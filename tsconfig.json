@@ -1,0 +1,66 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "es2019"
+    ],
+    "module": "esnext",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@common/*": [
+        "./src/common/*"
+      ],
+      "@lib/*": [
+        "./src/lib/*"
+      ],
+      "@state/*": [
+        "./src/state/*"
+      ],
+      "@style/*": [
+        "./src/style/*"
+      ],
+      "@mocks/*": [
+        "./src/mocks/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "moduleResolution": "node"
+  },
+  "include": [
+    "next-env.d.ts",
+    "./components/**/*.ts",
+    "./components/**/*.tsx",
+    "./utils/**/*.ts",
+    "./utils/**/*.tsx",
+    "./pages/**/*.ts",
+    "./pages/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+	"*.setup.js",
+	".eslintrc.js",
+	".importjs.js",
+	"*.config.js",
+	".prettierrc.js",
+	"i18n.js"
+  ]
+}

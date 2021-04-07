@@ -1,0 +1,5 @@
+out
+*.config.js
+*.setup.js
+.*.js
+

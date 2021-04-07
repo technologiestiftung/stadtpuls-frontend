@@ -1,0 +1,8 @@
+{
+  "short_name": "Berlin IoT Hub",
+  "name": "Berlin IoT Hub",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
