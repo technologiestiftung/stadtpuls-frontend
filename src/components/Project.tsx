@@ -153,8 +153,8 @@ export const Project: React.FC = () => {
       // TODO: type this properly
       devicesWithCoordinates.map(device => {
         return {
-          latitude: device.latitude,
-          longitude: device.longitude,
+          latitude: device.latitude || 0,
+          longitude: device.longitude || 0,
           id: device.id,
           isActive: device.id === selectedDeviceId,
         };
