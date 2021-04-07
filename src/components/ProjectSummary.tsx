@@ -11,7 +11,7 @@ export const ProjectSummary: React.FC<SummaryType> = ({
 }) => {
   return (
     <Box sx={{ maxWidth: "60ch" }}>
-      <Heading as="h1" variant="h1" sx={{ fontSize: [4, 4, 5] }}>
+      <Heading as='h1' variant='h1' sx={{ fontSize: [4, 4, 5] }}>
         {title}
       </Heading>
       <Text mt={3}>{description}</Text>

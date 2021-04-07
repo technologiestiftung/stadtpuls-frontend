@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
         zIndex: 3,
       }}
     >
-      <Link href="/">
+      <Link href='/'>
         <a sx={{ textDecoration: "none", color: "text" }}>
           <Flex>
             <Image

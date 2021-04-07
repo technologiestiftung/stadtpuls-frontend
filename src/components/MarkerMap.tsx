@@ -50,7 +50,7 @@ export const MarkerMap: React.FC<{
     }
   );
 
-  const allDevicesHaveSameLocation: boolean = latLonItems.every((item) => {
+  const allDevicesHaveSameLocation: boolean = latLonItems.every(item => {
     return (
       item.latitude === latLonItems[0].latitude &&
       item.longitude === latLonItems[0].longitude
@@ -107,7 +107,7 @@ export const MarkerMap: React.FC<{
       {...viewport}
       width={mapWidth}
       height={mapHeight}
-      mapStyle="mapbox://styles/mapbox/light-v10"
+      mapStyle='mapbox://styles/mapbox/light-v10'
       onViewportChange={(nextViewport: any) => setViewport(nextViewport)}
       mapboxApiAccessToken={MAPBOX_TOKEN}
     >

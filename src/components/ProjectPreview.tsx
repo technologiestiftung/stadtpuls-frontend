@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import React, { useEffect, useState, useRef } from "react";
-import Link from 'next/link';
+import Link from "next/link";
 import { jsx, Box, Card, Heading, Text, Grid, Flex } from "theme-ui";
 import { ProjectType, DateValueType, RecordType } from "../common/interfaces";
 import { LinePath } from "./visualization/LinePath";
@@ -20,7 +20,7 @@ export const ProjectPreview: React.FC<ProjectType> = ({
   >(undefined);
 
   const numberOfRecordsToDisplay = useStoreState(
-    (state) => state.records.segmentSize
+    state => state.records.segmentSize
   );
 
   useEffect(() => {
@@ -53,12 +53,12 @@ export const ProjectPreview: React.FC<ProjectType> = ({
                 .sort(
                   (a, b) => Date.parse(b.recordedAt) - Date.parse(a.recordedAt)
                 )
-                .filter((_record, i: Number) => i < numberOfRecordsToDisplay)
+                .filter((_record, i: number) => i < numberOfRecordsToDisplay)
             : result;
 
         setDateValueArray(createDateValueArray(dataToDisplay));
       })
-      .catch((error) => console.error(error));
+      .catch(error => console.error(error));
 
     return () => {
       isMounted = false;
@@ -99,19 +99,23 @@ export const ProjectPreview: React.FC<ProjectType> = ({
           >
             <Grid gap={2} columns={[1, 2, 2]}>
               <Box>
-                <Heading as="h3" variant="h3">
+                <Heading as='h3' variant='h3'>
                   {title}
                 </Heading>
-                <Heading as="h4" variant="h5" mt={1}>
+                <Heading as='h4' variant='h5' mt={1}>
                   {city}
                 </Heading>
                 <Text mt={3}>{description}</Text>
               </Box>
-              <Flex ref={parentRef} mt={[4, 0, 0]} sx={{ alignItems: "center" }}>
+              <Flex
+                ref={parentRef}
+                mt={[4, 0, 0]}
+                sx={{ alignItems: "center" }}
+              >
                 {dateValueArray && (
                   <svg
                     viewBox={`0 0  `}
-                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns='http://www.w3.org/2000/svg'
                     width={svgWrapperWidth}
                     height={svgWrapperHeight}
                     sx={{ overflow: "visible" }}

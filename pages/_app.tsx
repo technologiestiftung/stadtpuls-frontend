@@ -11,13 +11,16 @@ import { CookieBanner } from "@components/CookieBanner";
 import store from "@state/store";
 
 import theme from "../src/style/theme";
-import '../src/style/global.css';
+import "../src/style/global.css";
 
 // if (process.env.NODE_ENV === "development") {
 //   import("../src/mocks/browser").then(({ worker }) => worker.start());
 // }
 
-const publicURL = process.env.NODE_ENV === "development" ? '' : 'https://berlin-iot-hub.netlify.app';
+const publicURL =
+  process.env.NODE_ENV === "development"
+    ? ""
+    : "https://berlin-iot-hub.netlify.app";
 
 const App: FC<{
   Component: FC;
@@ -34,15 +37,18 @@ const App: FC<{
       <StoreProvider store={store}>
         <ThemeProvider theme={theme}>
           <Head>
-            <link rel="icon" href={`${publicURL}/favicon.ico`} />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta name="theme-color" content="#000000" />
+            <link rel='icon' href={`${publicURL}/favicon.ico`} />
             <meta
-              name="description"
-              content="Das Berlin IoT Hub ist eine prototypische Offene Datenplattform, die Sensordaten aus Forschungsprojekten der Technologiestiftung Berlin speichert und frei verfügbar macht"
+              name='viewport'
+              content='width=device-width, initial-scale=1'
             />
-            <link rel="apple-touch-icon" href={`${publicURL}/logo192.png`} />
-            <link rel="manifest" href={`${publicURL}/manifest.json`} />
+            <meta name='theme-color' content='#000000' />
+            <meta
+              name='description'
+              content='Das Berlin IoT Hub ist eine prototypische Offene Datenplattform, die Sensordaten aus Forschungsprojekten der Technologiestiftung Berlin speichert und frei verfügbar macht'
+            />
+            <link rel='apple-touch-icon' href={`${publicURL}/logo192.png`} />
+            <link rel='manifest' href={`${publicURL}/manifest.json`} />
             <title>Berlin IoT Hub | Technologiestiftung Berlin</title>
           </Head>
           <Header />

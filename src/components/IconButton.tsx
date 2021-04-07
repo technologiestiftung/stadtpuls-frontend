@@ -11,7 +11,7 @@ export const IconButton: React.FC<IconButtonType> = ({
 }) => {
   return (
     <Button
-      variant="text"
+      variant='text'
       sx={{
         display: "flex",
         alignItems: "center",
@@ -20,7 +20,7 @@ export const IconButton: React.FC<IconButtonType> = ({
       onClick={clickHandler}
     >
       <Box
-        bg="secondary"
+        bg='secondary'
         mr={2}
         sx={{
           display: "inline-block",
@@ -31,7 +31,7 @@ export const IconButton: React.FC<IconButtonType> = ({
       >
         <Image
           src={iconSource}
-          alt="Download-Icon"
+          alt='Download-Icon'
           sx={{ width: "100%", height: "100%", flex: "1 0 0" }}
         />
       </Box>

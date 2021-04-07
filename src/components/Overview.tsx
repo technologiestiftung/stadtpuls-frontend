@@ -18,7 +18,7 @@ import { ProjectType } from "../common/interfaces";
 const DatahubLogo = "/images/datahub-logo.svg";
 
 export const Overview: React.FC = () => {
-  const projects = useStoreState((state) => state.projects.items);
+  const projects = useStoreState(state => state.projects.items);
 
   return (
     <Container mt={[0, 5, 5]} p={4}>
@@ -41,16 +41,16 @@ export const Overview: React.FC = () => {
           />
           <Box>
             <Heading
-              as="h1"
-              variant="h1"
+              as='h1'
+              variant='h1'
               mt={[0, null, 4]}
               sx={{ color: "text" }}
             >
               Berlin <span sx={{ fontWeight: "body" }}>IoT Hub</span>
             </Heading>
             <Heading
-              as="h2"
-              variant="h2"
+              as='h2'
+              variant='h2'
               mt={2}
               mr={2}
               sx={{ color: "primary" }}
@@ -70,7 +70,7 @@ export const Overview: React.FC = () => {
             hier erfassten Daten sind unter der freien CC-BY-SA-Lizenz
             verfügbar.
           </Text>
-          <Heading as="h2" variant="h5" mt={3}>
+          <Heading as='h2' variant='h5' mt={3}>
             Anzahl der IoT-Projekte: 3
           </Heading>
           <Text mt={3}>

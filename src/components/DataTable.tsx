@@ -11,9 +11,7 @@ import { useStoreState } from "../state/hooks";
 const downloadIcon = "./images/download.svg";
 
 export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
-  const recordsSegmentSize = useStoreState(
-    (state) => state.records.segmentSize
-  );
+  const recordsSegmentSize = useStoreState(state => state.records.segmentSize);
 
   const [displayedData, setDisplayedData] = useState<undefined | RecordType[]>(
     undefined
@@ -48,14 +46,14 @@ export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
       <Grid
         columns={["auto max-content"]}
         p={3}
-        bg="background"
+        bg='background'
         sx={{
-          borderBottom: (theme) => `1px solid ${theme.colors.lightgrey}`,
+          borderBottom: theme => `1px solid ${theme.colors.lightgrey}`,
           position: "sticky",
           top: 0,
         }}
       >
-        {title && <Box color="primary">{title}</Box>}
+        {title && <Box color='primary'>{title}</Box>}
         <Box>
           <IconButton
             value={"Download"}
@@ -83,8 +81,7 @@ export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
                   py: 2,
                   px: 1,
                   fontWeight: "body",
-                  borderBottom: (theme) =>
-                    `1px solid ${theme.colors.lightgrey}`,
+                  borderBottom: theme => `1px solid ${theme.colors.lightgrey}`,
                 },
               }}
             >
@@ -117,7 +114,7 @@ export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
           </tbody>
         </table>
         {data && data.length > numberOfRecordsToDisplay && (
-          <Button variant="text" mt={3} onClick={handleLoadMore}>
+          <Button variant='text' mt={3} onClick={handleLoadMore}>
             Mehr anzeigen
           </Button>
         )}

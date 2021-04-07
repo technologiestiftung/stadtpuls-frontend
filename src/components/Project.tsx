@@ -3,8 +3,8 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useStoreState } from "../state/hooks";
 import { getDevices, getRecords, API_VERSION } from "../lib/requests";
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import Link from "next/link";
+import { useRouter } from "next/router";
 import {
   jsx,
   Grid,
@@ -39,14 +39,10 @@ import { NotFoundPage } from "./NotFoundPage";
 
 const downloadIcon = "./images/download.svg";
 
-interface RouteParams {
-  id: string;
-}
-
 export const Project: React.FC = () => {
   const router = useRouter();
   const id = router.query.id;
-  const selectedProject: ProjectType = useStoreState((state) =>
+  const selectedProject: ProjectType = useStoreState(state =>
     state.projects.selected(Number(id))
   );
 
@@ -77,7 +73,7 @@ export const Project: React.FC = () => {
     undefined
   );
 
-  const [loading, setLoading] = useState<Boolean>(true);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -108,7 +104,7 @@ export const Project: React.FC = () => {
           setCompleteProjectData(completeData);
           setSelectedDeviceId(completeData.devices[0].id);
         })
-        .catch((error) => console.error(error));
+        .catch(error => console.error(error));
     };
 
     if (!selectedProject) return;
@@ -118,7 +114,7 @@ export const Project: React.FC = () => {
   useEffect(() => {
     if (!completeProjectData) return;
     const device = completeProjectData.devices.find(
-      (device) => device.id === selectedDeviceId
+      device => device.id === selectedDeviceId
     );
 
     if (!device) return;
@@ -154,8 +150,8 @@ export const Project: React.FC = () => {
     );
 
     setMarkerData(
-      // @ts-ignore TODO: type this properly
-      devicesWithCoordinates.map((device) => {
+      // TODO: type this properly
+      devicesWithCoordinates.map(device => {
         return {
           latitude: device.latitude,
           longitude: device.longitude,
@@ -179,7 +175,7 @@ export const Project: React.FC = () => {
     };
   }, []);
 
-  const chartWrapper = useCallback((node) => {
+  const chartWrapper = useCallback(node => {
     if (!node) return;
     setChartWidth(node.getBoundingClientRect().width);
     setChartHeight(node.getBoundingClientRect().width / 2);
@@ -208,7 +204,7 @@ export const Project: React.FC = () => {
     };
   }, []);
 
-  const mapWrapper = useCallback((node) => {
+  const mapWrapper = useCallback(node => {
     if (!node) return;
     setMapWidth(node.getBoundingClientRect().width);
     setMapHeight(node.getBoundingClientRect().height);
@@ -259,11 +255,11 @@ export const Project: React.FC = () => {
         <Container mt={[0, 5, 5]} p={4}>
           <Grid gap={[4, null, 6]} columns={[1, "1fr 2fr"]}>
             <Box>
-              <Link href="/">
+              <Link href='/'>
                 <a sx={{ textDecoration: "none", color: "text" }}>
                   <IconButton
-                    aria-label="Zurück zur Übersicht"
-                    bg="background"
+                    aria-label='Zurück zur Übersicht'
+                    bg='background'
                     sx={{
                       borderRadius: "50%",
                       "&:hover": {
@@ -271,7 +267,7 @@ export const Project: React.FC = () => {
                       },
                     }}
                   >
-                    <ArrowBackIcon color="primary" />
+                    <ArrowBackIcon color='primary' />
                   </IconButton>
                 </a>
               </Link>
@@ -313,9 +309,9 @@ export const Project: React.FC = () => {
                   />
                 )}
               </Box>
-              <Card mt={5} bg="muted">
+              <Card mt={5} bg='muted'>
                 <div
-                  id="map-wrapper"
+                  id='map-wrapper'
                   ref={mapWrapper}
                   sx={{ width: "100%", height: "200px" }}
                 >
@@ -348,7 +344,7 @@ export const Project: React.FC = () => {
                       columns={["auto max-content"]}
                       p={3}
                       sx={{
-                        borderBottom: (theme) =>
+                        borderBottom: theme =>
                           `1px solid ${theme.colors.lightgrey}`,
                       }}
                     >
@@ -365,13 +361,13 @@ export const Project: React.FC = () => {
                             };
                           }
                         )}
-                        changeHandler={(selected) =>
+                        changeHandler={selected =>
                           setSelectedDeviceId(selected)
                         }
                       />
                       <Box sx={{ fontSize: 0 }}>
                         <Grid
-                          as="dl"
+                          as='dl'
                           columns={"100px 1fr"}
                           gap={2}
                           sx={{
@@ -384,12 +380,14 @@ export const Project: React.FC = () => {
                           <dt>Letzter Eintrag:</dt>
                           <dd>
                             {selectedDevice.records.length &&
+                            // TODO: Do not use hasOwnProperty here
+                            // eslint-disable-next-line no-prototype-builtins
                             selectedDevice.records[0].hasOwnProperty(
                               "recordedAt"
                             )
                               ? new Date(
                                   Math.max(
-                                    ...selectedDevice.records.map((e) =>
+                                    ...selectedDevice.records.map(e =>
                                       Date.parse(e.recordedAt)
                                     )
                                   )
@@ -403,31 +401,31 @@ export const Project: React.FC = () => {
                         </Grid>
                         {selectedDevice && (
                           <Grid
-                            as="form"
+                            as='form'
                             columns={"100px 1fr auto"}
                             gap={2}
                             onSubmit={handleUpdateRecords}
                           >
-                            <Label htmlFor="records-amount">Angezeigt:</Label>
+                            <Label htmlFor='records-amount'>Angezeigt:</Label>
                             <Input
-                              type="number"
-                              name="records-amount"
+                              type='number'
+                              name='records-amount'
                               value={numberOfRecordsToDisplay}
-                              min="1"
+                              min='1'
                               max={`${selectedDevice.records.length}`}
-                              step="1"
-                              id="records-amount"
-                              color="primary"
+                              step='1'
+                              id='records-amount'
+                              color='primary'
                               sx={{ fontWeight: "bold" }}
-                              onChange={(event) =>
+                              onChange={event =>
                                 setNumberOfRecordsToDisplay(
                                   Number(event.target.value)
                                 )
                               }
                             />
                             <Button
-                              variant="text"
-                              type="submit"
+                              variant='text'
+                              type='submit'
                               sx={{ display: "flex", alignItems: "center" }}
                             >
                               <ArrowForwardIcon
@@ -440,7 +438,7 @@ export const Project: React.FC = () => {
                       </Box>
                     </Grid>
                   )}
-                <Box id="chart-wrapper" ref={chartWrapper} mt={4}>
+                <Box id='chart-wrapper' ref={chartWrapper} mt={4}>
                   {chartWidth && chartHeight && lineChartData && (
                     <LineChart
                       width={chartWidth}

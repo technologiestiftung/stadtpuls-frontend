@@ -1,17 +1,17 @@
 import { FC, useEffect } from "react";
 
-import { Overview } from '@components/Overview';
+import { Overview } from "@components/Overview";
 
 import { useStoreActions } from "@state/hooks";
 
 const HomePage: FC = () => {
-  const loadDevices = useStoreActions((action) => action.projects.load);
+  const loadDevices = useStoreActions(action => action.projects.load);
 
   useEffect(() => {
     loadDevices();
   }, [loadDevices]);
 
-    return <Overview />
+  return <Overview />;
 };
 
 export default HomePage;

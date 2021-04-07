@@ -12,10 +12,12 @@ export const MainArea: React.FC = () => {
   return (
     <main sx={{ minHeight: "100vh", zIndex: 0 }}>
       <Switch>
-        <Route exact path="/">
+        <Route exact path='/'>
           <Overview />
         </Route>
-        <Route path="/:id" children={<Project />}></Route>
+        <Route path='/:id'>
+          <Project />
+        </Route>
         <Route component={NotFoundPage} />
       </Switch>
     </main>

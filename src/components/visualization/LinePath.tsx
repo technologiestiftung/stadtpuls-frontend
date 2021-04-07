@@ -26,10 +26,8 @@ export const LinePath = ({ width, height, data }: LineGraphType) => {
       curve={curveLinear}
       data={data}
       // TODO: [DATAHUB-36] Type this function
-      // @ts-ignore
-      x={(d) => xScale(getX(d))}
-      // @ts-ignore
-      y={(d) => yScale(getY(d))}
+      x={d => xScale(getX(d))}
+      y={d => yScale(getY(d))}
       sx={{
         stroke: "primary",
         strokeWidth: 2,

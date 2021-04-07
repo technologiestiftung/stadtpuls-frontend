@@ -9,7 +9,7 @@ export const MarkerCircle: React.FC<{
   children?: React.ReactNode;
 }> = ({ isActive, clickHandler, children }) => {
   return (
-    <div
+    <button
       sx={{
         width: "24px",
         height: "24px",
@@ -23,6 +23,6 @@ export const MarkerCircle: React.FC<{
       onClick={() => (clickHandler ? clickHandler() : null)}
     >
       {children}
-    </div>
+    </button>
   );
 };

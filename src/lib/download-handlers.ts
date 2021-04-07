@@ -14,11 +14,11 @@ export const createCSVStructure = (input: RecordType[] | undefined): string => {
 };
 
 export const downloadCSV = (input: string, title: string | undefined): void => {
-  let hiddenElement = document.createElement("a");
+  const hiddenElement = document.createElement("a");
   hiddenElement.href = `data:text/csv;charset=utf-8,${encodeURI(input)}`;
   hiddenElement.target = "_blank";
   hiddenElement.download = `${
-    // @ts-ignore replaceAll IS implemented in all modern browsers
+    // TODO replaceAll IS implemented in all modern browsers
     title ? title.toLowerCase().replaceAll(" ", "_") : "data"
   }.csv`;
   hiddenElement.click();

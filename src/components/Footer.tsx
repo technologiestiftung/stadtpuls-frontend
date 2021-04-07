@@ -9,7 +9,7 @@ const SenWEBLogo = "/images/senweb-logo.svg";
 export const Footer: React.FC = () => {
   return (
     <Grid
-      as="footer"
+      as='footer'
       columns={[1, null, "auto max-content"]}
       sx={{
         bg: "background",
@@ -54,18 +54,18 @@ export const Footer: React.FC = () => {
         }}
       >
         <Link
-          href="https://www.technologiestiftung-berlin.de/de/impressum/"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="footer"
+          href='https://www.technologiestiftung-berlin.de/de/impressum/'
+          target='_blank'
+          rel='noopener noreferrer'
+          variant='footer'
         >
           Impressum
         </Link>
         <Link
-          href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="footer"
+          href='https://www.technologiestiftung-berlin.de/de/datenschutz/'
+          target='_blank'
+          rel='noopener noreferrer'
+          variant='footer'
           ml={3}
         >
           Datenschutz

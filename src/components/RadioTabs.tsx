@@ -21,11 +21,11 @@ export const RadioTabs: React.FC<RadioTabsType> = ({
             key={`${name}-${option.id}-tab`}
             sx={{
               display: "inline-block",
-              marginRight: (theme) => `${theme.space[3]}px`,
+              marginRight: theme => `${theme.space[3]}px`,
             }}
           >
             <input
-              type="radio"
+              type='radio'
               id={`${name}-${option.id}`}
               name={name}
               value={option.id}
