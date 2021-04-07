@@ -17,10 +17,7 @@ import "../src/style/global.css";
 //   import("../src/mocks/browser").then(({ worker }) => worker.start());
 // }
 
-const publicURL =
-  process.env.NODE_ENV === "development"
-    ? ""
-    : "https://berlin-iot-hub.netlify.app";
+const publicURL = process.env.NEXT_PUBLIC_VERCEL_URL || "";
 
 const App: FC<{
   Component: FC;
