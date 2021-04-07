@@ -10,7 +10,7 @@ import { CookieBanner } from "@components/CookieBanner";
 
 import store from "@state/store";
 
-import theme from "@style/theme";
+import theme from "../src/style/theme";
 import '../src/style/global.css';
 
 // if (process.env.NODE_ENV === "development") {

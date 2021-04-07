@@ -33,9 +33,6 @@
       "@state/*": [
         "./src/state/*"
       ],
-      "@style/*": [
-        "./src/style/*"
-      ],
       "@mocks/*": [
         "./src/mocks/*"
       ],
