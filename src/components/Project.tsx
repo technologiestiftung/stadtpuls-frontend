@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import React, { useEffect, useState, useCallback } from "react";
 import { useStoreState } from "../state/hooks";
-import { getDevices, getRecords, API_VERSION } from "../lib/requests";
+import { getDevicesByProjectId, getRecordsByDeviceId } from "../lib/requests";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {
@@ -41,7 +41,7 @@ const downloadIcon = "./images/download.svg";
 
 export const Project: React.FC = () => {
   const router = useRouter();
-  const id = router.query.id;
+  const id = router.query.id as string;
   const selectedProject: ProjectType = useStoreState(state =>
     state.projects.selected(Number(id))
   );
@@ -79,16 +79,12 @@ export const Project: React.FC = () => {
     const fetchData = async () => {
       const {
         data: { devices },
-      } = await getDevices(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/${API_VERSION}/projects/${id}/devices`
-      );
+      } = await getDevicesByProjectId(id);
       Promise.all(
         devices.map(async (device: DeviceType) => {
           const {
             data: { records },
-          } = await getRecords(
-            `${process.env.NEXT_PUBLIC_API_URL}/api/${API_VERSION}/devices/${device.id}/records`
-          );
+          } = await getRecordsByDeviceId(device.id);
           return {
             ...device,
             records: records,

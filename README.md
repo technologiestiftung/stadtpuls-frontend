@@ -28,10 +28,12 @@ Requests to the API are defined in `src/lib/requests.ts` and called in currently
 - `src/components/Project.tsx` (for fetching records of all devices associated with the project)
 - `src/components/ProjectPreview.tsx` (for fetching the records of one project device, to be displayed in the project preview)
 
-The requests are constructed following this pattern:
+The requests should provide the relevant parameters. For example:
 
-```
-{API_URL}/api/{API_VERSION}/route/to/endpoint
+```js
+await getAllProjects() // No parameters needed here
+await getDevicesByProjectId(id) // The id of the project to get the devices from
+await getRecordsByDeviceId(id) // The id of the device to get the records from
 ```
 
 The API version can be defined in `src/lib/requests.ts`.

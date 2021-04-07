@@ -1,6 +1,6 @@
 import { createStore, thunk, action, computed } from "easy-peasy";
 import { StoreModel } from "./model";
-import { getProjects, API_VERSION } from "../lib/requests";
+import { getAllProjects } from "../lib/requests";
 import { ProjectType } from "../common/interfaces";
 
 const store = createStore<StoreModel>({
@@ -16,9 +16,7 @@ const store = createStore<StoreModel>({
     load: thunk(async actions => {
       const {
         data: { projects },
-      } = await getProjects(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/${API_VERSION}/projects`
-      );
+      } = await getAllProjects();
       actions.save(projects);
     }),
   },

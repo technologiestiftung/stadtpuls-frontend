@@ -1,6 +1,7 @@
 import { DeviceType, RecordType, ProjectType } from "../common/interfaces";
 
 export const API_VERSION = "v1";
+const apiBaseUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/${API_VERSION}`;
 
 export interface ProjectResponse {
   data: {
@@ -8,8 +9,8 @@ export interface ProjectResponse {
   };
 }
 
-export async function getProjects(url: string): Promise<ProjectResponse> {
-  const response = await fetch(url);
+export async function getAllProjects(): Promise<ProjectResponse> {
+  const response = await fetch(`${apiBaseUrl}/projects`);
   if (!response.ok) {
     console.error(await response.text());
     throw new Error("Failed to fetch projects");
@@ -24,8 +25,10 @@ export interface DeviceResponse {
   };
 }
 
-export async function getDevices(url: string): Promise<DeviceResponse> {
-  const response = await fetch(url);
+export async function getDevicesByProjectId(
+  id: string | number
+): Promise<DeviceResponse> {
+  const response = await fetch(`${apiBaseUrl}/projects/${id}/devices`);
   if (!response.ok) {
     console.error(await response.text());
     throw new Error("Failed to fetch device");
@@ -40,8 +43,10 @@ export interface RecordsResponse {
   };
 }
 
-export async function getRecords(url: string): Promise<RecordsResponse> {
-  const response = await fetch(url);
+export async function getRecordsByDeviceId(
+  id: string | number
+): Promise<RecordsResponse> {
+  const response = await fetch(`${apiBaseUrl}/devices/${id}/records`);
   if (!response.ok) {
     console.error(await response.text());
     throw new Error("Failed to fetch records");

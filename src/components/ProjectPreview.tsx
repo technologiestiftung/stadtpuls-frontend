@@ -5,7 +5,7 @@ import Link from "next/link";
 import { jsx, Box, Card, Heading, Text, Grid, Flex } from "theme-ui";
 import { ProjectType, DateValueType, RecordType } from "../common/interfaces";
 import { LinePath } from "./visualization/LinePath";
-import { getDevices, getRecords, API_VERSION } from "../lib/requests";
+import { getDevicesByProjectId, getRecordsByDeviceId } from "../lib/requests";
 import { createDateValueArray } from "../lib/utils";
 import { useStoreState } from "../state/hooks";
 
@@ -29,17 +29,13 @@ export const ProjectPreview: React.FC<ProjectType> = ({
     const fetchFirstDeviceRecords = async () => {
       const {
         data: { devices },
-      } = await getDevices(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/${API_VERSION}/projects/${id}/devices`
-      );
+      } = await getDevicesByProjectId(id);
 
       if (devices.length < 1) return;
 
       const {
         data: { records },
-      } = await getRecords(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/${API_VERSION}/devices/${devices[0].id}/records`
-      );
+      } = await getRecordsByDeviceId(devices[0].id);
       return records;
     };
 
