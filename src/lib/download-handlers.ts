@@ -18,8 +18,7 @@ export const downloadCSV = (input: string, title: string | undefined): void => {
   hiddenElement.href = `data:text/csv;charset=utf-8,${encodeURI(input)}`;
   hiddenElement.target = "_blank";
   hiddenElement.download = `${
-    // TODO replaceAll IS implemented in all modern browsers
-    title ? title.toLowerCase().replaceAll(" ", "_") : "data"
+    title ? title.toLowerCase().split(" ").join("_") : "data"
   }.csv`;
   hiddenElement.click();
   hiddenElement.remove();
