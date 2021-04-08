@@ -19,7 +19,6 @@
     "react-dom": "17.0.2",
     "react-map-gl": "5.3.11",
     "react-router-dom": "5.2.0",
-    "react-scripts": "4.0.3",
     "theme-ui": "0.3.5"
   },
   "devDependencies": {
@@ -65,18 +64,6 @@
     "lint": "eslint --ext js,jsx,ts,tsx .",
     "lint-fix": "npm run lint -- --fix",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   },
   "husky": {
     "hooks": {
