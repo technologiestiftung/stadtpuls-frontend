@@ -39,7 +39,7 @@ export const MarkerMap: React.FC<{
     maxZoom: 16,
     width: mapWidth,
     height: mapHeight,
-  });
+  } as ViewportType);
 
   const latLonItems: { latitude: number; longitude: number }[] = markers.map(
     (marker: MarkerType) => {
@@ -108,7 +108,9 @@ export const MarkerMap: React.FC<{
       width={mapWidth}
       height={mapHeight}
       mapStyle='mapbox://styles/mapbox/light-v10'
-      onViewportChange={(nextViewport: any) => setViewport(nextViewport)}
+      onViewportChange={(nextViewport: ViewportType) =>
+        setViewport(nextViewport)
+      }
       mapboxApiAccessToken={MAPBOX_TOKEN}
     >
       {!allDevicesHaveSameLocation &&

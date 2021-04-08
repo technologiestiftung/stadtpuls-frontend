@@ -43,7 +43,7 @@ const downloadIcon = "./images/download.svg";
 export const Project: React.FC = () => {
   const router = useRouter();
   const id = router.query.id as string;
-  const selectedProject: ProjectType = useStoreState(state =>
+  const selectedProject: ProjectType | undefined = useStoreState(state =>
     state.projects.selected(Number(id))
   );
 
@@ -78,6 +78,7 @@ export const Project: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
+      if (!selectedProject) return;
       const devices = await getDevicesByProjectId(id);
       Promise.all(
         devices.map(async (device: DeviceType) => {
@@ -100,7 +101,6 @@ export const Project: React.FC = () => {
         .catch(error => console.error(error));
     };
 
-    if (!selectedProject) return;
     fetchData();
   }, [selectedProject, id]);
 

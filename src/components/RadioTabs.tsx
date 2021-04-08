@@ -9,7 +9,7 @@ export const RadioTabs: React.FC<RadioTabsType> = ({
   options,
   changeHandler,
 }) => {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     changeHandler(Number(event.target.value));
   };
 
