@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx, Box, Link, Heading } from "theme-ui";
-import { ApiTableType } from "../common/interfaces";
+import { ApiTableType } from "../../common/interfaces";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
