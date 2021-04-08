@@ -1,4 +1,4 @@
-import { RecordType } from "../common/interfaces";
+import { RecordType } from "../../common/interfaces";
 
 export const createCSVStructure = (input: RecordType[] | undefined): string => {
   let csv = "id,deviceId,recordedAt,value\n";
@@ -15,7 +15,7 @@ export const createCSVStructure = (input: RecordType[] | undefined): string => {
   return csv;
 };
 
-export const downloadCSV = (input: string, title: string | undefined): void => {
+export const downloadCSV = (input: string, title?: string): void => {
   const hiddenElement = document.createElement("a");
   hiddenElement.href = `data:text/csv;charset=utf-8,${encodeURI(input)}`;
   hiddenElement.target = "_blank";
