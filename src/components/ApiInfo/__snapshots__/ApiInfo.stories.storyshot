@@ -24,7 +24,7 @@ exports[`Storyshots ApiInfo Default 1`] = `
         >
           <a
             className="css-uv00ue"
-            href="undefined/api/devices/1/records"
+            href="https://berlin-datahub-api.onrender.com/api/devices/1/records"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -45,7 +45,7 @@ exports[`Storyshots ApiInfo Default 1`] = `
         >
           <a
             className="css-uv00ue"
-            href="undefined/api/devices/2/records"
+            href="https://berlin-datahub-api.onrender.com/api/devices/2/records"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -66,7 +66,7 @@ exports[`Storyshots ApiInfo Default 1`] = `
         >
           <a
             className="css-uv00ue"
-            href="undefined/api/devices/3/records"
+            href="https://berlin-datahub-api.onrender.com/api/devices/3/records"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -87,7 +87,7 @@ exports[`Storyshots ApiInfo Default 1`] = `
         >
           <a
             className="css-uv00ue"
-            href="undefined/api/devices/4/records"
+            href="https://berlin-datahub-api.onrender.com/api/devices/4/records"
             rel="noopener noreferrer"
             target="_blank"
           >
