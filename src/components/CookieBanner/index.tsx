@@ -4,14 +4,17 @@ import React, { useState } from "react";
 import { jsx, Text, Link, Flex, Box } from "theme-ui";
 import CloseIcon from "@material-ui/icons/Close";
 
-export const CookieBanner: React.FC = () => {
+export const CookieBanner: React.FC<{
+  ignoreCookie?: true;
+}> = ({ ignoreCookie }) => {
   const cookie = typeof window !== "undefined" && window.document.cookie;
+  const cookieIsAccepted = cookie
+    ? Boolean(
+        cookie?.split("; ")?.find(row => row.startsWith("disclaimerAccepted"))
+      )
+    : false;
   const [cookieStatus, setCookieStatus] = useState<boolean>(
-    cookie &&
-      cookie.split("; ").find(row => row.startsWith("disclaimerAccepted")) !==
-        undefined
-      ? true
-      : false
+    ignoreCookie === undefined ? cookieIsAccepted : false
   );
 
   const acceptCookies: () => void = () => {
@@ -28,11 +31,15 @@ export const CookieBanner: React.FC = () => {
           p={3}
           sx={{
             fontSize: 0,
-            width: [theme => `calc(100% - ${theme.space[3]}px)`, "80%", "60%"],
+            width: [
+              theme => `calc(100vw - ${theme.space[3]}px)`,
+              "80vw",
+              "60vw",
+            ],
             border: theme => `2px solid ${theme.colors.primary}`,
             position: "fixed",
             bottom: [theme => `${theme.space[2]}px`, "40px", null],
-            left: [theme => `${theme.space[2]}px`, "10%", "20%"],
+            left: [theme => `${theme.space[2]}px`, "10vw", "20vw"],
             zIndex: 3,
           }}
         >
