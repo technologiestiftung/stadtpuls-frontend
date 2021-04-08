@@ -38,7 +38,7 @@ describe("Project component", () => {
     );
 
     await waitFor(() =>
-      expect(screen.getByText(/CO2-Sensoren/gi)).toBeInTheDocument()
+      expect(screen.getByText(/Test project A/gi)).toBeInTheDocument()
     );
   });
 });
