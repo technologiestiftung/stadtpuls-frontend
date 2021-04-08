@@ -3,8 +3,8 @@ import { getAllProjects } from "@lib/requests/getAllProjects";
 import { NextPage, NextApiResponse } from "next";
 import { Component } from "react";
 
-const createFullUrl: (path: string) => string = path =>
-  `${process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000"}${path}`;
+const publicURL = process.env.NEXT_PUBLIC_WEB_URL;
+const createFullUrl: (path: string) => string = path => `${publicURL}${path}`;
 
 const formatDate: (dateStr?: string) => string = dateStr => {
   const date = dateStr ? new Date(dateStr) : new Date();

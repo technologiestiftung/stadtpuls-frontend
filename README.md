@@ -1,6 +1,6 @@
 # Berlin IoT Hub (Frontend)
 
-This repository contains the frontend of the Berlin IoT Hub of Technologiestiftung Berlin. It is built using [Create React App](https://github.com/facebook/create-react-app) (CRA), TypeScript, [visx](https://airbnb.io/visx/), and [a wrapper for Mapbox GL](https://visgl.github.io/react-map-gl/).
+This repository contains the frontend of the Berlin IoT Hub of Technologiestiftung Berlin. It is built using [Next.js](https://nextjs.org/), TypeScript, [visx](https://airbnb.io/visx/), and [a wrapper for Mapbox GL](https://visgl.github.io/react-map-gl/).
 
 The API for retrieving data can found in a [different repository](https://github.com/technologiestiftung/berlin-datahub-api).
 
@@ -8,27 +8,46 @@ The API for retrieving data can found in a [different repository](https://github
 
 Clone this repository, then on the root level create a file named `.env` and fill in the required values (see `.env.example` for a reference).
 
-Currently we are not calling the actual API in dev mode, so the `.env.development` file (that comes with the repository) redirects API calls to our mock service worker.
+The actual API is mocked in dev mode using a [Mock Service Worker (msw)](https://mswjs.io/). To enable/disable the mocking in development, set `NEXT_PUBLIC_API_MOCKING` in your `.env.development` to `disabled`.
 
-Run `npm install` to install all required dependencies and then `npm start` to start developing locally. All available script can be found further down.
+Run `npm install` to install all required dependencies and then `npm run dev` to start developing locally. All available script can be found further down.
 
 ## Structure
 
-The folder structure follows CRA's recommendations.
+The folder structure follows Next.js's recommendations.
 
 ### Views and components
 
-`src/App.tsx` contains the routes/views that are currently available. The views themselves are simply React components that can be found in `src/components`. All other components can be found there as well.
+Page routing is achieved with Next.js's [file-system routing](https://nextjs.org/docs/routing/introduction). The views themselves are simply React components that can be found in `src/components`. All other components can be found there as well.
+
+### Storybook
+
+We use [Storybook](https://storybook.js.org/) to create and test our React components in isolation.
+We also use the [storyshots addon](https://storybook.js.org/docs/react/workflows/snapshot-testing#gatsby-focus-wrapper) to create test snapshots.
+
+### Testing
+
+We use [jest](https://jestjs.io/) to unit test our code. We also use a [testing-library](https://testing-library.com/) to test our react components, user events, and other things.
+
+To run the tests enter:
+```sh
+npm t
+```
+
+Or in watch mode:
+```sh
+nom run test:watch
+```
 
 ### Requests
 
-Requests to the API are defined in `src/lib/requests.ts` and called in currently three places:
+Requests to the API are defined various request utility functions located in `src/lib/requests/` and called in currently three places:
 
 - `src/state/store.ts` (for fetching all projects to be displayed on the homepage)
 - `src/components/Project.tsx` (for fetching records of all devices associated with the project)
 - `src/components/ProjectPreview.tsx` (for fetching the records of one project device, to be displayed in the project preview)
 
-The requests should provide the relevant parameters. For example:
+The request utility functions should provide the relevant parameters. For example:
 
 ```js
 await getAllProjects() // No parameters needed here
@@ -36,7 +55,7 @@ await getDevicesByProjectId(id) // The id of the project to get the devices from
 await getRecordsByDeviceId(id) // The id of the device to get the records from
 ```
 
-The API version can be defined in `src/lib/requests.ts`.
+The API version can be defined in `src/lib/requests/createApiUrl.ts`.
 
 ### Styling
 
@@ -52,53 +71,9 @@ New features, fixes, etc. should always be developed on a separate branch:
 4. Push your changes to the remote: `git push -U origin HEAD`
 5. Open a pull request.
 
+You can commit using the `npm run cm` command to ensure your commits follow our conventions.
+
 ## Deployment
 
-The frontend is currently deployed to [netlify](https://www.netlify.com/). Pushing to the `main` branch will automatically trigger a new deploy (this should be avoided, if possible).
+The frontend is currently deployed to [Vercel](https://vercel.com/). Pushing to the `main` branch will automatically trigger a new deploy (this should be avoided, if possible).
 
----
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) (CRA), the following section originates from CRA's docs, but still applies to this repository.
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
