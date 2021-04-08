@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
       }}
     >
       <Link href='/'>
-        <a sx={{ textDecoration: "none", color: "text" }}>
+        <a sx={{ textDecoration: "none", color: "text", cursor: "pointer" }}>
           <Flex>
             <Image
               src={DatahubLogo}

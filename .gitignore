@@ -25,3 +25,4 @@ yarn-error.log*
 .env
 .next
 .vercel
+.tsconfig-lint.json

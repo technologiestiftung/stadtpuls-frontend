@@ -66,6 +66,8 @@
     "test:ci": "jest --runInBand",
     "lint": "eslint --ext js,jsx,ts,tsx .",
     "lint-fix": "npm run lint -- --fix",
+    "lint-staged": "lint-staged",
+    "qa": "npm run lint-fix && npm run type-check && npm run test",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     "prepare": "husky install"
   },
@@ -86,8 +88,5 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "proxy": "http://localhost:4000",
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix"
-  }
+  "proxy": "http://localhost:4000"
 }
