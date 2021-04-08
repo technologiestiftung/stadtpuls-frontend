@@ -13,11 +13,11 @@ import store from "@state/store";
 import theme from "../src/style/theme";
 import "../src/style/global.css";
 
-// if (process.env.NODE_ENV === "development") {
-//   import("../src/mocks/browser").then(({ worker }) => worker.start());
-// }
-
 const publicURL = process.env.NEXT_PUBLIC_VERCEL_URL || "";
+
+if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
+  require("../src/mocks");
+}
 
 const App: FC<{
   Component: FC;
