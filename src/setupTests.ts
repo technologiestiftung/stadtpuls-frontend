@@ -5,7 +5,10 @@
 import "@testing-library/jest-dom/extend-expect";
 import { server } from "./mocks/server";
 import "whatwg-fetch";
-process.env.NEXT_PUBLIC_API_URL = "";
+import initStoryshots from '@storybook/addon-storyshots';
+
+initStoryshots();
+
 beforeAll(() => {
   // Enable the mocking in tests.
   server.listen();
