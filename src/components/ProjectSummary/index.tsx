@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx, Heading, Text, Box } from "theme-ui";
-import { SummaryType } from "../common/interfaces";
+import { SummaryType } from "../../common/interfaces";
 
 export const ProjectSummary: React.FC<SummaryType> = ({
   title,
