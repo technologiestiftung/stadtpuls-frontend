@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Footer Default 1`] = `
+<footer
+  className="css-605ip6-Footer"
+>
+  <div
+    className="css-177thsy"
+  >
+    <div
+      className="css-4cffwv"
+    >
+      <div
+        className="css-1tospi0-Footer"
+      >
+        <div
+          className="css-vurnku"
+        >
+          Ein Projekt der:
+        </div>
+      </div>
+      <img
+        alt="Logo der Technologiestiftung Berlin"
+        className="css-1t6cmvr-Footer"
+        src="/images/tsb-logo.svg"
+      />
+    </div>
+    <div
+      className="css-4cffwv"
+    >
+      <div
+        className="css-1tospi0-Footer"
+      >
+        <div
+          className="css-vurnku"
+        >
+          Gefördert von:
+        </div>
+      </div>
+      <img
+        alt="Logo der Senatsverwaltung für Wirtschaft, Energie und Betriebe"
+        className="css-h1k1oh-Footer"
+        src="/images/senweb-logo.svg"
+      />
+    </div>
+  </div>
+  <div
+    className="css-18f9hr4-Footer"
+  >
+    <a
+      className="css-ta8zj8"
+      href="https://www.technologiestiftung-berlin.de/de/impressum/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Impressum
+    </a>
+    <a
+      className="css-1cve2jh"
+      href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Datenschutz
+    </a>
+  </div>
+</footer>
+`;
+
+exports[`Storyshots Header Default 1`] = `
+<header
+  className="css-4werlw-Header"
+>
+  <a
+    className="css-1kxglq2-Header"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="css-4cffwv"
+    >
+      <img
+        alt="Logo des Berlin IoT Hub"
+        className="css-k3qijy-Header"
+        src="/images/datahub-logo.svg"
+      />
+      <h2
+        className="css-12hmaxm-Header"
+      >
+        Berlin 
+        <span
+          className="css-u111td-Header"
+        >
+          IoT Hub
+        </span>
+      </h2>
+    </div>
+  </a>
+</header>
+`;
