@@ -8,9 +8,7 @@ import {
   device3Records,
   device4Records,
 } from "./data";
-import { API_VERSION } from "../lib/requests";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+import { createApiUrl } from "../lib/requests";
 
 const { data: projectsData } = projectsResponse;
 const { data: project1DevicesData } = project1Devices;
@@ -21,64 +19,46 @@ const { data: device3RecordsData } = device3Records;
 const { data: device4RecordsData } = device4Records;
 
 export const handlers = [
-  rest.get(`${API_URL}/api/${API_VERSION}/projects`, (_req, res, ctx) => {
+  rest.get(createApiUrl(`/projects`), (_req, res, ctx) => {
     return res(
       ctx.status(201, "Mocked status"),
       ctx.json({ data: projectsData, meta: "mocked" })
     );
   }),
-  rest.get(
-    `${API_URL}/api/${API_VERSION}/projects/1/devices`,
-    (_req, res, ctx) => {
-      return res(
-        ctx.status(201, "Mocked status"),
-        ctx.json({ data: project1DevicesData, meta: "mocked" })
-      );
-    }
-  ),
-  rest.get(
-    `${API_URL}/api/${API_VERSION}/projects/2/devices`,
-    (_req, res, ctx) => {
-      return res(
-        ctx.status(201, "Mocked status"),
-        ctx.json({ data: project2DevicesData, meta: "mocked" })
-      );
-    }
-  ),
-  rest.get(
-    `${API_URL}/api/${API_VERSION}/devices/1/records`,
-    (_req, res, ctx) => {
-      return res(
-        ctx.status(201, "Mocked status"),
-        ctx.json({ data: device1RecordsData, meta: "mocked" })
-      );
-    }
-  ),
-  rest.get(
-    `${API_URL}/api/${API_VERSION}/devices/2/records`,
-    (_req, res, ctx) => {
-      return res(
-        ctx.status(201, "Mocked status"),
-        ctx.json({ data: device2RecordsData, meta: "mocked" })
-      );
-    }
-  ),
-  rest.get(
-    `${API_URL}/api/${API_VERSION}/devices/3/records`,
-    (_req, res, ctx) => {
-      return res(
-        ctx.status(201, "Mocked status"),
-        ctx.json({ data: device3RecordsData, meta: "mocked" })
-      );
-    }
-  ),
-  rest.get(
-    `${API_URL}/api/${API_VERSION}/devices/4/records`,
-    (_req, res, ctx) => {
-      return res(
-        ctx.status(201, "Mocked status"),
-        ctx.json({ data: device4RecordsData, meta: "mocked" })
-      );
-    }
-  ),
+  rest.get(createApiUrl(`/projects/1/devices`), (_req, res, ctx) => {
+    return res(
+      ctx.status(201, "Mocked status"),
+      ctx.json({ data: project1DevicesData, meta: "mocked" })
+    );
+  }),
+  rest.get(createApiUrl(`/projects/2/devices`), (_req, res, ctx) => {
+    return res(
+      ctx.status(201, "Mocked status"),
+      ctx.json({ data: project2DevicesData, meta: "mocked" })
+    );
+  }),
+  rest.get(createApiUrl(`/devices/1/records`), (_req, res, ctx) => {
+    return res(
+      ctx.status(201, "Mocked status"),
+      ctx.json({ data: device1RecordsData, meta: "mocked" })
+    );
+  }),
+  rest.get(createApiUrl(`/devices/2/records`), (_req, res, ctx) => {
+    return res(
+      ctx.status(201, "Mocked status"),
+      ctx.json({ data: device2RecordsData, meta: "mocked" })
+    );
+  }),
+  rest.get(createApiUrl(`/devices/3/records`), (_req, res, ctx) => {
+    return res(
+      ctx.status(201, "Mocked status"),
+      ctx.json({ data: device3RecordsData, meta: "mocked" })
+    );
+  }),
+  rest.get(createApiUrl(`/devices/4/records`), (_req, res, ctx) => {
+    return res(
+      ctx.status(201, "Mocked status"),
+      ctx.json({ data: device4RecordsData, meta: "mocked" })
+    );
+  }),
 ];
