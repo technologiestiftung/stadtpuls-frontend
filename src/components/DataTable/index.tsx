@@ -1,12 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import React, { useState, useEffect } from "react";
-import { jsx, Grid, Card, Box, Button } from "theme-ui";
+import { jsx, Grid, Card, Box, Button, Theme } from "theme-ui";
 import { IconButton } from "../IconButton";
 import { RecordType, DataTableType } from "../../common/interfaces";
-import { createTimeOutput } from "../../lib/utils";
-import { createCSVStructure, downloadCSV } from "../../lib/download-handlers";
-import { useStoreState } from "../../state/hooks";
+import { createTimeOutput } from "@lib/dateUtil";
+import { createCSVStructure, downloadCSV } from "@lib/downloadCsvUtil";
+import { useStoreState } from "@state/hooks";
 
 const downloadIcon = "/images/download.svg";
 
@@ -48,7 +48,8 @@ export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
         p={3}
         bg='background'
         sx={{
-          borderBottom: theme => `1px solid ${theme.colors.lightgrey}`,
+          borderBottom: (theme: Theme) =>
+            `1px solid ${String(theme.colors?.lightgrey)}`,
           position: "sticky",
           top: 0,
         }}
@@ -81,7 +82,8 @@ export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
                   py: 2,
                   px: 1,
                   fontWeight: "body",
-                  borderBottom: theme => `1px solid ${theme.colors.lightgrey}`,
+                  borderBottom: (theme: Theme) =>
+                    `1px solid ${String(theme.colors?.lightgrey)}`,
                 },
               }}
             >

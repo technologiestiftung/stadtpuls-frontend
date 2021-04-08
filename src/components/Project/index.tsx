@@ -17,8 +17,9 @@ import {
   Input,
   Label,
   Button,
+  Theme,
 } from "theme-ui";
-import { downloadMultiple } from "@lib/download-handlers";
+import { downloadMultiple } from "@lib/downloadCsvUtil";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { ProjectSummary } from "../ProjectSummary";
@@ -33,7 +34,7 @@ import {
 } from "../../common/interfaces";
 import { RadioTabs } from "../RadioTabs";
 import { LineChart } from "../visualization/LineChart";
-import { createDateValueArray } from "../../lib/utils";
+import { createDateValueArray } from "@lib/dateUtil";
 import { ApiInfo } from "../ApiInfo";
 import { MarkerMap } from "../MarkerMap";
 import { NotFoundPage } from "../NotFoundPage";
@@ -101,7 +102,10 @@ export const Project: React.FC = () => {
         .catch(error => console.error(error));
     };
 
-    fetchData();
+    fetchData().then(
+      () => undefined,
+      () => undefined
+    );
   }, [selectedProject, id]);
 
   useEffect(() => {
@@ -168,9 +172,9 @@ export const Project: React.FC = () => {
     };
   }, []);
 
-  const chartWrapper = useCallback(node => {
+  const chartWrapper = useCallback((node: HTMLDivElement | null) => {
     if (!node) return;
-    setChartWidth(node.getBoundingClientRect().width);
+    setChartWidth(node.getBoundingClientRect().width || 0);
     setChartHeight(node.getBoundingClientRect().width / 2);
   }, []);
 
@@ -197,7 +201,7 @@ export const Project: React.FC = () => {
     };
   }, []);
 
-  const mapWrapper = useCallback(node => {
+  const mapWrapper = useCallback((node: HTMLDivElement | null) => {
     if (!node) return;
     setMapWidth(node.getBoundingClientRect().width);
     setMapHeight(node.getBoundingClientRect().height);
@@ -339,8 +343,8 @@ export const Project: React.FC = () => {
                       columns={["auto max-content"]}
                       p={3}
                       sx={{
-                        borderBottom: theme =>
-                          `1px solid ${theme.colors.lightgrey}`,
+                        borderBottom: (theme: Theme) =>
+                          `1px solid ${String(theme.colors?.lightgrey)}`,
                       }}
                     >
                       <RadioTabs

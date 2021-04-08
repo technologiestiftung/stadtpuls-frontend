@@ -7,7 +7,7 @@ import { ProjectType, DateValueType, RecordType } from "@common/interfaces";
 import { LinePath } from "../visualization/LinePath";
 import { getRecordsByDeviceId } from "@lib/requests/getRecordsByDeviceId";
 import { getDevicesByProjectId } from "@lib/requests/getDevicesByProjectId";
-import { createDateValueArray } from "@lib/utils";
+import { createDateValueArray } from "@lib/dateUtil";
 import { useStoreState } from "@state/hooks";
 
 export const ProjectPreview: React.FC<ProjectType> = ({

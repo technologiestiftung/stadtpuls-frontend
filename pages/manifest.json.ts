@@ -12,11 +12,7 @@ const getManifest = (): string => `{
 `;
 
 class Sitemap extends Component {
-  static async getInitialProps({
-    res,
-  }: {
-    res: NextApiResponse;
-  }): Promise<void> {
+  static getInitialProps({ res }: { res: NextApiResponse }): void {
     res.setHeader("Content-Type", "application/manifest+json");
     res.write(getManifest());
     res.end();

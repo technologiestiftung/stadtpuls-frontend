@@ -8,11 +8,7 @@ Disallow:
 `;
 
 class Sitemap extends Component {
-  static async getInitialProps({
-    res,
-  }: {
-    res: NextApiResponse;
-  }): Promise<void> {
+  static getInitialProps({ res }: { res: NextApiResponse }): void {
     res.setHeader("Content-Type", "text/txt");
     res.write(getManifest());
     res.end();

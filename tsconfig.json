@@ -36,28 +36,23 @@
       "@mocks/*": [
         "./src/mocks/*"
       ],
-      "@/*": [
-        "./src/*"
-      ]
     },
     "moduleResolution": "node"
   },
   "include": [
     "next-env.d.ts",
-    "./components/**/*.ts",
-    "./components/**/*.tsx",
-    "./utils/**/*.ts",
-    "./utils/**/*.tsx",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
     "./pages/**/*.ts",
-    "./pages/**/*.tsx"
+    "./pages/**/*.tsx",
   ],
   "exclude": [
     "node_modules",
-	"*.setup.js",
-	".eslintrc.js",
-	".importjs.js",
-	"*.config.js",
-	".prettierrc.js",
-	"i18n.js"
+    "*.setup.js",
+    ".eslintrc.js",
+    ".importjs.js",
+    "*.config.js",
+    ".prettierrc.js",
+    "i18n.js"
   ]
 }

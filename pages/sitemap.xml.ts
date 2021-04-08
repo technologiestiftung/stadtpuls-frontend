@@ -3,7 +3,7 @@ import { getAllProjects } from "@lib/requests/getAllProjects";
 import { NextPage, NextApiResponse } from "next";
 import { Component } from "react";
 
-const publicURL = process.env.NEXT_PUBLIC_WEB_URL;
+const publicURL = process.env.NEXT_PUBLIC_WEB_URL || "";
 const createFullUrl: (path: string) => string = path => `${publicURL}${path}`;
 
 const formatDate: (dateStr?: string) => string = dateStr => {

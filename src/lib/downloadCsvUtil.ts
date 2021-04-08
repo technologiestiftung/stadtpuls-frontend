@@ -6,7 +6,9 @@ export const createCSVStructure = (input: RecordType[] | undefined): string => {
   if (!input) return csv;
 
   input.forEach((record: RecordType) => {
-    csv += `${record.id},${record.deviceId},${record.recordedAt},${record.value},`;
+    csv += `${record.id},${record.deviceId || ""},${record.recordedAt},${
+      record.value
+    },`;
     csv += "\n";
   });
 

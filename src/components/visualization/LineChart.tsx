@@ -7,7 +7,7 @@ import { Group } from "@visx/group";
 import { scaleLinear, scaleUtc } from "@visx/scale";
 import { AxisBottom, AxisLeft } from "@visx/axis";
 import { timeFormat } from "d3-time-format";
-import { DateValueType, LineGraphType } from "../../common/interfaces";
+import { DateValueType, LineGraphType } from "@common/interfaces";
 import { LinePath } from "./LinePath";
 
 const getX = (d: DateValueType): Date => d.date;
@@ -62,7 +62,7 @@ export const LineChart: FC<LineGraphType> = ({ width, height, data }) => {
         hideAxisLine={true}
         numTicks={8}
         tickStroke={
-          theme.colors?.mediumgrey ? `${theme.colors.mediumgrey}` : "inherit"
+          theme.colors?.mediumgrey ? String(theme.colors.mediumgrey) : "inherit"
         }
       />
       <AxisLeft
@@ -72,7 +72,7 @@ export const LineChart: FC<LineGraphType> = ({ width, height, data }) => {
         hideTicks={true}
         numTicks={4}
         tickStroke={
-          theme.colors?.mediumgrey ? `${theme.colors.mediumgrey}` : "inherit"
+          theme.colors?.mediumgrey ? String(theme.colors.mediumgrey) : "inherit"
         }
       />
       <Group left={paddingLeft}>

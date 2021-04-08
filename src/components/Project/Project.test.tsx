@@ -24,6 +24,7 @@ describe("Project component", () => {
     nextRouter.useRouter = jest.fn();
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     nextRouter.useRouter.mockImplementation(() => ({
       query: { id: 1 },
       prefetch: () => Promise.resolve(true),

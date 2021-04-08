@@ -13,12 +13,14 @@ export default {
 } as Meta;
 
 const createFakeData = (amount: number): RecordType[] =>
-  [...new Array(amount)].map((_, idx: number) => ({
-    id: idx,
-    deviceId: idx,
-    recordedAt: "2021-04-08T13:23:04.753Z",
-    value: idx * 10,
-  }));
+  [...new Array(amount || 1).map((_, idx: number) => idx)].map(
+    (idx: number) => ({
+      id: idx,
+      deviceId: idx,
+      recordedAt: "2021-04-08T13:23:04.753Z",
+      value: idx * 10,
+    })
+  );
 
 const Template: Story<DataTableType> = args => (
   <StoreProvider store={store}>

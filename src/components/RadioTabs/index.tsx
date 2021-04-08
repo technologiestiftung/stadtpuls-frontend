@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import React from "react";
-import { jsx, Box } from "theme-ui";
-import { RadioTabsType, RadioTabOptionType } from "../../common/interfaces";
+import { jsx, Box, Theme } from "theme-ui";
+import { RadioTabsType, RadioTabOptionType } from "@common/interfaces";
 
 export const RadioTabs: React.FC<RadioTabsType> = ({
   name,
@@ -21,7 +21,8 @@ export const RadioTabs: React.FC<RadioTabsType> = ({
             key={`${name}-${option.id}-tab`}
             sx={{
               display: "inline-block",
-              marginRight: theme => `${theme.space[3]}px`,
+              marginRight: (theme: Theme) =>
+                `${String((theme?.space || [])[3])}px`,
             }}
           >
             <input

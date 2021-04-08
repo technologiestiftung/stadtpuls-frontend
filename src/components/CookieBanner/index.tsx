@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import React, { useState } from "react";
-import { jsx, Text, Link, Flex, Box } from "theme-ui";
+import { jsx, Text, Link, Flex, Box, Theme } from "theme-ui";
 import CloseIcon from "@material-ui/icons/Close";
 
 export const CookieBanner: React.FC<{
@@ -32,14 +32,24 @@ export const CookieBanner: React.FC<{
           sx={{
             fontSize: 0,
             width: [
-              theme => `calc(100vw - ${theme.space[3]}px)`,
+              (theme: Theme) =>
+                `calc(100vw - ${String((theme.space || [])[3])}px)`,
               "80vw",
               "60vw",
             ],
-            border: theme => `2px solid ${theme.colors.primary}`,
+            border: (theme: Theme) =>
+              `2px solid ${String(theme.colors?.primary)}`,
             position: "fixed",
-            bottom: [theme => `${theme.space[2]}px`, "40px", null],
-            left: [theme => `${theme.space[2]}px`, "10vw", "20vw"],
+            bottom: [
+              (theme: Theme) => `${String((theme.space || [])[2])}px`,
+              "40px",
+              null,
+            ],
+            left: [
+              (theme: Theme) => `${String((theme.space || [])[2])}px`,
+              "10vw",
+              "20vw",
+            ],
             zIndex: 3,
           }}
         >
