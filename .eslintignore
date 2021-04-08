@@ -2,4 +2,5 @@ out
 *.config.js
 *.setup.js
 .*.js
+storybook-static
 

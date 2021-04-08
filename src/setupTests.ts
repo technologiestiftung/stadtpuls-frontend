@@ -5,7 +5,7 @@
 import "@testing-library/jest-dom/extend-expect";
 import { server } from "./mocks/server";
 import "whatwg-fetch";
-import initStoryshots from '@storybook/addon-storyshots';
+import initStoryshots from "@storybook/addon-storyshots";
 
 initStoryshots();
 
