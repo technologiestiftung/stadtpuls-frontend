@@ -1,5 +1,5 @@
 import { ProjectType } from "@common/interfaces";
-import { getAllProjects } from "@lib/requests";
+import { getAllProjects } from "@lib/requests/getAllProjects";
 import { NextPage, NextApiResponse } from "next";
 import { Component } from "react";
 
@@ -38,9 +38,7 @@ class Sitemap extends Component<NextPage> {
   }: {
     res: NextApiResponse;
   }): Promise<void> {
-    const {
-      data: { projects },
-    } = await getAllProjects();
+    const projects = await getAllProjects();
     res.setHeader("Content-Type", "text/xml");
     res.write(getSitemap(projects));
     res.end();

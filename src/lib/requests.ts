@@ -1,26 +1,9 @@
-import { DeviceType, RecordType, ProjectType } from "../common/interfaces";
+import { DeviceType, RecordType } from "../common/interfaces";
 
 const API_VERSION = "v1";
 
 export const createApiUrl = (resource: string): string =>
   `${process.env.NEXT_PUBLIC_API_URL}/api/${API_VERSION}${resource}`;
-
-export interface ProjectResponse {
-  data: {
-    projects: ProjectType[];
-  };
-}
-
-export async function getAllProjects(): Promise<ProjectResponse> {
-  const url = createApiUrl(`/projects`);
-  const response = await fetch(url);
-  if (!response.ok) {
-    console.error(await response.text());
-    throw new Error("Failed to fetch projects");
-  }
-  const json = (await response.json()) as ProjectResponse;
-  return json;
-}
 
 export interface DeviceResponse {
   data: {

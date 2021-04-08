@@ -1,7 +1,7 @@
 import { createStore, thunk, action, computed } from "easy-peasy";
 import { StoreModel } from "./model";
-import { getAllProjects } from "../lib/requests";
-import { ProjectType } from "../common/interfaces";
+import { getAllProjects } from "@lib/requests/getAllProjects";
+import { ProjectType } from "@common/interfaces";
 
 const store = createStore<StoreModel>({
   projects: {
@@ -14,9 +14,7 @@ const store = createStore<StoreModel>({
       state.items = payload;
     }),
     load: thunk(async actions => {
-      const {
-        data: { projects },
-      } = await getAllProjects();
+      const projects = await getAllProjects();
       actions.save(projects);
     }),
   },
