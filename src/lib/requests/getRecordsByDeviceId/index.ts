@@ -1,6 +1,6 @@
 import { RecordType } from "@common/interfaces";
 import { FetchResponse } from "@common/types";
-import { createApiUrl } from "./createApiUrl";
+import { createApiUrl } from "../createApiUrl";
 
 type RecordsResponse = FetchResponse<"records", RecordType[]>;
 export async function getRecordsByDeviceId(
