@@ -2,11 +2,11 @@
 /** @jsx jsx */
 import React, { useState, useEffect } from "react";
 import { jsx, Grid, Card, Box, Button } from "theme-ui";
-import { IconButton } from "./IconButton";
-import { RecordType, DataTableType } from "../common/interfaces";
-import { createTimeOutput } from "../lib/utils";
-import { createCSVStructure, downloadCSV } from "../lib/download-handlers";
-import { useStoreState } from "../state/hooks";
+import { IconButton } from "../IconButton";
+import { RecordType, DataTableType } from "../../common/interfaces";
+import { createTimeOutput } from "../../lib/utils";
+import { createCSVStructure, downloadCSV } from "../../lib/download-handlers";
+import { useStoreState } from "../../state/hooks";
 
 const downloadIcon = "./images/download.svg";
 
