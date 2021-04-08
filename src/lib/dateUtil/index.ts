@@ -1,4 +1,4 @@
-import { RecordType, DateValueType } from "../common/interfaces";
+import { RecordType, DateValueType } from "../../common/interfaces";
 
 export const createDateValueArray = (input: RecordType[]): DateValueType[] => {
   const dateValueArray = input.map((record: RecordType) => {
