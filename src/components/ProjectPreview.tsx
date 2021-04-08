@@ -3,11 +3,12 @@
 import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { jsx, Box, Card, Heading, Text, Grid, Flex } from "theme-ui";
-import { ProjectType, DateValueType, RecordType } from "../common/interfaces";
+import { ProjectType, DateValueType, RecordType } from "@common/interfaces";
 import { LinePath } from "./visualization/LinePath";
-import { getDevicesByProjectId, getRecordsByDeviceId } from "../lib/requests";
-import { createDateValueArray } from "../lib/utils";
-import { useStoreState } from "../state/hooks";
+import { getRecordsByDeviceId } from "@lib/requests/getRecordsByDeviceId";
+import { getDevicesByProjectId } from "@lib/requests/getDevicesByProjectId";
+import { createDateValueArray } from "@lib/utils";
+import { useStoreState } from "@state/hooks";
 
 export const ProjectPreview: React.FC<ProjectType> = ({
   id,
@@ -26,16 +27,14 @@ export const ProjectPreview: React.FC<ProjectType> = ({
   useEffect(() => {
     let isMounted = true;
 
-    const fetchFirstDeviceRecords = async () => {
-      const {
-        data: { devices },
-      } = await getDevicesByProjectId(id);
+    const fetchFirstDeviceRecords = async (): Promise<
+      RecordType[] | undefined
+    > => {
+      const devices = await getDevicesByProjectId(id);
 
       if (devices.length < 1) return;
 
-      const {
-        data: { records },
-      } = await getRecordsByDeviceId(devices[0].id);
+      const records = await getRecordsByDeviceId(devices[0].id);
       return records;
     };
 
@@ -65,7 +64,7 @@ export const ProjectPreview: React.FC<ProjectType> = ({
   const [svgWrapperWidth, setSvgWrapperWidth] = useState(0);
   const [svgWrapperHeight, setSvgWrapperHeight] = useState(0);
 
-  const updateWidthAndHeight = () => {
+  const updateWidthAndHeight = (): void => {
     if (parentRef.current === null) return;
     setSvgWrapperWidth(parentRef.current.offsetWidth);
     setSvgWrapperHeight(parentRef.current.offsetWidth / 2);

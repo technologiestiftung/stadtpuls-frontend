@@ -1,12 +1,8 @@
-import { ProjectType } from "../../common/interfaces";
-import { createApiUrl } from "../requests";
+import { ProjectType } from "@common/interfaces";
+import { FetchResponse } from "@common/types";
+import { createApiUrl } from "@lib/requests/createApiUrl";
 
-export interface ProjectResponse {
-  data: {
-    projects: ProjectType[];
-  };
-}
-
+type ProjectResponse = FetchResponse<"projects", ProjectType[]>;
 export async function getAllProjects(): Promise<ProjectType[]> {
   const url = createApiUrl(`/projects`);
   const response = await fetch(url);

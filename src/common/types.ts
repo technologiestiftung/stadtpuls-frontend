@@ -1,2 +1,5 @@
-// No types for this file at the moment
-export type Baz = "Baz" | "Bah";
+export type FetchResponse<ResKey extends string, ResType> = {
+  data: {
+    [key in ResKey]: ResType;
+  };
+};

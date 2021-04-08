@@ -8,7 +8,7 @@ import {
   device3Records,
   device4Records,
 } from "./data";
-import { createApiUrl } from "../lib/requests";
+import { createApiUrl } from "../lib/requests/createApiUrl";
 
 const { data: projectsData } = projectsResponse;
 const { data: project1DevicesData } = project1Devices;

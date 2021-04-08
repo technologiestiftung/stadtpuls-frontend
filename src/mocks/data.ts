@@ -1,10 +1,8 @@
-import {
-  ProjectResponse,
-  DeviceResponse,
-  RecordsResponse,
-} from "../lib/requests";
+import { FetchResponse } from "./../common/types";
+import { DeviceType, ProjectType, RecordType } from "./../common/interfaces";
 
-export const projectsResponse: ProjectResponse = {
+type ProjectsResponseType = FetchResponse<"projects", ProjectType[]>;
+export const projectsResponse: ProjectsResponseType = {
   data: {
     projects: [
       {
@@ -29,7 +27,8 @@ export const projectsResponse: ProjectResponse = {
   },
 };
 
-export const project1Devices: DeviceResponse = {
+type DevicesResponseType = FetchResponse<"devices", DeviceType[]>;
+export const project1Devices: DevicesResponseType = {
   data: {
     devices: [
       {
@@ -63,7 +62,7 @@ export const project1Devices: DeviceResponse = {
   },
 };
 
-export const project2Devices: DeviceResponse = {
+export const project2Devices: DevicesResponseType = {
   data: {
     devices: [
       {
@@ -79,7 +78,8 @@ export const project2Devices: DeviceResponse = {
   },
 };
 
-export const device1Records: RecordsResponse = {
+type RecordsResponseType = FetchResponse<"records", RecordType[]>;
+export const device1Records: RecordsResponseType = {
   data: {
     records: [
       {
@@ -116,7 +116,7 @@ export const device1Records: RecordsResponse = {
   },
 };
 
-export const device2Records: RecordsResponse = {
+export const device2Records: RecordsResponseType = {
   data: {
     records: [
       {
@@ -147,7 +147,7 @@ export const device2Records: RecordsResponse = {
   },
 };
 
-export const device3Records: RecordsResponse = {
+export const device3Records: RecordsResponseType = {
   data: {
     records: [
       {
@@ -172,7 +172,7 @@ export const device3Records: RecordsResponse = {
   },
 };
 
-export const device4Records: RecordsResponse = {
+export const device4Records: RecordsResponseType = {
   data: {
     records: [
       {

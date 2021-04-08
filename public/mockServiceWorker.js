@@ -218,10 +218,10 @@ function sendToClient(client, message) {
 }
 
 function createResponse(clientMessage) {
-  return new Response(clientMessage.payload.body, {
-    ...clientMessage.payload,
+  return new Response(clientMessage.payload.body, Object.assign({},
+    clientMessage.payload, {
     headers: clientMessage.payload.headers,
-  })
+  }))
 }
 
 function ensureKeys(keys, obj) {

@@ -2,7 +2,8 @@
 /** @jsx jsx */
 import React, { useEffect, useState, useCallback } from "react";
 import { useStoreState } from "../state/hooks";
-import { getDevicesByProjectId, getRecordsByDeviceId } from "../lib/requests";
+import { getDevicesByProjectId } from "@lib/requests/getDevicesByProjectId";
+import { getRecordsByDeviceId } from "@lib/requests/getRecordsByDeviceId";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {
@@ -17,7 +18,7 @@ import {
   Label,
   Button,
 } from "theme-ui";
-import { downloadMultiple } from "../lib/download-handlers";
+import { downloadMultiple } from "@lib/download-handlers";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { ProjectSummary } from "./ProjectSummary";
@@ -76,15 +77,11 @@ export const Project: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const {
-        data: { devices },
-      } = await getDevicesByProjectId(id);
+    const fetchData = async (): Promise<void> => {
+      const devices = await getDevicesByProjectId(id);
       Promise.all(
         devices.map(async (device: DeviceType) => {
-          const {
-            data: { records },
-          } = await getRecordsByDeviceId(device.id);
+          const records = await getRecordsByDeviceId(device.id);
           return {
             ...device,
             records: records,
@@ -177,7 +174,7 @@ export const Project: React.FC = () => {
     setChartHeight(node.getBoundingClientRect().width / 2);
   }, []);
 
-  const updateChartDimensions = () => {
+  const updateChartDimensions = (): void => {
     const boundingRect: HTMLDivElement | null = document.querySelector(
       "#chart-wrapper"
     );
@@ -206,7 +203,7 @@ export const Project: React.FC = () => {
     setMapHeight(node.getBoundingClientRect().height);
   }, []);
 
-  const updateMapDimensions = () => {
+  const updateMapDimensions = (): void => {
     const boundingRect: HTMLDivElement | null = document.querySelector(
       "#map-wrapper"
     );
@@ -219,7 +216,7 @@ export const Project: React.FC = () => {
   // =================================================================
   // DOWNLOAD HANLDERS
   // =================================================================
-  const handleDownload = () => {
+  const handleDownload = (): void => {
     if (!completeProjectData) return;
     downloadMultiple(
       completeProjectData.devices.map((device: DeviceType) => device.records),
@@ -229,11 +226,13 @@ export const Project: React.FC = () => {
     );
   };
 
-  const handleMarkerSelect = (deviceId: number) => {
+  const handleMarkerSelect = (deviceId: number): void => {
     setSelectedDeviceId(deviceId);
   };
 
-  const handleUpdateRecords = (event: React.FormEvent<HTMLDivElement>) => {
+  const handleUpdateRecords = (
+    event: React.FormEvent<HTMLDivElement>
+  ): void => {
     event.preventDefault();
 
     if (!selectedDevice) return;
