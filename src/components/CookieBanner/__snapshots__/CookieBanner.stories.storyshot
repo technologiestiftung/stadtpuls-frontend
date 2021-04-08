@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots CookieBanner Default 1`] = `
+<div
+  className="css-kbykye-CookieBanner"
+>
+  <div
+    className="css-1a2feea-CookieBanner"
+  >
+    <div
+      className="css-vurnku"
+    >
+      Diese Webseite verwendet Cookies, um bestimmte Funktionen zu ermöglichen und das Angebot zu verbessern. Indem Sie hier fortfahren, stimmen Sie der Nutzung von Cookies zu.
+    </div>
+     
+    <a
+      className="css-1yve10-CookieBanner"
+      href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Weitere Informationen
+    </a>
+  </div>
+  <svg
+    aria-hidden={true}
+    className="MuiSvgIcon-root css-uzhkcn-CookieBanner MuiSvgIcon-fontSizeLarge"
+    focusable="false"
+    onClick={[Function]}
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+    />
+  </svg>
+</div>
+`;

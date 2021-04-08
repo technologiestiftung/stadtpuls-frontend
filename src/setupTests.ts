@@ -5,9 +5,6 @@
 import "@testing-library/jest-dom/extend-expect";
 import { server } from "./mocks/server";
 import "whatwg-fetch";
-import initStoryshots from "@storybook/addon-storyshots";
-
-initStoryshots();
 
 beforeAll(() => {
   // Enable the mocking in tests.
@@ -16,6 +13,7 @@ beforeAll(() => {
 
 afterEach(() => {
   // Reset any runtime handlers tests may use.
+  jest.restoreAllMocks();
   server.resetHandlers();
 });
 

@@ -1,4 +1,5 @@
 module.exports = {
+  globalSetup: '<rootDir>/dotenv/dotenvTest.js',
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
 	moduleNameMapper: {
 		'^@components(.*)$': '<rootDir>/src/components$1',

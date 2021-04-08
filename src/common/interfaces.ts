@@ -222,12 +222,6 @@ export interface RadioTabsType {
   changeHandler: (selected: number) => void;
 }
 
-export interface IconButtonType {
-  value: string;
-  iconSource: string;
-  clickHandler?: (event: React.ChangeEvent<any>) => void;
-}
-
 export interface ApiTableType {
   entries: Array<{
     name: string;

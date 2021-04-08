@@ -4,10 +4,10 @@ import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, WebMercatorViewport } from "react-map-gl";
 import { bbox, featureCollection, point } from "@turf/turf";
 import { jsx } from "theme-ui";
-import { MarkerType } from "../common/interfaces";
-import { MarkerCircle } from "./MarkerCircle";
+import { MarkerType } from "../../common/interfaces";
+import { MarkerCircle } from "../MarkerCircle";
 
-import "mapbox-gl/dist/mapbox-gl.css";
+// import "mapbox-gl/dist/mapbox-gl.css";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
@@ -39,7 +39,7 @@ export const MarkerMap: React.FC<{
     maxZoom: 16,
     width: mapWidth,
     height: mapHeight,
-  });
+  } as ViewportType);
 
   const latLonItems: { latitude: number; longitude: number }[] = markers.map(
     (marker: MarkerType) => {
@@ -108,7 +108,9 @@ export const MarkerMap: React.FC<{
       width={mapWidth}
       height={mapHeight}
       mapStyle='mapbox://styles/mapbox/light-v10'
-      onViewportChange={(nextViewport: any) => setViewport(nextViewport)}
+      onViewportChange={(nextViewport: ViewportType) =>
+        setViewport(nextViewport)
+      }
       mapboxApiAccessToken={MAPBOX_TOKEN}
     >
       {!allDevicesHaveSameLocation &&

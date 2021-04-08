@@ -2,14 +2,14 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx, Box } from "theme-ui";
-import { RadioTabsType, RadioTabOptionType } from "../common/interfaces";
+import { RadioTabsType, RadioTabOptionType } from "../../common/interfaces";
 
 export const RadioTabs: React.FC<RadioTabsType> = ({
   name,
   options,
   changeHandler,
 }) => {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     changeHandler(Number(event.target.value));
   };
 

@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import React, { useEffect, useState, useCallback } from "react";
-import { useStoreState } from "../state/hooks";
+import { useStoreState } from "../../state/hooks";
 import { getDevicesByProjectId } from "@lib/requests/getDevicesByProjectId";
 import { getRecordsByDeviceId } from "@lib/requests/getRecordsByDeviceId";
 import Link from "next/link";
@@ -21,29 +21,29 @@ import {
 import { downloadMultiple } from "@lib/download-handlers";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-import { ProjectSummary } from "./ProjectSummary";
-import { DataTable } from "./DataTable";
-import { IconButton as DownloadButton } from "./IconButton";
+import { ProjectSummary } from "../ProjectSummary";
+import { DataTable } from "../DataTable";
+import { IconButton as DownloadButton } from "../IconButton";
 import {
   ProjectType,
   DeviceType,
   MarkerType,
   CompleteProjectType,
   RecordType,
-} from "../common/interfaces";
-import { RadioTabs } from "./RadioTabs";
-import { LineChart } from "./visualization/LineChart";
-import { createDateValueArray } from "../lib/utils";
-import { ApiInfo } from "./ApiInfo";
-import { MarkerMap } from "./MarkerMap";
-import { NotFoundPage } from "./NotFoundPage";
+} from "../../common/interfaces";
+import { RadioTabs } from "../RadioTabs";
+import { LineChart } from "../visualization/LineChart";
+import { createDateValueArray } from "../../lib/utils";
+import { ApiInfo } from "../ApiInfo";
+import { MarkerMap } from "../MarkerMap";
+import { NotFoundPage } from "../NotFoundPage";
 
 const downloadIcon = "./images/download.svg";
 
 export const Project: React.FC = () => {
   const router = useRouter();
   const id = router.query.id as string;
-  const selectedProject: ProjectType = useStoreState(state =>
+  const selectedProject: ProjectType | undefined = useStoreState(state =>
     state.projects.selected(Number(id))
   );
 
@@ -78,6 +78,7 @@ export const Project: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
+      if (!selectedProject) return;
       const devices = await getDevicesByProjectId(id);
       Promise.all(
         devices.map(async (device: DeviceType) => {
@@ -100,7 +101,6 @@ export const Project: React.FC = () => {
         .catch(error => console.error(error));
     };
 
-    if (!selectedProject) return;
     fetchData();
   }, [selectedProject, id]);
 

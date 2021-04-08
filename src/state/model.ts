@@ -3,7 +3,7 @@ import { ProjectType } from "../common/interfaces";
 
 export interface ProjectsModel {
   items: Array<ProjectType> | undefined;
-  selected: Computed<ProjectsModel, ProjectType | any>;
+  selected: Computed<ProjectsModel, (id: number) => ProjectType | undefined>;
   save: Action<ProjectsModel, ProjectType[]>;
   load: Thunk<ProjectsModel>;
 }

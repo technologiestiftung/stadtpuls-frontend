@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DataTable Default 1`] = `
+<div
+  className="css-1034mxm-DataTable"
+>
+  <div
+    className="css-6j75o1-DataTable"
+  >
+    <div
+      className="css-86k88y"
+    >
+      My supa dupa table
+    </div>
+    <div
+      className="css-vurnku"
+    >
+      <button
+        className="css-17v1r2j-IconButton"
+        onClick={[Function]}
+      >
+        <div
+          className="css-hz1ji0-IconButton"
+        >
+          <img
+            alt="Download-Icon"
+            className="css-1710cio-IconButton"
+            src="/images/download.svg"
+          />
+        </div>
+        Download
+      </button>
+    </div>
+  </div>
+  <div
+    className="css-1tfj38l-DataTable"
+  >
+    <table
+      className="css-1ugvjqu-DataTable"
+    >
+      <thead>
+        <tr
+          className="css-180p6o3-DataTable"
+        >
+          <th
+            className="css-tw4ryr-DataTable"
+          >
+            Datum
+          </th>
+          <th
+            className="css-tw4ryr-DataTable"
+          >
+            Uhrzeit
+          </th>
+          <th
+            className="css-1bltckk-DataTable"
+          >
+            Wert
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>
+</div>
+`;

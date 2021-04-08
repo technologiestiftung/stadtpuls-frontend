@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ApiInfo Default 1`] = `
+<div
+  className="css-vurnku"
+>
+  <h2
+    className="css-1t5hxd4"
+  >
+    API
+  </h2>
+  <table
+    className="css-1rorulu-ApiInfo"
+  >
+    <tbody>
+      <tr
+        className="css-osdorg"
+      >
+        <td>
+          One
+        </td>
+        <td
+          className="css-13486uz"
+        >
+          <a
+            className="css-uv00ue"
+            href="https://berlin-datahub-api.onrender.com/api/devices/1/records"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            /api/devices/
+            1
+            /records
+          </a>
+        </td>
+      </tr>
+      <tr
+        className="css-osdorg"
+      >
+        <td>
+          Two
+        </td>
+        <td
+          className="css-13486uz"
+        >
+          <a
+            className="css-uv00ue"
+            href="https://berlin-datahub-api.onrender.com/api/devices/2/records"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            /api/devices/
+            2
+            /records
+          </a>
+        </td>
+      </tr>
+      <tr
+        className="css-osdorg"
+      >
+        <td>
+          Three
+        </td>
+        <td
+          className="css-13486uz"
+        >
+          <a
+            className="css-uv00ue"
+            href="https://berlin-datahub-api.onrender.com/api/devices/3/records"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            /api/devices/
+            3
+            /records
+          </a>
+        </td>
+      </tr>
+      <tr
+        className="css-osdorg"
+      >
+        <td>
+          Four
+        </td>
+        <td
+          className="css-13486uz"
+        >
+          <a
+            className="css-uv00ue"
+            href="https://berlin-datahub-api.onrender.com/api/devices/4/records"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            /api/devices/
+            4
+            /records
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

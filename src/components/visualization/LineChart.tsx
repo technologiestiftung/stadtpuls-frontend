@@ -1,5 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+import { FC } from "react";
 import { jsx, useThemeUI } from "theme-ui";
 import { extent, max } from "d3-array";
 import { Group } from "@visx/group";
@@ -9,10 +10,10 @@ import { timeFormat } from "d3-time-format";
 import { DateValueType, LineGraphType } from "../../common/interfaces";
 import { LinePath } from "./LinePath";
 
-const getX = (d: DateValueType) => d.date;
-const getY = (d: DateValueType) => d.value;
+const getX = (d: DateValueType): Date => d.date;
+const getY = (d: DateValueType): number => d.value;
 
-export const LineChart = ({ width, height, data }: LineGraphType) => {
+export const LineChart: FC<LineGraphType> = ({ width, height, data }) => {
   const context = useThemeUI();
   const { theme } = context;
 

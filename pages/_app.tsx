@@ -11,6 +11,7 @@ import { CookieBanner } from "@components/CookieBanner";
 import store from "@state/store";
 
 import theme from "../src/style/theme";
+
 import "../src/style/global.css";
 
 const publicURL = process.env.NEXT_PUBLIC_WEB_URL;

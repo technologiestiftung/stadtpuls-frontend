@@ -1,5 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+import { FC } from "react";
 import { jsx } from "theme-ui";
 import { extent, max } from "d3-array";
 import { curveLinear } from "@visx/curve";
@@ -7,10 +8,10 @@ import { LinePath as Path } from "@visx/shape";
 import { scaleLinear, scaleUtc } from "@visx/scale";
 import { DateValueType, LineGraphType } from "../../common/interfaces";
 
-const getX = (d: DateValueType) => d.date;
-const getY = (d: DateValueType) => d.value;
+const getX = (d: DateValueType): Date => d.date;
+const getY = (d: DateValueType): number => d.value;
 
-export const LinePath = ({ width, height, data }: LineGraphType) => {
+export const LinePath: FC<LineGraphType> = ({ width, height, data }) => {
   const xScale = scaleUtc<number>({
     domain: extent(data, getX) as [Date, Date],
     range: [0, width],
