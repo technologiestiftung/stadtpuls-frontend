@@ -12,6 +12,15 @@ The actual API is mocked in dev mode using a [Mock Service Worker (msw)](https:/
 
 Run `npm install` to install all required dependencies and then `npm run dev` to start developing locally. All available script can be found further down.
 
+### Quality management
+
+We use husky and lint-staged to run some quality management script before each commits. These scripts are:
+- Lint all js files
+- Type-check changed typescript files
+- Run tests concerned by changed files
+
+To enable type checking of only staged files, a script has been added `scripts/tsc-lint.sh`. To allow this script to run, you might need to give it the relevant permissions. Run `chmod +x scripts/tsc-lint.sh`. The script is needed because there is otherwise no way to run `tsc` only on staged files. Typescript only allows for either a list of files or a `tsconfig.json`. 
+
 ## Structure
 
 The folder structure follows Next.js's recommendations.
