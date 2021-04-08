@@ -8,7 +8,7 @@ import { createTimeOutput } from "../../lib/utils";
 import { createCSVStructure, downloadCSV } from "../../lib/download-handlers";
 import { useStoreState } from "../../state/hooks";
 
-const downloadIcon = "./images/download.svg";
+const downloadIcon = "/images/download.svg";
 
 export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
   const recordsSegmentSize = useStoreState(state => state.records.segmentSize);
