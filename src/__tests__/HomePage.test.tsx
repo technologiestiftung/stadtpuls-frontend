@@ -3,9 +3,9 @@ import { StoreProvider } from "easy-peasy";
 import { ThemeProvider } from "theme-ui";
 
 import store from "@state/store";
-import theme from "../../src/style/theme";
+import theme from "../style/theme";
 
-import HomePage from "..";
+import HomePage from "../../pages";
 
 describe("page home", () => {
   it("should render without failing", () => {

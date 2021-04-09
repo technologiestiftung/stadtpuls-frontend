@@ -1,4 +1,4 @@
-import Sitemap from "../sitemap.xml";
+import Sitemap from "../../pages/sitemap.xml";
 
 describe("sitemap.xml", () => {
   it("should call the response handlers with the right params", async (): Promise<void> => {

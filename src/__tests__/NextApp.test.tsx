@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import * as nextRouter from "next/router";
 
-import NextApp from "../_app";
+import NextApp from "../../pages/_app";
 
 describe("404 page", () => {
   it("should render without failing", () => {

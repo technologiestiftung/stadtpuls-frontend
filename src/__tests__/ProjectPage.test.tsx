@@ -4,9 +4,9 @@ import * as nextRouter from "next/router";
 import { ThemeProvider } from "theme-ui";
 
 import store from "@state/store";
-import theme from "../../src/style/theme";
+import theme from "../style/theme";
 
-import ProjectPage from "../[id]";
+import ProjectPage from "../../pages/[id]";
 
 describe("project page", () => {
   it("should render without failing", () => {

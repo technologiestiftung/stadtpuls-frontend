@@ -1,6 +1,6 @@
-import RobotsTxt from "../robots.txt";
+import Manifest from "../../pages/manifest.json";
 
-describe("robots.txt", () => {
+describe("manifest.json", () => {
   it("should call the response handlers with the right params", () => {
     const res = {
       setHeader: jest.fn(),
@@ -9,8 +9,11 @@ describe("robots.txt", () => {
     };
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    RobotsTxt.getInitialProps({ res });
-    expect(res.setHeader).toHaveBeenCalledWith("Content-Type", "text/txt");
+    Manifest.getInitialProps({ res });
+    expect(res.setHeader).toHaveBeenCalledWith(
+      "Content-Type",
+      "application/manifest+json"
+    );
     expect(res.write).toHaveBeenCalled();
     expect(res.end).toHaveBeenCalled();
   });
