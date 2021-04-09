@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx, Box, Button, Image } from "theme-ui";
-interface IconButtonType {
+export interface IconButtonType {
   value: string;
   iconSource: string;
   clickHandler?: React.MouseEventHandler<HTMLButtonElement>;
