@@ -14,7 +14,6 @@ export const Footer: React.FC = () => {
       sx={{
         bg: "background",
         p: 4,
-        mt: 6,
       }}
     >
       <Grid

@@ -46,8 +46,8 @@ export const SignupForm: FC<{
       <fieldset className='flex gap-4 place-content-between'>
         <section className='text-gray-500'>
           Du hast bereits einen Account?{" "}
-          <Link href='/login'>
-            <TextLink href='/login' className='inline-block'>
+          <Link href='/signin'>
+            <TextLink href='/signin' className='inline-block'>
               Logge dich ein
             </TextLink>
           </Link>

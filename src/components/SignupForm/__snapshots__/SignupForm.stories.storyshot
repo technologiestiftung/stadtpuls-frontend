@@ -64,7 +64,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
        
       <a
         className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset inline-block"
-        href="/login"
+        href="/signin"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
