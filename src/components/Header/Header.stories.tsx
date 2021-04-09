@@ -5,7 +5,7 @@ import theme from "../../style/theme";
 import { Header } from ".";
 
 export default {
-  title: "Header",
+  title: "Layout/Header",
   component: Header,
 } as Meta;
 

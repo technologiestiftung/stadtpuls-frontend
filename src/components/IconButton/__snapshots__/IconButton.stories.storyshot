@@ -16,3 +16,20 @@ exports[`Storyshots IconButton Default 1`] = `
   Download
 </button>
 `;
+
+exports[`Storyshots UI Elements/IconButton Default 1`] = `
+<button
+  className="css-17v1r2j-IconButton"
+>
+  <div
+    className="css-hz1ji0-IconButton"
+  >
+    <img
+      alt="Download-Icon"
+      className="css-1710cio-IconButton"
+      src="/images/download.svg"
+    />
+  </div>
+  Download
+</button>
+`;

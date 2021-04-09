@@ -5,7 +5,7 @@ import theme from "../../style/theme";
 import { LineChart } from ".";
 
 export default {
-  title: "LineChart",
+  title: "Charts/LineChart",
   component: LineChart,
 } as Meta;
 

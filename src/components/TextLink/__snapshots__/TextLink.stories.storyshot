@@ -9,3 +9,13 @@ exports[`Storyshots TextLink Default 1`] = `
   Hi! I'm a link
 </a>
 `;
+
+exports[`Storyshots UI Elements/TextLink Default 1`] = `
+<a
+  className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset "
+  href="#"
+  onClick={[Function]}
+>
+  Hi! I'm a link
+</a>
+`;

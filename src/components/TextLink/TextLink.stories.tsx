@@ -4,7 +4,7 @@ import { TextLink } from ".";
 import { HTMLProps } from "react";
 
 export default {
-  title: "TextLink",
+  title: "UI Elements/TextLink",
   component: TextLink,
 } as Meta;
 

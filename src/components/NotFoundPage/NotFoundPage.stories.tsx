@@ -5,7 +5,7 @@ import theme from "../../style/theme";
 import { NotFoundPage } from ".";
 
 export default {
-  title: "NotFoundPage",
+  title: "Pages/NotFoundPage",
   component: NotFoundPage,
 } as Meta;
 

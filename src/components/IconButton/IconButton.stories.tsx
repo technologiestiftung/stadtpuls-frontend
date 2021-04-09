@@ -5,7 +5,7 @@ import theme from "../../style/theme";
 import { IconButton, IconButtonType } from ".";
 
 export default {
-  title: "IconButton",
+  title: "UI Elements/IconButton",
   component: IconButton,
 } as Meta;
 

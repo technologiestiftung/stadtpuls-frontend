@@ -5,7 +5,7 @@ import theme from "../../style/theme";
 import { LinePath } from ".";
 
 export default {
-  title: "LinePath",
+  title: "Charts/LinePath",
   component: LinePath,
 } as Meta;
 

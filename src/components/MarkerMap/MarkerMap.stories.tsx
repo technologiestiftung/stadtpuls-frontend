@@ -6,7 +6,7 @@ import { MarkerMap } from ".";
 import { MarkerType } from "@common/interfaces";
 
 export default {
-  title: "MarkerMap",
+  title: "Map/MarkerMap",
   component: MarkerMap,
 } as Meta;
 

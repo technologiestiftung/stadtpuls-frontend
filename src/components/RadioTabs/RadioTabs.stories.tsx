@@ -6,7 +6,7 @@ import theme from "../../style/theme";
 import { RadioTabs } from ".";
 
 export default {
-  title: "RadioTabs",
+  title: "UI Elements/RadioTabs",
   argTypes: {
     name: {
       description: "The HTML name for the radio field",
