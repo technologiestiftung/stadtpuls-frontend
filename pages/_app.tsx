@@ -16,7 +16,9 @@ import "../src/style/global.css";
 
 const publicURL = process.env.NEXT_PUBLIC_WEB_URL || "";
 
-require("../src/mocks");
+if (process.env.NODE_ENV !== "production") {
+  require("../src/mocks");
+}
 
 const App: FC<{
   Component: FC;
