@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { jsx, Box, Card, Heading, Text, Grid, Flex } from "theme-ui";
 import { ProjectType, DateValueType, RecordType } from "@common/interfaces";
-import { LinePath } from "../visualization/LinePath";
+import { LinePath } from "../LinePath";
 import { getRecordsByDeviceId } from "@lib/requests/getRecordsByDeviceId";
 import { getDevicesByProjectId } from "@lib/requests/getDevicesByProjectId";
 import { createDateValueArray } from "@lib/dateUtil";

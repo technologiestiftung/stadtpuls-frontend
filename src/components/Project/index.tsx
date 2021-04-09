@@ -33,7 +33,7 @@ import {
   RecordType,
 } from "../../common/interfaces";
 import { RadioTabs } from "../RadioTabs";
-import { LineChart } from "../visualization/LineChart";
+import { LineChart } from "../LineChart";
 import { createDateValueArray } from "@lib/dateUtil";
 import { ApiInfo } from "../ApiInfo";
 import { MarkerMap } from "../MarkerMap";

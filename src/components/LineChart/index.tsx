@@ -8,7 +8,7 @@ import { scaleLinear, scaleUtc } from "@visx/scale";
 import { AxisBottom, AxisLeft } from "@visx/axis";
 import { timeFormat } from "d3-time-format";
 import { DateValueType, LineGraphType } from "@common/interfaces";
-import { LinePath } from "./LinePath";
+import { LinePath } from "../LinePath";
 
 const getX = (d: DateValueType): Date => d.date;
 const getY = (d: DateValueType): number => d.value;
