@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Forms/Signin Default 1`] = `
+<form
+  className="max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
+  onSubmit={[Function]}
+  style={
+    Object {
+      "minHeight": 360,
+    }
+  }
+>
+  <fieldset>
+    <h1
+      className="text-primary text-3xl font-semibold m-0 mb-4"
+    >
+      Login
+    </h1>
+    <label
+      className="block mb-2"
+      htmlFor="email"
+    >
+      E-Mail
+    </label>
+    <input
+      name="email"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Deine E-Mail-Adresse..."
+      type="email"
+    />
+  </fieldset>
+  <fieldset
+    className="flex gap-4 place-content-between"
+  >
+    <section
+      className="text-gray-500"
+    >
+      Du hast noch keinen Account?
+       
+      <a
+        className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset inline-block"
+        href="/signup"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Registriere dich
+      </a>
+    </section>
+    <section
+      className="flex flex-col"
+      style={
+        Object {
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <input
+        type="submit"
+        value="Weiter"
+      />
+    </section>
+  </fieldset>
+</form>
+`;
