@@ -34,7 +34,7 @@ describe("utility function getRecordsByDeviceId", () => {
   it("should throw 'Failed to fetch records' if provided with unexisting id", async (): Promise<void> => {
     const id = 1000000000;
     const server = setupServer(
-      rest.get(createApiUrl(`/projects/${id}/records`), (_req, res, ctx) => {
+      rest.get(createApiUrl(`/devices/${id}/records`), (_req, res, ctx) => {
         return res(ctx.status(403), ctx.text("Error message!"));
       })
     );
