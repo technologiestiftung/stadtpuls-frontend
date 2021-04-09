@@ -3,10 +3,23 @@ import { ThemeProvider } from "theme-ui";
 
 import theme from "../../style/theme";
 import { ProjectSummary } from ".";
+import { projectsResponse } from "@mocks/data";
 
 export default {
   title: "ProjectSummary",
   component: ProjectSummary,
+  argTypes: {
+    title: {
+      description: "Title of the project",
+    },
+    description: {
+      description: "Description of the project",
+    },
+    noOfDevices: {
+      control: { type: "range", min: 0, max: 100 },
+      description: "Number of devices in the project",
+    },
+  },
 } as Meta;
 
 const Template: Story<{
@@ -21,7 +34,7 @@ const Template: Story<{
 
 export const Default = Template.bind({});
 Default.args = {
-  title: "Title",
-  description: "Description",
-  noOfDevices: 12,
+  title: projectsResponse.data.projects[0].title || "",
+  description: projectsResponse.data.projects[0].description || "",
+  noOfDevices: 5,
 };
