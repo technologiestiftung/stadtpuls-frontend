@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots LinePath Default 1`] = `
+<svg
+  height={200}
+  width={400}
+>
+  <path
+    className="visx-linepath css-j1t6gj-LinePath"
+    d="M400,100L200,0L0,50"
+    fill="transparent"
+    strokeLinecap="round"
+  />
+</svg>
+`;
