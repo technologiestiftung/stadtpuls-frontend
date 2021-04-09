@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ProjectSummary Default 1`] = `
+<div
+  className="css-18m44zn-ProjectSummary"
+>
+  <h1
+    className="css-ixh96h-ProjectSummary"
+  >
+    Title
+  </h1>
+  <div
+    className="css-jmlio4"
+  >
+    Description
+  </div>
+  <div
+    className="css-198lzgh-ProjectSummary"
+  >
+    Anzahl der Sensoren: 
+    12
+  </div>
+</div>
+`;
