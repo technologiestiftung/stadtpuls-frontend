@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Forms/Signup Default 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <label
+    htmlFor="email"
+  >
+    E-Mail
+  </label>
+  <input
+    name="email"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Deine E-Mail-Adresse..."
+    type="email"
+  />
+  <input
+    name="areConditionsAccepted"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    htmlFor="areConditionsAccepted"
+  >
+    Ich akzeptiere die Nutzungsbedingungen
+  </label>
+  <button
+    type="submit"
+  >
+    Weiter
+  </button>
+</form>
+`;
