@@ -6,5 +6,6 @@ module.exports = {
 		'^@state(.*)$': '<rootDir>/src/state$1',
 		'^@common(.*)$': '<rootDir>/src/common$1',
 		'^@mocks(.*)$': '<rootDir>/src/mocks$1',
+		'\\.css$': '<rootDir>/src/mocks/cssMock.ts',
 	},
 }
