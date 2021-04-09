@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots RadioTabs Default 1`] = `
+<div
+  className="css-vurnku"
+>
+  <div
+    className="css-126cxia"
+  >
+    <input
+      checked={true}
+      className="css-df67pz"
+      id="story-radio-1"
+      name="story-radio"
+      onChange={[Function]}
+      type="radio"
+      value={1}
+    />
+    <label
+      className="css-1uexs8x"
+      htmlFor="story-radio-1"
+    >
+      My first tab
+    </label>
+  </div>
+  <div
+    className="css-126cxia"
+  >
+    <input
+      checked={false}
+      className="css-df67pz"
+      id="story-radio-2"
+      name="story-radio"
+      onChange={[Function]}
+      type="radio"
+      value={2}
+    />
+    <label
+      className="css-1bgjlky"
+      htmlFor="story-radio-2"
+    >
+      My second tab
+    </label>
+  </div>
+</div>
+`;
