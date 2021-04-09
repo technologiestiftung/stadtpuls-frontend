@@ -18,7 +18,7 @@ exports[`Storyshots Header Default 1`] = `
         src="/images/datahub-logo.svg"
       />
       <h2
-        className="css-12hmaxm-Header"
+        className="text-2xl css-12hmaxm-Header"
       >
         Berlin 
         <span

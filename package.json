@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "4.11.3",
     "@material-ui/icons": "4.11.2",
+    "@tailwindcss/forms": "0.3.2",
     "@turf/turf": "6.3.0",
     "@visx/axis": "1.7.0",
     "@visx/curve": "1.7.0",
