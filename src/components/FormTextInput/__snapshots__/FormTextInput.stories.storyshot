@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Forms/FormTextInput As Email 1`] = `
+<div
+  className=" mb-2"
+>
+  <label
+    className="block mb-2 cursor-pointer transition hover:opacity-60"
+    htmlFor="email"
+  >
+    E-Mail
+     
+  </label>
+  <input
+    className="mb-2 "
+    min={20}
+    onChange={[Function]}
+    placeholder="Deine E-Mail-Adresse..."
+    required={true}
+    type="email"
+  />
+</div>
+`;
+
+exports[`Storyshots Forms/FormTextInput As Password 1`] = `
+<div
+  className=" mb-2"
+>
+  <label
+    className="block mb-2 cursor-pointer transition hover:opacity-60"
+    htmlFor="password"
+  >
+    Passwort
+     
+  </label>
+  <input
+    className="mb-2 "
+    min={20}
+    onChange={[Function]}
+    placeholder="Dein Passwort..."
+    required={true}
+    type="password"
+  />
+</div>
+`;
+
+exports[`Storyshots Forms/FormTextInput Optional Field 1`] = `
+<div
+  className=" mb-2"
+>
+  <label
+    className="block mb-2 cursor-pointer transition hover:opacity-60"
+    htmlFor="firstName"
+  >
+    First name
+     
+    <span
+      className="text-gray-500 float-right text-sm transform translate-y-1"
+    >
+      (Optional)
+    </span>
+  </label>
+  <input
+    className="mb-2 "
+    min={20}
+    onChange={[Function]}
+    placeholder="Enter your first name..."
+    required={true}
+    type="text"
+  />
+</div>
+`;
+
+exports[`Storyshots Forms/FormTextInput With Error 1`] = `
+<div
+  className=" mb-2"
+>
+  <label
+    className="block mb-2 cursor-pointer transition hover:opacity-60"
+    htmlFor="firstName"
+  >
+    First name
+     
+  </label>
+  <input
+    className="mb-2 error"
+    min={20}
+    onChange={[Function]}
+    placeholder="Enter your first name..."
+    required={true}
+    type="text"
+  />
+  <p
+    className="text-secondary text-sm"
+  >
+    Your name has to be beautiful
+  </p>
+  <p
+    className="text-secondary text-sm"
+  >
+    Your name is not long enough
+  </p>
+</div>
+`;
+
+exports[`Storyshots Forms/FormTextInput With Label 1`] = `
+<div
+  className=" mb-2"
+>
+  <label
+    className="block mb-2 cursor-pointer transition hover:opacity-60"
+    htmlFor="firstName"
+  >
+    First name
+     
+  </label>
+  <input
+    className="mb-2 "
+    min={20}
+    onChange={[Function]}
+    placeholder="Enter your first name..."
+    required={true}
+    type="text"
+  />
+</div>
+`;
+
+exports[`Storyshots Forms/FormTextInput Without Label 1`] = `
+<div
+  className=" mb-2"
+>
+  <input
+    className="mb-2 "
+    min={20}
+    onChange={[Function]}
+    placeholder="Enter your first name..."
+    required={true}
+    type="text"
+  />
+</div>
+`;

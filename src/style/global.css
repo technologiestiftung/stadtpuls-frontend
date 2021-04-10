@@ -57,9 +57,32 @@
     @apply block w-full border-gray-400 mb-4 focus:border-primary focus:ring-primary;
   }
 
+  [type='text'].error,
+  [type='email'].error,
+  [type='url'].error,
+  [type='password'].error,
+  [type='number'].error,
+  [type='date'].error,
+  [type='datetime-local'].error,
+  [type='month'].error,
+  [type='search'].error,
+  [type='tel'].error,
+  [type='time'].error,
+  [type='week'].error,
+  [multiple].error,
+  textarea.error,
+  select.error {
+    @apply border-secondary focus:border-secondary focus:ring-secondary;
+  }
+
   [type='checkbox'],
   [type='radio'] {
     @apply mr-2 transform translate-y-0.5 border-gray-400 text-primary focus:ring-primary;
+  }
+
+  [type='checkbox'].error,
+  [type='radio'].error {
+    @apply border-secondary text-secondary focus:ring-secondary;
   }
 
   input[type='submit'] {
