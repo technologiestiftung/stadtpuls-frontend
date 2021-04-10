@@ -75,7 +75,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest --maxWorkers=50% --coverage --collectCoverageFrom='./(src|pages)/**/*.ts(x)?'",
+    "test": "jest --maxWorkers=50% --coverage --collectCoverageFrom='./(src|pages)/**/*.ts(x)?' --collectCoverageFrom='!./(src|pages)/**/*.stories.ts(x)?'",
     "test:watch": "npm run test -- --watch",
     "test:ci": "jest --runInBand",
     "lint": "eslint --ext js,jsx,ts,tsx .",
