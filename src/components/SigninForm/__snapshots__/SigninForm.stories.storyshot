@@ -43,8 +43,7 @@ exports[`Storyshots Forms/Signin Default 1`] = `
     <section
       className="text-gray-500"
     >
-      Du hast noch keinen Account?
-       
+      Hast du noch keinen Account? 
       <a
         className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset inline-block"
         href="/signup"
