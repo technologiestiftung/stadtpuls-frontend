@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Forms/SignInUpFormWrapper Signin 1`] = `
+<form
+  className="max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
+  noValidate={true}
+  style={
+    Object {
+      "minHeight": 360,
+    }
+  }
+>
+  <fieldset>
+    <h1
+      className="text-primary text-3xl font-semibold m-0 mb-4"
+    >
+      Login
+    </h1>
+    <h1>
+      I'm a signin form
+    </h1>
+  </fieldset>
+  <fieldset
+    className="flex gap-4 place-content-between"
+  >
+    <section
+      className="text-gray-500"
+    >
+      Hast du noch keinen Account? 
+      <a
+        className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset inline-block"
+        href="/signup"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Registriere dich
+      </a>
+    </section>
+    <section
+      className="flex flex-col"
+      style={
+        Object {
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <input
+        type="submit"
+        value="Weiter"
+      />
+    </section>
+  </fieldset>
+</form>
+`;
+
+exports[`Storyshots Forms/SignInUpFormWrapper Signup 1`] = `
+<form
+  className="max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
+  noValidate={true}
+  style={
+    Object {
+      "minHeight": 360,
+    }
+  }
+>
+  <fieldset>
+    <h1
+      className="text-primary text-3xl font-semibold m-0 mb-4"
+    >
+      Registrierung
+    </h1>
+    <h1>
+      I'm a signup form
+    </h1>
+  </fieldset>
+  <fieldset
+    className="flex gap-4 place-content-between"
+  >
+    <section
+      className="text-gray-500"
+    >
+      Hast du schon einen Account? 
+      <a
+        className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset inline-block"
+        href="/signin"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Logge dich ein
+      </a>
+    </section>
+    <section
+      className="flex flex-col"
+      style={
+        Object {
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <input
+        type="submit"
+        value="Weiter"
+      />
+    </section>
+  </fieldset>
+</form>
+`;
