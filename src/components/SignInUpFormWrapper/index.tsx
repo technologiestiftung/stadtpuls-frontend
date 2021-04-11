@@ -1,3 +1,4 @@
+import { Submit } from "@components/Button";
 import { SmallModal } from "@components/SmallModal";
 import { TextLink } from "@components/TextLink";
 import Link from "next/link";
@@ -22,14 +23,14 @@ const getTextsByType = (type: "in" | "up"): TextsObjectType =>
         switchQuestion: "Hast du noch keinen Account?",
         switchLinkText: "Registriere dich",
         switchLinkRoute: "signup",
-        submitButton: "Weiter",
+        submitButton: "Einloggen",
       }
     : {
         title: "Registrierung",
         switchQuestion: "Hast du schon einen Account?",
         switchLinkText: "Logge dich ein",
         switchLinkRoute: "signin",
-        submitButton: "Weiter",
+        submitButton: "Registrieren",
       };
 
 export const SignInUpFormWrapper: FC<SignInUpFormWrapperPropType> = ({
@@ -60,7 +61,7 @@ export const SignInUpFormWrapper: FC<SignInUpFormWrapperPropType> = ({
             className='flex flex-col'
             style={{ justifyContent: "flex-end" }}
           >
-            <input type='submit' form={formId} value={texts.submitButton} />
+            <Submit form={formId}>{texts.submitButton}</Submit>
           </section>
         </>
       }
