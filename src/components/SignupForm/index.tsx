@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, useForm } from "react-hook-form";
 import { TextLink } from "@components/TextLink";
 import { FormTextInput } from "@components/FormTextInput";
+import { FormCheckbox } from "@components/FormCheckbox";
 
 interface SignupFormData {
   email: string;
@@ -16,6 +17,9 @@ const formSchema = yup.object().shape({
     .string()
     .email("Die angegebene E-Mail Adresse ist ungültig")
     .required("Sie müssen eine E-Mail Adresse angeben"),
+  areConditionsAccepted: yup
+    .string()
+    .required("Sie müssen die Nutzungsbedingungen akzeptieren"),
 });
 
 export const SignupForm: FC<{
@@ -23,13 +27,17 @@ export const SignupForm: FC<{
 }> = ({ onSubmit = console.log }) => {
   const {
     control,
-    register,
     handleSubmit,
     formState: { errors },
   } = useForm<SignupFormData>({
     resolver: yupResolver(formSchema),
   });
-  const onInternalSubmit = handleSubmit(data => onSubmit(data));
+  const onInternalSubmit = handleSubmit(data =>
+    onSubmit({
+      ...data,
+      areConditionsAccepted: Boolean(data.areConditionsAccepted),
+    })
+  );
 
   return (
     <form
@@ -56,16 +64,30 @@ export const SignupForm: FC<{
             />
           )}
         />
-        <section className='flex'>
-          <input type='checkbox' {...register("areConditionsAccepted")} />
-          <label htmlFor='areConditionsAccepted' className='leading-5'>
-            Ich akzeptiere die{" "}
-            <TextLink href='https://www.technologiestiftung-berlin.de/de/datenschutz/'>
-              Nutzungsbedingungen
-            </TextLink>
-            .
-          </label>
-        </section>
+        <Controller
+          name='areConditionsAccepted'
+          control={control}
+          defaultValue=''
+          render={({ field }) => (
+            <FormCheckbox
+              {...field}
+              label={
+                <>
+                  Ich akzeptiere die{" "}
+                  <TextLink href='https://www.technologiestiftung-berlin.de/de/datenschutz/'>
+                    Nutzungsbedingungen
+                  </TextLink>
+                  .
+                </>
+              }
+              errors={
+                errors.areConditionsAccepted?.message
+                  ? [errors.areConditionsAccepted?.message]
+                  : []
+              }
+            />
+          )}
+        />
       </fieldset>
       <fieldset className='flex gap-4 place-content-between'>
         <section className='text-gray-500'>

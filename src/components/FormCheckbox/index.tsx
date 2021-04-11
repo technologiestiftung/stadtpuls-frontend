@@ -1,7 +1,7 @@
 import { HTMLProps, FC, ReactNode } from "react";
 
 interface FormCheckboxPropType
-  extends Omit<HTMLProps<HTMLInputElement>, "label"> {
+  extends Omit<HTMLProps<HTMLInputElement>, "label" | "value"> {
   name: string;
   label?: ReactNode;
   errors?: string[];

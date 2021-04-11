@@ -40,25 +40,29 @@ exports[`Storyshots Forms/Signup Default 1`] = `
       className="flex"
     >
       <input
+        className="transform translate-y-1 "
         name="areConditionsAccepted"
         onBlur={[Function]}
         onChange={[Function]}
         type="checkbox"
+        value=""
       />
-      <label
-        className="leading-5"
-        htmlFor="areConditionsAccepted"
-      >
-        Ich akzeptiere die
-         
-        <a
-          className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset "
-          href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
+      <div>
+        <label
+          className="leading-5"
+          htmlFor="areConditionsAccepted"
         >
-          Nutzungsbedingungen
-        </a>
-        .
-      </label>
+          Ich akzeptiere die
+           
+          <a
+            className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset "
+            href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
+          >
+            Nutzungsbedingungen
+          </a>
+          .
+        </label>
+      </div>
     </section>
   </fieldset>
   <fieldset
