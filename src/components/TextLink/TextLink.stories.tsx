@@ -8,8 +8,14 @@ export default {
   component: TextLink,
 } as Meta;
 
-const Template: Story<HTMLProps<HTMLAnchorElement>> = args => (
-  <TextLink {...args} />
+const Template: Story<HTMLProps<HTMLAnchorElement>> = ({
+  href,
+  children,
+  onClick,
+}) => (
+  <TextLink href={href} onClick={onClick}>
+    {children}
+  </TextLink>
 );
 
 export const Default = Template.bind({});
