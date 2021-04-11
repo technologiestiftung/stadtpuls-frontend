@@ -3,6 +3,7 @@
 exports[`Storyshots Forms/Signup Default 1`] = `
 <form
   className="max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
+  noValidate={true}
   onSubmit={[Function]}
   style={
     Object {
@@ -16,19 +17,25 @@ exports[`Storyshots Forms/Signup Default 1`] = `
     >
       Registrierung
     </h1>
-    <label
-      className="block mb-2"
-      htmlFor="email"
+    <div
+      className=" mb-2"
     >
-      E-Mail
-    </label>
-    <input
-      name="email"
-      onBlur={[Function]}
-      onChange={[Function]}
-      placeholder="Deine E-Mail-Adresse..."
-      type="email"
-    />
+      <label
+        className="block mb-2 cursor-pointer transition hover:opacity-60"
+        htmlFor="email"
+      >
+        E-Mail
+         
+      </label>
+      <input
+        className="mb-2 "
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Deine E-Mail-Adresse..."
+        type="email"
+        value=""
+      />
+    </div>
     <section
       className="flex"
     >

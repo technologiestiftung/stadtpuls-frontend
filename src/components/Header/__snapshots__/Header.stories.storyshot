@@ -1,37 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Header Default 1`] = `
-<header
-  className="css-4werlw-Header"
->
-  <a
-    className="css-1dmc8dd-Header"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-  >
-    <div
-      className="css-4cffwv"
-    >
-      <img
-        alt="Logo des Berlin IoT Hub"
-        className="css-k3qijy-Header"
-        src="/images/datahub-logo.svg"
-      />
-      <h2
-        className="text-2xl css-12hmaxm-Header"
-      >
-        Berlin 
-        <span
-          className="css-u111td-Header"
-        >
-          IoT Hub
-        </span>
-      </h2>
-    </div>
-  </a>
-</header>
-`;
-
 exports[`Storyshots Layout/Header Default 1`] = `
 <header
   className="css-4werlw-Header"

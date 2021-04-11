@@ -1,28 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots NotFoundPage Default 1`] = `
-<div
-  className="css-v6ij9w"
->
-  <h1
-    className="css-1rfmn20"
-  >
-    Die angeforderte Seite existiert nicht.
-  </h1>
-  <div
-    className="css-1qa1a31"
-  >
-    Zurück zur 
-    <a
-      className="css-uv00ue"
-      href="/"
-    >
-      Startseite
-    </a>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Pages/NotFoundPage Default 1`] = `
 <div
   className="css-v6ij9w"

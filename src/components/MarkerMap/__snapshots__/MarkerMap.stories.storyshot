@@ -35,39 +35,3 @@ exports[`Storyshots Map/MarkerMap Default 1`] = `
   </div>
 </div>
 `;
-
-exports[`Storyshots MarkerMap Default 1`] = `
-<div
-  style={
-    Object {
-      "cursor": "grab",
-      "height": 400,
-      "position": "relative",
-      "width": 600,
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  >
-    <div
-      className=""
-      style={
-        Object {
-          "height": "100%",
-          "overflow": "hidden",
-          "position": "absolute",
-          "visibility": "inherit",
-          "width": "100%",
-        }
-      }
-    />
-  </div>
-</div>
-`;

@@ -1,17 +1,34 @@
 import { FC } from "react";
 import Link from "next/link";
-import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Controller, useForm } from "react-hook-form";
 import { TextLink } from "@components/TextLink";
+import { FormTextInput } from "@components/FormTextInput";
 
 interface SignupFormData {
   email: string;
   areConditionsAccepted?: boolean;
 }
 
+const formSchema = yup.object().shape({
+  email: yup
+    .string()
+    .email("Die angegebene E-Mail Adresse ist ungültig")
+    .required("Sie müssen eine E-Mail Adresse angeben"),
+});
+
 export const SignupForm: FC<{
   onSubmit?: (data: SignupFormData) => void;
 }> = ({ onSubmit = console.log }) => {
-  const { register, handleSubmit } = useForm<SignupFormData>();
+  const {
+    control,
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SignupFormData>({
+    resolver: yupResolver(formSchema),
+  });
   const onInternalSubmit = handleSubmit(data => onSubmit(data));
 
   return (
@@ -19,18 +36,25 @@ export const SignupForm: FC<{
       onSubmit={onInternalSubmit}
       className='max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between'
       style={{ minHeight: 360 }}
+      noValidate
     >
       <fieldset>
         <h1 className='text-primary text-3xl font-semibold m-0 mb-4'>
           Registrierung
         </h1>
-        <label htmlFor='email' className='block mb-2'>
-          E-Mail
-        </label>
-        <input
-          {...register("email")}
-          type='email'
-          placeholder='Deine E-Mail-Adresse...'
+        <Controller
+          name='email'
+          control={control}
+          defaultValue=''
+          render={({ field }) => (
+            <FormTextInput
+              {...field}
+              label='E-Mail'
+              placeholder='Deine E-Mail-Adresse...'
+              type='email'
+              errors={errors.email?.message ? [errors.email?.message] : []}
+            />
+          )}
         />
         <section className='flex'>
           <input type='checkbox' {...register("areConditionsAccepted")} />
