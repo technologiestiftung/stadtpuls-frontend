@@ -1,8 +1,5 @@
 import { Story, Meta } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { ThemeProvider } from "theme-ui";
-
-import theme from "../../style/theme";
 import { SignupForm } from ".";
 
 export default {
@@ -16,11 +13,7 @@ export default {
 
 const Template: Story<{
   onSubmit?: () => void;
-}> = args => (
-  <ThemeProvider theme={theme}>
-    <SignupForm {...args} />
-  </ThemeProvider>
-);
+}> = args => <SignupForm {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

@@ -1,71 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Forms/Signup Default 1`] = `
-<form
+<div
   className="max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
-  noValidate={true}
-  onSubmit={[Function]}
   style={
     Object {
       "minHeight": 360,
     }
   }
 >
-  <fieldset>
+  <div>
     <h1
       className="text-primary text-3xl font-semibold m-0 mb-4"
     >
       Registrierung
     </h1>
-    <div
-      className=" mb-2"
+    <form
+      id="signup-form"
+      noValidate={true}
+      onSubmit={[Function]}
     >
-      <label
-        className="block mb-2 cursor-pointer transition hover:opacity-60"
-        htmlFor="email"
+      <div
+        className=" mb-2"
       >
-        E-Mail
-         
-      </label>
-      <input
-        className="mb-2 "
-        onBlur={[Function]}
-        onChange={[Function]}
-        placeholder="Deine E-Mail-Adresse..."
-        type="email"
-        value=""
-      />
-    </div>
-    <section
-      className="flex"
-    >
-      <input
-        className="transform translate-y-1 "
-        name="areConditionsAccepted"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="checkbox"
-        value=""
-      />
-      <div>
         <label
-          className="leading-5"
-          htmlFor="areConditionsAccepted"
+          className="block mb-2 cursor-pointer transition hover:opacity-60"
+          htmlFor="email"
         >
-          Ich akzeptiere die
+          E-Mail
            
-          <a
-            className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset "
-            href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
-          >
-            Nutzungsbedingungen
-          </a>
-          .
         </label>
+        <input
+          className="mb-2 "
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Deine E-Mail-Adresse..."
+          type="email"
+          value=""
+        />
       </div>
-    </section>
-  </fieldset>
-  <fieldset
+      <section
+        className="flex"
+      >
+        <input
+          className="transform translate-y-1 "
+          name="areConditionsAccepted"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="checkbox"
+          value=""
+        />
+        <div>
+          <label
+            className="leading-5"
+            htmlFor="areConditionsAccepted"
+          >
+            Ich akzeptiere die
+             
+            <a
+              className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset "
+              href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
+            >
+              Nutzungsbedingungen
+            </a>
+            .
+          </label>
+        </div>
+      </section>
+    </form>
+  </div>
+  <div
     className="flex gap-4 place-content-between"
   >
     <section
@@ -90,10 +94,11 @@ exports[`Storyshots Forms/Signup Default 1`] = `
       }
     >
       <input
+        form="signup-form"
         type="submit"
         value="Weiter"
       />
     </section>
-  </fieldset>
-</form>
+  </div>
+</div>
 `;

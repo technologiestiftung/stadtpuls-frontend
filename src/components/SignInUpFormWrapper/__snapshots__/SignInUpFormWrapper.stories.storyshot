@@ -1,26 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Forms/SignInUpFormWrapper Signin 1`] = `
-<form
+<div
   className="max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
-  noValidate={true}
   style={
     Object {
       "minHeight": 360,
     }
   }
 >
-  <fieldset>
+  <div>
     <h1
       className="text-primary text-3xl font-semibold m-0 mb-4"
     >
       Login
     </h1>
-    <h1>
-      I'm a signin form
-    </h1>
-  </fieldset>
-  <fieldset
+    <form
+      id="signin-form"
+      noValidate={true}
+    >
+      <h1>
+        I'm a signin form
+      </h1>
+    </form>
+  </div>
+  <div
     className="flex gap-4 place-content-between"
   >
     <section
@@ -45,35 +49,40 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signin 1`] = `
       }
     >
       <input
+        form="signin-form"
         type="submit"
         value="Weiter"
       />
     </section>
-  </fieldset>
-</form>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Forms/SignInUpFormWrapper Signup 1`] = `
-<form
+<div
   className="max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
-  noValidate={true}
   style={
     Object {
       "minHeight": 360,
     }
   }
 >
-  <fieldset>
+  <div>
     <h1
       className="text-primary text-3xl font-semibold m-0 mb-4"
     >
       Registrierung
     </h1>
-    <h1>
-      I'm a signup form
-    </h1>
-  </fieldset>
-  <fieldset
+    <form
+      id="signup-form"
+      noValidate={true}
+    >
+      <h1>
+        I'm a signup form
+      </h1>
+    </form>
+  </div>
+  <div
     className="flex gap-4 place-content-between"
   >
     <section
@@ -98,10 +107,11 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signup 1`] = `
       }
     >
       <input
+        form="signup-form"
         type="submit"
         value="Weiter"
       />
     </section>
-  </fieldset>
-</form>
+  </div>
+</div>
 `;

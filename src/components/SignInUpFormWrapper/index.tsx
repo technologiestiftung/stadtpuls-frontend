@@ -1,3 +1,4 @@
+import { SmallModal } from "@components/SmallModal";
 import { TextLink } from "@components/TextLink";
 import Link from "next/link";
 import { HTMLProps, FC } from "react";
@@ -37,39 +38,36 @@ export const SignInUpFormWrapper: FC<SignInUpFormWrapperPropType> = ({
   ...formProps
 }) => {
   const texts = getTextsByType(type);
+  const formId = `sign${type}-form`;
 
   return (
-    <form
-      className='max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between'
-      style={{ minHeight: 360 }}
-      noValidate
-      {...formProps}
+    <SmallModal
+      title={texts.title}
+      footerContent={
+        <>
+          <section className='text-gray-500'>
+            {`${texts.switchQuestion} `}
+            <Link href={`/${texts.switchLinkRoute}`}>
+              <TextLink
+                href={`/${texts.switchLinkRoute}`}
+                className='inline-block'
+              >
+                {texts.switchLinkText}
+              </TextLink>
+            </Link>
+          </section>
+          <section
+            className='flex flex-col'
+            style={{ justifyContent: "flex-end" }}
+          >
+            <input type='submit' form={formId} value={texts.submitButton} />
+          </section>
+        </>
+      }
     >
-      <fieldset>
-        <h1 className='text-primary text-3xl font-semibold m-0 mb-4'>
-          {texts.title}
-        </h1>
+      <form noValidate {...formProps} id={formId}>
         {children}
-      </fieldset>
-      <fieldset className='flex gap-4 place-content-between'>
-        <section className='text-gray-500'>
-          {`${texts.switchQuestion} `}
-          <Link href={`/${texts.switchLinkRoute}`}>
-            <TextLink
-              href={`/${texts.switchLinkRoute}`}
-              className='inline-block'
-            >
-              {texts.switchLinkText}
-            </TextLink>
-          </Link>
-        </section>
-        <section
-          className='flex flex-col'
-          style={{ justifyContent: "flex-end" }}
-        >
-          <input type='submit' value={texts.submitButton} />
-        </section>
-      </fieldset>
-    </form>
+      </form>
+    </SmallModal>
   );
 };
