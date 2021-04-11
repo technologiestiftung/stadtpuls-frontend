@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI Elements/Button Default Button 1`] = `
+<button
+  className="px-4 py-2 font-sans text-lg transition bg-primary text-white hover:opacity-60 cursor-pointer focus-offset"
+  disabled={false}
+  type="button"
+>
+  I am a button
+</button>
+`;
+
+exports[`Storyshots UI Elements/Button Disabled Button 1`] = `
+<button
+  className="px-4 py-2 font-sans text-lg transition bg-gray-300 text-gray-600 cursor-default"
+  disabled={true}
+  type="button"
+>
+  I am a disabled button
+</button>
+`;

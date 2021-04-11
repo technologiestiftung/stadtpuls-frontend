@@ -84,14 +84,4 @@
   [type='radio'].error {
     @apply border-secondary text-secondary focus:ring-secondary;
   }
-
-  input[type='submit'] {
-    @apply px-4 py-2 font-sans text-lg transition;
-  }
-  input[type='submit']:not(:disabled) {
-    @apply bg-primary text-white hover:opacity-60 focus-offset;
-  }
-  input[type='submit']:disabled {
-    @apply bg-gray-300 text-gray-600;
-  }
 };
