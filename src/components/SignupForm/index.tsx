@@ -6,6 +6,7 @@ import { TextLink } from "@components/TextLink";
 import { FormTextInput } from "@components/FormTextInput";
 import { FormCheckbox } from "@components/FormCheckbox";
 import { SignInUpFormWrapper } from "@components/SignInUpFormWrapper";
+import { requiredEmailValidation } from "@lib/formValidationUtil";
 
 interface SignupFormData {
   email: string;
@@ -13,10 +14,7 @@ interface SignupFormData {
 }
 
 const formSchema = yup.object().shape({
-  email: yup
-    .string()
-    .email("Die angegebene E-Mail Adresse ist ungültig")
-    .required("Sie müssen eine E-Mail Adresse angeben"),
+  email: requiredEmailValidation,
   areConditionsAccepted: yup
     .string()
     .required("Sie müssen die Nutzungsbedingungen akzeptieren"),

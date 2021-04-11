@@ -4,16 +4,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, useForm } from "react-hook-form";
 import { FormTextInput } from "@components/FormTextInput";
 import { SignInUpFormWrapper } from "@components/SignInUpFormWrapper";
+import { requiredEmailValidation } from "@lib/formValidationUtil";
 
 interface SigninFormData {
   email: string;
 }
 
 const formSchema = yup.object().shape({
-  email: yup
-    .string()
-    .email("Die angegebene E-Mail Adresse ist ungültig")
-    .required("Sie müssen eine E-Mail Adresse angeben"),
+  email: requiredEmailValidation,
 });
 
 export const SigninForm: FC<{
