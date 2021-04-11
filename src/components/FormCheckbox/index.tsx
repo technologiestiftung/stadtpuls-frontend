@@ -8,7 +8,6 @@ interface FormCheckboxPropType
   optional?: boolean;
 }
 
-// eslint-disable-next-line react/display-name
 export const FormCheckbox: FC<FormCheckboxPropType> = ({
   name,
   label,

@@ -7,7 +7,6 @@ interface FormTextInputPropType extends HTMLProps<HTMLInputElement> {
   optional?: boolean;
 }
 
-// eslint-disable-next-line react/display-name
 export const FormTextInput: FC<FormTextInputPropType> = ({
   name,
   label,
