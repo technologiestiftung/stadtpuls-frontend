@@ -1,99 +1,131 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Footer Default 1`] = `
-<footer
-  className="css-605ip6-Footer"
->
-  <div
-    className="css-177thsy"
+<footer>
+  <section
+    className="bg-white border-t border-gray-200"
   >
     <div
-      className="css-4cffwv"
+      className="max-w-screen-lg mx-auto p-8"
     >
       <div
-        className="css-1tospi0-Footer"
+        className="w-full flex"
       >
         <div
-          className="css-vurnku"
+          className="block"
         >
-          Ein Projekt der:
+          <span
+            className="w-full block text-xs text-gray-700"
+          >
+            Ein Projekt der:
+          </span>
+          <a
+            className="mt-4 block"
+            href="https://technologiestiftung-berlin.de/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="Logo der Technologiestiftung Berlin"
+              className="w-32"
+              src="/images/tsb-logo.svg"
+            />
+          </a>
         </div>
-      </div>
-      <img
-        alt="Logo der Technologiestiftung Berlin"
-        className="css-1t6cmvr-Footer"
-        src="/images/tsb-logo.svg"
-      />
-    </div>
-    <div
-      className="css-4cffwv"
-    >
-      <div
-        className="css-1tospi0-Footer"
-      >
         <div
-          className="css-vurnku"
+          className="ml-8 md:ml-12 block"
         >
-          Gefördert von:
+          <span
+            className="w-full block text-xs text-gray-700"
+          >
+            Gefördert von:
+          </span>
+          <a
+            className="mt-4 block"
+            href="https://www.berlin.de/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="Logo der Senatsverwaltung für Wirtschaft, Energie und Betriebe"
+              className="w-48"
+              src="/images/senweb-logo.svg"
+            />
+          </a>
         </div>
       </div>
-      <img
-        alt="Logo der Senatsverwaltung für Wirtschaft, Energie und Betriebe"
-        className="css-h1k1oh-Footer"
-        src="/images/senweb-logo.svg"
-      />
     </div>
-  </div>
-  <div
-    className="css-18f9hr4-Footer"
+  </section>
+  <section
+    className="bg-gray-100"
   >
-    <a
-      className="css-ta8zj8"
-      href="https://www.technologiestiftung-berlin.de/de/impressum/"
-      rel="noopener noreferrer"
-      target="_blank"
+    <div
+      className="max-w-screen-lg mx-auto px-8 py-6 block sm:flex justify-between"
     >
-      Impressum
-    </a>
-    <a
-      className="css-1cve2jh"
-      href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      Datenschutz
-    </a>
-  </div>
+      <div
+        className="flex items-center"
+      >
+        <p
+          className="text-sm text-gray-700"
+        >
+          © 
+          2021
+           Technologiestiftung Berlin
+        </p>
+      </div>
+      <ul
+        className="flex items-center mt-2 sm:mt-0"
+      >
+        <li>
+          <a
+            className="text-sm text-gray-700"
+            href="https://www.technologiestiftung-berlin.de/de/impressum/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Impressum
+          </a>
+        </li>
+        <li
+          className="ml-4"
+        >
+          <a
+            className="text-sm text-gray-700"
+            href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Datenschutzerklärung
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
 </footer>
 `;
 
 exports[`Storyshots Header Default 1`] = `
 <header
-  className="css-4werlw-Header"
+  className="w-full p-4 bg-white shadow-lg relative md:sticky md:top-0"
 >
   <a
-    className="css-1dmc8dd-Header"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
+    className="w-max flex items-center"
+    href="/"
   >
+    <img
+      alt="Logo des Berlin IoT Hub"
+      className="w-10"
+      src="/images/datahub-logo.svg"
+    />
     <div
-      className="css-4cffwv"
+      className="ml-2"
     >
-      <img
-        alt="Logo des Berlin IoT Hub"
-        className="css-k3qijy-Header"
-        src="/images/datahub-logo.svg"
-      />
-      <h2
-        className="css-12hmaxm-Header"
+      <span
+        className="font-bold"
       >
-        Berlin 
-        <span
-          className="css-u111td-Header"
-        >
-          IoT Hub
-        </span>
-      </h2>
+        Berlin
+      </span>
+       IoT Hub
     </div>
   </a>
 </header>
