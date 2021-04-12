@@ -50,7 +50,12 @@ const App: FC<{
             <title>Berlin IoT Hub | Technologiestiftung Berlin</title>
           </Head>
           <Header />
-          <main sx={{ minHeight: "100vh", zIndex: 0 }}>
+          <main
+            className='z-0 relative pb-24'
+            style={{
+              minHeight: "calc(100vh - 215px)",
+            }}
+          >
             <Component {...pageProps} />
           </main>
           <Footer />

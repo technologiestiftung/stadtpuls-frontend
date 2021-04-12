@@ -5,7 +5,7 @@ import theme from "../../style/theme";
 import { Footer } from ".";
 
 export default {
-  title: "Footer",
+  title: "Layout/Footer",
   component: Footer,
 } as Meta;
 

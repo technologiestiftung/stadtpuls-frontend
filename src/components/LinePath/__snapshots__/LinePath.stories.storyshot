@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots LinePath Default 1`] = `
+exports[`Storyshots Charts/LinePath Default 1`] = `
 <svg
   height={200}
   width={400}

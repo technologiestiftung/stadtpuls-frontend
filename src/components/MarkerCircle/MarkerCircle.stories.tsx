@@ -5,7 +5,7 @@ import theme from "../../style/theme";
 import { MarkerCircle } from ".";
 
 export default {
-  title: "MarkerCircle",
+  title: "Map/MarkerCircle",
   component: MarkerCircle,
 } as Meta;
 

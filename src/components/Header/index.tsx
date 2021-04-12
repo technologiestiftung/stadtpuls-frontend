@@ -32,7 +32,7 @@ export const Header: React.FC = () => {
               alt={"Logo des Berlin IoT Hub"}
               sx={{ width: "56px", height: "100%" }}
             />
-            <Heading ml={3} sx={{ lineHeight: "inherit" }}>
+            <Heading ml={3} sx={{ lineHeight: "inherit" }} className='text-2xl'>
               Berlin <span sx={{ fontWeight: "normal" }}>IoT Hub</span>
             </Heading>
           </Flex>

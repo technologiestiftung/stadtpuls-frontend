@@ -14,7 +14,7 @@ export default {
 
 const createFakeData = (amount: number): RecordType[] =>
   [...new Array(amount || 1).map((_, idx: number) => idx)].map(
-    (idx: number) => ({
+    (_, idx: number) => ({
       id: idx,
       deviceId: idx,
       recordedAt: "2021-04-08T13:23:04.753Z",

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots RadioTabs Default 1`] = `
+exports[`Storyshots UI Elements/RadioTabs Default 1`] = `
 <div
   className="css-vurnku"
 >

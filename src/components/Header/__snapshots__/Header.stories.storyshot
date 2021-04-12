@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Header Default 1`] = `
+exports[`Storyshots Layout/Header Default 1`] = `
 <header
   className="css-4werlw-Header"
 >
@@ -18,7 +18,7 @@ exports[`Storyshots Header Default 1`] = `
         src="/images/datahub-logo.svg"
       />
       <h2
-        className="css-12hmaxm-Header"
+        className="text-2xl css-12hmaxm-Header"
       >
         Berlin 
         <span

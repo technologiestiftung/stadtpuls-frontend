@@ -1,31 +1,87 @@
-@font-face {
-  font-family: "IBM Plex Sans";
-  src: url("/fonts/IBMPlexSans-BoldItalic.woff2") format("woff2"),
-    url("/fonts/IBMPlexSans-BoldItalic.woff") format("woff");
-  font-weight: bold;
-  font-style: italic;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .focus-offset {
+    @apply focus:ring-primary focus:ring-2 focus:ring-offset-white focus:ring-offset-2 focus:outline-none;
+  }
+};
+@layer base {
+  @font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/fonts/IBMPlexSans-BoldItalic.woff2") format("woff2"),
+      url("/fonts/IBMPlexSans-BoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+  }
 
-@font-face {
-  font-family: "IBM Plex Sans";
-  src: url("/fonts/IBMPlexSans-Italic.woff2") format("woff2"),
-    url("/fonts/IBMPlexSans-Italic.woff") format("woff");
-  font-weight: 400;
-  font-style: italic;
-}
+  @font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/fonts/IBMPlexSans-Italic.woff2") format("woff2"),
+      url("/fonts/IBMPlexSans-Italic.woff") format("woff");
+    font-weight: 400;
+    font-style: italic;
+  }
 
-@font-face {
-  font-family: "IBM Plex Sans";
-  src: url("/fonts/IBMPlexSans-Bold.woff2") format("woff2"),
-    url("/fonts/IBMPlexSans-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
+  @font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/fonts/IBMPlexSans-Bold.woff2") format("woff2"),
+      url("/fonts/IBMPlexSans-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
 
-@font-face {
-  font-family: "IBM Plex Sans";
-  src: url("/fonts/IBMPlexSans-Regular.woff2") format("woff2"),
-    url("/fonts/IBMPlexSans-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
+  @font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/fonts/IBMPlexSans-Regular.woff2") format("woff2"),
+      url("/fonts/IBMPlexSans-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [multiple],
+  textarea,
+  select {
+    @apply block w-full border-gray-400 mb-4 focus:border-primary focus:ring-primary;
+  }
+
+  [type='text'].error,
+  [type='email'].error,
+  [type='url'].error,
+  [type='password'].error,
+  [type='number'].error,
+  [type='date'].error,
+  [type='datetime-local'].error,
+  [type='month'].error,
+  [type='search'].error,
+  [type='tel'].error,
+  [type='time'].error,
+  [type='week'].error,
+  [multiple].error,
+  textarea.error,
+  select.error {
+    @apply border-secondary focus:border-secondary focus:ring-secondary;
+  }
+
+  [type='checkbox'],
+  [type='radio'] {
+    @apply mr-2 transform translate-y-0.5 border-gray-400 text-primary focus:ring-primary;
+  }
+
+  [type='checkbox'].error,
+  [type='radio'].error {
+    @apply border-secondary text-secondary focus:ring-secondary;
+  }
+};

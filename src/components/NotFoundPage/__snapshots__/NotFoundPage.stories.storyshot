@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots NotFoundPage Default 1`] = `
+exports[`Storyshots Pages/NotFoundPage Default 1`] = `
 <div
   className="css-v6ij9w"
 >

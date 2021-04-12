@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots IconButton Default 1`] = `
+exports[`Storyshots UI Elements/IconButton Default 1`] = `
 <button
   className="css-17v1r2j-IconButton"
 >

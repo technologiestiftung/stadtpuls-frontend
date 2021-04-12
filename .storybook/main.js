@@ -1,4 +1,4 @@
-const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin')
+const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   stories: [
@@ -7,9 +7,10 @@ module.exports = {
   ],
   addons: [
     "@storybook/addon-links",
-    "@storybook/addon-essentials"
+    "@storybook/addon-essentials",
+    "@storybook/addon-postcss"
   ],
-  webpackFinal: async (config) => {
+  webpackFinal: async config => {
     config.resolve.plugins = [new TsconfigPathsPlugin({ extensions: config.resolve.extensions })]
     return config
   },

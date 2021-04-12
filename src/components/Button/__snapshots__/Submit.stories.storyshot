@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI Elements/Submit Default Submit 1`] = `
+<input
+  className="px-4 py-2 font-sans text-lg transition bg-primary text-white hover:opacity-60 cursor-pointer focus-offset"
+  disabled={false}
+  type="submit"
+  value="I am a submit"
+/>
+`;
+
+exports[`Storyshots UI Elements/Submit Disabled Submit 1`] = `
+<input
+  className="px-4 py-2 font-sans text-lg transition bg-gray-300 text-gray-600 cursor-default"
+  disabled={true}
+  type="submit"
+  value="I am a disabled submit"
+/>
+`;
