@@ -75,6 +75,24 @@
     @apply border-secondary focus:border-secondary focus:ring-secondary;
   }
 
+  [type='text']:disabled,
+  [type='email']:disabled,
+  [type='url']:disabled,
+  [type='password']:disabled,
+  [type='number']:disabled,
+  [type='date']:disabled,
+  [type='datetime-local']:disabled,
+  [type='month']:disabled,
+  [type='search']:disabled,
+  [type='tel']:disabled,
+  [type='time']:disabled,
+  [type='week']:disabled,
+  [multiple]:disabled,
+  textarea:disabled,
+  select:disabled {
+    @apply opacity-50;
+  }
+
   [type='checkbox'],
   [type='radio'] {
     @apply mr-2 transform translate-y-0.5 border-gray-400 text-primary focus:ring-primary;
