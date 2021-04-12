@@ -1,43 +1,26 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
 import React from "react";
-import Link from "next/link";
-import { jsx, Flex, Heading, Image } from "theme-ui";
 
 const DatahubLogo = "/images/datahub-logo.svg";
 
 export const Header: React.FC = () => {
   return (
     <header
-      sx={{
-        color: "text",
-        bg: "background",
-        boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
-        width: "100%",
-        p: 4,
-        position: ["relative", "sticky", "sticky"],
-        top: "0",
-        display: "flex",
-        flex: "1 1 auto",
-        flexWrap: "wrap",
-        justifyContent: "space-between",
-        zIndex: 3,
-      }}
+      className={[
+        "w-full p-4 bg-white shadow-lg",
+        "relative",
+        "md:sticky md:top-0",
+      ].join(" ")}
     >
-      <Link href='/'>
-        <a sx={{ textDecoration: "none", color: "text", cursor: "pointer" }}>
-          <Flex>
-            <Image
-              src={DatahubLogo}
-              alt={"Logo des Berlin IoT Hub"}
-              sx={{ width: "56px", height: "100%" }}
-            />
-            <Heading ml={3} sx={{ lineHeight: "inherit" }}>
-              Berlin <span sx={{ fontWeight: "normal" }}>IoT Hub</span>
-            </Heading>
-          </Flex>
-        </a>
-      </Link>
+      <a href='/' className='w-max flex items-center'>
+        <img
+          src={DatahubLogo}
+          alt={"Logo des Berlin IoT Hub"}
+          className='w-10'
+        />
+        <div className='ml-2'>
+          <span className='font-bold'>Berlin</span> IoT Hub
+        </div>
+      </a>
     </header>
   );
 };
