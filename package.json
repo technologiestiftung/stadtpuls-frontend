@@ -26,6 +26,7 @@
     "@storybook/addon-actions": "6.2.5",
     "@storybook/addon-essentials": "6.2.5",
     "@storybook/addon-links": "6.2.5",
+    "@storybook/addon-postcss": "2.0.0",
     "@storybook/addon-storyshots": "6.2.5",
     "@storybook/react": "6.2.5",
     "@tailwindcss/postcss7-compat": "2.1.0",
