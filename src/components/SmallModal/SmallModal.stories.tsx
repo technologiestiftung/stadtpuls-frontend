@@ -13,8 +13,13 @@ const Template: Story<{
   title: string;
   children: ReactNode;
   footerContent?: ReactNode;
+  secondary?: boolean;
 }> = args => (
-  <SmallModal title={args.title} footerContent={args.footerContent}>
+  <SmallModal
+    title={args.title}
+    footerContent={args.footerContent}
+    secondary={args.secondary}
+  >
     {args.children}
   </SmallModal>
 );
@@ -28,6 +33,13 @@ WithoutFooterContent.args = {
       Link an, um dich einzuloggen.
     </p>
   ),
+};
+
+export const WithSecondaryTitle = Template.bind({});
+WithSecondaryTitle.args = {
+  title: "Bitte bestätige die Löschung deines Accounts",
+  secondary: true,
+  children: <p>Sind sie sicher?</p>,
 };
 
 export const WithFooterContent = Template.bind({});

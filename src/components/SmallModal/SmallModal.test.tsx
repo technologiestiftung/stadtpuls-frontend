@@ -7,6 +7,11 @@ describe("SmallModal component", () => {
     const title = screen.getByText(/Hello/g);
     expect(title).toBeInTheDocument();
   });
+  it("should render the provided title in secondary color", () => {
+    render(<SmallModal secondary title='Hello' />);
+    const title = screen.getByRole("heading");
+    expect(title.getAttribute("class")?.includes("text-secondary")).toBe(true);
+  });
   it("should render the provided chilren", () => {
     render(<SmallModal title='Title'>Content</SmallModal>);
     const content = screen.getByText(/Content/g);

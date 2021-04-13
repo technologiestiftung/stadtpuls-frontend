@@ -59,6 +59,28 @@ exports[`Storyshots UI Elements/SmallModal With Footer Content 1`] = `
 </div>
 `;
 
+exports[`Storyshots UI Elements/SmallModal With Secondary Title 1`] = `
+<div
+  className="max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
+  style={
+    Object {
+      "minHeight": 360,
+    }
+  }
+>
+  <div>
+    <h1
+      className="text-secondary text-3xl font-semibold m-0 mb-4"
+    >
+      Bitte bestätige die Löschung deines Accounts
+    </h1>
+    <p>
+      Sind sie sicher?
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Storyshots UI Elements/SmallModal Without Footer Content 1`] = `
 <div
   className="max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
