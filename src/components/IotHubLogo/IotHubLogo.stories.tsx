@@ -2,7 +2,7 @@ import { Story } from "@storybook/react";
 import { IotHubLogo } from ".";
 
 export default {
-  title: "Coporate identity/Logo",
+  title: "Coporate identity/IOT Hub Belrin",
   component: IotHubLogo,
 };
 

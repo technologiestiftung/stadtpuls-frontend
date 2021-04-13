@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Coporate identity/Logo Default 1`] = `
+exports[`Storyshots Coporate identity/IOT Hub Belrin Default 1`] = `
 <a
   className="w-max flex items-center"
   href="/"
