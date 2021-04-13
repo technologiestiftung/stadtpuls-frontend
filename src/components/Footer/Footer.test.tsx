@@ -4,12 +4,12 @@ import { Footer } from ".";
 describe("Footer component", () => {
   it("should render the impressum link", () => {
     render(<Footer />);
-    const berlinText = screen.getByText(/Impressum/g);
-    expect(berlinText).toBeInTheDocument();
+    const imprintText = screen.getByText(/Impressum/g);
+    expect(imprintText).toBeInTheDocument();
   });
-  it("should render the Datenschutz link", () => {
+  it("should render the Datenschutzerklärung link", () => {
     render(<Footer />);
-    const berlinText = screen.getByText(/Datenschutz/g);
-    expect(berlinText).toBeInTheDocument();
+    const dataprivacyText = screen.getByText(/Datenschutzerklärung/g);
+    expect(dataprivacyText).toBeInTheDocument();
   });
 });

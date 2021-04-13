@@ -2,31 +2,26 @@
 
 exports[`Storyshots Layout/Header Default 1`] = `
 <header
-  className="css-4werlw-Header"
+  className="w-full p-4 bg-white shadow-lg z-50 relative md:sticky md:top-0"
 >
   <a
-    className="css-1dmc8dd-Header"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
+    className="w-max flex items-center"
+    href="/"
   >
+    <img
+      alt="Logo des Berlin IoT Hub"
+      className="w-10"
+      src="/images/datahub-logo.svg"
+    />
     <div
-      className="css-4cffwv"
+      className="ml-2"
     >
-      <img
-        alt="Logo des Berlin IoT Hub"
-        className="css-k3qijy-Header"
-        src="/images/datahub-logo.svg"
-      />
-      <h2
-        className="text-2xl css-12hmaxm-Header"
+      <span
+        className="font-bold"
       >
-        Berlin 
-        <span
-          className="css-u111td-Header"
-        >
-          IoT Hub
-        </span>
-      </h2>
+        Berlin
+      </span>
+       IoT Hub
     </div>
   </a>
 </header>
