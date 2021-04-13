@@ -1,4 +1,4 @@
-import { HTMLProps, FC } from "react";
+import { HTMLProps, forwardRef } from "react";
 
 interface FormTextInputPropType extends HTMLProps<HTMLInputElement> {
   name: string;
@@ -7,13 +7,11 @@ interface FormTextInputPropType extends HTMLProps<HTMLInputElement> {
   optional?: boolean;
 }
 
-export const FormTextInput: FC<FormTextInputPropType> = ({
-  name,
-  label,
-  optional = false,
-  errors = [],
-  ...inputProps
-}) => (
+// eslint-disable-next-line react/display-name
+export const FormTextInput = forwardRef<
+  HTMLInputElement,
+  FormTextInputPropType
+>(({ name, label, optional = false, errors = [], ...inputProps }, ref) => (
   <div className=' mb-2'>
     {label && (
       <label
@@ -28,11 +26,15 @@ export const FormTextInput: FC<FormTextInputPropType> = ({
         )}
       </label>
     )}
-    <input {...inputProps} className={`mb-2 ${errors.length ? "error" : ""}`} />
+    <input
+      {...inputProps}
+      ref={ref}
+      className={`mb-2 ${errors.length ? "error" : ""}`}
+    />
     {errors.map(error => (
       <p className='text-secondary text-sm' key={error}>
         {error}
       </p>
     ))}
   </div>
-);
+));
