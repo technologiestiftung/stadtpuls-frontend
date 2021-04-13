@@ -31,7 +31,12 @@ describe("Button component", () => {
   it("should have outline styles when outline", () => {
     render(<Button outline>Button</Button>);
     const button = screen.getByRole("button");
-    expect(button.getAttribute("class")?.includes("cursor-pointer")).toBe(true);
+    expect(button.getAttribute("class")?.includes("border-primary")).toBe(true);
+  });
+  it("should have secondary colors when secondary", () => {
+    render(<Button secondary>Button</Button>);
+    const button = screen.getByRole("button");
+    expect(button.getAttribute("class")?.includes("bg-secondary")).toBe(true);
   });
 });
 

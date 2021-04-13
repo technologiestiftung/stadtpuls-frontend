@@ -2,7 +2,7 @@
 
 exports[`Storyshots UI Elements/Submit Default Submit 1`] = `
 <input
-  className="px-4 py-2 font-sans text-lg transition bg-primary text-white hover:opacity-60 cursor-pointer focus-offset"
+  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-primary text-white hover:opacity-60"
   disabled={false}
   type="submit"
   value="I am a submit"
