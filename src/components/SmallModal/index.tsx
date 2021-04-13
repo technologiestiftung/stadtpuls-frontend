@@ -2,7 +2,7 @@ import { HTMLProps, FC, ReactNode } from "react";
 
 interface SmallModalPropType extends HTMLProps<HTMLFormElement> {
   title: string;
-  titleClassName?: string;
+  variant?: "dangerous" | "primary";
   footerContent?: ReactNode;
 }
 
@@ -10,7 +10,7 @@ export const SmallModal: FC<SmallModalPropType> = ({
   title,
   children,
   footerContent,
-  titleClassName,
+  variant,
 }) => {
   return (
     <div
@@ -19,8 +19,8 @@ export const SmallModal: FC<SmallModalPropType> = ({
     >
       <div>
         <h1
-          className={`text-primary text-3xl font-semibold m-0 mb-4 ${
-            titleClassName ? titleClassName : ""
+          className={`text-3xl font-semibold m-0 mb-4 text-${
+            variant == "dangerous" ? "secondary" : "primary"
           }`}
         >
           {title}
