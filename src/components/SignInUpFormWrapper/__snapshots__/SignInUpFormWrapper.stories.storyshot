@@ -2,10 +2,11 @@
 
 exports[`Storyshots Forms/SignInUpFormWrapper Signin 1`] = `
 <div
-  className="max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
+  className="max-w-full bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
   style={
     Object {
       "minHeight": 360,
+      "width": "28rem",
     }
   }
 >
@@ -61,10 +62,11 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signin 1`] = `
 
 exports[`Storyshots Forms/SignInUpFormWrapper Signup 1`] = `
 <div
-  className="max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
+  className="max-w-full bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
   style={
     Object {
       "minHeight": 360,
+      "width": "28rem",
     }
   }
 >
