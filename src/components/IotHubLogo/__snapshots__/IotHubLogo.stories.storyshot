@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Coporate identity/Logo Default 1`] = `
+<a
+  className="w-max flex items-center"
+  href="/"
+>
+  <img
+    alt="Logo des Berlin IoT Hub"
+    className="w-10"
+    src="/images/datahub-logo.svg"
+  />
+  <div
+    className="ml-2"
+  >
+    <span
+      className="font-bold"
+    >
+      Berlin
+    </span>
+     IoT Hub
+  </div>
+</a>
+`;
