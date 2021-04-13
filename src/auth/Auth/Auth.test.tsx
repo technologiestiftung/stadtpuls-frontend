@@ -3,20 +3,39 @@ import { act, render, screen, waitFor } from "@testing-library/react";
 import { FC, useEffect } from "react";
 import { AuthProvider, useAuth } from ".";
 
+const createChildComponent = ({
+  isReady = () => true,
+  inEffect = () => undefined,
+}: {
+  isReady?: (auth: ReturnType<typeof useAuth>) => boolean;
+  inEffect?: (auth: ReturnType<typeof useAuth>) => Promise<void> | void;
+}): FC => {
+  const ChildComponent: FC = () => {
+    const auth = useAuth();
+    useEffect(() => {
+      void inEffect(auth);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+    const ready = isReady(auth);
+    return <div>{ready && "READY"}</div>;
+  };
+  return ChildComponent;
+};
+
 describe("AuthProvider", () => {
   it("should provide its children with context values", async () => {
-    const ChildComponent: FC = () => {
-      const auth = useAuth();
-      const ready =
-        typeof auth?.isLoadingAuth !== "undefined" &&
-        auth?.authenticatedUser === null &&
-        auth?.error === null &&
-        typeof auth?.authenticate === "function" &&
-        typeof auth?.signOut === "function" &&
-        auth?.magicLinkWasSent === false &&
-        auth?.isAuthenticating === false;
-      return <div>{ready && "READY"}</div>;
-    };
+    const ChildComponent = createChildComponent({
+      isReady: auth =>
+        !!(
+          typeof auth?.isLoadingAuth !== "undefined" &&
+          auth?.authenticatedUser === null &&
+          auth?.error === null &&
+          typeof auth?.authenticate === "function" &&
+          typeof auth?.signOut === "function" &&
+          auth?.magicLinkWasSent === false &&
+          auth?.isAuthenticating === false
+        ),
+    });
     act(() => {
       render(
         <AuthProvider>
@@ -27,21 +46,19 @@ describe("AuthProvider", () => {
 
     await waitFor(() => expect(screen.getByText("READY")).toBeInTheDocument());
   });
+});
+
+describe("signIn", () => {
   it("should send a magic link after authenticating", async () => {
     const oldSignIn = supabase.auth.signIn.bind(supabase.auth);
     const signInMock = jest
       .fn()
       .mockReturnValue(Promise.resolve({ error: false }));
     supabase.auth.signIn = signInMock;
-    const ChildComponent: FC = () => {
-      const auth = useAuth();
-      useEffect(() => {
-        auth.authenticate({ email: "contact@example.com" });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, []);
-      const ready = !!(auth.magicLinkWasSent && !auth.isAuthenticating);
-      return <div>{ready && "READY"}</div>;
-    };
+    const ChildComponent = createChildComponent({
+      isReady: auth => !!(auth.magicLinkWasSent && !auth.isAuthenticating),
+      inEffect: auth => auth.authenticate({ email: "contact@example.com" }),
+    });
     act(() => {
       render(
         <AuthProvider>
@@ -62,15 +79,11 @@ describe("AuthProvider", () => {
       .fn()
       .mockResolvedValue({ error: new Error("WRONG") });
     supabase.auth.signIn = signInMock;
-    const ChildComponent: FC = () => {
-      const auth = useAuth();
-      useEffect(() => {
-        auth.authenticate({ email: "spam@youdontwant.inyourinbox" });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, []);
-
-      return <div>{auth.error}</div>;
-    };
+    const ChildComponent = createChildComponent({
+      isReady: auth => !!auth.error,
+      inEffect: auth =>
+        auth.authenticate({ email: "spam@youdontwant.inyourinbox" }),
+    });
     act(() => {
       render(
         <AuthProvider>
@@ -80,23 +93,21 @@ describe("AuthProvider", () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByText("WRONG")).toBeInTheDocument();
+      expect(screen.getByText("READY")).toBeInTheDocument();
       supabase.auth.signIn = oldSignIn;
     });
   });
+});
+
+describe("signOut", () => {
   it("should signOut", async () => {
     const signOutMock = jest
       .fn()
       .mockReturnValue(Promise.resolve({ error: false }));
     supabase.auth.signOut = signOutMock;
-    const ChildComponent: FC = () => {
-      const auth = useAuth();
-      useEffect(() => {
-        void auth.signOut();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, []);
-      return <div />;
-    };
+    const ChildComponent = createChildComponent({
+      inEffect: auth => void auth.signOut(),
+    });
     act(() => {
       render(
         <AuthProvider>
