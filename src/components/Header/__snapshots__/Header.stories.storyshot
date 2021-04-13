@@ -34,7 +34,7 @@ exports[`Storyshots Layout/Header Default 1`] = `
       onMouseEnter={[Function]}
     >
       <span
-        className="text-gray-400 transform -translate-y-0.5 transition inline-block group-hover:text-primary"
+        className="transform -translate-y-0.5 transition inline-block text-gray-400 group-hover:text-primary"
       >
         <svg
           aria-hidden={true}
@@ -48,7 +48,7 @@ exports[`Storyshots Layout/Header Default 1`] = `
         </svg>
       </span>
       <span
-        className="inline-block ml-1 group-hover:text-primary transition"
+        className="inline-block ml-1 transition text-black group-hover:text-primary"
       >
         Anmeldung
       </span>
