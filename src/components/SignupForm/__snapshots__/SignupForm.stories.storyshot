@@ -11,7 +11,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
 >
   <div>
     <h1
-      className="text-primary text-3xl font-semibold m-0 mb-4 "
+      className="text-3xl font-semibold m-0 mb-4 text-primary"
     >
       Registrierung
     </h1>
@@ -98,6 +98,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
         form="signup-form"
         type="submit"
         value="Registrieren"
+        variant="primary"
       />
     </section>
   </div>
