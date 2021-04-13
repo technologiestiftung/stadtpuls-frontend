@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI Elements/Dropdown Default 1`] = `
+<button
+  className="inline-block relative cursor-pointer rounded-none focus-offset"
+  onClick={[Function]}
+>
+  Click me
+  <section
+    className="absolute top-full left-0 transform transition whitespace-nowrap w-auto max-width-md transform-y-4 opacity-0 pointer-events-none"
+  >
+    <div
+      className="bg-white shadow-md"
+    >
+      <div
+        className="px-4 py-3"
+      >
+        <h1>
+          I am content
+        </h1>
+      </div>
+    </div>
+  </section>
+</button>
+`;
