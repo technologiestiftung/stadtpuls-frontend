@@ -66,10 +66,10 @@ const apiHandlers = [
 
 const { url } = getSupabaseCredentials();
 const authHandlers = [
-  rest.get(`${url}/auth/v1/magiclink`, (_req, res, ctx) => {
+  rest.post(`${url}/auth/v1/magiclink`, (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"), ctx.json({ data: {} }));
   }),
-  rest.get(`${url}/auth/v1/user`, (_req, res, ctx) => {
+  rest.post(`${url}/auth/v1/user`, (_req, res, ctx) => {
     return res(
       ctx.status(201, "Mocked status"),
       ctx.json({

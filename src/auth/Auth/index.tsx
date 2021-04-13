@@ -1,4 +1,11 @@
-import { useState, useEffect, createContext, FC, useContext } from "react";
+import {
+  useState,
+  useEffect,
+  createContext,
+  FC,
+  useContext,
+  useCallback,
+} from "react";
 import { supabase } from "../supabase";
 
 interface SupabaseUserType {
@@ -21,7 +28,6 @@ interface SupabaseUserType {
 }
 
 interface AuthContextType {
-  signUp: typeof supabase.auth.signUp;
   signIn: typeof supabase.auth.signIn;
   signOut: typeof supabase.auth.signOut;
   authenticatedUser: SupabaseUserType | null;
@@ -29,7 +35,6 @@ interface AuthContextType {
 }
 
 const defaultValue = {
-  signUp: supabase.auth.signUp.bind(supabase.auth),
   signIn: supabase.auth.signIn.bind(supabase.auth),
   signOut: supabase.auth.signOut.bind(supabase.auth),
   authenticatedUser: null,
@@ -65,7 +70,6 @@ export const AuthProvider: FC = ({ children }) => {
   }, []);
 
   const value = {
-    signUp: supabase.auth.signUp.bind(supabase.auth),
     signIn: supabase.auth.signIn.bind(supabase.auth),
     signOut: supabase.auth.signOut.bind(supabase.auth),
     authenticatedUser: authenticatedUser ?? null,
@@ -75,7 +79,29 @@ export const AuthProvider: FC = ({ children }) => {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
-export const useAuth = (): AuthContextType => {
-  const auth = useContext(AuthContext);
-  return auth;
+interface AuthHookReturnType extends Omit<AuthContextType, "signIn"> {
+  magicLinkWasSent: boolean;
+  isAuthenticating: boolean;
+  error: string | null;
+  authenticate: (data: { email: string }) => void;
+}
+
+export const useAuth = (): AuthHookReturnType => {
+  const { signIn, ...auth } = useContext(AuthContext);
+  const [magicLinkWasSent, setMagicLinkWasSent] = useState<boolean>(false);
+  const [isAuthenticating, setIsAuthenticating] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const authenticate = useCallback(
+    async (data: { email: string }): Promise<void> => {
+      setIsAuthenticating(true);
+      const { error } = await signIn(data);
+
+      if (error) setError(error.message);
+      if (!error) setMagicLinkWasSent(true);
+      setIsAuthenticating(false);
+    },
+    [signIn, setMagicLinkWasSent, setIsAuthenticating]
+  );
+  return { ...auth, error, magicLinkWasSent, isAuthenticating, authenticate };
 };
