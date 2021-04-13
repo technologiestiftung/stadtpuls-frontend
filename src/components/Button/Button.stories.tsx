@@ -7,13 +7,29 @@ export default {
   component: Button,
 } as Meta;
 
-const ButtonTemplate: Story<HTMLProps<HTMLButtonElement>> = ({
+interface ButtonTemplatePropTypes extends HTMLProps<HTMLButtonElement> {
+  outline?: boolean;
+}
+
+const ButtonTemplate: Story<ButtonTemplatePropTypes> = ({
   children,
   disabled,
-}) => <Button disabled={disabled}>{children || "Hello"}</Button>;
+  outline,
+}) => (
+  <Button outline={outline} disabled={disabled}>
+    {children || "Hello"}
+  </Button>
+);
 
 export const DefaultButton = ButtonTemplate.bind({});
 DefaultButton.args = { disabled: false, children: "I am a button" };
 
 export const DisabledButton = ButtonTemplate.bind({});
 DisabledButton.args = { disabled: true, children: "I am a disabled button" };
+
+export const OutlinedButton = ButtonTemplate.bind({});
+OutlinedButton.args = {
+  disabled: false,
+  outline: true,
+  children: "I am an outlined button",
+};

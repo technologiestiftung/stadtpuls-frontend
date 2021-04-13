@@ -3,22 +3,27 @@ import { forwardRef, HTMLProps, ReactNode } from "react";
 interface ButtonPropType
   extends Omit<HTMLProps<HTMLButtonElement>, "children"> {
   children: ReactNode;
+  outline?: boolean;
 }
 interface SubmitPropType extends Omit<HTMLProps<HTMLInputElement>, "children"> {
   children: string;
 }
 
 const getButtonStyles = ({
+  outline,
   disabled,
   className,
 }: {
   disabled?: boolean;
+  outline?: boolean;
   className?: string;
 }): string =>
   [
     "px-4 py-2 font-sans text-lg transition",
     disabled
       ? "bg-gray-300 text-gray-600 cursor-default"
+      : outline
+      ? "bg-white border border-primary text-primary hover:bg-primary hover:bg-opacity-10 cursor-pointer focus-offset"
       : "bg-primary text-white hover:opacity-60 cursor-pointer focus-offset",
     className,
   ]

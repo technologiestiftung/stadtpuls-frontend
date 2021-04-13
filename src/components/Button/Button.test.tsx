@@ -28,6 +28,11 @@ describe("Button component", () => {
     const button = screen.getByRole("button");
     expect(button.getAttribute("class")?.includes("cursor-default")).toBe(true);
   });
+  it("should have outline styles when outline", () => {
+    render(<Button outline>Button</Button>);
+    const button = screen.getByRole("button");
+    expect(button.getAttribute("class")?.includes("cursor-pointer")).toBe(true);
+  });
 });
 
 describe("Submit component", () => {

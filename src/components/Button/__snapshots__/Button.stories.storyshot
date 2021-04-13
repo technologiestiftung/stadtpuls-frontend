@@ -19,3 +19,14 @@ exports[`Storyshots UI Elements/Button Disabled Button 1`] = `
   I am a disabled button
 </button>
 `;
+
+exports[`Storyshots UI Elements/Button Outlined Button 1`] = `
+<button
+  className="px-4 py-2 font-sans text-lg transition bg-white border border-primary text-primary hover:bg-primary hover:bg-opacity-10 cursor-pointer focus-offset"
+  disabled={false}
+  outline={true}
+  type="button"
+>
+  I am an outlined button
+</button>
+`;
