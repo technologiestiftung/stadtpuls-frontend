@@ -48,7 +48,7 @@ describe("AuthProvider", () => {
   });
 });
 
-describe("signIn", () => {
+describe("signIn aka. Authentication (because of magic link, also signUp)", () => {
   it("should send a magic link after authenticating", async () => {
     const oldSignIn = supabase.auth.signIn.bind(supabase.auth);
     const signInMock = jest
@@ -95,6 +95,29 @@ describe("signIn", () => {
     await waitFor(() => {
       expect(screen.getByText("READY")).toBeInTheDocument();
       supabase.auth.signIn = oldSignIn;
+    });
+  });
+  it("should retrieve the user from the session", async () => {
+    const oldSessionFuncion = supabase.auth.session.bind(supabase.auth);
+    supabase.auth.session = jest.fn().mockReturnValue({
+      user: {
+        email: "contact@example.com",
+      },
+    });
+    const ChildComponent = createChildComponent({
+      isReady: auth => auth.authenticatedUser?.email === "contact@example.com",
+    });
+    act(() => {
+      render(
+        <AuthProvider>
+          <ChildComponent />
+        </AuthProvider>
+      );
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText("READY")).toBeInTheDocument();
+      supabase.auth.session = oldSessionFuncion;
     });
   });
 });
