@@ -1,9 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots UI Elements/Button Dangerous Button 1`] = `
+<button
+  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-secondary text-secondary hover:bg-secondary hover:bg-opacity-10"
+  type="button"
+  variant="dangerous"
+>
+  I am a dangerous button
+</button>
+`;
+
 exports[`Storyshots UI Elements/Button Default Button 1`] = `
 <button
-  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-primary text-white hover:opacity-60"
-  disabled={false}
+  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-primary text-primary hover:bg-primary hover:bg-opacity-10"
   type="button"
 >
   I am a button
@@ -13,29 +22,19 @@ exports[`Storyshots UI Elements/Button Default Button 1`] = `
 exports[`Storyshots UI Elements/Button Disabled Button 1`] = `
 <button
   className="px-4 py-2 font-sans text-lg transition bg-gray-300 text-gray-600 cursor-default"
-  disabled={true}
   type="button"
+  variant="disabled"
 >
   I am a disabled button
 </button>
 `;
 
-exports[`Storyshots UI Elements/Button Secondary Button 1`] = `
+exports[`Storyshots UI Elements/Button Primary Button 1`] = `
 <button
-  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-primary text-primary hover:bg-primary hover:bg-opacity-10"
-  secondary={true}
+  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-primary text-white hover:opacity-60"
   type="button"
+  variant="primary"
 >
-  I am a secondary button
-</button>
-`;
-
-exports[`Storyshots UI Elements/Button Warning Button 1`] = `
-<button
-  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-secondary text-secondary hover:bg-secondary hover:bg-opacity-10"
-  type="button"
-  warning={true}
->
-  I am a warning button
+  I am a primary button
 </button>
 `;

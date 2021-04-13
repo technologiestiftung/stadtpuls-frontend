@@ -7,17 +7,33 @@ export default {
   component: Submit,
 } as Meta;
 
-const SubmitTemplate: Story<HTMLProps<HTMLInputElement>> = ({
+interface SubmitTemplatePropTypes extends HTMLProps<HTMLInputElement> {
+  variant?: "primary" | "secondary" | "dangerous" | "disabled";
+}
+
+const SubmitTemplate: Story<SubmitTemplatePropTypes> = ({
   children,
-  disabled,
+  variant,
 }) => (
-  <Submit disabled={disabled}>
+  <Submit variant={variant}>
     {typeof children === "string" ? children : "Hello"}
   </Submit>
 );
 
 export const DefaultSubmit = SubmitTemplate.bind({});
-DefaultSubmit.args = { disabled: false, children: "I am a submit" };
+DefaultSubmit.args = { children: "I am a submit" };
+
+export const PrimarySubmit = SubmitTemplate.bind({});
+PrimarySubmit.args = { variant: "primary", children: "I am a primary submit" };
+
+export const DangerousSubmit = SubmitTemplate.bind({});
+DangerousSubmit.args = {
+  variant: "dangerous",
+  children: "I am a dangerous submit",
+};
 
 export const DisabledSubmit = SubmitTemplate.bind({});
-DisabledSubmit.args = { disabled: true, children: "I am a disabled submit" };
+DisabledSubmit.args = {
+  variant: "disabled",
+  children: "I am a disabled submit",
+};

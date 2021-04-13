@@ -3,37 +3,40 @@ import { forwardRef, HTMLProps, ReactNode } from "react";
 interface ButtonPropType
   extends Omit<HTMLProps<HTMLButtonElement>, "children"> {
   children: ReactNode;
-  secondary?: boolean;
-  warning?: boolean;
+  variant?: "primary" | "secondary" | "dangerous" | "disabled";
 }
 interface SubmitPropType extends Omit<HTMLProps<HTMLInputElement>, "children"> {
   children: string;
+  variant?: "primary" | "secondary" | "dangerous" | "disabled";
 }
 
 const getButtonStyles = ({
-  secondary,
-  warning,
-  disabled,
+  variant,
   className,
 }: {
-  secondary?: boolean;
-  disabled?: boolean;
-  warning?: boolean;
+  variant?: "primary" | "secondary" | "dangerous" | "disabled";
   className?: string;
 }): string => {
   const classes = ["px-4 py-2 font-sans text-lg transition"];
-  if (disabled) classes.push("bg-gray-300 text-gray-600 cursor-default");
-  else {
-    classes.push("cursor-pointer focus-offset");
-    if (secondary)
+  switch (variant) {
+    case "primary":
       classes.push(
-        `bg-white border border-primary text-primary hover:bg-primary hover:bg-opacity-10`
+        "cursor-pointer focus-offset bg-primary text-white hover:opacity-60"
       );
-    else if (warning)
+      break;
+    case "dangerous":
       classes.push(
-        `bg-white border border-secondary text-secondary hover:bg-secondary hover:bg-opacity-10`
+        "cursor-pointer focus-offset bg-white border border-secondary text-secondary hover:bg-secondary hover:bg-opacity-10"
       );
-    else classes.push(`bg-primary text-white hover:opacity-60`);
+      break;
+    case "disabled":
+      classes.push("bg-gray-300 text-gray-600 cursor-default");
+      break;
+    default:
+      classes.push(
+        "cursor-pointer focus-offset bg-white border border-primary text-primary hover:bg-primary hover:bg-opacity-10"
+      );
+      break;
   }
   if (className) classes.push(className);
   return classes.filter(Boolean).join(" ");

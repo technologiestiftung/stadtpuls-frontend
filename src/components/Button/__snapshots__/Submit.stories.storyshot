@@ -1,9 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots UI Elements/Submit Dangerous Submit 1`] = `
+<input
+  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-secondary text-secondary hover:bg-secondary hover:bg-opacity-10"
+  type="submit"
+  value="I am a dangerous submit"
+  variant="dangerous"
+/>
+`;
+
 exports[`Storyshots UI Elements/Submit Default Submit 1`] = `
 <input
-  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-primary text-white hover:opacity-60"
-  disabled={false}
+  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-primary text-primary hover:bg-primary hover:bg-opacity-10"
   type="submit"
   value="I am a submit"
 />
@@ -12,8 +20,17 @@ exports[`Storyshots UI Elements/Submit Default Submit 1`] = `
 exports[`Storyshots UI Elements/Submit Disabled Submit 1`] = `
 <input
   className="px-4 py-2 font-sans text-lg transition bg-gray-300 text-gray-600 cursor-default"
-  disabled={true}
   type="submit"
   value="I am a disabled submit"
+  variant="disabled"
+/>
+`;
+
+exports[`Storyshots UI Elements/Submit Primary Submit 1`] = `
+<input
+  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-primary text-white hover:opacity-60"
+  type="submit"
+  value="I am a primary submit"
+  variant="primary"
 />
 `;

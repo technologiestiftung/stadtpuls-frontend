@@ -8,35 +8,31 @@ export default {
 } as Meta;
 
 interface ButtonTemplatePropTypes extends HTMLProps<HTMLButtonElement> {
-  secondary?: boolean;
-  warning?: boolean;
+  variant?: "primary" | "secondary" | "dangerous" | "disabled";
 }
 
 const ButtonTemplate: Story<ButtonTemplatePropTypes> = ({
   children,
-  disabled,
-  warning,
-  secondary,
-}) => (
-  <Button warning={warning} disabled={disabled} secondary={secondary}>
-    {children || "Hello"}
-  </Button>
-);
+  variant,
+}) => <Button variant={variant}>{children || "Hello"}</Button>;
 
 export const DefaultButton = ButtonTemplate.bind({});
-DefaultButton.args = { disabled: false, children: "I am a button" };
+DefaultButton.args = { children: "I am a button" };
 
-export const SecondaryButton = ButtonTemplate.bind({});
-SecondaryButton.args = {
-  secondary: true,
-  children: "I am a secondary button",
+export const PrimaryButton = ButtonTemplate.bind({});
+PrimaryButton.args = {
+  variant: "primary",
+  children: "I am a primary button",
 };
 
-export const WarningButton = ButtonTemplate.bind({});
-WarningButton.args = {
-  warning: true,
-  children: "I am a warning button",
+export const DangerousButton = ButtonTemplate.bind({});
+DangerousButton.args = {
+  variant: "dangerous",
+  children: "I am a dangerous button",
 };
 
 export const DisabledButton = ButtonTemplate.bind({});
-DisabledButton.args = { disabled: true, children: "I am a disabled button" };
+DisabledButton.args = {
+  variant: "disabled",
+  children: "I am a disabled button",
+};
