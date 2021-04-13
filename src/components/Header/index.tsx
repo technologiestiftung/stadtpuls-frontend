@@ -5,14 +5,16 @@ import { IotHubLogo } from "@components/IotHubLogo";
 import { TsbLogoSymbol } from "@components/TsbLogoSymbol";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 
-const LoginLink: FC = () => (
-  <Link href='/signin'>
-    <a href='/signin' className='group'>
+const LoginLink: FC<{
+  href: string;
+}> = ({ children, href }) => (
+  <Link href={href}>
+    <a href={href} className='group'>
       <span className='text-gray-400 transform -translate-y-0.5 transition inline-block group-hover:text-primary'>
         <AccountCircle />
       </span>
       <span className='inline-block ml-1 group-hover:text-primary transition'>
-        Anmeldung
+        {children}
       </span>
     </a>
   </Link>
@@ -31,8 +33,10 @@ export const Header: React.FC = () => {
       <Link href='/'>
         <IotHubLogo />
       </Link>
-      <section className='flex gap-8'>
-        {authenticatedUser ? authenticatedUser.email : <LoginLink />}
+      <section className='flex gap-8 items-center'>
+        <LoginLink href={authenticatedUser ? "/user" : "/signin"}>
+          {authenticatedUser ? authenticatedUser.email : "Anmeldung"}
+        </LoginLink>
         <TsbLogoSymbol />
       </section>
     </header>
