@@ -4,7 +4,7 @@ interface ButtonPropType
   extends Omit<HTMLProps<HTMLButtonElement>, "children"> {
   children: ReactNode;
   secondary?: boolean;
-  outline?: boolean;
+  warning?: boolean;
 }
 interface SubmitPropType extends Omit<HTMLProps<HTMLInputElement>, "children"> {
   children: string;
@@ -12,25 +12,28 @@ interface SubmitPropType extends Omit<HTMLProps<HTMLInputElement>, "children"> {
 
 const getButtonStyles = ({
   secondary,
-  outline,
+  warning,
   disabled,
   className,
 }: {
   secondary?: boolean;
   disabled?: boolean;
-  outline?: boolean;
+  warning?: boolean;
   className?: string;
 }): string => {
   const classes = ["px-4 py-2 font-sans text-lg transition"];
   if (disabled) classes.push("bg-gray-300 text-gray-600 cursor-default");
   else {
     classes.push("cursor-pointer focus-offset");
-    const color = secondary ? "secondary" : "primary";
-    if (outline)
+    if (secondary)
       classes.push(
-        `bg-white border border-${color} text-${color} hover:bg-${color} hover:bg-opacity-10`
+        `bg-white border border-primary text-primary hover:bg-primary hover:bg-opacity-10`
       );
-    else classes.push(`bg-${color} text-white hover:opacity-60`);
+    else if (warning)
+      classes.push(
+        `bg-white border border-secondary text-secondary hover:bg-secondary hover:bg-opacity-10`
+      );
+    else classes.push(`bg-primary text-white hover:opacity-60`);
   }
   if (className) classes.push(className);
   return classes.filter(Boolean).join(" ");

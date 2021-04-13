@@ -28,15 +28,17 @@ describe("Button component", () => {
     const button = screen.getByRole("button");
     expect(button.getAttribute("class")?.includes("cursor-default")).toBe(true);
   });
-  it("should have outline styles when outline", () => {
-    render(<Button outline>Button</Button>);
+  it("should have secondary styles when secondary", () => {
+    render(<Button secondary>Button</Button>);
     const button = screen.getByRole("button");
     expect(button.getAttribute("class")?.includes("border-primary")).toBe(true);
   });
-  it("should have secondary colors when secondary", () => {
-    render(<Button secondary>Button</Button>);
+  it("should have warning styles when warning", () => {
+    render(<Button warning>Button</Button>);
     const button = screen.getByRole("button");
-    expect(button.getAttribute("class")?.includes("bg-secondary")).toBe(true);
+    expect(button.getAttribute("class")?.includes("border-secondary")).toBe(
+      true
+    );
   });
 });
 

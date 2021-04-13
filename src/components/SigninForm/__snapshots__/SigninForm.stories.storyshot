@@ -11,7 +11,7 @@ exports[`Storyshots Forms/Signin Default 1`] = `
 >
   <div>
     <h1
-      className="text-primary text-3xl font-semibold m-0 mb-4"
+      className="text-primary text-3xl font-semibold m-0 mb-4 "
     >
       Login
     </h1>

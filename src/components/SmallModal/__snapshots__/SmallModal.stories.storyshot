@@ -11,7 +11,7 @@ exports[`Storyshots UI Elements/SmallModal With Footer Content 1`] = `
 >
   <div>
     <h1
-      className="text-primary text-3xl font-semibold m-0 mb-4"
+      className="text-primary text-3xl font-semibold m-0 mb-4 "
     >
       Willkommen!
     </h1>
@@ -59,7 +59,7 @@ exports[`Storyshots UI Elements/SmallModal With Footer Content 1`] = `
 </div>
 `;
 
-exports[`Storyshots UI Elements/SmallModal With Secondary Title 1`] = `
+exports[`Storyshots UI Elements/SmallModal With Secondary Color Title 1`] = `
 <div
   className="max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
   style={
@@ -70,7 +70,7 @@ exports[`Storyshots UI Elements/SmallModal With Secondary Title 1`] = `
 >
   <div>
     <h1
-      className="text-secondary text-3xl font-semibold m-0 mb-4"
+      className="text-primary text-3xl font-semibold m-0 mb-4 text-secondary"
     >
       Bitte bestätige die Löschung deines Accounts
     </h1>
@@ -92,7 +92,7 @@ exports[`Storyshots UI Elements/SmallModal Without Footer Content 1`] = `
 >
   <div>
     <h1
-      className="text-primary text-3xl font-semibold m-0 mb-4"
+      className="text-primary text-3xl font-semibold m-0 mb-4 "
     >
       Gehe zu deinen E-Mails
     </h1>

@@ -8,17 +8,17 @@ export default {
 } as Meta;
 
 interface ButtonTemplatePropTypes extends HTMLProps<HTMLButtonElement> {
-  outline?: boolean;
   secondary?: boolean;
+  warning?: boolean;
 }
 
 const ButtonTemplate: Story<ButtonTemplatePropTypes> = ({
   children,
   disabled,
-  outline,
+  warning,
   secondary,
 }) => (
-  <Button outline={outline} disabled={disabled} secondary={secondary}>
+  <Button warning={warning} disabled={disabled} secondary={secondary}>
     {children || "Hello"}
   </Button>
 );
@@ -26,26 +26,16 @@ const ButtonTemplate: Story<ButtonTemplatePropTypes> = ({
 export const DefaultButton = ButtonTemplate.bind({});
 DefaultButton.args = { disabled: false, children: "I am a button" };
 
-export const DefaultOutlinedButton = ButtonTemplate.bind({});
-DefaultOutlinedButton.args = {
-  disabled: false,
-  outline: true,
-  children: "I am an outlined button",
-};
-
 export const SecondaryButton = ButtonTemplate.bind({});
 SecondaryButton.args = {
   secondary: true,
-  disabled: false,
   children: "I am a secondary button",
 };
 
-export const SecondaryOutlinedButton = ButtonTemplate.bind({});
-SecondaryOutlinedButton.args = {
-  secondary: true,
-  disabled: false,
-  outline: true,
-  children: "I am a secondary outlined button",
+export const WarningButton = ButtonTemplate.bind({});
+WarningButton.args = {
+  warning: true,
+  children: "I am a warning button",
 };
 
 export const DisabledButton = ButtonTemplate.bind({});

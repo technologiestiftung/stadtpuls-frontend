@@ -2,7 +2,7 @@ import { HTMLProps, FC, ReactNode } from "react";
 
 interface SmallModalPropType extends HTMLProps<HTMLFormElement> {
   title: string;
-  secondary?: boolean;
+  titleClassName?: string;
   footerContent?: ReactNode;
 }
 
@@ -10,7 +10,7 @@ export const SmallModal: FC<SmallModalPropType> = ({
   title,
   children,
   footerContent,
-  secondary,
+  titleClassName,
 }) => {
   return (
     <div
@@ -19,9 +19,9 @@ export const SmallModal: FC<SmallModalPropType> = ({
     >
       <div>
         <h1
-          className={`text-${
-            secondary ? "secondary" : "primary"
-          } text-3xl font-semibold m-0 mb-4`}
+          className={`text-primary text-3xl font-semibold m-0 mb-4 ${
+            titleClassName ? titleClassName : ""
+          }`}
         >
           {title}
         </h1>

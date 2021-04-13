@@ -10,17 +10,6 @@ exports[`Storyshots UI Elements/Button Default Button 1`] = `
 </button>
 `;
 
-exports[`Storyshots UI Elements/Button Default Outlined Button 1`] = `
-<button
-  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-primary text-primary hover:bg-primary hover:bg-opacity-10"
-  disabled={false}
-  outline={true}
-  type="button"
->
-  I am an outlined button
-</button>
-`;
-
 exports[`Storyshots UI Elements/Button Disabled Button 1`] = `
 <button
   className="px-4 py-2 font-sans text-lg transition bg-gray-300 text-gray-600 cursor-default"
@@ -33,8 +22,7 @@ exports[`Storyshots UI Elements/Button Disabled Button 1`] = `
 
 exports[`Storyshots UI Elements/Button Secondary Button 1`] = `
 <button
-  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-secondary text-white hover:opacity-60"
-  disabled={false}
+  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-primary text-primary hover:bg-primary hover:bg-opacity-10"
   secondary={true}
   type="button"
 >
@@ -42,14 +30,12 @@ exports[`Storyshots UI Elements/Button Secondary Button 1`] = `
 </button>
 `;
 
-exports[`Storyshots UI Elements/Button Secondary Outlined Button 1`] = `
+exports[`Storyshots UI Elements/Button Warning Button 1`] = `
 <button
   className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-secondary text-secondary hover:bg-secondary hover:bg-opacity-10"
-  disabled={false}
-  outline={true}
-  secondary={true}
   type="button"
+  warning={true}
 >
-  I am a secondary outlined button
+  I am a warning button
 </button>
 `;

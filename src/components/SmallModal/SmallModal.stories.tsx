@@ -13,12 +13,12 @@ const Template: Story<{
   title: string;
   children: ReactNode;
   footerContent?: ReactNode;
-  secondary?: boolean;
+  titleClassName?: string;
 }> = args => (
   <SmallModal
     title={args.title}
     footerContent={args.footerContent}
-    secondary={args.secondary}
+    titleClassName={args.titleClassName}
   >
     {args.children}
   </SmallModal>
@@ -35,10 +35,10 @@ WithoutFooterContent.args = {
   ),
 };
 
-export const WithSecondaryTitle = Template.bind({});
-WithSecondaryTitle.args = {
+export const WithSecondaryColorTitle = Template.bind({});
+WithSecondaryColorTitle.args = {
   title: "Bitte bestätige die Löschung deines Accounts",
-  secondary: true,
+  titleClassName: "text-secondary",
   children: <p>Sind sie sicher?</p>,
 };
 
