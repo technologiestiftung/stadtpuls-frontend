@@ -46,10 +46,11 @@ exports[`Storyshots UI Elements/SmallModal With Dangerous Content 1`] = `
 
 exports[`Storyshots UI Elements/SmallModal With Footer Content 1`] = `
 <div
-  className="max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
+  className="max-w-full bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
   style={
     Object {
       "minHeight": 360,
+      "width": "28rem",
     }
   }
 >
@@ -106,10 +107,11 @@ exports[`Storyshots UI Elements/SmallModal With Footer Content 1`] = `
 
 exports[`Storyshots UI Elements/SmallModal Without Footer Content 1`] = `
 <div
-  className="max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
+  className="max-w-full bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
   style={
     Object {
       "minHeight": 360,
+      "width": "28rem",
     }
   }
 >

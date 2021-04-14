@@ -36,6 +36,9 @@
       "@mocks/*": [
         "./src/mocks/*"
       ],
+      "@auth/*": [
+        "./src/auth/*"
+      ],
     },
     "moduleResolution": "node"
   },

@@ -1,6 +1,6 @@
-import { HTMLProps, FC, ReactNode } from "react";
+import { FC, ReactNode } from "react";
 
-interface SmallModalPropType extends HTMLProps<HTMLFormElement> {
+interface SmallModalPropType {
   title: string;
   variant?: "dangerous" | "primary";
   footerContent?: ReactNode;
@@ -14,8 +14,8 @@ export const SmallModal: FC<SmallModalPropType> = ({
 }) => {
   return (
     <div
-      className='max-w-md bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between'
-      style={{ minHeight: 360 }}
+      className='max-w-full bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between'
+      style={{ minHeight: 360, width: "28rem" }}
     >
       <div>
         <h1

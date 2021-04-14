@@ -6,7 +6,7 @@ The API for retrieving data can found in a [different repository](https://github
 
 ## Getting started
 
-Clone this repository, then on the root level create a file named `.env` and fill in the required values (see `.env.example` for a reference).
+Clone this repository, then on the root level create a file named `.env` or `.env.development.local` and fill in the required values (see `.env.example` for a reference).
 
 The actual API is mocked in dev mode using a [Mock Service Worker (msw)](https://mswjs.io/).
 

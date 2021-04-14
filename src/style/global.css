@@ -102,4 +102,8 @@
   [type='radio'].error {
     @apply border-secondary text-secondary focus:ring-secondary;
   }
+
+  p {
+    @apply max-w-prose;
+  }
 };

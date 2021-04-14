@@ -6,6 +6,9 @@ import "@testing-library/jest-dom/extend-expect";
 import { server } from "./mocks/server";
 import "whatwg-fetch";
 
+const noop = (): void => undefined;
+Object.defineProperty(window, "scrollTo", { value: noop, writable: true });
+
 beforeAll(() => {
   // Enable the mocking in tests.
   server.listen();
