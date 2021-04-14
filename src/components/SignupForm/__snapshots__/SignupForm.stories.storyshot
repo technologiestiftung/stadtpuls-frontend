@@ -59,7 +59,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
             Ich akzeptiere die
              
             <a
-              className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset "
+              className="text-blue-500 underline transition hover:opacity-60 cursor-pointer focus-offset "
               href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
             >
               Nutzungsbedingungen
@@ -78,7 +78,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
     >
       Hast du schon einen Account? 
       <a
-        className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset inline-block"
+        className="text-blue-500 underline transition hover:opacity-60 cursor-pointer focus-offset inline-block"
         href="/signin"
         onClick={[Function]}
         onMouseEnter={[Function]}
