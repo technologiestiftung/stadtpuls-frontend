@@ -54,7 +54,7 @@
   [multiple],
   textarea,
   select {
-    @apply block w-full border-gray-400 mb-4 focus:border-primary focus:ring-primary;
+    @apply block w-full text-primary border-gray-400 mb-4 focus:border-primary focus:ring-primary;
   }
 
   [type='text'].error,
@@ -73,6 +73,24 @@
   textarea.error,
   select.error {
     @apply border-secondary focus:border-secondary focus:ring-secondary;
+  }
+
+  [type='text']:disabled,
+  [type='email']:disabled,
+  [type='url']:disabled,
+  [type='password']:disabled,
+  [type='number']:disabled,
+  [type='date']:disabled,
+  [type='datetime-local']:disabled,
+  [type='month']:disabled,
+  [type='search']:disabled,
+  [type='tel']:disabled,
+  [type='time']:disabled,
+  [type='week']:disabled,
+  [multiple]:disabled,
+  textarea:disabled,
+  select:disabled {
+    @apply opacity-50;
   }
 
   [type='checkbox'],

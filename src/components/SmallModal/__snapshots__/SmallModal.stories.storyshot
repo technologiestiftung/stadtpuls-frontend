@@ -1,5 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots UI Elements/SmallModal With Dangerous Content 1`] = `
+<div
+  className="max-w-full bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
+  style={
+    Object {
+      "minHeight": 360,
+      "width": "28rem",
+    }
+  }
+>
+  <div>
+    <h1
+      className="text-3xl font-semibold m-0 mb-4 text-red-500"
+    >
+      Bitte bestätige die Löschung deines Accounts
+    </h1>
+    <p>
+      Dein Account wird undwiederruflich gelöscht. Alle deine Projekte und Daten werden von der Platform und aus der Datenbank entfernt.
+    </p>
+  </div>
+  <div
+    className="flex gap-4 place-content-between"
+  >
+    <div
+      className="block w-full text-right"
+    >
+      <button
+        className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-red-500 text-red-500 hover:bg-red-500 hover:bg-opacity-10 mr-4"
+        type="button"
+        variant="dangerous"
+      >
+        Löschen
+      </button>
+      <button
+        className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
+        type="button"
+        variant="primary"
+      >
+        Abbrechen
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots UI Elements/SmallModal With Footer Content 1`] = `
 <div
   className="max-w-full bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
@@ -12,7 +57,7 @@ exports[`Storyshots UI Elements/SmallModal With Footer Content 1`] = `
 >
   <div>
     <h1
-      className="text-primary text-3xl font-semibold m-0 mb-4"
+      className="text-3xl font-semibold m-0 mb-4 text-blue-500"
     >
       Willkommen!
     </h1>
@@ -50,8 +95,9 @@ exports[`Storyshots UI Elements/SmallModal With Footer Content 1`] = `
       className="block w-full text-right"
     >
       <button
-        className="px-4 py-2 font-sans text-lg transition bg-primary text-white hover:opacity-60 cursor-pointer focus-offset"
+        className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
         type="button"
+        variant="primary"
       >
         Dein Profil
       </button>
@@ -72,7 +118,7 @@ exports[`Storyshots UI Elements/SmallModal Without Footer Content 1`] = `
 >
   <div>
     <h1
-      className="text-primary text-3xl font-semibold m-0 mb-4"
+      className="text-3xl font-semibold m-0 mb-4 text-blue-500"
     >
       Gehe zu deinen E-Mails
     </h1>
