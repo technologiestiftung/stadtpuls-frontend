@@ -91,12 +91,12 @@ exports[`Storyshots Forms/FormTextInput With Error 1`] = `
     type="text"
   />
   <p
-    className="text-secondary text-sm"
+    className="text-red-500 text-sm"
   >
     Your name has to be beautiful
   </p>
   <p
-    className="text-secondary text-sm"
+    className="text-red-500 text-sm"
   >
     Your name is not long enough
   </p>

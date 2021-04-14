@@ -8,7 +8,7 @@ export const TextLink = forwardRef<
   <a
     {...rest}
     ref={ref}
-    className={`text-primary underline transition hover:opacity-60 cursor-pointer focus-offset ${className}`}
+    className={`text-blue-500 underline transition hover:opacity-60 cursor-pointer focus-offset ${className}`}
   >
     {children}
   </a>
