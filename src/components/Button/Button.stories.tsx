@@ -8,13 +8,19 @@ export default {
 } as Meta;
 
 interface ButtonTemplatePropTypes extends HTMLProps<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "dangerous" | "disabled";
+  disabled?: boolean;
+  variant?: "primary" | "secondary" | "dangerous";
 }
 
 const ButtonTemplate: Story<ButtonTemplatePropTypes> = ({
   children,
   variant,
-}) => <Button variant={variant}>{children || "Hello"}</Button>;
+  disabled,
+}) => (
+  <Button variant={variant} disabled={disabled}>
+    {children}
+  </Button>
+);
 
 export const DefaultButton = ButtonTemplate.bind({});
 DefaultButton.args = { children: "I am a button" };
@@ -33,6 +39,6 @@ DangerousButton.args = {
 
 export const DisabledButton = ButtonTemplate.bind({});
 DisabledButton.args = {
-  variant: "disabled",
+  disabled: true,
   children: "I am a disabled button",
 };

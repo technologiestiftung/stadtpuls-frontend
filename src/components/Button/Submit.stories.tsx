@@ -8,14 +8,16 @@ export default {
 } as Meta;
 
 interface SubmitTemplatePropTypes extends HTMLProps<HTMLInputElement> {
-  variant?: "primary" | "secondary" | "dangerous" | "disabled";
+  disabled?: boolean;
+  variant?: "primary" | "secondary" | "dangerous";
 }
 
 const SubmitTemplate: Story<SubmitTemplatePropTypes> = ({
   children,
   variant,
+  disabled,
 }) => (
-  <Submit variant={variant}>
+  <Submit variant={variant} disabled={disabled}>
     {typeof children === "string" ? children : "Hello"}
   </Submit>
 );
@@ -34,6 +36,6 @@ DangerousSubmit.args = {
 
 export const DisabledSubmit = SubmitTemplate.bind({});
 DisabledSubmit.args = {
-  variant: "disabled",
+  disabled: true,
   children: "I am a disabled submit",
 };

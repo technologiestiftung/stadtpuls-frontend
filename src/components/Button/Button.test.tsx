@@ -24,21 +24,19 @@ describe("Button component", () => {
     expect(button.getAttribute("class")?.includes("cursor-pointer")).toBe(true);
   });
   it("should have disabled styles when disabled", () => {
-    render(<Button variant='disabled'>Button</Button>);
+    render(<Button disabled>Button</Button>);
     const button = screen.getByRole("button");
     expect(button.getAttribute("class")?.includes("cursor-default")).toBe(true);
   });
   it("should have primary styles when primary", () => {
     render(<Button variant='primary'>Button</Button>);
     const button = screen.getByRole("button");
-    expect(button.getAttribute("class")?.includes("bg-primary")).toBe(true);
+    expect(button.getAttribute("class")?.includes("bg-blue-500")).toBe(true);
   });
   it("should have dangerous styles when dangerous", () => {
     render(<Button variant='dangerous'>Button</Button>);
     const button = screen.getByRole("button");
-    expect(button.getAttribute("class")?.includes("border-secondary")).toBe(
-      true
-    );
+    expect(button.getAttribute("class")?.includes("border-red-500")).toBe(true);
   });
 });
 
@@ -65,20 +63,18 @@ describe("Submit component", () => {
     expect(submit.getAttribute("class")?.includes("cursor-pointer")).toBe(true);
   });
   it("should have disabled styles when disabled", () => {
-    render(<Submit variant='disabled'>Submit</Submit>);
+    render(<Submit disabled>Submit</Submit>);
     const submit = screen.getByText("Submit");
     expect(submit.getAttribute("class")?.includes("cursor-default")).toBe(true);
   });
   it("should have primary styles when primary", () => {
     render(<Submit variant='primary'>Submit</Submit>);
     const submit = screen.getByText("Submit");
-    expect(submit.getAttribute("class")?.includes("bg-primary")).toBe(true);
+    expect(submit.getAttribute("class")?.includes("bg-blue-500")).toBe(true);
   });
   it("should have dangerous styles when dangerous", () => {
     render(<Submit variant='dangerous'>Submit</Submit>);
     const submit = screen.getByText("Submit");
-    expect(submit.getAttribute("class")?.includes("border-secondary")).toBe(
-      true
-    );
+    expect(submit.getAttribute("class")?.includes("border-red-500")).toBe(true);
   });
 });
