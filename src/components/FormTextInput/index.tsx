@@ -32,7 +32,7 @@ export const FormTextInput = forwardRef<
       className={`mb-2 ${errors.length ? "error" : ""}`}
     />
     {errors.map(error => (
-      <p className='text-secondary text-sm' key={error}>
+      <p className='text-red-500 text-sm' key={error}>
         {error}
       </p>
     ))}

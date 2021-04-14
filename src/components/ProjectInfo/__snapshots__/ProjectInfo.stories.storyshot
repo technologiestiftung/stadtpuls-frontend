@@ -13,7 +13,7 @@ exports[`Storyshots Layout/ProjectInfo Default Project Info 1`] = `
     }
   >
     <h2
-      className="text-primary text-3xl font-bold"
+      className="text-blue-500 text-3xl font-bold"
     >
       Temperatur Grunewaldstraße
     </h2>

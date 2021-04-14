@@ -20,7 +20,7 @@ export const ProjectInfo: FC<ProjectInfoPropType> = ({
       className='grid gap-4 items-start'
       style={{ gridTemplateColumns: "auto max-content" }}
     >
-      <h2 className='text-primary text-3xl font-bold'>{title}</h2>
+      <h2 className='text-blue-500 text-3xl font-bold'>{title}</h2>
       <a
         href={projectViewLink}
         className='p-2 border border-blue-500 text-blue-500 hover:bg-blue-50 transition-colors'

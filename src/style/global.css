@@ -3,7 +3,7 @@
 @tailwind utilities;
 @layer utilities {
   .focus-offset {
-    @apply focus:ring-primary focus:ring-2 focus:ring-offset-white focus:ring-offset-2 focus:outline-none;
+    @apply focus:ring-blue-500 focus:ring-2 focus:ring-offset-white focus:ring-offset-2 focus:outline-none;
   }
 };
 @layer base {
@@ -54,7 +54,7 @@
   [multiple],
   textarea,
   select {
-    @apply block w-full text-primary border-gray-400 mb-4 focus:border-primary focus:ring-primary;
+    @apply block w-full text-blue-500 border-gray-400 mb-4 focus:border-blue-500 focus:ring-blue-500;
   }
 
   [type='text'].error,
@@ -72,7 +72,7 @@
   [multiple].error,
   textarea.error,
   select.error {
-    @apply border-secondary focus:border-secondary focus:ring-secondary;
+    @apply border-red-500 focus:border-red-500 focus:ring-red-500;
   }
 
   [type='text']:disabled,
@@ -95,12 +95,12 @@
 
   [type='checkbox'],
   [type='radio'] {
-    @apply mr-2 transform translate-y-0.5 border-gray-400 text-primary focus:ring-primary;
+    @apply mr-2 transform translate-y-0.5 border-gray-400 text-blue-500 focus:ring-blue-500;
   }
 
   [type='checkbox'].error,
   [type='radio'].error {
-    @apply border-secondary text-secondary focus:ring-secondary;
+    @apply border-red-500 text-red-500 focus:ring-red-500;
   }
 
   p {
