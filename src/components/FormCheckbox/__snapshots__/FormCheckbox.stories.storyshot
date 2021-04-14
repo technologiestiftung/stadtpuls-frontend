@@ -55,12 +55,12 @@ exports[`Storyshots Forms/FormCheckbox With Error 1`] = `
       .
     </label>
     <p
-      className="text-secondary text-sm"
+      className="text-red-500 text-sm"
     >
       Your checkbox has to be beautiful
     </p>
     <p
-      className="text-secondary text-sm"
+      className="text-red-500 text-sm"
     >
       Your checkbox is not checked
     </p>

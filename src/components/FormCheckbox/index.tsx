@@ -34,7 +34,7 @@ export const FormCheckbox = forwardRef<HTMLInputElement, FormCheckboxPropType>(
             </label>
           )}
           {errors.map(error => (
-            <p className='text-secondary text-sm' key={error}>
+            <p className='text-red-500 text-sm' key={error}>
               {error}
             </p>
           ))}

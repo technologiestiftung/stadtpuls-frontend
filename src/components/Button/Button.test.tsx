@@ -18,15 +18,45 @@ describe("Button component", () => {
     const button = screen.getByRole("button");
     expect(button.getAttribute("class")?.includes("transition")).toBe(true);
   });
-  it("should have non disabled styles when not disabled", () => {
+  it("should have default styles when default", () => {
     render(<Button>Button</Button>);
     const button = screen.getByRole("button");
     expect(button.getAttribute("class")?.includes("cursor-pointer")).toBe(true);
   });
-  it("should have disabled styles when disabled", () => {
+  it("should have primary styles when primary", () => {
+    render(<Button variant='primary'>Button</Button>);
+    const button = screen.getByRole("button");
+    expect(button.getAttribute("class")?.includes("bg-blue-500")).toBe(true);
+  });
+  it("should have dangerous styles when dangerous", () => {
+    render(<Button variant='dangerous'>Button</Button>);
+    const button = screen.getByRole("button");
+    expect(button.getAttribute("class")?.includes("border-red-500")).toBe(true);
+  });
+  it("should have default disabled styles when default disabled", () => {
     render(<Button disabled>Button</Button>);
     const button = screen.getByRole("button");
-    expect(button.getAttribute("class")?.includes("cursor-default")).toBe(true);
+    expect(button.getAttribute("class")?.includes("border-gray-400")).toBe(
+      true
+    );
+  });
+  it("should have primary disabled styles when primary disabled", () => {
+    render(
+      <Button variant='primary' disabled>
+        Button
+      </Button>
+    );
+    const button = screen.getByRole("button");
+    expect(button.getAttribute("class")?.includes("bg-gray-200")).toBe(true);
+  });
+  it("should have dangerous disabled styles when dangerous disabled", () => {
+    render(
+      <Button variant='dangerous' disabled>
+        Button
+      </Button>
+    );
+    const button = screen.getByRole("button");
+    expect(button.getAttribute("class")?.includes("border-red-300")).toBe(true);
   });
 });
 
@@ -47,12 +77,22 @@ describe("Submit component", () => {
     const submit = screen.getByText("Submit");
     expect(submit.getAttribute("class")?.includes("transition")).toBe(true);
   });
-  it("should have non disabled styles when not disabled", () => {
+  it("should have default styles when default", () => {
     render(<Submit>Submit</Submit>);
     const submit = screen.getByText("Submit");
     expect(submit.getAttribute("class")?.includes("cursor-pointer")).toBe(true);
   });
-  it("should have disabled styles when disabled", () => {
+  it("should have primary styles when primary", () => {
+    render(<Submit variant='primary'>Submit</Submit>);
+    const submit = screen.getByText("Submit");
+    expect(submit.getAttribute("class")?.includes("bg-blue-500")).toBe(true);
+  });
+  it("should have dangerous styles when dangerous", () => {
+    render(<Submit variant='dangerous'>Submit</Submit>);
+    const submit = screen.getByText("Submit");
+    expect(submit.getAttribute("class")?.includes("border-red-500")).toBe(true);
+  });
+  it("should have default disabled styles when default disabled", () => {
     render(<Submit disabled>Submit</Submit>);
     const submit = screen.getByText("Submit");
     expect(submit.getAttribute("class")?.includes("cursor-default")).toBe(true);

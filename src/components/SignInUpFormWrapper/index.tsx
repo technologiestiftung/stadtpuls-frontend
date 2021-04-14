@@ -61,7 +61,9 @@ export const SignInUpFormWrapper: FC<SignInUpFormWrapperPropType> = ({
             className='flex flex-col'
             style={{ justifyContent: "flex-end" }}
           >
-            <Submit form={formId}>{texts.submitButton}</Submit>
+            <Submit variant='primary' form={formId}>
+              {texts.submitButton}
+            </Submit>
           </section>
         </>
       }

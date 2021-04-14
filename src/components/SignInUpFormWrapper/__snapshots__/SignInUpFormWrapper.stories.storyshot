@@ -12,7 +12,7 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signin 1`] = `
 >
   <div>
     <h1
-      className="text-primary text-3xl font-semibold m-0 mb-4"
+      className="text-3xl font-semibold m-0 mb-4 text-blue-500"
     >
       Login
     </h1>
@@ -33,7 +33,7 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signin 1`] = `
     >
       Hast du noch keinen Account? 
       <a
-        className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset inline-block"
+        className="text-blue-500 underline transition hover:opacity-60 cursor-pointer focus-offset inline-block"
         href="/signup"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -50,10 +50,11 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signin 1`] = `
       }
     >
       <input
-        className="px-4 py-2 font-sans text-lg transition bg-primary text-white hover:opacity-60 cursor-pointer focus-offset"
+        className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
         form="signin-form"
         type="submit"
         value="Einloggen"
+        variant="primary"
       />
     </section>
   </div>
@@ -72,7 +73,7 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signup 1`] = `
 >
   <div>
     <h1
-      className="text-primary text-3xl font-semibold m-0 mb-4"
+      className="text-3xl font-semibold m-0 mb-4 text-blue-500"
     >
       Registrierung
     </h1>
@@ -93,7 +94,7 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signup 1`] = `
     >
       Hast du schon einen Account? 
       <a
-        className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset inline-block"
+        className="text-blue-500 underline transition hover:opacity-60 cursor-pointer focus-offset inline-block"
         href="/signin"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -110,10 +111,11 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signup 1`] = `
       }
     >
       <input
-        className="px-4 py-2 font-sans text-lg transition bg-primary text-white hover:opacity-60 cursor-pointer focus-offset"
+        className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
         form="signup-form"
         type="submit"
         value="Registrieren"
+        variant="primary"
       />
     </section>
   </div>
