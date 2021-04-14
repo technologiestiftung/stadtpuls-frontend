@@ -25,7 +25,7 @@ export const DropdownMenu: FC<DropdownMenuPropType> = ({ children, items }) => {
   const menuItemStyles = [
     "block w-full text-black",
     "px-4 py-1.5 cursor-pointer transition text-left",
-    "hover:bg-blue-100 text-blue-500",
+    "hover:bg-blue-50 hover:text-blue-500",
   ]
     .filter(Boolean)
     .join(" ");

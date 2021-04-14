@@ -28,7 +28,7 @@ exports[`Storyshots UI Elements/DropdownMenu Default 1`] = `
         className="py-2"
       >
         <a
-          className="block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-blue-100 text-blue-500"
+          className="block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-blue-50 hover:text-blue-500"
           href="/projects"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -36,7 +36,7 @@ exports[`Storyshots UI Elements/DropdownMenu Default 1`] = `
           Meine Projekte
         </a>
         <a
-          className="block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-blue-100 text-blue-500"
+          className="block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-blue-50 hover:text-blue-500"
           href="/account"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -44,7 +44,7 @@ exports[`Storyshots UI Elements/DropdownMenu Default 1`] = `
           Account
         </a>
         <button
-          className="block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-blue-100 text-blue-500"
+          className="block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-blue-50 hover:text-blue-500"
           onClick={[Function]}
         >
           Logout
