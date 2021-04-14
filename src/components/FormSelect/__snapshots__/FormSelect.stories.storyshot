@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Forms/FormSelect With Label 1`] = `
+<div
+  className="max-w-prose"
+>
+  <label
+    className="block mb-2 cursor-pointer transition hover:opacity-60"
+    htmlFor="Select with label"
+  >
+    Default label
+  </label>
+  <select
+    className="text-blue-500"
+    id="Select with label"
+    min={20}
+    name="Select with label"
+    onChange={[Function]}
+    required={true}
+  >
+    <option
+      value="First option"
+    >
+      First option
+    </option>
+    <option
+      value="Second option"
+    >
+      Second option
+    </option>
+    <option
+      value="Third option"
+    >
+      Third option
+    </option>
+  </select>
+</div>
+`;
+
+exports[`Storyshots Forms/FormSelect Without Label 1`] = `
+<div
+  className="max-w-prose"
+>
+  <select
+    className="text-blue-500"
+    id="Select without label"
+    min={20}
+    name="Select without label"
+    onChange={[Function]}
+    required={true}
+  >
+    <option
+      value="First option"
+    >
+      First option
+    </option>
+    <option
+      value="Second option"
+    >
+      Second option
+    </option>
+    <option
+      value="Third option"
+    >
+      Third option
+    </option>
+  </select>
+</div>
+`;
