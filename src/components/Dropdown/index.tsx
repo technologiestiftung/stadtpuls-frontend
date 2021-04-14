@@ -27,16 +27,18 @@ export const Dropdown: FC<DropdownPropType> = ({
     .filter(Boolean)
     .join(" ");
   return (
-    <button
-      className='inline-block relative cursor-pointer rounded-none focus-offset'
-      onClick={() => setIsVisible(!isVisible)}
-      ref={ref}
-    >
-      {children}
-      {<span aria-hidden className={caretStyles} />}
+    <div className='inline-block relative'>
+      <button
+        className='cursor-pointer rounded-none focus-offset'
+        onClick={() => setIsVisible(!isVisible)}
+        ref={ref}
+      >
+        {children}
+      </button>
+      <span aria-hidden className={caretStyles} />
       <section className={dropdownStyles}>
         <div className='bg-white shadow-md'>{dropdownContent}</div>
       </section>
-    </button>
+    </div>
   );
 };

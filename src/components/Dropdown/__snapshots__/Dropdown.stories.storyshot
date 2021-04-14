@@ -1,15 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI Elements/Dropdown Default 1`] = `
-<button
-  className="inline-block relative cursor-pointer rounded-none focus-offset"
-  onClick={[Function]}
+<div
+  className="inline-block relative"
 >
-  <a
-    className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset "
+  <button
+    className="cursor-pointer rounded-none focus-offset"
+    onClick={[Function]}
   >
-    Click me
-  </a>
+    <a
+      className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset "
+    >
+      Click me
+    </a>
+  </button>
   <span
     aria-hidden={true}
     className="absolute top-full left-1 w-3 h-3 bg-white shadow transition transform rotate-45 translate-y-2 opacity-0 opacity-0"
@@ -29,5 +33,5 @@ exports[`Storyshots UI Elements/Dropdown Default 1`] = `
       </div>
     </div>
   </section>
-</button>
+</div>
 `;
