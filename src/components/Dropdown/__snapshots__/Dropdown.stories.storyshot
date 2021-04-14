@@ -5,9 +5,17 @@ exports[`Storyshots UI Elements/Dropdown Default 1`] = `
   className="inline-block relative cursor-pointer rounded-none focus-offset"
   onClick={[Function]}
 >
-  Click me
+  <a
+    className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset "
+  >
+    Click me
+  </a>
+  <span
+    aria-hidden={true}
+    className="absolute top-full left-1 w-3 h-3 bg-white shadow transition transform rotate-45 translate-y-2 opacity-0 opacity-0"
+  />
   <section
-    className="absolute top-full left-0 transform transition whitespace-nowrap w-auto max-width-md transform-y-4 opacity-0 pointer-events-none"
+    className="absolute top-full left-0 transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 opacity-0 pointer-events-none"
   >
     <div
       className="bg-white shadow-md"
@@ -16,7 +24,7 @@ exports[`Storyshots UI Elements/Dropdown Default 1`] = `
         className="px-4 py-3"
       >
         <h1>
-          I am content
+          Hi. I am the content.
         </h1>
       </div>
     </div>
