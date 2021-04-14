@@ -12,7 +12,7 @@ export const SmallModalOverlay: FC<SmallModalOverlayPropType> = props => {
   const [container, setContainer] = useState<Element | null>(null);
   useEffect(() => {
     setContainer(document.querySelector("body"));
-  });
+  }, [setContainer]);
 
   if (!container) return null;
   else
