@@ -13,8 +13,13 @@ const Template: Story<{
   title: string;
   children: ReactNode;
   footerContent?: ReactNode;
+  variant?: "dangerous" | "primary";
 }> = args => (
-  <SmallModal title={args.title} footerContent={args.footerContent}>
+  <SmallModal
+    title={args.title}
+    footerContent={args.footerContent}
+    variant={args.variant}
+  >
     {args.children}
   </SmallModal>
 );
@@ -46,7 +51,27 @@ WithFooterContent.args = {
   ),
   footerContent: (
     <div className='block w-full text-right'>
-      <Button>Dein Profil</Button>
+      <Button variant='primary'>Dein Profil</Button>
+    </div>
+  ),
+};
+
+export const WithDangerousContent = Template.bind({});
+WithDangerousContent.args = {
+  title: "Bitte bestätige die Löschung deines Accounts",
+  variant: "dangerous",
+  children: (
+    <p>
+      Dein Account wird undwiederruflich gelöscht. Alle deine Projekte und Daten
+      werden von der Platform und aus der Datenbank entfernt.
+    </p>
+  ),
+  footerContent: (
+    <div className='block w-full text-right'>
+      <Button variant='dangerous' className='mr-4'>
+        Löschen
+      </Button>
+      <Button variant='primary'>Abbrechen</Button>
     </div>
   ),
 };

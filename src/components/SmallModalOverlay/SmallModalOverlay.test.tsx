@@ -1,24 +1,24 @@
 import { render, screen } from "@testing-library/react";
-import { SmallModal } from ".";
+import { SmallModalOverlay } from ".";
 
-describe("SmallModal component", () => {
+describe("SmallModalOverlay component", () => {
   it("should render the provided title", () => {
-    render(<SmallModal title='Hello' />);
+    render(<SmallModalOverlay title='Hello' />);
     const title = screen.getByText(/Hello/g);
     expect(title).toBeInTheDocument();
   });
   it("should render the provided chilren", () => {
-    render(<SmallModal title='Title'>Content</SmallModal>);
+    render(<SmallModalOverlay title='Title'>Content</SmallModalOverlay>);
     const content = screen.getByText(/Content/g);
     expect(content).toBeInTheDocument();
   });
   it("should render the provided footerContent", () => {
-    render(<SmallModal title='Title' footerContent='Footer' />);
+    render(<SmallModalOverlay title='Title' footerContent='Footer' />);
     const footerContent = screen.getByText(/Footer/g);
     expect(footerContent).toBeInTheDocument();
   });
   it("should render the secondary colored title when dangerous variant", () => {
-    render(<SmallModal variant='dangerous' title='Hello' />);
+    render(<SmallModalOverlay variant='dangerous' title='Hello' />);
     const title = screen.getByText(/Hello/g);
     expect(title.getAttribute("class")?.includes("text-red-500")).toBe(true);
   });
