@@ -1,10 +1,11 @@
 import { AuthProvider } from "@auth/Auth";
 import { supabase } from "@auth/supabase";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
 import { AuthLink } from ".";
 
 const oldSessionFuncion = supabase.auth.session.bind(supabase.auth);
+const oldLogoutFuncion = supabase.auth.signOut.bind(supabase.auth);
 
 describe("component AuthLink while logged out", () => {
   it("should render Anmeldung by default", () => {
@@ -34,6 +35,7 @@ describe("component AuthLink while logged in", () => {
 
   afterAll(() => {
     supabase.auth.session = oldSessionFuncion;
+    supabase.auth.signOut = oldLogoutFuncion;
   });
   it("should render the user email if logged in", () => {
     render(
@@ -62,5 +64,31 @@ describe("component AuthLink while logged in", () => {
     expect(anmeldung?.getAttribute("class")?.includes("text-primary")).toBe(
       true
     );
+  });
+  it("should render the Dropdown menu links", () => {
+    render(
+      <AuthProvider>
+        <AuthLink />
+      </AuthProvider>
+    );
+    const projectsLink = screen.getByText("Meine Projekte");
+    const accountLink = screen.getByText("Account");
+    const logoutLink = screen.getByText("Logout");
+    expect(projectsLink).toBeInTheDocument();
+    expect(accountLink).toBeInTheDocument();
+    expect(logoutLink).toBeInTheDocument();
+  });
+  it("should call auth's logout function on logout click", () => {
+    const signOutFunction = jest.fn();
+    supabase.auth.signOut = signOutFunction;
+    render(
+      <AuthProvider>
+        <AuthLink />
+      </AuthProvider>
+    );
+
+    const logoutLink = screen.getByText("Logout");
+    fireEvent.click(logoutLink);
+    expect(signOutFunction).toHaveBeenCalledTimes(1);
   });
 });

@@ -30,7 +30,11 @@ export const Dropdown: FC<DropdownPropType> = ({
     <div className='inline-block relative'>
       <button
         className='cursor-pointer rounded-none focus-offset'
-        onClick={() => setIsVisible(!isVisible)}
+        onClick={evt => {
+          evt.preventDefault();
+          evt.stopPropagation();
+          setIsVisible(!isVisible);
+        }}
         ref={ref}
       >
         {children}

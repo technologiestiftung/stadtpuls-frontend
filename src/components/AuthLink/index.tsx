@@ -2,10 +2,11 @@ import { FC } from "react";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import Link from "next/link";
 import { useAuth } from "@auth/Auth";
+import { DropdownMenu } from "@components/DropdownMenu";
 
 export const ColouredAuthLink: FC<{
   variant: "primary" | "secondary";
-  href: string;
+  href?: string;
 }> = ({ children, href, variant }) => {
   const iconStyles = [
     "transform -translate-y-0.5 transition inline-block",
@@ -22,27 +23,49 @@ export const ColouredAuthLink: FC<{
   ]
     .filter(Boolean)
     .join(" ");
-  return (
+
+  const text = (
+    <>
+      <span className={iconStyles}>
+        <AccountCircle />
+      </span>
+      <span className={textStyles}>{children}</span>
+    </>
+  );
+  return href ? (
     <Link href={href}>
       <a href={href} className='group'>
-        <span className={iconStyles}>
-          <AccountCircle />
-        </span>
-        <span className={textStyles}>{children}</span>
+        {text}
       </a>
     </Link>
+  ) : (
+    text
   );
 };
 
 export const AuthLink: FC = () => {
-  const { authenticatedUser } = useAuth();
+  const { authenticatedUser, signOut } = useAuth();
 
-  return (
+  const link = (
     <ColouredAuthLink
-      href={authenticatedUser ? "/user" : "/signin"}
+      href={authenticatedUser ? undefined : "/signin"}
       variant={authenticatedUser ? "primary" : "secondary"}
     >
       {authenticatedUser ? authenticatedUser.email || "Profile" : "Anmeldung"}
     </ColouredAuthLink>
+  );
+
+  return !authenticatedUser ? (
+    link
+  ) : (
+    <DropdownMenu
+      items={[
+        { id: 1, title: "Meine Projekte", href: "/projects" },
+        { id: 2, title: "Account", href: "/account" },
+        { id: 3, title: "Logout", onClick: () => void signOut() },
+      ]}
+    >
+      {link}
+    </DropdownMenu>
   );
 };
