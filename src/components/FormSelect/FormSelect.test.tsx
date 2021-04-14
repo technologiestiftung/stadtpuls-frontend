@@ -23,15 +23,49 @@ describe("FormSelect component", () => {
     const select = document.querySelector("select");
     expect(select).toBeInTheDocument();
   });
+
+  it("should initially display a custom placeholder value when provided", () => {
+    render(
+      <FormSelect
+        name='name'
+        placeholder='custom placeholder'
+        options={exampleOptions}
+      />
+    );
+    const optionToBeSelected: Partial<HTMLOptionElement> = screen.getByRole(
+      "option",
+      {
+        name: "custom placeholder",
+      }
+    );
+    expect(optionToBeSelected).toBeInTheDocument();
+    expect(optionToBeSelected.selected).toBe(true);
+  });
+
   it("should provide select options", () => {
     render(<FormSelect name='name' options={exampleOptions} />);
     const options = screen.getAllByRole("option");
     options.forEach(option => expect(option).toBeInTheDocument());
   });
+
   it("should update select value when an option is selected", () => {
     render(
-      <FormSelect name='name' label='Some label' options={exampleOptions} />
+      <FormSelect
+        name='name'
+        label='Some label'
+        placeholder='custom placeholder'
+        options={exampleOptions}
+      />
     );
+
+    const optionToBeSelectedInitially: Partial<HTMLOptionElement> = screen.getByRole(
+      "option",
+      {
+        name: "custom placeholder",
+      }
+    );
+    expect(optionToBeSelectedInitially.selected).toBe(true);
+
     userEvent.selectOptions(screen.getByLabelText("Some label"), [
       "Third option",
     ]);
@@ -44,6 +78,7 @@ describe("FormSelect component", () => {
     );
     expect(optionToBeSelected.selected).toBe(true);
   });
+
   it("should not render a label when not provided", () => {
     render(<FormSelect name='name' options={exampleOptions} />);
     const label = document.querySelector("label");
