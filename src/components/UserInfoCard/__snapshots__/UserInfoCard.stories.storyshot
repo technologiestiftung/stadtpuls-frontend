@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UserInfoCard Default User Info Card 1`] = `
+<div
+  className="flex flex-col mr-16 justify-between h-full"
+  style={
+    Object {
+      "minWidth": "320px",
+    }
+  }
+>
+  <div>
+    <div
+      className="flex items-center px-4"
+    >
+      <div
+        className="w-14 h-14 rounded-full mr-4 bg-blue-500"
+      />
+      <h1
+        className="text-blue-500 text-3xl font-semibold"
+      >
+        ffthornton
+      </h1>
+    </div>
+    <div
+      className="border-gray-300 border-t my-8"
+    />
+    <p
+      className="text-gray-500"
+    >
+      E-Mail
+       
+      <span
+        className="text-sm text-gray-400"
+      >
+        (nicht öffentlich)
+      </span>
+    </p>
+    <p>
+      ffthornton5@yopmail.com
+    </p>
+    <p
+      className="mt-8 text-gray-500"
+    >
+      Registrierungsdatum
+       
+      <span
+        className="text-sm text-gray-400"
+      >
+        (nicht öffentlich)
+      </span>
+    </p>
+    <p>
+      12. April 2021
+    </p>
+  </div>
+  <div>
+    <button
+      className="text-left mt-16 text-red-500 hover:text-opacity-50 cursor-pointer"
+      onClick={[Function]}
+    >
+      Account Löschen
+    </button>
+  </div>
+</div>
+`;
