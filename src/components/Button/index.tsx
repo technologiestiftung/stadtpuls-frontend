@@ -22,8 +22,20 @@ const getButtonStyles = ({
   className?: string;
 }): string => {
   const classes = ["px-4 py-2 font-sans text-lg transition"];
-  if (disabled) classes.push("bg-gray-300 text-gray-600 cursor-default");
-  else {
+  if (disabled) {
+    classes.push("cursor-default");
+    switch (variant) {
+      case "primary":
+        classes.push("bg-gray-200 text-gray-400");
+        break;
+      case "dangerous":
+        classes.push("bg-white border border-red-300 text-red-300");
+        break;
+      default:
+        classes.push("bg-white border border-gray-400 text-gray-400");
+        break;
+    }
+  } else {
     switch (variant) {
       case "primary":
         classes.push(

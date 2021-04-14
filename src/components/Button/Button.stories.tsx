@@ -37,8 +37,22 @@ DangerousButton.args = {
   children: "I am a dangerous button",
 };
 
-export const DisabledButton = ButtonTemplate.bind({});
-DisabledButton.args = {
+export const DefaultDisabledButton = ButtonTemplate.bind({});
+DefaultDisabledButton.args = {
   disabled: true,
-  children: "I am a disabled button",
+  children: "I am a default disabled button",
+};
+
+export const PrimaryDisabledButton = ButtonTemplate.bind({});
+PrimaryDisabledButton.args = {
+  disabled: true,
+  variant: "primary",
+  children: "I am a primary disabled button",
+};
+
+export const DangerousDisabledButton = ButtonTemplate.bind({});
+DangerousDisabledButton.args = {
+  disabled: true,
+  variant: "dangerous",
+  children: "I am a dangerous disabled button",
 };
