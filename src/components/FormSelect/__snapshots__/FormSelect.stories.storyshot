@@ -1,5 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Forms/FormSelect With Custom Placeholder 1`] = `
+<div
+  className="max-w-prose"
+>
+  <select
+    className="text-gray-500"
+    id="Select with custom placeholder"
+    min={20}
+    name="Select with custom placeholder"
+    onBlur={[Function]}
+    onChange={[Function]}
+    required={true}
+  >
+    <option
+      value=""
+    >
+      This is a custom placeholder
+    </option>
+    <option
+      value="First option"
+    >
+      First option
+    </option>
+    <option
+      value="Second option"
+    >
+      Second option
+    </option>
+    <option
+      value="Third option"
+    >
+      Third option
+    </option>
+  </select>
+</div>
+`;
+
 exports[`Storyshots Forms/FormSelect With Label 1`] = `
 <div
   className="max-w-prose"
@@ -11,13 +48,19 @@ exports[`Storyshots Forms/FormSelect With Label 1`] = `
     Default label
   </label>
   <select
-    className="text-blue-500"
+    className="text-gray-500"
     id="Select with label"
     min={20}
     name="Select with label"
+    onBlur={[Function]}
     onChange={[Function]}
     required={true}
   >
+    <option
+      value=""
+    >
+      Bitte wähle eine Option
+    </option>
     <option
       value="First option"
     >
@@ -42,13 +85,19 @@ exports[`Storyshots Forms/FormSelect Without Label 1`] = `
   className="max-w-prose"
 >
   <select
-    className="text-blue-500"
+    className="text-gray-500"
     id="Select without label"
     min={20}
     name="Select without label"
+    onBlur={[Function]}
     onChange={[Function]}
     required={true}
   >
+    <option
+      value=""
+    >
+      Bitte wähle eine Option
+    </option>
     <option
       value="First option"
     >

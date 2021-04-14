@@ -11,6 +11,7 @@ export default {
 const Template: Story<{
   name: string;
   label?: string;
+  placeholder?: string;
   options: SelectOptionType[];
 }> = args => {
   const { register } = useForm();
@@ -54,6 +55,26 @@ WithLabel.args = {
 export const WithoutLabel = Template.bind({});
 WithoutLabel.args = {
   name: "Select without label",
+  options: [
+    {
+      name: "First option",
+      value: "First option",
+    },
+    {
+      name: "Second option",
+      value: "Second option",
+    },
+    {
+      name: "Third option",
+      value: "Third option",
+    },
+  ],
+};
+
+export const WithCustomPlaceholder = Template.bind({});
+WithCustomPlaceholder.args = {
+  name: "Select with custom placeholder",
+  placeholder: "This is a custom placeholder",
   options: [
     {
       name: "First option",
