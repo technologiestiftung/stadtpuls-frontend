@@ -37,6 +37,53 @@ exports[`Storyshots Forms/FormSelect With Custom Placeholder 1`] = `
 </div>
 `;
 
+exports[`Storyshots Forms/FormSelect With Errors 1`] = `
+<div
+  className="max-w-prose"
+>
+  <select
+    className="text-gray-500"
+    id="Select with custom placeholder"
+    min={20}
+    name="Select with custom placeholder"
+    onBlur={[Function]}
+    onChange={[Function]}
+    required={true}
+  >
+    <option
+      value=""
+    >
+      Bitte wähle eine Option
+    </option>
+    <option
+      value="First option"
+    >
+      First option
+    </option>
+    <option
+      value="Second option"
+    >
+      Second option
+    </option>
+    <option
+      value="Third option"
+    >
+      Third option
+    </option>
+  </select>
+  <p
+    className="text-secondary text-sm"
+  >
+    This is an error message
+  </p>
+  <p
+    className="text-secondary text-sm"
+  >
+    This is another error message
+  </p>
+</div>
+`;
+
 exports[`Storyshots Forms/FormSelect With Label 1`] = `
 <div
   className="max-w-prose"

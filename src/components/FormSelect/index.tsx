@@ -11,6 +11,7 @@ interface FormSelectPropType
   label?: ReactNode;
   placeholder?: string;
   options: SelectOptionType[];
+  errors?: string[];
 }
 
 // eslint-disable-next-line react/display-name
@@ -21,6 +22,7 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectPropType>(
       label,
       options,
       placeholder = "Bitte wähle eine Option",
+      errors = [],
       ...selectProps
     },
     ref
@@ -57,6 +59,11 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectPropType>(
             </option>
           ))}
         </select>
+        {errors.map(error => (
+          <p className='text-secondary text-sm' key={error}>
+            {error}
+          </p>
+        ))}
       </div>
     );
   }

@@ -13,6 +13,7 @@ const Template: Story<{
   label?: string;
   placeholder?: string;
   options: SelectOptionType[];
+  errors: string[];
 }> = args => {
   const { register } = useForm();
 
@@ -89,4 +90,24 @@ WithCustomPlaceholder.args = {
       value: "Third option",
     },
   ],
+};
+
+export const WithErrors = Template.bind({});
+WithErrors.args = {
+  name: "Select with custom placeholder",
+  options: [
+    {
+      name: "First option",
+      value: "First option",
+    },
+    {
+      name: "Second option",
+      value: "Second option",
+    },
+    {
+      name: "Third option",
+      value: "Third option",
+    },
+  ],
+  errors: ["This is an error message", "This is another error message"],
 };
