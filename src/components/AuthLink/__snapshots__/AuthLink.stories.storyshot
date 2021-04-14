@@ -8,7 +8,7 @@ exports[`Storyshots UI Elements/AuthLink Logged In 1`] = `
   onMouseEnter={[Function]}
 >
   <span
-    className="transform -translate-y-0.5 transition inline-block text-primary group-hover:opacity-60"
+    className="transform -translate-y-0.5 transition inline-block text-blue-500 group-hover:opacity-60"
   >
     <svg
       aria-hidden={true}
@@ -22,7 +22,7 @@ exports[`Storyshots UI Elements/AuthLink Logged In 1`] = `
     </svg>
   </span>
   <span
-    className="inline-block ml-1 transition text-primary font-semibold group-hover:opacity-60"
+    className="inline-block ml-1 transition text-blue-500 font-semibold group-hover:opacity-60"
   >
     contact@example.com
   </span>
@@ -37,7 +37,7 @@ exports[`Storyshots UI Elements/AuthLink Logged Out 1`] = `
   onMouseEnter={[Function]}
 >
   <span
-    className="transform -translate-y-0.5 transition inline-block text-gray-400 group-hover:text-primary"
+    className="transform -translate-y-0.5 transition inline-block text-gray-400 group-hover:text-blue-500"
   >
     <svg
       aria-hidden={true}
@@ -51,7 +51,7 @@ exports[`Storyshots UI Elements/AuthLink Logged Out 1`] = `
     </svg>
   </span>
   <span
-    className="inline-block ml-1 transition text-black group-hover:text-primary"
+    className="inline-block ml-1 transition text-black group-hover:text-blue-500"
   >
     Anmeldung
   </span>

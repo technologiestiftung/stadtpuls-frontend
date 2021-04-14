@@ -9,7 +9,7 @@ exports[`Storyshots UI Elements/Dropdown Default 1`] = `
     onClick={[Function]}
   >
     <a
-      className="text-primary underline transition hover:opacity-60 cursor-pointer focus-offset "
+      className="text-blue-500 underline transition hover:opacity-60 cursor-pointer focus-offset "
     >
       Click me
     </a>

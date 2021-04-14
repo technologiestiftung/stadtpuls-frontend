@@ -10,16 +10,16 @@ export const ColouredAuthLink: FC<{
 }> = ({ children, href, variant }) => {
   const iconStyles = [
     "transform -translate-y-0.5 transition inline-block",
-    variant === "secondary" && "text-gray-400 group-hover:text-primary",
-    variant === "primary" && "text-primary group-hover:opacity-60",
+    variant === "secondary" && "text-gray-400 group-hover:text-blue-500",
+    variant === "primary" && "text-blue-500 group-hover:opacity-60",
   ]
     .filter(Boolean)
     .join(" ");
   const textStyles = [
     "inline-block ml-1 transition",
-    variant === "secondary" && "text-black group-hover:text-primary",
+    variant === "secondary" && "text-black group-hover:text-blue-500",
     variant === "primary" &&
-      "text-primary font-semibold group-hover:opacity-60",
+      "text-blue-500 font-semibold group-hover:opacity-60",
   ]
     .filter(Boolean)
     .join(" ");

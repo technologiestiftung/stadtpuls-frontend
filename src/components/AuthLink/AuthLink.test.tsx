@@ -60,8 +60,8 @@ describe("component AuthLink while logged in", () => {
     render(<AuthLink />);
     const icon = document.querySelector("span");
     const anmeldung = screen.getByText("Anmeldung");
-    expect(icon?.getAttribute("class")?.includes("text-primary")).toBe(true);
-    expect(anmeldung?.getAttribute("class")?.includes("text-primary")).toBe(
+    expect(icon?.getAttribute("class")?.includes("text-blue-500")).toBe(true);
+    expect(anmeldung?.getAttribute("class")?.includes("text-blue-500")).toBe(
       true
     );
   });
