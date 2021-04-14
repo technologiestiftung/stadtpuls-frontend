@@ -24,7 +24,7 @@ const Template: Story<{
         onChange: evt =>
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          action(`Input "${args.name}" changed`)(evt.target.value),
+          action(`Select "${args.name}" changed`)(evt.target.value),
       })}
       {...args}
     />
