@@ -13,6 +13,7 @@ exports[`Storyshots Forms/FormTextInput As Email 1`] = `
   </label>
   <input
     className="mb-2 "
+    id="email"
     min={20}
     onChange={[Function]}
     placeholder="Deine E-Mail-Adresse..."
@@ -35,6 +36,7 @@ exports[`Storyshots Forms/FormTextInput As Password 1`] = `
   </label>
   <input
     className="mb-2 "
+    id="password"
     min={20}
     onChange={[Function]}
     placeholder="Dein Passwort..."
@@ -62,6 +64,7 @@ exports[`Storyshots Forms/FormTextInput Optional Field 1`] = `
   </label>
   <input
     className="mb-2 "
+    id="firstName"
     min={20}
     onChange={[Function]}
     placeholder="Enter your first name..."
@@ -84,6 +87,7 @@ exports[`Storyshots Forms/FormTextInput With Error 1`] = `
   </label>
   <input
     className="mb-2 error"
+    id="firstName"
     min={20}
     onChange={[Function]}
     placeholder="Enter your first name..."
@@ -116,6 +120,7 @@ exports[`Storyshots Forms/FormTextInput With Label 1`] = `
   </label>
   <input
     className="mb-2 "
+    id="firstName"
     min={20}
     onChange={[Function]}
     placeholder="Enter your first name..."
@@ -131,6 +136,7 @@ exports[`Storyshots Forms/FormTextInput Without Label 1`] = `
 >
   <input
     className="mb-2 "
+    id="firstName"
     min={20}
     onChange={[Function]}
     placeholder="Enter your first name..."
