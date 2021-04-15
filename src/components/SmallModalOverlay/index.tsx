@@ -17,7 +17,7 @@ export const SmallModalOverlay: FC<SmallModalOverlayPropType> = props => {
   if (!container) return null;
   else
     return createPortal(
-      <div className='fixed top-0 left-0 bg-black bg-opacity-50 z-10 w-screen h-screen flex items-center justify-center'>
+      <div className='fixed top-0 left-0 bg-black bg-opacity-50 w-screen h-screen flex items-center justify-center z-50'>
         <SmallModal {...props} />
       </div>,
       container
