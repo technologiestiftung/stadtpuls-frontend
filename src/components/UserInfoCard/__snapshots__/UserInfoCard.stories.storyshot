@@ -2,7 +2,7 @@
 
 exports[`Storyshots UserInfoCard Default User Info Card 1`] = `
 <div
-  className="flex flex-col md:pr-8 lg:pr-16 justify-between h-full w-full sm:min-w-md"
+  className="flex flex-col md:pr-8 lg:pr-16 justify-between h-full w-full sm:min-w-md md:min-w-xs lg:min-w-md"
 >
   <div>
     <div

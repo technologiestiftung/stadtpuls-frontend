@@ -16,7 +16,7 @@ export const UserInfoCard: FC<UserInfoCardPropTypes> = ({
 }) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   return (
-    <div className='flex flex-col md:pr-8 lg:pr-16 justify-between h-full w-full sm:min-w-md'>
+    <div className='flex flex-col md:pr-8 lg:pr-16 justify-between h-full w-full sm:min-w-md md:min-w-xs lg:min-w-md'>
       <div>
         <div className='flex items-center'>
           <span className='w-14 h-14 mr-4 transform -translate-y-0.5 transition inline-block text-blue-500 group-hover:opacity-60'>
