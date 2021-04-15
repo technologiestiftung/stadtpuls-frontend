@@ -5,6 +5,7 @@
 import "@testing-library/jest-dom/extend-expect";
 import { server } from "./mocks/server";
 import "whatwg-fetch";
+import { cache } from "swr";
 
 const noop = (): void => undefined;
 Object.defineProperty(window, "scrollTo", { value: noop, writable: true });
@@ -18,6 +19,7 @@ afterEach(() => {
   // Reset any runtime handlers tests may use.
   jest.restoreAllMocks();
   server.resetHandlers();
+  cache.clear();
 });
 
 afterAll(() => {

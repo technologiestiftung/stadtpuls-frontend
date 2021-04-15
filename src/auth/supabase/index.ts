@@ -6,7 +6,7 @@ export const getSupabaseCredentials = (): {
 } => ({
   url: (
     process.env.NEXT_PUBLIC_SUPABASE_URL ||
-    "https://YOUR_SUPABASE_URL.supabase.co"
+    "https://your_supabase_url.supabase.co"
   ).toLowerCase(),
   key:
     process.env.NEXT_PUBLIC_SUPABASE_PUBLIC_KEY ||
