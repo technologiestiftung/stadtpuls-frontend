@@ -5,6 +5,23 @@
   .focus-offset {
     @apply focus:ring-blue-500 focus:ring-2 focus:ring-offset-white focus:ring-offset-2 focus:outline-none;
   }
+  @variants responsive {
+    .min-w-xs {
+      min-width: 20rem;	
+    }
+    .min-w-sm {
+      min-width: 24rem;	
+    }
+    .min-w-md {
+      min-width: 28rem;	
+    }
+    .min-w-lg {
+      min-width: 32rem;	
+    }
+    .min-w-xl {
+      min-width: 36rem;	
+    }
+  }
 };
 @layer base {
   @font-face {
