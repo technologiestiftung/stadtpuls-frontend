@@ -47,7 +47,7 @@ export const UserInfoEdit: FC<UserInfoEditProps> = ({
   });
 
   return (
-    <div className='flex flex-col pt-3' style={{ minWidth: "640px" }}>
+    <div className='flex flex-col pt-3 min-w-xs lg:min-w-md'>
       <h1 className='text-blue-500 text-3xl font-semibold m-0 mb-10'>
         Profil Bearbeiten
       </h1>

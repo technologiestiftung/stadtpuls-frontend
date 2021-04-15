@@ -12,7 +12,7 @@ const UserPage: FC = () => {
       style={{ paddingTop: "10vmax" }}
     >
       <div
-        className='bg-white p-8 shadow-lg flex gap-8'
+        className='bg-white p-8 shadow-lg flex gap-8 flex flex-col md:flex-row'
         style={{ minHeight: "480px" }}
       >
         <UserInfoCard
