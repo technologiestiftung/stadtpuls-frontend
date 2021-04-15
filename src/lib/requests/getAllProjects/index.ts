@@ -1,10 +1,10 @@
 import { ProjectType } from "@common/interfaces";
 import { FetchResponse } from "@common/types";
-import { createApiUrl } from "@lib/requests/createApiUrl";
+import { createV1ApiUrl } from "@lib/requests/createV1ApiUrl";
 
 type ProjectResponse = FetchResponse<"projects", ProjectType[]>;
 export async function getAllProjects(): Promise<ProjectType[]> {
-  const url = createApiUrl(`/projects`);
+  const url = createV1ApiUrl(`/projects`);
   const response = await fetch(url);
   if (!response.ok) {
     console.error(await response.text());

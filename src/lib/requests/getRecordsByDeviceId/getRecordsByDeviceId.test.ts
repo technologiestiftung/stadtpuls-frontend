@@ -1,5 +1,5 @@
 import { device1Records } from "../../../mocks/data";
-import { createApiUrl } from "../createApiUrl";
+import { createV1ApiUrl } from "../createV1ApiUrl";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { getRecordsByDeviceId } from ".";
@@ -19,7 +19,7 @@ describe("utility function getRecordsByDeviceId", () => {
   it("should throw 'Failed to fetch records' if fails", async (): Promise<void> => {
     const id = 1;
     const server = setupServer(
-      rest.get(createApiUrl(`/devices/${id}/records`), (_req, res, ctx) => {
+      rest.get(createV1ApiUrl(`/devices/${id}/records`), (_req, res, ctx) => {
         return res(ctx.status(403), ctx.text("Error message!"));
       })
     );
@@ -34,7 +34,7 @@ describe("utility function getRecordsByDeviceId", () => {
   it("should throw 'Failed to fetch records' if provided with unexisting id", async (): Promise<void> => {
     const id = 1000000000;
     const server = setupServer(
-      rest.get(createApiUrl(`/devices/${id}/records`), (_req, res, ctx) => {
+      rest.get(createV1ApiUrl(`/devices/${id}/records`), (_req, res, ctx) => {
         return res(ctx.status(403), ctx.text("Error message!"));
       })
     );

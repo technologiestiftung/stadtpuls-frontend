@@ -64,7 +64,7 @@ await getDevicesByProjectId(id) // The id of the project to get the devices from
 await getRecordsByDeviceId(id) // The id of the device to get the records from
 ```
 
-The API version can be defined in `src/lib/requests/createApiUrl.ts`.
+The API version can be defined in `src/lib/requests/createV1ApiUrl.ts`.
 
 ### Styling
 
