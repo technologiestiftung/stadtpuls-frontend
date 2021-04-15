@@ -7,7 +7,8 @@ export const requiredEmailValidation = yup
 
 export const requiredProjectTitleValidation = yup
   .string()
-  .required("Das Projekt muss einen Titel haben");
+  .required("Das Projekt muss einen Titel haben")
+  .max(60, "Der Titel darf maximal 60 Zeichen haben");
 
 export const requiredProjectCategoryValidation = yup
   .string()

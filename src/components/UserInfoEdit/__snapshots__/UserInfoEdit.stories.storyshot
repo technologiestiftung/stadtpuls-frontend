@@ -26,6 +26,7 @@ exports[`Storyshots Forms/UserInfoEdit Default User Info Edit 1`] = `
       <input
         className="mb-2 "
         disabled={true}
+        id="username"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Dein Nutzername..."
@@ -46,6 +47,7 @@ exports[`Storyshots Forms/UserInfoEdit Default User Info Edit 1`] = `
       <input
         className="mb-2 "
         disabled={true}
+        id="email"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Deine E-Mail-Adresse..."
