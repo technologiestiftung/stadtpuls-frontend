@@ -4,6 +4,7 @@ import {
   requiredProjectTitleValidation,
   requiredProjectCategoryValidation,
   requiredProjectDescriptionValidation,
+  requiredProjectIntegrationValidation,
 } from ".";
 
 describe("requiredEmailValidation validation", () => {
@@ -50,6 +51,13 @@ describe("requiredProjectDescriptionValidation validation", () => {
     const isValid = await requiredProjectDescriptionValidation.isValid(
       longString
     );
+    expect(isValid).toBe(false);
+  });
+});
+
+describe("requiredProjectIntegrationValidation validation", () => {
+  it("should not be valid if empty", async () => {
+    const isValid = await requiredProjectIntegrationValidation.isValid("");
     expect(isValid).toBe(false);
   });
 });
