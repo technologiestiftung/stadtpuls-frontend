@@ -46,7 +46,9 @@ export const ProjectInfoFormWrapper: FC<ProjectInfoFormWrapperPropType> = ({
       )}
       {type === "create" && (
         <footer className='mt-12 flex justify-end'>
-          <Button variant='primary'>Weiter</Button>
+          <Submit variant='primary' form={formId} className='ml-4'>
+            Weiter
+          </Submit>
         </footer>
       )}
     </>

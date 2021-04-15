@@ -19,13 +19,13 @@ Array [
   <footer
     className="mt-12 flex justify-end"
   >
-    <button
-      className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
-      type="button"
+    <input
+      className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60 ml-4"
+      form="create-project-form"
+      type="submit"
+      value="Weiter"
       variant="primary"
-    >
-      Weiter
-    </button>
+    />
   </footer>,
 ]
 `;
