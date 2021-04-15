@@ -1,6 +1,7 @@
 // import * as yup from "yup";
 import {
   requiredEmailValidation,
+  requiredUsernameValidation
   requiredProjectTitleValidation,
   requiredProjectCategoryValidation,
   requiredProjectDescriptionValidation,
@@ -59,5 +60,14 @@ describe("requiredProjectIntegrationValidation validation", () => {
   it("should not be valid if empty", async () => {
     const isValid = await requiredProjectIntegrationValidation.isValid("");
     expect(isValid).toBe(false);
+
+describe("requiredUsernameValidation validation", () => {
+  it("should not be valid if empty", async () => {
+    const isValid = await requiredUsernameValidation.isValid("");
+    expect(isValid).toBe(false);
+  });
+  it("should be valid if not empty", async () => {
+    const isValid = await requiredUsernameValidation.isValid("greatusername");
+    expect(isValid).toBe(true);
   });
 });

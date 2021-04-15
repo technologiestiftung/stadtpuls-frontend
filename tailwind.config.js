@@ -56,6 +56,13 @@ module.exports = {
         "Noto Color Emoji",
       ],
     },
+    minWidth: {
+      "xs": "20rem",
+      "sm": "24rem",
+      "md": "28rem",
+      "lg": "32rem",
+      "xl": "36rem",
+    },
   },
   variants: {},
   plugins: [require("@tailwindcss/forms")],
