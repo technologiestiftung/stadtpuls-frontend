@@ -16,7 +16,7 @@ export const UserInfoCard: FC<UserInfoCardPropTypes> = ({
 }) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   return (
-    <div className='flex flex-col mr-0 md:pr-8 lg:pr-16 justify-between h-full min-w-xs lg:min-w-md'>
+    <div className='flex flex-col md:pr-8 lg:pr-16 justify-between h-full w-full sm:min-w-md'>
       <div>
         <div className='flex items-center'>
           <span className='w-14 h-14 mr-4 transform -translate-y-0.5 transition inline-block text-blue-500 group-hover:opacity-60'>
@@ -41,7 +41,7 @@ export const UserInfoCard: FC<UserInfoCardPropTypes> = ({
           className='text-left mt-16 text-red-500 hover:text-opacity-50 cursor-pointer'
           onClick={() => setShowDeleteModal(true)}
         >
-          Account Löschen
+          Account löschen
         </button>
       </div>
       {showDeleteModal && (
