@@ -32,7 +32,7 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectPropType>(
       selectValue === placeholder || selectValue === "";
 
     return (
-      <div className='max-w-prose'>
+      <div className='mb-2'>
         {label && (
           <label
             htmlFor={name}
@@ -47,9 +47,9 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectPropType>(
           ref={ref}
           required
           {...selectProps}
-          className={`${
+          className={`mb-2 ${
             placeholderIsSelected ? "text-gray-500" : "text-blue-500"
-          }`}
+          } ${errors.length ? "error" : ""}`}
           onBlur={evt => setSelectValue(evt.target.value)}
         >
           <option value=''>{placeholder}</option>
@@ -60,7 +60,7 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectPropType>(
           ))}
         </select>
         {errors.map(error => (
-          <p className='text-secondary text-sm' key={error}>
+          <p className='text-red-500 text-sm' key={error}>
             {error}
           </p>
         ))}

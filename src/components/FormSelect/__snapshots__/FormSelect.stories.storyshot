@@ -2,10 +2,10 @@
 
 exports[`Storyshots Forms/FormSelect With Custom Placeholder 1`] = `
 <div
-  className="max-w-prose"
+  className="mb-2"
 >
   <select
-    className="text-gray-500"
+    className="mb-2 text-gray-500 "
     id="Select with custom placeholder"
     min={20}
     name="Select with custom placeholder"
@@ -39,10 +39,10 @@ exports[`Storyshots Forms/FormSelect With Custom Placeholder 1`] = `
 
 exports[`Storyshots Forms/FormSelect With Errors 1`] = `
 <div
-  className="max-w-prose"
+  className="mb-2"
 >
   <select
-    className="text-gray-500"
+    className="mb-2 text-gray-500 error"
     id="Select with custom placeholder"
     min={20}
     name="Select with custom placeholder"
@@ -72,12 +72,12 @@ exports[`Storyshots Forms/FormSelect With Errors 1`] = `
     </option>
   </select>
   <p
-    className="text-secondary text-sm"
+    className="text-red-500 text-sm"
   >
     This is an error message
   </p>
   <p
-    className="text-secondary text-sm"
+    className="text-red-500 text-sm"
   >
     This is another error message
   </p>
@@ -86,7 +86,7 @@ exports[`Storyshots Forms/FormSelect With Errors 1`] = `
 
 exports[`Storyshots Forms/FormSelect With Label 1`] = `
 <div
-  className="max-w-prose"
+  className="mb-2"
 >
   <label
     className="block mb-2 cursor-pointer transition hover:opacity-60"
@@ -95,7 +95,7 @@ exports[`Storyshots Forms/FormSelect With Label 1`] = `
     Default label
   </label>
   <select
-    className="text-gray-500"
+    className="mb-2 text-gray-500 "
     id="Select with label"
     min={20}
     name="Select with label"
@@ -129,10 +129,10 @@ exports[`Storyshots Forms/FormSelect With Label 1`] = `
 
 exports[`Storyshots Forms/FormSelect Without Label 1`] = `
 <div
-  className="max-w-prose"
+  className="mb-2"
 >
   <select
-    className="text-gray-500"
+    className="mb-2 text-gray-500 "
     id="Select without label"
     min={20}
     name="Select without label"
