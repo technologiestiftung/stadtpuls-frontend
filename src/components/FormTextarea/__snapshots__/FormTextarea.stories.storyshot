@@ -2,9 +2,10 @@
 
 exports[`Storyshots Forms/FormTextarea With Custom Placeholder 1`] = `
 <div
-  className=" mb-2"
+  className="mb-2"
 >
   <textarea
+    className="mb-2 "
     cols={30}
     id="Textarea with custom placeholder-textarea"
     maxLength={140}
@@ -21,9 +22,10 @@ exports[`Storyshots Forms/FormTextarea With Custom Placeholder 1`] = `
 
 exports[`Storyshots Forms/FormTextarea With Errors 1`] = `
 <div
-  className=" mb-2"
+  className="mb-2"
 >
   <textarea
+    className="mb-2 error"
     cols={30}
     id="Textarea with custom placeholder-textarea"
     maxLength={140}
@@ -50,7 +52,7 @@ exports[`Storyshots Forms/FormTextarea With Errors 1`] = `
 
 exports[`Storyshots Forms/FormTextarea With Label 1`] = `
 <div
-  className=" mb-2"
+  className="mb-2"
 >
   <label
     className="block mb-2 cursor-pointer transition hover:opacity-60"
@@ -59,6 +61,7 @@ exports[`Storyshots Forms/FormTextarea With Label 1`] = `
     Some label
   </label>
   <textarea
+    className="mb-2 "
     cols={30}
     id="Textarea with label-textarea"
     maxLength={140}
@@ -75,9 +78,10 @@ exports[`Storyshots Forms/FormTextarea With Label 1`] = `
 
 exports[`Storyshots Forms/FormTextarea Without Label 1`] = `
 <div
-  className=" mb-2"
+  className="mb-2"
 >
   <textarea
+    className="mb-2 "
     cols={30}
     id="Textarea without label-textarea"
     maxLength={140}

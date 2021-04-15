@@ -27,7 +27,7 @@ export const FormTextarea = forwardRef<
     },
     ref
   ) => (
-    <div className=' mb-2'>
+    <div className='mb-2'>
       {label && (
         <label
           htmlFor={`${name}-textarea`}
@@ -45,6 +45,7 @@ export const FormTextarea = forwardRef<
         maxLength={maxCharacters}
         minLength={minCharacters}
         placeholder={placeholder}
+        className={`mb-2 ${errors.length ? "error" : ""}`}
         ref={ref}
       ></textarea>
       {errors.map(error => (
