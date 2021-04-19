@@ -22,17 +22,32 @@ const { data: device3RecordsData } = device3Records;
 const { data: device4RecordsData } = device4Records;
 
 const supabaseHandlers = [
-  rest.get(
-    createV2ApiUrl(
-      "/projects?select=name%2Cdescription%2Clocation%2Cdevices%28records%28recordedAt%2Cmeasurements%29%29&offset=:offset&limit=:limit&devices.limit=1"
-    ),
-    (_req, res, ctx) => {
+  rest.get(createV2ApiUrl("/projects"), (req, res, ctx) => {
+    const query = req.url.searchParams;
+
+    const select = query.get("select");
+    const offset = query.get("offset");
+    const limit = query.get("limit");
+    const devicesLimit = query.get("devices.limit");
+    if (
+      devicesLimit == "1" &&
+      limit == "10" &&
+      offset == "0" &&
+      select ==
+        "id,name,description,location,devices(records(recordedAt,measurements))"
+    )
       return res(
+        ctx.set("content-range", "0-9/14"),
         ctx.status(201, "Mocked status"),
         ctx.json(publicProjectsData)
       );
-    }
-  ),
+    else
+      return res(
+        ctx.set("content-range", "0-9/14"),
+        ctx.status(404, "Mocked status"),
+        ctx.json(publicProjectsData)
+      );
+  }),
   rest.get(
     createV2ApiUrl(
       `/records?select=id%2CrecordedAt%2Cmeasurements%2Clongitude%2Clatitude%2Caltitude%2Cdevice%3AdeviceId%28id%2CexternalId%2Cname%2Cproject%3AprojectId%28id%2Cname%2Cdescription%2CcreatedAt%2Clocation%2Cconnectype%2Ccategory%3AcategoryId%28id%2Cname%2Cdescription%29%29%29&device.project.id=eq.10`
