@@ -1,12 +1,11 @@
 import { FC, useEffect } from "react";
 import { render, waitFor } from "@testing-library/react";
 import { rest } from "msw";
-import { useProjectData } from "../useProjectData";
+import { PublicProjects, usePublicProjects } from ".";
 import { server } from "@mocks/server";
 import { SWRConfig } from "swr";
 
-type DataType = ReturnType<typeof useProjectData>["data"];
-type OnSuccessType = (data: DataType) => void;
+type OnSuccessType = (data: PublicProjects) => void;
 type OnFailType = (error: string) => void;
 
 const createTestComponent = (
@@ -14,21 +13,21 @@ const createTestComponent = (
   onFail: OnFailType
 ): FC => {
   const TestComponent: FC = () => {
-    const { data, error } = useProjectData(10);
+    const { data, error } = usePublicProjects();
     useEffect(() => {
       if (data && !error) onSuccess(data);
       if (error) onFail(error.message);
     }, [data, error]);
-    return <div>{data ? data.id : error?.message}</div>;
+    return <div>{data ? data.count : error?.message}</div>;
   };
   return TestComponent;
 };
 
-describe("hook useProjectData", () => {
+describe("hook usePublicProjects", () => {
   it("should provide a data and error value", async (): Promise<void> => {
     const onSuccess = jest.fn();
-    const onSuccessWrapper = (data: DataType): void => {
-      onSuccess(data && data.id);
+    const onSuccessWrapper = (data: PublicProjects): void => {
+      onSuccess(data && data.count);
     };
     const onError = jest.fn();
     const TestComponent = createTestComponent(onSuccessWrapper, onError);
@@ -39,7 +38,7 @@ describe("hook useProjectData", () => {
     );
 
     await waitFor(() => {
-      expect(onSuccess).toHaveBeenLastCalledWith(10);
+      expect(onSuccess).toHaveBeenLastCalledWith(14);
       expect(onError).not.toHaveBeenCalled();
     });
   });

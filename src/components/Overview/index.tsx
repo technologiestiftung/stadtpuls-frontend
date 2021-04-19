@@ -1,7 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import React from "react";
-import { useStoreState } from "../../state/hooks";
+import { FC } from "react";
 import {
   jsx,
   Heading,
@@ -13,13 +12,11 @@ import {
   Divider,
 } from "theme-ui";
 import { ProjectPreview } from "../ProjectPreview";
-import { ProjectType } from "../../common/interfaces";
+import { PublicProjects } from "@lib/hooks/usePublicProjects";
 
 const DatahubLogo = "/images/datahub-logo.svg";
 
-export const Overview: React.FC = () => {
-  const projects = useStoreState(state => state.projects.items);
-
+export const Overview: FC<PublicProjects> = ({ projects, count }) => {
   return (
     <Container mt={[0, 5, 5]} p={4}>
       <Grid gap={[4, null, null]} columns={[1, null, "1fr 2fr"]}>
@@ -71,7 +68,7 @@ export const Overview: React.FC = () => {
             verfügbar.
           </Text>
           <Heading as='h2' variant='h5' mt={3}>
-            Anzahl der IoT-Projekte: 3
+            Anzahl der IoT-Projekte: {count}
           </Heading>
           <Text mt={3}>
             <i>
@@ -80,16 +77,8 @@ export const Overview: React.FC = () => {
           </Text>
           <Divider mt={4} />
           {projects &&
-            projects.map((project: ProjectType) => {
-              return (
-                <ProjectPreview
-                  key={project.id}
-                  id={project.id}
-                  title={project.title}
-                  city={project.city}
-                  description={project.description}
-                />
-              );
+            projects.map(project => {
+              return <ProjectPreview key={project.id} {...project} />;
             })}
         </Box>
       </Grid>

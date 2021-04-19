@@ -29,7 +29,11 @@ const supabaseHandlers = [
     const offset = query.get("offset");
     const limit = query.get("limit");
     const devicesLimit = query.get("devices.limit");
+    const recordsLimit = query.get("devices.records.limit");
+    const recordsOrder = query.get("devices.records.order");
     if (
+      recordsLimit == "50" &&
+      recordsOrder == "recordedAt.desc.nullslast" &&
       devicesLimit == "1" &&
       limit == "10" &&
       offset == "0" &&
