@@ -1,5 +1,6 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import moment from "moment";
+import { FC, useEffect, useState } from "react";
 import { SensorsList } from ".";
 
 const createSensor = (
@@ -115,6 +116,34 @@ describe("component SensorsList", () => {
     const editButton4 = screen.getByText(/Bearbeiten/gi);
     expect(editButton4).toBeInTheDocument();
   });
+  it("should close edit mode when key escape is pressed", () => {
+    render(<SensorsList sensors={[createSensor("A")]} />);
+
+    const editButton1 = screen.getByText(/Bearbeiten/gi);
+    expect(editButton1).toBeInTheDocument();
+
+    fireEvent.click(editButton1);
+
+    const saveButton1 = screen.getByText(/Speichern/gi);
+    expect(saveButton1).toBeInTheDocument();
+
+    const [idInput] = screen.getAllByRole("textbox");
+    fireEvent.keyUp(idInput, { key: "Escape", code: "Escape" });
+
+    const editButton3 = screen.getByText(/Bearbeiten/gi);
+    expect(editButton3).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText(/Bearbeiten/gi));
+
+    const saveButton2 = screen.getByText(/Speichern/gi);
+    expect(saveButton2).toBeInTheDocument();
+
+    const [, nameInput] = screen.getAllByRole("textbox");
+    fireEvent.keyUp(nameInput, { key: "Escape", code: "Escape" });
+
+    const editButton4 = screen.getByText(/Bearbeiten/gi);
+    expect(editButton4).toBeInTheDocument();
+  });
   it("should close edit mode when clicked outside with no changes", () => {
     render(
       <>
@@ -164,9 +193,9 @@ describe("component SensorsList", () => {
     fireEvent.click(outsideButton);
 
     const saveButton = screen.queryByText(/Speichern/gi);
-    expect(saveButton).not.toBeInTheDocument();
+    expect(saveButton).toBeInTheDocument();
     const editButton2 = screen.queryByText(/Bearbeiten/gi);
-    expect(editButton2).toBeInTheDocument();
+    expect(editButton2).not.toBeInTheDocument();
   });
   it("should call the onDelete when delete link is clicked", () => {
     const testOnEdit = jest.fn();
@@ -195,5 +224,44 @@ describe("component SensorsList", () => {
 
     const cancelButton2 = screen.queryByText(/Abbrechen/gi);
     expect(cancelButton2).not.toBeInTheDocument();
+  });
+  it("should show errors when empyt fields", () => {
+    render(<SensorsList sensors={[createSensor("A")]} />);
+
+    const editButton1 = screen.getByText(/Bearbeiten/gi);
+    expect(editButton1).toBeInTheDocument();
+
+    fireEvent.click(editButton1);
+
+    const [idInput, nameInput] = screen.getAllByRole("textbox");
+
+    fireEvent.change(idInput, { target: { value: "" } });
+    fireEvent.change(nameInput, { target: { value: "" } });
+
+    const errors = screen.getAllByText(/Min. 3 Zeichen/gi);
+    expect(errors).toHaveLength(2);
+  });
+  it("should update the draft when props change from outside", async (): Promise<void> => {
+    const CustomWrapper: FC = () => {
+      const [sensor, setSensor] = useState(createSensor("A"));
+
+      useEffect(() => {
+        const to = setTimeout(
+          () => setSensor({ ...sensor, name: "Hello" }),
+          200
+        );
+        return () => clearTimeout(to);
+      }, [setSensor, sensor]);
+
+      return <SensorsList sensors={[sensor]} />;
+    };
+    render(<CustomWrapper />);
+
+    const name = screen.getByText(/My sensor A/gi);
+    expect(name).toBeInTheDocument();
+
+    await waitFor(() =>
+      expect(screen.getByText(/Hello/gi)).toBeInTheDocument()
+    );
   });
 });

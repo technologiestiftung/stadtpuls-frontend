@@ -3,6 +3,8 @@ import { formatDateFromNow } from "@lib/dateUtil";
 import useClickOutside from "@lib/onClickOutsideHook";
 import { DeviceIcon } from "./DeviceIcon";
 import { FormTextInput } from "@components/FormTextInput";
+import { requiredDeviceId, requiredDeviceName } from "@lib/formValidationUtil";
+import { usePrevious } from "@lib/hooks/usePrevious";
 
 interface SensorType {
   id: string | number;
@@ -23,6 +25,7 @@ interface SensorsListEditItemPropType {
   currentDraft: SubmissionDataType;
   onDraftChange: (data: SubmissionDataType) => void;
   onSubmit: () => void;
+  onClickOutside: () => void;
   onCancel: () => void;
 }
 
@@ -94,14 +97,42 @@ const SensorsListEditItem: FC<SensorsListEditItemPropType> = ({
   currentDraft,
   onSubmit,
   onCancel,
+  onClickOutside,
   onDraftChange,
 }) => {
-  const ref = useClickOutside<HTMLTableRowElement>(onSubmit);
+  const ref = useClickOutside<HTMLTableRowElement>(onClickOutside);
   const externalIdInputRef = useRef<HTMLInputElement>(null);
+  const [deviceIdError, setDeviceIdError] = useState<string | null>(null);
+  const [deviceNameError, setDeviceNameError] = useState<string | null>(null);
+
+  const onKeyUp = (key: string): void => {
+    if (key === "Enter") onSubmit();
+    if (key === "Escape") onCancel();
+  };
 
   useEffect(() => {
     externalIdInputRef.current?.focus();
   }, [externalIdInputRef]);
+
+  useEffect(() => {
+    try {
+      requiredDeviceId.validateSync(currentDraft.externalId);
+      setDeviceIdError(null);
+    } catch (err) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      setDeviceIdError(err.errors[0]);
+    }
+  }, [currentDraft.externalId, setDeviceIdError]);
+
+  useEffect(() => {
+    try {
+      requiredDeviceName.validateSync(currentDraft.name);
+      setDeviceNameError(null);
+    } catch (err) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      setDeviceNameError(err.errors[0]);
+    }
+  }, [currentDraft.name, setDeviceNameError]);
 
   return (
     <tr ref={ref} className='transition hover:bg-blue-25 cursor-pointer'>
@@ -125,7 +156,8 @@ const SensorsListEditItem: FC<SensorsListEditItemPropType> = ({
                 externalId: evt.target.value,
               })
             }
-            onKeyUp={evt => evt.key === "Enter" && onSubmit()}
+            onKeyUp={evt => onKeyUp(evt.key)}
+            errors={deviceIdError ? [deviceIdError] : []}
           />
         </div>
       </Td>
@@ -143,7 +175,8 @@ const SensorsListEditItem: FC<SensorsListEditItemPropType> = ({
               name: evt.target.value,
             })
           }
-          onKeyUp={evt => evt.key === "Enter" && onSubmit()}
+          onKeyUp={evt => onKeyUp(evt.key)}
+          errors={deviceNameError ? [deviceNameError] : []}
         />
       </Td>
       <Td p='px-6 py-1' />
@@ -161,9 +194,22 @@ const SensorListItem: FC<SensorsListItemPropType> = props => {
   const { onChange, onDelete, ...sensor } = props;
   const [isInEditMode, setIsInEditMode] = useState<boolean>(false);
   const [currentDraft, setFormDraft] = useState<SubmissionDataType>(sensor);
+  const previousProps = usePrevious<SensorsListItemPropType>(props);
   const hasChanged =
     currentDraft.externalId !== sensor.externalId ||
     currentDraft.name !== sensor.name;
+
+  useEffect(() => {
+    if (
+      props.externalId === previousProps?.externalId &&
+      props.name === previousProps?.name &&
+      props.lastRecordedAt === previousProps?.lastRecordedAt
+    )
+      return;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { onChange, onDelete, ...newDraft } = props;
+    setFormDraft(newDraft);
+  }, [previousProps, props]);
 
   const Component = isInEditMode ? SensorsListEditItem : SensorsListDisplayItem;
   return (
@@ -173,11 +219,15 @@ const SensorListItem: FC<SensorsListItemPropType> = props => {
       onDeleteClick={() => onDelete(sensor.id)}
       currentDraft={currentDraft}
       onDraftChange={setFormDraft}
+      onClickOutside={() => !hasChanged && setIsInEditMode(false)}
       onSubmit={() => {
-        setIsInEditMode(false);
-        if (!hasChanged) return;
-        onChange(currentDraft);
-        setFormDraft(sensor);
+        if (hasChanged) {
+          setIsInEditMode(false);
+          onChange(currentDraft);
+        } else {
+          setIsInEditMode(false);
+          setFormDraft(sensor);
+        }
       }}
       onCancel={() => {
         setIsInEditMode(false);
