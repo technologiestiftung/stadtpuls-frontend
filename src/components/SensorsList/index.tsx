@@ -256,6 +256,20 @@ export const SensorsList: FC<SensorsListPropType> = ({
       </tr>
     </thead>
     <tbody>
+      {sensors.length === 0 && (
+        <tr>
+          <Td
+            colSpan={5}
+            className='text-center align-middle'
+            style={{ height: "20vmax" }}
+          >
+            <button>
+              <DeviceIcon />
+              Ersten Sensor hinzufügen
+            </button>
+          </Td>
+        </tr>
+      )}
       {sensors.map(({ id, externalId, name, lastRecordedAt }) => (
         <SensorListItem
           key={id}

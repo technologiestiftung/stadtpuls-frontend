@@ -38,3 +38,10 @@ Default.args = {
   onEdit: action("Edit action for sensor called"),
   onDelete: action("Delete action for sensor called"),
 };
+
+export const Empty = Template.bind({});
+Empty.args = {
+  sensors: [],
+  onEdit: action("Edit action for sensor called"),
+  onDelete: action("Delete action for sensor called"),
+};
