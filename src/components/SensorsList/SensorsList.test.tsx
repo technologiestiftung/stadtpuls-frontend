@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import moment from "moment";
 import { SensorsList } from ".";
 
@@ -55,5 +55,23 @@ describe("component SensorsList", () => {
     expect(dateA).toBeInTheDocument();
     expect(dateB).toBeInTheDocument();
     expect(dateC).toBeInTheDocument();
+  });
+  it("should call the onEdit when edit link is clicked", () => {
+    const testOnEdit = jest.fn();
+    const sensorA = createSensor("A");
+    render(<SensorsList sensors={[sensorA]} onEdit={testOnEdit} />);
+    const editButton = screen.getByText(/Bearbeiten/gi);
+    expect(editButton).toBeInTheDocument();
+    fireEvent.click(editButton);
+    expect(testOnEdit).toHaveBeenCalledWith("A");
+  });
+  it("should call the onDelete when delete link is clicked", () => {
+    const testOnEdit = jest.fn();
+    const sensorA = createSensor("A");
+    render(<SensorsList sensors={[sensorA]} onDelete={testOnEdit} />);
+    const editButton = screen.getByText(/Löschen/gi);
+    expect(editButton).toBeInTheDocument();
+    fireEvent.click(editButton);
+    expect(testOnEdit).toHaveBeenCalledWith("A");
   });
 });

@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Layout/SensorsList Default 1`] = `
+<table>
+  <thead>
+    <tr>
+      <th>
+        Gerät-ID
+      </th>
+      <th>
+        Anzeigename
+      </th>
+      <th>
+        Letztes Signal
+      </th>
+      <th />
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        device-
+        1
+      </td>
+      <td>
+        Neo
+      </td>
+      <td>
+        Vor ein paar Sekunden
+      </td>
+      <td>
+        <button
+          onClick={[Function]}
+        >
+          Löschen
+        </button>
+      </td>
+      <td>
+        <button
+          onClick={[Function]}
+        >
+          Bearbeiten
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        device-
+        2
+      </td>
+      <td>
+        Triniti
+      </td>
+      <td>
+        Vor 3 Monaten
+      </td>
+      <td>
+        <button
+          onClick={[Function]}
+        >
+          Löschen
+        </button>
+      </td>
+      <td>
+        <button
+          onClick={[Function]}
+        >
+          Bearbeiten
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        device-
+        Infinity
+      </td>
+      <td>
+        Morpheus
+      </td>
+      <td>
+        —
+      </td>
+      <td>
+        <button
+          onClick={[Function]}
+        >
+          Löschen
+        </button>
+      </td>
+      <td>
+        <button
+          onClick={[Function]}
+        >
+          Bearbeiten
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

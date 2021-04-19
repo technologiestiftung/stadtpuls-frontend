@@ -13,7 +13,11 @@ interface SensorsListPropType {
   onDelete?: (id: string | number) => void;
 }
 
-export const SensorsList: FC<SensorsListPropType> = ({ sensors }) => (
+export const SensorsList: FC<SensorsListPropType> = ({
+  sensors,
+  onEdit = () => undefined,
+  onDelete = () => undefined,
+}) => (
   <table>
     <thead>
       <tr>
@@ -29,6 +33,12 @@ export const SensorsList: FC<SensorsListPropType> = ({ sensors }) => (
           <td>device-{id}</td>
           <td>{name}</td>
           <td>{lastRecordedAt ? formatDateFromNow(lastRecordedAt) : "—"}</td>
+          <td>
+            <button onClick={() => onDelete(id)}>Löschen</button>
+          </td>
+          <td>
+            <button onClick={() => onEdit(id)}>Bearbeiten</button>
+          </td>
         </tr>
       ))}
     </tbody>
