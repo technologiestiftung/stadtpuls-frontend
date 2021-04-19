@@ -26,8 +26,11 @@ const supabaseHandlers = [
     createV2ApiUrl(
       "/projects?select=name%2Cdescription%2Clocation%2Cdevices%28records%28recordedAt%2Cmeasurements%29%29&offset=:offset&limit=:limit&devices.limit=1"
     ),
-    (req, res, ctx) => {
-      return res(ctx.status(201, "Mocked status"), ctx.json(req));
+    (_req, res, ctx) => {
+      return res(
+        ctx.status(201, "Mocked status"),
+        ctx.json(publicProjectsData)
+      );
     }
   ),
   rest.get(
