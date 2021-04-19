@@ -1,22 +1,11 @@
-import { FC, useEffect } from "react";
 import { screen, render, waitFor } from "@testing-library/react";
 import { ThemeProvider } from "theme-ui";
 import { StoreProvider } from "easy-peasy";
 import * as nextRouter from "next/router";
 import theme from "../../style/theme";
 import store from "../../state/store";
-import { useStoreActions } from "../../state/hooks";
 import { Project } from ".";
-
-const ProjectWithData: FC = () => {
-  const loadDevices = useStoreActions(action => action.projects.load);
-
-  useEffect(() => {
-    loadDevices();
-  }, [loadDevices]);
-
-  return <Project />;
-};
+import { getProjectData } from "@lib/requests/getProjectData";
 describe("Project component", () => {
   it("should render the Project title", async (): Promise<void> => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -30,16 +19,20 @@ describe("Project component", () => {
       prefetch: () => Promise.resolve(true),
     }));
 
+    const project = await getProjectData(10);
+
     render(
       <StoreProvider store={store}>
         <ThemeProvider theme={theme}>
-          <ProjectWithData />
+          <Project {...project} />
         </ThemeProvider>
       </StoreProvider>
     );
 
     await waitFor(() =>
-      expect(screen.getByText(/Test project A/gi)).toBeInTheDocument()
+      expect(
+        screen.getByText(/Temperatur Grunewaldstraße/gi)
+      ).toBeInTheDocument()
     );
   });
 });

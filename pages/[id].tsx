@@ -1,15 +1,25 @@
 import { Project } from "@components/Project";
-import { useStoreActions } from "@state/hooks";
-import { FC, useEffect } from "react";
+import {
+  getProjectData,
+  SupabaseProjectType,
+} from "@lib/requests/getProjectData";
+import { GetServerSideProps } from "next";
+import { FC } from "react";
 
-const ProjectPage: FC = () => {
-  const loadDevices = useStoreActions(action => action.projects.load);
+export const getServerSideProps: GetServerSideProps = async context => {
+  try {
+    const projectId = context.query.id;
+    if (!projectId || Array.isArray(projectId)) return { notFound: true };
 
-  useEffect(() => {
-    loadDevices();
-  }, [loadDevices]);
-
-  return <Project />;
+    const projectData = await getProjectData(parseInt(projectId, 10));
+    return { props: { project: projectData, error: null } };
+  } catch (error) {
+    return { notFound: true };
+  }
 };
+
+const ProjectPage: FC<{
+  project: SupabaseProjectType;
+}> = ({ project }) => <Project {...project} />;
 
 export default ProjectPage;
