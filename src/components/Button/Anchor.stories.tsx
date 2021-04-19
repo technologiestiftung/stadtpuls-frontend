@@ -24,3 +24,9 @@ PrimaryAnchor.args = {
   variant: "primary",
   children: "Anchor (looking like a primary button)",
 };
+
+export const TextAnchor = AnchorTemplate.bind({});
+TextAnchor.args = {
+  variant: "text",
+  children: "Anchor (looking traditionally underlined)",
+};

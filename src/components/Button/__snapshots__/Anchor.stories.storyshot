@@ -18,3 +18,13 @@ exports[`Storyshots UI Elements/Anchor Primary Anchor 1`] = `
   Anchor (looking like a primary button)
 </a>
 `;
+
+exports[`Storyshots UI Elements/Anchor Text Anchor 1`] = `
+<a
+  className="font-sans transition text-base px-0 py-0 cursor-pointer focus-offset bg-transparent text-blue-500 border-none hover:opacity-60 underline"
+  href="/"
+  variant="text"
+>
+  Anchor (looking traditionally underlined)
+</a>
+`;
