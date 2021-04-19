@@ -29,6 +29,7 @@ export const FormTextInput = forwardRef<
     <input
       {...inputProps}
       ref={ref}
+      id={name}
       className={`mb-2 ${errors.length ? "error" : ""}`}
     />
     {errors.map(error => (

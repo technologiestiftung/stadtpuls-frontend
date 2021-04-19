@@ -1,0 +1,305 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Forms/EditProjectForm With Default Values 1`] = `
+Array [
+  <h2
+    className="text-3xl text-blue-500 font-bold"
+  >
+    Projekt bearbeiten
+  </h2>,
+  <form
+    className="mt-4"
+    id="edit-project-form"
+    noValidate={true}
+    onSubmit={[Function]}
+  >
+    <div
+      className=" mb-2"
+    >
+      <label
+        className="block mb-2 cursor-pointer transition hover:opacity-60"
+        htmlFor="title"
+      >
+        Titel
+         
+      </label>
+      <input
+        className="mb-2 "
+        id="title"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Wie soll dein Projekt heißen?"
+        type="text"
+        value="A title"
+      />
+    </div>
+    <div
+      className="mb-2"
+    >
+      <label
+        className="block mb-2 cursor-pointer transition hover:opacity-60"
+        htmlFor="category"
+      >
+        Kategorie
+      </label>
+      <select
+        className="mb-2 text-gray-500 "
+        id="category"
+        name="category"
+        onBlur={[Function]}
+        onChange={[Function]}
+        required={true}
+        value="some value C"
+      >
+        <option
+          value=""
+        >
+          Bitte wähle eine Option
+        </option>
+        <option
+          value="some value A"
+        >
+          some name A
+        </option>
+        <option
+          value="some value B"
+        >
+          some name B
+        </option>
+        <option
+          value="some value C"
+        >
+          some name C
+        </option>
+      </select>
+    </div>
+    <div
+      className="mb-2"
+    >
+      <label
+        className="block mb-2 cursor-pointer transition hover:opacity-60"
+        htmlFor="description-textarea"
+      >
+        Beschreibung
+      </label>
+      <textarea
+        className="mb-2 "
+        cols={30}
+        id="description-textarea"
+        maxLength={140}
+        minLength={10}
+        name="description"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Beschreibe kurz das Projekt"
+        rows={10}
+        value="A description"
+      />
+    </div>
+    <div
+      className=" mb-2"
+    >
+      <label
+        className="block mb-2 cursor-pointer transition hover:opacity-60"
+        htmlFor="location"
+      >
+        Standort
+         
+        <span
+          className="text-gray-500 float-right text-sm transform translate-y-1"
+        >
+          (Optional)
+        </span>
+      </label>
+      <input
+        className="mb-2 "
+        id="location"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Wo befindet sich dein Projekt?"
+        type="text"
+        value="A location"
+      />
+    </div>
+    <button
+      className="mt-6 text-blue-500 underline"
+    >
+      Token neu generieren (placeholder)
+    </button>
+  </form>,
+  <footer
+    className="mt-12 flex place-content-between"
+  >
+    <button
+      className="text-red-500"
+    >
+      Projekt löschen
+    </button>
+    <div>
+      <button
+        className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+        type="button"
+      >
+        Abbrechen
+      </button>
+      <input
+        className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60 ml-4"
+        form="edit-project-form"
+        type="submit"
+        value="Speichern"
+        variant="primary"
+      />
+    </div>
+  </footer>,
+]
+`;
+
+exports[`Storyshots Forms/EditProjectForm Without Default Values 1`] = `
+Array [
+  <h2
+    className="text-3xl text-blue-500 font-bold"
+  >
+    Projekt bearbeiten
+  </h2>,
+  <form
+    className="mt-4"
+    id="edit-project-form"
+    noValidate={true}
+    onSubmit={[Function]}
+  >
+    <div
+      className=" mb-2"
+    >
+      <label
+        className="block mb-2 cursor-pointer transition hover:opacity-60"
+        htmlFor="title"
+      >
+        Titel
+         
+      </label>
+      <input
+        className="mb-2 "
+        id="title"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Wie soll dein Projekt heißen?"
+        type="text"
+      />
+    </div>
+    <div
+      className="mb-2"
+    >
+      <label
+        className="block mb-2 cursor-pointer transition hover:opacity-60"
+        htmlFor="category"
+      >
+        Kategorie
+      </label>
+      <select
+        className="mb-2 text-gray-500 "
+        id="category"
+        name="category"
+        onBlur={[Function]}
+        onChange={[Function]}
+        required={true}
+      >
+        <option
+          value=""
+        >
+          Bitte wähle eine Option
+        </option>
+        <option
+          value="some value A"
+        >
+          some name A
+        </option>
+        <option
+          value="some value B"
+        >
+          some name B
+        </option>
+        <option
+          value="some value C"
+        >
+          some name C
+        </option>
+      </select>
+    </div>
+    <div
+      className="mb-2"
+    >
+      <label
+        className="block mb-2 cursor-pointer transition hover:opacity-60"
+        htmlFor="description-textarea"
+      >
+        Beschreibung
+      </label>
+      <textarea
+        className="mb-2 "
+        cols={30}
+        id="description-textarea"
+        maxLength={140}
+        minLength={10}
+        name="description"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Beschreibe kurz das Projekt"
+        rows={10}
+      />
+    </div>
+    <div
+      className=" mb-2"
+    >
+      <label
+        className="block mb-2 cursor-pointer transition hover:opacity-60"
+        htmlFor="location"
+      >
+        Standort
+         
+        <span
+          className="text-gray-500 float-right text-sm transform translate-y-1"
+        >
+          (Optional)
+        </span>
+      </label>
+      <input
+        className="mb-2 "
+        id="location"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Wo befindet sich dein Projekt?"
+        type="text"
+      />
+    </div>
+    <button
+      className="mt-6 text-blue-500 underline"
+    >
+      Token neu generieren (placeholder)
+    </button>
+  </form>,
+  <footer
+    className="mt-12 flex place-content-between"
+  >
+    <button
+      className="text-red-500"
+    >
+      Projekt löschen
+    </button>
+    <div>
+      <button
+        className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+        type="button"
+      >
+        Abbrechen
+      </button>
+      <input
+        className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60 ml-4"
+        form="edit-project-form"
+        type="submit"
+        value="Speichern"
+        variant="primary"
+      />
+    </div>
+  </footer>,
+]
+`;

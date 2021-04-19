@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Forms/ProjectInfoFormWrapper Create 1`] = `
+Array [
+  <h2
+    className="text-3xl text-blue-500 font-bold"
+  >
+    Projekt erstellen
+  </h2>,
+  <form
+    className="mt-4"
+    id="create-project-form"
+    noValidate={true}
+  >
+    <h1>
+      Insert here: a create project form
+    </h1>
+  </form>,
+  <footer
+    className="mt-12 flex justify-end"
+  >
+    <button
+      className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+      type="button"
+    >
+      Abbrechen
+    </button>
+    <input
+      className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60 ml-4"
+      form="create-project-form"
+      type="submit"
+      value="Weiter"
+      variant="primary"
+    />
+  </footer>,
+]
+`;
+
+exports[`Storyshots Forms/ProjectInfoFormWrapper Edit 1`] = `
+Array [
+  <h2
+    className="text-3xl text-blue-500 font-bold"
+  >
+    Projekt bearbeiten
+  </h2>,
+  <form
+    className="mt-4"
+    id="edit-project-form"
+    noValidate={true}
+  >
+    <h1>
+      Insert here: an edit project form
+    </h1>
+  </form>,
+  <footer
+    className="mt-12 flex place-content-between"
+  >
+    <button
+      className="text-red-500"
+    >
+      Projekt löschen
+    </button>
+    <div>
+      <button
+        className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+        type="button"
+      >
+        Abbrechen
+      </button>
+      <input
+        className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60 ml-4"
+        form="edit-project-form"
+        type="submit"
+        value="Speichern"
+        variant="primary"
+      />
+    </div>
+  </footer>,
+]
+`;
