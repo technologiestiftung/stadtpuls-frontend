@@ -6,6 +6,13 @@ interface ButtonPropType
   disabled?: boolean;
   variant?: "primary" | "secondary" | "dangerous";
 }
+
+export interface AnchorPropType
+  extends Omit<HTMLProps<HTMLAnchorElement>, "children"> {
+  children: ReactNode;
+  variant?: "primary" | "secondary";
+  href: string;
+}
 interface SubmitPropType extends Omit<HTMLProps<HTMLInputElement>, "children"> {
   children: string;
   disabled?: boolean;
@@ -82,5 +89,19 @@ export const Submit = forwardRef<HTMLInputElement, SubmitPropType>(
       className={getButtonStyles(submitProps)}
       value={children}
     />
+  )
+);
+
+// eslint-disable-next-line react/display-name
+export const Anchor = forwardRef<HTMLAnchorElement, AnchorPropType>(
+  ({ href, children, ...anchorProps }, ref) => (
+    <a
+      href={href}
+      {...anchorProps}
+      ref={ref}
+      className={getButtonStyles(anchorProps)}
+    >
+      {children}
+    </a>
   )
 );
