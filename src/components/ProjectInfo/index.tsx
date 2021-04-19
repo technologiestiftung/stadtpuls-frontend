@@ -34,7 +34,7 @@ export const ProjectInfo: FC<ProjectInfoPropType> = ({
         </mark>
       </p>
       <div className='mt-4 max-w-prose'>{children}</div>
-      <Button onClick={onEditProject} className='mt-4'>
+      <Button variant='text' onClick={onEditProject} className='mt-4'>
         Projekt bearbeiten
       </Button>
     </div>
