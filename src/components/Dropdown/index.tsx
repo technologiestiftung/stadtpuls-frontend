@@ -1,4 +1,4 @@
-import useClickOutside from "@lib/onClickOutsideHook";
+import useClickOutside from "@lib/useClickOutside";
 import { FC, ReactNode, useState } from "react";
 
 interface DropdownPropType {
