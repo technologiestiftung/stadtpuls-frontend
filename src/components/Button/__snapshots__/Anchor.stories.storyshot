@@ -2,7 +2,7 @@
 
 exports[`Storyshots UI Elements/Anchor Default Anchor 1`] = `
 <a
-  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+  className="font-sans transition text-lg px-4 py-2 cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
   href="/"
 >
   Anchor (looking like a button)
@@ -11,7 +11,7 @@ exports[`Storyshots UI Elements/Anchor Default Anchor 1`] = `
 
 exports[`Storyshots UI Elements/Anchor Primary Anchor 1`] = `
 <a
-  className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
+  className="font-sans transition text-lg px-4 py-2 cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
   href="/"
   variant="primary"
 >
