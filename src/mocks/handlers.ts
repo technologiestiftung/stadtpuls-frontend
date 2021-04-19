@@ -8,7 +8,7 @@ import {
   device3Records,
   device4Records,
 } from "./data";
-import { allProjectsRecordsData } from "./supabaseData";
+import { allProjectsRecordsData, publicProjectsData } from "./supabaseData";
 import { createV1ApiUrl } from "../lib/requests/createV1ApiUrl";
 import { createV2ApiUrl } from "../lib/requests/createV2ApiUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
@@ -22,6 +22,14 @@ const { data: device3RecordsData } = device3Records;
 const { data: device4RecordsData } = device4Records;
 
 const supabaseHandlers = [
+  rest.get(
+    createV2ApiUrl(
+      "/projects?select=name%2Cdescription%2Clocation%2Cdevices%28records%28recordedAt%2Cmeasurements%29%29&offset=:offset&limit=:limit&devices.limit=1"
+    ),
+    (req, res, ctx) => {
+      return res(ctx.status(201, "Mocked status"), ctx.json(req));
+    }
+  ),
   rest.get(
     createV2ApiUrl(
       `/records?select=id%2CrecordedAt%2Cmeasurements%2Clongitude%2Clatitude%2Caltitude%2Cdevice%3AdeviceId%28id%2CexternalId%2Cname%2Cproject%3AprojectId%28id%2Cname%2Cdescription%2CcreatedAt%2Clocation%2Cconnectype%2Ccategory%3AcategoryId%28id%2Cname%2Cdescription%29%29%29&device.project.id=eq.10`

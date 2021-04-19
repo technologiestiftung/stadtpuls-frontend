@@ -211,3 +211,154 @@ export const allProjectsRecordsData: SupabaseResponseType[] = [
     },
   },
 ];
+
+export const publicProjectsData = [
+  {
+    name: "2ca64659a1fc249ba889b17726ce211a",
+    description: null,
+    location: null,
+    devices: [
+      {
+        records: [
+          {
+            recordedAt: "2021-04-14",
+            measurements: null,
+          },
+          {
+            recordedAt: "2021-04-14",
+            measurements: null,
+          },
+          {
+            recordedAt: "2021-04-14",
+            measurements: null,
+          },
+          {
+            recordedAt: "2021-04-14",
+            measurements: [1],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "536893d8360f2a0c4a5a631d8be3a002",
+    description: null,
+    location: null,
+    devices: [
+      {
+        records: [
+          {
+            recordedAt: "2021-04-14",
+            measurements: null,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "59d4b770ab921409bdd9e817f882c0b8",
+    description: null,
+    location: null,
+    devices: [
+      {
+        records: [
+          {
+            recordedAt: "2021-04-14",
+            measurements: null,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "d6b05156109faa7969797e774a2d7950",
+    description: null,
+    location: null,
+    devices: [
+      {
+        records: [],
+      },
+    ],
+  },
+  {
+    name: "0a582563dc6914914c1a581fd8a2e999",
+    description: null,
+    location: null,
+    devices: [
+      {
+        records: [],
+      },
+    ],
+  },
+  {
+    name: "51504f56e64abd432c7c0aa7a6addf5d",
+    description: null,
+    location: null,
+    devices: [],
+  },
+  {
+    name: "0ee22ee354ee9fa40460aea7d608cd14",
+    description: null,
+    location: null,
+    devices: [],
+  },
+  {
+    name: "e26cb7589a6df37d5a3deddf41fbfb31",
+    description: null,
+    location: null,
+    devices: [
+      {
+        records: [],
+      },
+    ],
+  },
+  {
+    name: "895998dd33688c7867bf7037cf023b94",
+    description: null,
+    location: null,
+    devices: [],
+  },
+  {
+    name: "3a0cc5e1dea483d9114b164dc2d6879d",
+    description: null,
+    location: null,
+    devices: [
+      {
+        records: [
+          {
+            recordedAt: "2021-04-14",
+            measurements: null,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "eb0a23cab37cd9ba4bde02722606b59c",
+    description: null,
+    location: null,
+    devices: [],
+  },
+  {
+    name: "c4bfe4558e414837b1ea689df784fb2a",
+    description: null,
+    location: null,
+    devices: [],
+  },
+  {
+    name: "018b1ef25dd5ccabef63cafc03ea93a4",
+    description: null,
+    location: null,
+    devices: [
+      {
+        records: [],
+      },
+    ],
+  },
+  {
+    name: "018b1ef25dd5ccabef63cafc03ea93a4",
+    description: null,
+    location: null,
+    devices: [],
+  },
+];
