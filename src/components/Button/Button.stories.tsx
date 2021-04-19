@@ -1,6 +1,6 @@
 import { Story, Meta } from "@storybook/react";
 import { HTMLProps } from "react";
-import { Button } from ".";
+import { Button, ButtonVariantsType } from ".";
 
 export default {
   title: "UI Elements/Button",
@@ -9,7 +9,7 @@ export default {
 
 interface ButtonTemplatePropTypes extends HTMLProps<HTMLButtonElement> {
   disabled?: boolean;
-  variant?: "primary" | "secondary" | "dangerous";
+  variant?: ButtonVariantsType;
 }
 
 const ButtonTemplate: Story<ButtonTemplatePropTypes> = ({
@@ -31,6 +31,12 @@ PrimaryButton.args = {
   children: "I am a primary button",
 };
 
+export const TextButton = ButtonTemplate.bind({});
+TextButton.args = {
+  variant: "text",
+  children: "I am a text button",
+};
+
 export const DangerousButton = ButtonTemplate.bind({});
 DangerousButton.args = {
   variant: "dangerous",
@@ -48,6 +54,13 @@ PrimaryDisabledButton.args = {
   disabled: true,
   variant: "primary",
   children: "I am a primary disabled button",
+};
+
+export const TextDisabledButton = ButtonTemplate.bind({});
+TextDisabledButton.args = {
+  disabled: true,
+  variant: "text",
+  children: "I am a text disabled button",
 };
 
 export const DangerousDisabledButton = ButtonTemplate.bind({});

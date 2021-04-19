@@ -28,6 +28,11 @@ describe("Button component", () => {
     const button = screen.getByRole("button");
     expect(button.getAttribute("class")?.includes("bg-blue-500")).toBe(true);
   });
+  it("should have basic text button style when text button", () => {
+    render(<Button variant='text'>Button</Button>);
+    const button = screen.getByRole("button");
+    expect(button.getAttribute("class")?.includes("underline")).toBe(true);
+  });
   it("should have dangerous styles when dangerous", () => {
     render(<Button variant='dangerous'>Button</Button>);
     const button = screen.getByRole("button");
@@ -48,6 +53,15 @@ describe("Button component", () => {
     );
     const button = screen.getByRole("button");
     expect(button.getAttribute("class")?.includes("bg-gray-200")).toBe(true);
+  });
+  it("should have text button disabled styles when text button disabled", () => {
+    render(
+      <Button variant='text' disabled>
+        Button
+      </Button>
+    );
+    const button = screen.getByRole("button");
+    expect(button.getAttribute("class")?.includes("text-gray-300")).toBe(true);
   });
   it("should have dangerous disabled styles when dangerous disabled", () => {
     render(
