@@ -188,11 +188,6 @@ export interface CompleteProjectType extends ProjectType {
   devices: DeviceType[];
 }
 
-export interface DataTableType {
-  data: Array<RecordType> | undefined;
-  title: string | undefined;
-}
-
 export interface SummaryType {
   title: string;
   description: string;
