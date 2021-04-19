@@ -77,7 +77,10 @@ const SensorsListDisplayItem: FC<SensorsListDisplayItemPropType> = ({
   onEditClick,
   onDeleteClick,
 }) => (
-  <tr className='transition hover:bg-blue-25 cursor-pointer'>
+  <tr
+    className='transition hover:bg-blue-25 cursor-pointer'
+    onClick={() => onEditClick()}
+  >
     <Td className='pl-0' style={{ minWidth: "20vw" }}>
       <DeviceIcon />
       {externalId}

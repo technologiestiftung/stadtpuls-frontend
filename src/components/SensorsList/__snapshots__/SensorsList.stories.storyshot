@@ -36,6 +36,7 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
   <tbody>
     <tr
       className="transition hover:bg-blue-25 cursor-pointer"
+      onClick={[Function]}
     >
       <td
         className="pl-0 py-3 px-6 whitespace-nowrap font-normal w-auto"
@@ -111,6 +112,7 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
     </tr>
     <tr
       className="transition hover:bg-blue-25 cursor-pointer"
+      onClick={[Function]}
     >
       <td
         className="pl-0 py-3 px-6 whitespace-nowrap font-normal w-auto"
@@ -186,6 +188,7 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
     </tr>
     <tr
       className="transition hover:bg-blue-25 cursor-pointer"
+      onClick={[Function]}
     >
       <td
         className="pl-0 py-3 px-6 whitespace-nowrap font-normal w-auto"
