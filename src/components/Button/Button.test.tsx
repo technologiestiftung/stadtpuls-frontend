@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Button, Submit } from ".";
+import { Button, Submit, Anchor } from ".";
 
 describe("Button component", () => {
   it("should have a button type", () => {
@@ -96,5 +96,38 @@ describe("Submit component", () => {
     render(<Submit disabled>Submit</Submit>);
     const submit = screen.getByText("Submit");
     expect(submit.getAttribute("class")?.includes("cursor-default")).toBe(true);
+  });
+});
+
+describe("Anchor component", () => {
+  it("should render a link", () => {
+    render(<Anchor href='/'>Some link</Anchor>);
+    const anchor = screen.getByRole("link", { name: /Some link/g });
+    expect(anchor).toBeInTheDocument();
+  });
+  it("should have basic styles", () => {
+    render(<Anchor href='/'>Some link</Anchor>);
+    const anchor = screen.getByRole("link", { name: /Some link/g });
+    expect(anchor.getAttribute("class")?.includes("transition")).toBe(true);
+  });
+  it("should have default styles when default", () => {
+    render(<Anchor href='/'>Some link</Anchor>);
+    const anchor = screen.getByRole("link", { name: /Some link/g });
+    expect(anchor.getAttribute("class")?.includes("cursor-pointer")).toBe(true);
+  });
+  it("should have primary styles when primary", () => {
+    render(<Anchor href='/'>Some link</Anchor>);
+    const anchor = screen.getByRole("link", { name: /Some link/g });
+    expect(anchor.getAttribute("class")?.includes("bg-blue-500")).toBe(true);
+  });
+  it("should have open-in-new-tab attributes when provided", () => {
+    render(
+      <Anchor href='/' target='_blank' rel='noopener noreferrer'>
+        Some link
+      </Anchor>
+    );
+    const anchor = screen.getByRole("link", { name: /Some link/g });
+    expect(anchor.getAttribute("target")).toBe("_blank");
+    expect(anchor.getAttribute("rel")).toBe("noopener noreferrer");
   });
 });
