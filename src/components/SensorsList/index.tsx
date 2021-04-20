@@ -1,15 +1,16 @@
 import { FC, useEffect, useState } from "react";
-import { DeviceIcon } from "./DeviceIcon";
 import { usePrevious } from "@lib/hooks/usePrevious";
-import { Td, Tr } from "@components/HTMLTable";
 import { SensorType, SubmissionDataType } from "./SensorsListTypes";
 import { SensorsListDispalyRow } from "./SensorsListDispalyRow";
 import { SensorsListEditRow } from "./SensorsListEditRow";
 import { SensorsListHeaderRow } from "./SensorsListHeaderRow";
+import { EmptySensorsLink } from "./EmptySensorsLink";
+import { NewSensorForm } from "./NewSensorForm";
 
 interface SensorsListPropType {
   sensors: SensorType[];
   onChange?: (data: SensorType) => void;
+  onAdd?: (data: SensorType) => void;
   onDelete?: (id: string | number) => void;
 }
 
@@ -68,36 +69,48 @@ const SensorListItem: FC<SensorsListItemPropType> = props => {
 export const SensorsList: FC<SensorsListPropType> = ({
   sensors,
   onChange = () => undefined,
+  onAdd = () => undefined,
   onDelete = () => undefined,
-}) => (
-  <table className='w-full text-left'>
-    <SensorsListHeaderRow />
-    <tbody>
-      {sensors.length === 0 && (
-        <Tr>
-          <Td
-            colSpan={5}
-            className='text-center align-middle'
-            style={{ height: "20vmax" }}
-          >
-            <button>
-              <DeviceIcon />
-              Ersten Sensor hinzufügen
-            </button>
-          </Td>
-        </Tr>
+}) => {
+  const [isAddingSensor, setIsAddingSensor] = useState<boolean>(false);
+
+  return (
+    <>
+      <table className='w-full text-left'>
+        <SensorsListHeaderRow />
+        <tbody>
+          {sensors.length === 0 && !isAddingSensor && (
+            <EmptySensorsLink onClick={() => setIsAddingSensor(true)} />
+          )}
+          {sensors.map(({ id, externalId, name, lastRecordedAt }) => (
+            <SensorListItem
+              key={id}
+              id={id}
+              externalId={externalId}
+              name={name}
+              lastRecordedAt={lastRecordedAt}
+              onChange={onChange}
+              onDelete={onDelete}
+            />
+          ))}
+          {isAddingSensor && (
+            <NewSensorForm
+              onSubmit={(data: SubmissionDataType) => {
+                setIsAddingSensor(false);
+                onAdd(data);
+              }}
+              onCancel={() => setIsAddingSensor(false)}
+            />
+          )}
+        </tbody>
+      </table>
+      {sensors.length > 0 && !isAddingSensor && (
+        <div className='text-right mt-8'>
+          <button onClick={() => setIsAddingSensor(true)}>
+            Sensor hinzufügen
+          </button>
+        </div>
       )}
-      {sensors.map(({ id, externalId, name, lastRecordedAt }) => (
-        <SensorListItem
-          key={id}
-          id={id}
-          externalId={externalId}
-          name={name}
-          lastRecordedAt={lastRecordedAt}
-          onChange={onChange}
-          onDelete={onDelete}
-        />
-      ))}
-    </tbody>
-  </table>
-);
+    </>
+  );
+};
