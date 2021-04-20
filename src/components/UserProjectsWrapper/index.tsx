@@ -38,7 +38,7 @@ export const UserProjectsWrapper: FC<UserProjectWrapperType> = ({
           <UserProjectsNav
             projects={projects}
             defaultSelectedProject={
-              projects.find(project => project.projectId === id) || projects[0]
+              projects.find(project => project.projectId === id) || null
             }
             onSelectProject={handleSelectProject}
             className='mt-12'

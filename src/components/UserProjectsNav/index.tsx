@@ -7,7 +7,7 @@ export interface ProjectListItemType {
 
 export interface UserProjectsNavType extends HTMLProps<HTMLElement> {
   projects: ProjectListItemType[];
-  defaultSelectedProject?: ProjectListItemType;
+  defaultSelectedProject?: ProjectListItemType | null;
   onSelectProject: (projectId: string) => void;
 }
 

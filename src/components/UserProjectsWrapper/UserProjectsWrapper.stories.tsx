@@ -32,7 +32,7 @@ export const Default = Template.bind({});
 Default.parameters = {
   nextRouter: {
     query: {
-      id: "4",
+      id: "1",
     },
   },
 };
