@@ -1,7 +1,7 @@
 import { supabase } from "@auth/supabase";
 import useSWR from "swr";
 
-import { ProjectsType } from "@common/types/supabase";
+import { DevicesType, ProjectsType } from "@common/types/supabase";
 
 interface DateValueType {
   date: Date;
@@ -23,6 +23,29 @@ export interface PublicProjects {
 
 //TODO: Find a better place to define page size for homepage
 const pageSize = 10;
+
+const parseDeviceRecords = (
+  devices: DevicesType[] | undefined
+): DateValueType[][] | null => {
+  if (!devices) return null;
+  else if (devices.length === 0) return null;
+  else if (!devices[0].records) return null;
+  else if (devices[0].records.length === 0) return null;
+  else if (!devices[0].records[0].measurements) return null;
+  else if (devices[0].records[0].measurements.length === 0) return null;
+  else {
+    return devices[0].records[0].measurements.map((_measurement, index) =>
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      devices[0].records.map(record => {
+        return {
+          date: new Date(record.recordedAt),
+          value: record.measurements ? record.measurements[index] : 0,
+        };
+      })
+    );
+  }
+};
 
 export const getPublicProjects = async (
   page: number,
@@ -64,18 +87,7 @@ export const getPublicProjects = async (
         name,
         description,
         location,
-        records:
-          devices.length && devices[0].records.length
-            ? devices[0]?.records[0].measurements?.map((_measurement, index) =>
-                devices[0]?.records.map(record => {
-                  return {
-                    date: new Date(record.recordedAt),
-                    //FIXME: wait for Fabian to fix db and make measurements required
-                    value: record.measurements ? record.measurements[index] : 0,
-                  };
-                })
-              )
-            : null,
+        records: parseDeviceRecords(devices),
       };
     }
   );

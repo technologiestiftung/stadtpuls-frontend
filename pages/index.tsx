@@ -7,7 +7,7 @@ const HomePage: FC = () => {
   const recordsLimit = useStoreState(state => state.records.segmentSize);
 
   const { data, error } = usePublicProjects(0, recordsLimit);
-
+  console.log(data);
   if (!data || error) return <></>;
   else return <Overview {...data} />;
 };
