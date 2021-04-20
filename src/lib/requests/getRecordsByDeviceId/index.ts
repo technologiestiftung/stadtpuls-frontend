@@ -1,12 +1,12 @@
 import { RecordType } from "@common/interfaces";
 import { FetchResponse } from "@common/types";
-import { createApiUrl } from "../createApiUrl";
+import { createV1ApiUrl } from "../createV1ApiUrl";
 
 type RecordsResponse = FetchResponse<"records", RecordType[]>;
 export async function getRecordsByDeviceId(
   id: string | number
 ): Promise<RecordType[]> {
-  const url = createApiUrl(`/devices/${id}/records`);
+  const url = createV1ApiUrl(`/devices/${id}/records`);
   const response = await fetch(url);
   if (!response.ok) {
     console.error(await response.text());

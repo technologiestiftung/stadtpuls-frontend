@@ -1,12 +1,12 @@
 import { DeviceType } from "@common/interfaces";
 import { FetchResponse } from "@common/types";
-import { createApiUrl } from "@lib/requests/createApiUrl";
+import { createV1ApiUrl } from "@lib/requests/createV1ApiUrl";
 
 type DeviceResponse = FetchResponse<"devices", DeviceType[]>;
 export async function getDevicesByProjectId(
   id: string | number
 ): Promise<DeviceType[]> {
-  const url = createApiUrl(`/projects/${id}/devices`);
+  const url = createV1ApiUrl(`/projects/${id}/devices`);
   const response = await fetch(url);
   if (!response.ok) {
     console.error(await response.text());

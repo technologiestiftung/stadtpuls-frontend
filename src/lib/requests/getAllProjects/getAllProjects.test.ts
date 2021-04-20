@@ -1,4 +1,4 @@
-import { createApiUrl } from "./../createApiUrl";
+import { createV1ApiUrl } from "./../createV1ApiUrl";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { projectsResponse } from "./../../../mocks/data";
@@ -18,7 +18,7 @@ describe("utility function getAllProjects", () => {
   });
   it("should throw 'Failed to fetch projects' if fails", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createApiUrl("/projects"), (_req, res, ctx) => {
+      rest.get(createV1ApiUrl("/projects"), (_req, res, ctx) => {
         return res(ctx.status(403), ctx.text("Error message!"));
       })
     );

@@ -1,65 +1,18 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, FC } from "react";
 import Link from "next/link";
 import { jsx, Box, Card, Heading, Text, Grid, Flex } from "theme-ui";
-import { ProjectType, DateValueType, RecordType } from "@common/interfaces";
-import { LinePath } from "../LinePath";
-import { getRecordsByDeviceId } from "@lib/requests/getRecordsByDeviceId";
-import { getDevicesByProjectId } from "@lib/requests/getDevicesByProjectId";
-import { createDateValueArray } from "@lib/dateUtil";
-import { useStoreState } from "@state/hooks";
+import { LinePath } from "@components/LinePath";
+import { PublicProject } from "@lib/hooks/usePublicProjects";
 
-export const ProjectPreview: React.FC<ProjectType> = ({
+export const ProjectPreview: FC<PublicProject> = ({
   id,
-  title,
-  city,
+  name,
+  location,
   description,
+  records,
 }) => {
-  const [dateValueArray, setDateValueArray] = useState<
-    DateValueType[] | undefined
-  >(undefined);
-
-  const numberOfRecordsToDisplay = useStoreState(
-    state => state.records.segmentSize
-  );
-
-  useEffect(() => {
-    let isMounted = true;
-
-    const fetchFirstDeviceRecords = async (): Promise<
-      RecordType[] | undefined
-    > => {
-      const devices = await getDevicesByProjectId(id);
-
-      if (devices.length < 1) return;
-
-      const records = await getRecordsByDeviceId(devices[0].id);
-      return records;
-    };
-
-    fetchFirstDeviceRecords()
-      .then((result: undefined | RecordType[]) => {
-        if (!result || !isMounted) return;
-
-        const dataToDisplay =
-          result.length > numberOfRecordsToDisplay
-            ? result
-                .sort(
-                  (a, b) => Date.parse(b.recordedAt) - Date.parse(a.recordedAt)
-                )
-                .filter((_record, i: number) => i < numberOfRecordsToDisplay)
-            : result;
-
-        setDateValueArray(createDateValueArray(dataToDisplay));
-      })
-      .catch(error => console.error(error));
-
-    return () => {
-      isMounted = false;
-    };
-  }, [id, numberOfRecordsToDisplay]);
-
   const parentRef = useRef<HTMLDivElement>(null);
   const [svgWrapperWidth, setSvgWrapperWidth] = useState(0);
   const [svgWrapperHeight, setSvgWrapperHeight] = useState(0);
@@ -95,10 +48,10 @@ export const ProjectPreview: React.FC<ProjectType> = ({
             <Grid gap={2} columns={[1, 2, 2]}>
               <Box>
                 <Heading as='h3' variant='h3'>
-                  {title}
+                  {name}
                 </Heading>
                 <Heading as='h4' variant='h5' mt={1}>
-                  {city}
+                  {location}
                 </Heading>
                 <Text mt={3}>{description}</Text>
               </Box>
@@ -107,7 +60,7 @@ export const ProjectPreview: React.FC<ProjectType> = ({
                 mt={[4, 0, 0]}
                 sx={{ alignItems: "center" }}
               >
-                {dateValueArray && (
+                {records && (
                   <svg
                     viewBox={`0 0  `}
                     xmlns='http://www.w3.org/2000/svg'
@@ -118,7 +71,8 @@ export const ProjectPreview: React.FC<ProjectType> = ({
                     <LinePath
                       width={svgWrapperWidth}
                       height={svgWrapperHeight}
-                      data={dateValueArray}
+                      //FIXME: Figure out how we want to handle multiple data points
+                      data={records[0]}
                     />
                   </svg>
                 )}
