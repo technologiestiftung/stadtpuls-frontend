@@ -44,3 +44,48 @@ exports[`Storyshots Layout/UserProjectsNav Default 1`] = `
   </ul>
 </nav>
 `;
+
+exports[`Storyshots Layout/UserProjectsNav Without Default Selected Project 1`] = `
+<nav
+  aria-label="Projekte-Navigation"
+>
+  <ul>
+    <li
+      aria-labelledby="user-project-item-kjasdhjkas"
+      className="my-4 border-opacity-0"
+    >
+      <button
+        className="py-0 pl-4 border-l-2 border-blue-400 focus-offset transition text-gray-500 border-opacity-0"
+        id="user-project-item-kjasdhjkas"
+        onClick={[Function]}
+      >
+        Project A
+      </button>
+    </li>
+    <li
+      aria-labelledby="user-project-item-uisdzuada"
+      className="my-4 border-opacity-0"
+    >
+      <button
+        className="py-0 pl-4 border-l-2 border-blue-400 focus-offset transition text-gray-500 border-opacity-0"
+        id="user-project-item-uisdzuada"
+        onClick={[Function]}
+      >
+        Project B
+      </button>
+    </li>
+    <li
+      aria-labelledby="user-project-item-tgedhebdm"
+      className="my-4 border-opacity-0"
+    >
+      <button
+        className="py-0 pl-4 border-l-2 border-blue-400 focus-offset transition text-gray-500 border-opacity-0"
+        id="user-project-item-tgedhebdm"
+        onClick={[Function]}
+      >
+        Project C
+      </button>
+    </li>
+  </ul>
+</nav>
+`;
