@@ -34,9 +34,9 @@ export interface CategoriesType {
     | "Lautstärke";
   description: string;
   //Relations
-  projects: ProjectsType[];
+  projects?: ProjectsType[];
 }
-export interface Devices {
+export interface DevicesType {
   /**
    * Note:
    * This is a Primary Key.<pk/>
@@ -49,7 +49,7 @@ export interface Devices {
    * This is a Foreign Key to `projects.id`.<fk table='projects' column='id'/>
    */
   projectId: number;
-  project: ProjectsType;
+  project?: ProjectsType;
   /**
    * Note:
    * This is a Foreign Key to `users.id`.<fk table='users' column='id'/>
@@ -57,7 +57,7 @@ export interface Devices {
   userId?: string;
   user?: UsersType;
   //Relations
-  records: RecordsType[];
+  records?: RecordsType[];
 }
 export interface ProjectsType {
   /**
@@ -74,16 +74,16 @@ export interface ProjectsType {
    * Note:
    * This is a Foreign Key to `users.id`.<fk table='users' column='id'/>
    */
-  userId: string;
-  user: UsersType;
+  userId?: string;
+  user?: UsersType;
   /**
    * Note:
    * This is a Foreign Key to `categories.id`.<fk table='categories' column='id'/>
    */
   categoryId: number;
-  category: CategoriesType;
+  category?: CategoriesType;
   //Relations
-  devices: Devices[];
+  devices?: DevicesType[];
   authtoken?: AuthtokensType;
 }
 export interface RecordsType {
@@ -102,7 +102,7 @@ export interface RecordsType {
    * This is a Foreign Key to `devices.id`.<fk table='devices' column='id'/>
    */
   deviceId: number;
-  device: Devices;
+  device?: DevicesType;
 }
 export interface UsersType {
   /**
@@ -114,9 +114,9 @@ export interface UsersType {
   createdAt: string;
   role?: "maker";
   //Relations
-  projects: ProjectsType[];
-  devices: Devices[];
-  authtokens: AuthtokensType[];
+  projects?: ProjectsType[];
+  devices?: DevicesType[];
+  authtokens?: AuthtokensType[];
 }
 
 export interface AuthenticatedUsersType {
