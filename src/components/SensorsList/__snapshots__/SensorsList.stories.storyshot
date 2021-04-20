@@ -8,46 +8,57 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
     className="font-normal"
   >
     <tr
-      className="border-b border-gray-200 mb-4"
+      className="border-b border-gray-200 mb-4 py-4 sm:py-0 whitespace-nowrap w-auto block align-top sm:table-cell grid gap-2 sm:gap-0 sm:table-row"
     >
       <th
-        className="pl-0 text-gray-400 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="pl-0 sm:py-3 sm:pr-3 whitespace-nowrap w-auto block align-top sm:table-cell text-gray-400 hidden sm:visible font-normal"
       >
         Gerät-ID
       </th>
       <th
-        className="w-full text-gray-400 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="w-full sm:py-3 sm:pr-3 whitespace-nowrap w-auto block align-top sm:table-cell text-gray-400 hidden sm:visible font-normal"
       >
         Anzeigename
       </th>
       <th
-        className=" text-gray-400 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="sm:py-3 sm:pr-3 whitespace-nowrap w-auto block align-top sm:table-cell text-gray-400 hidden sm:visible font-normal"
       >
         Letztes Signal
       </th>
       <th
-        className=" text-gray-400 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="sm:py-3 sm:pr-3 whitespace-nowrap w-auto block align-top sm:table-cell text-gray-400 hidden sm:visible font-normal"
       />
       <th
-        className="pr-0 text-gray-400 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="pr-0 sm:py-3 sm:pr-3 whitespace-nowrap w-auto block align-top sm:table-cell text-gray-400 hidden sm:visible font-normal"
       />
     </tr>
   </thead>
   <tbody>
     <tr
-      className="transition hover:bg-blue-25 cursor-pointer"
+      className="transition hover:bg-blue-25 cursor-pointer py-4 sm:py-0 whitespace-nowrap w-auto block align-top sm:table-cell grid gap-2 sm:gap-0 sm:table-row"
       onClick={[Function]}
+      style={
+        Object {
+          "gridTemplateAreas": "
+      'id         name'
+      'lastSeen   lastSeen'
+      'button1    button2'
+    ",
+          "gridTemplateColumns": "auto 1fr",
+        }
+      }
     >
       <td
-        className="pl-0 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="font-bold sm:font-normal pl-0 sm:py-3 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
         style={
           Object {
+            "gridArea": "id",
             "minWidth": "20vw",
           }
         }
       >
         <svg
-          className="inline-block mr-3 ml-2"
+          className="inline-block mr-3 sm:ml-2"
           fill="none"
           height="15"
           viewBox="0 0 21 15"
@@ -82,26 +93,32 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
         device-1
       </td>
       <td
-        className="w-full py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="w-full sm:py-3 pl-8 sm:pl-0 sm:pr-6 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
+        style={
+          Object {
+            "gridArea": "name",
+          }
+        }
       >
         Neo
       </td>
       <td
-        className=" py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="italic text-gray-500 sm:py-3 pl-8 sm:pl-0 sm:pr-6 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
+        style={
+          Object {
+            "gridArea": "lastSeen",
+          }
+        }
       >
         Vor ein paar Sekunden
       </td>
       <td
-        className=" py-3 px-6 whitespace-nowrap font-normal w-auto"
-      >
-        <button
-          onClick={[Function]}
-        >
-          Löschen
-        </button>
-      </td>
-      <td
-        className="pr-0 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="sm:text-right sm:py-3 pl-8 sm:pl-0 sm:pr-6 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
+        style={
+          Object {
+            "gridArea": "button1",
+          }
+        }
       >
         <button
           onClick={[Function]}
@@ -109,21 +126,46 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
           Bearbeiten
         </button>
       </td>
-    </tr>
-    <tr
-      className="transition hover:bg-blue-25 cursor-pointer"
-      onClick={[Function]}
-    >
       <td
-        className="pl-0 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="sm:text-right pr-0 sm:py-3 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
         style={
           Object {
+            "gridArea": "button2",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+        >
+          Löschen
+        </button>
+      </td>
+    </tr>
+    <tr
+      className="transition hover:bg-blue-25 cursor-pointer py-4 sm:py-0 whitespace-nowrap w-auto block align-top sm:table-cell grid gap-2 sm:gap-0 sm:table-row"
+      onClick={[Function]}
+      style={
+        Object {
+          "gridTemplateAreas": "
+      'id         name'
+      'lastSeen   lastSeen'
+      'button1    button2'
+    ",
+          "gridTemplateColumns": "auto 1fr",
+        }
+      }
+    >
+      <td
+        className="font-bold sm:font-normal pl-0 sm:py-3 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
+        style={
+          Object {
+            "gridArea": "id",
             "minWidth": "20vw",
           }
         }
       >
         <svg
-          className="inline-block mr-3 ml-2"
+          className="inline-block mr-3 sm:ml-2"
           fill="none"
           height="15"
           viewBox="0 0 21 15"
@@ -158,26 +200,32 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
         device-2
       </td>
       <td
-        className="w-full py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="w-full sm:py-3 pl-8 sm:pl-0 sm:pr-6 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
+        style={
+          Object {
+            "gridArea": "name",
+          }
+        }
       >
         Triniti
       </td>
       <td
-        className=" py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="italic text-gray-500 sm:py-3 pl-8 sm:pl-0 sm:pr-6 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
+        style={
+          Object {
+            "gridArea": "lastSeen",
+          }
+        }
       >
         Vor 3 Monaten
       </td>
       <td
-        className=" py-3 px-6 whitespace-nowrap font-normal w-auto"
-      >
-        <button
-          onClick={[Function]}
-        >
-          Löschen
-        </button>
-      </td>
-      <td
-        className="pr-0 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="sm:text-right sm:py-3 pl-8 sm:pl-0 sm:pr-6 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
+        style={
+          Object {
+            "gridArea": "button1",
+          }
+        }
       >
         <button
           onClick={[Function]}
@@ -185,21 +233,46 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
           Bearbeiten
         </button>
       </td>
-    </tr>
-    <tr
-      className="transition hover:bg-blue-25 cursor-pointer"
-      onClick={[Function]}
-    >
       <td
-        className="pl-0 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="sm:text-right pr-0 sm:py-3 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
         style={
           Object {
+            "gridArea": "button2",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+        >
+          Löschen
+        </button>
+      </td>
+    </tr>
+    <tr
+      className="transition hover:bg-blue-25 cursor-pointer py-4 sm:py-0 whitespace-nowrap w-auto block align-top sm:table-cell grid gap-2 sm:gap-0 sm:table-row"
+      onClick={[Function]}
+      style={
+        Object {
+          "gridTemplateAreas": "
+      'id         name'
+      'lastSeen   lastSeen'
+      'button1    button2'
+    ",
+          "gridTemplateColumns": "auto 1fr",
+        }
+      }
+    >
+      <td
+        className="font-bold sm:font-normal pl-0 sm:py-3 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
+        style={
+          Object {
+            "gridArea": "id",
             "minWidth": "20vw",
           }
         }
       >
         <svg
-          className="inline-block mr-3 ml-2"
+          className="inline-block mr-3 sm:ml-2"
           fill="none"
           height="15"
           viewBox="0 0 21 15"
@@ -234,31 +307,51 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
         device-3
       </td>
       <td
-        className="w-full py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="w-full sm:py-3 pl-8 sm:pl-0 sm:pr-6 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
+        style={
+          Object {
+            "gridArea": "name",
+          }
+        }
       >
         Morpheus
       </td>
       <td
-        className=" py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="italic text-gray-500 sm:py-3 pl-8 sm:pl-0 sm:pr-6 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
+        style={
+          Object {
+            "gridArea": "lastSeen",
+          }
+        }
       >
         —
       </td>
       <td
-        className=" py-3 px-6 whitespace-nowrap font-normal w-auto"
-      >
-        <button
-          onClick={[Function]}
-        >
-          Löschen
-        </button>
-      </td>
-      <td
-        className="pr-0 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="sm:text-right sm:py-3 pl-8 sm:pl-0 sm:pr-6 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
+        style={
+          Object {
+            "gridArea": "button1",
+          }
+        }
       >
         <button
           onClick={[Function]}
         >
           Bearbeiten
+        </button>
+      </td>
+      <td
+        className="sm:text-right pr-0 sm:py-3 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
+        style={
+          Object {
+            "gridArea": "button2",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+        >
+          Löschen
         </button>
       </td>
     </tr>
@@ -274,35 +367,37 @@ exports[`Storyshots Layout/SensorsList Empty 1`] = `
     className="font-normal"
   >
     <tr
-      className="border-b border-gray-200 mb-4"
+      className="border-b border-gray-200 mb-4 py-4 sm:py-0 whitespace-nowrap w-auto block align-top sm:table-cell grid gap-2 sm:gap-0 sm:table-row"
     >
       <th
-        className="pl-0 text-gray-400 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="pl-0 sm:py-3 sm:pr-3 whitespace-nowrap w-auto block align-top sm:table-cell text-gray-400 hidden sm:visible font-normal"
       >
         Gerät-ID
       </th>
       <th
-        className="w-full text-gray-400 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="w-full sm:py-3 sm:pr-3 whitespace-nowrap w-auto block align-top sm:table-cell text-gray-400 hidden sm:visible font-normal"
       >
         Anzeigename
       </th>
       <th
-        className=" text-gray-400 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="sm:py-3 sm:pr-3 whitespace-nowrap w-auto block align-top sm:table-cell text-gray-400 hidden sm:visible font-normal"
       >
         Letztes Signal
       </th>
       <th
-        className=" text-gray-400 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="sm:py-3 sm:pr-3 whitespace-nowrap w-auto block align-top sm:table-cell text-gray-400 hidden sm:visible font-normal"
       />
       <th
-        className="pr-0 text-gray-400 py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="pr-0 sm:py-3 sm:pr-3 whitespace-nowrap w-auto block align-top sm:table-cell text-gray-400 hidden sm:visible font-normal"
       />
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr
+      className="py-4 sm:py-0 whitespace-nowrap w-auto block align-top sm:table-cell grid gap-2 sm:gap-0 sm:table-row"
+    >
       <td
-        className="text-center align-middle py-3 px-6 whitespace-nowrap font-normal w-auto"
+        className="text-center align-middle sm:py-3 pl-8 sm:pl-0 sm:pr-6 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"
         colSpan={5}
         style={
           Object {
@@ -312,7 +407,7 @@ exports[`Storyshots Layout/SensorsList Empty 1`] = `
       >
         <button>
           <svg
-            className="inline-block mr-3 ml-2"
+            className="inline-block mr-3 sm:ml-2"
             fill="none"
             height="15"
             viewBox="0 0 21 15"

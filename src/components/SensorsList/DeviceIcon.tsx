@@ -7,7 +7,7 @@ export const DeviceIcon: FC = () => (
     viewBox='0 0 21 15'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
-    className='inline-block mr-3 ml-2'
+    className='inline-block mr-3 sm:ml-2'
   >
     <path
       opacity='0.5'
