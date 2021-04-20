@@ -1,5 +1,6 @@
 import { FC, HTMLProps } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import { Anchor } from "@components/Button";
 import {
   UserProjectsNav,
@@ -29,9 +30,11 @@ export const UserProjectsWrapper: FC<UserProjectWrapperType> = ({
       <section className='col-span-4'>
         <h1 className='text-3xl text-blue-500 font-bold'>Meine Projekte</h1>
         <div className='mt-8'>
-          <Anchor href={"/account/projects/new"} variant='primary'>
-            Neues Projekt
-          </Anchor>
+          <Link href={"/account/projects/new"}>
+            <Anchor href={"/account/projects/new"} variant='primary'>
+              Neues Projekt
+            </Anchor>
+          </Link>
           <UserProjectsNav
             projects={projects}
             defaultSelectedProject={
