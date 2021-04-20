@@ -8,7 +8,10 @@ import {
 } from "@common/types/supabase";
 import { useAuth } from "@auth/Auth";
 
-type UserDataType = AuthenticatedUsersType & UsersType;
+interface UserDataType {
+  user: UsersType;
+  projects: ProjectsType[];
+}
 
 const fetchUserData = async (
   authenticatedUser: AuthenticatedUsersType | null
@@ -53,7 +56,11 @@ const fetchUserData = async (
   if (projects_error) throw projects_error;
   else if (!user)
     throw new Error(`User with id "${authenticatedUser.id} was not found"`);
-  else return { ...authenticatedUser, user, projects };
+  else if (!projects)
+    throw new Error(
+      `Projects for user with id "${authenticatedUser.id} was not found"`
+    );
+  else return { user, projects };
 };
 
 const addDevice = async (
@@ -174,7 +181,9 @@ const deleteUser = async (
 };
 
 export const useUserData = (): {
-  data: UsersType | null;
+  authenticatedUser: AuthenticatedUsersType | null;
+  user: UsersType | null;
+  projects: ProjectsType[] | null;
   error: Error | null;
   addDevice: ({
     externalId,
@@ -210,12 +219,15 @@ export const useUserData = (): {
   deleteUser: () => Promise<any[] | null | Error>;
 } => {
   const { authenticatedUser } = useAuth();
-  const { data, error } = useSWR<UsersType, Error>(
+  const { data, error } = useSWR<UserDataType, Error>(
     ["user", authenticatedUser?.id],
     () => fetchUserData(authenticatedUser)
   );
+
   return {
-    data: data || null,
+    authenticatedUser: authenticatedUser || null,
+    user: data?.user || null,
+    projects: data?.projects || null,
     error: error || null,
     addDevice: ({ externalId, name, projectId }) =>
       addDevice({ externalId, name, projectId, userId: authenticatedUser?.id }),

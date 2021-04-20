@@ -134,6 +134,6 @@ export interface AuthenticatedUsersType {
   created_at: string;
   confirmed_at?: string;
   last_sign_in_at?: string;
-  role?: "maker";
+  role?: "maker" | string;
   updated_at?: string;
 }
