@@ -33,3 +33,9 @@ Default.args = {
   defaultSelectedProject: exampleProjects[0],
   onSelectProject: action("Function triggered when selected project changes"),
 };
+
+export const WithoutDefaultSelectedProject = Template.bind({});
+WithoutDefaultSelectedProject.args = {
+  projects: exampleProjects,
+  onSelectProject: action("Function triggered when selected project changes"),
+};

@@ -2,7 +2,7 @@
 
 exports[`Storyshots Forms/FormTextInput As Email 1`] = `
 <div
-  className=" mb-2"
+  className="mb-2"
 >
   <label
     className="block mb-2 cursor-pointer transition hover:opacity-60"
@@ -12,9 +12,10 @@ exports[`Storyshots Forms/FormTextInput As Email 1`] = `
      
   </label>
   <input
-    className="mb-2 "
+    className=" mb-2"
     id="email"
     min={20}
+    name="email"
     onChange={[Function]}
     placeholder="Deine E-Mail-Adresse..."
     required={true}
@@ -25,7 +26,7 @@ exports[`Storyshots Forms/FormTextInput As Email 1`] = `
 
 exports[`Storyshots Forms/FormTextInput As Password 1`] = `
 <div
-  className=" mb-2"
+  className="mb-2"
 >
   <label
     className="block mb-2 cursor-pointer transition hover:opacity-60"
@@ -35,9 +36,10 @@ exports[`Storyshots Forms/FormTextInput As Password 1`] = `
      
   </label>
   <input
-    className="mb-2 "
+    className=" mb-2"
     id="password"
     min={20}
+    name="password"
     onChange={[Function]}
     placeholder="Dein Passwort..."
     required={true}
@@ -48,7 +50,7 @@ exports[`Storyshots Forms/FormTextInput As Password 1`] = `
 
 exports[`Storyshots Forms/FormTextInput Optional Field 1`] = `
 <div
-  className=" mb-2"
+  className="mb-2"
 >
   <label
     className="block mb-2 cursor-pointer transition hover:opacity-60"
@@ -63,9 +65,10 @@ exports[`Storyshots Forms/FormTextInput Optional Field 1`] = `
     </span>
   </label>
   <input
-    className="mb-2 "
+    className=" mb-2"
     id="firstName"
     min={20}
+    name="firstName"
     onChange={[Function]}
     placeholder="Enter your first name..."
     required={true}
@@ -76,7 +79,7 @@ exports[`Storyshots Forms/FormTextInput Optional Field 1`] = `
 
 exports[`Storyshots Forms/FormTextInput With Error 1`] = `
 <div
-  className=" mb-2"
+  className="mb-2"
 >
   <label
     className="block mb-2 cursor-pointer transition hover:opacity-60"
@@ -86,9 +89,10 @@ exports[`Storyshots Forms/FormTextInput With Error 1`] = `
      
   </label>
   <input
-    className="mb-2 error"
+    className="error mb-2"
     id="firstName"
     min={20}
+    name="firstName"
     onChange={[Function]}
     placeholder="Enter your first name..."
     required={true}
@@ -109,7 +113,7 @@ exports[`Storyshots Forms/FormTextInput With Error 1`] = `
 
 exports[`Storyshots Forms/FormTextInput With Label 1`] = `
 <div
-  className=" mb-2"
+  className="mb-2"
 >
   <label
     className="block mb-2 cursor-pointer transition hover:opacity-60"
@@ -119,9 +123,10 @@ exports[`Storyshots Forms/FormTextInput With Label 1`] = `
      
   </label>
   <input
-    className="mb-2 "
+    className=" mb-2"
     id="firstName"
     min={20}
+    name="firstName"
     onChange={[Function]}
     placeholder="Enter your first name..."
     required={true}
@@ -132,12 +137,13 @@ exports[`Storyshots Forms/FormTextInput With Label 1`] = `
 
 exports[`Storyshots Forms/FormTextInput Without Label 1`] = `
 <div
-  className=" mb-2"
+  className="mb-2"
 >
   <input
-    className="mb-2 "
+    className=" mb-2"
     id="firstName"
     min={20}
+    name="firstName"
     onChange={[Function]}
     placeholder="Enter your first name..."
     required={true}
