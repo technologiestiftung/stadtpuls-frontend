@@ -32,7 +32,7 @@ const DeviceIdDisplayField: FC = ({ children }) => (
   <Td
     p='pl-0 sm:py-3'
     className='font-bold sm:font-normal'
-    style={{ minWidth: "20vw", gridArea: "id" }}
+    style={{ minWidth: "10vw", gridArea: "id" }}
   >
     <DeviceIcon />
     {children}
@@ -87,10 +87,26 @@ export const SensorsListDispalyRow: FC<SensorsListDisplayItemPropType> = ({
       {lastRecordedAt ? formatDateFromNow(lastRecordedAt) : "—"}
     </LastSeenDisplayField>
     <Button1DisplayField>
-      <button onClick={() => onEditClick()}>Bearbeiten</button>
+      <button
+        onClick={evt => {
+          evt.preventDefault();
+          evt.stopPropagation();
+          onEditClick();
+        }}
+      >
+        Bearbeiten
+      </button>
     </Button1DisplayField>
     <Button2DisplayField>
-      <button onClick={() => onDeleteClick()}>Löschen</button>
+      <button
+        onClick={evt => {
+          evt.preventDefault();
+          evt.stopPropagation();
+          onDeleteClick();
+        }}
+      >
+        Löschen
+      </button>
     </Button2DisplayField>
   </TableDisplayRow>
 );

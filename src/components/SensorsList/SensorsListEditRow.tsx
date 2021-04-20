@@ -44,7 +44,7 @@ const TableEditRow = forwardRef<
 ));
 
 const DeviceIdEditField: FC = ({ children }) => (
-  <Td p='sm:pl-0 sm:pr-1 sm:py-1' style={{ minWidth: "20vw", gridArea: "id" }}>
+  <Td p='sm:pl-0 sm:pr-1 sm:py-1' style={{ minWidth: "10vw", gridArea: "id" }}>
     <div
       className='grid items-start'
       style={{ gridTemplateColumns: "auto 1fr" }}
@@ -58,13 +58,12 @@ const DeviceIdEditField: FC = ({ children }) => (
 );
 
 const NameEditField: FC = ({ children }) => (
-  <Td className='w-full' p='sm:pl-1 sm:py-1' style={{ gridArea: "name" }}>
-    {children}
-  </Td>
-);
-
-const LastSeenEditField: FC = ({ children }) => (
-  <Td p='sm:px-6 sm:py-1' style={{ gridArea: "lastSeen" }}>
+  <Td
+    className='w-full'
+    p='sm:pl-1 sm:py-1'
+    style={{ gridArea: "name" }}
+    colSpan={2}
+  >
     {children}
   </Td>
 );
@@ -169,15 +168,30 @@ export const SensorsListEditRow: FC<SensorsListEditRowPropType> = ({
           errors={deviceNameError ? [deviceNameError] : []}
         />
       </NameEditField>
-      <LastSeenEditField />
       <Button1EditField>
         <span className='h-10 flex items-center'>
-          <button onClick={onCancel}>Abbrechen</button>
+          <button
+            onClick={evt => {
+              evt.preventDefault();
+              evt.stopPropagation();
+              onCancel();
+            }}
+          >
+            Abbrechen
+          </button>
         </span>
       </Button1EditField>
       <Button2EditField>
         <span className='h-10 flex items-center'>
-          <button onClick={onSubmit}>Speichern</button>
+          <button
+            onClick={evt => {
+              evt.preventDefault();
+              evt.stopPropagation();
+              onSubmit();
+            }}
+          >
+            Speichern
+          </button>
         </span>
       </Button2EditField>
     </TableEditRow>

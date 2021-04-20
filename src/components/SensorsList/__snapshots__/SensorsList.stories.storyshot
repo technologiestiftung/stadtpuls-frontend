@@ -54,7 +54,7 @@ Array [
           style={
             Object {
               "gridArea": "id",
-              "minWidth": "20vw",
+              "minWidth": "10vw",
             }
           }
         >
@@ -161,7 +161,7 @@ Array [
           style={
             Object {
               "gridArea": "id",
-              "minWidth": "20vw",
+              "minWidth": "10vw",
             }
           }
         >
@@ -268,7 +268,7 @@ Array [
           style={
             Object {
               "gridArea": "id",
-              "minWidth": "20vw",
+              "minWidth": "10vw",
             }
           }
         >

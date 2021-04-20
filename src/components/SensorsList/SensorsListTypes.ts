@@ -1,6 +1,6 @@
 export interface SensorType {
-  id: string | number;
-  externalId: string | number;
+  id: number;
+  externalId: string;
   name: string;
   lastRecordedAt?: Date | null;
 }
