@@ -1,10 +1,12 @@
 import { FC, ReactNode } from "react";
+import Link from "next/link";
+import { Anchor } from "@components/Button";
 
 export interface ProjectInfoPropType {
   title: string;
   category: string;
   projectViewLink: string;
-  editLink: string;
+  onEditProject: () => void;
   children: ReactNode;
 }
 
@@ -12,7 +14,7 @@ export const ProjectInfo: FC<ProjectInfoPropType> = ({
   title,
   category,
   projectViewLink,
-  editLink,
+  onEditProject,
   children,
 }) => (
   <section className='bg-blue-25 p-6'>
@@ -21,12 +23,9 @@ export const ProjectInfo: FC<ProjectInfoPropType> = ({
       style={{ gridTemplateColumns: "auto max-content" }}
     >
       <h2 className='text-blue-500 text-3xl font-bold'>{title}</h2>
-      <a
-        href={projectViewLink}
-        className='p-2 border border-blue-500 text-blue-500 hover:bg-blue-50 transition-colors'
-      >
-        → Projektseite
-      </a>
+      <Link href={projectViewLink}>
+        <Anchor href={projectViewLink}>→ Projektseite</Anchor>
+      </Link>
     </header>
     <div className='mt-4'>
       <p>
@@ -34,15 +33,13 @@ export const ProjectInfo: FC<ProjectInfoPropType> = ({
           {category}
         </mark>
       </p>
-      <p className='mt-4'>{children}</p>
-      <p className='mt-4'>
-        <a
-          href={editLink}
-          className='text-blue-500 hover:text-blue-400 underline transition-colors'
-        >
-          Projekt bearbeiten
-        </a>
-      </p>
+      <div className='mt-4 max-w-prose'>{children}</div>
+      <button
+        onClick={onEditProject}
+        className='mt-4 text-blue-500 underline hover:text-opacity-60 transition-colors focus-offset'
+      >
+        Projekt bearbeiten
+      </button>
     </div>
   </section>
 );
