@@ -4,7 +4,7 @@ import { Anchor } from "@components/Button";
 
 export interface ProjectInfoPropType {
   title: string;
-  category: string;
+  category?: string;
   projectViewLink: string;
   onEditProject: () => void;
   children: ReactNode;
@@ -28,11 +28,13 @@ export const ProjectInfo: FC<ProjectInfoPropType> = ({
       </Link>
     </header>
     <div className='mt-4'>
-      <p>
-        <mark className='p-1 text-sm bg-blue-100 text-blue-500'>
-          {category}
-        </mark>
-      </p>
+      {category && (
+        <p>
+          <mark className='p-1 text-sm bg-blue-100 text-blue-500'>
+            {category}
+          </mark>
+        </p>
+      )}
       <div className='mt-4 max-w-prose'>{children}</div>
       <button
         onClick={onEditProject}
