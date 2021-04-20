@@ -1,7 +1,7 @@
 import { FormTextInput } from "@components/FormTextInput";
 import { Td, Tr } from "@components/HTMLTable";
 import { requiredDeviceId, requiredDeviceName } from "@lib/formValidationUtil";
-import useClickOutside from "@lib/onClickOutsideHook";
+import useClickOutside from "@lib/hooks/useClickOutside";
 import {
   ChangeEvent,
   FC,
