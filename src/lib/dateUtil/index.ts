@@ -1,4 +1,6 @@
 import { RecordType, DateValueType } from "../../common/interfaces";
+import moment from "moment";
+moment.locale("de-DE");
 
 export const createDateValueArray = (input: RecordType[]): DateValueType[] => {
   const dateValueArray = input.map((record: RecordType) => {
@@ -20,4 +22,9 @@ export const createTimeOutput = (input: Date): string => {
   return `${hours < 10 ? `0${hours}` : hours}:${
     minutes < 10 ? `0${minutes}` : minutes
   }:${seconds < 10 ? `0${seconds}` : seconds}`;
+};
+
+export const formatDateFromNow = (date: Date): string => {
+  const fromNowStr = moment(date).fromNow();
+  return `${fromNowStr.charAt(0).toUpperCase()}${fromNowStr.slice(1)}`;
 };

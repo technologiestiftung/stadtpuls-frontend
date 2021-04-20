@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import onClickOutsideHook from ".";
+import useClickOutside from ".";
 
 // eslint-disable-next-line react/display-name
 const createChildComponent = (clickOutsideHandler: () => void): FC => () => {
-  const ref = onClickOutsideHook<HTMLDivElement>(clickOutsideHandler);
+  const ref = useClickOutside<HTMLDivElement>(clickOutsideHandler);
   return (
     <>
       <article ref={ref} />
@@ -13,7 +13,7 @@ const createChildComponent = (clickOutsideHandler: () => void): FC => () => {
   );
 };
 
-describe("onClickOutsideHook hook", () => {
+describe("useClickOutside hook", () => {
   it("should call the callback when clicked outside", () => {
     const clickOutsideHandler = jest.fn();
     const Component = createChildComponent(clickOutsideHandler);

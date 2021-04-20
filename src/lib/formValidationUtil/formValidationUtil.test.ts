@@ -6,6 +6,7 @@ import {
   requiredProjectCategoryValidation,
   requiredProjectDescriptionValidation,
   requiredProjectIntegrationValidation,
+  requiredDeviceId,
 } from ".";
 
 describe("requiredEmailValidation validation", () => {
@@ -77,5 +78,19 @@ describe("requiredUsernameValidation validation", () => {
   it("should be valid if not empty", async () => {
     const isValid = await requiredUsernameValidation.isValid("greatusername");
     expect(isValid).toBe(true);
+  });
+});
+
+describe("requiredDeviceId validation", () => {
+  it("should not be valid if empty", async () => {
+    const isValid = await requiredDeviceId.isValid("");
+    expect(isValid).toBe(false);
+  });
+});
+
+describe("requiredDeviceName validation", () => {
+  it("should not be valid if smaller than 3 chars", async () => {
+    const isValid = await requiredDeviceId.isValid("12");
+    expect(isValid).toBe(false);
   });
 });
