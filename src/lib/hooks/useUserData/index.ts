@@ -137,15 +137,14 @@ const updateProject = async ({
 const deleteProject = async (
   id: number,
   userId: string | undefined
-): Promise<ProjectsType[] | null | Error> => {
+): Promise<void> => {
   if (!userId) throw new Error("Not authenticated");
-  const { data, error } = await supabase
+  const { error } = await supabase
     .from<ProjectsType>("projects")
     .delete()
     .eq("id", id)
     .eq("userId", userId);
   if (error) throw error;
-  else return data;
 };
 
 const updateName = async (
@@ -171,13 +170,10 @@ const updateEmail = async (
   if (error) throw error;
   else return user as AuthenticatedUsersType;
 };
-const deleteUser = async (
-  userId: string | undefined
-): Promise<any[] | null | Error> => {
+const deleteUser = async (userId: string | undefined): Promise<void> => {
   if (!userId) throw new Error("Not authenticated");
-  const { data, error } = await supabase.rpc("delete_user");
+  const { error } = await supabase.rpc("delete_user");
   if (error) throw error;
-  else return data;
 };
 
 export const useUserData = (): {
@@ -211,12 +207,12 @@ export const useUserData = (): {
     location,
     categoryId,
   }: ProjectsType) => Promise<ProjectsType[] | null | Error>;
-  deleteProject: (id: number) => Promise<ProjectsType[] | null | Error>;
+  deleteProject: (id: number) => Promise<void>;
   updateName: (name: string) => Promise<UsersType[] | null | Error>;
   updateEmail: (
     email: string
   ) => Promise<AuthenticatedUsersType | null | Error>;
-  deleteUser: () => Promise<any[] | null | Error>;
+  deleteUser: () => Promise<void>;
 } => {
   const { authenticatedUser } = useAuth();
   const { data, error } = useSWR<UserDataType, Error>(
