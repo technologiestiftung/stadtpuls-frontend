@@ -7,7 +7,7 @@ export interface ProjectListItemType {
 
 export interface UserProjectsNavType extends HTMLProps<HTMLElement> {
   projects: ProjectListItemType[];
-  defaultSelectedProject: ProjectListItemType;
+  defaultSelectedProject?: ProjectListItemType;
   onSelectProject: (projectId: string) => void;
 }
 
@@ -46,7 +46,7 @@ export const UserProjectsNav: FC<UserProjectsNavType> = ({
               className={[
                 `my-4`,
                 `${
-                  project.projectId === selectedProject.projectId
+                  project.projectId === selectedProject?.projectId
                     ? "border-opacity-100"
                     : "border-opacity-0"
                 }`,
@@ -58,7 +58,7 @@ export const UserProjectsNav: FC<UserProjectsNavType> = ({
                 className={[
                   `py-0 pl-4 border-l-2 border-blue-400 focus-offset transition`,
                   `${
-                    project.projectId === selectedProject.projectId
+                    project.projectId === selectedProject?.projectId
                       ? "text-blue-500 border-opacity-100"
                       : "text-gray-500 border-opacity-0"
                   }`,

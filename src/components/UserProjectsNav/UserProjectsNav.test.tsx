@@ -61,4 +61,20 @@ describe("component UserProjectsNav", () => {
 
     expect(handleSelectFunction).toHaveBeenCalledTimes(1);
   });
+
+  it("should not highlight a project link when no default selected project is provided", () => {
+    render(
+      <UserProjectsNav
+        projects={exampleProjects}
+        onSelectProject={handleSelectFunction}
+      />
+    );
+
+    const buttons = screen.getAllByRole("button");
+    buttons.forEach(button =>
+      expect(button.getAttribute("class")?.includes("border-opacity-100")).toBe(
+        false
+      )
+    );
+  });
 });
