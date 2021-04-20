@@ -2,12 +2,12 @@ import { withNextRouter } from "storybook-addon-next-router";
 import { Story, Meta } from "@storybook/react";
 import { ThemeProvider } from "theme-ui";
 import { StoreProvider } from "easy-peasy";
-import { useEffect, FC } from "react";
+import { FC } from "react";
 
 import theme from "../../style/theme";
 import store from "../../state/store";
 import { Project } from ".";
-import { useStoreActions } from "@state/hooks";
+import { useProjectData } from "@lib/hooks/useProjectData";
 
 export default {
   title: "Pages/Project",
@@ -16,13 +16,10 @@ export default {
 } as Meta;
 
 const ProjectPage: FC = () => {
-  const loadDevices = useStoreActions(action => action.projects.load);
+  const { data: project } = useProjectData(10);
 
-  useEffect(() => {
-    loadDevices();
-  }, [loadDevices]);
-
-  return <Project />;
+  if (!project) return null;
+  return <Project {...project} />;
 };
 
 const Template: Story = () => (
