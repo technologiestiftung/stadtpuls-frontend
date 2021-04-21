@@ -5,6 +5,7 @@ export interface ProjectInfoFormWrapperPropType
   extends HTMLProps<HTMLFormElement> {
   type: "create" | "edit";
   handleCancel: () => void;
+  handleDelete?: () => void;
 }
 
 interface TextsObjectType {
@@ -23,6 +24,7 @@ const getTextsByType = (type: "create" | "edit"): TextsObjectType =>
 export const ProjectInfoFormWrapper: FC<ProjectInfoFormWrapperPropType> = ({
   type,
   handleCancel,
+  handleDelete,
   children,
   ...formProps
 }) => {
@@ -38,7 +40,12 @@ export const ProjectInfoFormWrapper: FC<ProjectInfoFormWrapperPropType> = ({
       <footer className='mt-24'>
         {type === "edit" && (
           <div className='flex place-content-between'>
-            <button className='text-red-500'>Projekt löschen</button>
+            <button
+              className='text-red-500 focus-offset'
+              onClick={handleDelete}
+            >
+              Projekt löschen
+            </button>
             <div>
               <Button onClick={handleCancel}>Abbrechen</Button>
               <Submit variant='primary' form={formId} className='ml-4'>

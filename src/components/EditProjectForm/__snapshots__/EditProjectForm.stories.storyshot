@@ -136,7 +136,8 @@ exports[`Storyshots Forms/EditProjectForm With Default Values 1`] = `
       className="flex place-content-between"
     >
       <button
-        className="text-red-500"
+        className="text-red-500 focus-offset"
+        onClick={[Function]}
       >
         Projekt löschen
       </button>
@@ -293,7 +294,8 @@ exports[`Storyshots Forms/EditProjectForm Without Default Values 1`] = `
       className="flex place-content-between"
     >
       <button
-        className="text-red-500"
+        className="text-red-500 focus-offset"
+        onClick={[Function]}
       >
         Projekt löschen
       </button>
