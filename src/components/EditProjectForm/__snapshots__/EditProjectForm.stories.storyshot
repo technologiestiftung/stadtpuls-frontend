@@ -18,15 +18,15 @@ exports[`Storyshots Forms/EditProjectForm With Default Values 1`] = `
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
-        htmlFor="title"
+        htmlFor="name"
       >
         Titel
          
       </label>
       <input
         className=" mb-2"
-        id="title"
-        name="title"
+        id="name"
+        name="name"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Wie soll dein Projekt heißen?"
@@ -39,18 +39,18 @@ exports[`Storyshots Forms/EditProjectForm With Default Values 1`] = `
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
-        htmlFor="category"
+        htmlFor="categoryId"
       >
         Kategorie
       </label>
       <select
         className="mb-2 text-gray-500 "
-        id="category"
-        name="category"
+        id="categoryId"
+        name="categoryId"
         onBlur={[Function]}
         onChange={[Function]}
         required={true}
-        value="some value C"
+        value={3}
       >
         <option
           value=""
@@ -58,17 +58,17 @@ exports[`Storyshots Forms/EditProjectForm With Default Values 1`] = `
           Bitte wähle eine Option
         </option>
         <option
-          value="some value A"
+          value="1"
         >
           some name A
         </option>
         <option
-          value="some value B"
+          value="2"
         >
           some name B
         </option>
         <option
-          value="some value C"
+          value="3"
         >
           some name C
         </option>
@@ -124,9 +124,10 @@ exports[`Storyshots Forms/EditProjectForm With Default Values 1`] = `
       />
     </div>
     <button
-      className="mt-6 text-blue-500 underline"
+      className="mt-6 text-gray-400 underline cursor-not-allowed"
+      disabled={true}
     >
-      Token neu generieren (placeholder)
+      Token neu generieren (derzeit nicht verfügbar)
     </button>
   </form>
   <footer
@@ -180,15 +181,15 @@ exports[`Storyshots Forms/EditProjectForm Without Default Values 1`] = `
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
-        htmlFor="title"
+        htmlFor="name"
       >
         Titel
          
       </label>
       <input
         className=" mb-2"
-        id="title"
-        name="title"
+        id="name"
+        name="name"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Wie soll dein Projekt heißen?"
@@ -200,14 +201,14 @@ exports[`Storyshots Forms/EditProjectForm Without Default Values 1`] = `
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
-        htmlFor="category"
+        htmlFor="categoryId"
       >
         Kategorie
       </label>
       <select
         className="mb-2 text-gray-500 "
-        id="category"
-        name="category"
+        id="categoryId"
+        name="categoryId"
         onBlur={[Function]}
         onChange={[Function]}
         required={true}
@@ -218,17 +219,17 @@ exports[`Storyshots Forms/EditProjectForm Without Default Values 1`] = `
           Bitte wähle eine Option
         </option>
         <option
-          value="some value A"
+          value="1"
         >
           some name A
         </option>
         <option
-          value="some value B"
+          value="2"
         >
           some name B
         </option>
         <option
-          value="some value C"
+          value="3"
         >
           some name C
         </option>
@@ -282,9 +283,10 @@ exports[`Storyshots Forms/EditProjectForm Without Default Values 1`] = `
       />
     </div>
     <button
-      className="mt-6 text-blue-500 underline"
+      className="mt-6 text-gray-400 underline cursor-not-allowed"
+      disabled={true}
     >
-      Token neu generieren (placeholder)
+      Token neu generieren (derzeit nicht verfügbar)
     </button>
   </form>
   <footer

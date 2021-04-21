@@ -2,19 +2,20 @@ import { render, screen } from "@testing-library/react";
 import { EditProjectForm } from ".";
 
 const onCancelFunction = jest.fn();
+const onDeleteFunction = jest.fn();
 
 const exampleCategories = [
   {
     name: "some name A",
-    value: "some value A",
+    value: "1",
   },
   {
     name: "some name B",
-    value: "some value B",
+    value: "2",
   },
   {
     name: "some name C",
-    value: "some value C",
+    value: "3",
   },
 ];
 
@@ -24,6 +25,7 @@ describe("EditProjectForm component", () => {
       <EditProjectForm
         categoryOptions={exampleCategories}
         onCancel={onCancelFunction}
+        onDelete={onDeleteFunction}
       />
     );
     const titleInput = screen.getByLabelText(/Titel/i);
@@ -34,6 +36,7 @@ describe("EditProjectForm component", () => {
       <EditProjectForm
         categoryOptions={exampleCategories}
         onCancel={onCancelFunction}
+        onDelete={onDeleteFunction}
       />
     );
     const categorySelect = screen.getByLabelText(/Kategorie/i);
@@ -44,6 +47,7 @@ describe("EditProjectForm component", () => {
       <EditProjectForm
         categoryOptions={exampleCategories}
         onCancel={onCancelFunction}
+        onDelete={onDeleteFunction}
       />
     );
     const descriptionTextarea = screen.getByLabelText(/Beschreibung/i);
@@ -54,6 +58,7 @@ describe("EditProjectForm component", () => {
       <EditProjectForm
         categoryOptions={exampleCategories}
         onCancel={onCancelFunction}
+        onDelete={onDeleteFunction}
       />
     );
     const locationInput = screen.getByLabelText(/Standort/i);

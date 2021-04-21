@@ -5,15 +5,15 @@ import { EditProjectForm, ProjectForm } from ".";
 const exampleCategories = [
   {
     name: "some name A",
-    value: "some value A",
+    value: "1",
   },
   {
     name: "some name B",
-    value: "some value B",
+    value: "2",
   },
   {
     name: "some name C",
-    value: "some value C",
+    value: "3",
   },
 ];
 
@@ -47,10 +47,12 @@ WithoutDefaultValues.args = {
 export const WithDefaultValues = Template.bind({});
 WithDefaultValues.args = {
   defaultValues: {
-    title: "A title",
-    category: exampleCategories.map(category => category.value)[
-      exampleCategories.length - 1
-    ],
+    name: "A title",
+    categoryId: parseInt(
+      exampleCategories.map(category => category.value)[
+        exampleCategories.length - 1
+      ]
+    ),
     description: "A description",
     location: "A location",
   },
