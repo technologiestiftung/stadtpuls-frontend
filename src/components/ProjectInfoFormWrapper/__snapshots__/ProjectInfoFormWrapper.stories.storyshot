@@ -21,6 +21,7 @@ Array [
   >
     <button
       className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+      onClick={[Function]}
       type="button"
     >
       Abbrechen
@@ -63,6 +64,7 @@ Array [
     <div>
       <button
         className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+        onClick={[Function]}
         type="button"
       >
         Abbrechen

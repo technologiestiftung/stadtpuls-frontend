@@ -30,6 +30,10 @@ export default {
     onSubmit: {
       description: "A callback called when the form has submitted",
     },
+    onCancel: {
+      description:
+        "A function called when the form is cancelled without submit",
+    },
   },
 } as Meta;
 
@@ -40,4 +44,5 @@ Default.args = {
   categoryOptions: exampleCategories,
   integrationOptions: exampleIntegrations,
   onSubmit: action("Form data submited"),
+  onCancel: action("Form cancelled"),
 };

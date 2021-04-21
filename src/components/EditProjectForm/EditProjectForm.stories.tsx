@@ -23,6 +23,10 @@ export default {
     onSubmit: {
       description: "A callback called when the form has submitted",
     },
+    onCancel: {
+      description:
+        "A function called when the form is cancelled without submit",
+    },
   },
 } as Meta;
 
@@ -32,6 +36,7 @@ export const WithoutDefaultValues = Template.bind({});
 WithoutDefaultValues.args = {
   categoryOptions: exampleCategories,
   onSubmit: action("Form data submited"),
+  onCancel: action("Form cancelled"),
 };
 
 export const WithDefaultValues = Template.bind({});
@@ -46,4 +51,5 @@ WithDefaultValues.args = {
   },
   categoryOptions: exampleCategories,
   onSubmit: action("Form data submited"),
+  onCancel: action("Form cancelled"),
 };

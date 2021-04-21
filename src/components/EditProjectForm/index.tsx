@@ -23,6 +23,7 @@ export interface ProjectForm {
   categoryOptions: SelectOptionType[];
   defaultValues?: Partial<ProjectFormDataToSubmit>;
   onSubmit?: (data: ProjectFormDataToSubmit) => void;
+  onCancel: () => void;
 }
 
 const formSchema = yup.object().shape({
@@ -35,6 +36,7 @@ export const EditProjectForm: FC<ProjectForm> = ({
   categoryOptions,
   defaultValues,
   onSubmit = console.log,
+  onCancel,
 }) => {
   const {
     control,
@@ -50,7 +52,11 @@ export const EditProjectForm: FC<ProjectForm> = ({
     errorMsg ? [errorMsg] : [];
 
   return (
-    <ProjectInfoFormWrapper onSubmit={onInternalSubmit} type='edit'>
+    <ProjectInfoFormWrapper
+      onSubmit={onInternalSubmit}
+      handleCancel={onCancel}
+      type='edit'
+    >
       <Controller
         name='title'
         control={control}
