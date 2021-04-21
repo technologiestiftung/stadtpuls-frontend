@@ -6,6 +6,11 @@ import { InvalidPageId } from "@components/PageError/InvalidPageId";
 import { ServerError } from "@components/PageError/ServerError";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { UserProjectsWrapper } from "@components/UserProjectsWrapper";
+import {
+  EditProjectForm,
+  EditableProjectFieldsType,
+} from "@components/EditProjectForm";
+import { useProjectCategories } from "@lib/hooks/useProjectCategories";
 import { useUserData } from "@lib/hooks/useUserData";
 import { useRouter } from "next/router";
 import { FC } from "react";
@@ -15,6 +20,11 @@ const AccountProjectEditPage: FC = () => {
   const projectId = router.query.id;
   const { authenticatedUser, isLoadingAuth, error: authError } = useAuth();
   const { projects, error } = useUserData();
+  const {
+    categories,
+    isLoading: isLoadingCategories,
+    error: categoriesError,
+  } = useProjectCategories();
 
   if (isLoadingAuth || (!projects && !error)) return null;
 
@@ -37,6 +47,13 @@ const AccountProjectEditPage: FC = () => {
     name,
   }));
 
+  const currentProjectValues: Partial<EditableProjectFieldsType> = {
+    name: project?.name,
+    description: project?.description,
+    location: project?.location,
+    categoryId: project?.category?.id,
+  };
+
   if (!project) {
     return (
       <SmallModalOverlay
@@ -54,7 +71,21 @@ const AccountProjectEditPage: FC = () => {
 
   return (
     <UserProjectsWrapper projects={projectsForSidebar}>
-      {project.name}
+      <div className='p-6'>
+        {categories && !isLoadingCategories && !categoriesError && (
+          <EditProjectForm
+            categoryOptions={categories.map(category => {
+              return {
+                value: `${category.id}`,
+                name: category.name,
+              };
+            })}
+            defaultValues={currentProjectValues}
+            onCancel={() => router.push(`/account/projects/${projectId}`)}
+            onDelete={() => console.log("Delete")}
+          />
+        )}
+      </div>
     </UserProjectsWrapper>
   );
 };
