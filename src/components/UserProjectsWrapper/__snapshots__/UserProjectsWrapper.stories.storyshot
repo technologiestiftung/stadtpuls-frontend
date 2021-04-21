@@ -2,7 +2,7 @@
 
 exports[`Storyshots Layout/UserProjectsWrapper Default 1`] = `
 <div
-  className="max-w-screen-lg mx-auto p-6 block md:grid gap-4 grid-cols-12"
+  className="max-w-screen-xl mx-auto p-6 block md:grid gap-4 grid-cols-12"
   style={
     Object {
       "paddingTop": "5vmax",
@@ -10,7 +10,7 @@ exports[`Storyshots Layout/UserProjectsWrapper Default 1`] = `
   }
 >
   <section
-    className="col-span-4"
+    className="col-span-3"
   >
     <h1
       className="text-3xl text-blue-500 font-bold"
@@ -75,7 +75,7 @@ exports[`Storyshots Layout/UserProjectsWrapper Default 1`] = `
     </div>
   </section>
   <main
-    className="md:col-span-8 mt-6 md:mt-0 bg-white shadow-md"
+    className="md:col-span-9 mt-6 md:mt-0 bg-white shadow-md"
   >
     <h1>
       Insert here: the main content
