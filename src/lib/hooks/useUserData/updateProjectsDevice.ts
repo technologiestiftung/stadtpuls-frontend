@@ -46,3 +46,22 @@ export const deleteProjectsDevice = (
     ],
     [] as ProjectsType[]
   );
+
+export const addProjectsDevice = (
+  projects: ProjectsType[],
+  device: DevicesType,
+  projectId: ProjectsType["id"]
+): ProjectsType[] =>
+  projects.reduce(
+    (acc, project) => [
+      ...acc,
+      {
+        ...project,
+        devices:
+          project.devices && projectId === project.id
+            ? [...project.devices, device]
+            : project.devices || [],
+      },
+    ],
+    [] as ProjectsType[]
+  );

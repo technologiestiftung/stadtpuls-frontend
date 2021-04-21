@@ -12,9 +12,11 @@ import {
 } from "@common/types/supabase";
 import { useAuth } from "@auth/Auth";
 import {
+  addProjectsDevice,
   deleteProjectsDevice,
   updateProjectsDevice,
 } from "./updateProjectsDevice";
+import { useState } from "react";
 
 type UserFetcherSignature = (
   userId?: AuthenticatedUsersType["id"],
@@ -206,7 +208,10 @@ export const useUserData = (): {
   user: UsersType | null;
   projects: ProjectsType[] | null;
   error: Error | null;
-  addDevice: (device: DevicesType) => Promise<void>;
+  addDevice: (
+    device: DevicesType,
+    projectId: ProjectsType["id"]
+  ) => Promise<void>;
   updateDevice: (device: DevicesType) => Promise<void>;
   deleteDevice: (id: number) => Promise<void>;
   addProject: (project: ProjectsType) => Promise<void>;
@@ -216,6 +221,7 @@ export const useUserData = (): {
   updateEmail: (email: string) => Promise<void>;
   deleteUser: () => Promise<void>;
 } => {
+  const [actionError, setActionError] = useState<Error | null>(null);
   const { authenticatedUser, isLoadingAuth } = useAuth();
   const userId = authenticatedUser?.id;
 
@@ -234,72 +240,82 @@ export const useUserData = (): {
     authenticatedUser: authenticatedUser || null,
     user: user.data || null,
     projects: projects.data || null,
-    error: projects.error || user.error || null,
-    addDevice: async device => {
+    error: projects.error || user.error || actionError || null,
+    addDevice: async (device, projectId) => {
       if (!projects.data || projects.error) return;
-      void mutate(projectsParams, [...projects.data, device], false);
-      await addDevice({ ...device, userId });
+      setActionError(null);
+      void mutate(
+        projectsParams,
+        addProjectsDevice(projects.data, device, projectId),
+        false
+      );
+      await addDevice({ ...device, userId }).catch(setActionError);
       void mutate(projectsParams);
     },
     updateDevice: async device => {
       if (!projects.data || projects.error) return;
+      setActionError(null);
       void mutate(
         projectsParams,
         updateProjectsDevice(projects.data, device),
         false
       );
-      await updateDevice({ ...device, userId });
+      await updateDevice({ ...device, userId }).catch(setActionError);
       void mutate(projectsParams);
     },
     deleteDevice: async id => {
       if (!projects.data || projects.error) return;
+      setActionError(null);
       void mutate(
         projectsParams,
         deleteProjectsDevice(projects.data, id),
         false
       );
-      await deleteDevice(id, userId);
+      await deleteDevice(id, userId).catch(setActionError);
       void mutate(projectsParams);
     },
     addProject: async project => {
       if (!projects.data || projects.error) return;
+      setActionError(null);
       void mutate(projectsParams, [...projects.data, project], false);
-      await addProject({ ...project, userId });
+      await addProject({ ...project, userId }).catch(setActionError);
       void mutate(projectsParams);
     },
     updateProject: async project => {
       if (!projects.data || projects.error) return;
+      setActionError(null);
       void mutate(
         projectsParams,
         updateProjectsProject(projects.data, project),
         false
       );
-      await updateProject({ ...project, userId });
+      await updateProject({ ...project, userId }).catch(setActionError);
       void mutate(projectsParams);
     },
     deleteProject: async id => {
       if (!projects.data || projects.error) return;
+      setActionError(null);
       void mutate(
         projectsParams,
         deleteProjectsProject(projects.data, id),
         false
       );
-      await deleteProject(id, userId);
+      await deleteProject(id, userId).catch(setActionError);
       void mutate(projectsParams);
     },
     updateName: async name => {
       void mutate(userParams, { ...user, name }, false);
-      await updateName(name, userId);
+      await updateName(name, userId).catch(setActionError);
       void mutate(userParams);
     },
     updateEmail: async email => {
       void mutate(userParams, { ...user, email }, false);
-      await updateEmail(email, userId);
+      await updateEmail(email, userId).catch(setActionError);
       void mutate(userParams);
     },
     deleteUser: async () => {
       void mutate(userParams, null, false);
-      await deleteUser(userId);
+      await deleteUser(userId).catch(setActionError);
       void mutate(userParams);
     },
   };
