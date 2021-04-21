@@ -32,5 +32,6 @@ PleaseLoginError.args = {};
 
 export const ServerErrorError = ServerErrorTemplate.bind({});
 ServerErrorError.args = {
-  error: "Server error goes here",
+  error:
+    "Too many concurrent requests on your origin server can cause some of the requests to not complete within the specified time resulting in a 504 error at the proxy server end. If you seeing 504 consistently then that would mean a network issue between the proxy server and the origin server.",
 };
