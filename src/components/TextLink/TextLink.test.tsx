@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { TextLink } from ".";
+import { TextLink, TextLinkButton } from ".";
 
 describe("TextLink component", () => {
   it("should work like a normal anchor", () => {
@@ -9,9 +9,22 @@ describe("TextLink component", () => {
         Hi! I am a link
       </TextLink>
     );
-    const link = screen.getByText("Hi! I am a link");
+    const link = screen.getByRole("link", { name: "Hi! I am a link" });
     fireEvent.click(link);
     expect(link).toBeInTheDocument();
+    expect(handleClick).toHaveBeenCalled();
+  });
+});
+
+describe("TextLinkButton component", () => {
+  it("should work like a normal button", () => {
+    const handleClick = jest.fn();
+    render(
+      <TextLinkButton onClick={handleClick}>Hi! I am a button</TextLinkButton>
+    );
+    const buttton = screen.getByRole("button", { name: "Hi! I am a button" });
+    fireEvent.click(buttton);
+    expect(buttton).toBeInTheDocument();
     expect(handleClick).toHaveBeenCalled();
   });
 });
