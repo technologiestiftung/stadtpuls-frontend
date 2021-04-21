@@ -1,26 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UI Elements/TextLink As Anchor 1`] = `
-<a
-  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
-  href="#"
-  onClick={[Function]}
->
-  Hi! I'm an anchor looking like a link
-</a>
-`;
-
-exports[`Storyshots UI Elements/TextLink As Button 1`] = `
-<button
-  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
-  href="#"
-  onClick={[Function]}
-  type="button"
->
-  Hi! I'm a button looking like a link
-</button>
-`;
-
 exports[`Storyshots UI Elements/TextLink As Dangerous Anchor 1`] = `
 <a
   className="focus-offset underline transition hover:opacity-60 cursor-pointer text-red-500 focus:ring-red-500"
@@ -41,5 +20,49 @@ exports[`Storyshots UI Elements/TextLink As Dangerous Button 1`] = `
   variant="dangerous"
 >
   Hi! I'm a button looking like a dangerous link
+</button>
+`;
+
+exports[`Storyshots UI Elements/TextLink As Primary Anchor 1`] = `
+<a
+  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
+  href="#"
+  onClick={[Function]}
+>
+  Hi! I'm an anchor looking like a primary link
+</a>
+`;
+
+exports[`Storyshots UI Elements/TextLink As Primary Button 1`] = `
+<button
+  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
+  href="#"
+  onClick={[Function]}
+  type="button"
+>
+  Hi! I'm a button looking like a primary link
+</button>
+`;
+
+exports[`Storyshots UI Elements/TextLink As Secondary Anchor 1`] = `
+<a
+  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-gray-500 focus:ring-blue-500"
+  href="#"
+  onClick={[Function]}
+  variant="secondary"
+>
+  Hi! I'm an anchor looking like a secondary link
+</a>
+`;
+
+exports[`Storyshots UI Elements/TextLink As Secondary Button 1`] = `
+<button
+  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-gray-500 focus:ring-blue-500"
+  href="#"
+  onClick={[Function]}
+  type="button"
+  variant="secondary"
+>
+  Hi! I'm a button looking like a primary link
 </button>
 `;

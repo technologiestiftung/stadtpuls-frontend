@@ -10,7 +10,7 @@ export default {
 
 const AnchorTemplate: Story<
   HTMLProps<HTMLAnchorElement> & {
-    variant?: "dangerous" | "default";
+    variant?: "dangerous" | "primary" | "secondary";
   }
 > = ({ href, children, onClick, variant }) => (
   <TextLink href={href} onClick={onClick} variant={variant}>
@@ -18,11 +18,19 @@ const AnchorTemplate: Story<
   </TextLink>
 );
 
-export const AsAnchor = AnchorTemplate.bind({});
-AsAnchor.args = {
+export const AsPrimaryAnchor = AnchorTemplate.bind({});
+AsPrimaryAnchor.args = {
   href: "#",
-  children: "Hi! I'm an anchor looking like a link",
+  children: "Hi! I'm an anchor looking like a primary link",
   onClick: action("You clicked the link"),
+};
+
+export const AsSecondaryAnchor = AnchorTemplate.bind({});
+AsSecondaryAnchor.args = {
+  href: "#",
+  children: "Hi! I'm an anchor looking like a secondary link",
+  onClick: action("You clicked the link"),
+  variant: "secondary",
 };
 
 export const AsDangerousAnchor = AnchorTemplate.bind({});
@@ -35,7 +43,7 @@ AsDangerousAnchor.args = {
 
 const ButtonTemplate: Story<
   HTMLProps<HTMLButtonElement> & {
-    variant?: "dangerous" | "default";
+    variant?: "dangerous" | "primary" | "secondary";
   }
 > = ({ href, children, onClick, variant }) => (
   <ButtonTextLink href={href} onClick={onClick} variant={variant}>
@@ -43,11 +51,19 @@ const ButtonTemplate: Story<
   </ButtonTextLink>
 );
 
-export const AsButton = ButtonTemplate.bind({});
-AsButton.args = {
+export const AsPrimaryButton = ButtonTemplate.bind({});
+AsPrimaryButton.args = {
   href: "#",
-  children: "Hi! I'm a button looking like a link",
+  children: "Hi! I'm a button looking like a primary link",
   onClick: action("You clicked the link"),
+};
+
+export const AsSecondaryButton = ButtonTemplate.bind({});
+AsSecondaryButton.args = {
+  href: "#",
+  children: "Hi! I'm a button looking like a primary link",
+  onClick: action("You clicked the link"),
+  variant: "secondary",
 };
 
 export const AsDangerousButton = ButtonTemplate.bind({});
