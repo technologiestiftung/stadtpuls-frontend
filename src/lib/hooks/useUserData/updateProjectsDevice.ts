@@ -49,7 +49,7 @@ export const deleteProjectsDevice = (
 
 export const addProjectsDevice = (
   projects: ProjectsType[],
-  device: DevicesType,
+  device: Omit<DevicesType, "id">,
   projectId: ProjectsType["id"]
 ): ProjectsType[] =>
   projects.reduce(
@@ -59,7 +59,13 @@ export const addProjectsDevice = (
         ...project,
         devices:
           project.devices && projectId === project.id
-            ? [...project.devices, device]
+            ? [
+                ...project.devices,
+                {
+                  ...device,
+                  id: project.devices[project.devices.length - 1].id + 1,
+                },
+              ]
             : project.devices || [],
       },
     ],

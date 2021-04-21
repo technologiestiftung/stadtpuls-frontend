@@ -97,11 +97,7 @@ const AccountProjectPage: FC = () => {
             })
           }
           onAdd={data =>
-            addDevice({
-              ...data,
-              projectId: projectIdInt,
-              id: parseInt(`${data.id}`, 10),
-            })
+            addDevice({ ...data, projectId: projectIdInt }, projectIdInt)
           }
           onDelete={id => deleteDevice(parseInt(`${id}`, 10))}
         />

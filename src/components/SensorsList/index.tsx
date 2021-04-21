@@ -10,7 +10,7 @@ import { NewSensorForm } from "./NewSensorForm";
 interface SensorsListPropType {
   sensors: SensorType[];
   onChange?: (data: SensorType) => void;
-  onAdd?: (data: SensorType) => void;
+  onAdd?: (data: Omit<SensorType, "id">) => void;
   onDelete?: (id: string | number) => void;
 }
 
@@ -95,7 +95,7 @@ export const SensorsList: FC<SensorsListPropType> = ({
           ))}
           {isAddingSensor && (
             <NewSensorForm
-              onSubmit={(data: SubmissionDataType) => {
+              onSubmit={data => {
                 setIsAddingSensor(false);
                 onAdd(data);
               }}

@@ -35,7 +35,7 @@ describe("updateProjectsDevice", () => {
     };
     const updatedProjects = updateProjectsProject(fakeProjects, newProject);
     if (!updatedProjects[1]) throw new Error("First project not found");
-    expect(updatedProjects[1]).toBe(newProject);
+    expect(updatedProjects[1]).toStrictEqual(newProject);
   });
 });
 
@@ -44,6 +44,6 @@ describe("deleteProjectsDevice", () => {
     const newProject = createFakeProject(2);
     const updatedProjects = deleteProjectsProject(fakeProjects, newProject.id);
     if (!updatedProjects[1]) throw new Error("First project not found");
-    expect(updatedProjects[1]).not.toBe(newProject);
+    expect(updatedProjects[1]).not.toStrictEqual(newProject);
   });
 });
