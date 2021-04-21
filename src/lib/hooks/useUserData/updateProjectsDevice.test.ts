@@ -77,6 +77,9 @@ describe("addProjectsDevice", () => {
       throw new Error("First project has no devices");
     if (!updatedProjects[0].devices[3])
       throw new Error("Second device not found");
-    expect(updatedProjects[0].devices[3]).toStrictEqual(newDevice);
+    expect(updatedProjects[0].devices[3]).toStrictEqual({
+      ...newDevice,
+      id: 10000000,
+    });
   });
 });

@@ -1,5 +1,7 @@
 import { DevicesType, ProjectsType } from "@common/types/supabase";
 
+let lastDeviceId = 10000000;
+
 const updateDevices = (
   devices: DevicesType[],
   device: DevicesType
@@ -63,7 +65,7 @@ export const addProjectsDevice = (
                 ...project.devices,
                 {
                   ...device,
-                  id: project.devices[project.devices.length - 1].id + 1,
+                  id: lastDeviceId++,
                 },
               ]
             : project.devices || [],
