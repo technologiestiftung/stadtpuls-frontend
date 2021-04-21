@@ -2,7 +2,7 @@
 
 exports[`Storyshots UI Elements/Submit Dangerous Submit 1`] = `
 <input
-  className="font-sans transition text-lg px-4 py-2 cursor-pointer focus-offset bg-white border border-red-500 text-red-500 hover:bg-red-500 hover:bg-opacity-10"
+  className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset bg-white border border-red-500 text-red-500 hover:bg-red-500 hover:bg-opacity-10"
   type="submit"
   value="I am a dangerous submit"
   variant="dangerous"
@@ -11,7 +11,7 @@ exports[`Storyshots UI Elements/Submit Dangerous Submit 1`] = `
 
 exports[`Storyshots UI Elements/Submit Default Submit 1`] = `
 <input
-  className="font-sans transition text-lg px-4 py-2 cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+  className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
   type="submit"
   value="I am a submit"
 />
@@ -19,7 +19,7 @@ exports[`Storyshots UI Elements/Submit Default Submit 1`] = `
 
 exports[`Storyshots UI Elements/Submit Disabled Submit 1`] = `
 <input
-  className="font-sans transition cursor-default text-lg px-4 py-2 bg-white border border-gray-400 text-gray-400"
+  className="text-lg px-4 py-2 font-sans transition cursor-default bg-white border border-gray-400 text-gray-400"
   disabled={true}
   type="submit"
   value="I am a disabled submit"
@@ -28,7 +28,7 @@ exports[`Storyshots UI Elements/Submit Disabled Submit 1`] = `
 
 exports[`Storyshots UI Elements/Submit Primary Submit 1`] = `
 <input
-  className="font-sans transition text-lg px-4 py-2 cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
+  className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
   type="submit"
   value="I am a primary submit"
   variant="primary"

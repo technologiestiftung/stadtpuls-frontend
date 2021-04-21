@@ -1,4 +1,4 @@
-import { Anchor } from "@components/Button";
+import { AnchorButton } from "@components/Button";
 import { FC, HTMLProps } from "react";
 import Link from "next/link";
 
@@ -25,9 +25,9 @@ export const ProjectCreatedInfo: FC<ProjectCreatedInfoType> = ({
       <p className='mt-2 p-3 border border-gray-200 text-gray-500'>{token}</p>
       <footer className='mt-24 flex justify-end'>
         <Link href='/myprojects'>
-          <Anchor href='/myprojects'>Zur Projektübersicht</Anchor>
+          <AnchorButton href='/myprojects'>Zur Projektübersicht</AnchorButton>
         </Link>
-        <Anchor
+        <AnchorButton
           href='https://console.thethingsnetwork.org/'
           target='_blank'
           rel='noopener noreferrer'
@@ -35,7 +35,7 @@ export const ProjectCreatedInfo: FC<ProjectCreatedInfoType> = ({
           className='ml-4'
         >
           Zur TTN-Konsole
-        </Anchor>
+        </AnchorButton>
       </footer>
     </article>
   );

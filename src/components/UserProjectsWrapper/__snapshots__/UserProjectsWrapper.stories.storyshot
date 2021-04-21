@@ -21,7 +21,7 @@ exports[`Storyshots Layout/UserProjectsWrapper Default 1`] = `
       className="mt-8"
     >
       <a
-        className="font-sans transition text-lg px-4 py-2 cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
+        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
         href="/account/projects/new"
         onClick={[Function]}
         onMouseEnter={[Function]}

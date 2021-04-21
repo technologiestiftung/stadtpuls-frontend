@@ -1,5 +1,5 @@
 import { useAuth } from "@auth/Auth";
-import { Anchor } from "@components/Button";
+import { AnchorButton } from "@components/Button";
 import { NoAccess } from "@components/PageError/NoAccess";
 import { PleaseLogin } from "@components/PageError/PleaseLogin";
 import { InvalidPageId } from "@components/PageError/InvalidPageId";
@@ -43,7 +43,9 @@ const AccountProjectEditPage: FC = () => {
         title='Project nicht gefunden'
         footerContent={
           <div className='block w-full text-right'>
-            <Anchor href='/account/profile'>Zu meinem profil</Anchor>
+            <AnchorButton href='/account/profile'>
+              Zu meinem profil
+            </AnchorButton>
           </div>
         }
       >

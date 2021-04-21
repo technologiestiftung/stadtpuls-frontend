@@ -1,5 +1,5 @@
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
-import { Anchor as AnchorButton } from "@components/Button";
+import { AnchorButton } from "@components/Button";
 import { FC } from "react";
 
 export const PleaseLogin: FC = () => (

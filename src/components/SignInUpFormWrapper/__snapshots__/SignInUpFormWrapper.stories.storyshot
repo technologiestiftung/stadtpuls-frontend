@@ -50,7 +50,7 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signin 1`] = `
       }
     >
       <input
-        className="font-sans transition text-lg px-4 py-2 cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
+        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
         form="signin-form"
         type="submit"
         value="Einloggen"
@@ -111,7 +111,7 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signup 1`] = `
       }
     >
       <input
-        className="font-sans transition text-lg px-4 py-2 cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
+        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
         form="signup-form"
         type="submit"
         value="Registrieren"

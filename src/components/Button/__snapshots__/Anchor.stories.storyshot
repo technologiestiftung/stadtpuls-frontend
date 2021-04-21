@@ -1,30 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UI Elements/Anchor Default Anchor 1`] = `
+exports[`Storyshots UI Elements/AnchorButton Dangerous Anchor Button 1`] = `
 <a
-  className="font-sans transition text-lg px-4 py-2 cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+  className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset bg-white border border-red-500 text-red-500 hover:bg-red-500 hover:bg-opacity-10"
   href="/"
+  variant="dangerous"
 >
-  Anchor (looking like a button)
+  Anchor button (looking like a dangerous button)
 </a>
 `;
 
-exports[`Storyshots UI Elements/Anchor Primary Anchor 1`] = `
+exports[`Storyshots UI Elements/AnchorButton Default Anchor Button 1`] = `
 <a
-  className="font-sans transition text-lg px-4 py-2 cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
+  className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+  href="/"
+>
+  Anchor button (looking like a button)
+</a>
+`;
+
+exports[`Storyshots UI Elements/AnchorButton Primary Anchor 1`] = `
+<a
+  className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
   href="/"
   variant="primary"
 >
-  Anchor (looking like a primary button)
-</a>
-`;
-
-exports[`Storyshots UI Elements/Anchor Text Anchor 1`] = `
-<a
-  className="font-sans transition text-base px-0 py-0 cursor-pointer focus-offset bg-transparent text-blue-500 border-none hover:opacity-60 underline"
-  href="/"
-  variant="text"
->
-  Anchor (looking traditionally underlined)
+  Anchor button (looking like a primary button)
 </a>
 `;

@@ -31,12 +31,6 @@ PrimaryButton.args = {
   children: "I am a primary button",
 };
 
-export const TextButton = ButtonTemplate.bind({});
-TextButton.args = {
-  variant: "text",
-  children: "I am a text button",
-};
-
 export const DangerousButton = ButtonTemplate.bind({});
 DangerousButton.args = {
   variant: "dangerous",
@@ -54,13 +48,6 @@ PrimaryDisabledButton.args = {
   disabled: true,
   variant: "primary",
   children: "I am a primary disabled button",
-};
-
-export const TextDisabledButton = ButtonTemplate.bind({});
-TextDisabledButton.args = {
-  disabled: true,
-  variant: "text",
-  children: "I am a text disabled button",
 };
 
 export const DangerousDisabledButton = ButtonTemplate.bind({});

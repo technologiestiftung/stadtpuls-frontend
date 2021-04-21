@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Button, Submit, Anchor } from ".";
+import { Button, Submit, AnchorButton } from ".";
 
 describe("Button component", () => {
   it("should have a button type", () => {
@@ -28,11 +28,6 @@ describe("Button component", () => {
     const button = screen.getByRole("button");
     expect(button.getAttribute("class")?.includes("bg-blue-500")).toBe(true);
   });
-  it("should have basic text button style when text button", () => {
-    render(<Button variant='text'>Button</Button>);
-    const button = screen.getByRole("button");
-    expect(button.getAttribute("class")?.includes("underline")).toBe(true);
-  });
   it("should have dangerous styles when dangerous", () => {
     render(<Button variant='dangerous'>Button</Button>);
     const button = screen.getByRole("button");
@@ -53,15 +48,6 @@ describe("Button component", () => {
     );
     const button = screen.getByRole("button");
     expect(button.getAttribute("class")?.includes("bg-gray-200")).toBe(true);
-  });
-  it("should have text button disabled styles when text button disabled", () => {
-    render(
-      <Button variant='text' disabled>
-        Button
-      </Button>
-    );
-    const button = screen.getByRole("button");
-    expect(button.getAttribute("class")?.includes("text-gray-300")).toBe(true);
   });
   it("should have dangerous disabled styles when dangerous disabled", () => {
     render(
@@ -115,30 +101,30 @@ describe("Submit component", () => {
 
 describe("Anchor component", () => {
   it("should render a link", () => {
-    render(<Anchor href='/'>Some link</Anchor>);
+    render(<AnchorButton href='/'>Some link</AnchorButton>);
     const anchor = screen.getByRole("link", { name: /Some link/g });
     expect(anchor).toBeInTheDocument();
   });
   it("should have basic styles", () => {
-    render(<Anchor href='/'>Some link</Anchor>);
+    render(<AnchorButton href='/'>Some link</AnchorButton>);
     const anchor = screen.getByRole("link", { name: /Some link/g });
     expect(anchor.getAttribute("class")?.includes("transition")).toBe(true);
   });
   it("should have default styles when default", () => {
-    render(<Anchor href='/'>Some link</Anchor>);
+    render(<AnchorButton href='/'>Some link</AnchorButton>);
     const anchor = screen.getByRole("link", { name: /Some link/g });
     expect(anchor.getAttribute("class")?.includes("cursor-pointer")).toBe(true);
   });
   it("should have primary styles when primary", () => {
-    render(<Anchor href='/'>Some link</Anchor>);
+    render(<AnchorButton href='/'>Some link</AnchorButton>);
     const anchor = screen.getByRole("link", { name: /Some link/g });
     expect(anchor.getAttribute("class")?.includes("bg-blue-500")).toBe(true);
   });
   it("should have open-in-new-tab attributes when provided", () => {
     render(
-      <Anchor href='/' target='_blank' rel='noopener noreferrer'>
+      <AnchorButton href='/' target='_blank' rel='noopener noreferrer'>
         Some link
-      </Anchor>
+      </AnchorButton>
     );
     const anchor = screen.getByRole("link", { name: /Some link/g });
     expect(anchor.getAttribute("target")).toBe("_blank");
