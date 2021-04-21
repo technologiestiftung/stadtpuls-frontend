@@ -7,30 +7,12 @@ import {
   useCallback,
 } from "react";
 import { supabase } from "../supabase";
-
-interface SupabaseUserType {
-  id: string;
-  app_metadata: {
-    provider?: string;
-    [key: string]: unknown;
-  };
-  user_metadata: {
-    [key: string]: unknown;
-  };
-  aud: string;
-  confirmation_sent_at?: string;
-  email?: string;
-  created_at: string;
-  confirmed_at?: string;
-  last_sign_in_at?: string;
-  role?: string;
-  updated_at?: string;
-}
+import { AuthenticatedUsersType } from "@common/types/supabase";
 
 interface AuthContextType {
   signIn: typeof supabase.auth.signIn;
   signOut: typeof supabase.auth.signOut;
-  authenticatedUser: SupabaseUserType | null;
+  authenticatedUser: AuthenticatedUsersType | null;
   isLoadingAuth: boolean;
 }
 

@@ -14,7 +14,7 @@ Array [
     onSubmit={[Function]}
   >
     <div
-      className=" mb-2"
+      className="mb-2"
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
@@ -24,8 +24,9 @@ Array [
          
       </label>
       <input
-        className="mb-2 "
+        className=" mb-2"
         id="title"
+        name="title"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Wie soll dein Projekt heißen?"
@@ -97,7 +98,7 @@ Array [
       />
     </div>
     <div
-      className=" mb-2"
+      className="mb-2"
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
@@ -112,8 +113,9 @@ Array [
         </span>
       </label>
       <input
-        className="mb-2 "
+        className=" mb-2"
         id="location"
+        name="location"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Wo befindet sich dein Projekt?"
@@ -168,7 +170,7 @@ Array [
     onSubmit={[Function]}
   >
     <div
-      className=" mb-2"
+      className="mb-2"
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
@@ -178,8 +180,9 @@ Array [
          
       </label>
       <input
-        className="mb-2 "
+        className=" mb-2"
         id="title"
+        name="title"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Wie soll dein Projekt heißen?"
@@ -248,7 +251,7 @@ Array [
       />
     </div>
     <div
-      className=" mb-2"
+      className="mb-2"
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
@@ -263,8 +266,9 @@ Array [
         </span>
       </label>
       <input
-        className="mb-2 "
+        className=" mb-2"
         id="location"
+        name="location"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Wo befindet sich dein Projekt?"

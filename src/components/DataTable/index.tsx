@@ -3,19 +3,27 @@
 import React, { useState, useEffect } from "react";
 import { jsx, Grid, Card, Box, Button, Theme } from "theme-ui";
 import { IconButton } from "../IconButton";
-import { RecordType, DataTableType } from "../../common/interfaces";
+import { RecordType } from "@common/interfaces";
 import { createTimeOutput } from "@lib/dateUtil";
 import { createCSVStructure, downloadCSV } from "@lib/downloadCsvUtil";
 import { useStoreState } from "@state/hooks";
 
 const downloadIcon = "/images/download.svg";
 
+interface DataTableRowType {
+  id: string | number;
+  value: string | number;
+  recordedAt: string;
+}
+export interface DataTableType {
+  data: DataTableRowType[];
+  title: string | undefined;
+}
+
 export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
   const recordsSegmentSize = useStoreState(state => state.records.segmentSize);
 
-  const [displayedData, setDisplayedData] = useState<undefined | RecordType[]>(
-    undefined
-  );
+  const [displayedData, setDisplayedData] = useState<DataTableRowType[]>([]);
 
   const [
     numberOfRecordsToDisplay,
@@ -33,7 +41,7 @@ export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
   }, [data, numberOfRecordsToDisplay]);
 
   const handleDownload = (): void => {
-    const CSVData = createCSVStructure(data);
+    const CSVData = createCSVStructure(data as RecordType[]);
     downloadCSV(CSVData, title);
   };
 
@@ -93,26 +101,25 @@ export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
             </tr>
           </thead>
           <tbody>
-            {displayedData &&
-              displayedData.map((record: RecordType, i: number) => {
-                return (
-                  <tr
-                    key={record.id}
-                    sx={{
-                      backgroundColor: () =>
-                        `${i % 2 === 0 ? "muted" : "background"}`,
-                      "& > td": {
-                        p: 2,
-                        border: "none",
-                      },
-                    }}
-                  >
-                    <td>{new Date(record.recordedAt).toLocaleDateString()}</td>
-                    <td>{createTimeOutput(new Date(record.recordedAt))}</td>
-                    <td sx={{ textAlign: "right" }}>{record.value}</td>
-                  </tr>
-                );
-              })}
+            {displayedData.map((record: DataTableRowType, i: number) => {
+              return (
+                <tr
+                  key={record.id}
+                  sx={{
+                    backgroundColor: () =>
+                      `${i % 2 === 0 ? "muted" : "background"}`,
+                    "& > td": {
+                      p: 2,
+                      border: "none",
+                    },
+                  }}
+                >
+                  <td>{new Date(record.recordedAt).toLocaleDateString()}</td>
+                  <td>{createTimeOutput(new Date(record.recordedAt))}</td>
+                  <td sx={{ textAlign: "right" }}>{record.value}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
         {data && data.length > numberOfRecordsToDisplay && (

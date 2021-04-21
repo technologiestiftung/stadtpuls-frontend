@@ -14,7 +14,7 @@ exports[`Storyshots Forms/UserInfoEdit Default User Info Edit 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className=" mb-2"
+      className="mb-2"
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
@@ -24,9 +24,10 @@ exports[`Storyshots Forms/UserInfoEdit Default User Info Edit 1`] = `
          
       </label>
       <input
-        className="mb-2 "
+        className=" mb-2"
         disabled={true}
         id="username"
+        name="username"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Dein Nutzername..."
@@ -35,7 +36,7 @@ exports[`Storyshots Forms/UserInfoEdit Default User Info Edit 1`] = `
       />
     </div>
     <div
-      className=" mb-2"
+      className="mb-2"
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
@@ -45,9 +46,10 @@ exports[`Storyshots Forms/UserInfoEdit Default User Info Edit 1`] = `
          
       </label>
       <input
-        className="mb-2 "
+        className=" mb-2"
         disabled={true}
         id="email"
+        name="email"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Deine E-Mail-Adresse..."

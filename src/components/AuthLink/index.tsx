@@ -60,8 +60,8 @@ export const AuthLink: FC = () => {
   ) : (
     <DropdownMenu
       items={[
-        { id: 1, title: "Meine Projekte", href: "/projects" },
-        { id: 2, title: "Account", href: "/account" },
+        { id: 1, title: "Meine Projekte", href: "/account/projects" },
+        { id: 2, title: "Account", href: "/account/profile" },
         { id: 3, title: "Logout", onClick: () => void signOut() },
       ]}
     >

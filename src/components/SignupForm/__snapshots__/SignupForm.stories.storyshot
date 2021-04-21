@@ -22,7 +22,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
       onSubmit={[Function]}
     >
       <div
-        className=" mb-2"
+        className="mb-2"
       >
         <label
           className="block mb-2 cursor-pointer transition hover:opacity-60"
@@ -32,8 +32,9 @@ exports[`Storyshots Forms/Signup Default 1`] = `
            
         </label>
         <input
-          className="mb-2 "
+          className=" mb-2"
           id="email"
+          name="email"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder="Deine E-Mail-Adresse..."

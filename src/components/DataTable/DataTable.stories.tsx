@@ -4,8 +4,8 @@ import { StoreProvider } from "easy-peasy";
 
 import theme from "../../style/theme";
 import store from "../../state/store";
-import { DataTableType, RecordType } from "../../common/interfaces";
-import { DataTable } from ".";
+import { RecordType } from "../../common/interfaces";
+import { DataTableType, DataTable } from ".";
 
 export default {
   title: "DataTable",

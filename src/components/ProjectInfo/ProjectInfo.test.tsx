@@ -1,14 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { ProjectInfo, ProjectInfoPropType } from ".";
-
-const editProjectFunction = jest.fn();
 
 const exampleArgs: ProjectInfoPropType = {
   title: "A title",
   category: "A category",
   projectViewLink: "/123abc",
-  onEditProject: editProjectFunction,
+  projectEditLink: "/account/projects/123abc/edit",
   children: <p>Description</p>,
 };
 
@@ -27,17 +24,23 @@ describe("ProjectInfo component", () => {
     expect(childrenText).toBeInTheDocument();
   });
   it("should display a category tag", () => {
-    render(<ProjectInfo {...exampleArgs}>{exampleArgs.children}</ProjectInfo>);
-    const category = screen.getByText(exampleArgs.category);
+    render(
+      <ProjectInfo {...exampleArgs} category='Hey'>
+        {exampleArgs.children}
+      </ProjectInfo>
+    );
+    const category = screen.getByText(/Hey/gi);
     expect(category).toBeInTheDocument();
   });
-  it("should fire a function when 'edit project' is clicked", () => {
+  it("should display a link to the project edit route", () => {
     render(<ProjectInfo {...exampleArgs}>{exampleArgs.children}</ProjectInfo>);
-    const editProjectButton = screen.getByRole("button", {
-      name: /Projekt bearbeiten/i,
+    const projectEditLink = screen.getByRole("link", {
+      name: "Projekt bearbeiten",
     });
-    userEvent.click(editProjectButton);
-    expect(editProjectFunction).toHaveBeenCalledTimes(1);
+    expect(projectEditLink).toBeInTheDocument();
+    expect(projectEditLink.getAttribute("href")).toBe(
+      exampleArgs.projectEditLink
+    );
   });
   it("should display a link to the project view route", () => {
     render(<ProjectInfo {...exampleArgs}>{exampleArgs.children}</ProjectInfo>);

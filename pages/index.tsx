@@ -1,17 +1,14 @@
-import { FC, useEffect } from "react";
-
+import { FC } from "react";
 import { Overview } from "@components/Overview";
-
-import { useStoreActions } from "@state/hooks";
+import { usePublicProjects } from "@lib/hooks/usePublicProjects";
+import { useStoreState } from "@state/hooks";
 
 const HomePage: FC = () => {
-  const loadDevices = useStoreActions(action => action.projects.load);
+  const recordsLimit = useStoreState(state => state.records.segmentSize);
+  const { data, error } = usePublicProjects(0, recordsLimit);
 
-  useEffect(() => {
-    loadDevices();
-  }, [loadDevices]);
-
-  return <Overview />;
+  if (!data || error) return null;
+  else return <Overview {...data} />;
 };
 
 export default HomePage;

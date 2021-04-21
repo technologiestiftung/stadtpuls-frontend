@@ -8,7 +8,13 @@ import {
   device3Records,
   device4Records,
 } from "./data";
-import { createApiUrl } from "../lib/requests/createApiUrl";
+import {
+  allProjectsRecordsData,
+  publicCategories,
+  publicProjectsData,
+} from "./supabaseData";
+import { createV1ApiUrl } from "../lib/requests/createV1ApiUrl";
+import { createV2ApiUrl } from "../lib/requests/createV2ApiUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
 
 const { data: projectsData } = projectsResponse;
@@ -19,44 +25,91 @@ const { data: device2RecordsData } = device2Records;
 const { data: device3RecordsData } = device3Records;
 const { data: device4RecordsData } = device4Records;
 
+const supabaseHandlers = [
+  rest.get(createV2ApiUrl("/categories"), (_req, res, ctx) => {
+    return res(ctx.status(201, "Mocked status"), ctx.json(publicCategories));
+  }),
+  rest.get(createV2ApiUrl("/projects"), (req, res, ctx) => {
+    const query = req.url.searchParams;
+
+    const select = query.get("select");
+    const offset = query.get("offset");
+    const limit = query.get("limit");
+    const devicesLimit = query.get("devices.limit");
+    const recordsLimit = query.get("devices.records.limit");
+    const recordsOrder = query.get("devices.records.order");
+    if (
+      recordsLimit == "50" &&
+      recordsOrder == "recordedAt.desc.nullslast" &&
+      devicesLimit == "1" &&
+      limit == "10" &&
+      offset == "0" &&
+      select ==
+        "id,name,description,location,devices(records(recordedAt,measurements))"
+    )
+      return res(
+        ctx.set("content-range", "0-9/14"),
+        ctx.status(201, "Mocked status"),
+        ctx.json(publicProjectsData)
+      );
+    else
+      return res(
+        ctx.set("content-range", "0-9/14"),
+        ctx.status(404, "Mocked status"),
+        ctx.json(publicProjectsData)
+      );
+  }),
+  rest.get(
+    createV2ApiUrl(
+      `/records?select=id%2CrecordedAt%2Cmeasurements%2Clongitude%2Clatitude%2Caltitude%2Cdevice%3AdeviceId%28id%2CexternalId%2Cname%2Cproject%3AprojectId%28id%2Cname%2Cdescription%2CcreatedAt%2Clocation%2Cconnectype%2Ccategory%3AcategoryId%28id%2Cname%2Cdescription%29%29%29&device.project.id=eq.10`
+    ),
+    (_req, res, ctx) => {
+      return res(
+        ctx.status(201, "Mocked status"),
+        ctx.json(allProjectsRecordsData)
+      );
+    }
+  ),
+];
+
 const apiHandlers = [
-  rest.get(createApiUrl(`/projects`), (_req, res, ctx) => {
+  rest.get(createV1ApiUrl(`/projects`), (_req, res, ctx) => {
     return res(
       ctx.status(201, "Mocked status"),
       ctx.json({ data: projectsData, meta: "mocked" })
     );
   }),
-  rest.get(createApiUrl(`/projects/1/devices`), (_req, res, ctx) => {
+  rest.get(createV1ApiUrl(`/projects/1/devices`), (_req, res, ctx) => {
     return res(
       ctx.status(201, "Mocked status"),
       ctx.json({ data: project1DevicesData, meta: "mocked" })
     );
   }),
-  rest.get(createApiUrl(`/projects/2/devices`), (_req, res, ctx) => {
+  rest.get(createV1ApiUrl(`/projects/2/devices`), (_req, res, ctx) => {
     return res(
       ctx.status(201, "Mocked status"),
       ctx.json({ data: project2DevicesData, meta: "mocked" })
     );
   }),
-  rest.get(createApiUrl(`/devices/1/records`), (_req, res, ctx) => {
+  rest.get(createV1ApiUrl(`/devices/1/records`), (_req, res, ctx) => {
     return res(
       ctx.status(201, "Mocked status"),
       ctx.json({ data: device1RecordsData, meta: "mocked" })
     );
   }),
-  rest.get(createApiUrl(`/devices/2/records`), (_req, res, ctx) => {
+  rest.get(createV1ApiUrl(`/devices/2/records`), (_req, res, ctx) => {
     return res(
       ctx.status(201, "Mocked status"),
       ctx.json({ data: device2RecordsData, meta: "mocked" })
     );
   }),
-  rest.get(createApiUrl(`/devices/3/records`), (_req, res, ctx) => {
+  rest.get(createV1ApiUrl(`/devices/3/records`), (_req, res, ctx) => {
     return res(
       ctx.status(201, "Mocked status"),
       ctx.json({ data: device3RecordsData, meta: "mocked" })
     );
   }),
-  rest.get(createApiUrl(`/devices/4/records`), (_req, res, ctx) => {
+  rest.get(createV1ApiUrl(`/devices/4/records`), (_req, res, ctx) => {
     return res(
       ctx.status(201, "Mocked status"),
       ctx.json({ data: device4RecordsData, meta: "mocked" })
@@ -92,4 +145,4 @@ const authHandlers = [
   }),
 ];
 
-export const handlers = [...apiHandlers, ...authHandlers];
+export const handlers = [...apiHandlers, ...supabaseHandlers, ...authHandlers];
