@@ -434,7 +434,7 @@ exports[`Storyshots Layout/SensorsList Empty 1`] = `
             colSpan={5}
             style={
               Object {
-                "height": "20vmax",
+                "height": 50,
               }
             }
           >
