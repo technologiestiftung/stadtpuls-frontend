@@ -1,12 +1,13 @@
 import { FC, ReactNode } from "react";
 import Link from "next/link";
 import { Anchor } from "@components/Button";
+import { TextLink } from "@components/TextLink";
 
 export interface ProjectInfoPropType {
   title: string;
-  category: string;
+  category?: string;
   projectViewLink: string;
-  onEditProject: () => void;
+  projectEditLink: string;
   children: ReactNode;
 }
 
@@ -14,7 +15,7 @@ export const ProjectInfo: FC<ProjectInfoPropType> = ({
   title,
   category,
   projectViewLink,
-  onEditProject,
+  projectEditLink,
   children,
 }) => (
   <section className='bg-blue-25 p-6'>
@@ -27,19 +28,20 @@ export const ProjectInfo: FC<ProjectInfoPropType> = ({
         <Anchor href={projectViewLink}>→ Projektseite</Anchor>
       </Link>
     </header>
-    <div className='mt-4'>
-      <p>
-        <mark className='p-1 text-sm bg-blue-100 text-blue-500'>
-          {category}
-        </mark>
-      </p>
-      <div className='mt-4 max-w-prose'>{children}</div>
-      <button
-        onClick={onEditProject}
-        className='mt-4 text-blue-500 underline hover:text-opacity-60 transition-colors focus-offset'
-      >
-        Projekt bearbeiten
-      </button>
+    <div className='mt-3'>
+      {category && (
+        <p>
+          <mark className='p-1 text-sm bg-blue-100 text-blue-500'>
+            {category}
+          </mark>
+        </p>
+      )}
+      <div className='mt-2 max-w-prose'>{children}</div>
+      <Link href={projectEditLink}>
+        <TextLink href={projectEditLink} className='mt-4 inline-block'>
+          Projekt bearbeiten
+        </TextLink>
+      </Link>
     </div>
   </section>
 );

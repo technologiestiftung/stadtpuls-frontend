@@ -60,7 +60,7 @@ const fetchProjects: ProjectsFetcherSignature = async (
       description,
       connectype,
       location,
-      category:categoryId (
+      category: categoryId (
         id,
         name,
         description
@@ -68,7 +68,11 @@ const fetchProjects: ProjectsFetcherSignature = async (
       devices (
         id,
         externalId,
-        name
+        name,
+        records (
+          id,
+          recordedAt
+        )
       )
     `
     )
@@ -80,12 +84,12 @@ const fetchProjects: ProjectsFetcherSignature = async (
   return data;
 };
 
-const addDevice = async (device: DevicesType): Promise<void> => {
+const addDevice = async (device: Omit<DevicesType, "id">): Promise<void> => {
   if (!device.userId) throw new Error("Not authenticated");
 
   const { error } = await supabase
     .from<DevicesType>("devices")
-    .insert([device]);
+    .insert([{ ...device, id: undefined }]);
 
   if (error) throw error;
 };
@@ -127,7 +131,7 @@ const addProject = async (project: ProjectsType): Promise<void> => {
 
   const { error } = await supabase
     .from<ProjectsType>("projects")
-    .insert([project]);
+    .insert([{ ...project, id: undefined }]);
 
   if (error) throw error;
 };
@@ -209,7 +213,7 @@ export const useUserData = (): {
   projects: ProjectsType[] | null;
   error: Error | null;
   addDevice: (
-    device: DevicesType,
+    device: Omit<DevicesType, "id">,
     projectId: ProjectsType["id"]
   ) => Promise<void>;
   updateDevice: (device: DevicesType) => Promise<void>;

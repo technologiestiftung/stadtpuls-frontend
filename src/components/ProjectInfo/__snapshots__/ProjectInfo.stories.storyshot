@@ -27,7 +27,7 @@ exports[`Storyshots Layout/ProjectInfo Default Project Info 1`] = `
     </a>
   </header>
   <div
-    className="mt-4"
+    className="mt-3"
   >
     <p>
       <mark
@@ -37,16 +37,18 @@ exports[`Storyshots Layout/ProjectInfo Default Project Info 1`] = `
       </mark>
     </p>
     <div
-      className="mt-4 max-w-prose"
+      className="mt-2 max-w-prose"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </div>
-    <button
-      className="mt-4 text-blue-500 underline hover:text-opacity-60 transition-colors focus-offset"
+    <a
+      className="text-blue-500 underline transition hover:opacity-60 cursor-pointer focus-offset mt-4 inline-block"
+      href="/account/projects/123abc/edit"
       onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       Projekt bearbeiten
-    </button>
+    </a>
   </div>
 </section>
 `;

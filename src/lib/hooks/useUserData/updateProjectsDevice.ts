@@ -1,5 +1,7 @@
 import { DevicesType, ProjectsType } from "@common/types/supabase";
 
+let lastDeviceId = 10000000;
+
 const updateDevices = (
   devices: DevicesType[],
   device: DevicesType
@@ -49,7 +51,7 @@ export const deleteProjectsDevice = (
 
 export const addProjectsDevice = (
   projects: ProjectsType[],
-  device: DevicesType,
+  device: Omit<DevicesType, "id">,
   projectId: ProjectsType["id"]
 ): ProjectsType[] =>
   projects.reduce(
@@ -59,7 +61,13 @@ export const addProjectsDevice = (
         ...project,
         devices:
           project.devices && projectId === project.id
-            ? [...project.devices, device]
+            ? [
+                ...project.devices,
+                {
+                  ...device,
+                  id: lastDeviceId++,
+                },
+              ]
             : project.devices || [],
       },
     ],

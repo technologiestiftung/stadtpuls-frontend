@@ -3,12 +3,11 @@ import { SubmissionDataType } from "./SensorsListTypes";
 import { SensorsListEditRow } from "./SensorsListEditRow";
 
 interface NewSensorFormPropType {
-  onSubmit: (data: SubmissionDataType) => void;
+  onSubmit: (data: Omit<SubmissionDataType, "id">) => void;
   onCancel: () => void;
 }
 
 const defaultDraft = {
-  id: Infinity,
   externalId: "new-device-0",
   name: "My new device",
 };
@@ -17,12 +16,12 @@ export const NewSensorForm: FC<NewSensorFormPropType> = ({
   onSubmit,
   onCancel,
 }) => {
-  const [currentDraft, setCurrentDraft] = useState<SubmissionDataType>(
-    defaultDraft
-  );
+  const [currentDraft, setCurrentDraft] = useState<
+    Omit<SubmissionDataType, "id">
+  >(defaultDraft);
   return (
     <SensorsListEditRow
-      currentDraft={currentDraft}
+      currentDraft={{ ...currentDraft, id: Infinity }}
       onSubmit={() => {
         onSubmit(currentDraft);
         setCurrentDraft(defaultDraft);

@@ -51,7 +51,7 @@ describe("updateProjectsDevice", () => {
       throw new Error("First project has no devices");
     if (!updatedProjects[0].devices[1])
       throw new Error("Second device not found");
-    expect(updatedProjects[0].devices[1]).toBe(newDevice2);
+    expect(updatedProjects[0].devices[1]).toStrictEqual(newDevice2);
   });
 });
 
@@ -64,7 +64,7 @@ describe("deleteProjectsDevice", () => {
       throw new Error("First project has no devices");
     if (!updatedProjects[0].devices[1])
       throw new Error("Second device not found");
-    expect(updatedProjects[0].devices[1]).not.toBe(newDevice2);
+    expect(updatedProjects[0].devices[1]).not.toStrictEqual(newDevice2);
   });
 });
 
@@ -77,6 +77,9 @@ describe("addProjectsDevice", () => {
       throw new Error("First project has no devices");
     if (!updatedProjects[0].devices[3])
       throw new Error("Second device not found");
-    expect(updatedProjects[0].devices[3]).toBe(newDevice);
+    expect(updatedProjects[0].devices[3]).toStrictEqual({
+      ...newDevice,
+      id: 10000000,
+    });
   });
 });

@@ -3,11 +3,12 @@ import moment from "moment";
 import { FC, useEffect, useState } from "react";
 import { SensorsList } from ".";
 
+const defaults = { onChange: jest.fn(), onAdd: jest.fn(), onDelete: jest.fn() };
 const createSensor = (
-  key: string,
+  key: number,
   date?: Date | null
 ): {
-  id: string;
+  id: number;
   externalId: string;
   name: string;
   lastRecordedAt: Date | null;
@@ -21,37 +22,37 @@ const createSensor = (
 
 describe("component SensorsList", () => {
   it("should render the devices names", () => {
-    const sensorA = createSensor("A");
-    const sensorB = createSensor("B");
-    const sensorC = createSensor("C");
+    const sensorA = createSensor(1);
+    const sensorB = createSensor(2);
+    const sensorC = createSensor(3);
     const sensors = [sensorA, sensorB, sensorC];
-    render(<SensorsList sensors={sensors} />);
-    const titleA = screen.getByText(/My sensor A/i);
-    const titleB = screen.getByText(/My sensor B/i);
-    const titleC = screen.getByText(/My sensor C/i);
+    render(<SensorsList {...defaults} sensors={sensors} />);
+    const titleA = screen.getByText(/My sensor 1/i);
+    const titleB = screen.getByText(/My sensor 2/i);
+    const titleC = screen.getByText(/My sensor 3/i);
     expect(titleA).toBeInTheDocument();
     expect(titleB).toBeInTheDocument();
     expect(titleC).toBeInTheDocument();
   });
   it("should render the devices ids", () => {
-    const sensorA = createSensor("A");
-    const sensorB = createSensor("B");
-    const sensorC = createSensor("C");
+    const sensorA = createSensor(1);
+    const sensorB = createSensor(2);
+    const sensorC = createSensor(3);
     const sensors = [sensorA, sensorB, sensorC];
-    render(<SensorsList sensors={sensors} />);
-    const deviceA = screen.getByText(/device-A/i);
-    const deviceB = screen.getByText(/device-B/i);
-    const deviceC = screen.getByText(/device-C/i);
+    render(<SensorsList {...defaults} sensors={sensors} />);
+    const deviceA = screen.getByText(/device-1/i);
+    const deviceB = screen.getByText(/device-2/i);
+    const deviceC = screen.getByText(/device-3/i);
     expect(deviceA).toBeInTheDocument();
     expect(deviceB).toBeInTheDocument();
     expect(deviceC).toBeInTheDocument();
   });
   it("should render relative dates based on lastRecordedAt", () => {
-    const sensorA = createSensor("A", moment().subtract(3, "minutes").toDate());
-    const sensorB = createSensor("B", moment().subtract(2, "days").toDate());
-    const sensorC = createSensor("C", null);
+    const sensorA = createSensor(1, moment().subtract(3, "minutes").toDate());
+    const sensorB = createSensor(2, moment().subtract(2, "days").toDate());
+    const sensorC = createSensor(3, null);
     const sensors = [sensorA, sensorB, sensorC];
-    render(<SensorsList sensors={sensors} />);
+    render(<SensorsList {...defaults} sensors={sensors} />);
     const dateA = screen.getByText(/Vor 3 Minuten/i);
     const dateB = screen.getByText(/Vor 2 Tagen/i);
     const dateC = screen.getByText(/—/i);
@@ -61,9 +62,11 @@ describe("component SensorsList", () => {
   });
   it("should call the onEdit when data is changed", () => {
     const testOnEdit = jest.fn();
-    const sensorA = createSensor("A");
+    const sensorA = createSensor(1);
 
-    render(<SensorsList sensors={[sensorA]} onChange={testOnEdit} />);
+    render(
+      <SensorsList {...defaults} sensors={[sensorA]} onChange={testOnEdit} />
+    );
 
     const editButton = screen.getByText(/Bearbeiten/gi);
     expect(editButton).toBeInTheDocument();
@@ -89,7 +92,7 @@ describe("component SensorsList", () => {
     });
   });
   it("should close edit mode when key enter is pressed", () => {
-    render(<SensorsList sensors={[createSensor("A")]} />);
+    render(<SensorsList {...defaults} sensors={[createSensor(1)]} />);
 
     const editButton1 = screen.getByText(/Bearbeiten/gi);
     expect(editButton1).toBeInTheDocument();
@@ -117,7 +120,7 @@ describe("component SensorsList", () => {
     expect(editButton4).toBeInTheDocument();
   });
   it("should close edit mode when key escape is pressed", () => {
-    render(<SensorsList sensors={[createSensor("A")]} />);
+    render(<SensorsList {...defaults} sensors={[createSensor(1)]} />);
 
     const editButton1 = screen.getByText(/Bearbeiten/gi);
     expect(editButton1).toBeInTheDocument();
@@ -147,7 +150,7 @@ describe("component SensorsList", () => {
   it("should close edit mode when clicked outside with no changes", () => {
     render(
       <>
-        <SensorsList sensors={[createSensor("A")]} />
+        <SensorsList {...defaults} sensors={[createSensor(1)]} />
         <button>other thing outside</button>
       </>
     );
@@ -172,7 +175,7 @@ describe("component SensorsList", () => {
   it("should not close edit mode when clicked outside with changes", () => {
     render(
       <>
-        <SensorsList sensors={[createSensor("A")]} />
+        <SensorsList {...defaults} sensors={[createSensor(1)]} />
         <button>other thing outside</button>
       </>
     );
@@ -197,17 +200,77 @@ describe("component SensorsList", () => {
     const editButton2 = screen.queryByText(/Bearbeiten/gi);
     expect(editButton2).not.toBeInTheDocument();
   });
-  it("should call the onDelete when delete link is clicked", () => {
+  it("should call the onDelete with confirmation when delete link is clicked", () => {
     const testOnEdit = jest.fn();
-    const sensorA = createSensor("A");
-    render(<SensorsList sensors={[sensorA]} onDelete={testOnEdit} />);
-    const editButton = screen.getByText(/Löschen/gi);
-    expect(editButton).toBeInTheDocument();
-    fireEvent.click(editButton);
-    expect(testOnEdit).toHaveBeenCalledWith("A");
+    const sensorA = createSensor(1);
+    render(
+      <SensorsList {...defaults} sensors={[sensorA]} onDelete={testOnEdit} />
+    );
+    const deleteButton = screen.getByText(/Löschen/gi);
+    expect(deleteButton).toBeInTheDocument();
+    fireEvent.click(deleteButton);
+    const confirmation = screen.getByText(/Bitte bestätige/gi);
+    expect(confirmation).toBeInTheDocument();
+    const [, confirmButton] = screen.getAllByText(/Löschen/gi);
+    expect(confirmButton).toBeInTheDocument();
+    fireEvent.click(confirmButton);
+    expect(testOnEdit).toHaveBeenCalledWith(1);
+  });
+  it("should cancel the confirmation when cancel link is clicked", () => {
+    const testOnEdit = jest.fn();
+    const sensorA = createSensor(1);
+    render(
+      <SensorsList {...defaults} sensors={[sensorA]} onDelete={testOnEdit} />
+    );
+    const deleteButton = screen.getByText(/Löschen/gi);
+    expect(deleteButton).toBeInTheDocument();
+    fireEvent.click(deleteButton);
+    const confirmation = screen.getByText(/Bitte bestätige/gi);
+    expect(confirmation).toBeInTheDocument();
+    const cancelButton = screen.getByText(/Abbrechen/gi);
+    expect(cancelButton).toBeInTheDocument();
+    fireEvent.click(cancelButton);
+    expect(testOnEdit).not.toHaveBeenCalledWith(1);
+    expect(screen.queryByText(/Bitte bestätige/gi)).not.toBeInTheDocument();
+  });
+  it("should render a new sensor link when empty", () => {
+    render(<SensorsList {...defaults} sensors={[]} />);
+    const firstButton = screen.getByText(/Ersten Sensor hinzufügen/gi);
+    expect(firstButton).toBeInTheDocument();
+    fireEvent.click(firstButton);
+    const cancelButton = screen.getByText(/Abbrechen/gi);
+    expect(cancelButton).toBeInTheDocument();
+    const saveButton = screen.getByText(/Speichern/gi);
+    expect(saveButton).toBeInTheDocument();
+    fireEvent.click(cancelButton);
+    const firstButton2 = screen.getByText(/Ersten Sensor hinzufügen/gi);
+    expect(firstButton2).toBeInTheDocument();
+    fireEvent.click(firstButton2);
+    const saveButton2 = screen.getByText(/Speichern/gi);
+    expect(saveButton2).toBeInTheDocument();
+    fireEvent.click(saveButton2);
+  });
+  it("should render a new sensor link when full", () => {
+    const sensorA = createSensor(1);
+    render(<SensorsList {...defaults} sensors={[sensorA]} />);
+    const addButton = screen.getByText(/Sensor hinzufügen/gi);
+    expect(addButton).toBeInTheDocument();
+    fireEvent.click(addButton);
+    const cancelButton = screen.getByText(/Abbrechen/gi);
+    expect(cancelButton).toBeInTheDocument();
+    const saveButton = screen.getByText(/Speichern/gi);
+    expect(saveButton).toBeInTheDocument();
+    fireEvent.click(cancelButton);
+    expect(screen.queryByText(/Abbrechen/gi)).not.toBeInTheDocument();
+    const addButton2 = screen.getByText(/Sensor hinzufügen/gi);
+    expect(addButton2).toBeInTheDocument();
+    fireEvent.click(addButton2);
+    const saveButton2 = screen.getByText(/Speichern/gi);
+    expect(saveButton2).toBeInTheDocument();
+    fireEvent.click(saveButton2);
   });
   it("should call the onCancel when delete link is clicked", () => {
-    render(<SensorsList sensors={[createSensor("A")]} />);
+    render(<SensorsList {...defaults} sensors={[createSensor(1)]} />);
 
     const editButton1 = screen.getByText(/Bearbeiten/gi);
     expect(editButton1).toBeInTheDocument();
@@ -226,7 +289,7 @@ describe("component SensorsList", () => {
     expect(cancelButton2).not.toBeInTheDocument();
   });
   it("should show errors when empyt fields", () => {
-    render(<SensorsList sensors={[createSensor("A")]} />);
+    render(<SensorsList {...defaults} sensors={[createSensor(1)]} />);
 
     const editButton1 = screen.getByText(/Bearbeiten/gi);
     expect(editButton1).toBeInTheDocument();
@@ -243,7 +306,7 @@ describe("component SensorsList", () => {
   });
   it("should update the draft when props change from outside", async (): Promise<void> => {
     const CustomWrapper: FC = () => {
-      const [sensor, setSensor] = useState(createSensor("A"));
+      const [sensor, setSensor] = useState(createSensor(1));
 
       useEffect(() => {
         const to = setTimeout(
@@ -253,11 +316,11 @@ describe("component SensorsList", () => {
         return () => clearTimeout(to);
       }, [setSensor, sensor]);
 
-      return <SensorsList sensors={[sensor]} />;
+      return <SensorsList {...defaults} sensors={[sensor]} />;
     };
     render(<CustomWrapper />);
 
-    const name = screen.getByText(/My sensor A/gi);
+    const name = screen.getByText(/My sensor 1/gi);
     expect(name).toBeInTheDocument();
 
     await waitFor(() =>
