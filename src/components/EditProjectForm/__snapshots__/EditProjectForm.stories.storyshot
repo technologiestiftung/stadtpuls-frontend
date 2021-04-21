@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Forms/EditProjectForm With Default Values 1`] = `
-Array [
+<div>
   <h2
     className="text-3xl text-blue-500 font-bold"
   >
     Projekt bearbeiten
-  </h2>,
+  </h2>
   <form
     className="mt-4"
     id="edit-project-form"
@@ -128,42 +128,46 @@ Array [
     >
       Token neu generieren (placeholder)
     </button>
-  </form>,
+  </form>
   <footer
-    className="mt-12 flex place-content-between"
+    className="mt-24"
   >
-    <button
-      className="text-red-500"
+    <div
+      className="flex place-content-between"
     >
-      Projekt löschen
-    </button>
-    <div>
       <button
-        className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
-        onClick={[Function]}
-        type="button"
+        className="text-red-500"
       >
-        Abbrechen
+        Projekt löschen
       </button>
-      <input
-        className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60 ml-4"
-        form="edit-project-form"
-        type="submit"
-        value="Speichern"
-        variant="primary"
-      />
+      <div>
+        <button
+          className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+          onClick={[Function]}
+          type="button"
+        >
+          Abbrechen
+        </button>
+        <input
+          className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60 ml-4"
+          form="edit-project-form"
+          type="submit"
+          value="Speichern"
+          variant="primary"
+        />
+      </div>
     </div>
-  </footer>,
-]
+  </footer>
+</div>
 `;
 
 exports[`Storyshots Forms/EditProjectForm Without Default Values 1`] = `
-Array [
+<div>
   <h2
     className="text-3xl text-blue-500 font-bold"
   >
     Projekt bearbeiten
-  </h2>,
+  </h2>
   <form
     className="mt-4"
     id="edit-project-form"
@@ -281,31 +285,35 @@ Array [
     >
       Token neu generieren (placeholder)
     </button>
-  </form>,
+  </form>
   <footer
-    className="mt-12 flex place-content-between"
+    className="mt-24"
   >
-    <button
-      className="text-red-500"
+    <div
+      className="flex place-content-between"
     >
-      Projekt löschen
-    </button>
-    <div>
       <button
-        className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
-        onClick={[Function]}
-        type="button"
+        className="text-red-500"
       >
-        Abbrechen
+        Projekt löschen
       </button>
-      <input
-        className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60 ml-4"
-        form="edit-project-form"
-        type="submit"
-        value="Speichern"
-        variant="primary"
-      />
+      <div>
+        <button
+          className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+          onClick={[Function]}
+          type="button"
+        >
+          Abbrechen
+        </button>
+        <input
+          className="px-4 py-2 font-sans text-lg transition cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60 ml-4"
+          form="edit-project-form"
+          type="submit"
+          value="Speichern"
+          variant="primary"
+        />
+      </div>
     </div>
-  </footer>,
-]
+  </footer>
+</div>
 `;
