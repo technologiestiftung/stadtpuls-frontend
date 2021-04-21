@@ -27,6 +27,10 @@ export default {
       description:
         "A function called when the form is cancelled without submit",
     },
+    onDelete: {
+      description:
+        "A function called when the 'delete project' button is clicked",
+    },
   },
 } as Meta;
 
@@ -37,6 +41,7 @@ WithoutDefaultValues.args = {
   categoryOptions: exampleCategories,
   onSubmit: action("Form data submited"),
   onCancel: action("Form cancelled"),
+  onDelete: action("Delete project clicked"),
 };
 
 export const WithDefaultValues = Template.bind({});
@@ -52,4 +57,5 @@ WithDefaultValues.args = {
   categoryOptions: exampleCategories,
   onSubmit: action("Form data submited"),
   onCancel: action("Form cancelled"),
+  onDelete: action("Delete project clicked"),
 };

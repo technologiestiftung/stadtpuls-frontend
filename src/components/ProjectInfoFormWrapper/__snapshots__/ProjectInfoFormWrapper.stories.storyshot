@@ -64,7 +64,8 @@ exports[`Storyshots Forms/ProjectInfoFormWrapper Edit 1`] = `
       className="flex place-content-between"
     >
       <button
-        className="text-red-500"
+        className="text-red-500 focus-offset"
+        onClick={[Function]}
       >
         Projekt löschen
       </button>

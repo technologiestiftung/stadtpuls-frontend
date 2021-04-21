@@ -10,6 +10,10 @@ export default {
       description:
         "A function called when the form is cancelled without submit",
     },
+    handleDelete: {
+      description:
+        "A function called that will start the deletion process of a project",
+    },
   },
 } as Meta;
 
@@ -21,6 +25,7 @@ export const Edit = Template.bind({});
 Edit.args = {
   type: "edit",
   handleCancel: action("Handled cancelling the form"),
+  handleDelete: action("Clicked the delete button"),
   children: <h1>{"Insert here: an edit project form"}</h1>,
 };
 
