@@ -1,6 +1,6 @@
 import { Story, Meta } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { TextLink, TextLinkButton } from ".";
+import { TextLink, ButtonTextLink } from ".";
 import { HTMLProps } from "react";
 
 export default {
@@ -8,12 +8,12 @@ export default {
   component: TextLink,
 } as Meta;
 
-const AnchorTemplate: Story<HTMLProps<HTMLAnchorElement>> = ({
-  href,
-  children,
-  onClick,
-}) => (
-  <TextLink href={href} onClick={onClick}>
+const AnchorTemplate: Story<
+  HTMLProps<HTMLAnchorElement> & {
+    variant?: "dangerous" | "default";
+  }
+> = ({ href, children, onClick, variant }) => (
+  <TextLink href={href} onClick={onClick} variant={variant}>
     {children}
   </TextLink>
 );
@@ -25,19 +25,35 @@ AsAnchor.args = {
   onClick: action("You clicked the link"),
 };
 
-const ButtonTemplate: Story<HTMLProps<HTMLButtonElement>> = ({
-  href,
-  children,
-  onClick,
-}) => (
-  <TextLinkButton href={href} onClick={onClick}>
+export const AsDangerousAnchor = AnchorTemplate.bind({});
+AsDangerousAnchor.args = {
+  href: "#",
+  children: "Hi! I'm an anchor looking like a dangerous link",
+  onClick: action("You clicked the dangerous link"),
+  variant: "dangerous",
+};
+
+const ButtonTemplate: Story<
+  HTMLProps<HTMLButtonElement> & {
+    variant?: "dangerous" | "default";
+  }
+> = ({ href, children, onClick, variant }) => (
+  <ButtonTextLink href={href} onClick={onClick} variant={variant}>
     {children}
-  </TextLinkButton>
+  </ButtonTextLink>
 );
 
 export const AsButton = ButtonTemplate.bind({});
 AsButton.args = {
   href: "#",
-  children: "Hi! I'm an button looking like a link",
+  children: "Hi! I'm a button looking like a link",
   onClick: action("You clicked the link"),
+};
+
+export const AsDangerousButton = ButtonTemplate.bind({});
+AsDangerousButton.args = {
+  href: "#",
+  children: "Hi! I'm a button looking like a dangerous link",
+  onClick: action("You clicked the dangerous link"),
+  variant: "dangerous",
 };

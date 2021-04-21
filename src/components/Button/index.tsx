@@ -44,16 +44,18 @@ const getButtonStyles = ({
     classes.push("cursor-pointer focus-offset");
     switch (variant) {
       case "primary":
-        classes.push("bg-blue-500 text-white hover:opacity-60");
+        classes.push(
+          "focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60"
+        );
         break;
       case "dangerous":
         classes.push(
-          "bg-white border border-red-500 text-red-500 hover:bg-red-500 hover:bg-opacity-10"
+          "focus:ring-red-500 bg-white border border-red-500 text-red-500 hover:bg-red-500 hover:bg-opacity-10"
         );
         break;
       default:
         classes.push(
-          "bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+          "focus:ring-blue-500 bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
         );
         break;
     }

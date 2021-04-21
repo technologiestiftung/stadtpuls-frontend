@@ -18,7 +18,7 @@ exports[`Storyshots Layout/ProjectInfo Default Project Info 1`] = `
       Temperatur Grunewaldstraße
     </h2>
     <a
-      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
       href="/123abc"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -42,7 +42,7 @@ exports[`Storyshots Layout/ProjectInfo Default Project Info 1`] = `
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </div>
     <a
-      className="text-blue-500 underline transition hover:opacity-60 cursor-pointer focus-offset mt-4 inline-block"
+      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500 mt-4 inline-block"
       href="/account/projects/123abc/edit"
       onClick={[Function]}
       onMouseEnter={[Function]}

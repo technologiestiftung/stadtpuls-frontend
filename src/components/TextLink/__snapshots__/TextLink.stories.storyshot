@@ -2,7 +2,7 @@
 
 exports[`Storyshots UI Elements/TextLink As Anchor 1`] = `
 <a
-  className="text-blue-500 underline transition hover:opacity-60 cursor-pointer focus-offset "
+  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
   href="#"
   onClick={[Function]}
 >
@@ -12,11 +12,34 @@ exports[`Storyshots UI Elements/TextLink As Anchor 1`] = `
 
 exports[`Storyshots UI Elements/TextLink As Button 1`] = `
 <button
-  className="text-blue-500 underline transition hover:opacity-60 cursor-pointer focus-offset "
+  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
   href="#"
   onClick={[Function]}
   type="button"
 >
-  Hi! I'm an button looking like a link
+  Hi! I'm a button looking like a link
+</button>
+`;
+
+exports[`Storyshots UI Elements/TextLink As Dangerous Anchor 1`] = `
+<a
+  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-red-500 focus:ring-red-500"
+  href="#"
+  onClick={[Function]}
+  variant="dangerous"
+>
+  Hi! I'm an anchor looking like a dangerous link
+</a>
+`;
+
+exports[`Storyshots UI Elements/TextLink As Dangerous Button 1`] = `
+<button
+  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-red-500 focus:ring-red-500"
+  href="#"
+  onClick={[Function]}
+  type="button"
+  variant="dangerous"
+>
+  Hi! I'm a button looking like a dangerous link
 </button>
 `;

@@ -3,7 +3,7 @@
 @tailwind utilities;
 @layer utilities {
   .focus-offset {
-    @apply focus:ring-blue-500 focus:ring-2 focus:ring-offset-white focus:ring-offset-2 focus:outline-none;
+    @apply focus:ring-2 focus:ring-offset-white focus:ring-offset-2 focus:outline-none;
   }
 };
 @layer base {

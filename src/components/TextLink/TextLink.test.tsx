@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { TextLink, TextLinkButton } from ".";
+import { TextLink, ButtonTextLink } from ".";
 
 describe("TextLink component", () => {
   it("should work like a normal anchor", () => {
@@ -14,17 +14,39 @@ describe("TextLink component", () => {
     expect(link).toBeInTheDocument();
     expect(handleClick).toHaveBeenCalled();
   });
+  it("should have dangerous styles if dangerous variant", () => {
+    render(
+      <TextLink href='#' variant='dangerous'>
+        Hi! I am a link
+      </TextLink>
+    );
+    const link = screen.getByRole("link", { name: "Hi! I am a link" });
+    fireEvent.click(link);
+    expect(link).toBeInTheDocument();
+    expect(link.getAttribute("class")?.includes("text-red-500")).toBe(true);
+  });
 });
 
-describe("TextLinkButton component", () => {
+describe("ButtonTextLink component", () => {
   it("should work like a normal button", () => {
     const handleClick = jest.fn();
     render(
-      <TextLinkButton onClick={handleClick}>Hi! I am a button</TextLinkButton>
+      <ButtonTextLink onClick={handleClick}>Hi! I am a button</ButtonTextLink>
     );
     const buttton = screen.getByRole("button", { name: "Hi! I am a button" });
     fireEvent.click(buttton);
     expect(buttton).toBeInTheDocument();
     expect(handleClick).toHaveBeenCalled();
+  });
+  it("should have dangerous styles if dangerous variant", () => {
+    render(
+      <ButtonTextLink href='#' variant='dangerous'>
+        Hi! I am a button
+      </ButtonTextLink>
+    );
+    const button = screen.getByRole("button", { name: "Hi! I am a button" });
+    fireEvent.click(button);
+    expect(button).toBeInTheDocument();
+    expect(button.getAttribute("class")?.includes("text-red-500")).toBe(true);
   });
 });

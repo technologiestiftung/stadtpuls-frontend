@@ -29,7 +29,7 @@ export const Dropdown: FC<DropdownPropType> = ({
   return (
     <div className='inline-block relative'>
       <button
-        className='cursor-pointer rounded-none focus-offset'
+        className='cursor-pointer rounded-none focus-offset focus:ring-blue-500'
         onClick={evt => {
           evt.preventDefault();
           evt.stopPropagation();

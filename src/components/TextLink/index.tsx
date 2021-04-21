@@ -1,29 +1,43 @@
 import { forwardRef, HTMLProps } from "react";
 
-const textLinkStyle =
-  "text-blue-500 underline transition hover:opacity-60 cursor-pointer focus-offset";
+interface TextLinkPropType {
+  variant?: "default" | "dangerous";
+}
+type AnchorTextLinkPropType = HTMLProps<HTMLAnchorElement> & TextLinkPropType;
+type ButtonTextLinkPropType = HTMLProps<HTMLButtonElement> & TextLinkPropType;
+
+const textLinkCommonStyle =
+  "focus-offset underline transition hover:opacity-60 cursor-pointer";
+const textLinkDefaultStyle = "text-blue-500 focus:ring-blue-500";
+const textLinkDangerousStyle = "text-red-500 focus:ring-red-500";
+
+type GetLinkStyleType = TextLinkPropType & { className?: string };
+const getLinkStyle = (props: GetLinkStyleType): string =>
+  [
+    textLinkCommonStyle,
+    props.variant === "dangerous"
+      ? textLinkDangerousStyle
+      : textLinkDefaultStyle,
+    props.className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
 // eslint-disable-next-line react/display-name
-export const TextLink = forwardRef<
-  HTMLAnchorElement,
-  HTMLProps<HTMLAnchorElement>
->(({ className = "", children, ...rest }, ref) => (
-  <a {...rest} ref={ref} className={`${textLinkStyle} ${className}`}>
-    {children}
-  </a>
-));
+export const TextLink = forwardRef<HTMLAnchorElement, AnchorTextLinkPropType>(
+  ({ children, ...rest }, ref) => (
+    <a {...rest} ref={ref} className={getLinkStyle(rest)}>
+      {children}
+    </a>
+  )
+);
 
 // eslint-disable-next-line react/display-name
-export const TextLinkButton = forwardRef<
+export const ButtonTextLink = forwardRef<
   HTMLButtonElement,
-  HTMLProps<HTMLButtonElement>
->(({ className = "", children, ...rest }, ref) => (
-  <button
-    {...rest}
-    type='button'
-    ref={ref}
-    className={`${textLinkStyle} ${className}`}
-  >
+  ButtonTextLinkPropType
+>(({ children, ...rest }, ref) => (
+  <button {...rest} type='button' ref={ref} className={getLinkStyle(rest)}>
     {children}
   </button>
 ));
