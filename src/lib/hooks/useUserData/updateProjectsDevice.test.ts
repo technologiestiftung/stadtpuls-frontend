@@ -1,5 +1,6 @@
 import { ProjectsType, DevicesType } from "@common/types/supabase";
 import {
+  addProjectsDevice,
   deleteProjectsDevice,
   updateProjectsDevice,
 } from "./updateProjectsDevice";
@@ -64,5 +65,18 @@ describe("deleteProjectsDevice", () => {
     if (!updatedProjects[0].devices[1])
       throw new Error("Second device not found");
     expect(updatedProjects[0].devices[1]).not.toBe(newDevice2);
+  });
+});
+
+describe("addProjectsDevice", () => {
+  it("should add the provided device", () => {
+    const newDevice = createFakeDevice(4);
+    const updatedProjects = addProjectsDevice(fakeProjects, newDevice, 1);
+    if (!updatedProjects[0]) throw new Error("First project not found");
+    if (!Array.isArray(updatedProjects[0].devices))
+      throw new Error("First project has no devices");
+    if (!updatedProjects[0].devices[3])
+      throw new Error("Second device not found");
+    expect(updatedProjects[0].devices[3]).toBe(newDevice);
   });
 });
