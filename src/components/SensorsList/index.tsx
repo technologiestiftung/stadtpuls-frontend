@@ -116,7 +116,7 @@ export const SensorsList: FC<SensorsListPropType> = ({
   ] = useState<SensorType | null>(null);
 
   return (
-    <>
+    <div className='p-6 pb-8'>
       {deviceBeingDeleted && (
         <DeletionPrompt
           {...deviceBeingDeleted}
@@ -127,6 +127,9 @@ export const SensorsList: FC<SensorsListPropType> = ({
           onCancel={() => setDeviceBeingDeleted(null)}
         />
       )}
+      <h1 className='text-2xl font-semibold m-0 mb-2 text-blue-500'>
+        Sensoren
+      </h1>
       <table className='w-full text-left'>
         <SensorsListHeaderRow />
         <tbody>
@@ -162,6 +165,6 @@ export const SensorsList: FC<SensorsListPropType> = ({
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 };

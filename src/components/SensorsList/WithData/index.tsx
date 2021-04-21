@@ -28,26 +28,24 @@ export const SensorsListWithData: FC<SensorsListWithDataPropType> = ({
   const { updateDevice, addDevice, deleteDevice } = useUserData();
 
   return (
-    <div className='p-3 pb-8'>
-      <SensorsList
-        sensors={(devices || []).map(device => ({
-          id: device.id,
-          externalId: device.externalId,
-          lastRecordedAt: Array.isArray(device.records)
-            ? getLastRecordedAt(device.records)
-            : null,
-          name: device.name || "",
-        }))}
-        onChange={data =>
-          updateDevice({
-            ...data,
-            projectId,
-            id: parseInt(`${data.id}`, 10),
-          })
-        }
-        onAdd={data => addDevice({ ...data, projectId }, projectId)}
-        onDelete={id => deleteDevice(parseInt(`${id}`, 10))}
-      />
-    </div>
+    <SensorsList
+      sensors={(devices || []).map(device => ({
+        id: device.id,
+        externalId: device.externalId,
+        lastRecordedAt: Array.isArray(device.records)
+          ? getLastRecordedAt(device.records)
+          : null,
+        name: device.name || "",
+      }))}
+      onChange={data =>
+        updateDevice({
+          ...data,
+          projectId,
+          id: parseInt(`${data.id}`, 10),
+        })
+      }
+      onAdd={data => addDevice({ ...data, projectId }, projectId)}
+      onDelete={id => deleteDevice(parseInt(`${id}`, 10))}
+    />
   );
 };
