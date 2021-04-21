@@ -13,7 +13,7 @@ const TableDisplayRow = forwardRef<
 >(({ children, onClick }, ref) => (
   <Tr
     ref={ref}
-    className='transition hover:bg-blue-25 cursor-pointer'
+    className='transition hover:bg-blue-25 cursor-pointer w-full'
     onClick={() => onClick()}
     style={{
       gridTemplateColumns: "auto 1fr",
@@ -32,7 +32,7 @@ const DeviceIdDisplayField: FC = ({ children }) => (
   <Td
     p='pl-0 sm:py-3'
     className='font-bold sm:font-normal'
-    style={{ minWidth: "10vw", gridArea: "id" }}
+    style={{ minWidth: 140, gridArea: "id" }}
   >
     <DeviceIcon />
     {children}

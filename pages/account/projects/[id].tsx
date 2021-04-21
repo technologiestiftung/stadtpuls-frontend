@@ -21,7 +21,12 @@ const AccountProjectPage: FC = () => {
   if (isLoadingAuth || (!projects && !error)) return null;
 
   if (!projectId || Array.isArray(projectId))
-    return <InvalidPageId pageType='Projekt' id={projectId.toString()} />;
+    return (
+      <InvalidPageId
+        pageType='Projekt'
+        id={projectId ? projectId.toString() : projectId}
+      />
+    );
   if (!authenticatedUser) return <PleaseLogin />;
   if (error) return <ServerError error={error.message} />;
   if (authError) return <ServerError error={authError} />;

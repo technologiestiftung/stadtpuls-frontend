@@ -43,7 +43,7 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
     </thead>
     <tbody>
       <tr
-        className="transition hover:bg-blue-25 cursor-pointer py-4 sm:py-0 whitespace-nowrap w-auto block align-top sm:table-cell grid gap-2 sm:gap-0 sm:table-row"
+        className="transition hover:bg-blue-25 cursor-pointer w-full py-4 sm:py-0 whitespace-nowrap w-auto block align-top sm:table-cell grid gap-2 sm:gap-0 sm:table-row"
         onClick={[Function]}
         style={
           Object {
@@ -61,7 +61,7 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
           style={
             Object {
               "gridArea": "id",
-              "minWidth": "10vw",
+              "minWidth": 140,
             }
           }
         >
@@ -150,7 +150,7 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
         </td>
       </tr>
       <tr
-        className="transition hover:bg-blue-25 cursor-pointer py-4 sm:py-0 whitespace-nowrap w-auto block align-top sm:table-cell grid gap-2 sm:gap-0 sm:table-row"
+        className="transition hover:bg-blue-25 cursor-pointer w-full py-4 sm:py-0 whitespace-nowrap w-auto block align-top sm:table-cell grid gap-2 sm:gap-0 sm:table-row"
         onClick={[Function]}
         style={
           Object {
@@ -168,7 +168,7 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
           style={
             Object {
               "gridArea": "id",
-              "minWidth": "10vw",
+              "minWidth": 140,
             }
           }
         >
@@ -257,7 +257,7 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
         </td>
       </tr>
       <tr
-        className="transition hover:bg-blue-25 cursor-pointer py-4 sm:py-0 whitespace-nowrap w-auto block align-top sm:table-cell grid gap-2 sm:gap-0 sm:table-row"
+        className="transition hover:bg-blue-25 cursor-pointer w-full py-4 sm:py-0 whitespace-nowrap w-auto block align-top sm:table-cell grid gap-2 sm:gap-0 sm:table-row"
         onClick={[Function]}
         style={
           Object {
@@ -275,7 +275,7 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
           style={
             Object {
               "gridArea": "id",
-              "minWidth": "10vw",
+              "minWidth": 140,
             }
           }
         >

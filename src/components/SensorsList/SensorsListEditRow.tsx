@@ -44,7 +44,11 @@ const TableEditRow = forwardRef<
 ));
 
 const DeviceIdEditField: FC = ({ children }) => (
-  <Td p='sm:pl-0 sm:pr-1 sm:py-1' style={{ minWidth: "10vw", gridArea: "id" }}>
+  <Td
+    p='sm:pl-0 sm:pr-1 sm:py-1'
+    className='whitespace-normal'
+    style={{ minWidth: 140, gridArea: "id" }}
+  >
     <div
       className='grid items-start'
       style={{ gridTemplateColumns: "auto 1fr" }}
@@ -59,7 +63,7 @@ const DeviceIdEditField: FC = ({ children }) => (
 
 const NameEditField: FC = ({ children }) => (
   <Td
-    className='w-full'
+    className='w-full whitespace-normal'
     p='sm:pl-1 sm:py-1'
     style={{ gridArea: "name" }}
     colSpan={2}
