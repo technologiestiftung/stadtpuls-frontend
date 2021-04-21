@@ -14,8 +14,10 @@ interface UserDataType {
 }
 
 const fetchUserData = async (
-  authenticatedUser: AuthenticatedUsersType | null
-): Promise<UserDataType> => {
+  authenticatedUser: AuthenticatedUsersType | null,
+  isLoadingAuth: boolean
+): Promise<UserDataType | null> => {
+  if (isLoadingAuth) return null;
   if (!authenticatedUser) throw new Error("Not authenticated");
 
   const { data: user, error: user_error } = await supabase
@@ -39,7 +41,7 @@ const fetchUserData = async (
       description,
       connectype,
       location,
-      category:categoryId (
+      category: categoryId (
         id,
         name,
         description
@@ -47,7 +49,11 @@ const fetchUserData = async (
       devices (
         id,
         externalId,
-        name
+        name,
+        records (
+          id,
+          recordedAt
+        )
       )
     `
     )
@@ -214,10 +220,10 @@ export const useUserData = (): {
   ) => Promise<AuthenticatedUsersType | null | Error>;
   deleteUser: () => Promise<void>;
 } => {
-  const { authenticatedUser } = useAuth();
-  const { data, error } = useSWR<UserDataType, Error>(
+  const { authenticatedUser, isLoadingAuth } = useAuth();
+  const { data, error } = useSWR<UserDataType | null, Error>(
     ["user", authenticatedUser?.id],
-    () => fetchUserData(authenticatedUser)
+    () => fetchUserData(authenticatedUser, isLoadingAuth)
   );
 
   return {
