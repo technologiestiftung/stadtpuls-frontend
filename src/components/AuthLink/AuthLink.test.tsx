@@ -1,6 +1,6 @@
 import { AuthProvider } from "@auth/Auth";
 import { supabase } from "@auth/supabase";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import React from "react";
 import { AuthLink } from ".";
 
@@ -65,20 +65,23 @@ describe("component AuthLink while logged in", () => {
       true
     );
   });
-  it("should render the Dropdown menu links", () => {
+  it("should render the Dropdown menu links", async () => {
     render(
       <AuthProvider>
         <AuthLink />
       </AuthProvider>
     );
-    const projectsLink = screen.getByText("Meine Projekte");
+    const projectsLink = screen.getByText("Neues Projekt");
     const accountLink = screen.getByText("Account");
     const logoutLink = screen.getByText("Logout");
-    expect(projectsLink).toBeInTheDocument();
-    expect(accountLink).toBeInTheDocument();
-    expect(logoutLink).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(projectsLink).toBeInTheDocument();
+      expect(accountLink).toBeInTheDocument();
+      expect(logoutLink).toBeInTheDocument();
+    });
   });
-  it("should call auth's logout function on logout click", () => {
+  it("should call auth's logout function on logout click", async () => {
     const signOutFunction = jest.fn();
     supabase.auth.signOut = signOutFunction;
     render(
@@ -89,6 +92,7 @@ describe("component AuthLink while logged in", () => {
 
     const logoutLink = screen.getByText("Logout");
     fireEvent.click(logoutLink);
-    expect(signOutFunction).toHaveBeenCalledTimes(1);
+
+    await waitFor(() => expect(signOutFunction).toHaveBeenCalledTimes(1));
   });
 });

@@ -2,7 +2,8 @@ import { FC } from "react";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import Link from "next/link";
 import { useAuth } from "@auth/Auth";
-import { DropdownMenu } from "@components/DropdownMenu";
+import { DropdownMenu, DropdownMenuPropType } from "@components/DropdownMenu";
+import { useUserData } from "@lib/hooks/useUserData";
 
 export const ColouredAuthLink: FC<{
   variant: "primary" | "secondary";
@@ -45,6 +46,7 @@ export const ColouredAuthLink: FC<{
 
 export const AuthLink: FC = () => {
   const { authenticatedUser, signOut } = useAuth();
+  const { projects } = useUserData();
 
   const link = (
     <ColouredAuthLink
@@ -59,11 +61,18 @@ export const AuthLink: FC = () => {
     link
   ) : (
     <DropdownMenu
-      items={[
-        { id: 1, title: "Meine Projekte", href: "/account/projects" },
-        { id: 2, title: "Account", href: "/account/profile" },
-        { id: 3, title: "Logout", onClick: () => void signOut() },
-      ]}
+      items={
+        [
+          { id: 0, title: "Neues Projekt", href: "/account/projects/new" },
+          !!(projects && projects.length > 0) && {
+            id: 1,
+            title: "Meine Projekte",
+            href: `/account/projects/${projects[0].id}`,
+          },
+          { id: 2, title: "Account", href: "/account/profile" },
+          { id: 3, title: "Logout", onClick: () => void signOut() },
+        ].filter(Boolean) as DropdownMenuPropType["items"]
+      }
     >
       {link}
     </DropdownMenu>
