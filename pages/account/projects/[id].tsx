@@ -1,42 +1,22 @@
 import { useAuth } from "@auth/Auth";
-import { RecordsType } from "@common/types/supabase";
 import { Anchor } from "@components/Button";
 import { NoAccess } from "@components/PageError/NoAccess";
 import { PleaseLogin } from "@components/PageError/PleaseLogin";
 import { InvalidPageId } from "@components/PageError/InvalidPageId";
 import { ServerError } from "@components/PageError/ServerError";
 import { ProjectInfo } from "@components/ProjectInfo";
-import { SensorsList } from "@components/SensorsList";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { UserProjectsWrapper } from "@components/UserProjectsWrapper";
 import { useUserData } from "@lib/hooks/useUserData";
 import { useRouter } from "next/router";
 import { FC } from "react";
-
-const getLastRecordedAt = (records: RecordsType[]): Date | null => {
-  const sortedRecords = records
-    .filter(record => record.recordedAt)
-    .map(record => ({
-      ...record,
-      recordedAt: new Date(record.recordedAt),
-    }))
-    .sort((a, b) => a.recordedAt.getTime() - b.recordedAt.getTime());
-
-  if (sortedRecords.length === 0) return null;
-  return sortedRecords[0].recordedAt;
-};
+import { SensorsListWithData } from "@components/SensorsList/WithData";
 
 const AccountProjectPage: FC = () => {
   const router = useRouter();
   const projectId = router.query.id;
   const { authenticatedUser, isLoadingAuth, error: authError } = useAuth();
-  const {
-    projects,
-    updateDevice,
-    addDevice,
-    deleteDevice,
-    error,
-  } = useUserData();
+  const { projects, error } = useUserData();
 
   if (isLoadingAuth || (!projects && !error)) return null;
 
@@ -79,29 +59,10 @@ const AccountProjectPage: FC = () => {
       >
         {project.description}
       </ProjectInfo>
-      <div className='p-3 pb-8'>
-        <SensorsList
-          sensors={(project.devices || []).map(device => ({
-            id: device.id,
-            externalId: device.externalId,
-            lastRecordedAt: Array.isArray(device.records)
-              ? getLastRecordedAt(device.records)
-              : null,
-            name: device.name || "",
-          }))}
-          onChange={data =>
-            updateDevice({
-              ...data,
-              projectId: projectIdInt,
-              id: parseInt(`${data.id}`, 10),
-            })
-          }
-          onAdd={data =>
-            addDevice({ ...data, projectId: projectIdInt }, projectIdInt)
-          }
-          onDelete={id => deleteDevice(parseInt(`${id}`, 10))}
-        />
-      </div>
+      <SensorsListWithData
+        devices={project.devices || []}
+        projectId={projectIdInt}
+      />
     </UserProjectsWrapper>
   );
 };

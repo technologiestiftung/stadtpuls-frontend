@@ -6,18 +6,55 @@ import { SensorsListEditRow } from "./SensorsListEditRow";
 import { SensorsListHeaderRow } from "./SensorsListHeaderRow";
 import { EmptySensorsLink } from "./EmptySensorsLink";
 import { NewSensorForm } from "./NewSensorForm";
+import { SmallModalOverlay } from "@components/SmallModalOverlay";
+import { Button } from "@components/Button";
+import { DeviceIcon } from "./DeviceIcon";
 
 interface SensorsListPropType {
   sensors: SensorType[];
-  onChange?: (data: SensorType) => void;
-  onAdd?: (data: Omit<SensorType, "id">) => void;
-  onDelete?: (id: string | number) => void;
+  onChange: (data: SensorType) => void;
+  onAdd: (data: Omit<SensorType, "id">) => void;
+  onDelete: (id: number) => void;
 }
 
 interface SensorsListItemPropType extends SensorType {
   onChange: (data: SubmissionDataType) => void;
-  onDelete: (id: SensorType["id"]) => void;
+  onDelete: (sensor: SensorType) => void;
 }
+
+interface DeletionPromptPropType extends SensorType {
+  onCancel: () => void;
+  onConfirm: () => void;
+}
+
+const DeletionPrompt: FC<DeletionPromptPropType> = ({
+  externalId,
+  name,
+  onConfirm,
+  onCancel,
+}) => (
+  <SmallModalOverlay
+    title='Bitte bestätige die Löschung des Sensors'
+    variant='dangerous'
+    footerContent={
+      <div className='block w-full text-right'>
+        <Button variant='dangerous' onClick={onConfirm}>
+          Löschen
+        </Button>
+        <Button variant='primary' onClick={onCancel} className='ml-2'>
+          Abbrechen
+        </Button>
+      </div>
+    }
+  >
+    Der folgende Sensor wird unwiderruflich gelöscht.
+    <div className='bg-blue-25 p-3 mt-2'>
+      <DeviceIcon />
+      <span className='mr-3 inline-block'>{externalId}</span>
+      <span className='inline-block'>{name}</span>
+    </div>
+  </SmallModalOverlay>
+);
 
 const SensorListItem: FC<SensorsListItemPropType> = props => {
   const { onChange, onDelete, ...sensor } = props;
@@ -45,7 +82,7 @@ const SensorListItem: FC<SensorsListItemPropType> = props => {
     <Component
       {...sensor}
       onEditClick={() => setIsInEditMode(true)}
-      onDeleteClick={() => onDelete(sensor.id)}
+      onDeleteClick={() => onDelete(sensor)}
       currentDraft={currentDraft}
       onDraftChange={setFormDraft}
       onClickOutside={() => !hasChanged && setIsInEditMode(false)}
@@ -68,14 +105,28 @@ const SensorListItem: FC<SensorsListItemPropType> = props => {
 
 export const SensorsList: FC<SensorsListPropType> = ({
   sensors,
-  onChange = () => undefined,
-  onAdd = () => undefined,
-  onDelete = () => undefined,
+  onChange,
+  onAdd,
+  onDelete,
 }) => {
   const [isAddingSensor, setIsAddingSensor] = useState<boolean>(false);
+  const [
+    deviceBeingDeleted,
+    setDeviceBeingDeleted,
+  ] = useState<SensorType | null>(null);
 
   return (
     <>
+      {deviceBeingDeleted && (
+        <DeletionPrompt
+          {...deviceBeingDeleted}
+          onConfirm={() => {
+            onDelete(deviceBeingDeleted.id);
+            setDeviceBeingDeleted(null);
+          }}
+          onCancel={() => setDeviceBeingDeleted(null)}
+        />
+      )}
       <table className='w-full text-left'>
         <SensorsListHeaderRow />
         <tbody>
@@ -90,7 +141,7 @@ export const SensorsList: FC<SensorsListPropType> = ({
               name={name}
               lastRecordedAt={lastRecordedAt}
               onChange={onChange}
-              onDelete={onDelete}
+              onDelete={setDeviceBeingDeleted}
             />
           ))}
           {isAddingSensor && (
