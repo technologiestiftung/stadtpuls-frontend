@@ -1,9 +1,17 @@
 import { FC } from "react";
 import AccountCircle from "@material-ui/icons/AccountCircle";
+import AddIcon from "@material-ui/icons/Add";
+import ProjectIcon from "@material-ui/icons/FormatListBulleted";
+import AccountIcon from "@material-ui/icons/AccountCircle";
+import LogoutIconn from "@material-ui/icons/ExitToApp";
 import Link from "next/link";
 import { useAuth } from "@auth/Auth";
 import { DropdownMenu, DropdownMenuPropType } from "@components/DropdownMenu";
 import { useUserData } from "@lib/hooks/useUserData";
+
+const iconProps = {
+  className: "transition mr-2 text-gray-400 group-hover:text-blue-400",
+};
 
 export const ColouredAuthLink: FC<{
   variant: "primary" | "secondary";
@@ -63,14 +71,42 @@ export const AuthLink: FC = () => {
     <DropdownMenu
       items={
         [
-          { id: 0, title: "Neues Projekt", href: "/account/projects/new" },
+          {
+            id: 0,
+            title: (
+              <>
+                <AddIcon {...iconProps} /> Neues Projekt
+              </>
+            ),
+            href: "/account/projects/new",
+          },
           !!(projects && projects.length > 0) && {
             id: 1,
-            title: "Meine Projekte",
+            title: (
+              <>
+                <ProjectIcon {...iconProps} /> Meine Projekte
+              </>
+            ),
             href: `/account/projects/${projects[0].id}`,
           },
-          { id: 2, title: "Account", href: "/account/profile" },
-          { id: 3, title: "Logout", onClick: () => void signOut() },
+          {
+            id: 2,
+            title: (
+              <>
+                <AccountIcon {...iconProps} /> Account
+              </>
+            ),
+            href: "/account/profile",
+          },
+          {
+            id: 3,
+            title: (
+              <>
+                <LogoutIconn {...iconProps} /> Abmelden
+              </>
+            ),
+            onClick: () => void signOut(),
+          },
         ].filter(Boolean) as DropdownMenuPropType["items"]
       }
     >

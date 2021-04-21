@@ -10,7 +10,7 @@ const oldLogoutFuncion = supabase.auth.signOut.bind(supabase.auth);
 describe("component AuthLink while logged out", () => {
   it("should render Anmeldung by default", () => {
     render(<AuthLink />);
-    const anmeldung = screen.getByText("Anmeldung");
+    const anmeldung = screen.getByText(/Anmeldung/gi);
     expect(anmeldung).toBeInTheDocument();
   });
   it("should render an icon", () => {
@@ -21,7 +21,7 @@ describe("component AuthLink while logged out", () => {
   it("should have gray styles by default", () => {
     render(<AuthLink />);
     const icon = document.querySelector("span");
-    const anmeldung = screen.getByText("Anmeldung");
+    const anmeldung = screen.getByText(/Anmeldung/gi);
     expect(icon?.getAttribute("class")?.includes("text-gray-400")).toBe(true);
     expect(anmeldung?.getAttribute("class")?.includes("text-black")).toBe(true);
   });
@@ -43,7 +43,7 @@ describe("component AuthLink while logged in", () => {
         <AuthLink />
       </AuthProvider>
     );
-    const email = screen.getByText("contact@example.com");
+    const email = screen.getByText(/contact@example.com/gi);
     expect(email).toBeInTheDocument();
   });
   it("should render the word Profile if logged in with empty email", () => {
@@ -53,13 +53,13 @@ describe("component AuthLink while logged in", () => {
         <AuthLink />
       </AuthProvider>
     );
-    const email = screen.getByText("Profile");
+    const email = screen.getByText(/Profile/gi);
     expect(email).toBeInTheDocument();
   });
   it("should have primary styles if logged in", () => {
     render(<AuthLink />);
     const icon = document.querySelector("span");
-    const anmeldung = screen.getByText("Anmeldung");
+    const anmeldung = screen.getByText(/Anmeldung/gi);
     expect(icon?.getAttribute("class")?.includes("text-blue-500")).toBe(true);
     expect(anmeldung?.getAttribute("class")?.includes("text-blue-500")).toBe(
       true
@@ -71,9 +71,9 @@ describe("component AuthLink while logged in", () => {
         <AuthLink />
       </AuthProvider>
     );
-    const projectsLink = screen.getByText("Neues Projekt");
-    const accountLink = screen.getByText("Account");
-    const logoutLink = screen.getByText("Logout");
+    const projectsLink = screen.getByText(/Neues Projekt/gi);
+    const accountLink = screen.getByText(/Account/gi);
+    const logoutLink = screen.getByText(/Abmelden/gi);
 
     await waitFor(() => {
       expect(projectsLink).toBeInTheDocument();
@@ -90,7 +90,7 @@ describe("component AuthLink while logged in", () => {
       </AuthProvider>
     );
 
-    const logoutLink = screen.getByText("Logout");
+    const logoutLink = screen.getByText(/Abmelden/gi);
     fireEvent.click(logoutLink);
 
     await waitFor(() => expect(signOutFunction).toHaveBeenCalledTimes(1));
