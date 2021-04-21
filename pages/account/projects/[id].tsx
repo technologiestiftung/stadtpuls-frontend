@@ -60,7 +60,7 @@ const AccountProjectPage: FC = () => {
         title={project.name}
         category={project.category?.name}
         projectViewLink={`/${project.id}`}
-        onEditProject={() => undefined}
+        projectEditLink={`/account/projects/${project.id}/edit`}
       >
         {project.description}
       </ProjectInfo>

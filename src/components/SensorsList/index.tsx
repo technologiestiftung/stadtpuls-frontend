@@ -130,34 +130,36 @@ export const SensorsList: FC<SensorsListPropType> = ({
       <h1 className='text-2xl font-semibold m-0 mb-2 text-blue-500'>
         Sensoren
       </h1>
-      <table className='w-full text-left'>
-        <SensorsListHeaderRow />
-        <tbody>
-          {sensors.length === 0 && !isAddingSensor && (
-            <EmptySensorsLink onClick={() => setIsAddingSensor(true)} />
-          )}
-          {sensors.map(({ id, externalId, name, lastRecordedAt }) => (
-            <SensorListItem
-              key={id}
-              id={id}
-              externalId={externalId}
-              name={name}
-              lastRecordedAt={lastRecordedAt}
-              onChange={onChange}
-              onDelete={setDeviceBeingDeleted}
-            />
-          ))}
-          {isAddingSensor && (
-            <NewSensorForm
-              onSubmit={data => {
-                setIsAddingSensor(false);
-                onAdd(data);
-              }}
-              onCancel={() => setIsAddingSensor(false)}
-            />
-          )}
-        </tbody>
-      </table>
+      <div className='w-full max-w-full overflow-y-hidden overflow-x-auto pb-4'>
+        <table className='w-full text-left'>
+          <SensorsListHeaderRow />
+          <tbody>
+            {sensors.length === 0 && !isAddingSensor && (
+              <EmptySensorsLink onClick={() => setIsAddingSensor(true)} />
+            )}
+            {sensors.map(({ id, externalId, name, lastRecordedAt }) => (
+              <SensorListItem
+                key={id}
+                id={id}
+                externalId={externalId}
+                name={name}
+                lastRecordedAt={lastRecordedAt}
+                onChange={onChange}
+                onDelete={setDeviceBeingDeleted}
+              />
+            ))}
+            {isAddingSensor && (
+              <NewSensorForm
+                onSubmit={data => {
+                  setIsAddingSensor(false);
+                  onAdd(data);
+                }}
+                onCancel={() => setIsAddingSensor(false)}
+              />
+            )}
+          </tbody>
+        </table>
+      </div>
       {sensors.length > 0 && !isAddingSensor && (
         <div className='text-right mt-8'>
           <button onClick={() => setIsAddingSensor(true)}>
