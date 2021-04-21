@@ -1,3 +1,7 @@
+import {
+  deleteProjectsProject,
+  updateProjectsProject,
+} from "./updateProjectsProject";
 import useSWR, { mutate } from "swr";
 import { supabase } from "@auth/supabase";
 import {
@@ -7,6 +11,10 @@ import {
   DevicesType,
 } from "@common/types/supabase";
 import { useAuth } from "@auth/Auth";
+import {
+  deleteProjectsDevice,
+  updateProjectsDevice,
+} from "./updateProjectsDevice";
 
 type UserFetcherSignature = (
   userId?: AuthenticatedUsersType["id"],
@@ -228,38 +236,69 @@ export const useUserData = (): {
     projects: projects.data || null,
     error: projects.error || user.error || null,
     addDevice: async device => {
+      if (!projects.data || projects.error) return;
+      void mutate(projectsParams, [...projects.data, device], false);
       await addDevice({ ...device, userId });
       void mutate(projectsParams);
     },
     updateDevice: async device => {
+      if (!projects.data || projects.error) return;
+      void mutate(
+        projectsParams,
+        updateProjectsDevice(projects.data, device),
+        false
+      );
       await updateDevice({ ...device, userId });
       void mutate(projectsParams);
     },
     deleteDevice: async id => {
+      if (!projects.data || projects.error) return;
+      void mutate(
+        projectsParams,
+        deleteProjectsDevice(projects.data, id),
+        false
+      );
       await deleteDevice(id, userId);
       void mutate(projectsParams);
     },
     addProject: async project => {
+      if (!projects.data || projects.error) return;
+      void mutate(projectsParams, [...projects.data, project], false);
       await addProject({ ...project, userId });
       void mutate(projectsParams);
     },
     updateProject: async project => {
+      if (!projects.data || projects.error) return;
+      void mutate(
+        projectsParams,
+        updateProjectsProject(projects.data, project),
+        false
+      );
       await updateProject({ ...project, userId });
       void mutate(projectsParams);
     },
     deleteProject: async id => {
+      if (!projects.data || projects.error) return;
+      void mutate(
+        projectsParams,
+        deleteProjectsProject(projects.data, id),
+        false
+      );
       await deleteProject(id, userId);
       void mutate(projectsParams);
     },
     updateName: async name => {
+      void mutate(userParams, { ...user, name }, false);
       await updateName(name, userId);
       void mutate(userParams);
     },
     updateEmail: async email => {
+      void mutate(userParams, { ...user, email }, false);
       await updateEmail(email, userId);
       void mutate(userParams);
     },
     deleteUser: async () => {
+      void mutate(userParams, null, false);
       await deleteUser(userId);
       void mutate(userParams);
     },
