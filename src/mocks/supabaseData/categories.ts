@@ -5,12 +5,12 @@ export const fakeCategories = [
     description: "Description for A",
   },
   {
-    id: 1,
+    id: 2,
     name: "Mock Category B",
     description: "Description for B",
   },
   {
-    id: 1,
+    id: 3,
     name: "Mock Category C",
     description: "Description for C",
   },
