@@ -17,7 +17,7 @@ import "../src/style/global.css";
 const publicURL = process.env.NEXT_PUBLIC_WEB_URL || "";
 
 if (process.env.NODE_ENV !== "production") {
-  require("../src/mocks/index");
+  //require("../src/mocks/index");
 }
 
 const App: FC<{
