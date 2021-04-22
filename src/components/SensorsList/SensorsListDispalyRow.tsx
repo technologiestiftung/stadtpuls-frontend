@@ -1,4 +1,5 @@
 import { Td, Tr } from "@components/HTMLTable";
+import { ButtonTextLink } from "@components/TextLink";
 import { formatDateFromNow } from "@lib/dateUtil";
 import { FC, forwardRef, HTMLProps } from "react";
 import { DeviceIcon } from "./DeviceIcon";
@@ -14,7 +15,7 @@ const TableDisplayRow = forwardRef<
   <Tr
     ref={ref}
     className='transition hover:bg-blue-25 cursor-pointer w-full'
-    onClick={() => onClick()}
+    onClick={onClick}
     style={{
       gridTemplateColumns: "auto 1fr",
       gridTemplateAreas: `
@@ -87,7 +88,7 @@ export const SensorsListDispalyRow: FC<SensorsListDisplayItemPropType> = ({
       {lastRecordedAt ? formatDateFromNow(lastRecordedAt) : "—"}
     </LastSeenDisplayField>
     <Button1DisplayField>
-      <button
+      <ButtonTextLink
         onClick={evt => {
           evt.preventDefault();
           evt.stopPropagation();
@@ -95,10 +96,11 @@ export const SensorsListDispalyRow: FC<SensorsListDisplayItemPropType> = ({
         }}
       >
         Bearbeiten
-      </button>
+      </ButtonTextLink>
     </Button1DisplayField>
     <Button2DisplayField>
-      <button
+      <ButtonTextLink
+        variant='dangerous'
         onClick={evt => {
           evt.preventDefault();
           evt.stopPropagation();
@@ -106,7 +108,7 @@ export const SensorsListDispalyRow: FC<SensorsListDisplayItemPropType> = ({
         }}
       >
         Löschen
-      </button>
+      </ButtonTextLink>
     </Button2DisplayField>
   </TableDisplayRow>
 );
