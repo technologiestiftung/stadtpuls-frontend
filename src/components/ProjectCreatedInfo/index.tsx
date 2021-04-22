@@ -3,11 +3,13 @@ import { FC, HTMLProps } from "react";
 import Link from "next/link";
 
 export interface ProjectCreatedInfoType extends HTMLProps<HTMLElement> {
+  projectId: number;
   projectTitle: string;
   token: string;
 }
 
 export const ProjectCreatedInfo: FC<ProjectCreatedInfoType> = ({
+  projectId,
   projectTitle,
   token,
   children,
@@ -24,8 +26,10 @@ export const ProjectCreatedInfo: FC<ProjectCreatedInfoType> = ({
       <h4 className='mt-12'>Token</h4>
       <p className='mt-2 p-3 border border-gray-200 text-gray-500'>{token}</p>
       <footer className='mt-24 flex justify-end'>
-        <Link href='/myprojects'>
-          <AnchorButton href='/myprojects'>Zur Projektübersicht</AnchorButton>
+        <Link href={`/account/projects/${projectId}`}>
+          <AnchorButton href={`/account/projects/${projectId}`}>
+            Zur Projektübersicht
+          </AnchorButton>
         </Link>
         <AnchorButton
           href='https://console.thethingsnetwork.org/'
