@@ -7,20 +7,18 @@ import { ServerError } from "@components/PageError/ServerError";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { UserProjectsWrapper } from "@components/UserProjectsWrapper";
 import { Button } from "@components/Button";
-import {
-  EditProjectForm,
-  EditableProjectFieldsType,
-} from "@components/EditProjectForm";
+import { EditProjectForm } from "@components/EditProjectForm";
 import { useProjectCategories } from "@lib/hooks/useProjectCategories";
 import { useUserData } from "@lib/hooks/useUserData";
 import { useRouter } from "next/router";
 import { FC, useState } from "react";
+import { ProjectsType } from "@common/types/supabase";
 
 const AccountProjectEditPage: FC = () => {
   const router = useRouter();
   const projectId = router.query.id;
   const { authenticatedUser, isLoadingAuth, error: authError } = useAuth();
-  const { projects, deleteProject, error } = useUserData();
+  const { projects, updateProject, deleteProject, error } = useUserData();
   const {
     categories,
     isLoading: isLoadingCategories,
@@ -50,11 +48,19 @@ const AccountProjectEditPage: FC = () => {
     name,
   }));
 
-  const currentProjectValues: Partial<EditableProjectFieldsType> = {
+  const currentProjectValues: Partial<ProjectsType> = {
     name: project?.name,
     description: project?.description,
     location: project?.location,
     categoryId: project?.category?.id,
+  };
+
+  const handleSubmit = (data: ProjectsType): void => {
+    void updateProject({
+      ...project,
+      ...data,
+    });
+    void router.push(`/account/projects/${projectId}`);
   };
 
   const handleDelete = (): void => {
@@ -97,6 +103,7 @@ const AccountProjectEditPage: FC = () => {
               defaultValues={currentProjectValues}
               onCancel={() => router.push(`/account/projects/${projectId}`)}
               onDelete={() => setDeleteIsInitiated(true)}
+              onSubmit={handleSubmit}
             />
           )}
         </div>
