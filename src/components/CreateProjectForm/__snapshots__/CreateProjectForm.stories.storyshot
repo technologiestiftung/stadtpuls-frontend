@@ -157,20 +157,24 @@ exports[`Storyshots Forms/CreateProjectForm Default 1`] = `
   <footer
     className="mt-24"
   >
-    <button
-      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="flex justify-end"
     >
-      Abbrechen
-    </button>
-    <input
-      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60 ml-4"
-      form="create-project-form"
-      type="submit"
-      value="Weiter"
-      variant="primary"
-    />
-  </footer>,
-]
+      <button
+        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+        onClick={[Function]}
+        type="button"
+      >
+        Abbrechen
+      </button>
+      <input
+        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60 ml-4"
+        form="create-project-form"
+        type="submit"
+        value="Weiter"
+        variant="primary"
+      />
+    </div>
+  </footer>
+</div>
 `;
