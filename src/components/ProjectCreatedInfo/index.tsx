@@ -9,6 +9,15 @@ export interface ProjectCreatedInfoType extends HTMLProps<HTMLElement> {
   projectTitle: string;
 }
 
+interface TokenResponseObjectType {
+  comment: string;
+  method: string;
+  url: string;
+  data: {
+    token: string;
+  };
+}
+
 export const ProjectCreatedInfo: FC<ProjectCreatedInfoType> = ({
   projectId,
   projectTitle,
@@ -16,15 +25,19 @@ export const ProjectCreatedInfo: FC<ProjectCreatedInfoType> = ({
   ...props
 }) => {
   const { accessToken } = useAuth();
-  const { createToken } = useProjectTokens(projectId);
+  const { createToken, error } = useProjectTokens(projectId);
 
   const [token, setToken] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     const createTokenFunction = async (): Promise<void> => {
-      const res = await createToken(`Token for ${projectTitle}`);
-      setToken(res);
+      const responseString = await createToken(`Token for ${projectTitle}`);
+      const parsedResponse: TokenResponseObjectType = JSON.parse(
+        responseString
+      ) as TokenResponseObjectType;
+      setToken(parsedResponse.data.token);
     };
+
     if (!accessToken) return;
     void createTokenFunction();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -39,8 +52,20 @@ export const ProjectCreatedInfo: FC<ProjectCreatedInfoType> = ({
       </h3>
       <div className='mt-4'>{children}</div>
       <h4 className='mt-12'>Token</h4>
+      {!token && error && (
+        <p className='mt-2 p-3 border border-gray-200 text-gray-500 break-words'>
+          Das Token konnte nicht generiert werden.
+        </p>
+      )}
+      {!token && !error && (
+        <p className='mt-2 p-3 border border-gray-200 text-gray-400 break-words'>
+          Token wird generiert...
+        </p>
+      )}
       {token && (
-        <p className='mt-2 p-3 border border-gray-200 text-gray-500'>{token}</p>
+        <p className='mt-2 p-3 border border-gray-200 text-gray-500 break-words'>
+          {token}
+        </p>
       )}
       <footer className='mt-24 flex justify-end'>
         <Link href={`/account/projects/${projectId}`}>
