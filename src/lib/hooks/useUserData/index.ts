@@ -133,7 +133,7 @@ const addProject = async (
 
   const { error } = await supabase
     .from<ProjectsType>("projects")
-    .insert([{ ...project, id: undefined }]);
+    .insert([{ ...project }]);
 
   if (error) throw error;
 };
