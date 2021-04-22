@@ -13,22 +13,22 @@ import {
 } from "@lib/formValidationUtil";
 import { ProjectsType } from "@common/types/supabase";
 
-export type EditableProjectFieldsType = Pick<
+type EditableProjectFieldsType = Pick<
   ProjectsType,
   "name" | "location" | "categoryId" | "description"
 >;
 
 export interface ProjectForm {
   categoryOptions: SelectOptionType[];
-  defaultValues?: Partial<EditableProjectFieldsType>;
-  onSubmit?: (data: EditableProjectFieldsType) => void;
+  defaultValues?: Partial<ProjectsType>;
+  onSubmit?: (data: ProjectsType) => void;
   onCancel: () => void;
   onDelete: () => void;
 }
 
 const formSchema = yup.object().shape({
-  title: requiredProjectTitleValidation,
-  category: requiredProjectCategoryValidation,
+  name: requiredProjectTitleValidation,
+  categoryId: requiredProjectCategoryValidation,
   description: requiredProjectDescriptionValidation,
 });
 
