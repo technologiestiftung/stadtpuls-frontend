@@ -8,12 +8,12 @@ import {
 } from "react";
 import { supabase } from "../supabase";
 import { AuthenticatedUsersType } from "@common/types/supabase";
-
 interface AuthContextType {
   signIn: typeof supabase.auth.signIn;
   signOut: typeof supabase.auth.signOut;
   authenticatedUser: AuthenticatedUsersType | null;
   isLoadingAuth: boolean;
+  accessToken: string | null;
 }
 
 const defaultValue = {
@@ -21,6 +21,7 @@ const defaultValue = {
   signOut: supabase.auth.signOut.bind(supabase.auth),
   authenticatedUser: null,
   isLoadingAuth: true,
+  accessToken: null,
 };
 
 const AuthContext = createContext<AuthContextType>(defaultValue);
@@ -32,11 +33,15 @@ export const AuthProvider: FC = ({ children }) => {
   const [isLoadingAuth, setLoading] = useState<
     AuthContextType["isLoadingAuth"]
   >(true);
+  const [accessToken, setAccessToken] = useState<
+    AuthContextType["accessToken"]
+  >(null);
 
   useEffect(() => {
     const session = supabase.auth.session();
 
     setUser(session?.user ?? null);
+    setAccessToken(session?.access_token ?? null);
     setLoading(false);
 
     const { data: listener } = supabase.auth.onAuthStateChange(
@@ -56,6 +61,7 @@ export const AuthProvider: FC = ({ children }) => {
     signOut: supabase.auth.signOut.bind(supabase.auth),
     authenticatedUser: authenticatedUser ?? null,
     isLoadingAuth,
+    accessToken,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
@@ -69,7 +75,8 @@ interface AuthHookReturnType extends Omit<AuthContextType, "signIn"> {
 }
 
 export const useAuth = (): AuthHookReturnType => {
-  const { signIn, ...auth } = useContext(AuthContext);
+  const authContext = useContext(AuthContext);
+  const { signIn, ...auth } = authContext;
   const [magicLinkWasSent, setMagicLinkWasSent] = useState<boolean>(false);
   const [isAuthenticating, setIsAuthenticating] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -85,5 +92,11 @@ export const useAuth = (): AuthHookReturnType => {
     },
     [signIn, setMagicLinkWasSent, setIsAuthenticating]
   );
-  return { ...auth, error, magicLinkWasSent, isAuthenticating, authenticate };
+  return {
+    ...auth,
+    error,
+    magicLinkWasSent,
+    isAuthenticating,
+    authenticate,
+  };
 };
