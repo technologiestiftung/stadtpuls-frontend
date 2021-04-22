@@ -28,7 +28,9 @@ export const UserProjectsWrapper: FC<UserProjectWrapperType> = ({
       style={{ paddingTop: "5vmax" }}
     >
       <section className='col-span-4'>
-        <h1 className='text-3xl text-blue-500 font-bold'>Meine Projekte</h1>
+        <h1 className='text-3xl text-blue-500 font-bold mt-6'>
+          Meine Projekte
+        </h1>
         <div className='mt-8'>
           <Link href={"/account/projects/new"}>
             <Anchor href={"/account/projects/new"} variant='primary'>
