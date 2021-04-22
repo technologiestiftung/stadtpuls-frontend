@@ -49,7 +49,6 @@ export const CreateProjectForm: FC<ProjectForm> = ({
 
   const onInternalSubmit = handleSubmit(data =>
     onSubmit({
-      createdAt: new Date(),
       categoryId: data.categoryId,
       name: data.name,
       description: data.description,
