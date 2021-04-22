@@ -60,11 +60,11 @@ exports[`Storyshots UI Elements/DropdownMenu With Custom Children 1`] = `
   className="inline-block relative"
 >
   <button
-    className="cursor-pointer rounded-none focus-offset"
+    className="cursor-pointer rounded-none focus-offset focus:ring-blue-500"
     onClick={[Function]}
   >
     <a
-      className="text-blue-500 underline transition hover:opacity-60 cursor-pointer focus-offset "
+      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
     >
       Click me
     </a>
