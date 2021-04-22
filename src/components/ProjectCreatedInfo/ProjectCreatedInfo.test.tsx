@@ -4,11 +4,7 @@ import { ProjectCreatedInfo } from ".";
 describe("ProjectCreatedInfo component", () => {
   it("should render the given title", () => {
     render(
-      <ProjectCreatedInfo
-        projectId={1}
-        projectTitle={"Some title"}
-        token={"12345"}
-      >
+      <ProjectCreatedInfo projectId={1} projectTitle={"Some title"}>
         <p>next steps description</p>
       </ProjectCreatedInfo>
     );
@@ -21,11 +17,7 @@ describe("ProjectCreatedInfo component", () => {
 
   it("should render the next steps description", () => {
     render(
-      <ProjectCreatedInfo
-        projectId={1}
-        projectTitle={"Some title"}
-        token={"12345"}
-      >
+      <ProjectCreatedInfo projectId={1} projectTitle={"Some title"}>
         <p>next steps description</p>
       </ProjectCreatedInfo>
     );
@@ -33,27 +25,19 @@ describe("ProjectCreatedInfo component", () => {
     expect(description).toBeInTheDocument();
   });
 
-  it("should render the token", () => {
+  /* it("should render the token", () => {
     render(
-      <ProjectCreatedInfo
-        projectId={1}
-        projectTitle={"Some title"}
-        token={"12345"}
-      >
+      <ProjectCreatedInfo projectId={1} projectTitle={"Some title"}>
         <p>next steps description</p>
       </ProjectCreatedInfo>
     );
     const token = screen.getByText("12345");
     expect(token).toBeInTheDocument();
-  });
+  }); */
 
   it("should render links to the next steps", () => {
     render(
-      <ProjectCreatedInfo
-        projectId={1}
-        projectTitle={"Some title"}
-        token={"12345"}
-      >
+      <ProjectCreatedInfo projectId={1} projectTitle={"Some title"}>
         <p>next steps description</p>
       </ProjectCreatedInfo>
     );

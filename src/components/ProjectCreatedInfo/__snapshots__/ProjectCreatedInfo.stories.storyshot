@@ -34,11 +34,6 @@ exports[`Storyshots Layout/ProjectCreatedInfo Default 1`] = `
   >
     Token
   </h4>
-  <p
-    className="mt-2 p-3 border border-gray-200 text-gray-500"
-  >
-    1234-example-token-5678
-  </p>
   <footer
     className="mt-24 flex justify-end"
   >

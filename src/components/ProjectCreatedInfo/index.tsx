@@ -1,20 +1,35 @@
 import { AnchorButton } from "@components/Button";
-import { FC, HTMLProps } from "react";
+import { FC, HTMLProps, useEffect, useState } from "react";
 import Link from "next/link";
+import { useProjectTokens } from "@lib/hooks/useProjectTokens";
+import { useAuth } from "@auth/Auth";
 
 export interface ProjectCreatedInfoType extends HTMLProps<HTMLElement> {
   projectId: number;
   projectTitle: string;
-  token: string;
 }
 
 export const ProjectCreatedInfo: FC<ProjectCreatedInfoType> = ({
   projectId,
   projectTitle,
-  token,
   children,
   ...props
 }) => {
+  const { accessToken } = useAuth();
+  const { createToken } = useProjectTokens(projectId);
+
+  const [token, setToken] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    const createTokenFunction = async (): Promise<void> => {
+      const res = await createToken(`Token for ${projectTitle}`);
+      setToken(res);
+    };
+    if (!accessToken) return;
+    void createTokenFunction();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [accessToken]);
+
   return (
     <article className='bg-white max-w-prose' {...props}>
       <h2 className='text-3xl text-blue-500 font-bold'>{projectTitle}</h2>
@@ -24,7 +39,9 @@ export const ProjectCreatedInfo: FC<ProjectCreatedInfoType> = ({
       </h3>
       <div className='mt-4'>{children}</div>
       <h4 className='mt-12'>Token</h4>
-      <p className='mt-2 p-3 border border-gray-200 text-gray-500'>{token}</p>
+      {token && (
+        <p className='mt-2 p-3 border border-gray-200 text-gray-500'>{token}</p>
+      )}
       <footer className='mt-24 flex justify-end'>
         <Link href={`/account/projects/${projectId}`}>
           <AnchorButton href={`/account/projects/${projectId}`}>
