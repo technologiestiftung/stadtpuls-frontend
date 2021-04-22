@@ -10,29 +10,27 @@ import {
   requiredProjectTitleValidation,
   requiredProjectCategoryValidation,
   requiredProjectDescriptionValidation,
-  requiredProjectIntegrationValidation,
+  requiredProjectConnectypeValidation,
 } from "@lib/formValidationUtil";
+import { ProjectsType } from "@common/types/supabase";
 
-interface ProjectFormDataToSubmit {
-  title: string;
-  category: string;
-  description: string;
-  location?: string;
-  integration: string;
-}
+type ChoosableProjectFieldsType = Pick<
+  ProjectsType,
+  "name" | "location" | "categoryId" | "description" | "connectype"
+>;
 
 export interface ProjectForm {
   categoryOptions: SelectOptionType[];
   integrationOptions: SelectOptionType[];
-  onSubmit?: (data: ProjectFormDataToSubmit) => void;
+  onSubmit?: (data: ProjectsType) => void;
   onCancel: () => void;
 }
 
 const formSchema = yup.object().shape({
-  title: requiredProjectTitleValidation,
-  category: requiredProjectCategoryValidation,
+  name: requiredProjectTitleValidation,
+  categoryId: requiredProjectCategoryValidation,
   description: requiredProjectDescriptionValidation,
-  integration: requiredProjectIntegrationValidation,
+  connectype: requiredProjectConnectypeValidation,
 });
 
 export const CreateProjectForm: FC<ProjectForm> = ({
@@ -45,11 +43,20 @@ export const CreateProjectForm: FC<ProjectForm> = ({
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<ProjectFormDataToSubmit>({
+  } = useForm<ChoosableProjectFieldsType>({
     resolver: yupResolver(formSchema),
   });
 
-  const onInternalSubmit = handleSubmit(data => onSubmit(data));
+  const onInternalSubmit = handleSubmit(data =>
+    onSubmit({
+      createdAt: new Date(),
+      categoryId: data.categoryId,
+      name: data.name,
+      description: data.description,
+      location: data.location,
+      connectype: data.connectype,
+    })
+  );
 
   const formatError = (errorMsg?: string): string[] =>
     errorMsg ? [errorMsg] : [];
@@ -61,7 +68,7 @@ export const CreateProjectForm: FC<ProjectForm> = ({
       type='create'
     >
       <Controller
-        name='title'
+        name='name'
         control={control}
         defaultValue=''
         render={({ field }) => (
@@ -70,12 +77,12 @@ export const CreateProjectForm: FC<ProjectForm> = ({
             label='Titel'
             placeholder='Wie soll dein Projekt heißen?'
             type='text'
-            errors={formatError(errors.title?.message)}
+            errors={formatError(errors.name?.message)}
           />
         )}
       />
       <Controller
-        name='category'
+        name='categoryId'
         control={control}
         defaultValue=''
         render={({ field }) => (
@@ -83,7 +90,7 @@ export const CreateProjectForm: FC<ProjectForm> = ({
             {...field}
             label='Kategorie'
             options={categoryOptions}
-            errors={formatError(errors.category?.message)}
+            errors={formatError(errors.categoryId?.message)}
           />
         )}
       />
@@ -115,7 +122,7 @@ export const CreateProjectForm: FC<ProjectForm> = ({
         )}
       />
       <Controller
-        name='integration'
+        name='connectype'
         control={control}
         defaultValue=''
         render={({ field }) => (
@@ -124,7 +131,7 @@ export const CreateProjectForm: FC<ProjectForm> = ({
             label='Integration'
             placeholder='Wie möchtest du dein Projekt integrieren?'
             options={integrationOptions}
-            errors={formatError(errors.integration?.message)}
+            errors={formatError(errors.connectype?.message)}
           />
         )}
       />
