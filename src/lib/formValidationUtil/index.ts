@@ -22,7 +22,7 @@ export const requiredProjectDescriptionValidation = yup
   .min(10, "Die Beschreibung kann 10 bis 140 Zeichen enthalten")
   .max(140, "Die Beschreibung kann 10 bis 140 Zeichen enthalten");
 
-export const requiredProjectIntegrationValidation = yup
+export const requiredProjectConnectypeValidation = yup
   .string()
   .required("Eine Integration muss ausgewählt sein");
 
