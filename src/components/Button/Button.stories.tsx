@@ -1,6 +1,6 @@
 import { Story, Meta } from "@storybook/react";
 import { HTMLProps } from "react";
-import { Button } from ".";
+import { Button, ButtonVariantsType } from ".";
 
 export default {
   title: "UI Elements/Button",
@@ -9,7 +9,7 @@ export default {
 
 interface ButtonTemplatePropTypes extends HTMLProps<HTMLButtonElement> {
   disabled?: boolean;
-  variant?: "primary" | "secondary" | "dangerous";
+  variant?: ButtonVariantsType;
 }
 
 const ButtonTemplate: Story<ButtonTemplatePropTypes> = ({

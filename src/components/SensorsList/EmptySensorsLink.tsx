@@ -1,4 +1,5 @@
 import { Td, Tr } from "@components/HTMLTable";
+import { ButtonTextLink } from "@components/TextLink";
 import { FC } from "react";
 import { DeviceIcon } from "./DeviceIcon";
 
@@ -12,10 +13,10 @@ export const EmptySensorsLink: FC<{
       className='text-center align-middle'
       style={{ height: 50 }}
     >
-      <button onClick={onClick}>
+      <ButtonTextLink onClick={onClick}>
         <DeviceIcon />
         Ersten Sensor hinzufügen
-      </button>
+      </ButtonTextLink>
     </Td>
   </Tr>
 );

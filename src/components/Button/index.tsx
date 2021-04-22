@@ -1,22 +1,20 @@
-import { forwardRef, HTMLProps, ReactNode } from "react";
+import { forwardRef, HTMLProps } from "react";
 
-interface ButtonPropType
-  extends Omit<HTMLProps<HTMLButtonElement>, "children"> {
-  children: ReactNode;
+export type ButtonVariantsType = "primary" | "secondary" | "dangerous";
+
+interface ButtonPropType extends HTMLProps<HTMLButtonElement> {
   disabled?: boolean;
-  variant?: "primary" | "secondary" | "dangerous";
+  variant?: ButtonVariantsType;
 }
 
-export interface AnchorPropType
-  extends Omit<HTMLProps<HTMLAnchorElement>, "children"> {
-  children: ReactNode;
-  variant?: "primary" | "secondary";
+export interface AnchorButtonPropType extends HTMLProps<HTMLAnchorElement> {
+  variant?: ButtonVariantsType;
   href: string;
 }
 interface SubmitPropType extends Omit<HTMLProps<HTMLInputElement>, "children"> {
   children: string;
   disabled?: boolean;
-  variant?: "primary" | "secondary" | "dangerous";
+  variant?: ButtonVariantsType;
 }
 
 const getButtonStyles = ({
@@ -24,11 +22,11 @@ const getButtonStyles = ({
   disabled,
   className,
 }: {
-  variant?: "primary" | "secondary" | "dangerous";
+  variant?: ButtonVariantsType;
   disabled?: boolean;
   className?: string;
 }): string => {
-  const classes = ["px-4 py-2 font-sans text-lg transition"];
+  const classes = ["text-lg px-4 py-2 font-sans transition"];
   if (disabled) {
     classes.push("cursor-default");
     switch (variant) {
@@ -43,20 +41,21 @@ const getButtonStyles = ({
         break;
     }
   } else {
+    classes.push("cursor-pointer focus-offset");
     switch (variant) {
       case "primary":
         classes.push(
-          "cursor-pointer focus-offset bg-blue-500 text-white hover:opacity-60"
+          "focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60"
         );
         break;
       case "dangerous":
         classes.push(
-          "cursor-pointer focus-offset bg-white border border-red-500 text-red-500 hover:bg-red-500 hover:bg-opacity-10"
+          "focus:ring-red-500 bg-white border border-red-500 text-red-500 hover:bg-red-500 hover:bg-opacity-10"
         );
         break;
       default:
         classes.push(
-          "cursor-pointer focus-offset bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+          "focus:ring-blue-500 bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
         );
         break;
     }
@@ -93,7 +92,7 @@ export const Submit = forwardRef<HTMLInputElement, SubmitPropType>(
 );
 
 // eslint-disable-next-line react/display-name
-export const Anchor = forwardRef<HTMLAnchorElement, AnchorPropType>(
+export const AnchorButton = forwardRef<HTMLAnchorElement, AnchorButtonPropType>(
   ({ href, children, ...anchorProps }, ref) => (
     <a
       href={href}

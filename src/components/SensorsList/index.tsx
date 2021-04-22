@@ -9,6 +9,7 @@ import { NewSensorForm } from "./NewSensorForm";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { Button } from "@components/Button";
 import { DeviceIcon } from "./DeviceIcon";
+import { ButtonTextLink } from "@components/TextLink";
 
 interface SensorsListPropType {
   sensors: SensorType[];
@@ -162,9 +163,9 @@ export const SensorsList: FC<SensorsListPropType> = ({
       </div>
       {sensors.length > 0 && !isAddingSensor && (
         <div className='text-right mt-8'>
-          <button onClick={() => setIsAddingSensor(true)}>
+          <ButtonTextLink onClick={() => setIsAddingSensor(true)}>
             Sensor hinzufügen
-          </button>
+          </ButtonTextLink>
         </div>
       )}
     </div>

@@ -132,7 +132,9 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
             }
           >
             <button
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
               onClick={[Function]}
+              type="button"
             >
               Bearbeiten
             </button>
@@ -146,7 +148,10 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
             }
           >
             <button
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-red-500 focus:ring-red-500"
               onClick={[Function]}
+              type="button"
+              variant="dangerous"
             >
               Löschen
             </button>
@@ -239,7 +244,9 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
             }
           >
             <button
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
               onClick={[Function]}
+              type="button"
             >
               Bearbeiten
             </button>
@@ -253,7 +260,10 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
             }
           >
             <button
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-red-500 focus:ring-red-500"
               onClick={[Function]}
+              type="button"
+              variant="dangerous"
             >
               Löschen
             </button>
@@ -346,7 +356,9 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
             }
           >
             <button
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
               onClick={[Function]}
+              type="button"
             >
               Bearbeiten
             </button>
@@ -360,7 +372,10 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
             }
           >
             <button
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-red-500 focus:ring-red-500"
               onClick={[Function]}
+              type="button"
+              variant="dangerous"
             >
               Löschen
             </button>
@@ -373,7 +388,9 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
     className="text-right mt-8"
   >
     <button
+      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
       onClick={[Function]}
+      type="button"
     >
       Sensor hinzufügen
     </button>
@@ -439,7 +456,9 @@ exports[`Storyshots Layout/SensorsList Empty 1`] = `
             }
           >
             <button
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
               onClick={[Function]}
+              type="button"
             >
               <svg
                 className="inline-block mr-3 sm:ml-2"

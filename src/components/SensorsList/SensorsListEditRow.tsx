@@ -1,5 +1,6 @@
 import { FormTextInput } from "@components/FormTextInput";
 import { Td, Tr } from "@components/HTMLTable";
+import { ButtonTextLink } from "@components/TextLink";
 import { requiredDeviceId, requiredDeviceName } from "@lib/formValidationUtil";
 import useClickOutside from "@lib/hooks/useClickOutside";
 import {
@@ -174,7 +175,8 @@ export const SensorsListEditRow: FC<SensorsListEditRowPropType> = ({
       </NameEditField>
       <Button1EditField>
         <span className='h-10 flex items-center'>
-          <button
+          <ButtonTextLink
+            variant='secondary'
             onClick={evt => {
               evt.preventDefault();
               evt.stopPropagation();
@@ -182,12 +184,12 @@ export const SensorsListEditRow: FC<SensorsListEditRowPropType> = ({
             }}
           >
             Abbrechen
-          </button>
+          </ButtonTextLink>
         </span>
       </Button1EditField>
       <Button2EditField>
         <span className='h-10 flex items-center'>
-          <button
+          <ButtonTextLink
             onClick={evt => {
               evt.preventDefault();
               evt.stopPropagation();
@@ -195,7 +197,7 @@ export const SensorsListEditRow: FC<SensorsListEditRowPropType> = ({
             }}
           >
             Speichern
-          </button>
+          </ButtonTextLink>
         </span>
       </Button2EditField>
     </TableEditRow>

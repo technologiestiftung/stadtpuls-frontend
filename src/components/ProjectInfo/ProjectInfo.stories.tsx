@@ -4,7 +4,6 @@ import { ProjectInfo, ProjectInfoPropType } from ".";
 export default {
   title: "Layout/ProjectInfo",
   component: ProjectInfo,
-  argTypes: { onEditProject: { action: "Clicked edit project" } },
 } as Meta;
 
 const ProjectInfoTemplate: Story<ProjectInfoPropType> = ({

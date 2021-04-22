@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import Link from "next/link";
-import { Anchor } from "@components/Button";
+import { AnchorButton } from "@components/Button";
 import { TextLink } from "@components/TextLink";
 
 export interface ProjectInfoPropType {
@@ -25,7 +25,7 @@ export const ProjectInfo: FC<ProjectInfoPropType> = ({
     >
       <h2 className='text-blue-500 text-3xl font-bold'>{title}</h2>
       <Link href={projectViewLink}>
-        <Anchor href={projectViewLink}>→ Projektseite</Anchor>
+        <AnchorButton href={projectViewLink}>→ Projektseite</AnchorButton>
       </Link>
     </header>
     <div className='mt-3'>

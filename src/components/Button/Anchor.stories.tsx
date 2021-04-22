@@ -1,26 +1,34 @@
 import { Story, Meta } from "@storybook/react";
-import { Anchor, AnchorPropType } from ".";
+import { AnchorButton, AnchorButtonPropType } from ".";
 
 export default {
-  title: "UI Elements/Anchor",
-  component: Anchor,
+  title: "UI Elements/AnchorButton",
+  component: AnchorButton,
 } as Meta;
 
-const AnchorTemplate: Story<AnchorPropType> = ({
+const AnchorTemplate: Story<AnchorButtonPropType> = ({
   children,
   variant,
   href = "/",
 }) => (
-  <Anchor variant={variant} href={href}>
-    {typeof children === "string" ? children : "Default anchor text"}
-  </Anchor>
+  <AnchorButton variant={variant} href={href}>
+    {children}
+  </AnchorButton>
 );
 
-export const DefaultAnchor = AnchorTemplate.bind({});
-DefaultAnchor.args = { children: "Anchor (looking like a button)" };
+export const DefaultAnchorButton = AnchorTemplate.bind({});
+DefaultAnchorButton.args = {
+  children: "Anchor button (looking like a button)",
+};
 
 export const PrimaryAnchor = AnchorTemplate.bind({});
 PrimaryAnchor.args = {
   variant: "primary",
-  children: "Anchor (looking like a primary button)",
+  children: "Anchor button (looking like a primary button)",
+};
+
+export const DangerousAnchorButton = AnchorTemplate.bind({});
+DangerousAnchorButton.args = {
+  variant: "dangerous",
+  children: "Anchor button (looking like a dangerous button)",
 };
