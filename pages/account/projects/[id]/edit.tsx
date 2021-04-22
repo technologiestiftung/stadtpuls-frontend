@@ -6,6 +6,7 @@ import { InvalidPageId } from "@components/PageError/InvalidPageId";
 import { ServerError } from "@components/PageError/ServerError";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { UserProjectsWrapper } from "@components/UserProjectsWrapper";
+import { Button } from "@components/Button";
 import {
   EditProjectForm,
   EditableProjectFieldsType,
@@ -13,18 +14,20 @@ import {
 import { useProjectCategories } from "@lib/hooks/useProjectCategories";
 import { useUserData } from "@lib/hooks/useUserData";
 import { useRouter } from "next/router";
-import { FC } from "react";
+import { FC, useState } from "react";
 
 const AccountProjectEditPage: FC = () => {
   const router = useRouter();
   const projectId = router.query.id;
   const { authenticatedUser, isLoadingAuth, error: authError } = useAuth();
-  const { projects, error } = useUserData();
+  const { projects, deleteProject, error } = useUserData();
   const {
     categories,
     isLoading: isLoadingCategories,
     error: categoriesError,
   } = useProjectCategories();
+
+  const [deleteIsInitiated, setDeleteIsInitiated] = useState(false);
 
   if (isLoadingAuth || (!projects && !error)) return null;
 
@@ -54,6 +57,16 @@ const AccountProjectEditPage: FC = () => {
     categoryId: project?.category?.id,
   };
 
+  const handleDelete = (): void => {
+    const exitRoute =
+      projectsForSidebar.length !== 0
+        ? `/account/projects/${projectsForSidebar[0].projectId}`
+        : "/account/profile";
+
+    void deleteProject(parseInt(`${projectId}`, 10));
+    void router.push(exitRoute);
+  };
+
   if (!project) {
     return (
       <SmallModalOverlay
@@ -70,23 +83,54 @@ const AccountProjectEditPage: FC = () => {
   }
 
   return (
-    <UserProjectsWrapper projects={projectsForSidebar}>
-      <div className='p-6'>
-        {categories && !isLoadingCategories && !categoriesError && (
-          <EditProjectForm
-            categoryOptions={categories.map(category => {
-              return {
-                value: `${category.id}`,
-                name: category.name,
-              };
-            })}
-            defaultValues={currentProjectValues}
-            onCancel={() => router.push(`/account/projects/${projectId}`)}
-            onDelete={() => console.log("Delete")}
-          />
-        )}
-      </div>
-    </UserProjectsWrapper>
+    <>
+      <UserProjectsWrapper projects={projectsForSidebar}>
+        <div className='p-6'>
+          {categories && !isLoadingCategories && !categoriesError && (
+            <EditProjectForm
+              categoryOptions={categories.map(category => {
+                return {
+                  value: `${category.id}`,
+                  name: category.name,
+                };
+              })}
+              defaultValues={currentProjectValues}
+              onCancel={() => router.push(`/account/projects/${projectId}`)}
+              onDelete={() => setDeleteIsInitiated(true)}
+            />
+          )}
+        </div>
+      </UserProjectsWrapper>
+      {deleteIsInitiated && (
+        <SmallModalOverlay
+          title='Bitte bestätige die Löschung deines Projekts'
+          variant='dangerous'
+          footerContent={
+            <div className='flex justify-end w-full'>
+              <Button
+                className='mr-4'
+                variant='dangerous'
+                onClick={handleDelete}
+              >
+                Löschen
+              </Button>
+              <Button
+                variant='primary'
+                onClick={() => setDeleteIsInitiated(false)}
+              >
+                Abbrechen
+              </Button>
+            </div>
+          }
+        >
+          Der folgende Projekt samt aller Sensoren und Daten wird unwiderruflich
+          gelöscht.
+          <div className='bg-blue-25 p-3 mt-2'>
+            <span className='mr-3 inline-block'>{project.name}</span>
+          </div>
+        </SmallModalOverlay>
+      )}
+    </>
   );
 };
 
