@@ -1,36 +1,57 @@
 import { AuthProvider } from "@auth/Auth";
-import { supabase } from "@auth/supabase";
-import { render, screen } from "@testing-library/react";
+import * as userDataHook from "@lib/hooks/useUserData";
+import { render, screen, waitFor } from "@testing-library/react";
 import { Header } from ".";
 
+const originalUserDataHook = userDataHook.useUserData;
+
 describe("Header component", () => {
-  it("should render the iot logo", () => {
+  beforeEach(() => {
+    // Ignored because of the reassignment for mock purposes
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    userDataHook.useUserData = jest.fn().mockReturnValue({
+      user: { name: "JohnDoe" },
+    });
+  });
+
+  afterEach(() => {
+    // Ignored because of the reassignment for mock purposes
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    userDataHook.useUserData = originalUserDataHook;
+  });
+  it("should render the iot logo", async () => {
     render(<Header />);
     const logo = screen.getByRole("img");
-    expect(logo).toBeInTheDocument();
+    await waitFor(() => expect(logo).toBeInTheDocument());
   });
-  it("should render the tsb logo", () => {
+  it("should render the tsb logo", async () => {
     render(<Header />);
     const logo = document.querySelector("svg");
-    expect(logo).toBeInTheDocument();
+    await waitFor(() => expect(logo).toBeInTheDocument());
   });
-  it("should render the 'authentication' link if logged out", () => {
+  it("should render the 'authentication' link if logged out", async () => {
+    // Ignored because of the reassignment for mock purposes
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    userDataHook.useUserData = jest.fn().mockReturnValue({
+      user: null,
+    });
     render(<Header />);
     const link = screen.getByText(/Anmeldung/g);
-    expect(link).toBeInTheDocument();
+    await waitFor(() => expect(link).toBeInTheDocument());
   });
-  it("should render the 'username' link if logged in", () => {
-    const oldSessionFuncion = supabase.auth.session.bind(supabase.auth);
-    supabase.auth.session = jest
-      .fn()
-      .mockReturnValue({ user: { email: "contact@example.com" } });
+  it("should render the 'username' link if logged in", async () => {
     render(
       <AuthProvider>
         <Header />
       </AuthProvider>
     );
-    const email = screen.getByText("contact@example.com");
-    expect(email).toBeInTheDocument();
-    supabase.auth.session = oldSessionFuncion;
+    const username = screen.getByText("JohnDoe");
+
+    await waitFor(() => {
+      expect(username).toBeInTheDocument();
+    });
   });
 });

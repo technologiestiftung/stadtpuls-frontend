@@ -1,5 +1,6 @@
 import { AuthProvider } from "@auth/Auth";
 import { supabase } from "@auth/supabase";
+import * as userDataHook from "@lib/hooks/useUserData";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import React from "react";
 import { AuthLink } from ".";
@@ -26,44 +27,63 @@ describe("component AuthLink while logged out", () => {
     expect(anmeldung?.getAttribute("class")?.includes("text-black")).toBe(true);
   });
 });
+
+const originalUserDataHook = userDataHook.useUserData;
 describe("component AuthLink while logged in", () => {
-  beforeAll(() => {
-    supabase.auth.session = jest
-      .fn()
-      .mockReturnValue({ user: { email: "contact@example.com" } });
+  beforeEach(() => {
+    // Ignored because of the reassignment for mock purposes
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    userDataHook.useUserData = jest.fn().mockReturnValue({
+      user: { name: "JohnDoe" },
+    });
   });
 
-  afterAll(() => {
+  afterEach(() => {
     supabase.auth.session = oldSessionFuncion;
+    // Ignored because of the reassignment for mock purposes
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    userDataHook.useUserData = originalUserDataHook;
     supabase.auth.signOut = oldLogoutFuncion;
   });
-  it("should render the user email if logged in", () => {
+  it("should render the user username if logged in", async () => {
     render(
       <AuthProvider>
         <AuthLink />
       </AuthProvider>
     );
-    const email = screen.getByText(/contact@example.com/gi);
-    expect(email).toBeInTheDocument();
+    const username = screen.getByText(/JohnDoe/gi);
+
+    await waitFor(() => expect(username).toBeInTheDocument());
   });
-  it("should render the word Profile if logged in with empty email", () => {
-    supabase.auth.session = jest.fn().mockReturnValue({ user: {} });
+  it("should render the word Profile if logged in with empty username", async () => {
+    // Ignored because of the reassignment for mock purposes
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    userDataHook.useUserData = jest.fn().mockReturnValue({
+      user: { name: "" },
+    });
     render(
       <AuthProvider>
         <AuthLink />
       </AuthProvider>
     );
-    const email = screen.getByText(/Profile/gi);
-    expect(email).toBeInTheDocument();
+    const username = screen.getByText(/Profile/gi);
+
+    await waitFor(() => expect(username).toBeInTheDocument());
   });
-  it("should have primary styles if logged in", () => {
+  it("should have primary styles if logged in", async () => {
     render(<AuthLink />);
     const icon = document.querySelector("span");
-    const anmeldung = screen.getByText(/Anmeldung/gi);
-    expect(icon?.getAttribute("class")?.includes("text-blue-500")).toBe(true);
-    expect(anmeldung?.getAttribute("class")?.includes("text-blue-500")).toBe(
-      true
-    );
+    const anmeldung = screen.getByText(/JohnDoe/gi);
+
+    await waitFor(() => {
+      expect(icon?.getAttribute("class")?.includes("text-blue-500")).toBe(true);
+      expect(anmeldung?.getAttribute("class")?.includes("text-blue-500")).toBe(
+        true
+      );
+    });
   });
   it("should render the Dropdown menu links", async () => {
     render(
