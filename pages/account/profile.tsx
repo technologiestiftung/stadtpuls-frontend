@@ -9,10 +9,10 @@ const UserPage: FC = () => {
   return (
     <div
       className='w-full h-full relative grid place-content-center'
-      style={{ paddingTop: "10vmax" }}
+      style={{ paddingTop: "5vmax" }}
     >
       <div
-        className='bg-white p-8 shadow-lg flex gap-8 flex flex-col md:flex-row'
+        className='bg-white p-8 shadow-lg gap-8 flex flex-col md:flex-row'
         style={{ minHeight: "480px" }}
       >
         <UserInfoCard
