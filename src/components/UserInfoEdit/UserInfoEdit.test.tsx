@@ -33,7 +33,6 @@ describe("component UserInfoEdit", () => {
     expect(editButton).toBeInTheDocument();
     fireEvent.click(editButton);
     const submitButton = screen.getByDisplayValue("Speichern");
-    const emailInput = screen.getByDisplayValue(testEmail);
     const usernameInput = screen.getByDisplayValue(testUsername);
 
     fireEvent.change(usernameInput, {
@@ -41,16 +40,10 @@ describe("component UserInfoEdit", () => {
         value: "janedoe",
       },
     });
-    fireEvent.change(emailInput, {
-      target: {
-        value: "janedoe@aol.com",
-      },
-    });
     fireEvent.click(submitButton);
     await waitFor(() =>
       expect(mySubmit).toHaveBeenCalledWith({
         username: "janedoe",
-        email: "janedoe@aol.com",
       })
     );
   });

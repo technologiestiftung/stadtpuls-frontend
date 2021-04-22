@@ -173,31 +173,18 @@ const deleteProject = async (
   if (error) throw error;
 };
 
-const updateName = async (
-  name: string,
+const updateUser = async (
+  newName: string,
   userId: string | undefined
 ): Promise<void> => {
   if (!userId) throw new Error("Not authenticated");
 
-  const { error } = await supabase
+  const nameReset = await supabase
     .from<UsersType>("users")
-    .update({ name })
+    .update({ name: newName })
     .eq("id", userId);
 
-  if (error) throw error;
-};
-
-const updateEmail = async (
-  email: string,
-  userId: string | undefined
-): Promise<void> => {
-  if (!userId) throw new Error("Not authenticated");
-
-  const { error } = await supabase.auth.update({
-    data: { email },
-  });
-
-  if (error) throw error;
+  if (nameReset.error) throw nameReset.error;
 };
 
 const deleteUser = async (userId: string | undefined): Promise<void> => {
@@ -222,8 +209,7 @@ export const useUserData = (): {
   ) => Promise<void>;
   updateProject: (project: Omit<ProjectsType, "createdAt">) => Promise<void>;
   deleteProject: (id: number) => Promise<void>;
-  updateName: (name: string) => Promise<void>;
-  updateEmail: (email: string) => Promise<void>;
+  updateUser: (newName: string) => Promise<void>;
   deleteUser: () => Promise<void>;
 } => {
   const [actionError, setActionError] = useState<Error | null>(null);
@@ -308,14 +294,11 @@ export const useUserData = (): {
       await deleteProject(id, userId).catch(setActionError);
       void mutate(projectsParams);
     },
-    updateName: async name => {
+    updateUser: async name => {
+      if (!user.data?.name) return;
+      if (user.data.name === name) return;
       void mutate(userParams, { ...user, name }, false);
-      await updateName(name, userId).catch(setActionError);
-      void mutate(userParams);
-    },
-    updateEmail: async email => {
-      void mutate(userParams, { ...user, email }, false);
-      await updateEmail(email, userId).catch(setActionError);
+      await updateUser(name, userId).catch(setActionError);
       void mutate(userParams);
     },
     deleteUser: async () => {

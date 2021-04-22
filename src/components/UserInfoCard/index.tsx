@@ -7,12 +7,14 @@ interface UserInfoCardPropTypes {
   username: string;
   email: string;
   registerDate: string;
+  onUserDelete?: () => void;
 }
 
 export const UserInfoCard: FC<UserInfoCardPropTypes> = ({
   username,
   email,
   registerDate,
+  onUserDelete,
 }) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   return (
@@ -37,20 +39,26 @@ export const UserInfoCard: FC<UserInfoCardPropTypes> = ({
         <p>{registerDate}</p>
       </div>
       <div>
-        <button
-          className='text-left mt-16 text-red-500 hover:text-opacity-50 cursor-pointer'
-          onClick={() => setShowDeleteModal(true)}
-        >
-          Account löschen
-        </button>
+        {onUserDelete && (
+          <button
+            className='text-left mt-16 text-red-500 hover:text-opacity-50 cursor-pointer'
+            onClick={() => setShowDeleteModal(true)}
+          >
+            Account löschen
+          </button>
+        )}
       </div>
-      {showDeleteModal && (
+      {showDeleteModal && onUserDelete && (
         <SmallModalOverlay
           title='Bitte bestätige die Löschung deines Accounts'
           variant='dangerous'
           footerContent={
             <div className='flex justify-end w-full'>
-              <Button className='mr-4' variant='dangerous'>
+              <Button
+                className='mr-4'
+                variant='dangerous'
+                onClick={onUserDelete}
+              >
                 Löschen
               </Button>
               <Button
@@ -61,7 +69,10 @@ export const UserInfoCard: FC<UserInfoCardPropTypes> = ({
               </Button>
             </div>
           }
-        />
+        >
+          Dein Account wird unwiderruflich gelöscht. Alle deine Projekte und
+          Daten werden von der Plattform und aus der Datenbank entfernt.
+        </SmallModalOverlay>
       )}
     </div>
   );

@@ -6,10 +6,24 @@ import { useAuth } from "@auth/Auth";
 import { PleaseLogin } from "@components/PageError/PleaseLogin";
 import { ServerError } from "@components/PageError/ServerError";
 import moment from "moment";
+import { useRouter } from "next/router";
+moment.locale("de-DE");
 
 const UserPage: FC = () => {
-  const { authenticatedUser, isLoadingAuth, error: authError } = useAuth();
-  const { user, isLoading, error: userDataError } = useUserData();
+  const router = useRouter();
+  const {
+    authenticatedUser,
+    isLoadingAuth,
+    error: authError,
+    signOut,
+  } = useAuth();
+  const {
+    user,
+    isLoading,
+    error: userDataError,
+    updateUser,
+    deleteUser,
+  } = useUserData();
 
   if (isLoadingAuth || isLoading) return null;
   if (!authenticatedUser || !user) return <PleaseLogin />;
@@ -32,12 +46,17 @@ const UserPage: FC = () => {
           username={name || ""}
           email={email || ""}
           registerDate={moment(createdAt).format("Do MMMM YYYY")}
+          onUserDelete={() => {
+            void router.push("/");
+            void deleteUser();
+            void signOut();
+          }}
         />
         <UserInfoEdit
           username={name || ""}
           email={email || ""}
-          onSubmit={({ username, email }) => {
-            console.log(username, email);
+          onSubmit={({ username }) => {
+            void updateUser(username);
           }}
         />
       </div>
