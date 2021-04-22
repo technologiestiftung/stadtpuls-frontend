@@ -8,7 +8,7 @@ import {
 } from "@components/UserProjectsNav";
 
 export interface UserProjectWrapperType extends HTMLProps<HTMLElement> {
-  projects: ProjectListItemType[];
+  projects: ProjectListItemType[] | null;
 }
 
 export const UserProjectsWrapper: FC<UserProjectWrapperType> = ({
@@ -37,14 +37,16 @@ export const UserProjectsWrapper: FC<UserProjectWrapperType> = ({
               Neues Projekt
             </AnchorButton>
           </Link>
-          <UserProjectsNav
-            projects={projects}
-            defaultSelectedProject={
-              projects.find(project => project.projectId === id) || null
-            }
-            onSelectProject={handleSelectProject}
-            className='mt-12'
-          />
+          {projects && (
+            <UserProjectsNav
+              projects={projects}
+              defaultSelectedProject={
+                projects.find(project => project.projectId === id) || null
+              }
+              onSelectProject={handleSelectProject}
+              className='mt-12'
+            />
+          )}
         </div>
       </section>
       <main
