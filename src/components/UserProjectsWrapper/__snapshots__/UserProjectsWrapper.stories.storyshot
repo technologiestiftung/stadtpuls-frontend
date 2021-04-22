@@ -13,7 +13,7 @@ exports[`Storyshots Layout/UserProjectsWrapper Default 1`] = `
     className="col-span-3"
   >
     <h1
-      className="text-3xl text-blue-500 font-bold"
+      className="text-3xl text-blue-500 font-bold mt-6"
     >
       Meine Projekte
     </h1>

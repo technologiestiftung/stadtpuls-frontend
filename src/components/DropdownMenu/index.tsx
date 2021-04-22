@@ -23,6 +23,7 @@ export interface DropdownMenuPropType {
 
 export const DropdownMenu: FC<DropdownMenuPropType> = ({ children, items }) => {
   const menuItemStyles = [
+    "group",
     "block w-full text-black",
     "px-4 py-1.5 cursor-pointer transition text-left",
     "hover:bg-blue-50 hover:text-blue-500",
