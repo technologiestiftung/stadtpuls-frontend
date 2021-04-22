@@ -6,4 +6,6 @@ exports[`Storyshots PageError No Access Error 1`] = `null`;
 
 exports[`Storyshots PageError Please Login Error 1`] = `null`;
 
+exports[`Storyshots PageError Project Not Found Error 1`] = `null`;
+
 exports[`Storyshots PageError Server Error Error 1`] = `null`;
