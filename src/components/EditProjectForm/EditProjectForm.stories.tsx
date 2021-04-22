@@ -5,15 +5,15 @@ import { EditProjectForm, ProjectForm } from ".";
 const exampleCategories = [
   {
     name: "some name A",
-    value: "some value A",
+    value: "1",
   },
   {
     name: "some name B",
-    value: "some value B",
+    value: "2",
   },
   {
     name: "some name C",
-    value: "some value C",
+    value: "3",
   },
 ];
 
@@ -22,6 +22,14 @@ export default {
   argTypes: {
     onSubmit: {
       description: "A callback called when the form has submitted",
+    },
+    onCancel: {
+      description:
+        "A function called when the form is cancelled without submit",
+    },
+    onDelete: {
+      description:
+        "A function called when the 'delete project' button is clicked",
     },
   },
 } as Meta;
@@ -32,18 +40,24 @@ export const WithoutDefaultValues = Template.bind({});
 WithoutDefaultValues.args = {
   categoryOptions: exampleCategories,
   onSubmit: action("Form data submited"),
+  onCancel: action("Form cancelled"),
+  onDelete: action("Delete project clicked"),
 };
 
 export const WithDefaultValues = Template.bind({});
 WithDefaultValues.args = {
   defaultValues: {
-    title: "A title",
-    category: exampleCategories.map(category => category.value)[
-      exampleCategories.length - 1
-    ],
+    name: "A title",
+    categoryId: parseInt(
+      exampleCategories.map(category => category.value)[
+        exampleCategories.length - 1
+      ]
+    ),
     description: "A description",
     location: "A location",
   },
   categoryOptions: exampleCategories,
   onSubmit: action("Form data submited"),
+  onCancel: action("Form cancelled"),
+  onDelete: action("Delete project clicked"),
 };

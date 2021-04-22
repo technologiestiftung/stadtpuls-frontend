@@ -16,6 +16,7 @@ import {
 import { createV1ApiUrl } from "../lib/requests/createV1ApiUrl";
 import { createV2ApiUrl } from "../lib/requests/createV2ApiUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
+import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
 
 const { data: projectsData } = projectsResponse;
 const { data: project1DevicesData } = project1Devices;
@@ -24,6 +25,29 @@ const { data: device1RecordsData } = device1Records;
 const { data: device2RecordsData } = device2Records;
 const { data: device3RecordsData } = device3Records;
 const { data: device4RecordsData } = device4Records;
+
+const tokenApiHandlers = [
+  rest.get(createTokenApiUrl({ projectId: "10" }), (_req, res, ctx) => {
+    return res(
+      ctx.status(201, "Mocked status"),
+      ctx.json({
+        data: [
+          { niceId: 1, description: "Lorem ipsum dolor.", projectId: 10 },
+          { niceId: 2, description: "Sit amet consectetur.", projectId: 10 },
+          { niceId: 3, description: "Lipsum amet dolor.", projectId: 10 },
+        ],
+      })
+    );
+  }),
+  rest.post(createTokenApiUrl(), (_req, res, ctx) => {
+    return res(
+      ctx.status(201, "Mocked status"),
+      ctx.text(
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjYTNmMjY3My0wNWNkLTRiNjMtYTJiZC1lZjhmYWY5MzFlZWYiLCJwcm9qZWN0SWQiOjEwLCJkZXNjcmlwdGlvbiI6Im15IGZhbmN5IHRva2VuIiwianRpIjoiOTlmMGNjY2EtYTA3MC00MjBmLTk0N2EtZDk3Y2QxYTAzN2RmIiwiaXNzIjoidGVjaG5vbG9naWVzdGlmdHVuZy1iZXJsaW4uZGUiLCJpYXQiOjE2MTkwNzkzOTB9.IBZ4qrsi8ibAUcUi8LsZtiWSE1Q5DzjFJZMPwzMZrKA"
+      )
+    );
+  }),
+];
 
 const supabaseHandlers = [
   rest.get(createV2ApiUrl("/categories"), (_req, res, ctx) => {
@@ -145,4 +169,9 @@ const authHandlers = [
   }),
 ];
 
-export const handlers = [...apiHandlers, ...supabaseHandlers, ...authHandlers];
+export const handlers = [
+  ...apiHandlers,
+  ...supabaseHandlers,
+  ...authHandlers,
+  ...tokenApiHandlers,
+];

@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { CreateProjectForm } from ".";
 
+const onCancelFunction = jest.fn();
+
 const exampleCategories = [
   {
     name: "some name A",
@@ -29,6 +31,7 @@ describe("CreateProjectForm component", () => {
       <CreateProjectForm
         categoryOptions={exampleCategories}
         integrationOptions={exampleIntegrations}
+        onCancel={onCancelFunction}
       />
     );
     const titleInput = screen.getByLabelText(/Titel/i);
@@ -39,6 +42,7 @@ describe("CreateProjectForm component", () => {
       <CreateProjectForm
         categoryOptions={exampleCategories}
         integrationOptions={exampleIntegrations}
+        onCancel={onCancelFunction}
       />
     );
     const categorySelect = screen.getByLabelText(/Kategorie/i);
@@ -49,6 +53,7 @@ describe("CreateProjectForm component", () => {
       <CreateProjectForm
         categoryOptions={exampleCategories}
         integrationOptions={exampleIntegrations}
+        onCancel={onCancelFunction}
       />
     );
     const descriptionTextarea = screen.getByLabelText(/Beschreibung/i);
@@ -59,6 +64,7 @@ describe("CreateProjectForm component", () => {
       <CreateProjectForm
         categoryOptions={exampleCategories}
         integrationOptions={exampleIntegrations}
+        onCancel={onCancelFunction}
       />
     );
     const locationInput = screen.getByLabelText(/Standort/i);
@@ -69,6 +75,7 @@ describe("CreateProjectForm component", () => {
       <CreateProjectForm
         categoryOptions={exampleCategories}
         integrationOptions={exampleIntegrations}
+        onCancel={onCancelFunction}
       />
     );
     const integrationInput = screen.getByLabelText(/Integration/i);

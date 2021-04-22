@@ -126,7 +126,9 @@ const deleteDevice = async (
   if (error) throw error;
 };
 
-const addProject = async (project: ProjectsType): Promise<void> => {
+const addProject = async (
+  project: Omit<ProjectsType, "id" | "createdAt">
+): Promise<void> => {
   if (!project.userId) throw new Error("Not authenticated");
 
   const { error } = await supabase
@@ -212,14 +214,13 @@ export const useUserData = (): {
   user: UsersType | null;
   projects: ProjectsType[] | null;
   error: Error | null;
-  addDevice: (
-    device: Omit<DevicesType, "id">,
-    projectId: ProjectsType["id"]
-  ) => Promise<void>;
-  updateDevice: (device: DevicesType) => Promise<void>;
+  addDevice: (device: Omit<DevicesType, "id">) => Promise<void>;
+  updateDevice: (device: Omit<DevicesType, "projectId">) => Promise<void>;
   deleteDevice: (id: number) => Promise<void>;
-  addProject: (project: ProjectsType) => Promise<void>;
-  updateProject: (project: ProjectsType) => Promise<void>;
+  addProject: (
+    project: Omit<ProjectsType, "id" | "createdAt">
+  ) => Promise<void>;
+  updateProject: (project: Omit<ProjectsType, "createdAt">) => Promise<void>;
   deleteProject: (id: number) => Promise<void>;
   updateName: (name: string) => Promise<void>;
   updateEmail: (email: string) => Promise<void>;
@@ -245,12 +246,12 @@ export const useUserData = (): {
     user: user.data || null,
     projects: projects.data || null,
     error: projects.error || user.error || actionError || null,
-    addDevice: async (device, projectId) => {
+    addDevice: async device => {
       if (!projects.data || projects.error) return;
       setActionError(null);
       void mutate(
         projectsParams,
-        addProjectsDevice(projects.data, device, projectId),
+        addProjectsDevice(projects.data, device),
         false
       );
       await addDevice({ ...device, userId }).catch(setActionError);
@@ -290,7 +291,7 @@ export const useUserData = (): {
       setActionError(null);
       void mutate(
         projectsParams,
-        updateProjectsProject(projects.data, project),
+        updateProjectsProject(projects.data, project as ProjectsType),
         false
       );
       await updateProject({ ...project, userId }).catch(setActionError);

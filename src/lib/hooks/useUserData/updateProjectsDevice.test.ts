@@ -71,7 +71,7 @@ describe("deleteProjectsDevice", () => {
 describe("addProjectsDevice", () => {
   it("should add the provided device", () => {
     const newDevice = createFakeDevice(4);
-    const updatedProjects = addProjectsDevice(fakeProjects, newDevice, 1);
+    const updatedProjects = addProjectsDevice(fakeProjects, newDevice);
     if (!updatedProjects[0]) throw new Error("First project not found");
     if (!Array.isArray(updatedProjects[0].devices))
       throw new Error("First project has no devices");
