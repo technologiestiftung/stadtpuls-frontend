@@ -53,7 +53,12 @@ describe("useProjectTokens", () => {
     // Ingored because of readonly reassignment for mocking purposes
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    auth.useAuth = jest.fn().mockReturnValue({ accessToken: "12345" });
+    auth.useAuth = jest.fn().mockReturnValue({
+      accessToken: "12345",
+      authenticatedUser: {
+        id: 1234,
+      },
+    });
   });
 
   afterEach(() => {
@@ -84,6 +89,7 @@ describe("useProjectTokens", () => {
 
   it("should return an error if network has error", async (): Promise<void> => {
     server.use(rest.get("*", (_req, res) => res.networkError("Error")));
+    server.use(rest.delete("*", (_req, res) => res.networkError("Error")));
     const onSuccess = jest.fn();
     const onError = jest.fn();
     const onErrorWrapper = (error: string): void => {

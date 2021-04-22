@@ -232,6 +232,9 @@ const supabaseHandlers = [
       );
     }
   ),
+  rest.delete(createV2ApiUrl("/authtokens"), (_req, res, ctx) => {
+    return res(ctx.status(201, "Mocked status"), ctx.json([]));
+  }),
 ];
 
 const apiHandlers = [
