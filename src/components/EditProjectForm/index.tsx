@@ -11,23 +11,24 @@ import {
   requiredProjectCategoryValidation,
   requiredProjectDescriptionValidation,
 } from "@lib/formValidationUtil";
+import { ProjectsType } from "@common/types/supabase";
 
-interface ProjectFormDataToSubmit {
-  title: string;
-  category: string;
-  description: string;
-  location?: string;
-}
+type EditableProjectFieldsType = Pick<
+  ProjectsType,
+  "name" | "location" | "categoryId" | "description"
+>;
 
 export interface ProjectForm {
   categoryOptions: SelectOptionType[];
-  defaultValues?: Partial<ProjectFormDataToSubmit>;
-  onSubmit?: (data: ProjectFormDataToSubmit) => void;
+  defaultValues?: Partial<ProjectsType>;
+  onSubmit?: (data: ProjectsType) => void;
+  onCancel: () => void;
+  onDelete: () => void;
 }
 
 const formSchema = yup.object().shape({
-  title: requiredProjectTitleValidation,
-  category: requiredProjectCategoryValidation,
+  name: requiredProjectTitleValidation,
+  categoryId: requiredProjectCategoryValidation,
   description: requiredProjectDescriptionValidation,
 });
 
@@ -35,12 +36,14 @@ export const EditProjectForm: FC<ProjectForm> = ({
   categoryOptions,
   defaultValues,
   onSubmit = console.log,
+  onCancel,
+  onDelete,
 }) => {
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<ProjectFormDataToSubmit>({
+  } = useForm<EditableProjectFieldsType>({
     resolver: yupResolver(formSchema),
   });
 
@@ -50,31 +53,36 @@ export const EditProjectForm: FC<ProjectForm> = ({
     errorMsg ? [errorMsg] : [];
 
   return (
-    <ProjectInfoFormWrapper onSubmit={onInternalSubmit} type='edit'>
+    <ProjectInfoFormWrapper
+      onSubmit={onInternalSubmit}
+      handleCancel={onCancel}
+      handleDelete={onDelete}
+      type='edit'
+    >
       <Controller
-        name='title'
+        name='name'
         control={control}
-        defaultValue={defaultValues?.title}
+        defaultValue={defaultValues?.name}
         render={({ field }) => (
           <FormTextInput
             {...field}
             label='Titel'
             placeholder='Wie soll dein Projekt heißen?'
             type='text'
-            errors={formatError(errors.title?.message)}
+            errors={formatError(errors.name?.message)}
           />
         )}
       />
       <Controller
-        name='category'
+        name='categoryId'
         control={control}
-        defaultValue={defaultValues?.category}
+        defaultValue={defaultValues?.categoryId}
         render={({ field }) => (
           <FormSelect
             {...field}
             label='Kategorie'
             options={categoryOptions}
-            errors={formatError(errors.category?.message)}
+            errors={formatError(errors.categoryId?.message)}
           />
         )}
       />
@@ -105,8 +113,11 @@ export const EditProjectForm: FC<ProjectForm> = ({
           />
         )}
       />
-      <button className='mt-6 text-blue-500 underline'>
-        Token neu generieren (placeholder)
+      <button
+        disabled
+        className='mt-6 text-gray-400 underline cursor-not-allowed'
+      >
+        Token neu generieren (derzeit nicht verfügbar)
       </button>
     </ProjectInfoFormWrapper>
   );

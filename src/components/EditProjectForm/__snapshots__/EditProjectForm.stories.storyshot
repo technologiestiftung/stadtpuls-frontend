@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Forms/EditProjectForm With Default Values 1`] = `
-Array [
+<div>
   <h2
     className="text-3xl text-blue-500 font-bold"
   >
     Projekt bearbeiten
-  </h2>,
+  </h2>
   <form
     className="mt-4"
     id="edit-project-form"
@@ -18,15 +18,15 @@ Array [
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
-        htmlFor="title"
+        htmlFor="name"
       >
         Titel
          
       </label>
       <input
         className=" mb-2"
-        id="title"
-        name="title"
+        id="name"
+        name="name"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Wie soll dein Projekt heißen?"
@@ -39,18 +39,18 @@ Array [
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
-        htmlFor="category"
+        htmlFor="categoryId"
       >
         Kategorie
       </label>
       <select
         className="mb-2 text-gray-500 "
-        id="category"
-        name="category"
+        id="categoryId"
+        name="categoryId"
         onBlur={[Function]}
         onChange={[Function]}
         required={true}
-        value="some value C"
+        value={3}
       >
         <option
           value=""
@@ -58,17 +58,17 @@ Array [
           Bitte wähle eine Option
         </option>
         <option
-          value="some value A"
+          value="1"
         >
           some name A
         </option>
         <option
-          value="some value B"
+          value="2"
         >
           some name B
         </option>
         <option
-          value="some value C"
+          value="3"
         >
           some name C
         </option>
@@ -124,45 +124,52 @@ Array [
       />
     </div>
     <button
-      className="mt-6 text-blue-500 underline"
+      className="mt-6 text-gray-400 underline cursor-not-allowed"
+      disabled={true}
     >
-      Token neu generieren (placeholder)
+      Token neu generieren (derzeit nicht verfügbar)
     </button>
-  </form>,
+  </form>
   <footer
-    className="mt-12 flex place-content-between"
+    className="mt-24"
   >
-    <button
-      className="text-red-500"
+    <div
+      className="flex place-content-between"
     >
-      Projekt löschen
-    </button>
-    <div>
       <button
-        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
-        type="button"
+        className="text-red-500 focus-offset"
+        onClick={[Function]}
       >
-        Abbrechen
+        Projekt löschen
       </button>
-      <input
-        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60 ml-4"
-        form="edit-project-form"
-        type="submit"
-        value="Speichern"
-        variant="primary"
-      />
+      <div>
+        <button
+          className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+          onClick={[Function]}
+          type="button"
+        >
+          Abbrechen
+        </button>
+        <input
+          className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60 ml-4"
+          form="edit-project-form"
+          type="submit"
+          value="Speichern"
+          variant="primary"
+        />
+      </div>
     </div>
-  </footer>,
-]
+  </footer>
+</div>
 `;
 
 exports[`Storyshots Forms/EditProjectForm Without Default Values 1`] = `
-Array [
+<div>
   <h2
     className="text-3xl text-blue-500 font-bold"
   >
     Projekt bearbeiten
-  </h2>,
+  </h2>
   <form
     className="mt-4"
     id="edit-project-form"
@@ -174,15 +181,15 @@ Array [
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
-        htmlFor="title"
+        htmlFor="name"
       >
         Titel
          
       </label>
       <input
         className=" mb-2"
-        id="title"
-        name="title"
+        id="name"
+        name="name"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Wie soll dein Projekt heißen?"
@@ -194,14 +201,14 @@ Array [
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
-        htmlFor="category"
+        htmlFor="categoryId"
       >
         Kategorie
       </label>
       <select
         className="mb-2 text-gray-500 "
-        id="category"
-        name="category"
+        id="categoryId"
+        name="categoryId"
         onBlur={[Function]}
         onChange={[Function]}
         required={true}
@@ -212,17 +219,17 @@ Array [
           Bitte wähle eine Option
         </option>
         <option
-          value="some value A"
+          value="1"
         >
           some name A
         </option>
         <option
-          value="some value B"
+          value="2"
         >
           some name B
         </option>
         <option
-          value="some value C"
+          value="3"
         >
           some name C
         </option>
@@ -276,34 +283,41 @@ Array [
       />
     </div>
     <button
-      className="mt-6 text-blue-500 underline"
+      className="mt-6 text-gray-400 underline cursor-not-allowed"
+      disabled={true}
     >
-      Token neu generieren (placeholder)
+      Token neu generieren (derzeit nicht verfügbar)
     </button>
-  </form>,
+  </form>
   <footer
-    className="mt-12 flex place-content-between"
+    className="mt-24"
   >
-    <button
-      className="text-red-500"
+    <div
+      className="flex place-content-between"
     >
-      Projekt löschen
-    </button>
-    <div>
       <button
-        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
-        type="button"
+        className="text-red-500 focus-offset"
+        onClick={[Function]}
       >
-        Abbrechen
+        Projekt löschen
       </button>
-      <input
-        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60 ml-4"
-        form="edit-project-form"
-        type="submit"
-        value="Speichern"
-        variant="primary"
-      />
+      <div>
+        <button
+          className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+          onClick={[Function]}
+          type="button"
+        >
+          Abbrechen
+        </button>
+        <input
+          className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60 ml-4"
+          form="edit-project-form"
+          type="submit"
+          value="Speichern"
+          variant="primary"
+        />
+      </div>
     </div>
-  </footer>,
-]
+  </footer>
+</div>
 `;
