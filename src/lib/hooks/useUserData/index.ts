@@ -126,7 +126,9 @@ const deleteDevice = async (
   if (error) throw error;
 };
 
-const addProject = async (project: Omit<ProjectsType, "id" | "createdAt">): Promise<void> => {
+const addProject = async (
+  project: Omit<ProjectsType, "id" | "createdAt">
+): Promise<void> => {
   if (!project.userId) throw new Error("Not authenticated");
 
   const { error } = await supabase
@@ -215,7 +217,9 @@ export const useUserData = (): {
   addDevice: (device: Omit<DevicesType, "id">) => Promise<void>;
   updateDevice: (device: Omit<DevicesType, "projectId">) => Promise<void>;
   deleteDevice: (id: number) => Promise<void>;
-  addProject: (project: Omit<ProjectsType, "id" | "createdAt">) => Promise<void>;
+  addProject: (
+    project: Omit<ProjectsType, "id" | "createdAt">
+  ) => Promise<void>;
   updateProject: (project: Omit<ProjectsType, "createdAt">) => Promise<void>;
   deleteProject: (id: number) => Promise<void>;
   updateName: (name: string) => Promise<void>;
