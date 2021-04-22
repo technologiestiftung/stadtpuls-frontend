@@ -40,11 +40,10 @@ export const SensorsListWithData: FC<SensorsListWithDataPropType> = ({
       onChange={data =>
         updateDevice({
           ...data,
-          projectId,
           id: parseInt(`${data.id}`, 10),
         })
       }
-      onAdd={data => addDevice({ ...data, projectId }, projectId)}
+      onAdd={data => addDevice({ ...data, projectId })}
       onDelete={id => deleteDevice(parseInt(`${id}`, 10))}
     />
   );
