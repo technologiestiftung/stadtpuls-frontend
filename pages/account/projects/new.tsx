@@ -84,7 +84,6 @@ const AccountProjectNewPage: FC = () => {
           <ProjectCreatedInfo
             projectId={newProjectId}
             projectTitle={newProjectName}
-            token={"123456789"}
           >
             <p>
               Das sind deine nächsten Schritte. Das sind deine nächsten
