@@ -48,9 +48,7 @@ const AccountProjectNewPage: FC = () => {
   };
 
   const handleSubmit = async (data: ProjectsType): Promise<void> => {
-    const res = await addProject({
-      ...data,
-    });
+    const res = await addProject(data);
     if (res && Array.isArray(res)) {
       const newProjectId = res[0].id;
       const newProjectName = res[0].name;

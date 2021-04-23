@@ -25,16 +25,6 @@ describe("ProjectCreatedInfo component", () => {
     expect(description).toBeInTheDocument();
   });
 
-  /* it("should render the token", () => {
-    render(
-      <ProjectCreatedInfo projectId={1} projectTitle={"Some title"}>
-        <p>next steps description</p>
-      </ProjectCreatedInfo>
-    );
-    const token = screen.getByText("12345");
-    expect(token).toBeInTheDocument();
-  }); */
-
   it("should render links to the next steps", () => {
     render(
       <ProjectCreatedInfo projectId={1} projectTitle={"Some title"}>
