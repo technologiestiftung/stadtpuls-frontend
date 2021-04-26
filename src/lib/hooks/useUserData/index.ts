@@ -128,14 +128,15 @@ const deleteDevice = async (
 
 const addProject = async (
   project: Omit<ProjectsType, "id" | "createdAt">
-): Promise<void> => {
+): Promise<ProjectsType[] | null> => {
   if (!project.userId) throw new Error("Not authenticated");
 
-  const { error } = await supabase
+  const { error, data } = await supabase
     .from<ProjectsType>("projects")
-    .insert([{ ...project, id: undefined }]);
+    .insert([{ ...project }]);
 
   if (error) throw error;
+  return data;
 };
 
 const updateProject = async ({
@@ -206,7 +207,7 @@ export const useUserData = (): {
   deleteDevice: (id: number) => Promise<void>;
   addProject: (
     project: Omit<ProjectsType, "id" | "createdAt">
-  ) => Promise<void>;
+  ) => Promise<ProjectsType[] | null | void>;
   updateProject: (project: Omit<ProjectsType, "createdAt">) => Promise<void>;
   deleteProject: (id: number) => Promise<void>;
   updateUser: (newName: string) => Promise<void>;
@@ -269,8 +270,11 @@ export const useUserData = (): {
       if (!projects.data || projects.error) return;
       setActionError(null);
       void mutate(projectsParams, [...projects.data, project], false);
-      await addProject({ ...project, userId }).catch(setActionError);
+      const newProjects = await addProject({ ...project, userId }).catch(
+        setActionError
+      );
       void mutate(projectsParams);
+      return newProjects;
     },
     updateProject: async project => {
       if (!projects.data || projects.error) return;

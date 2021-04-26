@@ -47,6 +47,7 @@ export const AuthProvider: FC = ({ children }) => {
     const { data: listener } = supabase.auth.onAuthStateChange(
       (_event, session) => {
         setUser(session?.user ?? null);
+        setAccessToken(session?.access_token ?? null);
         setLoading(false);
       }
     );

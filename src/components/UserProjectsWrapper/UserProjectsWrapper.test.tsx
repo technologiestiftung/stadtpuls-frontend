@@ -47,4 +47,26 @@ describe("UserProjectsWrapper component", () => {
     });
     expect(link).toBeInTheDocument();
   });
+
+  it("should render the project nav if projects are provided", () => {
+    render(
+      <UserProjectsWrapper projects={exampleProjects}>
+        <p>I could be a form or something else</p>
+      </UserProjectsWrapper>
+    );
+    const nav = screen.getByRole("navigation");
+    expect(nav).toBeInTheDocument();
+    const navItems = screen.getAllByRole("button", { name: /Project/i });
+    navItems.forEach(navItem => expect(navItem).toBeInTheDocument());
+  });
+
+  it("should not render the project nav if no projects are provided", () => {
+    render(
+      <UserProjectsWrapper projects={null}>
+        <p>I could be a form or something else</p>
+      </UserProjectsWrapper>
+    );
+    const nav = screen.queryByRole("navigation");
+    expect(nav).not.toBeInTheDocument();
+  });
 });

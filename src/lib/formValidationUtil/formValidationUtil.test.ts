@@ -5,7 +5,7 @@ import {
   requiredProjectTitleValidation,
   requiredProjectCategoryValidation,
   requiredProjectDescriptionValidation,
-  requiredProjectIntegrationValidation,
+  requiredProjectConnectypeValidation,
   requiredDeviceId,
 } from ".";
 
@@ -63,9 +63,9 @@ describe("requiredProjectDescriptionValidation validation", () => {
   });
 });
 
-describe("requiredProjectIntegrationValidation validation", () => {
+describe("requiredProjectConnectypeValidation validation", () => {
   it("should not be valid if empty", async () => {
-    const isValid = await requiredProjectIntegrationValidation.isValid("");
+    const isValid = await requiredProjectConnectypeValidation.isValid("");
     expect(isValid).toBe(false);
   });
 });

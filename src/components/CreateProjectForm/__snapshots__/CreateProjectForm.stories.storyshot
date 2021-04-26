@@ -18,15 +18,15 @@ exports[`Storyshots Forms/CreateProjectForm Default 1`] = `
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
-        htmlFor="title"
+        htmlFor="name"
       >
         Titel
          
       </label>
       <input
         className=" mb-2"
-        id="title"
-        name="title"
+        id="name"
+        name="name"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Wie soll dein Projekt heißen?"
@@ -39,14 +39,14 @@ exports[`Storyshots Forms/CreateProjectForm Default 1`] = `
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
-        htmlFor="category"
+        htmlFor="categoryId"
       >
         Kategorie
       </label>
       <select
         className="mb-2 text-gray-500 "
-        id="category"
-        name="category"
+        id="categoryId"
+        name="categoryId"
         onBlur={[Function]}
         onChange={[Function]}
         required={true}
@@ -128,14 +128,14 @@ exports[`Storyshots Forms/CreateProjectForm Default 1`] = `
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
-        htmlFor="integration"
+        htmlFor="connectype"
       >
         Integration
       </label>
       <select
         className="mb-2 text-gray-500 "
-        id="integration"
-        name="integration"
+        id="connectype"
+        name="connectype"
         onBlur={[Function]}
         onChange={[Function]}
         required={true}
