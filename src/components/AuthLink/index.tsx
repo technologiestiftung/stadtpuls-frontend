@@ -53,19 +53,19 @@ export const ColouredAuthLink: FC<{
 };
 
 export const AuthLink: FC = () => {
-  const { authenticatedUser, signOut } = useAuth();
-  const { projects } = useUserData();
+  const { signOut } = useAuth();
+  const { projects, user } = useUserData();
 
   const link = (
     <ColouredAuthLink
-      href={authenticatedUser ? undefined : "/signin"}
-      variant={authenticatedUser ? "primary" : "secondary"}
+      href={user ? undefined : "/signin"}
+      variant={user ? "primary" : "secondary"}
     >
-      {authenticatedUser ? authenticatedUser.email || "Profile" : "Anmeldung"}
+      {user ? user.name || "Profile" : "Anmeldung"}
     </ColouredAuthLink>
   );
 
-  return !authenticatedUser ? (
+  return !user ? (
     link
   ) : (
     <DropdownMenu

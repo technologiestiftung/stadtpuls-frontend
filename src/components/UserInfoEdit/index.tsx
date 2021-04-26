@@ -4,10 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, Controller } from "react-hook-form";
 import { Button, Submit } from "@components/Button";
 import { FormTextInput } from "@components/FormTextInput";
-import {
-  requiredUsernameValidation,
-  requiredEmailValidation,
-} from "@lib/formValidationUtil";
+import { requiredUsernameValidation } from "@lib/formValidationUtil";
 
 interface UserInfoData {
   username: string;
@@ -20,7 +17,6 @@ interface UserInfoEditProps extends UserInfoData {
 
 const formSchema = yup.object().shape({
   username: requiredUsernameValidation,
-  email: requiredEmailValidation,
 });
 
 export const UserInfoEdit: FC<UserInfoEditProps> = ({
@@ -52,6 +48,14 @@ export const UserInfoEdit: FC<UserInfoEditProps> = ({
         Profil bearbeiten
       </h1>
       <form id='user-info-form' onSubmit={onInternalSubmit}>
+        <FormTextInput
+          name='email'
+          value={email}
+          label='E-Mail'
+          placeholder='Deine E-Mail-Adresse...'
+          type='email'
+          disabled
+        />
         <Controller
           name='username'
           control={control}
@@ -64,21 +68,6 @@ export const UserInfoEdit: FC<UserInfoEditProps> = ({
               type='text'
               disabled={!edit}
               errors={formatError(errors.username?.message)}
-            />
-          )}
-        />
-        <Controller
-          name='email'
-          control={control}
-          defaultValue={email}
-          render={({ field }) => (
-            <FormTextInput
-              {...field}
-              label='E-Mail'
-              placeholder='Deine E-Mail-Adresse...'
-              type='email'
-              disabled={!edit}
-              errors={formatError(errors.email?.message)}
             />
           )}
         />

@@ -18,6 +18,26 @@ exports[`Storyshots Forms/UserInfoEdit Default User Info Edit 1`] = `
     >
       <label
         className="block mb-2 cursor-pointer transition hover:opacity-60"
+        htmlFor="email"
+      >
+        E-Mail
+         
+      </label>
+      <input
+        className=" mb-2"
+        disabled={true}
+        id="email"
+        name="email"
+        placeholder="Deine E-Mail-Adresse..."
+        type="email"
+        value="ffthornton5@yopmail.com"
+      />
+    </div>
+    <div
+      className="mb-2"
+    >
+      <label
+        className="block mb-2 cursor-pointer transition hover:opacity-60"
         htmlFor="username"
       >
         Nutzername
@@ -33,28 +53,6 @@ exports[`Storyshots Forms/UserInfoEdit Default User Info Edit 1`] = `
         placeholder="Dein Nutzername..."
         type="text"
         value="ffthornton"
-      />
-    </div>
-    <div
-      className="mb-2"
-    >
-      <label
-        className="block mb-2 cursor-pointer transition hover:opacity-60"
-        htmlFor="email"
-      >
-        E-Mail
-         
-      </label>
-      <input
-        className=" mb-2"
-        disabled={true}
-        id="email"
-        name="email"
-        onBlur={[Function]}
-        onChange={[Function]}
-        placeholder="Deine E-Mail-Adresse..."
-        type="email"
-        value="ffthornton5@yopmail.com"
       />
     </div>
     <div
