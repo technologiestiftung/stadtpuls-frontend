@@ -12,8 +12,8 @@ const Template: Story<ProjectCreatedInfoType> = args => (
 
 export const Default = Template.bind({});
 Default.args = {
+  projectId: 1,
   projectTitle: "I'm a user controlled project title",
-  token: "1234-example-token-5678",
   children: (
     <>
       <p>

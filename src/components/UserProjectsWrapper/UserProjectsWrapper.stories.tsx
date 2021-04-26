@@ -28,15 +28,27 @@ const Template: Story<UserProjectWrapperType> = args => (
   <UserProjectsWrapper {...args}>{args.children}</UserProjectsWrapper>
 );
 
-export const Default = Template.bind({});
-Default.parameters = {
+export const WithProjects = Template.bind({});
+WithProjects.parameters = {
   nextRouter: {
     query: {
       id: "1",
     },
   },
 };
-Default.args = {
+WithProjects.args = {
   projects: exampleProjects,
+  children: <h1>{"Insert here: the main content"}</h1>,
+};
+
+export const WithoutProjects = Template.bind({});
+WithoutProjects.parameters = {
+  nextRouter: {
+    query: {
+      id: "1",
+    },
+  },
+};
+WithoutProjects.args = {
   children: <h1>{"Insert here: the main content"}</h1>,
 };

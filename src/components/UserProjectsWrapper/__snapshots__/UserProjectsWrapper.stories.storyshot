@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Layout/UserProjectsWrapper Default 1`] = `
+exports[`Storyshots Layout/UserProjectsWrapper With Projects 1`] = `
 <div
   className="max-w-screen-xl mx-auto p-6 block md:grid gap-4 grid-cols-12"
   style={
@@ -72,6 +72,47 @@ exports[`Storyshots Layout/UserProjectsWrapper Default 1`] = `
           </li>
         </ul>
       </nav>
+    </div>
+  </section>
+  <main
+    className="md:col-span-9 mt-6 md:mt-0 bg-white shadow-md"
+  >
+    <h1>
+      Insert here: the main content
+    </h1>
+  </main>
+</div>
+`;
+
+exports[`Storyshots Layout/UserProjectsWrapper Without Projects 1`] = `
+<div
+  className="max-w-screen-xl mx-auto p-6 block md:grid gap-4 grid-cols-12"
+  style={
+    Object {
+      "paddingTop": "5vmax",
+    }
+  }
+>
+  <section
+    className="col-span-3"
+  >
+    <h1
+      className="text-3xl text-blue-500 font-bold mt-6"
+    >
+      Meine Projekte
+    </h1>
+    <div
+      className="mt-8"
+    >
+      <a
+        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60"
+        href="/account/projects/new"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        variant="primary"
+      >
+        Neues Projekt
+      </a>
     </div>
   </section>
   <main
