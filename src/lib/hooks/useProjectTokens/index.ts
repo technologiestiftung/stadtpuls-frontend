@@ -1,4 +1,5 @@
 import { useAuth } from "@auth/Auth";
+import { supabase } from "@auth/supabase";
 import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
 import { useCallback } from "react";
 import useSWR, { mutate } from "swr";
@@ -29,12 +30,14 @@ type GetProjectTokensSignature = (
 
 type CreateProjectTokenSignature = (
   params: CreateTokenPayload & {
+    userId: string;
     accessToken: AccessTokenType;
   }
 ) => Promise<string>;
 
 const createProjectToken: CreateProjectTokenSignature = async ({
   accessToken,
+  userId,
   ...payload
 }) => {
   const myHeaders = new Headers();
@@ -47,6 +50,17 @@ const createProjectToken: CreateProjectTokenSignature = async ({
     redirect: "follow" as const,
     body: JSON.stringify(payload),
   };
+
+  const { error: deletionError } = await supabase
+    .from<{
+      projectId: typeof payload.projectId;
+      userId: typeof userId;
+    }>("authtokens")
+    .delete()
+    .eq("userId", userId)
+    .eq("projectId", payload.projectId);
+
+  if (deletionError) throw deletionError;
 
   const rawToken = await fetch(createTokenApiUrl(), requestOptions);
   const stringToken = await rawToken.text();
@@ -97,7 +111,7 @@ interface ProjectTokensHookReturnType {
 export const useProjectTokens = (
   projectId: number
 ): ProjectTokensHookReturnType => {
-  const { accessToken } = useAuth();
+  const { accessToken, authenticatedUser } = useAuth();
   const tokensParams = [`use-tokens-${projectId}`, accessToken];
   const { data: tokens, error } = useSWR<TokenType[] | null, Error>(
     tokensParams,
@@ -106,17 +120,18 @@ export const useProjectTokens = (
 
   const createToken = useCallback(
     async (description: string) => {
-      if (!accessToken)
+      if (!accessToken || !authenticatedUser?.id)
         throw new Error("Invalid accessToken while creating a token");
       const token = await createProjectToken({
         projectId: String(projectId),
+        userId: authenticatedUser?.id,
         description,
         accessToken,
       });
       await mutate([`use-tokens-${projectId}`, accessToken]);
       return token;
     },
-    [accessToken, projectId]
+    [accessToken, projectId, authenticatedUser?.id]
   );
 
   return {

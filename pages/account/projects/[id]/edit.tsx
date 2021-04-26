@@ -1,10 +1,8 @@
 import { useAuth } from "@auth/Auth";
-import { AnchorButton } from "@components/Button";
 import { NoAccess } from "@components/PageError/NoAccess";
 import { PleaseLogin } from "@components/PageError/PleaseLogin";
 import { InvalidPageId } from "@components/PageError/InvalidPageId";
 import { ServerError } from "@components/PageError/ServerError";
-import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { UserProjectsWrapper } from "@components/UserProjectsWrapper";
 import { Button } from "@components/Button";
 import { EditProjectForm } from "@components/EditProjectForm";
@@ -13,6 +11,8 @@ import { useUserData } from "@lib/hooks/useUserData";
 import { useRouter } from "next/router";
 import { FC, useState } from "react";
 import { ProjectsType } from "@common/types/supabase";
+import { ProjectNotFound } from "@components/PageError/ProjectNotFound";
+import { SmallModalOverlay } from "@components/SmallModalOverlay";
 
 const AccountProjectEditPage: FC = () => {
   const router = useRouter();
@@ -73,22 +73,7 @@ const AccountProjectEditPage: FC = () => {
     void router.push(exitRoute);
   };
 
-  if (!project) {
-    return (
-      <SmallModalOverlay
-        title='Project nicht gefunden'
-        footerContent={
-          <div className='block w-full text-right'>
-            <AnchorButton href='/account/profile'>
-              Zu meinem profil
-            </AnchorButton>
-          </div>
-        }
-      >
-        {`Sie haben kein Projekt mit der ID "${projectId}".`}
-      </SmallModalOverlay>
-    );
-  }
+  if (!project) return <ProjectNotFound projectId={projectId} />;
 
   return (
     <>
