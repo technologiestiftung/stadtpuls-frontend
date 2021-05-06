@@ -16,7 +16,7 @@ import { SmallModalOverlay } from "@components/SmallModalOverlay";
 
 const AccountProjectEditPage: FC = () => {
   const router = useRouter();
-  const projectId = router.query.id;
+  const { id: editingProjectId } = router.query;
   const { authenticatedUser, isLoadingAuth, error: authError } = useAuth();
   const { projects, updateProject, deleteProject, error } = useUserData();
   const {
@@ -29,11 +29,11 @@ const AccountProjectEditPage: FC = () => {
 
   if (isLoadingAuth || (!projects && !error)) return null;
 
-  if (!projectId || Array.isArray(projectId))
+  if (!editingProjectId || Array.isArray(editingProjectId))
     return (
       <InvalidPageId
         pageType='Projekt'
-        id={projectId ? projectId.toString() : projectId}
+        id={editingProjectId ? editingProjectId.toString() : editingProjectId}
       />
     );
   if (!authenticatedUser) return <PleaseLogin />;
@@ -41,8 +41,8 @@ const AccountProjectEditPage: FC = () => {
   if (authError) return <ServerError error={authError} />;
   if (!projects || projects.length === 0) return <NoAccess />;
 
-  const projectIdInt = parseInt(projectId, 10);
-  const project = projects.find(({ id }) => id === projectIdInt);
+  const editingProjectIdInt = parseInt(editingProjectId, 10);
+  const project = projects.find(({ id }) => id === editingProjectIdInt);
   const projectsForSidebar = projects.map(({ id, name }) => ({
     projectId: `${id}`,
     name,
@@ -60,20 +60,23 @@ const AccountProjectEditPage: FC = () => {
       ...project,
       ...data,
     });
-    void router.push(`/account/projects/${projectId}`);
+    void router.push(`/account/projects/${editingProjectId}`);
   };
 
   const handleDelete = (): void => {
+    const remainingProjects = projectsForSidebar.filter(
+      project => project.projectId !== editingProjectId
+    );
     const exitRoute =
       projectsForSidebar.length !== 0
-        ? `/account/projects/${projectsForSidebar[0].projectId}`
+        ? `/account/projects/${remainingProjects[0].projectId}`
         : "/account/profile";
 
-    void deleteProject(parseInt(`${projectId}`, 10));
+    void deleteProject(parseInt(`${editingProjectId}`, 10));
     void router.push(exitRoute);
   };
 
-  if (!project) return <ProjectNotFound projectId={projectId} />;
+  if (!project) return <ProjectNotFound projectId={editingProjectId} />;
 
   return (
     <>
@@ -88,7 +91,9 @@ const AccountProjectEditPage: FC = () => {
                 };
               })}
               defaultValues={currentProjectValues}
-              onCancel={() => router.push(`/account/projects/${projectId}`)}
+              onCancel={() =>
+                router.push(`/account/projects/${editingProjectId}`)
+              }
               onDelete={() => setDeleteIsInitiated(true)}
               onSubmit={handleSubmit}
             />
