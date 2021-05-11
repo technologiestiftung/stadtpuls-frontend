@@ -26,7 +26,6 @@ export const LinePath: FC<LineGraphType> = ({ width, height, data }) => {
     <Path<DateValueType>
       curve={curveLinear}
       data={data}
-      // TODO: [DATAHUB-36] Type this function
       x={d => xScale(getX(d))}
       y={d => yScale(getY(d))}
       sx={{
