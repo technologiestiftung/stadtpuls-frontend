@@ -27,7 +27,7 @@ WithoutFooterContent.args = {
   title: "Gehe zu deinen E-Mails",
   children: (
     <p>
-      Wir haben dir eine E-Mail mir einem Anmeldungs-Link geschickt. Klicke den
+      Wir haben dir eine E-Mail mit einem Anmeldungs-Link geschickt. Klicke den
       Link an, um dich einzuloggen.
     </p>
   ),

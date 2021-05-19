@@ -16,13 +16,13 @@ const MagicLinkConfirmationModal: FC<{
       </div>
     }
   >
-    Wir haben dir eine E-Mail mir einem Anmeldungs-Link geschickt. Klicke den
+    Wir haben dir eine E-Mail mit einem Anmeldungs-Link geschickt. Klicke den
     Link an, um dich einzuloggen.
   </SmallModal>
 );
 
 const SigningInState: FC = () => (
-  <SmallModal title='Login'>Sie werden eingeloggt</SmallModal>
+  <SmallModal title='Login'>Du wirst eingeloggt</SmallModal>
 );
 
 const SigninPage: FC = () => {

@@ -16,7 +16,7 @@ const MagicLinkConfirmationModal: FC<{
       </div>
     }
   >
-    Wir haben dir eine E-Mail mir einem Registrierungs-Link geschickt. Klicke
+    Wir haben dir eine E-Mail mit einem Registrierungs-Link geschickt. Klicke
     den Link an, um deine E-Mail Adresse zu bestätigen.
   </SmallModal>
 );
