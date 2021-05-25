@@ -4,7 +4,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, Controller } from "react-hook-form";
 import { Button, Submit } from "@components/Button";
 import { FormTextInput } from "@components/FormTextInput";
-import { requiredUsernameValidation } from "@lib/formValidationUtil";
+import {
+  requiredUsernameValidation,
+  requiredEmailValidation,
+} from "@lib/formValidationUtil";
 
 interface UserInfoData {
   username: string;
@@ -16,6 +19,7 @@ interface UserInfoEditProps extends UserInfoData {
 }
 
 const formSchema = yup.object().shape({
+  email: requiredEmailValidation,
   username: requiredUsernameValidation,
 });
 
@@ -29,6 +33,7 @@ export const UserInfoEdit: FC<UserInfoEditProps> = ({
   const {
     control,
     handleSubmit,
+    reset: resetForm,
     formState: { errors },
   } = useForm<UserInfoData>({
     resolver: yupResolver(formSchema),
@@ -48,13 +53,20 @@ export const UserInfoEdit: FC<UserInfoEditProps> = ({
         Profil bearbeiten
       </h1>
       <form id='user-info-form' onSubmit={onInternalSubmit}>
-        <FormTextInput
+        <Controller
           name='email'
-          value={email}
-          label='E-Mail'
-          placeholder='Deine E-Mail-Adresse...'
-          type='email'
-          disabled
+          control={control}
+          defaultValue={email}
+          render={({ field }) => (
+            <FormTextInput
+              {...field}
+              label='E-Mail'
+              placeholder='Deine E-Mail-Adresse...'
+              type='email'
+              disabled={!edit}
+              errors={formatError(errors.email?.message)}
+            />
+          )}
         />
         <Controller
           name='username'
@@ -74,7 +86,13 @@ export const UserInfoEdit: FC<UserInfoEditProps> = ({
         <div className='flex justify-end mt-8'>
           {edit ? (
             <>
-              <Button onClick={() => setEdit(false)} className='mr-4'>
+              <Button
+                onClick={() => {
+                  resetForm({ email, username });
+                  setEdit(false);
+                }}
+                className='mr-4'
+              >
                 Abbrechen
               </Button>
               <Submit variant='primary'>Speichern</Submit>

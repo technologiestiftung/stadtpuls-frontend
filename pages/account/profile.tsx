@@ -22,6 +22,7 @@ const UserPage: FC = () => {
     isLoading,
     error: userDataError,
     updateUser,
+    updateEmail,
     deleteUser,
   } = useUserData();
 
@@ -55,7 +56,8 @@ const UserPage: FC = () => {
         <UserInfoEdit
           username={name || ""}
           email={email || ""}
-          onSubmit={({ username }) => {
+          onSubmit={({ email, username }) => {
+            void updateEmail(email);
             void updateUser(username);
           }}
         />

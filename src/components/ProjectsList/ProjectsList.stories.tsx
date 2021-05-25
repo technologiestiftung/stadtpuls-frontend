@@ -6,26 +6,26 @@ import { FC } from "react";
 
 import theme from "../../style/theme";
 import store from "../../state/store";
-import { Overview } from ".";
+import { ProjectsList } from ".";
 import { usePublicProjects } from "@lib/hooks/usePublicProjects";
 
 export default {
-  title: "Pages/Overview",
-  component: Overview,
+  title: "Pages/ProjectsList",
+  component: ProjectsList,
   decorators: [withNextRouter],
 } as Meta;
 
-const OverviewPage: FC = () => {
+const ProjectsListPage: FC = () => {
   const { data, error } = usePublicProjects();
 
   if (!data || error) return null;
-  else return <Overview {...data} />;
+  else return <ProjectsList {...data} />;
 };
 
 const Template: Story = () => (
   <StoreProvider store={store}>
     <ThemeProvider theme={theme}>
-      <OverviewPage />
+      <ProjectsListPage />
     </ThemeProvider>
   </StoreProvider>
 );
