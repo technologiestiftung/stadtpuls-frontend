@@ -1,7 +1,12 @@
+import { LandingHero } from "@components/LandingHero";
 import { FC } from "react";
 
 const LandingPage: FC = () => {
-  return null;
+  return (
+    <>
+      <LandingHero />
+    </>
+  );
 };
 
 export default LandingPage;
