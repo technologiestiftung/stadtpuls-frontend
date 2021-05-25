@@ -319,10 +319,12 @@ export const useUserData = (): {
       void mutate(userParams);
     },
     updateEmail: async email => {
-      // if (user.data?.name === name) return;
-      // void mutate(userParams, { ...user, name }, false);
+      console.log(authenticatedUser?.email);
+
+      if (authenticatedUser?.email === email) return;
+      void mutate(userParams, { ...authenticatedUser, email }, false);
       await updateEmail(email, userId).catch(setActionError);
-      // void mutate(userParams);
+      void mutate(userParams);
     },
     deleteUser: async () => {
       void mutate(userParams, null, false);
