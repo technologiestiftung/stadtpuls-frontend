@@ -190,9 +190,11 @@ export const SensorsListEditRow: FC<SensorsListEditRowPropType> = ({
       <Button2EditField>
         <span className='h-10 flex items-center'>
           <ButtonTextLink
+            disabled={Boolean(deviceIdError || deviceNameError)}
             onClick={evt => {
               evt.preventDefault();
               evt.stopPropagation();
+              if (deviceIdError || deviceNameError) return;
               onSubmit();
             }}
           >
