@@ -5,9 +5,10 @@ import theme from "../../style/theme";
 import store from "../../state/store";
 import { Overview } from ".";
 import { getPublicProjects } from "@lib/hooks/usePublicProjects";
+import { publicProjectsData } from "@mocks/supabaseData";
 
 describe("Overview component", () => {
-  it("should render the title, subtitle and text", async (): Promise<void> => {
+  it("should render the fisrt project", async (): Promise<void> => {
     const data = await getPublicProjects(0, 50);
     if (data)
       render(
@@ -18,13 +19,7 @@ describe("Overview component", () => {
         </StoreProvider>
       );
 
-    const h1 = document.querySelector("h1");
-    const h2 = document.querySelector("h2");
-    const text = screen.getByText(
-      /Das Berlin IoT Hub ist eine prototypische Offene Datenplattform/gi
-    );
+    const h1 = screen.getByText(publicProjectsData[0].name);
     expect(h1).toBeInTheDocument();
-    expect(h2).toBeInTheDocument();
-    expect(text).toBeInTheDocument();
   });
 });
