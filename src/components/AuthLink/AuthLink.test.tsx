@@ -69,7 +69,7 @@ describe("component AuthLink while logged in", () => {
         <AuthLink />
       </AuthProvider>
     );
-    const username = screen.getByText(/Profile/gi);
+    const username = screen.getByText(/Profil/gi);
 
     await waitFor(() => expect(username).toBeInTheDocument());
   });

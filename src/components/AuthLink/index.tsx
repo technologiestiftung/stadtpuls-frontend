@@ -61,7 +61,7 @@ export const AuthLink: FC = () => {
       href={user ? undefined : "/signin"}
       variant={user ? "primary" : "secondary"}
     >
-      {user ? user.name || "Profile" : "Anmeldung"}
+      {user ? user.name || "Profil" : "Anmeldung"}
     </ColouredAuthLink>
   );
 

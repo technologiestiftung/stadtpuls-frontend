@@ -3,16 +3,16 @@ import { StoreProvider } from "easy-peasy";
 import { ThemeProvider } from "theme-ui";
 
 import store from "@state/store";
-import theme from "../style/theme";
+import theme from "../../src/style/theme";
 
-import Signup from "../../pages/signup";
+import UserPage from "../../pages/account/profile";
 
-describe("signup page", () => {
+describe("userprofile page", () => {
   it("should render without failing", () => {
     render(
       <StoreProvider store={store}>
         <ThemeProvider theme={theme}>
-          <Signup />
+          <UserPage />
         </ThemeProvider>
       </StoreProvider>
     );

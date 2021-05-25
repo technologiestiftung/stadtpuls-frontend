@@ -64,8 +64,8 @@ const supabaseHandlers = [
     const query = req.url.searchParams;
 
     const select = query.get("select");
-    const offset = query.get("offset");
-    const limit = query.get("limit");
+    // const offset = query.get("offset");
+    // const limit = query.get("limit");
     const devicesLimit = query.get("devices.limit");
     const recordsLimit = query.get("devices.records.limit");
     const recordsOrder = query.get("devices.records.order");
@@ -74,8 +74,8 @@ const supabaseHandlers = [
       recordsLimit == "50" &&
       recordsOrder == "recordedAt.desc.nullslast" &&
       devicesLimit == "1" &&
-      limit == "10" &&
-      offset == "0" &&
+      // limit == "10" &&
+      // offset == "0" &&
       select ==
         "id,name,description,location,devices(records(recordedAt,measurements))"
     )
