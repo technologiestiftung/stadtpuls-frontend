@@ -9,7 +9,7 @@ import { publicProjectsData } from "@mocks/supabaseData";
 
 describe("ProjectsList component", () => {
   it("should render the fisrt project", async (): Promise<void> => {
-    const data = await getPublicProjects(0, 50);
+    const data = await getPublicProjects(50);
     if (data)
       render(
         <StoreProvider store={store}>
