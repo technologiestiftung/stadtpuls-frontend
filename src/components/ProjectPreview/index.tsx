@@ -54,24 +54,20 @@ export const ProjectPreview: FC<PublicProject> = ({
               <p className='text-base'>{description}</p>
             </div>
           </div>
-          {records &&
-            records.map((record, idx) => (
-              <svg
-                key={`record-${idx}`}
-                viewBox={`0 0 ${svgWrapperWidth} 80`}
-                xmlns='http://www.w3.org/2000/svg'
-                width={svgWrapperWidth}
-                height={80}
-                className='overflow-visible absolute bottom-0 left-0 right-0'
-              >
-                <LinePath
-                  width={svgWrapperWidth}
-                  height={80}
-                  //FIXME: Figure out how we want to handle multiple data points
-                  data={record}
-                />
-              </svg>
-            ))}
+          <svg
+            viewBox={`0 0 ${svgWrapperWidth} 80`}
+            xmlns='http://www.w3.org/2000/svg'
+            width={svgWrapperWidth}
+            height={80}
+            className='overflow-visible absolute bottom-0 left-0 right-0'
+          >
+            <LinePath
+              width={svgWrapperWidth}
+              height={80}
+              //FIXME: Figure out how we want to handle multiple data points
+              data={(records && records[0]) || []}
+            />
+          </svg>
         </a>
       </Link>
     </div>
