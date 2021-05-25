@@ -7,7 +7,7 @@ import theme from "../../src/style/theme";
 
 import HomePage from "../../pages";
 
-describe("page home", () => {
+describe("home page", () => {
   it("should render without failing", () => {
     render(
       <StoreProvider store={store}>

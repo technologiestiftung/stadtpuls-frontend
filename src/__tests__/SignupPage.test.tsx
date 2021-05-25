@@ -7,7 +7,7 @@ import theme from "../style/theme";
 
 import Signup from "../../pages/signup";
 
-describe("page home", () => {
+describe("signup page", () => {
   it("should render without failing", () => {
     render(
       <StoreProvider store={store}>
