@@ -43,8 +43,105 @@ describe("component UserInfoEdit", () => {
     fireEvent.click(submitButton);
     await waitFor(() =>
       expect(mySubmit).toHaveBeenCalledWith({
+        email: testEmail,
         username: "janedoe",
       })
     );
+  });
+  it("should throw an error and not submit with an invalid email", async (): Promise<void> => {
+    const mySubmit = jest.fn();
+    render(
+      <UserInfoEdit
+        email={testEmail}
+        username={testUsername}
+        onSubmit={mySubmit}
+      />
+    );
+
+    const editButton = screen.getByText("Ändern");
+    expect(editButton).toBeInTheDocument();
+    fireEvent.click(editButton);
+
+    const submitButton = screen.getByDisplayValue("Speichern");
+    const emailInput = screen.getByDisplayValue(testEmail);
+
+    fireEvent.change(emailInput, {
+      target: {
+        value: "invalid_email",
+      },
+    });
+
+    fireEvent.click(submitButton);
+    await waitFor(() => {
+      const emailError = screen.getByText(
+        "Die angegebene E-Mail Adresse ist ungültig"
+      );
+      expect(emailError).toBeInTheDocument();
+      expect(mySubmit).not.toHaveBeenCalled();
+    });
+  });
+  it("should throw an error and not submit with an invalid username", async (): Promise<void> => {
+    const mySubmit = jest.fn();
+    render(
+      <UserInfoEdit
+        email={testEmail}
+        username={testUsername}
+        onSubmit={mySubmit}
+      />
+    );
+
+    const editButton = screen.getByText("Ändern");
+    expect(editButton).toBeInTheDocument();
+    fireEvent.click(editButton);
+
+    const submitButton = screen.getByDisplayValue("Speichern");
+    const usernameInput = screen.getByDisplayValue(testUsername);
+
+    fireEvent.change(usernameInput, {
+      target: {
+        value: "poggers!1!",
+      },
+    });
+
+    fireEvent.click(submitButton);
+    await waitFor(() => {
+      const usernameError = screen.getByText(
+        "Nutzernamen dürfen nur Buchstaben, Zahlen und _ enthalten"
+      );
+      expect(usernameError).toBeInTheDocument();
+      expect(mySubmit).not.toHaveBeenCalled();
+    });
+  });
+  it("should reset the form when changes are canceled", async (): Promise<void> => {
+    render(<UserInfoEdit email={testEmail} username={testUsername} />);
+
+    const editButton = screen.getByText("Ändern");
+    expect(editButton).toBeInTheDocument();
+    fireEvent.click(editButton);
+
+    const cancelButton = screen.getByText("Abbrechen");
+
+    const usernameInput = screen.getByDisplayValue(testUsername);
+    const emailInput = screen.getByDisplayValue(testEmail);
+
+    fireEvent.change(usernameInput, {
+      target: {
+        value: "poggers!1!",
+      },
+    });
+    fireEvent.change(emailInput, {
+      target: {
+        value: "invalid_email",
+      },
+    });
+
+    fireEvent.click(cancelButton);
+
+    await waitFor(() => {
+      // const usernameInput = screen.getByDisplayValue(testUsername);
+      // const emailInput = screen.getByDisplayValue(testEmail);
+      // expect(usernameInput).toBeInTheDocument();
+      // expect(emailInput).toBeInTheDocument();
+    });
   });
 });

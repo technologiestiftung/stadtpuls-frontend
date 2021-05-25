@@ -188,6 +188,19 @@ const updateUser = async (
   if (nameReset.error) throw nameReset.error;
 };
 
+const updateEmail = async (
+  newEmail: string,
+  userId: string | undefined
+): Promise<void> => {
+  if (!userId) throw new Error("Not authenticated");
+
+  const { error } = await supabase.rpc("update_email", {
+    new_email: newEmail,
+  });
+
+  if (error) throw error;
+};
+
 const deleteUser = async (userId: string | undefined): Promise<void> => {
   if (!userId) throw new Error("Not authenticated");
 
@@ -211,6 +224,7 @@ export const useUserData = (): {
   updateProject: (project: Omit<ProjectsType, "createdAt">) => Promise<void>;
   deleteProject: (id: number) => Promise<void>;
   updateUser: (newName: string) => Promise<void>;
+  updateEmail: (newEmail: string) => Promise<void>;
   deleteUser: () => Promise<void>;
 } => {
   const [actionError, setActionError] = useState<Error | null>(null);
@@ -303,6 +317,12 @@ export const useUserData = (): {
       void mutate(userParams, { ...user, name }, false);
       await updateUser(name, userId).catch(setActionError);
       void mutate(userParams);
+    },
+    updateEmail: async email => {
+      // if (user.data?.name === name) return;
+      // void mutate(userParams, { ...user, name }, false);
+      await updateEmail(email, userId).catch(setActionError);
+      // void mutate(userParams);
     },
     deleteUser: async () => {
       void mutate(userParams, null, false);
