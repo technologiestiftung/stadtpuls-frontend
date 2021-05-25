@@ -3,18 +3,18 @@ import { ThemeProvider } from "theme-ui";
 import { StoreProvider } from "easy-peasy";
 import theme from "../../style/theme";
 import store from "../../state/store";
-import { Overview } from ".";
+import { ProjectsList } from ".";
 import { getPublicProjects } from "@lib/hooks/usePublicProjects";
 import { publicProjectsData } from "@mocks/supabaseData";
 
-describe("Overview component", () => {
+describe("ProjectsList component", () => {
   it("should render the fisrt project", async (): Promise<void> => {
     const data = await getPublicProjects(0, 50);
     if (data)
       render(
         <StoreProvider store={store}>
           <ThemeProvider theme={theme}>
-            <Overview {...data} />
+            <ProjectsList {...data} />
           </ThemeProvider>
         </StoreProvider>
       );
