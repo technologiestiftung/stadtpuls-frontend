@@ -299,8 +299,7 @@ export const useUserData = (): {
       void mutate(projectsParams);
     },
     updateUser: async name => {
-      if (!user.data?.name) return;
-      if (user.data.name === name) return;
+      if (user.data?.name === name) return;
       void mutate(userParams, { ...user, name }, false);
       await updateUser(name, userId).catch(setActionError);
       void mutate(userParams);
