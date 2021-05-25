@@ -138,10 +138,10 @@ describe("component UserInfoEdit", () => {
     fireEvent.click(cancelButton);
 
     await waitFor(() => {
-      // const usernameInput = screen.getByDisplayValue(testUsername);
-      // const emailInput = screen.getByDisplayValue(testEmail);
-      // expect(usernameInput).toBeInTheDocument();
-      // expect(emailInput).toBeInTheDocument();
+      const usernameInput = screen.getByDisplayValue(testUsername);
+      const emailInput = screen.getByDisplayValue(testEmail);
+      expect(usernameInput).toBeInTheDocument();
+      expect(emailInput).toBeInTheDocument();
     });
   });
 });
