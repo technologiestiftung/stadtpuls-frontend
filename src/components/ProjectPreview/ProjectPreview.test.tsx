@@ -8,7 +8,7 @@ import { getPublicProjects } from "@lib/hooks/usePublicProjects";
 
 describe("ProjectPreview component", () => {
   it("should render the title, subtitle and text", async (): Promise<void> => {
-    const data = await getPublicProjects(0, 50);
+    const data = await getPublicProjects(50);
     if (data)
       render(
         <StoreProvider store={store}>
