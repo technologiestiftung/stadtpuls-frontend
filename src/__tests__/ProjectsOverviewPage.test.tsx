@@ -7,7 +7,7 @@ import theme from "../style/theme";
 
 import ProjectsOverviewPage from "../../pages/projects";
 
-describe("page home", () => {
+describe("home page", () => {
   it("should render without failing", () => {
     render(
       <StoreProvider store={store}>

@@ -7,7 +7,7 @@ import theme from "../style/theme";
 
 import Signin from "../../pages/signin";
 
-describe("page home", () => {
+describe("signin page", () => {
   it("should render without failing", () => {
     render(
       <StoreProvider store={store}>
