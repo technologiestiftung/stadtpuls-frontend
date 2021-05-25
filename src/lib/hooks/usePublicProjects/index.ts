@@ -22,7 +22,7 @@ export interface PublicProjects {
 }
 
 //TODO: Find a better place to define page size for homepage
-const pageSize = 10;
+// const pageSize = 10;
 
 const parseDeviceRecords = (
   devices: DevicesType[] | undefined
@@ -48,7 +48,7 @@ const parseDeviceRecords = (
 };
 
 export const getPublicProjects = async (
-  page: number,
+  _page: number,
   recordsLimit: number
 ): Promise<PublicProjects | null> => {
   const { data, error, count } = await supabase
@@ -68,7 +68,7 @@ export const getPublicProjects = async (
     `,
       { count: "exact" }
     )
-    .range(page * pageSize, (page + 1) * pageSize - 1)
+    // .range(page * pageSize, (page + 1) * pageSize - 1)
     //FIXME: the typecasting
     .order("recordedAt" as keyof ProjectsType, {
       foreignTable: "devices.records",
