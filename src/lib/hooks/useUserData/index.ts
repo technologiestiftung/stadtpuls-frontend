@@ -319,8 +319,6 @@ export const useUserData = (): {
       void mutate(userParams);
     },
     updateEmail: async email => {
-      console.log(authenticatedUser?.email);
-
       if (authenticatedUser?.email === email) return;
       void mutate(userParams, { ...authenticatedUser, email }, false);
       await updateEmail(email, userId).catch(setActionError);
