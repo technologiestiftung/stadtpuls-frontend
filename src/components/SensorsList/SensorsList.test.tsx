@@ -327,4 +327,70 @@ describe("component SensorsList", () => {
       expect(screen.getByText(/Hello/gi)).toBeInTheDocument()
     );
   });
+  it("should not submit when the device Id field has an error", () => {
+    const CustomWrapper: FC = () => {
+      const sensor = {
+        id: 124142,
+        externalId: "",
+        name: "My sensor 1",
+        lastRecordedAt: null,
+      };
+
+      return <SensorsList {...defaults} sensors={[sensor]} />;
+    };
+    render(<CustomWrapper />);
+
+    const editButton1 = screen.getByText(/Bearbeiten/gi);
+    expect(editButton1).toBeInTheDocument();
+
+    fireEvent.click(editButton1);
+
+    const saveButton1 = screen.getByText(/Speichern/gi);
+    expect(saveButton1).toBeInTheDocument();
+
+    const errorMsg1 = screen.getByText(/Min. 3 Zeichen/gi);
+    expect(errorMsg1).toBeInTheDocument();
+
+    fireEvent.click(saveButton1);
+
+    // Nothing should have happend, things should be the same
+    const saveButton2 = screen.getByText(/Speichern/gi);
+    expect(saveButton2).toBeInTheDocument();
+
+    const errorMsg2 = screen.getByText(/Min. 3 Zeichen/gi);
+    expect(errorMsg2).toBeInTheDocument();
+  });
+  it("should not submit when the device Id field has an error", () => {
+    const CustomWrapper: FC = () => {
+      const sensor = {
+        id: 124142,
+        externalId: "my-sensor-1",
+        name: "",
+        lastRecordedAt: null,
+      };
+
+      return <SensorsList {...defaults} sensors={[sensor]} />;
+    };
+    render(<CustomWrapper />);
+
+    const editButton1 = screen.getByText(/Bearbeiten/gi);
+    expect(editButton1).toBeInTheDocument();
+
+    fireEvent.click(editButton1);
+
+    const saveButton1 = screen.getByText(/Speichern/gi);
+    expect(saveButton1).toBeInTheDocument();
+
+    const errorMsg1 = screen.getByText(/Min. 3 Zeichen/gi);
+    expect(errorMsg1).toBeInTheDocument();
+
+    fireEvent.click(saveButton1);
+
+    // Nothing should have happend, things should be the same
+    const saveButton2 = screen.getByText(/Speichern/gi);
+    expect(saveButton2).toBeInTheDocument();
+
+    const errorMsg2 = screen.getByText(/Min. 3 Zeichen/gi);
+    expect(errorMsg2).toBeInTheDocument();
+  });
 });
