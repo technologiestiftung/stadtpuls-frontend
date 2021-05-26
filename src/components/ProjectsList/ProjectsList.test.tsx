@@ -6,7 +6,6 @@ import store from "../../state/store";
 import { ProjectsList } from ".";
 import { getPublicProjects } from "@lib/hooks/usePublicProjects";
 import { publicProjectsData } from "@mocks/supabaseData";
-
 describe("ProjectsList component", () => {
   it("should render the fisrt project", async (): Promise<void> => {
     const data = await getPublicProjects(500);
