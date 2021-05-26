@@ -71,9 +71,9 @@ const supabaseHandlers = [
     const recordsOrder = query.get("devices.records.order");
     const userId = query.get("userId")?.slice(3);
     if (
-      recordsLimit == "50" &&
+      recordsLimit == "500" &&
       recordsOrder == "recordedAt.desc.nullslast" &&
-      devicesLimit == "1" &&
+      devicesLimit == "10" &&
       // limit == "10" &&
       // offset == "0" &&
       select ==

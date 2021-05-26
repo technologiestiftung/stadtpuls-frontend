@@ -65,7 +65,7 @@ export const ProjectPreview: FC<PublicProject> = ({
               width={svgWrapperWidth}
               height={80}
               //FIXME: Figure out how we want to handle multiple data points
-              data={(records && records[0]) || []}
+              data={records}
             />
           </svg>
         </a>

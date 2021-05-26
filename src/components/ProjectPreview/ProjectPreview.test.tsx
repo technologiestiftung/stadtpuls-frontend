@@ -8,7 +8,7 @@ import { getPublicProjects } from "@lib/hooks/usePublicProjects";
 
 describe("ProjectPreview component", () => {
   it("should render the title, subtitle and text", async (): Promise<void> => {
-    const data = await getPublicProjects(50);
+    const data = await getPublicProjects(500);
     if (data)
       render(
         <StoreProvider store={store}>
@@ -18,6 +18,7 @@ describe("ProjectPreview component", () => {
               name='Title'
               location='Berlin'
               description='Description'
+              records={[]}
             />
           </ThemeProvider>
         </StoreProvider>
