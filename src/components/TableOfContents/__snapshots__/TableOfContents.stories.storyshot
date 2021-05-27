@@ -15,7 +15,7 @@ Array [
         className="mb-2"
       >
         <button
-          className="text-left cursor-pointer text-gray-400 hover:text-blue-500 transition focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2 focus:outline-none"
+          className="text-left cursor-pointer hover:text-blue-500 transition focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2 focus:outline-none text-gray-400"
           onClick={[Function]}
         >
           Ingredients
@@ -25,7 +25,7 @@ Array [
         className="mb-2"
       >
         <button
-          className="text-left cursor-pointer text-gray-400 hover:text-blue-500 transition focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2 focus:outline-none"
+          className="text-left cursor-pointer hover:text-blue-500 transition focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2 focus:outline-none text-gray-400"
           onClick={[Function]}
         >
           Preparation
@@ -35,7 +35,7 @@ Array [
         className="mb-2"
       >
         <button
-          className="text-left cursor-pointer text-gray-400 hover:text-blue-500 transition focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2 focus:outline-none"
+          className="text-left cursor-pointer hover:text-blue-500 transition focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2 focus:outline-none text-gray-400"
           onClick={[Function]}
         >
           Serving
