@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI Elements/ActiveLink Default 1`] = `
+Array [
+  <p>
+    <a
+      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500 no-underline font-bold hover:opacity-100"
+      href="/a"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Active Link
+    </a>
+  </p>,
+  <p>
+    <a
+      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
+      href="/b"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Non active Link
+    </a>
+  </p>,
+]
+`;

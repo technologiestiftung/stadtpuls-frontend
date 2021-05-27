@@ -25,20 +25,20 @@ exports[`Storyshots UI Elements/DocsSidebar Default 1`] = `
             <a
               className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
               href="/docs/about"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
-              <a>
-                Über dieses Projekt
-              </a>
+              Über dieses Projekt
             </a>
           </li>
           <li>
             <a
               className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
               href="/docs/participate"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
-              <a>
-                Mitmachen
-              </a>
+              Mitmachen
             </a>
           </li>
         </ul>
@@ -54,10 +54,10 @@ exports[`Storyshots UI Elements/DocsSidebar Default 1`] = `
             <a
               className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
               href="/docs"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
-              <a>
-                Willkommen
-              </a>
+              Willkommen
             </a>
           </li>
         </ul>
