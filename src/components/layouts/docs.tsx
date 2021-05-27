@@ -45,7 +45,7 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
       />
       <div className='md:grid md:grid-cols-12'>
         <DocsSidebar isOpened={isOpened} />
-        <article className='col-span-9 lg:col-span-7'>
+        <article className='col-span-8 lg:col-span-7 xl:col-span-8'>
           <Head>
             <title>
               {frontMatter.metaTitle} | Berlin IoT Hub | Technologiestiftung

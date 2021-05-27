@@ -56,7 +56,7 @@ export const DocsSidebar: FC<DocsSidebarPropType> = ({ isOpened = true }) => (
   <aside
     className={[
       isOpened ? "" : "-translate-x-full",
-      "transform transition col-span-3 z-10",
+      "transform transition col-span-4 lg:col-span-3 xl:col-span-2 z-10",
       "md:block md:translate-x-0 md:col-span",
       "fixed md:relative w-full md:w-auto",
     ].join(" ")}
