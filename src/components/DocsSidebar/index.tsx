@@ -31,8 +31,8 @@ const docsPages: PageType[] = [
 
 const PagesGroup: FC<PagesGroupPropType> = ({ title, pages }) => (
   <>
-    <h4 className='font-bold text-xl mb-2'>{title}</h4>
-    <ul className='list-none mb-8'>
+    <h4 className='font-bold text-xl 2xl:text-2xl mb-2'>{title}</h4>
+    <ul className='list-none mb-8 2xl:text-lg'>
       {pages.map(page => (
         <li key={page.path}>
           <TextLink href={page.path}>

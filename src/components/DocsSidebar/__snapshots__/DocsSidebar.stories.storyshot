@@ -14,12 +14,12 @@ exports[`Storyshots UI Elements/DocsSidebar Default 1`] = `
         className="px-8 py-24 bg-white border-r w-full h-full"
       >
         <h4
-          className="font-bold text-xl mb-2"
+          className="font-bold text-xl 2xl:text-2xl mb-2"
         >
           Informationen
         </h4>
         <ul
-          className="list-none mb-8"
+          className="list-none mb-8 2xl:text-lg"
         >
           <li>
             <a
@@ -43,12 +43,12 @@ exports[`Storyshots UI Elements/DocsSidebar Default 1`] = `
           </li>
         </ul>
         <h4
-          className="font-bold text-xl mb-2"
+          className="font-bold text-xl 2xl:text-2xl mb-2"
         >
           Dokumentation
         </h4>
         <ul
-          className="list-none mb-8"
+          className="list-none mb-8 2xl:text-lg"
         >
           <li>
             <a
