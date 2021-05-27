@@ -62,7 +62,7 @@ export const DocsSidebar: FC<DocsSidebarPropType> = ({ isOpened = true }) => (
     ].join(" ")}
   >
     <div className='sticky w-full top-16 overflow-y-auto h-screen'>
-      <div className='px-8 py-24 bg-white border-r w-full h-full'>
+      <div className='px-8 py-8 bg-white border-r w-full h-full'>
         <PagesGroup title='Informationen' pages={infoPages} />
         <PagesGroup title='Dokumentation' pages={docsPages} />
       </div>

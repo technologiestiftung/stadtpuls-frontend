@@ -11,7 +11,7 @@ exports[`Storyshots UI Elements/DocsSidebar Default 1`] = `
       className="sticky w-full top-16 overflow-y-auto h-screen"
     >
       <div
-        className="px-8 py-24 bg-white border-r w-full h-full"
+        className="px-8 py-8 bg-white border-r w-full h-full"
       >
         <h4
           className="font-bold text-xl 2xl:text-2xl mb-2"
@@ -23,7 +23,7 @@ exports[`Storyshots UI Elements/DocsSidebar Default 1`] = `
         >
           <li>
             <a
-              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
               href="/docs/about"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -33,7 +33,7 @@ exports[`Storyshots UI Elements/DocsSidebar Default 1`] = `
           </li>
           <li>
             <a
-              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
               href="/docs/participate"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -52,7 +52,7 @@ exports[`Storyshots UI Elements/DocsSidebar Default 1`] = `
         >
           <li>
             <a
-              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
               href="/docs"
               onClick={[Function]}
               onMouseEnter={[Function]}
