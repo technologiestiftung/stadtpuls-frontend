@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI Elements/DocsSidebar Default 1`] = `
+<div
+  className="grid grid-cols-12 bg-gray-50"
+>
+  <aside
+    className="hidden sm:block col-span-3 relative"
+  >
+    <div
+      className="sticky w-full top-16 overflow-y-auto h-screen"
+    >
+      <div
+        className="px-8 py-24 bg-white border-r w-full h-full"
+      >
+        <h4
+          className="font-bold text-xl mb-2"
+        >
+          Informationen
+        </h4>
+        <ul
+          className="list-none mb-8"
+        >
+          <li>
+            <a
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
+              href="/docs/about"
+            >
+              <a>
+                Über dieses Projekt
+              </a>
+            </a>
+          </li>
+          <li>
+            <a
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
+              href="/docs/participate"
+            >
+              <a>
+                Mitmachen
+              </a>
+            </a>
+          </li>
+        </ul>
+        <h4
+          className="font-bold text-xl mb-2"
+        >
+          Dokumentation
+        </h4>
+        <ul
+          className="list-none mb-8"
+        >
+          <li>
+            <a
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500"
+              href="/docs"
+            >
+              <a>
+                Willkommen
+              </a>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+</div>
+`;

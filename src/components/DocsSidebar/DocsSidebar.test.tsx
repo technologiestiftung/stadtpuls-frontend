@@ -4,7 +4,7 @@ import { DocsSidebar } from ".";
 describe("DocsSidebar component", () => {
   it("should render some links", () => {
     render(<DocsSidebar />);
-    const link = screen.getByRole("link");
-    expect(link).toBeInTheDocument();
+    const links = screen.getAllByRole("link");
+    links.forEach(link => expect(link).toBeInTheDocument());
   });
 });
