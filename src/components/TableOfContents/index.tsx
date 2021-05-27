@@ -9,9 +9,11 @@ interface TableOfContentsPropType {
   links: TableOfContentsLinkType[];
 }
 
-const onLinkClick = (id: string): void => {
+const scrollToId = (id: string): void => {
   const elementToScrollTo = document.getElementById(id);
   if (!elementToScrollTo) return;
+
+  window.location.hash = id === "main-headline" ? "" : id;
   const headerOffset = 40;
   const elementPosition = elementToScrollTo.offsetTop;
   const offsetPosition = elementPosition - headerOffset;
@@ -30,7 +32,7 @@ export const TableOfContents: FC<TableOfContentsPropType> = ({ links }) => {
         {links.map(({ id, text }) => (
           <li key={id} className='mb-2'>
             <button
-              onClick={() => onLinkClick(id)}
+              onClick={() => scrollToId(id)}
               className={[
                 "text-left cursor-pointer",
                 "text-gray-400 hover:text-blue-500 transition",
