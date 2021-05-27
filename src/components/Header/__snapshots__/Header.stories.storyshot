@@ -2,7 +2,7 @@
 
 exports[`Storyshots Layout/Header Logged In 1`] = `
 <header
-  className="w-full p-4 bg-white shadow-lg z-50 relative flex place-content-between md:sticky md:top-0"
+  className="w-full p-4 bg-white shadow-lg z-50 flex place-content-between fixed top-0"
 >
   <a
     className="w-max flex items-center"
@@ -188,7 +188,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
 
 exports[`Storyshots Layout/Header Logged Out 1`] = `
 <header
-  className="w-full p-4 bg-white shadow-lg z-50 relative flex place-content-between md:sticky md:top-0"
+  className="w-full p-4 bg-white shadow-lg z-50 flex place-content-between fixed top-0"
 >
   <a
     className="w-max flex items-center"

@@ -7,8 +7,8 @@ export const Header: React.FC = () => (
   <header
     className={[
       "w-full p-4 bg-white shadow-lg z-50",
-      "relative flex place-content-between",
-      "md:sticky md:top-0",
+      "flex place-content-between",
+      "fixed top-0",
     ].join(" ")}
   >
     <Link href='/'>

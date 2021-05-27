@@ -44,8 +44,19 @@ const PagesGroup: FC<PagesGroupPropType> = ({ title, pages }) => (
   </>
 );
 
-export const DocsSidebar: FC = () => (
-  <aside className='hidden sm:block col-span-3 relative'>
+interface DocsSidebarPropType {
+  isOpened?: boolean;
+}
+
+export const DocsSidebar: FC<DocsSidebarPropType> = ({ isOpened = true }) => (
+  <aside
+    className={[
+      isOpened ? "" : "-translate-x-full",
+      "transform transition col-span-3 z-10",
+      "md:block md:translate-x-0 md:col-span",
+      "fixed md:relative w-full md:w-auto",
+    ].join(" ")}
+  >
     <div className='sticky w-full top-16 overflow-y-auto h-screen'>
       <div className='px-8 py-24 bg-white border-r w-full h-full'>
         <PagesGroup title='Informationen' pages={infoPages} />

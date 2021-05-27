@@ -39,6 +39,10 @@
     font-style: normal;
   }
 
+  body {
+    @apply pt-16;
+  }
+
   [type='text'],
   [type='email'],
   [type='url'],

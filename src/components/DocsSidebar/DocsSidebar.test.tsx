@@ -7,4 +7,9 @@ describe("DocsSidebar component", () => {
     const links = screen.getAllByRole("link");
     links.forEach(link => expect(link).toBeInTheDocument());
   });
+  it("should be slided left when not opened", () => {
+    render(<DocsSidebar isOpened={false} />);
+    const aside = document.querySelector(".-translate-x-full");
+    expect(aside).toBeInTheDocument();
+  });
 });
