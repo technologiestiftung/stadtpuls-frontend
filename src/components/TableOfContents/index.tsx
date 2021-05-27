@@ -13,7 +13,6 @@ const scrollToId = (id: string): void => {
   const elementToScrollTo = document.getElementById(id);
   if (!elementToScrollTo) return;
 
-  window.location.hash = id === "main-headline" ? "" : id;
   const headerOffset = 40;
   const elementPosition = elementToScrollTo.offsetTop;
   const offsetPosition = elementPosition - headerOffset;
@@ -22,6 +21,11 @@ const scrollToId = (id: string): void => {
     top: offsetPosition,
     behavior: "smooth",
   });
+
+  const to = setTimeout(() => {
+    window.location.hash = id === "main-headline" ? "" : id;
+    clearTimeout(to);
+  }, 600);
 };
 
 export const TableOfContents: FC<TableOfContentsPropType> = ({ links }) => {
