@@ -61,7 +61,9 @@ export const HeaderMenu: React.FC = () => {
           "bg-gray-50 sm:bg-transparent",
           "border-t border-gray-200 sm:border-none",
           "transition",
-          !isOpened ? "opacity-0 pointer-events-none" : "",
+          !isOpened
+            ? "opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
+            : "",
         ].join(" ")}
       >
         <ul
