@@ -43,7 +43,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
       </svg>
     </button>
     <nav
-      className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-10 sm:z-auto w-full sm:w-auto shadow-xl sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-transparent border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
+      className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-10 sm:z-auto w-full sm:w-auto shadow-xl sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-white border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
     >
       <ul
         className="h-full sm:w-auto sm:flex sm:gap-8 text-gray-500 sm:mr-4"
@@ -288,7 +288,7 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
       </svg>
     </button>
     <nav
-      className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-10 sm:z-auto w-full sm:w-auto shadow-xl sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-transparent border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
+      className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-10 sm:z-auto w-full sm:w-auto shadow-xl sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-white border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
     >
       <ul
         className="h-full sm:w-auto sm:flex sm:gap-8 text-gray-500 sm:mr-4"

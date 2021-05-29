@@ -58,7 +58,7 @@ export const HeaderMenu: React.FC = () => {
           "w-full sm:w-auto",
           "shadow-xl sm:shadow-none",
           "py-4 px-1 sm:p-0",
-          "bg-gray-50 sm:bg-transparent",
+          "bg-gray-50 sm:bg-white",
           "border-t border-gray-200 sm:border-none",
           "transition",
           !isOpened
