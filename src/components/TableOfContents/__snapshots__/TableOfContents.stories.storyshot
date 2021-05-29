@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Layout/TableOfContents Default 1`] = `
+exports[`Storyshots Navigation/TableOfContents Default 1`] = `
 Array [
   <nav
     className="hidden fixed lg:block top-18 right-4 p-8 w-1/6 lg:w-1/5"

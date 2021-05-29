@@ -19,9 +19,14 @@ type DropdownItemType = HrefItemType | OnclickItemType;
 
 export interface DropdownMenuPropType {
   items: DropdownItemType[];
+  position?: "right" | "left";
 }
 
-export const DropdownMenu: FC<DropdownMenuPropType> = ({ children, items }) => {
+export const DropdownMenu: FC<DropdownMenuPropType> = ({
+  children,
+  items,
+  position = "left",
+}) => {
   const menuItemStyles = [
     "group",
     "block w-full text-black",
@@ -32,6 +37,7 @@ export const DropdownMenu: FC<DropdownMenuPropType> = ({ children, items }) => {
     .join(" ");
   return (
     <Dropdown
+      position={position}
       dropdownContent={
         <div className='py-2'>
           {items.map(item => {

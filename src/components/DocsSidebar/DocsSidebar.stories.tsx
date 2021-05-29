@@ -2,7 +2,7 @@ import { Meta, Story } from "@storybook/react";
 import { DocsSidebar } from ".";
 
 export default {
-  title: "Layout/DocsSidebar",
+  title: "Navigation/DocsSidebar",
   component: DocsSidebar,
 } as Meta;
 

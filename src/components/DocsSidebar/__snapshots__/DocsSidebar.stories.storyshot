@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Layout/DocsSidebar Default 1`] = `
+exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
 <div
   className="grid grid-cols-12 bg-gray-50"
 >

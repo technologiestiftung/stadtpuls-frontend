@@ -3,7 +3,7 @@ import { FC } from "react";
 import { TableOfContents } from ".";
 
 export default {
-  title: "Layout/TableOfContents",
+  title: "Navigation/TableOfContents",
   component: TableOfContents,
 } as Meta;
 

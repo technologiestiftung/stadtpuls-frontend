@@ -2,6 +2,7 @@ import Link from "next/link";
 import { IotHubLogo } from "@components/IotHubLogo";
 import { TsbLogoSymbol } from "@components/TsbLogoSymbol";
 import { AuthLink } from "@components/AuthLink";
+import { HeaderMenu } from "@components/HeaderMenu";
 
 export const Header: React.FC = () => (
   <header
@@ -14,7 +15,8 @@ export const Header: React.FC = () => (
     <Link href='/'>
       <IotHubLogo />
     </Link>
-    <section className='flex gap-8 items-center'>
+    <section className='flex gap-4 sm:gap-8 items-center'>
+      <HeaderMenu />
       <AuthLink />
       <TsbLogoSymbol />
     </section>

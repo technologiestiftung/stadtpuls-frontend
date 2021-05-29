@@ -22,7 +22,7 @@ exports[`Storyshots UI Elements/AuthLink Logged In 1`] = `
     </svg>
   </span>
   <span
-    className="inline-block ml-1 transition text-blue-500 font-semibold group-hover:opacity-60"
+    className="inline-block ml-1 transition hidden sm:inline-block text-blue-500 font-semibold group-hover:opacity-60"
   >
     contact@example.com
   </span>
@@ -51,7 +51,7 @@ exports[`Storyshots UI Elements/AuthLink Logged Out 1`] = `
     </svg>
   </span>
   <span
-    className="inline-block ml-1 transition text-black group-hover:text-blue-500"
+    className="inline-block ml-1 transition hidden sm:inline-block text-black group-hover:text-blue-500"
   >
     Anmeldung
   </span>
