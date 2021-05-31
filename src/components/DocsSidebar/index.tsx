@@ -28,6 +28,10 @@ const docsPages: PageType[] = [
     title: "Willkommen",
     path: "/docs",
   },
+  {
+    title: "Tutorial",
+    path: "/docs/tutorial",
+  },
 ];
 
 const PagesGroup: FC<PagesGroupPropType> = ({ title, pages }) => (

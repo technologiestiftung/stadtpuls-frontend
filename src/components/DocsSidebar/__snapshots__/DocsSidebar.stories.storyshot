@@ -60,6 +60,16 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
               Willkommen
             </a>
           </li>
+          <li>
+            <a
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+              href="/docs/tutorial"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Tutorial
+            </a>
+          </li>
         </ul>
       </div>
     </div>
