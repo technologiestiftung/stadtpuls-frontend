@@ -23,7 +23,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
         >
           <li>
             <a
-              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+              className="navigation-link p-4 block sm:inline"
               href="/docs/about"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -33,7 +33,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           </li>
           <li>
             <a
-              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+              className="navigation-link p-4 block sm:inline"
               href="/docs/participate"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -52,7 +52,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
         >
           <li>
             <a
-              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+              className="navigation-link p-4 block sm:inline"
               href="/docs"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -62,7 +62,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           </li>
           <li>
             <a
-              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+              className="navigation-link p-4 block sm:inline"
               href="/docs/tutorial"
               onClick={[Function]}
               onMouseEnter={[Function]}
