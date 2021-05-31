@@ -27,7 +27,7 @@ const infoPages: PageType[] = [
   },
 ];
 
-export const docsPages: PageType[] = [
+const docsPages: PageType[] = [
   {
     title: "Gerät auf TTN konfigurieren",
     path: "/docs/ttn-configuration",
@@ -57,6 +57,8 @@ export const docsPages: PageType[] = [
     path: "/docs/manage-account",
   },
 ];
+
+export const allPages = [...infoPages, ...docsPages];
 
 const PagesGroup: FC<PagesGroupPropType> = ({ title, pages }) => (
   <>
