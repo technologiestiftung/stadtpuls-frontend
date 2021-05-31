@@ -56,7 +56,7 @@ Array [
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
-          Dokumentation
+          Mehr Infos
         </a>
       </li>
     </ul>

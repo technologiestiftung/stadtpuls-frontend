@@ -16,11 +16,23 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
         <h4
           className="font-bold text-xl 2xl:text-2xl mb-2"
         >
-          Informationen
+          About
         </h4>
         <ul
           className="list-none mb-8 2xl:text-lg leading-tight"
         >
+          <li
+            className="mb-2"
+          >
+            <a
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+              href="/docs"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Willkommen
+            </a>
+          </li>
           <li
             className="mb-2"
           >
@@ -38,11 +50,11 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           >
             <a
               className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
-              href="/docs/participate"
+              href="/docs/faq"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Mitmachen
+              FAQ
             </a>
           </li>
         </ul>
@@ -54,18 +66,6 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
         <ul
           className="list-none mb-8 2xl:text-lg leading-tight"
         >
-          <li
-            className="mb-2"
-          >
-            <a
-              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
-              href="/docs"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Willkommen
-            </a>
-          </li>
           <li
             className="mb-2"
           >
@@ -147,7 +147,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Ihr Konto Verwalten
+              Konto Verwalten
             </a>
           </li>
         </ul>

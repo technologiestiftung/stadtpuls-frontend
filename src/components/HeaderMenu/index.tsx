@@ -14,7 +14,7 @@ interface MenuLinkPropType extends MenuPageType {
 
 const pages: MenuPageType[] = [
   { href: "/projects", text: "Projekte" },
-  { href: "/docs", text: "Dokumentation" },
+  { href: "/docs", text: "Mehr Infos" },
 ];
 
 const HeaderLink: FC<MenuLinkPropType> = ({ text, href, className = "" }) => (

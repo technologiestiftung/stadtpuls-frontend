@@ -14,20 +14,20 @@ interface PagesGroupPropType {
 
 const infoPages: PageType[] = [
   {
+    title: "Willkommen",
+    path: "/docs",
+  },
+  {
     title: "Über dieses Projekt",
     path: "/docs/about",
   },
   {
-    title: "Mitmachen",
-    path: "/docs/participate",
+    title: "FAQ",
+    path: "/docs/faq",
   },
 ];
 
-const docsPages: PageType[] = [
-  {
-    title: "Willkommen",
-    path: "/docs",
-  },
+export const docsPages: PageType[] = [
   {
     title: "Gerät auf TTN konfigurieren",
     path: "/docs/ttn-configuration",
@@ -53,7 +53,7 @@ const docsPages: PageType[] = [
     path: "/docs/troubleshooting",
   },
   {
-    title: "Ihr Konto Verwalten",
+    title: "Konto Verwalten",
     path: "/docs/manage-account",
   },
 ];
@@ -91,7 +91,7 @@ export const DocsSidebar: FC<DocsSidebarPropType> = ({ isOpened = true }) => (
   >
     <div className='sticky w-full top-16 overflow-y-auto h-screen'>
       <div className='px-8 py-8 bg-white border-r w-full h-full'>
-        <PagesGroup title='Informationen' pages={infoPages} />
+        <PagesGroup title='About' pages={infoPages} />
         <PagesGroup title='Dokumentation' pages={docsPages} />
       </div>
     </div>
