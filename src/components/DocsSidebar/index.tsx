@@ -1,5 +1,4 @@
 import { ActiveLink } from "@components/ActiveLink";
-import { TextLink } from "@components/TextLink";
 import { FC } from "react";
 
 interface PageType {
@@ -40,11 +39,10 @@ const PagesGroup: FC<PagesGroupPropType> = ({ title, pages }) => (
     <ul className='list-none mb-8 2xl:text-lg'>
       {pages.map(page => (
         <li key={page.path}>
-          <ActiveLink
-            activeClassName='no-underline font-bold hover:opacity-100'
-            href={page.path}
-          >
-            <TextLink href={page.path}>{page.title}</TextLink>
+          <ActiveLink activeClassName='navigation-link-active' href={page.path}>
+            <a href={page.path} className='navigation-link p-4 block sm:inline'>
+              {page.title}
+            </a>
           </ActiveLink>
         </li>
       ))}

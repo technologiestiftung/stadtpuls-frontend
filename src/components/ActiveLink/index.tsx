@@ -19,17 +19,15 @@ export const ActiveLink: FC<ActiveLinkPropType> = ({
   const { asPath } = router || {};
   const child = Children.only(children) as ReactElement<HTMLAnchorElement>;
   const childClassName = child.props.className || "";
+  const isActive = asPath && (asPath === href || asPath === props.as);
 
-  const className =
-    asPath && (asPath === href || asPath === props.as)
-      ? `${childClassName} ${activeClassName}`.trim()
-      : childClassName;
+  const className = isActive
+    ? [activeClassName, childClassName].join(" ").trim()
+    : childClassName;
 
   return (
     <Link href={href} {...props}>
-      {React.cloneElement(child, {
-        className: className || "",
-      })}
+      {React.cloneElement(child, { className })}
     </Link>
   );
 };
