@@ -72,29 +72,32 @@ export const TableOfContents: FC<TableOfContentsPropType> = ({ links }) => {
   }, []);
 
   return (
-    <nav className='hidden fixed lg:block top-18 right-4 p-8 w-1/6 lg:w-1/5'>
-      <h4 className='font-bold mb-2 text-gray-500'>Auf diese Seite</h4>
-      <ul>
-        {links.map(({ id, text }) => (
-          <li key={id} className='mb-2'>
-            <button
-              onClick={() => scrollToId(id)}
-              className={[
-                "text-left cursor-pointer",
-                "hover:text-blue-500 transition",
-                "focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2",
-                "focus:outline-none",
-                "leading-tight pr-1 pl-3 py-0.5 -ml-3",
-                activeLinkId === id
-                  ? "border-l-2 border-blue-500 text-blue-500"
-                  : "text-gray-400",
-              ].join(" ")}
-            >
-              {text}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <div className='hidden relative lg:col-span-2 xl:col-span-3 lg:block h-full'>
+      <div className='h-60' />
+      <nav className='sticky top-24 right-4'>
+        <h4 className='font-bold mb-2 text-gray-500'>Auf diese Seite</h4>
+        <ul>
+          {links.map(({ id, text }) => (
+            <li key={id} className='mb-2'>
+              <button
+                onClick={() => scrollToId(id)}
+                className={[
+                  "text-left cursor-pointer",
+                  "hover:text-blue-500 transition",
+                  "focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2",
+                  "focus:outline-none",
+                  "leading-tight pr-1 pl-3 py-0.5 -ml-3",
+                  activeLinkId === id
+                    ? "border-l-2 border-blue-500 text-blue-500"
+                    : "text-gray-400",
+                ].join(" ")}
+              >
+                {text}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
   );
 };

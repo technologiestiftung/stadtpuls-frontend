@@ -35,18 +35,9 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
 
   return (
     <>
-      <TableOfContents
-        links={[
-          {
-            text: frontMatter.title,
-            id: "main-headline",
-          },
-          ...childrenArr,
-        ]}
-      />
       <div className='md:grid md:grid-cols-12'>
         <DocsSidebar isOpened={isOpened} />
-        <article className='col-span-8 lg:col-span-7 xl:col-span-8'>
+        <article className='col-span-8 lg:col-span-7 xl:col-span-7'>
           <Head>
             <title>
               {frontMatter.metaTitle} | Berlin IoT Hub | Technologiestiftung
@@ -56,16 +47,34 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
           </Head>
           <div
             className={[
-              "relative z-0",
-              "container mx-auto prose lg:prose-lg 2xl:prose-2xl prose-blue",
-              "px-4 py-6 sm:px-8 sm:py-12 md:px-12 md:py-18 lg:px-18 lg:py-24",
+              "relative z-0 bg-gradient-to-r from-gray-100",
+              "px-4 py-6 sm:p-8 sm:pt-12 md:p-12 md:pt-18 lg:p-18 lg:pt-24",
             ].join(" ")}
           >
-            <h1 id='main-headline'>{frontMatter.title}</h1>
+            <div className='container mx-auto prose'>
+              <h1 id='main-headline'>{frontMatter.title}</h1>
+            </div>
+          </div>
+          <div
+            className={[
+              "relative z-0",
+              "container mx-auto prose lg:prose-lg 2xl:prose-2xl prose-blue",
+              "px-4 py-6 sm:p-8 sm:pb-12 md:p-12 md:pb-18 lg:p-18 lg:pb-24",
+            ].join(" ")}
+          >
             {children}
           </div>
           <DocsBottomNavigation />
         </article>
+        <TableOfContents
+          links={[
+            {
+              text: frontMatter.title,
+              id: "main-headline",
+            },
+            ...childrenArr,
+          ]}
+        />
       </div>
       <div className='fixed bottom-4 right-4 z-20'>
         <Button
