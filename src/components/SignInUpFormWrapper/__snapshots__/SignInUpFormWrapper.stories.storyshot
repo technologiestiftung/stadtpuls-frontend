@@ -33,7 +33,7 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signin 1`] = `
     >
       Hast du noch keinen Account? 
       <a
-        className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500 inline-block"
+        className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500 inline-block"
         href="/signup"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -94,7 +94,7 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signup 1`] = `
     >
       Hast du schon einen Account? 
       <a
-        className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500 inline-block"
+        className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500 inline-block"
         href="/signin"
         onClick={[Function]}
         onMouseEnter={[Function]}

@@ -2,7 +2,7 @@
 
 exports[`Storyshots Layout/Header Logged In 1`] = `
 <header
-  className="w-full p-4 bg-white shadow-lg z-50 relative flex place-content-between md:sticky md:top-0"
+  className="w-full p-4 bg-white shadow-lg z-50 flex place-content-between fixed top-0"
 >
   <a
     className="w-max flex items-center"
@@ -25,8 +25,67 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
     </div>
   </a>
   <section
-    className="flex gap-8 items-center"
+    className="flex gap-4 sm:gap-8 items-center"
   >
+    <button
+      className="sm:hidden text-blue-500 focus-offset"
+      onClick={[Function]}
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+        />
+      </svg>
+    </button>
+    <nav
+      className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-10 sm:z-auto w-full sm:w-auto shadow-xl sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-white border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
+    >
+      <ul
+        className="h-full sm:w-auto sm:flex sm:gap-8 text-gray-500 sm:mr-4"
+      >
+        <li
+          className="sm:hidden sm:inline-block text-xl sm:text-base"
+        >
+          <a
+            className="hover:text-blue-500 transition p-4 sm:p-0 block sm:inline"
+            href="/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Startseite
+          </a>
+        </li>
+        <li
+          className=" sm:inline-block text-xl sm:text-base"
+        >
+          <a
+            className="hover:text-blue-500 transition p-4 sm:p-0 block sm:inline"
+            href="/projects"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Projekte
+          </a>
+        </li>
+        <li
+          className=" sm:inline-block text-xl sm:text-base"
+        >
+          <a
+            className="hover:text-blue-500 transition p-4 sm:p-0 block sm:inline"
+            href="/docs"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Dokumentation
+          </a>
+        </li>
+      </ul>
+    </nav>
     <a
       className="group"
       href="/signin"
@@ -48,7 +107,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
         </svg>
       </span>
       <span
-        className="inline-block ml-1 transition text-black group-hover:text-blue-500"
+        className="inline-block ml-1 transition hidden sm:inline-block text-black group-hover:text-blue-500"
       >
         Anmeldung
       </span>
@@ -188,7 +247,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
 
 exports[`Storyshots Layout/Header Logged Out 1`] = `
 <header
-  className="w-full p-4 bg-white shadow-lg z-50 relative flex place-content-between md:sticky md:top-0"
+  className="w-full p-4 bg-white shadow-lg z-50 flex place-content-between fixed top-0"
 >
   <a
     className="w-max flex items-center"
@@ -211,8 +270,67 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
     </div>
   </a>
   <section
-    className="flex gap-8 items-center"
+    className="flex gap-4 sm:gap-8 items-center"
   >
+    <button
+      className="sm:hidden text-blue-500 focus-offset"
+      onClick={[Function]}
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+        />
+      </svg>
+    </button>
+    <nav
+      className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-10 sm:z-auto w-full sm:w-auto shadow-xl sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-white border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
+    >
+      <ul
+        className="h-full sm:w-auto sm:flex sm:gap-8 text-gray-500 sm:mr-4"
+      >
+        <li
+          className="sm:hidden sm:inline-block text-xl sm:text-base"
+        >
+          <a
+            className="hover:text-blue-500 transition p-4 sm:p-0 block sm:inline"
+            href="/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Startseite
+          </a>
+        </li>
+        <li
+          className=" sm:inline-block text-xl sm:text-base"
+        >
+          <a
+            className="hover:text-blue-500 transition p-4 sm:p-0 block sm:inline"
+            href="/projects"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Projekte
+          </a>
+        </li>
+        <li
+          className=" sm:inline-block text-xl sm:text-base"
+        >
+          <a
+            className="hover:text-blue-500 transition p-4 sm:p-0 block sm:inline"
+            href="/docs"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Dokumentation
+          </a>
+        </li>
+      </ul>
+    </nav>
     <a
       className="group"
       href="/signin"
@@ -234,7 +352,7 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
         </svg>
       </span>
       <span
-        className="inline-block ml-1 transition text-black group-hover:text-blue-500"
+        className="inline-block ml-1 transition hidden sm:inline-block text-black group-hover:text-blue-500"
       >
         Anmeldung
       </span>

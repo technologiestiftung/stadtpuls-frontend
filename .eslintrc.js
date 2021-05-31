@@ -12,7 +12,7 @@ module.exports = {
 		// This configuration will apply only to TypeScript files
 		{
 			plugins: ['@typescript-eslint', 'import'],
-			files: ['**/*.ts', '**/*.tsx'],
+			files: ['**/*.ts', '**/*.tsx', '**/*.mdx'],
 			parser: '@typescript-eslint/parser',
 			settings: {
 				react: { version: 'detect' },

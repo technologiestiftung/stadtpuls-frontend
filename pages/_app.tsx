@@ -52,7 +52,7 @@ const App: FC<{
             </Head>
             <Header />
             <main
-              className='z-0 relative pb-24'
+              className='z-0 relative'
               style={{
                 minHeight: "calc(100vh - 215px)",
               }}

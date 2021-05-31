@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Navigation/TableOfContents Default 1`] = `
+Array [
+  <nav
+    className="hidden fixed lg:block top-18 right-4 p-8 w-1/6 lg:w-1/5"
+  >
+    <h4
+      className="font-bold mb-2 text-gray-500"
+    >
+      Inhalte
+    </h4>
+    <ul>
+      <li
+        className="mb-2"
+      >
+        <button
+          className="text-left cursor-pointer hover:text-blue-500 transition focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2 focus:outline-none text-gray-400"
+          onClick={[Function]}
+        >
+          Ingredients
+        </button>
+      </li>
+      <li
+        className="mb-2"
+      >
+        <button
+          className="text-left cursor-pointer hover:text-blue-500 transition focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2 focus:outline-none text-gray-400"
+          onClick={[Function]}
+        >
+          Preparation
+        </button>
+      </li>
+      <li
+        className="mb-2"
+      >
+        <button
+          className="text-left cursor-pointer hover:text-blue-500 transition focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2 focus:outline-none text-gray-400"
+          onClick={[Function]}
+        >
+          Serving
+        </button>
+      </li>
+    </ul>
+  </nav>,
+  <div
+    className="container mx-auto prose lg:prose-lg 2xl:prose-2xl prose-blue px-4 py-6 sm:px-8 sm:py-12 md:px-12 md:py-18 lg:px-18 lg:py-24"
+  >
+    <h2
+      id="a"
+    >
+      Ingredients
+    </h2>
+    <p>
+      Lorem away dolizzle bling bling amizzle, consectetuer adipiscing shizznit. Nullam daahng dawg shit, fizzle volutpat, suscipit quizzle, bow wow wow vizzle, things. Pellentesque eget go to hizzle. Sizzle erizzle. For sure izzle dolizzle dapibizzle sheezy tempizzle ass. Mauris stuff nibh izzle turpizzle. Vestibulum izzle tortor. Shiz sure rhoncizzle nisi. In gizzle for sure platea dictumst. Mah nizzle dapibizzle. Curabitur tellus urna, pretium mofo, mattizzle shit, eleifend vitae, nunc. Gangsta suscipizzle. Crunk yo mamma velizzle rizzle fo shizzle.
+    </p>
+  </div>,
+  <div
+    className="container mx-auto prose lg:prose-lg 2xl:prose-2xl prose-blue px-4 py-6 sm:px-8 sm:py-12 md:px-12 md:py-18 lg:px-18 lg:py-24"
+  >
+    <h2
+      id="b"
+    >
+      Preparation
+    </h2>
+    <p>
+      Lorem away dolizzle bling bling amizzle, consectetuer adipiscing shizznit. Nullam daahng dawg shit, fizzle volutpat, suscipit quizzle, bow wow wow vizzle, things. Pellentesque eget go to hizzle. Sizzle erizzle. For sure izzle dolizzle dapibizzle sheezy tempizzle ass. Mauris stuff nibh izzle turpizzle. Vestibulum izzle tortor. Shiz sure rhoncizzle nisi. In gizzle for sure platea dictumst. Mah nizzle dapibizzle. Curabitur tellus urna, pretium mofo, mattizzle shit, eleifend vitae, nunc. Gangsta suscipizzle. Crunk yo mamma velizzle rizzle fo shizzle.
+    </p>
+  </div>,
+  <div
+    className="container mx-auto prose lg:prose-lg 2xl:prose-2xl prose-blue px-4 py-6 sm:px-8 sm:py-12 md:px-12 md:py-18 lg:px-18 lg:py-24"
+  >
+    <h2
+      id="c"
+    >
+      Serving
+    </h2>
+    <p>
+      Lorem away dolizzle bling bling amizzle, consectetuer adipiscing shizznit. Nullam daahng dawg shit, fizzle volutpat, suscipit quizzle, bow wow wow vizzle, things. Pellentesque eget go to hizzle. Sizzle erizzle. For sure izzle dolizzle dapibizzle sheezy tempizzle ass. Mauris stuff nibh izzle turpizzle. Vestibulum izzle tortor. Shiz sure rhoncizzle nisi. In gizzle for sure platea dictumst. Mah nizzle dapibizzle. Curabitur tellus urna, pretium mofo, mattizzle shit, eleifend vitae, nunc. Gangsta suscipizzle. Crunk yo mamma velizzle rizzle fo shizzle.
+    </p>
+  </div>,
+]
+`;

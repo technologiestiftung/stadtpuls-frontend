@@ -25,7 +25,7 @@ export const ColouredAuthLink: FC<{
     .filter(Boolean)
     .join(" ");
   const textStyles = [
-    "inline-block ml-1 transition",
+    "inline-block ml-1 transition hidden sm:inline-block",
     variant === "secondary" && "text-black group-hover:text-blue-500",
     variant === "primary" &&
       "text-blue-500 font-semibold group-hover:opacity-60",
@@ -69,6 +69,7 @@ export const AuthLink: FC = () => {
     link
   ) : (
     <DropdownMenu
+      position='right'
       items={
         [
           {
