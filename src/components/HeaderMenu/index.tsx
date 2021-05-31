@@ -19,17 +19,8 @@ const pages: MenuPageType[] = [
 
 const HeaderLink: FC<MenuLinkPropType> = ({ text, href, className = "" }) => (
   <li className={`${className} sm:inline-block text-xl sm:text-base`}>
-    <ActiveLink
-      activeClassName='font-bold text-blue-500 cursor-default'
-      href={href}
-    >
-      <a
-        href={href}
-        className={[
-          "hover:text-blue-500 transition",
-          "p-4 sm:p-0 block sm:inline",
-        ].join(" ")}
-      >
+    <ActiveLink activeClassName='navigation-link-active' href={href}>
+      <a href={href} className='navigation-link p-4 block sm:inline'>
         {text}
       </a>
     </ActiveLink>
@@ -66,12 +57,7 @@ export const HeaderMenu: React.FC = () => {
             : "",
         ].join(" ")}
       >
-        <ul
-          className={[
-            "h-full sm:w-auto",
-            "sm:flex sm:gap-8 text-gray-500 sm:mr-4",
-          ].join(" ")}
-        >
+        <ul className='h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4'>
           <HeaderLink href='/' text='Startseite' className='sm:hidden' />
           {pages.map(({ href, text }) => (
             <HeaderLink key={href} href={href} text={text} />

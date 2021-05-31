@@ -46,13 +46,13 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
       className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-10 sm:z-auto w-full sm:w-auto shadow-xl sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-white border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
     >
       <ul
-        className="h-full sm:w-auto sm:flex sm:gap-8 text-gray-500 sm:mr-4"
+        className="h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4"
       >
         <li
           className="sm:hidden sm:inline-block text-xl sm:text-base"
         >
           <a
-            className="hover:text-blue-500 transition p-4 sm:p-0 block sm:inline"
+            className="navigation-link p-4 block sm:inline"
             href="/"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -64,7 +64,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
           className=" sm:inline-block text-xl sm:text-base"
         >
           <a
-            className="hover:text-blue-500 transition p-4 sm:p-0 block sm:inline"
+            className="navigation-link p-4 block sm:inline"
             href="/projects"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -76,7 +76,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
           className=" sm:inline-block text-xl sm:text-base"
         >
           <a
-            className="hover:text-blue-500 transition p-4 sm:p-0 block sm:inline"
+            className="navigation-link p-4 block sm:inline"
             href="/docs"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -291,13 +291,13 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
       className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-10 sm:z-auto w-full sm:w-auto shadow-xl sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-white border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
     >
       <ul
-        className="h-full sm:w-auto sm:flex sm:gap-8 text-gray-500 sm:mr-4"
+        className="h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4"
       >
         <li
           className="sm:hidden sm:inline-block text-xl sm:text-base"
         >
           <a
-            className="hover:text-blue-500 transition p-4 sm:p-0 block sm:inline"
+            className="navigation-link p-4 block sm:inline"
             href="/"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -309,7 +309,7 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
           className=" sm:inline-block text-xl sm:text-base"
         >
           <a
-            className="hover:text-blue-500 transition p-4 sm:p-0 block sm:inline"
+            className="navigation-link p-4 block sm:inline"
             href="/projects"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -321,7 +321,7 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
           className=" sm:inline-block text-xl sm:text-base"
         >
           <a
-            className="hover:text-blue-500 transition p-4 sm:p-0 block sm:inline"
+            className="navigation-link p-4 block sm:inline"
             href="/docs"
             onClick={[Function]}
             onMouseEnter={[Function]}

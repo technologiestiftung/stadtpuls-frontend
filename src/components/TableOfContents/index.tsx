@@ -84,8 +84,9 @@ export const TableOfContents: FC<TableOfContentsPropType> = ({ links }) => {
                 "hover:text-blue-500 transition",
                 "focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2",
                 "focus:outline-none",
+                "leading-tight pr-1 pl-3 py-0.5 -ml-3",
                 activeLinkId === id
-                  ? "font-bold text-blue-500"
+                  ? "border-l-2 border-blue-500 text-blue-500"
                   : "text-gray-400",
               ].join(" ")}
             >
