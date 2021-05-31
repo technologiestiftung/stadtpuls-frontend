@@ -7,18 +7,24 @@ export default {
 } as Meta;
 
 const Template: Story<TokenDisplayType> = args => (
-  <TokenDisplay {...args}></TokenDisplay>
+  <TokenDisplay {...args}>{args.children}</TokenDisplay>
 );
 
+export const Default = Template.bind({});
+
 export const IsGenerating = Template.bind({});
+IsGenerating.args = {
+  children: "Token wird generiert...",
+};
 
 export const WithToken = Template.bind({});
 WithToken.args = {
-  token:
+  children:
     "123456789123456789123456789123456789123456789123456789123456789123456789123456789",
 };
 
 export const Error = Template.bind({});
 Error.args = {
-  errorMessage: "Some error message",
+  hasError: true,
+  children: "This could be a custom error message",
 };

@@ -1,40 +1,41 @@
-import { FC } from "react";
+import { FC, HTMLProps } from "react";
 
-export interface TokenDisplayType {
-  token?: string;
-  errorMessage?: string;
-}
-
-interface ContentsWrapperType {
+export interface TokenDisplayType extends HTMLProps<HTMLDivElement> {
   hasError?: boolean;
 }
 
+interface ContentsWrapperType {
+  hasErrorStyle?: boolean;
+}
+
 const ContentsWrapper: React.FC<ContentsWrapperType> = ({
-  hasError,
+  hasErrorStyle,
   children,
 }) => (
-  <p
+  <div
     aria-labelledby='token-display-label'
     className={[
       "mt-2 p-3 break-words",
-      `border ${hasError ? "border-red-500" : "border-gray-200"}`,
-      `${hasError ? "text-red-500" : "text-gray-700"}`,
+      `border ${hasErrorStyle ? "border-red-500" : "border-gray-200"}`,
+      `${hasErrorStyle ? "text-red-500" : "text-gray-700"}`,
     ].join(" ")}
   >
     {children}
-  </p>
+  </div>
 );
 
-export const TokenDisplay: FC<TokenDisplayType> = ({ token, errorMessage }) => {
+export const TokenDisplay: FC<TokenDisplayType> = ({ hasError, children }) => {
   return (
     <div>
       <p id='token-display-label'>Token</p>
-      {!token && !errorMessage && (
-        <ContentsWrapper>Token wird generiert ...</ContentsWrapper>
+      {!hasError && !children && (
+        <ContentsWrapper>
+          * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+        </ContentsWrapper>
       )}
-      {token && !errorMessage && <ContentsWrapper>{token}</ContentsWrapper>}
-      {!token && errorMessage && (
-        <ContentsWrapper hasError>{errorMessage}</ContentsWrapper>
+      {children && !hasError && <ContentsWrapper>{children}</ContentsWrapper>}
+      {hasError && children && (
+        <ContentsWrapper hasErrorStyle>{children}</ContentsWrapper>
       )}
     </div>
   );
