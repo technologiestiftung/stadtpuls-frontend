@@ -19,9 +19,11 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           Informationen
         </h4>
         <ul
-          className="list-none mb-8 2xl:text-lg"
+          className="list-none mb-8 2xl:text-lg leading-tight"
         >
-          <li>
+          <li
+            className="mb-2"
+          >
             <a
               className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
               href="/docs/about"
@@ -31,7 +33,9 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
               Über dieses Projekt
             </a>
           </li>
-          <li>
+          <li
+            className="mb-2"
+          >
             <a
               className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
               href="/docs/participate"
@@ -48,9 +52,11 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           Dokumentation
         </h4>
         <ul
-          className="list-none mb-8 2xl:text-lg"
+          className="list-none mb-8 2xl:text-lg leading-tight"
         >
-          <li>
+          <li
+            className="mb-2"
+          >
             <a
               className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
               href="/docs"
@@ -60,14 +66,88 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
               Willkommen
             </a>
           </li>
-          <li>
+          <li
+            className="mb-2"
+          >
             <a
               className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
-              href="/docs/tutorial"
+              href="/docs/ttn-configuration"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Tutorial
+              Gerät auf TTN konfigurieren
+            </a>
+          </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+              href="/docs/new-account"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              IoT Hub Konto erstellen
+            </a>
+          </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+              href="/docs/new-project"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Neues Projekt erstellen
+            </a>
+          </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+              href="/docs/new-device"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Neues Gerät anlegen
+            </a>
+          </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+              href="/docs/view-device-data"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Device-Daten anschauen
+            </a>
+          </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+              href="/docs/troubleshooting"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Troubleshooting
+            </a>
+          </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+              href="/docs/manage-account"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Ihr Konto Verwalten
             </a>
           </li>
         </ul>

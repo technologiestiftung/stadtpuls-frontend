@@ -29,17 +29,41 @@ const docsPages: PageType[] = [
     path: "/docs",
   },
   {
-    title: "Tutorial",
-    path: "/docs/tutorial",
+    title: "Gerät auf TTN konfigurieren",
+    path: "/docs/ttn-configuration",
+  },
+  {
+    title: "IoT Hub Konto erstellen",
+    path: "/docs/new-account",
+  },
+  {
+    title: "Neues Projekt erstellen",
+    path: "/docs/new-project",
+  },
+  {
+    title: "Neues Gerät anlegen",
+    path: "/docs/new-device",
+  },
+  {
+    title: "Device-Daten anschauen",
+    path: "/docs/view-device-data",
+  },
+  {
+    title: "Troubleshooting",
+    path: "/docs/troubleshooting",
+  },
+  {
+    title: "Ihr Konto Verwalten",
+    path: "/docs/manage-account",
   },
 ];
 
 const PagesGroup: FC<PagesGroupPropType> = ({ title, pages }) => (
   <>
     <h4 className='font-bold text-xl 2xl:text-2xl mb-2'>{title}</h4>
-    <ul className='list-none mb-8 2xl:text-lg'>
+    <ul className='list-none mb-8 2xl:text-lg leading-tight'>
       {pages.map(page => (
-        <li key={page.path}>
+        <li key={page.path} className='mb-2'>
           <ActiveLink
             activeClassName='no-underline font-bold hover:opacity-100'
             href={page.path}
