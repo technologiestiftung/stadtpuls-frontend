@@ -9,21 +9,55 @@ import { EditProjectForm } from "@components/EditProjectForm";
 import { useProjectCategories } from "@lib/hooks/useProjectCategories";
 import { useUserData } from "@lib/hooks/useUserData";
 import { useRouter } from "next/router";
-import { FC, useState } from "react";
+import React, { FC, useState } from "react";
 import { ProjectsType } from "@common/types/supabase";
 import { ProjectNotFound } from "@components/PageError/ProjectNotFound";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
+import { ButtonTextLink } from "@components/TextLink";
+import { TokenDisplay } from "@components/TokenDisplay";
+import { useProjectTokens } from "@lib/hooks/useProjectTokens";
+import { TokenResponseObjectType } from "@common/interfaces";
 
 const AccountProjectEditPage: FC = () => {
   const router = useRouter();
   const { id: editingProjectId } = router.query;
-  const { authenticatedUser, isLoadingAuth, error: authError } = useAuth();
+  const {
+    authenticatedUser,
+    isLoadingAuth,
+    error: authError,
+    accessToken,
+  } = useAuth();
   const { projects, updateProject, deleteProject, error } = useUserData();
   const {
     categories,
     isLoading: isLoadingCategories,
     error: categoriesError,
   } = useProjectCategories();
+
+  const parsedProjectId = Array.isArray(editingProjectId)
+    ? editingProjectId[0]
+    : editingProjectId;
+
+  const { createToken, error: tokenError } = useProjectTokens(
+    parseInt(parsedProjectId, 10)
+  );
+
+  const [token, setToken] = useState<string | undefined>(undefined);
+
+  const generateNewToken: () => void = () => {
+    const createTokenFunction = async (): Promise<void> => {
+      const responseString = await createToken(
+        `Token for project ID ${parsedProjectId}`
+      );
+      const parsedResponse: TokenResponseObjectType = JSON.parse(
+        responseString
+      ) as TokenResponseObjectType;
+      setToken(parsedResponse.data.token);
+    };
+
+    if (!accessToken) return;
+    void createTokenFunction();
+  };
 
   const [deleteIsInitiated, setDeleteIsInitiated] = useState(false);
 
@@ -96,7 +130,18 @@ const AccountProjectEditPage: FC = () => {
               }
               onDelete={() => setDeleteIsInitiated(true)}
               onSubmit={handleSubmit}
-            />
+            >
+              <div className='block'>
+                <TokenDisplay hasError={!!tokenError}>
+                  {token && !tokenError ? token : tokenError}
+                </TokenDisplay>
+                <div className='w-full mt-2 flex justify-end'>
+                  <ButtonTextLink onClick={generateNewToken}>
+                    Neu generieren
+                  </ButtonTextLink>
+                </div>
+              </div>
+            </EditProjectForm>
           )}
         </div>
       </UserProjectsWrapper>
