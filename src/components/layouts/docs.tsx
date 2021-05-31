@@ -47,8 +47,8 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
           </Head>
           <div
             className={[
-              "relative z-0 bg-gradient-to-r from-gray-100",
-              "px-4 py-6 sm:p-8 sm:pt-12 md:p-12 md:pt-18 lg:p-18 lg:pt-24",
+              "relative z-0 md:bg-gradient-to-r from-gray-100",
+              "px-4 pb-0 py-6 sm:px-8 sm:pt-12 md:p-12 md:pt-18 lg:p-18 lg:pt-24",
             ].join(" ")}
           >
             <div className='container mx-auto prose'>
