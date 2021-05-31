@@ -5,7 +5,7 @@ exports[`Storyshots Layout/UserProjectsWrapper With Projects 1`] = `
   className="max-w-screen-xl mx-auto p-6 block md:grid gap-4 grid-cols-12"
   style={
     Object {
-      "paddingTop": "5vmax",
+      "padding": "5vmax 0",
     }
   }
 >
@@ -89,7 +89,7 @@ exports[`Storyshots Layout/UserProjectsWrapper Without Projects 1`] = `
   className="max-w-screen-xl mx-auto p-6 block md:grid gap-4 grid-cols-12"
   style={
     Object {
-      "paddingTop": "5vmax",
+      "padding": "5vmax 0",
     }
   }
 >

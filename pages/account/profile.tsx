@@ -37,7 +37,7 @@ const UserPage: FC = () => {
   return (
     <div
       className='w-full h-full relative grid place-content-center'
-      style={{ paddingTop: "5vmax" }}
+      style={{ padding: "5vmax 0" }}
     >
       <div
         className='bg-white p-8 shadow-lg gap-8 flex flex-col md:flex-row'
