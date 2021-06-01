@@ -28,7 +28,6 @@ const normalizeData = (data: DateValueType[]): DateValueType[] =>
 
 export const LinePath: FC<LineGraphType> = ({ width, height, data }) => {
   const normalizedData = normalizeData(data);
-  // console.log(data, normalizedData);
   const xScale = scaleUtc<number>({
     domain: extent(normalizedData, getX) as [Date, Date],
     range: [0, width],
