@@ -31,6 +31,7 @@ import {
 } from "@lib/requests/getProjectData";
 import { ApiInfo } from "../ApiInfo";
 import { MarkerMap } from "../MarkerMap";
+import useGeocodedLocation from "@lib/hooks/useGeocodedLocation";
 
 const downloadIcon = "./images/download.svg";
 
@@ -54,6 +55,8 @@ export const Project: FC<SupabaseProjectType> = project => {
   const [lineChartData, setLineChartData] = useState<RecordType[]>([]);
 
   const [markerData, setMarkerData] = useState<MarkerType[]>([]);
+
+  const { viewport: locationViewport } = useGeocodedLocation(project.location);
 
   useEffect(() => {
     const device = project.devices[selectedDeviceIndex];
@@ -84,6 +87,17 @@ export const Project: FC<SupabaseProjectType> = project => {
       );
     });
 
+    if (devicesWithCoordinates.length === 0 && locationViewport) {
+      setMarkerData([
+        {
+          ...locationViewport,
+          id: 0,
+          isActive: true,
+        },
+      ]);
+      return;
+    }
+
     setMarkerData(
       devicesWithCoordinates.map((device, idx) => {
         return {
@@ -94,11 +108,8 @@ export const Project: FC<SupabaseProjectType> = project => {
         };
       })
     );
-  }, [project.devices, selectedDeviceIndex]);
+  }, [project.devices, selectedDeviceIndex, locationViewport]);
 
-  // =================================================================
-  // CHART DIMENSIONS
-  // =================================================================
   const [chartWidth, setChartWidth] = useState<number | undefined>(undefined);
   const [chartHeight, setChartHeight] = useState<number | undefined>(undefined);
 
@@ -125,9 +136,6 @@ export const Project: FC<SupabaseProjectType> = project => {
     setChartHeight(boundingRect.offsetWidth / 2);
   };
 
-  // =================================================================
-  // MAP DIMENSIONS
-  // =================================================================
   const [mapWidth, setMapWidth] = useState<number | undefined>(undefined);
   const [mapHeight, setMapHeight] = useState<number | undefined>(undefined);
 
@@ -154,9 +162,6 @@ export const Project: FC<SupabaseProjectType> = project => {
     setMapHeight(boundingRect.offsetHeight);
   };
 
-  // =================================================================
-  // DOWNLOAD HANLDERS
-  // =================================================================
   const handleDownload = (): void => {
     if (!project) return;
     downloadMultiple(
@@ -187,16 +192,11 @@ export const Project: FC<SupabaseProjectType> = project => {
       <Grid gap={[4, null, 6]} columns={[1, "1fr 2fr"]}>
         <Box>
           <Link href='/projects'>
-            <a sx={{ textDecoration: "none", color: "text" }} href='/projects'>
+            <a href='/projects'>
               <IconButton
                 aria-label='Zurück zur Übersicht'
                 bg='background'
-                sx={{
-                  borderRadius: "50%",
-                  "&:hover": {
-                    cursor: "pointer",
-                  },
-                }}
+                className='rounded-full cursor-pointer'
               >
                 <ArrowBackIcon color='primary' />
               </IconButton>
@@ -209,31 +209,32 @@ export const Project: FC<SupabaseProjectType> = project => {
               noOfDevices={project.devices ? project.devices.length : 0}
             />
           </Box>
-          <Box mt={4}>
-            <ApiInfo
-              entries={project.devices.map(device => {
-                return {
-                  name: device.name ? device.name : "Kein Titel",
-                  id: device.id,
-                };
-              })}
-            />
-          </Box>
-          <Box mt={4}>
-            {project && (
-              <DownloadButton
-                value={"Alle Daten downloaden"}
-                iconSource={downloadIcon}
-                clickHandler={handleDownload}
-              />
-            )}
-          </Box>
+          {project.devices.length > 0 && (
+            <>
+              <Box mt={4}>
+                <ApiInfo
+                  entries={project.devices.map(device => {
+                    return {
+                      name: device.name ? device.name : "Kein Titel",
+                      id: device.id,
+                    };
+                  })}
+                />
+              </Box>
+              <Box mt={4}>
+                {project && (
+                  <DownloadButton
+                    value={"Alle Daten downloaden"}
+                    iconSource={downloadIcon}
+                    clickHandler={handleDownload}
+                  />
+                )}
+              </Box>
+            </>
+          )}
+
           <Card mt={5} bg='muted'>
-            <div
-              id='map-wrapper'
-              ref={mapWrapper}
-              sx={{ width: "100%", height: "200px" }}
-            >
+            <div id='map-wrapper' ref={mapWrapper} className='w-full h-52'>
               {markerData && markerData.length === 0 && (
                 <Text>Keine Geoinformationen verfügbar.</Text>
               )}
@@ -343,13 +344,29 @@ export const Project: FC<SupabaseProjectType> = project => {
                 </Box>
               </Grid>
             )}
-            <Box id='chart-wrapper' ref={chartWrapper} mt={4}>
-              {chartWidth && chartHeight && lineChartData && (
-                <LineChart
-                  width={chartWidth}
-                  height={chartHeight}
-                  data={createDateValueArray(lineChartData)}
-                />
+            <Box
+              id='chart-wrapper'
+              ref={chartWrapper}
+              className='mt-4'
+              style={{ minHeight: 340 }}
+            >
+              {project.devices.length > 0 &&
+                chartWidth &&
+                chartHeight &&
+                lineChartData && (
+                  <LineChart
+                    width={chartWidth}
+                    height={chartHeight}
+                    data={createDateValueArray(lineChartData)}
+                  />
+                )}
+              {project.devices.length === 0 && (
+                <div className='prose p-8 max-w-full h-80 grid text-center items-center'>
+                  <div>
+                    <h3>Dieses Projekt enthält noch keine Sensoren.</h3>
+                    <p>Die Autor:in konfiguriert es möglicherweise noch.</p>
+                  </div>
+                </div>
               )}
             </Box>
           </Card>
