@@ -13,7 +13,7 @@ export interface PublicProject {
   name: string;
   description?: string;
   location?: string;
-  records?: DateValueType[][] | null;
+  records: DateValueType[];
 }
 
 export interface PublicProjects {
@@ -23,25 +23,19 @@ export interface PublicProjects {
 
 const parseDeviceRecords = (
   devices: DevicesType[] | undefined
-): DateValueType[][] | null => {
-  if (!devices) return null;
-  else if (devices.length === 0) return null;
-  else if (!devices[0].records) return null;
-  else if (devices[0].records.length === 0) return null;
-  else if (!devices[0].records[0].measurements) return null;
-  else if (devices[0].records[0].measurements.length === 0) return null;
-  else {
-    return devices[0].records[0].measurements.map((_measurement, index) =>
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      devices[0].records.map(record => {
-        return {
-          date: new Date(record.recordedAt),
-          value: record.measurements ? record.measurements[index] : 0,
-        };
-      })
-    );
-  }
+): DateValueType[] => {
+  if (!devices) return [];
+  if (devices.length === 0) return [];
+
+  const mappedDevices = devices
+    .map(({ records }) =>
+      (records || []).map(record => ({
+        date: new Date(record.recordedAt),
+        value: record.measurements ? record.measurements[0] : 0,
+      }))
+    )
+    .sort((a, b) => b.length - a.length);
+  return mappedDevices[0];
 };
 
 export const getPublicProjects = async (
@@ -69,7 +63,7 @@ export const getPublicProjects = async (
       foreignTable: "devices.records",
       ascending: false,
     })
-    .limit(1, { foreignTable: "devices" })
+    .limit(10, { foreignTable: "devices" })
     .limit(recordsLimit, { foreignTable: "devices.records" });
 
   if (error) throw error;
@@ -91,7 +85,7 @@ export const getPublicProjects = async (
 };
 
 export const usePublicProjects = (
-  recordsLimit = 50
+  recordsLimit = 500
 ): {
   data: PublicProjects | null;
   error: Error | null;
