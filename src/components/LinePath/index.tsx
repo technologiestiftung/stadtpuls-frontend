@@ -18,7 +18,7 @@ export const LinePath: FC<LineGraphType> = ({ width, height, data }) => {
   });
 
   const yScale = scaleLinear<number>({
-    domain: [0, max(data, getY) as number],
+    domain: [0, (max(data, getY) as number) * 1.2],
     range: [height, 0],
   });
 
