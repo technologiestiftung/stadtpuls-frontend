@@ -24,6 +24,7 @@ import { createV2ApiUrl } from "../lib/requests/createV2ApiUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
 import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
 import { DevicesType, ProjectsType, UsersType } from "@common/types/supabase";
+import { fakeGeocondingData } from "./mapboxData";
 
 const { data: projectsData } = projectsResponse;
 const { data: project1DevicesData } = project1Devices;
@@ -32,6 +33,20 @@ const { data: device1RecordsData } = device1Records;
 const { data: device2RecordsData } = device2Records;
 const { data: device3RecordsData } = device3Records;
 const { data: device4RecordsData } = device4Records;
+
+const mapBoxGeocodingHandlers = [
+  rest.get(
+    `https://api.mapbox.com/geocoding/v5/mapbox.places/Berlin.json?access_token=${
+      process.env.NEXT_PUBLIC_MAPBOX_TOKEN || ""
+    }`,
+    (_req, res, ctx) => {
+      return res(
+        ctx.status(201, "Mocked status"),
+        ctx.json(fakeGeocondingData)
+      );
+    }
+  ),
+];
 
 const tokenApiHandlers = [
   rest.get(createTokenApiUrl({ projectId: "10" }), (_req, res, ctx) => {
@@ -71,9 +86,9 @@ const supabaseHandlers = [
     const recordsOrder = query.get("devices.records.order");
     const userId = query.get("userId")?.slice(3);
     if (
-      recordsLimit == "50" &&
+      recordsLimit == "500" &&
       recordsOrder == "recordedAt.desc.nullslast" &&
-      devicesLimit == "1" &&
+      devicesLimit == "10" &&
       // limit == "10" &&
       // offset == "0" &&
       select ==
@@ -311,6 +326,7 @@ const authHandlers = [
 ];
 
 export const handlers = [
+  ...mapBoxGeocodingHandlers,
   ...apiHandlers,
   ...supabaseHandlers,
   ...authHandlers,
