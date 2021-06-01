@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Charts/AreaPath Default 1`] = `
+<svg
+  height={200}
+  width={400}
+>
+  <defs>
+    <linearGradient
+      id="area-gradient"
+      x1="0"
+      x2="0"
+      y1="0"
+      y2="1"
+    >
+      <stop
+        offset="0%"
+        stopColor="#1E3791"
+        stopOpacity="30%"
+      />
+      <stop
+        offset="100%"
+        stopColor="#1E3791"
+        stopOpacity="5%"
+      />
+    </linearGradient>
+  </defs>
+  <path
+    className="visx-area-closed"
+    d="M400,100L200,0L0,50L0,200L200,200L400,200Z"
+    fill="url(#area-gradient)"
+    shapeRendering="geometricPrecision"
+    stroke="#1E3791"
+    strokeWidth={2}
+  />
+</svg>
+`;
