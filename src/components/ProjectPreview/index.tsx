@@ -90,7 +90,6 @@ export const ProjectPreview: FC<PublicProject> = ({
             width={svgWrapperWidth + 4}
             height={82}
             className='overflow-visible absolute -bottom-1 -left-1 -right-1'
-            style={{ backdropFilter: "blur(2px)" }}
           >
             <AreaPath
               width={svgWrapperWidth + 4}
