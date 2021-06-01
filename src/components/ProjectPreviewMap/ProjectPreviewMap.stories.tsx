@@ -1,16 +1,16 @@
 import { Story, Meta } from "@storybook/react";
 
-import { SimpleMap } from ".";
+import { ProjectPreviewMap } from ".";
 
 export default {
-  title: "Map/SimpleMap",
-  component: SimpleMap,
+  title: "Map/ProjectPreviewMap",
+  component: ProjectPreviewMap,
 } as Meta;
 
 const Template: Story<{
   mapWidth: number;
   mapHeight: number;
-}> = args => <SimpleMap {...args} />;
+}> = args => <ProjectPreviewMap {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

@@ -1,5 +1,5 @@
 import { FC, useEffect } from "react";
-import { render, waitFor, screen } from "@testing-library/react";
+import { render, waitFor } from "@testing-library/react";
 import { rest } from "msw";
 import { useProjectCategories } from ".";
 import { server } from "@mocks/server";
@@ -44,7 +44,6 @@ describe("useProjectCategories", () => {
         <TestComponent />
       </SWRConfig>
     );
-    screen.debug();
 
     await waitFor(() => {
       expect(onSuccess).toHaveBeenCalled();

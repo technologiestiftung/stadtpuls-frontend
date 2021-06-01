@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef, FC } from "react";
 import Link from "next/link";
 import { PublicProject } from "@lib/hooks/usePublicProjects";
-import { SimpleMap } from "@components/SimpleMap";
+import { ProjectPreviewMap } from "@components/ProjectPreviewMap";
 import useIsInViewport from "use-is-in-viewport";
 import { AreaPath } from "@components/AreaPath";
 
@@ -56,7 +56,8 @@ export const ProjectPreview: FC<PublicProject> = ({
                 animationDelay: "1s",
               }}
             >
-              <SimpleMap
+              <ProjectPreviewMap
+                location={location}
                 mapWidth={svgWrapperWidth + 64}
                 mapHeight={svgWrapperHeight + 64}
               />
