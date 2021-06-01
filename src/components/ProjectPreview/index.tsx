@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef, FC } from "react";
 import Link from "next/link";
-import { LinePath } from "@components/LinePath";
 import { PublicProject } from "@lib/hooks/usePublicProjects";
 import { SimpleMap } from "@components/SimpleMap";
 import useIsInViewport from "use-is-in-viewport";
+import { AreaPath } from "@components/AreaPath";
 
 export const ProjectPreview: FC<PublicProject> = ({
   id,
@@ -84,15 +84,16 @@ export const ProjectPreview: FC<PublicProject> = ({
             </div>
           </div>
           <svg
-            viewBox={`0 0 ${svgWrapperWidth} 80`}
+            viewBox={`0 0 ${svgWrapperWidth + 4} 82`}
             xmlns='http://www.w3.org/2000/svg'
-            width={svgWrapperWidth}
-            height={80}
-            className='overflow-visible absolute bottom-0 left-0 right-0'
+            width={svgWrapperWidth + 4}
+            height={82}
+            className='overflow-visible absolute -bottom-1 -left-1 -right-1'
+            style={{ backdropFilter: "blur(2px)" }}
           >
-            <LinePath
-              width={svgWrapperWidth}
-              height={80}
+            <AreaPath
+              width={svgWrapperWidth + 4}
+              height={82}
               //FIXME: Figure out how we want to handle multiple data points
               data={records}
             />
