@@ -3,17 +3,20 @@ import { FC, ReactNode, useState } from "react";
 
 interface DropdownPropType {
   dropdownContent: ReactNode | ReactNode[];
+  position?: "left" | "right";
 }
 
 export const Dropdown: FC<DropdownPropType> = ({
   children,
   dropdownContent,
+  position = "left",
 }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const ref = useClickOutside<HTMLButtonElement>(() => setIsVisible(false));
   const dropdownStyles = [
     "absolute top-full left-0 transform transition whitespace-nowrap pt-3",
     "w-auto max-width-md transform-y-4 opacity-0",
+    position === "right" && "-translate-x-3/4",
     !isVisible && "pointer-events-none",
     isVisible && "transform-y-0 opacity-100 pointer-events-all",
   ]

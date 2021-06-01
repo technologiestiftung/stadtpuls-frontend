@@ -5,6 +5,12 @@
   .focus-offset {
     @apply focus:ring-2 focus:ring-offset-white focus:ring-offset-2 focus:outline-none;
   }
+  .navigation-link {
+    @apply text-black opacity-75 transition hover:opacity-100 hover:text-blue-500 sm:px-1 sm:py-0.5 -ml-1 sm:inline-block;
+  }
+  .navigation-link-active {
+    @apply text-blue-500 bg-blue-50 opacity-100;
+  }
 };
 @layer base {
   @font-face {
@@ -37,6 +43,10 @@
       url("/fonts/IBMPlexSans-Regular.woff") format("woff");
     font-weight: 400;
     font-style: normal;
+  }
+
+  body {
+    @apply pt-16;
   }
 
   [type='text'],

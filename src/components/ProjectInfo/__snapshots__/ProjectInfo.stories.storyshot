@@ -42,7 +42,7 @@ exports[`Storyshots Layout/ProjectInfo Default Project Info 1`] = `
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </div>
     <a
-      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-blue-500 focus:ring-blue-500 mt-4 inline-block"
+      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500 mt-4 inline-block"
       href="/account/projects/123abc/edit"
       onClick={[Function]}
       onMouseEnter={[Function]}
