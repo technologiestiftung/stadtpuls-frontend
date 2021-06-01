@@ -19,7 +19,7 @@ const store = createStore<StoreModel>({
     }),
   },
   records: {
-    segmentSize: 50,
+    segmentSize: 500,
   },
 });
 
