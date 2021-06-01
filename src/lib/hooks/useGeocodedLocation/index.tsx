@@ -8,7 +8,12 @@ interface GeocodeingResponseType {
   features: GeoFeatureType[];
 }
 
-type GeocodeingReturnType = Partial<ViewportType> | null;
+interface RetrunedViewportType extends Partial<ViewportType> {
+  latitude: number;
+  longitude: number;
+}
+
+type GeocodeingReturnType = RetrunedViewportType | null;
 
 async function fetchLocation(
   location: string | null
