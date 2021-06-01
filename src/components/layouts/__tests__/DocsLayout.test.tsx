@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
+import * as nextRouter from "next/router";
 import DocsLayout from "../docs";
 
 const testFrontmatter = {
@@ -9,6 +10,17 @@ const testFrontmatter = {
 };
 
 describe("Footer component", () => {
+  beforeAll(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    nextRouter.useRouter = jest.fn();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    nextRouter.useRouter.mockImplementation(() => ({
+      pathname: "/docs",
+    }));
+  });
   it("should render without crashing", () => {
     render(<DocsLayout frontMatter={testFrontmatter}>docs</DocsLayout>);
   });

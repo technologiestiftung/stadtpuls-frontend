@@ -2,47 +2,54 @@
 
 exports[`Storyshots Navigation/TableOfContents Default 1`] = `
 Array [
-  <nav
-    className="hidden fixed lg:block top-18 right-4 p-8 w-1/6 lg:w-1/5"
+  <div
+    className="hidden relative lg:col-span-2 xl:col-span-3 lg:block h-full"
   >
-    <h4
-      className="font-bold mb-2 text-gray-500"
+    <div
+      className="h-60"
+    />
+    <nav
+      className="sticky top-24 right-4"
     >
-      Inhalte
-    </h4>
-    <ul>
-      <li
-        className="mb-2"
+      <h4
+        className="font-bold mb-2 text-gray-500"
       >
-        <button
-          className="text-left cursor-pointer hover:text-blue-500 transition focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2 focus:outline-none leading-tight pr-1 pl-3 py-0.5 -ml-3 text-gray-400"
-          onClick={[Function]}
+        Auf diese Seite
+      </h4>
+      <ul>
+        <li
+          className="mb-2"
         >
-          Ingredients
-        </button>
-      </li>
-      <li
-        className="mb-2"
-      >
-        <button
-          className="text-left cursor-pointer hover:text-blue-500 transition focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2 focus:outline-none leading-tight pr-1 pl-3 py-0.5 -ml-3 text-gray-400"
-          onClick={[Function]}
+          <button
+            className="text-left cursor-pointer hover:text-blue-500 transition focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2 focus:outline-none leading-tight pr-1 pl-3 py-0.5 -ml-3 text-gray-400"
+            onClick={[Function]}
+          >
+            Ingredients
+          </button>
+        </li>
+        <li
+          className="mb-2"
         >
-          Preparation
-        </button>
-      </li>
-      <li
-        className="mb-2"
-      >
-        <button
-          className="text-left cursor-pointer hover:text-blue-500 transition focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2 focus:outline-none leading-tight pr-1 pl-3 py-0.5 -ml-3 text-gray-400"
-          onClick={[Function]}
+          <button
+            className="text-left cursor-pointer hover:text-blue-500 transition focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2 focus:outline-none leading-tight pr-1 pl-3 py-0.5 -ml-3 text-gray-400"
+            onClick={[Function]}
+          >
+            Preparation
+          </button>
+        </li>
+        <li
+          className="mb-2"
         >
-          Serving
-        </button>
-      </li>
-    </ul>
-  </nav>,
+          <button
+            className="text-left cursor-pointer hover:text-blue-500 transition focus:ring-2 focus:ring-offset-gray-100 focus:ring-offset-2 focus:outline-none leading-tight pr-1 pl-3 py-0.5 -ml-3 text-gray-400"
+            onClick={[Function]}
+          >
+            Serving
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>,
   <div
     className="container mx-auto prose lg:prose-lg 2xl:prose-2xl prose-blue px-4 py-6 sm:px-8 sm:py-12 md:px-12 md:py-18 lg:px-18 lg:py-24"
   >

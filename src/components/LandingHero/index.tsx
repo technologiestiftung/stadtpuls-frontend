@@ -1,4 +1,5 @@
 import { AnchorButton } from "@components/Button";
+import Link from "next/link";
 import { FC } from "react";
 
 const datahubLogo = "/images/datahub-logo.svg";
@@ -33,12 +34,16 @@ export const LandingHero: FC = () => (
         werden automatisch gespeichert, visualisiert und für andere verfügbar
         gemacht.
       </p>
-      <AnchorButton href='/' variant='primary' className='mr-4'>
-        Zum Tutorial
-      </AnchorButton>
-      <AnchorButton href='/projects' variant='secondary'>
-        Projekte ansehen
-      </AnchorButton>
+      <Link href='/docs'>
+        <AnchorButton href='/' variant='primary' className='mr-4'>
+          Mehr Erfahren
+        </AnchorButton>
+      </Link>
+      <Link href='/projects'>
+        <AnchorButton href='/projects' variant='secondary'>
+          Projekte ansehen
+        </AnchorButton>
+      </Link>
     </div>
     <div>
       <img

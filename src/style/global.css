@@ -9,7 +9,7 @@
     @apply text-black opacity-75 transition hover:opacity-100 hover:text-blue-500 sm:px-1 sm:py-0.5 -ml-1 sm:inline-block;
   }
   .navigation-link-active {
-    @apply text-blue-500 bg-blue-50 opacity-100;
+    @apply decoration-clone text-blue-500 bg-blue-50 opacity-100;
   }
 };
 @layer base {
