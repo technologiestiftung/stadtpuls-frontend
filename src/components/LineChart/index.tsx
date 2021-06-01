@@ -137,18 +137,6 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
                 : "inherit"
             }
           />
-          <Bar
-            x={paddingLeft}
-            y={0}
-            width={graphWidth}
-            height={graphHeight}
-            fill='transparent'
-            rx={14}
-            onTouchStart={handleTooltip}
-            onTouchMove={handleTooltip}
-            onMouseMove={handleTooltip}
-            onMouseLeave={hideTooltip}
-          />
           {tooltipData && (
             <g>
               <Line
@@ -182,6 +170,18 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
           <Group left={paddingLeft}>
             <LinePath width={graphWidth} height={graphHeight} data={data} />
           </Group>
+          <Bar
+            x={paddingLeft}
+            y={0}
+            width={graphWidth}
+            height={graphHeight}
+            fill='transparent'
+            rx={14}
+            onTouchStart={handleTooltip}
+            onTouchMove={handleTooltip}
+            onMouseMove={handleTooltip}
+            onMouseLeave={hideTooltip}
+          />
         </svg>
         {tooltipData && (
           <div>

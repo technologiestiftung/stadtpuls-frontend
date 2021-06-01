@@ -540,6 +540,17 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
           </g>
           
         </g>
+        <g
+          className="visx-group"
+          transform="translate(64, 0)"
+        >
+          <path
+            className="visx-linepath css-j1t6gj-LinePath"
+            d="M304,97.99999999999999L152,27.999999999999993L0,63"
+            fill="transparent"
+            strokeLinecap="round"
+          />
+        </g>
         <rect
           className="visx-bar"
           fill="transparent"
@@ -553,17 +564,6 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
           x={64}
           y={0}
         />
-        <g
-          className="visx-group"
-          transform="translate(64, 0)"
-        >
-          <path
-            className="visx-linepath css-j1t6gj-LinePath"
-            d="M304,97.99999999999999L152,27.999999999999993L0,63"
-            fill="transparent"
-            strokeLinecap="round"
-          />
-        </g>
       </svg>
     </div>
   </div>
