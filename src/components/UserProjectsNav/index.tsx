@@ -56,7 +56,7 @@ export const UserProjectsNav: FC<UserProjectsNavType> = ({
                 id={`user-project-item-${project.projectId}`}
                 onClick={() => handleSelectProject(project.projectId)}
                 className={[
-                  `py-0 pl-4 border-l-2 border-blue-400 focus-offset transition focus:ring-blue-500`,
+                  `py-0 pl-4 border-l-2 border-blue-400 focus-offset text-left transition focus:ring-blue-500`,
                   `${
                     project.projectId === selectedProject?.projectId
                       ? "text-blue-500 border-opacity-100"

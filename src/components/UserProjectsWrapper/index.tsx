@@ -25,7 +25,7 @@ export const UserProjectsWrapper: FC<UserProjectWrapperType> = ({
   return (
     <div
       className='max-w-screen-xl mx-auto p-6 block md:grid gap-4 grid-cols-12'
-      style={{ paddingTop: "5vmax" }}
+      style={{ padding: "5vmax 0" }}
     >
       <section className='col-span-3'>
         <h1 className='text-3xl text-blue-500 font-bold mt-6'>

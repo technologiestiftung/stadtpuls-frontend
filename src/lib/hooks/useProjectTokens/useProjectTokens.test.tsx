@@ -103,7 +103,7 @@ describe("useProjectTokens", () => {
     );
 
     await waitFor(() => {
-      expect(onError).toHaveBeenLastCalledWith(true);
+      expect(onError).toHaveBeenCalled();
       expect(onSuccess).not.toHaveBeenCalled();
     });
   });
