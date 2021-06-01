@@ -362,10 +362,7 @@ export const Project: FC<SupabaseProjectType> = project => {
                 )}
               {project.devices.length === 0 && (
                 <div className='prose p-8 max-w-full h-80 grid text-center items-center'>
-                  <div>
-                    <h3>Dieses Projekt enthält noch keine Sensoren.</h3>
-                    <p>Die Autor:in konfiguriert es möglicherweise noch.</p>
-                  </div>
+                  <h3>Dieses Projekt enthält noch keine Sensoren.</h3>
                 </div>
               )}
             </Box>
