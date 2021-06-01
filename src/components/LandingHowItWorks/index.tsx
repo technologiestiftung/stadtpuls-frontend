@@ -29,7 +29,7 @@ const HowItWorksColumn: FC<HowItWorksColumnPropType> = ({
   children,
   final = false,
 }) => (
-  <div className={["pr-8", final ? "bg-white" : ""].join(" ")}>
+  <div className={["pr-8", final ? "bg-white col-span-3" : "col-span-2"].join(" ")}>
     <header className={final ? "px-8" : ""}>{children}</header>
   </div>
 );
@@ -38,7 +38,12 @@ const ListWithIcons: FC<ListWithIconsPropType> = ({
   listItems,
   final = false,
 }) => (
-  <ul className={["pt-8 pr-8", final ? "bg-white px-8" : ""].join(" ")}>
+  <ul
+    className={[
+      "pt-8 pr-8",
+      final ? "bg-white px-8 col-span-3" : "col-span-2",
+    ].join(" ")}
+  >
     {listItems.map(({ text, icon = <i /> }) => (
       <li
         key={text}
@@ -54,92 +59,100 @@ const ListWithIcons: FC<ListWithIconsPropType> = ({
   </ul>
 );
 
+const columnsData = [
+  {
+    title: "Hardware",
+    description:
+      "Die Hardware-Wahl  ist ganz dir überlassen. Arbeite z.B. mit Arduino, Raspberry Pi oder einer Open Sense Box.",
+    listItems: [
+      { text: "Arduino" },
+      { text: "Raspberry Pi" },
+      { text: "Open Sense Box" },
+    ],
+  },
+  {
+    title: "Sensoren",
+    description:
+      "Wir unterstützen aktuell die folgenden, für die Umwelt relevanten Sensortypen.",
+    listItems: [
+      { text: "Temperatur" },
+      { text: "CO2" },
+      { text: "Luftfeuchtigkeit" },
+      { text: "Druck" },
+      { text: "Helligkeit" },
+      { text: "Lautstärke" },
+      { text: "Personenzähler" },
+    ],
+  },
+  {
+    title: "Protokolle",
+    description:
+      "Über die folgenden Protokolle kannst du deine Daten übertragen.",
+    listItems: [{ text: "TheThingsNetwork (TTN)" }],
+  },
+  {
+    title: "Was wir bereitstellen",
+    description:
+      "Hast du erstmal deinen Sensoren registriert, stellen wir dir automatisch und kostenlos folgendes bereit:",
+    listItems: [
+      { text: "Ein Profil für dein Projekt" },
+      { text: "Datenvisualisierungen" },
+      { text: "REST-API für alle Sensoren" },
+      { text: "Daten-Downloads (CSV & JSON)" },
+    ],
+  },
+];
+
 export const LandingHowItWorks: FC = () => (
-  <section
-    className={[
-      "container mx-auto max-w-8xl",
-      "px-4 sm:px-6 md:px-8",
-      "py-12 sm:py-24 md:py-40",
-      "overflow-x-auto",
-    ].join(" ")}
-  >
-    <div className='grid grid-cols-4 gap-0'>
-      <HowItWorksColumn>
-        <HowItWorksTitle>
-          <span className='mr-2'>Hardware</span>
-          <ArrowForward />
-        </HowItWorksTitle>
-      </HowItWorksColumn>
-      <HowItWorksColumn>
-        <HowItWorksTitle>
-          <span className='mr-2'>Sensoren</span>
-          <ArrowForward />
-        </HowItWorksTitle>
-      </HowItWorksColumn>
-      <HowItWorksColumn>
-        <HowItWorksTitle>
-          <span className='mr-2'>Protokolle</span>
-          <ArrowForward />
-        </HowItWorksTitle>
-      </HowItWorksColumn>
-      <HowItWorksColumn final={true}>
-        <HowItWorksTitle>Was wir bereitstellen</HowItWorksTitle>
-      </HowItWorksColumn>
-    </div>
-    <div className='grid grid-cols-4 gap-0 border-b border-gray-300'>
-      <HowItWorksColumn>
-        <HowItWorksDescription>
-          Die Hardware-Wahl ist ganz dir überlassen. Arbeite z.B. mit Arduino,
-          Raspberry Pi oder einer Open Sense Box.
-        </HowItWorksDescription>
-      </HowItWorksColumn>
-      <HowItWorksColumn>
-        <HowItWorksDescription>
-          Wir unterstützen aktuell die folgenden, für die Umwelt relevanten
-          Sensortypen.
-        </HowItWorksDescription>
-      </HowItWorksColumn>
-      <HowItWorksColumn>
-        <HowItWorksDescription>
-          Über die folgenden Protokolle kannst du deine Daten übertragen.
-        </HowItWorksDescription>
-      </HowItWorksColumn>
-      <HowItWorksColumn final={true}>
-        <HowItWorksDescription>
-          Hast du erstmal deinen Sensoren registriert, stellen wir dir
-          automatisch und kostenlos folgendes bereit:
-        </HowItWorksDescription>
-      </HowItWorksColumn>
-    </div>
-    <div className='grid grid-cols-4 gap-0 pb-8 mb-8 sm:pb-12 sm:mb-12'>
-      <ListWithIcons
-        listItems={[
-          { text: "Arduino" },
-          { text: "Raspberry Pi" },
-          { text: "Open Sense Box" },
-        ]}
-      />
-      <ListWithIcons
-        listItems={[
-          { text: "Temperatur" },
-          { text: "CO2" },
-          { text: "Luftfeuchtigkeit" },
-          { text: "Druck" },
-          { text: "Helligkeit" },
-          { text: "Lautstärke" },
-          { text: "Personenzähler" },
-        ]}
-      />
-      <ListWithIcons listItems={[{ text: "TTN" }]} />
-      <ListWithIcons
-        final={true}
-        listItems={[
-          { text: "Ein Profil für dein Projekt" },
-          { text: "Datenvisualisierungen" },
-          { text: "REST-API für alle Sensoren" },
-          { text: "Daten-Downloads (CSV & JSON)" },
-        ]}
-      />
-    </div>
-  </section>
+  <div className='bg-gray-50'>
+    <section
+      className={[
+        "container mx-auto max-w-8xl",
+        "px-4 sm:px-6 md:px-8",
+        "py-8 sm:py-12 md:py-16",
+        "overflow-x-auto",
+      ].join(" ")}
+    >
+      <h1
+        className={[
+          "text-xl sm:text-2xl md:text-3xl",
+          "text-blue-500 font-semibold",
+          "mt-6 mb-8",
+        ].join(" ")}
+      >
+        Und so geht’s:
+        <br />
+        <span className='text-blue-300'>Eine kleine Übersicht</span>
+      </h1>
+      <div className='grid grid-cols-9 gap-0'>
+        {columnsData.map(({ title }, idx) => (
+          <HowItWorksColumn key={title} final={idx + 1 === columnsData.length}>
+            <HowItWorksTitle>
+              <span className='mr-2'>{title}</span>
+              {idx + 1 !== columnsData.length && <ArrowForward />}
+            </HowItWorksTitle>
+          </HowItWorksColumn>
+        ))}
+      </div>
+      <div className='grid grid-cols-9 gap-0 border-b border-gray-300'>
+        {columnsData.map(({ description }, idx) => (
+          <HowItWorksColumn
+            key={description}
+            final={idx + 1 === columnsData.length}
+          >
+            <HowItWorksDescription>{description}</HowItWorksDescription>
+          </HowItWorksColumn>
+        ))}
+      </div>
+      <div className='grid grid-cols-9 gap-0 pb-8 mb-8 sm:pb-12 sm:mb-12'>
+        {columnsData.map(({ title, listItems }, idx) => (
+          <ListWithIcons
+            key={title}
+            final={idx + 1 === columnsData.length}
+            listItems={listItems}
+          />
+        ))}
+      </div>
+    </section>
+  </div>
 );
