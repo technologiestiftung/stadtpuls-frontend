@@ -230,3 +230,12 @@ export interface MarkerType {
   id: number;
   isActive: boolean;
 }
+
+export interface TokenResponseObjectType {
+  comment: string;
+  method: string;
+  url: string;
+  data: {
+    token: string;
+  };
+}

@@ -13,32 +13,58 @@ interface PagesGroupPropType {
 
 const infoPages: PageType[] = [
   {
+    title: "Willkommen",
+    path: "/docs",
+  },
+  {
     title: "Über dieses Projekt",
     path: "/docs/about",
   },
   {
-    title: "Mitmachen",
-    path: "/docs/participate",
+    title: "FAQ",
+    path: "/docs/faq",
   },
 ];
 
 const docsPages: PageType[] = [
   {
-    title: "Willkommen",
-    path: "/docs",
+    title: "Gerät auf TTN konfigurieren",
+    path: "/docs/ttn-configuration",
   },
   {
-    title: "Tutorial",
-    path: "/docs/tutorial",
+    title: "IoT Hub Konto erstellen",
+    path: "/docs/new-account",
+  },
+  {
+    title: "Neues Projekt erstellen",
+    path: "/docs/new-project",
+  },
+  {
+    title: "Neues Gerät anlegen",
+    path: "/docs/new-device",
+  },
+  {
+    title: "Device-Daten anschauen",
+    path: "/docs/view-device-data",
+  },
+  {
+    title: "Troubleshooting",
+    path: "/docs/troubleshooting",
+  },
+  {
+    title: "Konto Verwalten",
+    path: "/docs/manage-account",
   },
 ];
+
+export const allPages = [...infoPages, ...docsPages];
 
 const PagesGroup: FC<PagesGroupPropType> = ({ title, pages }) => (
   <>
     <h4 className='font-bold text-xl 2xl:text-2xl mb-2'>{title}</h4>
-    <ul className='list-none mb-8 2xl:text-lg'>
+    <ul className='list-none mb-8 2xl:text-lg leading-tight'>
       {pages.map(page => (
-        <li key={page.path}>
+        <li key={page.path} className='mb-2'>
           <ActiveLink activeClassName='navigation-link-active' href={page.path}>
             <a href={page.path} className='navigation-link p-4 block sm:inline'>
               {page.title}
@@ -65,7 +91,7 @@ export const DocsSidebar: FC<DocsSidebarPropType> = ({ isOpened = true }) => (
   >
     <div className='sticky w-full top-16 overflow-y-auto h-screen'>
       <div className='px-8 py-8 bg-white border-r w-full h-full'>
-        <PagesGroup title='Informationen' pages={infoPages} />
+        <PagesGroup title='About' pages={infoPages} />
         <PagesGroup title='Dokumentation' pages={docsPages} />
       </div>
     </div>

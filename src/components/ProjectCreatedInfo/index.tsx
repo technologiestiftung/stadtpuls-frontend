@@ -1,21 +1,14 @@
 import { AnchorButton } from "@components/Button";
+import { TokenDisplay } from "@components/TokenDisplay";
 import { FC, HTMLProps, useEffect, useState } from "react";
 import Link from "next/link";
 import { useProjectTokens } from "@lib/hooks/useProjectTokens";
 import { useAuth } from "@auth/Auth";
+import { TokenResponseObjectType } from "@common/interfaces";
 
 export interface ProjectCreatedInfoType extends HTMLProps<HTMLElement> {
   projectId: number;
   projectTitle: string;
-}
-
-interface TokenResponseObjectType {
-  comment: string;
-  method: string;
-  url: string;
-  data: {
-    token: string;
-  };
 }
 
 export const ProjectCreatedInfo: FC<ProjectCreatedInfoType> = ({
@@ -50,23 +43,14 @@ export const ProjectCreatedInfo: FC<ProjectCreatedInfoType> = ({
       <h3 className='mt-12 text-2xl text-blue-500 font-bold'>
         Nächste Schritte
       </h3>
-      <div className='mt-4'>{children}</div>
-      <h4 className='mt-12'>Token</h4>
-      {!token && error && (
-        <p className='mt-2 p-3 border border-gray-200 text-gray-500 break-words'>
-          Das Token konnte nicht generiert werden.
-        </p>
-      )}
-      {!token && !error && (
-        <p className='mt-2 p-3 border border-gray-200 text-gray-400 break-words'>
-          Token wird generiert...
-        </p>
-      )}
-      {token && (
-        <p className='mt-2 p-3 border border-gray-200 text-gray-500 break-words'>
-          {token}
-        </p>
-      )}
+      <div className='mt-4 mb-12'>{children}</div>
+      <TokenDisplay hasError={!!error}>
+        {!token && !error
+          ? "Token wird generiert ..."
+          : token && !error
+          ? token
+          : error}
+      </TokenDisplay>
       <footer className='mt-24 flex justify-end'>
         <Link href={`/account/projects/${projectId}`}>
           <AnchorButton href={`/account/projects/${projectId}`}>

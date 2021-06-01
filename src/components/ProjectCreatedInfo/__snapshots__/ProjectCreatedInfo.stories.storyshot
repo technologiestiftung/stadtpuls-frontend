@@ -20,7 +20,7 @@ exports[`Storyshots Layout/ProjectCreatedInfo Default 1`] = `
     Nächste Schritte
   </h3>
   <div
-    className="mt-4"
+    className="mt-4 mb-12"
   >
     <p>
       This is a next steps description. This is a next steps description. This is a next steps description. This is a next steps description. This is a next steps description. This is a next steps description.
@@ -29,16 +29,19 @@ exports[`Storyshots Layout/ProjectCreatedInfo Default 1`] = `
       Possibly in two paragraphs. Possibly in two paragraphs. Possibly in two paragraphs. Possibly in two paragraphs. Possibly in two paragraphs. Possibly in two paragraphs.
     </p>
   </div>
-  <h4
-    className="mt-12"
-  >
-    Token
-  </h4>
-  <p
-    className="mt-2 p-3 border border-gray-200 text-gray-400 break-words"
-  >
-    Token wird generiert...
-  </p>
+  <div>
+    <p
+      id="token-display-label"
+    >
+      Token
+    </p>
+    <div
+      aria-labelledby="token-display-label"
+      className="mt-2 p-3 break-words border border-gray-200 text-gray-700"
+    >
+      Token wird generiert ...
+    </div>
+  </div>
   <footer
     className="mt-24 flex justify-end"
   >

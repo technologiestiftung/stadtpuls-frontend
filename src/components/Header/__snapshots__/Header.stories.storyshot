@@ -81,7 +81,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            Dokumentation
+            Mehr Infos
           </a>
         </li>
       </ul>
@@ -326,7 +326,7 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            Dokumentation
+            Mehr Infos
           </a>
         </li>
       </ul>

@@ -38,6 +38,7 @@ export const EditProjectForm: FC<ProjectForm> = ({
   onSubmit = console.log,
   onCancel,
   onDelete,
+  children,
 }) => {
   const {
     control,
@@ -113,12 +114,7 @@ export const EditProjectForm: FC<ProjectForm> = ({
           />
         )}
       />
-      <button
-        disabled
-        className='mt-6 text-gray-400 underline cursor-not-allowed'
-      >
-        Token neu generieren (derzeit nicht verfügbar)
-      </button>
+      <div className='mt-12'>{children}</div>
     </ProjectInfoFormWrapper>
   );
 };

@@ -16,41 +16,14 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
         <h4
           className="font-bold text-xl 2xl:text-2xl mb-2"
         >
-          Informationen
+          About
         </h4>
         <ul
-          className="list-none mb-8 2xl:text-lg"
+          className="list-none mb-8 2xl:text-lg leading-tight"
         >
-          <li>
-            <a
-              className="navigation-link p-4 block sm:inline"
-              href="/docs/about"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Über dieses Projekt
-            </a>
-          </li>
-          <li>
-            <a
-              className="navigation-link p-4 block sm:inline"
-              href="/docs/participate"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Mitmachen
-            </a>
-          </li>
-        </ul>
-        <h4
-          className="font-bold text-xl 2xl:text-2xl mb-2"
-        >
-          Dokumentation
-        </h4>
-        <ul
-          className="list-none mb-8 2xl:text-lg"
-        >
-          <li>
+          <li
+            className="mb-2"
+          >
             <a
               className="navigation-link p-4 block sm:inline"
               href="/docs"
@@ -60,14 +33,121 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
               Willkommen
             </a>
           </li>
-          <li>
+          <li
+            className="mb-2"
+          >
             <a
               className="navigation-link p-4 block sm:inline"
-              href="/docs/tutorial"
+              href="/docs/about"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Tutorial
+              Über dieses Projekt
+            </a>
+          </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/docs/faq"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              FAQ
+            </a>
+          </li>
+        </ul>
+        <h4
+          className="font-bold text-xl 2xl:text-2xl mb-2"
+        >
+          Dokumentation
+        </h4>
+        <ul
+          className="list-none mb-8 2xl:text-lg leading-tight"
+        >
+          <li
+            className="mb-2"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/docs/ttn-configuration"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Gerät auf TTN konfigurieren
+            </a>
+          </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/docs/new-account"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              IoT Hub Konto erstellen
+            </a>
+          </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/docs/new-project"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Neues Projekt erstellen
+            </a>
+          </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/docs/new-device"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Neues Gerät anlegen
+            </a>
+          </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/docs/view-device-data"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Device-Daten anschauen
+            </a>
+          </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/docs/troubleshooting"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Troubleshooting
+            </a>
+          </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/docs/manage-account"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Konto Verwalten
             </a>
           </li>
         </ul>

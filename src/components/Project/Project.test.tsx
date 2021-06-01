@@ -7,7 +7,7 @@ import store from "../../state/store";
 import { Project } from ".";
 import { getProjectData } from "@lib/requests/getProjectData";
 describe("Project component", () => {
-  it("should render the Project title", async (): Promise<void> => {
+  beforeAll(() => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     nextRouter.useRouter = jest.fn();
@@ -18,7 +18,8 @@ describe("Project component", () => {
       query: { id: 1 },
       prefetch: () => Promise.resolve(true),
     }));
-
+  });
+  it("should render the Project title", async (): Promise<void> => {
     const project = await getProjectData(10);
 
     render(
@@ -33,6 +34,21 @@ describe("Project component", () => {
       expect(
         screen.getByText(/Temperatur Grunewaldstraße/gi)
       ).toBeInTheDocument()
+    );
+  });
+  it("should render a link to go back to the projects list", async (): Promise<void> => {
+    const project = await getProjectData(10);
+
+    render(
+      <StoreProvider store={store}>
+        <ThemeProvider theme={theme}>
+          <Project {...project} />
+        </ThemeProvider>
+      </StoreProvider>
+    );
+
+    await waitFor(() =>
+      expect(document.querySelector("a[href^='/projects']")).toBeInTheDocument()
     );
   });
 });

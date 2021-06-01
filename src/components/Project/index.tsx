@@ -186,8 +186,8 @@ export const Project: FC<SupabaseProjectType> = project => {
     <Container mt={[0, 5, 5]} p={4}>
       <Grid gap={[4, null, 6]} columns={[1, "1fr 2fr"]}>
         <Box>
-          <Link href='/'>
-            <a sx={{ textDecoration: "none", color: "text" }}>
+          <Link href='/projects'>
+            <a sx={{ textDecoration: "none", color: "text" }} href='/projects'>
               <IconButton
                 aria-label='Zurück zur Übersicht'
                 bg='background'
