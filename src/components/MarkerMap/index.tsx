@@ -6,23 +6,13 @@ import { bbox, featureCollection, point } from "@turf/turf";
 import { jsx } from "theme-ui";
 import { MarkerType } from "../../common/interfaces";
 import { MarkerCircle } from "../MarkerCircle";
+import { ViewportType } from "@common/types/ReactMapGl";
 
 // import "mapbox-gl/dist/mapbox-gl.css";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
 type ClickHandlerType = (markerId: number) => void;
-
-interface ViewportType {
-  latitude: number;
-  longitude: number;
-  zoom: number;
-  bearing: number;
-  pitch: number;
-  maxZoom: number;
-  width: number;
-  height: number;
-}
 
 export const MarkerMap: React.FC<{
   markers: MarkerType[];
