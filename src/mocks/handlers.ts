@@ -81,14 +81,12 @@ const supabaseHandlers = [
     const select = query.get("select");
     // const offset = query.get("offset");
     // const limit = query.get("limit");
-    const devicesLimit = query.get("devices.limit");
     const recordsLimit = query.get("devices.records.limit");
     const recordsOrder = query.get("devices.records.order");
     const userId = query.get("userId")?.slice(3);
     if (
       recordsLimit == "500" &&
       recordsOrder == "recordedAt.desc.nullslast" &&
-      devicesLimit == "10" &&
       // limit == "10" &&
       // offset == "0" &&
       select ==
