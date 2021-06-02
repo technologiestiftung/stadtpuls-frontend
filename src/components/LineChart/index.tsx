@@ -36,6 +36,8 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
     data,
     width,
     height,
+    yAxisUnit,
+    xAxisUnit,
     showTooltip,
     hideTooltip,
     tooltipData,
@@ -51,7 +53,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
     const paddingLeft: number = theme.space ? Number(theme.space[5]) : 0;
 
     const graphWidth: number = width - paddingLeft - padding;
-    const graphHeight: number = height - padding;
+    const graphHeight: number = height - padding * 2;
 
     const xScale = scaleUtc<number>({
       domain: extent(data, getX) as [Date, Date],
@@ -106,14 +108,6 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
     return (
       <div>
         <svg width={width} height={height} sx={{ overflow: "visible" }}>
-          <rect
-            sx={{
-              fill: "background",
-              width: graphWidth,
-              height: graphHeight,
-            }}
-            x={paddingLeft}
-          />
           <GridRows
             scale={yScale}
             width={graphWidth}
@@ -124,6 +118,9 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
             scale={xAxis.scale}
             top={graphHeight}
             left={paddingLeft}
+            label={xAxisUnit}
+            labelOffset={12}
+            labelClassName='font-bold'
             stroke={
               theme.colors?.lightgrey
                 ? String(theme.colors.lightgrey)
@@ -139,6 +136,9 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
           <AxisLeft
             scale={yAxis.scale}
             left={paddingLeft}
+            label={yAxisUnit}
+            labelOffset={24}
+            labelClassName='font-bold'
             hideAxisLine={true}
             hideTicks={true}
             numTicks={4}
@@ -147,6 +147,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
                 ? String(theme.colors.mediumgrey)
                 : "inherit"
             }
+            hideZero={true}
           />
           {tooltipData && (
             <g>
