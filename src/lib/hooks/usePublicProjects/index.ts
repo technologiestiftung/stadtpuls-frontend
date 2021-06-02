@@ -15,6 +15,7 @@ export interface PublicProject {
   location?: string;
   devicesNumber: number;
   authorName: string | null;
+  category: string | null;
   records: DateValueType[];
 }
 
@@ -59,6 +60,9 @@ export const getPublicProjects = async (
     ),
     user:userId (
       name
+    ),
+    category:categoryId (
+      name
     )
     `,
       { count: "exact" }
@@ -74,7 +78,15 @@ export const getPublicProjects = async (
   if (!data || !count) return null;
   const projects = data?.map(
     (project): PublicProject => {
-      const { id, name, description, location, devices, user } = project;
+      const {
+        id,
+        name,
+        description,
+        location,
+        devices,
+        user,
+        category,
+      } = project;
       return {
         id,
         name,
@@ -83,6 +95,7 @@ export const getPublicProjects = async (
         devicesNumber: devices?.length || 0,
         authorName: user?.name || null,
         records: parseDeviceRecords(devices),
+        category: category?.name || null,
       };
     }
   );

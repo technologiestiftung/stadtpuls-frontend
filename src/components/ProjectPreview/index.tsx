@@ -14,6 +14,7 @@ export const ProjectPreview: FC<PublicProject> = ({
   records,
   devicesNumber,
   authorName,
+  category,
 }) => {
   const parentRef = useRef<HTMLDivElement>(null);
   const [svgWrapperWidth, setSvgWrapperWidth] = useState(0);
@@ -80,8 +81,21 @@ export const ProjectPreview: FC<PublicProject> = ({
             ].join(" ")}
           >
             <div>
-              <h3 className='text-blue-500 text-xl sm:text-2xl md:text-3xl font-semibold'>
-                {name}
+              <h3 className='text-blue-500 text-xl sm:text-2xl md:text-3xl font-semibold flex justify-between items-start'>
+                <span>{name}</span>
+                {category && (
+                  <div
+                    className={[
+                      "sm:absolute z-10",
+                      "text-base font-normal",
+                      "ml-4",
+                      "right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7",
+                      "px-3 py-1 bg-blue-50 text-blue-500",
+                    ].join(" ")}
+                  >
+                    {category}
+                  </div>
+                )}
               </h3>
               <p className='mt-4 mb-2 flex gap-2 flex-wrap'>
                 <span className='font-bold inline-block'>{location}</span>
@@ -92,7 +106,10 @@ export const ProjectPreview: FC<PublicProject> = ({
                 {authorName && (
                   <>
                     <span className='text-gray-400'>·</span>
-                    <span className='inline-block max-w-full truncate'>
+                    <span
+                      className='inline-block truncate'
+                      style={{ maxWidth: "calc(100vw - 64px)" }}
+                    >
                       <AccountCircle className='mr-2 opacity-40' />
                       {authorName}
                     </span>

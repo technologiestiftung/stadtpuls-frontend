@@ -9,6 +9,7 @@ const defaultProject = {
   description: "Description",
   records: [],
   authorName: "Lucas",
+  category: "Temperatur",
   devicesNumber: 0,
 };
 
@@ -60,7 +61,7 @@ describe("ProjectPreview component", () => {
     expect(author).toBeInTheDocument();
     expect(dots).toHaveLength(2);
   });
-  it("not should not render the author name if null", async (): Promise<void> => {
+  it("should not render the author name if null", async (): Promise<void> => {
     const data = await getPublicProjects(500);
     if (data) render(<ProjectPreview {...defaultProject} authorName={null} />);
 
@@ -68,5 +69,19 @@ describe("ProjectPreview component", () => {
     const dots = screen.getAllByText(/·/gi);
     expect(author).not.toBeInTheDocument();
     expect(dots).toHaveLength(1);
+  });
+  it("should render the category", async (): Promise<void> => {
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} />);
+
+    const category = screen.queryByText(/Temperatur/gi);
+    expect(category).toBeInTheDocument();
+  });
+  it("should not render the category if null", async (): Promise<void> => {
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} category='null' />);
+
+    const category = screen.queryByText(/Temperatur/gi);
+    expect(category).not.toBeInTheDocument();
   });
 });

@@ -61,6 +61,9 @@ export const fakeProjects = [
         ],
       },
     ],
+    category: {
+      name: "Temperatur",
+    },
     user: {
       name: "Hans Peter Schmidt Van Der Hagen Lust",
     },
@@ -78,6 +81,9 @@ export const fakeProjects = [
         ],
       },
     ],
+    category: {
+      name: "C02",
+    },
     user: {
       name: "Vogelino",
     },
@@ -89,6 +95,9 @@ export const fakeProjects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
     devices: [],
+    category: {
+      name: "Luftfeuchtigkeit",
+    },
     user: {
       name: "Ingo",
     },
@@ -106,6 +115,9 @@ export const fakeProjects = [
       { records: [] },
       { records: [] },
     ],
+    category: {
+      name: "Druck",
+    },
     user: {
       name: "Ed",
     },
@@ -117,6 +129,9 @@ export const fakeProjects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
     devices: [],
+    category: {
+      name: "PAXCounter",
+    },
     user: {
       name: null,
     },
@@ -128,6 +143,9 @@ export const fakeProjects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
     devices: [],
+    category: {
+      name: "Lautstärke",
+    },
     user: {
       name: "Julia",
     },
@@ -139,6 +157,9 @@ export const fakeProjects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
     devices: [{ records: [] }],
+    category: {
+      name: null,
+    },
     user: {
       name: "Anne",
     },
@@ -150,6 +171,9 @@ export const fakeProjects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
     devices: [{ records: [] }],
+    category: {
+      name: "Temperatur",
+    },
     user: {
       name: "Dennis",
     },
@@ -167,6 +191,9 @@ export const fakeProjects = [
         ],
       },
     ],
+    category: {
+      name: "Temperatur",
+    },
     user: {
       name: "Fabian",
     },
@@ -184,6 +211,9 @@ export const fakeProjects = [
         ],
       },
     ],
+    category: {
+      name: "Temperatur",
+    },
     user: {
       name: "Lisa",
     },
