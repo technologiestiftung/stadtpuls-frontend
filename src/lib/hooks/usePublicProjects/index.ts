@@ -13,6 +13,7 @@ export interface PublicProject {
   name: string;
   description?: string;
   location?: string;
+  devicesNumber: number;
   records: DateValueType[];
 }
 
@@ -63,7 +64,6 @@ export const getPublicProjects = async (
       foreignTable: "devices.records",
       ascending: false,
     })
-    .limit(10, { foreignTable: "devices" })
     .limit(recordsLimit, { foreignTable: "devices.records" });
 
   if (error) throw error;
@@ -76,6 +76,7 @@ export const getPublicProjects = async (
         name,
         description,
         location,
+        devicesNumber: devices?.length || 0,
         records: parseDeviceRecords(devices),
       };
     }

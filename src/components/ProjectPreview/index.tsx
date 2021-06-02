@@ -11,6 +11,7 @@ export const ProjectPreview: FC<PublicProject> = ({
   location,
   description,
   records,
+  devicesNumber,
 }) => {
   const parentRef = useRef<HTMLDivElement>(null);
   const [svgWrapperWidth, setSvgWrapperWidth] = useState(0);
@@ -80,7 +81,13 @@ export const ProjectPreview: FC<PublicProject> = ({
               <h3 className='text-blue-500 text-xl sm:text-2xl md:text-3xl font-semibold'>
                 {name}
               </h3>
-              <h4 className='mt-4 mb-2 font-bold'>{location}</h4>
+              <p className='mt-4 mb-2 flex gap-x-2'>
+                <span className='font-bold'>{location}</span>
+                <span className='text-gray-400'>·</span>
+                <span className=''>
+                  {devicesNumber} {devicesNumber > 1 ? "Sensoren" : "Sensor"}
+                </span>
+              </p>
               <p className='text-base'>{description}</p>
             </div>
           </div>
