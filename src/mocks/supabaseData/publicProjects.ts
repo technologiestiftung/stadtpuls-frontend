@@ -4,7 +4,7 @@ export const fakeProjects = [
     name: "Temperatur Grunewaldstraße",
     description:
       "Temperaturmessung den Räumlichkeiten der Technologiestiftung Berlin in der Grunewaldstraße",
-    location: "Berlin",
+    location: "La Tour-de-Peilz",
     devices: [
       {
         records: [
@@ -70,10 +70,10 @@ export const fakeProjects = [
   },
   {
     id: 19,
-    name: "Project 10",
+    name: "Plan of Simplicity",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    location: "Berlin",
+      "What is once well done is done forever. - Henry David Thoreau",
+    location: "Santiago",
     devices: [
       {
         records: [
@@ -90,10 +90,10 @@ export const fakeProjects = [
   },
   {
     id: 18,
-    name: "Project 9",
+    name: "Shadow of Struggle",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    location: "Berlin",
+      "Do not fear death so much but rather the inadequate life. - Bertolt Brecht",
+    location: "Kiev",
     devices: [],
     category: {
       name: "Luftfeuchtigkeit",
@@ -104,10 +104,10 @@ export const fakeProjects = [
   },
   {
     id: 17,
-    name: "Project 8",
+    name: "Poison Thing",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    location: "Berlin",
+      "Ambition is the path to success. Persistence is the vehicle you arrive in. - Bill Bradley",
+    location: "Minsk",
     devices: [
       { records: [] },
       { records: [] },
@@ -124,10 +124,9 @@ export const fakeProjects = [
   },
   {
     id: 16,
-    name: "Project 7",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    location: "Berlin",
+    name: "August",
+    description: "",
+    location: "Tokyo",
     devices: [],
     category: {
       name: "PAXCounter",
@@ -138,10 +137,10 @@ export const fakeProjects = [
   },
   {
     id: 15,
-    name: "Project 6",
+    name: "Delicate Collapse",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    location: "Berlin",
+      "Sadness flies away on the wings of time. - Jean de La Fontaine",
+    location: "Nairobi",
     devices: [],
     category: {
       name: "Lautstärke",
@@ -152,10 +151,10 @@ export const fakeProjects = [
   },
   {
     id: 14,
-    name: "Project 5",
+    name: "Simple Broadcast",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    location: "Berlin",
+      "Through perseverance many people win success out of what seemed destined to be certain failure. - Benjamin Disraeli",
+    location: "New Dehli",
     devices: [{ records: [] }],
     category: {
       name: null,
@@ -166,9 +165,9 @@ export const fakeProjects = [
   },
   {
     id: 13,
-    name: "Project 4",
+    name: "doge blessedupleasant",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Love is too young to know what conscience is. - William Shakespeare",
     location: "Berlin",
     devices: [{ records: [] }],
     category: {
@@ -180,10 +179,10 @@ export const fakeProjects = [
   },
   {
     id: 12,
-    name: "Project 3",
+    name: "Mercenary Quiet",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    location: "Lucas",
+      "Life isn’t about getting and having, it’s about giving and being. - Kevin Kruse",
+    location: "New York",
     devices: [
       {
         records: [
@@ -200,10 +199,10 @@ export const fakeProjects = [
   },
   {
     id: 11,
-    name: "Project 2",
+    name: "Draco Annoying",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    location: "Tori",
+      "Prayer does not change God, but it changes him who prays. - Soren Kierkegaard",
+    location: "Hamburg",
     devices: [
       {
         records: [
