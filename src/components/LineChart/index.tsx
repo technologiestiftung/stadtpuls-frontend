@@ -14,6 +14,7 @@ import { TooltipWithBounds, withTooltip, defaultStyles } from "@visx/tooltip";
 import { WithTooltipProvidedProps } from "@visx/tooltip/lib/enhancers/withTooltip";
 import { Bar, Line } from "@visx/shape";
 import { localPoint } from "@visx/event";
+import { GridRows } from "@visx/grid";
 
 const getX = (d: DateValueType): Date => d.date;
 const getY = (d: DateValueType): number => d.value;
@@ -112,6 +113,12 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               height: graphHeight,
             }}
             x={paddingLeft}
+          />
+          <GridRows
+            scale={yScale}
+            width={graphWidth}
+            left={paddingLeft}
+            numTicks={4}
           />
           <AxisBottom
             scale={xAxis.scale}

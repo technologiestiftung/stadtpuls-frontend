@@ -13,6 +13,7 @@
     "@visx/axis": "1.7.0",
     "@visx/curve": "1.7.0",
     "@visx/event": "1.7.0",
+    "@visx/grid": "1.11.1",
     "@visx/group": "1.7.0",
     "@visx/mock-data": "1.7.0",
     "@visx/scale": "1.7.0",
