@@ -49,11 +49,15 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
     const context = useThemeUI();
     const { theme } = context;
 
-    const padding: number = theme.space ? Number(theme.space[4]) : 0;
-    const paddingLeft: number = theme.space ? Number(theme.space[5]) : 0;
+    const padding = {
+      left: 64,
+      right: 32,
+      top: 32,
+      bottom: 64,
+    };
 
-    const graphWidth: number = width - paddingLeft - padding;
-    const graphHeight: number = height - padding * 2;
+    const graphWidth: number = width - padding.left - padding.right;
+    const graphHeight: number = height - padding.top - padding.bottom;
 
     const xScale = scaleUtc<number>({
       domain: extent(data, getX) as [Date, Date],
@@ -84,7 +88,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
           | React.MouseEvent<SVGRectElement>
       ) => {
         const { x } = localPoint(event) || { x: 0 };
-        const x0 = xScale.invert(x - paddingLeft);
+        const x0 = xScale.invert(x - padding.left);
         const index = bisectDate(data, x0, 1);
         const d0 = data[index - 1];
         const d1 = data[index];
@@ -102,7 +106,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
           tooltipTop: yScale(getY(d)),
         });
       },
-      [showTooltip, yScale, xScale, data, paddingLeft]
+      [showTooltip, yScale, xScale, data, padding.left]
     );
 
     return (
@@ -111,13 +115,14 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
           <GridRows
             scale={yScale}
             width={graphWidth}
-            left={paddingLeft}
+            top={padding.top}
+            left={padding.left}
             numTicks={4}
           />
           <AxisBottom
             scale={xAxis.scale}
-            top={graphHeight}
-            left={paddingLeft}
+            top={graphHeight + padding.top}
+            left={padding.left}
             label={xAxisUnit}
             labelOffset={12}
             labelClassName='font-bold'
@@ -135,7 +140,8 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
           />
           <AxisLeft
             scale={yAxis.scale}
-            left={paddingLeft}
+            top={padding.top}
+            left={padding.left}
             label={yAxisUnit}
             labelOffset={24}
             labelClassName='font-bold'
@@ -150,7 +156,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
             hideZero={true}
           />
           {tooltipData && (
-            <g>
+            <Group top={padding.top}>
               <Line
                 className='stroke-current text-gray-400'
                 from={{ x: tooltipLeft, y: 0 }}
@@ -177,14 +183,14 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
                 strokeWidth={2}
                 pointerEvents='none'
               />
-            </g>
+            </Group>
           )}
-          <Group left={paddingLeft}>
+          <Group left={padding.left} top={padding.top}>
             <LinePath width={graphWidth} height={graphHeight} data={data} />
           </Group>
           <Bar
-            x={paddingLeft}
-            y={0}
+            x={padding.left}
+            y={padding.top}
             width={graphWidth}
             height={graphHeight}
             fill='transparent'
@@ -199,7 +205,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
           <div>
             <TooltipWithBounds
               key={Math.random()}
-              top={tooltipTop - 12}
+              top={tooltipTop + 20}
               left={tooltipLeft}
               style={tooltipStyles}
               className='bg-blue-500'
@@ -207,7 +213,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               {`${getY(tooltipData)}`}
             </TooltipWithBounds>
             <TooltipWithBounds
-              top={graphHeight - padding}
+              top={graphHeight}
               left={tooltipLeft}
               offsetLeft={10}
               style={{
