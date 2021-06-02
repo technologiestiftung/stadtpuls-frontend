@@ -61,6 +61,12 @@ export const fakeProjects = [
         ],
       },
     ],
+    category: {
+      name: "Temperatur",
+    },
+    user: {
+      name: "Hans Peter Schmidt Van Der Hagen Lust",
+    },
   },
   {
     id: 19,
@@ -75,6 +81,12 @@ export const fakeProjects = [
         ],
       },
     ],
+    category: {
+      name: "C02",
+    },
+    user: {
+      name: "Vogelino",
+    },
   },
   {
     id: 18,
@@ -83,6 +95,12 @@ export const fakeProjects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
     devices: [],
+    category: {
+      name: "Luftfeuchtigkeit",
+    },
+    user: {
+      name: "Ingo",
+    },
   },
   {
     id: 17,
@@ -90,7 +108,19 @@ export const fakeProjects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
-    devices: [{ records: [] }],
+    devices: [
+      { records: [] },
+      { records: [] },
+      { records: [] },
+      { records: [] },
+      { records: [] },
+    ],
+    category: {
+      name: "Druck",
+    },
+    user: {
+      name: "Ed",
+    },
   },
   {
     id: 16,
@@ -99,6 +129,12 @@ export const fakeProjects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
     devices: [],
+    category: {
+      name: "PAXCounter",
+    },
+    user: {
+      name: null,
+    },
   },
   {
     id: 15,
@@ -107,6 +143,12 @@ export const fakeProjects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
     devices: [],
+    category: {
+      name: "Lautstärke",
+    },
+    user: {
+      name: "Julia",
+    },
   },
   {
     id: 14,
@@ -115,6 +157,12 @@ export const fakeProjects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
     devices: [{ records: [] }],
+    category: {
+      name: null,
+    },
+    user: {
+      name: "Anne",
+    },
   },
   {
     id: 13,
@@ -123,13 +171,19 @@ export const fakeProjects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
     devices: [{ records: [] }],
+    category: {
+      name: "Temperatur",
+    },
+    user: {
+      name: "Dennis",
+    },
   },
   {
     id: 12,
     name: "Project 3",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    location: "Berlin",
+    location: "Lucas",
     devices: [
       {
         records: [
@@ -137,13 +191,19 @@ export const fakeProjects = [
         ],
       },
     ],
+    category: {
+      name: "Temperatur",
+    },
+    user: {
+      name: "Fabian",
+    },
   },
   {
     id: 11,
     name: "Project 2",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    location: "Berlin",
+    location: "Tori",
     devices: [
       {
         records: [
@@ -151,5 +211,11 @@ export const fakeProjects = [
         ],
       },
     ],
+    category: {
+      name: "Temperatur",
+    },
+    user: {
+      name: "Lisa",
+    },
   },
 ];

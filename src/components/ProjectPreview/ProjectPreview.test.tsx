@@ -8,6 +8,8 @@ const defaultProject = {
   location: "Berlin",
   description: "Description",
   records: [],
+  authorName: "Lucas",
+  category: "Temperatur",
   devicesNumber: 0,
 };
 
@@ -49,5 +51,37 @@ describe("ProjectPreview component", () => {
     const singular = screen.queryByText(/Sensor$/gi);
     expect(plural).toBeInTheDocument();
     expect(singular).not.toBeInTheDocument();
+  });
+  it("should render the author name", async (): Promise<void> => {
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} />);
+
+    const author = screen.getByText(/Lucas/gi);
+    const dots = screen.getAllByText(/·/gi);
+    expect(author).toBeInTheDocument();
+    expect(dots).toHaveLength(2);
+  });
+  it("should not render the author name if null", async (): Promise<void> => {
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} authorName={null} />);
+
+    const author = screen.queryByText(/Lucas/gi);
+    const dots = screen.getAllByText(/·/gi);
+    expect(author).not.toBeInTheDocument();
+    expect(dots).toHaveLength(1);
+  });
+  it("should render the category", async (): Promise<void> => {
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} />);
+
+    const category = screen.queryByText(/Temperatur/gi);
+    expect(category).toBeInTheDocument();
+  });
+  it("should not render the category if null", async (): Promise<void> => {
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} category='null' />);
+
+    const category = screen.queryByText(/Temperatur/gi);
+    expect(category).not.toBeInTheDocument();
   });
 });
