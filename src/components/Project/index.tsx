@@ -43,7 +43,7 @@ const rawRecordToRecord = (rawRecord: RawRecordType): RecordType => ({
 });
 
 const getCategoryUnit = (
-  category: CategoriesType["name"] | undefined
+  category: CategoriesType["name"] | string | undefined
 ): string => {
   switch (category) {
     case "Temperatur":

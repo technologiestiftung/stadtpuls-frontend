@@ -1,5 +1,4 @@
 import { supabase } from "@auth/supabase";
-import { CategoriesType } from "@common/types/supabase";
 
 export interface RawRecordType {
   id: number;
@@ -18,7 +17,7 @@ interface RawDeviceType {
 
 export interface RawCategoryType {
   id: number;
-  name: CategoriesType["name"];
+  name: string;
   description: string;
 }
 
