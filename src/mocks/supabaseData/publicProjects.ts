@@ -61,6 +61,9 @@ export const fakeProjects = [
         ],
       },
     ],
+    user: {
+      name: "Hans Peter Schmidt Van Der Hagen Lust",
+    },
   },
   {
     id: 19,
@@ -75,6 +78,9 @@ export const fakeProjects = [
         ],
       },
     ],
+    user: {
+      name: "Vogelino",
+    },
   },
   {
     id: 18,
@@ -83,6 +89,9 @@ export const fakeProjects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
     devices: [],
+    user: {
+      name: "Ingo",
+    },
   },
   {
     id: 17,
@@ -90,7 +99,16 @@ export const fakeProjects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
-    devices: [{ records: [] }],
+    devices: [
+      { records: [] },
+      { records: [] },
+      { records: [] },
+      { records: [] },
+      { records: [] },
+    ],
+    user: {
+      name: "Ed",
+    },
   },
   {
     id: 16,
@@ -99,6 +117,9 @@ export const fakeProjects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
     devices: [],
+    user: {
+      name: null,
+    },
   },
   {
     id: 15,
@@ -107,6 +128,9 @@ export const fakeProjects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
     devices: [],
+    user: {
+      name: "Julia",
+    },
   },
   {
     id: 14,
@@ -115,6 +139,9 @@ export const fakeProjects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
     devices: [{ records: [] }],
+    user: {
+      name: "Anne",
+    },
   },
   {
     id: 13,
@@ -123,13 +150,16 @@ export const fakeProjects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     location: "Berlin",
     devices: [{ records: [] }],
+    user: {
+      name: "Dennis",
+    },
   },
   {
     id: 12,
     name: "Project 3",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    location: "Berlin",
+    location: "Lucas",
     devices: [
       {
         records: [
@@ -137,13 +167,16 @@ export const fakeProjects = [
         ],
       },
     ],
+    user: {
+      name: "Fabian",
+    },
   },
   {
     id: 11,
     name: "Project 2",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    location: "Berlin",
+    location: "Tori",
     devices: [
       {
         records: [
@@ -151,5 +184,8 @@ export const fakeProjects = [
         ],
       },
     ],
+    user: {
+      name: "Lisa",
+    },
   },
 ];

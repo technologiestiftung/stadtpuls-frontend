@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { useEffect, useState, useCallback, FC } from "react";
+import React, { useEffect, useState, useCallback, FC } from "react";
 import Link from "next/link";
 import {
   jsx,

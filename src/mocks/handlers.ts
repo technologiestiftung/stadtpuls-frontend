@@ -90,7 +90,7 @@ const supabaseHandlers = [
       // limit == "10" &&
       // offset == "0" &&
       select ==
-        "id,name,description,location,devices(records(recordedAt,measurements))"
+        "id,name,description,location,devices(records(recordedAt,measurements)),user:userId(name)"
     )
       return res(
         ctx.set("content-range", "0-9/14"),

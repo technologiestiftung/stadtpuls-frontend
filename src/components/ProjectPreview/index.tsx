@@ -4,6 +4,7 @@ import { PublicProject } from "@lib/hooks/usePublicProjects";
 import { ProjectPreviewMap } from "@components/ProjectPreviewMap";
 import useIsInViewport from "use-is-in-viewport";
 import { AreaPath } from "@components/AreaPath";
+import { AccountCircle } from "@material-ui/icons";
 
 export const ProjectPreview: FC<PublicProject> = ({
   id,
@@ -12,6 +13,7 @@ export const ProjectPreview: FC<PublicProject> = ({
   description,
   records,
   devicesNumber,
+  authorName,
 }) => {
   const parentRef = useRef<HTMLDivElement>(null);
   const [svgWrapperWidth, setSvgWrapperWidth] = useState(0);
@@ -81,12 +83,21 @@ export const ProjectPreview: FC<PublicProject> = ({
               <h3 className='text-blue-500 text-xl sm:text-2xl md:text-3xl font-semibold'>
                 {name}
               </h3>
-              <p className='mt-4 mb-2 flex gap-x-2'>
-                <span className='font-bold'>{location}</span>
+              <p className='mt-4 mb-2 flex gap-2 flex-wrap'>
+                <span className='font-bold inline-block'>{location}</span>
                 <span className='text-gray-400'>·</span>
-                <span className=''>
+                <span className='inline-block'>
                   {devicesNumber} {devicesNumber > 1 ? "Sensoren" : "Sensor"}
                 </span>
+                {authorName && (
+                  <>
+                    <span className='text-gray-400'>·</span>
+                    <span className='inline-block max-w-full truncate'>
+                      <AccountCircle className='mr-2 opacity-40' />
+                      {authorName}
+                    </span>
+                  </>
+                )}
               </p>
               <p className='text-base'>{description}</p>
             </div>

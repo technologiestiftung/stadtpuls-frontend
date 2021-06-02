@@ -8,6 +8,7 @@ const defaultProject = {
   location: "Berlin",
   description: "Description",
   records: [],
+  authorName: "Lucas",
   devicesNumber: 0,
 };
 
@@ -49,5 +50,23 @@ describe("ProjectPreview component", () => {
     const singular = screen.queryByText(/Sensor$/gi);
     expect(plural).toBeInTheDocument();
     expect(singular).not.toBeInTheDocument();
+  });
+  it("should render the author name", async (): Promise<void> => {
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} />);
+
+    const author = screen.getByText(/Lucas/gi);
+    const dots = screen.getAllByText(/·/gi);
+    expect(author).toBeInTheDocument();
+    expect(dots).toHaveLength(2);
+  });
+  it("not should not render the author name if null", async (): Promise<void> => {
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} authorName={null} />);
+
+    const author = screen.queryByText(/Lucas/gi);
+    const dots = screen.getAllByText(/·/gi);
+    expect(author).not.toBeInTheDocument();
+    expect(dots).toHaveLength(1);
   });
 });
