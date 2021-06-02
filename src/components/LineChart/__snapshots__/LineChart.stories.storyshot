@@ -43,8 +43,8 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
               shapeRendering="crispEdges"
               stroke="#8D8D8D"
               strokeLinecap="square"
-              x1={36.941087777777774}
-              x2={36.941087777777774}
+              x1={0}
+              x2={0}
               y1={0}
               y2={8}
             />
@@ -64,14 +64,14 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
                 fontSize={10}
                 textAnchor="middle"
                 transform=""
-                x={36.941087777777774}
+                x={0}
                 y={18}
               >
                 <tspan
                   dy="0em"
-                  x={36.941087777777774}
+                  x={0}
                 >
-                  06 PM
+                  12:10
                 </tspan>
               </text>
             </svg>
@@ -86,8 +86,8 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
               shapeRendering="crispEdges"
               stroke="#8D8D8D"
               strokeLinecap="square"
-              x1={74.94108777777778}
-              x2={74.94108777777778}
+              x1={38}
+              x2={38}
               y1={0}
               y2={8}
             />
@@ -107,14 +107,14 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
                 fontSize={10}
                 textAnchor="middle"
                 transform=""
-                x={74.94108777777778}
+                x={38}
                 y={18}
               >
                 <tspan
                   dy="0em"
-                  x={74.94108777777778}
+                  x={38}
                 >
-                  Thu 08
+                  :15
                 </tspan>
               </text>
             </svg>
@@ -129,8 +129,8 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
               shapeRendering="crispEdges"
               stroke="#8D8D8D"
               strokeLinecap="square"
-              x1={112.94108777777778}
-              x2={112.94108777777778}
+              x1={76}
+              x2={76}
               y1={0}
               y2={8}
             />
@@ -150,14 +150,14 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
                 fontSize={10}
                 textAnchor="middle"
                 transform=""
-                x={112.94108777777778}
+                x={76}
                 y={18}
               >
                 <tspan
                   dy="0em"
-                  x={112.94108777777778}
+                  x={76}
                 >
-                  06 AM
+                  :30
                 </tspan>
               </text>
             </svg>
@@ -172,8 +172,8 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
               shapeRendering="crispEdges"
               stroke="#8D8D8D"
               strokeLinecap="square"
-              x1={150.9410877777778}
-              x2={150.9410877777778}
+              x1={114}
+              x2={114}
               y1={0}
               y2={8}
             />
@@ -193,14 +193,14 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
                 fontSize={10}
                 textAnchor="middle"
                 transform=""
-                x={150.9410877777778}
+                x={114}
                 y={18}
               >
                 <tspan
                   dy="0em"
-                  x={150.9410877777778}
+                  x={114}
                 >
-                  12 PM
+                  :45
                 </tspan>
               </text>
             </svg>
@@ -215,8 +215,8 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
               shapeRendering="crispEdges"
               stroke="#8D8D8D"
               strokeLinecap="square"
-              x1={188.9410877777778}
-              x2={188.9410877777778}
+              x1={152}
+              x2={152}
               y1={0}
               y2={8}
             />
@@ -236,14 +236,14 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
                 fontSize={10}
                 textAnchor="middle"
                 transform=""
-                x={188.9410877777778}
+                x={152}
                 y={18}
               >
                 <tspan
                   dy="0em"
-                  x={188.9410877777778}
+                  x={152}
                 >
-                  06 PM
+                  12:11
                 </tspan>
               </text>
             </svg>
@@ -258,8 +258,8 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
               shapeRendering="crispEdges"
               stroke="#8D8D8D"
               strokeLinecap="square"
-              x1={226.9410877777778}
-              x2={226.9410877777778}
+              x1={190}
+              x2={190}
               y1={0}
               y2={8}
             />
@@ -279,14 +279,14 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
                 fontSize={10}
                 textAnchor="middle"
                 transform=""
-                x={226.9410877777778}
+                x={190}
                 y={18}
               >
                 <tspan
                   dy="0em"
-                  x={226.9410877777778}
+                  x={190}
                 >
-                  Fri 09
+                  :15
                 </tspan>
               </text>
             </svg>
@@ -301,8 +301,8 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
               shapeRendering="crispEdges"
               stroke="#8D8D8D"
               strokeLinecap="square"
-              x1={264.9410877777778}
-              x2={264.9410877777778}
+              x1={228}
+              x2={228}
               y1={0}
               y2={8}
             />
@@ -322,14 +322,14 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
                 fontSize={10}
                 textAnchor="middle"
                 transform=""
-                x={264.9410877777778}
+                x={228}
                 y={18}
               >
                 <tspan
                   dy="0em"
-                  x={264.9410877777778}
+                  x={228}
                 >
-                  06 AM
+                  :30
                 </tspan>
               </text>
             </svg>
@@ -344,8 +344,8 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
               shapeRendering="crispEdges"
               stroke="#8D8D8D"
               strokeLinecap="square"
-              x1={302.9410877777778}
-              x2={302.9410877777778}
+              x1={266}
+              x2={266}
               y1={0}
               y2={8}
             />
@@ -365,14 +365,57 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
                 fontSize={10}
                 textAnchor="middle"
                 transform=""
-                x={302.9410877777778}
+                x={266}
                 y={18}
               >
                 <tspan
                   dy="0em"
-                  x={302.9410877777778}
+                  x={266}
                 >
-                  12 PM
+                  :45
+                </tspan>
+              </text>
+            </svg>
+          </g>
+          <g
+            className="visx-group visx-axis-tick"
+            transform="translate(0, 0)"
+          >
+            <line
+              className="visx-line"
+              fill="transparent"
+              shapeRendering="crispEdges"
+              stroke="#8D8D8D"
+              strokeLinecap="square"
+              x1={304}
+              x2={304}
+              y1={0}
+              y2={8}
+            />
+            <svg
+              fontSize={10}
+              style={
+                Object {
+                  "overflow": "visible",
+                }
+              }
+              x={0}
+              y="0.25em"
+            >
+              <text
+                fill="#222"
+                fontFamily="Arial"
+                fontSize={10}
+                textAnchor="middle"
+                transform=""
+                x={304}
+                y={18}
+              >
+                <tspan
+                  dy="0em"
+                  x={304}
+                >
+                  12:12
                 </tspan>
               </text>
             </svg>
@@ -551,7 +594,7 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
         >
           <path
             className="visx-linepath css-j1t6gj-LinePath"
-            d="M304,97.99999999999999L152,27.999999999999993L0,63"
+            d="M0,97.99999999999999L152,27.999999999999993L304,63"
             fill="transparent"
             strokeLinecap="round"
           />
