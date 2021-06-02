@@ -66,13 +66,12 @@ export const LandingProjectAbout: FC = () => (
         "container mx-auto max-w-8xl",
         "px-4 sm:px-6 md:px-8",
         "py-8 sm:py-12 md:py-16",
-        "overflow-x-auto",
       ].join(" ")}
     >
       <AboutTitle>Über das Projekt</AboutTitle>
       <div className='grid sm:grid-cols-2 lg:grid-cols-10 xl:grid-cols-4 gap-4 sm:gap-8'>
         <div className='sm:col-span-2 lg:col-span-4 xl:col-span-2 prose max-w-none'>
-          <p>
+          <p className='max-w-none'>
             Hier steht ein ausführlicher Beschreibungstext über Hintergründe des
             Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext
             über Hintergründe des Projekts, TSB, usw. Hier steht ein
@@ -81,7 +80,7 @@ export const LandingProjectAbout: FC = () => (
             Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher
             Beschreibungstext über Hintergründe des Projekts, TSB, usw.
           </p>
-          <p>
+          <p className='max-w-none'>
             Hier steht ein ausführlicher Beschreibungstext über Hintergründe des
             Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext
             über Hintergründe des Projekts, TSB, usw.

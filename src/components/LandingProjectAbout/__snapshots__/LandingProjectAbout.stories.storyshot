@@ -5,7 +5,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
   className="bg-white"
 >
   <section
-    className="container mx-auto max-w-8xl px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 overflow-x-auto"
+    className="container mx-auto max-w-8xl px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16"
   >
     <h1
       className="text-xl sm:text-2xl md:text-3xl text-blue-500 font-semibold mt-6 mb-8"
@@ -18,10 +18,14 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
       <div
         className="sm:col-span-2 lg:col-span-4 xl:col-span-2 prose max-w-none"
       >
-        <p>
+        <p
+          className="max-w-none"
+        >
           Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw.
         </p>
-        <p>
+        <p
+          className="max-w-none"
+        >
           Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw.
         </p>
       </div>
