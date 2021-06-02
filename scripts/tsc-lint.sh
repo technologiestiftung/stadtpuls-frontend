@@ -5,6 +5,7 @@ cat >$TMP <<EOF
 {
   "extends": "./tsconfig.json",
   "include": [
+    "./next-env.d.ts",
 EOF
 for file in "$@"; do
   echo "    \"$file\"," >> $TMP
