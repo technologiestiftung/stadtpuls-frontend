@@ -16,11 +16,11 @@ const Template: Story<{
     date: Date;
     value: number;
   }>;
-}> = args => (
+}> = ({ width, height, data }) => (
   <ThemeProvider theme={theme}>
-    <svg width={args.width} height={args.height}>
-      <LineChart {...args} />
-    </svg>
+    <div className='bg-white' style={{ width, height }}>
+      <LineChart {...{ width, height, data }} />
+    </div>
   </ThemeProvider>
 );
 

@@ -1,9 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Charts/LineChart Default 1`] = `
-<svg
-  height={200}
-  width={400}
+<div
+  className="bg-white"
+  style={
+    Object {
+      "height": 200,
+      "width": 400,
+    }
+  }
 >
   <div
     style={
@@ -567,5 +572,5 @@ exports[`Storyshots Charts/LineChart Default 1`] = `
       </svg>
     </div>
   </div>
-</svg>
+</div>
 `;
