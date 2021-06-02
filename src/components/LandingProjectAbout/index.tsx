@@ -105,7 +105,7 @@ export const LandingProjectAbout: FC = () => (
                     <a
                       href={link}
                       title={description}
-                      className='text-gray-500 underline hover:bg-blue-500 transition'
+                      className='text-gray-500 underline hover:text-blue-500 transition'
                     >
                       {name}
                     </a>

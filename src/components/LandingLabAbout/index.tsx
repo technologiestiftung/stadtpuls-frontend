@@ -81,8 +81,8 @@ export const LandingLabAbout: FC = () => (
           {furtherProjects.map(({ name, repo, logo }) => (
             <a
               key={name}
-              href={`https://github.com/technologiestiftung/`}
-              title={`Das Code-Repository von `}
+              href={`https://github.com/technologiestiftung/${repo}`}
+              title={`Das Code-Repository von ${name}`}
               target='_blank'
               rel='noopener noreferrer'
               className={[

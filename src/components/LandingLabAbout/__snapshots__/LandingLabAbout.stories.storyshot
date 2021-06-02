@@ -74,10 +74,10 @@ exports[`Storyshots Promotional/LandingLabAbout Default 1`] = `
       >
         <a
           className="p-4 h-32 xl:h-48 rounded bg-white border border-gray-300 gap-4 xl:gap-y-8 transition hover:border-blue-500 hover:bg-blue-50 flex flex-col justify-between max"
-          href="https://github.com/technologiestiftung/"
+          href="https://github.com/technologiestiftung/giessdenkiez-de"
           rel="noopener noreferrer"
           target="_blank"
-          title="Das Code-Repository von "
+          title="Das Code-Repository von Gieß den Kiez"
         >
           <div
             className="flex justify-between"
@@ -116,10 +116,10 @@ exports[`Storyshots Promotional/LandingLabAbout Default 1`] = `
         </a>
         <a
           className="p-4 h-32 xl:h-48 rounded bg-white border border-gray-300 gap-4 xl:gap-y-8 transition hover:border-blue-500 hover:bg-blue-50 flex flex-col justify-between max"
-          href="https://github.com/technologiestiftung/"
+          href="https://github.com/technologiestiftung/berlin-open-source-portal"
           rel="noopener noreferrer"
           target="_blank"
-          title="Das Code-Repository von "
+          title="Das Code-Repository von Berlin Open Source"
         >
           <div
             className="flex justify-between"

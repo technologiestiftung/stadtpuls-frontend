@@ -65,7 +65,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
           <ul>
             <li>
               <a
-                className="text-gray-500 underline hover:bg-blue-500 transition"
+                className="text-gray-500 underline hover:text-blue-500 transition"
                 href="http://supabase.io/"
                 title="Open Source Firebase-like Service"
               >
@@ -74,7 +74,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
             </li>
             <li>
               <a
-                className="text-gray-500 underline hover:bg-blue-500 transition"
+                className="text-gray-500 underline hover:text-blue-500 transition"
                 href="https://www.fastify.io/"
                 title="Fast and low overhead web framework, for Node.js"
               >
@@ -83,7 +83,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
             </li>
             <li>
               <a
-                className="text-gray-500 underline hover:bg-blue-500 transition"
+                className="text-gray-500 underline hover:text-blue-500 transition"
                 href="https://www.postgresql.org/"
                 title="Open Source Relational Database"
               >
@@ -125,7 +125,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
           <ul>
             <li>
               <a
-                className="text-gray-500 underline hover:bg-blue-500 transition"
+                className="text-gray-500 underline hover:text-blue-500 transition"
                 href="https://nextjs.org/"
                 title="The React Framework for Production"
               >
@@ -134,7 +134,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
             </li>
             <li>
               <a
-                className="text-gray-500 underline hover:bg-blue-500 transition"
+                className="text-gray-500 underline hover:text-blue-500 transition"
                 href="https://airbnb.io/visx/"
                 title="A collection of expressive, low-level visualization primitives for React"
               >
@@ -143,7 +143,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
             </li>
             <li>
               <a
-                className="text-gray-500 underline hover:bg-blue-500 transition"
+                className="text-gray-500 underline hover:text-blue-500 transition"
                 href="https://swr.vercel.app/"
                 title="React Hooks library for data fetching"
               >
