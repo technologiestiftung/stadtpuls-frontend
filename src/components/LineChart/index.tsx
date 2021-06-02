@@ -1,7 +1,5 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
 import { useCallback } from "react";
-import { jsx, useThemeUI } from "theme-ui";
+import { useThemeUI } from "theme-ui";
 import { bisector, extent, max } from "d3-array";
 import { Group } from "@visx/group";
 import { scaleLinear, scaleUtc } from "@visx/scale";
@@ -14,7 +12,7 @@ import { TooltipWithBounds, withTooltip, defaultStyles } from "@visx/tooltip";
 import { WithTooltipProvidedProps } from "@visx/tooltip/lib/enhancers/withTooltip";
 import { Bar, Line } from "@visx/shape";
 import { localPoint } from "@visx/event";
-import { GridRows } from "@visx/grid";
+import { GridRows as HorizontalGridLines } from "@visx/grid";
 
 const getX = (d: DateValueType): Date => d.date;
 const getY = (d: DateValueType): number => d.value;
@@ -111,8 +109,8 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
 
     return (
       <div>
-        <svg width={width} height={height} sx={{ overflow: "visible" }}>
-          <GridRows
+        <svg width={width} height={height} className='overflow-visible'>
+          <HorizontalGridLines
             scale={yScale}
             width={graphWidth}
             top={padding.top}
