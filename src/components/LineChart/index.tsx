@@ -53,7 +53,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
       left: 64,
       right: 32,
       top: 32,
-      bottom: 64,
+      bottom: 80,
     };
 
     const graphWidth: number = width - padding.left - padding.right;
@@ -121,17 +121,14 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
           />
           <AxisBottom
             scale={xAxis.scale}
-            top={graphHeight + padding.top}
+            top={graphHeight + padding.top + 12}
             left={padding.left}
             label={xAxisUnit}
-            labelOffset={12}
+            labelOffset={24}
             labelClassName='font-bold'
-            stroke={
-              theme.colors?.lightgrey
-                ? String(theme.colors.lightgrey)
-                : "inherit"
-            }
-            numTicks={8}
+            hideAxisLine={true}
+            numTicks={6}
+            tickTransform='translate(0 16)'
             tickStroke={
               theme.colors?.lightgrey
                 ? String(theme.colors.lightgrey)
@@ -160,7 +157,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               <Line
                 className='stroke-current text-gray-400'
                 from={{ x: tooltipLeft, y: 0 }}
-                to={{ x: tooltipLeft, y: graphHeight + 0 }}
+                to={{ x: tooltipLeft, y: graphHeight + 24 }}
                 strokeWidth={1}
                 pointerEvents='none'
               />
@@ -205,7 +202,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
           <div>
             <TooltipWithBounds
               key={Math.random()}
-              top={tooltipTop + 20}
+              top={tooltipTop + 10}
               left={tooltipLeft}
               style={tooltipStyles}
               className='bg-blue-500'
@@ -213,16 +210,16 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               {`${getY(tooltipData)}`}
             </TooltipWithBounds>
             <TooltipWithBounds
-              top={graphHeight}
+              top={graphHeight + 28}
               left={tooltipLeft}
               offsetLeft={10}
               style={{
                 position: "absolute",
-                fontSize: "14px",
+                fontSize: "10px",
                 minWidth: 72,
                 textAlign: "center",
               }}
-              className='text-blue-500'
+              className='text-gray-900'
             >
               {formatDate(getX(tooltipData))}
             </TooltipWithBounds>
