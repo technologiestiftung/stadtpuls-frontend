@@ -1,4 +1,5 @@
 import { supabase } from "@auth/supabase";
+import { CategoriesType } from "@common/types/supabase";
 
 export interface RawRecordType {
   id: number;
@@ -15,9 +16,9 @@ interface RawDeviceType {
   name: string | null;
 }
 
-interface RawCategoryType {
+export interface RawCategoryType {
   id: number;
-  name: string;
+  name: CategoriesType["name"];
   description: string;
 }
 
@@ -28,6 +29,7 @@ interface RawProjectType {
   createdAt: string;
   location: string | null;
   connectype: string | null;
+  category: RawCategoryType | null;
 }
 
 export interface SupabaseResponseType extends RawRecordType {

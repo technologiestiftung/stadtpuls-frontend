@@ -32,6 +32,7 @@ import {
 import { ApiInfo } from "../ApiInfo";
 import { MarkerMap } from "../MarkerMap";
 import useGeocodedLocation from "@lib/hooks/useGeocodedLocation";
+import { CategoriesType } from "@common/types/supabase";
 
 const downloadIcon = "./images/download.svg";
 
@@ -40,6 +41,27 @@ const rawRecordToRecord = (rawRecord: RawRecordType): RecordType => ({
   recordedAt: rawRecord.recordedAt || "",
   value: rawRecord.measurements ? rawRecord.measurements[0] : 0,
 });
+
+const getCategoryUnit = (
+  category: CategoriesType["name"] | undefined
+): string => {
+  switch (category) {
+    case "Temperatur":
+      return "°C";
+    case "CO2":
+      return "ppm";
+    case "Luftfeuchtigkeit":
+      return "%";
+    case "Lautstärke":
+      return "dB";
+    case "Druck":
+      return "Pa";
+    case "PAXCounter":
+      return "Personen";
+    default:
+      return "";
+  }
+};
 
 export const Project: FC<SupabaseProjectType> = project => {
   const [selectedDeviceIndex, setSelectedDeviceIndex] = useState<number>(0);
@@ -357,6 +379,8 @@ export const Project: FC<SupabaseProjectType> = project => {
                   <LineChart
                     width={chartWidth}
                     height={chartHeight}
+                    yAxisUnit={getCategoryUnit(project.category?.name)}
+                    xAxisUnit='Messdatum'
                     data={createDateValueArray(lineChartData)}
                   />
                 )}
