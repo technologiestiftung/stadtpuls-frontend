@@ -69,8 +69,8 @@ export const LandingProjectAbout: FC = () => (
       ].join(" ")}
     >
       <AboutTitle>Über das Projekt</AboutTitle>
-      <div className='grid sm:grid-cols-2 lg:grid-cols-10 xl:grid-cols-4 gap-4 sm:gap-8'>
-        <div className='sm:col-span-2 lg:col-span-4 xl:col-span-2 prose max-w-none'>
+      <div className='grid md:grid-cols-5 xl:grid-cols-2 gap-4 sm:gap-8'>
+        <div className='md:col-span-3 xl:col-span-1 prose max-w-none'>
           <p className='max-w-none'>
             Hier steht ein ausführlicher Beschreibungstext über Hintergründe des
             Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext
@@ -86,33 +86,35 @@ export const LandingProjectAbout: FC = () => (
             über Hintergründe des Projekts, TSB, usw.
           </p>
         </div>
-        {techInfoColumns.map(({ repo, title, technologies }) => (
-          <div key={title} className='lg:col-span-3 xl:col-span-1'>
-            <h4 className='text-xl font-bold mb-1'>{title}</h4>
-            <a
-              href={`https://github.com/technologiestiftung/${repo}`}
-              title={`Das Code-Repository von der IoT Hub ${title}`}
-              className='text-sm text-gray-500 mb-4 block'
-            >
-              <GitHub className='mr-1 transform scale-75' />
-              technologiestiftung/
-              <span className='text-black'>{repo}</span>
-            </a>
-            <ul>
-              {technologies.map(({ link, description, name }) => (
-                <li key={name}>
-                  <a
-                    href={link}
-                    title={description}
-                    className='text-gray-500 underline hover:bg-blue-500 transition'
-                  >
-                    {name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        <div className='grid sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 md:col-span-2 xl:col-span-1 gap-4 lg:gap-8'>
+          {techInfoColumns.map(({ repo, title, technologies }) => (
+            <div key={title} className=''>
+              <h4 className='text-xl font-bold mb-1'>{title}</h4>
+              <a
+                href={`https://github.com/technologiestiftung/${repo}`}
+                title={`Das Code-Repository von der IoT Hub ${title}`}
+                className='text-sm text-gray-500 mb-4 block'
+              >
+                <GitHub className='mr-1 transform scale-75' />
+                technologiestiftung/
+                <span className='text-black'>{repo}</span>
+              </a>
+              <ul>
+                {technologies.map(({ link, description, name }) => (
+                  <li key={name}>
+                    <a
+                      href={link}
+                      title={description}
+                      className='text-gray-500 underline hover:bg-blue-500 transition'
+                    >
+                      {name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   </div>
