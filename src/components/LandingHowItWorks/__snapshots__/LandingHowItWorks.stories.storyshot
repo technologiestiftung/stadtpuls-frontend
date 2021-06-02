@@ -19,16 +19,21 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
       </span>
     </h1>
     <div
-      className="grid grid-cols-9 gap-0"
+      className="grid grid-cols-2 lg:grid-cols-9 gap-x-4 sm:gap-x-0 undefined"
     >
       <div
-        className="pr-8 col-span-2"
+        className="sm:pr-4 md:pr-8 "
+        style={
+          Object {
+            "gridArea": "title-1",
+          }
+        }
       >
         <header
           className=""
         >
           <h3
-            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 mt-8 mb-2"
+            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 sm:pt-4 md:mt-8 mb-2"
           >
             <span
               className="mr-2"
@@ -49,13 +54,18 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
         </header>
       </div>
       <div
-        className="pr-8 col-span-2"
+        className="sm:pr-4 md:pr-8 "
+        style={
+          Object {
+            "gridArea": "title-2",
+          }
+        }
       >
         <header
           className=""
         >
           <h3
-            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 mt-8 mb-2"
+            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 sm:pt-4 md:mt-8 mb-2"
           >
             <span
               className="mr-2"
@@ -76,13 +86,18 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
         </header>
       </div>
       <div
-        className="pr-8 col-span-2"
+        className="sm:pr-4 md:pr-8 "
+        style={
+          Object {
+            "gridArea": "title-3",
+          }
+        }
       >
         <header
           className=""
         >
           <h3
-            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 mt-8 mb-2"
+            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 sm:pt-4 md:mt-8 mb-2"
           >
             <span
               className="mr-2"
@@ -103,13 +118,18 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
         </header>
       </div>
       <div
-        className="pr-8 bg-white col-span-3"
+        className="sm:pr-4 md:pr-8 sm:bg-white"
+        style={
+          Object {
+            "gridArea": "title-4",
+          }
+        }
       >
         <header
-          className="px-8"
+          className="sm:pl-4 md:pl-8"
         >
           <h3
-            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 mt-8 mb-2"
+            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 sm:pt-4 md:mt-8 mb-2"
           >
             <span
               className="mr-2"
@@ -119,12 +139,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           </h3>
         </header>
       </div>
-    </div>
-    <div
-      className="grid grid-cols-9 gap-0 border-b border-gray-300"
-    >
       <div
-        className="pr-8 col-span-2"
+        className="sm:pr-4 md:pr-8 "
+        style={
+          Object {
+            "gridArea": "description-1",
+          }
+        }
       >
         <header
           className=""
@@ -137,7 +158,12 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
         </header>
       </div>
       <div
-        className="pr-8 col-span-2"
+        className="sm:pr-4 md:pr-8 "
+        style={
+          Object {
+            "gridArea": "description-2",
+          }
+        }
       >
         <header
           className=""
@@ -150,7 +176,12 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
         </header>
       </div>
       <div
-        className="pr-8 col-span-2"
+        className="sm:pr-4 md:pr-8 "
+        style={
+          Object {
+            "gridArea": "description-3",
+          }
+        }
       >
         <header
           className=""
@@ -163,10 +194,15 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
         </header>
       </div>
       <div
-        className="pr-8 bg-white col-span-3"
+        className="sm:pr-4 md:pr-8 sm:bg-white"
+        style={
+          Object {
+            "gridArea": "description-4",
+          }
+        }
       >
         <header
-          className="px-8"
+          className="sm:pl-4 md:pl-8"
         >
           <p
             className="text-sm text-gray-600 mb-8"
@@ -175,12 +211,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           </p>
         </header>
       </div>
-    </div>
-    <div
-      className="grid grid-cols-9 gap-0 pb-8 mb-8 sm:pb-12 sm:mb-12"
-    >
       <ul
-        className="pt-8 pr-8 col-span-2"
+        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300 "
+        style={
+          Object {
+            "gridArea": "list-1",
+          }
+        }
       >
         <li
           className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
@@ -191,11 +228,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
           >
             <i />
           </span>
-          <span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
             Arduino
           </span>
         </li>
@@ -208,11 +247,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
           >
             <i />
           </span>
-          <span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
             Raspberry Pi
           </span>
         </li>
@@ -225,17 +266,24 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
           >
             <i />
           </span>
-          <span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
             Open Sense Box
           </span>
         </li>
       </ul>
       <ul
-        className="pt-8 pr-8 col-span-2"
+        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300 "
+        style={
+          Object {
+            "gridArea": "list-2",
+          }
+        }
       >
         <li
           className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
@@ -246,11 +294,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
           >
             <i />
           </span>
-          <span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
             Temperatur
           </span>
         </li>
@@ -263,11 +313,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
           >
             <i />
           </span>
-          <span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
             CO2
           </span>
         </li>
@@ -280,11 +332,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
           >
             <i />
           </span>
-          <span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
             Luftfeuchtigkeit
           </span>
         </li>
@@ -297,11 +351,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
           >
             <i />
           </span>
-          <span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
             Druck
           </span>
         </li>
@@ -314,11 +370,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
           >
             <i />
           </span>
-          <span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
             Helligkeit
           </span>
         </li>
@@ -331,11 +389,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
           >
             <i />
           </span>
-          <span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
             Lautstärke
           </span>
         </li>
@@ -348,17 +408,24 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
           >
             <i />
           </span>
-          <span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
             Personenzähler
           </span>
         </li>
       </ul>
       <ul
-        className="pt-8 pr-8 col-span-2"
+        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300 "
+        style={
+          Object {
+            "gridArea": "list-3",
+          }
+        }
       >
         <li
           className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
@@ -369,17 +436,24 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
           >
             <i />
           </span>
-          <span>
-            TheThingsNetwork (TTN)
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            LoRaWAN (TTN)
           </span>
         </li>
       </ul>
       <ul
-        className="pt-8 pr-8 bg-white px-8 col-span-3"
+        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300 sm:bg-white sm:px-4 md:px-8"
+        style={
+          Object {
+            "gridArea": "list-4",
+          }
+        }
       >
         <li
           className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
@@ -390,11 +464,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
           >
             <i />
           </span>
-          <span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
             Ein Profil für dein Projekt
           </span>
         </li>
@@ -407,12 +483,14 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
           >
             <i />
           </span>
-          <span>
-            Datenvisualisierungen
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Daten­visualisierungen
           </span>
         </li>
         <li
@@ -424,11 +502,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
           >
             <i />
           </span>
-          <span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
             REST-API für alle Sensoren
           </span>
         </li>
@@ -441,11 +521,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
           >
             <i />
           </span>
-          <span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
             Daten-Downloads (CSV & JSON)
           </span>
         </li>
