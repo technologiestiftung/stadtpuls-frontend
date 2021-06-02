@@ -124,11 +124,15 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
             scale={xAxis.scale}
             top={graphHeight}
             left={paddingLeft}
-            hideAxisLine={true}
+            stroke={
+              theme.colors?.lightgrey
+                ? String(theme.colors.lightgrey)
+                : "inherit"
+            }
             numTicks={8}
             tickStroke={
-              theme.colors?.mediumgrey
-                ? String(theme.colors.mediumgrey)
+              theme.colors?.lightgrey
+                ? String(theme.colors.lightgrey)
                 : "inherit"
             }
           />
