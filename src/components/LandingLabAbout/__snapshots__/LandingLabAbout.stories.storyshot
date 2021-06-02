@@ -60,9 +60,10 @@ exports[`Storyshots Promotional/LandingLabAbout Default 1`] = `
         <strong
           className="font-bold"
         >
-          226
+          182
         </strong>
-         Open Source Projekte
+         
+        Open Source Projekte
         <span
           className="block text-gray-500"
         >
