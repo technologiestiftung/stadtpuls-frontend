@@ -1,5 +1,6 @@
 import { LandingHero } from "@components/LandingHero";
 import { LandingHowItWorks } from "@components/LandingHowItWorks";
+import { LandingProjectAbout } from "@components/LandingProjectAbout";
 import { FC } from "react";
 
 const LandingPage: FC = () => {
@@ -7,6 +8,7 @@ const LandingPage: FC = () => {
     <>
       <LandingHero />
       <LandingHowItWorks />
+      <LandingProjectAbout />
     </>
   );
 };
