@@ -1793,3 +1793,505 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
   </div>
 </div>
 `;
+
+exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
+<div
+  className="bg-white"
+  style={
+    Object {
+      "height": 300,
+      "width": 600,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "inherit",
+        "position": "relative",
+        "width": "inherit",
+      }
+    }
+  >
+    <div>
+      <svg
+        className="overflow-visible"
+        height={300}
+        width={600}
+      >
+        <g
+          className="visx-group visx-rows"
+          transform="translate(64, 32)"
+        >
+          <line
+            className="visx-line"
+            fill="transparent"
+            shapeRendering="crispEdges"
+            stroke="#eaf0f6"
+            strokeWidth={1}
+            x1={0}
+            x2={504}
+            y1={188}
+            y2={188}
+          />
+          <line
+            className="visx-line"
+            fill="transparent"
+            shapeRendering="crispEdges"
+            stroke="#eaf0f6"
+            strokeWidth={1}
+            x1={0}
+            x2={504}
+            y1={143.23809523809524}
+            y2={143.23809523809524}
+          />
+          <line
+            className="visx-line"
+            fill="transparent"
+            shapeRendering="crispEdges"
+            stroke="#eaf0f6"
+            strokeWidth={1}
+            x1={0}
+            x2={504}
+            y1={98.47619047619048}
+            y2={98.47619047619048}
+          />
+          <line
+            className="visx-line"
+            fill="transparent"
+            shapeRendering="crispEdges"
+            stroke="#eaf0f6"
+            strokeWidth={1}
+            x1={0}
+            x2={504}
+            y1={53.71428571428571}
+            y2={53.71428571428571}
+          />
+          <line
+            className="visx-line"
+            fill="transparent"
+            shapeRendering="crispEdges"
+            stroke="#eaf0f6"
+            strokeWidth={1}
+            x1={0}
+            x2={504}
+            y1={8.952380952380963}
+            y2={8.952380952380963}
+          />
+        </g>
+        <g
+          className="visx-group visx-axis visx-axis-bottom"
+          transform="translate(64, 232)"
+        >
+          <g
+            className="visx-group visx-axis-tick"
+            transform="translate(0 16)"
+          >
+            <line
+              className="visx-line"
+              fill="transparent"
+              shapeRendering="crispEdges"
+              stroke="#D8D8D8"
+              strokeLinecap="square"
+              x1={83.02583333333334}
+              x2={83.02583333333334}
+              y1={0}
+              y2={8}
+            />
+            <svg
+              fontSize={10}
+              style={
+                Object {
+                  "overflow": "visible",
+                }
+              }
+              x={0}
+              y="0.25em"
+            >
+              <text
+                fill="#222"
+                fontFamily="Arial"
+                fontSize={10}
+                textAnchor="middle"
+                transform=""
+                x={83.02583333333334}
+                y={18}
+              >
+                <tspan
+                  dy="0em"
+                  x={83.02583333333334}
+                >
+                  Apr 11
+                </tspan>
+              </text>
+            </svg>
+          </g>
+          <g
+            className="visx-group visx-axis-tick"
+            transform="translate(0 16)"
+          >
+            <line
+              className="visx-line"
+              fill="transparent"
+              shapeRendering="crispEdges"
+              stroke="#D8D8D8"
+              strokeLinecap="square"
+              x1={183.82583333333335}
+              x2={183.82583333333335}
+              y1={0}
+              y2={8}
+            />
+            <svg
+              fontSize={10}
+              style={
+                Object {
+                  "overflow": "visible",
+                }
+              }
+              x={0}
+              y="0.25em"
+            >
+              <text
+                fill="#222"
+                fontFamily="Arial"
+                fontSize={10}
+                textAnchor="middle"
+                transform=""
+                x={183.82583333333335}
+                y={18}
+              >
+                <tspan
+                  dy="0em"
+                  x={183.82583333333335}
+                >
+                  Mon 12
+                </tspan>
+              </text>
+            </svg>
+          </g>
+          <g
+            className="visx-group visx-axis-tick"
+            transform="translate(0 16)"
+          >
+            <line
+              className="visx-line"
+              fill="transparent"
+              shapeRendering="crispEdges"
+              stroke="#D8D8D8"
+              strokeLinecap="square"
+              x1={284.62583333333333}
+              x2={284.62583333333333}
+              y1={0}
+              y2={8}
+            />
+            <svg
+              fontSize={10}
+              style={
+                Object {
+                  "overflow": "visible",
+                }
+              }
+              x={0}
+              y="0.25em"
+            >
+              <text
+                fill="#222"
+                fontFamily="Arial"
+                fontSize={10}
+                textAnchor="middle"
+                transform=""
+                x={284.62583333333333}
+                y={18}
+              >
+                <tspan
+                  dy="0em"
+                  x={284.62583333333333}
+                >
+                  Tue 13
+                </tspan>
+              </text>
+            </svg>
+          </g>
+          <g
+            className="visx-group visx-axis-tick"
+            transform="translate(0 16)"
+          >
+            <line
+              className="visx-line"
+              fill="transparent"
+              shapeRendering="crispEdges"
+              stroke="#D8D8D8"
+              strokeLinecap="square"
+              x1={385.42583333333334}
+              x2={385.42583333333334}
+              y1={0}
+              y2={8}
+            />
+            <svg
+              fontSize={10}
+              style={
+                Object {
+                  "overflow": "visible",
+                }
+              }
+              x={0}
+              y="0.25em"
+            >
+              <text
+                fill="#222"
+                fontFamily="Arial"
+                fontSize={10}
+                textAnchor="middle"
+                transform=""
+                x={385.42583333333334}
+                y={18}
+              >
+                <tspan
+                  dy="0em"
+                  x={385.42583333333334}
+                >
+                  Wed 14
+                </tspan>
+              </text>
+            </svg>
+          </g>
+          <g
+            className="visx-group visx-axis-tick"
+            transform="translate(0 16)"
+          >
+            <line
+              className="visx-line"
+              fill="transparent"
+              shapeRendering="crispEdges"
+              stroke="#D8D8D8"
+              strokeLinecap="square"
+              x1={486.22583333333336}
+              x2={486.22583333333336}
+              y1={0}
+              y2={8}
+            />
+            <svg
+              fontSize={10}
+              style={
+                Object {
+                  "overflow": "visible",
+                }
+              }
+              x={0}
+              y="0.25em"
+            >
+              <text
+                fill="#222"
+                fontFamily="Arial"
+                fontSize={10}
+                textAnchor="middle"
+                transform=""
+                x={486.22583333333336}
+                y={18}
+              >
+                <tspan
+                  dy="0em"
+                  x={486.22583333333336}
+                >
+                  Thu 15
+                </tspan>
+              </text>
+            </svg>
+          </g>
+          
+        </g>
+        <g
+          className="visx-group visx-axis visx-axis-left"
+          transform="translate(64, 32)"
+        >
+          <g
+            className="visx-group visx-axis-tick"
+            transform="translate(0, 0)"
+          >
+            <svg
+              fontSize={10}
+              style={
+                Object {
+                  "overflow": "visible",
+                }
+              }
+              x="-0.25em"
+              y="0.25em"
+            >
+              <text
+                fill="#222"
+                fontFamily="Arial"
+                fontSize={10}
+                textAnchor="end"
+                transform=""
+                x={-8}
+                y={188}
+              >
+                <tspan
+                  dy="0em"
+                  x={-8}
+                >
+                  0
+                </tspan>
+              </text>
+            </svg>
+          </g>
+          <g
+            className="visx-group visx-axis-tick"
+            transform="translate(0, 0)"
+          >
+            <svg
+              fontSize={10}
+              style={
+                Object {
+                  "overflow": "visible",
+                }
+              }
+              x="-0.25em"
+              y="0.25em"
+            >
+              <text
+                fill="#222"
+                fontFamily="Arial"
+                fontSize={10}
+                textAnchor="end"
+                transform=""
+                x={-8}
+                y={143.23809523809524}
+              >
+                <tspan
+                  dy="0em"
+                  x={-8}
+                >
+                  20
+                </tspan>
+              </text>
+            </svg>
+          </g>
+          <g
+            className="visx-group visx-axis-tick"
+            transform="translate(0, 0)"
+          >
+            <svg
+              fontSize={10}
+              style={
+                Object {
+                  "overflow": "visible",
+                }
+              }
+              x="-0.25em"
+              y="0.25em"
+            >
+              <text
+                fill="#222"
+                fontFamily="Arial"
+                fontSize={10}
+                textAnchor="end"
+                transform=""
+                x={-8}
+                y={98.47619047619048}
+              >
+                <tspan
+                  dy="0em"
+                  x={-8}
+                >
+                  40
+                </tspan>
+              </text>
+            </svg>
+          </g>
+          <g
+            className="visx-group visx-axis-tick"
+            transform="translate(0, 0)"
+          >
+            <svg
+              fontSize={10}
+              style={
+                Object {
+                  "overflow": "visible",
+                }
+              }
+              x="-0.25em"
+              y="0.25em"
+            >
+              <text
+                fill="#222"
+                fontFamily="Arial"
+                fontSize={10}
+                textAnchor="end"
+                transform=""
+                x={-8}
+                y={53.71428571428571}
+              >
+                <tspan
+                  dy="0em"
+                  x={-8}
+                >
+                  60
+                </tspan>
+              </text>
+            </svg>
+          </g>
+          <g
+            className="visx-group visx-axis-tick"
+            transform="translate(0, 0)"
+          >
+            <svg
+              fontSize={10}
+              style={
+                Object {
+                  "overflow": "visible",
+                }
+              }
+              x="-0.25em"
+              y="0.25em"
+            >
+              <text
+                fill="#222"
+                fontFamily="Arial"
+                fontSize={10}
+                textAnchor="end"
+                transform=""
+                x={-8}
+                y={8.952380952380963}
+              >
+                <tspan
+                  dy="0em"
+                  x={-8}
+                >
+                  80
+                </tspan>
+              </text>
+            </svg>
+          </g>
+          
+        </g>
+        <g
+          className="visx-group"
+          transform="translate(64, 32)"
+        >
+          <path
+            className="visx-linepath css-j1t6gj-LinePath"
+            d="M0,31.333333333333325L100.80000000000001,64.9047619047619L201.60000000000002,51.47619047619048L302.4,82.80952380952381L403.20000000000005,35.80952380952381L504,73.85714285714286"
+            fill="transparent"
+            strokeLinecap="round"
+          />
+        </g>
+        <rect
+          className="visx-bar"
+          fill="transparent"
+          height={188}
+          onMouseLeave={[Function]}
+          onMouseMove={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          rx={14}
+          width={504}
+          x={64}
+          y={32}
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
