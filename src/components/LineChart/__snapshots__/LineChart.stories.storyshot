@@ -1161,7 +1161,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
                 dy="0em"
                 x={-94}
               >
-                Personen
+                Anzahl an Personen
               </tspan>
             </text>
           </svg>

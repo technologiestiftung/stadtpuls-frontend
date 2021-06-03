@@ -204,7 +204,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               style={tooltipStyles}
               className='bg-blue-500'
             >
-              {`${getY(tooltipData)}`}
+              {`${getY(tooltipData)} ${yAxisUnit ? yAxisUnit : ""}`}
             </TooltipWithBounds>
             <TooltipWithBounds
               top={graphHeight + 28}

@@ -89,7 +89,7 @@ export const PaxcounterThroughoutDay = Template.bind({});
 PaxcounterThroughoutDay.args = {
   width: 600,
   height: 300,
-  yAxisUnit: "Personen",
+  yAxisUnit: "Anzahl an Personen",
   xAxisUnit: "Messdatum",
   data: [
     {
