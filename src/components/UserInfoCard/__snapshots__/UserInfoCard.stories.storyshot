@@ -9,23 +9,95 @@ exports[`Storyshots UserInfoCard Default User Info Card 1`] = `
       className="flex items-center"
     >
       <span
-        className="w-14 h-14 mr-4 transform -translate-y-0.5 transition inline-block text-blue-500 group-hover:opacity-60"
+        className="mr-4 inline-block align-middle rounded-full border border-blue-50"
+        style={
+          Object {
+            "height": 49,
+            "width": 49,
+          }
+        }
       >
         <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root"
-          focusable="false"
-          style={
-            Object {
-              "height": "56px",
-              "width": "56px",
-            }
+          colors={
+            Array [
+              "#E40134",
+              "#213A8F",
+              "#3192D0",
+              "#63B9E9",
+              "#FFFFFF",
+            ]
           }
-          viewBox="0 0 24 24"
+          fill="none"
+          height={48}
+          name="ffthornton"
+          size={48}
+          viewBox="0 0 36 36"
+          width={48}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-          />
+          <mask
+            height={36}
+            id="mask__beam"
+            maskUnits="userSpaceOnUse"
+            width={36}
+            x={0}
+            y={0}
+          >
+            <rect
+              fill="white"
+              height={36}
+              rx={20}
+              width={36}
+            />
+          </mask>
+          <g
+            fill="transparent"
+            mask="url(#mask__beam)"
+          >
+            <rect
+              fill="#FFFFFF"
+              height={36}
+              rx={20}
+              width={36}
+            />
+            <rect
+              fill="#213A8F"
+              height={36}
+              rx={6}
+              transform="translate(6 -2) rotate(16 18 18) scale(1.1)"
+              width={36}
+              x="0"
+              y="0"
+            />
+            <g
+              transform="translate(0 -4) rotate(6 18 18)"
+            >
+              <path
+                d="M15 20c2 1 4 1 6 0"
+                fill="none"
+                stroke="white"
+                strokeLinecap="round"
+              />
+              <rect
+                fill="white"
+                height={2}
+                rx={1}
+                stroke="none"
+                width={1.5}
+                x={13}
+                y={14}
+              />
+              <rect
+                fill="white"
+                height={2}
+                rx={1}
+                stroke="none"
+                width={1.5}
+                x={21}
+                y={14}
+              />
+            </g>
+          </g>
         </svg>
       </span>
       <h1
