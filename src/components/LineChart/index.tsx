@@ -148,7 +148,6 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
                 ? String(theme.colors.mediumgrey)
                 : "inherit"
             }
-            hideZero={true}
           />
           {tooltipData && (
             <Group top={padding.top}>

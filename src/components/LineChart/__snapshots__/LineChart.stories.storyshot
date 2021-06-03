@@ -357,6 +357,38 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
+                y={188}
+              >
+                <tspan
+                  dy="0em"
+                  x={-8}
+                >
+                  0
+                </tspan>
+              </text>
+            </svg>
+          </g>
+          <g
+            className="visx-group visx-axis-tick"
+            transform="translate(0, 0)"
+          >
+            <svg
+              fontSize={10}
+              style={
+                Object {
+                  "overflow": "visible",
+                }
+              }
+              x="-0.25em"
+              y="0.25em"
+            >
+              <text
+                fill="#222"
+                fontFamily="Arial"
+                fontSize={10}
+                textAnchor="end"
+                transform=""
+                x={-8}
                 y={143.23809523809524}
               >
                 <tspan
@@ -881,6 +913,38 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
           className="visx-group visx-axis visx-axis-left"
           transform="translate(64, 32)"
         >
+          <g
+            className="visx-group visx-axis-tick"
+            transform="translate(0, 0)"
+          >
+            <svg
+              fontSize={10}
+              style={
+                Object {
+                  "overflow": "visible",
+                }
+              }
+              x="-0.25em"
+              y="0.25em"
+            >
+              <text
+                fill="#222"
+                fontFamily="Arial"
+                fontSize={10}
+                textAnchor="end"
+                transform=""
+                x={-8}
+                y={188}
+              >
+                <tspan
+                  dy="0em"
+                  x={-8}
+                >
+                  0
+                </tspan>
+              </text>
+            </svg>
+          </g>
           <g
             className="visx-group visx-axis-tick"
             transform="translate(0, 0)"
@@ -1479,6 +1543,38 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
           className="visx-group visx-axis visx-axis-left"
           transform="translate(64, 32)"
         >
+          <g
+            className="visx-group visx-axis-tick"
+            transform="translate(0, 0)"
+          >
+            <svg
+              fontSize={10}
+              style={
+                Object {
+                  "overflow": "visible",
+                }
+              }
+              x="-0.25em"
+              y="0.25em"
+            >
+              <text
+                fill="#222"
+                fontFamily="Arial"
+                fontSize={10}
+                textAnchor="end"
+                transform=""
+                x={-8}
+                y={188}
+              >
+                <tspan
+                  dy="0em"
+                  x={-8}
+                >
+                  0
+                </tspan>
+              </text>
+            </svg>
+          </g>
           <g
             className="visx-group visx-axis-tick"
             transform="translate(0, 0)"
