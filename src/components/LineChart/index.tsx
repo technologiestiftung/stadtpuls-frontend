@@ -70,8 +70,6 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
     const xAxis = {
       scale: xScale,
       values: data.map(el => el.date),
-      // TODO: review how to switch to a 24 hour display
-      //tickFormat: (v: Date) => timeFormat("%H:%M")(v),
     };
 
     const yAxis = {
