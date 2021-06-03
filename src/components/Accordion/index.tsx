@@ -53,13 +53,13 @@ export const Accordion: FC<AccordionPropType> = ({ items }) => {
               <h2
                 style={{ margin: 0 }}
                 id={id}
-                className='group-hover:text-blue-500'
+                className='group-hover:text-blue-500 inline'
               >
                 {title}
-                <span className='float-right font-light text-gray-400'>
-                  {isActive ? "–" : "+"}
-                </span>
               </h2>
+              <span className='float-right font-light text-xl text-gray-400'>
+                {isActive ? "–" : "+"}
+              </span>
             </button>
             {isActive && (
               <p style={{ margin: 0 }} className={styles.content}>

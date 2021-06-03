@@ -19,7 +19,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
         tabIndex={1}
       >
         <h2
-          className="group-hover:text-blue-500"
+          className="group-hover:text-blue-500 inline"
           id="0"
           style={
             Object {
@@ -28,12 +28,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
           }
         >
           Do you like the number 1?
-          <span
-            className="float-right font-light text-gray-400"
-          >
-            –
-          </span>
         </h2>
+        <span
+          className="float-right font-light text-xl text-gray-400"
+        >
+          –
+        </span>
       </button>
       <p
         className="rounded bg-gray-100 m-0 leading-7 p-4 overflow-hidden max-w-none w-full"
@@ -60,7 +60,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
         tabIndex={-1}
       >
         <h2
-          className="group-hover:text-blue-500"
+          className="group-hover:text-blue-500 inline"
           id="1"
           style={
             Object {
@@ -69,12 +69,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
           }
         >
           Do you like the number 2?
-          <span
-            className="float-right font-light text-gray-400"
-          >
-            +
-          </span>
         </h2>
+        <span
+          className="float-right font-light text-xl text-gray-400"
+        >
+          +
+        </span>
       </button>
     </div>
     <div
@@ -91,7 +91,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
         tabIndex={-1}
       >
         <h2
-          className="group-hover:text-blue-500"
+          className="group-hover:text-blue-500 inline"
           id="2"
           style={
             Object {
@@ -100,12 +100,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
           }
         >
           Do you like the number 3?
-          <span
-            className="float-right font-light text-gray-400"
-          >
-            +
-          </span>
         </h2>
+        <span
+          className="float-right font-light text-xl text-gray-400"
+        >
+          +
+        </span>
       </button>
     </div>
     <div
@@ -122,7 +122,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
         tabIndex={-1}
       >
         <h2
-          className="group-hover:text-blue-500"
+          className="group-hover:text-blue-500 inline"
           id="3"
           style={
             Object {
@@ -131,12 +131,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
           }
         >
           Do you like the number 4?
-          <span
-            className="float-right font-light text-gray-400"
-          >
-            +
-          </span>
         </h2>
+        <span
+          className="float-right font-light text-xl text-gray-400"
+        >
+          +
+        </span>
       </button>
     </div>
     <div
@@ -153,7 +153,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
         tabIndex={-1}
       >
         <h2
-          className="group-hover:text-blue-500"
+          className="group-hover:text-blue-500 inline"
           id="4"
           style={
             Object {
@@ -162,12 +162,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
           }
         >
           Do you like the number 5?
-          <span
-            className="float-right font-light text-gray-400"
-          >
-            +
-          </span>
         </h2>
+        <span
+          className="float-right font-light text-xl text-gray-400"
+        >
+          +
+        </span>
       </button>
     </div>
     <div
@@ -184,7 +184,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
         tabIndex={-1}
       >
         <h2
-          className="group-hover:text-blue-500"
+          className="group-hover:text-blue-500 inline"
           id="5"
           style={
             Object {
@@ -193,12 +193,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
           }
         >
           Do you like the number 6?
-          <span
-            className="float-right font-light text-gray-400"
-          >
-            +
-          </span>
         </h2>
+        <span
+          className="float-right font-light text-xl text-gray-400"
+        >
+          +
+        </span>
       </button>
     </div>
     <div
@@ -215,7 +215,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
         tabIndex={-1}
       >
         <h2
-          className="group-hover:text-blue-500"
+          className="group-hover:text-blue-500 inline"
           id="6"
           style={
             Object {
@@ -224,12 +224,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
           }
         >
           Do you like the number 7?
-          <span
-            className="float-right font-light text-gray-400"
-          >
-            +
-          </span>
         </h2>
+        <span
+          className="float-right font-light text-xl text-gray-400"
+        >
+          +
+        </span>
       </button>
     </div>
     <div
@@ -246,7 +246,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
         tabIndex={-1}
       >
         <h2
-          className="group-hover:text-blue-500"
+          className="group-hover:text-blue-500 inline"
           id="7"
           style={
             Object {
@@ -255,12 +255,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
           }
         >
           Do you like the number 8?
-          <span
-            className="float-right font-light text-gray-400"
-          >
-            +
-          </span>
         </h2>
+        <span
+          className="float-right font-light text-xl text-gray-400"
+        >
+          +
+        </span>
       </button>
     </div>
     <div
@@ -277,7 +277,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
         tabIndex={-1}
       >
         <h2
-          className="group-hover:text-blue-500"
+          className="group-hover:text-blue-500 inline"
           id="8"
           style={
             Object {
@@ -286,12 +286,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
           }
         >
           Do you like the number 9?
-          <span
-            className="float-right font-light text-gray-400"
-          >
-            +
-          </span>
         </h2>
+        <span
+          className="float-right font-light text-xl text-gray-400"
+        >
+          +
+        </span>
       </button>
     </div>
     <div
@@ -308,7 +308,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
         tabIndex={-1}
       >
         <h2
-          className="group-hover:text-blue-500"
+          className="group-hover:text-blue-500 inline"
           id="9"
           style={
             Object {
@@ -317,12 +317,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
           }
         >
           Do you like the number 10?
-          <span
-            className="float-right font-light text-gray-400"
-          >
-            +
-          </span>
         </h2>
+        <span
+          className="float-right font-light text-xl text-gray-400"
+        >
+          +
+        </span>
       </button>
     </div>
     <div
@@ -339,7 +339,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
         tabIndex={-1}
       >
         <h2
-          className="group-hover:text-blue-500"
+          className="group-hover:text-blue-500 inline"
           id="10"
           style={
             Object {
@@ -348,12 +348,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
           }
         >
           Do you like the number 11?
-          <span
-            className="float-right font-light text-gray-400"
-          >
-            +
-          </span>
         </h2>
+        <span
+          className="float-right font-light text-xl text-gray-400"
+        >
+          +
+        </span>
       </button>
     </div>
     <div
@@ -370,7 +370,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
         tabIndex={-1}
       >
         <h2
-          className="group-hover:text-blue-500"
+          className="group-hover:text-blue-500 inline"
           id="11"
           style={
             Object {
@@ -379,12 +379,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
           }
         >
           Do you like the number 12?
-          <span
-            className="float-right font-light text-gray-400"
-          >
-            +
-          </span>
         </h2>
+        <span
+          className="float-right font-light text-xl text-gray-400"
+        >
+          +
+        </span>
       </button>
     </div>
   </div>
