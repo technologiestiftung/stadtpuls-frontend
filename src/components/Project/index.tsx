@@ -57,7 +57,7 @@ const getCategoryUnit = (
     case "Druck":
       return "hPa";
     case "PAXCounter":
-      return "Anzahl an Personen";
+      return "Personen";
     default:
       return "";
   }
