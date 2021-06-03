@@ -122,7 +122,6 @@ export const LandingHowItWorks: FC = () => (
         "container mx-auto max-w-8xl",
         "px-4 sm:px-6 md:px-8",
         "py-8 sm:py-12 md:py-16",
-        "overflow-x-auto",
       ].join(" ")}
     >
       <h1

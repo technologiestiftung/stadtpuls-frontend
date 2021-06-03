@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
+<div
+  className="bg-white"
+>
+  <section
+    className="container mx-auto max-w-8xl px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16"
+  >
+    <h1
+      className="text-xl sm:text-2xl md:text-3xl text-blue-500 font-semibold mt-6 mb-8"
+    >
+      Über das Projekt
+    </h1>
+    <div
+      className="grid md:grid-cols-5 xl:grid-cols-2 gap-4 sm:gap-8"
+    >
+      <div
+        className="md:col-span-3 xl:col-span-1 prose max-w-none"
+      >
+        <p
+          className="max-w-none"
+        >
+          Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw.
+        </p>
+        <p
+          className="max-w-none"
+        >
+          Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw.
+        </p>
+      </div>
+      <div
+        className="grid sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 md:col-span-2 xl:col-span-1 gap-4 lg:gap-8"
+      >
+        <div
+          className=""
+        >
+          <h4
+            className="text-xl font-bold mb-1"
+          >
+            Backend
+          </h4>
+          <a
+            className="text-sm text-gray-500 mb-4 block"
+            href="https://github.com/technologiestiftung/next-iot-hub-api"
+            title="Das Code-Repository von der IoT Hub Backend"
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root mr-1 transform scale-75"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"
+              />
+            </svg>
+            technologiestiftung/
+            <span
+              className="text-black"
+            >
+              next-iot-hub-api
+            </span>
+          </a>
+          <ul>
+            <li>
+              <a
+                className="text-gray-500 underline hover:text-blue-500 transition"
+                href="http://supabase.io/"
+                title="Open Source Firebase-like Service"
+              >
+                Supabase
+              </a>
+            </li>
+            <li>
+              <a
+                className="text-gray-500 underline hover:text-blue-500 transition"
+                href="https://www.fastify.io/"
+                title="Fast and low overhead web framework, for Node.js"
+              >
+                Fastify
+              </a>
+            </li>
+            <li>
+              <a
+                className="text-gray-500 underline hover:text-blue-500 transition"
+                href="https://www.postgresql.org/"
+                title="Open Source Relational Database"
+              >
+                PostgreSQL Database
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          className=""
+        >
+          <h4
+            className="text-xl font-bold mb-1"
+          >
+            Frontend
+          </h4>
+          <a
+            className="text-sm text-gray-500 mb-4 block"
+            href="https://github.com/technologiestiftung/next-iot-hub"
+            title="Das Code-Repository von der IoT Hub Frontend"
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root mr-1 transform scale-75"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"
+              />
+            </svg>
+            technologiestiftung/
+            <span
+              className="text-black"
+            >
+              next-iot-hub
+            </span>
+          </a>
+          <ul>
+            <li>
+              <a
+                className="text-gray-500 underline hover:text-blue-500 transition"
+                href="https://nextjs.org/"
+                title="The React Framework for Production"
+              >
+                Next.js
+              </a>
+            </li>
+            <li>
+              <a
+                className="text-gray-500 underline hover:text-blue-500 transition"
+                href="https://airbnb.io/visx/"
+                title="A collection of expressive, low-level visualization primitives for React"
+              >
+                Visx
+              </a>
+            </li>
+            <li>
+              <a
+                className="text-gray-500 underline hover:text-blue-500 transition"
+                href="https://swr.vercel.app/"
+                title="React Hooks library for data fetching"
+              >
+                SWR
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

@@ -25,6 +25,7 @@ import { getSupabaseCredentials } from "../auth/supabase";
 import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
 import { DevicesType, ProjectsType, UsersType } from "@common/types/supabase";
 import { fakeGeocondingData } from "./mapboxData";
+import { fakeGithubUserData } from "./githubData";
 
 const { data: projectsData } = projectsResponse;
 const { data: project1DevicesData } = project1Devices;
@@ -33,6 +34,12 @@ const { data: device1RecordsData } = device1Records;
 const { data: device2RecordsData } = device2Records;
 const { data: device3RecordsData } = device3Records;
 const { data: device4RecordsData } = device4Records;
+
+const githubHandlers = [
+  rest.get(`https://api.github.com/users/*`, (_req, res, ctx) => {
+    return res(ctx.status(201, "Mocked status"), ctx.json(fakeGithubUserData));
+  }),
+];
 
 const mapBoxGeocodingHandlers = [
   rest.get(
@@ -324,6 +331,7 @@ const authHandlers = [
 ];
 
 export const handlers = [
+  ...githubHandlers,
   ...mapBoxGeocodingHandlers,
   ...apiHandlers,
   ...supabaseHandlers,
