@@ -1,4 +1,4 @@
-import { Children, useState } from "react";
+import { useEffect, useState } from "react";
 import { MDXLayoutType } from "@common/types/MDXLayout";
 import { Button } from "@components/Button";
 import { DocsSidebar } from "@components/DocsSidebar";
@@ -9,16 +9,9 @@ import Head from "next/head";
 import { TableOfContents } from "@components/TableOfContents";
 import { DocsBottomNavigation } from "@components/DocsBottomNavigation";
 
-interface MDXReactChild {
-  props: {
-    originalType: string;
-    children: string;
-    id: string;
-  };
-}
-
 const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
+  const [tocTitles, setTocTitles] = useState<HTMLHeadingElement[]>([]);
   const toggleSidebar = (): void => setIsOpened(!isOpened);
 
   const scrollUp = (): void => {
@@ -26,12 +19,10 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const childrenArr = (Children.toArray(children) as MDXReactChild[])
-    .filter(({ props }) => !props || props.originalType === "h2")
-    .map(({ props }, idx) => ({
-      text: props?.children || `${idx}`,
-      id: props?.id || `${idx}`,
-    }));
+  useEffect(() => {
+    if (typeof document === undefined) return;
+    setTocTitles(Array.from(document.querySelectorAll("h2")));
+  }, []);
 
   return (
     <>
@@ -72,7 +63,12 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
               text: frontMatter.title,
               id: "main-headline",
             },
-            ...childrenArr,
+            ...tocTitles
+              .filter(h2El => !!h2El.textContent && !!h2El.getAttribute("id"))
+              .map(h2El => ({
+                text: h2El.textContent || "",
+                id: h2El.getAttribute("id") || "",
+              })),
           ]}
         />
       </div>
