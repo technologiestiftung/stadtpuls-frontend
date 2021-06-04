@@ -4,7 +4,7 @@ import useSWR from "swr";
 import { DevicesType, ProjectsType } from "@common/types/supabase";
 
 interface DateValueType {
-  date: Date;
+  date: string;
   value: number;
 }
 
@@ -24,6 +24,14 @@ export interface PublicProjects {
   count: number;
 }
 
+interface OptionsType {
+  recordsLimit: number;
+  initialData: null | {
+    count: number;
+    projects: PublicProject[];
+  };
+}
+
 const parseDeviceRecords = (
   devices: DevicesType[] | undefined
 ): DateValueType[] => {
@@ -33,7 +41,7 @@ const parseDeviceRecords = (
   const mappedDevices = devices
     .map(({ records }) =>
       (records || []).map(record => ({
-        date: new Date(record.recordedAt),
+        date: record.recordedAt,
         value: record.measurements ? record.measurements[0] : 0,
       }))
     )
@@ -103,15 +111,23 @@ export const getPublicProjects = async (
   return { projects: projects, count: count };
 };
 
+const defaultOptions: OptionsType = {
+  recordsLimit: 500,
+  initialData: null,
+};
+
 export const usePublicProjects = (
-  recordsLimit = 500
+  options: Partial<OptionsType> = defaultOptions
 ): {
   data: PublicProjects | null;
   error: Error | null;
 } => {
+  const recordsLimit = options.recordsLimit || defaultOptions.recordsLimit;
+  const initialData = options.initialData || defaultOptions.initialData;
   const { data, error } = useSWR<PublicProjects | null, Error>(
     ["usePublicProjects", recordsLimit],
-    () => getPublicProjects(recordsLimit)
+    () => getPublicProjects(recordsLimit),
+    { initialData }
   );
 
   return {

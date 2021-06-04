@@ -5,8 +5,13 @@ import { ProjectPreviewMap } from "@components/ProjectPreviewMap";
 import useIsInViewport from "use-is-in-viewport";
 import { AreaPath } from "@components/AreaPath";
 import { UserAvatar } from "@components/UserAvatar";
+import { ViewportType } from "@common/types/ReactMapGl";
 
-export const ProjectPreview: FC<PublicProject> = ({
+interface ProjectPreviewPropType extends PublicProject {
+  viewport?: Partial<ViewportType>;
+}
+
+export const ProjectPreview: FC<ProjectPreviewPropType> = ({
   id,
   name,
   location,
@@ -15,6 +20,7 @@ export const ProjectPreview: FC<PublicProject> = ({
   devicesNumber,
   authorName,
   category,
+  viewport,
 }) => {
   const parentRef = useRef<HTMLDivElement>(null);
   const [svgWrapperWidth, setSvgWrapperWidth] = useState(0);
@@ -47,7 +53,7 @@ export const ProjectPreview: FC<PublicProject> = ({
     >
       <Link href={`/${id}`}>
         <a href={`/${id}`} ref={mapWrapperRef}>
-          {isInViewport && (
+          {viewport && isInViewport && (
             <div
               className={[
                 "absolute -inset-8 pointer-events-none",
@@ -61,7 +67,7 @@ export const ProjectPreview: FC<PublicProject> = ({
               }}
             >
               <ProjectPreviewMap
-                location={location}
+                viewport={viewport}
                 mapWidth={svgWrapperWidth + 64}
                 mapHeight={svgWrapperHeight + 64}
               />
@@ -134,7 +140,10 @@ export const ProjectPreview: FC<PublicProject> = ({
               width={svgWrapperWidth + 4}
               height={82}
               //FIXME: Figure out how we want to handle multiple data points
-              data={records}
+              data={records.map(record => ({
+                ...record,
+                date: new Date(record.date),
+              }))}
             />
           </svg>
         </a>
