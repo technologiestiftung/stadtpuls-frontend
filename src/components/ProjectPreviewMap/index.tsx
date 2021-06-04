@@ -1,11 +1,11 @@
 import ReactMapGL from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { ViewportType } from "@common/types/ReactMapGl";
+import { InteractiveMapProps } from "react-map-gl/src/components/interactive-map";
 
 export const ProjectPreviewMap: React.FC<{
   mapWidth: number;
   mapHeight: number;
-  viewport: Partial<ViewportType>;
+  viewport: Partial<InteractiveMapProps>;
 }> = ({ mapWidth, mapHeight, viewport }) => (
   <ReactMapGL
     zoom={10}

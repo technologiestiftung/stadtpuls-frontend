@@ -8,9 +8,9 @@ const landingHeroStack = "/images/landing-hero-stack.svg";
 export const LandingHero: FC = () => (
   <section
     className={[
-      "container mx-auto max-w-8xl",
+      "container mx-auto max-w-8xl h-screen",
       "px-4 sm:px-6 md:px-8",
-      "py-12 sm:py-24 md:py-40",
+      "pt-12 sm:pt-24 md:pt-40",
       "grid lg:grid-cols-2 gap-16",
     ].join(" ")}
   >
