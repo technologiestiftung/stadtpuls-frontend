@@ -1,7 +1,5 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
 import { useCallback } from "react";
-import { jsx, useThemeUI } from "theme-ui";
+import { useThemeUI } from "theme-ui";
 import { bisector, extent, max } from "d3-array";
 import { Group } from "@visx/group";
 import { scaleLinear, scaleUtc } from "@visx/scale";
@@ -14,6 +12,7 @@ import { TooltipWithBounds, withTooltip, defaultStyles } from "@visx/tooltip";
 import { WithTooltipProvidedProps } from "@visx/tooltip/lib/enhancers/withTooltip";
 import { Bar, Line } from "@visx/shape";
 import { localPoint } from "@visx/event";
+import { GridRows as HorizontalGridLines } from "@visx/grid";
 
 const getX = (d: DateValueType): Date => d.date;
 const getY = (d: DateValueType): number => d.value;
@@ -35,6 +34,8 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
     data,
     width,
     height,
+    yAxisUnit,
+    xAxisUnit,
     showTooltip,
     hideTooltip,
     tooltipData,
@@ -46,11 +47,15 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
     const context = useThemeUI();
     const { theme } = context;
 
-    const padding: number = theme.space ? Number(theme.space[4]) : 0;
-    const paddingLeft: number = theme.space ? Number(theme.space[5]) : 0;
+    const padding = {
+      left: 64,
+      right: 32,
+      top: 32,
+      bottom: 80,
+    };
 
-    const graphWidth: number = width - paddingLeft - padding;
-    const graphHeight: number = height - padding;
+    const graphWidth: number = width - padding.left - padding.right;
+    const graphHeight: number = height - padding.top - padding.bottom;
 
     const xScale = scaleUtc<number>({
       domain: extent(data, getX) as [Date, Date],
@@ -81,7 +86,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
           | React.MouseEvent<SVGRectElement>
       ) => {
         const { x } = localPoint(event) || { x: 0 };
-        const x0 = xScale.invert(x - paddingLeft);
+        const x0 = xScale.invert(x - padding.left);
         const index = bisectDate(data, x0, 1);
         const d0 = data[index - 1];
         const d1 = data[index];
@@ -99,35 +104,42 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
           tooltipTop: yScale(getY(d)),
         });
       },
-      [showTooltip, yScale, xScale, data, paddingLeft]
+      [showTooltip, yScale, xScale, data, padding.left]
     );
 
     return (
       <div>
-        <svg width={width} height={height} sx={{ overflow: "visible" }}>
-          <rect
-            sx={{
-              fill: "background",
-              width: graphWidth,
-              height: graphHeight,
-            }}
-            x={paddingLeft}
+        <svg width={width} height={height} className='overflow-visible'>
+          <HorizontalGridLines
+            scale={yScale}
+            width={graphWidth}
+            top={padding.top}
+            left={padding.left}
+            numTicks={4}
           />
           <AxisBottom
             scale={xAxis.scale}
-            top={graphHeight}
-            left={paddingLeft}
+            top={graphHeight + padding.top + 12}
+            left={padding.left}
+            label={xAxisUnit}
+            labelOffset={24}
+            labelClassName='font-bold'
             hideAxisLine={true}
-            numTicks={8}
+            numTicks={6}
+            tickTransform='translate(0 16)'
             tickStroke={
-              theme.colors?.mediumgrey
-                ? String(theme.colors.mediumgrey)
+              theme.colors?.lightgrey
+                ? String(theme.colors.lightgrey)
                 : "inherit"
             }
           />
           <AxisLeft
             scale={yAxis.scale}
-            left={paddingLeft}
+            top={padding.top}
+            left={padding.left}
+            label={yAxisUnit}
+            labelOffset={24}
+            labelClassName='font-bold'
             hideAxisLine={true}
             hideTicks={true}
             numTicks={4}
@@ -136,13 +148,14 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
                 ? String(theme.colors.mediumgrey)
                 : "inherit"
             }
+            hideZero={true}
           />
           {tooltipData && (
-            <g>
+            <Group top={padding.top}>
               <Line
                 className='stroke-current text-gray-400'
                 from={{ x: tooltipLeft, y: 0 }}
-                to={{ x: tooltipLeft, y: graphHeight + 0 }}
+                to={{ x: tooltipLeft, y: graphHeight + 24 }}
                 strokeWidth={1}
                 pointerEvents='none'
               />
@@ -165,14 +178,14 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
                 strokeWidth={2}
                 pointerEvents='none'
               />
-            </g>
+            </Group>
           )}
-          <Group left={paddingLeft}>
+          <Group left={padding.left} top={padding.top}>
             <LinePath width={graphWidth} height={graphHeight} data={data} />
           </Group>
           <Bar
-            x={paddingLeft}
-            y={0}
+            x={padding.left}
+            y={padding.top}
             width={graphWidth}
             height={graphHeight}
             fill='transparent'
@@ -187,7 +200,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
           <div>
             <TooltipWithBounds
               key={Math.random()}
-              top={tooltipTop - 12}
+              top={tooltipTop + 10}
               left={tooltipLeft}
               style={tooltipStyles}
               className='bg-blue-500'
@@ -195,16 +208,16 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               {`${getY(tooltipData)}`}
             </TooltipWithBounds>
             <TooltipWithBounds
-              top={graphHeight - padding}
+              top={graphHeight + 28}
               left={tooltipLeft}
               offsetLeft={10}
               style={{
                 position: "absolute",
-                fontSize: "14px",
+                fontSize: "10px",
                 minWidth: 72,
                 textAlign: "center",
               }}
-              className='text-blue-500'
+              className='text-gray-900'
             >
               {formatDate(getX(tooltipData))}
             </TooltipWithBounds>
