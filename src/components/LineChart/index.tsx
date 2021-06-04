@@ -4,7 +4,7 @@ import { bisector, extent, max } from "d3-array";
 import { Group } from "@visx/group";
 import { scaleLinear, scaleUtc } from "@visx/scale";
 import { AxisBottom, AxisLeft } from "@visx/axis";
-import { timeFormat } from "d3-time-format";
+import { utcFormat } from "d3-time-format";
 import { DateValueType, LineGraphType } from "@common/interfaces";
 import { LinePath } from "../LinePath";
 
@@ -18,7 +18,7 @@ const getX = (d: DateValueType): Date => d.date;
 const getY = (d: DateValueType): number => d.value;
 // eslint-disable-next-line @typescript-eslint/unbound-method
 const bisectDate = bisector<DateValueType, Date>(d => new Date(d.date)).left;
-const formatDate = timeFormat("%d.%m.%Y - %H:%M:%S");
+const formatDate = utcFormat("%d.%m.%Y - %H:%M:%S");
 
 const tooltipStyles = {
   ...defaultStyles,
@@ -70,8 +70,6 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
     const xAxis = {
       scale: xScale,
       values: data.map(el => el.date),
-      // TODO: review how to switch to a 24 hour display
-      tickFormat: (v: Date) => timeFormat("%H:%M")(v),
     };
 
     const yAxis = {
@@ -148,7 +146,6 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
                 ? String(theme.colors.mediumgrey)
                 : "inherit"
             }
-            hideZero={true}
           />
           {tooltipData && (
             <Group top={padding.top}>
@@ -205,7 +202,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               style={tooltipStyles}
               className='bg-blue-500'
             >
-              {`${getY(tooltipData)}`}
+              {`${getY(tooltipData)} ${yAxisUnit ? yAxisUnit : ""}`}
             </TooltipWithBounds>
             <TooltipWithBounds
               top={graphHeight + 28}
