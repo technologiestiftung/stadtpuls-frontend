@@ -6,12 +6,9 @@ import useIsInViewport from "use-is-in-viewport";
 import { AreaPath } from "@components/AreaPath";
 import { UserAvatar } from "@components/UserAvatar";
 import { ViewportType } from "@common/types/ReactMapGl";
+import { getGeocodedViewportByString } from "@lib/requests/getGeocodedViewportByString";
 
-interface ProjectPreviewPropType extends PublicProject {
-  viewport?: Partial<ViewportType>;
-}
-
-export const ProjectPreview: FC<ProjectPreviewPropType> = ({
+export const ProjectPreview: FC<PublicProject> = ({
   id,
   name,
   location,
@@ -20,25 +17,40 @@ export const ProjectPreview: FC<ProjectPreviewPropType> = ({
   devicesNumber,
   authorName,
   category,
-  viewport,
 }) => {
+  const animationFrameRef = useRef(0);
   const parentRef = useRef<HTMLDivElement>(null);
   const [svgWrapperWidth, setSvgWrapperWidth] = useState(0);
   const [svgWrapperHeight, setSvgWrapperHeight] = useState(0);
   const [isInViewport, mapWrapperRef] = useIsInViewport({ threshold: 50 });
+  const [locationViewport, setLocationViewport] = useState<Pick<
+    ViewportType,
+    "latitude" | "longitude"
+  > | null>(null);
 
   useEffect(() => {
     const updateWidthAndHeight = (): void => {
       if (parentRef.current === null) return;
       setSvgWrapperWidth(parentRef.current.offsetWidth);
       setSvgWrapperHeight(parentRef.current.offsetHeight);
+
+      animationFrameRef.current = requestAnimationFrame(updateWidthAndHeight);
     };
 
-    window.addEventListener("resize", updateWidthAndHeight);
-    updateWidthAndHeight();
-
-    return () => window.removeEventListener("resize", updateWidthAndHeight);
+    animationFrameRef.current = requestAnimationFrame(updateWidthAndHeight);
+    return () => cancelAnimationFrame(animationFrameRef.current);
   }, [parentRef]);
+
+  useEffect(() => {
+    let isMounted = true;
+    if (locationViewport || !isInViewport || !location) return;
+    void getGeocodedViewportByString(location).then(
+      viewport => isMounted && setLocationViewport(viewport)
+    );
+    return () => {
+      isMounted = false;
+    };
+  }, [location, isInViewport, locationViewport]);
 
   return (
     <div
@@ -53,10 +65,10 @@ export const ProjectPreview: FC<ProjectPreviewPropType> = ({
     >
       <Link href={`/${id}`}>
         <a href={`/${id}`} ref={mapWrapperRef}>
-          {viewport && isInViewport && (
+          {locationViewport && isInViewport && (
             <div
               className={[
-                "absolute -inset-8 pointer-events-none",
+                "absolute inset-0 overflow-hidden pointer-events-none",
                 "transition opacity-40 group-hover:opacity-60",
               ].join(" ")}
               style={{
@@ -67,9 +79,9 @@ export const ProjectPreview: FC<ProjectPreviewPropType> = ({
               }}
             >
               <ProjectPreviewMap
-                viewport={viewport}
-                mapWidth={svgWrapperWidth + 64}
-                mapHeight={svgWrapperHeight + 64}
+                viewport={locationViewport}
+                mapWidth={Math.round(svgWrapperWidth * 1.5)}
+                mapHeight={svgWrapperHeight}
               />
             </div>
           )}
@@ -104,8 +116,12 @@ export const ProjectPreview: FC<ProjectPreviewPropType> = ({
                 )}
               </h3>
               <p className='mt-4 mb-2 flex gap-2 flex-wrap'>
-                <span className='font-bold inline-block'>{location}</span>
-                <span className='text-gray-400'>·</span>
+                {location && (
+                  <>
+                    <span className='font-bold inline-block'>{location}</span>
+                    <span className='text-gray-400'>·</span>
+                  </>
+                )}
                 <span className='inline-block'>
                   {devicesNumber} {devicesNumber > 1 ? "Sensoren" : "Sensor"}
                 </span>

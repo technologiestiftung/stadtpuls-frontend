@@ -1,14 +1,10 @@
 import { FC } from "react";
 import { ProjectsList } from "@components/ProjectsList";
-import {
-  getPublicProjects,
-  PublicProject,
-  usePublicProjects,
-} from "@lib/hooks/usePublicProjects";
+import { getPublicProjects, PublicProject } from "@lib/hooks/usePublicProjects";
 import { GetServerSideProps } from "next";
 
 interface ProjectsOverviewPropType {
-  initialData: {
+  projects: {
     count: number;
     projects: PublicProject[];
   };
@@ -16,21 +12,17 @@ interface ProjectsOverviewPropType {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
-    const initialData = await getPublicProjects(500);
-    return { props: { initialData } };
+    const projects = await getPublicProjects(500);
+    return { props: { projects } };
   } catch (error) {
+    console.log(error);
     return { notFound: true };
   }
 };
 
-const ProjectsOverview: FC<ProjectsOverviewPropType> = ({ initialData }) => {
-  const { data, error } = usePublicProjects({
-    recordsLimit: 500,
-    initialData,
-  });
-
-  if (!data || error) return null;
-  else return <ProjectsList {...data} />;
+const ProjectsOverview: FC<ProjectsOverviewPropType> = ({ projects }) => {
+  if (!projects) return null;
+  else return <ProjectsList {...projects} />;
 };
 
 export default ProjectsOverview;

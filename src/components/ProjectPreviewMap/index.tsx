@@ -8,6 +8,7 @@ export const ProjectPreviewMap: React.FC<{
   viewport: Partial<ViewportType>;
 }> = ({ mapWidth, mapHeight, viewport }) => (
   <ReactMapGL
+    zoom={10}
     {...viewport}
     width={mapWidth}
     height={mapHeight}

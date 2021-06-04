@@ -107,7 +107,7 @@ export const fakeProjects = [
     name: "Poison Thing",
     description:
       "Ambition is the path to success. Persistence is the vehicle you arrive in. - Bill Bradley",
-    location: "Minsk",
+    location: null,
     devices: [
       { records: [] },
       { records: [] },

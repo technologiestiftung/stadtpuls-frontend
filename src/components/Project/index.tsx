@@ -31,8 +31,9 @@ import {
 } from "@lib/requests/getProjectData";
 import { ApiInfo } from "../ApiInfo";
 import { MarkerMap } from "../MarkerMap";
-import useGeocodedLocation from "@lib/hooks/useGeocodedLocation";
 import { CategoriesType } from "@common/types/supabase";
+import { ViewportType } from "@common/types/ReactMapGl";
+import { getGeocodedViewportByString } from "@lib/requests/getGeocodedViewportByString";
 
 const downloadIcon = "./images/download.svg";
 
@@ -78,7 +79,10 @@ export const Project: FC<SupabaseProjectType> = project => {
 
   const [markerData, setMarkerData] = useState<MarkerType[]>([]);
 
-  const { viewport: locationViewport } = useGeocodedLocation(project.location);
+  const [locationViewport, setLocationViewport] = useState<Pick<
+    ViewportType,
+    "latitude" | "longitude"
+  > | null>(null);
 
   useEffect(() => {
     const device = project.devices[selectedDeviceIndex];
@@ -134,6 +138,16 @@ export const Project: FC<SupabaseProjectType> = project => {
 
   const [chartWidth, setChartWidth] = useState<number | undefined>(undefined);
   const [chartHeight, setChartHeight] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    let isMounted = true;
+    void getGeocodedViewportByString(project.location).then(
+      viewport => isMounted && setLocationViewport(viewport)
+    );
+    return () => {
+      isMounted = false;
+    };
+  }, [project.location]);
 
   useEffect(() => {
     window.addEventListener("resize", updateChartDimensions);
