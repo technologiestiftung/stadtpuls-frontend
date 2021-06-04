@@ -13,23 +13,23 @@ const Template: Story<{
 
 const lineChartDates = [
   {
-    date: new Date("2021-04-11T12:10:01.908Z"),
+    date: "2021-04-11T12:10:01.908Z",
     value: Math.random() * 100,
   },
   {
-    date: new Date("2021-04-10T12:10:01.908Z"),
+    date: "2021-04-10T12:10:01.908Z",
     value: Math.random() * 100,
   },
   {
-    date: new Date("2021-04-09T12:10:01.908Z"),
+    date: "2021-04-09T12:10:01.908Z",
     value: Math.random() * 100,
   },
   {
-    date: new Date("2021-04-08T12:10:01.908Z"),
+    date: "2021-04-08T12:10:01.908Z",
     value: Math.random() * 100,
   },
   {
-    date: new Date("2021-04-07T12:10:01.908Z"),
+    date: "2021-04-07T12:10:01.908Z",
     value: Math.random() * 100,
   },
 ];

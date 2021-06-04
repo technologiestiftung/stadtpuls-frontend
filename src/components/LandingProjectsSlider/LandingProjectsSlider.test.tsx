@@ -6,6 +6,6 @@ describe("LandingProjectsSlider component", () => {
   it("should 3 slides by project", () => {
     render(<LandingProjectsSlider projects={fakeProjects} />);
     const headings = document.getElementsByClassName("swiper-slide");
-    expect(headings).toHaveLength(fakeProjects.length * 3);
+    expect(headings).toHaveLength(fakeProjects.length);
   });
 });

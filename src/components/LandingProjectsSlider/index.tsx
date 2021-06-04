@@ -21,7 +21,8 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
       slidesPerView: 1,
       centeredSlides: true,
       spaceBetween: 64,
-      loop: true,
+      loop: false,
+      initialSlide: Math.round(projects.length / 2) - 1,
       height: 340,
       breakpoints: {
         960: {
