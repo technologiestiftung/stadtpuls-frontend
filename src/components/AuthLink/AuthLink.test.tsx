@@ -21,7 +21,7 @@ describe("component AuthLink while logged out", () => {
   });
   it("should have gray styles by default", () => {
     render(<AuthLink />);
-    const icon = document.querySelector("span");
+    const icon = document.querySelector("svg");
     const anmeldung = screen.getByText(/Anmeldung/gi);
     expect(icon?.getAttribute("class")?.includes("text-gray-400")).toBe(true);
     expect(anmeldung?.getAttribute("class")?.includes("text-black")).toBe(true);
