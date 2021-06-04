@@ -24,6 +24,7 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
       loop: false,
       initialSlide: Math.round(projects.length / 2) - 1,
       height: 340,
+      slideActiveClass: "lg:-translate-y-0",
       breakpoints: {
         960: {
           slidesPerView: 3,
@@ -31,7 +32,7 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
       },
     });
     return () => swiper.destroy();
-  }, []);
+  }, [projects.length]);
 
   return (
     <section className='overflow-hidden px-4 sm:px-8 my-12 sm:my-24 md:my-40'>
@@ -39,7 +40,10 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
         <div className='swiper-container' id='projects-slider'>
           <div className='swiper-wrapper'>
             {projects.map(project => (
-              <div className='swiper-slide' key={project.id}>
+              <div
+                className='swiper-slide transition transform translate-y-16'
+                key={project.id}
+              >
                 <ProjectPreview {...project} />
               </div>
             ))}
