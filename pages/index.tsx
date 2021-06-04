@@ -14,18 +14,18 @@ const LandingPage: FC = () => {
   );
   return (
     <>
-      <LandingHeroBackgroundMap project={fakeProjects[activeSlideIndex]} />
-      <div className='relative z-10' style={{ marginTop: "-200vh" }}>
-        <LandingHero />
-        <LandingProjectsSlider
-          projects={fakeProjects}
-          initialSlideIndex={initialSlideIndex}
-          onSlideChange={setActiveSlideIndex}
-        />
-        <LandingHowItWorks />
-        <LandingProjectAbout />
-        <LandingLabAbout />
+      <div className='absolute z-0 top-0 left-0 right-0'>
+        <LandingHeroBackgroundMap project={fakeProjects[activeSlideIndex]} />
       </div>
+      <LandingHero />
+      <LandingProjectsSlider
+        projects={fakeProjects}
+        initialSlideIndex={initialSlideIndex}
+        onSlideChange={setActiveSlideIndex}
+      />
+      <LandingHowItWorks />
+      <LandingProjectAbout />
+      <LandingLabAbout />
     </>
   );
 };

@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from "react";
 import { PublicProject } from "@lib/hooks/usePublicProjects";
-import { ProjectPreviewMap } from "@components/ProjectPreviewMap";
 import { ViewportType } from "@common/types/ReactMapGl";
 import { getGeocodedViewportByString } from "@lib/requests/getGeocodedViewportByString";
+import { MarkerMap } from "@components/MarkerMap";
 
 interface LandingHeroBackgroundMapPropType {
   project: PublicProject;
@@ -61,10 +61,17 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
       className='relative overflow-hidden pointer-events-none'
       style={{ height: "200vh" }}
     >
-      <ProjectPreviewMap
+      <MarkerMap
         mapWidth={windowWidth}
         mapHeight={Math.round(windowHeight * 3)}
-        viewport={locationViewport}
+        clickHandler={() => undefined}
+        markers={[
+          {
+            ...locationViewport,
+            isActive: true,
+            id: 0,
+          },
+        ]}
       />
       <div className='absolute bg-gradient-to-b from-white inset-0' />
     </div>

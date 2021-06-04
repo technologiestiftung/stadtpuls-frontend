@@ -8,6 +8,7 @@ const landingHeroStack = "/images/landing-hero-stack.svg";
 export const LandingHero: FC = () => (
   <section
     className={[
+      "relative z-10",
       "container mx-auto max-w-8xl h-screen",
       "px-4 sm:px-6 md:px-8",
       "pt-12 sm:pt-24 md:pt-40",
