@@ -1,9 +1,7 @@
 import { render } from "@testing-library/react";
-import { StoreProvider } from "easy-peasy";
 import * as nextRouter from "next/router";
 import { ThemeProvider } from "theme-ui";
 
-import store from "@state/store";
 import theme from "../style/theme";
 
 import ProjectPage from "../../pages/[id]";
@@ -25,11 +23,9 @@ describe("project page", () => {
     const project = await getProjectData(10);
 
     render(
-      <StoreProvider store={store}>
-        <ThemeProvider theme={theme}>
-          <ProjectPage project={project} />
-        </ThemeProvider>
-      </StoreProvider>
+      <ThemeProvider theme={theme}>
+        <ProjectPage project={project} />
+      </ThemeProvider>
     );
   });
 });

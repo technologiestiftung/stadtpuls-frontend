@@ -30,9 +30,6 @@
       "@lib/*": [
         "./src/lib/*"
       ],
-      "@state/*": [
-        "./src/state/*"
-      ],
       "@mocks/*": [
         "./src/mocks/*"
       ],

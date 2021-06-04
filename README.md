@@ -52,7 +52,6 @@ nom run test:watch
 
 Requests to the API are defined various request utility functions located in `src/lib/requests/` and called in currently three places:
 
-- `src/state/store.ts` (for fetching all projects to be displayed on the homepage)
 - `src/components/Project.tsx` (for fetching records of all devices associated with the project)
 - `src/components/ProjectPreview.tsx` (for fetching the records of one project device, to be displayed in the project preview)
 
