@@ -156,10 +156,7 @@ export const ProjectPreview: FC<PublicProject> = ({
               width={svgWrapperWidth + 4}
               height={82}
               //FIXME: Figure out how we want to handle multiple data points
-              data={records.map(record => ({
-                ...record,
-                date: new Date(record.date),
-              }))}
+              data={records}
             />
           </svg>
         </a>

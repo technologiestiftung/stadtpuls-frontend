@@ -195,7 +195,7 @@ export interface SummaryType {
 }
 
 export interface DateValueType {
-  date: Date;
+  date: string;
   value: number;
 }
 

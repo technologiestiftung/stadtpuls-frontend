@@ -1,7 +1,7 @@
 import { fakeGeocondingData } from "@mocks/mapboxData";
 import { getGeocodedViewportByString } from ".";
 
-describe("useGeocodedLocation", () => {
+describe("getGeocodedViewportByString", () => {
   it("should get the vewport by string", async (): Promise<void> => {
     const viewport = await getGeocodedViewportByString("Berlin");
 

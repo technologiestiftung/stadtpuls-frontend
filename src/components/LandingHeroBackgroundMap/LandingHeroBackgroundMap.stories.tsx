@@ -1,5 +1,5 @@
-import { fakeProjects } from "@components/LandingProjectsSlider/LandingProjectsSlider.stories";
 import { PublicProject } from "@lib/hooks/usePublicProjects";
+import { fakeCuratedProjects } from "@mocks/data";
 import { Story, Meta } from "@storybook/react";
 import { LandingHeroBackgroundMap } from ".";
 
@@ -14,5 +14,5 @@ const Template: Story<{
 
 export const Default = Template.bind({});
 Default.args = {
-  project: fakeProjects[0],
+  project: fakeCuratedProjects[0],
 };

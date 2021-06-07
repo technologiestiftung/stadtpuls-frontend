@@ -14,7 +14,7 @@ import { Bar, Line } from "@visx/shape";
 import { localPoint } from "@visx/event";
 import { GridRows as HorizontalGridLines } from "@visx/grid";
 
-const getX = (d: DateValueType): Date => d.date;
+const getX = (d: DateValueType): Date => new Date(d.date);
 const getY = (d: DateValueType): number => d.value;
 // eslint-disable-next-line @typescript-eslint/unbound-method
 const bisectDate = bisector<DateValueType, Date>(d => new Date(d.date)).left;

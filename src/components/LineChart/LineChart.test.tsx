@@ -15,7 +15,7 @@ describe("Footer component", () => {
           height={height}
           data={[
             {
-              date: new Date(),
+              date: new Date().toISOString(),
               value: 20,
             },
           ]}

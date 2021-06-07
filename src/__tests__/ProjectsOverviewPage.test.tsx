@@ -3,7 +3,7 @@ import { ThemeProvider } from "theme-ui";
 import theme from "../style/theme";
 
 import ProjectsOverviewPage from "../../pages/projects";
-import { fakeProjects } from "@components/LandingProjectsSlider/LandingProjectsSlider.stories";
+import { fakeCuratedProjects } from "@mocks/data";
 
 describe("home page", () => {
   it("should render without failing", () => {
@@ -11,8 +11,8 @@ describe("home page", () => {
       <ThemeProvider theme={theme}>
         <ProjectsOverviewPage
           projects={{
-            count: fakeProjects.length,
-            projects: fakeProjects,
+            count: fakeCuratedProjects.length,
+            projects: fakeCuratedProjects,
           }}
         />
       </ThemeProvider>
