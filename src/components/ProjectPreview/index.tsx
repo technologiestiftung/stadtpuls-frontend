@@ -4,7 +4,7 @@ import { PublicProject } from "@lib/hooks/usePublicProjects";
 import { ProjectPreviewMap } from "@components/ProjectPreviewMap";
 import useIsInViewport from "use-is-in-viewport";
 import { AreaPath } from "@components/AreaPath";
-import { AccountCircle } from "@material-ui/icons";
+import { UserAvatar } from "@components/UserAvatar";
 
 export const ProjectPreview: FC<PublicProject> = ({
   id,
@@ -110,7 +110,11 @@ export const ProjectPreview: FC<PublicProject> = ({
                       className='inline-block truncate'
                       style={{ maxWidth: "calc(100vw - 64px)" }}
                     >
-                      <AccountCircle className='mr-2 opacity-40' />
+                      <UserAvatar
+                        username={authorName}
+                        size={20}
+                        className='mr-1.5'
+                      />
                       {authorName}
                     </span>
                   </>
