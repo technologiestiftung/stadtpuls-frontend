@@ -1,4 +1,5 @@
 import { FC, ReactNode, useState } from "react";
+import styles from "./Accordion.module.css";
 
 interface AccordionItemType {
   id: string;
@@ -17,12 +18,14 @@ const filterStyles = (
 ): string => classes.filter(Boolean).join(" ");
 
 const getStyles: StyleGetterType = ({ isActive }) => ({
-  wrapper: filterStyles("-ml-4", !isActive && "border-b border-b-gray-50"),
+  wrapper: filterStyles(
+    styles.wrapper,
+    !isActive && "border-b border-b-gray-50"
+  ),
   title: filterStyles(
     "p-4 block w-full text-sm text-left bg-gray-50 border border-white",
-    "transition rounded relative zi-10 focus:outline-none",
-    !isActive && "hover:bg-blue-50 group hover:border-blue-500",
-    !isActive ? "focus-offset" : "cursor-default"
+    "transition rounded relative focus:outline-none focus:z-10",
+    "hover:bg-blue-50 group hover:border-blue-500 focus-offset"
   ),
   content: filterStyles(
     "rounded bg-gray-100 m-0 leading-7 p-4 overflow-hidden",
@@ -31,24 +34,21 @@ const getStyles: StyleGetterType = ({ isActive }) => ({
 });
 
 export const Accordion: FC<AccordionPropType> = ({ items }) => {
-  const [activeItemId, setActiveItemId] = useState<string>(items[0].id);
+  const [activeItemId, setActiveItemId] = useState<string | null>(null);
   return (
     <div>
       {items.map(({ id, title, content }) => {
         const isActive = id === activeItemId;
-        const styles = getStyles({ isActive });
+        const classes = getStyles({ isActive });
         return (
-          <div
-            key={id}
-            className={styles.wrapper}
-            style={{
-              width: "calc(100% + 32px)",
-            }}
-          >
+          <div key={id} className={classes.wrapper}>
             <button
-              className={styles.title}
-              onClick={() => setActiveItemId(id)}
-              tabIndex={isActive ? 1 : -1}
+              className={classes.title}
+              onClick={() => {
+                if (activeItemId === id) return setActiveItemId(null);
+                setActiveItemId(id);
+              }}
+              tabIndex={isActive ? 1 : 0}
             >
               <h2
                 style={{ margin: 0 }}
@@ -62,7 +62,7 @@ export const Accordion: FC<AccordionPropType> = ({ items }) => {
               </span>
             </button>
             {isActive && (
-              <p style={{ margin: 0 }} className={styles.content}>
+              <p style={{ margin: 0 }} className={classes.content}>
                 {content}
               </p>
             )}
