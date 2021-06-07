@@ -5,7 +5,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
   className="overflow-hidden px-4 sm:px-8 my-12 sm:my-24 md:my-40"
   style={
     Object {
-      "marginTop": "calc(100vh - 340px)",
+      "marginTop": "calc(93vh - 340px)",
     }
   }
 >

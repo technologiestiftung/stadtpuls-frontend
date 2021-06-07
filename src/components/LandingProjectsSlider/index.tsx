@@ -46,7 +46,7 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
   return (
     <section
       className='overflow-hidden px-4 sm:px-8 my-12 sm:my-24 md:my-40'
-      style={{ marginTop: "calc(100vh - 340px)" }}
+      style={{ marginTop: "calc(93vh - 340px)" }}
     >
       <div className={styles.sliderParent}>
         <div className='swiper-container' id='projects-slider'>
