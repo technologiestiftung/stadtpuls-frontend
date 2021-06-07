@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI Elements/TokenDisplay Default 1`] = `
+<div>
+  <p
+    id="token-display-label"
+  >
+    Token
+  </p>
+  <div
+    aria-labelledby="token-display-label"
+    className="mt-2 p-3 break-words border border-gray-200 text-gray-700"
+  >
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI Elements/TokenDisplay Error 1`] = `
+<div>
+  <p
+    id="token-display-label"
+  >
+    Token
+  </p>
+  <div
+    aria-labelledby="token-display-label"
+    className="mt-2 p-3 break-words border border-red-500 text-red-500"
+  >
+    This could be a custom error message
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI Elements/TokenDisplay Is Generating 1`] = `
+<div>
+  <p
+    id="token-display-label"
+  >
+    Token
+  </p>
+  <div
+    aria-labelledby="token-display-label"
+    className="mt-2 p-3 break-words border border-gray-200 text-gray-700"
+  >
+    Token wird generiert...
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI Elements/TokenDisplay With Token 1`] = `
+<div>
+  <p
+    id="token-display-label"
+  >
+    Token
+  </p>
+  <div
+    aria-labelledby="token-display-label"
+    className="mt-2 p-3 break-words border border-gray-200 text-gray-700"
+  >
+    123456789123456789123456789123456789123456789123456789123456789123456789123456789
+  </div>
+</div>
+`;

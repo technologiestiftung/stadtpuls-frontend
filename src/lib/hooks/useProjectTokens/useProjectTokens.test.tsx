@@ -13,16 +13,17 @@ type OnCreateTokensSuccessType = (token: string) => void;
 type OnCreateTokensFailType = (error: string) => void;
 
 const createTestComponent = (
+  projectId: number,
   onSuccess: OnLoadTokensSuccessType = jest.fn(),
   onFail: OnLoadTokensFailType = jest.fn(),
   onTokenCreationSuccess: OnCreateTokensSuccessType = jest.fn(),
   onTokenCreationFail: OnCreateTokensFailType = jest.fn()
 ): FC => {
   const TestComponent: FC = () => {
-    const { tokens, error, createToken } = useProjectTokens(10);
+    const { tokens, error, createToken } = useProjectTokens(projectId);
 
     useEffect(() => {
-      if (tokens && !error) onSuccess(tokens);
+      if (Array.isArray(tokens) && !error) onSuccess(tokens);
       if (error) onFail(error.message);
     }, [tokens, error, createToken]);
 
@@ -46,10 +47,8 @@ const createTestComponent = (
   };
   return TestComponent;
 };
-
-const originalUseAuth = auth.useAuth;
 describe("useProjectTokens", () => {
-  beforeEach(() => {
+  beforeAll(() => {
     // Ingored because of readonly reassignment for mocking purposes
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
@@ -60,20 +59,13 @@ describe("useProjectTokens", () => {
       },
     });
   });
-
-  afterEach(() => {
-    // Ingored because of readonly reassignment for mocking purposes
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    auth.useAuth = originalUseAuth;
-  });
   it("should get the project tokens", async (): Promise<void> => {
     const onSuccess = jest.fn();
     const onSuccessWrapper = (tokens: DataType): void => {
       onSuccess(tokens);
     };
     const onError = jest.fn();
-    const TestComponent = createTestComponent(onSuccessWrapper, onError);
+    const TestComponent = createTestComponent(1, onSuccessWrapper, onError);
 
     render(
       <SWRConfig value={{ dedupingInterval: 0 }}>
@@ -89,13 +81,12 @@ describe("useProjectTokens", () => {
 
   it("should return an error if network has error", async (): Promise<void> => {
     server.use(rest.get("*", (_req, res) => res.networkError("Error")));
-    server.use(rest.delete("*", (_req, res) => res.networkError("Error")));
     const onSuccess = jest.fn();
     const onError = jest.fn();
     const onErrorWrapper = (error: string): void => {
       onError(error ? true : false);
     };
-    const TestComponent = createTestComponent(onSuccess, onErrorWrapper);
+    const TestComponent = createTestComponent(2, onSuccess, onErrorWrapper);
     render(
       <SWRConfig value={{ dedupingInterval: 0 }}>
         <TestComponent />
@@ -103,7 +94,7 @@ describe("useProjectTokens", () => {
     );
 
     await waitFor(() => {
-      expect(onError).toHaveBeenLastCalledWith(true);
+      expect(onError).toHaveBeenCalled();
       expect(onSuccess).not.toHaveBeenCalled();
     });
   });
@@ -115,6 +106,7 @@ describe("useProjectTokens", () => {
     };
 
     const TestComponent = createTestComponent(
+      2,
       undefined,
       undefined,
       onCreateSuccessWrapper,
@@ -141,6 +133,7 @@ describe("useProjectTokens", () => {
     const onCreateError = jest.fn();
 
     const TestComponent = createTestComponent(
+      4,
       undefined,
       undefined,
       onCreateSuccess,

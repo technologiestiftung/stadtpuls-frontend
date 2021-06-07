@@ -92,20 +92,16 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
-      <span
-        className="transform -translate-y-0.5 transition inline-block text-gray-400 group-hover:text-blue-500"
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 text-gray-400 group-hover:text-blue-500"
+        focusable="false"
+        viewBox="0 0 24 24"
       >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-          />
-        </svg>
-      </span>
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+        />
+      </svg>
       <span
         className="inline-block ml-1 transition hidden sm:inline-block text-black group-hover:text-blue-500"
       >
@@ -337,20 +333,16 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
-      <span
-        className="transform -translate-y-0.5 transition inline-block text-gray-400 group-hover:text-blue-500"
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 text-gray-400 group-hover:text-blue-500"
+        focusable="false"
+        viewBox="0 0 24 24"
       >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-          />
-        </svg>
-      </span>
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+        />
+      </svg>
       <span
         className="inline-block ml-1 transition hidden sm:inline-block text-black group-hover:text-blue-500"
       >

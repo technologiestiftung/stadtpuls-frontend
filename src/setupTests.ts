@@ -9,6 +9,17 @@ import { cache } from "swr";
 
 const noop = (): void => undefined;
 Object.defineProperty(window, "scrollTo", { value: noop, writable: true });
+const observe = jest.fn();
+const unobserve = jest.fn();
+const disconnect = jest.fn();
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+window.IntersectionObserver = jest.fn(() => ({
+  observe,
+  unobserve,
+  disconnect,
+}));
 
 beforeAll(() => {
   // Enable the mocking in tests.

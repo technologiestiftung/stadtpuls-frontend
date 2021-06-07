@@ -123,12 +123,9 @@ exports[`Storyshots Forms/EditProjectForm With Default Values 1`] = `
         value="A location"
       />
     </div>
-    <button
-      className="mt-6 text-gray-400 underline cursor-not-allowed"
-      disabled={true}
-    >
-      Token neu generieren (derzeit nicht verfügbar)
-    </button>
+    <div
+      className="mt-12"
+    />
   </form>
   <footer
     className="mt-24"
@@ -282,12 +279,9 @@ exports[`Storyshots Forms/EditProjectForm Without Default Values 1`] = `
         type="text"
       />
     </div>
-    <button
-      className="mt-6 text-gray-400 underline cursor-not-allowed"
-      disabled={true}
-    >
-      Token neu generieren (derzeit nicht verfügbar)
-    </button>
+    <div
+      className="mt-12"
+    />
   </form>
   <footer
     className="mt-24"

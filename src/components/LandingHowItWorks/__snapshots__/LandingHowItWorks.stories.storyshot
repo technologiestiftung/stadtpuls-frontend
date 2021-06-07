@@ -1,0 +1,538 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
+<div
+  className="bg-gray-50"
+>
+  <section
+    className="container mx-auto max-w-8xl px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16"
+  >
+    <h1
+      className="text-xl sm:text-2xl md:text-3xl text-blue-500 font-semibold mt-6 mb-8"
+    >
+      Und so geht’s:
+      <br />
+      <span
+        className="text-blue-300"
+      >
+        Eine kleine Übersicht
+      </span>
+    </h1>
+    <div
+      className="grid grid-cols-2 lg:grid-cols-9 gap-x-4 sm:gap-x-0 undefined"
+    >
+      <div
+        className="sm:pr-4 md:pr-8 "
+        style={
+          Object {
+            "gridArea": "title-1",
+          }
+        }
+      >
+        <header
+          className=""
+        >
+          <h3
+            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 sm:pt-4 md:mt-8 mb-2"
+          >
+            <span
+              className="mr-2"
+            >
+              Hardware
+            </span>
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+              />
+            </svg>
+          </h3>
+        </header>
+      </div>
+      <div
+        className="sm:pr-4 md:pr-8 "
+        style={
+          Object {
+            "gridArea": "title-2",
+          }
+        }
+      >
+        <header
+          className=""
+        >
+          <h3
+            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 sm:pt-4 md:mt-8 mb-2"
+          >
+            <span
+              className="mr-2"
+            >
+              Sensoren
+            </span>
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+              />
+            </svg>
+          </h3>
+        </header>
+      </div>
+      <div
+        className="sm:pr-4 md:pr-8 "
+        style={
+          Object {
+            "gridArea": "title-3",
+          }
+        }
+      >
+        <header
+          className=""
+        >
+          <h3
+            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 sm:pt-4 md:mt-8 mb-2"
+          >
+            <span
+              className="mr-2"
+            >
+              Protokolle
+            </span>
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+              />
+            </svg>
+          </h3>
+        </header>
+      </div>
+      <div
+        className="sm:pr-4 md:pr-8 sm:bg-white"
+        style={
+          Object {
+            "gridArea": "title-4",
+          }
+        }
+      >
+        <header
+          className="sm:pl-4 md:pl-8"
+        >
+          <h3
+            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 sm:pt-4 md:mt-8 mb-2"
+          >
+            <span
+              className="mr-2"
+            >
+              Was wir bereitstellen
+            </span>
+          </h3>
+        </header>
+      </div>
+      <div
+        className="sm:pr-4 md:pr-8 "
+        style={
+          Object {
+            "gridArea": "description-1",
+          }
+        }
+      >
+        <header
+          className=""
+        >
+          <p
+            className="text-sm text-gray-600 mb-8"
+          >
+            Die Hardware-Wahl  ist ganz dir überlassen. Arbeite z.B. mit Arduino, Raspberry Pi oder einer Open Sense Box.
+          </p>
+        </header>
+      </div>
+      <div
+        className="sm:pr-4 md:pr-8 "
+        style={
+          Object {
+            "gridArea": "description-2",
+          }
+        }
+      >
+        <header
+          className=""
+        >
+          <p
+            className="text-sm text-gray-600 mb-8"
+          >
+            Wir unterstützen aktuell die folgenden, für die Umwelt relevanten Sensortypen.
+          </p>
+        </header>
+      </div>
+      <div
+        className="sm:pr-4 md:pr-8 "
+        style={
+          Object {
+            "gridArea": "description-3",
+          }
+        }
+      >
+        <header
+          className=""
+        >
+          <p
+            className="text-sm text-gray-600 mb-8"
+          >
+            Über die folgenden Protokolle kannst du deine Daten übertragen.
+          </p>
+        </header>
+      </div>
+      <div
+        className="sm:pr-4 md:pr-8 sm:bg-white"
+        style={
+          Object {
+            "gridArea": "description-4",
+          }
+        }
+      >
+        <header
+          className="sm:pl-4 md:pl-8"
+        >
+          <p
+            className="text-sm text-gray-600 mb-8"
+          >
+            Hast du erstmal deinen Sensoren registriert, stellen wir dir automatisch und kostenlos folgendes bereit:
+          </p>
+        </header>
+      </div>
+      <ul
+        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300 "
+        style={
+          Object {
+            "gridArea": "list-1",
+          }
+        }
+      >
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
+          >
+            <i />
+          </span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Arduino
+          </span>
+        </li>
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
+          >
+            <i />
+          </span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Raspberry Pi
+          </span>
+        </li>
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
+          >
+            <i />
+          </span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Open Sense Box
+          </span>
+        </li>
+      </ul>
+      <ul
+        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300 "
+        style={
+          Object {
+            "gridArea": "list-2",
+          }
+        }
+      >
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
+          >
+            <i />
+          </span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Temperatur
+          </span>
+        </li>
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
+          >
+            <i />
+          </span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            CO2
+          </span>
+        </li>
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
+          >
+            <i />
+          </span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Luftfeuchtigkeit
+          </span>
+        </li>
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
+          >
+            <i />
+          </span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Druck
+          </span>
+        </li>
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
+          >
+            <i />
+          </span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Helligkeit
+          </span>
+        </li>
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
+          >
+            <i />
+          </span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Lautstärke
+          </span>
+        </li>
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
+          >
+            <i />
+          </span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Personenzähler
+          </span>
+        </li>
+      </ul>
+      <ul
+        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300 "
+        style={
+          Object {
+            "gridArea": "list-3",
+          }
+        }
+      >
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
+          >
+            <i />
+          </span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            LoRaWAN (TTN)
+          </span>
+        </li>
+      </ul>
+      <ul
+        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300 sm:bg-white sm:px-4 md:px-8"
+        style={
+          Object {
+            "gridArea": "list-4",
+          }
+        }
+      >
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
+          >
+            <i />
+          </span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Ein Profil für dein Projekt
+          </span>
+        </li>
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
+          >
+            <i />
+          </span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Daten­visualisierungen
+          </span>
+        </li>
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
+          >
+            <i />
+          </span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            REST-API für alle Sensoren
+          </span>
+        </li>
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
+          >
+            <i />
+          </span>
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Daten-Downloads (CSV & JSON)
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+`;

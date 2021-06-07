@@ -1,27 +1,22 @@
 import { screen, render } from "@testing-library/react";
-import { ThemeProvider } from "theme-ui";
-import { StoreProvider } from "easy-peasy";
-import theme from "../../style/theme";
-import store from "../../state/store";
 import { ProjectPreview } from ".";
 import { getPublicProjects } from "@lib/hooks/usePublicProjects";
 
+const defaultProject = {
+  id: 0,
+  name: "Title",
+  location: "Berlin",
+  description: "Description",
+  records: [],
+  authorName: "Lucas",
+  category: "Temperatur",
+  devicesNumber: 0,
+};
+
 describe("ProjectPreview component", () => {
   it("should render the title, subtitle and text", async (): Promise<void> => {
-    const data = await getPublicProjects(50);
-    if (data)
-      render(
-        <StoreProvider store={store}>
-          <ThemeProvider theme={theme}>
-            <ProjectPreview
-              id={0}
-              name='Title'
-              location='Berlin'
-              description='Description'
-            />
-          </ThemeProvider>
-        </StoreProvider>
-      );
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} />);
 
     const title = screen.getByText(/Title/gi);
     const city = screen.getByText(/Berlin/gi);
@@ -29,5 +24,64 @@ describe("ProjectPreview component", () => {
     expect(title).toBeInTheDocument();
     expect(city).toBeInTheDocument();
     expect(description).toBeInTheDocument();
+  });
+  it("should render the sensors amount in singular, if 0", async (): Promise<void> => {
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} />);
+
+    const singular = screen.getByText(/0 Sensor/gi);
+    const plural = screen.queryByText(/Sensoren/gi);
+    expect(singular).toBeInTheDocument();
+    expect(plural).not.toBeInTheDocument();
+  });
+  it("should render the sensors amount in singular, if 1", async (): Promise<void> => {
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} devicesNumber={1} />);
+
+    const singular = screen.getByText(/1 Sensor/gi);
+    const plural = screen.queryByText(/Sensoren/gi);
+    expect(singular).toBeInTheDocument();
+    expect(plural).not.toBeInTheDocument();
+  });
+  it("should render the sensors amount in plural, if 2 or more", async (): Promise<void> => {
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} devicesNumber={2} />);
+
+    const plural = screen.getByText(/2 Sensoren/gi);
+    const singular = screen.queryByText(/Sensor$/gi);
+    expect(plural).toBeInTheDocument();
+    expect(singular).not.toBeInTheDocument();
+  });
+  it("should render the author name", async (): Promise<void> => {
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} />);
+
+    const author = screen.getByText(/Lucas/gi);
+    const dots = screen.getAllByText(/·/gi);
+    expect(author).toBeInTheDocument();
+    expect(dots).toHaveLength(2);
+  });
+  it("should not render the author name if null", async (): Promise<void> => {
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} authorName={null} />);
+
+    const author = screen.queryByText(/Lucas/gi);
+    const dots = screen.getAllByText(/·/gi);
+    expect(author).not.toBeInTheDocument();
+    expect(dots).toHaveLength(1);
+  });
+  it("should render the category", async (): Promise<void> => {
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} />);
+
+    const category = screen.queryByText(/Temperatur/gi);
+    expect(category).toBeInTheDocument();
+  });
+  it("should not render the category if null", async (): Promise<void> => {
+    const data = await getPublicProjects(500);
+    if (data) render(<ProjectPreview {...defaultProject} category='null' />);
+
+    const category = screen.queryByText(/Temperatur/gi);
+    expect(category).not.toBeInTheDocument();
   });
 });

@@ -203,6 +203,8 @@ export interface LineGraphType {
   width: number;
   height: number;
   data: Array<DateValueType>;
+  yAxisUnit?: string;
+  xAxisUnit?: string;
 }
 
 export interface RadioTabOptionType {
@@ -229,4 +231,13 @@ export interface MarkerType {
   longitude: number;
   id: number;
   isActive: boolean;
+}
+
+export interface TokenResponseObjectType {
+  comment: string;
+  method: string;
+  url: string;
+  data: {
+    token: string;
+  };
 }

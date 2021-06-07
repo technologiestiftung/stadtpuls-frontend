@@ -1,9 +1,24 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { UserInfoEdit } from ".";
+import * as verifyUser from "@lib/requests/isUsernameAlreadyTaken";
+
+const originalUserVerifFunction = verifyUser.isUsernameAlreadyTaken;
 
 describe("component UserInfoEdit", () => {
   const testEmail = "johndoe@aol.com";
   const testUsername = "johndoe";
+
+  beforeAll(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    verifyUser.isUsernameAlreadyTaken = jest.fn().mockResolvedValue(false);
+  });
+
+  afterAll(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    verifyUser.isUsernameAlreadyTaken = originalUserVerifFunction;
+  });
 
   it("should render an username input", () => {
     render(<UserInfoEdit email={testEmail} username={testUsername} />);
@@ -32,21 +47,48 @@ describe("component UserInfoEdit", () => {
     const editButton = screen.getByText("Ändern");
     expect(editButton).toBeInTheDocument();
     fireEvent.click(editButton);
+    const usernameInput = screen.getByDisplayValue(testUsername);
+
+    fireEvent.change(usernameInput, {
+      target: {
+        value: "vogelino",
+      },
+    });
+
+    const submitButton = screen.getByDisplayValue("Speichern");
+    fireEvent.click(submitButton);
+
+    await waitFor(() => {
+      expect(mySubmit).toHaveBeenCalledWith({
+        email: testEmail,
+        username: "vogelino",
+      });
+    });
+  });
+  it("should not call the onSubmit handler when username already exists", async (): Promise<void> => {
+    const mySubmit = jest.fn();
+    render(
+      <UserInfoEdit
+        email={testEmail}
+        username={testUsername}
+        onSubmit={mySubmit}
+      />
+    );
+    const editButton = screen.getByText("Ändern");
+    expect(editButton).toBeInTheDocument();
+    fireEvent.click(editButton);
     const submitButton = screen.getByDisplayValue("Speichern");
     const usernameInput = screen.getByDisplayValue(testUsername);
 
     fireEvent.change(usernameInput, {
       target: {
-        value: "janedoe",
+        value: "vogelino",
       },
     });
     fireEvent.click(submitButton);
-    await waitFor(() =>
-      expect(mySubmit).toHaveBeenCalledWith({
-        email: testEmail,
-        username: "janedoe",
-      })
-    );
+    await waitFor(() => expect(mySubmit).not.toHaveBeenCalled(), {
+      timeout: 300,
+    });
   });
   it("should throw an error and not submit with an invalid email", async (): Promise<void> => {
     const mySubmit = jest.fn();
