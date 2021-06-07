@@ -55,7 +55,7 @@ const getCategoryUnit = (
     case "Lautstärke":
       return "dB";
     case "Druck":
-      return "Pa";
+      return "hPa";
     case "PAXCounter":
       return "Personen";
     default:

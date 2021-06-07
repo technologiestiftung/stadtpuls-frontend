@@ -89,7 +89,7 @@ export const PaxcounterThroughoutDay = Template.bind({});
 PaxcounterThroughoutDay.args = {
   width: 600,
   height: 300,
-  yAxisUnit: "Personen",
+  yAxisUnit: "Anzahl an Personen",
   xAxisUnit: "Messdatum",
   data: [
     {
@@ -115,6 +115,38 @@ PaxcounterThroughoutDay.args = {
     {
       date: new Date("2021-04-15T19:13:55.000Z"),
       value: 306,
+    },
+  ],
+};
+
+export const ValuesWithoutSuppliedUnit = Template.bind({});
+ValuesWithoutSuppliedUnit.args = {
+  width: 600,
+  height: 300,
+  data: [
+    {
+      date: new Date("2021-04-10T04:13:55.000Z"),
+      value: 70,
+    },
+    {
+      date: new Date("2021-04-11T04:13:55.000Z"),
+      value: 55,
+    },
+    {
+      date: new Date("2021-04-12T04:13:55.000Z"),
+      value: 61,
+    },
+    {
+      date: new Date("2021-04-13T04:13:55.000Z"),
+      value: 47,
+    },
+    {
+      date: new Date("2021-04-14T04:13:55.000Z"),
+      value: 68,
+    },
+    {
+      date: new Date("2021-04-15T04:13:55.000Z"),
+      value: 51,
     },
   ],
 };
