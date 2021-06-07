@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { Button } from "@components/Button";
-import AccountCircle from "@material-ui/icons/AccountCircle";
+import { UserAvatar } from "@components/UserAvatar";
 
 interface UserInfoCardPropTypes {
   username: string;
@@ -21,9 +21,7 @@ export const UserInfoCard: FC<UserInfoCardPropTypes> = ({
     <div className='flex flex-col md:pr-8 lg:pr-16 justify-between h-full w-full sm:min-w-md md:min-w-xs lg:min-w-md'>
       <div>
         <div className='flex items-center'>
-          <span className='w-14 h-14 mr-4 transform -translate-y-0.5 transition inline-block text-blue-500 group-hover:opacity-60'>
-            <AccountCircle style={{ width: "56px", height: "56px" }} />
-          </span>
+          <UserAvatar username={username} size={48} className='mr-4' />
           <h1 className='text-blue-500 text-3xl font-semibold'>{username}</h1>
         </div>
         <div className='border-gray-300 border-t my-8' />

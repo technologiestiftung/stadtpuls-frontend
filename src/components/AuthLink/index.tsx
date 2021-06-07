@@ -1,5 +1,4 @@
 import { FC } from "react";
-import AccountCircle from "@material-ui/icons/AccountCircle";
 import AddIcon from "@material-ui/icons/Add";
 import ProjectIcon from "@material-ui/icons/FormatListBulleted";
 import AccountIcon from "@material-ui/icons/AccountCircle";
@@ -8,17 +7,20 @@ import Link from "next/link";
 import { useAuth } from "@auth/Auth";
 import { DropdownMenu, DropdownMenuPropType } from "@components/DropdownMenu";
 import { useUserData } from "@lib/hooks/useUserData";
+import { UserAvatar } from "@components/UserAvatar";
+import { AccountCircle } from "@material-ui/icons";
 
 const iconProps = {
   className: "transition mr-2 text-gray-400 group-hover:text-blue-400",
 };
 
 export const ColouredAuthLink: FC<{
+  withAvatar?: boolean;
   variant: "primary" | "secondary";
   href?: string;
-}> = ({ children, href, variant }) => {
+}> = ({ children, href, variant, withAvatar = false }) => {
   const iconStyles = [
-    "transform -translate-y-0.5 transition inline-block",
+    "transform -translate-y-0.5 transition inline-block align-middle mr-1",
     variant === "secondary" && "text-gray-400 group-hover:text-blue-500",
     variant === "primary" && "text-blue-500 group-hover:opacity-60",
   ]
@@ -33,14 +35,19 @@ export const ColouredAuthLink: FC<{
     .filter(Boolean)
     .join(" ");
 
-  const text = (
-    <>
-      <span className={iconStyles}>
-        <AccountCircle />
-      </span>
-      <span className={textStyles}>{children}</span>
-    </>
-  );
+  const text =
+    typeof children === "string" ? (
+      <>
+        {withAvatar ? (
+          <UserAvatar username={children} className={iconStyles} />
+        ) : (
+          <AccountCircle className={iconStyles} />
+        )}
+        <span className={textStyles}>{children}</span>
+      </>
+    ) : (
+      <span />
+    );
   return href ? (
     <Link href={href}>
       <a href={href} className='group'>
@@ -58,6 +65,7 @@ export const AuthLink: FC = () => {
 
   const link = (
     <ColouredAuthLink
+      withAvatar={!!user}
       href={user ? undefined : "/signin"}
       variant={user ? "primary" : "secondary"}
     >

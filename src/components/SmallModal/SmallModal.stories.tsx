@@ -1,8 +1,8 @@
 import { Story, Meta } from "@storybook/react";
 import { ReactNode } from "react";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { Button } from "@components/Button";
 import { SmallModal } from ".";
+import { UserAvatar } from "@components/UserAvatar";
 
 export default {
   title: "UI Elements/SmallModal",
@@ -42,9 +42,7 @@ WithFooterContent.args = {
     <div>
       Du bist eingeloggt als:
       <div className='mt-1'>
-        <span className='text-gray-300 mr-1'>
-          <AccountCircleIcon />
-        </span>
+        <UserAvatar username='User' className='mr-1.5' />
         <span className='text-gray-400'>user@usermail.com</span>
       </div>
     </div>
