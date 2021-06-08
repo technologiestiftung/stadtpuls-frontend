@@ -1,9 +1,7 @@
 import { screen, render, waitFor } from "@testing-library/react";
 import { ThemeProvider } from "theme-ui";
-import { StoreProvider } from "easy-peasy";
 import * as nextRouter from "next/router";
 import theme from "../../style/theme";
-import store from "../../state/store";
 import { Project } from ".";
 import { getProjectData } from "@lib/requests/getProjectData";
 describe("Project component", () => {
@@ -23,11 +21,9 @@ describe("Project component", () => {
     const project = await getProjectData(10);
 
     render(
-      <StoreProvider store={store}>
-        <ThemeProvider theme={theme}>
-          <Project {...project} />
-        </ThemeProvider>
-      </StoreProvider>
+      <ThemeProvider theme={theme}>
+        <Project {...project} />
+      </ThemeProvider>
     );
 
     await waitFor(() =>
@@ -40,11 +36,9 @@ describe("Project component", () => {
     const project = await getProjectData(10);
 
     render(
-      <StoreProvider store={store}>
-        <ThemeProvider theme={theme}>
-          <Project {...project} />
-        </ThemeProvider>
-      </StoreProvider>
+      <ThemeProvider theme={theme}>
+        <Project {...project} />
+      </ThemeProvider>
     );
 
     await waitFor(() =>

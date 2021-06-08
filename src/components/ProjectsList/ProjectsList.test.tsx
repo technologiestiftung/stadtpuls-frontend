@@ -1,8 +1,6 @@
 import { screen, render } from "@testing-library/react";
 import { ThemeProvider } from "theme-ui";
-import { StoreProvider } from "easy-peasy";
 import theme from "../../style/theme";
-import store from "../../state/store";
 import { ProjectsList } from ".";
 import { getPublicProjects } from "@lib/hooks/usePublicProjects";
 import { publicProjectsData } from "@mocks/supabaseData";
@@ -11,11 +9,9 @@ describe("ProjectsList component", () => {
     const data = await getPublicProjects(500);
     if (data)
       render(
-        <StoreProvider store={store}>
-          <ThemeProvider theme={theme}>
-            <ProjectsList {...data} />
-          </ThemeProvider>
-        </StoreProvider>
+        <ThemeProvider theme={theme}>
+          <ProjectsList {...data} />
+        </ThemeProvider>
       );
 
     const h1 = screen.getByText(publicProjectsData[0].name);
