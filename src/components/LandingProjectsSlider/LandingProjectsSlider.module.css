@@ -1,0 +1,24 @@
+.sliderParent > div {
+    padding-bottom: 32px;
+}
+
+@media screen and (min-width: 960px) {
+    .sliderParent {
+        width: 200%;
+        margin-left: -50%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .sliderParent {
+        width: 180%;
+        margin-left: -40%;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .sliderParent {
+        width: 120%;
+        margin-left: -10%;
+    }
+}
