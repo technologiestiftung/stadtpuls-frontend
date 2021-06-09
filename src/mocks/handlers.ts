@@ -23,7 +23,11 @@ import { createV1ApiUrl } from "../lib/requests/createV1ApiUrl";
 import { createV2ApiUrl } from "../lib/requests/createV2ApiUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
 import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
-import { DevicesType, ProjectsType, UsersType } from "@common/types/supabase";
+import {
+  DevicesType,
+  ProjectsType,
+  UserProfilesType,
+} from "@common/types/supabase";
 import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
 
@@ -112,7 +116,7 @@ const supabaseHandlers = [
       return res(ctx.status(201, "Mocked status"), ctx.json(userProjects));
     else return res(ctx.status(404, "Not found"));
   }),
-  rest.get(createV2ApiUrl("/users"), (req, res, ctx) => {
+  rest.get(createV2ApiUrl("/userprofiles"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const select = query.get("select");
@@ -220,26 +224,29 @@ const supabaseHandlers = [
   rest.post(createV2ApiUrl("/rpc/delete_user"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"));
   }),
-  rest.patch<UsersType>(createV2ApiUrl("/users"), (req, res, ctx) => {
-    const query = req.url.searchParams;
-    const payload = req.body;
+  rest.patch<UserProfilesType>(
+    createV2ApiUrl("/userprofiles"),
+    (req, res, ctx) => {
+      const query = req.url.searchParams;
+      const payload = req.body;
 
-    const id = query.get("id")?.slice(3);
-    const createdAt = new Date().toISOString();
-    if (id == authToken.currentSession.user.id)
-      return res(
-        ctx.status(201, "Mocked status"),
-        ctx.json([
-          {
-            ...payload,
-            id,
-            createdAt,
-            role: "maker",
-          },
-        ])
-      );
-    else return res(ctx.status(404, "Not found"));
-  }),
+      const id = query.get("id")?.slice(3);
+      const createdAt = new Date().toISOString();
+      if (id == authToken.currentSession.user.id)
+        return res(
+          ctx.status(201, "Mocked status"),
+          ctx.json([
+            {
+              ...payload,
+              id,
+              createdAt,
+              role: "maker",
+            },
+          ])
+        );
+      else return res(ctx.status(404, "Not found"));
+    }
+  ),
   //other
   rest.get(
     createV2ApiUrl(
