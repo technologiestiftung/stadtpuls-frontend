@@ -5,7 +5,7 @@ import {
 import useSWR, { mutate } from "swr";
 import { supabase } from "@auth/supabase";
 import {
-  UsersType,
+  UserProfilesType,
   AuthenticatedUsersType,
   ProjectsType,
   DevicesType,
@@ -21,7 +21,7 @@ import { useState } from "react";
 type UserFetcherSignature = (
   userId?: AuthenticatedUsersType["id"],
   isLoadingAuth?: boolean
-) => Promise<UsersType | null>;
+) => Promise<UserProfilesType | null>;
 
 type ProjectsFetcherSignature = (
   userId?: AuthenticatedUsersType["id"],
@@ -33,7 +33,7 @@ const fetchUser: UserFetcherSignature = async (userId, isLoadingAuth) => {
   if (!userId) throw new Error("Not authenticated");
 
   const { data: user, error } = await supabase
-    .from<UsersType>("users")
+    .from<UserProfilesType>("userprofiles")
     .select("name")
     .eq("id", userId)
     .single();
@@ -181,7 +181,7 @@ const updateUser = async (
   if (!userId) throw new Error("Not authenticated");
 
   const nameReset = await supabase
-    .from<UsersType>("users")
+    .from<UserProfilesType>("userprofiles")
     .update({ name: newName })
     .eq("id", userId);
 
@@ -212,7 +212,7 @@ const deleteUser = async (userId: string | undefined): Promise<void> => {
 export const useUserData = (): {
   isLoading: boolean;
   authenticatedUser: AuthenticatedUsersType | null;
-  user: UsersType | null;
+  user: UserProfilesType | null;
   projects: ProjectsType[] | null;
   error: Error | null;
   addDevice: (device: Omit<DevicesType, "id">) => Promise<void>;
@@ -232,7 +232,7 @@ export const useUserData = (): {
   const userId = authenticatedUser?.id;
 
   const userParams = ["userData", userId, isLoadingAuth];
-  const user = useSWR<UsersType | null, Error>(userParams, () =>
+  const user = useSWR<UserProfilesType | null, Error>(userParams, () =>
     fetchUser(userId, isLoadingAuth)
   );
 
