@@ -1,8 +1,6 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
 import React, { useState } from "react";
-import { jsx, Text, Link, Flex, Box, Theme } from "theme-ui";
 import CloseIcon from "@material-ui/icons/Close";
+import { TextLink } from "@components/TextLink";
 
 export const CookieBanner: React.FC<{
   ignoreCookie?: true;
@@ -22,66 +20,34 @@ export const CookieBanner: React.FC<{
     setCookieStatus(true);
   };
 
+  if (cookieStatus !== false) return null;
   return (
-    <React.Fragment>
-      {cookieStatus === false && (
-        <Flex
-          color='text'
-          bg='background'
-          p={3}
-          sx={{
-            fontSize: 0,
-            width: [
-              (theme: Theme) =>
-                `calc(100vw - ${String((theme.space || [])[3])}px)`,
-              "80vw",
-              "60vw",
-            ],
-            border: (theme: Theme) =>
-              `2px solid ${String(theme.colors?.primary)}`,
-            position: "fixed",
-            bottom: [
-              (theme: Theme) => `${String((theme.space || [])[2])}px`,
-              "40px",
-              null,
-            ],
-            left: [
-              (theme: Theme) => `${String((theme.space || [])[2])}px`,
-              "10vw",
-              "20vw",
-            ],
-            zIndex: 3,
-          }}
-        >
-          <Box
-            sx={{
-              "& > *": {
-                display: "inline",
-              },
-            }}
+    <>
+      <div
+        className={[
+          "p-3 border border-gray-200 shadow-xl fixed left-1/2 transform -translate-x-1/2",
+          "bottom-0 sm:bottom-4 z-50 bg-white text-sm rounded container max-w-3xl",
+          "flex gap-4 justify-between",
+        ].join(" ")}
+      >
+        <p className='max-w-none'>
+          Diese Webseite verwendet Cookies, um bestimmte Funktionen zu
+          ermöglichen und das Angebot zu verbessern. Indem Sie hier fortfahren,
+          stimmen Sie der Nutzung von Cookies zu. &nbsp;
+          <TextLink
+            href='https://www.technologiestiftung-berlin.de/de/datenschutz/'
+            target='_blank'
+            rel='noopener noreferrer'
           >
-            <Text>
-              Diese Webseite verwendet Cookies, um bestimmte Funktionen zu
-              ermöglichen und das Angebot zu verbessern. Indem Sie hier
-              fortfahren, stimmen Sie der Nutzung von Cookies zu.
-            </Text>
-            &nbsp;
-            <Link
-              href='https://www.technologiestiftung-berlin.de/de/datenschutz/'
-              target='_blank'
-              rel='noopener noreferrer'
-              sx={{ color: "primary" }}
-            >
-              Weitere Informationen
-            </Link>
-          </Box>
-          <CloseIcon
-            fontSize='large'
-            sx={{ color: "primary", cursor: "pointer" }}
-            onClick={acceptCookies}
-          />
-        </Flex>
-      )}
-    </React.Fragment>
+            Weitere Informationen
+          </TextLink>
+        </p>
+        <CloseIcon
+          fontSize='large'
+          onClick={acceptCookies}
+          className='cursor-pointer text-blue-500 opacity-100 hover:opacity-50 transition'
+        />
+      </div>
+    </>
   );
 };

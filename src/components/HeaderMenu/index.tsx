@@ -10,6 +10,7 @@ interface MenuPageType {
 
 interface MenuLinkPropType extends MenuPageType {
   className?: string;
+  onClick: () => void;
 }
 
 const pages: MenuPageType[] = [
@@ -17,10 +18,19 @@ const pages: MenuPageType[] = [
   { href: "/docs", text: "Mehr Infos" },
 ];
 
-const HeaderLink: FC<MenuLinkPropType> = ({ text, href, className = "" }) => (
+const HeaderLink: FC<MenuLinkPropType> = ({
+  text,
+  href,
+  className = "",
+  onClick,
+}) => (
   <li className={`${className} sm:inline-block text-xl sm:text-base`}>
     <ActiveLink activeClassName='navigation-link-active' href={href}>
-      <a href={href} className='navigation-link p-4 block sm:inline'>
+      <a
+        href={href}
+        className='navigation-link p-4 block sm:inline'
+        onClick={onClick}
+      >
         {text}
       </a>
     </ActiveLink>
@@ -30,22 +40,21 @@ const HeaderLink: FC<MenuLinkPropType> = ({ text, href, className = "" }) => (
 export const HeaderMenu: React.FC = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const toggleIsOpened = (): void => setIsOpened(!isOpened);
-  const menuRef = useClickOutside(() => setIsOpened(false));
+  const menuRef = useClickOutside<HTMLDivElement>(() => setIsOpened(false));
   return (
-    <>
+    <div ref={menuRef}>
       <button
-        className='sm:hidden text-blue-500 focus-offset'
+        className='sm:hidden text-blue-500 focus-offset relative z-0'
         onClick={toggleIsOpened}
       >
         {isOpened ? <Close /> : <Menu />}
       </button>
       <nav
-        ref={menuRef}
         className={[
           "fixed sm:static",
           "top-16 sm:top-auto",
           "left-0 sm:left-auto",
-          "z-10 sm:z-auto",
+          "z-20 sm:z-auto",
           "w-full sm:w-auto",
           "shadow-xl sm:shadow-none",
           "py-4 px-1 sm:p-0",
@@ -58,12 +67,22 @@ export const HeaderMenu: React.FC = () => {
         ].join(" ")}
       >
         <ul className='h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4'>
-          <HeaderLink href='/' text='Startseite' className='sm:hidden' />
+          <HeaderLink
+            href='/'
+            text='Startseite'
+            className='sm:hidden'
+            onClick={() => setIsOpened(false)}
+          />
           {pages.map(({ href, text }) => (
-            <HeaderLink key={href} href={href} text={text} />
+            <HeaderLink
+              key={href}
+              href={href}
+              text={text}
+              onClick={() => setIsOpened(false)}
+            />
           ))}
         </ul>
       </nav>
-    </>
+    </div>
   );
 };

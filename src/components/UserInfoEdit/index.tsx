@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, Controller } from "react-hook-form";
@@ -8,11 +8,14 @@ import {
   requiredUsernameValidation,
   requiredEmailValidation,
 } from "@lib/formValidationUtil";
+import { isUsernameAlreadyTaken } from "@lib/requests/isUsernameAlreadyTaken";
 
 interface UserInfoData {
   username: string;
   email: string;
 }
+
+type UniqueUsernameErrorType = string | null | undefined;
 
 interface UserInfoEditProps extends UserInfoData {
   onSubmit?: (data: UserInfoData) => void;
@@ -23,12 +26,39 @@ const formSchema = yup.object().shape({
   username: requiredUsernameValidation,
 });
 
+const getCancelableIsUsernameAlreadyTaken = (): {
+  call: typeof isUsernameAlreadyTaken;
+  cancel: () => void;
+} => {
+  let hasCanceled_ = false;
+
+  const wrappedPromise: typeof isUsernameAlreadyTaken = username =>
+    new Promise((resolve, reject) => {
+      isUsernameAlreadyTaken(username).then(
+        val => !hasCanceled_ && resolve(val),
+        error => !hasCanceled_ && reject(error)
+      );
+    });
+
+  return {
+    call: wrappedPromise,
+    cancel() {
+      hasCanceled_ = true;
+    },
+  };
+};
+
 export const UserInfoEdit: FC<UserInfoEditProps> = ({
   onSubmit = data => console.log(data),
   username,
   email,
 }) => {
   const [edit, setEdit] = useState(false);
+  const [
+    uniqueUsernameError,
+    setUniqueUsernameError,
+  ] = useState<UniqueUsernameErrorType | null>(null);
+  const isUsernameAlreadyTakenCancelable = getCancelableIsUsernameAlreadyTaken();
 
   const {
     control,
@@ -39,12 +69,29 @@ export const UserInfoEdit: FC<UserInfoEditProps> = ({
     resolver: yupResolver(formSchema),
   });
 
-  const formatError = (errorMsg?: string): string[] =>
-    errorMsg ? [errorMsg] : [];
+  const formatErrors = (errorMsgs: (string | null | undefined)[]): string[] =>
+    errorMsgs.filter(Boolean) as string[];
+
+  useEffect(() => {
+    return () => isUsernameAlreadyTakenCancelable.cancel();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const afterValidationSubmit = (data: UserInfoData): void => {
+    onSubmit(data);
+    setUniqueUsernameError(null);
+    setEdit(false);
+  };
 
   const onInternalSubmit = handleSubmit(data => {
-    onSubmit(data);
-    setEdit(false);
+    if (data.username === username) return afterValidationSubmit(data);
+    void isUsernameAlreadyTakenCancelable.call(data.username).then(isTaken => {
+      if (isTaken)
+        return setUniqueUsernameError(
+          `Ein Nutzer mit der Nutzername "${data.username}" existiert bereits`
+        );
+      afterValidationSubmit(data);
+    });
   });
 
   return (
@@ -64,7 +111,7 @@ export const UserInfoEdit: FC<UserInfoEditProps> = ({
               placeholder='Deine E-Mail-Adresse...'
               type='email'
               disabled={!edit}
-              errors={formatError(errors.email?.message)}
+              errors={formatErrors([errors.email?.message])}
             />
           )}
         />
@@ -79,7 +126,10 @@ export const UserInfoEdit: FC<UserInfoEditProps> = ({
               placeholder='Dein Nutzername...'
               type='text'
               disabled={!edit}
-              errors={formatError(errors.username?.message)}
+              errors={formatErrors([
+                errors.username?.message,
+                uniqueUsernameError,
+              ])}
             />
           )}
         />
@@ -89,6 +139,7 @@ export const UserInfoEdit: FC<UserInfoEditProps> = ({
               <Button
                 onClick={() => {
                   resetForm({ email, username });
+                  setUniqueUsernameError(null);
                   setEdit(false);
                 }}
                 className='mr-4'

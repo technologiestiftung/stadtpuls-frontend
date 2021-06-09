@@ -27,73 +27,10 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
   <section
     className="flex gap-4 sm:gap-8 items-center"
   >
-    <button
-      className="sm:hidden text-blue-500 focus-offset"
-      onClick={[Function]}
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-        />
-      </svg>
-    </button>
-    <nav
-      className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-10 sm:z-auto w-full sm:w-auto shadow-xl sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-white border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
-    >
-      <ul
-        className="h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4"
-      >
-        <li
-          className="sm:hidden sm:inline-block text-xl sm:text-base"
-        >
-          <a
-            className="navigation-link p-4 block sm:inline"
-            href="/"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Startseite
-          </a>
-        </li>
-        <li
-          className=" sm:inline-block text-xl sm:text-base"
-        >
-          <a
-            className="navigation-link p-4 block sm:inline"
-            href="/projects"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Projekte
-          </a>
-        </li>
-        <li
-          className=" sm:inline-block text-xl sm:text-base"
-        >
-          <a
-            className="navigation-link p-4 block sm:inline"
-            href="/docs"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Mehr Infos
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <a
-      className="group"
-      href="/signin"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <span
-        className="transform -translate-y-0.5 transition inline-block text-gray-400 group-hover:text-blue-500"
+    <div>
+      <button
+        className="sm:hidden text-blue-500 focus-offset relative z-0"
+        onClick={[Function]}
       >
         <svg
           aria-hidden={true}
@@ -102,10 +39,71 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+            d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
           />
         </svg>
-      </span>
+      </button>
+      <nav
+        className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-20 sm:z-auto w-full sm:w-auto shadow-xl sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-white border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
+      >
+        <ul
+          className="h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4"
+        >
+          <li
+            className="sm:hidden sm:inline-block text-xl sm:text-base"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Startseite
+            </a>
+          </li>
+          <li
+            className=" sm:inline-block text-xl sm:text-base"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/projects"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Projekte
+            </a>
+          </li>
+          <li
+            className=" sm:inline-block text-xl sm:text-base"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/docs"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Mehr Infos
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <a
+      className="group"
+      href="/signin"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 text-gray-400 group-hover:text-blue-500"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+        />
+      </svg>
       <span
         className="inline-block ml-1 transition hidden sm:inline-block text-black group-hover:text-blue-500"
       >
@@ -272,73 +270,10 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
   <section
     className="flex gap-4 sm:gap-8 items-center"
   >
-    <button
-      className="sm:hidden text-blue-500 focus-offset"
-      onClick={[Function]}
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-        />
-      </svg>
-    </button>
-    <nav
-      className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-10 sm:z-auto w-full sm:w-auto shadow-xl sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-white border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
-    >
-      <ul
-        className="h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4"
-      >
-        <li
-          className="sm:hidden sm:inline-block text-xl sm:text-base"
-        >
-          <a
-            className="navigation-link p-4 block sm:inline"
-            href="/"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Startseite
-          </a>
-        </li>
-        <li
-          className=" sm:inline-block text-xl sm:text-base"
-        >
-          <a
-            className="navigation-link p-4 block sm:inline"
-            href="/projects"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Projekte
-          </a>
-        </li>
-        <li
-          className=" sm:inline-block text-xl sm:text-base"
-        >
-          <a
-            className="navigation-link p-4 block sm:inline"
-            href="/docs"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Mehr Infos
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <a
-      className="group"
-      href="/signin"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <span
-        className="transform -translate-y-0.5 transition inline-block text-gray-400 group-hover:text-blue-500"
+    <div>
+      <button
+        className="sm:hidden text-blue-500 focus-offset relative z-0"
+        onClick={[Function]}
       >
         <svg
           aria-hidden={true}
@@ -347,10 +282,71 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+            d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
           />
         </svg>
-      </span>
+      </button>
+      <nav
+        className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-20 sm:z-auto w-full sm:w-auto shadow-xl sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-white border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
+      >
+        <ul
+          className="h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4"
+        >
+          <li
+            className="sm:hidden sm:inline-block text-xl sm:text-base"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Startseite
+            </a>
+          </li>
+          <li
+            className=" sm:inline-block text-xl sm:text-base"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/projects"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Projekte
+            </a>
+          </li>
+          <li
+            className=" sm:inline-block text-xl sm:text-base"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/docs"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Mehr Infos
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <a
+      className="group"
+      href="/signin"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 text-gray-400 group-hover:text-blue-500"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+        />
+      </svg>
       <span
         className="inline-block ml-1 transition hidden sm:inline-block text-black group-hover:text-blue-500"
       >

@@ -203,6 +203,8 @@ export interface LineGraphType {
   width: number;
   height: number;
   data: Array<DateValueType>;
+  yAxisUnit?: string;
+  xAxisUnit?: string;
 }
 
 export interface RadioTabOptionType {

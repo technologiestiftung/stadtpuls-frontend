@@ -15,7 +15,7 @@ const ComponentWithPrevious: FC = () => {
 };
 
 describe("hook usePrevious", () => {
-  it.only("should return the previous value", async (): Promise<void> => {
+  it("should return the previous value", async (): Promise<void> => {
     render(<ComponentWithPrevious />);
 
     await waitFor(() => expect(screen.getByText(/B-A/gi)).toBeInTheDocument());

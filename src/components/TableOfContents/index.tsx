@@ -29,6 +29,7 @@ const getActiveLinkId = (): string => {
     top: h2El.offsetTop,
     id: h2El.getAttribute("id") || "main-headline",
   }));
+
   const windowEl = {
     id: "window",
     top: window.scrollY,

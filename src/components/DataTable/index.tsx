@@ -6,7 +6,6 @@ import { IconButton } from "../IconButton";
 import { RecordType } from "@common/interfaces";
 import { createTimeOutput } from "@lib/dateUtil";
 import { createCSVStructure, downloadCSV } from "@lib/downloadCsvUtil";
-import { useStoreState } from "@state/hooks";
 
 const downloadIcon = "/images/download.svg";
 
@@ -21,14 +20,12 @@ export interface DataTableType {
 }
 
 export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
-  const recordsSegmentSize = useStoreState(state => state.records.segmentSize);
-
   const [displayedData, setDisplayedData] = useState<DataTableRowType[]>([]);
 
   const [
     numberOfRecordsToDisplay,
     setNumberOfRecordsToDisplay,
-  ] = useState<number>(recordsSegmentSize);
+  ] = useState<number>(500);
 
   useEffect(() => {
     if (!data) return;
@@ -46,7 +43,7 @@ export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
   };
 
   const handleLoadMore = (): void => {
-    setNumberOfRecordsToDisplay(numberOfRecordsToDisplay + recordsSegmentSize);
+    setNumberOfRecordsToDisplay(numberOfRecordsToDisplay + 500);
   };
 
   return (
