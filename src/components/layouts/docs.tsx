@@ -14,6 +14,11 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
   const [tocTitles, setTocTitles] = useState<HTMLHeadingElement[]>([]);
   const toggleSidebar = (): void => setIsOpened(!isOpened);
 
+  useEffect(() => {
+    const classMethod = isOpened ? "add" : "remove";
+    document.body.classList[classMethod]("no-scroll");
+  }, [isOpened]);
+
   const scrollUp = (): void => {
     if (typeof window === undefined) return;
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -26,7 +31,7 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
 
   return (
     <>
-      <div className='md:grid md:grid-cols-12'>
+      <div className='sm:grid sm:grid-cols-12'>
         <DocsSidebar isOpened={isOpened} />
         <article className='col-span-8 lg:col-span-7 xl:col-span-7'>
           <Head>

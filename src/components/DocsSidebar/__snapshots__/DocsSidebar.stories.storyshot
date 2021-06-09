@@ -5,13 +5,13 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
   className="grid grid-cols-12 bg-gray-50"
 >
   <aside
-    className=" transform transition col-span-4 lg:col-span-3 xl:col-span-2 z-10 md:block md:translate-x-0 md:col-span fixed md:relative w-full md:w-auto"
+    className=" transform transition col-span-4 lg:col-span-3 xl:col-span-2 z-10 sm:block sm:translate-x-0 sm:col-span fixed sm:relative w-full sm:w-auto bg-white"
   >
     <div
-      className="sticky w-full top-16 overflow-y-auto h-screen"
+      className="fixed sm:sticky w-full top-0 sm:top-16 overflow-y-auto h-screen"
     >
       <div
-        className="px-8 py-8 bg-white border-r w-full h-full"
+        className="px-8 pt-8 pb-24 sm:pb-8 bg-white border-r w-full min-h-full"
       >
         <h4
           className="font-bold text-xl 2xl:text-2xl mb-2"
