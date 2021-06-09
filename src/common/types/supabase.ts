@@ -16,7 +16,7 @@ export interface AuthtokensType {
    * This is a Foreign Key to `users.id`.<fk table='users' column='id'/>
    */
   userId?: string;
-  user?: UsersType;
+  userProfile?: UserProfilesType;
   niceId: number;
 }
 export interface CategoriesType {
@@ -55,7 +55,7 @@ export interface DevicesType {
    * This is a Foreign Key to `users.id`.<fk table='users' column='id'/>
    */
   userId?: string;
-  user?: UsersType;
+  userProfile?: UserProfilesType;
   //Relations
   records?: RecordsType[];
 }
@@ -75,7 +75,7 @@ export interface ProjectsType {
    * This is a Foreign Key to `users.id`.<fk table='users' column='id'/>
    */
   userId?: string;
-  user?: UsersType;
+  userProfile?: UserProfilesType;
   /**
    * Note:
    * This is a Foreign Key to `categories.id`.<fk table='categories' column='id'/>
@@ -104,7 +104,7 @@ export interface RecordsType {
   deviceId: number;
   device?: DevicesType;
 }
-export interface UsersType {
+export interface UserProfilesType {
   /**
    * Note:
    * This is a Primary Key.<pk/>
