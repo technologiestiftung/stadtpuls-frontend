@@ -1,15 +1,12 @@
 import { DevicesType, ProjectsType } from "@common/types/supabase";
 import { fakeCategories } from "./categories";
 import { fakeProjects } from "./publicProjects";
-import { fakeRecords } from "./records";
 import {
   fakeAuthToken,
   fakeRefreshToken,
   fakeUserData,
   fakeUserProjects,
 } from "./userData";
-
-export const allProjectsRecordsData = fakeRecords;
 
 export const publicProjectsData = fakeProjects;
 
