@@ -25,18 +25,18 @@ import { MarkerType, RecordType } from "../../common/interfaces";
 import { RadioTabs } from "../RadioTabs";
 import { LineChart } from "../LineChart";
 import { createDateValueArray } from "@lib/dateUtil";
-import {
-  SupabaseProjectType,
-  RawRecordType,
-} from "@lib/requests/getProjectData";
 import { ApiInfo } from "../ApiInfo";
 import { MarkerMap } from "../MarkerMap";
 import useGeocodedLocation from "@lib/hooks/useGeocodedLocation";
-import { CategoriesType } from "@common/types/supabase";
+import {
+  CategoriesType,
+  RecordsType,
+  ProjectsType,
+} from "@common/types/supabase";
 
 const downloadIcon = "./images/download.svg";
 
-const rawRecordToRecord = (rawRecord: RawRecordType): RecordType => ({
+const rawRecordToRecord = (rawRecord: RecordsType): RecordType => ({
   id: rawRecord.id,
   recordedAt: rawRecord.recordedAt || "",
   value: rawRecord.measurements ? rawRecord.measurements[0] : 0,
@@ -63,9 +63,9 @@ const getCategoryUnit = (
   }
 };
 
-export const Project: FC<SupabaseProjectType> = project => {
+export const Project: FC<ProjectsType> = project => {
   const [selectedDeviceIndex, setSelectedDeviceIndex] = useState<number>(0);
-  const selectedDevice = project.devices[selectedDeviceIndex];
+  const selectedDevice = project?.devices?.[selectedDeviceIndex];
 
   const MIN_NUMBER_OF_RECORDS_TO_DISPLAY = 100;
 
@@ -78,12 +78,14 @@ export const Project: FC<SupabaseProjectType> = project => {
 
   const [markerData, setMarkerData] = useState<MarkerType[]>([]);
 
-  const { viewport: locationViewport } = useGeocodedLocation(project.location);
+  const { viewport: locationViewport } = useGeocodedLocation(
+    project.location || null
+  );
 
   useEffect(() => {
-    const device = project.devices[selectedDeviceIndex];
+    const device = project?.devices?.[selectedDeviceIndex];
 
-    if (!device) return;
+    if (!device || !device.records) return;
 
     const initialNumberOfRecordsToDisplay =
       device.records.length < 500 ? device.records.length : 500;
@@ -91,25 +93,24 @@ export const Project: FC<SupabaseProjectType> = project => {
   }, [selectedDeviceIndex, project.devices]);
 
   useEffect(() => {
-    const device = project.devices[selectedDeviceIndex];
-    if (!device) return;
+    const device = project?.devices?.[selectedDeviceIndex];
+
+    if (!device || !device.records) return;
+
     setLineChartData(
       device.records.slice(0, numberOfRecordsToDisplay).map(rawRecordToRecord)
     );
   }, [selectedDeviceIndex, project.devices, numberOfRecordsToDisplay]);
 
   useEffect(() => {
-    const devicesWithCoordinates = project.devices.filter(device => {
-      const latLonFieldsExist =
-        device.records[0].latitude && device.records[0].longitude;
+    const devicesWithCoordinates = project?.devices?.filter(device => {
       return (
-        latLonFieldsExist &&
-        device.records[0].latitude !== null &&
-        device.records[0].longitude !== null
+        Boolean(device?.records?.[0].latitude) &&
+        Boolean(device?.records?.[0].longitude)
       );
     });
 
-    if (devicesWithCoordinates.length === 0 && locationViewport) {
+    if (devicesWithCoordinates?.length === 0 && locationViewport) {
       setMarkerData([
         {
           ...locationViewport,
@@ -121,14 +122,14 @@ export const Project: FC<SupabaseProjectType> = project => {
     }
 
     setMarkerData(
-      devicesWithCoordinates.map((device, idx) => {
+      devicesWithCoordinates?.map((device, idx) => {
         return {
-          latitude: device.records[0].latitude || 0,
-          longitude: device.records[0].longitude || 0,
+          latitude: device?.records?.[0].latitude || 0,
+          longitude: device?.records?.[0].longitude || 0,
           id: idx,
           isActive: idx === selectedDeviceIndex,
         };
-      })
+      }) || []
     );
   }, [project.devices, selectedDeviceIndex, locationViewport]);
 
@@ -187,8 +188,16 @@ export const Project: FC<SupabaseProjectType> = project => {
   const handleDownload = (): void => {
     if (!project) return;
     downloadMultiple(
-      project.devices.map(device => device.records.map(rawRecordToRecord)),
-      project.devices.map(device => (device.name ? device.name : "Kein Titel"))
+      project?.devices?.map(device => {
+        return (
+          device?.records?.map(rawRecordToRecord) || [
+            { id: 0, recordedAt: "", value: 0 },
+          ]
+        );
+      }) || [[{ id: 0, recordedAt: "", value: 0 }]],
+      project?.devices?.map(device =>
+        device.name ? device.name : "Kein Titel"
+      ) || ["Kein Titel"]
     );
   };
 
@@ -201,7 +210,7 @@ export const Project: FC<SupabaseProjectType> = project => {
   ): void => {
     event.preventDefault();
 
-    if (!selectedDevice) return;
+    if (!selectedDevice || !selectedDevice.records) return;
     setLineChartData(
       selectedDevice.records
         .slice(0, numberOfRecordsToDisplay)
@@ -231,7 +240,7 @@ export const Project: FC<SupabaseProjectType> = project => {
               noOfDevices={project.devices ? project.devices.length : 0}
             />
           </Box>
-          {project.devices.length > 0 && (
+          {project && project.devices && project.devices.length > 0 && (
             <>
               <Box mt={4}>
                 <ApiInfo
@@ -277,102 +286,108 @@ export const Project: FC<SupabaseProjectType> = project => {
         </Box>
         <Box>
           <Card p={0}>
-            {project.devices[selectedDeviceIndex] && (
-              <Grid
-                columns={["auto max-content"]}
-                p={3}
-                sx={{
-                  borderBottom: (theme: Theme) =>
-                    `1px solid ${String(theme.colors?.lightgrey)}`,
-                }}
-              >
-                <RadioTabs
-                  name={"devices"}
-                  options={project.devices.map((device, idx) => {
-                    return {
-                      title: device.name ? device.name : "Kein Titel",
-                      id: idx,
-                      isActive: idx === selectedDeviceIndex,
-                    };
-                  })}
-                  changeHandler={selected => setSelectedDeviceIndex(selected)}
-                />
-                <Box sx={{ fontSize: 0 }}>
-                  <Grid
-                    as='dl'
-                    columns={"100px 1fr"}
-                    gap={2}
-                    sx={{
-                      rowGap: 2,
-                      ">dd": {
-                        marginLeft: 0,
-                      },
-                    }}
-                  >
-                    <dt>Letzter Eintrag:</dt>
-                    <dd>
-                      {selectedDevice.records.length &&
-                      // TODO: Do not use hasOwnProperty here
-                      // eslint-disable-next-line no-prototype-builtins
-                      selectedDevice.records[0].hasOwnProperty("recordedAt")
-                        ? new Date(
-                            Math.max(
-                              ...selectedDevice.records.map(record =>
-                                Date.parse(record.recordedAt || "")
-                              )
-                            )
-                          ).toLocaleDateString()
-                        : ""}
-                    </dd>
-                    <dt>Messwerte:</dt>
-                    <dd>{selectedDevice && selectedDevice.records.length}</dd>
-                  </Grid>
-                  {selectedDevice && (
+            {project &&
+              project.devices &&
+              project.devices[selectedDeviceIndex] && (
+                <Grid
+                  columns={["auto max-content"]}
+                  p={3}
+                  sx={{
+                    borderBottom: (theme: Theme) =>
+                      `1px solid ${String(theme.colors?.lightgrey)}`,
+                  }}
+                >
+                  <RadioTabs
+                    name={"devices"}
+                    options={project.devices.map((device, idx) => {
+                      return {
+                        title: device.name ? device.name : "Kein Titel",
+                        id: idx,
+                        isActive: idx === selectedDeviceIndex,
+                      };
+                    })}
+                    changeHandler={selected => setSelectedDeviceIndex(selected)}
+                  />
+                  <Box sx={{ fontSize: 0 }}>
                     <Grid
-                      as='form'
-                      columns={"100px 1fr auto"}
+                      as='dl'
+                      columns={"100px 1fr"}
                       gap={2}
-                      onSubmit={handleUpdateRecords}
+                      sx={{
+                        rowGap: 2,
+                        ">dd": {
+                          marginLeft: 0,
+                        },
+                      }}
                     >
-                      <Label htmlFor='records-amount'>Angezeigt:</Label>
-                      <Input
-                        type='number'
-                        name='records-amount'
-                        value={numberOfRecordsToDisplay}
-                        min='1'
-                        max={`${selectedDevice.records.length}`}
-                        step='1'
-                        id='records-amount'
-                        color='primary'
-                        sx={{ fontWeight: "bold" }}
-                        onChange={event =>
-                          setNumberOfRecordsToDisplay(
-                            Number(event.target.value)
-                          )
-                        }
-                      />
-                      <Button
-                        variant='text'
-                        type='submit'
-                        sx={{ display: "flex", alignItems: "center" }}
-                      >
-                        <ArrowForwardIcon
-                          fontSize={"small"}
-                          sx={{ color: "primary" }}
-                        />
-                      </Button>
+                      <dt>Letzter Eintrag:</dt>
+                      <dd>
+                        {selectedDevice?.records?.length &&
+                        // TODO: Do not use hasOwnProperty here
+                        // eslint-disable-next-line no-prototype-builtins
+                        selectedDevice.records[0].hasOwnProperty("recordedAt")
+                          ? new Date(
+                              Math.max(
+                                ...selectedDevice.records.map(record =>
+                                  Date.parse(record.recordedAt || "")
+                                )
+                              )
+                            ).toLocaleDateString()
+                          : ""}
+                      </dd>
+                      <dt>Messwerte:</dt>
+                      <dd>
+                        {selectedDevice && selectedDevice?.records?.length}
+                      </dd>
                     </Grid>
-                  )}
-                </Box>
-              </Grid>
-            )}
+                    {selectedDevice && (
+                      <Grid
+                        as='form'
+                        columns={"100px 1fr auto"}
+                        gap={2}
+                        onSubmit={handleUpdateRecords}
+                      >
+                        <Label htmlFor='records-amount'>Angezeigt:</Label>
+                        <Input
+                          type='number'
+                          name='records-amount'
+                          value={numberOfRecordsToDisplay}
+                          min='1'
+                          max={`${selectedDevice?.records?.length || 0}`}
+                          step='1'
+                          id='records-amount'
+                          color='primary'
+                          sx={{ fontWeight: "bold" }}
+                          onChange={event =>
+                            setNumberOfRecordsToDisplay(
+                              Number(event.target.value)
+                            )
+                          }
+                        />
+                        <Button
+                          variant='text'
+                          type='submit'
+                          sx={{ display: "flex", alignItems: "center" }}
+                        >
+                          <ArrowForwardIcon
+                            fontSize={"small"}
+                            sx={{ color: "primary" }}
+                          />
+                        </Button>
+                      </Grid>
+                    )}
+                  </Box>
+                </Grid>
+              )}
             <Box
               id='chart-wrapper'
               ref={chartWrapper}
               className='mt-4'
               style={{ minHeight: 340 }}
             >
-              {project.devices.length > 0 &&
+              {project &&
+                project.devices &&
+                project.devices.length > 0 &&
                 chartWidth &&
                 chartHeight &&
                 lineChartData && (
@@ -384,7 +399,7 @@ export const Project: FC<SupabaseProjectType> = project => {
                     data={createDateValueArray(lineChartData)}
                   />
                 )}
-              {project.devices.length === 0 && (
+              {project?.devices?.length === 0 && (
                 <div className='prose p-8 max-w-full h-80 grid text-center items-center'>
                   <h3>Dieses Projekt enthält noch keine Sensoren.</h3>
                 </div>
