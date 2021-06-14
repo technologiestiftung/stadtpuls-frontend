@@ -105,8 +105,8 @@ export const Project: FC<ProjectsType> = project => {
   useEffect(() => {
     const devicesWithCoordinates = project?.devices?.filter(device => {
       return (
-        Boolean(device?.records?.[0].latitude) &&
-        Boolean(device?.records?.[0].longitude)
+        Boolean(device?.records?.[0]?.latitude) &&
+        Boolean(device?.records?.[0]?.longitude)
       );
     });
 
