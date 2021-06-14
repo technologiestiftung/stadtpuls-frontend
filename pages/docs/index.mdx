@@ -1,44 +1,27 @@
 ---
 layout: 'docs'
-title: 'Willkommen auf Iot Hub'
+title: 'Willkommen im IoT Hub'
 metaTitle: 'Willkommen'
-metaDescription: 'Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.'
+metaDescription: 'Willkommensseite des IoT Hub Berlin.'
 ---
 
+import { Button } from "@components/Button";
+
 <p className="lead">
-  Until now, trying to style an article, document, or blog post with Tailwind has been a tedious
-  task that required a keen eye for typography and a lot of complex custom CSS.
+  Entdecke die Welt der IoT-Sensorik und werde aktiver Teil dieser Plattform.
 </p>
 
-By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you _really are_ just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.
+Der +++Berlin IoT Hub+++ ist eine prototypische Offene Datenplattform, die <b>Sensordaten von & für Berlin</b> als Open Data frei zugänglich macht.
+Dabei kannst du ganz einfach aktiver Teil dieser Plattform werden, indem du Daten Deiner eigenen IoT-Projekte spendest oder Daten für eigene Projekte nutzt.
 
-We get lots of complaints about it actually, with people regularly asking us things like:
+### Du hast bereits ein IoT-Projekt?
+Wunderbar! Erstelle einen Account und stellen deine Daten für andere Nutzer*innen und die Öffentlichkeit zur Verfügung. Bislang ist es möglich, dass Du deine <a href="www.thethingsnewtork.de">The Things Network</a> registrierten Sensoren mit dem +++Iot Hub Berlin+++ verknüpft.
+Die gemessenen Daten werden nach erfolgreicher Verknüpfung als Download, sowie über eine REST-API frei zur Verfügung gestellt und als eigenständiges Projekt im IoT Hub visualisiert.
 
-> Why is Tailwind removing the default styles on my `h1` elements? How do I disable this? What do you mean I lose all the other base styles too?
+<Button>Jetzt Account anlegen</Button>
 
-We hear you, but we're not convinced that simply disabling our base styles is what you really want. You don't want to have to remove annoying margins every time you use a `p` element in a piece of your dashboard UI. And I doubt you really want your blog posts to use the user-agent styles either — you want them to look _awesome_, not awful.
 
-The `@tailwindcss/typography` plugin is our attempt to give you what you _actually_ want, without any of the downsides of doing something stupid like disabling our base styles.
-
-It adds a new `prose` class that you can slap on any block of vanilla HTML content and turn it into a beautiful, well-formatted document:
-
-```html
-<article class="prose">
-  <h1>Garlic bread with cheese: What the science tells us</h1>
-  <p>
-    For years parents have espoused the health benefits of eating garlic bread with cheese to their
-    children, with the food earning such an iconic status in our culture that kids will often dress
-    up as warm, cheesy loaf for Halloween.
-  </p>
-  <p>
-    But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases
-    springing up around the country.
-  </p>
-  <!-- ... -->
-</article>
-```
-
-For more information about how to use the plugin and the features it includes, [read the documentation](https://github.com/tailwindcss/typography/blob/master/README.md).
+Oder lies dir zunächst unsere <a href="">Dokumentation</a> durch. 
 
 ---
 
