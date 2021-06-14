@@ -9,13 +9,12 @@ import {
   device4Records,
 } from "./data";
 import {
-  allProjectsRecordsData,
   publicCategories,
   publicProjectsData,
   userData,
   userProjects,
   getDevice,
-  getProject,
+  getUserProject,
   refreshToken,
   authToken,
 } from "./supabaseData";
@@ -95,6 +94,7 @@ const supabaseHandlers = [
     const recordsLimit = query.get("devices.records.limit");
     const recordsOrder = query.get("devices.records.order");
     const userId = query.get("userId")?.slice(3);
+    const id = query.get("id")?.slice(3);
     if (
       recordsLimit == "500" &&
       recordsOrder == "recordedAt.desc.nullslast" &&
@@ -114,6 +114,15 @@ const supabaseHandlers = [
       userId == authToken.currentSession.user.id
     )
       return res(ctx.status(201, "Mocked status"), ctx.json(userProjects));
+    else if (
+      select ==
+        "id,name,connectype,createdAt,location,category:categoryId(id,name,description),devices(id,externalId,name,records(id,recordedAt,measurements,longitude,latitude,altitude))" &&
+      id == "10"
+    )
+      return res(
+        ctx.status(201, "Mocked status"),
+        ctx.json(publicProjectsData[0])
+      );
     else return res(ctx.status(404, "Not found"));
   }),
   rest.get(createV2ApiUrl("/userprofiles"), (req, res, ctx) => {
@@ -189,7 +198,7 @@ const supabaseHandlers = [
 
     const id = Number(query.get("id")?.slice(3));
     const userId = query.get("userId")?.slice(3);
-    const project = getProject(id);
+    const project = getUserProject(id);
     const payload = req.body;
     if (userId == authToken.currentSession.user.id && project)
       return res(
@@ -208,7 +217,7 @@ const supabaseHandlers = [
 
     const id = Number(query.get("id")?.slice(3));
     const userId = query.get("userId")?.slice(3);
-    const project = getProject(id);
+    const project = getUserProject(id);
     if (userId == authToken.currentSession.user.id)
       return res(ctx.status(201, "Mocked status"), ctx.json(project));
     else return res(ctx.status(404, "Not found"));
@@ -248,17 +257,6 @@ const supabaseHandlers = [
     }
   ),
   //other
-  rest.get(
-    createV2ApiUrl(
-      `/records?select=id%2CrecordedAt%2Cmeasurements%2Clongitude%2Clatitude%2Caltitude%2Cdevice%3AdeviceId%28id%2CexternalId%2Cname%2Cproject%3AprojectId%28id%2Cname%2Cdescription%2CcreatedAt%2Clocation%2Cconnectype%2Ccategory%3AcategoryId%28id%2Cname%2Cdescription%29%29%29&device.project.id=eq.10`
-    ),
-    (_req, res, ctx) => {
-      return res(
-        ctx.status(201, "Mocked status"),
-        ctx.json(allProjectsRecordsData)
-      );
-    }
-  ),
   rest.delete(createV2ApiUrl("/authtokens"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"), ctx.json([]));
   }),

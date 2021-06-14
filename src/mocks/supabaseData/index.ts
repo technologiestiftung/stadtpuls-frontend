@@ -1,5 +1,4 @@
 import { DevicesType, ProjectsType } from "@common/types/supabase";
-import { SupabaseResponseType } from "@lib/requests/getProjectData";
 import { fakeCategories } from "./categories";
 import { fakeProjects } from "./publicProjects";
 import { fakeRecords } from "./records";
@@ -10,7 +9,7 @@ import {
   fakeUserProjects,
 } from "./userData";
 
-export const allProjectsRecordsData: SupabaseResponseType[] = fakeRecords;
+export const allProjectsRecordsData = fakeRecords;
 
 export const publicProjectsData = fakeProjects;
 
@@ -28,7 +27,7 @@ export const getDevice = (id: number): null | DevicesType[] =>
     }
     return res;
   }, null);
-export const getProject = (
+export const getUserProject = (
   id: number
 ): null | Omit<ProjectsType, "categoryId"> =>
   fakeUserProjects.reduce<null | Omit<ProjectsType, "categoryId">>(
