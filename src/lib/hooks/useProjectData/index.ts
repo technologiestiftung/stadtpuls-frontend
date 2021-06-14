@@ -1,21 +1,19 @@
-import {
-  getProjectData,
-  SupabaseProjectType,
-} from "@lib/requests/getProjectData";
+import { ProjectsType } from "@common/types/supabase";
+import { getProjectData } from "@lib/requests/getProjectData";
 import useSWR from "swr";
 
 const getData = async (
   _key: string,
   projectId: number
-): Promise<SupabaseProjectType> => getProjectData(projectId);
+): Promise<ProjectsType> => getProjectData(projectId);
 
 export const useProjectData = (
   projectId: number
 ): {
-  data: SupabaseProjectType | null;
+  data: ProjectsType | null;
   error: Error | null;
 } => {
-  const { data, error } = useSWR<SupabaseProjectType, Error>(
+  const { data, error } = useSWR<ProjectsType, Error>(
     [`project-${projectId}`, projectId],
     getData
   );

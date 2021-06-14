@@ -84,7 +84,7 @@ export const getPublicProjects = async (
         description,
         location,
         devices,
-        user,
+        userProfile,
         category,
       } = project;
       return {
@@ -93,7 +93,7 @@ export const getPublicProjects = async (
         description,
         location,
         devicesNumber: devices?.length || 0,
-        authorName: user?.name || null,
+        authorName: userProfile?.name || null,
         records: parseDeviceRecords(devices),
         category: category?.name || null,
       };
