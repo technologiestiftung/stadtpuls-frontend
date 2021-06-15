@@ -3,6 +3,6 @@ module.exports = {
 	'(pages|src)/**/*.(ts)?(x)': (filenames) => [
 		`eslint --fix ${filenames.join(' ')}`,
 		`scripts/tsc-lint.sh ${filenames.join(' ')}`,
-		'npm run test',
+		`jest --bail --findRelatedTests  ${filenames.join(' ')}`,
 	],
 }
