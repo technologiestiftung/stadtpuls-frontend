@@ -12,7 +12,7 @@ interface ProjectsOverviewPropType {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
-    const projects = await getPublicProjects(500);
+    const projects = await getPublicProjects();
     return { props: { projects } };
   } catch (error) {
     console.log(error);

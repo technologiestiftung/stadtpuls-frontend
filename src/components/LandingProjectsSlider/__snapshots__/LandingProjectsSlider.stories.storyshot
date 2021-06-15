@@ -24,7 +24,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
             className="bg-white shadow-lg hover:bg-blue-25 border border-blue-50 cursor-pointer transition rounded-md relative overflow-hidden group"
             style={
               Object {
-                "height": 340,
+                "minHeight": 340,
                 "paddingBottom": 100,
               }
             }
@@ -613,7 +613,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
             className="bg-white shadow-lg hover:bg-blue-25 border border-blue-50 cursor-pointer transition rounded-md relative overflow-hidden group"
             style={
               Object {
-                "height": 340,
+                "minHeight": 340,
                 "paddingBottom": 100,
               }
             }
@@ -1202,7 +1202,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
             className="bg-white shadow-lg hover:bg-blue-25 border border-blue-50 cursor-pointer transition rounded-md relative overflow-hidden group"
             style={
               Object {
-                "height": 340,
+                "minHeight": 340,
                 "paddingBottom": 100,
               }
             }

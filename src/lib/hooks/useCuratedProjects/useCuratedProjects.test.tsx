@@ -1,11 +1,12 @@
 import { FC, useEffect } from "react";
 import { render, waitFor } from "@testing-library/react";
 import { rest } from "msw";
-import { PublicProjects, usePublicProjects } from ".";
+import { useCuratedProjects } from ".";
 import { server } from "@mocks/server";
 import { SWRConfig } from "swr";
+import { PublicProject } from "../usePublicProjects";
 
-type OnSuccessType = (data: PublicProjects) => void;
+type OnSuccessType = (data: PublicProject[]) => void;
 type OnFailType = (error: string) => void;
 
 const createTestComponent = (
@@ -13,20 +14,20 @@ const createTestComponent = (
   onFail: OnFailType
 ): FC => {
   const TestComponent: FC = () => {
-    const { data, error } = usePublicProjects();
+    const { data, error } = useCuratedProjects();
     useEffect(() => {
       if (data && !error) onSuccess(data);
       if (error) onFail(error.message);
     }, [data, error]);
-    return <div>{data ? data.count : error?.message}</div>;
+    return <div />;
   };
   return TestComponent;
 };
 
-describe("hook usePublicProjects", () => {
+describe("hook useCuratedProjects", () => {
   it("should provide a data and error value", async (): Promise<void> => {
     const onSuccess = jest.fn();
-    const onSuccessWrapper = (data: PublicProjects): void => {
+    const onSuccessWrapper = (data: PublicProject[]): void => {
       onSuccess(data);
     };
     const onError = jest.fn();

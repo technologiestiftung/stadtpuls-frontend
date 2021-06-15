@@ -85,7 +85,7 @@ const supabaseHandlers = [
 
     const select = query.get("select");
     // const offset = query.get("offset");
-    // const limit = query.get("limit");
+    const limit = query.get("limit");
     const recordsLimit = query.get("devices.records.limit");
     const recordsOrder = query.get("devices.records.order");
     const userId = query.get("userId")?.slice(3);
@@ -100,7 +100,11 @@ const supabaseHandlers = [
       return res(
         ctx.set("content-range", "0-9/14"),
         ctx.status(201, "Mocked status"),
-        ctx.json(publicProjectsData)
+        ctx.json(
+          limit
+            ? publicProjectsData.slice(0, parseInt(limit, 10))
+            : publicProjectsData
+        )
       );
     else if (
       select ==
@@ -110,7 +114,7 @@ const supabaseHandlers = [
       return res(ctx.status(201, "Mocked status"), ctx.json(userProjects));
     else return res(ctx.status(404, "Not found"));
   }),
-  rest.get(createV2ApiUrl("/users"), (req, res, ctx) => {
+  rest.get(createV2ApiUrl("/userprofiles"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const select = query.get("select");
@@ -218,7 +222,7 @@ const supabaseHandlers = [
   rest.post(createV2ApiUrl("/rpc/delete_user"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"));
   }),
-  rest.patch<UsersType>(createV2ApiUrl("/users"), (req, res, ctx) => {
+  rest.patch<UsersType>(createV2ApiUrl("/userprofiles"), (req, res, ctx) => {
     const query = req.url.searchParams;
     const payload = req.body;
 
@@ -254,7 +258,7 @@ const supabaseHandlers = [
     return res(ctx.status(201, "Mocked status"), ctx.json([]));
   }),
   // Head calls
-  rest.head(createV2ApiUrl("/users"), (req, res, ctx) => {
+  rest.head(createV2ApiUrl("/userprofiles"), (req, res, ctx) => {
     if (req.headers.get("prefer") === "count=exact") {
       return res(
         ctx.set("content-range", "0-26/27"),

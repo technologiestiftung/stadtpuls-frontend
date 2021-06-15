@@ -61,7 +61,7 @@ export const ProjectPreview: FC<PublicProject> = ({
         "cursor-pointer transition rounded-md",
         "relative overflow-hidden group",
       ].join(" ")}
-      style={{ paddingBottom: 100, height: 340 }}
+      style={{ paddingBottom: 100, minHeight: 340 }}
     >
       <Link href={`/${id}`}>
         <a href={`/${id}`} ref={mapWrapperRef}>
