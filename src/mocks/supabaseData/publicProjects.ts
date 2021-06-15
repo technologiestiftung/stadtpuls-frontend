@@ -1,3 +1,68 @@
+import { DateValueType } from "@common/interfaces";
+
+const getFakeLineChartDates = (): DateValueType[] => [
+  {
+    date: "2021-04-11T12:10:01.908Z",
+    value: 25,
+  },
+  {
+    date: "2021-04-10T12:10:01.908Z",
+    value: 99,
+  },
+  {
+    date: "2021-04-09T12:10:01.908Z",
+    value: 75,
+  },
+  {
+    date: "2021-04-08T12:10:01.908Z",
+    value: 12,
+  },
+  {
+    date: "2021-04-07T12:10:01.908Z",
+    value: 0,
+  },
+  {
+    date: "2021-04-06T12:10:01.908Z",
+    value: 33,
+  },
+];
+
+export const fakeCuratedProjects = [
+  {
+    id: 1,
+    name: "Temperatur Grundewaldstraße",
+    description:
+      "Es war einmal die Temperatur Bemeßung in die Grundewaldstraße",
+    devicesNumber: 5,
+    authorName: "CityLAB",
+    category: "Temperatur",
+    location: "Berlin",
+    records: getFakeLineChartDates(),
+  },
+  {
+    id: 2,
+    name: "CO2 Elbphilharmonie Hamburg.",
+    description:
+      "Es war einmal die CO2 Bemeßung in die Elbphilharmonie Hamburg.",
+    devicesNumber: 4,
+    authorName: "Elbphilharmonie",
+    category: "CO2",
+    location: "Hamburg",
+    records: getFakeLineChartDates(),
+  },
+  {
+    id: 3,
+    name: "PAXCounter Schokoladenmuseum Köln",
+    description:
+      "Es war einmal die PAXCounter Bemeßung in der Schokoladenmuseum Köln",
+    devicesNumber: 1,
+    authorName: "Schokoladenmuseum",
+    category: "PAXCounter",
+    location: "Köln",
+    records: getFakeLineChartDates(),
+  },
+];
+
 export const fakeProjects = [
   {
     id: 10,

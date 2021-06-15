@@ -1,4 +1,4 @@
-import { fakeCuratedProjects } from "@mocks/data";
+import { fakeCuratedProjects } from "@mocks/supabaseData/publicProjects";
 import { render } from "@testing-library/react";
 import { LandingHeroBackgroundMap } from ".";
 

@@ -3,7 +3,7 @@ import { ThemeProvider } from "theme-ui";
 import theme from "../style/theme";
 
 import ProjectsOverviewPage from "../../pages/projects";
-import { fakeCuratedProjects } from "@mocks/data";
+import { fakeCuratedProjects } from "@mocks/supabaseData/publicProjects";
 
 describe("home page", () => {
   it("should render without failing", () => {

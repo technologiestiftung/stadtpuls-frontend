@@ -1,5 +1,5 @@
 import { PublicProject } from "@lib/hooks/usePublicProjects";
-import { fakeCuratedProjects } from "@mocks/data";
+import { fakeCuratedProjects } from "@mocks/supabaseData/publicProjects";
 import { Story, Meta } from "@storybook/react";
 import { LandingHeroBackgroundMap } from ".";
 
