@@ -1,13 +1,12 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import Swiper from "swiper";
-import SwiperCore, { Navigation, Pagination } from "swiper/core";
+import SwiperClass from "swiper/types/swiper-class";
 import styles from "./LandingProjectsSlider.module.css";
 
 import "swiper/swiper-bundle.css";
 import { ProjectPreview } from "@components/ProjectPreview";
 import { PublicProject } from "@lib/hooks/usePublicProjects";
-
-SwiperCore.use([Navigation, Pagination]);
+import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
 interface LandingProjectsSliderPropType {
   projects: PublicProject[];
@@ -20,7 +19,12 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
   initialSlideIndex = 0,
   onSlideChange = () => undefined,
 }) => {
+  const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
+    null
+  );
   useEffect(() => {
+    const parentElement = document.getElementById("projects-slider");
+    if (!parentElement) return;
     const swiper = new Swiper("#projects-slider", {
       slidesPerView: 3,
       centeredSlides: true,
@@ -28,7 +32,7 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
       loop: false,
       initialSlide: initialSlideIndex,
       height: 340,
-      slideActiveClass: "sm:-translate-y-0",
+      slideActiveClass: styles.sliderSlideActive || "active",
       on: {
         slideChange: swiper => {
           onSlideChange(swiper.activeIndex);
@@ -40,8 +44,12 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
         },
       },
     });
+
+    setSwiperInstance(swiper);
+
     return () => swiper.destroy();
-  }, [projects.length, initialSlideIndex, onSlideChange]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <section
@@ -53,13 +61,42 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
           <div className='swiper-wrapper'>
             {projects.map(project => (
               <div
-                className='swiper-slide transition transform translate-y-8'
+                className={`swiper-slide ${styles.sliderSlide}`}
                 key={project.id}
               >
                 <ProjectPreview {...project} location={undefined} />
               </div>
             ))}
           </div>
+          <button
+            onClick={() => swiperInstance && swiperInstance.slidePrev()}
+            className={[
+              swiperInstance?.activeIndex === 0 && "opacity-0",
+              styles.sliderButton,
+              styles.sliderPrevButton,
+            ]
+              .filter(Boolean)
+              .join(" ")}
+          >
+            <span className={styles.sliderButtonIcon}>
+              <ArrowBack />
+            </span>
+          </button>
+          <button
+            onClick={() => swiperInstance?.slideNext()}
+            className={[
+              swiperInstance?.activeIndex === projects.length - 1 &&
+                "opacity-0",
+              styles.sliderButton,
+              styles.sliderNextButton,
+            ]
+              .filter(Boolean)
+              .join(" ")}
+          >
+            <span className={styles.sliderButtonIcon}>
+              <ArrowForward />
+            </span>
+          </button>
         </div>
       </div>
     </section>

@@ -7,10 +7,56 @@
     padding-bottom: 80px;
 }
 
+.sliderSlide > div {
+    @apply transition transform translate-y-8;
+}
+
+.sliderSlideActive > div {
+    @apply translate-y-0;
+}
+
+.sliderButton {
+    width: 5%;
+    height: 80%;
+    @apply z-30 absolute transition-opacity transform top-0 focus:outline-none grid items-center;
+}
+
+.sliderButtonIcon {
+    @apply inline-block text-blue-500 transition shadow-lg bg-white rounded-full p-2 w-10 h-10;
+}
+
+.sliderButton:focus .sliderButtonIcon {
+    box-shadow: 0 0 0 3px;
+}
+
+.sliderPrevButton {
+    left: calc(33% + 18px);
+    @apply justify-end -translate-x-full;
+}
+
+.sliderNextButton {
+    right: calc(33% + 18px);
+    @apply justify-start translate-x-full;
+}
+
+@media screen and (min-width: 640px) {
+    .sliderPrevButton {
+        left: calc(33% + 18px);
+    }
+
+    .sliderNextButton {
+        right: calc(33% + 18px);
+    }
+}
+
 @media screen and (min-width: 960px) {
     .sliderParent {
         width: 200%;
         margin-left: -50%;
+    }
+
+    .sliderButton {
+        width: 20%;
     }
 }
 
