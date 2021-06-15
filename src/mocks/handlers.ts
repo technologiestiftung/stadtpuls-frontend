@@ -9,13 +9,12 @@ import {
   device4Records,
 } from "./data";
 import {
-  allProjectsRecordsData,
   publicCategories,
   publicProjectsData,
   userData,
   userProjects,
   getDevice,
-  getProject,
+  getUserProject,
   refreshToken,
   authToken,
 } from "./supabaseData";
@@ -23,7 +22,11 @@ import { createV1ApiUrl } from "../lib/requests/createV1ApiUrl";
 import { createV2ApiUrl } from "../lib/requests/createV2ApiUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
 import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
-import { DevicesType, ProjectsType, UsersType } from "@common/types/supabase";
+import {
+  DevicesType,
+  ProjectsType,
+  UserProfilesType,
+} from "@common/types/supabase";
 import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
 
@@ -89,6 +92,7 @@ const supabaseHandlers = [
     const recordsLimit = query.get("devices.records.limit");
     const recordsOrder = query.get("devices.records.order");
     const userId = query.get("userId")?.slice(3);
+    const id = query.get("id")?.slice(3);
     if (
       recordsLimit == "500" &&
       recordsOrder == "recordedAt.desc.nullslast" &&
@@ -112,6 +116,15 @@ const supabaseHandlers = [
       userId == authToken.currentSession.user.id
     )
       return res(ctx.status(201, "Mocked status"), ctx.json(userProjects));
+    else if (
+      select ==
+        "id,name,connectype,createdAt,location,category:categoryId(id,name,description),devices(id,externalId,name,records(id,recordedAt,measurements,longitude,latitude,altitude))" &&
+      id == "10"
+    )
+      return res(
+        ctx.status(201, "Mocked status"),
+        ctx.json(publicProjectsData[0])
+      );
     else return res(ctx.status(404, "Not found"));
   }),
   rest.get(createV2ApiUrl("/userprofiles"), (req, res, ctx) => {
@@ -187,7 +200,7 @@ const supabaseHandlers = [
 
     const id = Number(query.get("id")?.slice(3));
     const userId = query.get("userId")?.slice(3);
-    const project = getProject(id);
+    const project = getUserProject(id);
     const payload = req.body;
     if (userId == authToken.currentSession.user.id && project)
       return res(
@@ -206,7 +219,7 @@ const supabaseHandlers = [
 
     const id = Number(query.get("id")?.slice(3));
     const userId = query.get("userId")?.slice(3);
-    const project = getProject(id);
+    const project = getUserProject(id);
     if (userId == authToken.currentSession.user.id)
       return res(ctx.status(201, "Mocked status"), ctx.json(project));
     else return res(ctx.status(404, "Not found"));
@@ -222,38 +235,30 @@ const supabaseHandlers = [
   rest.post(createV2ApiUrl("/rpc/delete_user"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"));
   }),
-  rest.patch<UsersType>(createV2ApiUrl("/userprofiles"), (req, res, ctx) => {
-    const query = req.url.searchParams;
-    const payload = req.body;
+  rest.patch<UserProfilesType>(
+    createV2ApiUrl("/userprofiles"),
+    (req, res, ctx) => {
+      const query = req.url.searchParams;
+      const payload = req.body;
 
-    const id = query.get("id")?.slice(3);
-    const createdAt = new Date().toISOString();
-    if (id == authToken.currentSession.user.id)
-      return res(
-        ctx.status(201, "Mocked status"),
-        ctx.json([
-          {
-            ...payload,
-            id,
-            createdAt,
-            role: "maker",
-          },
-        ])
-      );
-    else return res(ctx.status(404, "Not found"));
-  }),
-  //other
-  rest.get(
-    createV2ApiUrl(
-      `/records?select=id%2CrecordedAt%2Cmeasurements%2Clongitude%2Clatitude%2Caltitude%2Cdevice%3AdeviceId%28id%2CexternalId%2Cname%2Cproject%3AprojectId%28id%2Cname%2Cdescription%2CcreatedAt%2Clocation%2Cconnectype%2Ccategory%3AcategoryId%28id%2Cname%2Cdescription%29%29%29&device.project.id=eq.10`
-    ),
-    (_req, res, ctx) => {
-      return res(
-        ctx.status(201, "Mocked status"),
-        ctx.json(allProjectsRecordsData)
-      );
+      const id = query.get("id")?.slice(3);
+      const createdAt = new Date().toISOString();
+      if (id == authToken.currentSession.user.id)
+        return res(
+          ctx.status(201, "Mocked status"),
+          ctx.json([
+            {
+              ...payload,
+              id,
+              createdAt,
+              role: "maker",
+            },
+          ])
+        );
+      else return res(ctx.status(404, "Not found"));
     }
   ),
+  //other
   rest.delete(createV2ApiUrl("/authtokens"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"), ctx.json([]));
   }),

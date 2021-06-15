@@ -1,8 +1,6 @@
+import { ProjectsType } from "@common/types/supabase";
 import { Project } from "@components/Project";
-import {
-  getProjectData,
-  SupabaseProjectType,
-} from "@lib/requests/getProjectData";
+import { getProjectData } from "@lib/requests/getProjectData";
 import { GetServerSideProps } from "next";
 import { FC } from "react";
 
@@ -19,7 +17,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 };
 
 const ProjectPage: FC<{
-  project: SupabaseProjectType;
+  project: ProjectsType;
 }> = ({ project }) => <Project {...project} />;
 
 export default ProjectPage;
