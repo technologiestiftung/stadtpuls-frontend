@@ -1,7 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import React, { useEffect, useState, useCallback, FC } from "react";
-import Link from "next/link";
 import {
   jsx,
   Grid,
@@ -34,6 +33,7 @@ import {
   RecordsType,
   ProjectsType,
 } from "@common/types/supabase";
+import { useRouter } from "next/router";
 
 const downloadIcon = "./images/download.svg";
 
@@ -65,6 +65,7 @@ const getCategoryUnit = (
 };
 
 export const Project: FC<ProjectsType> = project => {
+  const router = useRouter();
   const [selectedDeviceIndex, setSelectedDeviceIndex] = useState<number>(0);
   const selectedDevice = project?.devices?.[selectedDeviceIndex];
 
@@ -235,17 +236,15 @@ export const Project: FC<ProjectsType> = project => {
     <Container mt={[0, 5, 5]} p={4}>
       <Grid gap={[4, null, 6]} columns={[1, "1fr 2fr"]}>
         <Box>
-          <Link href='/projects'>
-            <a href='/projects'>
-              <IconButton
-                aria-label='Zurück zur Übersicht'
-                bg='background'
-                className='rounded-full cursor-pointer'
-              >
-                <ArrowBackIcon color='primary' />
-              </IconButton>
-            </a>
-          </Link>
+          <IconButton
+            aria-label='Zurück zur Übersicht'
+            bg='background'
+            className='rounded-full cursor-pointer'
+            onClick={() => router.back()}
+            id='back-button'
+          >
+            <ArrowBackIcon color='primary' />
+          </IconButton>
           <Box mt={2}>
             <ProjectSummary
               title={project.name}
