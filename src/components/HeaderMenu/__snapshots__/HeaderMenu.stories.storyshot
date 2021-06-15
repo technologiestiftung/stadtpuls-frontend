@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Navigation/HeaderMenu Default 1`] = `
-Array [
+<div>
   <button
-    className="sm:hidden text-blue-500 focus-offset"
+    className="sm:hidden text-blue-500 focus-offset relative z-0"
     onClick={[Function]}
   >
     <svg
@@ -16,9 +16,9 @@ Array [
         d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
       />
     </svg>
-  </button>,
+  </button>
   <nav
-    className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-10 sm:z-auto w-full sm:w-auto shadow-xl sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-white border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
+    className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-20 sm:z-auto w-full sm:w-auto shadow-xl sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-white border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
   >
     <ul
       className="h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4"
@@ -60,6 +60,6 @@ Array [
         </a>
       </li>
     </ul>
-  </nav>,
-]
+  </nav>
+</div>
 `;

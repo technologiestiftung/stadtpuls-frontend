@@ -49,6 +49,10 @@
     @apply pt-16;
   }
 
+  html.no-scroll {
+    overflow: hidden;
+  }
+
   [type='text'],
   [type='email'],
   [type='url'],
