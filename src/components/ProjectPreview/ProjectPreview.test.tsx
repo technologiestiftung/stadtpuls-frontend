@@ -15,7 +15,7 @@ const defaultProject = {
 
 describe("ProjectPreview component", () => {
   it("should render the title, subtitle and text", async (): Promise<void> => {
-    const data = await getPublicProjects(500);
+    const data = await getPublicProjects();
     if (data) render(<ProjectPreview {...defaultProject} />);
 
     const title = screen.getByText(/Title/gi);
@@ -26,7 +26,7 @@ describe("ProjectPreview component", () => {
     expect(description).toBeInTheDocument();
   });
   it("should render the sensors amount in singular, if 0", async (): Promise<void> => {
-    const data = await getPublicProjects(500);
+    const data = await getPublicProjects();
     if (data) render(<ProjectPreview {...defaultProject} />);
 
     const singular = screen.getByText(/0 Sensor/gi);
@@ -35,7 +35,7 @@ describe("ProjectPreview component", () => {
     expect(plural).not.toBeInTheDocument();
   });
   it("should render the sensors amount in singular, if 1", async (): Promise<void> => {
-    const data = await getPublicProjects(500);
+    const data = await getPublicProjects();
     if (data) render(<ProjectPreview {...defaultProject} devicesNumber={1} />);
 
     const singular = screen.getByText(/1 Sensor/gi);
@@ -44,7 +44,7 @@ describe("ProjectPreview component", () => {
     expect(plural).not.toBeInTheDocument();
   });
   it("should render the sensors amount in plural, if 2 or more", async (): Promise<void> => {
-    const data = await getPublicProjects(500);
+    const data = await getPublicProjects();
     if (data) render(<ProjectPreview {...defaultProject} devicesNumber={2} />);
 
     const plural = screen.getByText(/2 Sensoren/gi);
@@ -53,7 +53,7 @@ describe("ProjectPreview component", () => {
     expect(singular).not.toBeInTheDocument();
   });
   it("should render the author name", async (): Promise<void> => {
-    const data = await getPublicProjects(500);
+    const data = await getPublicProjects();
     if (data) render(<ProjectPreview {...defaultProject} />);
 
     const author = screen.getByText(/Lucas/gi);
@@ -62,7 +62,7 @@ describe("ProjectPreview component", () => {
     expect(dots).toHaveLength(2);
   });
   it("should not render the author name if null", async (): Promise<void> => {
-    const data = await getPublicProjects(500);
+    const data = await getPublicProjects();
     if (data) render(<ProjectPreview {...defaultProject} authorName={null} />);
 
     const author = screen.queryByText(/Lucas/gi);
@@ -71,14 +71,14 @@ describe("ProjectPreview component", () => {
     expect(dots).toHaveLength(1);
   });
   it("should render the category", async (): Promise<void> => {
-    const data = await getPublicProjects(500);
+    const data = await getPublicProjects();
     if (data) render(<ProjectPreview {...defaultProject} />);
 
     const category = screen.queryByText(/Temperatur/gi);
     expect(category).toBeInTheDocument();
   });
   it("should not render the category if null", async (): Promise<void> => {
-    const data = await getPublicProjects(500);
+    const data = await getPublicProjects();
     if (data) render(<ProjectPreview {...defaultProject} category='null' />);
 
     const category = screen.queryByText(/Temperatur/gi);

@@ -6,7 +6,7 @@ import { getPublicProjects } from "@lib/hooks/usePublicProjects";
 import { publicProjectsData } from "@mocks/supabaseData";
 describe("ProjectsList component", () => {
   it("should render the fisrt project", async (): Promise<void> => {
-    const data = await getPublicProjects(500);
+    const data = await getPublicProjects();
     if (data)
       render(
         <ThemeProvider theme={theme}>
