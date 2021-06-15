@@ -22,13 +22,13 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
 }) => {
   useEffect(() => {
     const swiper = new Swiper("#projects-slider", {
-      slidesPerView: 1,
+      slidesPerView: 3,
       centeredSlides: true,
-      spaceBetween: 64,
+      spaceBetween: 24,
       loop: false,
       initialSlide: initialSlideIndex,
       height: 340,
-      slideActiveClass: "lg:-translate-y-0",
+      slideActiveClass: "sm:-translate-y-0",
       on: {
         slideChange: swiper => {
           onSlideChange(swiper.activeIndex);
@@ -36,7 +36,7 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
       },
       breakpoints: {
         960: {
-          slidesPerView: 3,
+          spaceBetween: 64,
         },
       },
     });
@@ -45,7 +45,7 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
 
   return (
     <section
-      className='overflow-hidden px-4 sm:px-8 my-12 sm:my-24 md:my-40'
+      className='overflow-hidden px-8 md:px-24 lg:px-32 xl:px-40 my-12 sm:my-24 md:my-40'
       style={{ marginTop: "calc(93vh - 340px)" }}
     >
       <div className={styles.sliderParent}>
@@ -53,7 +53,7 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
           <div className='swiper-wrapper'>
             {projects.map(project => (
               <div
-                className='swiper-slide transition transform translate-y-16'
+                className='swiper-slide transition transform translate-y-8'
                 key={project.id}
               >
                 <ProjectPreview {...project} location={undefined} />

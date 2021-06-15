@@ -1,3 +1,8 @@
+.sliderParent {
+    width: 300%;
+    margin-left: -100%;
+}
+
 .sliderParent > div {
     padding-bottom: 80px;
 }

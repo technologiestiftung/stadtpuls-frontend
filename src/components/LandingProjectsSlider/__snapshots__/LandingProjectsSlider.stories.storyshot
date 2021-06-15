@@ -2,7 +2,7 @@
 
 exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
 <section
-  className="overflow-hidden px-4 sm:px-8 my-12 sm:my-24 md:my-40"
+  className="overflow-hidden px-8 md:px-24 lg:px-32 xl:px-40 my-12 sm:my-24 md:my-40"
   style={
     Object {
       "marginTop": "calc(93vh - 340px)",
@@ -18,7 +18,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
         className="swiper-wrapper"
       >
         <div
-          className="swiper-slide transition transform translate-y-16"
+          className="swiper-slide transition transform translate-y-8"
         >
           <div
             className="bg-white shadow-lg hover:bg-blue-25 border border-blue-50 cursor-pointer transition rounded-md relative overflow-hidden group"
@@ -607,7 +607,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
           </div>
         </div>
         <div
-          className="swiper-slide transition transform translate-y-16"
+          className="swiper-slide transition transform translate-y-8"
         >
           <div
             className="bg-white shadow-lg hover:bg-blue-25 border border-blue-50 cursor-pointer transition rounded-md relative overflow-hidden group"
@@ -1196,7 +1196,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
           </div>
         </div>
         <div
-          className="swiper-slide transition transform translate-y-16"
+          className="swiper-slide transition transform translate-y-8"
         >
           <div
             className="bg-white shadow-lg hover:bg-blue-25 border border-blue-50 cursor-pointer transition rounded-md relative overflow-hidden group"

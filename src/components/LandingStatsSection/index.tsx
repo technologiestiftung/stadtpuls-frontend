@@ -12,12 +12,12 @@ export const LandingStatsSection: FC<{
       "flex flex-wrap justify-between",
     ].join(" ")}
   >
-    <div>
+    <div className='w-full sm:w-auto'>
       <h2
         className={[
           "text-xl sm:text-2xl md:text-3xl",
           "text-blue-500 font-semibold",
-          "mt-6 mb-4",
+          "mt-8 sm:mt-6 mb-4 text-center sm:text-left",
         ].join(" ")}
         style={{
           textShadow:
@@ -30,21 +30,21 @@ export const LandingStatsSection: FC<{
       </h2>
     </div>
     <div className='flex items-center'>
-      <div className='p-4 flex gap-8 bg-white shadow items-center'>
+      <div className='p-4 inline-flex flex-wrap sm:flex-nowrap gap-x-8 gap-y-2 bg-white shadow items-center justify-center'>
         <div className='flex gap-2 items-center'>
-          <strong className='text-xl font-bold text-blue-500'>
+          <strong className='sm:text-xl font-bold text-blue-500'>
             {stats.usersCount}
           </strong>
           Teilnehmer
         </div>
         <div className='flex gap-2 items-center'>
-          <strong className='text-xl font-bold text-blue-500'>
+          <strong className='sm:text-xl font-bold text-blue-500'>
             {stats.devicesCount}
           </strong>
           Sensoren
         </div>
         <div className='flex gap-2 items-center'>
-          <strong className='text-xl font-bold text-blue-500'>
+          <strong className='sm:text-xl font-bold text-blue-500'>
             {stats.recordsCount}
           </strong>
           Messwerte

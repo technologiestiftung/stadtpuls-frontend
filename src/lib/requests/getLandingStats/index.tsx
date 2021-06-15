@@ -1,6 +1,6 @@
 import { supabase } from "@auth/supabase";
 import { RecordType } from "@common/interfaces";
-import { DevicesType, UsersType } from "@common/types/supabase";
+import { DevicesType, UserProfilesType } from "@common/types/supabase";
 
 export interface LandingStatsReturnType {
   usersCount: number;
@@ -11,7 +11,7 @@ export interface LandingStatsReturnType {
 export async function getLandingStats(): Promise<LandingStatsReturnType> {
   const [usersReq, devicesReq, recordsReq] = await Promise.all([
     supabase
-      .from<UsersType>("userprofiles")
+      .from<UserProfilesType>("userprofiles")
       .select("name", { count: "exact", head: true }),
     supabase
       .from<DevicesType>("devices")
