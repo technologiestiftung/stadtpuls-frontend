@@ -11,7 +11,7 @@ const Template: Story<{
   width: number;
   height: number;
   data: Array<{
-    date: Date;
+    date: string;
     value: number;
   }>;
 }> = args => (
@@ -26,15 +26,15 @@ Default.args = {
   height: 200,
   data: [
     {
-      date: new Date("2021-04-09T12:10:01.908Z"),
+      date: "2021-04-09T12:10:01.908Z",
       value: 10,
     },
     {
-      date: new Date("2021-04-08T12:10:01.908Z"),
+      date: "2021-04-08T12:10:01.908Z",
       value: 20,
     },
     {
-      date: new Date("2021-04-07T12:10:01.908Z"),
+      date: "2021-04-07T12:10:01.908Z",
       value: 15,
     },
   ],

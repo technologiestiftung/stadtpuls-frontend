@@ -12,7 +12,10 @@ export const createDateValueArray = (input: RecordType[]): DateValueType[] => {
   const sortedDateValueArray = dateValueArray.sort((a, b) => {
     return a.date.getTime() - b.date.getTime();
   });
-  return sortedDateValueArray as DateValueType[];
+  return sortedDateValueArray.map(record => ({
+    value: record.value,
+    date: record.date.toISOString(),
+  })) as DateValueType[];
 };
 
 export const createTimeOutput = (input: Date): string => {

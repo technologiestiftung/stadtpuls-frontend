@@ -6,17 +6,17 @@ import { scaleLinear, scaleUtc } from "@visx/scale";
 import { DateValueType, LineGraphType } from "../../common/interfaces";
 import theme from "../../style/theme";
 
-const getX = (d: DateValueType): Date => d.date;
+const getX = (d: DateValueType): Date => new Date(d.date);
 const getY = (d: DateValueType): number => d.value;
 
 const startDate = new Date();
 const defaultArr = [
   {
-    date: startDate,
+    date: startDate.toISOString(),
     value: 0,
   },
   {
-    date: new Date(startDate.getDate() + 1),
+    date: new Date(startDate.getDate() + 1).toISOString(),
     value: 0,
   },
 ];

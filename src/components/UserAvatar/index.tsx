@@ -26,7 +26,7 @@ export const UserAvatar: FC<UserAvatarPropType> = ({
     <BoringAvatar
       name={username}
       size={size}
-      variant='beam'
+      variant='pixel'
       colors={avatarColors}
     />
   </span>

@@ -1,7 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import React, { useEffect, useState, useCallback, FC } from "react";
-import Link from "next/link";
 import {
   jsx,
   Grid,
@@ -27,12 +26,14 @@ import { LineChart } from "../LineChart";
 import { createDateValueArray } from "@lib/dateUtil";
 import { ApiInfo } from "../ApiInfo";
 import { MarkerMap } from "../MarkerMap";
-import useGeocodedLocation from "@lib/hooks/useGeocodedLocation";
+import { ViewportType } from "@common/types/ReactMapGl";
+import { getGeocodedViewportByString } from "@lib/requests/getGeocodedViewportByString";
 import {
   CategoriesType,
   RecordsType,
   ProjectsType,
 } from "@common/types/supabase";
+import { useRouter } from "next/router";
 
 const downloadIcon = "./images/download.svg";
 
@@ -64,6 +65,7 @@ const getCategoryUnit = (
 };
 
 export const Project: FC<ProjectsType> = project => {
+  const router = useRouter();
   const [selectedDeviceIndex, setSelectedDeviceIndex] = useState<number>(0);
   const selectedDevice = project?.devices?.[selectedDeviceIndex];
 
@@ -78,9 +80,10 @@ export const Project: FC<ProjectsType> = project => {
 
   const [markerData, setMarkerData] = useState<MarkerType[]>([]);
 
-  const { viewport: locationViewport } = useGeocodedLocation(
-    project.location || null
-  );
+  const [locationViewport, setLocationViewport] = useState<Pick<
+    ViewportType,
+    "latitude" | "longitude"
+  > | null>(null);
 
   useEffect(() => {
     const device = project?.devices?.[selectedDeviceIndex];
@@ -135,6 +138,17 @@ export const Project: FC<ProjectsType> = project => {
 
   const [chartWidth, setChartWidth] = useState<number | undefined>(undefined);
   const [chartHeight, setChartHeight] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    let isMounted = true;
+    if (!project.location) return;
+    void getGeocodedViewportByString(project.location).then(
+      viewport => isMounted && setLocationViewport(viewport)
+    );
+    return () => {
+      isMounted = false;
+    };
+  }, [project.location]);
 
   useEffect(() => {
     window.addEventListener("resize", updateChartDimensions);
@@ -222,17 +236,15 @@ export const Project: FC<ProjectsType> = project => {
     <Container mt={[0, 5, 5]} p={4}>
       <Grid gap={[4, null, 6]} columns={[1, "1fr 2fr"]}>
         <Box>
-          <Link href='/projects'>
-            <a href='/projects'>
-              <IconButton
-                aria-label='Zurück zur Übersicht'
-                bg='background'
-                className='rounded-full cursor-pointer'
-              >
-                <ArrowBackIcon color='primary' />
-              </IconButton>
-            </a>
-          </Link>
+          <IconButton
+            aria-label='Zurück zur Übersicht'
+            bg='background'
+            className='rounded-full cursor-pointer'
+            onClick={() => router.back()}
+            id='back-button'
+          >
+            <ArrowBackIcon color='primary' />
+          </IconButton>
           <Box mt={2}>
             <ProjectSummary
               title={project.name}

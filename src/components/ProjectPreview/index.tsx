@@ -5,6 +5,8 @@ import { ProjectPreviewMap } from "@components/ProjectPreviewMap";
 import useIsInViewport from "use-is-in-viewport";
 import { AreaPath } from "@components/AreaPath";
 import { UserAvatar } from "@components/UserAvatar";
+import { ViewportType } from "@common/types/ReactMapGl";
+import { getGeocodedViewportByString } from "@lib/requests/getGeocodedViewportByString";
 
 export const ProjectPreview: FC<PublicProject> = ({
   id,
@@ -16,23 +18,39 @@ export const ProjectPreview: FC<PublicProject> = ({
   authorName,
   category,
 }) => {
+  const animationFrameRef = useRef(0);
   const parentRef = useRef<HTMLDivElement>(null);
   const [svgWrapperWidth, setSvgWrapperWidth] = useState(0);
   const [svgWrapperHeight, setSvgWrapperHeight] = useState(0);
   const [isInViewport, mapWrapperRef] = useIsInViewport({ threshold: 50 });
+  const [locationViewport, setLocationViewport] = useState<Pick<
+    ViewportType,
+    "latitude" | "longitude"
+  > | null>(null);
 
   useEffect(() => {
     const updateWidthAndHeight = (): void => {
       if (parentRef.current === null) return;
       setSvgWrapperWidth(parentRef.current.offsetWidth);
       setSvgWrapperHeight(parentRef.current.offsetHeight);
+
+      animationFrameRef.current = requestAnimationFrame(updateWidthAndHeight);
     };
 
-    window.addEventListener("resize", updateWidthAndHeight);
-    updateWidthAndHeight();
-
-    return () => window.removeEventListener("resize", updateWidthAndHeight);
+    animationFrameRef.current = requestAnimationFrame(updateWidthAndHeight);
+    return () => cancelAnimationFrame(animationFrameRef.current);
   }, [parentRef]);
+
+  useEffect(() => {
+    let isMounted = true;
+    if (locationViewport || !isInViewport || !location) return;
+    void getGeocodedViewportByString(location).then(
+      viewport => isMounted && setLocationViewport(viewport)
+    );
+    return () => {
+      isMounted = false;
+    };
+  }, [location, isInViewport, locationViewport]);
 
   return (
     <div
@@ -43,14 +61,14 @@ export const ProjectPreview: FC<PublicProject> = ({
         "cursor-pointer transition rounded-md",
         "relative overflow-hidden group",
       ].join(" ")}
-      style={{ paddingBottom: 100, height: 340 }}
+      style={{ paddingBottom: 100, minHeight: 340 }}
     >
       <Link href={`/${id}`}>
         <a href={`/${id}`} ref={mapWrapperRef}>
-          {isInViewport && (
+          {locationViewport && isInViewport && (
             <div
               className={[
-                "absolute -inset-8 pointer-events-none",
+                "absolute inset-0 overflow-hidden pointer-events-none",
                 "transition opacity-40 group-hover:opacity-60",
               ].join(" ")}
               style={{
@@ -61,9 +79,9 @@ export const ProjectPreview: FC<PublicProject> = ({
               }}
             >
               <ProjectPreviewMap
-                location={location}
-                mapWidth={svgWrapperWidth + 64}
-                mapHeight={svgWrapperHeight + 64}
+                viewport={locationViewport}
+                mapWidth={Math.round(svgWrapperWidth * 1.5)}
+                mapHeight={svgWrapperHeight}
               />
             </div>
           )}
@@ -98,8 +116,12 @@ export const ProjectPreview: FC<PublicProject> = ({
                 )}
               </h3>
               <p className='mt-4 mb-2 flex gap-2 flex-wrap'>
-                <span className='font-bold inline-block'>{location}</span>
-                <span className='text-gray-400'>·</span>
+                {location && (
+                  <>
+                    <span className='font-bold inline-block'>{location}</span>
+                    <span className='text-gray-400'>·</span>
+                  </>
+                )}
                 <span className='inline-block'>
                   {devicesNumber} {devicesNumber > 1 ? "Sensoren" : "Sensor"}
                 </span>

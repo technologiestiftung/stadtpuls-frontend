@@ -1,11 +1,11 @@
+import { fakeCuratedProjects } from "@mocks/supabaseData/publicProjects";
 import { render } from "@testing-library/react";
 import { LandingProjectsSlider } from ".";
-import { fakeProjects } from "./LandingProjectsSlider.stories";
 
 describe("LandingProjectsSlider component", () => {
   it("should 3 slides by project", () => {
-    render(<LandingProjectsSlider projects={fakeProjects} />);
+    render(<LandingProjectsSlider projects={fakeCuratedProjects} />);
     const headings = document.getElementsByClassName("swiper-slide");
-    expect(headings).toHaveLength(fakeProjects.length * 3);
+    expect(headings).toHaveLength(fakeCuratedProjects.length);
   });
 });

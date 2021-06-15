@@ -64,6 +64,8 @@ module.exports = {
       "xl": "36rem",
     },
   },
-  variants: {},
+  variants: {
+    extend: {},
+  },
   plugins: [require("@tailwindcss/forms"), require('@tailwindcss/typography')],
 };

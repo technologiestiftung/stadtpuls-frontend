@@ -21,7 +21,7 @@ describe("createDateValueArray", () => {
         value: 20,
       },
     ]);
-    expect(dateValueArray[0].date).toBeInstanceOf(Date);
+    expect(dateValueArray[0].date).toBe("2021-04-08T20:32:49.796Z");
   });
   it("should return an array sorted by Date", () => {
     const dateValueArray = createDateValueArray([

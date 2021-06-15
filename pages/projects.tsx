@@ -1,12 +1,28 @@
 import { FC } from "react";
 import { ProjectsList } from "@components/ProjectsList";
-import { usePublicProjects } from "@lib/hooks/usePublicProjects";
+import { getPublicProjects, PublicProject } from "@lib/hooks/usePublicProjects";
+import { GetServerSideProps } from "next";
 
-const ProjectsOverview: FC = () => {
-  const { data, error } = usePublicProjects(500);
+interface ProjectsOverviewPropType {
+  projects: {
+    count: number;
+    projects: PublicProject[];
+  };
+}
 
-  if (!data || error) return null;
-  else return <ProjectsList {...data} />;
+export const getServerSideProps: GetServerSideProps = async () => {
+  try {
+    const projects = await getPublicProjects();
+    return { props: { projects } };
+  } catch (error) {
+    console.log(error);
+    return { notFound: true };
+  }
+};
+
+const ProjectsOverview: FC<ProjectsOverviewPropType> = ({ projects }) => {
+  if (!projects) return null;
+  else return <ProjectsList {...projects} />;
 };
 
 export default ProjectsOverview;

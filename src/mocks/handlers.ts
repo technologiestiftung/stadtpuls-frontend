@@ -46,9 +46,7 @@ const githubHandlers = [
 
 const mapBoxGeocodingHandlers = [
   rest.get(
-    `https://api.mapbox.com/geocoding/v5/mapbox.places/Berlin.json?access_token=${
-      process.env.NEXT_PUBLIC_MAPBOX_TOKEN || ""
-    }`,
+    `https://api.mapbox.com/geocoding/v5/mapbox.places/Berlin.json`,
     (_req, res, ctx) => {
       return res(
         ctx.status(201, "Mocked status"),
@@ -90,7 +88,7 @@ const supabaseHandlers = [
 
     const select = query.get("select");
     // const offset = query.get("offset");
-    // const limit = query.get("limit");
+    const limit = query.get("limit");
     const recordsLimit = query.get("devices.records.limit");
     const recordsOrder = query.get("devices.records.order");
     const userId = query.get("userId")?.slice(3);
@@ -106,7 +104,11 @@ const supabaseHandlers = [
       return res(
         ctx.set("content-range", "0-9/14"),
         ctx.status(201, "Mocked status"),
-        ctx.json(publicProjectsData)
+        ctx.json(
+          limit
+            ? publicProjectsData.slice(0, parseInt(limit, 10))
+            : publicProjectsData
+        )
       );
     else if (
       select ==
@@ -224,7 +226,7 @@ const supabaseHandlers = [
   }),
   //Auth
   rest.post(
-    "https://dyxublythmmlsositxtg.supabase.co/auth/v1/token?grant_type=refresh_token",
+    "https://dyxublythmmlsositxtg.supabase.co/auth/v1/token",
     (_req, res, ctx) => {
       return res(ctx.status(201, "Mocked status"), ctx.json(refreshToken));
     }
@@ -259,6 +261,34 @@ const supabaseHandlers = [
   //other
   rest.delete(createV2ApiUrl("/authtokens"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"), ctx.json([]));
+  }),
+  // Head calls
+  rest.head(createV2ApiUrl("/userprofiles"), (req, res, ctx) => {
+    if (req.headers.get("prefer") === "count=exact") {
+      return res(
+        ctx.set("content-range", "0-26/27"),
+        ctx.status(201, "Mocked status")
+      );
+    }
+    return res(ctx.status(404, "Not found"));
+  }),
+  rest.head(createV2ApiUrl("/devices"), (req, res, ctx) => {
+    if (req.headers.get("prefer") === "count=exact") {
+      return res(
+        ctx.set("content-range", "0-28/29"),
+        ctx.status(201, "Mocked status")
+      );
+    }
+    return res(ctx.status(404, "Not found"));
+  }),
+  rest.head(createV2ApiUrl("/records"), (req, res, ctx) => {
+    if (req.headers.get("prefer") === "count=exact") {
+      return res(
+        ctx.set("content-range", "0-999/10030"),
+        ctx.status(201, "Mocked status")
+      );
+    }
+    return res(ctx.status(404, "Not found"));
   }),
 ];
 

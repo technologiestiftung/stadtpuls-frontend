@@ -3,8 +3,10 @@ import useSWR from "swr";
 
 import { DevicesType, ProjectsType } from "@common/types/supabase";
 
+const RECORDS_LIMIT = 500;
+
 interface DateValueType {
-  date: Date;
+  date: string;
   value: number;
 }
 
@@ -21,7 +23,14 @@ export interface PublicProject {
 
 export interface PublicProjects {
   projects: Array<PublicProject>;
-  count: number;
+  count?: number;
+}
+
+interface OptionsType {
+  initialData: null | {
+    count: number;
+    projects: PublicProject[];
+  };
 }
 
 const parseDeviceRecords = (
@@ -33,7 +42,7 @@ const parseDeviceRecords = (
   const mappedDevices = devices
     .map(({ records }) =>
       (records || []).map(record => ({
-        date: new Date(record.recordedAt),
+        date: record.recordedAt,
         value: record.measurements ? record.measurements[0] : 0,
       }))
     )
@@ -41,77 +50,80 @@ const parseDeviceRecords = (
   return mappedDevices[0];
 };
 
-export const getPublicProjects = async (
-  recordsLimit: number
-): Promise<PublicProjects | null> => {
-  const { data, error, count } = await supabase
-    .from<ProjectsType>("projects")
-    .select(
-      `
+export const projectQueryString = `
+  id,
+  name,
+  description,
+  location,
+  devices (
+    records (
+      recordedAt,
+      measurements
+    )
+  ),
+  user:userId (
+    name
+  ),
+  category:categoryId (
+    name
+  )
+`;
+
+export const mapPublicProject = (project: ProjectsType): PublicProject => {
+  const {
     id,
     name,
     description,
     location,
-    devices (
-      records (
-        recordedAt,
-        measurements
-      )
-    ),
-    user:userId (
-      name
-    ),
-    category:categoryId (
-      name
-    )
-    `,
-      { count: "exact" }
-    )
+    devices,
+    userProfile,
+    category,
+  } = project;
+  return {
+    id,
+    name,
+    description,
+    location,
+    devicesNumber: devices?.length || 0,
+    authorName: userProfile?.name || null,
+    records: parseDeviceRecords(devices),
+    category: category?.name || null,
+  };
+};
+
+export const getPublicProjects = async (): Promise<PublicProjects | null> => {
+  const { data, error } = await supabase
+    .from<ProjectsType>("projects")
+    .select(projectQueryString)
     //FIXME: the typecasting
     .order("recordedAt" as keyof ProjectsType, {
       foreignTable: "devices.records",
       ascending: false,
     })
-    .limit(recordsLimit, { foreignTable: "devices.records" });
+    .limit(RECORDS_LIMIT, { foreignTable: "devices.records" });
 
   if (error) throw error;
-  if (!data || !count) return null;
-  const projects = data?.map(
-    (project): PublicProject => {
-      const {
-        id,
-        name,
-        description,
-        location,
-        devices,
-        userProfile,
-        category,
-      } = project;
-      return {
-        id,
-        name,
-        description,
-        location,
-        devicesNumber: devices?.length || 0,
-        authorName: userProfile?.name || null,
-        records: parseDeviceRecords(devices),
-        category: category?.name || null,
-      };
-    }
-  );
+  if (!data) return null;
+  const projects = data?.map(mapPublicProject);
 
-  return { projects: projects, count: count };
+  return { projects: projects };
+};
+
+const defaultOptions: OptionsType = {
+  initialData: null,
 };
 
 export const usePublicProjects = (
-  recordsLimit = 500
+  options: Partial<OptionsType> = defaultOptions
 ): {
   data: PublicProjects | null;
   error: Error | null;
 } => {
+  const initialData = options.initialData || defaultOptions.initialData;
   const { data, error } = useSWR<PublicProjects | null, Error>(
-    ["usePublicProjects", recordsLimit],
-    () => getPublicProjects(recordsLimit)
+    ["usePublicProjects"],
+    () => getPublicProjects(),
+    { initialData }
   );
 
   return {

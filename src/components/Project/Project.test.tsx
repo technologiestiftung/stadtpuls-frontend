@@ -32,7 +32,7 @@ describe("Project component", () => {
       ).toBeInTheDocument()
     );
   });
-  it("should render a link to go back to the projects list", async (): Promise<void> => {
+  it("should render a button to go back to the projects list", async (): Promise<void> => {
     const project = await getProjectData(10);
 
     render(
@@ -42,7 +42,7 @@ describe("Project component", () => {
     );
 
     await waitFor(() =>
-      expect(document.querySelector("a[href^='/projects']")).toBeInTheDocument()
+      expect(document.getElementById("back-button")).toBeInTheDocument()
     );
   });
 });
