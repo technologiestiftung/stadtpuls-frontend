@@ -8,183 +8,58 @@ metaDescription: 'Willkommensseite des IoT Hub Berlin.'
 import { Button } from "@components/Button";
 
 <p className="lead">
-  Entdecke die Welt der IoT-Sensorik und werde aktiver Teil dieser Plattform.
+  Fühle den Puls Deiner Stadt, entdecke die Welt der urbanen IoT-Sensorik und werde Teil einer rießigen Community.
 </p>
 
-Der +++Berlin IoT Hub+++ ist eine prototypische Offene Datenplattform, die <b>Sensordaten von & für Berlin</b> als Open Data frei zugänglich macht.
-Dabei kannst du ganz einfach aktiver Teil dieser Plattform werden, indem du Daten Deiner eigenen IoT-Projekte spendest oder Daten für eigene Projekte nutzt.
+Der Berlin IoT Hub sammelt Sensor- und Echtzeitdaten Berlins, bereitet diese auf und stellt sie der gesamten Stadtgesellschaft frei zugägnlich zur Verfügung.
+Egal ob Forscher:in, Tüftler:in oder IoT-Neuling: hier kann jede:r aktiver Teil der Plattform werden! Erkunde die Daten Deiner Stadt, Nutze die Daten der <a href='/projects'>Projekte</a> für Deine Datenanalysen und Forschungen oder erstelle Dein eigenes Projekt und spende die Daten Deiner Sensoren.
 
-### Du hast bereits ein IoT-Projekt?
-Wunderbar! Erstelle einen Account und stellen deine Daten für andere Nutzer*innen und die Öffentlichkeit zur Verfügung. Bislang ist es möglich, dass Du deine <a href="www.thethingsnewtork.de">The Things Network</a> registrierten Sensoren mit dem +++Iot Hub Berlin+++ verknüpft.
-Die gemessenen Daten werden nach erfolgreicher Verknüpfung als Download, sowie über eine REST-API frei zur Verfügung gestellt und als eigenständiges Projekt im IoT Hub visualisiert.
+Drei Gründe, die <b>für</b> unseren IoT Hub Sprechen:
 
-<Button>Jetzt Account anlegen</Button>
-
-
-Oder lies dir zunächst unsere <a href="">Dokumentation</a> durch. 
+<span className="w-12 h-12 rounded-full bg-gray-200" style={{padding: '0.3em 0.5em 0.3em 0.5em'}}>→</span> Der gesamten Quellcode ist <b>Open Source</b>
+<br></br>
+<br></br>
+<span className="w-12 h-12 rounded-full bg-gray-200" style={{padding: '0.3em 0.5em 0.3em 0.5em'}}>→</span> Alle Daten sind <b>Offene Daten</b>
+<br></br>
+<br></br>
+<span className="w-12 h-12 rounded-full bg-gray-200" style={{padding: '0.3em 0.5em 0.3em 0.5em'}}>→</span> Die Plattform ist komplett <b>kostenlos</b>
 
 ---
 
-## What to expect from here on out
+## Du möchtest den digitalen Puls Deiner Stadt fühlen?
+Dann bist Du hier genau richtig! Die Stadt Berlin, Hochschulen aber auch Privatpersonen erheben bereits enorm viele Daten über unsere Stadt. Dabei spielen Klimadaten, aber auch städtische Sensordaten zu Themen wie "Lärmbelästigung" oder "Füllstände von Mülleimern" eine wichtige Rolle.
+Diese Daten in einer gemeinsamen Datenbasis vorzuhalten, zugänglich zu machen und zu visualisieren ist ein erster Schritt in Richtung *smarte vernetzte Stadt* und legt den Grundstein für weitere Analysen, Prozessoptimiereung und für eine bessere Stadtplanung.
+Man könnte sagen:
+<blockquote>
+  <p>Sensordaten legen den Grundstein für eine smarte Stadt der Zukunft.</p>
+</blockquote>
 
-What follows from here is just a bunch of absolute nonsense I've written to dogfood the plugin itself. It includes every sensible typographic element I could think of, like **bold text**, unordered lists, ordered lists, code blocks, block quotes, _and even italics_.
+Mit Klick auf die <a href='/projects'>Projekte</a> gelangst Du zur Projektübersicht. Hier werden alle Projekte unserer Community gelistet.
+Du siehst auf einem Blick Namen, Kurzbeschreibung, Eigentümer und weitere wichtige Informationen zum Projekt.
 
-It's important to cover all of these use cases for a few reasons:
+## Du hast bereits ein IoT-Projekt?
+Wunderbar! Erstelle  Dir einen Account und stelle Deine Daten für andere Nutzer:innen und die Öffentlichkeit zur Verfügung. Die Plattform unterstützt bislang die Anbindung an das <a href="https://www.thethingsnetwork.org/" target="_blank">The Things Network (TTN)</a>, sodass Du Sensoren Die Du bereits in TTN registriert hast einfach über die <a href="https://www.thethingsnetwork.org/docs/applications/http/" target="_blank">HTTP-Integration von TTN</a> mit dem IoT Hub verknüpfen kannst.
+Nach erfolgreicher Verknüpfung wird für Deine Sensoren automatisch ein Projekt generiert und die Daten Deiner Sensoren zum Download, sowie über eine REST-API <b>frei als Open Data zur Verfügung gestellt</b>.
 
-1. We want everything to look good out of the box.
-2. Really just the first reason, that's the whole point of the plugin.
-3. Here's a third pretend reason though a list with three items looks more realistic than a list with two items.
+<Button><a href='/signup'>Jetzt Account anlegen</a></Button>
 
-Now we're going to try out another header style.
+Im linken Menü findest du unter dem Punkt *Dokumentation* eine ausführliche Erläuterung dazu, wie Du Dir einen Account anlegst oder Deine Sensoren aus TTN mit dem IoT Hub verknüpfst.
 
-### Typography should be easy
+## Du brauchst Daten für Deine Analyse?
 
-So that's a header for you — with any luck if we've done our job correctly that will look pretty reasonable.
+Dann browse durch <a href='/projects'>Projekte</a> finde den passenden Datensatz für Deine Datenanalyse.
+Bislang unterstützen wir Sensordaten aus <b>sieben verschiedenen Kategorien</b>. Dazu zählen:
+1. Temperatur
+2. CO2
+3. Luftfeuchtigkeit
+4. Druck
+5. Helligkeit
+6. Lautstärke
+7. Personenzähler
 
-Something a wise person once told me about typography is:
+Alle Daten werden als Open Dat zur verfügugn gestellt udn können entweder als *JSON-* oder *CSV-Datei* heruntergeladen oder über eine *Restful API* kostenlos für eigene Projekte genutzt werden. 
 
-> Typography is pretty important if you don't want your stuff to look like trash. Make it good then it won't be bad.
+---
 
-It's probably important that images look okay here by default as well:
+Wenn du Fragen, Feedback oder Anregungen hast, dann **schreib uns eine E-Mail**
 
-<figure>
-  <img
-    src="https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-    alt=""
-  />
-  <figcaption>
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-    classical Latin literature from 45 BC, making it over 2000 years old.
-  </figcaption>
-</figure>
-
-Now I'm going to show you an example of an unordered list to make sure that looks good, too:
-
-- So here is the first item in this list.
-- In this example we're keeping the items short.
-- Later, we'll use longer, more complex list items.
-
-And that's the end of this section.
-
-## What if we stack headings?
-
-### We should make sure that looks good, too.
-
-Sometimes you have headings directly underneath each other. In those cases you often have to undo the top margin on the second heading because it usually looks better for the headings to be closer together than a paragraph followed by a heading should be.
-
-### When a heading comes after a paragraph …
-
-When a heading comes after a paragraph, we need a bit more space, like I already mentioned above. Now let's see what a more complex list would look like.
-
-- **I often do this thing where list items have headings.**
-
-  For some reason I think this looks cool which is unfortunate because it's pretty annoying to get the styles right.
-
-  I often have two or three paragraphs in these list items, too, so the hard part is getting the spacing between the paragraphs, list item heading, and separate list items to all make sense. Pretty tough honestly, you could make a strong argument that you just shouldn't write this way.
-
-- **Since this is a list, I need at least two items.**
-
-  I explained what I'm doing already in the previous list item, but a list wouldn't be a list if it only had one item, and we really want this to look realistic. That's why I've added this second list item so I actually have something to look at when writing the styles.
-
-- **It's not a bad idea to add a third item either.**
-
-  I think it probably would've been fine to just use two items but three is definitely not worse, and since I seem to be having no trouble making up arbitrary things to type, I might as well include it.
-
-After this sort of list I usually have a closing statement or paragraph, because it kinda looks weird jumping right to a heading.
-
-## Code should look okay by default.
-
-I think most people are going to use [highlight.js](https://highlightjs.org/) or [Prism](https://prismjs.com/) or something if they want to style their code blocks but it wouldn't hurt to make them look _okay_ out of the box, even with no syntax highlighting.
-
-Here's what a default `tailwind.config.js` file looks like at the time of writing:
-
-```js
-module.exports = {
-  purge: [],
-  theme: {
-    extend: {},
-  },
-  variants: {},
-  plugins: [],
-}
-```
-
-Hopefully that looks good enough to you.
-
-### What about nested lists?
-
-Nested lists basically always look bad which is why editors like Medium don't even let you do it, but I guess since some of you goofballs are going to do it we have to carry the burden of at least making it work.
-
-1. **Nested lists are rarely a good idea.**
-   - You might feel like you are being really "organized" or something but you are just creating a gross shape on the screen that is hard to read.
-   - Nested navigation in UIs is a bad idea too, keep things as flat as possible.
-   - Nesting tons of folders in your source code is also not helpful.
-2. **Since we need to have more items, here's another one.**
-   - I'm not sure if we'll bother styling more than two levels deep.
-   - Two is already too much, three is guaranteed to be a bad idea.
-   - If you nest four levels deep you belong in prison.
-3. **Two items isn't really a list, three is good though.**
-   - Again please don't nest lists if you want people to actually read your content.
-   - Nobody wants to look at this.
-   - I'm upset that we even have to bother styling this.
-
-The most annoying thing about lists in Markdown is that `<li>` elements aren't given a child `<p>` tag unless there are multiple paragraphs in the list item. That means I have to worry about styling that annoying situation too.
-
-- **For example, here's another nested list.**
-
-  But this time with a second paragraph.
-
-  - These list items won't have `<p>` tags
-  - Because they are only one line each
-
-- **But in this second top-level list item, they will.**
-
-  This is especially annoying because of the spacing on this paragraph.
-
-  - As you can see here, because I've added a second line, this list item now has a `<p>` tag.
-
-    This is the second line I'm talking about by the way.
-
-  - Finally here's another list item so it's more like a list.
-
-- A closing list item, but with no nested list, because why not?
-
-And finally a sentence to close off this section.
-
-## There are other elements we need to style
-
-I almost forgot to mention links, like [this link to the Tailwind CSS website](https://tailwindcss.com). We almost made them blue but that's so yesterday, so we went with dark gray, feels edgier.
-
-We even included table styles, check it out:
-
-| Wrestler                | Origin       | Finisher           |
-| ----------------------- | ------------ | ------------------ |
-| Bret "The Hitman" Hart  | Calgary, AB  | Sharpshooter       |
-| Stone Cold Steve Austin | Austin, TX   | Stone Cold Stunner |
-| Randy Savage            | Sarasota, FL | Elbow Drop         |
-| Vader                   | Boulder, CO  | Vader Bomb         |
-| Razor Ramon             | Chuluota, FL | Razor's Edge       |
-
-We also need to make sure inline code looks good, like if I wanted to talk about `<span>` elements or tell you the good news about `@tailwindcss/typography`.
-
-### Sometimes I even use `code` in headings
-
-Even though it's probably a bad idea, and historically I've had a hard time making it look good. This _"wrap the code blocks in backticks"_ trick works pretty well though really.
-
-Another thing I've done in the past is put a `code` tag inside of a link, like if I wanted to tell you about the [`tailwindcss/docs`](https://github.com/tailwindcss/docs) repository. I don't love that there is an underline below the backticks but it is absolutely not worth the madness it would require to avoid it.
-
-#### We haven't used an `h4` yet
-
-But now we have. Please don't use `h5` or `h6` in your content, Medium only supports two heading levels for a reason, you animals. I honestly considered using a `before` pseudo-element to scream at you if you use an `h5` or `h6`.
-
-We don't style them at all out of the box because `h4` elements are already so small that they are the same size as the body copy. What are we supposed to do with an `h5`, make it _smaller_ than the body copy? No thanks.
-
-### We still need to think about stacked headings though.
-
-#### Let's make sure we don't screw that up with `h4` elements, either.
-
-Phew, with any luck we have styled the headings above this text and they look pretty good.
-
-Let's add a closing paragraph here so things end with a decently sized block of text. I can't explain why I want things to end that way but I have to assume it's because I think things will look weird or unbalanced if there is a heading too close to the end of the document.
-
-What I've written here is probably long enough, but adding this final sentence can't hurt.
