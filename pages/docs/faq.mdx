@@ -2,35 +2,50 @@
 layout: 'docs'
 title: 'FAQ'
 metaTitle: 'FAQ'
-metaDescription: 'Mach mit!'
+metaDescription: 'Frequently Asked Questions zur Plattform'
 ---
 
 import { Accordion } from "@components/Accordion"
 
 <p className="lead">
-  Until now, trying to style an article, document, or blog post with Tailwind has been a tedious
-  task that required a keen eye for typography and a lot of complex custom CSS.
+  Du hast Fragen zur Plattform? Wir haben die Antworten.
 </p>
+
+Klicke auf die einzelnen Fragen, um die jeweilige Antwort aufzudecken.
 
 <Accordion items={[
   {
     id: '1',
-    title: 'What is it you want?',
-    content: 'Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.',
+    title: 'Was bedeutet IoT?',
+    content: 'IoT ist eine Abkürzung für "Internet of Things" und bedeutet übersetzt so viel wie "Internet der Dinge". Dabei unterscheidet man die Dinge in "Sensoren", die Ihre Umgebung fühlen und vermessen und "Aktoren", die mit Ihrer Umgebung interagieren. Ein Beispiel: Dein Temperatur-Sensor misst 38 °C, daraufhin sendet Dein Aktor eine Nachricht an Deine Klimaanlage damit diese automatisch Dein Home Office kühlt.',
   },
   {
     id: '2',
-    title: 'Why are you how you are?',
-    content: 'Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.',
+    title: 'Warum braucht die Stadt Berlin Sensordaten?',
+    content: 'In unserem heutigen digitalem Zeitalter helfen uns Daten unsere zunehmend komplexer werdende Umgebung besser verstehen und interpretieren zu können. Sensordaten bilden unsere Realität im digitalem Raum ab und sind der Nährboden für weiterführende Analysen, Prozessoptimierungen und für eine gerechte Stadtplanung. Ein Beispiel: Die Klimasensoren der Stadt Berlin verzeichnen Hitze-Inseln im deiner Straße, daraufhin plant die Stadt die Neupflanzung von 10 Bäumen.',
   },
   {
-    id: '42',
-    title: 'What is the meaning of life?',
-    content: 'Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.',
+    id: '3',
+    title: 'Was kann ich auf dieser Plattform machen?',
+    content: 'Du kannst Dich auf der Plattform über einzelne IoT-Projekte informieren, selber einen Account erstellen und Projekte sowie Sensoren anlegen oder die Datensätze der Projekte anderer Nutzer:innen für Deine eigenen Analysen oder Datenprojekte nutzen.',
   },
   {
-    id: '66',
-    title: 'How did you get there?',
-    content: 'Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.',
+    id: '4',
+    title: 'Wie kann ich Daten spenden?',
+    content: 'Die Plattform unterstützt bislang die Anbindung an das The Things Network. Wenn Du dort bereits Sensoren verwaltest kannst du diese mit wenigen Klicks über die "TTN-HTTP-Integration mit dieser PLattform verknüpfen. Wie genau? Klick links in der Dokumentation auf "Geräte auf TTN konfigurieren.',
+  },
+  {
+    id: '5',
+    title: 'Was macht ihr mit den Daten, die gespendet werden?',
+    content: 'Wir sammeln die Daten in einer Postgres-Datenbank und speichern Sie dort ab, um sie schließlich im Frontend der Plattform visualisieren und für andere Nutzer:innen zur Verfügung stellen zu können. Dabei erheben wir keine personenbezogenen Daten.',
+  },
+  {
+    id: '6',
+    title: 'Ich nutze kein TTN. Kann ich trotzdem Daten spenden?',
+    content: 'Bislang untersützt die Plattform lediglich die "TTN-HTTP-Integration". Die Anbindung an weitere Protokolle ist geplant, braucht aber etwas Zeit.',
   }
 ]} />
+
+
+## Ich habe immer noch Fragen!
+Wenn wir deine Fragen durch die Frequently Asked Questions nicht beantworten konnten, dann schreib' uns eine E-Mail.
