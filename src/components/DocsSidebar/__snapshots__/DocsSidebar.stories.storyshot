@@ -87,7 +87,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Neues Projekt erstellen
+              Neues Projekt anlegen
             </a>
           </li>
           <li
@@ -135,7 +135,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Konto Verwalten
+              Konto verwalten
             </a>
           </li>
           <li

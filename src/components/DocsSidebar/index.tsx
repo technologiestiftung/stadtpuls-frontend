@@ -32,7 +32,7 @@ const docsPages: PageType[] = [
     path: "/docs/new-account",
   },
   {
-    title: "Neues Projekt erstellen",
+    title: "Neues Projekt anlegen",
     path: "/docs/new-project",
   },
   {
@@ -48,7 +48,7 @@ const docsPages: PageType[] = [
     path: "/docs/view-device-data",
   },
   {
-    title: "Konto Verwalten",
+    title: "Konto verwalten",
     path: "/docs/manage-account",
   },
   {
