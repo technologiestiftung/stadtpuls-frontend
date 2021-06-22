@@ -71,23 +71,11 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           >
             <a
               className="navigation-link p-4 block sm:inline"
-              href="/docs/ttn-configuration"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Gerät auf TTN konfigurieren
-            </a>
-          </li>
-          <li
-            className="mb-2"
-          >
-            <a
-              className="navigation-link p-4 block sm:inline"
               href="/docs/new-account"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              IoT Hub Konto erstellen
+              Account erstellen
             </a>
           </li>
           <li
@@ -119,11 +107,11 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           >
             <a
               className="navigation-link p-4 block sm:inline"
-              href="/docs/view-device-data"
+              href="/docs/ttn-configuration"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Device-Daten anschauen
+              Gerät auf TTN konfigurieren
             </a>
           </li>
           <li
@@ -131,11 +119,11 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           >
             <a
               className="navigation-link p-4 block sm:inline"
-              href="/docs/troubleshooting"
+              href="/docs/view-device-data"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Troubleshooting
+              Sensordaten anschauen
             </a>
           </li>
           <li
@@ -148,6 +136,18 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
               onMouseEnter={[Function]}
             >
               Konto Verwalten
+            </a>
+          </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/docs/troubleshooting"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Troubleshooting
             </a>
           </li>
         </ul>
