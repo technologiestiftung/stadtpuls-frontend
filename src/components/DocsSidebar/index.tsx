@@ -28,11 +28,7 @@ const infoPages: PageType[] = [
 
 const docsPages: PageType[] = [
   {
-    title: "Gerät auf TTN konfigurieren",
-    path: "/docs/ttn-configuration",
-  },
-  {
-    title: "IoT Hub Konto erstellen",
+    title: "Account erstellen",
     path: "/docs/new-account",
   },
   {
@@ -44,16 +40,20 @@ const docsPages: PageType[] = [
     path: "/docs/new-device",
   },
   {
-    title: "Device-Daten anschauen",
-    path: "/docs/view-device-data",
+    title: "Gerät auf TTN konfigurieren",
+    path: "/docs/ttn-configuration",
   },
   {
-    title: "Troubleshooting",
-    path: "/docs/troubleshooting",
+    title: "Sensordaten anschauen",
+    path: "/docs/view-device-data",
   },
   {
     title: "Konto Verwalten",
     path: "/docs/manage-account",
+  },
+  {
+    title: "Troubleshooting",
+    path: "/docs/troubleshooting",
   },
 ];
 
