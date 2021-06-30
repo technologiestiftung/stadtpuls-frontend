@@ -9,9 +9,9 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
     href="/"
   >
     <img
-      alt="Logo des Berlin IoT Hub"
+      alt="Stadtpuls logo"
       className="w-10"
-      src="/images/datahub-logo.svg"
+      src="/images/stadtpuls-logo.svg"
     />
     <div
       className="ml-2"
@@ -19,9 +19,9 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
       <span
         className="font-bold"
       >
-        Berlin
+        Stadt
       </span>
-       IoT Hub
+      puls
     </div>
   </a>
   <section
@@ -252,9 +252,9 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
     href="/"
   >
     <img
-      alt="Logo des Berlin IoT Hub"
+      alt="Stadtpuls logo"
       className="w-10"
-      src="/images/datahub-logo.svg"
+      src="/images/stadtpuls-logo.svg"
     />
     <div
       className="ml-2"
@@ -262,9 +262,9 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
       <span
         className="font-bold"
       >
-        Berlin
+        Stadt
       </span>
-       IoT Hub
+      puls
     </div>
   </a>
   <section

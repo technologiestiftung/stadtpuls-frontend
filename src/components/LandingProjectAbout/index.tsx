@@ -16,7 +16,7 @@ const AboutTitle: FC = ({ children }) => (
 const techInfoColumns = [
   {
     title: "Backend",
-    repo: "next-iot-hub-api",
+    repo: "stadtpuls-api",
     technologies: [
       {
         name: "Supabase",
@@ -37,7 +37,7 @@ const techInfoColumns = [
   },
   {
     title: "Frontend",
-    repo: "next-iot-hub",
+    repo: "stadtpuls-frontend",
     technologies: [
       {
         name: "Next.js",
@@ -92,7 +92,7 @@ export const LandingProjectAbout: FC = () => (
               <h4 className='text-xl font-bold mb-1'>{title}</h4>
               <a
                 href={`https://github.com/technologiestiftung/${repo}`}
-                title={`Das Code-Repository von der IoT Hub ${title}`}
+                title={`Das Code-Repository von der Stadtpuls ${title}`}
                 className='text-sm text-gray-500 mb-4 block'
               >
                 <GitHub className='mr-1 transform scale-75' />

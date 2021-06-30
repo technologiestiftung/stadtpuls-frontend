@@ -2,7 +2,7 @@ import { AnchorButton } from "@components/Button";
 import Link from "next/link";
 import { FC } from "react";
 
-const datahubLogo = "/images/datahub-logo.svg";
+const stadtpulsLogo = "/images/stadtpuls-logo.svg";
 const landingHeroStack = "/images/landing-hero-stack.svg";
 
 export const LandingHero: FC = () => (
@@ -19,7 +19,7 @@ export const LandingHero: FC = () => (
     }}
   >
     <div>
-      <img src={datahubLogo} alt='IOT Hub logo' className='w-24' />
+      <img src={stadtpulsLogo} alt='Stadtpuls logo' className='w-24' />
       <h1
         className={[
           "text-xl sm:text-2xl md:text-3xl",
@@ -32,7 +32,7 @@ export const LandingHero: FC = () => (
         <span className='text-blue-300'>Teile die Daten und dein Wissen!</span>
       </h1>
       <p className='mb-8 max-w-prose'>
-        Das Berlin IoT Hub ist eine{" "}
+        Stadtpuls ist eine{" "}
         <strong>offene Datenplattform für IoT-Projekte</strong> bei der jede*r
         mitmachen kann. Einfach deine Sensoren registrieren und alle Messwerte
         werden automatisch gespeichert, visualisiert und für andere verfügbar

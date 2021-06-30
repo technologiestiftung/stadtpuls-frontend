@@ -21,7 +21,7 @@ describe("Header component", () => {
     // @ts-ignore
     userDataHook.useUserData = originalUserDataHook;
   });
-  it("should render the iot logo", async () => {
+  it("should render the Stadtpuls logo", async () => {
     render(<Header />);
     const logo = screen.getByRole("img");
     await waitFor(() => expect(logo).toBeInTheDocument());

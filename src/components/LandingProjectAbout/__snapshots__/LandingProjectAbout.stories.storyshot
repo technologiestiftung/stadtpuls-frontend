@@ -42,8 +42,8 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
           </h4>
           <a
             className="text-sm text-gray-500 mb-4 block"
-            href="https://github.com/technologiestiftung/next-iot-hub-api"
-            title="Das Code-Repository von der IoT Hub Backend"
+            href="https://github.com/technologiestiftung/stadtpuls-api"
+            title="Das Code-Repository von der Stadtpuls Backend"
           >
             <svg
               aria-hidden={true}
@@ -59,7 +59,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
             <span
               className="text-black"
             >
-              next-iot-hub-api
+              stadtpuls-api
             </span>
           </a>
           <ul>
@@ -102,8 +102,8 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
           </h4>
           <a
             className="text-sm text-gray-500 mb-4 block"
-            href="https://github.com/technologiestiftung/next-iot-hub"
-            title="Das Code-Repository von der IoT Hub Frontend"
+            href="https://github.com/technologiestiftung/stadtpuls-frontend"
+            title="Das Code-Repository von der Stadtpuls Frontend"
           >
             <svg
               aria-hidden={true}
@@ -119,7 +119,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
             <span
               className="text-black"
             >
-              next-iot-hub
+              stadtpuls-frontend
             </span>
           </a>
           <ul>

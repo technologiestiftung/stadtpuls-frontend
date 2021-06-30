@@ -2,8 +2,8 @@ import { NextApiResponse } from "next";
 import { Component } from "react";
 
 const getManifest = (): string => `{
-  "short_name": "Berlin IoT Hub",
-  "name": "Berlin IoT Hub",
+  "short_name": "Stadtpuls",
+  "name": "Stadtpuls Berlin",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
