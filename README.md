@@ -1,6 +1,6 @@
-# Berlin IoT Hub (Frontend)
+# Stadtpuls (Frontend)
 
-This repository contains the frontend of the Berlin IoT Hub of Technologiestiftung Berlin. It is built using [Next.js](https://nextjs.org/), TypeScript, [visx](https://airbnb.io/visx/), and [a wrapper for Mapbox GL](https://visgl.github.io/react-map-gl/).
+This repository contains the frontend of the platform *Stadtpuls* of Technologiestiftung Berlin. It is built using [Next.js](https://nextjs.org/), TypeScript, [visx](https://airbnb.io/visx/), and [a wrapper for Mapbox GL](https://visgl.github.io/react-map-gl/).
 
 The API for retrieving data can found in a [different repository](https://github.com/technologiestiftung/berlin-datahub-api).
 
