@@ -32,8 +32,8 @@ const infoPages: PageType[] = [
 
 const docsPages: PageType[] = [
   {
-    title: "Account erstellen",
-    path: "/docs/new-account",
+    title: "Stadtpuls-Account",
+    path: "/docs/stadtpuls-account",
   },
   {
     title: "Neues Projekt anlegen",
@@ -50,10 +50,6 @@ const docsPages: PageType[] = [
   {
     title: "Sensordaten anschauen",
     path: "/docs/view-device-data",
-  },
-  {
-    title: "Konto verwalten",
-    path: "/docs/manage-account",
   },
   {
     title: "Troubleshooting",

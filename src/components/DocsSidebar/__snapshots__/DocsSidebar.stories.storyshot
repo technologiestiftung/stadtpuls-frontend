@@ -83,11 +83,11 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           >
             <a
               className="navigation-link p-4 block sm:inline"
-              href="/docs/new-account"
+              href="/docs/stadtpuls-account"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Account erstellen
+              Stadtpuls-Account
             </a>
           </li>
           <li
@@ -136,18 +136,6 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
               onMouseEnter={[Function]}
             >
               Sensordaten anschauen
-            </a>
-          </li>
-          <li
-            className="mb-2"
-          >
-            <a
-              className="navigation-link p-4 block sm:inline"
-              href="/docs/manage-account"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Konto verwalten
             </a>
           </li>
           <li
