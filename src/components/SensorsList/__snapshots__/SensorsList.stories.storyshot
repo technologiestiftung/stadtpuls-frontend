@@ -233,7 +233,7 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
               }
             }
           >
-            Vor 5 Monaten
+            Vor 6 Monaten
           </td>
           <td
             className="sm:text-right sm:py-3 pl-8 sm:pl-0 sm:pr-6 whitespace-nowrap w-auto block align-top sm:table-cell font-normal"

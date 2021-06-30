@@ -41,11 +41,11 @@ const App: FC<{
             <meta name='theme-color' content='#000000' />
             <meta
               name='description'
-              content='Das Berlin IoT Hub ist eine prototypische Offene Datenplattform, die Sensordaten aus Forschungsprojekten der Technologiestiftung Berlin speichert und frei verfügbar macht'
+              content='Stadtpuls ist eine prototypische Offene Datenplattform, die Sensordaten aus Forschungsprojekten der Technologiestiftung Berlin speichert und frei verfügbar macht'
             />
             <link rel='apple-touch-icon' href={`${publicURL}/logo192.png`} />
             <link rel='manifest' href={`${publicURL}/manifest.json`} />
-            <title>Berlin IoT Hub | Technologiestiftung Berlin</title>
+            <title>Stadtpuls | Technologiestiftung Berlin</title>
           </Head>
           <Header />
           <main

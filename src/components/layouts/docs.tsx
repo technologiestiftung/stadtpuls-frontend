@@ -36,8 +36,7 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
         <article className='col-span-8 lg:col-span-7 xl:col-span-7'>
           <Head>
             <title>
-              {frontMatter.metaTitle} | Berlin IoT Hub | Technologiestiftung
-              Berlin
+              {frontMatter.metaTitle} | Stadtpuls | Technologiestiftung Berlin
             </title>
             <meta name='description' content={frontMatter.metaDescription} />
           </Head>

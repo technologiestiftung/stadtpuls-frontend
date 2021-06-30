@@ -11,9 +11,9 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
 >
   <div>
     <img
-      alt="IOT Hub logo"
+      alt="Stadtpuls logo"
       className="w-24"
-      src="/images/datahub-logo.svg"
+      src="/images/stadtpuls-logo.svg"
     />
     <h1
       className="text-xl sm:text-2xl md:text-3xl text-blue-500 font-semibold mt-6 mb-4"
@@ -29,7 +29,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
     <p
       className="mb-8 max-w-prose"
     >
-      Das Berlin IoT Hub ist eine
+      Stadtpuls ist eine
        
       <strong>
         offene Datenplattform für IoT-Projekte

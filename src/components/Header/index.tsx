@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { IotHubLogo } from "@components/IotHubLogo";
+import { StadtpulsLogo } from "@components/StadtpulsLogo";
 import { TsbLogoSymbol } from "@components/TsbLogoSymbol";
 import { AuthLink } from "@components/AuthLink";
 import { HeaderMenu } from "@components/HeaderMenu";
@@ -13,7 +13,7 @@ export const Header: React.FC = () => (
     ].join(" ")}
   >
     <Link href='/'>
-      <IotHubLogo />
+      <StadtpulsLogo />
     </Link>
     <section className='flex gap-4 sm:gap-8 items-center'>
       <HeaderMenu />
