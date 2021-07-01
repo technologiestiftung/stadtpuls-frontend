@@ -44,7 +44,7 @@ const docsPages: PageType[] = [
     path: "/docs/new-device",
   },
   {
-    title: "Gerät auf TTN konfigurieren",
+    title: "Applikation auf TTN konfigurieren",
     path: "/docs/ttn-configuration",
   },
   {

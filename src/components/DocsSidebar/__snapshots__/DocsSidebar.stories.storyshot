@@ -123,7 +123,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Gerät auf TTN konfigurieren
+              Applikation auf TTN konfigurieren
             </a>
           </li>
           <li
