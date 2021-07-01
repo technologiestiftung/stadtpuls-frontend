@@ -76,7 +76,7 @@ export const TableOfContents: FC<TableOfContentsPropType> = ({ links }) => {
     <div className='hidden relative lg:col-span-2 xl:col-span-3 lg:block h-full'>
       <div className='h-60' />
       <nav className='sticky top-24 right-4'>
-        <h4 className='font-bold mb-2 text-gray-500'>Auf diese Seite</h4>
+        <h4 className='font-bold mb-2 text-gray-500'>Auf dieser Seite</h4>
         <ul>
           {links.map(({ id, text }) => (
             <li key={id} className='mb-2'>

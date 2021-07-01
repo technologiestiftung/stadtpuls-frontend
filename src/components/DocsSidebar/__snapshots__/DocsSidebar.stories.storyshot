@@ -57,6 +57,18 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
               FAQ
             </a>
           </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/docs/changelog"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Changelog
+            </a>
+          </li>
         </ul>
         <h4
           className="font-bold text-xl 2xl:text-2xl mb-2"
@@ -71,23 +83,11 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           >
             <a
               className="navigation-link p-4 block sm:inline"
-              href="/docs/ttn-configuration"
+              href="/docs/stadtpuls-account"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Gerät auf TTN konfigurieren
-            </a>
-          </li>
-          <li
-            className="mb-2"
-          >
-            <a
-              className="navigation-link p-4 block sm:inline"
-              href="/docs/new-account"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              IoT Hub Konto erstellen
+              Stadtpuls-Account
             </a>
           </li>
           <li
@@ -99,7 +99,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Neues Projekt erstellen
+              Neues Projekt anlegen
             </a>
           </li>
           <li
@@ -119,11 +119,23 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           >
             <a
               className="navigation-link p-4 block sm:inline"
+              href="/docs/ttn-configuration"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Applikation auf TTN konfigurieren
+            </a>
+          </li>
+          <li
+            className="mb-2"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
               href="/docs/view-device-data"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Device-Daten anschauen
+              Sensordaten anschauen
             </a>
           </li>
           <li
@@ -136,18 +148,6 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
               onMouseEnter={[Function]}
             >
               Troubleshooting
-            </a>
-          </li>
-          <li
-            className="mb-2"
-          >
-            <a
-              className="navigation-link p-4 block sm:inline"
-              href="/docs/manage-account"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Konto Verwalten
             </a>
           </li>
         </ul>
