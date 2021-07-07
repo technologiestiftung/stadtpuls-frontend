@@ -2,108 +2,111 @@
 
 exports[`Storyshots Forms/Signup Default 1`] = `
 <div
-  className="max-w-full bg-white p-8 shadow-lg flex flex-col gap-8 place-content-between"
-  style={
-    Object {
-      "minHeight": 360,
-      "width": "28rem",
-    }
-  }
+  className="max-w-md px-4 md:px-0"
 >
-  <div>
-    <h1
-      className="text-3xl font-semibold m-0 mb-4 text-blue-500"
-    >
-      Registrierung
-    </h1>
-    <form
-      id="signup-form"
-      noValidate={true}
-      onSubmit={[Function]}
-    >
-      <div
-        className="mb-2"
-      >
-        <label
-          className="block mb-2 cursor-pointer transition hover:opacity-60"
-          htmlFor="email"
-        >
-          E-Mail
-           
-        </label>
-        <input
-          className=" mb-2"
-          id="email"
-          name="email"
-          onBlur={[Function]}
-          onChange={[Function]}
-          placeholder="Deine E-Mail-Adresse..."
-          type="email"
-          value=""
-        />
-      </div>
-      <section
-        className="flex"
-      >
-        <input
-          className="transform translate-y-1 "
-          name="areConditionsAccepted"
-          onBlur={[Function]}
-          onChange={[Function]}
-          type="checkbox"
-          value=""
-        />
-        <div>
-          <label
-            className="leading-5"
-            htmlFor="areConditionsAccepted"
-          >
-            Ich akzeptiere die
-             
-            <a
-              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
-              href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
-            >
-              Nutzungsbedingungen
-            </a>
-            .
-          </label>
-        </div>
-      </section>
-    </form>
-  </div>
   <div
-    className="flex gap-4 place-content-between"
-  >
-    <section
-      className="text-gray-500"
-    >
-      Hast du schon einen Account? 
-      <a
-        className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500 inline-block"
-        href="/signin"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        Logge dich ein
-      </a>
-    </section>
-    <section
-      className="flex flex-col"
-      style={
-        Object {
-          "justifyContent": "flex-end",
-        }
+    className="bg-white shadow-lg p-8 flex flex-col gap-8 place-content-between"
+    style={
+      Object {
+        "minHeight": 360,
       }
+    }
+  >
+    <div>
+      <h1
+        className="text-3xl font-semibold m-0 mb-4 text-blue-500"
+      >
+        Registrierung
+      </h1>
+      <form
+        id="signup-form"
+        noValidate={true}
+        onSubmit={[Function]}
+      >
+        <div
+          className="mb-2"
+        >
+          <label
+            className="block mb-2 cursor-pointer transition hover:opacity-60"
+            htmlFor="email"
+          >
+            E-Mail
+             
+          </label>
+          <input
+            className=" mb-2"
+            id="email"
+            name="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Deine E-Mail-Adresse..."
+            type="email"
+            value=""
+          />
+        </div>
+        <section
+          className="flex"
+        >
+          <input
+            className="transform translate-y-1 "
+            name="areConditionsAccepted"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="checkbox"
+            value=""
+          />
+          <div>
+            <label
+              className="leading-5"
+              htmlFor="areConditionsAccepted"
+            >
+              Ich akzeptiere die
+               
+              <a
+                className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+                href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
+              >
+                Nutzungsbedingungen
+              </a>
+              .
+            </label>
+          </div>
+        </section>
+      </form>
+    </div>
+    <div
+      className="flex gap-4 place-content-between"
     >
-      <input
-        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60"
-        form="signup-form"
-        type="submit"
-        value="Registrieren"
-        variant="primary"
-      />
-    </section>
+      <section
+        className="text-gray-500"
+      >
+        Hast du schon einen Account? 
+        <a
+          className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500 inline-block"
+          href="/signin"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Logge dich ein
+        </a>
+      </section>
+      <section
+        className="flex flex-col"
+        style={
+          Object {
+            "justifyContent": "flex-end",
+          }
+        }
+      >
+        <input
+          className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60"
+          form="signup-form"
+          type="submit"
+          value="Registrieren"
+          variant="primary"
+        />
+      </section>
+    </div>
   </div>
 </div>
 `;
