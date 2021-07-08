@@ -258,8 +258,11 @@ export const Project: FC<ProjectsType> = project => {
                 <ApiInfo
                   entries={project.devices.map(device => {
                     return {
-                      name: device.name ? device.name : "Kein Titel",
-                      id: device.id,
+                      label: device.name ? device.name : "Kein Titel",
+                      domain: process.env.NEXT_PUBLIC_WEB_URL || "",
+                      route: device.id
+                        ? `api/v1/devices/${device.id}/records`
+                        : "",
                     };
                   })}
                 />
