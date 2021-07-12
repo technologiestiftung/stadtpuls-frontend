@@ -4,13 +4,29 @@ import { ThemeProvider } from "theme-ui";
 import { ApiInfo } from ".";
 import theme from "../../style/theme";
 
+const testApiRoutes = [
+  {
+    label: "one",
+    domain: "https://somedomain.com",
+    route: "endpoint/one",
+  },
+  {
+    label: "two",
+    domain: "https://somedomain.com",
+    route: "endpoint/two",
+  },
+  {
+    label: "three",
+    domain: "https://somedomain.com",
+    route: "endpoint/three",
+  },
+];
+
 describe("Footer component", () => {
   it("should render a title with API as content", () => {
     render(
       <ThemeProvider theme={theme}>
-        <svg>
-          <ApiInfo entries={[]} />
-        </svg>
+        <ApiInfo entries={[]} />
       </ThemeProvider>
     );
     const title = screen.getByText("API");
@@ -19,49 +35,14 @@ describe("Footer component", () => {
   it("should render as many API titles as provided by the entries prop", () => {
     render(
       <ThemeProvider theme={theme}>
-        <svg>
-          <ApiInfo
-            entries={[
-              { id: 1, name: "One" },
-              { id: 2, name: "Two" },
-              { id: 3, name: "Three" },
-              { id: 4, name: "Four" },
-            ]}
-          />
-        </svg>
+        <ApiInfo entries={testApiRoutes} />
       </ThemeProvider>
     );
-    const one = screen.getByText("One");
-    const two = screen.getByText("Two");
-    const three = screen.getByText("Three");
-    const four = screen.getByText("Four");
+    const one = screen.getByText("one");
+    const two = screen.getByText("two");
+    const three = screen.getByText("three");
     expect(one).toBeInTheDocument();
     expect(two).toBeInTheDocument();
     expect(three).toBeInTheDocument();
-    expect(four).toBeInTheDocument();
-  });
-  it("should render as many API routes as provided by the entries prop", () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <svg>
-          <ApiInfo
-            entries={[
-              { id: 1, name: "One" },
-              { id: 2, name: "Two" },
-              { id: 3, name: "Three" },
-              { id: 4, name: "Four" },
-            ]}
-          />
-        </svg>
-      </ThemeProvider>
-    );
-    const one = screen.getByText("/api/devices/1/records");
-    const two = screen.getByText("/api/devices/2/records");
-    const three = screen.getByText("/api/devices/3/records");
-    const four = screen.getByText("/api/devices/4/records");
-    expect(one).toBeInTheDocument();
-    expect(two).toBeInTheDocument();
-    expect(three).toBeInTheDocument();
-    expect(four).toBeInTheDocument();
   });
 });

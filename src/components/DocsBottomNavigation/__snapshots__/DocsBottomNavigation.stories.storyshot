@@ -13,7 +13,7 @@ exports[`Storyshots Navigation/DocsBottomNavigation Default 1`] = `
       <li>
         <a
           className=" block p-4 sm:p-8 border rounded bg-gray-50 text-blue flex justify-between transition hover:border-blue hover:bg-gray-50"
-          href="/docs/manage-account"
+          href="/docs/troubleshooting"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -28,7 +28,7 @@ exports[`Storyshots Navigation/DocsBottomNavigation Default 1`] = `
             />
           </svg>
           <span>
-            Konto Verwalten
+            Troubleshooting
           </span>
         </a>
       </li>

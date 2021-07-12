@@ -1,47 +1,48 @@
-import { device1Records } from "../../../mocks/data";
-import { createV1ApiUrl } from "../createV1ApiUrl";
+import { fakeDeviceWithRecords } from "@mocks/supabaseData/publicProjects";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { getRecordsByDeviceId } from ".";
+import { createApiUrl } from "../createApiUrl";
+
 describe("utility function getRecordsByDeviceId", () => {
-  it("should return an array", async (): Promise<void> => {
-    const projects = await getRecordsByDeviceId(1);
-    expect(Array.isArray(projects)).toBe(true);
-  });
-  it("should have length of mocked data", async (): Promise<void> => {
-    const projects = await getRecordsByDeviceId(1);
-    expect(projects).toHaveLength(device1Records.data.records.length);
-  });
-  it("should return mocked data", async (): Promise<void> => {
-    const projects = await getRecordsByDeviceId(1);
-    expect(projects[0].id).toBe(device1Records.data.records[0].id);
-  });
-  it("should throw 'Failed to fetch records' if fails", async (): Promise<void> => {
-    const id = 1;
+  it("should return an array of records", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createV1ApiUrl(`/devices/${id}/records`), (_req, res, ctx) => {
-        return res(ctx.status(403), ctx.text("Error message!"));
+      rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
+        return res(
+          ctx.status(200, "Mocked status"),
+          ctx.json(fakeDeviceWithRecords.records)
+        );
       })
     );
     server.listen();
-    await expect(getRecordsByDeviceId(id)).rejects.toThrow(
-      "Failed to fetch records"
-    );
+    const records = await getRecordsByDeviceId(fakeDeviceWithRecords.id);
 
+    expect.assertions(2);
+    expect(Array.isArray(records)).toBe(true);
+    expect(records).toHaveLength(fakeDeviceWithRecords.records.length);
     server.resetHandlers();
     server.close();
   });
-  it("should throw 'Failed to fetch records' if provided with unexisting id", async (): Promise<void> => {
-    const id = 1000000000;
+
+  it("should send error message when erroring", async (): Promise<void> => {
+    const id = 99999999;
+
     const server = setupServer(
-      rest.get(createV1ApiUrl(`/devices/${id}/records`), (_req, res, ctx) => {
-        return res(ctx.status(403), ctx.text("Error message!"));
+      rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
+        return res(ctx.status(404), ctx.json({ message: "Error message" }));
       })
     );
+
     server.listen();
-    await expect(getRecordsByDeviceId(id)).rejects.toThrow(
-      "Failed to fetch records"
-    );
+
+    expect.assertions(1);
+    try {
+      await getRecordsByDeviceId(id);
+    } catch (error) {
+      expect(error).toEqual({
+        message: "Error message",
+      });
+    }
 
     server.resetHandlers();
     server.close();

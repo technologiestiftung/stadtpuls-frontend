@@ -17,20 +17,19 @@ exports[`Storyshots ApiInfo Default 1`] = `
         className="css-osdorg"
       >
         <td>
-          One
+          one
         </td>
         <td
           className="css-13pma7l"
         >
           <a
             className="css-p944lt"
-            href="/api/devices/1/records"
+            href="https://somedomain.com/endpoint/one"
             rel="noopener noreferrer"
             target="_blank"
           >
-            /api/devices/
-            1
-            /records
+            /
+            endpoint/one
           </a>
         </td>
       </tr>
@@ -38,20 +37,19 @@ exports[`Storyshots ApiInfo Default 1`] = `
         className="css-osdorg"
       >
         <td>
-          Two
+          two
         </td>
         <td
           className="css-13pma7l"
         >
           <a
             className="css-p944lt"
-            href="/api/devices/2/records"
+            href="https://somedomain.com/endpoint/two"
             rel="noopener noreferrer"
             target="_blank"
           >
-            /api/devices/
-            2
-            /records
+            /
+            endpoint/two
           </a>
         </td>
       </tr>
@@ -59,41 +57,19 @@ exports[`Storyshots ApiInfo Default 1`] = `
         className="css-osdorg"
       >
         <td>
-          Three
+          three
         </td>
         <td
           className="css-13pma7l"
         >
           <a
             className="css-p944lt"
-            href="/api/devices/3/records"
+            href="https://somedomain.com/endpoint/three"
             rel="noopener noreferrer"
             target="_blank"
           >
-            /api/devices/
-            3
-            /records
-          </a>
-        </td>
-      </tr>
-      <tr
-        className="css-osdorg"
-      >
-        <td>
-          Four
-        </td>
-        <td
-          className="css-13pma7l"
-        >
-          <a
-            className="css-p944lt"
-            href="/api/devices/4/records"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            /api/devices/
-            4
-            /records
+            /
+            endpoint/three
           </a>
         </td>
       </tr>

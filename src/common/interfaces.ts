@@ -219,13 +219,6 @@ export interface RadioTabsType {
   changeHandler: (selected: number) => void;
 }
 
-export interface ApiTableType {
-  entries: Array<{
-    name: string;
-    id: number;
-  }>;
-}
-
 export interface MarkerType {
   latitude: number;
   longitude: number;

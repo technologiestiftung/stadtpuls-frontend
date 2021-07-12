@@ -24,19 +24,19 @@ const infoPages: PageType[] = [
     title: "FAQ",
     path: "/docs/faq",
   },
+  {
+    title: "Changelog",
+    path: "/docs/changelog",
+  },
 ];
 
 const docsPages: PageType[] = [
   {
-    title: "Gerät auf TTN konfigurieren",
-    path: "/docs/ttn-configuration",
+    title: "Stadtpuls-Account",
+    path: "/docs/stadtpuls-account",
   },
   {
-    title: "IoT Hub Konto erstellen",
-    path: "/docs/new-account",
-  },
-  {
-    title: "Neues Projekt erstellen",
+    title: "Neues Projekt anlegen",
     path: "/docs/new-project",
   },
   {
@@ -44,16 +44,16 @@ const docsPages: PageType[] = [
     path: "/docs/new-device",
   },
   {
-    title: "Device-Daten anschauen",
+    title: "Applikation auf TTN konfigurieren",
+    path: "/docs/ttn-configuration",
+  },
+  {
+    title: "Sensordaten anschauen",
     path: "/docs/view-device-data",
   },
   {
     title: "Troubleshooting",
     path: "/docs/troubleshooting",
-  },
-  {
-    title: "Konto Verwalten",
-    path: "/docs/manage-account",
   },
 ];
 
