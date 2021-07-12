@@ -2,7 +2,7 @@
 
 This repository contains the frontend of the platform *Stadtpuls* of Technologiestiftung Berlin. It is built using [Next.js](https://nextjs.org/), TypeScript, [visx](https://airbnb.io/visx/), and [a wrapper for Mapbox GL](https://visgl.github.io/react-map-gl/).
 
-The API for retrieving data can found in a [different repository](https://github.com/technologiestiftung/berlin-datahub-api).
+The API for authenticating and posting from external sources (e.g. The Things Network) can found in a [different repository](https://github.com/technologiestiftung/stadtpuls-api).
 
 ## Getting started
 
@@ -50,24 +50,13 @@ nom run test:watch
 
 ### Requests
 
-Requests to the API are defined various request utility functions located in `src/lib/requests/` and called in currently three places:
-
-- `src/components/Project.tsx` (for fetching records of all devices associated with the project)
-- `src/components/ProjectPreview.tsx` (for fetching the records of one project device, to be displayed in the project preview)
-
-The request utility functions should provide the relevant parameters. For example:
-
-```js
-await getAllProjects() // No parameters needed here
-await getDevicesByProjectId(id) // The id of the project to get the devices from
-await getRecordsByDeviceId(id) // The id of the device to get the records from
-```
-
-The API version can be defined in `src/lib/requests/createV1ApiUrl.ts`.
+Requests to the Supabase API and [our custom API](https://github.com/technologiestiftung/stadtpuls-api) are defined in various request utility functions located in `src/lib/requests/` and `src/lib/hooks/`.
 
 ### Styling
 
 This project uses [Theme UI](https://theme-ui.com/home) for styling. Main style definitions can be found in `src/style/theme.ts`. The theme can be referenced in every component. For visual consistency, definitions from the theme should be used whenever possible. Information about using the theme can be found in Theme UI's docs.
+
+**We are in the process of refactoring the codebase to use TailwindCSS.**
 
 ## Workflow
 
