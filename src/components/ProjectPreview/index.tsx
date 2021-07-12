@@ -93,12 +93,12 @@ export const ProjectPreview: FC<PublicProject> = ({
           />
           <div
             className={[
-              "grid sm:grid-cols-2 gap-4",
+              "grid sm:grid-cols-6 gap-4",
               "px-4 py-3 sm:px-5 sm:py-4 md:px-8 md:py-7",
               "relative z-10",
             ].join(" ")}
           >
-            <div>
+            <div className='sm:col-span-4'>
               <h3 className='text-blue text-xl sm:text-2xl md:text-3xl font-semibold flex justify-between items-start'>
                 <span>{name}</span>
                 {category && (

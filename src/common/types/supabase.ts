@@ -75,7 +75,7 @@ export interface ProjectsType {
    * This is a Foreign Key to `users.id`.<fk table='users' column='id'/>
    */
   userId?: string;
-  userProfile?: UserProfilesType;
+  user?: UserProfilesType;
   /**
    * Note:
    * This is a Foreign Key to `categories.id`.<fk table='categories' column='id'/>
