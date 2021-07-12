@@ -44,7 +44,7 @@ export const Dropdown: FC<DropdownPropType> = ({
       </button>
       <span aria-hidden className={caretStyles} />
       <section className={dropdownStyles}>
-        <div className='bg-white shadow-md'>{dropdownContent}</div>
+        <div className='bg-white shadow'>{dropdownContent}</div>
       </section>
     </div>
   );

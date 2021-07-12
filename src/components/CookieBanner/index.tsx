@@ -25,7 +25,7 @@ export const CookieBanner: React.FC<{
     <>
       <div
         className={[
-          "p-3 border border-gray-200 shadow-xl fixed left-1/2 transform -translate-x-1/2",
+          "p-3 border border-gray-200 shadow fixed left-1/2 transform -translate-x-1/2",
           "bottom-0 sm:bottom-4 z-50 bg-white text-sm rounded container max-w-3xl",
           "flex gap-4 justify-between",
         ].join(" ")}

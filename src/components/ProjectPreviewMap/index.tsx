@@ -12,7 +12,10 @@ export const ProjectPreviewMap: React.FC<{
     {...viewport}
     width={mapWidth}
     height={mapHeight}
-    mapStyle='mapbox://styles/mapbox/light-v10'
+    mapStyle={
+      process.env.NEXT_PUBLIC_MAPBOX_TILESET_URL ||
+      "mapbox://styles/mapbox/light-v10"
+    }
     mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
   />
 );

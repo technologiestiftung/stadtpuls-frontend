@@ -7,7 +7,7 @@ import { HeaderMenu } from "@components/HeaderMenu";
 export const Header: React.FC = () => (
   <header
     className={[
-      "w-full p-4 bg-white shadow-lg z-50",
+      "w-full p-4 bg-white shadow z-50",
       "flex place-content-between",
       "fixed top-0",
     ].join(" ")}

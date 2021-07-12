@@ -21,7 +21,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
           className="swiper-slide undefined"
         >
           <div
-            className="bg-white shadow-lg hover:bg-gray-50 border border-gray-50 cursor-pointer transition rounded-md relative overflow-hidden group"
+            className="bg-white shadow hover:bg-gray-50 border border-gray-200 hover:border-purple hover:shadow-purple cursor-pointer transition-all relative overflow-hidden group"
             style={
               Object {
                 "minHeight": 340,
@@ -44,20 +44,36 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                   className="sm:col-span-4"
                 >
                   <h3
-                    className="text-blue text-xl sm:text-2xl md:text-3xl font-semibold flex justify-between items-start"
+                    className="text-black font-headline text-xl sm:text-2xl md:text-3xl font-bold flex justify-between items-start"
                   >
-                    <span>
+                    <span
+                      className="leading-8"
+                    >
                       Temperatur Grundewaldstraße
                     </span>
                     <div
-                      className="sm:absolute z-10 text-base font-normal ml-4 right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7 px-3 py-1 bg-gray-50 text-blue"
+                      className="sm:absolute z-10 text-base font-normal ml-4 bg-white bg-opacity-50 right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7"
                     >
-                      Temperatur
+                      <span
+                        className="bg-purple bg-opacity-10 px-3 py-1 text-purple inline-block"
+                      >
+                        Temperatur
+                      </span>
                     </div>
                   </h3>
                   <p
                     className="mt-4 mb-2 flex gap-2 flex-wrap"
                   >
+                    <span
+                      className="font-bold inline-block"
+                    >
+                      Berlin
+                    </span>
+                    <span
+                      className="text-gray-400"
+                    >
+                      ·
+                    </span>
                     <span
                       className="inline-block"
                     >
@@ -592,30 +608,11 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                 width={4}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <defs>
-                  <linearGradient
-                    id="area-gradient"
-                    x1="0"
-                    x2="0"
-                    y1="0"
-                    y2="1"
-                  >
-                    <stop
-                      offset="0%"
-                      stopColor="#0000C2"
-                      stopOpacity="30%"
-                    />
-                    <stop
-                      offset="100%"
-                      stopColor="#0000C2"
-                      stopOpacity="5%"
-                    />
-                  </linearGradient>
-                </defs>
                 <path
                   className="visx-area-closed"
                   d="M4,61.29292929292929L3.2,0L2.4,19.87878787878788L1.6,72.06060606060606L0.8,82L0,54.66666666666667L0,82L0.8,82L1.6,82L2.4,82L3.2,82L4,82Z"
-                  fill="url(#area-gradient)"
+                  fill="#46ECA1"
+                  fillOpacity="10%"
                   shapeRendering="geometricPrecision"
                   stroke="#0000C2"
                   strokeWidth={2}
@@ -628,7 +625,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
           className="swiper-slide undefined"
         >
           <div
-            className="bg-white shadow-lg hover:bg-gray-50 border border-gray-50 cursor-pointer transition rounded-md relative overflow-hidden group"
+            className="bg-white shadow hover:bg-gray-50 border border-gray-200 hover:border-purple hover:shadow-purple cursor-pointer transition-all relative overflow-hidden group"
             style={
               Object {
                 "minHeight": 340,
@@ -651,20 +648,36 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                   className="sm:col-span-4"
                 >
                   <h3
-                    className="text-blue text-xl sm:text-2xl md:text-3xl font-semibold flex justify-between items-start"
+                    className="text-black font-headline text-xl sm:text-2xl md:text-3xl font-bold flex justify-between items-start"
                   >
-                    <span>
+                    <span
+                      className="leading-8"
+                    >
                       CO2 Elbphilharmonie Hamburg.
                     </span>
                     <div
-                      className="sm:absolute z-10 text-base font-normal ml-4 right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7 px-3 py-1 bg-gray-50 text-blue"
+                      className="sm:absolute z-10 text-base font-normal ml-4 bg-white bg-opacity-50 right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7"
                     >
-                      CO2
+                      <span
+                        className="bg-purple bg-opacity-10 px-3 py-1 text-purple inline-block"
+                      >
+                        CO2
+                      </span>
                     </div>
                   </h3>
                   <p
                     className="mt-4 mb-2 flex gap-2 flex-wrap"
                   >
+                    <span
+                      className="font-bold inline-block"
+                    >
+                      Hamburg
+                    </span>
+                    <span
+                      className="text-gray-400"
+                    >
+                      ·
+                    </span>
                     <span
                       className="inline-block"
                     >
@@ -1199,30 +1212,11 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                 width={4}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <defs>
-                  <linearGradient
-                    id="area-gradient"
-                    x1="0"
-                    x2="0"
-                    y1="0"
-                    y2="1"
-                  >
-                    <stop
-                      offset="0%"
-                      stopColor="#0000C2"
-                      stopOpacity="30%"
-                    />
-                    <stop
-                      offset="100%"
-                      stopColor="#0000C2"
-                      stopOpacity="5%"
-                    />
-                  </linearGradient>
-                </defs>
                 <path
                   className="visx-area-closed"
                   d="M4,61.29292929292929L3.2,0L2.4,19.87878787878788L1.6,72.06060606060606L0.8,82L0,54.66666666666667L0,82L0.8,82L1.6,82L2.4,82L3.2,82L4,82Z"
-                  fill="url(#area-gradient)"
+                  fill="#46ECA1"
+                  fillOpacity="10%"
                   shapeRendering="geometricPrecision"
                   stroke="#0000C2"
                   strokeWidth={2}
@@ -1235,7 +1229,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
           className="swiper-slide undefined"
         >
           <div
-            className="bg-white shadow-lg hover:bg-gray-50 border border-gray-50 cursor-pointer transition rounded-md relative overflow-hidden group"
+            className="bg-white shadow hover:bg-gray-50 border border-gray-200 hover:border-purple hover:shadow-purple cursor-pointer transition-all relative overflow-hidden group"
             style={
               Object {
                 "minHeight": 340,
@@ -1258,20 +1252,36 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                   className="sm:col-span-4"
                 >
                   <h3
-                    className="text-blue text-xl sm:text-2xl md:text-3xl font-semibold flex justify-between items-start"
+                    className="text-black font-headline text-xl sm:text-2xl md:text-3xl font-bold flex justify-between items-start"
                   >
-                    <span>
+                    <span
+                      className="leading-8"
+                    >
                       PAXCounter Schokoladenmuseum Köln
                     </span>
                     <div
-                      className="sm:absolute z-10 text-base font-normal ml-4 right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7 px-3 py-1 bg-gray-50 text-blue"
+                      className="sm:absolute z-10 text-base font-normal ml-4 bg-white bg-opacity-50 right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7"
                     >
-                      PAXCounter
+                      <span
+                        className="bg-purple bg-opacity-10 px-3 py-1 text-purple inline-block"
+                      >
+                        PAXCounter
+                      </span>
                     </div>
                   </h3>
                   <p
                     className="mt-4 mb-2 flex gap-2 flex-wrap"
                   >
+                    <span
+                      className="font-bold inline-block"
+                    >
+                      Köln
+                    </span>
+                    <span
+                      className="text-gray-400"
+                    >
+                      ·
+                    </span>
                     <span
                       className="inline-block"
                     >
@@ -1806,30 +1816,11 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                 width={4}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <defs>
-                  <linearGradient
-                    id="area-gradient"
-                    x1="0"
-                    x2="0"
-                    y1="0"
-                    y2="1"
-                  >
-                    <stop
-                      offset="0%"
-                      stopColor="#0000C2"
-                      stopOpacity="30%"
-                    />
-                    <stop
-                      offset="100%"
-                      stopColor="#0000C2"
-                      stopOpacity="5%"
-                    />
-                  </linearGradient>
-                </defs>
                 <path
                   className="visx-area-closed"
                   d="M4,61.29292929292929L3.2,0L2.4,19.87878787878788L1.6,72.06060606060606L0.8,82L0,54.66666666666667L0,82L0.8,82L1.6,82L2.4,82L3.2,82L4,82Z"
-                  fill="url(#area-gradient)"
+                  fill="#46ECA1"
+                  fillOpacity="10%"
                   shapeRendering="geometricPrecision"
                   stroke="#0000C2"
                   strokeWidth={2}

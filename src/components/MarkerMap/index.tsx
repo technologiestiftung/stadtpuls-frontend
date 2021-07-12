@@ -97,7 +97,10 @@ export const MarkerMap: React.FC<{
       {...viewport}
       width={mapWidth}
       height={mapHeight}
-      mapStyle='mapbox://styles/technologiestiftung/ckqv0ehnl80ww17nw3ytxz5r4'
+      mapStyle={
+        process.env.NEXT_PUBLIC_MAPBOX_TILESET_URL ||
+        "mapbox://styles/mapbox/light-v10"
+      }
       onViewportChange={(nextViewport: ViewportType) =>
         setViewport(nextViewport)
       }

@@ -8,7 +8,11 @@ import { UserAvatar } from "@components/UserAvatar";
 import { ViewportType } from "@common/types/ReactMapGl";
 import { getGeocodedViewportByString } from "@lib/requests/getGeocodedViewportByString";
 
-export const ProjectPreview: FC<PublicProject> = ({
+interface ProjectPreviewPropType extends PublicProject {
+  withMapBackground?: boolean;
+}
+
+export const ProjectPreview: FC<ProjectPreviewPropType> = ({
   id,
   name,
   location,
@@ -17,6 +21,7 @@ export const ProjectPreview: FC<PublicProject> = ({
   devicesNumber,
   authorName,
   category,
+  withMapBackground = true,
 }) => {
   const animationFrameRef = useRef(0);
   const parentRef = useRef<HTMLDivElement>(null);
@@ -56,9 +61,10 @@ export const ProjectPreview: FC<PublicProject> = ({
     <div
       ref={parentRef}
       className={[
-        "bg-white shadow-lg hover:bg-gray-50",
-        "border border-gray-50",
-        "cursor-pointer transition rounded-md",
+        "bg-white shadow hover:bg-gray-50",
+        "border border-gray-200",
+        "hover:border-purple hover:shadow-purple",
+        "cursor-pointer transition-all",
         "relative overflow-hidden group",
       ].join(" ")}
       style={{ paddingBottom: 100, minHeight: 340 }}
@@ -78,11 +84,13 @@ export const ProjectPreview: FC<PublicProject> = ({
                 animationDelay: "1s",
               }}
             >
-              <ProjectPreviewMap
-                viewport={locationViewport}
-                mapWidth={Math.round(svgWrapperWidth * 1.5)}
-                mapHeight={svgWrapperHeight}
-              />
+              {withMapBackground && (
+                <ProjectPreviewMap
+                  viewport={locationViewport}
+                  mapWidth={Math.round(svgWrapperWidth * 1.5)}
+                  mapHeight={svgWrapperHeight}
+                />
+              )}
             </div>
           )}
           <div
@@ -99,19 +107,25 @@ export const ProjectPreview: FC<PublicProject> = ({
             ].join(" ")}
           >
             <div className='sm:col-span-4'>
-              <h3 className='text-blue text-xl sm:text-2xl md:text-3xl font-semibold flex justify-between items-start'>
-                <span>{name}</span>
+              <h3
+                className={[
+                  "text-black font-headline text-xl sm:text-2xl md:text-3xl",
+                  "font-bold flex justify-between items-start",
+                ].join(" ")}
+              >
+                <span className='leading-8'>{name}</span>
                 {category && (
                   <div
                     className={[
                       "sm:absolute z-10",
                       "text-base font-normal",
-                      "ml-4",
+                      "ml-4 bg-white bg-opacity-50",
                       "right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7",
-                      "px-3 py-1 bg-gray-50 text-blue",
                     ].join(" ")}
                   >
-                    {category}
+                    <span className='bg-purple bg-opacity-10 px-3 py-1 text-purple inline-block'>
+                      {category}
+                    </span>
                   </div>
                 )}
               </h3>

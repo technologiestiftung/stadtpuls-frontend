@@ -4,7 +4,7 @@ import { curveLinear } from "@visx/curve";
 import { AreaClosed } from "@visx/shape";
 import { scaleLinear, scaleUtc } from "@visx/scale";
 import { DateValueType, LineGraphType } from "../../common/interfaces";
-import theme from "../../style/theme";
+import colors from "../../style/colors";
 
 const getX = (d: DateValueType): Date => new Date(d.date);
 const getY = (d: DateValueType): number => d.value;
@@ -37,32 +37,17 @@ export const AreaPath: FC<LineGraphType> = ({ width, height, data }) => {
   });
 
   return (
-    <>
-      <defs>
-        <linearGradient id='area-gradient' x1='0' x2='0' y1='0' y2='1'>
-          <stop
-            stopColor={theme.colors.primary}
-            stopOpacity='30%'
-            offset='0%'
-          />
-          <stop
-            stopColor={theme.colors.primary}
-            stopOpacity='5%'
-            offset='100%'
-          />
-        </linearGradient>
-      </defs>
-      <AreaClosed<DateValueType>
-        curve={curveLinear}
-        data={normalizedData}
-        x={d => xScale(getX(d))}
-        y={d => yScale(getY(d))}
-        yScale={yScale}
-        strokeWidth={2}
-        stroke={theme.colors.primary}
-        fill='url(#area-gradient)'
-        shapeRendering='geometricPrecision'
-      />
-    </>
+    <AreaClosed<DateValueType>
+      curve={curveLinear}
+      data={normalizedData}
+      x={d => xScale(getX(d))}
+      y={d => yScale(getY(d))}
+      yScale={yScale}
+      strokeWidth={2}
+      stroke={colors.blue}
+      fill={colors.green}
+      fillOpacity='10%'
+      shapeRendering='geometricPrecision'
+    />
   );
 };

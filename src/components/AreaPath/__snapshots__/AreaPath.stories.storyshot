@@ -5,30 +5,11 @@ exports[`Storyshots Charts/AreaPath Default 1`] = `
   height={200}
   width={400}
 >
-  <defs>
-    <linearGradient
-      id="area-gradient"
-      x1="0"
-      x2="0"
-      y1="0"
-      y2="1"
-    >
-      <stop
-        offset="0%"
-        stopColor="#0000C2"
-        stopOpacity="30%"
-      />
-      <stop
-        offset="100%"
-        stopColor="#0000C2"
-        stopOpacity="5%"
-      />
-    </linearGradient>
-  </defs>
   <path
     className="visx-area-closed"
     d="M400,100L200,0L0,50L0,200L200,200L400,200Z"
-    fill="url(#area-gradient)"
+    fill="#46ECA1"
+    fillOpacity="10%"
     shapeRendering="geometricPrecision"
     stroke="#0000C2"
     strokeWidth={2}

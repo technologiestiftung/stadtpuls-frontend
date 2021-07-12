@@ -22,7 +22,7 @@ exports[`Storyshots UI Elements/Dropdown Default 1`] = `
     className="absolute top-full left-0 transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 opacity-0 pointer-events-none"
   >
     <div
-      className="bg-white shadow-md"
+      className="bg-white shadow"
     >
       <div
         className="px-4 py-3"

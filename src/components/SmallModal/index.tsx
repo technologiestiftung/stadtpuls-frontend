@@ -15,7 +15,7 @@ export const SmallModal: FC<SmallModalPropType> = ({
   return (
     <div className='max-w-md px-4 md:px-0'>
       <div
-        className='bg-white shadow-lg p-8 flex flex-col gap-8 place-content-between'
+        className='bg-white shadow p-8 flex flex-col gap-8 place-content-between'
         style={{ minHeight: 360 }}
       >
         <div>

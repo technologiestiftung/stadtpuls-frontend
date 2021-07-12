@@ -75,7 +75,7 @@ exports[`Storyshots Layout/UserProjectsWrapper With Projects 1`] = `
     </div>
   </section>
   <main
-    className="md:col-span-9 mt-6 md:mt-0 bg-white shadow-md"
+    className="md:col-span-9 mt-6 md:mt-0 bg-white shadow"
   >
     <h1>
       Insert here: the main content
@@ -116,7 +116,7 @@ exports[`Storyshots Layout/UserProjectsWrapper Without Projects 1`] = `
     </div>
   </section>
   <main
-    className="md:col-span-9 mt-6 md:mt-0 bg-white shadow-md"
+    className="md:col-span-9 mt-6 md:mt-0 bg-white shadow"
   >
     <h1>
       Insert here: the main content

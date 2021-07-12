@@ -23,7 +23,7 @@ module.exports = {
   theme: {
     colors,
     fontFamily: {
-      headline: [ "SpaceGrotesk", ...fallbackFonts ],
+      headline: [ "'SpaceGrotesk'", ...fallbackFonts ],
       sans: [ "Sora", ...fallbackFonts ],
     },
     minWidth: {
@@ -32,6 +32,14 @@ module.exports = {
       "md": "28rem",
       "lg": "32rem",
       "xl": "36rem",
+    },
+    boxShadow: {
+      "DEFAULT": "0 4px 0 0 rgba(87,83,122,0.05)",
+      "blue": `0 4px 0 0 ${colors.blue}`,
+      "purple": `0 4px 0 0 ${colors.purple}`,
+      "green": `0 4px 0 0 ${colors.green}`,
+      "inner": "inset 0 2px 0 0 rgba(87,83,122,0.05)",
+      "none": "none",
     },
   },
   variants: {

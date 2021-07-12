@@ -64,7 +64,7 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
                 className={`swiper-slide ${styles.sliderSlide}`}
                 key={project.id}
               >
-                <ProjectPreview {...project} location={undefined} />
+                <ProjectPreview {...project} withMapBackground={false} />
               </div>
             ))}
           </div>

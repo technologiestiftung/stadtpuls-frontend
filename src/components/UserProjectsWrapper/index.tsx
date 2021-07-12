@@ -48,9 +48,7 @@ export const UserProjectsWrapper: FC<UserProjectWrapperType> = ({
         </div>
       </section>
       <main
-        className={["md:col-span-9 mt-6 md:mt-0", "bg-white shadow-md"].join(
-          " "
-        )}
+        className={["md:col-span-9 mt-6 md:mt-0", "bg-white shadow"].join(" ")}
       >
         {children}
       </main>
