@@ -6,19 +6,14 @@ exports[`Storyshots ProjectSummary Default 1`] = `
 >
   <h1
     className="css-ixh96h-ProjectSummary"
-  >
-    Test project A
-  </h1>
+  />
   <div
     className="css-jmlio4"
-  >
-    This is a description for project A. This is a description. This is a description. This is a description.
-  </div>
+  />
   <div
     className="css-198lzgh-ProjectSummary"
   >
     Anzahl der Sensoren: 
-    5
   </div>
 </div>
 `;
