@@ -1,5 +1,5 @@
-import { ProjectType } from "@common/interfaces";
-import { getAllProjects } from "@lib/requests/getAllProjects";
+import { ProjectsType } from "@common/types/supabase";
+import { getProjects } from "@lib/requests/getProjects";
 import { NextPage, NextApiResponse } from "next";
 import { Component } from "react";
 
@@ -13,8 +13,8 @@ const formatDate: (dateStr?: string) => string = dateStr => {
   }-${date.getUTCDate()}`;
 };
 
-const getSitemap: (
-  projects: ProjectType[]
+export const getSitemap: (
+  projects: ProjectsType[]
 ) => string = projects => `<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -38,7 +38,7 @@ class Sitemap extends Component<NextPage> {
   }: {
     res: NextApiResponse;
   }): Promise<void> {
-    const projects = await getAllProjects();
+    const projects = await getProjects();
     res.setHeader("Content-Type", "text/xml");
     res.write(getSitemap(projects));
     res.end();
