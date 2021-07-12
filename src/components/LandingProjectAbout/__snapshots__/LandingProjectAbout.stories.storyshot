@@ -8,7 +8,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
     className="container mx-auto max-w-8xl px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16"
   >
     <h1
-      className="text-xl sm:text-2xl md:text-3xl text-blue-500 font-semibold mt-6 mb-8"
+      className="text-xl sm:text-2xl md:text-3xl text-blue font-semibold mt-6 mb-8"
     >
       Über das Projekt
     </h1>
@@ -65,7 +65,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
           <ul>
             <li>
               <a
-                className="text-gray-500 underline hover:text-blue-500 transition"
+                className="text-gray-500 underline hover:text-blue transition"
                 href="http://supabase.io/"
                 title="Open Source Firebase-like Service"
               >
@@ -74,7 +74,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
             </li>
             <li>
               <a
-                className="text-gray-500 underline hover:text-blue-500 transition"
+                className="text-gray-500 underline hover:text-blue transition"
                 href="https://www.fastify.io/"
                 title="Fast and low overhead web framework, for Node.js"
               >
@@ -83,7 +83,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
             </li>
             <li>
               <a
-                className="text-gray-500 underline hover:text-blue-500 transition"
+                className="text-gray-500 underline hover:text-blue transition"
                 href="https://www.postgresql.org/"
                 title="Open Source Relational Database"
               >
@@ -125,7 +125,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
           <ul>
             <li>
               <a
-                className="text-gray-500 underline hover:text-blue-500 transition"
+                className="text-gray-500 underline hover:text-blue transition"
                 href="https://nextjs.org/"
                 title="The React Framework for Production"
               >
@@ -134,7 +134,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
             </li>
             <li>
               <a
-                className="text-gray-500 underline hover:text-blue-500 transition"
+                className="text-gray-500 underline hover:text-blue transition"
                 href="https://airbnb.io/visx/"
                 title="A collection of expressive, low-level visualization primitives for React"
               >
@@ -143,7 +143,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
             </li>
             <li>
               <a
-                className="text-gray-500 underline hover:text-blue-500 transition"
+                className="text-gray-500 underline hover:text-blue transition"
                 href="https://swr.vercel.app/"
                 title="React Hooks library for data fetching"
               >

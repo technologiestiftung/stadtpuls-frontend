@@ -34,7 +34,7 @@ const getButtonStyles = ({
         classes.push("bg-gray-200 text-gray-400");
         break;
       case "dangerous":
-        classes.push("bg-white border border-red-300 text-red-300");
+        classes.push("bg-white border border-error text-error");
         break;
       default:
         classes.push("bg-white border border-gray-400 text-gray-400");
@@ -44,18 +44,16 @@ const getButtonStyles = ({
     classes.push("cursor-pointer focus-offset");
     switch (variant) {
       case "primary":
-        classes.push(
-          "focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60"
-        );
+        classes.push("focus:ring-blue bg-blue text-white hover:opacity-60");
         break;
       case "dangerous":
         classes.push(
-          "focus:ring-red-500 bg-white border border-red-500 text-red-500 hover:bg-red-500 hover:bg-opacity-10"
+          "focus:ring-error bg-white border border-error text-error hover:bg-error hover:bg-opacity-10"
         );
         break;
       default:
         classes.push(
-          "focus:ring-blue-500 bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+          "focus:ring-blue bg-white border border-blue text-blue hover:bg-blue hover:bg-opacity-10"
         );
         break;
     }

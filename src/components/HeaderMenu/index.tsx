@@ -44,7 +44,7 @@ export const HeaderMenu: React.FC = () => {
   return (
     <div ref={menuRef}>
       <button
-        className='sm:hidden text-blue-500 focus-offset relative z-0'
+        className='sm:hidden text-blue focus-offset relative z-0'
         onClick={toggleIsOpened}
       >
         {isOpened ? <Close /> : <Menu />}

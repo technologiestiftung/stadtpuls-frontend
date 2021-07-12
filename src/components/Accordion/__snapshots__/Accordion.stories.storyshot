@@ -9,12 +9,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       className="border-b border-b-gray-50"
     >
       <button
-        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-blue-50 group hover:border-blue-500 focus-offset"
+        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
         onClick={[Function]}
         tabIndex={0}
       >
         <h2
-          className="group-hover:text-blue-500 inline"
+          className="group-hover:text-blue inline"
           id="0"
           style={
             Object {
@@ -35,12 +35,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       className="border-b border-b-gray-50"
     >
       <button
-        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-blue-50 group hover:border-blue-500 focus-offset"
+        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
         onClick={[Function]}
         tabIndex={0}
       >
         <h2
-          className="group-hover:text-blue-500 inline"
+          className="group-hover:text-blue inline"
           id="1"
           style={
             Object {
@@ -61,12 +61,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       className="border-b border-b-gray-50"
     >
       <button
-        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-blue-50 group hover:border-blue-500 focus-offset"
+        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
         onClick={[Function]}
         tabIndex={0}
       >
         <h2
-          className="group-hover:text-blue-500 inline"
+          className="group-hover:text-blue inline"
           id="2"
           style={
             Object {
@@ -87,12 +87,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       className="border-b border-b-gray-50"
     >
       <button
-        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-blue-50 group hover:border-blue-500 focus-offset"
+        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
         onClick={[Function]}
         tabIndex={0}
       >
         <h2
-          className="group-hover:text-blue-500 inline"
+          className="group-hover:text-blue inline"
           id="3"
           style={
             Object {
@@ -113,12 +113,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       className="border-b border-b-gray-50"
     >
       <button
-        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-blue-50 group hover:border-blue-500 focus-offset"
+        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
         onClick={[Function]}
         tabIndex={0}
       >
         <h2
-          className="group-hover:text-blue-500 inline"
+          className="group-hover:text-blue inline"
           id="4"
           style={
             Object {
@@ -139,12 +139,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       className="border-b border-b-gray-50"
     >
       <button
-        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-blue-50 group hover:border-blue-500 focus-offset"
+        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
         onClick={[Function]}
         tabIndex={0}
       >
         <h2
-          className="group-hover:text-blue-500 inline"
+          className="group-hover:text-blue inline"
           id="5"
           style={
             Object {
@@ -165,12 +165,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       className="border-b border-b-gray-50"
     >
       <button
-        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-blue-50 group hover:border-blue-500 focus-offset"
+        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
         onClick={[Function]}
         tabIndex={0}
       >
         <h2
-          className="group-hover:text-blue-500 inline"
+          className="group-hover:text-blue inline"
           id="6"
           style={
             Object {
@@ -191,12 +191,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       className="border-b border-b-gray-50"
     >
       <button
-        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-blue-50 group hover:border-blue-500 focus-offset"
+        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
         onClick={[Function]}
         tabIndex={0}
       >
         <h2
-          className="group-hover:text-blue-500 inline"
+          className="group-hover:text-blue inline"
           id="7"
           style={
             Object {
@@ -217,12 +217,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       className="border-b border-b-gray-50"
     >
       <button
-        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-blue-50 group hover:border-blue-500 focus-offset"
+        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
         onClick={[Function]}
         tabIndex={0}
       >
         <h2
-          className="group-hover:text-blue-500 inline"
+          className="group-hover:text-blue inline"
           id="8"
           style={
             Object {
@@ -243,12 +243,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       className="border-b border-b-gray-50"
     >
       <button
-        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-blue-50 group hover:border-blue-500 focus-offset"
+        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
         onClick={[Function]}
         tabIndex={0}
       >
         <h2
-          className="group-hover:text-blue-500 inline"
+          className="group-hover:text-blue inline"
           id="9"
           style={
             Object {
@@ -269,12 +269,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       className="border-b border-b-gray-50"
     >
       <button
-        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-blue-50 group hover:border-blue-500 focus-offset"
+        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
         onClick={[Function]}
         tabIndex={0}
       >
         <h2
-          className="group-hover:text-blue-500 inline"
+          className="group-hover:text-blue inline"
           id="10"
           style={
             Object {
@@ -295,12 +295,12 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       className="border-b border-b-gray-50"
     >
       <button
-        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-blue-50 group hover:border-blue-500 focus-offset"
+        className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
         onClick={[Function]}
         tabIndex={0}
       >
         <h2
-          className="group-hover:text-blue-500 inline"
+          className="group-hover:text-blue inline"
           id="11"
           style={
             Object {

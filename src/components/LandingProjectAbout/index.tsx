@@ -5,7 +5,7 @@ const AboutTitle: FC = ({ children }) => (
   <h1
     className={[
       "text-xl sm:text-2xl md:text-3xl",
-      "text-blue-500 font-semibold",
+      "text-blue font-semibold",
       "mt-6 mb-8",
     ].join(" ")}
   >
@@ -105,7 +105,7 @@ export const LandingProjectAbout: FC = () => (
                     <a
                       href={link}
                       title={description}
-                      className='text-gray-500 underline hover:text-blue-500 transition'
+                      className='text-gray-500 underline hover:text-blue transition'
                     >
                       {name}
                     </a>

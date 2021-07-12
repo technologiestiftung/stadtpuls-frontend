@@ -19,7 +19,7 @@ interface ListWithIconsPropType {
 }
 
 const HowItWorksTitle: FC = ({ children }) => (
-  <h3 className='text-lg md:text-xl lg:text-2xl font-bold text-blue-500 sm:pt-4 md:mt-8 mb-2'>
+  <h3 className='text-lg md:text-xl lg:text-2xl font-bold text-blue sm:pt-4 md:mt-8 mb-2'>
     {children}
   </h3>
 );
@@ -127,13 +127,13 @@ export const LandingHowItWorks: FC = () => (
       <h1
         className={[
           "text-xl sm:text-2xl md:text-3xl",
-          "text-blue-500 font-semibold",
+          "text-blue font-semibold",
           "mt-6 mb-8",
         ].join(" ")}
       >
         Und so geht’s:
         <br />
-        <span className='text-blue-300'>Eine kleine Übersicht</span>
+        <span className='text-purple'>Eine kleine Übersicht</span>
       </h1>
       <div
         className={`grid grid-cols-2 lg:grid-cols-9 gap-x-4 sm:gap-x-0 ${styles.gridContainer}`}

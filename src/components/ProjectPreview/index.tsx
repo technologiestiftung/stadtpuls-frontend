@@ -56,8 +56,8 @@ export const ProjectPreview: FC<PublicProject> = ({
     <div
       ref={parentRef}
       className={[
-        "bg-white shadow-lg hover:bg-blue-25",
-        "border border-blue-50",
+        "bg-white shadow-lg hover:bg-gray-50",
+        "border border-gray-50",
         "cursor-pointer transition rounded-md",
         "relative overflow-hidden group",
       ].join(" ")}
@@ -99,7 +99,7 @@ export const ProjectPreview: FC<PublicProject> = ({
             ].join(" ")}
           >
             <div>
-              <h3 className='text-blue-500 text-xl sm:text-2xl md:text-3xl font-semibold flex justify-between items-start'>
+              <h3 className='text-blue text-xl sm:text-2xl md:text-3xl font-semibold flex justify-between items-start'>
                 <span>{name}</span>
                 {category && (
                   <div
@@ -108,7 +108,7 @@ export const ProjectPreview: FC<PublicProject> = ({
                       "text-base font-normal",
                       "ml-4",
                       "right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7",
-                      "px-3 py-1 bg-blue-50 text-blue-500",
+                      "px-3 py-1 bg-gray-50 text-blue",
                     ].join(" ")}
                   >
                     {category}

@@ -22,7 +22,7 @@
 }
 
 .sliderButtonIcon {
-    @apply inline-block text-blue-500 transition shadow-lg bg-white rounded-full p-2 w-10 h-10;
+    @apply inline-block text-blue transition shadow-lg bg-white rounded-full p-2 w-10 h-10;
 }
 
 .sliderButton:focus .sliderButtonIcon {

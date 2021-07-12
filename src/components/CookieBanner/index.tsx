@@ -45,7 +45,7 @@ export const CookieBanner: React.FC<{
         <CloseIcon
           fontSize='large'
           onClick={acceptCookies}
-          className='cursor-pointer text-blue-500 opacity-100 hover:opacity-50 transition'
+          className='cursor-pointer text-blue opacity-100 hover:opacity-50 transition'
         />
       </div>
     </>

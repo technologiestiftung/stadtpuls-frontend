@@ -12,7 +12,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
 >
   <div>
     <h1
-      className="text-3xl font-semibold m-0 mb-4 text-blue-500"
+      className="text-3xl font-semibold m-0 mb-4 text-blue"
     >
       Registrierung
     </h1>
@@ -61,7 +61,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
             Ich akzeptiere die
              
             <a
-              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+              className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue focus:ring-blue"
               href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
             >
               Nutzungsbedingungen
@@ -80,7 +80,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
     >
       Hast du schon einen Account? 
       <a
-        className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500 inline-block"
+        className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue focus:ring-blue inline-block"
         href="/signin"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -97,7 +97,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
       }
     >
       <input
-        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60"
+        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-blue text-white hover:opacity-60"
         form="signup-form"
         type="submit"
         value="Registrieren"

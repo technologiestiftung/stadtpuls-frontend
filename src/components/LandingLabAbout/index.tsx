@@ -6,7 +6,7 @@ const AboutTitle: FC = ({ children }) => (
   <h1
     className={[
       "text-xl sm:text-2xl md:text-3xl",
-      "text-blue-500 font-semibold",
+      "text-blue font-semibold",
       "mt-6 mb-8",
     ].join(" ")}
   >
@@ -51,7 +51,7 @@ export const LandingLabAbout: FC = () => {
             <AboutTitle>
               Wir bauen Prototypen
               <br />
-              <span className='text-blue-300'>Für das Gemeinwohl</span>
+              <span className='text-purple'>Für das Gemeinwohl</span>
             </AboutTitle>
             <div className='prose max-w-none'>
               <p className='max-w-none'>
@@ -91,7 +91,7 @@ export const LandingLabAbout: FC = () => {
                 rel='noopener noreferrer'
                 className={[
                   "p-4 h-32 xl:h-48 rounded bg-white border border-gray-300",
-                  "gap-4 xl:gap-y-8 transition hover:border-blue-500 hover:bg-blue-50",
+                  "gap-4 xl:gap-y-8 transition hover:border-blue hover:bg-gray-50",
                   "flex flex-col justify-between max",
                 ].join(" ")}
               >

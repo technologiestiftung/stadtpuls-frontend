@@ -23,13 +23,13 @@ export const LandingHero: FC = () => (
       <h1
         className={[
           "text-xl sm:text-2xl md:text-3xl",
-          "text-blue-500 font-semibold",
+          "text-blue font-semibold",
           "mt-6 mb-4",
         ].join(" ")}
       >
         Deine Sensoren erklären die (Um)welt?
         <br />
-        <span className='text-blue-300'>Teile die Daten und dein Wissen!</span>
+        <span className='text-purple'>Teile die Daten und dein Wissen!</span>
       </h1>
       <p className='mb-8 max-w-prose'>
         Stadtpuls ist eine{" "}

@@ -2,7 +2,7 @@
 
 exports[`Storyshots Layout/ProjectInfo Default Project Info 1`] = `
 <section
-  className="bg-blue-25 p-6"
+  className="bg-gray-50 p-6"
 >
   <header
     className="grid gap-4 items-start"
@@ -13,12 +13,12 @@ exports[`Storyshots Layout/ProjectInfo Default Project Info 1`] = `
     }
   >
     <h2
-      className="text-blue-500 text-3xl font-bold"
+      className="text-blue text-3xl font-bold"
     >
       Temperatur Grunewaldstraße
     </h2>
     <a
-      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-white border border-blue text-blue hover:bg-blue hover:bg-opacity-10"
       href="/123abc"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -31,7 +31,7 @@ exports[`Storyshots Layout/ProjectInfo Default Project Info 1`] = `
   >
     <p>
       <mark
-        className="p-1 text-sm bg-blue-100 text-blue-500"
+        className="p-1 text-sm bg-gray-100 text-blue"
       >
         Temperatur
       </mark>
@@ -42,7 +42,7 @@ exports[`Storyshots Layout/ProjectInfo Default Project Info 1`] = `
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </div>
     <a
-      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500 mt-4 inline-block"
+      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue focus:ring-blue mt-4 inline-block"
       href="/account/projects/123abc/edit"
       onClick={[Function]}
       onMouseEnter={[Function]}

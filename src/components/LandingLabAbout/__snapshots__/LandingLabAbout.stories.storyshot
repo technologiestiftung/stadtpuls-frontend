@@ -21,12 +21,12 @@ exports[`Storyshots Promotional/LandingLabAbout Default 1`] = `
         className="sm:col-span-2 lg:col-span-1"
       >
         <h1
-          className="text-xl sm:text-2xl md:text-3xl text-blue-500 font-semibold mt-6 mb-8"
+          className="text-xl sm:text-2xl md:text-3xl text-blue font-semibold mt-6 mb-8"
         >
           Wir bauen Prototypen
           <br />
           <span
-            className="text-blue-300"
+            className="text-purple"
           >
             Für das Gemeinwohl
           </span>
@@ -74,7 +74,7 @@ exports[`Storyshots Promotional/LandingLabAbout Default 1`] = `
         className="xl:col-span-2 grid xl:grid-cols-2 gap-4 xl:gap-8"
       >
         <a
-          className="p-4 h-32 xl:h-48 rounded bg-white border border-gray-300 gap-4 xl:gap-y-8 transition hover:border-blue-500 hover:bg-blue-50 flex flex-col justify-between max"
+          className="p-4 h-32 xl:h-48 rounded bg-white border border-gray-300 gap-4 xl:gap-y-8 transition hover:border-blue hover:bg-gray-50 flex flex-col justify-between max"
           href="https://github.com/technologiestiftung/giessdenkiez-de"
           rel="noopener noreferrer"
           target="_blank"
@@ -116,7 +116,7 @@ exports[`Storyshots Promotional/LandingLabAbout Default 1`] = `
           </div>
         </a>
         <a
-          className="p-4 h-32 xl:h-48 rounded bg-white border border-gray-300 gap-4 xl:gap-y-8 transition hover:border-blue-500 hover:bg-blue-50 flex flex-col justify-between max"
+          className="p-4 h-32 xl:h-48 rounded bg-white border border-gray-300 gap-4 xl:gap-y-8 transition hover:border-blue hover:bg-gray-50 flex flex-col justify-between max"
           href="https://github.com/technologiestiftung/berlin-open-source-portal"
           rel="noopener noreferrer"
           target="_blank"

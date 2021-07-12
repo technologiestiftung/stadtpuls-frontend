@@ -16,12 +16,12 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
       src="/images/stadtpuls-logo.svg"
     />
     <h1
-      className="text-xl sm:text-2xl md:text-3xl text-blue-500 font-semibold mt-6 mb-4"
+      className="text-xl sm:text-2xl md:text-3xl text-blue font-semibold mt-6 mb-4"
     >
       Deine Sensoren erklären die (Um)welt?
       <br />
       <span
-        className="text-blue-300"
+        className="text-purple"
       >
         Teile die Daten und dein Wissen!
       </span>
@@ -37,7 +37,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
        bei der jede*r mitmachen kann. Einfach deine Sensoren registrieren und alle Messwerte werden automatisch gespeichert, visualisiert und für andere verfügbar gemacht.
     </p>
     <a
-      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60 mr-4"
+      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-blue text-white hover:opacity-60 mr-4"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -46,7 +46,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
       Mehr Erfahren
     </a>
     <a
-      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-white border border-blue text-blue hover:bg-blue hover:bg-opacity-10"
       href="/projects"
       onClick={[Function]}
       onMouseEnter={[Function]}

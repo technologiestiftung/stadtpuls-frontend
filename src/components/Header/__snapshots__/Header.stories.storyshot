@@ -29,7 +29,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
   >
     <div>
       <button
-        className="sm:hidden text-blue-500 focus-offset relative z-0"
+        className="sm:hidden text-blue focus-offset relative z-0"
         onClick={[Function]}
       >
         <svg
@@ -96,7 +96,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 text-gray-400 group-hover:text-blue-500"
+        className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 text-gray-400 group-hover:text-blue"
         focusable="false"
         viewBox="0 0 24 24"
       >
@@ -105,7 +105,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
         />
       </svg>
       <span
-        className="inline-block ml-1 transition hidden sm:inline-block text-black group-hover:text-blue-500"
+        className="inline-block ml-1 transition hidden sm:inline-block text-black group-hover:text-blue"
       >
         Anmeldung
       </span>
@@ -272,7 +272,7 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
   >
     <div>
       <button
-        className="sm:hidden text-blue-500 focus-offset relative z-0"
+        className="sm:hidden text-blue focus-offset relative z-0"
         onClick={[Function]}
       >
         <svg
@@ -339,7 +339,7 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 text-gray-400 group-hover:text-blue-500"
+        className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 text-gray-400 group-hover:text-blue"
         focusable="false"
         viewBox="0 0 24 24"
       >
@@ -348,7 +348,7 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
         />
       </svg>
       <span
-        className="inline-block ml-1 transition hidden sm:inline-block text-black group-hover:text-blue-500"
+        className="inline-block ml-1 transition hidden sm:inline-block text-black group-hover:text-blue"
       >
         Anmeldung
       </span>

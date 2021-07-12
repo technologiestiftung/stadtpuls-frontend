@@ -160,7 +160,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
                 cx={tooltipLeft}
                 cy={tooltipTop + 1}
                 r={4}
-                className='stroke-current fill-current text-blue-500'
+                className='stroke-current fill-current text-blue'
                 fillOpacity={0.2}
                 strokeOpacity={0.2}
                 strokeWidth={2}
@@ -169,7 +169,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               <circle
                 cx={tooltipLeft}
                 cy={tooltipTop}
-                className='fill-current text-blue-500'
+                className='fill-current text-blue'
                 r={4}
                 stroke='white'
                 strokeWidth={2}
@@ -200,7 +200,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               top={tooltipTop + 10}
               left={tooltipLeft}
               style={tooltipStyles}
-              className='bg-blue-500'
+              className='bg-blue'
             >
               {`${getY(tooltipData)} ${yAxisUnit ? yAxisUnit : ""}`}
             </TooltipWithBounds>

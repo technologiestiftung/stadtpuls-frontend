@@ -16,7 +16,7 @@ export const LandingStatsSection: FC<{
       <h2
         className={[
           "text-xl sm:text-2xl md:text-3xl",
-          "text-blue-500 font-semibold",
+          "text-blue font-semibold",
           "mt-8 sm:mt-6 mb-4 text-center sm:text-left",
         ].join(" ")}
         style={{
@@ -26,25 +26,25 @@ export const LandingStatsSection: FC<{
       >
         Wir stehen erst am Anfang
         <br />
-        <span className='text-blue-300'>Ein paar Beispielprojekte</span>
+        <span className='text-purple'>Ein paar Beispielprojekte</span>
       </h2>
     </div>
     <div className='flex items-center'>
       <div className='p-4 inline-flex flex-wrap sm:flex-nowrap gap-x-8 gap-y-2 bg-white shadow items-center justify-center'>
         <div className='flex gap-2 items-center'>
-          <strong className='sm:text-xl font-bold text-blue-500'>
+          <strong className='sm:text-xl font-bold text-blue'>
             {stats.usersCount}
           </strong>
           Teilnehmer
         </div>
         <div className='flex gap-2 items-center'>
-          <strong className='sm:text-xl font-bold text-blue-500'>
+          <strong className='sm:text-xl font-bold text-blue'>
             {stats.devicesCount}
           </strong>
           Sensoren
         </div>
         <div className='flex gap-2 items-center'>
-          <strong className='sm:text-xl font-bold text-blue-500'>
+          <strong className='sm:text-xl font-bold text-blue'>
             {stats.recordsCount}
           </strong>
           Messwerte

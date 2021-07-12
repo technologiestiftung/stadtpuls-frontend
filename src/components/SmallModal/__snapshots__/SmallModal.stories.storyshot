@@ -12,7 +12,7 @@ exports[`Storyshots UI Elements/SmallModal With Dangerous Content 1`] = `
 >
   <div>
     <h1
-      className="text-3xl font-semibold m-0 mb-4 text-red-500"
+      className="text-3xl font-semibold m-0 mb-4 text-error-500"
     >
       Bitte bestätige die Löschung deines Accounts
     </h1>
@@ -27,14 +27,14 @@ exports[`Storyshots UI Elements/SmallModal With Dangerous Content 1`] = `
       className="block w-full text-right"
     >
       <button
-        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-red-500 bg-white border border-red-500 text-red-500 hover:bg-red-500 hover:bg-opacity-10 mr-4"
+        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-error bg-white border border-error text-error hover:bg-error hover:bg-opacity-10 mr-4"
         type="button"
         variant="dangerous"
       >
         Löschen
       </button>
       <button
-        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60"
+        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-blue text-white hover:opacity-60"
         type="button"
         variant="primary"
       >
@@ -57,7 +57,7 @@ exports[`Storyshots UI Elements/SmallModal With Footer Content 1`] = `
 >
   <div>
     <h1
-      className="text-3xl font-semibold m-0 mb-4 text-blue-500"
+      className="text-3xl font-semibold m-0 mb-4 text-blue"
     >
       Willkommen!
     </h1>
@@ -67,7 +67,7 @@ exports[`Storyshots UI Elements/SmallModal With Footer Content 1`] = `
         className="mt-1"
       >
         <span
-          className="mr-1.5 inline-block align-middle rounded-full border border-blue-50"
+          className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
           style={
             Object {
               "height": 25,
@@ -562,7 +562,7 @@ exports[`Storyshots UI Elements/SmallModal With Footer Content 1`] = `
       className="block w-full text-right"
     >
       <button
-        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60"
+        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-blue text-white hover:opacity-60"
         type="button"
         variant="primary"
       >
@@ -585,7 +585,7 @@ exports[`Storyshots UI Elements/SmallModal Without Footer Content 1`] = `
 >
   <div>
     <h1
-      className="text-3xl font-semibold m-0 mb-4 text-blue-500"
+      className="text-3xl font-semibold m-0 mb-4 text-blue"
     >
       Gehe zu deinen E-Mails
     </h1>

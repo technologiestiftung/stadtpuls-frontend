@@ -17,7 +17,7 @@ export const UserAvatar: FC<UserAvatarPropType> = ({
   <span
     className={[
       className,
-      "inline-block align-middle rounded-full border border-blue-50",
+      "inline-block align-middle rounded-full border border-gray-50",
     ]
       .filter(Boolean)
       .join(" ")}

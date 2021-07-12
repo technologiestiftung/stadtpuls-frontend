@@ -9,7 +9,7 @@ exports[`Storyshots UserInfoCard Default User Info Card 1`] = `
       className="flex items-center"
     >
       <span
-        className="mr-4 inline-block align-middle rounded-full border border-blue-50"
+        className="mr-4 inline-block align-middle rounded-full border border-gray-50"
         style={
           Object {
             "height": 49,
@@ -490,7 +490,7 @@ exports[`Storyshots UserInfoCard Default User Info Card 1`] = `
         </svg>
       </span>
       <h1
-        className="text-blue-500 text-3xl font-semibold"
+        className="text-blue text-3xl font-semibold"
       >
         ffthornton
       </h1>

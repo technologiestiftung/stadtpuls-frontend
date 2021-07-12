@@ -13,7 +13,7 @@ exports[`Storyshots Layout/UserProjectsWrapper With Projects 1`] = `
     className="col-span-3"
   >
     <h1
-      className="text-3xl text-blue-500 font-bold mt-6"
+      className="text-3xl text-blue font-bold mt-6"
     >
       Meine Projekte
     </h1>
@@ -21,7 +21,7 @@ exports[`Storyshots Layout/UserProjectsWrapper With Projects 1`] = `
       className="mt-8"
     >
       <a
-        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60"
+        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-blue text-white hover:opacity-60"
         href="/account/projects/new"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -39,7 +39,7 @@ exports[`Storyshots Layout/UserProjectsWrapper With Projects 1`] = `
             className="my-4 border-opacity-100"
           >
             <button
-              className="py-0 pl-4 border-l-2 border-blue-400 focus-offset text-left transition focus:ring-blue-500 text-blue-500 border-opacity-100"
+              className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-blue border-opacity-100"
               id="user-project-item-1"
               onClick={[Function]}
             >
@@ -51,7 +51,7 @@ exports[`Storyshots Layout/UserProjectsWrapper With Projects 1`] = `
             className="my-4 border-opacity-0"
           >
             <button
-              className="py-0 pl-4 border-l-2 border-blue-400 focus-offset text-left transition focus:ring-blue-500 text-gray-500 border-opacity-0"
+              className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-gray-500 border-opacity-0"
               id="user-project-item-2"
               onClick={[Function]}
             >
@@ -63,7 +63,7 @@ exports[`Storyshots Layout/UserProjectsWrapper With Projects 1`] = `
             className="my-4 border-opacity-0"
           >
             <button
-              className="py-0 pl-4 border-l-2 border-blue-400 focus-offset text-left transition focus:ring-blue-500 text-gray-500 border-opacity-0"
+              className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-gray-500 border-opacity-0"
               id="user-project-item-3"
               onClick={[Function]}
             >
@@ -97,7 +97,7 @@ exports[`Storyshots Layout/UserProjectsWrapper Without Projects 1`] = `
     className="col-span-3"
   >
     <h1
-      className="text-3xl text-blue-500 font-bold mt-6"
+      className="text-3xl text-blue font-bold mt-6"
     >
       Meine Projekte
     </h1>
@@ -105,7 +105,7 @@ exports[`Storyshots Layout/UserProjectsWrapper Without Projects 1`] = `
       className="mt-8"
     >
       <a
-        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60"
+        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-blue text-white hover:opacity-60"
         href="/account/projects/new"
         onClick={[Function]}
         onMouseEnter={[Function]}

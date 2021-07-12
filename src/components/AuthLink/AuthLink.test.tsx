@@ -79,8 +79,8 @@ describe("component AuthLink while logged in", () => {
     const anmeldung = screen.getByText(/JohnDoe/gi);
 
     await waitFor(() => {
-      expect(icon?.getAttribute("class")?.includes("text-blue-500")).toBe(true);
-      expect(anmeldung?.getAttribute("class")?.includes("text-blue-500")).toBe(
+      expect(icon?.getAttribute("class")?.includes("text-blue")).toBe(true);
+      expect(anmeldung?.getAttribute("class")?.includes("text-blue")).toBe(
         true
       );
     });

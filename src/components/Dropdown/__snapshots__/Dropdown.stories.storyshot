@@ -5,11 +5,11 @@ exports[`Storyshots UI Elements/Dropdown Default 1`] = `
   className="inline-block relative"
 >
   <button
-    className="cursor-pointer rounded-none focus-offset focus:ring-blue-500"
+    className="cursor-pointer rounded-none focus-offset focus:ring-blue"
     onClick={[Function]}
   >
     <a
-      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue focus:ring-blue"
     >
       Click me
     </a>

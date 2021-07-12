@@ -3,7 +3,7 @@
 exports[`Storyshots Navigation/HeaderMenu Default 1`] = `
 <div>
   <button
-    className="sm:hidden text-blue-500 focus-offset relative z-0"
+    className="sm:hidden text-blue focus-offset relative z-0"
     onClick={[Function]}
   >
     <svg

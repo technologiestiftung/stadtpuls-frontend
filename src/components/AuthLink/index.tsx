@@ -11,7 +11,7 @@ import { UserAvatar } from "@components/UserAvatar";
 import { AccountCircle } from "@material-ui/icons";
 
 const iconProps = {
-  className: "transition mr-2 text-gray-400 group-hover:text-blue-400",
+  className: "transition mr-2 text-gray-400 group-hover:text-purple",
 };
 
 export const ColouredAuthLink: FC<{
@@ -21,16 +21,15 @@ export const ColouredAuthLink: FC<{
 }> = ({ children, href, variant, withAvatar = false }) => {
   const iconStyles = [
     "transform -translate-y-0.5 transition inline-block align-middle mr-1",
-    variant === "secondary" && "text-gray-400 group-hover:text-blue-500",
-    variant === "primary" && "text-blue-500 group-hover:opacity-60",
+    variant === "secondary" && "text-gray-400 group-hover:text-blue",
+    variant === "primary" && "text-blue group-hover:opacity-60",
   ]
     .filter(Boolean)
     .join(" ");
   const textStyles = [
     "inline-block ml-1 transition hidden sm:inline-block",
-    variant === "secondary" && "text-black group-hover:text-blue-500",
-    variant === "primary" &&
-      "text-blue-500 font-semibold group-hover:opacity-60",
+    variant === "secondary" && "text-black group-hover:text-blue",
+    variant === "primary" && "text-blue font-semibold group-hover:opacity-60",
   ]
     .filter(Boolean)
     .join(" ");

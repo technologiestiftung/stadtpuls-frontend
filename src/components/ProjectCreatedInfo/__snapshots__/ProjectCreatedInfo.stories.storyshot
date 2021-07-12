@@ -5,7 +5,7 @@ exports[`Storyshots Layout/ProjectCreatedInfo Default 1`] = `
   className="bg-white max-w-prose"
 >
   <h2
-    className="text-3xl text-blue-500 font-bold"
+    className="text-3xl text-blue font-bold"
   >
     I'm a user controlled project title
   </h2>
@@ -15,7 +15,7 @@ exports[`Storyshots Layout/ProjectCreatedInfo Default 1`] = `
     Dein Projekt wurde erfolgreich angelegt.
   </p>
   <h3
-    className="mt-12 text-2xl text-blue-500 font-bold"
+    className="mt-12 text-2xl text-blue font-bold"
   >
     Nächste Schritte
   </h3>
@@ -46,7 +46,7 @@ exports[`Storyshots Layout/ProjectCreatedInfo Default 1`] = `
     className="mt-24 flex justify-end"
   >
     <a
-      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-white border border-blue text-blue hover:bg-blue hover:bg-opacity-10"
       href="/account/projects/1"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -54,7 +54,7 @@ exports[`Storyshots Layout/ProjectCreatedInfo Default 1`] = `
       Zur Projektübersicht
     </a>
     <a
-      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60 ml-4"
+      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-blue text-white hover:opacity-60 ml-4"
       href="https://console.thethingsnetwork.org/"
       rel="noopener noreferrer"
       target="_blank"
