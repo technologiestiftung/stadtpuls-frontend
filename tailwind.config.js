@@ -23,7 +23,7 @@ module.exports = {
   theme: {
     colors,
     fontFamily: {
-      headline: [ "Space Grotesk", ...fallbackFonts ],
+      headline: [ "SpaceGrotesk", ...fallbackFonts ],
       sans: [ "Sora", ...fallbackFonts ],
     },
     minWidth: {

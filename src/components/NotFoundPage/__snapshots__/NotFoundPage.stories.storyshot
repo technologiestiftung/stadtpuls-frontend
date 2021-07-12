@@ -5,7 +5,7 @@ exports[`Storyshots Pages/NotFoundPage Default 1`] = `
   className="css-v6ij9w"
 >
   <h1
-    className="css-1rfmn20"
+    className="css-1c7mi02"
   >
     Die angeforderte Seite existiert nicht.
   </h1>
@@ -14,7 +14,7 @@ exports[`Storyshots Pages/NotFoundPage Default 1`] = `
   >
     Zurück zur 
     <a
-      className="css-uv00ue"
+      className="css-p944lt"
       href="/"
     >
       Startseite

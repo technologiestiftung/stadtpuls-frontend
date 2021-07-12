@@ -5,7 +5,7 @@ exports[`Storyshots ApiInfo Default 1`] = `
   className="css-vurnku"
 >
   <h2
-    className="css-1t5hxd4"
+    className="css-12oqlt"
   >
     API
   </h2>
@@ -20,10 +20,10 @@ exports[`Storyshots ApiInfo Default 1`] = `
           One
         </td>
         <td
-          className="css-13486uz"
+          className="css-13pma7l"
         >
           <a
-            className="css-uv00ue"
+            className="css-p944lt"
             href="/api/devices/1/records"
             rel="noopener noreferrer"
             target="_blank"
@@ -41,10 +41,10 @@ exports[`Storyshots ApiInfo Default 1`] = `
           Two
         </td>
         <td
-          className="css-13486uz"
+          className="css-13pma7l"
         >
           <a
-            className="css-uv00ue"
+            className="css-p944lt"
             href="/api/devices/2/records"
             rel="noopener noreferrer"
             target="_blank"
@@ -62,10 +62,10 @@ exports[`Storyshots ApiInfo Default 1`] = `
           Three
         </td>
         <td
-          className="css-13486uz"
+          className="css-13pma7l"
         >
           <a
-            className="css-uv00ue"
+            className="css-p944lt"
             href="/api/devices/3/records"
             rel="noopener noreferrer"
             target="_blank"
@@ -83,10 +83,10 @@ exports[`Storyshots ApiInfo Default 1`] = `
           Four
         </td>
         <td
-          className="css-13486uz"
+          className="css-13pma7l"
         >
           <a
-            className="css-uv00ue"
+            className="css-p944lt"
             href="/api/devices/4/records"
             rel="noopener noreferrer"
             target="_blank"

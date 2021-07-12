@@ -15,12 +15,12 @@ exports[`Storyshots Charts/AreaPath Default 1`] = `
     >
       <stop
         offset="0%"
-        stopColor="#1E3791"
+        stopColor="#0000C2"
         stopOpacity="30%"
       />
       <stop
         offset="100%"
-        stopColor="#1E3791"
+        stopColor="#0000C2"
         stopOpacity="5%"
       />
     </linearGradient>
@@ -30,7 +30,7 @@ exports[`Storyshots Charts/AreaPath Default 1`] = `
     d="M400,100L200,0L0,50L0,200L200,200L400,200Z"
     fill="url(#area-gradient)"
     shapeRendering="geometricPrecision"
-    stroke="#1E3791"
+    stroke="#0000C2"
     strokeWidth={2}
   />
 </svg>

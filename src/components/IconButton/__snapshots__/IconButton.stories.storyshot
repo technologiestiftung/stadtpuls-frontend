@@ -2,10 +2,10 @@
 
 exports[`Storyshots UI Elements/IconButton Default 1`] = `
 <button
-  className="css-17v1r2j-IconButton"
+  className="css-jswibr-IconButton"
 >
   <div
-    className="css-hz1ji0-IconButton"
+    className="css-ft8o68-IconButton"
   >
     <img
       alt="Download-Icon"

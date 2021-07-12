@@ -584,12 +584,12 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                   >
                     <stop
                       offset="0%"
-                      stopColor="#1E3791"
+                      stopColor="#0000C2"
                       stopOpacity="30%"
                     />
                     <stop
                       offset="100%"
-                      stopColor="#1E3791"
+                      stopColor="#0000C2"
                       stopOpacity="5%"
                     />
                   </linearGradient>
@@ -599,7 +599,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                   d="M4,61.29292929292929L3.2,0L2.4,19.87878787878788L1.6,72.06060606060606L0.8,82L0,54.66666666666667L0,82L0.8,82L1.6,82L2.4,82L3.2,82L4,82Z"
                   fill="url(#area-gradient)"
                   shapeRendering="geometricPrecision"
-                  stroke="#1E3791"
+                  stroke="#0000C2"
                   strokeWidth={2}
                 />
               </svg>
@@ -1173,12 +1173,12 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                   >
                     <stop
                       offset="0%"
-                      stopColor="#1E3791"
+                      stopColor="#0000C2"
                       stopOpacity="30%"
                     />
                     <stop
                       offset="100%"
-                      stopColor="#1E3791"
+                      stopColor="#0000C2"
                       stopOpacity="5%"
                     />
                   </linearGradient>
@@ -1188,7 +1188,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                   d="M4,61.29292929292929L3.2,0L2.4,19.87878787878788L1.6,72.06060606060606L0.8,82L0,54.66666666666667L0,82L0.8,82L1.6,82L2.4,82L3.2,82L4,82Z"
                   fill="url(#area-gradient)"
                   shapeRendering="geometricPrecision"
-                  stroke="#1E3791"
+                  stroke="#0000C2"
                   strokeWidth={2}
                 />
               </svg>
@@ -1762,12 +1762,12 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                   >
                     <stop
                       offset="0%"
-                      stopColor="#1E3791"
+                      stopColor="#0000C2"
                       stopOpacity="30%"
                     />
                     <stop
                       offset="100%"
-                      stopColor="#1E3791"
+                      stopColor="#0000C2"
                       stopOpacity="5%"
                     />
                   </linearGradient>
@@ -1777,7 +1777,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                   d="M4,61.29292929292929L3.2,0L2.4,19.87878787878788L1.6,72.06060606060606L0.8,82L0,54.66666666666667L0,82L0.8,82L1.6,82L2.4,82L3.2,82L4,82Z"
                   fill="url(#area-gradient)"
                   shapeRendering="geometricPrecision"
-                  stroke="#1E3791"
+                  stroke="#0000C2"
                   strokeWidth={2}
                 />
               </svg>
