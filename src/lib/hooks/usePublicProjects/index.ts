@@ -82,8 +82,8 @@ export const mapPublicProject = (project: ProjectsType): PublicProject => {
   return {
     id,
     name,
-    description,
-    location,
+    description: description || "",
+    location: location || "",
     devicesNumber: devices?.length || 0,
     authorName: userProfile?.name || null,
     records: parseDeviceRecords(devices),

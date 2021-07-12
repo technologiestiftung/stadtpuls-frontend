@@ -35,6 +35,7 @@ const LandingPage: FC<{
   const [activeSlideIndex, setActiveSlideIndex] = useState<number>(
     initialSlideIndex
   );
+
   return (
     <>
       <div className='absolute z-0 top-0 left-0 right-0'>
