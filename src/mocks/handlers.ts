@@ -1,14 +1,5 @@
 import { rest } from "msw";
 import {
-  projectsResponse,
-  project1Devices,
-  project2Devices,
-  device1Records,
-  device2Records,
-  device3Records,
-  device4Records,
-} from "./data";
-import {
   publicCategories,
   publicProjectsData,
   userData,
@@ -18,8 +9,7 @@ import {
   refreshToken,
   authToken,
 } from "./supabaseData";
-import { createV1ApiUrl } from "../lib/requests/createV1ApiUrl";
-import { createV2ApiUrl } from "../lib/requests/createV2ApiUrl";
+import { createApiUrl } from "../lib/requests/createApiUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
 import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
 import {
@@ -29,14 +19,6 @@ import {
 } from "@common/types/supabase";
 import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
-
-const { data: projectsData } = projectsResponse;
-const { data: project1DevicesData } = project1Devices;
-const { data: project2DevicesData } = project2Devices;
-const { data: device1RecordsData } = device1Records;
-const { data: device2RecordsData } = device2Records;
-const { data: device3RecordsData } = device3Records;
-const { data: device4RecordsData } = device4Records;
 
 const githubHandlers = [
   rest.get(`https://api.github.com/users/*`, (_req, res, ctx) => {
@@ -80,10 +62,10 @@ const tokenApiHandlers = [
 ];
 
 const supabaseHandlers = [
-  rest.get(createV2ApiUrl("/categories"), (_req, res, ctx) => {
+  rest.get(createApiUrl("/categories"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"), ctx.json(publicCategories));
   }),
-  rest.get(createV2ApiUrl("/projects"), (req, res, ctx) => {
+  rest.get(createApiUrl("/projects"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const select = query.get("select");
@@ -127,7 +109,7 @@ const supabaseHandlers = [
       );
     else return res(ctx.status(404, "Not found"));
   }),
-  rest.get(createV2ApiUrl("/userprofiles"), (req, res, ctx) => {
+  rest.get(createApiUrl("/userprofiles"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const select = query.get("select");
@@ -137,7 +119,7 @@ const supabaseHandlers = [
     else return res(ctx.status(404, "Not found"));
   }),
   //Devices add update delete
-  rest.post<DevicesType[]>(createV2ApiUrl("/devices"), (req, res, ctx) => {
+  rest.post<DevicesType[]>(createApiUrl("/devices"), (req, res, ctx) => {
     const payload = req.body[0];
 
     if (payload.projectId >= 1 && 4 >= payload.projectId)
@@ -157,7 +139,7 @@ const supabaseHandlers = [
         })
       );
   }),
-  rest.patch<DevicesType>(createV2ApiUrl("/devices"), (req, res, ctx) => {
+  rest.patch<DevicesType>(createApiUrl("/devices"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -176,7 +158,7 @@ const supabaseHandlers = [
       );
     else return res(ctx.status(404, "Not found"));
   }),
-  rest.delete(createV2ApiUrl("/devices"), (req, res, ctx) => {
+  rest.delete(createApiUrl("/devices"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -187,7 +169,7 @@ const supabaseHandlers = [
     else return res(ctx.status(404, "Not found"));
   }),
   //Projects add update delete
-  rest.post<ProjectsType[]>(createV2ApiUrl("/projects"), (req, res, ctx) => {
+  rest.post<ProjectsType[]>(createApiUrl("/projects"), (req, res, ctx) => {
     const payload = req.body[0];
     const createdAt = new Date().toISOString();
     return res(
@@ -195,7 +177,7 @@ const supabaseHandlers = [
       ctx.json([{ ...payload, createdAt, id: 5 }])
     );
   }),
-  rest.patch<ProjectsType>(createV2ApiUrl("/projects"), (req, res, ctx) => {
+  rest.patch<ProjectsType>(createApiUrl("/projects"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -214,7 +196,7 @@ const supabaseHandlers = [
       );
     else return res(ctx.status(404, "Not found"));
   }),
-  rest.delete(createV2ApiUrl("/projects"), (req, res, ctx) => {
+  rest.delete(createApiUrl("/projects"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -232,11 +214,11 @@ const supabaseHandlers = [
     }
   ),
   //User
-  rest.post(createV2ApiUrl("/rpc/delete_user"), (_req, res, ctx) => {
+  rest.post(createApiUrl("/rpc/delete_user"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"));
   }),
   rest.patch<UserProfilesType>(
-    createV2ApiUrl("/userprofiles"),
+    createApiUrl("/userprofiles"),
     (req, res, ctx) => {
       const query = req.url.searchParams;
       const payload = req.body;
@@ -259,11 +241,11 @@ const supabaseHandlers = [
     }
   ),
   //other
-  rest.delete(createV2ApiUrl("/authtokens"), (_req, res, ctx) => {
+  rest.delete(createApiUrl("/authtokens"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"), ctx.json([]));
   }),
   // Head calls
-  rest.head(createV2ApiUrl("/userprofiles"), (req, res, ctx) => {
+  rest.head(createApiUrl("/userprofiles"), (req, res, ctx) => {
     if (req.headers.get("prefer") === "count=exact") {
       return res(
         ctx.set("content-range", "0-26/27"),
@@ -272,7 +254,7 @@ const supabaseHandlers = [
     }
     return res(ctx.status(404, "Not found"));
   }),
-  rest.head(createV2ApiUrl("/devices"), (req, res, ctx) => {
+  rest.head(createApiUrl("/devices"), (req, res, ctx) => {
     if (req.headers.get("prefer") === "count=exact") {
       return res(
         ctx.set("content-range", "0-28/29"),
@@ -281,7 +263,7 @@ const supabaseHandlers = [
     }
     return res(ctx.status(404, "Not found"));
   }),
-  rest.head(createV2ApiUrl("/records"), (req, res, ctx) => {
+  rest.head(createApiUrl("/records"), (req, res, ctx) => {
     if (req.headers.get("prefer") === "count=exact") {
       return res(
         ctx.set("content-range", "0-999/10030"),
@@ -289,51 +271,6 @@ const supabaseHandlers = [
       );
     }
     return res(ctx.status(404, "Not found"));
-  }),
-];
-
-const apiHandlers = [
-  rest.get(createV1ApiUrl(`/projects`), (_req, res, ctx) => {
-    return res(
-      ctx.status(201, "Mocked status"),
-      ctx.json({ data: projectsData, meta: "mocked" })
-    );
-  }),
-  rest.get(createV1ApiUrl(`/projects/1/devices`), (_req, res, ctx) => {
-    return res(
-      ctx.status(201, "Mocked status"),
-      ctx.json({ data: project1DevicesData, meta: "mocked" })
-    );
-  }),
-  rest.get(createV1ApiUrl(`/projects/2/devices`), (_req, res, ctx) => {
-    return res(
-      ctx.status(201, "Mocked status"),
-      ctx.json({ data: project2DevicesData, meta: "mocked" })
-    );
-  }),
-  rest.get(createV1ApiUrl(`/devices/1/records`), (_req, res, ctx) => {
-    return res(
-      ctx.status(201, "Mocked status"),
-      ctx.json({ data: device1RecordsData, meta: "mocked" })
-    );
-  }),
-  rest.get(createV1ApiUrl(`/devices/2/records`), (_req, res, ctx) => {
-    return res(
-      ctx.status(201, "Mocked status"),
-      ctx.json({ data: device2RecordsData, meta: "mocked" })
-    );
-  }),
-  rest.get(createV1ApiUrl(`/devices/3/records`), (_req, res, ctx) => {
-    return res(
-      ctx.status(201, "Mocked status"),
-      ctx.json({ data: device3RecordsData, meta: "mocked" })
-    );
-  }),
-  rest.get(createV1ApiUrl(`/devices/4/records`), (_req, res, ctx) => {
-    return res(
-      ctx.status(201, "Mocked status"),
-      ctx.json({ data: device4RecordsData, meta: "mocked" })
-    );
   }),
 ];
 
@@ -368,7 +305,6 @@ const authHandlers = [
 export const handlers = [
   ...githubHandlers,
   ...mapBoxGeocodingHandlers,
-  ...apiHandlers,
   ...supabaseHandlers,
   ...authHandlers,
   ...tokenApiHandlers,

@@ -3,7 +3,6 @@ import { ThemeProvider } from "theme-ui";
 
 import theme from "../../style/theme";
 import { ProjectSummary } from ".";
-import { projectsResponse } from "@mocks/data";
 
 export default {
   title: "ProjectSummary",
@@ -33,8 +32,3 @@ const Template: Story<{
 );
 
 export const Default = Template.bind({});
-Default.args = {
-  title: projectsResponse.data.projects[0].title || "",
-  description: projectsResponse.data.projects[0].description || "",
-  noOfDevices: 5,
-};

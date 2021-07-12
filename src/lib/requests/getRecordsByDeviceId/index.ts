@@ -1,19 +1,15 @@
-import { RecordType } from "@common/interfaces";
-import { FetchResponse } from "@common/types";
-import { createV1ApiUrl } from "../createV1ApiUrl";
+import { supabase } from "@auth/supabase";
+import { RecordsType } from "@common/types/supabase";
 
-type RecordsResponse = FetchResponse<"records", RecordType[]>;
-export async function getRecordsByDeviceId(
-  id: string | number
-): Promise<RecordType[]> {
-  const url = createV1ApiUrl(`/devices/${id}/records`);
-  const response = await fetch(url);
-  if (!response.ok) {
-    console.error(await response.text());
-    throw new Error("Failed to fetch records");
-  }
-  const {
-    data: { records },
-  } = (await response.json()) as RecordsResponse;
+export const getRecordsByDeviceId = async (
+  deviceId: number
+): Promise<RecordsType[]> => {
+  const { data: records, error } = await supabase
+    .from<RecordsType>("records")
+    .select("*")
+    .eq("deviceId", deviceId);
+
+  if (error) throw error;
+  if (!records) throw new Error(`No records found for device ID ${deviceId}`);
   return records;
-}
+};
