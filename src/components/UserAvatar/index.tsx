@@ -1,5 +1,6 @@
 import { FC } from "react";
 import BoringAvatar from "boring-avatars";
+import colors from "../../style/colors";
 
 interface UserAvatarPropType {
   size?: number;
@@ -7,7 +8,20 @@ interface UserAvatarPropType {
   username: string;
 }
 
-const avatarColors = ["#E40134", "#213A8F", "#3192D0", "#63B9E9", "#FFFFFF"];
+const avatarColors = [
+  colors.white,
+  colors.blue,
+  colors.blue,
+  colors.blue,
+  colors.black,
+  colors.green,
+  colors.green,
+  colors.green,
+  colors.purple,
+  colors.purple,
+  colors.purple,
+  ...Object.values(colors.gray),
+];
 
 export const UserAvatar: FC<UserAvatarPropType> = ({
   size = 24,
