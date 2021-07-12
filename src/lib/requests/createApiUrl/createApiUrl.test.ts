@@ -1,11 +1,11 @@
-import { createV2ApiUrl } from ".";
-describe("utility function createV2ApiUrl", () => {
+import { createApiUrl } from ".";
+describe("utility function createApiUrl", () => {
   it("should include the provided route", () => {
-    const url = createV2ApiUrl("/projects");
+    const url = createApiUrl("/projects");
     expect(url.includes("/projects")).toBe(true);
   });
   it("should not include undefined", () => {
-    const url = createV2ApiUrl("/projects");
+    const url = createApiUrl("/projects");
     expect(url.includes("undefined")).toBe(false);
   });
 });

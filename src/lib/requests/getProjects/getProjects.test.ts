@@ -2,12 +2,12 @@ import { fakeProjects } from "@mocks/supabaseData/publicProjects";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { getProjects } from ".";
-import { createV2ApiUrl } from "../createV2ApiUrl";
+import { createApiUrl } from "../createApiUrl";
 
 describe("utility function getProjects", () => {
   it("should return an array of projects", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createV2ApiUrl(`/projects`), (_req, res, ctx) => {
+      rest.get(createApiUrl(`/projects`), (_req, res, ctx) => {
         return res(ctx.status(200, "Mocked status"), ctx.json(fakeProjects));
       })
     );
@@ -23,7 +23,7 @@ describe("utility function getProjects", () => {
 
   it("should send error message when erroring", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createV2ApiUrl(`/projects`), (_req, res, ctx) => {
+      rest.get(createApiUrl(`/projects`), (_req, res, ctx) => {
         return res(ctx.status(404), ctx.json({ message: "Error message" }));
       })
     );

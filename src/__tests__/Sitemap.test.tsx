@@ -2,12 +2,12 @@ import { fakeProjects } from "@mocks/supabaseData/publicProjects";
 import Sitemap from "../../pages/sitemap.xml";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import { createV2ApiUrl } from "@lib/requests/createV2ApiUrl";
+import { createApiUrl } from "@lib/requests/createApiUrl";
 
 describe("sitemap.xml", () => {
   it("should call the response handlers with the right params", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createV2ApiUrl(`/projects`), (_req, res, ctx) => {
+      rest.get(createApiUrl(`/projects`), (_req, res, ctx) => {
         return res(ctx.status(200, "Mocked status"), ctx.json(fakeProjects));
       })
     );

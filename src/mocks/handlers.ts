@@ -9,7 +9,7 @@ import {
   refreshToken,
   authToken,
 } from "./supabaseData";
-import { createV2ApiUrl } from "../lib/requests/createV2ApiUrl";
+import { createApiUrl } from "../lib/requests/createApiUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
 import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
 import {
@@ -62,10 +62,10 @@ const tokenApiHandlers = [
 ];
 
 const supabaseHandlers = [
-  rest.get(createV2ApiUrl("/categories"), (_req, res, ctx) => {
+  rest.get(createApiUrl("/categories"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"), ctx.json(publicCategories));
   }),
-  rest.get(createV2ApiUrl("/projects"), (req, res, ctx) => {
+  rest.get(createApiUrl("/projects"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const select = query.get("select");
@@ -109,7 +109,7 @@ const supabaseHandlers = [
       );
     else return res(ctx.status(404, "Not found"));
   }),
-  rest.get(createV2ApiUrl("/userprofiles"), (req, res, ctx) => {
+  rest.get(createApiUrl("/userprofiles"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const select = query.get("select");
@@ -119,7 +119,7 @@ const supabaseHandlers = [
     else return res(ctx.status(404, "Not found"));
   }),
   //Devices add update delete
-  rest.post<DevicesType[]>(createV2ApiUrl("/devices"), (req, res, ctx) => {
+  rest.post<DevicesType[]>(createApiUrl("/devices"), (req, res, ctx) => {
     const payload = req.body[0];
 
     if (payload.projectId >= 1 && 4 >= payload.projectId)
@@ -139,7 +139,7 @@ const supabaseHandlers = [
         })
       );
   }),
-  rest.patch<DevicesType>(createV2ApiUrl("/devices"), (req, res, ctx) => {
+  rest.patch<DevicesType>(createApiUrl("/devices"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -158,7 +158,7 @@ const supabaseHandlers = [
       );
     else return res(ctx.status(404, "Not found"));
   }),
-  rest.delete(createV2ApiUrl("/devices"), (req, res, ctx) => {
+  rest.delete(createApiUrl("/devices"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -169,7 +169,7 @@ const supabaseHandlers = [
     else return res(ctx.status(404, "Not found"));
   }),
   //Projects add update delete
-  rest.post<ProjectsType[]>(createV2ApiUrl("/projects"), (req, res, ctx) => {
+  rest.post<ProjectsType[]>(createApiUrl("/projects"), (req, res, ctx) => {
     const payload = req.body[0];
     const createdAt = new Date().toISOString();
     return res(
@@ -177,7 +177,7 @@ const supabaseHandlers = [
       ctx.json([{ ...payload, createdAt, id: 5 }])
     );
   }),
-  rest.patch<ProjectsType>(createV2ApiUrl("/projects"), (req, res, ctx) => {
+  rest.patch<ProjectsType>(createApiUrl("/projects"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -196,7 +196,7 @@ const supabaseHandlers = [
       );
     else return res(ctx.status(404, "Not found"));
   }),
-  rest.delete(createV2ApiUrl("/projects"), (req, res, ctx) => {
+  rest.delete(createApiUrl("/projects"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -214,11 +214,11 @@ const supabaseHandlers = [
     }
   ),
   //User
-  rest.post(createV2ApiUrl("/rpc/delete_user"), (_req, res, ctx) => {
+  rest.post(createApiUrl("/rpc/delete_user"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"));
   }),
   rest.patch<UserProfilesType>(
-    createV2ApiUrl("/userprofiles"),
+    createApiUrl("/userprofiles"),
     (req, res, ctx) => {
       const query = req.url.searchParams;
       const payload = req.body;
@@ -241,11 +241,11 @@ const supabaseHandlers = [
     }
   ),
   //other
-  rest.delete(createV2ApiUrl("/authtokens"), (_req, res, ctx) => {
+  rest.delete(createApiUrl("/authtokens"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"), ctx.json([]));
   }),
   // Head calls
-  rest.head(createV2ApiUrl("/userprofiles"), (req, res, ctx) => {
+  rest.head(createApiUrl("/userprofiles"), (req, res, ctx) => {
     if (req.headers.get("prefer") === "count=exact") {
       return res(
         ctx.set("content-range", "0-26/27"),
@@ -254,7 +254,7 @@ const supabaseHandlers = [
     }
     return res(ctx.status(404, "Not found"));
   }),
-  rest.head(createV2ApiUrl("/devices"), (req, res, ctx) => {
+  rest.head(createApiUrl("/devices"), (req, res, ctx) => {
     if (req.headers.get("prefer") === "count=exact") {
       return res(
         ctx.set("content-range", "0-28/29"),
@@ -263,7 +263,7 @@ const supabaseHandlers = [
     }
     return res(ctx.status(404, "Not found"));
   }),
-  rest.head(createV2ApiUrl("/records"), (req, res, ctx) => {
+  rest.head(createApiUrl("/records"), (req, res, ctx) => {
     if (req.headers.get("prefer") === "count=exact") {
       return res(
         ctx.set("content-range", "0-999/10030"),
