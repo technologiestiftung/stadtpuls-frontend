@@ -21,7 +21,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
           className="swiper-slide undefined"
         >
           <div
-            className="bg-white shadow hover:bg-gray-50 border border-gray-200 hover:border-purple hover:shadow-purple cursor-pointer transition-all relative overflow-hidden group"
+            className="bg-white shadow hover:bg-gray-50 border border-gray-200 group hover:animate-borderpulse cursor-pointer transition-all relative overflow-hidden group"
             style={
               Object {
                 "minHeight": 340,
@@ -44,7 +44,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                   className="sm:col-span-4"
                 >
                   <h3
-                    className="text-black font-headline text-xl sm:text-2xl md:text-3xl font-bold flex justify-between items-start"
+                    className="font-headline text-xl sm:text-2xl md:text-3xl font-bold flex justify-between items-start"
                   >
                     <span
                       className="leading-8"
@@ -52,10 +52,10 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                       Temperatur Grundewaldstraße
                     </span>
                     <div
-                      className="sm:absolute z-10 text-base font-normal ml-4 bg-white bg-opacity-50 right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7"
+                      className="sm:absolute z-10 text-base font-normal ml-4 bg-white bg-opacity-50 right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7 text-purple bg-purple group-hover:animate-bgpulse"
                     >
                       <span
-                        className="bg-purple bg-opacity-10 px-3 py-1 text-purple inline-block"
+                        className="text-purple group-hover:animate-textpulse bg-white bg-opacity-80 px-3 py-1 inline-block"
                       >
                         Temperatur
                       </span>
@@ -602,7 +602,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                 </div>
               </div>
               <svg
-                className="overflow-visible absolute -bottom-1 -left-1 -right-1"
+                className="overflow-visible absolute -bottom-1 -left-1 -right-1 text-purple group-hover:animate-textpulse"
                 height={82}
                 viewBox="0 0 4 82"
                 width={4}
@@ -611,10 +611,10 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                 <path
                   className="visx-area-closed"
                   d="M4,61.29292929292929L3.2,0L2.4,19.87878787878788L1.6,72.06060606060606L0.8,82L0,54.66666666666667L0,82L0.8,82L1.6,82L2.4,82L3.2,82L4,82Z"
-                  fill="#46ECA1"
+                  fill="currentColor"
                   fillOpacity="10%"
                   shapeRendering="geometricPrecision"
-                  stroke="#0000C2"
+                  stroke="currentColor"
                   strokeWidth={2}
                 />
               </svg>
@@ -625,7 +625,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
           className="swiper-slide undefined"
         >
           <div
-            className="bg-white shadow hover:bg-gray-50 border border-gray-200 hover:border-purple hover:shadow-purple cursor-pointer transition-all relative overflow-hidden group"
+            className="bg-white shadow hover:bg-gray-50 border border-gray-200 group hover:animate-borderpulse cursor-pointer transition-all relative overflow-hidden group"
             style={
               Object {
                 "minHeight": 340,
@@ -648,7 +648,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                   className="sm:col-span-4"
                 >
                   <h3
-                    className="text-black font-headline text-xl sm:text-2xl md:text-3xl font-bold flex justify-between items-start"
+                    className="font-headline text-xl sm:text-2xl md:text-3xl font-bold flex justify-between items-start"
                   >
                     <span
                       className="leading-8"
@@ -656,10 +656,10 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                       CO2 Elbphilharmonie Hamburg.
                     </span>
                     <div
-                      className="sm:absolute z-10 text-base font-normal ml-4 bg-white bg-opacity-50 right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7"
+                      className="sm:absolute z-10 text-base font-normal ml-4 bg-white bg-opacity-50 right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7 text-purple bg-purple group-hover:animate-bgpulse"
                     >
                       <span
-                        className="bg-purple bg-opacity-10 px-3 py-1 text-purple inline-block"
+                        className="text-purple group-hover:animate-textpulse bg-white bg-opacity-80 px-3 py-1 inline-block"
                       >
                         CO2
                       </span>
@@ -1206,7 +1206,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                 </div>
               </div>
               <svg
-                className="overflow-visible absolute -bottom-1 -left-1 -right-1"
+                className="overflow-visible absolute -bottom-1 -left-1 -right-1 text-purple group-hover:animate-textpulse"
                 height={82}
                 viewBox="0 0 4 82"
                 width={4}
@@ -1215,10 +1215,10 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                 <path
                   className="visx-area-closed"
                   d="M4,61.29292929292929L3.2,0L2.4,19.87878787878788L1.6,72.06060606060606L0.8,82L0,54.66666666666667L0,82L0.8,82L1.6,82L2.4,82L3.2,82L4,82Z"
-                  fill="#46ECA1"
+                  fill="currentColor"
                   fillOpacity="10%"
                   shapeRendering="geometricPrecision"
-                  stroke="#0000C2"
+                  stroke="currentColor"
                   strokeWidth={2}
                 />
               </svg>
@@ -1229,7 +1229,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
           className="swiper-slide undefined"
         >
           <div
-            className="bg-white shadow hover:bg-gray-50 border border-gray-200 hover:border-purple hover:shadow-purple cursor-pointer transition-all relative overflow-hidden group"
+            className="bg-white shadow hover:bg-gray-50 border border-gray-200 group hover:animate-borderpulse cursor-pointer transition-all relative overflow-hidden group"
             style={
               Object {
                 "minHeight": 340,
@@ -1252,7 +1252,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                   className="sm:col-span-4"
                 >
                   <h3
-                    className="text-black font-headline text-xl sm:text-2xl md:text-3xl font-bold flex justify-between items-start"
+                    className="font-headline text-xl sm:text-2xl md:text-3xl font-bold flex justify-between items-start"
                   >
                     <span
                       className="leading-8"
@@ -1260,10 +1260,10 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                       PAXCounter Schokoladenmuseum Köln
                     </span>
                     <div
-                      className="sm:absolute z-10 text-base font-normal ml-4 bg-white bg-opacity-50 right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7"
+                      className="sm:absolute z-10 text-base font-normal ml-4 bg-white bg-opacity-50 right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7 text-purple bg-purple group-hover:animate-bgpulse"
                     >
                       <span
-                        className="bg-purple bg-opacity-10 px-3 py-1 text-purple inline-block"
+                        className="text-purple group-hover:animate-textpulse bg-white bg-opacity-80 px-3 py-1 inline-block"
                       >
                         PAXCounter
                       </span>
@@ -1810,7 +1810,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                 </div>
               </div>
               <svg
-                className="overflow-visible absolute -bottom-1 -left-1 -right-1"
+                className="overflow-visible absolute -bottom-1 -left-1 -right-1 text-purple group-hover:animate-textpulse"
                 height={82}
                 viewBox="0 0 4 82"
                 width={4}
@@ -1819,10 +1819,10 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                 <path
                   className="visx-area-closed"
                   d="M4,61.29292929292929L3.2,0L2.4,19.87878787878788L1.6,72.06060606060606L0.8,82L0,54.66666666666667L0,82L0.8,82L1.6,82L2.4,82L3.2,82L4,82Z"
-                  fill="#46ECA1"
+                  fill="currentColor"
                   fillOpacity="10%"
                   shapeRendering="geometricPrecision"
-                  stroke="#0000C2"
+                  stroke="currentColor"
                   strokeWidth={2}
                 />
               </svg>

@@ -4,7 +4,6 @@ import { curveLinear } from "@visx/curve";
 import { AreaClosed } from "@visx/shape";
 import { scaleLinear, scaleUtc } from "@visx/scale";
 import { DateValueType, LineGraphType } from "../../common/interfaces";
-import colors from "../../style/colors";
 
 const getX = (d: DateValueType): Date => new Date(d.date);
 const getY = (d: DateValueType): number => d.value;
@@ -44,8 +43,8 @@ export const AreaPath: FC<LineGraphType> = ({ width, height, data }) => {
       y={d => yScale(getY(d))}
       yScale={yScale}
       strokeWidth={2}
-      stroke={colors.blue}
-      fill={colors.green}
+      stroke='currentColor'
+      fill='currentColor'
       fillOpacity='10%'
       shapeRendering='geometricPrecision'
     />

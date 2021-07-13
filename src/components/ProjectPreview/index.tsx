@@ -62,8 +62,8 @@ export const ProjectPreview: FC<ProjectPreviewPropType> = ({
       ref={parentRef}
       className={[
         "bg-white shadow hover:bg-gray-50",
-        "border border-gray-200",
-        "hover:border-purple hover:shadow-purple",
+        "border border-gray-200 group",
+        "hover:animate-borderpulse",
         "cursor-pointer transition-all",
         "relative overflow-hidden group",
       ].join(" ")}
@@ -85,11 +85,19 @@ export const ProjectPreview: FC<ProjectPreviewPropType> = ({
               }}
             >
               {withMapBackground && (
-                <ProjectPreviewMap
-                  viewport={locationViewport}
-                  mapWidth={Math.round(svgWrapperWidth * 1.5)}
-                  mapHeight={svgWrapperHeight}
-                />
+                <>
+                  <ProjectPreviewMap
+                    viewport={locationViewport}
+                    mapWidth={Math.round(svgWrapperWidth * 1.5)}
+                    mapHeight={svgWrapperHeight}
+                  />
+                  <span
+                    className={[
+                      "absolute inset-0 bg-purple mix-blend-hue",
+                      "pointer-events-none group-hover:animate-bgpulse",
+                    ].join(" ")}
+                  />
+                </>
               )}
             </div>
           )}
@@ -109,7 +117,7 @@ export const ProjectPreview: FC<ProjectPreviewPropType> = ({
             <div className='sm:col-span-4'>
               <h3
                 className={[
-                  "text-black font-headline text-xl sm:text-2xl md:text-3xl",
+                  "font-headline text-xl sm:text-2xl md:text-3xl",
                   "font-bold flex justify-between items-start",
                 ].join(" ")}
               >
@@ -120,10 +128,18 @@ export const ProjectPreview: FC<ProjectPreviewPropType> = ({
                       "sm:absolute z-10",
                       "text-base font-normal",
                       "ml-4 bg-white bg-opacity-50",
-                      "right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7",
+                      "right-0 bottom-0 sm:bottom-auto sm:right-5",
+                      "sm:top-4 md:right-8 md:top-7",
+                      "text-purple",
+                      "bg-purple group-hover:animate-bgpulse",
                     ].join(" ")}
                   >
-                    <span className='bg-purple bg-opacity-10 px-3 py-1 text-purple inline-block'>
+                    <span
+                      className={[
+                        "text-purple group-hover:animate-textpulse",
+                        "bg-white bg-opacity-80 px-3 py-1 inline-block",
+                      ].join(" ")}
+                    >
                       {category}
                     </span>
                   </div>
@@ -164,7 +180,10 @@ export const ProjectPreview: FC<ProjectPreviewPropType> = ({
             xmlns='http://www.w3.org/2000/svg'
             width={svgWrapperWidth + 4}
             height={82}
-            className='overflow-visible absolute -bottom-1 -left-1 -right-1'
+            className={[
+              "overflow-visible absolute -bottom-1 -left-1 -right-1",
+              "text-purple group-hover:animate-textpulse",
+            ].join(" ")}
           >
             <AreaPath
               width={svgWrapperWidth + 4}
