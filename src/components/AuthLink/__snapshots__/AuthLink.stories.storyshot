@@ -9,7 +9,7 @@ exports[`Storyshots UI Elements/AuthLink Logged In 1`] = `
 >
   <svg
     aria-hidden={true}
-    className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 text-blue group-hover:opacity-60"
+    className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 group-hover:opacity-60"
     focusable="false"
     viewBox="0 0 24 24"
   >
@@ -18,7 +18,7 @@ exports[`Storyshots UI Elements/AuthLink Logged In 1`] = `
     />
   </svg>
   <span
-    className="inline-block ml-1 transition hidden sm:inline-block text-blue font-semibold group-hover:opacity-60"
+    className="inline-block ml-1 transition hidden sm:inline-block font-semibold group-hover:opacity-60"
   >
     contact@example.com
   </span>
@@ -34,7 +34,7 @@ exports[`Storyshots UI Elements/AuthLink Logged Out 1`] = `
 >
   <svg
     aria-hidden={true}
-    className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 text-gray-400 group-hover:text-blue"
+    className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 group-hover:text-green"
     focusable="false"
     viewBox="0 0 24 24"
   >
@@ -43,7 +43,7 @@ exports[`Storyshots UI Elements/AuthLink Logged Out 1`] = `
     />
   </svg>
   <span
-    className="inline-block ml-1 transition hidden sm:inline-block text-black group-hover:text-blue"
+    className="inline-block ml-1 transition hidden sm:inline-block group-hover:text-green"
   >
     Anmeldung
   </span>

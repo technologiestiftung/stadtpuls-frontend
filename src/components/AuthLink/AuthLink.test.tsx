@@ -19,12 +19,14 @@ describe("component AuthLink while logged out", () => {
     const icon = document.querySelector("svg");
     expect(icon).toBeInTheDocument();
   });
-  it("should have gray styles by default", () => {
+  it("should have group-hover styles", () => {
     render(<AuthLink />);
     const icon = document.querySelector("svg");
     const anmeldung = screen.getByText(/Anmeldung/gi);
-    expect(icon?.getAttribute("class")?.includes("text-gray-400")).toBe(true);
-    expect(anmeldung?.getAttribute("class")?.includes("text-black")).toBe(true);
+    expect(icon?.getAttribute("class")?.includes("group-hover")).toBe(true);
+    expect(anmeldung?.getAttribute("class")?.includes("group-hover")).toBe(
+      true
+    );
   });
 });
 
@@ -79,8 +81,8 @@ describe("component AuthLink while logged in", () => {
     const anmeldung = screen.getByText(/JohnDoe/gi);
 
     await waitFor(() => {
-      expect(icon?.getAttribute("class")?.includes("text-blue")).toBe(true);
-      expect(anmeldung?.getAttribute("class")?.includes("text-blue")).toBe(
+      expect(icon?.getAttribute("class")?.includes("opacity-60")).toBe(true);
+      expect(anmeldung?.getAttribute("class")?.includes("opacity-60")).toBe(
         true
       );
     });

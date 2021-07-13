@@ -2,486 +2,484 @@
 
 exports[`Storyshots Layout/Header Logged In 1`] = `
 <header
-  className="w-full p-4 bg-white shadow z-50 flex place-content-between fixed top-0"
+  className="w-full z-50 fixed top-0 border-t-0"
 >
-  <a
-    className="w-max flex items-center"
-    href="/"
+  <nav
+    className="w-full border transition border-t-0 flex place-content-between container mx-auto max-w-8xl bg-black border-purple text-white"
   >
-    <img
-      alt="Stadtpuls logo"
-      className="w-10"
-      src="/images/stadtpuls-logo.svg"
-    />
-    <div
-      className="ml-2"
+    <a
+      className="w-max flex items-center p-4 border-r transition border-purple"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       <span
-        className="font-bold"
-      >
-        Stadt
-      </span>
-      puls
-    </div>
-  </a>
-  <section
-    className="flex gap-4 sm:gap-8 items-center"
-  >
-    <div>
-      <button
-        className="sm:hidden text-blue focus-offset relative z-0"
+        role="img"
+      />
+    </a>
+    <section
+      className="flex gap-4 sm:gap-8 items-center pr-4"
+    >
+      <div>
+        <button
+          className="sm:hidden focus-offset relative z-0"
+          onClick={[Function]}
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            />
+          </svg>
+        </button>
+        <nav
+          className="fixed sm:static sm:top-auto left-0 sm:left-auto z-20 sm:z-auto w-full sm:w-auto shadow sm:shadow-none sm:py-4 sm:px-1 sm:p-0 sm:bg-opacity-0 bg-black transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
+          style={
+            Object {
+              "top": 62,
+            }
+          }
+        >
+          <ul
+            className="h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4"
+          >
+            <li
+              className="sm:hidden sm:inline-block text-xl sm:text-base"
+            >
+              <a
+                className="navigation-link-active navigation-link p-4 block sm:inline"
+                href="/"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Startseite
+              </a>
+            </li>
+            <li
+              className=" sm:inline-block text-xl sm:text-base"
+            >
+              <a
+                className="navigation-link p-4 block sm:inline"
+                href="/projects"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Projekte
+              </a>
+            </li>
+            <li
+              className=" sm:inline-block text-xl sm:text-base"
+            >
+              <a
+                className="navigation-link p-4 block sm:inline"
+                href="/docs"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Mehr Infos
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <a
+        className="group"
+        href="/signin"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         <svg
           aria-hidden={true}
-          className="MuiSvgIcon-root"
+          className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 group-hover:text-green"
           focusable="false"
           viewBox="0 0 24 24"
         >
           <path
-            d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
           />
         </svg>
-      </button>
-      <nav
-        className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-20 sm:z-auto w-full sm:w-auto shadow sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-white border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
-      >
-        <ul
-          className="h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4"
+        <span
+          className="inline-block ml-1 transition hidden sm:inline-block group-hover:text-green"
         >
-          <li
-            className="sm:hidden sm:inline-block text-xl sm:text-base"
-          >
-            <a
-              className="navigation-link p-4 block sm:inline"
-              href="/"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Startseite
-            </a>
-          </li>
-          <li
-            className=" sm:inline-block text-xl sm:text-base"
-          >
-            <a
-              className="navigation-link p-4 block sm:inline"
-              href="/projects"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Projekte
-            </a>
-          </li>
-          <li
-            className=" sm:inline-block text-xl sm:text-base"
-          >
-            <a
-              className="navigation-link p-4 block sm:inline"
-              href="/docs"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Mehr Infos
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <a
-      className="group"
-      href="/signin"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 text-gray-400 group-hover:text-blue"
-        focusable="false"
-        viewBox="0 0 24 24"
+          Anmeldung
+        </span>
+      </a>
+      <a
+        href="https://technologiestiftung-berlin.de/"
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <path
-          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-        />
-      </svg>
-      <span
-        className="inline-block ml-1 transition hidden sm:inline-block text-black group-hover:text-blue"
-      >
-        Anmeldung
-      </span>
-    </a>
-    <a
-      href="https://technologiestiftung-berlin.de/"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <svg
-        height="2em"
-        viewBox="0 0 183 183"
-        width="2em"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-      >
-        <defs>
-          <path
-            d="M0 0h51.933v46.828H0z"
-            id="prefix__a"
-          />
-          <path
-            d="M0 0h165.703v116.326H0z"
-            id="prefix__c"
-          />
-          <path
-            d="M0 0h165.703v80.279H0z"
-            id="prefix__e"
-          />
-          <path
-            d="M0 0h144.501v97.358H0z"
-            id="prefix__g"
-          />
-          <path
-            d="M0 0h102.883v61.312H0z"
-            id="prefix__i"
-          />
-        </defs>
-        <g
-          fill="none"
-          fillRule="evenodd"
-          transform="translate(0 23.971)"
+        <svg
+          height="2em"
+          viewBox="0 0 183 183"
+          width="2em"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
         >
+          <defs>
+            <path
+              d="M0 0h51.933v46.828H0z"
+              id="prefix__a"
+            />
+            <path
+              d="M0 0h165.703v116.326H0z"
+              id="prefix__c"
+            />
+            <path
+              d="M0 0h165.703v80.279H0z"
+              id="prefix__e"
+            />
+            <path
+              d="M0 0h144.501v97.358H0z"
+              id="prefix__g"
+            />
+            <path
+              d="M0 0h102.883v61.312H0z"
+              id="prefix__i"
+            />
+          </defs>
           <g
-            transform="translate(0 88.353)"
+            fill="none"
+            fillRule="evenodd"
+            transform="translate(0 23.971)"
           >
+            <g
+              transform="translate(0 88.353)"
+            >
+              <mask
+                fill="#fff"
+                id="prefix__b"
+              >
+                <use
+                  xlinkHref="#prefix__a"
+                />
+              </mask>
+              <path
+                d="M15.438 46.828L-.004.444.731 0l51.202 8.585-.405.421z"
+                fill="#8330FF"
+                fillRule="nonzero"
+                mask="url(#prefix__b)"
+              />
+            </g>
+            <path
+              d="M35.748 13.899l146.925 64.954-16.965 37.468L.003 88.799z"
+              fill="#46ECA1"
+              fillRule="nonzero"
+            />
             <mask
               fill="#fff"
-              id="prefix__b"
+              id="prefix__d"
             >
               <use
-                xlinkHref="#prefix__a"
+                xlinkHref="#prefix__c"
               />
             </mask>
             <path
-              d="M15.438 46.828L-.004.444.731 0l51.202 8.585-.405.421z"
-              fill="#E40134"
+              d="M-.002 88.796L144.501 0l21.202 116.326z"
+              fill="#0000C2"
               fillRule="nonzero"
-              mask="url(#prefix__b)"
+              mask="url(#prefix__d)"
             />
-          </g>
-          <path
-            d="M35.748 13.899l146.925 64.954-16.965 37.468L.003 88.799z"
-            fill="#71CBF4"
-            fillRule="nonzero"
-          />
-          <mask
-            fill="#fff"
-            id="prefix__d"
-          >
-            <use
-              xlinkHref="#prefix__c"
-            />
-          </mask>
-          <path
-            d="M-.002 88.796L144.501 0l21.202 116.326z"
-            fill="#63B9E9"
-            fillRule="nonzero"
-            mask="url(#prefix__d)"
-          />
-          <g
-            transform="translate(0 36.047)"
-          >
+            <g
+              transform="translate(0 36.047)"
+            >
+              <mask
+                fill="#fff"
+                id="prefix__f"
+              >
+                <use
+                  xlinkHref="#prefix__e"
+                />
+              </mask>
+              <path
+                d="M-.002 52.749L85.844 0l70.942 31.359 8.917 48.92z"
+                fill="#8330FF"
+                fillRule="nonzero"
+                mask="url(#prefix__f)"
+              />
+            </g>
             <mask
               fill="#fff"
-              id="prefix__f"
+              id="prefix__h"
             >
               <use
-                xlinkHref="#prefix__e"
+                xlinkHref="#prefix__g"
               />
             </mask>
             <path
-              d="M-.002 52.749L85.844 0l70.942 31.359 8.917 48.92z"
-              fill="#3192D0"
+              d="M-.002 88.796L144.501 0l-92.97 97.358z"
+              fill="#8330FF"
               fillRule="nonzero"
-              mask="url(#prefix__f)"
+              mask="url(#prefix__h)"
             />
-          </g>
-          <mask
-            fill="#fff"
-            id="prefix__h"
-          >
-            <use
-              xlinkHref="#prefix__g"
-            />
-          </mask>
-          <path
-            d="M-.002 88.796L144.501 0l-92.97 97.358z"
-            fill="#3A5BA7"
-            fillRule="nonzero"
-            mask="url(#prefix__h)"
-          />
-          <g
-            transform="translate(0 36.047)"
-          >
-            <mask
-              fill="#fff"
-              id="prefix__j"
+            <g
+              transform="translate(0 36.047)"
             >
-              <use
-                xlinkHref="#prefix__i"
+              <mask
+                fill="#fff"
+                id="prefix__j"
+              >
+                <use
+                  xlinkHref="#prefix__i"
+                />
+              </mask>
+              <path
+                d="M-.002 52.749L85.844 0l17.039 7.531-51.352 53.781z"
+                fill="#0000C2"
+                fillRule="nonzero"
+                mask="url(#prefix__j)"
               />
-            </mask>
-            <path
-              d="M-.002 52.749L85.844 0l17.039 7.531-51.352 53.781z"
-              fill="#213A8F"
-              fillRule="nonzero"
-              mask="url(#prefix__j)"
-            />
+            </g>
           </g>
-        </g>
-      </svg>
-    </a>
-  </section>
+        </svg>
+      </a>
+    </section>
+  </nav>
 </header>
 `;
 
 exports[`Storyshots Layout/Header Logged Out 1`] = `
 <header
-  className="w-full p-4 bg-white shadow z-50 flex place-content-between fixed top-0"
+  className="w-full z-50 fixed top-0 border-t-0"
 >
-  <a
-    className="w-max flex items-center"
-    href="/"
+  <nav
+    className="w-full border transition border-t-0 flex place-content-between container mx-auto max-w-8xl bg-black border-purple text-white"
   >
-    <img
-      alt="Stadtpuls logo"
-      className="w-10"
-      src="/images/stadtpuls-logo.svg"
-    />
-    <div
-      className="ml-2"
+    <a
+      className="w-max flex items-center p-4 border-r transition border-purple"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       <span
-        className="font-bold"
-      >
-        Stadt
-      </span>
-      puls
-    </div>
-  </a>
-  <section
-    className="flex gap-4 sm:gap-8 items-center"
-  >
-    <div>
-      <button
-        className="sm:hidden text-blue focus-offset relative z-0"
+        role="img"
+      />
+    </a>
+    <section
+      className="flex gap-4 sm:gap-8 items-center pr-4"
+    >
+      <div>
+        <button
+          className="sm:hidden focus-offset relative z-0"
+          onClick={[Function]}
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            />
+          </svg>
+        </button>
+        <nav
+          className="fixed sm:static sm:top-auto left-0 sm:left-auto z-20 sm:z-auto w-full sm:w-auto shadow sm:shadow-none sm:py-4 sm:px-1 sm:p-0 sm:bg-opacity-0 bg-black transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
+          style={
+            Object {
+              "top": 62,
+            }
+          }
+        >
+          <ul
+            className="h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4"
+          >
+            <li
+              className="sm:hidden sm:inline-block text-xl sm:text-base"
+            >
+              <a
+                className="navigation-link-active navigation-link p-4 block sm:inline"
+                href="/"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Startseite
+              </a>
+            </li>
+            <li
+              className=" sm:inline-block text-xl sm:text-base"
+            >
+              <a
+                className="navigation-link p-4 block sm:inline"
+                href="/projects"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Projekte
+              </a>
+            </li>
+            <li
+              className=" sm:inline-block text-xl sm:text-base"
+            >
+              <a
+                className="navigation-link p-4 block sm:inline"
+                href="/docs"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Mehr Infos
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <a
+        className="group"
+        href="/signin"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         <svg
           aria-hidden={true}
-          className="MuiSvgIcon-root"
+          className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 group-hover:text-green"
           focusable="false"
           viewBox="0 0 24 24"
         >
           <path
-            d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
           />
         </svg>
-      </button>
-      <nav
-        className="fixed sm:static top-16 sm:top-auto left-0 sm:left-auto z-20 sm:z-auto w-full sm:w-auto shadow sm:shadow-none py-4 px-1 sm:p-0 bg-gray-50 sm:bg-white border-t border-gray-200 sm:border-none transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
-      >
-        <ul
-          className="h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4"
+        <span
+          className="inline-block ml-1 transition hidden sm:inline-block group-hover:text-green"
         >
-          <li
-            className="sm:hidden sm:inline-block text-xl sm:text-base"
-          >
-            <a
-              className="navigation-link p-4 block sm:inline"
-              href="/"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Startseite
-            </a>
-          </li>
-          <li
-            className=" sm:inline-block text-xl sm:text-base"
-          >
-            <a
-              className="navigation-link p-4 block sm:inline"
-              href="/projects"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Projekte
-            </a>
-          </li>
-          <li
-            className=" sm:inline-block text-xl sm:text-base"
-          >
-            <a
-              className="navigation-link p-4 block sm:inline"
-              href="/docs"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Mehr Infos
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <a
-      className="group"
-      href="/signin"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 text-gray-400 group-hover:text-blue"
-        focusable="false"
-        viewBox="0 0 24 24"
+          Anmeldung
+        </span>
+      </a>
+      <a
+        href="https://technologiestiftung-berlin.de/"
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <path
-          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-        />
-      </svg>
-      <span
-        className="inline-block ml-1 transition hidden sm:inline-block text-black group-hover:text-blue"
-      >
-        Anmeldung
-      </span>
-    </a>
-    <a
-      href="https://technologiestiftung-berlin.de/"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <svg
-        height="2em"
-        viewBox="0 0 183 183"
-        width="2em"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-      >
-        <defs>
-          <path
-            d="M0 0h51.933v46.828H0z"
-            id="prefix__a"
-          />
-          <path
-            d="M0 0h165.703v116.326H0z"
-            id="prefix__c"
-          />
-          <path
-            d="M0 0h165.703v80.279H0z"
-            id="prefix__e"
-          />
-          <path
-            d="M0 0h144.501v97.358H0z"
-            id="prefix__g"
-          />
-          <path
-            d="M0 0h102.883v61.312H0z"
-            id="prefix__i"
-          />
-        </defs>
-        <g
-          fill="none"
-          fillRule="evenodd"
-          transform="translate(0 23.971)"
+        <svg
+          height="2em"
+          viewBox="0 0 183 183"
+          width="2em"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
         >
+          <defs>
+            <path
+              d="M0 0h51.933v46.828H0z"
+              id="prefix__a"
+            />
+            <path
+              d="M0 0h165.703v116.326H0z"
+              id="prefix__c"
+            />
+            <path
+              d="M0 0h165.703v80.279H0z"
+              id="prefix__e"
+            />
+            <path
+              d="M0 0h144.501v97.358H0z"
+              id="prefix__g"
+            />
+            <path
+              d="M0 0h102.883v61.312H0z"
+              id="prefix__i"
+            />
+          </defs>
           <g
-            transform="translate(0 88.353)"
+            fill="none"
+            fillRule="evenodd"
+            transform="translate(0 23.971)"
           >
+            <g
+              transform="translate(0 88.353)"
+            >
+              <mask
+                fill="#fff"
+                id="prefix__b"
+              >
+                <use
+                  xlinkHref="#prefix__a"
+                />
+              </mask>
+              <path
+                d="M15.438 46.828L-.004.444.731 0l51.202 8.585-.405.421z"
+                fill="#8330FF"
+                fillRule="nonzero"
+                mask="url(#prefix__b)"
+              />
+            </g>
+            <path
+              d="M35.748 13.899l146.925 64.954-16.965 37.468L.003 88.799z"
+              fill="#46ECA1"
+              fillRule="nonzero"
+            />
             <mask
               fill="#fff"
-              id="prefix__b"
+              id="prefix__d"
             >
               <use
-                xlinkHref="#prefix__a"
+                xlinkHref="#prefix__c"
               />
             </mask>
             <path
-              d="M15.438 46.828L-.004.444.731 0l51.202 8.585-.405.421z"
-              fill="#E40134"
+              d="M-.002 88.796L144.501 0l21.202 116.326z"
+              fill="#0000C2"
               fillRule="nonzero"
-              mask="url(#prefix__b)"
+              mask="url(#prefix__d)"
             />
-          </g>
-          <path
-            d="M35.748 13.899l146.925 64.954-16.965 37.468L.003 88.799z"
-            fill="#71CBF4"
-            fillRule="nonzero"
-          />
-          <mask
-            fill="#fff"
-            id="prefix__d"
-          >
-            <use
-              xlinkHref="#prefix__c"
-            />
-          </mask>
-          <path
-            d="M-.002 88.796L144.501 0l21.202 116.326z"
-            fill="#63B9E9"
-            fillRule="nonzero"
-            mask="url(#prefix__d)"
-          />
-          <g
-            transform="translate(0 36.047)"
-          >
+            <g
+              transform="translate(0 36.047)"
+            >
+              <mask
+                fill="#fff"
+                id="prefix__f"
+              >
+                <use
+                  xlinkHref="#prefix__e"
+                />
+              </mask>
+              <path
+                d="M-.002 52.749L85.844 0l70.942 31.359 8.917 48.92z"
+                fill="#8330FF"
+                fillRule="nonzero"
+                mask="url(#prefix__f)"
+              />
+            </g>
             <mask
               fill="#fff"
-              id="prefix__f"
+              id="prefix__h"
             >
               <use
-                xlinkHref="#prefix__e"
+                xlinkHref="#prefix__g"
               />
             </mask>
             <path
-              d="M-.002 52.749L85.844 0l70.942 31.359 8.917 48.92z"
-              fill="#3192D0"
+              d="M-.002 88.796L144.501 0l-92.97 97.358z"
+              fill="#8330FF"
               fillRule="nonzero"
-              mask="url(#prefix__f)"
+              mask="url(#prefix__h)"
             />
-          </g>
-          <mask
-            fill="#fff"
-            id="prefix__h"
-          >
-            <use
-              xlinkHref="#prefix__g"
-            />
-          </mask>
-          <path
-            d="M-.002 88.796L144.501 0l-92.97 97.358z"
-            fill="#3A5BA7"
-            fillRule="nonzero"
-            mask="url(#prefix__h)"
-          />
-          <g
-            transform="translate(0 36.047)"
-          >
-            <mask
-              fill="#fff"
-              id="prefix__j"
+            <g
+              transform="translate(0 36.047)"
             >
-              <use
-                xlinkHref="#prefix__i"
+              <mask
+                fill="#fff"
+                id="prefix__j"
+              >
+                <use
+                  xlinkHref="#prefix__i"
+                />
+              </mask>
+              <path
+                d="M-.002 52.749L85.844 0l17.039 7.531-51.352 53.781z"
+                fill="#0000C2"
+                fillRule="nonzero"
+                mask="url(#prefix__j)"
               />
-            </mask>
-            <path
-              d="M-.002 52.749L85.844 0l17.039 7.531-51.352 53.781z"
-              fill="#213A8F"
-              fillRule="nonzero"
-              mask="url(#prefix__j)"
-            />
+            </g>
           </g>
-        </g>
-      </svg>
-    </a>
-  </section>
+        </svg>
+      </a>
+    </section>
+  </nav>
 </header>
 `;

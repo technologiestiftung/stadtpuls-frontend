@@ -1,13 +1,25 @@
-import { forwardRef } from "react";
+import Link from "next/link";
+import { forwardRef, HTMLProps } from "react";
+import styles from "./StadtpulsLogo.module.css";
 
-const stadtpulsLogo = "/images/stadtpuls-logo.svg";
+interface StadtpulsLogoPropType extends HTMLProps<HTMLAnchorElement> {
+  className?: string;
+}
 
 // eslint-disable-next-line react/display-name
-export const StadtpulsLogo = forwardRef<HTMLAnchorElement>((_props, ref) => (
-  <a href='/' className='w-max flex items-center' ref={ref}>
-    <img src={stadtpulsLogo} alt={"Stadtpuls logo"} className='w-10' />
-    <div className='ml-2'>
-      <span className='font-bold'>Stadt</span>puls
-    </div>
-  </a>
+export const StadtpulsLogo = forwardRef<
+  HTMLAnchorElement,
+  StadtpulsLogoPropType
+>(({ className = "" }, ref) => (
+  <Link href='/'>
+    <a
+      href='/'
+      className={["w-max flex items-center", className]
+        .filter(Boolean)
+        .join(" ")}
+      ref={ref}
+    >
+      <span className={styles.logo} role='img' />
+    </a>
+  </Link>
 ));

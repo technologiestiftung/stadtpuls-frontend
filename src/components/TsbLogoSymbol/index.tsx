@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import colors from "../../style/colors";
 
 // eslint-disable-next-line react/display-name
 export const TsbLogoSymbol = forwardRef<HTMLAnchorElement>((_props, ref) => (
@@ -28,14 +29,14 @@ export const TsbLogoSymbol = forwardRef<HTMLAnchorElement>((_props, ref) => (
             <use xlinkHref='#prefix__a' />
           </mask>
           <path
-            fill='#E40134'
+            fill={colors.purple}
             fillRule='nonzero'
             mask='url(#prefix__b)'
             d='M15.438 46.828L-.004.444.731 0l51.202 8.585-.405.421z'
           />
         </g>
         <path
-          fill='#71CBF4'
+          fill={colors.green}
           fillRule='nonzero'
           d='M35.748 13.899l146.925 64.954-16.965 37.468L.003 88.799z'
         />
@@ -43,7 +44,7 @@ export const TsbLogoSymbol = forwardRef<HTMLAnchorElement>((_props, ref) => (
           <use xlinkHref='#prefix__c' />
         </mask>
         <path
-          fill='#63B9E9'
+          fill={colors.blue}
           fillRule='nonzero'
           mask='url(#prefix__d)'
           d='M-.002 88.796L144.501 0l21.202 116.326z'
@@ -53,7 +54,7 @@ export const TsbLogoSymbol = forwardRef<HTMLAnchorElement>((_props, ref) => (
             <use xlinkHref='#prefix__e' />
           </mask>
           <path
-            fill='#3192D0'
+            fill={colors.purple}
             fillRule='nonzero'
             mask='url(#prefix__f)'
             d='M-.002 52.749L85.844 0l70.942 31.359 8.917 48.92z'
@@ -63,7 +64,7 @@ export const TsbLogoSymbol = forwardRef<HTMLAnchorElement>((_props, ref) => (
           <use xlinkHref='#prefix__g' />
         </mask>
         <path
-          fill='#3A5BA7'
+          fill={colors.purple}
           fillRule='nonzero'
           mask='url(#prefix__h)'
           d='M-.002 88.796L144.501 0l-92.97 97.358z'
@@ -73,7 +74,7 @@ export const TsbLogoSymbol = forwardRef<HTMLAnchorElement>((_props, ref) => (
             <use xlinkHref='#prefix__i' />
           </mask>
           <path
-            fill='#213A8F'
+            fill={colors.blue}
             fillRule='nonzero'
             mask='url(#prefix__j)'
             d='M-.002 52.749L85.844 0l17.039 7.531-51.352 53.781z'

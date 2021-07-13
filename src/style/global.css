@@ -6,10 +6,10 @@
     @apply focus:ring-2 focus:ring-offset-white focus:ring-offset-2 focus:outline-none;
   }
   .navigation-link {
-    @apply text-black opacity-75 transition hover:opacity-100 hover:text-blue sm:px-1 sm:py-0.5 -ml-1 sm:inline-block;
+    @apply transition font-headline border-purple sm:border-green border-b hover:border-purple hover:text-green sm:px-0 sm:py-0.5 sm:inline-block leading-tight;
   }
   .navigation-link-active {
-    @apply decoration-clone text-blue bg-gray-50 opacity-100;
+    @apply decoration-clone text-white bg-purple font-bold border-green hover:text-white hover:bg-purple hover:border-green cursor-default sm:px-2 sm:-ml-2;
   }
 }
 @layer base {
