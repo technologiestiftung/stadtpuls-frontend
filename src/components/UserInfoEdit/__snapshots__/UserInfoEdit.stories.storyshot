@@ -61,7 +61,7 @@ exports[`Storyshots Forms/UserInfoEdit Default User Info Edit 1`] = `
       className="flex justify-end mt-8"
     >
       <button
-        className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-white border border-blue text-blue hover:bg-blue hover:bg-opacity-10"
+        className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-white border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
         onClick={[Function]}
         type="button"
       >

@@ -29,14 +29,14 @@ exports[`Storyshots UI Elements/SmallModal With Dangerous Content 1`] = `
         className="block w-full text-right"
       >
         <button
-          className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-error bg-white border border-error text-error hover:bg-error hover:bg-opacity-10 mr-4"
+          className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-error bg-white border border-error text-error hover:bg-error hover:bg-opacity-10 mr-4"
           type="button"
           variant="dangerous"
         >
           Löschen
         </button>
         <button
-          className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-blue text-white hover:opacity-60"
+          className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
           type="button"
           variant="primary"
         >
@@ -583,7 +583,7 @@ exports[`Storyshots UI Elements/SmallModal With Footer Content 1`] = `
         className="block w-full text-right"
       >
         <button
-          className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-blue text-white hover:opacity-60"
+          className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
           type="button"
           variant="primary"
         >

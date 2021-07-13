@@ -18,7 +18,7 @@ exports[`Storyshots Layout/ProjectInfo Default Project Info 1`] = `
       Temperatur Grunewaldstraße
     </h2>
     <a
-      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-white border border-blue text-blue hover:bg-blue hover:bg-opacity-10"
+      className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-white border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
       href="/123abc"
       onClick={[Function]}
       onMouseEnter={[Function]}

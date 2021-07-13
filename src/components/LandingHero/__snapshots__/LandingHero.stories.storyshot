@@ -37,7 +37,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
        bei der jede*r mitmachen kann. Einfach deine Sensoren registrieren und alle Messwerte werden automatisch gespeichert, visualisiert und für andere verfügbar gemacht.
     </p>
     <a
-      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-blue text-white hover:opacity-60 mr-4"
+      className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green mr-4"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -46,7 +46,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
       Mehr Erfahren
     </a>
     <a
-      className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-white border border-blue text-blue hover:bg-blue hover:bg-opacity-10"
+      className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-white border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
       href="/projects"
       onClick={[Function]}
       onMouseEnter={[Function]}

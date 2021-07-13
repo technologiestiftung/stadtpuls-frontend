@@ -71,7 +71,7 @@ exports[`Storyshots Forms/Signin Default 1`] = `
         }
       >
         <input
-          className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue bg-blue text-white hover:opacity-60"
+          className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
           form="signin-form"
           type="submit"
           value="Einloggen"

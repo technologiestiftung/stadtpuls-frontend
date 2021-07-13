@@ -26,7 +26,7 @@ const getButtonStyles = ({
   disabled?: boolean;
   className?: string;
 }): string => {
-  const classes = ["text-lg px-4 py-2 font-sans transition"];
+  const classes = ["text-lg px-4 py-2 font-headline transition"];
   if (disabled) {
     classes.push("cursor-default");
     switch (variant) {
@@ -44,7 +44,9 @@ const getButtonStyles = ({
     classes.push("cursor-pointer focus-offset");
     switch (variant) {
       case "primary":
-        classes.push("focus:ring-blue bg-blue text-white hover:opacity-60");
+        classes.push(
+          "focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
+        );
         break;
       case "dangerous":
         classes.push(
@@ -53,7 +55,7 @@ const getButtonStyles = ({
         break;
       default:
         classes.push(
-          "focus:ring-blue bg-white border border-blue text-blue hover:bg-blue hover:bg-opacity-10"
+          "focus:ring-green bg-white border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
         );
         break;
     }
