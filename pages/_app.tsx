@@ -33,7 +33,12 @@ const App: FC<{
           <Head />
           <Header />
           <main
-            className='z-0 relative'
+            className={[
+              "z-0 relative",
+              pathname === "/projects" && "bg-white-dot-pattern",
+            ]
+              .filter(Boolean)
+              .join(" ")}
             style={{
               paddingTop: pathname === "/" ? 0 : 62,
               minHeight: "calc(100vh - 215px)",
