@@ -22,6 +22,10 @@
   .animate-fade-in {
     opacity: 0;
     animation: fadeIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) 1 forwards;
+  }
+  .animate-slide-in {
+    opacity: 0;
+    animation: slideIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) 1 forwards;
     transform-origin: 50% 0
   }
 }
@@ -173,6 +177,11 @@
   }
   
   @keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 100; }
+  }
+
+  @keyframes slideIn {
     0%   { opacity: 0;   transform: translate(0, 20px) scale(0.99) }
     100% { opacity: 100; transform: translate(0, 0)    scale(1.00) }
   }

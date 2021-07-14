@@ -20,7 +20,7 @@ export const LandingHero: FC = () => (
         <div>
           <h1
             className={[
-              "animate-fade-in",
+              "animate-slide-in",
               "text-xl sm:text-2xl md:text-3xl",
               "text-green font-headline font-bold",
               "mt-6",
@@ -29,13 +29,13 @@ export const LandingHero: FC = () => (
             Deine Sensoren erklären die (Um)welt?
           </h1>
           <h2
-            className='animate-fade-in text-white text-lg font-sans font-normal mb-4'
+            className='animate-slide-in text-white text-lg font-sans font-normal mb-4'
             style={{ animationDelay: "50ms" }}
           >
             Teile die Daten und dein Wissen!
           </h2>
           <p
-            className='animate-fade-in mb-8 max-w-prose'
+            className='animate-slide-in mb-8 max-w-prose'
             style={{ animationDelay: "100ms" }}
           >
             Stadtpuls ist eine{" "}
@@ -50,7 +50,7 @@ export const LandingHero: FC = () => (
             <AnchorButton
               href='/'
               variant='primary'
-              className='animate-fade-in mr-4 mb-2'
+              className='animate-slide-in mr-4 mb-2'
               style={{ animationDelay: "150ms" }}
             >
               Mehr Erfahren
@@ -60,7 +60,7 @@ export const LandingHero: FC = () => (
             <AnchorButton
               href='/projects'
               variant='secondary'
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: "200ms" }}
             >
               Projekte ansehen

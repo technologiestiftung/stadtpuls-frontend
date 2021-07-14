@@ -137,7 +137,7 @@ export const LandingHeroImage: FC = () => {
         <g transform='translate(-578.000000, -24.000000)'>
           <g transform='translate(578.000000, 24.000000)'>
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(50 * animFactor)}ms` }}
               fill={colors.gray["100"]}
               x='290'
@@ -146,7 +146,7 @@ export const LandingHeroImage: FC = () => {
               height='116'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(100 * animFactor)}ms` }}
               fill={colors.green}
               x='464'
@@ -155,7 +155,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(150 * animFactor)}ms` }}
               fill='url(#top-right-square-image-pattern)'
               x='754'
@@ -164,7 +164,7 @@ export const LandingHeroImage: FC = () => {
               height='116'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{
                 animationDelay: `${Math.round(200 * animFactor)}ms`,
                 mixBlendMode: "screen",
@@ -176,7 +176,7 @@ export const LandingHeroImage: FC = () => {
               height='116'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(250 * animFactor)}ms` }}
               fill={colors.green}
               x='116'
@@ -185,7 +185,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(300 * animFactor)}ms` }}
               fill={colors.gray["100"]}
               x='174'
@@ -194,7 +194,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(350 * animFactor)}ms` }}
               fill={colors.gray["100"]}
               x='116'
@@ -203,7 +203,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(400 * animFactor)}ms` }}
               fill={colors.green}
               x='290'
@@ -212,7 +212,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(450 * animFactor)}ms` }}
               fill={colors.green}
               x='0'
@@ -221,7 +221,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(500 * animFactor)}ms` }}
               fill={colors.green}
               x='522'
@@ -230,7 +230,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(550 * animFactor)}ms` }}
               fill={colors.green}
               x='638'
@@ -239,7 +239,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(600 * animFactor)}ms` }}
               fill={colors.green}
               x='812'
@@ -248,7 +248,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(650 * animFactor)}ms` }}
               fill='url(#black-dot-pattern)'
               x='464'
@@ -257,7 +257,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(700 * animFactor)}ms` }}
               fill={colors.blue}
               x='232'
@@ -266,7 +266,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(750 * animFactor)}ms` }}
               fill={colors.blue}
               x='0'
@@ -275,7 +275,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(800 * animFactor)}ms` }}
               fill={colors.green}
               x='348'
@@ -295,7 +295,7 @@ export const LandingHeroImage: FC = () => {
               style={{ mixBlendMode: "lighten" }}
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(850 * animFactor)}ms` }}
               fill={colors.gray["100"]}
               x='290'
@@ -304,7 +304,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(900 * animFactor)}ms` }}
               fill={colors.gray["100"]}
               x='696'
@@ -313,7 +313,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(950 * animFactor)}ms` }}
               fill={colors.gray["100"]}
               x='812'
@@ -322,7 +322,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(1000 * animFactor)}ms` }}
               fill='url(#black-dot-pattern)'
               x='754'
@@ -331,7 +331,7 @@ export const LandingHeroImage: FC = () => {
               height='116'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(1050 * animFactor)}ms` }}
               fill={colors.gray["100"]}
               x='522'
@@ -340,7 +340,7 @@ export const LandingHeroImage: FC = () => {
               height='116'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(1100 * animFactor)}ms` }}
               fill='url(#bottom-square-image-pattern)'
               x='406'
@@ -349,7 +349,7 @@ export const LandingHeroImage: FC = () => {
               height='116'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{
                 animationDelay: `${Math.round(1150 * animFactor)}ms`,
                 mixBlendMode: "screen",
@@ -361,7 +361,7 @@ export const LandingHeroImage: FC = () => {
               height='116'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(1200 * animFactor)}ms` }}
               fill={colors.purple}
               x='522'
@@ -376,10 +376,10 @@ export const LandingHeroImage: FC = () => {
               y='58'
               width='58'
               height='58'
-              className={`animate-fade-in ${styles.hiddenSmall}`}
+              className={`animate-slide-in ${styles.hiddenSmall}`}
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(1300 * animFactor)}ms` }}
               fill='url(#bottom-left-square-image-pattern)'
               x='174'
@@ -388,7 +388,7 @@ export const LandingHeroImage: FC = () => {
               height='116'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{
                 animationDelay: `${Math.round(1350 * animFactor)}ms`,
                 mixBlendMode: "screen",
@@ -400,7 +400,7 @@ export const LandingHeroImage: FC = () => {
               height='116'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(1400 * animFactor)}ms` }}
               fill='url(#top-left-square-image-pattern)'
               x='290'
@@ -409,7 +409,7 @@ export const LandingHeroImage: FC = () => {
               height='116'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{
                 animationDelay: `${Math.round(1450 * animFactor)}ms`,
                 mixBlendMode: "screen",
@@ -421,7 +421,7 @@ export const LandingHeroImage: FC = () => {
               height='116'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(1500 * animFactor)}ms` }}
               fill='url(#black-dot-pattern)'
               x='58'
@@ -430,7 +430,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(1550 * animFactor)}ms` }}
               fill='url(#black-dot-pattern)'
               x='290'
@@ -439,7 +439,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(1600 * animFactor)}ms` }}
               fill={colors.purple}
               x='290'
@@ -448,7 +448,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(1650 * animFactor)}ms` }}
               fill={colors.purple}
               x='58'
@@ -457,7 +457,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(1700 * animFactor)}ms` }}
               fill={colors.purple}
               x='522'
@@ -466,7 +466,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(1750 * animFactor)}ms` }}
               fill={colors.purple}
               x='754'
@@ -475,7 +475,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(1800 * animFactor)}ms` }}
               fill={colors.purple}
               x='812'
@@ -484,7 +484,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(1850 * animFactor)}ms` }}
               fill={colors.purple}
               x='174'
@@ -493,7 +493,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2000 * animFactor)}ms` }}
               fill='url(#black-dot-pattern)'
               x='522'
@@ -502,7 +502,7 @@ export const LandingHeroImage: FC = () => {
               height='116'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2050 * animFactor)}ms` }}
               fill={colors.green}
               x='696'
@@ -511,7 +511,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2100 * animFactor)}ms` }}
               fill={colors.gray["100"]}
               x='812'
@@ -520,7 +520,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2150 * animFactor)}ms` }}
               fill={colors.gray["100"]}
               x='812'
@@ -529,7 +529,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2200 * animFactor)}ms` }}
               fill={colors.gray["100"]}
               x='812'
@@ -538,7 +538,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2250 * animFactor)}ms` }}
               fill={colors.blue}
               x='696'
@@ -547,7 +547,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2300 * animFactor)}ms` }}
               fill={colors.blue}
               x='580'
@@ -556,7 +556,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2350 * animFactor)}ms` }}
               fill={colors.blue}
               x='232'
@@ -565,7 +565,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2400 * animFactor)}ms` }}
               fill={colors.blue}
               x='754'
@@ -574,7 +574,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2450 * animFactor)}ms` }}
               fill='url(#black-dot-pattern)'
               x='406'
@@ -583,7 +583,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2500 * animFactor)}ms` }}
               fill={colors.blue}
               x='696'
@@ -592,7 +592,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2550 * animFactor)}ms` }}
               fill='url(#black-dot-pattern)'
               x='348'
@@ -601,7 +601,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2600 * animFactor)}ms` }}
               fill='url(#black-dot-pattern)'
               x='348'
@@ -610,7 +610,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2650 * animFactor)}ms` }}
               fill={colors.purple}
               x='522'
@@ -619,7 +619,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2750 * animFactor)}ms` }}
               fill='url(#black-dot-pattern)'
               x='812'
@@ -628,7 +628,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2800 * animFactor)}ms` }}
               fill={colors.blue}
               x='812'
@@ -637,7 +637,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <rect
-              className='animate-fade-in'
+              className='animate-slide-in'
               style={{ animationDelay: `${Math.round(2850 * animFactor)}ms` }}
               fill={colors.blue}
               x='812'
