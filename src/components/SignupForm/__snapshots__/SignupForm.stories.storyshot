@@ -99,7 +99,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
         }
       >
         <input
-          className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
+          className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
           form="signup-form"
           type="submit"
           value="Registrieren"

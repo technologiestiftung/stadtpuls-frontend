@@ -11,6 +11,19 @@
   .navigation-link-active {
     @apply decoration-clone text-white bg-purple font-bold border-green hover:text-white hover:bg-purple hover:border-green cursor-default sm:px-2 sm:-ml-2;
   }
+  .bg-black-dot-pattern {
+    @apply bg-black;
+    background-image: url('/images/patterns/black.svg');
+  }
+  .bg-white-dot-pattern {
+    @apply bg-white;
+    background-image: url('/images/patterns/white.svg');
+  }
+  .animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) 1 forwards;
+    transform-origin: 50% 0
+  }
 }
 @layer base {
   @font-face {
@@ -78,9 +91,13 @@
     font-style: normal;
   }
   
+  body, html, #__next {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
 
   body {
-    @apply pt-16 font-sans;
+    @apply font-sans;
   }
 
   html.no-scroll {
@@ -154,9 +171,9 @@
   p {
     @apply max-w-prose;
   }
-
+  
   @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0%   { opacity: 0;   transform: translate(0, 20px) scale(0.99) }
+    100% { opacity: 100; transform: translate(0, 0)    scale(1.00) }
   }
 }

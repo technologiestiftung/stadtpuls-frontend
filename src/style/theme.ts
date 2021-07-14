@@ -90,7 +90,6 @@ const theme: Theme = {
       lineHeight: "body",
       fontWeight: "body",
       minHeight: "100vh",
-      backgroundImage: "url('/images/tsb-background.svg')",
       backgroundSize: "cover",
     },
     p: {

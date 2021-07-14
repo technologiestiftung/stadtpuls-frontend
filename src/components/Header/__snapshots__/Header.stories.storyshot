@@ -5,10 +5,10 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
   className="w-full z-50 fixed top-0 border-t-0"
 >
   <nav
-    className="w-full border transition border-t-0 flex place-content-between container mx-auto max-w-8xl bg-black border-purple text-white"
+    className="w-full border transition border-t-0 flex place-content-between container mx-auto max-w-8xl bg-black-dot-pattern border-purple text-white"
   >
     <a
-      className="w-max flex items-center p-4 border-r transition border-purple"
+      className="w-max flex items-center p-4 sm:border-r transition border-purple"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -247,10 +247,10 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
   className="w-full z-50 fixed top-0 border-t-0"
 >
   <nav
-    className="w-full border transition border-t-0 flex place-content-between container mx-auto max-w-8xl bg-black border-purple text-white"
+    className="w-full border transition border-t-0 flex place-content-between container mx-auto max-w-8xl bg-black-dot-pattern border-purple text-white"
   >
     <a
-      className="w-max flex items-center p-4 border-r transition border-purple"
+      className="w-max flex items-center p-4 sm:border-r transition border-purple"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}

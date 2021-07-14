@@ -2,7 +2,7 @@
 
 exports[`Storyshots UI Elements/Button Dangerous Button 1`] = `
 <button
-  className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-error bg-white border border-error text-error hover:bg-error hover:bg-opacity-10"
+  className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-error border border-error text-error hover:bg-error hover:bg-opacity-10"
   type="button"
   variant="dangerous"
 >
@@ -12,7 +12,7 @@ exports[`Storyshots UI Elements/Button Dangerous Button 1`] = `
 
 exports[`Storyshots UI Elements/Button Dangerous Disabled Button 1`] = `
 <button
-  className="text-lg px-4 py-2 font-headline transition cursor-default bg-white border border-error text-error"
+  className="inline-block text-lg px-4 py-2 font-headline transition cursor-default border border-error text-error"
   disabled={true}
   type="button"
   variant="dangerous"
@@ -23,7 +23,7 @@ exports[`Storyshots UI Elements/Button Dangerous Disabled Button 1`] = `
 
 exports[`Storyshots UI Elements/Button Default Button 1`] = `
 <button
-  className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-white border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
+  className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
   type="button"
 >
   I am a button
@@ -32,7 +32,7 @@ exports[`Storyshots UI Elements/Button Default Button 1`] = `
 
 exports[`Storyshots UI Elements/Button Default Disabled Button 1`] = `
 <button
-  className="text-lg px-4 py-2 font-headline transition cursor-default bg-white border border-gray-400 text-gray-400"
+  className="inline-block text-lg px-4 py-2 font-headline transition cursor-default border border-gray-400 text-gray-400"
   disabled={true}
   type="button"
 >
@@ -42,7 +42,7 @@ exports[`Storyshots UI Elements/Button Default Disabled Button 1`] = `
 
 exports[`Storyshots UI Elements/Button Primary Button 1`] = `
 <button
-  className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
+  className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
   type="button"
   variant="primary"
 >
@@ -52,7 +52,7 @@ exports[`Storyshots UI Elements/Button Primary Button 1`] = `
 
 exports[`Storyshots UI Elements/Button Primary Disabled Button 1`] = `
 <button
-  className="text-lg px-4 py-2 font-headline transition cursor-default bg-gray-200 text-gray-400"
+  className="inline-block text-lg px-4 py-2 font-headline transition cursor-default bg-gray-200 text-gray-400"
   disabled={true}
   type="button"
   variant="primary"

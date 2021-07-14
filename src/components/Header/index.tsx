@@ -35,7 +35,7 @@ export const Header: React.FC = () => {
           "flex place-content-between",
           pathname === "/" && "container mx-auto max-w-8xl",
           hasDarkMode
-            ? ["bg-black border-purple text-white"]
+            ? ["bg-black-dot-pattern border-purple text-white"]
             : ["bg-white border-gray-100 shadow text-blue"],
         ]
           .flat()
@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
         <Link href='/'>
           <StadtpulsLogo
             className={[
-              "p-4 border-r transition",
+              "p-4 sm:border-r transition",
               hasDarkMode ? "border-purple" : "border-gray-100",
             ]
               .filter(Boolean)

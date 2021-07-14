@@ -73,7 +73,6 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
           },
         ]}
       />
-      <div className='absolute bg-gradient-to-b from-white inset-0' />
     </div>
   );
 };

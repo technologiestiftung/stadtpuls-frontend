@@ -8,6 +8,7 @@ export const LandingStatsSection: FC<{
     className={[
       "relative z-10",
       "container mx-auto max-w-8xl",
+      "pt-96",
       "px-4 sm:px-6 md:px-8",
       "flex flex-wrap justify-between",
     ].join(" ")}

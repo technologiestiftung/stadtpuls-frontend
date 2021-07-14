@@ -141,14 +141,14 @@ exports[`Storyshots Forms/EditProjectForm With Default Values 1`] = `
       </button>
       <div>
         <button
-          className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-white border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
+          className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
           onClick={[Function]}
           type="button"
         >
           Abbrechen
         </button>
         <input
-          className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green ml-4"
+          className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green ml-4"
           form="edit-project-form"
           type="submit"
           value="Speichern"
@@ -297,14 +297,14 @@ exports[`Storyshots Forms/EditProjectForm Without Default Values 1`] = `
       </button>
       <div>
         <button
-          className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-white border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
+          className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
           onClick={[Function]}
           type="button"
         >
           Abbrechen
         </button>
         <input
-          className="text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green ml-4"
+          className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green ml-4"
           form="edit-project-form"
           type="submit"
           value="Speichern"

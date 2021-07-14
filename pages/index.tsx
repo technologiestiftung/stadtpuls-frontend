@@ -38,7 +38,7 @@ const LandingPage: FC<{
 
   return (
     <>
-      <div className='absolute z-0 top-0 left-0 right-0'>
+      <div className='absolute z-0 top-0 left-0 right-0 mix-blend-multiply pointer-events-none'>
         {curatedProjects.length > 0 && (
           <LandingHeroBackgroundMap
             project={curatedProjects[activeSlideIndex]}
