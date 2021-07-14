@@ -10,15 +10,15 @@ export const LandingStatsSection: FC<{
       "container mx-auto max-w-8xl",
       "pt-96",
       "px-4 sm:px-6 md:px-8",
-      "flex flex-wrap justify-between",
+      "flex flex-wrap justify-center lg:justify-between",
     ].join(" ")}
   >
     <div className='w-full sm:w-auto'>
       <h2
         className={[
           "text-xl sm:text-2xl md:text-3xl",
-          "text-blue font-semibold",
-          "mt-8 sm:mt-6 mb-4 text-center sm:text-left",
+          "font-bold font-headline text-purple",
+          "mt-8 sm:mt-6 mb-1 text-center lg:text-left",
         ].join(" ")}
         style={{
           textShadow:
@@ -26,26 +26,40 @@ export const LandingStatsSection: FC<{
         }}
       >
         Wir stehen erst am Anfang
-        <br />
-        <span className='text-purple'>Ein paar Beispielprojekte</span>
       </h2>
+      <p className='mb-4 text-center lg:text-left'>Ein paar Zahlen</p>
     </div>
     <div className='flex items-center'>
-      <div className='p-4 inline-flex flex-wrap sm:flex-nowrap gap-x-8 gap-y-2 bg-white shadow items-center justify-center'>
-        <div className='flex gap-2 items-center'>
-          <strong className='sm:text-xl font-bold text-blue'>
+      <div
+        className={[
+          "inline-flex flex-wrap lg:flex-nowrap gap-x-8 gap-y-2",
+          "items-center justify-center sm:text-xl font-bold",
+          "font-headline",
+        ].join(" ")}
+      >
+        <div className='flex gap-4 items-center bg-blue text-green pr-4'>
+          <strong
+            className='bg-purple h-12 text-white p-4 flex place-items-center'
+            style={{ minWidth: "3rem" }}
+          >
             {stats.usersCount}
           </strong>
           Teilnehmer
         </div>
-        <div className='flex gap-2 items-center'>
-          <strong className='sm:text-xl font-bold text-blue'>
+        <div className='flex gap-4 items-center bg-purple text-white pr-4'>
+          <strong
+            className='bg-green h-12 text-blue p-4 flex place-items-center'
+            style={{ minWidth: "3rem" }}
+          >
             {stats.devicesCount}
           </strong>
           Sensoren
         </div>
-        <div className='flex gap-2 items-center'>
-          <strong className='sm:text-xl font-bold text-blue'>
+        <div className='flex gap-4 items-center bg-blue text-green pr-4'>
+          <strong
+            className='bg-green h-12 text-blue p-4 flex place-items-center'
+            style={{ minWidth: "3rem" }}
+          >
             {stats.recordsCount}
           </strong>
           Messwerte

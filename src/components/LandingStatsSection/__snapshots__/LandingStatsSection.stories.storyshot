@@ -2,13 +2,13 @@
 
 exports[`Storyshots Promotional/LandingStatsSection Default 1`] = `
 <section
-  className="relative z-10 container mx-auto max-w-8xl pt-96 px-4 sm:px-6 md:px-8 flex flex-wrap justify-between"
+  className="relative z-10 container mx-auto max-w-8xl pt-96 px-4 sm:px-6 md:px-8 flex flex-wrap justify-center lg:justify-between"
 >
   <div
     className="w-full sm:w-auto"
   >
     <h2
-      className="text-xl sm:text-2xl md:text-3xl text-blue font-semibold mt-8 sm:mt-6 mb-4 text-center sm:text-left"
+      className="text-xl sm:text-2xl md:text-3xl font-bold font-headline text-purple mt-8 sm:mt-6 mb-1 text-center lg:text-left"
       style={
         Object {
           "textShadow": "2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff",
@@ -16,45 +16,59 @@ exports[`Storyshots Promotional/LandingStatsSection Default 1`] = `
       }
     >
       Wir stehen erst am Anfang
-      <br />
-      <span
-        className="text-purple"
-      >
-        Ein paar Beispielprojekte
-      </span>
     </h2>
+    <p
+      className="mb-4 text-center lg:text-left"
+    >
+      Ein paar Zahlen
+    </p>
   </div>
   <div
     className="flex items-center"
   >
     <div
-      className="p-4 inline-flex flex-wrap sm:flex-nowrap gap-x-8 gap-y-2 bg-white shadow items-center justify-center"
+      className="inline-flex flex-wrap lg:flex-nowrap gap-x-8 gap-y-2 items-center justify-center sm:text-xl font-bold font-headline"
     >
       <div
-        className="flex gap-2 items-center"
+        className="flex gap-4 items-center bg-blue text-green pr-4"
       >
         <strong
-          className="sm:text-xl font-bold text-blue"
+          className="bg-purple h-12 text-white p-4 flex place-items-center"
+          style={
+            Object {
+              "minWidth": "3rem",
+            }
+          }
         >
           123
         </strong>
         Teilnehmer
       </div>
       <div
-        className="flex gap-2 items-center"
+        className="flex gap-4 items-center bg-purple text-white pr-4"
       >
         <strong
-          className="sm:text-xl font-bold text-blue"
+          className="bg-green h-12 text-blue p-4 flex place-items-center"
+          style={
+            Object {
+              "minWidth": "3rem",
+            }
+          }
         >
           432
         </strong>
         Sensoren
       </div>
       <div
-        className="flex gap-2 items-center"
+        className="flex gap-4 items-center bg-blue text-green pr-4"
       >
         <strong
-          className="sm:text-xl font-bold text-blue"
+          className="bg-green h-12 text-blue p-4 flex place-items-center"
+          style={
+            Object {
+              "minWidth": "3rem",
+            }
+          }
         >
           100234
         </strong>
