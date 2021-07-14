@@ -1,0 +1,17 @@
+.image {
+  background-repeat: no-repeat;
+  background-position: 50vw 0;
+  background-image: url(/images/patterns/about-pixels.svg);
+}
+
+@media screen and (max-width: 1280px) {
+  .image {
+    background-position: 60vw 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .image {
+    background-position: calc(var(--pixelSize, 58px) * -1) calc(var(--pixelSize, 58px) * -1);
+  }
+}

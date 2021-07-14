@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="836px" height="406px" viewBox="0 0 836 406" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Pixels</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.974977 0 0 0 0 0.989612 0 0 0 0 0.991508 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage-V2" transform="translate(-649.000000, -3629.000000)">
+            <g id="Pixels" transform="translate(0.000000, 3629.000000)" filter="url(#filter-1)">
+                <g transform="translate(649.000000, 0.000000)">
+                    <rect id="Rectangle" fill="#F9FCFD" x="198" y="116" width="116" height="116"></rect>
+                    <rect id="Rectangle" fill="#46ECA1" x="372" y="58" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#46ECA1" opacity="0.582542783" x="0" y="174" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#46ECA1" x="198" y="232" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#46ECA1" x="488" y="348" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#46ECA1" x="604" y="232" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#46ECA1" x="720" y="232" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#100C53" x="430" y="290" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#0000C2" opacity="0.768345424" x="140" y="174" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#46ECA1" opacity="0.582542783" x="256" y="116" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#100C53" x="662" y="58" width="116" height="116"></rect>
+                    <rect id="Rectangle" fill="#F9FCFD" x="546" y="58" width="116" height="116"></rect>
+                    <rect id="Rectangle" fill="#0000C2" opacity="0.630301339" x="314" y="116" width="116" height="116"></rect>
+                    <rect id="Rectangle" fill="#8330FF" opacity="0.582542783" x="430" y="116" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#8330FF" x="58" y="58" width="140" height="116"></rect>
+                    <rect id="Rectangle" fill="#100C53" x="0" y="0" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#8330FF" opacity="0.582542783" x="198" y="174" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#8330FF" x="488" y="290" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#8330FF" x="662" y="174" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#8330FF" x="778" y="174" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#46ECA1" opacity="0.582542783" x="430" y="58" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#46ECA1" opacity="0.582542783" x="487" y="174" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#100C53" x="314" y="58" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#0000C2" x="430" y="116" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#0000C2" x="487" y="116" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#0000C2" x="546" y="174" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#100C53" opacity="0.721168155" x="256" y="58" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#100C53" opacity="0.582542783" x="720" y="174" width="58" height="58"></rect>
+                    <rect id="Rectangle" fill="#46ECA1" x="778" y="58" width="58" height="58"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
