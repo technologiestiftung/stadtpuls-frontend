@@ -96,7 +96,7 @@ export const UserInfoEdit: FC<UserInfoEditProps> = ({
 
   return (
     <div className='flex flex-col pt-3 w-full sm:min-w-md md:min-w-xs lg:min-w-md'>
-      <h1 className='text-blue-500 text-3xl font-semibold m-0 mb-10'>
+      <h1 className='text-blue text-3xl font-semibold m-0 mb-10'>
         Profil bearbeiten
       </h1>
       <form id='user-info-form' onSubmit={onInternalSubmit}>

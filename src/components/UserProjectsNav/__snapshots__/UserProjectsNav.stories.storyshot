@@ -10,7 +10,7 @@ exports[`Storyshots Layout/UserProjectsNav Default 1`] = `
       className="my-4 border-opacity-100"
     >
       <button
-        className="py-0 pl-4 border-l-2 border-blue-400 focus-offset text-left transition focus:ring-blue-500 text-blue-500 border-opacity-100"
+        className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-blue border-opacity-100"
         id="user-project-item-kjasdhjkas"
         onClick={[Function]}
       >
@@ -22,7 +22,7 @@ exports[`Storyshots Layout/UserProjectsNav Default 1`] = `
       className="my-4 border-opacity-0"
     >
       <button
-        className="py-0 pl-4 border-l-2 border-blue-400 focus-offset text-left transition focus:ring-blue-500 text-gray-500 border-opacity-0"
+        className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-gray-500 border-opacity-0"
         id="user-project-item-uisdzuada"
         onClick={[Function]}
       >
@@ -34,7 +34,7 @@ exports[`Storyshots Layout/UserProjectsNav Default 1`] = `
       className="my-4 border-opacity-0"
     >
       <button
-        className="py-0 pl-4 border-l-2 border-blue-400 focus-offset text-left transition focus:ring-blue-500 text-gray-500 border-opacity-0"
+        className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-gray-500 border-opacity-0"
         id="user-project-item-tgedhebdm"
         onClick={[Function]}
       >
@@ -55,7 +55,7 @@ exports[`Storyshots Layout/UserProjectsNav Without Default Selected Project 1`] 
       className="my-4 border-opacity-0"
     >
       <button
-        className="py-0 pl-4 border-l-2 border-blue-400 focus-offset text-left transition focus:ring-blue-500 text-gray-500 border-opacity-0"
+        className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-gray-500 border-opacity-0"
         id="user-project-item-kjasdhjkas"
         onClick={[Function]}
       >
@@ -67,7 +67,7 @@ exports[`Storyshots Layout/UserProjectsNav Without Default Selected Project 1`] 
       className="my-4 border-opacity-0"
     >
       <button
-        className="py-0 pl-4 border-l-2 border-blue-400 focus-offset text-left transition focus:ring-blue-500 text-gray-500 border-opacity-0"
+        className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-gray-500 border-opacity-0"
         id="user-project-item-uisdzuada"
         onClick={[Function]}
       >
@@ -79,7 +79,7 @@ exports[`Storyshots Layout/UserProjectsNav Without Default Selected Project 1`] 
       className="my-4 border-opacity-0"
     >
       <button
-        className="py-0 pl-4 border-l-2 border-blue-400 focus-offset text-left transition focus:ring-blue-500 text-gray-500 border-opacity-0"
+        className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-gray-500 border-opacity-0"
         id="user-project-item-tgedhebdm"
         onClick={[Function]}
       >

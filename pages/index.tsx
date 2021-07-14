@@ -35,9 +35,10 @@ const LandingPage: FC<{
   const [activeSlideIndex, setActiveSlideIndex] = useState<number>(
     initialSlideIndex
   );
+
   return (
     <>
-      <div className='absolute z-0 top-0 left-0 right-0'>
+      <div className='absolute z-10 top-0 left-0 right-0 mix-blend-multiply pointer-events-none'>
         {curatedProjects.length > 0 && (
           <LandingHeroBackgroundMap
             project={curatedProjects[activeSlideIndex]}

@@ -53,7 +53,10 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
 
   return (
     <section
-      className='overflow-hidden px-8 md:px-24 lg:px-32 xl:px-40 my-12 sm:my-24 md:my-40'
+      className={[
+        "overflow-hidden px-8 md:px-24 lg:px-32 xl:px-40",
+        "my-12 sm:my-24 md:my-40 z-20 relative",
+      ].join(" ")}
       style={{ marginTop: "calc(93vh - 340px)" }}
     >
       <div className={styles.sliderParent}>
@@ -64,7 +67,7 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
                 className={`swiper-slide ${styles.sliderSlide}`}
                 key={project.id}
               >
-                <ProjectPreview {...project} location={undefined} />
+                <ProjectPreview {...project} withMapBackground={false} />
               </div>
             ))}
           </div>

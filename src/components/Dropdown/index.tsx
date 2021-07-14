@@ -32,7 +32,7 @@ export const Dropdown: FC<DropdownPropType> = ({
   return (
     <div className='inline-block relative'>
       <button
-        className='cursor-pointer rounded-none focus-offset focus:ring-blue-500'
+        className='cursor-pointer rounded-none focus-offset focus:ring-blue'
         onClick={evt => {
           evt.preventDefault();
           evt.stopPropagation();
@@ -44,7 +44,7 @@ export const Dropdown: FC<DropdownPropType> = ({
       </button>
       <span aria-hidden className={caretStyles} />
       <section className={dropdownStyles}>
-        <div className='bg-white shadow-md'>{dropdownContent}</div>
+        <div className='bg-white shadow'>{dropdownContent}</div>
       </section>
     </div>
   );

@@ -1,60 +1,30 @@
-const colors = require("tailwindcss/colors");
+const colors = require('./src/style/colors')
+
+const fallbackFonts = [
+  "ui-sans-serif",
+  "system-ui",
+  "-apple-system",
+  "BlinkMacSystemFont",
+  "Segoe UI",
+  "Roboto",
+  "Helvetica Neue",
+  "Arial",
+  "Noto Sans",
+  "sans-serif",
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  "Noto Color Emoji",
+]
 
 module.exports = {
   purge: ["./pages/**/*.tsx", "./src/**/*.tsx"],
   darkMode: false,
   theme: {
-    colors: {
-      white: "#FFFFFF",
-      black: "#2f2f2f",
-      blue: {
-        25: "#f5f6fa",
-        50: "#e9ebf4",
-        100: "#d2d7e9",
-        200: "#a5afd3",
-        300: "#7887bd",
-        400: "#4b5fa7",
-        500: "#1e3791",
-      },
-      red: {
-        50: "#fde6eb",
-        100: "#faccd6",
-        200: "#f599ad",
-        300: "#f06684",
-        400: "#eb335b",
-        500: "#e60032",
-      },
-      gray: {
-        50: "#fafafa",
-        100: "#f4f4f5",
-        200: "#e4e4e7",
-        300: "#d4d4d8",
-        400: "#a1a1aa",
-        500: "#71717a",
-        600: "#52525b",
-        700: "#3f3f46",
-        800: "#27272a",
-        900: "#18181b",
-      },
-    },
+    colors,
     fontFamily: {
-      sans: [
-        "IBM Plex Sans",
-        "ui-sans-serif",
-        "system-ui",
-        "-apple-system",
-        "BlinkMacSystemFont",
-        "Segoe UI",
-        "Roboto",
-        "Helvetica Neue",
-        "Arial",
-        "Noto Sans",
-        "sans-serif",
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        "Noto Color Emoji",
-      ],
+      headline: [ "'SpaceGrotesk'", ...fallbackFonts ],
+      sans: [ "Sora", ...fallbackFonts ],
     },
     minWidth: {
       "xs": "20rem",
@@ -63,9 +33,71 @@ module.exports = {
       "lg": "32rem",
       "xl": "36rem",
     },
+    boxShadow: {
+      "DEFAULT": "0 4px 0 0 rgba(87,83,122,0.05)",
+      "blue": `0 4px 0 0 ${colors.blue}`,
+      "purple": `0 4px 0 0 ${colors.purple}`,
+      "green": `0 4px 0 0 ${colors.green}`,
+      "inner": "inset 0 2px 0 0 rgba(87,83,122,0.05)",
+      "none": "none",
+    },
+    extend: {
+      animation: {
+        'borderpulse': 'border-pulse 3s ease-in-out infinite',
+        'borderpulse-blue': 'border-pulse-blue 3s ease-in-out infinite',
+        'textpulse': 'text-pulse 3s ease-out infinite',
+        'bgpulse': 'bg-pulse 3s linear infinite',
+      },
+      keyframes: {
+        'border-pulse': {
+          '0%, 100%': {
+            'border-color': colors.gray['200'],
+            'box-shadow': `0 4px 0 0 rgba(87,83,122,0.05)`,
+          },
+          '25%': {
+            'border-color': colors.purple,
+            'box-shadow': `0 4px 0 0 ${colors.purple}`,
+          },
+          '50%': {
+            'border-color': colors.blue,
+            'box-shadow': `0 4px 0 0 ${colors.blue}`,
+          },
+          '75%': {
+            'border-color': colors.green,
+            'box-shadow': `0 4px 0 0 ${colors.green}`,
+          },
+        },
+        'border-pulse-blue': {
+          '0%, 100%': {
+            'border-color': colors.blue,
+            'box-shadow': `0 4px 0 0 ${colors.blue}`,
+          },
+          '33%': {
+            'border-color': colors.green,
+            'box-shadow': `0 4px 0 0 ${colors.green}`,
+          },
+          '66%': {
+            'border-color': colors.purple,
+            'box-shadow': `0 4px 0 0 ${colors.purple}`,
+          },
+        },
+        'text-pulse': {
+          '0%, 25%, 100%': { 'color': colors.purple, },
+          '50%': { 'color': colors.blue, },
+          '75%': { 'color': colors.green, },
+        },
+        'bg-pulse': {
+          '0%, 25%, 100%': { 'background-color': colors.purple, },
+          '50%': { 'background-color': colors.blue, },
+          '75%': { 'background-color': colors.green, },
+        }
+      }
+    },
   },
   variants: {
-    extend: {},
+    extend: {
+      animation: ['hover', 'group-hover'],
+    },
   },
   plugins: [require("@tailwindcss/forms"), require('@tailwindcss/typography')],
 };

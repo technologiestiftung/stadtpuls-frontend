@@ -21,8 +21,8 @@ const DocsBottomNavigationLi: FC<DocsBottomNavigationLiPropType> = ({
         className={[
           className,
           "block p-4 sm:p-8 border rounded bg-gray-50",
-          "text-blue-500 flex justify-between",
-          "transition hover:border-blue-500 hover:bg-blue-50",
+          "text-blue flex justify-between",
+          "transition hover:border-blue hover:bg-gray-50",
         ].join(" ")}
       >
         {children}

@@ -18,12 +18,12 @@ export const ProjectInfo: FC<ProjectInfoPropType> = ({
   projectEditLink,
   children,
 }) => (
-  <section className='bg-blue-25 p-6'>
+  <section className='bg-gray-50 p-6'>
     <header
       className='grid gap-4 items-start'
       style={{ gridTemplateColumns: "auto max-content" }}
     >
-      <h2 className='text-blue-500 text-3xl font-bold'>{title}</h2>
+      <h2 className='text-blue text-3xl font-bold'>{title}</h2>
       <Link href={projectViewLink}>
         <AnchorButton href={projectViewLink}>→ Projektseite</AnchorButton>
       </Link>
@@ -31,9 +31,7 @@ export const ProjectInfo: FC<ProjectInfoPropType> = ({
     <div className='mt-3'>
       {category && (
         <p>
-          <mark className='p-1 text-sm bg-blue-100 text-blue-500'>
-            {category}
-          </mark>
+          <mark className='p-1 text-sm bg-gray-100 text-blue'>{category}</mark>
         </p>
       )}
       <div className='mt-2 max-w-prose'>{children}</div>

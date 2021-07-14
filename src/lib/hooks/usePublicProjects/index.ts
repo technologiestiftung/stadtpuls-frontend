@@ -70,22 +70,14 @@ export const projectQueryString = `
 `;
 
 export const mapPublicProject = (project: ProjectsType): PublicProject => {
-  const {
-    id,
-    name,
-    description,
-    location,
-    devices,
-    userProfile,
-    category,
-  } = project;
+  const { id, name, description, location, devices, user, category } = project;
   return {
     id,
     name,
-    description,
-    location,
+    description: description || "",
+    location: location || "",
     devicesNumber: devices?.length || 0,
-    authorName: userProfile?.name || null,
+    authorName: user?.name || null,
     records: parseDeviceRecords(devices),
     category: category?.name || null,
   };

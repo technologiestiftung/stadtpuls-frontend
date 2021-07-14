@@ -49,7 +49,7 @@ export const FormTextarea = forwardRef<
         ref={ref}
       ></textarea>
       {errors.map(error => (
-        <p className='text-red-500 text-sm' key={error}>
+        <p className='text-error text-sm' key={error}>
           {error}
         </p>
       ))}

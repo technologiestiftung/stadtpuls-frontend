@@ -5,7 +5,7 @@ exports[`Storyshots ApiInfo Default 1`] = `
   className="css-vurnku"
 >
   <h2
-    className="css-1t5hxd4"
+    className="css-12oqlt"
   >
     API
   </h2>
@@ -20,10 +20,10 @@ exports[`Storyshots ApiInfo Default 1`] = `
           one
         </td>
         <td
-          className="css-13486uz"
+          className="css-13pma7l"
         >
           <a
-            className="css-uv00ue"
+            className="css-p944lt"
             href="https://somedomain.com/endpoint/one"
             rel="noopener noreferrer"
             target="_blank"
@@ -40,10 +40,10 @@ exports[`Storyshots ApiInfo Default 1`] = `
           two
         </td>
         <td
-          className="css-13486uz"
+          className="css-13pma7l"
         >
           <a
-            className="css-uv00ue"
+            className="css-p944lt"
             href="https://somedomain.com/endpoint/two"
             rel="noopener noreferrer"
             target="_blank"
@@ -60,10 +60,10 @@ exports[`Storyshots ApiInfo Default 1`] = `
           three
         </td>
         <td
-          className="css-13486uz"
+          className="css-13pma7l"
         >
           <a
-            className="css-uv00ue"
+            className="css-p944lt"
             href="https://somedomain.com/endpoint/three"
             rel="noopener noreferrer"
             target="_blank"

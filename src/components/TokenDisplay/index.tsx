@@ -16,8 +16,8 @@ const ContentsWrapper: React.FC<ContentsWrapperType> = ({
     aria-labelledby='token-display-label'
     className={[
       "mt-2 p-3 break-words",
-      `border ${hasErrorStyle ? "border-red-500" : "border-gray-200"}`,
-      `${hasErrorStyle ? "text-red-500" : "text-gray-700"}`,
+      `border ${hasErrorStyle ? "border-error" : "border-gray-200"}`,
+      `${hasErrorStyle ? "text-error" : "text-gray-700"}`,
     ].join(" ")}
   >
     {children}

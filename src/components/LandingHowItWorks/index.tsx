@@ -4,7 +4,15 @@ import styles from "./LandingHowItWorks.module.css";
 
 interface ListItemType {
   text: ReactNode;
-  icon?: ReactNode;
+  icon?: string;
+}
+
+interface HowItWorksTitlePropType {
+  final?: boolean;
+}
+
+interface HowItWorksDescriptionPropType {
+  final?: boolean;
 }
 
 interface HowItWorksColumnPropType {
@@ -18,14 +26,28 @@ interface ListWithIconsPropType {
   area: string;
 }
 
-const HowItWorksTitle: FC = ({ children }) => (
-  <h3 className='text-lg md:text-xl lg:text-2xl font-bold text-blue-500 sm:pt-4 md:mt-8 mb-2'>
+const HowItWorksTitle: FC<HowItWorksTitlePropType> = ({ children }) => (
+  <h3
+    className={[
+      "text-lg md:text-xl lg:text-2xl font-bold",
+      "sm:pt-4 md:mt-8 mb-2 font-headline",
+    ].join(" ")}
+  >
     {children}
   </h3>
 );
 
-const HowItWorksDescription: FC = ({ children }) => (
-  <p className='text-sm text-gray-600 mb-8'>{children}</p>
+const HowItWorksDescription: FC<HowItWorksDescriptionPropType> = ({
+  children,
+  final = false,
+}) => (
+  <p
+    className={["text-sm mb-8 text-gray-500", final && "sm:text-gray-300"]
+      .filter(Boolean)
+      .join(" ")}
+  >
+    {children}
+  </p>
 );
 
 const HowItWorksColumn: FC<HowItWorksColumnPropType> = ({
@@ -34,7 +56,10 @@ const HowItWorksColumn: FC<HowItWorksColumnPropType> = ({
   area,
 }) => (
   <div
-    className={["sm:pr-4 md:pr-8", final ? "sm:bg-white" : ""].join(" ")}
+    className={[
+      "sm:pr-4 md:pr-8",
+      final ? "sm:bg-black-dot-pattern sm:text-white" : "",
+    ].join(" ")}
     style={{ gridArea: area }}
   >
     <header className={final ? "sm:pl-4 md:pl-8" : ""}>{children}</header>
@@ -50,19 +75,29 @@ const ListWithIcons: FC<ListWithIconsPropType> = ({
     className={[
       "sm:pr-4 md:pr-8",
       "pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300",
-      final ? "sm:bg-white sm:px-4 md:px-8" : "",
-    ].join(" ")}
+      final && "sm:bg-black-dot-pattern sm:px-4 md:px-8",
+      final && "sm:border-purple sm:border-opacity-50",
+    ]
+      .filter(Boolean)
+      .join(" ")}
     style={{ gridArea: area }}
   >
-    {listItems.map(({ text, icon = <i /> }) => (
+    {listItems.map(({ text, icon = "#" }) => (
       <li
         key={text?.toString()}
-        className='grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center'
+        className={[
+          "grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50",
+          final ? "sm:bg-green sm:bg-opacity-10 sm:text-white" : "",
+        ].join(" ")}
         style={{ gridTemplateColumns: "auto 1fr" }}
       >
-        <span className='bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10'>
-          {icon}
-        </span>
+        <span
+          className={[
+            "w-14 h-14 bg-no-repeat bg-center",
+            final ? "bg-green" : "bg-purple text-white",
+          ].join(" ")}
+          style={{ backgroundImage: `url(${icon})` }}
+        />
         <span className='text-sm sm:text-base break-words sm:break-normal'>
           {text}
         </span>
@@ -77,9 +112,9 @@ const columnsData = [
     description:
       "Die Hardware-Wahl  ist ganz dir überlassen. Arbeite z.B. mit Arduino, Raspberry Pi oder einer Open Sense Box.",
     listItems: [
-      { text: "Arduino" },
-      { text: "Raspberry Pi" },
-      { text: "Open Sense Box" },
+      { icon: "/images/icons/arduino.svg", text: "Arduino" },
+      { icon: "/images/icons/raspberry-pi.svg", text: "Raspberry Pi" },
+      { icon: "/images/icons/open-sense-box.svg", text: "Open Sense Box" },
     ],
   },
   {
@@ -87,36 +122,45 @@ const columnsData = [
     description:
       "Wir unterstützen aktuell die folgenden, für die Umwelt relevanten Sensortypen.",
     listItems: [
-      { text: "Temperatur" },
-      { text: "CO2" },
-      { text: "Luftfeuchtigkeit" },
-      { text: "Druck" },
-      { text: "Helligkeit" },
-      { text: "Lautstärke" },
-      { text: "Personenzähler" },
+      { icon: "/images/icons/temperature.svg", text: "Temperatur" },
+      { icon: "/images/icons/co2.svg", text: "CO2" },
+      { icon: "/images/icons/humidity.svg", text: "Luftfeuchtigkeit" },
+      { icon: "/images/icons/pressure.svg", text: "Druck" },
+      { icon: "/images/icons/lightness.svg", text: "Helligkeit" },
+      { icon: "/images/icons/decibels.svg", text: "Lautstärke" },
+      { icon: "/images/icons/crowd.svg", text: "Personenzähler" },
     ],
   },
   {
     title: "Protokolle",
     description:
       "Über die folgenden Protokolle kannst du deine Daten übertragen.",
-    listItems: [{ text: "LoRaWAN (TTN)" }],
+    listItems: [{ icon: "/images/icons/arduino.svg", text: "LoRaWAN (TTN)" }],
   },
   {
     title: "Was wir bereitstellen",
     description:
       "Hast du erstmal deinen Sensoren registriert, stellen wir dir automatisch und kostenlos folgendes bereit:",
     listItems: [
-      { text: "Ein Profil für dein Projekt" },
-      { text: <>Daten&shy;visualisierungen</> },
-      { text: "REST-API für alle Sensoren" },
-      { text: "Daten-Downloads (CSV & JSON)" },
+      {
+        icon: "/images/icons/profile.svg",
+        text: "Ein Profil für dein Projekt",
+      },
+      {
+        icon: "/images/icons/visualisations.svg",
+        text: <>Daten&shy;visualisierungen</>,
+      },
+      { icon: "/images/icons/api.svg", text: "REST-API für alle Sensoren" },
+      {
+        icon: "/images/icons/downloads.svg",
+        text: "Daten-Downloads (CSV & JSON)",
+      },
     ],
   },
 ];
 
 export const LandingHowItWorks: FC = () => (
-  <div className='bg-gray-50'>
+  <div>
     <section
       className={[
         "container mx-auto max-w-8xl",
@@ -127,14 +171,13 @@ export const LandingHowItWorks: FC = () => (
       <h1
         className={[
           "text-xl sm:text-2xl md:text-3xl",
-          "text-blue-500 font-semibold",
-          "mt-6 mb-8",
+          "text-purple font-bold font-headline",
+          "mt-6 mb-1",
         ].join(" ")}
       >
         Und so geht’s:
-        <br />
-        <span className='text-blue-300'>Eine kleine Übersicht</span>
       </h1>
+      <p className='mb-8 text-lg'>Eine kleine Übersicht</p>
       <div
         className={`grid grid-cols-2 lg:grid-cols-9 gap-x-4 sm:gap-x-0 ${styles.gridContainer}`}
       >
@@ -144,9 +187,11 @@ export const LandingHowItWorks: FC = () => (
             final={idx + 1 === columnsData.length}
             area={`title-${idx + 1}`}
           >
-            <HowItWorksTitle>
+            <HowItWorksTitle final={idx + 1 !== columnsData.length}>
               <span className='mr-2'>{title}</span>
-              {idx + 1 !== columnsData.length && <ArrowForward />}
+              {idx + 1 !== columnsData.length && (
+                <ArrowForward className='text-purple' />
+              )}
             </HowItWorksTitle>
           </HowItWorksColumn>
         ))}
@@ -156,7 +201,9 @@ export const LandingHowItWorks: FC = () => (
             final={idx + 1 === columnsData.length}
             area={`description-${idx + 1}`}
           >
-            <HowItWorksDescription>{description}</HowItWorksDescription>
+            <HowItWorksDescription final={idx + 1 === columnsData.length}>
+              {description}
+            </HowItWorksDescription>
           </HowItWorksColumn>
         ))}
         {columnsData.map(({ title, listItems }, idx) => (

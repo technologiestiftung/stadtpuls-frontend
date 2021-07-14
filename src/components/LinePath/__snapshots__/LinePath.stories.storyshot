@@ -6,7 +6,7 @@ exports[`Storyshots Charts/LinePath Default 1`] = `
   width={400}
 >
   <path
-    className="visx-linepath css-j1t6gj-LinePath"
+    className="visx-linepath css-lsicnm-LinePath"
     d="M400,116.66666666666666L200,33.33333333333333L0,75"
     fill="transparent"
     strokeLinecap="round"

@@ -2,6 +2,15 @@ import { AuthProvider } from "@auth/Auth";
 import * as userDataHook from "@lib/hooks/useUserData";
 import { render, screen, waitFor } from "@testing-library/react";
 import { Header } from ".";
+import * as nextRouter from "next/router";
+
+const useRouter = jest.fn();
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+nextRouter.useRouter = useRouter.mockReturnValue({
+  query: {},
+  pathname: "/",
+});
 
 const originalUserDataHook = userDataHook.useUserData;
 

@@ -5,11 +5,11 @@ exports[`Storyshots UI Elements/DropdownMenu Default 1`] = `
   className="inline-block relative"
 >
   <button
-    className="cursor-pointer rounded-none focus-offset focus:ring-blue-500"
+    className="cursor-pointer rounded-none focus-offset focus:ring-blue"
     onClick={[Function]}
   >
     <a
-      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue focus:ring-blue"
     >
       Click me
     </a>
@@ -22,13 +22,13 @@ exports[`Storyshots UI Elements/DropdownMenu Default 1`] = `
     className="absolute top-full left-0 transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 opacity-0 pointer-events-none"
   >
     <div
-      className="bg-white shadow-md"
+      className="bg-white shadow"
     >
       <div
         className="py-2"
       >
         <a
-          className="group block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-blue-50 hover:text-blue-500"
+          className="group block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-gray-50 hover:text-blue"
           href="/projects"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -36,7 +36,7 @@ exports[`Storyshots UI Elements/DropdownMenu Default 1`] = `
           Meine Projekte
         </a>
         <a
-          className="group block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-blue-50 hover:text-blue-500"
+          className="group block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-gray-50 hover:text-blue"
           href="/account"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -44,7 +44,7 @@ exports[`Storyshots UI Elements/DropdownMenu Default 1`] = `
           Account
         </a>
         <button
-          className="group block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-blue-50 hover:text-blue-500"
+          className="group block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-gray-50 hover:text-blue"
           onClick={[Function]}
         >
           Logout
@@ -60,11 +60,11 @@ exports[`Storyshots UI Elements/DropdownMenu With Custom Children 1`] = `
   className="inline-block relative"
 >
   <button
-    className="cursor-pointer rounded-none focus-offset focus:ring-blue-500"
+    className="cursor-pointer rounded-none focus-offset focus:ring-blue"
     onClick={[Function]}
   >
     <a
-      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue-500 focus:ring-blue-500"
+      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue focus:ring-blue"
     >
       Click me
     </a>
@@ -77,20 +77,20 @@ exports[`Storyshots UI Elements/DropdownMenu With Custom Children 1`] = `
     className="absolute top-full left-0 transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 opacity-0 pointer-events-none"
   >
     <div
-      className="bg-white shadow-md"
+      className="bg-white shadow"
     >
       <div
         className="py-2"
       >
         <a
-          className="group block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-blue-50 hover:text-blue-500"
+          className="group block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-gray-50 hover:text-blue"
           href="/account/projects"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <svg
             aria-hidden={true}
-            className="MuiSvgIcon-root transition mr-2 text-gray-400 group-hover:text-blue-400"
+            className="MuiSvgIcon-root transition mr-2 text-gray-400 group-hover:text-purple"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -101,14 +101,14 @@ exports[`Storyshots UI Elements/DropdownMenu With Custom Children 1`] = `
            Meine Projekte
         </a>
         <a
-          className="group block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-blue-50 hover:text-blue-500"
+          className="group block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-gray-50 hover:text-blue"
           href="/account/profile"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <svg
             aria-hidden={true}
-            className="MuiSvgIcon-root transition mr-2 text-gray-400 group-hover:text-blue-400"
+            className="MuiSvgIcon-root transition mr-2 text-gray-400 group-hover:text-purple"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -119,12 +119,12 @@ exports[`Storyshots UI Elements/DropdownMenu With Custom Children 1`] = `
            Account
         </a>
         <button
-          className="group block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-blue-50 hover:text-blue-500"
+          className="group block w-full text-black px-4 py-1.5 cursor-pointer transition text-left hover:bg-gray-50 hover:text-blue"
           onClick={[Function]}
         >
           <svg
             aria-hidden={true}
-            className="MuiSvgIcon-root transition mr-2 text-gray-400 group-hover:text-blue-400"
+            className="MuiSvgIcon-root transition mr-2 text-gray-400 group-hover:text-purple"
             focusable="false"
             viewBox="0 0 24 24"
           >

@@ -38,11 +38,9 @@ export const ProjectCreatedInfo: FC<ProjectCreatedInfoType> = ({
 
   return (
     <article className='bg-white max-w-prose' {...props}>
-      <h2 className='text-3xl text-blue-500 font-bold'>{projectTitle}</h2>
+      <h2 className='text-3xl text-blue font-bold'>{projectTitle}</h2>
       <p className='mt-4'>Dein Projekt wurde erfolgreich angelegt.</p>
-      <h3 className='mt-12 text-2xl text-blue-500 font-bold'>
-        Nächste Schritte
-      </h3>
+      <h3 className='mt-12 text-2xl text-blue font-bold'>Nächste Schritte</h3>
       <div className='mt-4 mb-12'>{children}</div>
       <TokenDisplay hasError={!!error}>
         {!token && !error

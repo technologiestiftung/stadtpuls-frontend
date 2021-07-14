@@ -22,7 +22,7 @@ export const UserInfoCard: FC<UserInfoCardPropTypes> = ({
       <div>
         <div className='flex items-center'>
           <UserAvatar username={username} size={48} className='mr-4' />
-          <h1 className='text-blue-500 text-3xl font-semibold'>{username}</h1>
+          <h1 className='text-blue text-3xl font-semibold'>{username}</h1>
         </div>
         <div className='border-gray-300 border-t my-8' />
         <p className='text-gray-500'>
@@ -39,7 +39,7 @@ export const UserInfoCard: FC<UserInfoCardPropTypes> = ({
       <div>
         {onUserDelete && (
           <button
-            className='text-left mt-16 text-red-500 hover:text-opacity-50 cursor-pointer'
+            className='text-left mt-16 text-error hover:text-opacity-50 cursor-pointer'
             onClick={() => setShowDeleteModal(true)}
           >
             Account löschen

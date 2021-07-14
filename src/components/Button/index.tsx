@@ -26,7 +26,7 @@ const getButtonStyles = ({
   disabled?: boolean;
   className?: string;
 }): string => {
-  const classes = ["text-lg px-4 py-2 font-sans transition"];
+  const classes = ["inline-block text-lg px-4 py-2 font-headline transition"];
   if (disabled) {
     classes.push("cursor-default");
     switch (variant) {
@@ -34,10 +34,10 @@ const getButtonStyles = ({
         classes.push("bg-gray-200 text-gray-400");
         break;
       case "dangerous":
-        classes.push("bg-white border border-red-300 text-red-300");
+        classes.push("border border-error text-error");
         break;
       default:
-        classes.push("bg-white border border-gray-400 text-gray-400");
+        classes.push("border border-gray-400 text-gray-400");
         break;
     }
   } else {
@@ -45,17 +45,17 @@ const getButtonStyles = ({
     switch (variant) {
       case "primary":
         classes.push(
-          "focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60"
+          "focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
         );
         break;
       case "dangerous":
         classes.push(
-          "focus:ring-red-500 bg-white border border-red-500 text-red-500 hover:bg-red-500 hover:bg-opacity-10"
+          "focus:ring-error border border-error text-error hover:bg-error hover:bg-opacity-10"
         );
         break;
       default:
         classes.push(
-          "focus:ring-blue-500 bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+          "focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
         );
         break;
     }

@@ -53,7 +53,6 @@ export interface Theme {
       lineHeight: string;
       fontWeight: string;
       minHeight: string;
-      backgroundImage: string;
       backgroundSize: string;
     };
     p: {

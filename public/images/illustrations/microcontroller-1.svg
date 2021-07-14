@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="35px" viewBox="0 0 31 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Illustrations/Microcontroller/V1</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.974977 0 0 0 0 0.989612 0 0 0 0 0.991508 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Illustrations/Microcontroller/V1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Rectangle" fill="#0000C2" points="2.96323558 2 27.9691574 2 31 5.25577311 31 32.0605844 28.0832671 35 3.05943442 35 0 32.0204294 0 5.24739543"></polygon>
+        <g filter="url(#filter-1)" id="Group">
+            <g transform="translate(3.000000, 5.000000)">
+                <circle id="Oval" fill="#D8D8D8" cx="1.5" cy="1.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="1.5" cy="19.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="1.5" cy="13.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="1.5" cy="7.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="1.5" cy="25.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="23.5" cy="1.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="23.5" cy="7.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="23.5" cy="13.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="23.5" cy="19.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="23.5" cy="25.5" r="1.5"></circle>
+            </g>
+        </g>
+        <rect id="Rectangle" fill="#46ECA1" x="9" y="5" width="13" height="13"></rect>
+        <rect id="Rectangle" fill="#46ECA1" x="13" y="23" width="9" height="9"></rect>
+        <rect id="Rectangle" fill="#8330FF" x="15" y="25" width="5" height="5"></rect>
+        <rect id="Rectangle" fill="#8330FF" x="17" y="0" width="5" height="5"></rect>
+        <rect id="Rectangle" fill="#8330FF" x="13" y="2" width="2" height="3"></rect>
+    </g>
+</svg>

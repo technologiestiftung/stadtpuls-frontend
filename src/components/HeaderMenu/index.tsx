@@ -8,6 +8,10 @@ interface MenuPageType {
   text: string;
 }
 
+interface HeaderMenuPropType {
+  hasDarkMode?: boolean;
+}
+
 interface MenuLinkPropType extends MenuPageType {
   className?: string;
   onClick: () => void;
@@ -37,14 +41,14 @@ const HeaderLink: FC<MenuLinkPropType> = ({
   </li>
 );
 
-export const HeaderMenu: React.FC = () => {
+export const HeaderMenu: FC<HeaderMenuPropType> = ({ hasDarkMode = false }) => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const toggleIsOpened = (): void => setIsOpened(!isOpened);
   const menuRef = useClickOutside<HTMLDivElement>(() => setIsOpened(false));
   return (
     <div ref={menuRef}>
       <button
-        className='sm:hidden text-blue-500 focus-offset relative z-0'
+        className='sm:hidden focus-offset relative z-0'
         onClick={toggleIsOpened}
       >
         {isOpened ? <Close /> : <Menu />}
@@ -52,19 +56,19 @@ export const HeaderMenu: React.FC = () => {
       <nav
         className={[
           "fixed sm:static",
-          "top-16 sm:top-auto",
+          "sm:top-auto",
           "left-0 sm:left-auto",
           "z-20 sm:z-auto",
           "w-full sm:w-auto",
-          "shadow-xl sm:shadow-none",
-          "py-4 px-1 sm:p-0",
-          "bg-gray-50 sm:bg-white",
-          "border-t border-gray-200 sm:border-none",
+          "shadow sm:shadow-none",
+          "sm:py-4 sm:px-1 sm:p-0 sm:bg-opacity-0",
+          hasDarkMode ? "bg-black" : "bg-white",
           "transition",
           !isOpened
             ? "opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
             : "",
         ].join(" ")}
+        style={{ top: 62 }}
       >
         <ul className='h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4'>
           <HeaderLink

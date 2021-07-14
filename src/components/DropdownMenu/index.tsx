@@ -31,7 +31,7 @@ export const DropdownMenu: FC<DropdownMenuPropType> = ({
     "group",
     "block w-full text-black",
     "px-4 py-1.5 cursor-pointer transition text-left",
-    "hover:bg-blue-50 hover:text-blue-500",
+    "hover:bg-gray-50 hover:text-blue",
   ]
     .filter(Boolean)
     .join(" ");

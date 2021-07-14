@@ -2,13 +2,13 @@
 
 exports[`Storyshots DataTable Default 1`] = `
 <div
-  className="css-1034mxm-DataTable"
+  className="css-888v7b-DataTable"
 >
   <div
-    className="css-6j75o1-DataTable"
+    className="css-1ojpts7-DataTable"
   >
     <div
-      className="css-86k88y"
+      className="css-1rjuow7"
     >
       My supa dupa table
     </div>
@@ -16,11 +16,11 @@ exports[`Storyshots DataTable Default 1`] = `
       className="css-vurnku"
     >
       <button
-        className="css-17v1r2j-IconButton"
+        className="css-jswibr-IconButton"
         onClick={[Function]}
       >
         <div
-          className="css-hz1ji0-IconButton"
+          className="css-ft8o68-IconButton"
         >
           <img
             alt="Download-Icon"
@@ -40,7 +40,7 @@ exports[`Storyshots DataTable Default 1`] = `
     >
       <thead>
         <tr
-          className="css-180p6o3-DataTable"
+          className="css-1thvw36-DataTable"
         >
           <th
             className="css-tw4ryr-DataTable"

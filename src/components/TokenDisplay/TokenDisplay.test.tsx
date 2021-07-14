@@ -25,10 +25,10 @@ describe("TokenDisplay component", () => {
   it("should visually indicate error when error", () => {
     render(<TokenDisplay hasError={true}>Something went wrong</TokenDisplay>);
     const tokenDisplay = screen.getByLabelText("Token");
-    expect(tokenDisplay.getAttribute("class")?.includes("text-red-500")).toBe(
+    expect(tokenDisplay.getAttribute("class")?.includes("text-error")).toBe(
       true
     );
-    expect(tokenDisplay.getAttribute("class")?.includes("border-red-500")).toBe(
+    expect(tokenDisplay.getAttribute("class")?.includes("border-error")).toBe(
       true
     );
   });

@@ -33,17 +33,14 @@ export const ProjectInfoFormWrapper: FC<ProjectInfoFormWrapperPropType> = ({
 
   return (
     <div>
-      <h2 className='text-3xl text-blue-500 font-bold'>{texts.title}</h2>
+      <h2 className='text-3xl text-blue font-bold'>{texts.title}</h2>
       <form noValidate {...formProps} id={formId} className='mt-4'>
         {children}
       </form>
       <footer className='mt-24'>
         {type === "edit" && (
           <div className='flex place-content-between'>
-            <button
-              className='text-red-500 focus-offset'
-              onClick={handleDelete}
-            >
+            <button className='text-error focus-offset' onClick={handleDelete}>
               Projekt löschen
             </button>
             <div>

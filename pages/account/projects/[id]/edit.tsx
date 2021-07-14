@@ -169,7 +169,7 @@ const AccountProjectEditPage: FC = () => {
         >
           Der folgende Projekt samt aller Sensoren und Daten wird unwiderruflich
           gelöscht.
-          <div className='bg-blue-25 p-3 mt-2'>
+          <div className='bg-gray-50 p-3 mt-2'>
             <span className='mr-3 inline-block'>{project.name}</span>
           </div>
         </SmallModalOverlay>

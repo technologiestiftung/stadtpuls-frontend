@@ -388,6 +388,11 @@ export const fakeProjects: ProjectsType[] = [
     },
     createdAt: "2019-04-14T00:00:00+00:00",
     connectype: "ttn",
+    user: {
+      id: "1",
+      createdAt: "2019-04-14T00:00:00+00:00",
+      name: "Dennis",
+    },
   },
   {
     id: 19,
@@ -418,6 +423,11 @@ export const fakeProjects: ProjectsType[] = [
     },
     createdAt: "2019-04-14T00:00:00+00:00",
     connectype: "ttn",
+    user: {
+      id: "2",
+      createdAt: "2019-04-14T00:00:00+00:00",
+      name: "Hans Peter Schmidt De La Vega",
+    },
   },
   {
     id: 18,
@@ -434,6 +444,11 @@ export const fakeProjects: ProjectsType[] = [
     },
     createdAt: "2019-04-14T00:00:00+00:00",
     connectype: "ttn",
+    user: {
+      id: "3",
+      createdAt: "2019-04-14T00:00:00+00:00",
+      name: "Lu",
+    },
   },
   {
     id: 17,
@@ -455,6 +470,10 @@ export const fakeProjects: ProjectsType[] = [
     },
     createdAt: "2019-04-14T00:00:00+00:00",
     connectype: "ttn",
+    user: {
+      id: "4",
+      createdAt: "2019-04-14T00:00:00+00:00",
+    },
   },
   {
     id: 16,
