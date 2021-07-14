@@ -11,22 +11,24 @@
   .navigation-link-active {
     @apply decoration-clone text-white bg-purple font-bold border-green hover:text-white hover:bg-purple hover:border-green cursor-default sm:px-2 sm:-ml-2;
   }
-  .bg-black-dot-pattern {
-    @apply bg-black;
-    background-image: url('/images/patterns/black.svg');
-  }
-  .bg-white-dot-pattern {
-    @apply bg-white;
-    background-image: url('/images/patterns/white.svg');
-  }
-  .animate-fade-in {
-    opacity: 0;
-    animation: fadeIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) 1 forwards;
-  }
-  .animate-slide-in {
-    opacity: 0;
-    animation: slideIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) 1 forwards;
-    transform-origin: 50% 0
+  @variants responsive {
+    .bg-black-dot-pattern {
+      @apply bg-black;
+      background-image: url('/images/patterns/black.svg');
+    }
+    .bg-white-dot-pattern {
+      @apply bg-white;
+      background-image: url('/images/patterns/white.svg');
+    }
+    .animate-fade-in {
+      opacity: 0;
+      animation: fadeIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) 1 forwards;
+    }
+    .animate-slide-in {
+      opacity: 0;
+      animation: slideIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) 1 forwards;
+      transform-origin: 50% 0
+    }
   }
 }
 @layer base {

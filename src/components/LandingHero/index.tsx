@@ -23,7 +23,7 @@ export const LandingHero: FC = () => (
               "animate-slide-in",
               "text-xl sm:text-2xl md:text-3xl",
               "text-green font-headline font-bold",
-              "mt-6",
+              "mt-6 mb-1",
             ].join(" ")}
           >
             Deine Sensoren erklären die (Um)welt?

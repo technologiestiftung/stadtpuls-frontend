@@ -18,7 +18,7 @@ exports[`Storyshots Promotional/LandingStatsSection Default 1`] = `
       Wir stehen erst am Anfang
     </h2>
     <p
-      className="mb-4 text-center lg:text-left"
+      className="mb-4 text-center text-lg lg:text-left"
     >
       Ein paar Zahlen
     </p>

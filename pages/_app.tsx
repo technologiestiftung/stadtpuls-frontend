@@ -35,6 +35,7 @@ const App: FC<{
           <main
             className='z-0 relative'
             style={{
+              paddingTop: pathname === "/" ? 0 : 62,
               minHeight: "calc(100vh - 215px)",
             }}
           >

@@ -27,7 +27,7 @@ export const LandingStatsSection: FC<{
       >
         Wir stehen erst am Anfang
       </h2>
-      <p className='mb-4 text-center lg:text-left'>Ein paar Zahlen</p>
+      <p className='mb-4 text-center text-lg lg:text-left'>Ein paar Zahlen</p>
     </div>
     <div className='flex items-center'>
       <div
