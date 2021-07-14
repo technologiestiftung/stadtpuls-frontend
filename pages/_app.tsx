@@ -33,6 +33,7 @@ const App: FC<{
           <Head />
           <Header />
           <main
+            id={pathname?.replace(/\//gi, "") || "home"}
             className={[
               "z-0 relative",
               pathname === "/projects" && "bg-white-dot-pattern",

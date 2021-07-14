@@ -6,10 +6,10 @@
     @apply focus:ring-2 focus:ring-offset-white focus:ring-offset-2 focus:outline-none;
   }
   .navigation-link {
-    @apply transition font-headline border-purple sm:border-green border-b hover:border-purple hover:text-green sm:px-0 sm:py-0.5 sm:inline-block leading-tight;
+    @apply transition font-headline border-purple sm:border-green border-b hover:border-purple hover:text-green sm:px-0 sm:py-0 sm:inline-block leading-tight;
   }
   .navigation-link-active {
-    @apply decoration-clone text-white bg-purple font-bold border-green hover:text-white hover:bg-purple hover:border-green cursor-default sm:px-2 sm:-ml-2;
+    @apply decoration-clone text-white bg-purple font-bold border-green hover:text-white hover:bg-purple hover:border-green cursor-default sm:px-2 sm:-ml-2 sm:py-0.5;
   }
   @variants responsive {
     .bg-black-dot-pattern {
@@ -97,7 +97,7 @@
     font-style: normal;
   }
   
-  body, html, #__next {
+  main#home {
     max-width: 100vw;
     overflow-x: hidden;
   }
@@ -176,6 +176,16 @@
 
   p {
     @apply max-w-prose;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6,
+  .prose [class~="lead"] {
+    @apply font-headline;
   }
   
   @keyframes fadeIn {
