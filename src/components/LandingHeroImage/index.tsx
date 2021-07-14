@@ -284,6 +284,7 @@ export const LandingHeroImage: FC = () => {
               height='58'
             />
             <path
+              role='img'
               d='M290,464 L232,464 L232,406 L290,406 L290,348 L348,348 L348,116 L696,116 L696,58 L754,58 L754,232 L812,232 L812,348 L754,348 L754,522 L348,522 L348,406 L290,406 L290,464 Z'
               fill='url(#main-image-pattern)'
             />
