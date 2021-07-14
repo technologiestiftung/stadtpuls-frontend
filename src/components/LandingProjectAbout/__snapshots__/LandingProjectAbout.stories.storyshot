@@ -2,52 +2,60 @@
 
 exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
 <div
-  className="bg-white"
+  className="bg-black-dot-pattern relative mt-16"
 >
+  <div
+    className="undefined absolute bg-cover w-1/2"
+  />
   <section
     className="container mx-auto max-w-8xl px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16"
   >
     <h1
-      className="text-xl sm:text-2xl md:text-3xl text-blue font-semibold mt-6 mb-8"
+      className="text-xl sm:text-2xl md:text-3xl text-green font-headline font-bold mt-6 mb-8"
     >
+      <img
+        alt="Microcontroller"
+        className="inline-block mr-4 align-top"
+        src="/images/illustrations/microcontroller-2.svg"
+      />
       Über das Projekt
     </h1>
     <div
       className="grid md:grid-cols-5 xl:grid-cols-2 gap-4 sm:gap-8"
     >
       <div
-        className="md:col-span-3 xl:col-span-1 prose max-w-none"
-      >
-        <p
-          className="max-w-none"
-        >
-          Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw.
-        </p>
-        <p
-          className="max-w-none"
-        >
-          Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw.
-        </p>
-      </div>
-      <div
-        className="grid sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 md:col-span-2 xl:col-span-1 gap-4 lg:gap-8"
+        className="md:col-span-3 xl:col-span-1"
       >
         <div
-          className=""
+          className="prose text-white max-w-none"
+        >
+          <p
+            className="max-w-none"
+          >
+            Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw.
+          </p>
+        </div>
+        <a
+          className=" border border-blue shadow-blue mt-8 p-8 block hover:animate-borderpulse-blue bg-no-repeat"
+          href="https://github.com/technologiestiftung/stadtpuls-api"
+          style={
+            Object {
+              "backgroundImage": "url(/images/icons/stadtpuls-api-technologies.svg)",
+            }
+          }
+          title="Das Code-Repository von der Stadtpuls Backend"
         >
           <h4
-            className="text-xl font-bold mb-1"
+            className="text-xl font-bold mb-1 text-green font-headline"
           >
             Backend
           </h4>
-          <a
-            className="text-sm text-gray-500 mb-4 block"
-            href="https://github.com/technologiestiftung/stadtpuls-api"
-            title="Das Code-Repository von der Stadtpuls Backend"
+          <p
+            className="text-sm text-gray-500 block"
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root mr-1 transform scale-75"
+              className="MuiSvgIcon-root mr-1 transform scale-75 align-top inline-block"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -57,57 +65,33 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
             </svg>
             technologiestiftung/
             <span
-              className="text-black"
+              className="text-white"
             >
               stadtpuls-api
             </span>
-          </a>
-          <ul>
-            <li>
-              <a
-                className="text-gray-500 underline hover:text-blue transition"
-                href="http://supabase.io/"
-                title="Open Source Firebase-like Service"
-              >
-                Supabase
-              </a>
-            </li>
-            <li>
-              <a
-                className="text-gray-500 underline hover:text-blue transition"
-                href="https://www.fastify.io/"
-                title="Fast and low overhead web framework, for Node.js"
-              >
-                Fastify
-              </a>
-            </li>
-            <li>
-              <a
-                className="text-gray-500 underline hover:text-blue transition"
-                href="https://www.postgresql.org/"
-                title="Open Source Relational Database"
-              >
-                PostgreSQL Database
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div
-          className=""
+          </p>
+        </a>
+        <a
+          className=" border border-blue shadow-blue mt-8 p-8 block hover:animate-borderpulse-blue bg-no-repeat"
+          href="https://github.com/technologiestiftung/stadtpuls-frontend"
+          style={
+            Object {
+              "backgroundImage": "url(/images/icons/stadtpuls-frontend-technologies.svg)",
+            }
+          }
+          title="Das Code-Repository von der Stadtpuls Frontend"
         >
           <h4
-            className="text-xl font-bold mb-1"
+            className="text-xl font-bold mb-1 text-green font-headline"
           >
             Frontend
           </h4>
-          <a
-            className="text-sm text-gray-500 mb-4 block"
-            href="https://github.com/technologiestiftung/stadtpuls-frontend"
-            title="Das Code-Repository von der Stadtpuls Frontend"
+          <p
+            className="text-sm text-gray-500 block"
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root mr-1 transform scale-75"
+              className="MuiSvgIcon-root mr-1 transform scale-75 align-top inline-block"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -117,41 +101,12 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
             </svg>
             technologiestiftung/
             <span
-              className="text-black"
+              className="text-white"
             >
               stadtpuls-frontend
             </span>
-          </a>
-          <ul>
-            <li>
-              <a
-                className="text-gray-500 underline hover:text-blue transition"
-                href="https://nextjs.org/"
-                title="The React Framework for Production"
-              >
-                Next.js
-              </a>
-            </li>
-            <li>
-              <a
-                className="text-gray-500 underline hover:text-blue transition"
-                href="https://airbnb.io/visx/"
-                title="A collection of expressive, low-level visualization primitives for React"
-              >
-                Visx
-              </a>
-            </li>
-            <li>
-              <a
-                className="text-gray-500 underline hover:text-blue transition"
-                href="https://swr.vercel.app/"
-                title="React Hooks library for data fetching"
-              >
-                SWR
-              </a>
-            </li>
-          </ul>
-        </div>
+          </p>
+        </a>
       </div>
     </div>
   </section>
