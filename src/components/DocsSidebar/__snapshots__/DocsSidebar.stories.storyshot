@@ -22,7 +22,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           className="list-none mb-8 2xl:text-lg leading-tight"
         >
           <li
-            className="mb-2"
+            className="mb-3"
           >
             <a
               className="navigation-link p-4 block sm:inline"
@@ -34,7 +34,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
             </a>
           </li>
           <li
-            className="mb-2"
+            className="mb-3"
           >
             <a
               className="navigation-link p-4 block sm:inline"
@@ -46,7 +46,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
             </a>
           </li>
           <li
-            className="mb-2"
+            className="mb-3"
           >
             <a
               className="navigation-link p-4 block sm:inline"
@@ -58,7 +58,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
             </a>
           </li>
           <li
-            className="mb-2"
+            className="mb-3"
           >
             <a
               className="navigation-link p-4 block sm:inline"
@@ -79,7 +79,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           className="list-none mb-8 2xl:text-lg leading-tight"
         >
           <li
-            className="mb-2"
+            className="mb-3"
           >
             <a
               className="navigation-link p-4 block sm:inline"
@@ -91,7 +91,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
             </a>
           </li>
           <li
-            className="mb-2"
+            className="mb-3"
           >
             <a
               className="navigation-link p-4 block sm:inline"
@@ -103,7 +103,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
             </a>
           </li>
           <li
-            className="mb-2"
+            className="mb-3"
           >
             <a
               className="navigation-link p-4 block sm:inline"
@@ -115,7 +115,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
             </a>
           </li>
           <li
-            className="mb-2"
+            className="mb-3"
           >
             <a
               className="navigation-link p-4 block sm:inline"
@@ -127,7 +127,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
             </a>
           </li>
           <li
-            className="mb-2"
+            className="mb-3"
           >
             <a
               className="navigation-link p-4 block sm:inline"
@@ -139,7 +139,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
             </a>
           </li>
           <li
-            className="mb-2"
+            className="mb-3"
           >
             <a
               className="navigation-link p-4 block sm:inline"
