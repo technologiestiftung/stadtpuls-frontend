@@ -12,6 +12,7 @@ module.exports = withMdxEnhanced({
     phase: "prebuild|loader|both",
   },
   reExportDataFetching: false,
+})({
   async headers() {
     return [
       {
@@ -20,15 +21,19 @@ module.exports = withMdxEnhanced({
           {
             key: "Content-Security-Policy",
             value: [
-              // script-src and style-src are currently commented out because both values fallback to default-src
               `default-src 'self'`,
-              //`script-src 'self'`,
-              `connect-src 'self' ${process.env.NEXT_PUBLIC_TOKEN_API_URL} ${process.env.NEXT_PUBLIC_SUPABASE_URL}`,
-              //`style-src 'self'`,
+              `script-src 'self' 'unsafe-eval'`,
+              `style-src 'self' 'unsafe-inline'`,
+              `font-src 'self' data:`,
+              `img-src 'self' data: blob:`,
+              `frame-ancestors 'none'`,
+              `worker-src 'self' blob:`,
+              `child-src 'self' blob:`,
+              `connect-src 'self' ${process.env.NEXT_PUBLIC_TOKEN_API_URL} ${process.env.NEXT_PUBLIC_SUPABASE_URL} https://api.github.com https://api.mapbox.com https://events.mapbox.com`,
             ].join("; "),
           },
         ],
       },
     ];
   },
-})();
+});
