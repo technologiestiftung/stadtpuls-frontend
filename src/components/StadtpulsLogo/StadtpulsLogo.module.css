@@ -1,0 +1,15 @@
+.logo {
+  display: inline-block;
+  width: 157px;
+  height: 29px;
+  background: url(/images/logo-sprite.svg) no-repeat 0 -0;
+}
+
+.logo:hover {
+  animation: logo-hover 1s linear infinite;
+}
+
+@keyframes logo-hover {
+  0% { background-position: 0 0px; }
+  100% { background-position: 0 -116px; }
+}

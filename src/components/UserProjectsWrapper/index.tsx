@@ -28,9 +28,7 @@ export const UserProjectsWrapper: FC<UserProjectWrapperType> = ({
       style={{ padding: "5vmax 0" }}
     >
       <section className='col-span-3'>
-        <h1 className='text-3xl text-blue-500 font-bold mt-6'>
-          Meine Projekte
-        </h1>
+        <h1 className='text-3xl text-blue font-bold mt-6'>Meine Projekte</h1>
         <div className='mt-8'>
           <Link href={"/account/projects/new"}>
             <AnchorButton href={"/account/projects/new"} variant='primary'>
@@ -50,9 +48,7 @@ export const UserProjectsWrapper: FC<UserProjectWrapperType> = ({
         </div>
       </section>
       <main
-        className={["md:col-span-9 mt-6 md:mt-0", "bg-white shadow-md"].join(
-          " "
-        )}
+        className={["md:col-span-9 mt-6 md:mt-0", "bg-white shadow"].join(" ")}
       >
         {children}
       </main>

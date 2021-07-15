@@ -25,7 +25,7 @@ const getStyles: StyleGetterType = ({ isActive }) => ({
   title: filterStyles(
     "p-4 block w-full text-sm text-left bg-gray-50 border border-white",
     "transition rounded relative focus:outline-none focus:z-10",
-    "hover:bg-blue-50 group hover:border-blue-500 focus-offset"
+    "hover:bg-gray-50 group hover:border-blue focus-offset"
   ),
   content: filterStyles(
     "rounded bg-gray-100 m-0 leading-7 p-4 overflow-hidden",
@@ -53,7 +53,7 @@ export const Accordion: FC<AccordionPropType> = ({ items }) => {
               <h2
                 style={{ margin: 0 }}
                 id={id}
-                className='group-hover:text-blue-500 inline'
+                className='group-hover:text-blue inline'
               >
                 {title}
               </h2>

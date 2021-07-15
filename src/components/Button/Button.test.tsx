@@ -26,12 +26,12 @@ describe("Button component", () => {
   it("should have primary styles when primary", () => {
     render(<Button variant='primary'>Button</Button>);
     const button = screen.getByRole("button");
-    expect(button.getAttribute("class")?.includes("bg-blue-500")).toBe(true);
+    expect(button.getAttribute("class")?.includes("bg-purple")).toBe(true);
   });
   it("should have dangerous styles when dangerous", () => {
     render(<Button variant='dangerous'>Button</Button>);
     const button = screen.getByRole("button");
-    expect(button.getAttribute("class")?.includes("border-red-500")).toBe(true);
+    expect(button.getAttribute("class")?.includes("border-error")).toBe(true);
   });
   it("should have default disabled styles when default disabled", () => {
     render(<Button disabled>Button</Button>);
@@ -56,7 +56,7 @@ describe("Button component", () => {
       </Button>
     );
     const button = screen.getByRole("button");
-    expect(button.getAttribute("class")?.includes("border-red-300")).toBe(true);
+    expect(button.getAttribute("class")?.includes("border-error")).toBe(true);
   });
 });
 
@@ -85,12 +85,12 @@ describe("Submit component", () => {
   it("should have primary styles when primary", () => {
     render(<Submit variant='primary'>Submit</Submit>);
     const submit = screen.getByText("Submit");
-    expect(submit.getAttribute("class")?.includes("bg-blue-500")).toBe(true);
+    expect(submit.getAttribute("class")?.includes("bg-purple")).toBe(true);
   });
   it("should have dangerous styles when dangerous", () => {
     render(<Submit variant='dangerous'>Submit</Submit>);
     const submit = screen.getByText("Submit");
-    expect(submit.getAttribute("class")?.includes("border-red-500")).toBe(true);
+    expect(submit.getAttribute("class")?.includes("border-error")).toBe(true);
   });
   it("should have default disabled styles when default disabled", () => {
     render(<Submit disabled>Submit</Submit>);
@@ -116,9 +116,13 @@ describe("Anchor component", () => {
     expect(anchor.getAttribute("class")?.includes("cursor-pointer")).toBe(true);
   });
   it("should have primary styles when primary", () => {
-    render(<AnchorButton href='/'>Some link</AnchorButton>);
+    render(
+      <AnchorButton variant='primary' href='/'>
+        Some link
+      </AnchorButton>
+    );
     const anchor = screen.getByRole("link", { name: /Some link/g });
-    expect(anchor.getAttribute("class")?.includes("bg-blue-500")).toBe(true);
+    expect(anchor.getAttribute("class")?.includes("bg-purple")).toBe(true);
   });
   it("should have open-in-new-tab attributes when provided", () => {
     render(

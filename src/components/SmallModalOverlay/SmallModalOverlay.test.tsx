@@ -20,6 +20,6 @@ describe("SmallModalOverlay component", () => {
   it("should render the secondary colored title when dangerous variant", () => {
     render(<SmallModalOverlay variant='dangerous' title='Hello' />);
     const title = screen.getByText(/Hello/g);
-    expect(title.getAttribute("class")?.includes("text-red-500")).toBe(true);
+    expect(title.getAttribute("class")?.includes("text-error")).toBe(true);
   });
 });

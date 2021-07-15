@@ -11,20 +11,28 @@ interface LandingHeroBackgroundMapPropType {
 type LatLngType = Pick<ViewportType, "latitude" | "longitude">;
 const location2ViewportCache: Record<string, LatLngType> = {};
 
+const getElTopOffset = (el: Element): number => {
+  const rect = el.getBoundingClientRect();
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  return rect.top + scrollTop + rect.height / 2;
+};
+
 export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
   project,
 }) => {
-  const [windowWidth, setWindowWidth] = useState(0);
-  const [windowHeight, setWindowHeight] = useState(0);
+  const [mapHeight, setMapHeight] = useState(1000);
+  const [mapWidth, setMapWidth] = useState(1000);
   const [locationViewport, setLocationViewport] = useState<LatLngType | null>(
     null
   );
 
   useEffect(() => {
     const updateWidthAndHeight = (): void => {
-      if (typeof window === "undefined") return;
-      setWindowWidth(window.innerWidth);
-      setWindowHeight(window.innerHeight);
+      const slider = document.getElementsByClassName("swiper-wrapper")[0];
+      if (!slider) return;
+
+      setMapHeight(getElTopOffset(slider));
+      setMapWidth(window.innerWidth);
     };
 
     updateWidthAndHeight();
@@ -59,11 +67,11 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
   return (
     <div
       className='relative overflow-hidden pointer-events-none'
-      style={{ height: "200vh" }}
+      style={{ height: mapHeight }}
     >
       <MarkerMap
-        mapWidth={windowWidth}
-        mapHeight={Math.round(windowHeight * 3)}
+        mapWidth={mapWidth}
+        mapHeight={typeof mapHeight === "string" ? mapHeight : mapHeight * 1.7}
         clickHandler={() => undefined}
         markers={[
           {
@@ -73,7 +81,6 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
           },
         ]}
       />
-      <div className='absolute bg-gradient-to-b from-white inset-0' />
     </div>
   );
 };

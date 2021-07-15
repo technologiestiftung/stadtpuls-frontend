@@ -1,12 +1,14 @@
 import { Theme } from "../common/interfaces";
+import colors from "./colors";
 
 const theme: Theme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   breakpoints: ["768px", "1024px", "1408px"],
   fonts: {
     body:
-      '"IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: "inherit",
+      '"Sora", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    heading:
+      '"SpaceGrotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     monospace: "Menlo, monospace",
   },
   fontSizes: [12, 16, 20, 24, 32, 48, 64, 72, 96],
@@ -20,13 +22,13 @@ const theme: Theme = {
     heading: 1.125,
   },
   colors: {
-    text: "#2F2F2F",
-    background: "#fff",
-    primary: "#1E3791",
-    secondary: "#E60032",
-    mediumgrey: "#8D8D8D",
-    lightgrey: "#D8D8D8",
-    muted: "#F9F9F9",
+    text: colors.black,
+    background: colors.white,
+    primary: colors.blue,
+    secondary: colors.purple,
+    mediumgrey: colors.gray["500"],
+    lightgrey: colors.gray["100"],
+    muted: colors.gray["50"],
   },
   text: {
     heading: {
@@ -35,7 +37,7 @@ const theme: Theme = {
       lineHeight: "heading",
     },
     h1: {
-      color: "primary",
+      color: "secondary",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
@@ -88,7 +90,6 @@ const theme: Theme = {
       lineHeight: "body",
       fontWeight: "body",
       minHeight: "100vh",
-      backgroundImage: "url('/images/tsb-background.svg')",
       backgroundSize: "cover",
     },
     p: {

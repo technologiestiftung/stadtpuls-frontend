@@ -23,7 +23,7 @@ describe("TextLink component", () => {
     const link = screen.getByRole("link", { name: "Hi! I am a link" });
     fireEvent.click(link);
     expect(link).toBeInTheDocument();
-    expect(link.getAttribute("class")?.includes("text-red-500")).toBe(true);
+    expect(link.getAttribute("class")?.includes("text-error")).toBe(true);
   });
   it("should have secondary styles if secondary variant", () => {
     render(
@@ -58,7 +58,7 @@ describe("ButtonTextLink component", () => {
     const button = screen.getByRole("button", { name: "Hi! I am a button" });
     fireEvent.click(button);
     expect(button).toBeInTheDocument();
-    expect(button.getAttribute("class")?.includes("text-red-500")).toBe(true);
+    expect(button.getAttribute("class")?.includes("text-error")).toBe(true);
   });
   it("should have secondary styles if secondary variant", () => {
     render(

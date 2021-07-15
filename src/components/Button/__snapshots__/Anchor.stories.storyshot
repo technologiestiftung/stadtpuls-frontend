@@ -2,7 +2,7 @@
 
 exports[`Storyshots UI Elements/AnchorButton Dangerous Anchor Button 1`] = `
 <a
-  className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-red-500 bg-white border border-red-500 text-red-500 hover:bg-red-500 hover:bg-opacity-10"
+  className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-error border border-error text-error hover:bg-error hover:bg-opacity-10"
   href="/"
   variant="dangerous"
 >
@@ -12,7 +12,7 @@ exports[`Storyshots UI Elements/AnchorButton Dangerous Anchor Button 1`] = `
 
 exports[`Storyshots UI Elements/AnchorButton Default Anchor Button 1`] = `
 <a
-  className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:bg-opacity-10"
+  className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
   href="/"
 >
   Anchor button (looking like a button)
@@ -21,7 +21,7 @@ exports[`Storyshots UI Elements/AnchorButton Default Anchor Button 1`] = `
 
 exports[`Storyshots UI Elements/AnchorButton Primary Anchor 1`] = `
 <a
-  className="text-lg px-4 py-2 font-sans transition cursor-pointer focus-offset focus:ring-blue-500 bg-blue-500 text-white hover:opacity-60"
+  className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
   href="/"
   variant="primary"
 >

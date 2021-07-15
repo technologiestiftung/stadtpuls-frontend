@@ -17,7 +17,7 @@ exports[`Storyshots UI Elements/RadioTabs Default 1`] = `
       value={1}
     />
     <label
-      className="css-1uexs8x"
+      className="css-wsabcl"
       htmlFor="story-radio-1"
     >
       My first tab
@@ -36,7 +36,7 @@ exports[`Storyshots UI Elements/RadioTabs Default 1`] = `
       value={2}
     />
     <label
-      className="css-1bgjlky"
+      className="css-1rb2c2o"
       htmlFor="story-radio-2"
     >
       My second tab

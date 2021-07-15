@@ -14,7 +14,7 @@ const TableDisplayRow = forwardRef<
 >(({ children, onClick }, ref) => (
   <Tr
     ref={ref}
-    className='transition hover:bg-blue-25 cursor-pointer w-full'
+    className='transition hover:bg-gray-50 cursor-pointer w-full'
     onClick={onClick}
     style={{
       gridTemplateColumns: "auto 1fr",

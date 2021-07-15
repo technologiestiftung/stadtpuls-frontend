@@ -38,12 +38,12 @@ exports[`Storyshots Forms/FormTextarea With Errors 1`] = `
     rows={10}
   />
   <p
-    className="text-red-500 text-sm"
+    className="text-error text-sm"
   >
     Please use less than X characters
   </p>
   <p
-    className="text-red-500 text-sm"
+    className="text-error text-sm"
   >
     Please use more than Y characters
   </p>

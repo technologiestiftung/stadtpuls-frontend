@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
       </section>
-      <section className='bg-gray-100'>
+      <section className='bg-white-dot-pattern'>
         <div className='max-w-screen-lg mx-auto px-8 py-6 block sm:flex justify-between'>
           <div className='flex items-center'>
             <p className='text-sm text-gray-700'>

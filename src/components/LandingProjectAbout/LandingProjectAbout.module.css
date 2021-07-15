@@ -1,0 +1,27 @@
+.image {
+  height: calc(100% + (2 * var(--pixelSize, 58px)));
+  top: calc(var(--pixelSize, 58px) * -1);
+  left: calc(50% + var(--pixelSize, 58px));
+  background-image: url(/images/photos/about-us-project.png);
+}
+
+.repoLink {
+  background-position: right 24px center;
+}
+
+@media screen and (max-width: 1280px) {
+  .image {
+    left: calc(60% + var(--pixelSize, 58px));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .image {
+    position: relative;
+    height: 49vw;
+    width: 100%;
+    top: auto;
+    left: auto;
+    background-position: center bottom;
+  }
+}

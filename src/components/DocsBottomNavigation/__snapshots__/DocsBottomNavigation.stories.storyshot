@@ -12,7 +12,7 @@ exports[`Storyshots Navigation/DocsBottomNavigation Default 1`] = `
     >
       <li>
         <a
-          className=" block p-4 sm:p-8 border rounded bg-gray-50 text-blue-500 flex justify-between transition hover:border-blue-500 hover:bg-blue-50"
+          className=" block p-4 sm:p-8 border rounded bg-white-dot-pattern text-purple flex justify-between transition hover:border-purple hover:bg-gray-50"
           href="/docs/troubleshooting"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -34,7 +34,7 @@ exports[`Storyshots Navigation/DocsBottomNavigation Default 1`] = `
       </li>
       <li>
         <a
-          className=" block p-4 sm:p-8 border rounded bg-gray-50 text-blue-500 flex justify-between transition hover:border-blue-500 hover:bg-blue-50"
+          className=" block p-4 sm:p-8 border rounded bg-white-dot-pattern text-purple flex justify-between transition hover:border-purple hover:bg-gray-50"
           href="/docs/about"
           onClick={[Function]}
           onMouseEnter={[Function]}

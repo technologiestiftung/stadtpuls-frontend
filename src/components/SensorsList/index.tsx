@@ -49,7 +49,7 @@ const DeletionPrompt: FC<DeletionPromptPropType> = ({
     }
   >
     Der folgende Sensor wird unwiderruflich gelöscht.
-    <div className='bg-blue-25 p-3 mt-2'>
+    <div className='bg-gray-50 p-3 mt-2'>
       <DeviceIcon />
       <span className='mr-3 inline-block'>{externalId}</span>
       <span className='inline-block'>{name}</span>
@@ -128,9 +128,7 @@ export const SensorsList: FC<SensorsListPropType> = ({
           onCancel={() => setDeviceBeingDeleted(null)}
         />
       )}
-      <h1 className='text-2xl font-semibold m-0 mb-2 text-blue-500'>
-        Sensoren
-      </h1>
+      <h1 className='text-2xl font-semibold m-0 mb-2 text-blue'>Sensoren</h1>
       <div className='w-full max-w-full overflow-y-hidden overflow-x-auto pb-4'>
         <table className='w-full text-left'>
           <SensorsListHeaderRow />

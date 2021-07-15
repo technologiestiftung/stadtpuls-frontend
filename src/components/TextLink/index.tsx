@@ -8,9 +8,9 @@ type ButtonTextLinkPropType = HTMLProps<HTMLButtonElement> & TextLinkPropType;
 
 const textLinkCommonStyle =
   "focus-offset underline transition hover:opacity-60 cursor-pointer text-left";
-const textLinkDefaultStyle = "text-blue-500 focus:ring-blue-500";
-const textLinkSecondaryStyle = "text-gray-500 focus:ring-blue-500";
-const textLinkDangerousStyle = "text-red-500 focus:ring-red-500";
+const textLinkDefaultStyle = "text-blue focus:ring-blue";
+const textLinkSecondaryStyle = "text-gray-500 focus:ring-blue";
+const textLinkDangerousStyle = "text-error focus:ring-error";
 
 type GetLinkStyleType = TextLinkPropType & { className?: string };
 const getLinkStyle = (props: GetLinkStyleType): string =>

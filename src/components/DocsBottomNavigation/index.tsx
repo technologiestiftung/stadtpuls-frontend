@@ -20,9 +20,9 @@ const DocsBottomNavigationLi: FC<DocsBottomNavigationLiPropType> = ({
         href={href}
         className={[
           className,
-          "block p-4 sm:p-8 border rounded bg-gray-50",
-          "text-blue-500 flex justify-between",
-          "transition hover:border-blue-500 hover:bg-blue-50",
+          "block p-4 sm:p-8 border rounded bg-white-dot-pattern",
+          "text-purple flex justify-between",
+          "transition hover:border-purple hover:bg-gray-50",
         ].join(" ")}
       >
         {children}

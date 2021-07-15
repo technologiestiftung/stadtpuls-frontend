@@ -72,12 +72,12 @@ exports[`Storyshots Forms/FormSelect With Errors 1`] = `
     </option>
   </select>
   <p
-    className="text-red-500 text-sm"
+    className="text-error text-sm"
   >
     This is an error message
   </p>
   <p
-    className="text-red-500 text-sm"
+    className="text-error text-sm"
   >
     This is another error message
   </p>

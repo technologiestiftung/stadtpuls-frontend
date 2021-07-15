@@ -1,7 +1,6 @@
 import { StrictMode, FC, useEffect } from "react";
 import { useRouter } from "next/router";
 import { ThemeProvider } from "theme-ui";
-import Head from "next/head";
 
 import { Header } from "@components/Header";
 import { Footer } from "@components/Footer";
@@ -11,8 +10,7 @@ import { AuthProvider } from "@auth/Auth";
 
 import theme from "../src/style/theme";
 import "../src/style/global.css";
-
-const publicURL = process.env.NEXT_PUBLIC_WEB_URL || "";
+import { Head } from "@components/Head";
 
 if (process.env.NODE_ENV !== "production") {
   require("../src/mocks/index");
@@ -32,25 +30,18 @@ const App: FC<{
     <StrictMode>
       <ThemeProvider theme={theme}>
         <AuthProvider>
-          <Head>
-            <link rel='icon' href={`${publicURL}/favicon.ico`} />
-            <meta
-              name='viewport'
-              content='width=device-width, initial-scale=1'
-            />
-            <meta name='theme-color' content='#000000' />
-            <meta
-              name='description'
-              content='Stadtpuls ist eine prototypische Offene Datenplattform, die Sensordaten aus Forschungsprojekten der Technologiestiftung Berlin speichert und frei verfügbar macht'
-            />
-            <link rel='apple-touch-icon' href={`${publicURL}/logo192.png`} />
-            <link rel='manifest' href={`${publicURL}/manifest.json`} />
-            <title>Stadtpuls | Technologiestiftung Berlin</title>
-          </Head>
+          <Head />
           <Header />
           <main
-            className='z-0 relative'
+            id={pathname?.replace(/\//gi, "") || "home"}
+            className={[
+              "z-0 relative",
+              pathname === "/projects" && "bg-white-dot-pattern",
+            ]
+              .filter(Boolean)
+              .join(" ")}
             style={{
+              paddingTop: pathname === "/" ? 0 : 62,
               minHeight: "calc(100vh - 215px)",
             }}
           >

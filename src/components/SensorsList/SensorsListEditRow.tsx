@@ -30,7 +30,7 @@ const TableEditRow = forwardRef<
 >(({ children }, ref) => (
   <Tr
     ref={ref}
-    className='transition hover:bg-blue-25 cursor-pointer px-3 sm:px-0'
+    className='transition hover:bg-gray-50 cursor-pointer px-3 sm:px-0'
     style={{
       gridTemplateAreas: `
         'id         id'

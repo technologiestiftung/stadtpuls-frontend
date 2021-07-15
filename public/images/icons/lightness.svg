@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="31px" viewBox="0 0 32 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>lightness</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.974977 0 0 0 0 0.989612 0 0 0 0 0.991508 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="lightness" transform="translate(-444.000000, -2599.000000)" filter="url(#filter-1)">
+            <g transform="translate(444.000000, 2599.000000)">
+                <ellipse id="Oval" stroke="#1E3791" stroke-width="1.5" cx="16.0007619" cy="15.5" rx="6.27785608" ry="6.08196269"></ellipse>
+                <line x1="0" y1="15.3819036" x2="6.3997562" y2="15.3819036" id="Path" stroke="#1E3791" stroke-width="1.5" stroke-linejoin="round"></line>
+                <line x1="25.6002438" y1="15.3819036" x2="32" y2="15.3819036" id="Path" stroke="#1E3791" stroke-width="1.5" stroke-linejoin="round"></line>
+                <line x1="16.121443" y1="0" x2="16.121443" y2="6.20005902" id="Path" stroke="#1E3791" stroke-width="1.5" stroke-linejoin="round"></line>
+                <line x1="16.121443" y1="24.7999409" x2="16.121443" y2="31" id="Path" stroke="#1E3791" stroke-width="1.5" stroke-linejoin="round"></line>
+                <line x1="4.77368481" y1="4.45595289" x2="9.29899813" y2="8.84005893" id="Path" stroke="#1E3791" stroke-width="1.5" stroke-linejoin="round"></line>
+                <line x1="22.8742524" y1="21.9923475" x2="27.3994895" y2="26.3765274" id="Path" stroke="#1E3791" stroke-width="1.5" stroke-linejoin="round"></line>
+                <line x1="27.3978134" y1="4.62328067" x2="22.8725763" y2="9.00738671" id="Path" stroke="#1E3791" stroke-width="1.5" stroke-linejoin="round"></line>
+                <line x1="9.29732201" y1="22.1597491" x2="4.77200869" y2="26.5437814" id="Path" stroke="#1E3791" stroke-width="1.5" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

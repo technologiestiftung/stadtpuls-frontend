@@ -8,7 +8,11 @@ import { UserAvatar } from "@components/UserAvatar";
 import { ViewportType } from "@common/types/ReactMapGl";
 import { getGeocodedViewportByString } from "@lib/requests/getGeocodedViewportByString";
 
-export const ProjectPreview: FC<PublicProject> = ({
+interface ProjectPreviewPropType extends PublicProject {
+  withMapBackground?: boolean;
+}
+
+export const ProjectPreview: FC<ProjectPreviewPropType> = ({
   id,
   name,
   location,
@@ -17,6 +21,7 @@ export const ProjectPreview: FC<PublicProject> = ({
   devicesNumber,
   authorName,
   category,
+  withMapBackground = true,
 }) => {
   const animationFrameRef = useRef(0);
   const parentRef = useRef<HTMLDivElement>(null);
@@ -56,9 +61,10 @@ export const ProjectPreview: FC<PublicProject> = ({
     <div
       ref={parentRef}
       className={[
-        "bg-white shadow-lg hover:bg-blue-25",
-        "border border-blue-50",
-        "cursor-pointer transition rounded-md",
+        "bg-white shadow hover:bg-gray-50",
+        "border border-gray-200 group",
+        "hover:animate-borderpulse",
+        "cursor-pointer transition-all",
         "relative overflow-hidden group",
       ].join(" ")}
       style={{ paddingBottom: 100, minHeight: 340 }}
@@ -78,11 +84,21 @@ export const ProjectPreview: FC<PublicProject> = ({
                 animationDelay: "1s",
               }}
             >
-              <ProjectPreviewMap
-                viewport={locationViewport}
-                mapWidth={Math.round(svgWrapperWidth * 1.5)}
-                mapHeight={svgWrapperHeight}
-              />
+              {withMapBackground && (
+                <>
+                  <ProjectPreviewMap
+                    viewport={locationViewport}
+                    mapWidth={Math.round(svgWrapperWidth * 1.5)}
+                    mapHeight={svgWrapperHeight}
+                  />
+                  <span
+                    className={[
+                      "absolute inset-0 bg-purple mix-blend-hue",
+                      "pointer-events-none group-hover:animate-bgpulse",
+                    ].join(" ")}
+                  />
+                </>
+              )}
             </div>
           )}
           <div
@@ -93,25 +109,39 @@ export const ProjectPreview: FC<PublicProject> = ({
           />
           <div
             className={[
-              "grid sm:grid-cols-2 gap-4",
+              "grid sm:grid-cols-6 gap-4",
               "px-4 py-3 sm:px-5 sm:py-4 md:px-8 md:py-7",
               "relative z-10",
             ].join(" ")}
           >
-            <div>
-              <h3 className='text-blue-500 text-xl sm:text-2xl md:text-3xl font-semibold flex justify-between items-start'>
-                <span>{name}</span>
+            <div className='sm:col-span-4'>
+              <h3
+                className={[
+                  "font-headline text-xl sm:text-2xl md:text-3xl",
+                  "font-bold flex justify-between items-start",
+                ].join(" ")}
+              >
+                <span className='leading-8'>{name}</span>
                 {category && (
                   <div
                     className={[
                       "sm:absolute z-10",
                       "text-base font-normal",
-                      "ml-4",
-                      "right-0 bottom-0 sm:bottom-auto sm:right-5 sm:top-4 md:right-8 md:top-7",
-                      "px-3 py-1 bg-blue-50 text-blue-500",
+                      "ml-4 bg-white bg-opacity-50",
+                      "right-0 bottom-0 sm:bottom-auto sm:right-5",
+                      "sm:top-4 md:right-8 md:top-7",
+                      "text-purple",
+                      "bg-purple group-hover:animate-bgpulse",
                     ].join(" ")}
                   >
-                    {category}
+                    <span
+                      className={[
+                        "text-purple group-hover:animate-textpulse",
+                        "bg-white bg-opacity-80 px-3 py-1 inline-block",
+                      ].join(" ")}
+                    >
+                      {category}
+                    </span>
                   </div>
                 )}
               </h3>
@@ -150,7 +180,10 @@ export const ProjectPreview: FC<PublicProject> = ({
             xmlns='http://www.w3.org/2000/svg'
             width={svgWrapperWidth + 4}
             height={82}
-            className='overflow-visible absolute -bottom-1 -left-1 -right-1'
+            className={[
+              "overflow-visible absolute -bottom-1 -left-1 -right-1",
+              "text-purple group-hover:animate-textpulse",
+            ].join(" ")}
           >
             <AreaPath
               width={svgWrapperWidth + 4}

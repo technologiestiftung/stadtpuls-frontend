@@ -9,7 +9,7 @@ exports[`Storyshots UserInfoCard Default User Info Card 1`] = `
       className="flex items-center"
     >
       <span
-        className="mr-4 inline-block align-middle rounded-full border border-blue-50"
+        className="mr-4 inline-block align-middle rounded-full border border-gray-50"
         style={
           Object {
             "height": 49,
@@ -20,11 +20,27 @@ exports[`Storyshots UserInfoCard Default User Info Card 1`] = `
         <svg
           colors={
             Array [
-              "#E40134",
-              "#213A8F",
-              "#3192D0",
-              "#63B9E9",
-              "#FFFFFF",
+              "#F9FCFD",
+              "#0000C2",
+              "#0000C2",
+              "#0000C2",
+              "#100C53",
+              "#46ECA1",
+              "#46ECA1",
+              "#46ECA1",
+              "#8330FF",
+              "#8330FF",
+              "#8330FF",
+              "#F2F3F8",
+              "#E7EAF2",
+              "#CFD0DC",
+              "#B4B4C7",
+              "#9695AE",
+              "#787696",
+              "#636188",
+              "#4A4878",
+              "#332F66",
+              "#1E1A5A",
             ]
           }
           fill="none"
@@ -55,432 +71,432 @@ exports[`Storyshots UserInfoCard Default User Info Card 1`] = `
             mask="url(#mask0)"
           >
             <rect
-              fill="#FFFFFF"
+              fill="#100C53"
               height={10}
               width={10}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#100C53"
               height={10}
               width={10}
               x={20}
             />
             <rect
-              fill="#213A8F"
+              fill="#0000C2"
               height={10}
               width={10}
               x={40}
             />
             <rect
-              fill="#63B9E9"
+              fill="#8330FF"
               height={10}
               width={10}
               x={60}
             />
             <rect
-              fill="#63B9E9"
+              fill="#8330FF"
               height={10}
               width={10}
               x={10}
             />
             <rect
-              fill="#213A8F"
+              fill="#787696"
               height={10}
               width={10}
               x={30}
             />
             <rect
-              fill="#63B9E9"
+              fill="#CFD0DC"
               height={10}
               width={10}
               x={50}
             />
             <rect
-              fill="#213A8F"
+              fill="#787696"
               height={10}
               width={10}
               x={70}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#100C53"
               height={10}
               width={10}
               y={10}
             />
             <rect
-              fill="#63B9E9"
+              fill="#4A4878"
               height={10}
               width={10}
               y={20}
             />
             <rect
-              fill="#E40134"
+              fill="#9695AE"
               height={10}
               width={10}
               y={30}
             />
             <rect
-              fill="#213A8F"
+              fill="#787696"
               height={10}
               width={10}
               y={40}
             />
             <rect
-              fill="#213A8F"
+              fill="#F9FCFD"
               height={10}
               width={10}
               y={50}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#100C53"
               height={10}
               width={10}
               y={60}
             />
             <rect
-              fill="#213A8F"
+              fill="#787696"
               height={10}
               width={10}
               y={70}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#100C53"
               height={10}
               width={10}
               x={20}
               y={10}
             />
             <rect
-              fill="#63B9E9"
+              fill="#0000C2"
               height={10}
               width={10}
               x={20}
               y={20}
             />
             <rect
-              fill="#213A8F"
+              fill="#787696"
               height={10}
               width={10}
               x={20}
               y={30}
             />
             <rect
-              fill="#213A8F"
+              fill="#F2F3F8"
               height={10}
               width={10}
               x={20}
               y={40}
             />
             <rect
-              fill="#63B9E9"
+              fill="#8330FF"
               height={10}
               width={10}
               x={20}
               y={50}
             />
             <rect
-              fill="#3192D0"
+              fill="#46ECA1"
               height={10}
               width={10}
               x={20}
               y={60}
             />
             <rect
-              fill="#63B9E9"
+              fill="#8330FF"
               height={10}
               width={10}
               x={20}
               y={70}
             />
             <rect
-              fill="#213A8F"
+              fill="#F2F3F8"
               height={10}
               width={10}
               x={40}
               y={10}
             />
             <rect
-              fill="#213A8F"
+              fill="#787696"
               height={10}
               width={10}
               x={40}
               y={20}
             />
             <rect
-              fill="#63B9E9"
+              fill="#0000C2"
               height={10}
               width={10}
               x={40}
               y={30}
             />
             <rect
-              fill="#3192D0"
+              fill="#F2F3F8"
               height={10}
               width={10}
               x={40}
               y={40}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#100C53"
               height={10}
               width={10}
               x={40}
               y={50}
             />
             <rect
-              fill="#213A8F"
+              fill="#787696"
               height={10}
               width={10}
               x={40}
               y={60}
             />
             <rect
-              fill="#E40134"
+              fill="#8330FF"
               height={10}
               width={10}
               x={40}
               y={70}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#100C53"
               height={10}
               width={10}
               x={60}
               y={10}
             />
             <rect
-              fill="#213A8F"
+              fill="#F9FCFD"
               height={10}
               width={10}
               x={60}
               y={20}
             />
             <rect
-              fill="#E40134"
+              fill="#332F66"
               height={10}
               width={10}
               x={60}
               y={30}
             />
             <rect
-              fill="#213A8F"
+              fill="#787696"
               height={10}
               width={10}
               x={60}
               y={40}
             />
             <rect
-              fill="#63B9E9"
+              fill="#636188"
               height={10}
               width={10}
               x={60}
               y={50}
             />
             <rect
-              fill="#E40134"
+              fill="#9695AE"
               height={10}
               width={10}
               x={60}
               y={60}
             />
             <rect
-              fill="#E40134"
+              fill="#332F66"
               height={10}
               width={10}
               x={60}
               y={70}
             />
             <rect
-              fill="#63B9E9"
+              fill="#4A4878"
               height={10}
               width={10}
               x={10}
               y={10}
             />
             <rect
-              fill="#213A8F"
+              fill="#100C53"
               height={10}
               width={10}
               x={10}
               y={20}
             />
             <rect
-              fill="#E40134"
+              fill="#100C53"
               height={10}
               width={10}
               x={10}
               y={30}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#100C53"
               height={10}
               width={10}
               x={10}
               y={40}
             />
             <rect
-              fill="#213A8F"
+              fill="#9695AE"
               height={10}
               width={10}
               x={10}
               y={50}
             />
             <rect
-              fill="#213A8F"
+              fill="#787696"
               height={10}
               width={10}
               x={10}
               y={60}
             />
             <rect
-              fill="#213A8F"
+              fill="#8330FF"
               height={10}
               width={10}
               x={10}
               y={70}
             />
             <rect
-              fill="#3192D0"
+              fill="#F2F3F8"
               height={10}
               width={10}
               x={30}
               y={10}
             />
             <rect
-              fill="#63B9E9"
+              fill="#CFD0DC"
               height={10}
               width={10}
               x={30}
               y={20}
             />
             <rect
-              fill="#3192D0"
+              fill="#8330FF"
               height={10}
               width={10}
               x={30}
               y={30}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#CFD0DC"
               height={10}
               width={10}
               x={30}
               y={40}
             />
             <rect
-              fill="#213A8F"
+              fill="#787696"
               height={10}
               width={10}
               x={30}
               y={50}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#636188"
               height={10}
               width={10}
               x={30}
               y={60}
             />
             <rect
-              fill="#3192D0"
+              fill="#F9FCFD"
               height={10}
               width={10}
               x={30}
               y={70}
             />
             <rect
-              fill="#E40134"
+              fill="#100C53"
               height={10}
               width={10}
               x={50}
               y={10}
             />
             <rect
-              fill="#63B9E9"
+              fill="#8330FF"
               height={10}
               width={10}
               x={50}
               y={20}
             />
             <rect
-              fill="#213A8F"
+              fill="#B4B4C7"
               height={10}
               width={10}
               x={50}
               y={30}
             />
             <rect
-              fill="#E40134"
+              fill="#332F66"
               height={10}
               width={10}
               x={50}
               y={40}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#0000C2"
               height={10}
               width={10}
               x={50}
               y={50}
             />
             <rect
-              fill="#63B9E9"
+              fill="#8330FF"
               height={10}
               width={10}
               x={50}
               y={60}
             />
             <rect
-              fill="#213A8F"
+              fill="#332F66"
               height={10}
               width={10}
               x={50}
               y={70}
             />
             <rect
-              fill="#213A8F"
+              fill="#100C53"
               height={10}
               width={10}
               x={70}
               y={10}
             />
             <rect
-              fill="#213A8F"
+              fill="#8330FF"
               height={10}
               width={10}
               x={70}
               y={20}
             />
             <rect
-              fill="#213A8F"
+              fill="#787696"
               height={10}
               width={10}
               x={70}
               y={30}
             />
             <rect
-              fill="#213A8F"
+              fill="#0000C2"
               height={10}
               width={10}
               x={70}
               y={40}
             />
             <rect
-              fill="#E40134"
+              fill="#4A4878"
               height={10}
               width={10}
               x={70}
               y={50}
             />
             <rect
-              fill="#213A8F"
+              fill="#100C53"
               height={10}
               width={10}
               x={70}
               y={60}
             />
             <rect
-              fill="#3192D0"
+              fill="#F2F3F8"
               height={10}
               width={10}
               x={70}
@@ -490,7 +506,7 @@ exports[`Storyshots UserInfoCard Default User Info Card 1`] = `
         </svg>
       </span>
       <h1
-        className="text-blue-500 text-3xl font-semibold"
+        className="text-blue text-3xl font-semibold"
       >
         ffthornton
       </h1>

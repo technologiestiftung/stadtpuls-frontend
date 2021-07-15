@@ -64,7 +64,7 @@ const PagesGroup: FC<PagesGroupPropType> = ({ title, pages }) => (
     <h4 className='font-bold text-xl 2xl:text-2xl mb-2'>{title}</h4>
     <ul className='list-none mb-8 2xl:text-lg leading-tight'>
       {pages.map(page => (
-        <li key={page.path} className='mb-2'>
+        <li key={page.path} className='mb-3'>
           <ActiveLink activeClassName='navigation-link-active' href={page.path}>
             <a href={page.path} className='navigation-link p-4 block sm:inline'>
               {page.title}

@@ -57,7 +57,7 @@ exports[`Storyshots Layout/Footer Default 1`] = `
     </div>
   </section>
   <section
-    className="bg-gray-100"
+    className="bg-white-dot-pattern"
   >
     <div
       className="max-w-screen-lg mx-auto px-8 py-6 block sm:flex justify-between"

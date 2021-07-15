@@ -8,7 +8,7 @@ import { DropdownMenu, DropdownMenuPropType } from ".";
 import { action } from "@storybook/addon-actions";
 
 const iconProps = {
-  className: "transition mr-2 text-gray-400 group-hover:text-blue-400",
+  className: "transition mr-2 text-gray-400 group-hover:text-purple",
 };
 
 export default {

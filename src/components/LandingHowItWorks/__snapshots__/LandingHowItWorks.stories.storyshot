@@ -1,23 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
-<div
-  className="bg-gray-50"
->
+<div>
   <section
     className="container mx-auto max-w-8xl px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16"
   >
     <h1
-      className="text-xl sm:text-2xl md:text-3xl text-blue-500 font-semibold mt-6 mb-8"
+      className="text-xl sm:text-2xl md:text-3xl text-purple font-bold font-headline mt-6 mb-1"
     >
       Und so geht’s:
-      <br />
-      <span
-        className="text-blue-300"
-      >
-        Eine kleine Übersicht
-      </span>
     </h1>
+    <p
+      className="mb-8 text-lg"
+    >
+      Eine kleine Übersicht
+    </p>
     <div
       className="grid grid-cols-2 lg:grid-cols-9 gap-x-4 sm:gap-x-0 undefined"
     >
@@ -33,7 +30,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           className=""
         >
           <h3
-            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 sm:pt-4 md:mt-8 mb-2"
+            className="text-lg md:text-xl lg:text-2xl font-bold sm:pt-4 md:mt-8 mb-2 font-headline"
           >
             <span
               className="mr-2"
@@ -42,7 +39,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             </span>
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root text-purple"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -65,7 +62,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           className=""
         >
           <h3
-            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 sm:pt-4 md:mt-8 mb-2"
+            className="text-lg md:text-xl lg:text-2xl font-bold sm:pt-4 md:mt-8 mb-2 font-headline"
           >
             <span
               className="mr-2"
@@ -74,7 +71,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             </span>
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root text-purple"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -97,7 +94,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           className=""
         >
           <h3
-            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 sm:pt-4 md:mt-8 mb-2"
+            className="text-lg md:text-xl lg:text-2xl font-bold sm:pt-4 md:mt-8 mb-2 font-headline"
           >
             <span
               className="mr-2"
@@ -106,7 +103,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             </span>
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root text-purple"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -118,7 +115,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
         </header>
       </div>
       <div
-        className="sm:pr-4 md:pr-8 sm:bg-white"
+        className="sm:pr-4 md:pr-8 sm:bg-black-dot-pattern sm:text-white"
         style={
           Object {
             "gridArea": "title-4",
@@ -129,7 +126,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           className="sm:pl-4 md:pl-8"
         >
           <h3
-            className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 sm:pt-4 md:mt-8 mb-2"
+            className="text-lg md:text-xl lg:text-2xl font-bold sm:pt-4 md:mt-8 mb-2 font-headline"
           >
             <span
               className="mr-2"
@@ -151,7 +148,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           className=""
         >
           <p
-            className="text-sm text-gray-600 mb-8"
+            className="text-sm mb-8 text-gray-500"
           >
             Die Hardware-Wahl  ist ganz dir überlassen. Arbeite z.B. mit Arduino, Raspberry Pi oder einer Open Sense Box.
           </p>
@@ -169,7 +166,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           className=""
         >
           <p
-            className="text-sm text-gray-600 mb-8"
+            className="text-sm mb-8 text-gray-500"
           >
             Wir unterstützen aktuell die folgenden, für die Umwelt relevanten Sensortypen.
           </p>
@@ -187,14 +184,14 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           className=""
         >
           <p
-            className="text-sm text-gray-600 mb-8"
+            className="text-sm mb-8 text-gray-500"
           >
             Über die folgenden Protokolle kannst du deine Daten übertragen.
           </p>
         </header>
       </div>
       <div
-        className="sm:pr-4 md:pr-8 sm:bg-white"
+        className="sm:pr-4 md:pr-8 sm:bg-black-dot-pattern sm:text-white"
         style={
           Object {
             "gridArea": "description-4",
@@ -205,14 +202,14 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           className="sm:pl-4 md:pl-8"
         >
           <p
-            className="text-sm text-gray-600 mb-8"
+            className="text-sm mb-8 text-gray-500 sm:text-gray-300"
           >
             Hast du erstmal deinen Sensoren registriert, stellen wir dir automatisch und kostenlos folgendes bereit:
           </p>
         </header>
       </div>
       <ul
-        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300 "
+        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300"
         style={
           Object {
             "gridArea": "list-1",
@@ -220,7 +217,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
         }
       >
         <li
-          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 "
           style={
             Object {
               "gridTemplateColumns": "auto 1fr",
@@ -228,10 +225,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
-          >
-            <i />
-          </span>
+            className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/arduino.svg)",
+              }
+            }
+          />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
@@ -239,7 +239,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           </span>
         </li>
         <li
-          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 "
           style={
             Object {
               "gridTemplateColumns": "auto 1fr",
@@ -247,10 +247,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
-          >
-            <i />
-          </span>
+            className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/raspberry-pi.svg)",
+              }
+            }
+          />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
@@ -258,7 +261,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           </span>
         </li>
         <li
-          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 "
           style={
             Object {
               "gridTemplateColumns": "auto 1fr",
@@ -266,10 +269,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
-          >
-            <i />
-          </span>
+            className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/open-sense-box.svg)",
+              }
+            }
+          />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
@@ -278,7 +284,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
         </li>
       </ul>
       <ul
-        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300 "
+        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300"
         style={
           Object {
             "gridArea": "list-2",
@@ -286,7 +292,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
         }
       >
         <li
-          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 "
           style={
             Object {
               "gridTemplateColumns": "auto 1fr",
@@ -294,10 +300,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
-          >
-            <i />
-          </span>
+            className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/temperature.svg)",
+              }
+            }
+          />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
@@ -305,7 +314,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           </span>
         </li>
         <li
-          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 "
           style={
             Object {
               "gridTemplateColumns": "auto 1fr",
@@ -313,10 +322,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
-          >
-            <i />
-          </span>
+            className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/co2.svg)",
+              }
+            }
+          />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
@@ -324,7 +336,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           </span>
         </li>
         <li
-          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 "
           style={
             Object {
               "gridTemplateColumns": "auto 1fr",
@@ -332,10 +344,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
-          >
-            <i />
-          </span>
+            className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/humidity.svg)",
+              }
+            }
+          />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
@@ -343,7 +358,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           </span>
         </li>
         <li
-          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 "
           style={
             Object {
               "gridTemplateColumns": "auto 1fr",
@@ -351,10 +366,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
-          >
-            <i />
-          </span>
+            className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/pressure.svg)",
+              }
+            }
+          />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
@@ -362,7 +380,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           </span>
         </li>
         <li
-          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 "
           style={
             Object {
               "gridTemplateColumns": "auto 1fr",
@@ -370,10 +388,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
-          >
-            <i />
-          </span>
+            className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/lightness.svg)",
+              }
+            }
+          />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
@@ -381,7 +402,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           </span>
         </li>
         <li
-          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 "
           style={
             Object {
               "gridTemplateColumns": "auto 1fr",
@@ -389,10 +410,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
-          >
-            <i />
-          </span>
+            className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/decibels.svg)",
+              }
+            }
+          />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
@@ -400,7 +424,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           </span>
         </li>
         <li
-          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 "
           style={
             Object {
               "gridTemplateColumns": "auto 1fr",
@@ -408,10 +432,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
-          >
-            <i />
-          </span>
+            className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/crowd.svg)",
+              }
+            }
+          />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
@@ -420,7 +447,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
         </li>
       </ul>
       <ul
-        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300 "
+        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300"
         style={
           Object {
             "gridArea": "list-3",
@@ -428,7 +455,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
         }
       >
         <li
-          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 "
           style={
             Object {
               "gridTemplateColumns": "auto 1fr",
@@ -436,10 +463,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
-          >
-            <i />
-          </span>
+            className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/arduino.svg)",
+              }
+            }
+          />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
@@ -448,7 +478,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
         </li>
       </ul>
       <ul
-        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300 sm:bg-white sm:px-4 md:px-8"
+        className="sm:pr-4 md:pr-8 pb-8 sm:pt-4 md:pt-8 sm:border-t border-gray-300 sm:bg-black-dot-pattern sm:px-4 md:px-8 sm:border-purple sm:border-opacity-50"
         style={
           Object {
             "gridArea": "list-4",
@@ -456,7 +486,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
         }
       >
         <li
-          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 sm:bg-green sm:bg-opacity-10 sm:text-white"
           style={
             Object {
               "gridTemplateColumns": "auto 1fr",
@@ -464,10 +494,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
-          >
-            <i />
-          </span>
+            className="w-14 h-14 bg-no-repeat bg-center bg-green"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/profile.svg)",
+              }
+            }
+          />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
@@ -475,7 +508,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           </span>
         </li>
         <li
-          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 sm:bg-green sm:bg-opacity-10 sm:text-white"
           style={
             Object {
               "gridTemplateColumns": "auto 1fr",
@@ -483,10 +516,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
-          >
-            <i />
-          </span>
+            className="w-14 h-14 bg-no-repeat bg-center bg-green"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/visualisations.svg)",
+              }
+            }
+          />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
@@ -494,7 +530,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           </span>
         </li>
         <li
-          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 sm:bg-green sm:bg-opacity-10 sm:text-white"
           style={
             Object {
               "gridTemplateColumns": "auto 1fr",
@@ -502,10 +538,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
-          >
-            <i />
-          </span>
+            className="w-14 h-14 bg-no-repeat bg-center bg-green"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/api.svg)",
+              }
+            }
+          />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
@@ -513,7 +552,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           </span>
         </li>
         <li
-          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center"
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 sm:bg-green sm:bg-opacity-10 sm:text-white"
           style={
             Object {
               "gridTemplateColumns": "auto 1fr",
@@ -521,10 +560,13 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           }
         >
           <span
-            className="bg-gray-200 rounded-full w-6 h-6 sm:w-10 sm:h-10"
-          >
-            <i />
-          </span>
+            className="w-14 h-14 bg-no-repeat bg-center bg-green"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/downloads.svg)",
+              }
+            }
+          />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >

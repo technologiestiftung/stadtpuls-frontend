@@ -4,21 +4,11 @@ exports[`Storyshots Coporate identity/Stadtpuls Default 1`] = `
 <a
   className="w-max flex items-center"
   href="/"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
 >
-  <img
-    alt="Stadtpuls logo"
-    className="w-10"
-    src="/images/stadtpuls-logo.svg"
+  <span
+    role="img"
   />
-  <div
-    className="ml-2"
-  >
-    <span
-      className="font-bold"
-    >
-      Stadt
-    </span>
-    puls
-  </div>
 </a>
 `;

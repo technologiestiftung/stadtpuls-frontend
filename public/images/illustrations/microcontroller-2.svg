@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="33px" viewBox="0 0 31 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Illustrations/Microcontroller/V2</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.511792 0 0 0 0 0.190149 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Illustrations/Microcontroller/V2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Rectangle" fill="#46ECA1" points="2.96323558 0 27.9691574 0 31 3.25577311 31 30.0605844 28.0832671 33 3.05943442 33 0 30.0204294 0 3.24739543"></polygon>
+        <g filter="url(#filter-1)" id="Group">
+            <g transform="translate(3.000000, 3.000000)">
+                <circle id="Oval" fill="#D8D8D8" cx="1.5" cy="1.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="1.5" cy="19.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="1.5" cy="13.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="1.5" cy="7.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="1.5" cy="25.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="23.5" cy="1.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="23.5" cy="7.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="23.5" cy="13.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="23.5" cy="19.5" r="1.5"></circle>
+                <circle id="Oval" fill="#D8D8D8" cx="23.5" cy="25.5" r="1.5"></circle>
+            </g>
+        </g>
+        <rect id="Rectangle" fill="#0000C2" x="9" y="14" width="13" height="17"></rect>
+        <rect id="Rectangle" fill="#8330FF" x="20" y="8" width="2" height="5" rx="1"></rect>
+        <g id="Group-3" transform="translate(7.500000, 7.500000) rotate(-180.000000) translate(-7.500000, -7.500000) translate(4.000000, 2.000000)" fill="#8330FF">
+            <rect id="Rectangle" x="-1.72430269e-13" y="0" width="2" height="11" rx="1"></rect>
+            <path d="M2.5,8 L7,8 L7,8 L7,9 L2.5,9 C2.22385763,9 2,8.77614237 2,8.5 C2,8.22385763 2.22385763,8 2.5,8 Z" id="Rectangle" transform="translate(4.500000, 8.500000) scale(-1, 1) translate(-4.500000, -8.500000) "></path>
+            <path d="M2.5,2 L7,2 L7,2 L7,3 L2.5,3 C2.22385763,3 2,2.77614237 2,2.5 C2,2.22385763 2.22385763,2 2.5,2 Z" id="Rectangle" transform="translate(4.500000, 2.500000) scale(-1, 1) translate(-4.500000, -2.500000) "></path>
+        </g>
+        <path d="M4.5,28 L9,28 L9,28 L9,29 L4.5,29 C4.22385763,29 4,28.7761424 4,28.5 C4,28.2238576 4.22385763,28 4.5,28 Z" id="Rectangle" fill="#0000C2"></path>
+        <path d="M22.5,28 L27,28 L27,28 L27,29 L22.5,29 C22.2238576,29 22,28.7761424 22,28.5 C22,28.2238576 22.2238576,28 22.5,28 Z" id="Rectangle" fill="#0000C2" transform="translate(24.500000, 28.500000) scale(-1, 1) translate(-24.500000, -28.500000) "></path>
+        <path d="M4.5,22 L9,22 L9,22 L9,23 L4.5,23 C4.22385763,23 4,22.7761424 4,22.5 C4,22.2238576 4.22385763,22 4.5,22 Z" id="Rectangle" fill="#0000C2"></path>
+        <path d="M22.5,22 L27,22 L27,22 L27,23 L22.5,23 C22.2238576,23 22,22.7761424 22,22.5 C22,22.2238576 22.2238576,22 22.5,22 Z" id="Rectangle" fill="#0000C2" transform="translate(24.500000, 22.500000) scale(-1, 1) translate(-24.500000, -22.500000) "></path>
+        <path d="M22.5,10 L27,10 L27,10 L27,11 L22.5,11 C22.2238576,11 22,10.7761424 22,10.5 C22,10.2238576 22.2238576,10 22.5,10 Z" id="Rectangle" fill="#8330FF" transform="translate(24.500000, 10.500000) scale(-1, 1) translate(-24.500000, -10.500000) "></path>
+        <path d="M4.5,16 L9,16 L9,16 L9,17 L4.5,17 C4.22385763,17 4,16.7761424 4,16.5 C4,16.2238576 4.22385763,16 4.5,16 Z" id="Rectangle" fill="#0000C2"></path>
+        <path d="M22.5,16 L27,16 L27,16 L27,17 L22.5,17 C22.2238576,17 22,16.7761424 22,16.5 C22,16.2238576 22.2238576,16 22.5,16 Z" id="Rectangle" fill="#0000C2" transform="translate(24.500000, 16.500000) scale(-1, 1) translate(-24.500000, -16.500000) "></path>
+    </g>
+</svg>

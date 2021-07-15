@@ -25,7 +25,7 @@ exports[`Storyshots UI Elements/TokenDisplay Error 1`] = `
   </p>
   <div
     aria-labelledby="token-display-label"
-    className="mt-2 p-3 break-words border border-red-500 text-red-500"
+    className="mt-2 p-3 break-words border border-error text-error"
   >
     This could be a custom error message
   </div>
