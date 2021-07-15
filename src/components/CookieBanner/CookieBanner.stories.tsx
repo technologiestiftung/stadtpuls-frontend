@@ -5,7 +5,7 @@ import theme from "../../style/theme";
 import { CookieBanner } from ".";
 
 export default {
-  title: "CookieBanner",
+  title: "UI Elements/CookieBanner",
   component: CookieBanner,
 } as Meta;
 
