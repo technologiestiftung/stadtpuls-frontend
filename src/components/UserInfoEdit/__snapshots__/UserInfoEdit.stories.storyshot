@@ -5,7 +5,7 @@ exports[`Storyshots Forms/UserInfoEdit Default User Info Edit 1`] = `
   className="flex flex-col pt-3 w-full sm:min-w-md md:min-w-xs lg:min-w-md"
 >
   <h1
-    className="text-blue text-3xl font-semibold m-0 mb-10"
+    className="text-3xl font-headline text-purple font-bold m-0 mb-10"
   >
     Profil bearbeiten
   </h1>

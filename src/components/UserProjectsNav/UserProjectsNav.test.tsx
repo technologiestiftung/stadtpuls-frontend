@@ -46,17 +46,17 @@ describe("component UserProjectsNav", () => {
       name: /Project A/i,
     });
     expect(
-      defaultSelected.getAttribute("class")?.includes("border-opacity-100")
+      defaultSelected.getAttribute("class")?.includes("navigation-link-active")
     ).toBe(true);
 
     userEvent.click(screen.getByRole("button", { name: /Project B/i }));
 
     const newlySelected = screen.getByRole("button", { name: /Project B/i });
     expect(
-      newlySelected.getAttribute("class")?.includes("border-opacity-100")
+      newlySelected.getAttribute("class")?.includes("navigation-link-active")
     ).toBe(true);
     expect(
-      defaultSelected.getAttribute("class")?.includes("border-opacity-100")
+      defaultSelected.getAttribute("class")?.includes("navigation-link-active")
     ).toBe(false);
 
     expect(handleSelectFunction).toHaveBeenCalledTimes(1);
@@ -72,9 +72,9 @@ describe("component UserProjectsNav", () => {
 
     const buttons = screen.getAllByRole("button");
     buttons.forEach(button =>
-      expect(button.getAttribute("class")?.includes("border-opacity-100")).toBe(
-        false
-      )
+      expect(
+        button.getAttribute("class")?.includes("navigation-link-active")
+      ).toBe(false)
     );
   });
 });

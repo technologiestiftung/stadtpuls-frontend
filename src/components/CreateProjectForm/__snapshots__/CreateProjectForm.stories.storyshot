@@ -3,7 +3,7 @@
 exports[`Storyshots Forms/CreateProjectForm Default 1`] = `
 <div>
   <h2
-    className="text-3xl text-blue font-bold"
+    className="text-3xl text-purple font-headline font-bold"
   >
     Projekt erstellen
   </h2>

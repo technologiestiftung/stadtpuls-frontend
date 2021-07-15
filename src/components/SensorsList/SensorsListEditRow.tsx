@@ -12,7 +12,6 @@ import {
   useRef,
   useState,
 } from "react";
-import { DeviceIcon } from "./DeviceIcon";
 import { SubmissionDataType } from "./SensorsListTypes";
 
 interface SensorsListEditRowPropType {
@@ -51,12 +50,14 @@ const DeviceIdEditField: FC = ({ children }) => (
     style={{ minWidth: 140, gridArea: "id" }}
   >
     <div
-      className='grid items-start'
-      style={{ gridTemplateColumns: "auto 1fr" }}
+      className='grid gap-2 items-center'
+      style={{ gridTemplateColumns: "20px 1fr" }}
     >
-      <span className='mt-2'>
-        <DeviceIcon />
-      </span>
+      <img
+        src='/images/illustrations/microcontroller-1.svg'
+        alt='A microcontroller icon'
+        className='inline-block w-5 h-5'
+      />
       {children}
     </div>
   </Td>

@@ -4,26 +4,31 @@ export type ButtonVariantsType = "primary" | "secondary" | "dangerous";
 
 interface ButtonPropType extends HTMLProps<HTMLButtonElement> {
   disabled?: boolean;
+  isOnDark?: boolean;
   variant?: ButtonVariantsType;
 }
 
 export interface AnchorButtonPropType extends HTMLProps<HTMLAnchorElement> {
   variant?: ButtonVariantsType;
+  isOnDark?: boolean;
   href: string;
 }
 interface SubmitPropType extends Omit<HTMLProps<HTMLInputElement>, "children"> {
   children: string;
   disabled?: boolean;
+  isOnDark?: boolean;
   variant?: ButtonVariantsType;
 }
 
 const getButtonStyles = ({
   variant,
   disabled,
+  isOnDark,
   className,
 }: {
   variant?: ButtonVariantsType;
   disabled?: boolean;
+  isOnDark?: boolean;
   className?: string;
 }): string => {
   const classes = ["inline-block text-lg px-4 py-2 font-headline transition"];
@@ -41,7 +46,8 @@ const getButtonStyles = ({
         break;
     }
   } else {
-    classes.push("cursor-pointer focus-offset");
+    classes.push("cursor-pointer");
+    classes.push(isOnDark ? "focus-offset-dark" : "focus-offset");
     switch (variant) {
       case "primary":
         classes.push(
