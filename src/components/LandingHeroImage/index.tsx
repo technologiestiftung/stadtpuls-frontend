@@ -26,27 +26,25 @@ export const LandingHeroImage: FC = () => {
         <pattern
           id='top-right-square-image-pattern'
           patternUnits='objectBoundingBox'
-          x='-25%'
-          width='125%'
+          x='0'
+          y='0'
+          width='100%'
           height='100%'
         >
-          <use
-            xlinkHref='#top-right-square-image-pattern-image'
-            transform='scale(0.128888889,0.128888889)'
-          />
+          <use xlinkHref='#top-right-square-image-pattern-image' />
         </pattern>
         <image
           id='top-right-square-image-pattern-image'
-          width='1350'
-          height='900'
+          width='116'
+          height='116'
           xlinkHref={topRightSquareImageUrl}
         />
         <pattern
           id='black-dot-pattern'
           width='6'
           height='6'
-          x='458'
-          y='748'
+          x='3'
+          y='3'
           patternUnits='userSpaceOnUse'
         >
           <use
@@ -81,55 +79,49 @@ export const LandingHeroImage: FC = () => {
         <pattern
           id='bottom-square-image-pattern'
           patternUnits='objectBoundingBox'
-          x='-16.5615142%'
-          width='116.561514%'
+          x='0'
+          y='0'
+          width='100%'
           height='100%'
         >
-          <use
-            xlinkHref='#bottom-square-image-pattern-image'
-            transform='scale(0.121976866,0.121976866)'
-          />
+          <use xlinkHref='#bottom-square-image-pattern-image' />
         </pattern>
         <image
           id='bottom-square-image-pattern-image'
-          width='1266'
-          height='951'
+          width='116'
+          height='116'
           xlinkHref={bottomSquareImageUrl}
         />
         <pattern
           id='bottom-left-square-image-pattern'
           patternUnits='objectBoundingBox'
-          x='-16.6140904%'
-          width='116.61409%'
+          x='0'
+          y='0'
+          width='100%'
           height='100%'
         >
-          <use
-            xlinkHref='#bottom-left-square-image-pattern-image'
-            transform='scale(0.121976866,0.121976866)'
-          />
+          <use xlinkHref='#bottom-left-square-image-pattern-image' />
         </pattern>
         <image
           id='bottom-left-square-image-pattern-image'
-          width='1267'
-          height='951'
+          width='116'
+          height='116'
           xlinkHref={bottomLeftSquareImageUrl}
         />
         <pattern
           id='top-left-square-image-pattern'
           patternUnits='objectBoundingBox'
-          x='-20.6486486%'
-          width='120.648649%'
+          x='0'
+          y='0'
+          width='100%'
           height='100%'
         >
-          <use
-            xlinkHref='#top-left-square-image-pattern-image'
-            transform='scale(0.125405405,0.125405405)'
-          />
+          <use xlinkHref='#top-left-square-image-pattern-image' />
         </pattern>
         <image
           id='top-left-square-image-pattern-image'
-          width='1307'
-          height='925'
+          width='116'
+          height='116'
           xlinkHref={topLeftSquareImageUrl}
         />
       </defs>
