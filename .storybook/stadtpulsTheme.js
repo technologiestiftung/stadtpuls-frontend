@@ -26,7 +26,7 @@ export default create({
   base: 'dark',
   brandTitle: 'Stadtpuls',
   brandUrl: 'https://stadtpuls.com',
-  brandImage: '/images/logo.svg',
+  brandImage: '/images/ui-logo.svg',
 
   colorSecondary: colors.purple,
   colorPrimary: colors.blue,
