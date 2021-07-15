@@ -2,7 +2,7 @@
 
 exports[`Storyshots UI Elements/TextLink As Dangerous Anchor 1`] = `
 <a
-  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-error focus:ring-error"
+  className="underline transition cursor-pointer text-left font-headline focus:ring-error hover:opacity-60 text-error focus-offset"
   href="#"
   onClick={[Function]}
   variant="dangerous"
@@ -13,7 +13,7 @@ exports[`Storyshots UI Elements/TextLink As Dangerous Anchor 1`] = `
 
 exports[`Storyshots UI Elements/TextLink As Dangerous Button 1`] = `
 <button
-  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-error focus:ring-error"
+  className="underline transition cursor-pointer text-left font-headline focus:ring-error hover:opacity-60 text-error focus-offset"
   href="#"
   onClick={[Function]}
   type="button"
@@ -25,7 +25,7 @@ exports[`Storyshots UI Elements/TextLink As Dangerous Button 1`] = `
 
 exports[`Storyshots UI Elements/TextLink As Primary Anchor 1`] = `
 <a
-  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue focus:ring-blue"
+  className="underline transition cursor-pointer text-left font-headline focus:ring-green text-blue underline-green hover:text-purple focus-offset"
   href="#"
   onClick={[Function]}
 >
@@ -35,7 +35,7 @@ exports[`Storyshots UI Elements/TextLink As Primary Anchor 1`] = `
 
 exports[`Storyshots UI Elements/TextLink As Primary Button 1`] = `
 <button
-  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue focus:ring-blue"
+  className="underline transition cursor-pointer text-left font-headline focus:ring-green text-blue underline-green hover:text-purple focus-offset"
   href="#"
   onClick={[Function]}
   type="button"
@@ -46,7 +46,7 @@ exports[`Storyshots UI Elements/TextLink As Primary Button 1`] = `
 
 exports[`Storyshots UI Elements/TextLink As Secondary Anchor 1`] = `
 <a
-  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-gray-500 focus:ring-blue"
+  className="underline transition cursor-pointer text-left font-headline focus:ring-green text-gray-500 hover:text-purple focus-offset"
   href="#"
   onClick={[Function]}
   variant="secondary"
@@ -57,7 +57,7 @@ exports[`Storyshots UI Elements/TextLink As Secondary Anchor 1`] = `
 
 exports[`Storyshots UI Elements/TextLink As Secondary Button 1`] = `
 <button
-  className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-gray-500 focus:ring-blue"
+  className="underline transition cursor-pointer text-left font-headline focus:ring-green text-gray-500 hover:text-purple focus-offset"
   href="#"
   onClick={[Function]}
   type="button"

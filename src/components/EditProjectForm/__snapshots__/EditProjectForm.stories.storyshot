@@ -3,7 +3,7 @@
 exports[`Storyshots Forms/EditProjectForm With Default Values 1`] = `
 <div>
   <h2
-    className="text-3xl text-blue font-bold"
+    className="text-3xl text-purple font-headline font-bold"
   >
     Projekt bearbeiten
   </h2>
@@ -163,7 +163,7 @@ exports[`Storyshots Forms/EditProjectForm With Default Values 1`] = `
 exports[`Storyshots Forms/EditProjectForm Without Default Values 1`] = `
 <div>
   <h2
-    className="text-3xl text-blue font-bold"
+    className="text-3xl text-purple font-headline font-bold"
   >
     Projekt bearbeiten
   </h2>

@@ -2,7 +2,6 @@ import { Td, Tr } from "@components/HTMLTable";
 import { ButtonTextLink } from "@components/TextLink";
 import { formatDateFromNow } from "@lib/dateUtil";
 import { FC, forwardRef, HTMLProps } from "react";
-import { DeviceIcon } from "./DeviceIcon";
 import { SensorType } from "./SensorsListTypes";
 
 // eslint-disable-next-line react/display-name
@@ -35,8 +34,17 @@ const DeviceIdDisplayField: FC = ({ children }) => (
     className='font-bold sm:font-normal'
     style={{ minWidth: 140, gridArea: "id" }}
   >
-    <DeviceIcon />
-    {children}
+    <div
+      className='grid gap-2 items-center'
+      style={{ gridTemplateColumns: "20px 1fr" }}
+    >
+      <img
+        src='/images/illustrations/microcontroller-1.svg'
+        alt='A microcontroller icon'
+        className='inline-block w-5 h-5'
+      />
+      {children}
+    </div>
   </Td>
 );
 

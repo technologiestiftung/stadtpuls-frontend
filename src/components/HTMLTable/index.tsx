@@ -33,7 +33,10 @@ export const Tr = forwardRef<HTMLTableRowElement, TrProps>(
 const commonStyles = `whitespace-nowrap w-auto block align-top sm:table-cell`;
 // eslint-disable-next-line react/display-name
 export const Th = forwardRef<HTMLTableHeaderCellElement, ThProps>(
-  ({ children, className = "", p = "sm:py-3 sm:pr-3", ...rest }, ref) => (
+  (
+    { children, className = "", p = "sm:py-3 sm:pr-3 sm:pl-2", ...rest },
+    ref
+  ) => (
     <th
       ref={ref}
       className={[
@@ -54,7 +57,7 @@ export const Th = forwardRef<HTMLTableHeaderCellElement, ThProps>(
 // eslint-disable-next-line react/display-name
 export const Td = forwardRef<HTMLTableCellElement, TdProps>(
   (
-    { children, className = "", p = "sm:py-3 pl-8 sm:pl-0 sm:pr-6", ...rest },
+    { children, className = "", p = "sm:py-3 pl-8 sm:pl-2 sm:pr-6", ...rest },
     ref
   ) => (
     <td
