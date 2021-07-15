@@ -23,7 +23,7 @@ module.exports = withMdxEnhanced({
             value: [
               `default-src 'self'`,
               `script-src 'self' 'unsafe-eval'`,
-              `style-src 'self'`,
+              `style-src 'self' 'unsafe-inline'`,
               `font-src 'self' data:`,
               `img-src 'self' data: blob:`,
               `frame-ancestors 'none'`,
