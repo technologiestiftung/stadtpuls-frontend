@@ -222,9 +222,13 @@ export const Project: FC<ProjectsType> = project => {
             />
           </div>
           <div className='mt-12'>
-            <div id='map-wrapper' ref={mapWrapper} className='w-full h-52'>
+            <div
+              id='map-wrapper'
+              ref={mapWrapper}
+              className='w-full h-52 border border-gray-100'
+            >
               {markerData && markerData.length === 0 && (
-                <p>Keine Geoinformationen verfügbar.</p>
+                <p className='ml-2 mt-2'>Koordinaten nicht verfügbar.</p>
               )}
               {mapWidth &&
                 mapHeight &&
