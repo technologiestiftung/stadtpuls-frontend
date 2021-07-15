@@ -42,9 +42,10 @@ export const LandingHero: FC = () => (
             <strong className='text-green'>
               offene Datenplattform für IoT-Projekte
             </strong>{" "}
-            bei der jede*r mitmachen kann. Einfach deine Sensoren registrieren
-            und alle Messwerte werden automatisch gespeichert, visualisiert und
-            für andere verfügbar gemacht.
+            Deiner Stadt. Und das beste: jede*r kann mitmachen. Egal ob Du
+            offene Daten suchst oder bereits eigene Sensoren und Daten hast:
+            Stadtpuls hilft dir, tiefer in die Welt der Stadt-Sensorik
+            einzutauchen und deine Stadt besser zu verstehen.
           </p>
           <Link href='/docs'>
             <AnchorButton
@@ -53,17 +54,17 @@ export const LandingHero: FC = () => (
               className='animate-slide-in mr-4 mb-2'
               style={{ animationDelay: "150ms" }}
             >
-              Mehr Erfahren
+              Mehr erfahren
             </AnchorButton>
           </Link>
-          <Link href='/projects'>
+          <Link href='/docs'>
             <AnchorButton
-              href='/projects'
+              href='/docs'
               variant='secondary'
               className='animate-slide-in'
               style={{ animationDelay: "200ms" }}
             >
-              Projekte ansehen
+              Mitmachen
             </AnchorButton>
           </Link>
         </div>

@@ -2,6 +2,7 @@ import useGithubUser from "@lib/hooks/useGithubUser";
 import { GitHub } from "@material-ui/icons";
 import { FC } from "react";
 import styles from "./LandingLabAbout.module.css";
+import Link from "next/link";
 
 const AboutTitle: FC = ({ children }) => (
   <h1
@@ -43,13 +44,19 @@ export const LandingLabAbout: FC = () => {
           <div className='grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 gap-4 md:gap-8'>
             <div className='sm:col-span-2 lg:col-span-1'>
               <AboutTitle>Wir bauen Prototypen</AboutTitle>
-              <p className='text-lg mb-8'>Für das Gemeinwohl</p>
+              <p className='text-lg mb-8'>Für die Stadtgesellschaft</p>
               <div className='prose max-w-none'>
                 <p className='max-w-none'>
                   In der Technologiestiftung Berlin arbeiten Expert*innen aus
                   den Bereichen Frontend- und Backendentwicklung, Data Science,
-                  Visualisierung, UI/UX zusammen, um aufzuzeigen, wie die
-                  Gemeinschaft von Technologie profitieren kann. Oder so.
+                  Datenvisualisierung, sowie UI/UX zusammen, um zu evaluieren
+                  und aufzuzeigen, wie unsere Stadtgesellschaft von Technologie
+                  profitieren kann.
+                </p>
+                <p>
+                  Das CityLAB Berlin ist Hauptakteur bei der Umsetzung der
+                  Prototypen. Neugierig geworden? Dann besuche einige unserer
+                  Projekte auf GitHub.
                 </p>
               </div>
             </div>
@@ -73,11 +80,19 @@ export const LandingLabAbout: FC = () => {
                   {user?.public_repos || 182}
                 </strong>{" "}
                 <span className='w-full'>Open Source Projekte</span>
-                <strong
-                  className={["px-4 py-3 bg-purple text-white"].join(" ")}
-                >
-                  <GitHub />
-                </strong>
+                <Link href='https://github.com/technologiestiftung'>
+                  <a
+                    href='https://github.com/technologiestiftung'
+                    className='group px-4 py-3 bg-purple hover:bg-green transition-colors'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    aria-label='GitHub der Technologiestiftung Berlin'
+                  >
+                    <strong className={["text-white"].join(" ")}>
+                      <GitHub />
+                    </strong>
+                  </a>
+                </Link>
               </span>
             </div>
             <div className='lg:col-span-2 grid lg:grid-cols-2 gap-4 xl:gap-8'>

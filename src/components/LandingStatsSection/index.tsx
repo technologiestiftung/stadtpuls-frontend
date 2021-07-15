@@ -27,7 +27,11 @@ export const LandingStatsSection: FC<{
       >
         Wir stehen erst am Anfang
       </h2>
-      <p className='mb-4 text-center text-lg lg:text-left'>Ein paar Zahlen</p>
+      <p className='mb-4 text-center text-base lg:text-left max-w-prose'>
+        Und sind auf der Suche nach Makern wie Dir! Wenn Du eigene
+        Sensor-Projekte hast, verknüpfe sie ganz einfach mit Stadtpuls und lass
+        die Community wachsen.
+      </p>
     </div>
     <div className='flex items-center'>
       <div

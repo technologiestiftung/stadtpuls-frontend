@@ -110,7 +110,7 @@ const columnsData = [
   {
     title: "Hardware",
     description:
-      "Die Hardware-Wahl  ist ganz dir überlassen. Arbeite z.B. mit Arduino, Raspberry Pi oder einer Open Sense Box.",
+      "Die Wahl der Hardware  ist ganz dir überlassen. Arbeite mit Arduino, Raspberry Pi oder einer Open Sense Box. Wichtig ist, dass Dein Board über eine LoRaWan-Antenne verfügt.",
     listItems: [
       { icon: "/images/icons/arduino.svg", text: "Arduino" },
       { icon: "/images/icons/raspberry-pi.svg", text: "Raspberry Pi" },
@@ -120,7 +120,7 @@ const columnsData = [
   {
     title: "Sensoren",
     description:
-      "Wir unterstützen aktuell die folgenden, für die Umwelt relevanten Sensortypen.",
+      "Prinzipiell kannst du jeden Sensor verbinden. Wir unterstützen aktuell die folgenden, für die Umwelt relevanten, Sensortypen und machen sie mit einem Kategorie-Flag sichtbar.",
     listItems: [
       { icon: "/images/icons/temperature.svg", text: "Temperatur" },
       { icon: "/images/icons/co2.svg", text: "CO2" },
@@ -134,13 +134,13 @@ const columnsData = [
   {
     title: "Protokolle",
     description:
-      "Über die folgenden Protokolle kannst du deine Daten übertragen.",
+      "Stadtpuls unterstützt bislang ein Protokoll: LoRaWan über TTN. Wir arbeiten aber bereits an weiteren Anbindungen.",
     listItems: [{ icon: "/images/icons/arduino.svg", text: "LoRaWAN (TTN)" }],
   },
   {
     title: "Was wir bereitstellen",
     description:
-      "Hast du erstmal deinen Sensoren registriert, stellen wir dir automatisch und kostenlos folgendes bereit:",
+      "Hast Du erst einmal ein eigenes Stadtpuls-Projekt, stellen wir Dir automatisch und kostenlos folgendes bereit:",
     listItems: [
       {
         icon: "/images/icons/profile.svg",
@@ -153,7 +153,7 @@ const columnsData = [
       { icon: "/images/icons/api.svg", text: "REST-API für alle Sensoren" },
       {
         icon: "/images/icons/downloads.svg",
-        text: "Daten-Downloads (CSV & JSON)",
+        text: "Daten-Downloads (CSV)",
       },
     ],
   },
@@ -168,6 +168,24 @@ export const LandingHowItWorks: FC = () => (
         "py-8 sm:py-12 md:py-16",
       ].join(" ")}
     >
+      <aside
+        className={[
+          "p-8 mx-auto mb-16 md:mb-24 max-w-prose",
+          "border border-green shadow-green",
+        ].join(" ")}
+      >
+        <img
+          src='/images/illustrations/microcontroller-2.svg'
+          alt='Microcontroller'
+          className='inline-block mr-4 align-top'
+        />
+        <p className='mt-3'>
+          In Berlin gibt es ein offenes LoRaWan-Netzwerk, welches seit 2017
+          durch die TheThingsNetwork (TTN) Community betrieben wird. Jeder kann
+          und darf es komplett kostenlos benutzten, seine Sensoren mit dem
+          Netzwerk verbinden und die Stadt auf eigene Faust vermessen.
+        </p>
+      </aside>
       <h1
         className={[
           "text-xl sm:text-2xl md:text-3xl",
@@ -175,9 +193,15 @@ export const LandingHowItWorks: FC = () => (
           "mt-6 mb-1",
         ].join(" ")}
       >
-        Und so geht’s:
+        Stadtpuls unterstützt die Anbindung an TTN!
       </h1>
-      <p className='mb-8 text-lg'>Eine kleine Übersicht</p>
+      <p className='mb-8 text-base'>
+        Durch die TTN-Anbindung kannst Du Deine TTN-Projekte ganz einfach über
+        einen Webhook mit Stadtpuls verbinden und eigene Projekte anlegen. Deine
+        Daten werden dadurch visualisiert und per API, sowie per CSV offen und
+        kostenlos der gesamten Stadtgesellschaft zur Verfügung gestellt. So
+        trägst auch Du dazu bei, unsere Stadt ein Stück smarter zu machen.
+      </p>
       <div
         className={`grid grid-cols-2 lg:grid-cols-9 gap-x-4 sm:gap-x-0 ${styles.gridContainer}`}
       >
