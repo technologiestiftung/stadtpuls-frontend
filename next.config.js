@@ -12,6 +12,7 @@ module.exports = withMdxEnhanced({
     phase: "prebuild|loader|both",
   },
   reExportDataFetching: false,
+})({
   async headers() {
     return [
       {
@@ -20,15 +21,15 @@ module.exports = withMdxEnhanced({
           {
             key: "Content-Security-Policy",
             value: [
-              // script-src and style-src are currently commented out because both values fallback to default-src
               `default-src 'self'`,
-              //`script-src 'self'`,
+              `script-src 'self'`,
+              `style-src 'self'`,
+              `frame-ancestors 'none'`,
               `connect-src 'self' ${process.env.NEXT_PUBLIC_TOKEN_API_URL} ${process.env.NEXT_PUBLIC_SUPABASE_URL}`,
-              //`style-src 'self'`,
             ].join("; "),
           },
         ],
       },
     ];
   },
-})();
+});
