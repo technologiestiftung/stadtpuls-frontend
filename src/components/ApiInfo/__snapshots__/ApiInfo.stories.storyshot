@@ -1,29 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots ApiInfo Default 1`] = `
-<div
-  className="css-vurnku"
->
+<div>
   <h2
-    className="css-12oqlt"
+    className="text-lg text-purple font-headline"
   >
     API
   </h2>
   <table
-    className="css-1rorulu-ApiInfo"
+    className="w-full mt-2"
   >
     <tbody>
-      <tr
-        className="css-osdorg"
-      >
-        <td>
+      <tr>
+        <td
+          className="py-2 text-xs"
+        >
           one
         </td>
         <td
-          className="css-13pma7l"
+          className="py-2 px-1 text-xs"
         >
           <a
-            className="css-p944lt"
+            className="text-blue hover:text-purple transition-colors"
             href="https://somedomain.com/endpoint/one"
             rel="noopener noreferrer"
             target="_blank"
@@ -33,17 +31,17 @@ exports[`Storyshots ApiInfo Default 1`] = `
           </a>
         </td>
       </tr>
-      <tr
-        className="css-osdorg"
-      >
-        <td>
+      <tr>
+        <td
+          className="py-2 text-xs"
+        >
           two
         </td>
         <td
-          className="css-13pma7l"
+          className="py-2 px-1 text-xs"
         >
           <a
-            className="css-p944lt"
+            className="text-blue hover:text-purple transition-colors"
             href="https://somedomain.com/endpoint/two"
             rel="noopener noreferrer"
             target="_blank"
@@ -53,17 +51,17 @@ exports[`Storyshots ApiInfo Default 1`] = `
           </a>
         </td>
       </tr>
-      <tr
-        className="css-osdorg"
-      >
-        <td>
+      <tr>
+        <td
+          className="py-2 text-xs"
+        >
           three
         </td>
         <td
-          className="css-13pma7l"
+          className="py-2 px-1 text-xs"
         >
           <a
-            className="css-p944lt"
+            className="text-blue hover:text-purple transition-colors"
             href="https://somedomain.com/endpoint/three"
             rel="noopener noreferrer"
             target="_blank"
