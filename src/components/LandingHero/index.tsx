@@ -47,7 +47,7 @@ export const LandingHero: FC = () => (
             Stadtpuls hilft dir, tiefer in die Welt der Stadt-Sensorik
             einzutauchen und deine Stadt besser zu verstehen.
           </p>
-          <Link href='/docs'>
+          <Link href='/'>
             <AnchorButton
               href='/'
               variant='primary'
