@@ -6,7 +6,7 @@ exports[`Storyshots Layout/Footer Default 1`] = `
     className="bg-white border-t border-gray-200"
   >
     <div
-      className="max-w-screen-lg mx-auto p-8"
+      className="max-w-screen-2xl mx-auto p-8"
     >
       <div
         className="w-full flex"
@@ -38,6 +38,27 @@ exports[`Storyshots Layout/Footer Default 1`] = `
           <span
             className="w-full block text-xs text-gray-700"
           >
+            Durchgeführt vom:
+          </span>
+          <a
+            className="mt-4 block"
+            href="https://technologiestiftung-berlin.de/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="Logo des CityLAB Berlin"
+              className="w-40"
+              src="/images/citylab-logo.svg"
+            />
+          </a>
+        </div>
+        <div
+          className="ml-8 md:ml-12 block"
+        >
+          <span
+            className="w-full block text-xs text-gray-700"
+          >
             Gefördert von:
           </span>
           <a
@@ -47,9 +68,9 @@ exports[`Storyshots Layout/Footer Default 1`] = `
             target="_blank"
           >
             <img
-              alt="Logo der Senatsverwaltung für Wirtschaft, Energie und Betriebe"
-              className="w-48"
-              src="/images/senweb-logo.svg"
+              alt="Berlin Logo"
+              className="w-32"
+              src="/images/berlin-logo.svg"
             />
           </a>
         </div>
@@ -60,7 +81,7 @@ exports[`Storyshots Layout/Footer Default 1`] = `
     className="bg-white-dot-pattern"
   >
     <div
-      className="max-w-screen-lg mx-auto px-8 py-6 block sm:flex justify-between"
+      className="max-w-screen-2xl mx-auto px-8 py-6 block sm:flex justify-between"
     >
       <div
         className="flex items-center"

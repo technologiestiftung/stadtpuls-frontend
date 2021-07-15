@@ -109,131 +109,32 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
         </span>
       </a>
       <a
-        href="https://technologiestiftung-berlin.de/"
+        aria-label="Website des CityLAB Berlin"
+        href="https://www.citylab-berlin.org"
         rel="noopener noreferrer"
         target="_blank"
       >
         <svg
-          height="2em"
-          viewBox="0 0 183 183"
-          width="2em"
+          height="36"
+          viewBox="0 0 32 36"
+          width="32"
           xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-          <defs>
-            <path
-              d="M0 0h51.933v46.828H0z"
-              id="prefix__a"
-            />
-            <path
-              d="M0 0h165.703v116.326H0z"
-              id="prefix__c"
-            />
-            <path
-              d="M0 0h165.703v80.279H0z"
-              id="prefix__e"
-            />
-            <path
-              d="M0 0h144.501v97.358H0z"
-              id="prefix__g"
-            />
-            <path
-              d="M0 0h102.883v61.312H0z"
-              id="prefix__i"
-            />
-          </defs>
           <g
             fill="none"
-            fillRule="evenodd"
-            transform="translate(0 23.971)"
           >
-            <g
-              transform="translate(0 88.353)"
-            >
-              <mask
-                fill="#fff"
-                id="prefix__b"
-              >
-                <use
-                  xlinkHref="#prefix__a"
-                />
-              </mask>
-              <path
-                d="M15.438 46.828L-.004.444.731 0l51.202 8.585-.405.421z"
-                fill="#8330FF"
-                fillRule="nonzero"
-                mask="url(#prefix__b)"
-              />
-            </g>
-            <path
-              d="M35.748 13.899l146.925 64.954-16.965 37.468L.003 88.799z"
-              fill="#46ECA1"
-              fillRule="nonzero"
-            />
-            <mask
-              fill="#fff"
-              id="prefix__d"
-            >
-              <use
-                xlinkHref="#prefix__c"
-              />
-            </mask>
-            <path
-              d="M-.002 88.796L144.501 0l21.202 116.326z"
+            <polygon
               fill="#0000C2"
-              fillRule="nonzero"
-              mask="url(#prefix__d)"
+              points="19.943 25.588 14.118 22.185 14.229 6.974 26.121 0 31.765 3.309 31.742 18.616"
             />
-            <g
-              transform="translate(0 36.047)"
-            >
-              <mask
-                fill="#fff"
-                id="prefix__f"
-              >
-                <use
-                  xlinkHref="#prefix__e"
-                />
-              </mask>
-              <path
-                d="M-.002 52.749L85.844 0l70.942 31.359 8.917 48.92z"
-                fill="#8330FF"
-                fillRule="nonzero"
-                mask="url(#prefix__f)"
-              />
-            </g>
-            <mask
-              fill="#fff"
-              id="prefix__h"
-            >
-              <use
-                xlinkHref="#prefix__g"
-              />
-            </mask>
-            <path
-              d="M-.002 88.796L144.501 0l-92.97 97.358z"
+            <polygon
+              fill="#46ECA1"
+              points="14.118 4.834 12.236 5.954 12.187 12.763 5.51 16.738 5.422 29.118 0 25.903 .11 10.563 11.925 3.529"
+            />
+            <polygon
               fill="#8330FF"
-              fillRule="nonzero"
-              mask="url(#prefix__h)"
+              points="12.548 14.118 12.486 22.689 19.669 26.937 24.706 23.924 24.699 29.111 12.889 36.176 7.059 32.728 7.17 17.312"
             />
-            <g
-              transform="translate(0 36.047)"
-            >
-              <mask
-                fill="#fff"
-                id="prefix__j"
-              >
-                <use
-                  xlinkHref="#prefix__i"
-                />
-              </mask>
-              <path
-                d="M-.002 52.749L85.844 0l17.039 7.531-51.352 53.781z"
-                fill="#0000C2"
-                fillRule="nonzero"
-                mask="url(#prefix__j)"
-              />
-            </g>
           </g>
         </svg>
       </a>
@@ -351,131 +252,32 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
         </span>
       </a>
       <a
-        href="https://technologiestiftung-berlin.de/"
+        aria-label="Website des CityLAB Berlin"
+        href="https://www.citylab-berlin.org"
         rel="noopener noreferrer"
         target="_blank"
       >
         <svg
-          height="2em"
-          viewBox="0 0 183 183"
-          width="2em"
+          height="36"
+          viewBox="0 0 32 36"
+          width="32"
           xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-          <defs>
-            <path
-              d="M0 0h51.933v46.828H0z"
-              id="prefix__a"
-            />
-            <path
-              d="M0 0h165.703v116.326H0z"
-              id="prefix__c"
-            />
-            <path
-              d="M0 0h165.703v80.279H0z"
-              id="prefix__e"
-            />
-            <path
-              d="M0 0h144.501v97.358H0z"
-              id="prefix__g"
-            />
-            <path
-              d="M0 0h102.883v61.312H0z"
-              id="prefix__i"
-            />
-          </defs>
           <g
             fill="none"
-            fillRule="evenodd"
-            transform="translate(0 23.971)"
           >
-            <g
-              transform="translate(0 88.353)"
-            >
-              <mask
-                fill="#fff"
-                id="prefix__b"
-              >
-                <use
-                  xlinkHref="#prefix__a"
-                />
-              </mask>
-              <path
-                d="M15.438 46.828L-.004.444.731 0l51.202 8.585-.405.421z"
-                fill="#8330FF"
-                fillRule="nonzero"
-                mask="url(#prefix__b)"
-              />
-            </g>
-            <path
-              d="M35.748 13.899l146.925 64.954-16.965 37.468L.003 88.799z"
-              fill="#46ECA1"
-              fillRule="nonzero"
-            />
-            <mask
-              fill="#fff"
-              id="prefix__d"
-            >
-              <use
-                xlinkHref="#prefix__c"
-              />
-            </mask>
-            <path
-              d="M-.002 88.796L144.501 0l21.202 116.326z"
+            <polygon
               fill="#0000C2"
-              fillRule="nonzero"
-              mask="url(#prefix__d)"
+              points="19.943 25.588 14.118 22.185 14.229 6.974 26.121 0 31.765 3.309 31.742 18.616"
             />
-            <g
-              transform="translate(0 36.047)"
-            >
-              <mask
-                fill="#fff"
-                id="prefix__f"
-              >
-                <use
-                  xlinkHref="#prefix__e"
-                />
-              </mask>
-              <path
-                d="M-.002 52.749L85.844 0l70.942 31.359 8.917 48.92z"
-                fill="#8330FF"
-                fillRule="nonzero"
-                mask="url(#prefix__f)"
-              />
-            </g>
-            <mask
-              fill="#fff"
-              id="prefix__h"
-            >
-              <use
-                xlinkHref="#prefix__g"
-              />
-            </mask>
-            <path
-              d="M-.002 88.796L144.501 0l-92.97 97.358z"
+            <polygon
+              fill="#46ECA1"
+              points="14.118 4.834 12.236 5.954 12.187 12.763 5.51 16.738 5.422 29.118 0 25.903 .11 10.563 11.925 3.529"
+            />
+            <polygon
               fill="#8330FF"
-              fillRule="nonzero"
-              mask="url(#prefix__h)"
+              points="12.548 14.118 12.486 22.689 19.669 26.937 24.706 23.924 24.699 29.111 12.889 36.176 7.059 32.728 7.17 17.312"
             />
-            <g
-              transform="translate(0 36.047)"
-            >
-              <mask
-                fill="#fff"
-                id="prefix__j"
-              >
-                <use
-                  xlinkHref="#prefix__i"
-                />
-              </mask>
-              <path
-                d="M-.002 52.749L85.844 0l17.039 7.531-51.352 53.781z"
-                fill="#0000C2"
-                fillRule="nonzero"
-                mask="url(#prefix__j)"
-              />
-            </g>
           </g>
         </svg>
       </a>
