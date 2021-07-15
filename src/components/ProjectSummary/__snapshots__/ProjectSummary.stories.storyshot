@@ -2,18 +2,18 @@
 
 exports[`Storyshots ProjectSummary Default 1`] = `
 <div
-  className="css-18m44zn-ProjectSummary"
+  className="max-prose"
 >
   <h1
-    className="css-d1nxv0-ProjectSummary"
+    className="text-xl sm:text-3xl md:text-4xl text-purple"
   />
-  <div
-    className="css-jmlio4"
+  <p
+    className="mt-3"
   />
-  <div
-    className="css-198lzgh-ProjectSummary"
+  <p
+    className="mt-1 font-bold"
   >
     Anzahl der Sensoren: 
-  </div>
+  </p>
 </div>
 `;
