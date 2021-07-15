@@ -214,39 +214,14 @@ export const Project: FC<ProjectsType> = project => {
           >
             <ArrowBackIcon />
           </a>
-          <div className='mt-2'>
+          <div className='mt-6'>
             <ProjectSummary
               title={project.name}
               description={project.description || ""}
               noOfDevices={project.devices ? project.devices.length : 0}
             />
           </div>
-          {project && project.devices && project.devices.length > 0 && (
-            <>
-              <div className='mt-8'>
-                <ApiInfo
-                  entries={project.devices.map(device => {
-                    return {
-                      label: device.name ? device.name : "Kein Titel",
-                      domain: process.env.NEXT_PUBLIC_WEB_URL || "",
-                      route: device.id
-                        ? `api/v1/devices/${device.id}/records`
-                        : "",
-                    };
-                  })}
-                />
-              </div>
-              <div className='mt-8'>
-                {project && (
-                  <Button variant='primary' onClick={handleDownload}>
-                    Alle Daten downloaden
-                  </Button>
-                )}
-              </div>
-            </>
-          )}
-
-          <div className='mt-8'>
+          <div className='mt-12'>
             <div id='map-wrapper' ref={mapWrapper} className='w-full h-52'>
               {markerData && markerData.length === 0 && (
                 <p>Keine Geoinformationen verfügbar.</p>
@@ -265,6 +240,30 @@ export const Project: FC<ProjectsType> = project => {
             </div>
           </div>
           {project && <p className='mt-2'>Standpunkt(e): {project.location}</p>}
+          {project && project.devices && project.devices.length > 0 && (
+            <>
+              <div className='mt-16'>
+                <ApiInfo
+                  entries={project.devices.map(device => {
+                    return {
+                      label: device.name ? device.name : "Kein Titel",
+                      domain: process.env.NEXT_PUBLIC_WEB_URL || "",
+                      route: device.id
+                        ? `api/v1/devices/${device.id}/records`
+                        : "",
+                    };
+                  })}
+                />
+              </div>
+              <div className='mt-6'>
+                {project && (
+                  <Button variant='primary' onClick={handleDownload}>
+                    Alle Daten downloaden
+                  </Button>
+                )}
+              </div>
+            </>
+          )}
         </div>
         <div>
           <div className='bg-white border border-gray-100 shadow'>

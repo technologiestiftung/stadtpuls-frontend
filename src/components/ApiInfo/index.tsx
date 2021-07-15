@@ -11,14 +11,14 @@ export interface ApiTableType {
 export const ApiInfo: FC<ApiTableType> = ({ entries }) => {
   return (
     <div>
-      <h2 className='text-lg text-purple font-headline'>API</h2>
+      <h2 className='text-xl md:text-3xl text-purple font-headline'>API</h2>
       <table className='w-full mt-2'>
         <tbody>
           {entries.map(entry => {
             return (
               <tr key={entry.label}>
-                <td className='py-2 text-xs'>{entry.label}</td>
-                <td className='py-2 px-1 text-xs'>
+                <td className='py-2 text-sm'>{entry.label}</td>
+                <td className='py-2 px-1 text-sm'>
                   <a
                     href={`${entry.domain}/${entry.route}`}
                     target='_blank'

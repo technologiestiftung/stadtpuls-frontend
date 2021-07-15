@@ -3,7 +3,7 @@
 exports[`Storyshots ApiInfo Default 1`] = `
 <div>
   <h2
-    className="text-lg text-purple font-headline"
+    className="text-xl md:text-3xl text-purple font-headline"
   >
     API
   </h2>
@@ -13,12 +13,12 @@ exports[`Storyshots ApiInfo Default 1`] = `
     <tbody>
       <tr>
         <td
-          className="py-2 text-xs"
+          className="py-2 text-sm"
         >
           one
         </td>
         <td
-          className="py-2 px-1 text-xs"
+          className="py-2 px-1 text-sm"
         >
           <a
             className="text-blue hover:text-purple transition-colors"
@@ -33,12 +33,12 @@ exports[`Storyshots ApiInfo Default 1`] = `
       </tr>
       <tr>
         <td
-          className="py-2 text-xs"
+          className="py-2 text-sm"
         >
           two
         </td>
         <td
-          className="py-2 px-1 text-xs"
+          className="py-2 px-1 text-sm"
         >
           <a
             className="text-blue hover:text-purple transition-colors"
@@ -53,12 +53,12 @@ exports[`Storyshots ApiInfo Default 1`] = `
       </tr>
       <tr>
         <td
-          className="py-2 text-xs"
+          className="py-2 text-sm"
         >
           three
         </td>
         <td
-          className="py-2 px-1 text-xs"
+          className="py-2 px-1 text-sm"
         >
           <a
             className="text-blue hover:text-purple transition-colors"
