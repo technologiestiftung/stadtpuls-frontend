@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { IconButton } from "../IconButton";
 import { RecordType } from "@common/interfaces";
 import { createTimeOutput } from "@lib/dateUtil";
 import { createCSVStructure, downloadCSV } from "@lib/downloadCsvUtil";
 import colors from "../../style/colors";
-
-const downloadIcon = "/images/download.svg";
+import { Button } from "@components/Button";
 
 interface DataTableRowType {
   id: string | number;
@@ -57,11 +55,7 @@ export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
       >
         <div className='text-blue'>{title}</div>
         <div>
-          <IconButton
-            value={"Download"}
-            iconSource={downloadIcon}
-            clickHandler={handleDownload}
-          />
+          <Button onClick={handleDownload}>Download</Button>
         </div>
       </div>
       <div className={["p-3", "flex flex-wrap justify-center"].join(" ")}>

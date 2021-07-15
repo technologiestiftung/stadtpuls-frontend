@@ -14,18 +14,10 @@ exports[`Storyshots DataTable Default 1`] = `
     </div>
     <div>
       <button
-        className="css-o6hqmc-IconButton"
+        className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
         onClick={[Function]}
+        type="button"
       >
-        <div
-          className="css-no1sd1-IconButton"
-        >
-          <img
-            alt="Download-Icon"
-            className="css-1710cio-IconButton"
-            src="/images/download.svg"
-          />
-        </div>
         Download
       </button>
     </div>
