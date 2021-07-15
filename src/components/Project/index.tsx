@@ -1,25 +1,8 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
 import React, { useEffect, useState, useCallback, FC } from "react";
-import {
-  jsx,
-  Grid,
-  Container,
-  Box,
-  Card,
-  IconButton,
-  Text,
-  Input,
-  Label,
-  Button,
-  Theme,
-} from "theme-ui";
 import { downloadMultiple } from "@lib/downloadCsvUtil";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { ProjectSummary } from "../ProjectSummary";
 import { DataTable } from "../DataTable";
-import { IconButton as DownloadButton } from "../IconButton";
 import { MarkerType, RecordType } from "../../common/interfaces";
 import { RadioTabs } from "../RadioTabs";
 import { LineChart } from "../LineChart";
@@ -33,9 +16,7 @@ import {
   RecordsType,
   ProjectsType,
 } from "@common/types/supabase";
-import { useRouter } from "next/router";
-
-const downloadIcon = "./images/download.svg";
+import { Button } from "@components/Button";
 
 const rawRecordToRecord = (rawRecord: RecordsType): RecordType => ({
   id: rawRecord.id,
@@ -65,7 +46,6 @@ const getCategoryUnit = (
 };
 
 export const Project: FC<ProjectsType> = project => {
-  const router = useRouter();
   const [selectedDeviceIndex, setSelectedDeviceIndex] = useState<number>(0);
   const selectedDevice = project?.devices?.[selectedDeviceIndex];
 
@@ -219,42 +199,31 @@ export const Project: FC<ProjectsType> = project => {
     setSelectedDeviceIndex(deviceIndex);
   };
 
-  const handleUpdateRecords = (
-    event: React.FormEvent<HTMLDivElement>
-  ): void => {
-    event.preventDefault();
-
-    if (!selectedDevice || !selectedDevice.records) return;
-    setLineChartData(
-      selectedDevice.records
-        .slice(0, numberOfRecordsToDisplay)
-        .map(rawRecordToRecord)
-    );
-  };
-
   return (
-    <Container mt={[0, 5, 5]} p={4}>
-      <Grid gap={[4, null, 6]} columns={[1, "1fr 2fr"]}>
-        <Box>
-          <IconButton
+    <div className={["max-w-screen-xl", "p-4 mx-auto mt-0 md:mt-5"].join(" ")}>
+      <div
+        className={[
+          "grid gap-4 md:gap-12 grid-cols-1 md:grid-cols-[1fr,2fr]",
+        ].join(" ")}
+      >
+        <div>
+          <a
+            href='/projects'
             aria-label='Zurück zur Übersicht'
-            bg='background'
             className='rounded-full cursor-pointer'
-            onClick={() => router.back()}
-            id='back-button'
           >
-            <ArrowBackIcon color='primary' />
-          </IconButton>
-          <Box mt={2}>
+            <ArrowBackIcon />
+          </a>
+          <div className='mt-2'>
             <ProjectSummary
               title={project.name}
               description={project.description || ""}
               noOfDevices={project.devices ? project.devices.length : 0}
             />
-          </Box>
+          </div>
           {project && project.devices && project.devices.length > 0 && (
             <>
-              <Box mt={4}>
+              <div className='mt-8'>
                 <ApiInfo
                   entries={project.devices.map(device => {
                     return {
@@ -266,23 +235,21 @@ export const Project: FC<ProjectsType> = project => {
                     };
                   })}
                 />
-              </Box>
-              <Box mt={4}>
+              </div>
+              <div className='mt-8'>
                 {project && (
-                  <DownloadButton
-                    value={"Alle Daten downloaden"}
-                    iconSource={downloadIcon}
-                    clickHandler={handleDownload}
-                  />
+                  <Button variant='primary' onClick={handleDownload}>
+                    Alle Daten downloaden
+                  </Button>
                 )}
-              </Box>
+              </div>
             </>
           )}
 
-          <Card mt={5} bg='muted'>
+          <div className='mt-8'>
             <div id='map-wrapper' ref={mapWrapper} className='w-full h-52'>
               {markerData && markerData.length === 0 && (
-                <Text>Keine Geoinformationen verfügbar.</Text>
+                <p>Keine Geoinformationen verfügbar.</p>
               )}
               {mapWidth &&
                 mapHeight &&
@@ -296,21 +263,20 @@ export const Project: FC<ProjectsType> = project => {
                   />
                 )}
             </div>
-          </Card>
-          {project && <Text mt={2}>Standpunkt(e): {project.location}</Text>}
-        </Box>
-        <Box>
-          <Card p={0}>
+          </div>
+          {project && <p className='mt-2'>Standpunkt(e): {project.location}</p>}
+        </div>
+        <div>
+          <div className='bg-white border border-gray-100 shadow'>
             {project &&
               project.devices &&
               project.devices[selectedDeviceIndex] && (
-                <Grid
-                  columns={["auto max-content"]}
-                  p={3}
-                  sx={{
-                    borderBottom: (theme: Theme) =>
-                      `1px solid ${String(theme.colors?.lightgrey)}`,
-                  }}
+                <div
+                  className={[
+                    "grid grid-cols-[auto,max-content]",
+                    "p-3",
+                    "border-b border-gray-100",
+                  ].join(" ")}
                 >
                   <RadioTabs
                     name={"devices"}
@@ -323,20 +289,15 @@ export const Project: FC<ProjectsType> = project => {
                     })}
                     changeHandler={selected => setSelectedDeviceIndex(selected)}
                   />
-                  <Box sx={{ fontSize: 0 }}>
-                    <Grid
-                      as='dl'
-                      columns={"100px 1fr"}
-                      gap={2}
-                      sx={{
-                        rowGap: 2,
-                        ">dd": {
-                          marginLeft: 0,
-                        },
-                      }}
+                  <div>
+                    <dl
+                      className={[
+                        "grid gap-2 grid-cols-[100px,1fr]",
+                        "text-xs",
+                      ].join(" ")}
                     >
                       <dt>Letzter Eintrag:</dt>
-                      <dd>
+                      <dd className='ml-2'>
                         {selectedDevice?.records?.length &&
                         // TODO: Do not use hasOwnProperty here
                         // eslint-disable-next-line no-prototype-builtins
@@ -351,19 +312,14 @@ export const Project: FC<ProjectsType> = project => {
                           : ""}
                       </dd>
                       <dt>Messwerte:</dt>
-                      <dd>
+                      <dd className='ml-2'>
                         {selectedDevice && selectedDevice?.records?.length}
                       </dd>
-                    </Grid>
+                    </dl>
                     {selectedDevice && (
-                      <Grid
-                        as='form'
-                        columns={"100px 1fr auto"}
-                        gap={2}
-                        onSubmit={handleUpdateRecords}
-                      >
-                        <Label htmlFor='records-amount'>Angezeigt:</Label>
-                        <Input
+                      <div className='grid grid-cols-[100px,1fr,auto] gap-2 text-xs mt-2'>
+                        <label htmlFor='records-amount'>Angezeigt:</label>
+                        <input
                           type='number'
                           name='records-amount'
                           value={numberOfRecordsToDisplay}
@@ -371,34 +327,22 @@ export const Project: FC<ProjectsType> = project => {
                           max={`${selectedDevice?.records?.length || 0}`}
                           step='1'
                           id='records-amount'
-                          color='primary'
-                          sx={{ fontWeight: "bold" }}
+                          className='text-blue font-bold text-xs'
                           onChange={event =>
                             setNumberOfRecordsToDisplay(
                               Number(event.target.value)
                             )
                           }
                         />
-                        <Button
-                          variant='text'
-                          type='submit'
-                          sx={{ display: "flex", alignItems: "center" }}
-                        >
-                          <ArrowForwardIcon
-                            fontSize={"small"}
-                            sx={{ color: "primary" }}
-                          />
-                        </Button>
-                      </Grid>
+                      </div>
                     )}
-                  </Box>
-                </Grid>
+                  </div>
+                </div>
               )}
-            <Box
+            <div
               id='chart-wrapper'
               ref={chartWrapper}
-              className='mt-4'
-              style={{ minHeight: 340 }}
+              className='mt-4 min-h-[340px]'
             >
               {project &&
                 project.devices &&
@@ -419,16 +363,18 @@ export const Project: FC<ProjectsType> = project => {
                   <h3>Dieses Projekt enthält noch keine Sensoren.</h3>
                 </div>
               )}
-            </Box>
-          </Card>
+            </div>
+          </div>
           {selectedDevice && selectedDevice.records && (
-            <DataTable
-              data={selectedDevice.records.map(rawRecordToRecord)}
-              title={selectedDevice.name || ""}
-            />
+            <div className='border border-gray-100 shadow mt-16 p-0'>
+              <DataTable
+                data={selectedDevice.records.map(rawRecordToRecord)}
+                title={selectedDevice.name || ""}
+              />
+            </div>
           )}
-        </Box>
-      </Grid>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };
