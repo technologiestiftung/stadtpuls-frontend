@@ -1,11 +1,9 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
 import React, { useState, useEffect } from "react";
-import { jsx, Grid, Card, Box, Button, Theme } from "theme-ui";
 import { IconButton } from "../IconButton";
 import { RecordType } from "@common/interfaces";
 import { createTimeOutput } from "@lib/dateUtil";
 import { createCSVStructure, downloadCSV } from "@lib/downloadCsvUtil";
+import colors from "../../style/colors";
 
 const downloadIcon = "/images/download.svg";
 
@@ -47,54 +45,44 @@ export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
   };
 
   return (
-    <Card mt={4} p={0} sx={{ height: "500px", overflowY: "scroll" }}>
-      <Grid
-        columns={["auto max-content"]}
-        p={3}
-        bg='background'
-        sx={{
-          borderBottom: (theme: Theme) =>
-            `1px solid ${String(theme.colors?.lightgrey)}`,
-          position: "sticky",
-          top: 0,
-        }}
+    <div className='h-[500px] overflow-y-scroll'>
+      <div
+        className={[
+          "grid grid-cols-[auto,max-content]",
+          "bg-white",
+          "p-3",
+          "border-b border-gray-100",
+          "sticky top-0",
+        ].join(" ")}
       >
-        {title && <Box color='primary'>{title}</Box>}
-        <Box>
+        <div className='text-blue'>{title}</div>
+        <div>
           <IconButton
             value={"Download"}
             iconSource={downloadIcon}
             clickHandler={handleDownload}
           />
-        </Box>
-      </Grid>
-      <Box
-        p={3}
-        sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
-        <table
-          sx={{
-            width: "100%",
-            p: 2,
-            borderCollapse: "collapse",
-          }}
-        >
+        </div>
+      </div>
+      <div className={["p-3", "flex flex-wrap justify-center"].join(" ")}>
+        <table className='w-full p-2 border-collapse'>
           <thead>
-            <tr
-              sx={{
-                color: "mediumgrey",
-                "& > th": {
-                  py: 2,
-                  px: 1,
-                  fontWeight: "body",
-                  borderBottom: (theme: Theme) =>
-                    `1px solid ${String(theme.colors?.lightgrey)}`,
-                },
-              }}
-            >
-              <th sx={{ textAlign: "left" }}>Datum</th>
-              <th sx={{ textAlign: "left" }}>Uhrzeit</th>
-              <th sx={{ textAlign: "right" }}>Wert</th>
+            <tr className='text-gray-600'>
+              <th
+                className={["py-2 px-1", "font-normal", "text-left"].join(" ")}
+              >
+                Datum
+              </th>
+              <th
+                className={["py-2 px-1", "font-normal", "text-left"].join(" ")}
+              >
+                Uhrzeit
+              </th>
+              <th
+                className={["py-2 px-1", "font-normal", "text-right"].join(" ")}
+              >
+                Wert
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -102,29 +90,30 @@ export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
               return (
                 <tr
                   key={record.id}
-                  sx={{
-                    backgroundColor: () =>
-                      `${i % 2 === 0 ? "muted" : "background"}`,
-                    "& > td": {
-                      p: 2,
-                      border: "none",
-                    },
+                  style={{
+                    backgroundColor: `${
+                      i % 2 === 0 ? colors.gray["50"] : colors.white
+                    }`,
                   }}
                 >
-                  <td>{new Date(record.recordedAt).toLocaleDateString()}</td>
-                  <td>{createTimeOutput(new Date(record.recordedAt))}</td>
-                  <td sx={{ textAlign: "right" }}>{record.value}</td>
+                  <td className='p-2 border-none'>
+                    {new Date(record.recordedAt).toLocaleDateString()}
+                  </td>
+                  <td className='p-2 border-none'>
+                    {createTimeOutput(new Date(record.recordedAt))}
+                  </td>
+                  <td className='p-2 border-none text-right'>{record.value}</td>
                 </tr>
               );
             })}
           </tbody>
         </table>
         {data && data.length > numberOfRecordsToDisplay && (
-          <Button variant='text' mt={3} onClick={handleLoadMore}>
+          <button className='mt-3' onClick={handleLoadMore}>
             Mehr anzeigen
-          </Button>
+          </button>
         )}
-      </Box>
-    </Card>
+      </div>
+    </div>
   );
 };
