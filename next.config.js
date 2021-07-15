@@ -24,6 +24,7 @@ module.exports = withMdxEnhanced({
               `default-src 'self'`,
               `script-src 'self'`,
               `style-src 'self'`,
+              `font-src 'self' data:`,
               `frame-ancestors 'none'`,
               `connect-src 'self' ${process.env.NEXT_PUBLIC_TOKEN_API_URL} ${process.env.NEXT_PUBLIC_SUPABASE_URL}`,
             ].join("; "),
