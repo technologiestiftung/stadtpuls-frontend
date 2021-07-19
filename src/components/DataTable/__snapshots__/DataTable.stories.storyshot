@@ -7,9 +7,7 @@ exports[`Storyshots DataTable Default 1`] = `
   <div
     className="grid grid-cols-[auto,max-content] bg-white p-3 border-b border-gray-100 sticky top-0"
   >
-    <div
-      className="text-blue"
-    >
+    <div>
       My supa dupa table
     </div>
     <div>

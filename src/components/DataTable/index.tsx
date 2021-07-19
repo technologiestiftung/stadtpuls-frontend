@@ -53,7 +53,7 @@ export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
           "sticky top-0",
         ].join(" ")}
       >
-        <div className='text-blue'>{title}</div>
+        <div>{title}</div>
         <div>
           <Button onClick={handleDownload}>Download</Button>
         </div>
