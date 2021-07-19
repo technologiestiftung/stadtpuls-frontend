@@ -2,7 +2,7 @@ import { Story } from "@storybook/react";
 import { TsbLogoSymbol } from ".";
 
 export default {
-  title: "Coporate identity/Technologiestiftung Symbol",
+  title: "Visual identity/Technologiestiftung Symbol",
   component: TsbLogoSymbol,
 };
 

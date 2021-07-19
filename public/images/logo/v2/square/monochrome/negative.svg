@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="29px" viewBox="0 0 29 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>logo/v2/square/monochrome/negative</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="29" height="29"></rect>
+        <path d="M29,0 L29,29 L0,29 L0,0 L29,0 Z M24.5,23 C23.6715729,23 23,23.6715729 23,24.5 C23,25.3284271 23.6715729,26 24.5,26 C25.3284271,26 26,25.3284271 26,24.5 C26,23.6715729 25.3284271,23 24.5,23 Z M4.5,23 C3.67157288,23 3,23.6715729 3,24.5 C3,25.3284271 3.67157288,26 4.5,26 C5.32842712,26 6,25.3284271 6,24.5 C6,23.6715729 5.32842712,23 4.5,23 Z M14.5,23 C13.6715729,23 13,23.6715729 13,24.5 C13,25.3284271 13.6715729,26 14.5,26 C15.3284271,26 16,25.3284271 16,24.5 C16,23.6715729 15.3284271,23 14.5,23 Z M14.5,13 C13.6715729,13 13,13.6715729 13,14.5 C13,15.3284271 13.6715729,16 14.5,16 C15.3284271,16 16,15.3284271 16,14.5 C16,13.6715729 15.3284271,13 14.5,13 Z M4.5,13 C3.67157288,13 3,13.6715729 3,14.5 C3,15.3284271 3.67157288,16 4.5,16 C5.32842712,16 6,15.3284271 6,14.5 C6,13.6715729 5.32842712,13 4.5,13 Z M24.5,13 C23.6715729,13 23,13.6715729 23,14.5 C23,15.3284271 23.6715729,16 24.5,16 C25.3284271,16 26,15.3284271 26,14.5 C26,13.6715729 25.3284271,13 24.5,13 Z M4.5,3 C3.67157288,3 3,3.67157288 3,4.5 C3,5.32842712 3.67157288,6 4.5,6 C5.32842712,6 6,5.32842712 6,4.5 C6,3.67157288 5.32842712,3 4.5,3 Z M14.5,3 C13.6715729,3 13,3.67157288 13,4.5 C13,5.32842712 13.6715729,6 14.5,6 C15.3284271,6 16,5.32842712 16,4.5 C16,3.67157288 15.3284271,3 14.5,3 Z M24.5,3 C23.6715729,3 23,3.67157288 23,4.5 C23,5.32842712 23.6715729,6 24.5,6 C25.3284271,6 26,5.32842712 26,4.5 C26,3.67157288 25.3284271,3 24.5,3 Z" id="path-3"></path>
+        <filter color-interpolation-filters="auto" id="filter-5">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.974977 0 0 0 0 0.989612 0 0 0 0 0.991508 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <filter color-interpolation-filters="auto" id="filter-6">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.974977 0 0 0 0 0.989612 0 0 0 0 0.991508 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <filter color-interpolation-filters="auto" id="filter-7">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.974977 0 0 0 0 0.989612 0 0 0 0 0.991508 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="logo/v2/square/monochrome/negative" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Rectangle" transform="translate(14.500000, 14.500000) scale(-1, 1) translate(-14.500000, -14.500000) "></g>
+        <mask id="mask-4" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <use id="Combined-Shape" fill="#100C53" xlink:href="#path-3"></use>
+        <g filter="url(#filter-5)" id="Group-14">
+            <g mask="url(#mask-4)">
+                <g transform="translate(8.000000, 18.000000)" fill="#46ECA1" id="Oval">
+                    <circle opacity="0.316615513" cx="6.5" cy="6.5" r="6.5"></circle>
+                    <circle opacity="0.316615513" cx="6.5" cy="6.5" r="4.5"></circle>
+                    <circle cx="6.5" cy="6.5" r="1.5"></circle>
+                </g>
+            </g>
+        </g>
+        <g filter="url(#filter-6)" id="Group-13">
+            <g mask="url(#mask-4)">
+                <g transform="translate(-2.000000, -2.000000)" fill="#0000FF" id="Oval">
+                    <circle opacity="0.316615513" cx="6.5" cy="6.5" r="6.5"></circle>
+                    <circle opacity="0.316615513" cx="6.5" cy="6.5" r="4.5"></circle>
+                    <circle cx="6.5" cy="6.5" r="1.5"></circle>
+                </g>
+            </g>
+        </g>
+        <g filter="url(#filter-7)" id="Group-14">
+            <g mask="url(#mask-4)">
+                <g transform="translate(18.000000, 8.000000)" fill="#FF0000" id="Oval">
+                    <circle opacity="0.316615513" cx="6.5" cy="6.5" r="6.5"></circle>
+                    <circle opacity="0.316615513" cx="6.5" cy="6.5" r="4.5"></circle>
+                    <circle cx="6.5" cy="6.5" r="1.5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

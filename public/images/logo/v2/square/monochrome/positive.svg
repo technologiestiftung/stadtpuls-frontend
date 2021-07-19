@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="29px" viewBox="0 0 29 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>logo/v2/square/monochrome/positive</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="29" height="29"></rect>
+        <filter color-interpolation-filters="auto" id="filter-3">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.062745 0 0 0 0 0.047059 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <filter color-interpolation-filters="auto" id="filter-4">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.062745 0 0 0 0 0.047059 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <filter color-interpolation-filters="auto" id="filter-5">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.062745 0 0 0 0 0.047059 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <filter color-interpolation-filters="auto" id="filter-6">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.062745 0 0 0 0 0.047059 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <rect id="path-7" x="0" y="0" width="29" height="29"></rect>
+    </defs>
+    <g id="logo/v2/square/monochrome/positive" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Rectangle" transform="translate(14.500000, 14.500000) scale(-1, 1) translate(-14.500000, -14.500000) "></g>
+        <g filter="url(#filter-3)" id="Group-9">
+            <g mask="url(#mask-2)">
+                <g transform="translate(3.000000, 3.000000)" id="Oval">
+                    <circle fill="#D8D8D8" cx="1.5" cy="1.5" r="1.5"></circle>
+                    <circle fill="#D8D8D8" cx="11.5" cy="11.5" r="1.5"></circle>
+                    <circle fill="#D8D8D8" cx="21.5" cy="21.5" r="1.5"></circle>
+                    <circle fill="#F9FCFD" cx="1.5" cy="11.5" r="1.5"></circle>
+                    <circle fill="#F9FCFD" cx="11.5" cy="1.5" r="1.5"></circle>
+                    <circle fill="#F9FCFD" cx="21.5" cy="11.5" r="1.5"></circle>
+                    <circle fill="#0000C2" cx="1.5" cy="21.5" r="1.5"></circle>
+                    <circle fill="#0000C2" cx="11.5" cy="21.5" r="1.5"></circle>
+                    <circle fill="#0000C2" cx="21.5" cy="1.5" r="1.5"></circle>
+                </g>
+            </g>
+        </g>
+        <g filter="url(#filter-4)" id="Group-14">
+            <g mask="url(#mask-2)">
+                <g transform="translate(8.000000, 18.000000)" fill="#46ECA1" id="Oval">
+                    <circle opacity="0.316615513" cx="6.5" cy="6.5" r="6.5"></circle>
+                    <circle opacity="0.316615513" cx="6.5" cy="6.5" r="4.5"></circle>
+                    <circle cx="6.5" cy="6.5" r="1.5"></circle>
+                </g>
+            </g>
+        </g>
+        <g filter="url(#filter-5)" id="Group-13">
+            <g mask="url(#mask-2)">
+                <g transform="translate(-2.000000, -2.000000)" fill="#0000FF" id="Oval">
+                    <circle opacity="0.316615513" cx="6.5" cy="6.5" r="6.5"></circle>
+                    <circle opacity="0.316615513" cx="6.5" cy="6.5" r="4.5"></circle>
+                    <circle cx="6.5" cy="6.5" r="1.5"></circle>
+                </g>
+            </g>
+        </g>
+        <g filter="url(#filter-6)" id="Group-14">
+            <g mask="url(#mask-2)">
+                <g transform="translate(18.000000, 8.000000)" fill="#FF0000" id="Oval">
+                    <circle opacity="0.316615513" cx="6.5" cy="6.5" r="6.5"></circle>
+                    <circle opacity="0.316615513" cx="6.5" cy="6.5" r="4.5"></circle>
+                    <circle cx="6.5" cy="6.5" r="1.5"></circle>
+                </g>
+            </g>
+        </g>
+        <mask id="mask-8" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+        <rect stroke="#100C53" x="0.5" y="0.5" width="28" height="28"></rect>
+    </g>
+</svg>

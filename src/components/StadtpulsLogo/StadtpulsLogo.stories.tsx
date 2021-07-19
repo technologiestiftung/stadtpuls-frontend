@@ -2,7 +2,7 @@ import { Story } from "@storybook/react";
 import { StadtpulsLogo } from ".";
 
 export default {
-  title: "Coporate identity/Stadtpuls",
+  title: "Visual identity/Stadtpuls Logo",
   component: StadtpulsLogo,
 };
 

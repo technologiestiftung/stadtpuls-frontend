@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="29px" viewBox="0 0 29 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>logo/v5/square/coloured</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="29" height="29"></rect>
+        <filter color-interpolation-filters="auto" id="filter-3">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.000000 0 0 0 0 0.000000 0 0 0 0 0.761266 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="logo/v5/square/coloured" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Rectangle" fill="#8330FF" transform="translate(14.500000, 14.500000) scale(-1, 1) translate(-14.500000, -14.500000) " xlink:href="#path-1"></use>
+        <g filter="url(#filter-3)" id="Group-9">
+            <g mask="url(#mask-2)">
+                <g transform="translate(3.000000, 3.000000)" id="Oval">
+                    <circle fill="#D8D8D8" cx="1.5" cy="1.5" r="1.5"></circle>
+                    <circle fill="#D8D8D8" cx="11.5" cy="11.5" r="1.5"></circle>
+                    <circle fill="#D8D8D8" cx="21.5" cy="21.5" r="1.5"></circle>
+                    <circle fill="#F9FCFD" cx="1.5" cy="11.5" r="1.5"></circle>
+                    <circle fill="#F9FCFD" cx="11.5" cy="1.5" r="1.5"></circle>
+                    <circle fill="#F9FCFD" cx="21.5" cy="11.5" r="1.5"></circle>
+                    <circle fill="#0000C2" cx="1.5" cy="21.5" r="1.5"></circle>
+                    <circle fill="#0000C2" cx="11.5" cy="21.5" r="1.5"></circle>
+                    <circle fill="#0000C2" cx="21.5" cy="1.5" r="1.5"></circle>
+                </g>
+            </g>
+        </g>
+        <circle id="Oval" fill="#46ECA1" mask="url(#mask-2)" cx="14.5" cy="14.5" r="1.5"></circle>
+        <circle id="Oval" fill="#46ECA1" mask="url(#mask-2)" cx="14.5" cy="24.5" r="1.5"></circle>
+        <circle id="Oval" fill="#46ECA1" mask="url(#mask-2)" cx="14.5" cy="4.5" r="1.5"></circle>
+        <path d="M4.5,13 C5.32842712,13 6,13.6715729 6,14.5 C6,15.1528467 5.58293192,15.7082819 5.00070296,15.9143985 L5.00070296,23.0856015 C5.58293192,23.2917181 6,23.8471533 6,24.5 C6,25.3284271 5.32842712,26 4.5,26 C3.67157288,26 3,25.3284271 3,24.5 C3,23.8467813 3.41754351,23.2910851 4.00029246,23.0852495 L4.00029246,15.9147505 C3.41754351,15.7089149 3,15.1532187 3,14.5 C3,13.6715729 3.67157288,13 4.5,13 Z" id="Combined-Shape" fill="#F9FCFD" mask="url(#mask-2)"></path>
+        <line x1="14.5" y1="24.4" x2="14.5" y2="4.5" id="Path-5" stroke="#46ECA1" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)" transform="translate(14.500000, 14.450000) rotate(-180.000000) translate(-14.500000, -14.450000) "></line>
+        <line x1="29.312" y1="19.45" x2="19.412" y2="19.45" id="Path-5" stroke="#F9FCFD" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)" transform="translate(24.362000, 19.450000) rotate(-270.000000) translate(-24.362000, -19.450000) "></line>
+        <circle id="Oval" fill="#F9FCFD" mask="url(#mask-2)" cx="24.5" cy="14.5" r="1.5"></circle>
+        <circle id="Oval" fill="#F9FCFD" mask="url(#mask-2)" cx="24.5" cy="24.5" r="1.5"></circle>
+    </g>
+</svg>

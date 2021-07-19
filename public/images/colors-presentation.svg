@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="1461px" viewBox="0 0 1920 1461" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>colors-presentation</title>
+    <g id="colors-presentation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="1920" height="1461"></rect>
+        <g id="Group-3">
+            <path d="M28.9568211,-2.98355851e-15 L384,0 L384,0 L384,384 L28.9568211,384 C18.8879035,384 15.2366707,382.951617 11.555625,380.982972 C7.87457924,379.014327 4.98567299,376.125421 3.01702818,372.444375 C1.04838337,368.763329 1.50695344e-15,365.112096 -2.5935951e-15,355.043179 L7.7992682e-16,28.9568211 C-4.53159943e-16,18.8879035 1.04838337,15.2366707 3.01702818,11.555625 C4.98567299,7.87457924 7.87457924,4.98567299 11.555625,3.01702818 C15.2366707,1.04838337 18.8879035,1.73353341e-15 28.9568211,-2.98355851e-15 Z" id="Rectangle" fill="#F9FCFD"></path>
+            <polygon id="Rectangle" fill="#8330FF" points="1152 0 1536 0 1536 384 1152 384"></polygon>
+            <polygon id="Rectangle" fill="#46ECA1" points="384 0 768 0 768 384 384 384"></polygon>
+            <polygon id="Rectangle" fill="#0000C2" points="768 0 1152 0 1152 384 768 384"></polygon>
+            <path d="M1536,0 L1891.04318,-1.57994312e-14 C1901.1121,9.17992449e-15 1904.76333,1.04838337 1908.44438,3.01702818 C1912.12542,4.98567299 1915.01433,7.87457924 1916.98297,11.555625 C1918.95162,15.2366707 1920,18.8879035 1920,28.9568211 L1920,355.043179 C1920,365.112096 1918.95162,368.763329 1916.98297,372.444375 C1915.01433,376.125421 1912.12542,379.014327 1908.44438,380.982972 C1904.76333,382.951617 1901.1121,384 1891.04318,384 L1536,384 L1536,384 L1536,0 Z" id="Rectangle" fill="#100C53"></path>
+            <path d="M1891.04318,1.41176471 C1900.71229,1.41176471 1904.23838,2.36861838 1907.77859,4.26194093 C1911.20997,6.09706338 1913.90294,8.79003098 1915.73806,12.2214116 C1917.63138,15.761617 1918.58824,19.2877114 1918.58824,28.9568211 L1918.58824,28.9568211 L1918.58824,355.043179 C1918.58824,364.712289 1917.63138,368.238383 1915.73806,371.778588 C1913.90294,375.209969 1911.20997,377.902937 1907.77859,379.738059 C1904.23838,381.631382 1900.71229,382.588235 1891.04318,382.588235 L1891.04318,382.588235 L28.9568211,382.588235 C19.2877114,382.588235 15.761617,381.631382 12.2214116,379.738059 C8.79003098,377.902937 6.09706338,375.209969 4.26194093,371.778588 C2.40354941,368.303698 1.44735965,364.842726 1.41273205,355.567227 L1.41273205,355.567227 L1.41176471,28.9568211 C1.41176471,19.2877114 2.36861838,15.761617 4.26194093,12.2214116 C6.09706338,8.79003098 8.79003098,6.09706338 12.2214116,4.26194093 C15.6963016,2.40354941 19.157274,1.44735965 28.4327698,1.41273205 L28.4327698,1.41273205 Z" id="Rectangle" stroke="#EBEBEB" stroke-width="2.82352941" style="mix-blend-mode: multiply;"></path>
+        </g>
+        <g id="Group" transform="translate(0.000000, 484.000000)">
+            <polygon id="Rectangle" fill="#E7EAF2" points="384 0 768 0 768 384 384 384"></polygon>
+            <path d="M28.9565194,-1.20518877e-14 L384,0 L384,0 L384,384 L0,384 L-1.03374958e-15,28.9565194 C6.00638277e-16,18.8877068 1.04837245,15.236512 3.01699676,11.5555046 C4.98562106,7.87449722 7.87449722,4.98562106 11.5555046,3.01699676 C15.236512,1.04837245 18.8877068,7.00249383e-15 28.9565194,-1.20518877e-14 Z" id="Rectangle" fill="#F2F3F8"></path>
+            <polygon id="Rectangle" fill="#CFD0DC" points="768 0 1152 0 1152 384 768 384"></polygon>
+            <polygon id="Rectangle" fill="#B4B4C7" points="1152 0 1536 0 1536 384 1152 384"></polygon>
+            <path d="M1536,0 L1891.04348,-6.43790235e-16 C1901.11229,3.74060666e-16 1904.76349,1.04837245 1908.4445,3.01699676 C1912.1255,4.98562106 1915.01438,7.87449722 1916.983,11.5555046 C1918.95163,15.236512 1920,18.8877068 1920,28.9565194 L1920,384 L1920,384 L1536,384 L1536,0 Z" id="Rectangle" fill="#9695AE"></path>
+            <path d="M0,384 L384,384 L384,768 L28.9565194,768 C18.8877068,768 15.236512,766.951628 11.5555046,764.983003 C7.87449722,763.014379 4.98562106,760.125503 3.01699676,756.444495 C1.04837245,752.763488 6.77591622e-15,749.112293 -1.16619284e-14,739.043481 L0,384 L0,384 Z" id="Rectangle" fill="#787696"></path>
+            <polygon id="Rectangle" fill="#636188" points="384 384 768 384 768 768 384 768"></polygon>
+            <polygon id="Rectangle" fill="#4A4878" points="768 384 1152 384 1152 768 768 768"></polygon>
+            <polygon id="Rectangle" fill="#332F66" points="1152 384 1536 384 1536 768 1152 768"></polygon>
+            <path d="M1536,384 L1920,384 L1920,739.043481 C1920,749.112293 1918.95163,752.763488 1916.983,756.444495 C1915.01438,760.125503 1912.1255,763.014379 1908.4445,764.983003 C1904.76349,766.951628 1901.11229,768 1891.04348,768 L1536,768 L1536,768 L1536,384 Z" id="Rectangle" fill="#1E1A5A"></path>
+            <path d="M1891.04348,2.82352941 C1900.31268,2.82352941 1903.7136,3.68884247 1907.11292,5.50682226 C1910.2946,7.20840183 1912.7916,9.7054007 1914.49318,12.8870779 C1916.31116,16.2864045 1917.17647,19.6873225 1917.17647,28.9565194 L1917.17647,28.9565194 L1917.17647,739.043481 C1917.17647,748.312678 1916.31116,751.713595 1914.49318,755.112922 C1912.7916,758.294599 1910.2946,760.791598 1907.11292,762.493178 C1903.7136,764.311158 1900.31268,765.176471 1891.04348,765.176471 L1891.04348,765.176471 L28.9565194,765.176471 C19.6873225,765.176471 16.2864045,764.311158 12.8870779,762.493178 C9.7054007,760.791598 7.20840183,758.294599 5.50682226,755.112922 C3.72451692,751.780301 2.85799095,748.446739 2.82449674,739.56223 L2.82449674,739.56223 L2.82352941,28.9565194 C2.82352941,19.6873225 3.68884247,16.2864045 5.50682226,12.8870779 C7.20840183,9.7054007 9.7054007,7.20840183 12.8870779,5.50682226 C16.219699,3.72451699 19.5532606,2.85799102 28.4377693,2.82449674 L28.4377693,2.82449674 Z" id="Rectangle" stroke="#EBEBEB" stroke-width="5.64705882" style="mix-blend-mode: multiply;"></path>
+        </g>
+        <path d="M53.6470588,1352.82353 C83.2755113,1352.82353 107.294118,1376.84214 107.294118,1406.47059 C107.294118,1436.09904 83.2755113,1460.11765 53.6470588,1460.11765 C24.0186064,1460.11765 3.62843895e-15,1436.09904 0,1406.47059 C-3.62843895e-15,1376.84214 24.0186064,1352.82353 53.6470588,1352.82353 Z" id="Rectangle" fill="#FF568D"></path>
+        <path d="M718.764706,1352.41176 C748.393158,1352.41176 772.411765,1376.43037 772.411765,1406.05882 C772.411765,1435.68728 748.393158,1459.70588 718.764706,1459.70588 C689.136253,1459.70588 665.117647,1435.68728 665.117647,1406.05882 C665.117647,1376.43037 689.136253,1352.41176 718.764706,1352.41176 Z" id="Rectangle" fill="#FFB756"></path>
+        <text id="White" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#1E1A5A">
+            <tspan x="40" y="87">White</tspan>
+        </text>
+        <text id="Gray-50" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#1E1A5A">
+            <tspan x="40" y="571">Gray 50</tspan>
+        </text>
+        <text id="Error-Red" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#1E1A5A">
+            <tspan x="143" y="1400">Error Red</tspan>
+        </text>
+        <text id="Warning-Orange" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#1E1A5A">
+            <tspan x="808" y="1400">Warning Orange</tspan>
+        </text>
+        <text id="Gray-500" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#F9FCFD">
+            <tspan x="40" y="955">Gray 500</tspan>
+        </text>
+        <text id="Green" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#1E1A5A">
+            <tspan x="424" y="87">Green</tspan>
+        </text>
+        <text id="Gray-100" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#1E1A5A">
+            <tspan x="424" y="571">Gray 100</tspan>
+        </text>
+        <text id="Gray-600" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#F9FCFD">
+            <tspan x="424" y="955">Gray 600</tspan>
+        </text>
+        <text id="Blue" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#F9FCFD">
+            <tspan x="808" y="87">Blue</tspan>
+        </text>
+        <text id="Gray-200" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#100C53">
+            <tspan x="808" y="571">Gray 200</tspan>
+        </text>
+        <text id="Gray-700" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#F9FCFD">
+            <tspan x="808" y="955">Gray 700</tspan>
+        </text>
+        <text id="Purple" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#F9FCFD">
+            <tspan x="1192" y="87">Purple</tspan>
+        </text>
+        <text id="Gray-300" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#100C53">
+            <tspan x="1192" y="571">Gray 300</tspan>
+        </text>
+        <text id="Gray-800" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#F9FCFD">
+            <tspan x="1192" y="955">Gray 800</tspan>
+        </text>
+        <text id="Black" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#F9FCFD">
+            <tspan x="1576" y="87">Black</tspan>
+        </text>
+        <text id="Gray-400" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#100C53">
+            <tspan x="1576" y="571">Gray 400</tspan>
+        </text>
+        <text id="Gray-900" font-family="SpaceGrotesk-Light_Bold, Space Grotesk" font-size="48" font-weight="bold" fill="#F9FCFD">
+            <tspan x="1576" y="955">Gray 900</tspan>
+        </text>
+        <text id="#F9FCFD" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#1E1A5A">
+            <tspan x="40" y="140">#F9FCFD</tspan>
+        </text>
+        <text id="#F2F3F8" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#1E1A5A">
+            <tspan x="40" y="624">#F2F3F8</tspan>
+        </text>
+        <text id="#787696" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#F9FCFD">
+            <tspan x="40" y="1008">#787696</tspan>
+        </text>
+        <text id="#46ECA1" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#1E1A5A">
+            <tspan x="424" y="140">#46ECA1</tspan>
+        </text>
+        <text id="#E7EAF2" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#1E1A5A">
+            <tspan x="424" y="624">#E7EAF2</tspan>
+        </text>
+        <text id="#636188" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#F9FCFD">
+            <tspan x="424" y="1008">#636188</tspan>
+        </text>
+        <text id="#0000C2" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#F9FCFD">
+            <tspan x="808" y="140">#0000C2</tspan>
+        </text>
+        <text id="#CFD0DC" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#100C53">
+            <tspan x="808" y="624">#CFD0DC</tspan>
+        </text>
+        <text id="#4A4878" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#F9FCFD">
+            <tspan x="808" y="1008">#4A4878</tspan>
+        </text>
+        <text id="#8330FF" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#F9FCFD">
+            <tspan x="1192" y="140">#8330FF</tspan>
+        </text>
+        <text id="#B4B4C7" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#100C53">
+            <tspan x="1192" y="624">#B4B4C7</tspan>
+        </text>
+        <text id="#332F66" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#F9FCFD">
+            <tspan x="1192" y="1008">#332F66</tspan>
+        </text>
+        <text id="#100C53" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#F9FCFD">
+            <tspan x="1576" y="140">#100C53</tspan>
+        </text>
+        <text id="#9695AE" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#100C53">
+            <tspan x="1576" y="624">#9695AE</tspan>
+        </text>
+        <text id="#1E1A5A" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#F9FCFD">
+            <tspan x="1576" y="1008">#1E1A5A</tspan>
+        </text>
+        <text id="#F9FCFD" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#1E1A5A">
+            <tspan x="143" y="1453">#F9FCFD</tspan>
+        </text>
+        <text id="#F9FCFD" font-family="Sora-Regular, Sora" font-size="32" font-weight="normal" fill="#1E1A5A">
+            <tspan x="808" y="1453">#F9FCFD</tspan>
+        </text>
+    </g>
+</svg>

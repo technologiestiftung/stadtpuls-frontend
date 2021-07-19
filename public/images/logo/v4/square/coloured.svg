@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="29px" viewBox="0 0 29 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>logo/v4/square/coloured</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="29" height="29"></rect>
+        <filter color-interpolation-filters="auto" id="filter-3">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.511792 0 0 0 0 0.190149 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <filter color-interpolation-filters="auto" id="filter-4">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.274510 0 0 0 0 0.925490 0 0 0 0 0.631373 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="logo/v4/square/coloured" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Rectangle" fill="#0000C2" transform="translate(14.500000, 14.500000) scale(-1, 1) translate(-14.500000, -14.500000) " xlink:href="#path-1"></use>
+        <g filter="url(#filter-3)" id="Group-9">
+            <g mask="url(#mask-2)">
+                <g transform="translate(3.000000, 3.000000)" id="Oval">
+                    <circle fill="#D8D8D8" cx="1.5" cy="1.5" r="1.5"></circle>
+                    <circle fill="#D8D8D8" cx="11.5" cy="11.5" r="1.5"></circle>
+                    <circle fill="#D8D8D8" cx="21.5" cy="21.5" r="1.5"></circle>
+                    <circle fill="#F9FCFD" cx="1.5" cy="11.5" r="1.5"></circle>
+                    <circle fill="#F9FCFD" cx="11.5" cy="1.5" r="1.5"></circle>
+                    <circle fill="#F9FCFD" cx="21.5" cy="11.5" r="1.5"></circle>
+                    <circle fill="#0000C2" cx="1.5" cy="21.5" r="1.5"></circle>
+                    <circle fill="#0000C2" cx="11.5" cy="21.5" r="1.5"></circle>
+                    <circle fill="#0000C2" cx="21.5" cy="1.5" r="1.5"></circle>
+                </g>
+            </g>
+        </g>
+        <path d="M14.5,3 C15.3284271,3 16,3.67157288 16,4.5 C16,5.1528467 15.5829319,5.70828193 15.000703,5.91439849 L15.000703,13.0856015 C15.5829319,13.2917181 16,13.8471533 16,14.5 C16,15.1528467 15.5829319,15.7082819 15.000703,15.9143985 L15.000703,23.0856015 C15.5829319,23.2917181 16,23.8471533 16,24.5 C16,25.3284271 15.3284271,26 14.5,26 C13.6715729,26 13,25.3284271 13,24.5 C13,23.8467813 13.4175435,23.2910851 14.0002925,23.0852495 L14.0002925,15.9147505 C13.4175435,15.7089149 13,15.1532187 13,14.5 C13,13.8467813 13.4175435,13.2910851 14.0002925,13.0852495 L14.0002925,5.91475048 C13.4175435,5.70891488 13,5.15321869 13,4.5 C13,3.67157288 13.6715729,3 14.5,3 Z" id="Combined-Shape" fill="#F9FCFD" mask="url(#mask-2)"></path>
+        <g filter="url(#filter-4)" id="Group">
+            <g mask="url(#mask-2)">
+                <g transform="translate(3.000000, 13.000000)" fill="#F9FCFD" id="Combined-Shape">
+                    <path d="M1.5,0 C2.32842712,0 3,0.671572875 3,1.5 C3,2.1528467 2.58293192,2.70828193 2.00070296,2.91439849 L2.00070296,10.0856015 C2.58293192,10.2917181 3,10.8471533 3,11.5 C3,12.3284271 2.32842712,13 1.5,13 C0.671572875,13 0,12.3284271 0,11.5 C0,10.8467813 0.417543508,10.2910851 1.00029246,10.0852495 L1.00029246,2.91475048 C0.417543508,2.70891488 0,2.15321869 0,1.5 C0,0.671572875 0.671572875,0 1.5,0 Z" fill-rule="evenodd"></path>
+                    <path d="M21.5,0 C22.3284271,0 23,0.671572875 23,1.5 C23,2.1528467 22.5829319,2.70828193 22.000703,2.91439849 L21.9997075,10.0852495 C22.5824565,10.2910851 23,10.8467813 23,11.5 C23,12.3284271 22.3284271,13 21.5,13 C20.6715729,13 20,12.3284271 20,11.5 C20,10.8471533 20.4170681,10.2917181 20.999297,10.0856015 L21.0002925,2.91475048 C20.4175435,2.70891488 20,2.15321869 20,1.5 C20,0.671572875 20.6715729,0 21.5,0 Z" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
