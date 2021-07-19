@@ -170,20 +170,39 @@ export const LandingHowItWorks: FC = () => (
     >
       <aside
         className={[
-          "p-8 mx-auto mb-16 md:mb-24 max-w-prose",
+          "grid gap-2 grid-cols-[32px,1fr]",
+          "p-4 mx-auto mb-16 md:mb-24 max-w-prose",
           "border border-green shadow-green",
         ].join(" ")}
       >
         <img
           src='/images/illustrations/microcontroller-2.svg'
           alt='Microcontroller'
-          className='inline-block mr-4 align-top'
+          className='align-top'
         />
-        <p className='mt-3'>
-          In Berlin gibt es ein offenes LoRaWan-Netzwerk, welches seit 2017
-          durch die TheThingsNetwork (TTN) Community betrieben wird. Jeder kann
-          und darf es komplett kostenlos benutzten, seine Sensoren mit dem
-          Netzwerk verbinden und die Stadt auf eigene Faust vermessen.
+        <h3 className='text-2xl'>TTN? LoRa-Was?</h3>
+        <p className='text-sm mt-2 col-span-2'>
+          In Berlin gibt es ein offenes{" "}
+          <a
+            href='https://de.wikipedia.org/wiki/Long_Range_Wide_Area_Network'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='underline hover:text-blue transition-colors'
+          >
+            LoRaWan-Netzwerk
+          </a>
+          , welches seit 2017 durch die{" "}
+          <a
+            href='https://www.thethingsnetwork.org/'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='underline hover:text-blue transition-colors'
+          >
+            The Things Network (TTN)
+          </a>{" "}
+          Community betrieben wird. Jeder kann und darf es komplett kostenlos
+          benutzten, seine Sensoren mit dem Netzwerk verbinden und die Stadt auf
+          eigene Faust vermessen.
         </p>
       </aside>
       <h1
