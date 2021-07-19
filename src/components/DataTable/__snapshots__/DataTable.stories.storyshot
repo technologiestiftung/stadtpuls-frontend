@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots DataTable Default 1`] = `
+exports[`Storyshots UI Elements/DataTable Default 1`] = `
 <div
   className="css-888v7b-DataTable"
 >

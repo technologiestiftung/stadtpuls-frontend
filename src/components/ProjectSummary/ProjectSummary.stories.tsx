@@ -5,7 +5,7 @@ import theme from "../../style/theme";
 import { ProjectSummary } from ".";
 
 export default {
-  title: "ProjectSummary",
+  title: "UI Elements/ProjectSummary",
   component: ProjectSummary,
   argTypes: {
     title: {

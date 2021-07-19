@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react";
 import { UserInfoCard } from ".";
 
 export default {
-  title: "UserInfoCard",
+  title: "UI Elements/UserInfoCard",
   component: UserInfoCard,
 } as Meta;
 

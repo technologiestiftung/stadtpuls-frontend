@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UserInfoCard Default User Info Card 1`] = `
+exports[`Storyshots UI Elements/UserInfoCard Default User Info Card 1`] = `
 <div
   className="flex flex-col md:pr-8 lg:pr-16 justify-between h-full w-full sm:min-w-md md:min-w-xs lg:min-w-md"
 >
