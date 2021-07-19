@@ -42,7 +42,7 @@ export const LandingProjectAbout: FC = () => (
         "py-8 sm:py-12 md:py-16",
       ].join(" ")}
     >
-      <AboutTitle>Über das Projekt</AboutTitle>
+      <AboutTitle>Was ist Stadtpuls?</AboutTitle>
       <div className='grid md:grid-cols-5 xl:grid-cols-2 gap-4 sm:gap-8'>
         <div className='md:col-span-3 xl:col-span-1'>
           <div className='text-white max-w-none leading-7'>

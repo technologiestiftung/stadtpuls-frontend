@@ -18,7 +18,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
         className="inline-block mr-4 align-top"
         src="/images/illustrations/microcontroller-2.svg"
       />
-      Über das Projekt
+      Was ist Stadtpuls?
     </h1>
     <div
       className="grid md:grid-cols-5 xl:grid-cols-2 gap-4 sm:gap-8"
