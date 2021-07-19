@@ -32,10 +32,19 @@ exports[`Storyshots Promotional/LandingLabAbout Default 1`] = `
             <p
               className="max-w-none"
             >
-              In der Technologiestiftung Berlin arbeiten Expert*innen aus den Bereichen Frontend- und Backendentwicklung, Data Science, Datenvisualisierung, sowie UI/UX zusammen, um zu evaluieren und aufzuzeigen, wie unsere Stadtgesellschaft von Technologie profitieren kann.
+              In der Technologiestiftung Berlin arbeiten Expert*innen aus den Bereichen Frontend- und Backendentwicklung, Data Science, Datenvisualisierung, sowie UI/UX zusammen, um zu evaluieren und aufzuzeigen, wie unsere Stadtgesellschaft von Technologie profitieren kann. Das CityLAB Berlin ist Hauptakteur bei der Umsetzung der Prototypen.
             </p>
             <p>
-              Das CityLAB Berlin ist Hauptakteur bei der Umsetzung der Prototypen. Neugierig geworden? Dann besuche einige unserer Projekte auf GitHub.
+              Neugierig geworden? Dann besuche einige unserer
+               
+              <a
+                href="https://github.com/technologiestiftung"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Projekte auf GitHub
+              </a>
+              .
             </p>
           </div>
         </div>

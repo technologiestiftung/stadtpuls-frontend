@@ -50,12 +50,19 @@ export const LandingLabAbout: FC = () => {
                   den Bereichen Frontend- und Backendentwicklung, Data Science,
                   Datenvisualisierung, sowie UI/UX zusammen, um zu evaluieren
                   und aufzuzeigen, wie unsere Stadtgesellschaft von Technologie
-                  profitieren kann.
+                  profitieren kann. Das CityLAB Berlin ist Hauptakteur bei der
+                  Umsetzung der Prototypen.
                 </p>
                 <p>
-                  Das CityLAB Berlin ist Hauptakteur bei der Umsetzung der
-                  Prototypen. Neugierig geworden? Dann besuche einige unserer
-                  Projekte auf GitHub.
+                  Neugierig geworden? Dann besuche einige unserer{" "}
+                  <a
+                    href='https://github.com/technologiestiftung'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    Projekte auf GitHub
+                  </a>
+                  .
                 </p>
               </div>
             </div>
