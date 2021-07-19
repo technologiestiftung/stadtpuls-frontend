@@ -276,7 +276,7 @@ export const Project: FC<ProjectsType> = project => {
               project.devices[selectedDeviceIndex] && (
                 <div
                   className={[
-                    "grid grid-cols-[auto,max-content]",
+                    "grid grid-cols-1 md:grid-cols-[auto,max-content] gap-2 md:gap-0",
                     "p-3",
                     "border-b border-gray-100",
                   ].join(" ")}
@@ -345,7 +345,7 @@ export const Project: FC<ProjectsType> = project => {
             <div
               id='chart-wrapper'
               ref={chartWrapper}
-              className='mt-4 min-h-[340px]'
+              className='mt-4 md:min-h-[340px]'
             >
               {project &&
                 project.devices &&
