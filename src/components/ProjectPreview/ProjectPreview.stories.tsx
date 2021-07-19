@@ -3,7 +3,7 @@ import { ProjectPreview } from ".";
 import { usePublicProjects } from "@lib/hooks/usePublicProjects";
 
 export default {
-  title: "ProjectPreview",
+  title: "UI Elements/ProjectPreview",
   component: ProjectPreview,
 } as Meta;
 

@@ -20,16 +20,16 @@ export const ColouredAuthLink: FC<{
   href?: string;
 }> = ({ children, href, variant, withAvatar = false }) => {
   const iconStyles = [
-    "transform -translate-y-0.5 transition inline-block align-middle mr-1",
+    "icon transform -translate-y-0.5 transition inline-block align-middle mr-1",
     variant === "secondary" && "group-hover:text-green",
     variant === "primary" && "group-hover:opacity-60",
   ]
     .filter(Boolean)
     .join(" ");
   const textStyles = [
-    "inline-block ml-1 transition hidden sm:inline-block",
+    "text inline-block ml-1 transition hidden sm:inline-block font-headline font-bold",
     variant === "secondary" && "group-hover:text-green",
-    variant === "primary" && "font-semibold group-hover:opacity-60",
+    variant === "primary" && "font-semibold group-hover:text-green",
   ]
     .filter(Boolean)
     .join(" ");
@@ -47,14 +47,16 @@ export const ColouredAuthLink: FC<{
     ) : (
       <span />
     );
-  return href ? (
-    <Link href={href}>
-      <a href={href} className='group'>
-        {text}
-      </a>
-    </Link>
-  ) : (
-    text
+  return (
+    <span className='group'>
+      {href ? (
+        <Link href={href}>
+          <a href={href}>{text}</a>
+        </Link>
+      ) : (
+        text
+      )}
+    </span>
   );
 };
 

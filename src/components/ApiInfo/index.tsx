@@ -1,8 +1,4 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import React from "react";
-import { jsx, Box, Link, Heading } from "theme-ui";
-
+import { FC } from "react";
 interface ApiEntryType {
   label: string;
   domain: string;
@@ -12,32 +8,33 @@ export interface ApiTableType {
   entries: ApiEntryType[];
 }
 
-export const ApiInfo: React.FC<ApiTableType> = ({ entries }) => {
+export const ApiInfo: FC<ApiTableType> = ({ entries }) => {
   return (
-    <Box>
-      <Heading as='h2' variant='h4'>
+    <div>
+      <h2 className='text-xl md:text-3xl font-bold font-headline text-purple'>
         API
-      </Heading>
-      <table sx={{ width: "100%", mt: 2 }}>
+      </h2>
+      <table className='w-full mt-2'>
         <tbody>
           {entries.map(entry => {
             return (
-              <tr key={entry.label} sx={{ "& > td": { fontSize: 0, py: 2 } }}>
-                <td>{entry.label}</td>
-                <td sx={{ px: 1, bg: "muted", fontFamily: "monospace" }}>
-                  <Link
+              <tr key={entry.label}>
+                <td className='py-2 text-sm'>{entry.label}</td>
+                <td className='py-2 px-1 text-sm'>
+                  <a
                     href={`${entry.domain}/${entry.route}`}
                     target='_blank'
                     rel='noopener noreferrer'
+                    className='text-blue hover:text-purple transition-colors'
                   >
                     /{entry.route}
-                  </Link>
+                  </a>
                 </td>
               </tr>
             );
           })}
         </tbody>
       </table>
-    </Box>
+    </div>
   );
 };

@@ -22,9 +22,9 @@ export const UserInfoCard: FC<UserInfoCardPropTypes> = ({
       <div>
         <div className='flex items-center'>
           <UserAvatar username={username} size={48} className='mr-4' />
-          <h1 className='text-blue text-3xl font-semibold'>{username}</h1>
+          <h1 className='text-2xl font-headline'>{username}</h1>
         </div>
-        <div className='border-gray-300 border-t my-8' />
+        <div className='border-gray-100 border-t my-8' />
         <p className='text-gray-500'>
           E-Mail{" "}
           <span className='text-sm text-gray-400'>(nicht öffentlich)</span>

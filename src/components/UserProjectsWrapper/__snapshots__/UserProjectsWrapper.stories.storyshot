@@ -13,7 +13,7 @@ exports[`Storyshots Layout/UserProjectsWrapper With Projects 1`] = `
     className="col-span-3"
   >
     <h1
-      className="text-3xl text-blue font-bold mt-6"
+      className="text-2xl font-headline mt-6"
     >
       Meine Projekte
     </h1>
@@ -36,10 +36,10 @@ exports[`Storyshots Layout/UserProjectsWrapper With Projects 1`] = `
         <ul>
           <li
             aria-labelledby="user-project-item-1"
-            className="my-4 border-opacity-100"
+            className="my-4"
           >
             <button
-              className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-blue border-opacity-100"
+              className="focus-offset text-left transition navigation-link-active"
               id="user-project-item-1"
               onClick={[Function]}
             >
@@ -48,10 +48,10 @@ exports[`Storyshots Layout/UserProjectsWrapper With Projects 1`] = `
           </li>
           <li
             aria-labelledby="user-project-item-2"
-            className="my-4 border-opacity-0"
+            className="my-4"
           >
             <button
-              className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-gray-500 border-opacity-0"
+              className="focus-offset text-left transition navigation-link"
               id="user-project-item-2"
               onClick={[Function]}
             >
@@ -60,10 +60,10 @@ exports[`Storyshots Layout/UserProjectsWrapper With Projects 1`] = `
           </li>
           <li
             aria-labelledby="user-project-item-3"
-            className="my-4 border-opacity-0"
+            className="my-4"
           >
             <button
-              className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-gray-500 border-opacity-0"
+              className="focus-offset text-left transition navigation-link"
               id="user-project-item-3"
               onClick={[Function]}
             >
@@ -74,13 +74,13 @@ exports[`Storyshots Layout/UserProjectsWrapper With Projects 1`] = `
       </nav>
     </div>
   </section>
-  <main
-    className="md:col-span-9 mt-6 md:mt-0 bg-white shadow"
+  <section
+    className="md:col-span-9 mt-6 md:mt-0 bg-white border border-gray-200 shadow"
   >
     <h1>
       Insert here: the main content
     </h1>
-  </main>
+  </section>
 </div>
 `;
 
@@ -97,7 +97,7 @@ exports[`Storyshots Layout/UserProjectsWrapper Without Projects 1`] = `
     className="col-span-3"
   >
     <h1
-      className="text-3xl text-blue font-bold mt-6"
+      className="text-2xl font-headline mt-6"
     >
       Meine Projekte
     </h1>
@@ -115,12 +115,12 @@ exports[`Storyshots Layout/UserProjectsWrapper Without Projects 1`] = `
       </a>
     </div>
   </section>
-  <main
-    className="md:col-span-9 mt-6 md:mt-0 bg-white shadow"
+  <section
+    className="md:col-span-9 mt-6 md:mt-0 bg-white border border-gray-200 shadow"
   >
     <h1>
       Insert here: the main content
     </h1>
-  </main>
+  </section>
 </div>
 `;

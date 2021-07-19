@@ -6,7 +6,7 @@ import { ProjectNotFound } from "./ProjectNotFound";
 import { ServerError } from "./ServerError";
 
 export default {
-  title: "PageError",
+  title: "UI Elements/PageError",
 } as Meta;
 
 const InvalidPageIdTemplate: Story<{

@@ -1,12 +1,9 @@
 import { Story, Meta } from "@storybook/react";
-import { ThemeProvider } from "theme-ui";
-
-import theme from "../../style/theme";
 import { RecordType } from "../../common/interfaces";
 import { DataTableType, DataTable } from ".";
 
 export default {
-  title: "DataTable",
+  title: "UI Elements/DataTable",
   component: DataTable,
 } as Meta;
 
@@ -20,11 +17,7 @@ const createFakeData = (amount: number): RecordType[] =>
     })
   );
 
-const Template: Story<DataTableType> = args => (
-  <ThemeProvider theme={theme}>
-    <DataTable {...args} />
-  </ThemeProvider>
-);
+const Template: Story<DataTableType> = args => <DataTable {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

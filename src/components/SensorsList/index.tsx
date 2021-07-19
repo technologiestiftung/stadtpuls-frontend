@@ -128,7 +128,7 @@ export const SensorsList: FC<SensorsListPropType> = ({
           onCancel={() => setDeviceBeingDeleted(null)}
         />
       )}
-      <h1 className='text-2xl font-semibold m-0 mb-2 text-blue'>Sensoren</h1>
+      <h1 className='text-2xl m-0 mb-2 text-black font-headline'>Sensoren</h1>
       <div className='w-full max-w-full overflow-y-hidden overflow-x-auto pb-4'>
         <table className='w-full text-left'>
           <SensorsListHeaderRow />

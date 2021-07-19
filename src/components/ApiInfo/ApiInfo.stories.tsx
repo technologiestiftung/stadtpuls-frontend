@@ -1,19 +1,12 @@
 import { Story, Meta } from "@storybook/react";
-import { ThemeProvider } from "theme-ui";
-
-import theme from "../../style/theme";
 import { ApiInfo, ApiTableType } from ".";
 
 export default {
-  title: "ApiInfo",
+  title: "UI Elements/ApiInfo",
   component: ApiInfo,
 } as Meta;
 
-const Template: Story<ApiTableType> = args => (
-  <ThemeProvider theme={theme}>
-    <ApiInfo {...args} />
-  </ThemeProvider>
-);
+const Template: Story<ApiTableType> = args => <ApiInfo {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
