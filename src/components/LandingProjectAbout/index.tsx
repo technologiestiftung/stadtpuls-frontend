@@ -42,19 +42,30 @@ export const LandingProjectAbout: FC = () => (
         "py-8 sm:py-12 md:py-16",
       ].join(" ")}
     >
-      <AboutTitle>Über das Projekt</AboutTitle>
+      <AboutTitle>Was ist Stadtpuls?</AboutTitle>
       <div className='grid md:grid-cols-5 xl:grid-cols-2 gap-4 sm:gap-8'>
         <div className='md:col-span-3 xl:col-span-1'>
-          <div className='prose text-white max-w-none'>
+          <div className='text-white max-w-none leading-7'>
             <p className='max-w-none'>
-              Hier steht ein ausführlicher Beschreibungstext über Hintergründe
-              des Projekts, TSB, usw. Hier steht ein ausführlicher
-              Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier
-              steht ein ausführlicher Beschreibungstext über Hintergründe des
-              Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext
-              über Hintergründe des Projekts, TSB, usw. Hier steht ein
-              ausführlicher Beschreibungstext über Hintergründe des Projekts,
-              TSB, usw.
+              Die Plattform <em>Stadtpuls</em> ist eine prototypische Offene
+              Datenplattform, welche{" "}
+              <strong className='text-green'>
+                Sensordaten von &amp; für Berlin
+              </strong>{" "}
+              als Open Data sammelt, frei zugänglich macht und der Stadt Berlin
+              auf ihrem Weg zur smarten Stadt der Zukunft helfen soll.
+            </p>
+            <p className='mt-4'>
+              Ziel der Plattform ist es Sensordaten der Stadt Berlin
+              aufzubereiten, zu visualisieren und für alle Akteure der
+              Stadtgesellschaft frei und kostenlos zur Verfügung zu stellen.
+              Nutzer:innen können sich über einzelne IoT-Projekte informieren,
+              selber Projekte und Sensoren anlegen oder Daten aus Projekten für
+              die eigene Analyse nutzen. Dabei spielen Klimadaten, aber auch
+              städtische Sensordaten ein große Rolle. Diese Daten in einer
+              gemeinsamen Datenbasis vorzuhalten, zugänglich zu machen und zu
+              visualisieren ist ein erster Schritt in Richtung einer smarten,
+              vernetzten Stadt.
             </p>
           </div>
           {techInfoColumns.map(({ repo, title, bgImage }) => (

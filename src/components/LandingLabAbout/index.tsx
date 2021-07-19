@@ -43,13 +43,26 @@ export const LandingLabAbout: FC = () => {
           <div className='grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 gap-4 md:gap-8'>
             <div className='sm:col-span-2 lg:col-span-1'>
               <AboutTitle>Wir bauen Prototypen</AboutTitle>
-              <p className='text-lg mb-8'>Für das Gemeinwohl</p>
+              <p className='text-lg mb-8'>Für die Stadtgesellschaft</p>
               <div className='prose max-w-none'>
                 <p className='max-w-none'>
                   In der Technologiestiftung Berlin arbeiten Expert*innen aus
                   den Bereichen Frontend- und Backendentwicklung, Data Science,
-                  Visualisierung, UI/UX zusammen, um aufzuzeigen, wie die
-                  Gemeinschaft von Technologie profitieren kann. Oder so.
+                  Datenvisualisierung, sowie UI/UX zusammen, um zu evaluieren
+                  und aufzuzeigen, wie unsere Stadtgesellschaft von Technologie
+                  profitieren kann. Das CityLAB Berlin ist Hauptakteur bei der
+                  Umsetzung der Prototypen.
+                </p>
+                <p>
+                  Neugierig geworden? Dann besuche einige unserer{" "}
+                  <a
+                    href='https://github.com/technologiestiftung'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    Projekte auf GitHub
+                  </a>
+                  .
                 </p>
               </div>
             </div>
@@ -63,23 +76,38 @@ export const LandingLabAbout: FC = () => {
           </div>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mt-12'>
             <div>
-              <span
-                className={[
-                  "text-lg sm:text-xl bg-blue text-green gap-4",
-                  "font-headline font-bold flex place-items-center",
-                ].join(" ")}
+              <a
+                href='https://github.com/technologiestiftung'
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='GitHub der Technologiestiftung Berlin'
               >
-                <strong className={["px-4 py-3 bg-green text-blue"].join(" ")}>
-                  {user?.public_repos || 182}
-                </strong>{" "}
-                <span className='w-full'>Open Source Projekte</span>
-                <strong
-                  className={["px-4 py-3 bg-purple text-white"].join(" ")}
+                <span
+                  className={[
+                    "group",
+                    "p-0",
+                    "text-lg sm:text-xl bg-blue text-green gap-4",
+                    "font-headline font-bold flex place-items-center",
+                  ].join(" ")}
                 >
-                  <GitHub />
-                </strong>
-              </span>
+                  <strong
+                    className={["px-4 py-3 bg-green text-blue"].join(" ")}
+                  >
+                    {user?.public_repos || 182}
+                  </strong>{" "}
+                  <span className='w-full'>Open Source Projekte</span>
+                  <strong
+                    className={[
+                      "px-4 py-3",
+                      "text-white bg-purple group-hover:bg-green transition-colors",
+                    ].join(" ")}
+                  >
+                    <GitHub />
+                  </strong>
+                </span>
+              </a>
             </div>
+
             <div className='lg:col-span-2 grid lg:grid-cols-2 gap-4 xl:gap-8'>
               {furtherProjects.map(({ name, repo, logo }) => (
                 <a

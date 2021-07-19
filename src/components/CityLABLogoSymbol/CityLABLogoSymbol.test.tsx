@@ -1,14 +1,14 @@
 import { render, screen } from "@testing-library/react";
-import { TsbLogoSymbol } from ".";
+import { CityLABLogoSymbol } from ".";
 
-describe("component TsbLogoSymbol", () => {
+describe("component CityLABLogoSymbol", () => {
   it("should render a link", () => {
-    render(<TsbLogoSymbol />);
+    render(<CityLABLogoSymbol />);
     const link = screen.getByRole("link");
     expect(link).toBeInTheDocument();
   });
   it("should render an svg", () => {
-    render(<TsbLogoSymbol />);
+    render(<CityLABLogoSymbol />);
     const svg = document.querySelector("svg");
     expect(svg).toBeInTheDocument();
   });
