@@ -225,7 +225,11 @@ export const Project: FC<ProjectsType> = project => {
             <div
               id='map-wrapper'
               ref={mapWrapper}
-              className='w-full h-52 border border-gray-100'
+              className={[
+                "w-full h-52",
+                "border border-gray-100",
+                "bg-white",
+              ].join(" ")}
             >
               {markerData && markerData.length === 0 && (
                 <p className='ml-2 mt-2'>Koordinaten nicht verfügbar.</p>

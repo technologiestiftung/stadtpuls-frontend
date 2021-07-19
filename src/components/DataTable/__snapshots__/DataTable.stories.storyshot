@@ -21,7 +21,7 @@ exports[`Storyshots UI Elements/DataTable Default 1`] = `
     </div>
   </div>
   <div
-    className="p-3 flex flex-wrap justify-center"
+    className="p-3 flex flex-wrap justify-center bg-white"
   >
     <table
       className="w-full p-2 border-collapse"

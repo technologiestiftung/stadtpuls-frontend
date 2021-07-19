@@ -58,7 +58,11 @@ export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
           <Button onClick={handleDownload}>Download</Button>
         </div>
       </div>
-      <div className={["p-3", "flex flex-wrap justify-center"].join(" ")}>
+      <div
+        className={["p-3", "flex flex-wrap justify-center", "bg-white"].join(
+          " "
+        )}
+      >
         <table className='w-full p-2 border-collapse'>
           <thead>
             <tr className='text-gray-600'>
