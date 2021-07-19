@@ -120,7 +120,7 @@ const columnsData = [
   {
     title: "Sensoren",
     description:
-      "Prinzipiell kannst du jeden Sensor verbinden. Wir unterstützen aktuell die folgenden, für die Umwelt relevanten, Sensortypen und machen sie mit einem Kategorie-Flag sichtbar.",
+      "Prinzipiell kannst du jeden Sensor verbinden. Wir unterstützen aktuell die folgenden, für die Umwelt relevanten, Sensortypen und machen sie mit einer Kategorie sichtbar.",
     listItems: [
       { icon: "/images/icons/temperature.svg", text: "Temperatur" },
       { icon: "/images/icons/co2.svg", text: "CO2" },
