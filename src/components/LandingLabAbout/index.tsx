@@ -2,7 +2,6 @@ import useGithubUser from "@lib/hooks/useGithubUser";
 import { GitHub } from "@material-ui/icons";
 import { FC } from "react";
 import styles from "./LandingLabAbout.module.css";
-import Link from "next/link";
 
 const AboutTitle: FC = ({ children }) => (
   <h1
@@ -70,31 +69,38 @@ export const LandingLabAbout: FC = () => {
           </div>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mt-12'>
             <div>
-              <span
-                className={[
-                  "text-lg sm:text-xl bg-blue text-green gap-4",
-                  "font-headline font-bold flex place-items-center",
-                ].join(" ")}
+              <a
+                href='https://github.com/technologiestiftung'
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='GitHub der Technologiestiftung Berlin'
               >
-                <strong className={["px-4 py-3 bg-green text-blue"].join(" ")}>
-                  {user?.public_repos || 182}
-                </strong>{" "}
-                <span className='w-full'>Open Source Projekte</span>
-                <Link href='https://github.com/technologiestiftung'>
-                  <a
-                    href='https://github.com/technologiestiftung'
-                    className='group px-4 py-3 bg-purple hover:bg-green transition-colors'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    aria-label='GitHub der Technologiestiftung Berlin'
+                <span
+                  className={[
+                    "group",
+                    "p-0",
+                    "text-lg sm:text-xl bg-blue text-green gap-4",
+                    "font-headline font-bold flex place-items-center",
+                  ].join(" ")}
+                >
+                  <strong
+                    className={["px-4 py-3 bg-green text-blue"].join(" ")}
                   >
-                    <strong className={["text-white"].join(" ")}>
-                      <GitHub />
-                    </strong>
-                  </a>
-                </Link>
-              </span>
+                    {user?.public_repos || 182}
+                  </strong>{" "}
+                  <span className='w-full'>Open Source Projekte</span>
+                  <strong
+                    className={[
+                      "px-4 py-3",
+                      "text-white bg-purple group-hover:bg-green transition-colors",
+                    ].join(" ")}
+                  >
+                    <GitHub />
+                  </strong>
+                </span>
+              </a>
             </div>
+
             <div className='lg:col-span-2 grid lg:grid-cols-2 gap-4 xl:gap-8'>
               {furtherProjects.map(({ name, repo, logo }) => (
                 <a

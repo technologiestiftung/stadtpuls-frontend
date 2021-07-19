@@ -53,31 +53,28 @@ exports[`Storyshots Promotional/LandingLabAbout Default 1`] = `
         className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mt-12"
       >
         <div>
-          <span
-            className="text-lg sm:text-xl bg-blue text-green gap-4 font-headline font-bold flex place-items-center"
+          <a
+            aria-label="GitHub der Technologiestiftung Berlin"
+            href="https://github.com/technologiestiftung"
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            <strong
-              className="px-4 py-3 bg-green text-blue"
-            >
-              182
-            </strong>
-             
             <span
-              className="w-full"
-            >
-              Open Source Projekte
-            </span>
-            <a
-              aria-label="GitHub der Technologiestiftung Berlin"
-              className="group px-4 py-3 bg-purple hover:bg-green transition-colors"
-              href="https://github.com/technologiestiftung"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              rel="noopener noreferrer"
-              target="_blank"
+              className="group p-0 text-lg sm:text-xl bg-blue text-green gap-4 font-headline font-bold flex place-items-center"
             >
               <strong
-                className="text-white"
+                className="px-4 py-3 bg-green text-blue"
+              >
+                182
+              </strong>
+               
+              <span
+                className="w-full"
+              >
+                Open Source Projekte
+              </span>
+              <strong
+                className="px-4 py-3 text-white bg-purple group-hover:bg-green transition-colors"
               >
                 <svg
                   aria-hidden={true}
@@ -90,8 +87,8 @@ exports[`Storyshots Promotional/LandingLabAbout Default 1`] = `
                   />
                 </svg>
               </strong>
-            </a>
-          </span>
+            </span>
+          </a>
         </div>
         <div
           className="lg:col-span-2 grid lg:grid-cols-2 gap-4 xl:gap-8"
