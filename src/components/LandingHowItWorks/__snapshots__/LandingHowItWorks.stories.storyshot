@@ -182,7 +182,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           <p
             className="text-sm mb-8 text-gray-500"
           >
-            Prinzipiell kannst du jeden Sensor verbinden. Wir unterstützen aktuell die folgenden, für die Umwelt relevanten, Sensortypen und machen sie mit einem Kategorie-Flag sichtbar.
+            Prinzipiell kannst du jeden Sensor verbinden. Wir unterstützen aktuell die folgenden, für die Umwelt relevanten, Sensortypen und machen sie mit einer Kategorie sichtbar.
           </p>
         </header>
       </div>
