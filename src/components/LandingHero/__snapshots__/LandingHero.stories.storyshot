@@ -32,7 +32,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
             }
           }
         >
-          Stadtpuls ist eine
+          Stadtpuls ist die
            
           <strong
             className="text-green"
@@ -43,8 +43,8 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
           Deiner Stadt. Und das beste: jede*r kann mitmachen. Egal ob Du offene Daten suchst oder bereits eigene Sensoren und Daten hast: Stadtpuls hilft dir, tiefer in die Welt der Stadt-Sensorik einzutauchen und deine Stadt besser zu verstehen.
         </p>
         <a
-          className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green animate-slide-in mr-4 mb-2"
-          href="/"
+          className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green animate-slide-in mr-4 mb-2"
+          href="/projects"
           onClick={[Function]}
           onMouseEnter={[Function]}
           style={
@@ -52,12 +52,12 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
               "animationDelay": "150ms",
             }
           }
-          variant="primary"
+          variant="secondary"
         >
-          Mehr erfahren
+          Projekte ansehen
         </a>
         <a
-          className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green animate-slide-in"
+          className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green animate-slide-in"
           href="/docs"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -66,7 +66,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
               "animationDelay": "200ms",
             }
           }
-          variant="secondary"
+          variant="primary"
         >
           Mitmachen
         </a>

@@ -38,7 +38,7 @@ export const LandingHero: FC = () => (
             className='animate-slide-in mb-8 max-w-prose'
             style={{ animationDelay: "100ms" }}
           >
-            Stadtpuls ist eine{" "}
+            Stadtpuls ist die{" "}
             <strong className='text-green'>
               offene Datenplattform für IoT-Projekte
             </strong>{" "}
@@ -47,20 +47,20 @@ export const LandingHero: FC = () => (
             Stadtpuls hilft dir, tiefer in die Welt der Stadt-Sensorik
             einzutauchen und deine Stadt besser zu verstehen.
           </p>
-          <Link href='/'>
+          <Link href='/projects'>
             <AnchorButton
-              href='/'
-              variant='primary'
+              href='/projects'
+              variant='secondary'
               className='animate-slide-in mr-4 mb-2'
               style={{ animationDelay: "150ms" }}
             >
-              Mehr erfahren
+              Projekte ansehen
             </AnchorButton>
           </Link>
           <Link href='/docs'>
             <AnchorButton
               href='/docs'
-              variant='secondary'
+              variant='primary'
               className='animate-slide-in'
               style={{ animationDelay: "200ms" }}
             >
