@@ -168,8 +168,8 @@ export const LandingHowItWorks: FC = () => (
         "py-8 sm:py-12 md:py-16",
       ].join(" ")}
     >
-      <div className='grid md:grid-cols-[1fr,auto] gap-8'>
-        <div>
+      <div className='grid grid-cols-2 lg:grid-cols-9'>
+        <div className='col-span-6 lg:pr-12'>
           <h1
             className={[
               "text-xl sm:text-2xl md:text-3xl",
@@ -195,10 +195,10 @@ export const LandingHowItWorks: FC = () => (
         </div>
         <aside
           className={[
-            "justify-self-start md:justify-self-end self-center",
+            "col-span-3 self-center",
             "grid gap-2 grid-cols-[32px,1fr]",
-            "w-full md:w-80",
-            "p-5",
+            "w-full",
+            "p-5 mt-8 lg:mt-0",
             "border border-green shadow-green",
           ].join(" ")}
         >
