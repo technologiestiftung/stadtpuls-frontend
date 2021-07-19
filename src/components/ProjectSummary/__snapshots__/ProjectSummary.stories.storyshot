@@ -5,7 +5,7 @@ exports[`Storyshots ProjectSummary Default 1`] = `
   className="max-prose"
 >
   <h1
-    className="text-xl sm:text-3xl md:text-4xl text-purple"
+    className="text-xl sm:text-3xl md:text-4xl font-bold text-purple"
   />
   <p
     className="mt-3"

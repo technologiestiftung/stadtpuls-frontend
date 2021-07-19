@@ -11,7 +11,9 @@ export interface ApiTableType {
 export const ApiInfo: FC<ApiTableType> = ({ entries }) => {
   return (
     <div>
-      <h2 className='text-xl md:text-3xl text-purple font-headline'>API</h2>
+      <h2 className='text-xl md:text-3xl font-bold font-headline text-purple'>
+        API
+      </h2>
       <table className='w-full mt-2'>
         <tbody>
           {entries.map(entry => {

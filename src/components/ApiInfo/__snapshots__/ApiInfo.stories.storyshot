@@ -3,7 +3,7 @@
 exports[`Storyshots ApiInfo Default 1`] = `
 <div>
   <h2
-    className="text-xl md:text-3xl text-purple font-headline"
+    className="text-xl md:text-3xl font-bold font-headline text-purple"
   >
     API
   </h2>
