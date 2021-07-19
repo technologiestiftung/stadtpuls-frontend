@@ -2,14 +2,14 @@
 
 exports[`Storyshots Map/MarkerCircle Active 1`] = `
 <button
-  className="css-7y5osg-MarkerCircle"
+  className="w-6 h-6 rounded-full bg-blue text-center -translate-x-3 -translate-y-3 cursor-default"
   onClick={[Function]}
 />
 `;
 
 exports[`Storyshots Map/MarkerCircle Inactive 1`] = `
 <button
-  className="css-110f3qw-MarkerCircle"
+  className="w-6 h-6 rounded-full bg-gray-500 text-center -translate-x-3 -translate-y-3 cursor-default"
   onClick={[Function]}
 />
 `;

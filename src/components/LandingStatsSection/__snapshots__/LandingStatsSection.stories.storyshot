@@ -18,9 +18,9 @@ exports[`Storyshots Promotional/LandingStatsSection Default 1`] = `
       Wir stehen erst am Anfang
     </h2>
     <p
-      className="mb-4 text-center text-lg lg:text-left"
+      className="mb-4 text-center text-base lg:text-left max-w-prose"
     >
-      Ein paar Zahlen
+      Und sind auf der Suche nach Makern wie Dir! Wenn Du eigene Sensor-Projekte hast, verknüpfe sie ganz einfach mit Stadtpuls und lass die Community wachsen.
     </p>
   </div>
   <div

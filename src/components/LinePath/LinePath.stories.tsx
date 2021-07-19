@@ -1,7 +1,4 @@
 import { Story, Meta } from "@storybook/react";
-import { ThemeProvider } from "theme-ui";
-
-import theme from "../../style/theme";
 import { LinePath } from ".";
 
 export default {
@@ -17,11 +14,9 @@ const Template: Story<{
     value: number;
   }>;
 }> = args => (
-  <ThemeProvider theme={theme}>
-    <svg width={args.width} height={args.height}>
-      <LinePath {...args} />
-    </svg>
-  </ThemeProvider>
+  <svg width={args.width} height={args.height}>
+    <LinePath {...args} />
+  </svg>
 );
 
 export const Default = Template.bind({});

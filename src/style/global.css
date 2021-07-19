@@ -3,14 +3,18 @@
 @tailwind utilities;
 @layer utilities {
   .focus-offset {
-    @apply focus:ring-2 focus:ring-offset-white focus:ring-offset-2 focus:outline-none;
+    @apply focus:ring-2 focus:ring-offset-gray-50 focus:ring-offset-2 focus:outline-none focus:ring-green;
+  }
+  .focus-offset-dark {
+    @apply focus:ring-2 focus:ring-offset-black focus:ring-offset-2 focus:outline-none focus:ring-green;
   }
   .navigation-link {
     @apply transition font-headline border-purple sm:border-green border-b hover:border-purple hover:text-green sm:px-0 sm:py-0 sm:inline-block leading-tight;
   }
   .navigation-link-active {
-    @apply decoration-clone text-white bg-purple font-bold border-green hover:text-white hover:bg-purple hover:border-green cursor-default sm:px-2 sm:-ml-2 sm:py-0.5;
+    @apply decoration-clone font-headline text-white bg-purple font-bold border-green hover:text-white hover:bg-purple hover:border-green cursor-default sm:px-2 sm:-ml-2 sm:py-0.5;
   }
+
   @variants responsive {
     .bg-black-dot-pattern {
       @apply bg-black;
@@ -96,10 +100,14 @@
     font-weight: 300 700;
     font-style: normal;
   }
-  
+
   main#home {
     max-width: 100vw;
     overflow-x: hidden;
+  }
+
+  main:not(#home):not(#docs) {
+    @apply bg-white-dot-pattern;
   }
 
   body {
@@ -125,7 +133,7 @@
   [multiple],
   textarea,
   select {
-    @apply block w-full border-gray-400 mb-4 text-blue focus:text-blue focus:border-blue focus:ring-blue;
+    @apply block w-full border-gray-200 mb-4 text-black font-headline focus:text-blue focus:border-purple focus:ring-green focus:ring-2 bg-white;
   }
 
   [type='text'].error,
@@ -166,7 +174,7 @@
 
   [type='checkbox'],
   [type='radio'] {
-    @apply mr-2 transform translate-y-0.5 border-gray-400 text-blue focus:ring-blue;
+    @apply mr-2 transform translate-y-0.5 border-gray-400 text-blue focus:ring-blue bg-white;
   }
 
   [type='checkbox'].error,
@@ -186,6 +194,19 @@
   .prose h6,
   .prose [class~="lead"] {
     @apply font-headline;
+  }
+
+  main#docs .prose a {
+    @apply text-blue underline-green hover:text-purple transition font-headline font-bold;
+  }
+
+  main#docs .prose button a {
+    @apply no-underline text-black;
+    font-size: inherit;
+  }
+
+  main#docs .prose button:hover a {
+    @apply text-purple;
   }
   
   @keyframes fadeIn {

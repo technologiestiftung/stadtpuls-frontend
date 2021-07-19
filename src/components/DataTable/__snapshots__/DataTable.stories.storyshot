@@ -2,58 +2,46 @@
 
 exports[`Storyshots UI Elements/DataTable Default 1`] = `
 <div
-  className="css-888v7b-DataTable"
+  className="h-[500px] overflow-y-scroll"
 >
   <div
-    className="css-1ojpts7-DataTable"
+    className="grid grid-cols-[auto,max-content] bg-white p-3 border-b border-gray-100 sticky top-0"
   >
-    <div
-      className="css-1rjuow7"
-    >
+    <div>
       My supa dupa table
     </div>
-    <div
-      className="css-vurnku"
-    >
+    <div>
       <button
-        className="css-jswibr-IconButton"
+        className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
         onClick={[Function]}
+        type="button"
       >
-        <div
-          className="css-ft8o68-IconButton"
-        >
-          <img
-            alt="Download-Icon"
-            className="css-1710cio-IconButton"
-            src="/images/download.svg"
-          />
-        </div>
         Download
       </button>
     </div>
   </div>
   <div
-    className="css-1tfj38l-DataTable"
+    className="p-3 flex flex-wrap justify-center bg-white"
   >
     <table
-      className="css-1ugvjqu-DataTable"
+      className="w-full p-2 border-collapse"
     >
       <thead>
         <tr
-          className="css-1thvw36-DataTable"
+          className="text-gray-600"
         >
           <th
-            className="css-tw4ryr-DataTable"
+            className="py-2 px-1 font-normal text-left"
           >
             Datum
           </th>
           <th
-            className="css-tw4ryr-DataTable"
+            className="py-2 px-1 font-normal text-left"
           >
             Uhrzeit
           </th>
           <th
-            className="css-1bltckk-DataTable"
+            className="py-2 px-1 font-normal text-right"
           >
             Wert
           </th>

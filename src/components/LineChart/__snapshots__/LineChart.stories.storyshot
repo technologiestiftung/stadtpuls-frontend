@@ -97,7 +97,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={83.02583333333334}
               x2={83.02583333333334}
@@ -105,19 +105,18 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={83.02583333333334}
@@ -140,7 +139,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={183.82583333333335}
               x2={183.82583333333335}
@@ -148,19 +147,18 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={183.82583333333335}
@@ -183,7 +181,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={284.62583333333333}
               x2={284.62583333333333}
@@ -191,19 +189,18 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={284.62583333333333}
@@ -226,7 +223,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={385.42583333333334}
               x2={385.42583333333334}
@@ -234,19 +231,18 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={385.42583333333334}
@@ -269,7 +265,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={486.22583333333336}
               x2={486.22583333333336}
@@ -277,19 +273,18 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={486.22583333333336}
@@ -316,8 +311,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
           >
             <text
               className="visx-axis-label font-bold"
-              fill="#222"
-              fontFamily="Arial"
+              fill="#8330FF"
               fontSize={10}
               textAnchor="middle"
               x={252}
@@ -341,19 +335,18 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -373,19 +366,18 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -405,19 +397,18 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -437,19 +428,18 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -469,19 +459,18 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -508,8 +497,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
           >
             <text
               className="visx-axis-label font-bold"
-              fill="#222"
-              fontFamily="Arial"
+              fill="#8330FF"
               fontSize={10}
               textAnchor="middle"
               transform="rotate(-90)"
@@ -530,10 +518,14 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
           transform="translate(64, 32)"
         >
           <path
-            className="visx-linepath css-lsicnm-LinePath"
+            className="visx-linepath"
             d="M0,31.333333333333325L100.80000000000001,64.9047619047619L201.60000000000002,51.47619047619048L302.4,82.80952380952381L403.20000000000005,35.80952380952381L504,73.85714285714286"
             fill="transparent"
+            shapeRendering="geometricPrecision"
+            stroke="#8330FF"
             strokeLinecap="round"
+            strokeOpacity={1}
+            strokeWidth={2}
           />
         </g>
         <rect
@@ -674,7 +666,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={64.02348484848484}
               x2={64.02348484848484}
@@ -682,19 +674,18 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={64.02348484848484}
@@ -717,7 +708,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={155.65984848484848}
               x2={155.65984848484848}
@@ -725,19 +716,18 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={155.65984848484848}
@@ -760,7 +750,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={247.29621212121214}
               x2={247.29621212121214}
@@ -768,19 +758,18 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={247.29621212121214}
@@ -803,7 +792,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={338.9325757575757}
               x2={338.9325757575757}
@@ -811,19 +800,18 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={338.9325757575757}
@@ -846,7 +834,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={430.5689393939394}
               x2={430.5689393939394}
@@ -854,19 +842,18 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={430.5689393939394}
@@ -893,8 +880,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
           >
             <text
               className="visx-axis-label font-bold"
-              fill="#222"
-              fontFamily="Arial"
+              fill="#8330FF"
               fontSize={10}
               textAnchor="middle"
               x={252}
@@ -918,19 +904,18 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -950,19 +935,18 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -982,19 +966,18 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -1014,19 +997,18 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -1046,19 +1028,18 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -1078,19 +1059,18 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -1110,19 +1090,18 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -1149,8 +1128,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
           >
             <text
               className="visx-axis-label font-bold"
-              fill="#222"
-              fontFamily="Arial"
+              fill="#8330FF"
               fontSize={10}
               textAnchor="middle"
               transform="rotate(-90)"
@@ -1171,10 +1149,14 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
           transform="translate(64, 32)"
         >
           <path
-            className="visx-linepath css-lsicnm-LinePath"
+            className="visx-linepath"
             d="M0,180.33865602129075L95.45454545454545,158.44910179640718L190.9090909090909,64.48037258815701L313.09090909090907,172.36460412508316L408.5454545454545,31.333333333333307L504,140.1556886227545"
             fill="transparent"
+            shapeRendering="geometricPrecision"
+            stroke="#8330FF"
             strokeLinecap="round"
+            strokeOpacity={1}
+            strokeWidth={2}
           />
         </g>
         <rect
@@ -1304,7 +1286,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={54.00242407918658}
               x2={54.00242407918658}
@@ -1312,19 +1294,18 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={54.00242407918658}
@@ -1347,7 +1328,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={145.63261733216618}
               x2={145.63261733216618}
@@ -1355,19 +1336,18 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={145.63261733216618}
@@ -1390,7 +1370,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={237.26281058514576}
               x2={237.26281058514576}
@@ -1398,19 +1378,18 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={237.26281058514576}
@@ -1433,7 +1412,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={328.8930038381254}
               x2={328.8930038381254}
@@ -1441,19 +1420,18 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={328.8930038381254}
@@ -1476,7 +1454,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={420.523197091105}
               x2={420.523197091105}
@@ -1484,19 +1462,18 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={420.523197091105}
@@ -1523,8 +1500,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
           >
             <text
               className="visx-axis-label font-bold"
-              fill="#222"
-              fontFamily="Arial"
+              fill="#8330FF"
               fontSize={10}
               textAnchor="middle"
               x={252}
@@ -1548,19 +1524,18 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -1580,19 +1555,18 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -1612,19 +1586,18 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -1644,19 +1617,18 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -1676,19 +1648,18 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -1708,19 +1679,18 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -1747,8 +1717,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
           >
             <text
               className="visx-axis-label font-bold"
-              fill="#222"
-              fontFamily="Arial"
+              fill="#8330FF"
               fontSize={10}
               textAnchor="middle"
               transform="rotate(-90)"
@@ -1769,10 +1738,14 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
           transform="translate(64, 32)"
         >
           <path
-            className="visx-linepath css-lsicnm-LinePath"
+            className="visx-linepath"
             d="M0,91.64306784660766L136.9871389132045,46.58407079646019L278.8272843579557,59.06194690265485L394.6461517742913,43.11799410029499L504,31.333333333333325"
             fill="transparent"
+            shapeRendering="geometricPrecision"
+            stroke="#8330FF"
             strokeLinecap="round"
+            strokeOpacity={1}
+            strokeWidth={2}
           />
         </g>
         <rect
@@ -1891,7 +1864,7 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={83.02583333333334}
               x2={83.02583333333334}
@@ -1899,19 +1872,18 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={83.02583333333334}
@@ -1934,7 +1906,7 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={183.82583333333335}
               x2={183.82583333333335}
@@ -1942,19 +1914,18 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={183.82583333333335}
@@ -1977,7 +1948,7 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={284.62583333333333}
               x2={284.62583333333333}
@@ -1985,19 +1956,18 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={284.62583333333333}
@@ -2020,7 +1990,7 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={385.42583333333334}
               x2={385.42583333333334}
@@ -2028,19 +1998,18 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={385.42583333333334}
@@ -2063,7 +2032,7 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
               className="visx-line"
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke="#E7EAF2"
+              stroke="#CFD0DC"
               strokeLinecap="square"
               x1={486.22583333333336}
               x2={486.22583333333336}
@@ -2071,19 +2040,18 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
               y2={8}
             />
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
               x={0}
-              y="0.25em"
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="middle"
                 transform=""
                 x={486.22583333333336}
@@ -2109,19 +2077,18 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -2141,19 +2108,18 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -2173,19 +2139,18 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -2205,19 +2170,18 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -2237,19 +2201,18 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
             transform="translate(0, 0)"
           >
             <svg
-              fontSize={10}
+              fontSize={9}
               style={
                 Object {
                   "overflow": "visible",
                 }
               }
-              x="-0.25em"
-              y="0.25em"
+              x={0}
+              y={0}
             >
               <text
-                fill="#222"
-                fontFamily="Arial"
-                fontSize={10}
+                fill="#787696"
+                fontSize={9}
                 textAnchor="end"
                 transform=""
                 x={-8}
@@ -2271,10 +2234,14 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
           transform="translate(64, 32)"
         >
           <path
-            className="visx-linepath css-lsicnm-LinePath"
+            className="visx-linepath"
             d="M0,31.333333333333325L100.80000000000001,64.9047619047619L201.60000000000002,51.47619047619048L302.4,82.80952380952381L403.20000000000005,35.80952380952381L504,73.85714285714286"
             fill="transparent"
+            shapeRendering="geometricPrecision"
+            stroke="#8330FF"
             strokeLinecap="round"
+            strokeOpacity={1}
+            strokeWidth={2}
           />
         </g>
         <rect

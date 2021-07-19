@@ -7,10 +7,10 @@ exports[`Storyshots Layout/UserProjectsNav Default 1`] = `
   <ul>
     <li
       aria-labelledby="user-project-item-kjasdhjkas"
-      className="my-4 border-opacity-100"
+      className="my-4"
     >
       <button
-        className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-blue border-opacity-100"
+        className="focus-offset text-left transition navigation-link-active"
         id="user-project-item-kjasdhjkas"
         onClick={[Function]}
       >
@@ -19,10 +19,10 @@ exports[`Storyshots Layout/UserProjectsNav Default 1`] = `
     </li>
     <li
       aria-labelledby="user-project-item-uisdzuada"
-      className="my-4 border-opacity-0"
+      className="my-4"
     >
       <button
-        className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-gray-500 border-opacity-0"
+        className="focus-offset text-left transition navigation-link"
         id="user-project-item-uisdzuada"
         onClick={[Function]}
       >
@@ -31,10 +31,10 @@ exports[`Storyshots Layout/UserProjectsNav Default 1`] = `
     </li>
     <li
       aria-labelledby="user-project-item-tgedhebdm"
-      className="my-4 border-opacity-0"
+      className="my-4"
     >
       <button
-        className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-gray-500 border-opacity-0"
+        className="focus-offset text-left transition navigation-link"
         id="user-project-item-tgedhebdm"
         onClick={[Function]}
       >
@@ -52,10 +52,10 @@ exports[`Storyshots Layout/UserProjectsNav Without Default Selected Project 1`] 
   <ul>
     <li
       aria-labelledby="user-project-item-kjasdhjkas"
-      className="my-4 border-opacity-0"
+      className="my-4"
     >
       <button
-        className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-gray-500 border-opacity-0"
+        className="focus-offset text-left transition navigation-link"
         id="user-project-item-kjasdhjkas"
         onClick={[Function]}
       >
@@ -64,10 +64,10 @@ exports[`Storyshots Layout/UserProjectsNav Without Default Selected Project 1`] 
     </li>
     <li
       aria-labelledby="user-project-item-uisdzuada"
-      className="my-4 border-opacity-0"
+      className="my-4"
     >
       <button
-        className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-gray-500 border-opacity-0"
+        className="focus-offset text-left transition navigation-link"
         id="user-project-item-uisdzuada"
         onClick={[Function]}
       >
@@ -76,10 +76,10 @@ exports[`Storyshots Layout/UserProjectsNav Without Default Selected Project 1`] 
     </li>
     <li
       aria-labelledby="user-project-item-tgedhebdm"
-      className="my-4 border-opacity-0"
+      className="my-4"
     >
       <button
-        className="py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue text-gray-500 border-opacity-0"
+        className="focus-offset text-left transition navigation-link"
         id="user-project-item-tgedhebdm"
         onClick={[Function]}
       >

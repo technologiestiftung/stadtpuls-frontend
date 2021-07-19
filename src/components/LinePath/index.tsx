@@ -1,12 +1,10 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
 import { FC } from "react";
-import { jsx } from "theme-ui";
 import { extent, max } from "d3-array";
 import { curveLinear } from "@visx/curve";
 import { LinePath as Path } from "@visx/shape";
 import { scaleLinear, scaleUtc } from "@visx/scale";
 import { DateValueType, LineGraphType } from "../../common/interfaces";
+import colors from "../../style/colors";
 
 const getX = (d: DateValueType): Date => new Date(d.date);
 const getY = (d: DateValueType): number => d.value;
@@ -44,12 +42,10 @@ export const LinePath: FC<LineGraphType> = ({ width, height, data }) => {
       data={normalizedData}
       x={d => xScale(getX(d))}
       y={d => yScale(getY(d))}
-      sx={{
-        stroke: "primary",
-        strokeWidth: 2,
-        strokeOpacity: 1,
-        shapeRendering: "geometricPrecision",
-      }}
+      stroke={colors.purple}
+      strokeWidth={2}
+      strokeOpacity={1}
+      shapeRendering='geometricPrecision'
     />
   );
 };

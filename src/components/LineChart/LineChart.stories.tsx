@@ -1,7 +1,4 @@
 import { Story, Meta } from "@storybook/react";
-import { ThemeProvider } from "theme-ui";
-
-import theme from "../../style/theme";
 import { LineChart } from ".";
 import { LineGraphType } from "@common/interfaces";
 
@@ -11,14 +8,9 @@ export default {
 } as Meta;
 
 const Template: Story<LineGraphType> = args => (
-  <ThemeProvider theme={theme}>
-    <div
-      className='bg-white'
-      style={{ width: args.width, height: args.height }}
-    >
-      <LineChart {...args} />
-    </div>
-  </ThemeProvider>
+  <div className='bg-white' style={{ width: args.width, height: args.height }}>
+    <LineChart {...args} />
+  </div>
 );
 
 export const TemperatureThroughoutDay = Template.bind({});

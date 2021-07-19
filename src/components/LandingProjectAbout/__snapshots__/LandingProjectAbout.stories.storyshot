@@ -18,7 +18,7 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
         className="inline-block mr-4 align-top"
         src="/images/illustrations/microcontroller-2.svg"
       />
-      Über das Projekt
+      Was ist Stadtpuls?
     </h1>
     <div
       className="grid md:grid-cols-5 xl:grid-cols-2 gap-4 sm:gap-8"
@@ -27,12 +27,29 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
         className="md:col-span-3 xl:col-span-1"
       >
         <div
-          className="prose text-white max-w-none"
+          className="text-white max-w-none leading-7"
         >
           <p
             className="max-w-none"
           >
-            Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw. Hier steht ein ausführlicher Beschreibungstext über Hintergründe des Projekts, TSB, usw.
+            Die Plattform 
+            <em>
+              Stadtpuls
+            </em>
+             ist eine prototypische Offene Datenplattform, welche
+             
+            <strong
+              className="text-green"
+            >
+              Sensordaten von & für Berlin
+            </strong>
+             
+            als Open Data sammelt, frei zugänglich macht und der Stadt Berlin auf ihrem Weg zur smarten Stadt der Zukunft helfen soll.
+          </p>
+          <p
+            className="mt-4"
+          >
+            Ziel der Plattform ist es Sensordaten der Stadt Berlin aufzubereiten, zu visualisieren und für alle Akteure der Stadtgesellschaft frei und kostenlos zur Verfügung zu stellen. Nutzer:innen können sich über einzelne IoT-Projekte informieren, selber Projekte und Sensoren anlegen oder Daten aus Projekten für die eigene Analyse nutzen. Dabei spielen Klimadaten, aber auch städtische Sensordaten ein große Rolle. Diese Daten in einer gemeinsamen Datenbasis vorzuhalten, zugänglich zu machen und zu visualisieren ist ein erster Schritt in Richtung einer smarten, vernetzten Stadt.
           </p>
         </div>
         <a

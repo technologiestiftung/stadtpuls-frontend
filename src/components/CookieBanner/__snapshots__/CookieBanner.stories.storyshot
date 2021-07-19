@@ -9,7 +9,7 @@ exports[`Storyshots UI Elements/CookieBanner Default 1`] = `
   >
     Diese Webseite verwendet Cookies, um bestimmte Funktionen zu ermöglichen und das Angebot zu verbessern. Indem Sie hier fortfahren, stimmen Sie der Nutzung von Cookies zu.  
     <a
-      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue focus:ring-blue"
+      className="underline transition cursor-pointer text-left font-headline focus:ring-green text-blue underline-green hover:text-purple focus-offset"
       href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
       rel="noopener noreferrer"
       target="_blank"
