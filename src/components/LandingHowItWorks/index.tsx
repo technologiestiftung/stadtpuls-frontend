@@ -194,13 +194,18 @@ export const LandingHowItWorks: FC = () => (
         ].join(" ")}
       >
         Stadtpuls unterstützt die Anbindung an TTN!
+        <sup className='text-xs text-black inline-block transform -translate-y-1.5 ml-2 bg-gray-100 px-1 py-0.5'>
+          More coming soon{" "}
+        </sup>
       </h1>
       <p className='mb-8 text-base'>
         Durch die TTN-Anbindung kannst Du Deine TTN-Projekte ganz einfach über
         einen Webhook mit Stadtpuls verbinden und eigene Projekte anlegen. Deine
         Daten werden dadurch visualisiert und per API, sowie per CSV offen und
         kostenlos der gesamten Stadtgesellschaft zur Verfügung gestellt. So
-        trägst auch Du dazu bei, unsere Stadt ein Stück smarter zu machen.
+        trägst auch Du dazu bei, unsere Stadt ein Stück smarter zu machen. Wir
+        arbeiten parallel an weiteren Schnittstellen, um in Zukunft die
+        Anbindung aller Protkolle und Sensortypen zu ermöglichen.
       </p>
       <div
         className={`grid grid-cols-2 lg:grid-cols-9 gap-x-4 sm:gap-x-0 ${styles.gridContainer}`}
