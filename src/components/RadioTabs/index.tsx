@@ -1,10 +1,7 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import React from "react";
-import { jsx, Box, Theme } from "theme-ui";
+import { FC } from "react";
 import { RadioTabsType, RadioTabOptionType } from "@common/interfaces";
 
-export const RadioTabs: React.FC<RadioTabsType> = ({
+export const RadioTabs: FC<RadioTabsType> = ({
   name,
   options,
   changeHandler,
@@ -14,17 +11,10 @@ export const RadioTabs: React.FC<RadioTabsType> = ({
   };
 
   return (
-    <Box>
+    <div>
       {options.map((option: RadioTabOptionType) => {
         return (
-          <div
-            key={`${name}-${option.id}-tab`}
-            sx={{
-              display: "inline-block",
-              marginRight: (theme: Theme) =>
-                `${String((theme?.space || [])[3])}px`,
-            }}
-          >
+          <div key={`${name}-${option.id}-tab`} className='inline-block mr-3'>
             <input
               type='radio'
               id={`${name}-${option.id}`}
@@ -32,28 +22,21 @@ export const RadioTabs: React.FC<RadioTabsType> = ({
               value={option.id}
               checked={option.isActive}
               onChange={handleChange}
-              sx={{
-                opacity: 0,
-                position: "absolute",
-                pointerEvents: "none",
-              }}
+              className='opacity-0 absolute pointer-events-none'
             />
             <label
               htmlFor={`${name}-${option.id}`}
-              sx={{
-                color: option.isActive ? "primary" : "lightgrey",
-                cursor: "pointer",
-                transition: "all .1s ease-in-out",
-                "&:hover": {
-                  color: "primary",
-                },
-              }}
+              className={[
+                "cursor-pointer",
+                "transition-all",
+                `${option.isActive ? "text-blue" : "text-gray-500"}`,
+              ].join(" ")}
             >
               {option.title}
             </label>
           </div>
         );
       })}
-    </Box>
+    </div>
   );
 };

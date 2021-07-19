@@ -1,5 +1,4 @@
 import { useCallback } from "react";
-import { useThemeUI } from "theme-ui";
 import { bisector, extent, max } from "d3-array";
 import { Group } from "@visx/group";
 import { scaleLinear, scaleUtc } from "@visx/scale";
@@ -13,6 +12,7 @@ import { WithTooltipProvidedProps } from "@visx/tooltip/lib/enhancers/withToolti
 import { Bar, Line } from "@visx/shape";
 import { localPoint } from "@visx/event";
 import { GridRows as HorizontalGridLines } from "@visx/grid";
+import colors from "../../style/colors";
 
 const getX = (d: DateValueType): Date => new Date(d.date);
 const getY = (d: DateValueType): number => d.value;
@@ -23,10 +23,10 @@ const formatDate = utcFormat("%d.%m.%Y - %H:%M:%S");
 const tooltipStyles = {
   ...defaultStyles,
   border: "1px solid white",
+  backgroundColor: colors.blue,
   color: "white",
 };
 
-delete tooltipStyles.backgroundColor;
 delete tooltipStyles.boxShadow;
 
 export const LineChart = withTooltip<LineGraphType, DateValueType>(
@@ -43,9 +43,6 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
     tooltipLeft = 0,
   }: LineGraphType & WithTooltipProvidedProps<DateValueType>) => {
     if (width < 10) return null;
-
-    const context = useThemeUI();
-    const { theme } = context;
 
     const padding = {
       left: 64,
@@ -122,14 +119,20 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
             label={xAxisUnit}
             labelOffset={24}
             labelClassName='font-bold'
+            labelProps={{
+              fill: colors.purple,
+              fontSize: 10,
+              textAnchor: "middle",
+            }}
             hideAxisLine={true}
             numTicks={6}
             tickTransform='translate(0 16)'
-            tickStroke={
-              theme.colors?.lightgrey
-                ? String(theme.colors.lightgrey)
-                : "inherit"
-            }
+            tickStroke={colors.gray["200"]}
+            tickLabelProps={() => ({
+              fill: colors.gray["500"],
+              fontSize: 9,
+              textAnchor: "middle",
+            })}
           />
           <AxisLeft
             scale={yAxis.scale}
@@ -138,14 +141,19 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
             label={yAxisUnit}
             labelOffset={24}
             labelClassName='font-bold'
+            labelProps={{
+              fill: colors.purple,
+              fontSize: 10,
+              textAnchor: "middle",
+            }}
             hideAxisLine={true}
             hideTicks={true}
             numTicks={4}
-            tickStroke={
-              theme.colors?.mediumgrey
-                ? String(theme.colors.mediumgrey)
-                : "inherit"
-            }
+            tickLabelProps={() => ({
+              fill: colors.gray["500"],
+              fontSize: 9,
+              textAnchor: "end",
+            })}
           />
           {tooltipData && (
             <Group top={padding.top}>

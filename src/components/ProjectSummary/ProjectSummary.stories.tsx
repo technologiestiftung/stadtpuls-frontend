@@ -1,7 +1,4 @@
 import { Story, Meta } from "@storybook/react";
-import { ThemeProvider } from "theme-ui";
-
-import theme from "../../style/theme";
 import { ProjectSummary } from ".";
 
 export default {
@@ -25,10 +22,6 @@ const Template: Story<{
   title: string;
   description: string;
   noOfDevices: number;
-}> = args => (
-  <ThemeProvider theme={theme}>
-    <ProjectSummary {...args} />
-  </ThemeProvider>
-);
+}> = args => <ProjectSummary {...args} />;
 
 export const Default = Template.bind({});

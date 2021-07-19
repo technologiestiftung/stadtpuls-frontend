@@ -1,8 +1,6 @@
 import { withNextRouter } from "storybook-addon-next-router";
 import { Story, Meta } from "@storybook/react";
-import { ThemeProvider } from "theme-ui";
 import { FC } from "react";
-import theme from "../../style/theme";
 import { Project } from ".";
 import { useProjectData } from "@lib/hooks/useProjectData";
 
@@ -19,11 +17,7 @@ const ProjectPage: FC = () => {
   return <Project {...project} />;
 };
 
-const Template: Story = () => (
-  <ThemeProvider theme={theme}>
-    <ProjectPage />
-  </ThemeProvider>
-);
+const Template: Story = () => <ProjectPage />;
 
 export const Default = Template.bind({});
 Default.args = {};

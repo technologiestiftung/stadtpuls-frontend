@@ -1,6 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import { ThemeProvider } from "theme-ui";
-import theme from "../../style/theme";
 import { RecordType } from "../../common/interfaces";
 
 import { DataTable } from ".";
@@ -16,20 +14,12 @@ const fakeData: RecordType[] = [
 
 describe("DataTable component", () => {
   it("should render the title", () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <DataTable data={[]} title='This is my title' />
-      </ThemeProvider>
-    );
+    render(<DataTable data={[]} title='This is my title' />);
     const title = screen.getByText(/This is my title/g);
     expect(title).toBeInTheDocument();
   });
   it("should render the data", () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <DataTable data={fakeData} title='This is my title' />
-      </ThemeProvider>
-    );
+    render(<DataTable data={fakeData} title='This is my title' />);
     const date = screen.getByText("4/8/2021");
     const time = screen.getByText("13:23:04");
     const value = screen.getByText("20");

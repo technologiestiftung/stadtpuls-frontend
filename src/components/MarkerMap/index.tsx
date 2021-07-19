@@ -1,14 +1,11 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
 import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, WebMercatorViewport } from "react-map-gl";
 import { bbox, featureCollection, point } from "@turf/turf";
-import { jsx } from "theme-ui";
 import { MarkerType } from "../../common/interfaces";
 import { MarkerCircle } from "../MarkerCircle";
 import { ViewportType } from "@common/types/ReactMapGl";
 
-// import "mapbox-gl/dist/mapbox-gl.css";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
