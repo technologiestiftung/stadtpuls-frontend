@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react";
 import { ProjectSummary } from ".";
 
 export default {
-  title: "ProjectSummary",
+  title: "UI Elements/ProjectSummary",
   component: ProjectSummary,
   argTypes: {
     title: {

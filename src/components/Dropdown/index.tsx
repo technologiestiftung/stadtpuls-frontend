@@ -23,7 +23,7 @@ export const Dropdown: FC<DropdownPropType> = ({
     .filter(Boolean)
     .join(" ");
   const caretStyles = [
-    "absolute top-full left-1 w-3 h-3 bg-white shadow transition",
+    "absolute top-full left-1 w-3 h-3 bg-gray-200 shadow transition",
     "transform rotate-45 translate-y-2 opacity-0",
     isVisible ? "opacity-100" : "opacity-0",
   ]
@@ -32,7 +32,10 @@ export const Dropdown: FC<DropdownPropType> = ({
   return (
     <div className='inline-block relative'>
       <button
-        className='cursor-pointer rounded-none focus-offset focus:ring-blue'
+        className={[
+          "cursor-pointer rounded-none",
+          "focus:ring-2 focus:outline-none focus:ring-green",
+        ].join(" ")}
         onClick={evt => {
           evt.preventDefault();
           evt.stopPropagation();
@@ -44,7 +47,9 @@ export const Dropdown: FC<DropdownPropType> = ({
       </button>
       <span aria-hidden className={caretStyles} />
       <section className={dropdownStyles}>
-        <div className='bg-white shadow'>{dropdownContent}</div>
+        <div className='bg-white border border-gray-200 shadow'>
+          {dropdownContent}
+        </div>
       </section>
     </div>
   );

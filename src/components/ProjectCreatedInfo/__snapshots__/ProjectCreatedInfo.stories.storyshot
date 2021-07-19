@@ -5,7 +5,7 @@ exports[`Storyshots Layout/ProjectCreatedInfo Default 1`] = `
   className="bg-white max-w-prose"
 >
   <h2
-    className="text-3xl text-blue font-bold"
+    className="text-3xl text-purple font-headline font-bold"
   >
     I'm a user controlled project title
   </h2>
@@ -15,7 +15,7 @@ exports[`Storyshots Layout/ProjectCreatedInfo Default 1`] = `
     Dein Projekt wurde erfolgreich angelegt.
   </p>
   <h3
-    className="mt-12 text-2xl text-blue font-bold"
+    className="mt-12 text-2xl font-headline"
   >
     Nächste Schritte
   </h3>

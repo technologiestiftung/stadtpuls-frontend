@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react";
 import { ApiInfo, ApiTableType } from ".";
 
 export default {
-  title: "ApiInfo",
+  title: "UI Elements/ApiInfo",
   component: ApiInfo,
 } as Meta;
 

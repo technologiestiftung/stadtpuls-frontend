@@ -5,24 +5,24 @@ exports[`Storyshots UI Elements/Dropdown Default 1`] = `
   className="inline-block relative"
 >
   <button
-    className="cursor-pointer rounded-none focus-offset focus:ring-blue"
+    className="cursor-pointer rounded-none focus:ring-2 focus:outline-none focus:ring-green"
     onClick={[Function]}
   >
     <a
-      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue focus:ring-blue"
+      className="underline transition cursor-pointer text-left font-headline focus:ring-green text-blue underline-green hover:text-purple focus-offset"
     >
       Click me
     </a>
   </button>
   <span
     aria-hidden={true}
-    className="absolute top-full left-1 w-3 h-3 bg-white shadow transition transform rotate-45 translate-y-2 opacity-0 opacity-0"
+    className="absolute top-full left-1 w-3 h-3 bg-gray-200 shadow transition transform rotate-45 translate-y-2 opacity-0 opacity-0"
   />
   <section
     className="absolute top-full left-0 transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 opacity-0 pointer-events-none"
   >
     <div
-      className="bg-white shadow"
+      className="bg-white border border-gray-200 shadow"
     >
       <div
         className="px-4 py-3"

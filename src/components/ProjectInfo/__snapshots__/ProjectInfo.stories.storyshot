@@ -2,7 +2,7 @@
 
 exports[`Storyshots Layout/ProjectInfo Default Project Info 1`] = `
 <section
-  className="bg-gray-50 p-6"
+  className="bg-black-dot-pattern text-white p-6"
 >
   <header
     className="grid gap-4 items-start"
@@ -13,13 +13,14 @@ exports[`Storyshots Layout/ProjectInfo Default Project Info 1`] = `
     }
   >
     <h2
-      className="text-blue text-3xl font-bold"
+      className="text-green font-headline text-3xl font-bold"
     >
       Temperatur Grunewaldstraße
     </h2>
     <a
-      className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
+      className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset-dark focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
       href="/123abc"
+      isOnDark={true}
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
@@ -31,7 +32,7 @@ exports[`Storyshots Layout/ProjectInfo Default Project Info 1`] = `
   >
     <p>
       <mark
-        className="p-1 text-sm bg-gray-100 text-blue"
+        className="p-1 text-sm bg-green bg-opacity-20 text-green"
       >
         Temperatur
       </mark>
@@ -42,8 +43,9 @@ exports[`Storyshots Layout/ProjectInfo Default Project Info 1`] = `
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </div>
     <a
-      className="focus-offset underline transition hover:opacity-60 cursor-pointer text-left text-blue focus:ring-blue mt-4 inline-block"
+      className="underline transition cursor-pointer text-left font-headline focus:ring-green text-green underline-purple hover:text-white focus-offset-dark mt-4 inline-block text-white"
       href="/account/projects/123abc/edit"
+      isOnDark={true}
       onClick={[Function]}
       onMouseEnter={[Function]}
     >

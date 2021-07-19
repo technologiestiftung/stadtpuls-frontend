@@ -33,7 +33,9 @@ export const ProjectInfoFormWrapper: FC<ProjectInfoFormWrapperPropType> = ({
 
   return (
     <div>
-      <h2 className='text-3xl text-blue font-bold'>{texts.title}</h2>
+      <h2 className='text-3xl text-purple font-headline font-bold'>
+        {texts.title}
+      </h2>
       <form noValidate {...formProps} id={formId} className='mt-4'>
         {children}
       </form>

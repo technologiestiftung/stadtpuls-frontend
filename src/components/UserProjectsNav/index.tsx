@@ -43,24 +43,17 @@ export const UserProjectsNav: FC<UserProjectsNavType> = ({
             <li
               aria-labelledby={`user-project-item-${project.projectId}`}
               key={project.projectId}
-              className={[
-                `my-4`,
-                `${
-                  project.projectId === selectedProject?.projectId
-                    ? "border-opacity-100"
-                    : "border-opacity-0"
-                }`,
-              ].join(" ")}
+              className='my-4'
             >
               <button
                 id={`user-project-item-${project.projectId}`}
                 onClick={() => handleSelectProject(project.projectId)}
                 className={[
-                  `py-0 pl-4 border-l-2 border-purple focus-offset text-left transition focus:ring-blue`,
+                  `focus-offset text-left transition`,
                   `${
                     project.projectId === selectedProject?.projectId
-                      ? "text-blue border-opacity-100"
-                      : "text-gray-500 border-opacity-0"
+                      ? "navigation-link-active"
+                      : "navigation-link"
                   }`,
                 ].join(" ")}
               >

@@ -100,5 +100,17 @@ module.exports = {
       animation: ["hover", "group-hover"],
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require('@tailwindcss/typography'),
+    function ({addUtilities}) {
+      const extendUnderline = {
+        '.underline-green': { 'text-decoration-color': colors.green, },
+        '.underline-blue': { 'text-decoration-color': colors.blue, },
+        '.underline-purple': { 'text-decoration-color': colors.purple, },
+        '.underline-gray': { 'text-decoration-color': colors.gray['200'], },
+      }
+      addUtilities(extendUnderline)
+    }
+  ],
 };

@@ -86,28 +86,31 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
           </ul>
         </nav>
       </div>
-      <a
+      <span
         className="group"
-        href="/signin"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
       >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 group-hover:text-green"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <a
+          href="/signin"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
         >
-          <path
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-          />
-        </svg>
-        <span
-          className="inline-block ml-1 transition hidden sm:inline-block group-hover:text-green"
-        >
-          Anmeldung
-        </span>
-      </a>
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root icon transform -translate-y-0.5 transition inline-block align-middle mr-1 group-hover:text-green"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+            />
+          </svg>
+          <span
+            className="text inline-block ml-1 transition hidden sm:inline-block font-headline font-bold group-hover:text-green"
+          >
+            Anmeldung
+          </span>
+        </a>
+      </span>
       <a
         href="https://technologiestiftung-berlin.de/"
         rel="noopener noreferrer"
@@ -328,28 +331,31 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
           </ul>
         </nav>
       </div>
-      <a
+      <span
         className="group"
-        href="/signin"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
       >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root transform -translate-y-0.5 transition inline-block align-middle mr-1 group-hover:text-green"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <a
+          href="/signin"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
         >
-          <path
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-          />
-        </svg>
-        <span
-          className="inline-block ml-1 transition hidden sm:inline-block group-hover:text-green"
-        >
-          Anmeldung
-        </span>
-      </a>
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root icon transform -translate-y-0.5 transition inline-block align-middle mr-1 group-hover:text-green"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+            />
+          </svg>
+          <span
+            className="text inline-block ml-1 transition hidden sm:inline-block font-headline font-bold group-hover:text-green"
+          >
+            Anmeldung
+          </span>
+        </a>
+      </span>
       <a
         href="https://technologiestiftung-berlin.de/"
         rel="noopener noreferrer"

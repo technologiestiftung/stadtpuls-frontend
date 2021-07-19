@@ -3,7 +3,7 @@ import { RecordType } from "../../common/interfaces";
 import { DataTableType, DataTable } from ".";
 
 export default {
-  title: "DataTable",
+  title: "UI Elements/DataTable",
   component: DataTable,
 } as Meta;
 

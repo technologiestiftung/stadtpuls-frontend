@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UserInfoCard Default User Info Card 1`] = `
+exports[`Storyshots UI Elements/UserInfoCard Default User Info Card 1`] = `
 <div
   className="flex flex-col md:pr-8 lg:pr-16 justify-between h-full w-full sm:min-w-md md:min-w-xs lg:min-w-md"
 >
@@ -506,13 +506,13 @@ exports[`Storyshots UserInfoCard Default User Info Card 1`] = `
         </svg>
       </span>
       <h1
-        className="text-blue text-3xl font-semibold"
+        className="text-2xl font-headline"
       >
         ffthornton
       </h1>
     </div>
     <div
-      className="border-gray-300 border-t my-8"
+      className="border-gray-100 border-t my-8"
     />
     <p
       className="text-gray-500"
