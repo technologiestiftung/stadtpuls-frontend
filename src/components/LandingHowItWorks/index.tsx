@@ -177,12 +177,15 @@ export const LandingHowItWorks: FC = () => (
               "mt-6 mb-1",
             ].join(" ")}
           >
-            Stadtpuls unterstützt die Anbindung an TTN!
-            <sup className='text-xs text-black inline-block transform -translate-y-1.5 bg-gray-100 px-1 ml-2 py-0.5'>
-              More coming soon{" "}
-            </sup>
+            <span>Stadtpuls unterstützt die Anbindung </span>
+            <span className='inline sm:inline-block'>
+              an TTN!{" "}
+              <span className='text-[11px] md:text-xs text-black inline-block bg-gray-100 px-1 py-0 leading-5 md:py-0.5 align-middle'>
+                More coming soon{" "}
+              </span>
+            </span>
           </h1>
-          <p className='text-base'>
+          <p className='text-base mt-8'>
             Durch die TTN-Anbindung kannst Du Deine TTN-Projekte ganz einfach
             über einen Webhook mit Stadtpuls verbinden und eigene Projekte
             anlegen. Deine Daten werden dadurch visualisiert und per API, sowie
