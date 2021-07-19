@@ -19,6 +19,7 @@ export const Footer: React.FC = () => {
                 target='_blank'
                 rel='noopener noreferrer'
                 className='mt-4 block'
+                aria-label='Technologiestiftung Berlin'
               >
                 <img
                   src={TSBLogo}
@@ -32,10 +33,11 @@ export const Footer: React.FC = () => {
                 Durchgeführt vom:
               </span>
               <a
-                href='https://technologiestiftung-berlin.de/'
+                href='https://www.citylab-berlin.org'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='mt-4 block'
+                aria-label='CityLAB Berlin'
               >
                 <img
                   src={CityLABLogo}
@@ -53,6 +55,7 @@ export const Footer: React.FC = () => {
                 target='_blank'
                 rel='noopener noreferrer'
                 className='mt-4 block'
+                aria-label='berlin.de'
               >
                 <img src={BerlinLogo} alt='Berlin Logo' className='w-32' />
               </a>

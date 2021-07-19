@@ -20,6 +20,7 @@ exports[`Storyshots Layout/Footer Default 1`] = `
             Ein Projekt der:
           </span>
           <a
+            aria-label="Technologiestiftung Berlin"
             className="mt-4 block"
             href="https://technologiestiftung-berlin.de/"
             rel="noopener noreferrer"
@@ -41,8 +42,9 @@ exports[`Storyshots Layout/Footer Default 1`] = `
             Durchgeführt vom:
           </span>
           <a
+            aria-label="CityLAB Berlin"
             className="mt-4 block"
-            href="https://technologiestiftung-berlin.de/"
+            href="https://www.citylab-berlin.org"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -62,6 +64,7 @@ exports[`Storyshots Layout/Footer Default 1`] = `
             Gefördert von:
           </span>
           <a
+            aria-label="berlin.de"
             className="mt-4 block"
             href="https://www.berlin.de/"
             rel="noopener noreferrer"
