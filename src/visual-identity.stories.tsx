@@ -275,14 +275,14 @@ const Template: Story = () => (
         <span className='bg-orange w-3 h-3 rounded-full inline-block mx-1' />
         <strong>Warning orange</strong>.
       </p>
-      <img src='/images/colors-presentation.svg' alt='Color codes' />
+      <img src='/images/docs/colors-presentation.svg' alt='Color codes' />
       <p>
         Not all colors have the same importance, however. The image below
         includes a visual estimation of how they are used proportionally to
         eachother depending on their background.
       </p>
       <img
-        src='/images/colors-representation.svg'
+        src='/images/docs/colors-representation.svg'
         alt='How colors are distributed'
       />
       <p>
@@ -292,7 +292,55 @@ const Template: Story = () => (
     </article>
     <article className='prose mt-8'>
       <h2>Patterns</h2>
-      <p>Work in progress...</p>
+      <p>
+        Patterns are discrete visual reminders of Stadpuls&apos;s visual
+        identity. They include a simple dot, which is an analogy to the electric{" "}
+        <em>breadboard</em>. They are used as backgrounds, exist in light and
+        dark and can be used to bring rythm to compositions.
+      </p>
+      <figure>
+        <img
+          src='/images/docs/pattern-explanation.svg'
+          alt='How patterns work'
+        />
+        <figcaption>
+          Patterns are an analogy to electric <em>breadboards</em>
+        </figcaption>
+      </figure>
+      <div className='grid grid-cols-2 gap-8'>
+        <div className='h-40 rounded bg-black-dot-pattern' />
+        <div className='h-40 rounded bg-white-dot-pattern' />
+      </div>
+    </article>
+    <article className='prose mt-8'>
+      <h2>Images</h2>
+      <p>
+        Images are able to vehiculate more that graphical elements or text will
+        ever be able to. Stadpuls&apos;s visual identity uses images to blance
+        technological look and feel (source of coldness) and human touch (source
+        of warmth). To achieve a playful, experimental, and forward appeal,
+        graphic elements and images are combined – sometimes more intensely,
+        sometimes less.
+      </p>
+      <figure>
+        <img
+          src='/images/docs/images-graphics-combinations.png'
+          alt='How images and graphics are combined'
+        />
+        <figcaption>
+          Decorative/Moody combination of images and graphics
+        </figcaption>
+      </figure>
+      <h3>Subjects in images vs. the role of graphics</h3>
+      <p>
+        The subject of images should preferably include people and city
+        landscapes and avoid focusing solely on sensors or technology. Graphic
+        elements have the role of rather conveying future oriented thinking,
+        technological innovation. Images, on the other side, communicate a
+        feeling of community, fun, experimentation, and civic engagement. Both
+        graphics and images should be combined to achieve a look and feel
+        aligned with Stadpuls&apos;s values and purpose.
+      </p>
     </article>
   </div>
 );
