@@ -272,7 +272,7 @@ const Template: Story = () => (
         <strong>Gray</strong>. For error fields we use{" "}
         <span className='bg-error w-3 h-3 rounded-full inline-block mx-1' />
         <strong>Error red</strong>, and for warnings we use{" "}
-        <span className='bg-orange w-3 h-3 rounded-full inline-block mx-1' />
+        <span className='bg-warning w-3 h-3 rounded-full inline-block mx-1' />
         <strong>Warning orange</strong>.
       </p>
       <img src='/images/docs/colors-presentation.svg' alt='Color codes' />
@@ -316,7 +316,7 @@ const Template: Story = () => (
       <h2>Images</h2>
       <p>
         Images are able to vehiculate more that graphical elements or text will
-        ever be able to. Stadpuls&apos;s visual identity uses images to blance
+        ever be able to. Stadpuls&apos;s visual identity uses images to balance
         technological look and feel (source of coldness) and human touch (source
         of warmth). To achieve a playful, experimental, and forward appeal,
         graphic elements and images are combined – sometimes more intensely,

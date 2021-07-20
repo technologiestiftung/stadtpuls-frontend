@@ -430,7 +430,7 @@ exports[`Storyshots Visual identity/Styleguide Default 1`] = `
       , and for warnings we use
        
       <span
-        className="bg-orange w-3 h-3 rounded-full inline-block mx-1"
+        className="bg-warning w-3 h-3 rounded-full inline-block mx-1"
       />
       <strong>
         Warning orange
@@ -496,7 +496,7 @@ exports[`Storyshots Visual identity/Styleguide Default 1`] = `
       Images
     </h2>
     <p>
-      Images are able to vehiculate more that graphical elements or text will ever be able to. Stadpuls's visual identity uses images to blance technological look and feel (source of coldness) and human touch (source of warmth). To achieve a playful, experimental, and forward appeal, graphic elements and images are combined – sometimes more intensely, sometimes less.
+      Images are able to vehiculate more that graphical elements or text will ever be able to. Stadpuls's visual identity uses images to balance technological look and feel (source of coldness) and human touch (source of warmth). To achieve a playful, experimental, and forward appeal, graphic elements and images are combined – sometimes more intensely, sometimes less.
     </p>
     <figure>
       <img
