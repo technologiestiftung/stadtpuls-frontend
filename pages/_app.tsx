@@ -4,7 +4,7 @@ import { ThemeProvider } from "theme-ui";
 
 import { Header } from "@components/Header";
 import { Footer } from "@components/Footer";
-import { CookieBanner } from "@components/CookieBanner";
+import { useMatomo } from "@lib/hooks/useMatomo";
 
 import { AuthProvider } from "@auth/Auth";
 
@@ -13,13 +13,14 @@ import "../src/style/global.css";
 import { Head } from "@components/Head";
 
 if (process.env.NODE_ENV !== "production") {
-  // require("../src/mocks/index");
+  require("../src/mocks/index");
 }
 
 const App: FC<{
   Component: FC;
   pageProps: Record<string, unknown>;
 }> = ({ Component, pageProps }) => {
+  useMatomo();
   const { pathname } = useRouter();
 
   useEffect(() => {
@@ -43,7 +44,6 @@ const App: FC<{
             <Component {...pageProps} />
           </main>
           <Footer />
-          <CookieBanner />
         </AuthProvider>
       </ThemeProvider>
     </StrictMode>
