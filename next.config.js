@@ -29,7 +29,7 @@ module.exports = withMdxEnhanced({
               `frame-ancestors 'none'`,
               `worker-src 'self' blob:`,
               `child-src 'self' blob:`,
-              `connect-src 'self' ${process.env.NEXT_PUBLIC_TOKEN_API_URL} ${process.env.NEXT_PUBLIC_SUPABASE_URL} https://api.github.com https://api.mapbox.com https://events.mapbox.com`,
+              `connect-src 'self' ${process.env.NEXT_PUBLIC_TOKEN_API_URL} ${process.env.NEXT_PUBLIC_SUPABASE_URL}  ${process.env.NEXT_PUBLIC_MATOMO_URL} https://api.github.com https://api.mapbox.com https://events.mapbox.com`,
             ].join("; "),
           },
         ],
