@@ -7,7 +7,7 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Default 1`] = `
   Here is a heading that needs some explaining
    
   <button
-    aria-describedby="id-c4c061"
+    aria-describedby="id-cvp0jk"
     onBlur={[Function]}
     onClickCapture={[Function]}
     onFocus={[Function]}
@@ -31,7 +31,7 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Default 1`] = `
   </button>
   <div
     hidden={true}
-    id="id-c4c061"
+    id="id-cvp0jk"
     onAnimationEnd={[Function]}
     onTransitionEnd={[Function]}
     role="tooltip"
@@ -90,7 +90,7 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Long Content 1`] = `
   Here is a heading that needs some explaining
    
   <button
-    aria-describedby="id-fco5qf"
+    aria-describedby="id-g0qktj"
     onBlur={[Function]}
     onClickCapture={[Function]}
     onFocus={[Function]}
@@ -114,7 +114,7 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Long Content 1`] = `
   </button>
   <div
     hidden={true}
-    id="id-fco5qf"
+    id="id-g0qktj"
     onAnimationEnd={[Function]}
     onTransitionEnd={[Function]}
     role="tooltip"
