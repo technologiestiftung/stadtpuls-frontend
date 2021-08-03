@@ -95,7 +95,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
         }
         showTooltip({
           tooltipData: d,
-          tooltipLeft: x,
+          tooltipLeft: xScale(getX(d)) + padding.left,
           tooltipTop: yScale(getY(d)),
         });
       },
