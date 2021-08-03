@@ -16,11 +16,15 @@ const Template: Story<QuestionMarkTooltipType> = args => (
 
 export const Default = Template.bind({});
 Default.args = {
+  id: "one",
+  title: "title one",
   content: "I am a tooltip, I explain things",
 };
 
 export const LongContent = Template.bind({});
 LongContent.args = {
+  id: "two",
+  title: "title two",
   content: (
     <div>
       <p>Hi there.</p>

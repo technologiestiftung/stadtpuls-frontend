@@ -8,11 +8,19 @@ export const SensorsListHeaderRow: FC = () => {
       <Tr className='border-b border-gray-200 mb-4'>
         <Th p='sm:py-3 sm:pr-3 sm:pl-0'>
           Device-ID{" "}
-          <QuestionMarkTooltip content='Nutze hier die exakte Device-ID aus Deiner TTN-Konsole. Die ID ist für andere Stadtpuls-Nutzer:innen nicht sichtbar.' />
+          <QuestionMarkTooltip
+            id='device-id'
+            title='Device-ID'
+            content='Nutze hier die exakte Device-ID aus Deiner TTN-Konsole. Die ID ist für andere Stadtpuls-Nutzer:innen nicht sichtbar.'
+          />
         </Th>
         <Th className='w-full'>
           Anzeigename{" "}
-          <QuestionMarkTooltip content='Der Anzeigename kann frei gewählt werden und ist auch für andere Stadtpuls-Nutzer:innen öffentlich sichtbar. Werde kreativ!' />
+          <QuestionMarkTooltip
+            id='anzeigename'
+            title='Anzeigename'
+            content='Der Anzeigename kann frei gewählt werden und ist auch für andere Stadtpuls-Nutzer:innen öffentlich sichtbar. Werde kreativ!'
+          />
         </Th>
         <Th>Letztes Signal</Th>
         <Th />
