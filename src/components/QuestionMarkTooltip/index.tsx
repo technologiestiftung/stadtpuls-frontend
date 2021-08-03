@@ -1,6 +1,7 @@
 import classNames from "classnames";
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useEffect, useState } from "react";
 import styles from "./QuestionMarkTooltip.module.css";
+import { useWindowSize } from "@lib/hooks/useWindowSize";
 
 export interface QuestionMarkTooltipType {
   id: string;
@@ -13,9 +14,34 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
   title,
   content,
 }) => {
+  const { width: windowWidth } = useWindowSize();
+  const [questionMarkXCoord, setQuestionMarkXCoord] = useState<
+    number | undefined
+  >(undefined);
+  const [tooltipMightOverflowScreen, setTooltipMightOverflowScreen] = useState(
+    false
+  );
+
+  useEffect(() => {
+    const questionMarkPosition = document
+      .querySelector(`#${id}-tooltip`)
+      ?.getBoundingClientRect();
+
+    if (!windowWidth || !questionMarkPosition) return;
+
+    setQuestionMarkXCoord(questionMarkPosition.left);
+
+    if (questionMarkPosition.left + 224 > windowWidth) {
+      setTooltipMightOverflowScreen(true);
+    } else {
+      setTooltipMightOverflowScreen(false);
+    }
+  }, [windowWidth, id]);
+
   return (
     <p className='inline-block transform -translate-y-0.5'>
       <button
+        id={`${id}-tooltip`}
         aria-describedby={`${id}-tooltip`}
         className={classNames(
           "rounded-full",
@@ -34,15 +60,31 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
         id={`${id}-tooltip`}
         className={classNames(
           `${styles.tooltipToggle}`,
-          "absolute top-9 -left-2",
-          "max-w-[224px] w-max h-auto p-4",
+          `${
+            tooltipMightOverflowScreen
+              ? questionMarkXCoord && questionMarkXCoord < 224
+                ? "left-[-104px]"
+                : "-right-2"
+              : "-left-2"
+          }`,
+          "absolute top-9",
+          "w-[224px] h-auto p-4",
           "bg-gray-900 text-white",
           "text-xs whitespace-normal"
         )}
       >
         <span
           aria-hidden
-          className='absolute w-0 h-0 -top-2 left-2'
+          className={classNames(
+            "absolute w-0 h-0 -top-2",
+            `${
+              tooltipMightOverflowScreen
+                ? questionMarkXCoord && questionMarkXCoord < 224
+                  ? "left-1/2 transform -translate-x-2"
+                  : "right-2"
+                : "left-2"
+            }`
+          )}
           style={{
             borderLeft: "solid transparent 8px",
             borderRight: "solid transparent 8px",
