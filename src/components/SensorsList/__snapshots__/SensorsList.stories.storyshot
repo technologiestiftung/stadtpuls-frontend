@@ -31,8 +31,14 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
             >
               <button
                 aria-describedby="device-id-tooltip"
-                className="rounded-full w-4 h-4 text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
+                className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
                 id="device-id-tooltip"
+                style={
+                  Object {
+                    "height": "16px",
+                    "width": "16px",
+                  }
+                }
               >
                 <span
                   aria-hidden={true}
@@ -47,9 +53,14 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
                 </span>
               </button>
               <span
-                className="undefined -left-2 absolute top-9 w-[224px] h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
+                className="undefined -left-2 absolute top-9 h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
                 id="device-id-tooltip"
                 role="tooltip"
+                style={
+                  Object {
+                    "width": "224px",
+                  }
+                }
               >
                 <span
                   aria-hidden={true}
@@ -76,8 +87,14 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
             >
               <button
                 aria-describedby="anzeigename-tooltip"
-                className="rounded-full w-4 h-4 text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
+                className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
                 id="anzeigename-tooltip"
+                style={
+                  Object {
+                    "height": "16px",
+                    "width": "16px",
+                  }
+                }
               >
                 <span
                   aria-hidden={true}
@@ -92,9 +109,14 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
                 </span>
               </button>
               <span
-                className="undefined -left-2 absolute top-9 w-[224px] h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
+                className="undefined -left-2 absolute top-9 h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
                 id="anzeigename-tooltip"
                 role="tooltip"
+                style={
+                  Object {
+                    "width": "224px",
+                  }
+                }
               >
                 <span
                   aria-hidden={true}
@@ -452,8 +474,14 @@ exports[`Storyshots Layout/SensorsList Empty 1`] = `
             >
               <button
                 aria-describedby="device-id-tooltip"
-                className="rounded-full w-4 h-4 text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
+                className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
                 id="device-id-tooltip"
+                style={
+                  Object {
+                    "height": "16px",
+                    "width": "16px",
+                  }
+                }
               >
                 <span
                   aria-hidden={true}
@@ -468,9 +496,14 @@ exports[`Storyshots Layout/SensorsList Empty 1`] = `
                 </span>
               </button>
               <span
-                className="undefined -left-2 absolute top-9 w-[224px] h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
+                className="undefined -left-2 absolute top-9 h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
                 id="device-id-tooltip"
                 role="tooltip"
+                style={
+                  Object {
+                    "width": "224px",
+                  }
+                }
               >
                 <span
                   aria-hidden={true}
@@ -497,8 +530,14 @@ exports[`Storyshots Layout/SensorsList Empty 1`] = `
             >
               <button
                 aria-describedby="anzeigename-tooltip"
-                className="rounded-full w-4 h-4 text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
+                className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
                 id="anzeigename-tooltip"
+                style={
+                  Object {
+                    "height": "16px",
+                    "width": "16px",
+                  }
+                }
               >
                 <span
                   aria-hidden={true}
@@ -513,9 +552,14 @@ exports[`Storyshots Layout/SensorsList Empty 1`] = `
                 </span>
               </button>
               <span
-                className="undefined -left-2 absolute top-9 w-[224px] h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
+                className="undefined -left-2 absolute top-9 h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
                 id="anzeigename-tooltip"
                 role="tooltip"
+                style={
+                  Object {
+                    "width": "224px",
+                  }
+                }
               >
                 <span
                   aria-hidden={true}

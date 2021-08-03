@@ -11,8 +11,14 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Default 1`] = `
   >
     <button
       aria-describedby="one-tooltip"
-      className="rounded-full w-4 h-4 text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
+      className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
       id="one-tooltip"
+      style={
+        Object {
+          "height": "16px",
+          "width": "16px",
+        }
+      }
     >
       <span
         aria-hidden={true}
@@ -27,9 +33,14 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Default 1`] = `
       </span>
     </button>
     <span
-      className="undefined -left-2 absolute top-9 w-[224px] h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
+      className="undefined -left-2 absolute top-9 h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
       id="one-tooltip"
       role="tooltip"
+      style={
+        Object {
+          "width": "224px",
+        }
+      }
     >
       <span
         aria-hidden={true}
@@ -59,8 +70,14 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Long Content 1`] = `
   >
     <button
       aria-describedby="two-tooltip"
-      className="rounded-full w-4 h-4 text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
+      className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
       id="two-tooltip"
+      style={
+        Object {
+          "height": "16px",
+          "width": "16px",
+        }
+      }
     >
       <span
         aria-hidden={true}
@@ -75,9 +92,14 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Long Content 1`] = `
       </span>
     </button>
     <span
-      className="undefined -left-2 absolute top-9 w-[224px] h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
+      className="undefined -left-2 absolute top-9 h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
       id="two-tooltip"
       role="tooltip"
+      style={
+        Object {
+          "width": "224px",
+        }
+      }
     >
       <span
         aria-hidden={true}

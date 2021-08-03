@@ -9,6 +9,9 @@ export interface QuestionMarkTooltipType {
   content: ReactNode;
 }
 
+const TOOLTIP_WIDTH = 224;
+const QUESTION_MARK_WIDTH = 16;
+
 export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
   id,
   title,
@@ -22,6 +25,18 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
     false
   );
 
+  const tooltipPositionClass = {
+    start: "-left-2",
+    end: "-right-2",
+    center: `left-[-${TOOLTIP_WIDTH / 2 - QUESTION_MARK_WIDTH / 2}px]`,
+  };
+
+  const trianglePositionClass = {
+    start: "left-2",
+    end: "right-2",
+    center: "left-1/2 transform -translate-x-2",
+  };
+
   useEffect(() => {
     const questionMarkPosition = document
       .querySelector(`#${id}-tooltip`)
@@ -31,7 +46,7 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
 
     setQuestionMarkXCoord(questionMarkPosition.left);
 
-    if (questionMarkPosition.left + 224 > windowWidth) {
+    if (questionMarkPosition.left + TOOLTIP_WIDTH > windowWidth) {
       setTooltipMightOverflowScreen(true);
     } else {
       setTooltipMightOverflowScreen(false);
@@ -43,9 +58,12 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
       <button
         id={`${id}-tooltip`}
         aria-describedby={`${id}-tooltip`}
+        style={{
+          width: `${QUESTION_MARK_WIDTH}px`,
+          height: `${QUESTION_MARK_WIDTH}px`,
+        }}
         className={classNames(
           "rounded-full",
-          "w-4 h-4",
           "text-[10px]",
           "bg-gray-50 text-gray-600",
           "border border-gray-500",
@@ -62,16 +80,19 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
           `${styles.tooltipToggle}`,
           `${
             tooltipMightOverflowScreen
-              ? questionMarkXCoord && questionMarkXCoord < 224
-                ? "left-[-104px]"
-                : "-right-2"
-              : "-left-2"
+              ? questionMarkXCoord && questionMarkXCoord < TOOLTIP_WIDTH
+                ? tooltipPositionClass.center
+                : tooltipPositionClass.end
+              : tooltipPositionClass.start
           }`,
           "absolute top-9",
-          "w-[224px] h-auto p-4",
+          "h-auto p-4",
           "bg-gray-900 text-white",
           "text-xs whitespace-normal"
         )}
+        style={{
+          width: `${TOOLTIP_WIDTH}px`,
+        }}
       >
         <span
           aria-hidden
@@ -79,10 +100,10 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
             "absolute w-0 h-0 -top-2",
             `${
               tooltipMightOverflowScreen
-                ? questionMarkXCoord && questionMarkXCoord < 224
-                  ? "left-1/2 transform -translate-x-2"
-                  : "right-2"
-                : "left-2"
+                ? questionMarkXCoord && questionMarkXCoord < TOOLTIP_WIDTH
+                  ? trianglePositionClass.center
+                  : trianglePositionClass.end
+                : trianglePositionClass.start
             }`
           )}
           style={{
