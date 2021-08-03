@@ -27,19 +27,28 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
         )}
       >
         <span aria-hidden>?</span>
-        <span className='sr-only'>{title}</span>
+        <span className='sr-only'>{title} Erklärung</span>
       </button>
       <span
         role='tooltip'
         id={`${id}-tooltip`}
         className={classNames(
           `${styles.tooltipToggle}`,
-          "absolute top-7 left-2",
+          "absolute top-9 -left-2",
           "max-w-[224px] w-max h-auto p-4",
           "bg-gray-900 text-white",
           "text-xs whitespace-normal"
         )}
       >
+        <span
+          aria-hidden
+          className='absolute w-0 h-0 -top-2 left-2'
+          style={{
+            borderLeft: "solid transparent 8px",
+            borderRight: "solid transparent 8px",
+            borderBottom: "solid rgb(30, 26, 90) 8px",
+          }}
+        ></span>
         {content}
       </span>
     </p>

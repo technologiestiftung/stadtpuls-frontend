@@ -22,13 +22,25 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Default 1`] = `
         className="sr-only"
       >
         title one
+         Erklärung
       </span>
     </button>
     <span
-      className="undefined absolute top-7 left-2 max-w-[224px] w-max h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
+      className="undefined absolute top-9 -left-2 max-w-[224px] w-max h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
       id="one-tooltip"
       role="tooltip"
     >
+      <span
+        aria-hidden={true}
+        className="absolute w-0 h-0 -top-2 left-2"
+        style={
+          Object {
+            "borderBottom": "solid rgb(30, 26, 90) 8px",
+            "borderLeft": "solid transparent 8px",
+            "borderRight": "solid transparent 8px",
+          }
+        }
+      />
       I am a tooltip, I explain things
     </span>
   </p>
@@ -57,13 +69,25 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Long Content 1`] = `
         className="sr-only"
       >
         title two
+         Erklärung
       </span>
     </button>
     <span
-      className="undefined absolute top-7 left-2 max-w-[224px] w-max h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
+      className="undefined absolute top-9 -left-2 max-w-[224px] w-max h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
       id="two-tooltip"
       role="tooltip"
     >
+      <span
+        aria-hidden={true}
+        className="absolute w-0 h-0 -top-2 left-2"
+        style={
+          Object {
+            "borderBottom": "solid rgb(30, 26, 90) 8px",
+            "borderLeft": "solid transparent 8px",
+            "borderRight": "solid transparent 8px",
+          }
+        }
+      />
       <div>
         <p>
           Hi there.
