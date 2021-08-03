@@ -9,37 +9,21 @@ import colors from "../../style/colors";
 const getX = (d: DateValueType): Date => new Date(d.date);
 const getY = (d: DateValueType): number => d.value;
 
-const startDate = new Date();
-const defaultArr = [
-  {
-    date: startDate.toISOString(),
-    value: 0,
-  },
-  {
-    date: new Date(startDate.getDate() + 1).toISOString(),
-    value: 0,
-  },
-];
-
-const normalizeData = (data: DateValueType[]): DateValueType[] =>
-  data.length <= 1 ? defaultArr : data;
-
 export const LinePath: FC<LineGraphType> = ({ width, height, data }) => {
-  const normalizedData = normalizeData(data);
   const xScale = scaleUtc<number>({
-    domain: extent(normalizedData, getX) as [Date, Date],
+    domain: extent(data, getX) as [Date, Date],
     range: [0, width],
   });
 
   const yScale = scaleLinear<number>({
-    domain: [0, (max(normalizedData, getY) as number) * 1.2],
+    domain: [0, (max(data, getY) as number) * 1.2],
     range: [height, 0],
   });
 
   return (
     <Path<DateValueType>
       curve={curveLinear}
-      data={normalizedData}
+      data={data}
       x={d => xScale(getX(d))}
       y={d => yScale(getY(d))}
       stroke={colors.purple}
