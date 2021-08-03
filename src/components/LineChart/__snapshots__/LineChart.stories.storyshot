@@ -27,7 +27,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
       >
         <g
           className="visx-group visx-rows"
-          transform="translate(64, 32)"
+          transform="translate(64, 0)"
         >
           <line
             className="visx-line"
@@ -37,8 +37,8 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={188}
-            y2={188}
+            y1={220}
+            y2={220}
           />
           <line
             className="visx-line"
@@ -48,8 +48,8 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={143.23809523809524}
-            y2={143.23809523809524}
+            y1={167.61904761904762}
+            y2={167.61904761904762}
           />
           <line
             className="visx-line"
@@ -59,8 +59,8 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={98.47619047619048}
-            y2={98.47619047619048}
+            y1={115.23809523809524}
+            y2={115.23809523809524}
           />
           <line
             className="visx-line"
@@ -70,8 +70,8 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={53.71428571428571}
-            y2={53.71428571428571}
+            y1={62.857142857142854}
+            y2={62.857142857142854}
           />
           <line
             className="visx-line"
@@ -81,8 +81,8 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={8.952380952380963}
-            y2={8.952380952380963}
+            y1={10.476190476190489}
+            y2={10.476190476190489}
           />
         </g>
         <g
@@ -328,7 +328,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
         </g>
         <g
           className="visx-group visx-axis visx-axis-left"
-          transform="translate(64, 32)"
+          transform="translate(64, 0)"
         >
           <g
             className="visx-group visx-axis-tick"
@@ -350,7 +350,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={188}
+                y={220}
               >
                 <tspan
                   dy="0em"
@@ -381,7 +381,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={143.23809523809524}
+                y={167.61904761904762}
               >
                 <tspan
                   dy="0em"
@@ -412,7 +412,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={98.47619047619048}
+                y={115.23809523809524}
               >
                 <tspan
                   dy="0em"
@@ -443,7 +443,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={53.71428571428571}
+                y={62.857142857142854}
               >
                 <tspan
                   dy="0em"
@@ -474,7 +474,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={8.952380952380963}
+                y={10.476190476190489}
               >
                 <tspan
                   dy="0em"
@@ -501,12 +501,12 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
               fontSize={10}
               textAnchor="middle"
               transform="rotate(-90)"
-              x={-94}
+              x={-110}
               y={-32}
             >
               <tspan
                 dy="0em"
-                x={-94}
+                x={-110}
               >
                 %
               </tspan>
@@ -515,11 +515,11 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
         </g>
         <g
           className="visx-group"
-          transform="translate(64, 32)"
+          transform="translate(64, 0)"
         >
           <path
             className="visx-linepath"
-            d="M0,31.333333333333325L100.80000000000001,64.9047619047619L201.60000000000002,51.47619047619048L302.4,82.80952380952381L403.20000000000005,35.80952380952381L504,73.85714285714286"
+            d="M0,36.66666666666666L100.80000000000001,75.95238095238095L201.60000000000002,60.23809523809524L302.4,96.9047619047619L403.20000000000005,41.904761904761905L504,86.42857142857144"
             fill="transparent"
             shapeRendering="geometricPrecision"
             stroke="#8330FF"
@@ -531,7 +531,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
         <rect
           className="visx-bar"
           fill="transparent"
-          height={188}
+          height={220}
           onMouseLeave={[Function]}
           onMouseMove={[Function]}
           onTouchMove={[Function]}
@@ -539,7 +539,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
           rx={14}
           width={504}
           x={64}
-          y={32}
+          y={0}
         />
       </svg>
     </div>
@@ -574,7 +574,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
       >
         <g
           className="visx-group visx-rows"
-          transform="translate(64, 32)"
+          transform="translate(64, 0)"
         >
           <line
             className="visx-line"
@@ -584,8 +584,8 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={188}
-            y2={188}
+            y1={220}
+            y2={220}
           />
           <line
             className="visx-line"
@@ -595,8 +595,8 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={156.72920825016635}
-            y2={156.72920825016635}
+            y1={183.40652029274784}
+            y2={183.40652029274784}
           />
           <line
             className="visx-line"
@@ -606,8 +606,8 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={125.45841650033266}
-            y2={125.45841650033266}
+            y1={146.81304058549568}
+            y2={146.81304058549568}
           />
           <line
             className="visx-line"
@@ -617,8 +617,8 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={94.18762475049898}
-            y2={94.18762475049898}
+            y1={110.2195608782435}
+            y2={110.2195608782435}
           />
           <line
             className="visx-line"
@@ -628,8 +628,8 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={62.91683300066533}
-            y2={62.91683300066533}
+            y1={73.62608117099134}
+            y2={73.62608117099134}
           />
           <line
             className="visx-line"
@@ -639,8 +639,8 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={31.64604125083165}
-            y2={31.64604125083165}
+            y1={37.03260146373916}
+            y2={37.03260146373916}
           />
           <line
             className="visx-line"
@@ -650,8 +650,8 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={0.37524950099799304}
-            y2={0.37524950099799304}
+            y1={0.4391217564870131}
+            y2={0.4391217564870131}
           />
         </g>
         <g
@@ -897,7 +897,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
         </g>
         <g
           className="visx-group visx-axis visx-axis-left"
-          transform="translate(64, 32)"
+          transform="translate(64, 0)"
         >
           <g
             className="visx-group visx-axis-tick"
@@ -919,7 +919,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={188}
+                y={220}
               >
                 <tspan
                   dy="0em"
@@ -950,7 +950,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={156.72920825016635}
+                y={183.40652029274784}
               >
                 <tspan
                   dy="0em"
@@ -981,7 +981,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={125.45841650033266}
+                y={146.81304058549568}
               >
                 <tspan
                   dy="0em"
@@ -1012,7 +1012,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={94.18762475049898}
+                y={110.2195608782435}
               >
                 <tspan
                   dy="0em"
@@ -1043,7 +1043,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={62.91683300066533}
+                y={73.62608117099134}
               >
                 <tspan
                   dy="0em"
@@ -1074,7 +1074,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={31.64604125083165}
+                y={37.03260146373916}
               >
                 <tspan
                   dy="0em"
@@ -1105,7 +1105,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={0.37524950099799304}
+                y={0.4391217564870131}
               >
                 <tspan
                   dy="0em"
@@ -1132,12 +1132,12 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
               fontSize={10}
               textAnchor="middle"
               transform="rotate(-90)"
-              x={-94}
+              x={-110}
               y={-32}
             >
               <tspan
                 dy="0em"
-                x={-94}
+                x={-110}
               >
                 Anzahl an Personen
               </tspan>
@@ -1146,11 +1146,11 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
         </g>
         <g
           className="visx-group"
-          transform="translate(64, 32)"
+          transform="translate(64, 0)"
         >
           <path
             className="visx-linepath"
-            d="M0,180.33865602129075L95.45454545454545,158.44910179640718L190.9090909090909,64.48037258815701L313.09090909090907,172.36460412508316L408.5454545454545,31.333333333333307L504,140.1556886227545"
+            d="M0,211.0345974717232L95.45454545454545,185.4191616766467L190.9090909090909,75.45575515635394L313.09090909090907,201.70326014637394L408.5454545454545,36.666666666666636L504,164.0119760479042"
             fill="transparent"
             shapeRendering="geometricPrecision"
             stroke="#8330FF"
@@ -1162,7 +1162,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
         <rect
           className="visx-bar"
           fill="transparent"
-          height={188}
+          height={220}
           onMouseLeave={[Function]}
           onMouseMove={[Function]}
           onTouchMove={[Function]}
@@ -1170,7 +1170,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
           rx={14}
           width={504}
           x={64}
-          y={32}
+          y={0}
         />
       </svg>
     </div>
@@ -1205,7 +1205,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
       >
         <g
           className="visx-group visx-rows"
-          transform="translate(64, 32)"
+          transform="translate(64, 0)"
         >
           <line
             className="visx-line"
@@ -1215,8 +1215,8 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={188}
-            y2={188}
+            y1={220}
+            y2={220}
           />
           <line
             className="visx-line"
@@ -1226,8 +1226,8 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={153.33923303834808}
-            y2={153.33923303834808}
+            y1={179.43952802359883}
+            y2={179.43952802359883}
           />
           <line
             className="visx-line"
@@ -1237,8 +1237,8 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={118.67846607669617}
-            y2={118.67846607669617}
+            y1={138.87905604719765}
+            y2={138.87905604719765}
           />
           <line
             className="visx-line"
@@ -1248,8 +1248,8 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={84.01769911504425}
-            y2={84.01769911504425}
+            y1={98.31858407079646}
+            y2={98.31858407079646}
           />
           <line
             className="visx-line"
@@ -1259,8 +1259,8 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={49.356932153392336}
-            y2={49.356932153392336}
+            y1={57.75811209439529}
+            y2={57.75811209439529}
           />
           <line
             className="visx-line"
@@ -1270,8 +1270,8 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={14.696165191740421}
-            y2={14.696165191740421}
+            y1={17.197640117994112}
+            y2={17.197640117994112}
           />
         </g>
         <g
@@ -1517,7 +1517,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
         </g>
         <g
           className="visx-group visx-axis visx-axis-left"
-          transform="translate(64, 32)"
+          transform="translate(64, 0)"
         >
           <g
             className="visx-group visx-axis-tick"
@@ -1539,7 +1539,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={188}
+                y={220}
               >
                 <tspan
                   dy="0em"
@@ -1570,7 +1570,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={153.33923303834808}
+                y={179.43952802359883}
               >
                 <tspan
                   dy="0em"
@@ -1601,7 +1601,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={118.67846607669617}
+                y={138.87905604719765}
               >
                 <tspan
                   dy="0em"
@@ -1632,7 +1632,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={84.01769911504425}
+                y={98.31858407079646}
               >
                 <tspan
                   dy="0em"
@@ -1663,7 +1663,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={49.356932153392336}
+                y={57.75811209439529}
               >
                 <tspan
                   dy="0em"
@@ -1694,7 +1694,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={14.696165191740421}
+                y={17.197640117994112}
               >
                 <tspan
                   dy="0em"
@@ -1721,12 +1721,12 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
               fontSize={10}
               textAnchor="middle"
               transform="rotate(-90)"
-              x={-94}
+              x={-110}
               y={-32}
             >
               <tspan
                 dy="0em"
-                x={-94}
+                x={-110}
               >
                 °C
               </tspan>
@@ -1735,11 +1735,11 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
         </g>
         <g
           className="visx-group"
-          transform="translate(64, 32)"
+          transform="translate(64, 0)"
         >
           <path
             className="visx-linepath"
-            d="M0,91.64306784660766L136.9871389132045,46.58407079646019L278.8272843579557,59.06194690265485L394.6461517742913,43.11799410029499L504,31.333333333333325"
+            d="M0,107.24188790560471L136.9871389132045,54.513274336283196L278.8272843579557,69.1150442477876L394.6461517742913,50.45722713864308L504,36.66666666666666"
             fill="transparent"
             shapeRendering="geometricPrecision"
             stroke="#8330FF"
@@ -1751,7 +1751,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
         <rect
           className="visx-bar"
           fill="transparent"
-          height={188}
+          height={220}
           onMouseLeave={[Function]}
           onMouseMove={[Function]}
           onTouchMove={[Function]}
@@ -1759,7 +1759,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
           rx={14}
           width={504}
           x={64}
-          y={32}
+          y={0}
         />
       </svg>
     </div>
@@ -1794,7 +1794,7 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
       >
         <g
           className="visx-group visx-rows"
-          transform="translate(64, 32)"
+          transform="translate(64, 0)"
         >
           <line
             className="visx-line"
@@ -1804,8 +1804,8 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={188}
-            y2={188}
+            y1={220}
+            y2={220}
           />
           <line
             className="visx-line"
@@ -1815,8 +1815,8 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={143.23809523809524}
-            y2={143.23809523809524}
+            y1={167.61904761904762}
+            y2={167.61904761904762}
           />
           <line
             className="visx-line"
@@ -1826,8 +1826,8 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={98.47619047619048}
-            y2={98.47619047619048}
+            y1={115.23809523809524}
+            y2={115.23809523809524}
           />
           <line
             className="visx-line"
@@ -1837,8 +1837,8 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={53.71428571428571}
-            y2={53.71428571428571}
+            y1={62.857142857142854}
+            y2={62.857142857142854}
           />
           <line
             className="visx-line"
@@ -1848,8 +1848,8 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
             strokeWidth={1}
             x1={0}
             x2={504}
-            y1={8.952380952380963}
-            y2={8.952380952380963}
+            y1={10.476190476190489}
+            y2={10.476190476190489}
           />
         </g>
         <g
@@ -2070,7 +2070,7 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
         </g>
         <g
           className="visx-group visx-axis visx-axis-left"
-          transform="translate(64, 32)"
+          transform="translate(64, 0)"
         >
           <g
             className="visx-group visx-axis-tick"
@@ -2092,7 +2092,7 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={188}
+                y={220}
               >
                 <tspan
                   dy="0em"
@@ -2123,7 +2123,7 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={143.23809523809524}
+                y={167.61904761904762}
               >
                 <tspan
                   dy="0em"
@@ -2154,7 +2154,7 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={98.47619047619048}
+                y={115.23809523809524}
               >
                 <tspan
                   dy="0em"
@@ -2185,7 +2185,7 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={53.71428571428571}
+                y={62.857142857142854}
               >
                 <tspan
                   dy="0em"
@@ -2216,7 +2216,7 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
                 textAnchor="end"
                 transform=""
                 x={-8}
-                y={8.952380952380963}
+                y={10.476190476190489}
               >
                 <tspan
                   dy="0em"
@@ -2231,11 +2231,11 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
         </g>
         <g
           className="visx-group"
-          transform="translate(64, 32)"
+          transform="translate(64, 0)"
         >
           <path
             className="visx-linepath"
-            d="M0,31.333333333333325L100.80000000000001,64.9047619047619L201.60000000000002,51.47619047619048L302.4,82.80952380952381L403.20000000000005,35.80952380952381L504,73.85714285714286"
+            d="M0,36.66666666666666L100.80000000000001,75.95238095238095L201.60000000000002,60.23809523809524L302.4,96.9047619047619L403.20000000000005,41.904761904761905L504,86.42857142857144"
             fill="transparent"
             shapeRendering="geometricPrecision"
             stroke="#8330FF"
@@ -2247,7 +2247,7 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
         <rect
           className="visx-bar"
           fill="transparent"
-          height={188}
+          height={220}
           onMouseLeave={[Function]}
           onMouseMove={[Function]}
           onTouchMove={[Function]}
@@ -2255,7 +2255,7 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
           rx={14}
           width={504}
           x={64}
-          y={32}
+          y={0}
         />
       </svg>
     </div>

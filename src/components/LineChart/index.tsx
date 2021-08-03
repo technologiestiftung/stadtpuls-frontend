@@ -29,6 +29,13 @@ const tooltipStyles = {
 
 delete tooltipStyles.boxShadow;
 
+const padding = {
+  left: 64,
+  right: 32,
+  top: 0,
+  bottom: 80,
+};
+
 export const LineChart = withTooltip<LineGraphType, DateValueType>(
   ({
     data,
@@ -43,13 +50,6 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
     tooltipLeft = 0,
   }: LineGraphType & WithTooltipProvidedProps<DateValueType>) => {
     if (width < 10) return null;
-
-    const padding = {
-      left: 64,
-      right: 32,
-      top: 32,
-      bottom: 80,
-    };
 
     const graphWidth: number = width - padding.left - padding.right;
     const graphHeight: number = height - padding.top - padding.bottom;
@@ -96,10 +96,10 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
         showTooltip({
           tooltipData: d,
           tooltipLeft: xScale(getX(d)) + padding.left,
-          tooltipTop: yScale(getY(d)),
+          tooltipTop: yScale(getY(d)) + padding.top,
         });
       },
-      [showTooltip, yScale, xScale, data, padding.left]
+      [xScale, data, showTooltip, yScale]
     );
 
     return (
@@ -160,7 +160,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               <Line
                 className='stroke-current text-gray-400'
                 from={{ x: tooltipLeft, y: 0 }}
-                to={{ x: tooltipLeft, y: graphHeight + 24 }}
+                to={{ x: tooltipLeft, y: graphHeight }}
                 strokeWidth={1}
                 pointerEvents='none'
               />
@@ -205,7 +205,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
           <div>
             <TooltipWithBounds
               key={Math.random()}
-              top={tooltipTop + 10}
+              top={tooltipTop - 40}
               left={tooltipLeft}
               style={tooltipStyles}
               className='bg-blue'
@@ -213,9 +213,10 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               {`${getY(tooltipData)} ${yAxisUnit ? yAxisUnit : ""}`}
             </TooltipWithBounds>
             <TooltipWithBounds
-              top={graphHeight + 28}
+              top={graphHeight}
               left={tooltipLeft}
-              offsetLeft={10}
+              offsetLeft={0}
+              offsetTop={5}
               style={{
                 position: "absolute",
                 fontSize: "10px",
