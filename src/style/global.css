@@ -66,39 +66,43 @@
   }
 
   @font-face {
-    font-family: "SpaceGrotesk";
-    src: url("/fonts/SpaceGrotesk-Regular.woff2") format("woff2"),
-      url("/fonts/SpaceGrotesk-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+      font-family: "SpaceGrotesk";
+      src: url("/fonts/SpaceGrotesk-Light.woff2") format("woff2"),
+        url("/fonts/SpaceGrotesk-Light.woff") format("woff");
+      font-weight: 300;
+      font-style: normal
   }
+
   @font-face {
-    font-family: "SpaceGrotesk";
-    src: url("/fonts/SpaceGrotesk-Italic.woff2") format("woff2"),
-      url("/fonts/SpaceGrotesk-Italic.ttf") format("truetype");
-    font-weight: normal;
-    font-style: italic;
+      font-family: "SpaceGrotesk";
+      src: url("/fonts/SpaceGrotesk-Regular.woff2") format("woff2"),
+        url("/fonts/SpaceGrotesk-Regular.woff") format("woff");
+      font-weight: 400;
+      font-style: normal
   }
+
   @font-face {
-    font-family: "SpaceGrotesk";  
-    src: url("/fonts/SpaceGrotesk-Bold.woff2") format("woff2"),
-      url("/fonts/SpaceGrotesk-Bold.ttf") format("truetype");
-    font-weight: bold;
-    font-style: normal;
+      font-family: "SpaceGrotesk";
+      src: url("/fonts/SpaceGrotesk-Medium.woff2") format("woff2"),
+        url("/fonts/SpaceGrotesk-Medium.woff") format("woff");
+      font-weight: 500;
+      font-style: normal
   }
+
   @font-face {
-    font-family: "SpaceGrotesk";  
-    src: url("/fonts/SpaceGrotesk-BoldItalic.woff2") format("woff2"),
-      url("/fonts/SpaceGrotesk-BoldItalic.ttf") format("truetype");
-    font-weight: bold;
-    font-style: italic;
+      font-family: "SpaceGrotesk";
+      src: url("/fonts/SpaceGrotesk-Bold.woff2") format("woff2"),
+        url("/fonts/SpaceGrotesk-Bold.woff") format("woff");
+      font-weight: 700;
+      font-style: normal
   }
+
   @font-face {
-    font-family: "SpaceGrotesk";  
-    src: url("/fonts/SpaceGrotesk-VariableFont_wght.woff2") format("woff2-variations"),
-      url("/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
-    font-weight: 300 700;
-    font-style: normal;
+      font-family: "SpaceGrotesk";
+      src: url("/fonts/SpaceGrotesk[wght].woff2") format("woff2"),
+        url("/fonts/SpaceGrotesk[wght].woff") format("woff");
+      font-weight: 300 700;
+      font-style: normal
   }
 
   main#home {
@@ -184,6 +188,10 @@
 
   p {
     @apply max-w-prose;
+  }
+
+  .font-bold {
+    
   }
 
   .prose h1,
