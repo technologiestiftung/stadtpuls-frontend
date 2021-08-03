@@ -6,8 +6,6 @@ import "@testing-library/jest-dom/extend-expect";
 import { server } from "./mocks/server";
 import "whatwg-fetch";
 import { cache } from "swr";
-import ReactDOM from "react-dom";
-import { ReactPortal } from "react";
 
 const noop = (): void => undefined;
 Object.defineProperty(window, "scrollTo", { value: noop, writable: true });
@@ -26,9 +24,6 @@ window.IntersectionObserver = jest.fn(() => ({
 beforeAll(() => {
   // Enable the mocking in tests.
   server.listen();
-
-  // mock createPortal because react-test-renderer doesn't support it
-  ReactDOM.createPortal = jest.fn(element => element as ReactPortal);
 });
 
 afterEach(() => {
@@ -41,7 +36,4 @@ afterEach(() => {
 afterAll(() => {
   // Clean up once the tests are done.
   server.close();
-
-  // clear previously created createPortal mock
-  (ReactDOM.createPortal as jest.Mock).mockClear();
 });
