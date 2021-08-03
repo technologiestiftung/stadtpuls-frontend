@@ -211,7 +211,7 @@ describe("component SensorsList", () => {
     fireEvent.click(deleteButton);
     const confirmation = screen.getByText(/Bitte bestätige/gi);
     expect(confirmation).toBeInTheDocument();
-    const [confirmButton] = screen.getAllByText(/Löschen/gi);
+    const [, confirmButton] = screen.getAllByText(/Löschen/gi);
     expect(confirmButton).toBeInTheDocument();
     fireEvent.click(confirmButton);
     expect(testOnEdit).toHaveBeenCalledWith(1);
