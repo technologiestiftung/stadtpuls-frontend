@@ -28,7 +28,10 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
   const tooltipPositionClass = {
     start: "-left-2",
     end: "-right-2",
-    center: `left-[-${TOOLTIP_WIDTH / 2 - QUESTION_MARK_WIDTH / 2}px]`,
+    // Hard-coded because Tailwind would otherwise purge the actual calculation:
+    // `left-[-${TOOLTIP_WIDTH / 2 - QUESTION_MARK_WIDTH / 2}px]`
+    // Could be safelisted in purge options, but better to keep this arbitrary value closeby.
+    center: `left-[-104px]`,
   };
 
   const trianglePositionClass = {
