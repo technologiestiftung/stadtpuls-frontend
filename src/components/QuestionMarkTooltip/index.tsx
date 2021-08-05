@@ -8,7 +8,7 @@ export interface QuestionMarkTooltipType {
   title: string;
   content: ReactNode;
   additionalClasses?: string;
-  theme: "light" | "dark";
+  theme?: "light" | "dark";
 }
 
 const TOOLTIP_WIDTH = 224;

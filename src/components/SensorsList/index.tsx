@@ -140,7 +140,7 @@ export const SensorsList: FC<SensorsListPropType> = ({
               <img
                 src='/images/illustrations/microcontroller-1.svg'
                 alt='A microcontroller icon'
-                className='inline-block w-4 h-4 mx-1'
+                className='inline-block w-4 h-4 mx-1 transform -translate-y-0.5'
               />
               <span>
                 Device-ID muss mit der Device-ID in der TTN-Konsole
@@ -154,6 +154,7 @@ export const SensorsList: FC<SensorsListPropType> = ({
               </span>
             </>
           }
+          theme='light'
           additionalClasses='inline-block sm:hidden'
         />
       </h1>
