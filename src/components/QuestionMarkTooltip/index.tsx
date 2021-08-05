@@ -8,6 +8,7 @@ export interface QuestionMarkTooltipType {
   title: string;
   content: ReactNode;
   additionalClasses?: string;
+  theme: "light" | "dark";
 }
 
 const TOOLTIP_WIDTH = 224;
@@ -18,6 +19,7 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
   title,
   content,
   additionalClasses,
+  theme = "dark",
 }) => {
   const { width: windowWidth } = useWindowSize();
   const [questionMarkXCoord, setQuestionMarkXCoord] = useState<
@@ -99,7 +101,11 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
           }`,
           "absolute top-9",
           "h-auto p-4",
-          "bg-gray-900 text-white",
+          `${
+            theme === "dark"
+              ? "bg-gray-900 text-white"
+              : "bg-gray-50 text-black"
+          }`,
           "text-xs whitespace-normal"
         )}
         style={{
@@ -121,7 +127,9 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
           style={{
             borderLeft: "solid transparent 8px",
             borderRight: "solid transparent 8px",
-            borderBottom: "solid rgb(30, 26, 90) 8px",
+            borderBottom: `solid ${
+              theme === "dark" ? "rgb(30, 26, 90)" : "rgb(242, 243, 248)"
+            } 8px`,
           }}
         ></span>
         {content}
