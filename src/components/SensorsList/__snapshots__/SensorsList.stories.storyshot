@@ -10,7 +10,7 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
     Sensoren
   </h1>
   <div
-    className="w-full max-w-full overflow-y-hidden overflow-x-auto pb-4"
+    className="w-full max-w-full overflow-y-hidden overflow-x-auto pb-16"
   >
     <table
       className="w-full text-left"
@@ -453,7 +453,7 @@ exports[`Storyshots Layout/SensorsList Empty 1`] = `
     Sensoren
   </h1>
   <div
-    className="w-full max-w-full overflow-y-hidden overflow-x-auto pb-4"
+    className="w-full max-w-full overflow-y-hidden overflow-x-auto pb-16"
   >
     <table
       className="w-full text-left"
@@ -603,7 +603,7 @@ exports[`Storyshots Layout/SensorsList Empty 1`] = `
             }
           >
             <button
-              className="underline transition cursor-pointer text-left font-headline focus:ring-green text-blue underline-green hover:text-purple focus-offset"
+              className="underline transition cursor-pointer text-left font-headline focus:ring-green text-blue underline-green hover:text-purple focus-offset mt-8"
               onClick={[Function]}
               type="button"
             >

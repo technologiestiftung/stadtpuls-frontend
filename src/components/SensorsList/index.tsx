@@ -129,7 +129,7 @@ export const SensorsList: FC<SensorsListPropType> = ({
         />
       )}
       <h1 className='text-2xl m-0 mb-2 text-black font-headline'>Sensoren</h1>
-      <div className='w-full max-w-full overflow-y-hidden overflow-x-auto pb-4'>
+      <div className='w-full max-w-full overflow-y-hidden overflow-x-auto pb-16'>
         <table className='w-full text-left'>
           <SensorsListHeaderRow />
           <tbody>
