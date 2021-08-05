@@ -31,7 +31,10 @@ const recordsHandler = async (
       .json({ message: `Please provide a valid time range in your request` });
   }
 
-  if (!isValidTimestamp(startDate) || !isValidTimestamp(endDate)) {
+  if (
+    (startDate && !isValidTimestamp(startDate)) ||
+    (endDate && !isValidTimestamp(endDate))
+  ) {
     return res.status(422).json({
       message: `startDate and / or endDate are invalid. Please provide valid timestamps such as: ${VALID_TIMESTAMP_EXAMPLE}`,
     });
