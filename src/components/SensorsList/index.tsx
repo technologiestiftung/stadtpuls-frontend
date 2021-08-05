@@ -10,6 +10,7 @@ import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { Button } from "@components/Button";
 import { DeviceIcon } from "./DeviceIcon";
 import { ButtonTextLink } from "@components/TextLink";
+import { QuestionMarkTooltip } from "@components/QuestionMarkTooltip";
 
 interface SensorsListPropType {
   sensors: SensorType[];
@@ -128,7 +129,34 @@ export const SensorsList: FC<SensorsListPropType> = ({
           onCancel={() => setDeviceBeingDeleted(null)}
         />
       )}
-      <h1 className='text-2xl m-0 mb-2 text-black font-headline'>Sensoren</h1>
+      <h1 className='text-2xl m-0 mb-2 text-black font-headline'>
+        Sensoren{" "}
+        <QuestionMarkTooltip
+          id='device-id-and-anzeigename'
+          title='Device-ID und Anzeigename'
+          content={
+            <>
+              <span>Die</span>
+              <img
+                src='/images/illustrations/microcontroller-1.svg'
+                alt='A microcontroller icon'
+                className='inline-block w-4 h-4 mx-1'
+              />
+              <span>
+                Device-ID muss mit der Device-ID in der TTN-Konsole
+                übereinstimmen. Sie ist für andere Stadtpuls-Nutzer:innen nicht
+                sichtbar.
+              </span>
+              <br />
+              <span>
+                Der darauf folgende Anzeigename ist frei wählbar und für andere
+                sichtbar. Werde kreativ!
+              </span>
+            </>
+          }
+          additionalClasses='inline-block sm:hidden'
+        />
+      </h1>
       <div className='w-full max-w-full overflow-y-hidden overflow-x-auto pb-16'>
         <table className='w-full text-left'>
           <SensorsListHeaderRow />

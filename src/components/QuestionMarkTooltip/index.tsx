@@ -7,6 +7,7 @@ export interface QuestionMarkTooltipType {
   id: string;
   title: string;
   content: ReactNode;
+  additionalClasses?: string;
 }
 
 const TOOLTIP_WIDTH = 224;
@@ -16,6 +17,7 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
   id,
   title,
   content,
+  additionalClasses,
 }) => {
   const { width: windowWidth } = useWindowSize();
   const [questionMarkXCoord, setQuestionMarkXCoord] = useState<
@@ -57,7 +59,13 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
   }, [windowWidth, id]);
 
   return (
-    <p className='inline-block transform -translate-y-0.5'>
+    <p
+      className={classNames(
+        `${
+          additionalClasses ? additionalClasses : ""
+        } transform -translate-y-0.5`
+      )}
+    >
       <button
         id={`${id}-tooltip`}
         aria-describedby={`${id}-tooltip`}
@@ -70,7 +78,8 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
           "text-[10px]",
           "bg-gray-50 text-gray-600",
           "border border-gray-500",
-          "focus:outline-none focus:ring"
+          "focus:outline-none focus:ring",
+          "flex items-center justify-center"
         )}
       >
         <span aria-hidden>?</span>
