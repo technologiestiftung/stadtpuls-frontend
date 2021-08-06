@@ -29,7 +29,7 @@ describe("/api/v1/devices/[id]/records", () => {
       query: {
         id: "1",
         startDate: "2020-09-08T20:09:12",
-        endDate: "2020-09-08T20:09:12",
+        endDate: "2021-09-08T20:09:12",
       },
     });
 
