@@ -2,32 +2,7 @@ import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { getRecordsByDeviceId } from ".";
 import { createApiUrl } from "../createApiUrl";
-
-const fakeDevice = {
-  id: 1234,
-  externalId: "device1",
-  projectId: 1234,
-  records: [
-    {
-      id: 1,
-      deviceId: 1234,
-      recordedAt: "2020-12-01T08:00:00",
-      measurements: [28.5],
-    },
-    {
-      id: 2,
-      deviceId: 1234,
-      recordedAt: "2020-12-02T15:00:00",
-      measurements: [24.1],
-    },
-    {
-      id: 3,
-      deviceId: 1234,
-      recordedAt: "2020-12-03T22:00:00",
-      measurements: [20.9],
-    },
-  ],
-};
+import { fakeDeviceWithFewRecords as fakeDevice } from "@mocks/supabaseData/publicProjects";
 
 describe("utility function getRecordsByDeviceId", () => {
   it("should return records belonging to provided deviceId", async (): Promise<void> => {
