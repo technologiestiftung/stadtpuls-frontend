@@ -9,7 +9,7 @@ import {
   VALID_TIMESTAMP_EXAMPLE,
 } from "@lib/timestampValidator";
 
-const recordsHandler = async (
+export const recordsHandler = async (
   req: NextApiRequest,
   res: NextApiResponse<{
     data?: RecordsType[];
@@ -21,13 +21,13 @@ const recordsHandler = async (
 
   if (Array.isArray(requestDeviceId)) {
     return res
-      .status(422)
+      .status(400)
       .json({ message: `Please provide a valid ID in your request` });
   }
 
   if (Array.isArray(startDate) || Array.isArray(endDate)) {
     return res
-      .status(422)
+      .status(400)
       .json({ message: `Please provide a valid time range in your request` });
   }
 
@@ -35,7 +35,7 @@ const recordsHandler = async (
     (startDate && !isValidTimestamp(startDate)) ||
     (endDate && !isValidTimestamp(endDate))
   ) {
-    return res.status(422).json({
+    return res.status(400).json({
       message: `startDate and / or endDate are invalid. Please provide valid timestamps such as: ${VALID_TIMESTAMP_EXAMPLE}`,
     });
   }
@@ -62,7 +62,7 @@ const recordsHandler = async (
       data: records,
     });
   } catch (error: unknown) {
-    return res.status(422).json({
+    return res.status(500).json({
       message: `The request could not be processed`,
       //error: error,
     });
