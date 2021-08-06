@@ -64,6 +64,32 @@ export const fakeCuratedProjects = [
   },
 ];
 
+export const fakeDeviceWithFewRecords = {
+  id: 1234,
+  externalId: "device1234",
+  projectId: 4567,
+  records: [
+    {
+      id: 1,
+      deviceId: 1234,
+      recordedAt: "2020-12-01T08:00:00",
+      measurements: [28.5],
+    },
+    {
+      id: 2,
+      deviceId: 1234,
+      recordedAt: "2020-12-02T15:00:00",
+      measurements: [24.1],
+    },
+    {
+      id: 3,
+      deviceId: 1234,
+      recordedAt: "2020-12-03T22:00:00",
+      measurements: [20.9],
+    },
+  ],
+};
+
 export const fakeDeviceWithRecords = {
   id: 1,
   externalId: "device1",
