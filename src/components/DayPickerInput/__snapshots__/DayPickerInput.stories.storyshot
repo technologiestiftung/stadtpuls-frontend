@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI Elements/DayPickerInput Default 1`] = `
+<div
+  className="grid place-content-center h-screen"
+>
+  <div>
+    <input
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      placeholder="DD/MM/YYYY"
+      value="08/01/2021"
+    />
+  </div>
+</div>
+`;

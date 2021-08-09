@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI Elements/DatetimeRangePicker Default 1`] = `
+<div
+  className="grid place-content-center h-screen"
+>
+  <div
+    className="flex gap-2"
+  >
+    <div
+      className="inline-flex"
+    >
+      <div>
+        <input
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          placeholder="DD/MM/YYYY"
+          value="09/08/2021"
+        />
+      </div>
+      <input
+        className="InputTime-from font-mono relative focus:z-30 w-20 text-center inline-block border border-gray-200 px-3 py-2 "
+        onChange={[Function]}
+        style={Object {}}
+        type="text"
+        value="00:00"
+      />
+    </div>
+    <span
+      className="inline-flex"
+    >
+      <div>
+        <input
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          placeholder="DD/MM/YYYY"
+          value="09/08/2021"
+        />
+      </div>
+      <input
+        className="InputTime-to font-mono relative focus:z-30 w-20 text-center inline-block border border-gray-200 px-3 py-2 "
+        onChange={[Function]}
+        style={Object {}}
+        type="text"
+        value="00:00"
+      />
+    </span>
+  </div>
+</div>
+`;
