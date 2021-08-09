@@ -11,7 +11,7 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Default 1`] = `
   >
     <button
       aria-describedby="one-tooltip"
-      className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
+      className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring flex items-center justify-center"
       id="one-tooltip"
       style={
         Object {
@@ -70,7 +70,7 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Long Content 1`] = `
   >
     <button
       aria-describedby="two-tooltip"
-      className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
+      className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring flex items-center justify-center"
       id="two-tooltip"
       style={
         Object {

@@ -8,9 +8,74 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
     className="text-2xl m-0 mb-2 text-black font-headline"
   >
     Sensoren
+     
+    <p
+      className="inline-block sm:hidden transform -translate-y-0.5"
+    >
+      <button
+        aria-describedby="device-id-and-anzeigename-tooltip"
+        className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring flex items-center justify-center"
+        id="device-id-and-anzeigename-tooltip"
+        style={
+          Object {
+            "height": "16px",
+            "width": "16px",
+          }
+        }
+      >
+        <span
+          aria-hidden={true}
+        >
+          ?
+        </span>
+        <span
+          className="sr-only"
+        >
+          Device-ID und Anzeigename
+           Erklärung
+        </span>
+      </button>
+      <span
+        className="undefined -left-2 absolute top-9 h-auto p-4 bg-gray-50 text-black text-xs whitespace-normal"
+        id="device-id-and-anzeigename-tooltip"
+        role="tooltip"
+        style={
+          Object {
+            "width": "224px",
+          }
+        }
+      >
+        <span
+          aria-hidden={true}
+          className="absolute w-0 h-0 -top-2 left-2"
+          style={
+            Object {
+              "borderBottom": "solid rgb(242, 243, 248) 8px",
+              "borderLeft": "solid transparent 8px",
+              "borderRight": "solid transparent 8px",
+            }
+          }
+        />
+        <span>
+          Die
+        </span>
+        <img
+          alt="A microcontroller icon"
+          className="inline-block w-4 h-4 mx-1 transform -translate-y-0.5"
+          src="/images/illustrations/microcontroller-1.svg"
+        />
+        <span>
+          Device-ID muss mit der Device-ID in der TTN-Konsole übereinstimmen. Sie ist für andere Stadtpuls-Nutzer:innen nicht sichtbar.
+        </span>
+        <br />
+        <span>
+          Der darauf folgende Anzeigename ist frei wählbar und für andere sichtbar. Werde kreativ!
+        </span>
+      </span>
+    </p>
   </h1>
   <div
-    className="w-full max-w-full overflow-y-hidden overflow-x-auto pb-4"
+    className="w-full max-w-full overflow-y-hidden overflow-x-auto pb-16"
   >
     <table
       className="w-full text-left"
@@ -27,11 +92,11 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
             Device-ID
              
             <p
-              className="inline-block transform -translate-y-0.5"
+              className="hidden sm:inline-block transform -translate-y-0.5"
             >
               <button
                 aria-describedby="device-id-tooltip"
-                className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
+                className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring flex items-center justify-center"
                 id="device-id-tooltip"
                 style={
                   Object {
@@ -83,11 +148,11 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
             Anzeigename
              
             <p
-              className="inline-block transform -translate-y-0.5"
+              className="hidden sm:inline-block transform -translate-y-0.5"
             >
               <button
                 aria-describedby="anzeigename-tooltip"
-                className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
+                className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring flex items-center justify-center"
                 id="anzeigename-tooltip"
                 style={
                   Object {
@@ -451,9 +516,74 @@ exports[`Storyshots Layout/SensorsList Empty 1`] = `
     className="text-2xl m-0 mb-2 text-black font-headline"
   >
     Sensoren
+     
+    <p
+      className="inline-block sm:hidden transform -translate-y-0.5"
+    >
+      <button
+        aria-describedby="device-id-and-anzeigename-tooltip"
+        className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring flex items-center justify-center"
+        id="device-id-and-anzeigename-tooltip"
+        style={
+          Object {
+            "height": "16px",
+            "width": "16px",
+          }
+        }
+      >
+        <span
+          aria-hidden={true}
+        >
+          ?
+        </span>
+        <span
+          className="sr-only"
+        >
+          Device-ID und Anzeigename
+           Erklärung
+        </span>
+      </button>
+      <span
+        className="undefined -left-2 absolute top-9 h-auto p-4 bg-gray-50 text-black text-xs whitespace-normal"
+        id="device-id-and-anzeigename-tooltip"
+        role="tooltip"
+        style={
+          Object {
+            "width": "224px",
+          }
+        }
+      >
+        <span
+          aria-hidden={true}
+          className="absolute w-0 h-0 -top-2 left-2"
+          style={
+            Object {
+              "borderBottom": "solid rgb(242, 243, 248) 8px",
+              "borderLeft": "solid transparent 8px",
+              "borderRight": "solid transparent 8px",
+            }
+          }
+        />
+        <span>
+          Die
+        </span>
+        <img
+          alt="A microcontroller icon"
+          className="inline-block w-4 h-4 mx-1 transform -translate-y-0.5"
+          src="/images/illustrations/microcontroller-1.svg"
+        />
+        <span>
+          Device-ID muss mit der Device-ID in der TTN-Konsole übereinstimmen. Sie ist für andere Stadtpuls-Nutzer:innen nicht sichtbar.
+        </span>
+        <br />
+        <span>
+          Der darauf folgende Anzeigename ist frei wählbar und für andere sichtbar. Werde kreativ!
+        </span>
+      </span>
+    </p>
   </h1>
   <div
-    className="w-full max-w-full overflow-y-hidden overflow-x-auto pb-4"
+    className="w-full max-w-full overflow-y-hidden overflow-x-auto pb-16"
   >
     <table
       className="w-full text-left"
@@ -470,11 +600,11 @@ exports[`Storyshots Layout/SensorsList Empty 1`] = `
             Device-ID
              
             <p
-              className="inline-block transform -translate-y-0.5"
+              className="hidden sm:inline-block transform -translate-y-0.5"
             >
               <button
                 aria-describedby="device-id-tooltip"
-                className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
+                className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring flex items-center justify-center"
                 id="device-id-tooltip"
                 style={
                   Object {
@@ -526,11 +656,11 @@ exports[`Storyshots Layout/SensorsList Empty 1`] = `
             Anzeigename
              
             <p
-              className="inline-block transform -translate-y-0.5"
+              className="hidden sm:inline-block transform -translate-y-0.5"
             >
               <button
                 aria-describedby="anzeigename-tooltip"
-                className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring"
+                className="rounded-full text-[10px] bg-gray-50 text-gray-600 border border-gray-500 focus:outline-none focus:ring flex items-center justify-center"
                 id="anzeigename-tooltip"
                 style={
                   Object {
@@ -603,7 +733,7 @@ exports[`Storyshots Layout/SensorsList Empty 1`] = `
             }
           >
             <button
-              className="underline transition cursor-pointer text-left font-headline focus:ring-green text-blue underline-green hover:text-purple focus-offset"
+              className="underline transition cursor-pointer text-left font-headline focus:ring-green text-blue underline-green hover:text-purple focus-offset mt-8"
               onClick={[Function]}
               type="button"
             >

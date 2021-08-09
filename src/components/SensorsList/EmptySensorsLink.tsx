@@ -12,7 +12,7 @@ export const EmptySensorsLink: FC<{
       className='text-center align-middle'
       style={{ height: 50 }}
     >
-      <ButtonTextLink onClick={onClick}>
+      <ButtonTextLink onClick={onClick} className='mt-8'>
         <img
           src='/images/illustrations/microcontroller-1.svg'
           alt='A microcontroller icon'

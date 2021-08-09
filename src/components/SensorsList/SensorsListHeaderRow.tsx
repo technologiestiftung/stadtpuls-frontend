@@ -12,6 +12,7 @@ export const SensorsListHeaderRow: FC = () => {
             id='device-id'
             title='Device-ID'
             content='Nutze hier die exakte Device-ID aus Deiner TTN-Konsole. Die ID ist für andere Stadtpuls-Nutzer:innen nicht sichtbar.'
+            additionalClasses='hidden sm:inline-block'
           />
         </Th>
         <Th className='w-full'>
@@ -20,6 +21,7 @@ export const SensorsListHeaderRow: FC = () => {
             id='anzeigename'
             title='Anzeigename'
             content='Der Anzeigename kann frei gewählt werden und ist auch für andere Stadtpuls-Nutzer:innen öffentlich sichtbar. Werde kreativ!'
+            additionalClasses='hidden sm:inline-block'
           />
         </Th>
         <Th>Letztes Signal</Th>
