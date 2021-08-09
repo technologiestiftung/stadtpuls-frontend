@@ -25,6 +25,7 @@ module.exports = {
     colors,
     fontFamily: {
       headline: ["'SpaceGrotesk'", ...fallbackFonts],
+      mono: ["'SpaceMono'", "monospace"],
       sans: ["Sora", ...fallbackFonts],
     },
     minWidth: {
