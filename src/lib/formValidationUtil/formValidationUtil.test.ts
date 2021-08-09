@@ -86,6 +86,10 @@ describe("requiredDeviceId validation", () => {
     const isValid = await requiredDeviceId.isValid("");
     expect(isValid).toBe(false);
   });
+  it("should not be valid with disallowed characters", async () => {
+    const isValid = await requiredDeviceId.isValid("this-is-good-TH!S_NOT");
+    expect(isValid).toBe(false);
+  });
 });
 
 describe("requiredDeviceName validation", () => {
