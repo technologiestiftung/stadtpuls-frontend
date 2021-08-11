@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
+<div
+  className="grid place-content-center h-screen"
+>
+  <div
+    className="border-b border-gray-100 shadow p-4 grid grid-cols-[auto,max-content] gap-8"
+  >
+    <fieldset
+      className="relative"
+    >
+      <div
+        className="grid grid-cols-[1.5rem,auto] text-sm mb-2"
+      >
+        <input
+          checked={true}
+          name="devicesByAmount"
+          onChange={[Function]}
+          tabIndex={0}
+          type="radio"
+        />
+        <label
+          className="text-blue"
+          htmlFor="devicesByAmount"
+        >
+          Beiträge bei Anzahl
+        </label>
+      </div>
+      <div
+        className="pl-6"
+      >
+        <div
+          className="grid grid-cols-[2fr,1fr] gap-2"
+        >
+          <div
+            className="mb-2"
+          >
+            <select
+              className="mb-2 text-blue "
+              defaultValue="newest"
+              id="newestOrOldest"
+              name="newestOrOldest"
+              onBlur={[Function]}
+              onChange={[Function]}
+              required={true}
+              tabIndex={0}
+            >
+              <option
+                value="newest"
+              >
+                Neueste
+              </option>
+              <option
+                value="oldest"
+              >
+                Älteste
+              </option>
+            </select>
+          </div>
+          <input
+            className="text-blue font-bold text-xs"
+            id="records-amount"
+            max="1000"
+            min="1"
+            name="records-amount"
+            onChange={[Function]}
+            step="1"
+            tabIndex={0}
+            type="number"
+            value={500}
+          />
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      className="relative"
+    >
+      <button
+        className="absolute w-[calc(100%-1.5rem)] h-full top-0 left-6 z-30 bg-white opacity-50 focus:outline-none"
+        onClick={[Function]}
+        tabIndex={-1}
+      />
+      <div
+        className="grid grid-cols-[1.5rem,auto] text-sm mb-2"
+      >
+        <input
+          checked={false}
+          name="devicesByDatetimeRange"
+          onChange={[Function]}
+          tabIndex={0}
+          type="radio"
+        />
+        <label
+          className=""
+          htmlFor="devicesByDatetimeRange"
+        >
+          Beiträge bei Zeitspanne
+        </label>
+      </div>
+      <div
+        className="pl-6"
+      >
+        <div
+          className="flex flex-wrap gap-2"
+        >
+          <div
+            className="inline-flex"
+          >
+            <div>
+              <input
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                placeholder="DD/MM/YYYY"
+                tabIndex={-1}
+                value="11/08/2021"
+              />
+            </div>
+            <input
+              className="InputTime-from font-mono relative focus:z-30 w-20 text-center inline-block border border-gray-200 px-3 py-2 "
+              onChange={[Function]}
+              style={Object {}}
+              tabIndex={-1}
+              type="text"
+              value="15:13"
+            />
+          </div>
+          <span
+            className="inline-flex"
+          >
+            <div>
+              <input
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                placeholder="DD/MM/YYYY"
+                tabIndex={-1}
+                value="01/08/2021"
+              />
+            </div>
+            <input
+              className="InputTime-to font-mono relative focus:z-30 w-20 text-center inline-block border border-gray-200 px-3 py-2 "
+              onChange={[Function]}
+              style={Object {}}
+              tabIndex={-1}
+              type="text"
+              value="21:19"
+            />
+          </span>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+`;

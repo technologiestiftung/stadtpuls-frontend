@@ -7,7 +7,7 @@
 }
 
 .container {
-  @apply shadow-none font-headline p-0 absolute top-full left-0;
+  @apply shadow-none font-headline p-0 absolute top-full left-0 z-10;
   transform: translate(0, -1px);
 }
 

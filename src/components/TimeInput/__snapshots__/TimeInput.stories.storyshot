@@ -8,6 +8,7 @@ exports[`Storyshots UI Elements/TimeInput Default 1`] = `
     className=" font-mono relative focus:z-30 w-20 text-center inline-block border border-gray-200 px-3 py-2 "
     onChange={[Function]}
     style={Object {}}
+    tabIndex={1}
     type="text"
     value="00:00"
   />

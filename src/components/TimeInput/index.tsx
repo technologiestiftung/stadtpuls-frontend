@@ -4,6 +4,7 @@ import styles from "./TimeInput.module.css";
 
 interface TimeInputProps {
   value?: string;
+  tabIndex?: number;
   className?: string;
   onChange: (val: string) => void;
 }
@@ -11,6 +12,7 @@ interface TimeInputProps {
 export const TimeInput: FC<TimeInputProps> = ({
   value,
   onChange,
+  tabIndex = 1,
   className = "",
 }) => (
   <TimeField
@@ -25,6 +27,7 @@ export const TimeInput: FC<TimeInputProps> = ({
           "inline-block border border-gray-200 px-3 py-2",
           styles.timeInput,
         ].join(" ")}
+        tabIndex={tabIndex}
       />
     }
   />

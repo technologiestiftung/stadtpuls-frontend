@@ -6,6 +6,7 @@ exports[`Storyshots Forms/FormSelect With Custom Placeholder 1`] = `
 >
   <select
     className="mb-2 text-gray-500 "
+    defaultValue="This is a custom placeholder"
     id="Select with custom placeholder"
     min={20}
     name="Select with custom placeholder"
@@ -43,6 +44,7 @@ exports[`Storyshots Forms/FormSelect With Errors 1`] = `
 >
   <select
     className="mb-2 text-gray-500 error"
+    defaultValue="Bitte wähle eine Option"
     id="Select with custom placeholder"
     min={20}
     name="Select with custom placeholder"
@@ -96,6 +98,7 @@ exports[`Storyshots Forms/FormSelect With Label 1`] = `
   </label>
   <select
     className="mb-2 text-gray-500 "
+    defaultValue="Bitte wähle eine Option"
     id="Select with label"
     min={20}
     name="Select with label"
@@ -133,6 +136,7 @@ exports[`Storyshots Forms/FormSelect Without Label 1`] = `
 >
   <select
     className="mb-2 text-gray-500 "
+    defaultValue="Bitte wähle eine Option"
     id="Select without label"
     min={20}
     name="Select without label"

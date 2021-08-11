@@ -45,12 +45,12 @@ exports[`Storyshots Forms/CreateProjectForm Default 1`] = `
       </label>
       <select
         className="mb-2 text-gray-500 "
+        defaultValue="Bitte wähle eine Option"
         id="categoryId"
         name="categoryId"
         onBlur={[Function]}
         onChange={[Function]}
         required={true}
-        value=""
       >
         <option
           value=""
@@ -134,12 +134,12 @@ exports[`Storyshots Forms/CreateProjectForm Default 1`] = `
       </label>
       <select
         className="mb-2 text-gray-500 "
+        defaultValue="Wie möchtest du dein Projekt integrieren?"
         id="connectype"
         name="connectype"
         onBlur={[Function]}
         onChange={[Function]}
         required={true}
-        value=""
       >
         <option
           value=""

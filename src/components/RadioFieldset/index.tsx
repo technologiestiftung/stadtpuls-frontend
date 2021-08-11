@@ -31,6 +31,7 @@ export const RadioFieldset: FC<RadioFieldsetPropType> = ({
         checked={isSelected}
         name={name}
         onChange={() => !isSelected && onSelect()}
+        tabIndex={0}
       />
       <label htmlFor={name} className={isSelected ? "text-blue" : ""}>
         {label}

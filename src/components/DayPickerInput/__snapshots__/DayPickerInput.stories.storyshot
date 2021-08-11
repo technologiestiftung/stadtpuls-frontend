@@ -13,6 +13,7 @@ exports[`Storyshots UI Elements/DayPickerInput Default 1`] = `
       onKeyDown={[Function]}
       onKeyUp={[Function]}
       placeholder="DD/MM/YYYY"
+      tabIndex={1}
       value="08/01/2021"
     />
   </div>

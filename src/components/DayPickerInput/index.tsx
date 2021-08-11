@@ -8,6 +8,7 @@ import styles from "./DayPickerInput.module.css";
 
 interface DayPickerInputExtendedProps extends DayPickerInputProps {
   nextElSelector?: string;
+  tabIndex?: number;
   value: Date;
   onDayChange?: (val: Date) => void;
 }
@@ -48,6 +49,7 @@ export const parseDate = (s: string): Date | undefined =>
 
 export const DayPickerInput: FC<DayPickerInputExtendedProps> = ({
   onDayChange = () => undefined,
+  tabIndex = 1,
   value,
   dayPickerProps,
   nextElSelector,
@@ -86,6 +88,7 @@ export const DayPickerInput: FC<DayPickerInputExtendedProps> = ({
       overlayWrapper: "",
       overlay: "",
     }}
+    inputProps={{ tabIndex }}
     {...props}
   />
 );
