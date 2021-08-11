@@ -40,7 +40,6 @@ export const requiredDeviceId = yup
   .string()
   .min(3, "Min. 3 Zeichen")
   .max(36, "Max. 36 Zeichen")
-  .matches(/^[a-z0-9-]{3,36}$/gm, "Nur Kleinbuchstaben, Zahlen und -")
   .required("Device-ID ist erforderlich");
 
 export const requiredDeviceName = yup
