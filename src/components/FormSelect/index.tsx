@@ -9,7 +9,7 @@ import {
 
 export interface SelectOptionType {
   name: string;
-  value: string;
+  value: string | number;
 }
 
 interface FormSelectPropType
@@ -19,8 +19,8 @@ interface FormSelectPropType
   placeholder?: string;
   options: SelectOptionType[];
   errors?: string[];
-  defaultValue?: string;
-  value?: string;
+  defaultValue?: string | number;
+  value?: string | number;
   onValueChange?: (name: string) => void;
 }
 
@@ -41,13 +41,13 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectPropType>(
     ref
   ) => {
     const [selectValue, setSelectValue] = useState<string>(
-      value || defaultValue || placeholder
+      `${value || defaultValue || placeholder}`
     );
     const placeholderIsSelected =
       selectValue === placeholder || selectValue === "";
 
     useEffect(() => {
-      defaultValue && setSelectValue(defaultValue);
+      defaultValue && setSelectValue(`${defaultValue}`);
     }, [defaultValue]);
 
     const handleSelect: ChangeEventHandler = evt => {
@@ -82,7 +82,7 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectPropType>(
         >
           {!defaultValue && <option value=''>{placeholder}</option>}
           {options.map(({ name, value: val }) => (
-            <option value={val} key={val}>
+            <option value={`${val}`} key={`${val}`}>
               {name}
             </option>
           ))}
