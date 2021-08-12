@@ -16,14 +16,14 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
       >
         <input
           checked={true}
-          name="devicesByAmount"
+          name="devicesByTimespan"
           readOnly={true}
           tabIndex={0}
           type="radio"
         />
         <label
           className="text-blue"
-          htmlFor="devicesByAmount"
+          htmlFor="devicesByTimespan"
         >
           Messwerte bei Zeitraum
         </label>

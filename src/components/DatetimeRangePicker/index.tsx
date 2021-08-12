@@ -16,7 +16,13 @@ export interface DatetimeRangePickerPropType {
   }) => void;
 }
 
-const hoursOffset = new Date().getTimezoneOffset() / 60;
+const offset = new Date().getTimezoneOffset() / 60;
+const hoursOffset = `${offset < 0 ? "-" : "+"}${pad(Math.abs(offset), 2)}:00`;
+
+function pad(num: number, size: number): string {
+  const s = `000${num}`;
+  return s.substr(s.length - size);
+}
 
 export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
   startDatetimeString,
@@ -37,13 +43,9 @@ export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
   useEffect(() => {
     const fromDayString = moment.formatDate(fromDate, "YYYY-MM-DD");
     const toDayString = moment.formatDate(toDate, "YYYY-MM-DD");
-    const fromHours = parseInt(fromTime.split(":")[0], 10) + hoursOffset;
-    const fromMinutes = fromTime.split(":")[1];
-    const toHours = parseInt(toTime.split(":")[0], 10) + hoursOffset;
-    const toMinutes = toTime.split(":")[1];
     onDatetimeRangeChange({
-      startDatetimeString: `${fromDayString}T${fromHours}:${fromMinutes}:00.000Z`,
-      endDatetimeString: `${toDayString}T${toHours}:${toMinutes}:00.000Z`,
+      startDatetimeString: `${fromDayString}T${fromTime}:00.000${hoursOffset}`,
+      endDatetimeString: `${toDayString}T${toTime}:00.000${hoursOffset}`,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fromDate, fromTime, toDate, toTime]);

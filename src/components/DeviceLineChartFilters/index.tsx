@@ -2,7 +2,7 @@ import { DatetimeRangePicker } from "@components/DatetimeRangePicker";
 import { RadioFieldset } from "@components/RadioFieldset";
 import { FC } from "react";
 
-type FilterType = "devicesByAmount" | "devicesByDatetimeRange";
+type FilterType = "devicesByTimespan" | "devicesByDatetimeRange";
 type TemporalityOfRecordsType = "today" | "week" | "month" | "all";
 
 export interface DeviceLineChartFiltersPropType {
@@ -62,10 +62,10 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
 }) => (
   <div className='border-b border-gray-100 shadow p-4 flex flex-wrap gap-8'>
     <RadioFieldset
-      isSelected={activeFilterType === "devicesByAmount"}
+      isSelected={activeFilterType === "devicesByTimespan"}
       label='Messwerte bei Zeitraum'
-      name='devicesByAmount'
-      onSelect={() => onActiveFilterTypeChange("devicesByAmount")}
+      name='devicesByTimespan'
+      onSelect={() => onActiveFilterTypeChange("devicesByTimespan")}
     >
       <div className='flex'>
         <TemporalityButton

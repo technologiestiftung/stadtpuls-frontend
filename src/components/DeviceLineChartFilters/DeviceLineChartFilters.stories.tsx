@@ -61,7 +61,7 @@ const Template: Story<DeviceLineChartFiltersPropType> = ({
 
 export const Default = Template.bind({});
 Default.args = {
-  activeFilterType: "devicesByAmount" as const,
+  activeFilterType: "devicesByTimespan" as const,
   temporalityOfRecords: "today" as const,
   onTemporalityOfRecordsChange: action("onTemporalityOfRecordsChange"),
   startDatetimeString: "2021-08-11T13:13:12.000Z",

@@ -21,6 +21,7 @@ import {
   DeviceLineChartFilters,
   DeviceLineChartFiltersPropType,
 } from "@components/DeviceLineChartFilters";
+import { useDeviceRecords } from "@lib/hooks/useDeviceRecords";
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -59,11 +60,9 @@ export const Project: FC<ProjectsType> = project => {
   const [selectedDeviceIndex, setSelectedDeviceIndex] = useState<number>(0);
   const selectedDevice = project?.devices?.[selectedDeviceIndex];
 
-  const MIN_NUMBER_OF_RECORDS_TO_DISPLAY = 100;
-
   const [activeFilterType, setActiveFilterType] = useState<
     DeviceLineChartFiltersPropType["activeFilterType"]
-  >("devicesByAmount");
+  >("devicesByTimespan");
   const [temporalityOfRecords, setTemporaityOfRecords] = useState<
     DeviceLineChartFiltersPropType["temporalityOfRecords"]
   >("today");
@@ -73,11 +72,19 @@ export const Project: FC<ProjectsType> = project => {
       "startDatetimeString" | "endDatetimeString"
     >
   >({
-    startDatetimeString: today.toISOString(),
-    endDatetimeString: tenDaysAgo.toISOString(),
+    startDatetimeString: today.toUTCString(),
+    endDatetimeString: tenDaysAgo.toUTCString(),
   });
 
-  const [lineChartData, setLineChartData] = useState<RecordType[]>([]);
+  const {
+    records,
+    error: recordsFetchError,
+    isLoading: recordsAreLoading,
+  } = useDeviceRecords({
+    deviceId: selectedDevice?.id,
+    startDateString: currentDatetimeRange.startDatetimeString,
+    endDateString: currentDatetimeRange.endDatetimeString,
+  });
 
   const [markerData, setMarkerData] = useState<MarkerType[]>([]);
 
@@ -85,18 +92,6 @@ export const Project: FC<ProjectsType> = project => {
     ViewportType,
     "latitude" | "longitude"
   > | null>(null);
-
-  useEffect(() => {
-    const device = project?.devices?.[selectedDeviceIndex];
-
-    if (!device || !device.records) return;
-
-    setLineChartData(
-      device.records
-        .slice(0, MIN_NUMBER_OF_RECORDS_TO_DISPLAY)
-        .map(rawRecordToRecord)
-    );
-  }, [selectedDeviceIndex, project.devices]);
 
   useEffect(() => {
     const devicesWithCoordinates = project?.devices?.filter(device => {
@@ -362,26 +357,45 @@ export const Project: FC<ProjectsType> = project => {
                 project.devices.length > 0 &&
                 chartWidth &&
                 chartHeight &&
-                lineChartData && (
+                !recordsFetchError &&
+                !recordsAreLoading &&
+                records.length > 0 && (
                   <LineChart
                     width={chartWidth}
                     height={chartHeight}
                     yAxisUnit={getCategoryUnit(project.category?.name)}
                     xAxisUnit='Messdatum'
-                    data={createDateValueArray(lineChartData)}
+                    data={createDateValueArray(records)}
                   />
                 )}
               {project?.devices?.length === 0 && (
                 <div className='prose p-8 max-w-full h-80 grid text-center items-center'>
-                  <h3>Dieses Projekt enthält noch keine Sensoren.</h3>
+                  <p>Dieses Projekt enthält noch keine Sensoren.</p>
+                </div>
+              )}
+              {recordsFetchError && (
+                <div className='prose p-8 max-w-full h-80 grid text-center items-center'>
+                  <p>{recordsFetchError.message}</p>
+                </div>
+              )}
+              {!recordsFetchError &&
+                !recordsAreLoading &&
+                records.length === 0 && (
+                  <div className='prose p-8 max-w-full h-80 grid text-center items-center'>
+                    <p>Keine Daten für die aktuelle Filterkonfiguration</p>
+                  </div>
+                )}
+              {!recordsFetchError && recordsAreLoading && (
+                <div className='prose p-8 max-w-full h-80 grid text-center items-center'>
+                  <p>Daten werden geladen...</p>
                 </div>
               )}
             </div>
           </div>
-          {selectedDevice && selectedDevice.records && (
+          {records.length > 0 && !recordsFetchError && selectedDevice && (
             <div className='border border-gray-100 shadow mt-16 p-0'>
               <DataTable
-                data={selectedDevice.records.map(rawRecordToRecord)}
+                data={records.map(rawRecordToRecord)}
                 title={selectedDevice.name || ""}
               />
             </div>

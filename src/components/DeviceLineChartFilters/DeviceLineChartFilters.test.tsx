@@ -4,7 +4,7 @@ import { FC, useState } from "react";
 import { DeviceLineChartFilters, DeviceLineChartFiltersPropType } from ".";
 
 const TestComponent: FC<Partial<DeviceLineChartFiltersPropType>> = ({
-  activeFilterType = "devicesByAmount",
+  activeFilterType = "devicesByTimespan",
   onActiveFilterTypeChange = jest.fn(),
   temporalityOfRecords = "today",
   onTemporalityOfRecordsChange = jest.fn(),
@@ -111,7 +111,7 @@ describe("DeviceLineChartFilters", () => {
 
     fireEvent.click(radio1);
 
-    expect(onActiveFilterTypeChange).toHaveBeenCalledWith("devicesByAmount");
+    expect(onActiveFilterTypeChange).toHaveBeenCalledWith("devicesByTimespan");
   });
   test("onTemporalityOfRecordsChange should call handler", () => {
     const onTemporalityOfRecordsChange = jest.fn();
@@ -144,7 +144,11 @@ describe("DeviceLineChartFilters", () => {
     render(<TestComponent onDatetimeRangeChange={onDatetimeRangeChange} />);
     const [date1, time1, date2, time2] = screen.getAllByRole("textbox");
 
-    const offset = Math.round(new Date().getTimezoneOffset() / 60);
+    const offset = new Date().getTimezoneOffset() / 60;
+    const hoursOffset = `${offset < 0 ? "-" : "+"}${pad(
+      Math.abs(offset),
+      2
+    )}:00`;
 
     fireEvent.change(date1, { target: { value: "01/02/2021" } });
     fireEvent.change(time1, { target: { value: "23:59" } });
@@ -152,8 +156,13 @@ describe("DeviceLineChartFilters", () => {
     fireEvent.change(time2, { target: { value: "00:01" } });
 
     expect(onDatetimeRangeChange).toHaveBeenLastCalledWith({
-      startDatetimeString: `2021-02-01T${23 + offset}:59:00.000Z`,
-      endDatetimeString: `2021-12-24T${0 + offset}:01:00.000Z`,
+      startDatetimeString: `2021-02-01T23:59:00.000${hoursOffset}`,
+      endDatetimeString: `2021-12-24T00:01:00.000${hoursOffset}`,
     });
   });
 });
+
+function pad(num: number, size: number): string {
+  const s = `0${num}`;
+  return s.substr(s.length - size);
+}
