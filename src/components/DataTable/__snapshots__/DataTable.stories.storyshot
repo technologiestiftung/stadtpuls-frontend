@@ -38,7 +38,7 @@ exports[`Storyshots UI Elements/DataTable Default 1`] = `
           <th
             className="py-2 px-1 font-normal text-left"
           >
-            Uhrzeit
+            Uhrzeit (UTC)
           </th>
           <th
             className="py-2 px-1 font-normal text-right"
