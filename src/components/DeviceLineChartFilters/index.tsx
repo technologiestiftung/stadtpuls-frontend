@@ -69,26 +69,38 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
     >
       <div className='flex'>
         <TemporalityButton
-          isActive={temporalityOfRecords === "today"}
+          isActive={
+            activeFilterType === "devicesByTimespan" &&
+            temporalityOfRecords === "today"
+          }
           isFirst
           onClick={() => onTemporalityOfRecordsChange("today")}
         >
           Heute
         </TemporalityButton>
         <TemporalityButton
-          isActive={temporalityOfRecords === "week"}
+          isActive={
+            activeFilterType === "devicesByTimespan" &&
+            temporalityOfRecords === "week"
+          }
           onClick={() => onTemporalityOfRecordsChange("week")}
         >
           Woche
         </TemporalityButton>
         <TemporalityButton
-          isActive={temporalityOfRecords === "month"}
+          isActive={
+            activeFilterType === "devicesByTimespan" &&
+            temporalityOfRecords === "month"
+          }
           onClick={() => onTemporalityOfRecordsChange("month")}
         >
           Monat
         </TemporalityButton>
         <TemporalityButton
-          isActive={temporalityOfRecords === "all"}
+          isActive={
+            activeFilterType === "devicesByTimespan" &&
+            temporalityOfRecords === "all"
+          }
           onClick={() => onTemporalityOfRecordsChange("all")}
         >
           Alle

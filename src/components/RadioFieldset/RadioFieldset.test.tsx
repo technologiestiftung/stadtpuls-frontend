@@ -17,20 +17,6 @@ describe("RadioFieldset component", () => {
     const coverDiv = document.querySelector(".absolute.bg-white");
     expect(coverDiv).not.toBeInTheDocument();
   });
-  test("should render a checked radio button", () => {
-    render(<RadioFieldset isSelected label='Test' name='test' />);
-
-    const radio = screen.queryByRole("radio");
-    expect(radio).toBeInTheDocument();
-    expect(radio?.getAttribute("checked")).toBeDefined();
-  });
-  test("should render a unchecked radio button", () => {
-    render(<RadioFieldset isSelected={false} label='Test' name='test' />);
-
-    const radio = screen.queryByRole("radio");
-    expect(radio).toBeInTheDocument();
-    expect(radio?.getAttribute("checked")).toBeNull();
-  });
   test("should call onSelect on fieldset click", () => {
     const onSelect = jest.fn();
     render(
@@ -51,8 +37,8 @@ describe("RadioFieldset component", () => {
   test("should have a fallback onSelect if none provided", () => {
     render(<RadioFieldset isSelected={false} label='Test' name='test' />);
 
-    const radio = screen.getByRole("radio");
+    const fieldset = screen.getByRole("group");
 
-    fireEvent.click(radio);
+    fireEvent.click(fieldset);
   });
 });

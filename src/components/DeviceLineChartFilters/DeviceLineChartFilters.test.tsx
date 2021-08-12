@@ -56,14 +56,11 @@ describe("DeviceLineChartFilters", () => {
   test("should have a regular tabbing flow", () => {
     render(<TestComponent />);
 
-    const [radio1, radio2] = screen.getAllByRole("radio");
+    const [, group2] = screen.getAllByRole("group");
     const [todayB, weekB, monthB, allB] = screen.getAllByRole("button");
     const [date1, time1, date2, time2] = screen.getAllByRole("textbox");
 
-    radio1.focus();
-    expect(radio1).toHaveFocus();
-
-    userEvent.tab();
+    todayB.focus();
     expect(todayB).toHaveFocus();
 
     userEvent.tab();
@@ -75,11 +72,7 @@ describe("DeviceLineChartFilters", () => {
     userEvent.tab();
     expect(allB).toHaveFocus();
 
-    userEvent.tab();
-    expect(radio2).toHaveFocus();
-
-    fireEvent.click(radio2);
-    expect(radio2).toHaveFocus();
+    fireEvent.click(group2);
 
     userEvent.tab();
     expect(date1).toHaveFocus();
@@ -101,15 +94,15 @@ describe("DeviceLineChartFilters", () => {
       <TestComponent onActiveFilterTypeChange={onActiveFilterTypeChange} />
     );
 
-    const [radio1, radio2] = screen.getAllByRole("radio");
+    const [group1, group2] = screen.getAllByRole("group");
 
-    fireEvent.click(radio2);
+    fireEvent.click(group2);
 
     expect(onActiveFilterTypeChange).toHaveBeenCalledWith(
       "devicesByDatetimeRange"
     );
 
-    fireEvent.click(radio1);
+    fireEvent.click(group1);
 
     expect(onActiveFilterTypeChange).toHaveBeenCalledWith("devicesByTimespan");
   });

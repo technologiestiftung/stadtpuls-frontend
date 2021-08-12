@@ -22,23 +22,17 @@ export const RadioFieldset: FC<RadioFieldsetPropType> = ({
     {!isSelected && (
       <div
         className={[
-          "absolute w-[calc(100%-1.5rem)] h-full top-0 left-6 z-30",
+          "absolute w-full h-full inset-0 z-30",
           "bg-white opacity-50 pointer-events-none",
         ].join(" ")}
       />
     )}
-    <div className='grid grid-cols-[1.5rem,auto] text-sm mb-2'>
-      <input
-        type='radio'
-        checked={isSelected}
-        name={name}
-        tabIndex={0}
-        readOnly
-      />
-      <label htmlFor={name} className={isSelected ? "text-blue" : ""}>
-        {label}
-      </label>
-    </div>
-    <div className='pl-6'>{children}</div>
+    <label
+      htmlFor={name}
+      className={`inline-block text-sm mb-2 ${isSelected ? "text-blue" : ""}`}
+    >
+      {label}
+    </label>
+    <div>{children}</div>
   </fieldset>
 );
