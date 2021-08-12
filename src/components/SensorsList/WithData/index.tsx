@@ -10,7 +10,7 @@ const getLastRecordedAt = (records: RecordsType[]): Date | null => {
       ...record,
       recordedAt: new Date(record.recordedAt),
     }))
-    .sort((a, b) => a.recordedAt.getTime() - b.recordedAt.getTime());
+    .sort((a, b) => b.recordedAt.getTime() - a.recordedAt.getTime());
 
   if (sortedRecords.length === 0) return null;
   return sortedRecords[0].recordedAt;
