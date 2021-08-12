@@ -1,19 +1,15 @@
 import { DatetimeRangePicker } from "@components/DatetimeRangePicker";
-import { FormSelect } from "@components/FormSelect";
 import { RadioFieldset } from "@components/RadioFieldset";
 import { FC } from "react";
 
 type FilterType = "devicesByAmount" | "devicesByDatetimeRange";
-type TemporalityOfRecordsType = "newest" | "oldest";
+type TemporalityOfRecordsType = "today" | "week" | "month" | "all";
 
 export interface DeviceLineChartFiltersPropType {
   activeFilterType: FilterType;
   onActiveFilterTypeChange: (filterType: FilterType) => void;
-  temporalityOfRecords: "newest" | "oldest";
+  temporalityOfRecords: TemporalityOfRecordsType;
   onTemporalityOfRecordsChange: (temp: TemporalityOfRecordsType) => void;
-  numberOfRecordsToDisplay: number;
-  onNumberOfRecordsChange: (num: number) => void;
-  maxNumberOfRecordsToDisplay: number;
   startDatetimeString: string;
   endDatetimeString: string;
   onDatetimeRangeChange: (vals: {
@@ -22,57 +18,86 @@ export interface DeviceLineChartFiltersPropType {
   }) => void;
 }
 
+interface TemporalityButtonPropType {
+  isActive?: boolean;
+  isFirst?: boolean;
+  onClick?: () => void;
+}
+
+const TemporalityButton: FC<TemporalityButtonPropType> = ({
+  isActive = false,
+  isFirst = false,
+  onClick = () => undefined,
+  children,
+}) => (
+  <button
+    className={[
+      "border border-gray-200 px-4 py-2 text-sm relative transition",
+      "focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30",
+      "focus:ring-offset focus:ring-offset-white focus:ring-offset-2",
+      !isActive &&
+        "hover:bg-purple hover:bg-opacity-10 hover:text-purple hover:border-purple hover:z-10",
+      !isFirst && "ml-[-1px]",
+      isActive && "bg-blue border-blue text-white z-20",
+    ]
+      .filter(Boolean)
+      .join(" ")}
+    onClick={evt => {
+      evt.preventDefault();
+      onClick();
+    }}
+  >
+    {children}
+  </button>
+);
+
 export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
   activeFilterType,
   onActiveFilterTypeChange,
   temporalityOfRecords,
   onTemporalityOfRecordsChange,
-  numberOfRecordsToDisplay,
-  onNumberOfRecordsChange,
-  maxNumberOfRecordsToDisplay,
   startDatetimeString,
   endDatetimeString,
   onDatetimeRangeChange,
 }) => (
-  <div className='border-b border-gray-100 shadow p-4 grid grid-cols-[auto,max-content] gap-8'>
+  <div className='border-b border-gray-100 shadow p-4 flex flex-wrap gap-8'>
     <RadioFieldset
       isSelected={activeFilterType === "devicesByAmount"}
-      label='Beiträge bei Anzahl'
+      label='Messwerte bei Zeitraum'
       name='devicesByAmount'
       onSelect={() => onActiveFilterTypeChange("devicesByAmount")}
     >
-      <div className='grid grid-cols-[2fr,1fr] gap-2'>
-        <FormSelect
-          name='newestOrOldest'
-          options={[
-            { name: "Neueste", value: "newest" },
-            { name: "Älteste", value: "oldest" },
-          ]}
-          defaultValue={temporalityOfRecords}
-          onValueChange={temp =>
-            onTemporalityOfRecordsChange(temp as TemporalityOfRecordsType)
-          }
-          tabIndex={activeFilterType === "devicesByAmount" ? 0 : -1}
-        />
-        <input
-          type='number'
-          name='records-amount'
-          value={numberOfRecordsToDisplay}
-          min='1'
-          max={`${maxNumberOfRecordsToDisplay}`}
-          step='1'
-          id='records-amount'
-          className='text-blue font-bold text-xs'
-          onChange={event =>
-            onNumberOfRecordsChange(parseInt(event.target.value, 10))
-          }
-          tabIndex={activeFilterType === "devicesByAmount" ? 0 : -1}
-        />
+      <div className='flex'>
+        <TemporalityButton
+          isActive={temporalityOfRecords === "today"}
+          isFirst
+          onClick={() => onTemporalityOfRecordsChange("today")}
+        >
+          Heute
+        </TemporalityButton>
+        <TemporalityButton
+          isActive={temporalityOfRecords === "week"}
+          onClick={() => onTemporalityOfRecordsChange("week")}
+        >
+          Woche
+        </TemporalityButton>
+        <TemporalityButton
+          isActive={temporalityOfRecords === "month"}
+          onClick={() => onTemporalityOfRecordsChange("month")}
+        >
+          Monat
+        </TemporalityButton>
+        <TemporalityButton
+          isActive={temporalityOfRecords === "all"}
+          onClick={() => onTemporalityOfRecordsChange("all")}
+        >
+          Alle
+        </TemporalityButton>
       </div>
     </RadioFieldset>
     <RadioFieldset
       isSelected={activeFilterType === "devicesByDatetimeRange"}
-      label='Beiträge bei Zeitspanne'
+      label='Messwerte bei Zeitspanne'
       name='devicesByDatetimeRange'
       onSelect={() => onActiveFilterTypeChange("devicesByDatetimeRange")}
     >

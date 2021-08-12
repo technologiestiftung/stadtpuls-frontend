@@ -14,15 +14,17 @@ export const RadioFieldset: FC<RadioFieldsetPropType> = ({
   children,
   onSelect = () => undefined,
 }) => (
-  <fieldset className='relative'>
+  /* eslint-disable jsx-a11y/click-events-have-key-events */
+  /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+  <fieldset className='relative' onClick={onSelect}>
+    {/* eslint-enable jsx-a11y/click-events-have-key-events */
+    /* eslint-enable jsx-a11y/no-noninteractive-element-interactions */}
     {!isSelected && (
-      <button
-        onClick={onSelect}
+      <div
         className={[
           "absolute w-[calc(100%-1.5rem)] h-full top-0 left-6 z-30",
-          "bg-white opacity-50 focus:outline-none",
+          "bg-white opacity-50 pointer-events-none",
         ].join(" ")}
-        tabIndex={-1}
       />
     )}
     <div className='grid grid-cols-[1.5rem,auto] text-sm mb-2'>
@@ -30,8 +32,8 @@ export const RadioFieldset: FC<RadioFieldsetPropType> = ({
         type='radio'
         checked={isSelected}
         name={name}
-        onChange={() => !isSelected && onSelect()}
         tabIndex={0}
+        readOnly
       />
       <label htmlFor={name} className={isSelected ? "text-blue" : ""}>
         {label}

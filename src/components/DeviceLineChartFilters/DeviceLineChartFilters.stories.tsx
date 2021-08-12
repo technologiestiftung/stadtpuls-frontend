@@ -13,9 +13,6 @@ const Template: Story<DeviceLineChartFiltersPropType> = ({
   onActiveFilterTypeChange,
   temporalityOfRecords,
   onTemporalityOfRecordsChange,
-  numberOfRecordsToDisplay,
-  onNumberOfRecordsChange,
-  maxNumberOfRecordsToDisplay,
   startDatetimeString,
   endDatetimeString,
   onDatetimeRangeChange,
@@ -23,12 +20,6 @@ const Template: Story<DeviceLineChartFiltersPropType> = ({
   const [internalActiveFilterType, setActiveFilterType] = useState<
     DeviceLineChartFiltersPropType["activeFilterType"]
   >(activeFilterType);
-  const [
-    internalNumberOfRecordsToDisplay,
-    setInternalNumberOfRecordsToDisplay,
-  ] = useState<DeviceLineChartFiltersPropType["numberOfRecordsToDisplay"]>(
-    numberOfRecordsToDisplay
-  );
   const [
     internalTemporalityOfRecords,
     setInternalTemporaityOfRecords,
@@ -57,12 +48,6 @@ const Template: Story<DeviceLineChartFiltersPropType> = ({
           setInternalTemporaityOfRecords(temp);
           onTemporalityOfRecordsChange(temp);
         }}
-        numberOfRecordsToDisplay={internalNumberOfRecordsToDisplay}
-        onNumberOfRecordsChange={num => {
-          setInternalNumberOfRecordsToDisplay(num);
-          onNumberOfRecordsChange(num);
-        }}
-        maxNumberOfRecordsToDisplay={maxNumberOfRecordsToDisplay}
         startDatetimeString={currentDatetimeRange.startDatetimeString}
         endDatetimeString={currentDatetimeRange.endDatetimeString}
         onDatetimeRangeChange={dateTimeRange => {
@@ -77,11 +62,8 @@ const Template: Story<DeviceLineChartFiltersPropType> = ({
 export const Default = Template.bind({});
 Default.args = {
   activeFilterType: "devicesByAmount" as const,
-  temporalityOfRecords: "newest" as const,
+  temporalityOfRecords: "today" as const,
   onTemporalityOfRecordsChange: action("onTemporalityOfRecordsChange"),
-  numberOfRecordsToDisplay: 500,
-  onNumberOfRecordsChange: action("onNumberOfRecordsChange"),
-  maxNumberOfRecordsToDisplay: 1000,
   startDatetimeString: "2021-08-11T13:13:12.000Z",
   endDatetimeString: "2021-08-01T19:19:43.000Z",
   onDatetimeRangeChange: action("onDatetimeRangeChange"),

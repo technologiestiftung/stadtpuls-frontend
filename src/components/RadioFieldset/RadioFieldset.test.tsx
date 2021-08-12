@@ -2,17 +2,20 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { RadioFieldset } from ".";
 
 describe("RadioFieldset component", () => {
-  test("should cover unselected RadioFieldsets with a button", () => {
+  test("should cover unselected RadioFieldsets with a transparent div", () => {
     render(<RadioFieldset isSelected={false} label='Test' name='test' />);
 
-    const button = screen.getByRole("button");
-    expect(button).toBeInTheDocument();
+    const coverDiv = document.querySelector(".absolute.bg-white");
+
+    if (!coverDiv) throw "coverDiv not found";
+
+    expect(coverDiv).toBeInTheDocument();
   });
-  test("should not cover selected RadioFieldsets with a button", () => {
+  test("should not cover selected RadioFieldsets with a transparent div", () => {
     render(<RadioFieldset isSelected label='Test' name='test' />);
 
-    const button = screen.queryByRole("button");
-    expect(button).not.toBeInTheDocument();
+    const coverDiv = document.querySelector(".absolute.bg-white");
+    expect(coverDiv).not.toBeInTheDocument();
   });
   test("should render a checked radio button", () => {
     render(<RadioFieldset isSelected label='Test' name='test' />);
@@ -28,7 +31,7 @@ describe("RadioFieldset component", () => {
     expect(radio).toBeInTheDocument();
     expect(radio?.getAttribute("checked")).toBeNull();
   });
-  test("should call onSelect on button click", () => {
+  test("should call onSelect on fieldset click", () => {
     const onSelect = jest.fn();
     render(
       <RadioFieldset
@@ -39,26 +42,9 @@ describe("RadioFieldset component", () => {
       />
     );
 
-    const button = screen.getByRole("button");
+    const fieldset = screen.getByRole("group");
 
-    fireEvent.click(button);
-
-    expect(onSelect).toHaveBeenCalledTimes(1);
-  });
-  test("should call onSelect on radio click", () => {
-    const onSelect = jest.fn();
-    render(
-      <RadioFieldset
-        isSelected={false}
-        label='Test'
-        name='test'
-        onSelect={onSelect}
-      />
-    );
-
-    const radio = screen.getByRole("radio");
-
-    fireEvent.click(radio);
+    fireEvent.click(fieldset);
 
     expect(onSelect).toHaveBeenCalledTimes(1);
   });

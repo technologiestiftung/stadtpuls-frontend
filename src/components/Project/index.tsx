@@ -64,12 +64,9 @@ export const Project: FC<ProjectsType> = project => {
   const [activeFilterType, setActiveFilterType] = useState<
     DeviceLineChartFiltersPropType["activeFilterType"]
   >("devicesByAmount");
-  const [numberOfRecordsToDisplay, setNumberOfRecordsToDisplay] = useState<
-    DeviceLineChartFiltersPropType["numberOfRecordsToDisplay"]
-  >(MIN_NUMBER_OF_RECORDS_TO_DISPLAY);
   const [temporalityOfRecords, setTemporaityOfRecords] = useState<
     DeviceLineChartFiltersPropType["temporalityOfRecords"]
-  >("newest");
+  >("today");
   const [currentDatetimeRange, setCurrentDatetimeRange] = useState<
     Pick<
       DeviceLineChartFiltersPropType,
@@ -94,22 +91,12 @@ export const Project: FC<ProjectsType> = project => {
 
     if (!device || !device.records) return;
 
-    const initialNumberOfRecordsToDisplay =
-      device.records.length < 500 ? device.records.length : 500;
-    setNumberOfRecordsToDisplay(initialNumberOfRecordsToDisplay);
-  }, [selectedDeviceIndex, project.devices]);
-
-  useEffect(() => {
-    const device = project?.devices?.[selectedDeviceIndex];
-
-    if (!device || !device.records) return;
-
     setLineChartData(
       device.records
-        .slice(0, numberOfRecordsToDisplay || MIN_NUMBER_OF_RECORDS_TO_DISPLAY)
+        .slice(0, MIN_NUMBER_OF_RECORDS_TO_DISPLAY)
         .map(rawRecordToRecord)
     );
-  }, [selectedDeviceIndex, project.devices, numberOfRecordsToDisplay]);
+  }, [selectedDeviceIndex, project.devices]);
 
   useEffect(() => {
     const devicesWithCoordinates = project?.devices?.filter(device => {
@@ -227,12 +214,8 @@ export const Project: FC<ProjectsType> = project => {
 
   return (
     <div className={["max-w-screen-xl", "p-4 mx-auto mt-0 md:mt-5"].join(" ")}>
-      <div
-        className={[
-          "grid gap-4 md:gap-12 grid-cols-1 md:grid-cols-[1fr,2fr]",
-        ].join(" ")}
-      >
-        <div>
+      <div className='grid gap-4 md:gap-12 grid-cols-1 lg:grid-cols-7'>
+        <div className='lg:col-span-2'>
           <a
             href='/projects'
             aria-label='Zurück zur Übersicht'
@@ -299,7 +282,7 @@ export const Project: FC<ProjectsType> = project => {
             </>
           )}
         </div>
-        <div>
+        <div className='lg:col-span-5'>
           <div className='bg-white border border-gray-100 shadow'>
             {project &&
               project.devices &&
@@ -361,12 +344,6 @@ export const Project: FC<ProjectsType> = project => {
                     onActiveFilterTypeChange={setActiveFilterType}
                     temporalityOfRecords={temporalityOfRecords}
                     onTemporalityOfRecordsChange={setTemporaityOfRecords}
-                    numberOfRecordsToDisplay={numberOfRecordsToDisplay}
-                    onNumberOfRecordsChange={setNumberOfRecordsToDisplay}
-                    maxNumberOfRecordsToDisplay={
-                      selectedDevice?.records?.length ||
-                      MIN_NUMBER_OF_RECORDS_TO_DISPLAY
-                    }
                     startDatetimeString={
                       currentDatetimeRange.startDatetimeString
                     }

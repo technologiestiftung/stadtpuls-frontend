@@ -5,10 +5,11 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
   className="grid place-content-center h-screen"
 >
   <div
-    className="border-b border-gray-100 shadow p-4 grid grid-cols-[auto,max-content] gap-8"
+    className="border-b border-gray-100 shadow p-4 flex flex-wrap gap-8"
   >
     <fieldset
       className="relative"
+      onClick={[Function]}
     >
       <div
         className="grid grid-cols-[1.5rem,auto] text-sm mb-2"
@@ -16,7 +17,7 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
         <input
           checked={true}
           name="devicesByAmount"
-          onChange={[Function]}
+          readOnly={true}
           tabIndex={0}
           type="radio"
         />
@@ -24,62 +25,48 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
           className="text-blue"
           htmlFor="devicesByAmount"
         >
-          Beiträge bei Anzahl
+          Messwerte bei Zeitraum
         </label>
       </div>
       <div
         className="pl-6"
       >
         <div
-          className="grid grid-cols-[2fr,1fr] gap-2"
+          className="flex"
         >
-          <div
-            className="mb-2"
+          <button
+            className="border border-gray-200 px-4 py-2 text-sm relative transition focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30 focus:ring-offset focus:ring-offset-white focus:ring-offset-2 bg-blue border-blue text-white z-20"
+            onClick={[Function]}
           >
-            <select
-              className="mb-2 text-blue "
-              defaultValue="newest"
-              id="newestOrOldest"
-              name="newestOrOldest"
-              onBlur={[Function]}
-              onChange={[Function]}
-              required={true}
-              tabIndex={0}
-            >
-              <option
-                value="newest"
-              >
-                Neueste
-              </option>
-              <option
-                value="oldest"
-              >
-                Älteste
-              </option>
-            </select>
-          </div>
-          <input
-            className="text-blue font-bold text-xs"
-            id="records-amount"
-            max="1000"
-            min="1"
-            name="records-amount"
-            onChange={[Function]}
-            step="1"
-            tabIndex={0}
-            type="number"
-            value={500}
-          />
+            Heute
+          </button>
+          <button
+            className="border border-gray-200 px-4 py-2 text-sm relative transition focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30 focus:ring-offset focus:ring-offset-white focus:ring-offset-2 hover:bg-purple hover:bg-opacity-10 hover:text-purple hover:border-purple hover:z-10 ml-[-1px]"
+            onClick={[Function]}
+          >
+            Woche
+          </button>
+          <button
+            className="border border-gray-200 px-4 py-2 text-sm relative transition focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30 focus:ring-offset focus:ring-offset-white focus:ring-offset-2 hover:bg-purple hover:bg-opacity-10 hover:text-purple hover:border-purple hover:z-10 ml-[-1px]"
+            onClick={[Function]}
+          >
+            Monat
+          </button>
+          <button
+            className="border border-gray-200 px-4 py-2 text-sm relative transition focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30 focus:ring-offset focus:ring-offset-white focus:ring-offset-2 hover:bg-purple hover:bg-opacity-10 hover:text-purple hover:border-purple hover:z-10 ml-[-1px]"
+            onClick={[Function]}
+          >
+            Alle
+          </button>
         </div>
       </div>
     </fieldset>
     <fieldset
       className="relative"
+      onClick={[Function]}
     >
-      <button
-        className="absolute w-[calc(100%-1.5rem)] h-full top-0 left-6 z-30 bg-white opacity-50 focus:outline-none"
-        onClick={[Function]}
-        tabIndex={-1}
+      <div
+        className="absolute w-[calc(100%-1.5rem)] h-full top-0 left-6 z-30 bg-white opacity-50 pointer-events-none"
       />
       <div
         className="grid grid-cols-[1.5rem,auto] text-sm mb-2"
@@ -87,7 +74,7 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
         <input
           checked={false}
           name="devicesByDatetimeRange"
-          onChange={[Function]}
+          readOnly={true}
           tabIndex={0}
           type="radio"
         />
@@ -95,7 +82,7 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
           className=""
           htmlFor="devicesByDatetimeRange"
         >
-          Beiträge bei Zeitspanne
+          Messwerte bei Zeitspanne
         </label>
       </div>
       <div

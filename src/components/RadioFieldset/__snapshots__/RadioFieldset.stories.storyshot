@@ -9,6 +9,7 @@ exports[`Storyshots Forms/RadioFieldset Default 1`] = `
   >
     <fieldset
       className="relative"
+      onClick={[Function]}
     >
       <div
         className="grid grid-cols-[1.5rem,auto] text-sm mb-2"
@@ -16,7 +17,7 @@ exports[`Storyshots Forms/RadioFieldset Default 1`] = `
         <input
           checked={true}
           name="a"
-          onChange={[Function]}
+          readOnly={true}
           tabIndex={0}
           type="radio"
         />
@@ -35,11 +36,10 @@ exports[`Storyshots Forms/RadioFieldset Default 1`] = `
     </fieldset>
     <fieldset
       className="relative"
+      onClick={[Function]}
     >
-      <button
-        className="absolute w-[calc(100%-1.5rem)] h-full top-0 left-6 z-30 bg-white opacity-50 focus:outline-none"
-        onClick={[Function]}
-        tabIndex={-1}
+      <div
+        className="absolute w-[calc(100%-1.5rem)] h-full top-0 left-6 z-30 bg-white opacity-50 pointer-events-none"
       />
       <div
         className="grid grid-cols-[1.5rem,auto] text-sm mb-2"
@@ -47,7 +47,7 @@ exports[`Storyshots Forms/RadioFieldset Default 1`] = `
         <input
           checked={false}
           name="b"
-          onChange={[Function]}
+          readOnly={true}
           tabIndex={0}
           type="radio"
         />

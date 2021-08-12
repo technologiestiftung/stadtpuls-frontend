@@ -6,11 +6,8 @@ import { DeviceLineChartFilters, DeviceLineChartFiltersPropType } from ".";
 const TestComponent: FC<Partial<DeviceLineChartFiltersPropType>> = ({
   activeFilterType = "devicesByAmount",
   onActiveFilterTypeChange = jest.fn(),
-  temporalityOfRecords = "newest",
+  temporalityOfRecords = "today",
   onTemporalityOfRecordsChange = jest.fn(),
-  numberOfRecordsToDisplay = 500,
-  onNumberOfRecordsChange = jest.fn(),
-  maxNumberOfRecordsToDisplay = 1000,
   startDatetimeString = "2021-12-01T00:00:00.000Z",
   endDatetimeString = "2021-12-01T00:00:00.000Z",
   onDatetimeRangeChange = jest.fn(),
@@ -18,12 +15,6 @@ const TestComponent: FC<Partial<DeviceLineChartFiltersPropType>> = ({
   const [internalActiveFilterType, setActiveFilterType] = useState<
     DeviceLineChartFiltersPropType["activeFilterType"]
   >(activeFilterType);
-  const [
-    internalNumberOfRecordsToDisplay,
-    setInternalNumberOfRecordsToDisplay,
-  ] = useState<DeviceLineChartFiltersPropType["numberOfRecordsToDisplay"]>(
-    numberOfRecordsToDisplay
-  );
   const [
     internalTemporalityOfRecords,
     setInternalTemporaityOfRecords,
@@ -51,12 +42,6 @@ const TestComponent: FC<Partial<DeviceLineChartFiltersPropType>> = ({
         setInternalTemporaityOfRecords(temp);
         onTemporalityOfRecordsChange(temp);
       }}
-      numberOfRecordsToDisplay={internalNumberOfRecordsToDisplay}
-      onNumberOfRecordsChange={num => {
-        setInternalNumberOfRecordsToDisplay(num);
-        onNumberOfRecordsChange(num);
-      }}
-      maxNumberOfRecordsToDisplay={maxNumberOfRecordsToDisplay}
       startDatetimeString={currentDatetimeRange.startDatetimeString}
       endDatetimeString={currentDatetimeRange.endDatetimeString}
       onDatetimeRangeChange={dateTimeRange => {
@@ -72,18 +57,23 @@ describe("DeviceLineChartFilters", () => {
     render(<TestComponent />);
 
     const [radio1, radio2] = screen.getAllByRole("radio");
-    const select = screen.getByRole("combobox");
-    const numRecords = screen.getByRole("spinbutton");
+    const [todayB, weekB, monthB, allB] = screen.getAllByRole("button");
     const [date1, time1, date2, time2] = screen.getAllByRole("textbox");
 
     radio1.focus();
     expect(radio1).toHaveFocus();
 
     userEvent.tab();
-    expect(select).toHaveFocus();
+    expect(todayB).toHaveFocus();
 
     userEvent.tab();
-    expect(numRecords).toHaveFocus();
+    expect(weekB).toHaveFocus();
+
+    userEvent.tab();
+    expect(monthB).toHaveFocus();
+
+    userEvent.tab();
+    expect(allB).toHaveFocus();
 
     userEvent.tab();
     expect(radio2).toHaveFocus();
@@ -131,31 +121,23 @@ describe("DeviceLineChartFilters", () => {
       />
     );
 
-    const select = screen.getByRole("combobox");
+    const [todayB, weekB, monthB, allB] = screen.getAllByRole("button");
 
-    fireEvent.change(select, { target: { value: "oldest" } });
+    fireEvent.click(weekB);
 
-    expect(onTemporalityOfRecordsChange).toHaveBeenCalledWith("oldest");
-  });
-  test("onNumberOfRecordsChange should call handler", () => {
-    const onNumberOfRecordsChange = jest.fn();
-    render(<TestComponent onNumberOfRecordsChange={onNumberOfRecordsChange} />);
+    expect(onTemporalityOfRecordsChange).toHaveBeenLastCalledWith("week");
 
-    const select = screen.getByRole("spinbutton");
+    fireEvent.click(monthB);
 
-    fireEvent.change(select, { target: { value: 200 } });
+    expect(onTemporalityOfRecordsChange).toHaveBeenLastCalledWith("month");
 
-    expect(onNumberOfRecordsChange).toHaveBeenCalledWith(200);
-  });
-  test("onNumberOfRecordsChange should call handler", () => {
-    const onNumberOfRecordsChange = jest.fn();
-    render(<TestComponent onNumberOfRecordsChange={onNumberOfRecordsChange} />);
+    fireEvent.click(allB);
 
-    const select = screen.getByRole("spinbutton");
+    expect(onTemporalityOfRecordsChange).toHaveBeenLastCalledWith("all");
 
-    fireEvent.change(select, { target: { value: 200 } });
+    fireEvent.click(todayB);
 
-    expect(onNumberOfRecordsChange).toHaveBeenCalledWith(200);
+    expect(onTemporalityOfRecordsChange).toHaveBeenLastCalledWith("today");
   });
   test("onDatetimeRangeChange should call handler", () => {
     const onDatetimeRangeChange = jest.fn();
