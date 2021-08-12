@@ -225,7 +225,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               }}
               className='text-gray-900'
             >
-              {formatDate(getX(tooltipData))}
+              {formatDate(getX(tooltipData))} (UTC)
             </TooltipWithBounds>
           </div>
         )}

@@ -74,7 +74,7 @@ export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
               <th
                 className={["py-2 px-1", "font-normal", "text-left"].join(" ")}
               >
-                Uhrzeit
+                Uhrzeit (UTC)
               </th>
               <th
                 className={["py-2 px-1", "font-normal", "text-right"].join(" ")}
