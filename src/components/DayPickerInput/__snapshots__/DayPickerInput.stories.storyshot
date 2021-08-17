@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UI Elements/DayPickerInput Default 1`] = `
+exports[`Storyshots Forms/DayPickerInput Default 1`] = `
 <div
   className="grid place-content-center h-screen"
 >

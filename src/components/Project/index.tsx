@@ -19,6 +19,8 @@ import { Button } from "@components/Button";
 import { FormSelect } from "@components/FormSelect";
 import { DeviceLineChartFilters } from "@components/DeviceLineChartFilters";
 import { useDeviceRecords } from "@lib/hooks/useDeviceRecords";
+import { useDeviceLastRecordDate } from "@lib/hooks/useDeviceLastRecordDate";
+import moment from "moment";
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -73,6 +75,8 @@ export const Project: FC<ProjectsType> = project => {
     startDateString: currentDatetimeRange.startDateTimeString,
     endDateString: currentDatetimeRange.endDateTimeString,
   });
+
+  const { lastRecordDate } = useDeviceLastRecordDate(selectedDevice?.id);
 
   const [markerData, setMarkerData] = useState<MarkerType[]>([]);
 
@@ -302,18 +306,9 @@ export const Project: FC<ProjectsType> = project => {
                       >
                         <dt>Letzter Eintrag:</dt>
                         <dd className='ml-2'>
-                          {selectedDevice?.records?.length &&
-                          // TODO: Do not use hasOwnProperty here
-                          // eslint-disable-next-line no-prototype-builtins
-                          selectedDevice.records[0].hasOwnProperty("recordedAt")
-                            ? new Date(
-                                Math.max(
-                                  ...selectedDevice.records.map(record =>
-                                    Date.parse(record.recordedAt || "")
-                                  )
-                                )
-                              ).toLocaleDateString()
-                            : ""}
+                          {lastRecordDate
+                            ? moment(lastRecordDate).format("D. MMMM YYYY")
+                            : "–"}
                         </dd>
                         <dt>Messwerte:</dt>
                         <dd className='ml-2'>
