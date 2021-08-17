@@ -1,5 +1,6 @@
 import { action } from "@storybook/addon-actions";
 import { Meta, Story } from "@storybook/react";
+import moment from "moment";
 import { useState } from "react";
 import {
   DatetimeRangeType,
@@ -33,6 +34,7 @@ const Template: Story<DeviceLineChartFiltersPropType> = ({
           setCurrentDatetimeRange(dateTimeRange);
           onDatetimeRangeChange(dateTimeRange);
         }}
+        today={moment("2021-08-05T10:23:01.908Z")}
       />
     </div>
   );
