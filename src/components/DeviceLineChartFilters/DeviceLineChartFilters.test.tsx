@@ -26,21 +26,7 @@ describe("DeviceLineChartFilters", () => {
     const [todayB, weekB, monthB, allB] = screen.getAllByRole("button");
     const [date1, time1, date2, time2] = screen.getAllByRole("textbox");
 
-    todayB.focus();
-    expect(todayB).toHaveFocus();
-
-    userEvent.tab();
-    expect(weekB).toHaveFocus();
-
-    userEvent.tab();
-    expect(monthB).toHaveFocus();
-
-    userEvent.tab();
-    expect(allB).toHaveFocus();
-
-    fireEvent.click(group2);
-
-    userEvent.tab();
+    date1.focus();
     expect(date1).toHaveFocus();
 
     userEvent.tab();
@@ -53,6 +39,20 @@ describe("DeviceLineChartFilters", () => {
     userEvent.tab();
     userEvent.tab();
     expect(time2).toHaveFocus();
+
+    fireEvent.click(group2);
+
+    userEvent.tab();
+    expect(todayB).toHaveFocus();
+
+    userEvent.tab();
+    expect(weekB).toHaveFocus();
+
+    userEvent.tab();
+    expect(monthB).toHaveFocus();
+
+    userEvent.tab();
+    expect(allB).toHaveFocus();
   });
   test("should reduce opacity of inactive filedset", () => {
     render(<TestComponent />);

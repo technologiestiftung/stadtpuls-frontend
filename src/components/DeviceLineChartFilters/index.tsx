@@ -81,6 +81,7 @@ const TemporalityButton: FC<TemporalityButtonPropType> = ({
       .join(" ")}
     onClick={evt => {
       evt.preventDefault();
+      evt.stopPropagation();
       onClick();
     }}
   >
@@ -94,7 +95,7 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
   onDatetimeRangeChange,
 }) => {
   const [activeFilterType, setActiveFilterType] = useState<FilterType>(
-    "devicesByTimespan"
+    "devicesByDatetimeRange"
   );
   const [temporalityOfRecords, setTemporaityOfRecords] = useState<TimespanType>(
     "today"
@@ -102,64 +103,6 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
   const weekTimeRange = getTimeRangeByTimespan("week");
   return (
     <div className='border-b border-gray-100 shadow p-4 flex flex-wrap gap-8'>
-      <RadioFieldset
-        isSelected={activeFilterType === "devicesByTimespan"}
-        label='Messwerte bei Zeitraum'
-        name='devicesByTimespan'
-        onSelect={() => setActiveFilterType("devicesByTimespan")}
-      >
-        <div className='flex'>
-          <TemporalityButton
-            isActive={
-              activeFilterType === "devicesByTimespan" &&
-              temporalityOfRecords === "today"
-            }
-            isFirst
-            onClick={() => {
-              setTemporaityOfRecords("today");
-              onDatetimeRangeChange(getTimeRangeByTimespan("today"));
-            }}
-          >
-            Heute
-          </TemporalityButton>
-          <TemporalityButton
-            isActive={
-              activeFilterType === "devicesByTimespan" &&
-              temporalityOfRecords === "week"
-            }
-            onClick={() => {
-              setTemporaityOfRecords("week");
-              onDatetimeRangeChange(getTimeRangeByTimespan("week"));
-            }}
-          >
-            Woche
-          </TemporalityButton>
-          <TemporalityButton
-            isActive={
-              activeFilterType === "devicesByTimespan" &&
-              temporalityOfRecords === "month"
-            }
-            onClick={() => {
-              setTemporaityOfRecords("month");
-              onDatetimeRangeChange(getTimeRangeByTimespan("month"));
-            }}
-          >
-            Monat
-          </TemporalityButton>
-          <TemporalityButton
-            isActive={
-              activeFilterType === "devicesByTimespan" &&
-              temporalityOfRecords === "all"
-            }
-            onClick={() => {
-              setTemporaityOfRecords("all");
-              onDatetimeRangeChange(getTimeRangeByTimespan("all"));
-            }}
-          >
-            Alle
-          </TemporalityButton>
-        </div>
-      </RadioFieldset>
       <RadioFieldset
         isSelected={activeFilterType === "devicesByDatetimeRange"}
         label='Messwerte bei Zeitspanne'
@@ -180,6 +123,73 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
           onDatetimeRangeChange={onDatetimeRangeChange}
           tabIndex={activeFilterType === "devicesByDatetimeRange" ? 0 : -1}
         />
+      </RadioFieldset>
+      <RadioFieldset
+        isSelected={activeFilterType === "devicesByTimespan"}
+        label='Messwerte bei Zeitraum'
+        name='devicesByTimespan'
+        onSelect={() => {
+          if (activeFilterType === "devicesByTimespan") return;
+          setActiveFilterType("devicesByTimespan");
+          setTemporaityOfRecords("today");
+          onDatetimeRangeChange(getTimeRangeByTimespan("today"));
+        }}
+      >
+        <div className='flex'>
+          <TemporalityButton
+            isActive={
+              activeFilterType === "devicesByTimespan" &&
+              temporalityOfRecords === "today"
+            }
+            isFirst
+            onClick={() => {
+              setActiveFilterType("devicesByTimespan");
+              setTemporaityOfRecords("today");
+              onDatetimeRangeChange(getTimeRangeByTimespan("today"));
+            }}
+          >
+            Heute
+          </TemporalityButton>
+          <TemporalityButton
+            isActive={
+              activeFilterType === "devicesByTimespan" &&
+              temporalityOfRecords === "week"
+            }
+            onClick={() => {
+              setActiveFilterType("devicesByTimespan");
+              setTemporaityOfRecords("week");
+              onDatetimeRangeChange(getTimeRangeByTimespan("week"));
+            }}
+          >
+            Woche
+          </TemporalityButton>
+          <TemporalityButton
+            isActive={
+              activeFilterType === "devicesByTimespan" &&
+              temporalityOfRecords === "month"
+            }
+            onClick={() => {
+              setActiveFilterType("devicesByTimespan");
+              setTemporaityOfRecords("month");
+              onDatetimeRangeChange(getTimeRangeByTimespan("month"));
+            }}
+          >
+            Monat
+          </TemporalityButton>
+          <TemporalityButton
+            isActive={
+              activeFilterType === "devicesByTimespan" &&
+              temporalityOfRecords === "all"
+            }
+            onClick={() => {
+              setActiveFilterType("devicesByTimespan");
+              setTemporaityOfRecords("all");
+              onDatetimeRangeChange(getTimeRangeByTimespan("all"));
+            }}
+          >
+            Alle
+          </TemporalityButton>
+        </div>
       </RadioFieldset>
     </div>
   );
