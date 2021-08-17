@@ -111,20 +111,14 @@ describe("DeviceLineChartFilters", () => {
 
     fireEvent.click(weekB);
     expect(onDatetimeRangeChange).toHaveBeenLastCalledWith({
-      startDateTimeString: moment()
-        .subtract(1, "week")
-        .startOf("day")
-        .toISOString(),
-      endDateTimeString: moment().endOf("day").toISOString(),
+      startDateTimeString: moment().startOf("week").toISOString(),
+      endDateTimeString: moment().endOf("week").toISOString(),
     });
 
     fireEvent.click(monthB);
     expect(onDatetimeRangeChange).toHaveBeenLastCalledWith({
-      startDateTimeString: moment()
-        .subtract(1, "months")
-        .startOf("day")
-        .toISOString(),
-      endDateTimeString: moment().endOf("day").toISOString(),
+      startDateTimeString: moment().startOf("month").toISOString(),
+      endDateTimeString: moment().endOf("month").toISOString(),
     });
 
     fireEvent.click(yearB);

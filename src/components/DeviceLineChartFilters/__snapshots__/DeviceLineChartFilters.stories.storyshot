@@ -13,6 +13,76 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
     >
       <label
         className="inline-block text-sm mb-2 text-blue"
+        htmlFor="devicesByDatetimeRange"
+      >
+        Messwerte bei Zeitspanne
+      </label>
+      <div>
+        <div
+          className="flex flex-wrap gap-2"
+        >
+          <div
+            className="inline-flex"
+          >
+            <div>
+              <input
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                placeholder="DD/MM/YYYY"
+                tabIndex={0}
+                value="11/08/2021"
+              />
+            </div>
+            <input
+              className="InputTime-from font-mono relative focus:z-30 w-20 text-center inline-block border border-gray-200 px-3 py-2 "
+              onChange={[Function]}
+              style={Object {}}
+              tabIndex={0}
+              type="text"
+              value="15:13"
+            />
+          </div>
+          <span
+            className="inline-flex"
+          >
+            <div>
+              <input
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                placeholder="DD/MM/YYYY"
+                tabIndex={0}
+                value="01/08/2021"
+              />
+            </div>
+            <input
+              className="InputTime-to font-mono relative focus:z-30 w-20 text-center inline-block border border-gray-200 px-3 py-2 "
+              onChange={[Function]}
+              style={Object {}}
+              tabIndex={0}
+              type="text"
+              value="21:19"
+            />
+          </span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      className="relative"
+      onClick={[Function]}
+    >
+      <div
+        className="absolute w-full h-full inset-0 z-30 bg-white opacity-50 pointer-events-none"
+      />
+      <label
+        className="inline-block text-sm mb-2 "
         htmlFor="devicesByTimespan"
       >
         Messwerte bei Zeitraum
@@ -22,7 +92,7 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
           className="flex"
         >
           <button
-            className="border border-gray-200 px-4 py-2 text-sm relative transition focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30 focus:ring-offset focus:ring-offset-white focus:ring-offset-2 bg-blue border-blue text-white z-20"
+            className="border border-gray-200 px-4 py-2 text-sm relative transition focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30 focus:ring-offset focus:ring-offset-white focus:ring-offset-2 hover:bg-purple hover:bg-opacity-10 hover:text-purple hover:border-purple hover:z-10"
             onClick={[Function]}
           >
             Heute
@@ -45,76 +115,6 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
           >
             Alle
           </button>
-        </div>
-      </div>
-    </fieldset>
-    <fieldset
-      className="relative"
-      onClick={[Function]}
-    >
-      <div
-        className="absolute w-full h-full inset-0 z-30 bg-white opacity-50 pointer-events-none"
-      />
-      <label
-        className="inline-block text-sm mb-2 "
-        htmlFor="devicesByDatetimeRange"
-      >
-        Messwerte bei Zeitspanne
-      </label>
-      <div>
-        <div
-          className="flex flex-wrap gap-2"
-        >
-          <div
-            className="inline-flex"
-          >
-            <div>
-              <input
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                placeholder="DD/MM/YYYY"
-                tabIndex={-1}
-                value="11/08/2021"
-              />
-            </div>
-            <input
-              className="InputTime-from font-mono relative focus:z-30 w-20 text-center inline-block border border-gray-200 px-3 py-2 "
-              onChange={[Function]}
-              style={Object {}}
-              tabIndex={-1}
-              type="text"
-              value="15:13"
-            />
-          </div>
-          <span
-            className="inline-flex"
-          >
-            <div>
-              <input
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                placeholder="DD/MM/YYYY"
-                tabIndex={-1}
-                value="01/08/2021"
-              />
-            </div>
-            <input
-              className="InputTime-to font-mono relative focus:z-30 w-20 text-center inline-block border border-gray-200 px-3 py-2 "
-              onChange={[Function]}
-              style={Object {}}
-              tabIndex={-1}
-              type="text"
-              value="21:19"
-            />
-          </span>
         </div>
       </div>
     </fieldset>

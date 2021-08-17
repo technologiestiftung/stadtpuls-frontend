@@ -20,7 +20,7 @@ exports[`Storyshots Forms/DatetimeRangePicker Default 1`] = `
           onKeyUp={[Function]}
           placeholder="DD/MM/YYYY"
           tabIndex={1}
-          value="11/08/2021"
+          value="17/08/2021"
         />
       </div>
       <input
@@ -29,7 +29,7 @@ exports[`Storyshots Forms/DatetimeRangePicker Default 1`] = `
         style={Object {}}
         tabIndex={1}
         type="text"
-        value="15:13"
+        value="10:27"
       />
     </div>
     <span
@@ -45,7 +45,7 @@ exports[`Storyshots Forms/DatetimeRangePicker Default 1`] = `
           onKeyUp={[Function]}
           placeholder="DD/MM/YYYY"
           tabIndex={1}
-          value="01/08/2021"
+          value="17/08/2021"
         />
       </div>
       <input
@@ -54,7 +54,7 @@ exports[`Storyshots Forms/DatetimeRangePicker Default 1`] = `
         style={Object {}}
         tabIndex={1}
         type="text"
-        value="21:19"
+        value="10:27"
       />
     </span>
   </div>

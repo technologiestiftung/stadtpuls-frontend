@@ -23,29 +23,21 @@ interface GetTimeRangeByFiltersReturnType {
 const getTimeRangeByTimespan = (
   timespan: TimespanType
 ): GetTimeRangeByFiltersReturnType => {
-  const todayMoment = moment().endOf("day");
-  const todayISOString = todayMoment.toISOString();
   switch (timespan) {
     case "today":
       return {
         startDateTimeString: moment().startOf("day").toISOString(),
-        endDateTimeString: todayISOString,
+        endDateTimeString: moment().endOf("day").toISOString(),
       };
     case "week":
       return {
-        startDateTimeString: moment()
-          .subtract(1, "week")
-          .startOf("day")
-          .toISOString(),
-        endDateTimeString: todayISOString,
+        startDateTimeString: moment().startOf("week").toISOString(),
+        endDateTimeString: moment().endOf("week").toISOString(),
       };
     case "month":
       return {
-        startDateTimeString: moment()
-          .subtract(1, "month")
-          .startOf("day")
-          .toISOString(),
-        endDateTimeString: todayISOString,
+        startDateTimeString: moment().startOf("month").toISOString(),
+        endDateTimeString: moment().endOf("month").toISOString(),
       };
     default:
       return {
