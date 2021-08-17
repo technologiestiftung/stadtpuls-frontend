@@ -5,8 +5,8 @@ describe("DatetimeRangePicker component", () => {
   test("should work as expected", () => {
     render(
       <DatetimeRangePicker
-        startDatetimeString='2021-08-11T10:19:43.000Z'
-        endDatetimeString='2021-08-11T19:24:56.000Z'
+        startDateTimeString='2021-08-11T10:19:43.000Z'
+        endDateTimeString='2021-08-11T19:24:56.000Z'
         onDatetimeRangeChange={jest.fn()}
       />
     );

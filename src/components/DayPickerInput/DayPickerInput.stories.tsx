@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { DayPickerInput } from ".";
 
 export default {
-  title: "UI Elements/DayPickerInput",
+  title: "Forms/DayPickerInput",
   component: DayPickerInput,
 } as Meta;
 

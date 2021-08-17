@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { TimeInput } from ".";
 
 export default {
-  title: "UI Elements/TimeInput",
+  title: "Forms/TimeInput",
   component: TimeInput,
 } as Meta;
 
