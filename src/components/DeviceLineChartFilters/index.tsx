@@ -61,7 +61,7 @@ const TemporalityButton: FC<TemporalityButtonPropType> = ({
 }) => (
   <button
     className={[
-      "border border-gray-200 px-4 py-2 text-sm relative transition",
+      "border border-gray-200 px-2 sm:px-3 py-2 text-sm relative transition",
       "focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30",
       "focus:ring-offset focus:ring-offset-white focus:ring-offset-2",
       !isActive &&

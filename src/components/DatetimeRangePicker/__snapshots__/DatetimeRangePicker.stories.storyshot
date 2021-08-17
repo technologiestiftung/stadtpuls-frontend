@@ -24,12 +24,12 @@ exports[`Storyshots Forms/DatetimeRangePicker Default 1`] = `
         />
       </div>
       <input
-        className="InputTime-from font-mono relative focus:z-30 w-20 text-center inline-block border border-gray-200 px-3 py-2 "
+        className="InputTime-from font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 "
         onChange={[Function]}
         style={Object {}}
         tabIndex={1}
         type="text"
-        value="10:27"
+        value="10:32"
       />
     </div>
     <span
@@ -49,12 +49,12 @@ exports[`Storyshots Forms/DatetimeRangePicker Default 1`] = `
         />
       </div>
       <input
-        className="InputTime-to font-mono relative focus:z-30 w-20 text-center inline-block border border-gray-200 px-3 py-2 "
+        className="InputTime-to font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 "
         onChange={[Function]}
         style={Object {}}
         tabIndex={1}
         type="text"
-        value="10:27"
+        value="10:32"
       />
     </span>
   </div>

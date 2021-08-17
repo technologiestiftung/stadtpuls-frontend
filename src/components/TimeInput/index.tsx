@@ -23,8 +23,8 @@ export const TimeInput: FC<TimeInputProps> = ({
         type='text'
         className={[
           className,
-          "font-mono relative focus:z-30 w-20 text-center",
-          "inline-block border border-gray-200 px-3 py-2",
+          "font-mono relative focus:z-30 w-[4.5rem] text-center",
+          "inline-block border border-gray-200 p-1.5",
           styles.timeInput,
         ].join(" ")}
         tabIndex={tabIndex}

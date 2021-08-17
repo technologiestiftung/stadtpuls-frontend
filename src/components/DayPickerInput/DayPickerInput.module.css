@@ -3,7 +3,7 @@
 }
 
 .inputContainer > input {
-  @apply font-mono w-32 text-center m-0 relative z-20 border border-gray-200 px-2 py-2 focus:outline-none focus:ring-2 focus:ring-green focus:border-purple focus:text-blue focus:placeholder-blue inline-block bg-white;
+  @apply font-mono w-32 text-center m-0 relative z-20 border border-gray-200 p-1.5 focus:outline-none focus:ring-2 focus:ring-green focus:border-purple focus:text-blue focus:placeholder-blue inline-block bg-white;
 }
 
 .container {
