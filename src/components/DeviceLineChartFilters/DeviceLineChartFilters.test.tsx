@@ -4,6 +4,9 @@ import moment from "moment";
 import { FC } from "react";
 import { DeviceLineChartFilters, DeviceLineChartFiltersPropType } from ".";
 
+const todayString = "2021-12-31T12:34:56.789Z";
+const today = moment(todayString);
+
 const TestComponent: FC<Partial<DeviceLineChartFiltersPropType>> = ({
   startDateTimeString = "2021-01-01T00:00:00.000Z",
   endDateTimeString = "2021-02-01T23:59:00.000Z",
@@ -14,6 +17,7 @@ const TestComponent: FC<Partial<DeviceLineChartFiltersPropType>> = ({
       startDateTimeString={startDateTimeString}
       endDateTimeString={endDateTimeString}
       onDatetimeRangeChange={onDatetimeRangeChange}
+      today={today}
     />
   );
 };
@@ -23,7 +27,12 @@ describe("DeviceLineChartFilters", () => {
     render(<TestComponent />);
 
     const [, group2] = screen.getAllByRole("group");
-    const [todayB, weekB, monthB, allB] = screen.getAllByRole("button");
+    const [
+      twentyFourHoursB,
+      sevenDaysB,
+      thrityDaysB,
+      allB,
+    ] = screen.getAllByRole("button");
     const [date1, time1, date2, time2] = screen.getAllByRole("textbox");
 
     date1.focus();
@@ -43,13 +52,13 @@ describe("DeviceLineChartFilters", () => {
     fireEvent.click(group2);
 
     userEvent.tab();
-    expect(todayB).toHaveFocus();
+    expect(twentyFourHoursB).toHaveFocus();
 
     userEvent.tab();
-    expect(weekB).toHaveFocus();
+    expect(sevenDaysB).toHaveFocus();
 
     userEvent.tab();
-    expect(monthB).toHaveFocus();
+    expect(thrityDaysB).toHaveFocus();
 
     userEvent.tab();
     expect(allB).toHaveFocus();
@@ -101,27 +110,32 @@ describe("DeviceLineChartFilters", () => {
   test("onDatetimeRangeChange should call handler", () => {
     const onDatetimeRangeChange = jest.fn();
     render(<TestComponent onDatetimeRangeChange={onDatetimeRangeChange} />);
-    const [todayB, weekB, monthB, yearB] = screen.getAllByRole("button");
+    const [
+      twentyFourHoursB,
+      sevenDaysB,
+      thrityDaysB,
+      allB,
+    ] = screen.getAllByRole("button");
 
-    fireEvent.click(todayB);
+    fireEvent.click(twentyFourHoursB);
     expect(onDatetimeRangeChange).toHaveBeenLastCalledWith({
-      startDateTimeString: moment().startOf("day").toISOString(),
-      endDateTimeString: moment().endOf("day").toISOString(),
+      startDateTimeString: "2021-12-30T12:34:56.789Z",
+      endDateTimeString: todayString,
     });
 
-    fireEvent.click(weekB);
+    fireEvent.click(sevenDaysB);
     expect(onDatetimeRangeChange).toHaveBeenLastCalledWith({
-      startDateTimeString: moment().startOf("week").toISOString(),
-      endDateTimeString: moment().endOf("week").toISOString(),
+      startDateTimeString: "2021-12-24T12:34:56.789Z",
+      endDateTimeString: todayString,
     });
 
-    fireEvent.click(monthB);
+    fireEvent.click(thrityDaysB);
     expect(onDatetimeRangeChange).toHaveBeenLastCalledWith({
-      startDateTimeString: moment().startOf("month").toISOString(),
-      endDateTimeString: moment().endOf("month").toISOString(),
+      startDateTimeString: "2021-12-01T12:34:56.789Z",
+      endDateTimeString: todayString,
     });
 
-    fireEvent.click(yearB);
+    fireEvent.click(allB);
     expect(onDatetimeRangeChange).toHaveBeenLastCalledWith({
       startDateTimeString: undefined,
       endDateTimeString: undefined,

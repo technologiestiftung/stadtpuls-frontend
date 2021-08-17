@@ -4,7 +4,7 @@ import moment from "moment";
 import { FC, useState } from "react";
 
 type FilterType = "devicesByTimespan" | "devicesByDatetimeRange";
-type TimespanType = "today" | "week" | "month" | "all";
+type TimespanType = "last24h" | "last7days" | "last30days" | "all";
 
 export interface DatetimeRangeType {
   startDateTimeString: string | undefined;
@@ -13,6 +13,7 @@ export interface DatetimeRangeType {
 
 export interface DeviceLineChartFiltersPropType extends DatetimeRangeType {
   onDatetimeRangeChange: (vals: DatetimeRangeType) => void;
+  today?: moment.Moment;
 }
 
 interface GetTimeRangeByFiltersReturnType {
@@ -21,23 +22,24 @@ interface GetTimeRangeByFiltersReturnType {
 }
 
 const getTimeRangeByTimespan = (
-  timespan: TimespanType
+  timespan: TimespanType,
+  today: moment.Moment
 ): GetTimeRangeByFiltersReturnType => {
   switch (timespan) {
-    case "today":
+    case "last24h":
       return {
-        startDateTimeString: moment().startOf("day").toISOString(),
-        endDateTimeString: moment().endOf("day").toISOString(),
+        startDateTimeString: moment(today).subtract(1, "days").toISOString(),
+        endDateTimeString: today.toISOString(),
       };
-    case "week":
+    case "last7days":
       return {
-        startDateTimeString: moment().startOf("week").toISOString(),
-        endDateTimeString: moment().endOf("week").toISOString(),
+        startDateTimeString: moment(today).subtract(7, "days").toISOString(),
+        endDateTimeString: today.toISOString(),
       };
-    case "month":
+    case "last30days":
       return {
-        startDateTimeString: moment().startOf("month").toISOString(),
-        endDateTimeString: moment().endOf("month").toISOString(),
+        startDateTimeString: moment(today).subtract(30, "days").toISOString(),
+        endDateTimeString: today.toISOString(),
       };
     default:
       return {
@@ -85,14 +87,15 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
   startDateTimeString,
   endDateTimeString,
   onDatetimeRangeChange,
+  today = moment(Date.now()),
 }) => {
   const [activeFilterType, setActiveFilterType] = useState<FilterType>(
     "devicesByDatetimeRange"
   );
   const [temporalityOfRecords, setTemporaityOfRecords] = useState<TimespanType>(
-    "today"
+    "last24h"
   );
-  const weekTimeRange = getTimeRangeByTimespan("week");
+  const last7daysTimeRange = getTimeRangeByTimespan("last7days", today);
   return (
     <div className='border-b border-gray-100 shadow p-4 flex flex-wrap gap-8'>
       <RadioFieldset
@@ -104,12 +107,12 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
         <DatetimeRangePicker
           startDateTimeString={
             startDateTimeString ||
-            weekTimeRange.startDateTimeString ||
+            last7daysTimeRange.startDateTimeString ||
             moment().toISOString()
           }
           endDateTimeString={
             endDateTimeString ||
-            weekTimeRange.endDateTimeString ||
+            last7daysTimeRange.endDateTimeString ||
             moment().toISOString()
           }
           onDatetimeRangeChange={onDatetimeRangeChange}
@@ -123,50 +126,52 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
         onSelect={() => {
           if (activeFilterType === "devicesByTimespan") return;
           setActiveFilterType("devicesByTimespan");
-          setTemporaityOfRecords("today");
-          onDatetimeRangeChange(getTimeRangeByTimespan("today"));
+          setTemporaityOfRecords("last24h");
+          onDatetimeRangeChange(getTimeRangeByTimespan("last24h", today));
         }}
       >
         <div className='flex'>
           <TemporalityButton
             isActive={
               activeFilterType === "devicesByTimespan" &&
-              temporalityOfRecords === "today"
+              temporalityOfRecords === "last24h"
             }
             isFirst
             onClick={() => {
               setActiveFilterType("devicesByTimespan");
-              setTemporaityOfRecords("today");
-              onDatetimeRangeChange(getTimeRangeByTimespan("today"));
+              setTemporaityOfRecords("last24h");
+              onDatetimeRangeChange(getTimeRangeByTimespan("last24h", today));
             }}
           >
-            Heute
+            24 Std.
           </TemporalityButton>
           <TemporalityButton
             isActive={
               activeFilterType === "devicesByTimespan" &&
-              temporalityOfRecords === "week"
+              temporalityOfRecords === "last7days"
             }
             onClick={() => {
               setActiveFilterType("devicesByTimespan");
-              setTemporaityOfRecords("week");
-              onDatetimeRangeChange(getTimeRangeByTimespan("week"));
+              setTemporaityOfRecords("last7days");
+              onDatetimeRangeChange(getTimeRangeByTimespan("last7days", today));
             }}
           >
-            Woche
+            7 Tage
           </TemporalityButton>
           <TemporalityButton
             isActive={
               activeFilterType === "devicesByTimespan" &&
-              temporalityOfRecords === "month"
+              temporalityOfRecords === "last30days"
             }
             onClick={() => {
               setActiveFilterType("devicesByTimespan");
-              setTemporaityOfRecords("month");
-              onDatetimeRangeChange(getTimeRangeByTimespan("month"));
+              setTemporaityOfRecords("last30days");
+              onDatetimeRangeChange(
+                getTimeRangeByTimespan("last30days", today)
+              );
             }}
           >
-            Monat
+            30 Tage
           </TemporalityButton>
           <TemporalityButton
             isActive={
@@ -176,7 +181,7 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
             onClick={() => {
               setActiveFilterType("devicesByTimespan");
               setTemporaityOfRecords("all");
-              onDatetimeRangeChange(getTimeRangeByTimespan("all"));
+              onDatetimeRangeChange(getTimeRangeByTimespan("all", today));
             }}
           >
             Alle
