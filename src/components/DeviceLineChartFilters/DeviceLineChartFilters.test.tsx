@@ -1,53 +1,19 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { FC, useState } from "react";
+import moment from "moment";
+import { FC } from "react";
 import { DeviceLineChartFilters, DeviceLineChartFiltersPropType } from ".";
 
 const TestComponent: FC<Partial<DeviceLineChartFiltersPropType>> = ({
-  activeFilterType = "devicesByTimespan",
-  onActiveFilterTypeChange = jest.fn(),
-  temporalityOfRecords = "today",
-  onTemporalityOfRecordsChange = jest.fn(),
-  startDatetimeString = "2021-12-01T00:00:00.000Z",
-  endDatetimeString = "2021-12-01T00:00:00.000Z",
+  startDateTimeString = "2021-01-01T00:00:00.000Z",
+  endDateTimeString = "2021-02-01T23:59:00.000Z",
   onDatetimeRangeChange = jest.fn(),
 }) => {
-  const [internalActiveFilterType, setActiveFilterType] = useState<
-    DeviceLineChartFiltersPropType["activeFilterType"]
-  >(activeFilterType);
-  const [
-    internalTemporalityOfRecords,
-    setInternalTemporaityOfRecords,
-  ] = useState<DeviceLineChartFiltersPropType["temporalityOfRecords"]>(
-    temporalityOfRecords
-  );
-  const [currentDatetimeRange, setCurrentDatetimeRange] = useState<
-    Pick<
-      DeviceLineChartFiltersPropType,
-      "startDatetimeString" | "endDatetimeString"
-    >
-  >({
-    startDatetimeString,
-    endDatetimeString,
-  });
   return (
     <DeviceLineChartFilters
-      activeFilterType={internalActiveFilterType}
-      onActiveFilterTypeChange={filter => {
-        setActiveFilterType(filter);
-        onActiveFilterTypeChange(filter);
-      }}
-      temporalityOfRecords={internalTemporalityOfRecords}
-      onTemporalityOfRecordsChange={temp => {
-        setInternalTemporaityOfRecords(temp);
-        onTemporalityOfRecordsChange(temp);
-      }}
-      startDatetimeString={currentDatetimeRange.startDatetimeString}
-      endDatetimeString={currentDatetimeRange.endDatetimeString}
-      onDatetimeRangeChange={dateTimeRange => {
-        setCurrentDatetimeRange(dateTimeRange);
-        onDatetimeRangeChange(dateTimeRange);
-      }}
+      startDateTimeString={startDateTimeString}
+      endDateTimeString={endDateTimeString}
+      onDatetimeRangeChange={onDatetimeRangeChange}
     />
   );
 };
@@ -88,60 +54,39 @@ describe("DeviceLineChartFilters", () => {
     userEvent.tab();
     expect(time2).toHaveFocus();
   });
-  test("onActiveFilterTypeChange should call handler", () => {
-    const onActiveFilterTypeChange = jest.fn();
-    render(
-      <TestComponent onActiveFilterTypeChange={onActiveFilterTypeChange} />
-    );
+  test("should reduce opacity of inactive filedset", () => {
+    render(<TestComponent />);
 
     const [group1, group2] = screen.getAllByRole("group");
 
     fireEvent.click(group2);
 
-    expect(onActiveFilterTypeChange).toHaveBeenCalledWith(
-      "devicesByDatetimeRange"
-    );
+    const coverDiv1 = group1.querySelector(".opacity-50");
+    if (!coverDiv1) throw "coverDiv was not found";
+    expect(coverDiv1).toBeInTheDocument();
 
     fireEvent.click(group1);
 
-    expect(onActiveFilterTypeChange).toHaveBeenCalledWith("devicesByTimespan");
+    const coverDiv2 = group2.querySelector(".opacity-50");
+    if (!coverDiv2) throw "coverDiv was not found";
+    expect(coverDiv2).toBeInTheDocument();
   });
-  test("onTemporalityOfRecordsChange should call handler", () => {
-    const onTemporalityOfRecordsChange = jest.fn();
-    render(
-      <TestComponent
-        onTemporalityOfRecordsChange={onTemporalityOfRecordsChange}
-      />
-    );
+  test("should have no active button when inactive filedset", () => {
+    render(<TestComponent />);
 
-    const [todayB, weekB, monthB, allB] = screen.getAllByRole("button");
+    const [group1, group2] = screen.getAllByRole("group");
 
-    fireEvent.click(weekB);
+    fireEvent.click(group2);
 
-    expect(onTemporalityOfRecordsChange).toHaveBeenLastCalledWith("week");
+    expect(group1.querySelector("bg-primary")).not.toBeInTheDocument();
 
-    fireEvent.click(monthB);
-
-    expect(onTemporalityOfRecordsChange).toHaveBeenLastCalledWith("month");
-
-    fireEvent.click(allB);
-
-    expect(onTemporalityOfRecordsChange).toHaveBeenLastCalledWith("all");
-
-    fireEvent.click(todayB);
-
-    expect(onTemporalityOfRecordsChange).toHaveBeenLastCalledWith("today");
+    const activeButton = group2.querySelector("bg-primary");
+    expect(activeButton).toBeNull();
   });
   test("onDatetimeRangeChange should call handler", () => {
     const onDatetimeRangeChange = jest.fn();
     render(<TestComponent onDatetimeRangeChange={onDatetimeRangeChange} />);
     const [date1, time1, date2, time2] = screen.getAllByRole("textbox");
-
-    const offset = new Date().getTimezoneOffset() / 60;
-    const hoursOffset = `${offset < 0 ? "-" : "+"}${pad(
-      Math.abs(offset),
-      2
-    )}:00`;
 
     fireEvent.change(date1, { target: { value: "01/02/2021" } });
     fireEvent.change(time1, { target: { value: "23:59" } });
@@ -149,13 +94,43 @@ describe("DeviceLineChartFilters", () => {
     fireEvent.change(time2, { target: { value: "00:01" } });
 
     expect(onDatetimeRangeChange).toHaveBeenLastCalledWith({
-      startDatetimeString: `2021-02-01T23:59:00.000${hoursOffset}`,
-      endDatetimeString: `2021-12-24T00:01:00.000${hoursOffset}`,
+      startDateTimeString: moment("2021-02-01 23:59").toISOString(),
+      endDateTimeString: moment("2021-12-24 00:01").toISOString(),
+    });
+  });
+  test("onDatetimeRangeChange should call handler", () => {
+    const onDatetimeRangeChange = jest.fn();
+    render(<TestComponent onDatetimeRangeChange={onDatetimeRangeChange} />);
+    const [todayB, weekB, monthB, yearB] = screen.getAllByRole("button");
+
+    fireEvent.click(todayB);
+    expect(onDatetimeRangeChange).toHaveBeenLastCalledWith({
+      startDateTimeString: moment().startOf("day").toISOString(),
+      endDateTimeString: moment().endOf("day").toISOString(),
+    });
+
+    fireEvent.click(weekB);
+    expect(onDatetimeRangeChange).toHaveBeenLastCalledWith({
+      startDateTimeString: moment()
+        .subtract(1, "week")
+        .startOf("day")
+        .toISOString(),
+      endDateTimeString: moment().endOf("day").toISOString(),
+    });
+
+    fireEvent.click(monthB);
+    expect(onDatetimeRangeChange).toHaveBeenLastCalledWith({
+      startDateTimeString: moment()
+        .subtract(1, "months")
+        .startOf("day")
+        .toISOString(),
+      endDateTimeString: moment().endOf("day").toISOString(),
+    });
+
+    fireEvent.click(yearB);
+    expect(onDatetimeRangeChange).toHaveBeenLastCalledWith({
+      startDateTimeString: undefined,
+      endDateTimeString: undefined,
     });
   });
 });
-
-function pad(num: number, size: number): string {
-  const s = `0${num}`;
-  return s.substr(s.length - size);
-}

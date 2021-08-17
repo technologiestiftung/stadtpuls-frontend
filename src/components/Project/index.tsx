@@ -17,10 +17,7 @@ import {
 } from "@common/types/supabase";
 import { Button } from "@components/Button";
 import { FormSelect } from "@components/FormSelect";
-import {
-  DeviceLineChartFilters,
-  DeviceLineChartFiltersPropType,
-} from "@components/DeviceLineChartFilters";
+import { DeviceLineChartFilters } from "@components/DeviceLineChartFilters";
 import { useDeviceRecords } from "@lib/hooks/useDeviceRecords";
 
 const today = new Date();
@@ -59,21 +56,12 @@ const getCategoryUnit = (
 export const Project: FC<ProjectsType> = project => {
   const [selectedDeviceIndex, setSelectedDeviceIndex] = useState<number>(0);
   const selectedDevice = project?.devices?.[selectedDeviceIndex];
-
-  const [activeFilterType, setActiveFilterType] = useState<
-    DeviceLineChartFiltersPropType["activeFilterType"]
-  >("devicesByTimespan");
-  const [temporalityOfRecords, setTemporaityOfRecords] = useState<
-    DeviceLineChartFiltersPropType["temporalityOfRecords"]
-  >("today");
-  const [currentDatetimeRange, setCurrentDatetimeRange] = useState<
-    Pick<
-      DeviceLineChartFiltersPropType,
-      "startDatetimeString" | "endDatetimeString"
-    >
-  >({
-    startDatetimeString: today.toUTCString(),
-    endDatetimeString: tenDaysAgo.toUTCString(),
+  const [currentDatetimeRange, setCurrentDatetimeRange] = useState<{
+    startDateTimeString: string | undefined;
+    endDateTimeString: string | undefined;
+  }>({
+    startDateTimeString: today.toISOString(),
+    endDateTimeString: tenDaysAgo.toISOString(),
   });
 
   const {
@@ -82,8 +70,8 @@ export const Project: FC<ProjectsType> = project => {
     isLoading: recordsAreLoading,
   } = useDeviceRecords({
     deviceId: selectedDevice?.id,
-    startDateString: currentDatetimeRange.startDatetimeString,
-    endDateString: currentDatetimeRange.endDatetimeString,
+    startDateString: currentDatetimeRange.startDateTimeString,
+    endDateString: currentDatetimeRange.endDateTimeString,
   });
 
   const [markerData, setMarkerData] = useState<MarkerType[]>([]);
@@ -335,15 +323,13 @@ export const Project: FC<ProjectsType> = project => {
                     </div>
                   </div>
                   <DeviceLineChartFilters
-                    activeFilterType={activeFilterType}
-                    onActiveFilterTypeChange={setActiveFilterType}
-                    temporalityOfRecords={temporalityOfRecords}
-                    onTemporalityOfRecordsChange={setTemporaityOfRecords}
-                    startDatetimeString={
-                      currentDatetimeRange.startDatetimeString
+                    startDateTimeString={
+                      currentDatetimeRange.startDateTimeString
                     }
-                    endDatetimeString={currentDatetimeRange.endDatetimeString}
-                    onDatetimeRangeChange={setCurrentDatetimeRange}
+                    endDateTimeString={currentDatetimeRange.endDateTimeString}
+                    onDatetimeRangeChange={vals =>
+                      setCurrentDatetimeRange(vals)
+                    }
                   />
                 </>
               )}

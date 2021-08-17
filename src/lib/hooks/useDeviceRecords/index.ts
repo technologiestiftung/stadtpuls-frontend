@@ -4,8 +4,8 @@ import useSWR from "swr";
 
 interface UseDeviceRecordsParamsType {
   deviceId: number | undefined;
-  startDateString: string;
-  endDateString: string;
+  startDateString?: string;
+  endDateString?: string;
 }
 
 interface UseDeviceRecordsReturnType {

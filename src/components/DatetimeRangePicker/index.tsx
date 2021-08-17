@@ -1,97 +1,156 @@
-import { useEffect, useState } from "react";
 import { FC } from "react";
 import "react-day-picker/lib/style.css";
 import "moment/locale/de";
 import { DayPickerInput } from "@components/DayPickerInput";
 import { TimeInput } from "@components/TimeInput";
-import moment from "react-day-picker/moment";
+import moment from "moment";
 
 export interface DatetimeRangePickerPropType {
-  startDatetimeString: string;
-  endDatetimeString: string;
+  startDateTimeString: string;
+  endDateTimeString: string;
   tabIndex?: number;
   onDatetimeRangeChange: (vals: {
-    startDatetimeString: string;
-    endDatetimeString: string;
+    startDateTimeString: string | undefined;
+    endDateTimeString: string | undefined;
   }) => void;
 }
 
-const offset = new Date().getTimezoneOffset() / 60;
-const hoursOffset = `${offset < 0 ? "-" : "+"}${pad(Math.abs(offset), 2)}:00`;
+const setDateDay = (date: moment.Moment, day: string): moment.Moment => {
+  const [dayString, monthString, yearString] = day.split("/");
+  return date
+    .date(parseInt(dayString, 10))
+    .month(parseInt(monthString, 10) - 1)
+    .year(parseInt(yearString, 10));
+};
 
-function pad(num: number, size: number): string {
-  const s = `000${num}`;
-  return s.substr(s.length - size);
-}
+const setDateTime = (date: moment.Moment, time: string): moment.Moment => {
+  const [hourString, minuteString] = time.split(":");
+  return date.hour(parseInt(hourString, 10)).minute(parseInt(minuteString, 10));
+};
+
+type GetModifiedTimeRangeSignature = (opts: {
+  fromDate: moment.Moment;
+  toDate: moment.Moment;
+  tail: "start" | "end";
+  val: Date | string;
+  unit: "day" | "time";
+}) => {
+  startDateTimeString: string | undefined;
+  endDateTimeString: string | undefined;
+};
+
+const getModifiedTimeRange: GetModifiedTimeRangeSignature = ({
+  fromDate,
+  toDate,
+  tail,
+  val,
+  unit,
+}) => {
+  if (unit === "day") {
+    const dayString = moment(val).format("DD/MM/YYYY");
+    return {
+      startDateTimeString: (tail === "start"
+        ? setDateDay(fromDate, dayString)
+        : fromDate
+      ).toISOString(),
+      endDateTimeString: (tail === "end"
+        ? setDateDay(toDate, dayString)
+        : toDate
+      ).toISOString(),
+    };
+  }
+  const timeString = String(val);
+  return {
+    startDateTimeString: (tail === "start"
+      ? setDateTime(fromDate, timeString)
+      : fromDate
+    ).toISOString(),
+    endDateTimeString: (tail === "end"
+      ? setDateTime(toDate, timeString)
+      : toDate
+    ).toISOString(),
+  };
+};
 
 export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
-  startDatetimeString,
-  endDatetimeString,
+  startDateTimeString,
+  endDateTimeString,
   onDatetimeRangeChange,
   tabIndex = 1,
 }) => {
-  const startDatetime = new Date(startDatetimeString);
-  const endDatetime = new Date(endDatetimeString);
-  const [fromDate, setFromDate] = useState(startDatetime);
-  const [toDate, setToDate] = useState(endDatetime);
-  const [fromTime, setFromTime] = useState(
-    moment.formatDate(startDatetime, "HH:mm")
-  );
-  const [toTime, setToTime] = useState(moment.formatDate(endDatetime, "HH:mm"));
-  const modifiers = { start: fromDate, end: toDate };
+  const fromDate = moment(startDateTimeString);
+  const toDate = moment(endDateTimeString);
+  const modifiers = { start: fromDate.toDate(), end: toDate.toDate() };
 
-  useEffect(() => {
-    const fromDayString = moment.formatDate(fromDate, "YYYY-MM-DD");
-    const toDayString = moment.formatDate(toDate, "YYYY-MM-DD");
-    onDatetimeRangeChange({
-      startDatetimeString: `${fromDayString}T${fromTime}:00.000${hoursOffset}`,
-      endDatetimeString: `${toDayString}T${toTime}:00.000${hoursOffset}`,
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [fromDate, fromTime, toDate, toTime]);
+  const handleDateChange = (
+    tail: "start" | "end",
+    val: Date | string,
+    unit: "day" | "time"
+  ): void => {
+    onDatetimeRangeChange(
+      getModifiedTimeRange({
+        fromDate,
+        toDate,
+        tail,
+        val,
+        unit,
+      })
+    );
+  };
 
   return (
     <div className='flex flex-wrap gap-2'>
       <div className='inline-flex'>
         <DayPickerInput
-          value={fromDate}
+          value={fromDate.toDate()}
           nextElSelector='.InputTime-from'
           dayPickerProps={{
-            selectedDays: [fromDate, { from: fromDate, to: toDate }],
-            toMonth: toDate,
+            selectedDays: [
+              fromDate.toDate(),
+              { from: fromDate.toDate(), to: toDate.toDate() },
+            ],
+            toMonth: toDate.toDate(),
             modifiers,
           }}
           onDayChange={val => {
-            setFromDate(val);
-            setToDate(val);
+            handleDateChange("start", val, "day");
           }}
           tabIndex={tabIndex}
         />
         <TimeInput
           className='InputTime-from'
-          value={fromTime}
-          onChange={setFromTime}
+          value={fromDate.format("HH:mm")}
+          onChange={val => {
+            handleDateChange("start", val, "time");
+          }}
           tabIndex={tabIndex}
         />
       </div>
       <span className='inline-flex'>
         <DayPickerInput
-          value={toDate}
+          value={toDate.toDate()}
           nextElSelector='.InputTime-to'
           dayPickerProps={{
-            selectedDays: [fromDate, { from: fromDate, to: toDate }],
-            disabledDays: { before: fromDate },
+            selectedDays: [
+              fromDate.toDate(),
+              { from: fromDate.toDate(), to: toDate.toDate() },
+            ],
+            disabledDays: { before: fromDate.toDate() },
             modifiers,
-            month: fromDate,
-            fromMonth: fromDate,
+            month: fromDate.toDate(),
+            fromMonth: fromDate.toDate(),
           }}
-          onDayChange={val => setToDate(val)}
+          onDayChange={val => {
+            handleDateChange("end", val, "day");
+          }}
           tabIndex={tabIndex}
         />
         <TimeInput
           className='InputTime-to'
-          value={toTime}
-          onChange={setToTime}
+          value={toDate.format("HH:mm")}
+          onChange={val => {
+            handleDateChange("end", val, "time");
+          }}
           tabIndex={tabIndex}
         />
       </span>
