@@ -39,9 +39,8 @@ export const requiredUsernameValidation = yup
 export const requiredDeviceId = yup
   .string()
   .min(3, "Min. 3 Zeichen")
-  .max(20, "Max. 20 Zeichen")
-  .matches(/^[\w-]{3,20}$/gm, "Nur Buchstaben, Zahlen und -")
-  .required("Drittanbieter-ID ist erforderlich");
+  .max(36, "Max. 36 Zeichen")
+  .required("Device-ID ist erforderlich");
 
 export const requiredDeviceName = yup
   .string()

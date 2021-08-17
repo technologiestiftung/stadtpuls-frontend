@@ -77,7 +77,7 @@ describe("component SensorsList", () => {
     expect(idInput).toBeInTheDocument();
     expect(nameInput).toBeInTheDocument();
 
-    fireEvent.change(idInput, { target: { value: "device-B" } });
+    fireEvent.change(idInput, { target: { value: "device-b" } });
     fireEvent.change(nameInput, { target: { value: "I like to change" } });
 
     const submitButton = screen.getByText(/Speichern/gi);
@@ -87,7 +87,7 @@ describe("component SensorsList", () => {
 
     expect(testOnEdit).toHaveBeenCalledWith({
       ...sensorA,
-      externalId: "device-B",
+      externalId: "device-b",
       name: "I like to change",
     });
   });
