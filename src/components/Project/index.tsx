@@ -352,6 +352,10 @@ export const Project: FC<ProjectsType> = project => {
                     yAxisUnit={getCategoryUnit(project.category?.name)}
                     xAxisUnit='Messdatum'
                     data={createDateValueArray(records)}
+                    startDateTimeString={
+                      currentDatetimeRange.startDateTimeString
+                    }
+                    endDateTimeString={currentDatetimeRange.endDateTimeString}
                   />
                 )}
               {project?.devices?.length === 0 && (

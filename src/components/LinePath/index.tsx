@@ -9,9 +9,18 @@ import colors from "../../style/colors";
 const getX = (d: DateValueType): Date => new Date(d.date);
 const getY = (d: DateValueType): number => d.value;
 
-export const LinePath: FC<LineGraphType> = ({ width, height, data }) => {
+export const LinePath: FC<LineGraphType> = ({
+  width,
+  height,
+  data,
+  startDateTimeString,
+  endDateTimeString,
+}) => {
   const xScale = scaleUtc<number>({
-    domain: extent(data, getX) as [Date, Date],
+    domain:
+      startDateTimeString && endDateTimeString
+        ? [new Date(startDateTimeString), new Date(endDateTimeString)]
+        : (extent(data, getX) as [Date, Date]),
     range: [0, width],
   });
 

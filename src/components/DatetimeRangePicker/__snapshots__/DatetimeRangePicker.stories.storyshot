@@ -29,7 +29,7 @@ exports[`Storyshots Forms/DatetimeRangePicker Default 1`] = `
         style={Object {}}
         tabIndex={1}
         type="text"
-        value="10:32"
+        value="10:57"
       />
     </div>
     <span
@@ -54,7 +54,7 @@ exports[`Storyshots Forms/DatetimeRangePicker Default 1`] = `
         style={Object {}}
         tabIndex={1}
         type="text"
-        value="10:32"
+        value="10:57"
       />
     </span>
   </div>
