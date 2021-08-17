@@ -21,6 +21,7 @@ import { DeviceLineChartFilters } from "@components/DeviceLineChartFilters";
 import { useDeviceRecords } from "@lib/hooks/useDeviceRecords";
 import { useDeviceLastRecordDate } from "@lib/hooks/useDeviceLastRecordDate";
 import moment from "moment";
+import { useDeviceRecordsCount } from "@lib/hooks/useDeviceRecordsCount";
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -77,6 +78,7 @@ export const Project: FC<ProjectsType> = project => {
   });
 
   const { lastRecordDate } = useDeviceLastRecordDate(selectedDevice?.id);
+  const { count: recordsCount } = useDeviceRecordsCount(selectedDevice?.id);
 
   const [markerData, setMarkerData] = useState<MarkerType[]>([]);
 
@@ -311,9 +313,7 @@ export const Project: FC<ProjectsType> = project => {
                             : "–"}
                         </dd>
                         <dt>Messwerte:</dt>
-                        <dd className='ml-2'>
-                          {selectedDevice && selectedDevice?.records?.length}
-                        </dd>
+                        <dd className='ml-2'>{recordsCount || "–"}</dd>
                       </dl>
                     </div>
                   </div>
