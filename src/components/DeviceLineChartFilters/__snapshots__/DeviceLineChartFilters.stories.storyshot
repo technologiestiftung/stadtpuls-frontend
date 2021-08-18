@@ -15,7 +15,7 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
         className="inline-block text-sm mb-2 text-blue"
         htmlFor="devicesByDatetimeRange"
       >
-        Messwerte bei Zeitspanne
+        Messwerte nach Zeitspanne
       </label>
       <div>
         <div
@@ -85,7 +85,7 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
         className="inline-block text-sm mb-2 "
         htmlFor="devicesByTimespan"
       >
-        Messwerte bei Zeitraum
+        Messwerte nach Zeitraum
       </label>
       <div>
         <div

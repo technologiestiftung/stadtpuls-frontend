@@ -100,7 +100,7 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
     <div className='border-b border-gray-100 shadow p-4 flex flex-wrap gap-8'>
       <RadioFieldset
         isSelected={activeFilterType === "devicesByDatetimeRange"}
-        label='Messwerte bei Zeitspanne'
+        label='Messwerte nach Zeitspanne'
         name='devicesByDatetimeRange'
         onSelect={() => setActiveFilterType("devicesByDatetimeRange")}
       >
@@ -121,7 +121,7 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
       </RadioFieldset>
       <RadioFieldset
         isSelected={activeFilterType === "devicesByTimespan"}
-        label='Messwerte bei Zeitraum'
+        label='Messwerte nach Zeitraum'
         name='devicesByTimespan'
         onSelect={() => {
           if (activeFilterType === "devicesByTimespan") return;

@@ -63,8 +63,8 @@ export const Project: FC<ProjectsType> = project => {
     startDateTimeString: string | undefined;
     endDateTimeString: string | undefined;
   }>({
-    startDateTimeString: today.toISOString(),
-    endDateTimeString: tenDaysAgo.toISOString(),
+    startDateTimeString: tenDaysAgo.toISOString(),
+    endDateTimeString: today.toISOString(),
   });
 
   const {
