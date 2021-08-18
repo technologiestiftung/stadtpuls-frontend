@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Forms/TimeInput Default 1`] = `
+<div
+  className="grid place-content-center h-screen"
+>
+  <input
+    className=" font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 "
+    onChange={[Function]}
+    style={Object {}}
+    tabIndex={1}
+    type="text"
+    value="00:00"
+  />
+</div>
+`;

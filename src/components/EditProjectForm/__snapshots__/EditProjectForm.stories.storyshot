@@ -44,13 +44,13 @@ exports[`Storyshots Forms/EditProjectForm With Default Values 1`] = `
         Kategorie
       </label>
       <select
-        className="mb-2 text-gray-500 "
+        className="mb-2 text-blue "
+        defaultValue="3"
         id="categoryId"
         name="categoryId"
         onBlur={[Function]}
         onChange={[Function]}
         required={true}
-        value={3}
       >
         <option
           value=""
@@ -204,6 +204,7 @@ exports[`Storyshots Forms/EditProjectForm Without Default Values 1`] = `
       </label>
       <select
         className="mb-2 text-gray-500 "
+        defaultValue="Bitte wähle eine Option"
         id="categoryId"
         name="categoryId"
         onBlur={[Function]}

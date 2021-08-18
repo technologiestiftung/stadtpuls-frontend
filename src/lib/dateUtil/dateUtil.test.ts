@@ -7,7 +7,7 @@ describe("createDateValueArray", () => {
         id: 1,
         deviceId: 1,
         recordedAt: "2021-04-08T20:32:49.796Z",
-        value: 20,
+        measurements: [20],
       },
     ]);
     expect(Array.isArray(dateValueArray)).toBe(true);
@@ -18,7 +18,7 @@ describe("createDateValueArray", () => {
         id: 1,
         deviceId: 1,
         recordedAt: "2021-04-08T20:32:49.796Z",
-        value: 20,
+        measurements: [20],
       },
     ]);
     expect(dateValueArray[0].date).toBe("2021-04-08T20:32:49.796Z");
@@ -29,19 +29,19 @@ describe("createDateValueArray", () => {
         id: 2,
         deviceId: 1,
         recordedAt: "2021-02-08T20:32:49.796Z",
-        value: 2,
+        measurements: [2],
       },
       {
         id: 3,
         deviceId: 1,
         recordedAt: "2021-03-08T20:32:49.796Z",
-        value: 3,
+        measurements: [3],
       },
       {
         id: 1,
         deviceId: 1,
         recordedAt: "2021-01-08T20:32:49.796Z",
-        value: 1,
+        measurements: [1],
       },
     ]);
     expect(dateValueArray[0].value).toBe(1);

@@ -19,7 +19,6 @@ export const getRecordsByDeviceId = async (
           .eq("deviceId", deviceId)
           .gte("recordedAt", options.startDate)
           .lte("recordedAt", options.endDate);
-
         if (error) throw error;
         if (!records) throw new Error(`No records found for this time range`);
 

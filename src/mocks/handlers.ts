@@ -1,6 +1,7 @@
 import { rest } from "msw";
 import {
   publicCategories,
+  deviceRecords,
   publicProjectsData,
   userData,
   userProjects,
@@ -64,6 +65,9 @@ const tokenApiHandlers = [
 const supabaseHandlers = [
   rest.get(createApiUrl("/categories"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"), ctx.json(publicCategories));
+  }),
+  rest.get(createApiUrl("/records"), (_req, res, ctx) => {
+    return res(ctx.status(201, "Mocked status"), ctx.json(deviceRecords));
   }),
   rest.get(createApiUrl("/projects"), (req, res, ctx) => {
     const query = req.url.searchParams;

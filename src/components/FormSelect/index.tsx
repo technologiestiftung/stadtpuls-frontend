@@ -1,8 +1,15 @@
-import { HTMLProps, forwardRef, ReactNode, useState } from "react";
+import {
+  HTMLProps,
+  forwardRef,
+  ReactNode,
+  useState,
+  useEffect,
+  ChangeEventHandler,
+} from "react";
 
 export interface SelectOptionType {
   name: string;
-  value: string;
+  value: string | number;
 }
 
 interface FormSelectPropType
@@ -12,6 +19,9 @@ interface FormSelectPropType
   placeholder?: string;
   options: SelectOptionType[];
   errors?: string[];
+  defaultValue?: string | number;
+  value?: string | number;
+  onValueChange?: (name: string) => void;
 }
 
 // eslint-disable-next-line react/display-name
@@ -23,13 +33,29 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectPropType>(
       options,
       placeholder = "Bitte wähle eine Option",
       errors = [],
+      defaultValue,
+      value,
+      onValueChange = () => undefined,
       ...selectProps
     },
     ref
   ) => {
-    const [selectValue, setSelectValue] = useState<string>(placeholder);
+    const [selectValue, setSelectValue] = useState<string>(
+      `${value || defaultValue || placeholder}`
+    );
     const placeholderIsSelected =
       selectValue === placeholder || selectValue === "";
+
+    useEffect(() => {
+      defaultValue && setSelectValue(`${defaultValue}`);
+    }, [defaultValue]);
+
+    const handleSelect: ChangeEventHandler = evt => {
+      evt.preventDefault();
+      const target = evt.target as HTMLSelectElement;
+      const newVal = target.selectedOptions[0].value;
+      onValueChange ? onValueChange(newVal) : setSelectValue(newVal);
+    };
 
     return (
       <div className='mb-2'>
@@ -50,11 +76,13 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectPropType>(
           className={`mb-2 ${
             placeholderIsSelected ? "text-gray-500" : "text-blue"
           } ${errors.length ? "error" : ""}`}
-          onBlur={evt => setSelectValue(evt.target.value)}
+          onBlur={handleSelect}
+          onChange={handleSelect}
+          defaultValue={selectValue}
         >
-          <option value=''>{placeholder}</option>
-          {options.map(({ name, value }) => (
-            <option value={value} key={value}>
+          {!defaultValue && <option value=''>{placeholder}</option>}
+          {options.map(({ name, value: val }) => (
+            <option value={`${val}`} key={`${val}`}>
               {name}
             </option>
           ))}

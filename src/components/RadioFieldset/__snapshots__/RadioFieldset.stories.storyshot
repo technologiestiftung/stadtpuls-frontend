@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Forms/RadioFieldset Default 1`] = `
+<div
+  className="grid place-content-center h-screen"
+>
+  <div
+    className="grid grid-cols-2 gap-8"
+  >
+    <fieldset
+      className="relative"
+      onClick={[Function]}
+    >
+      <label
+        className="inline-block text-sm mb-2 text-blue"
+        htmlFor="a"
+      >
+        I am a label
+      </label>
+      <div>
+        I am some content
+      </div>
+    </fieldset>
+    <fieldset
+      className="relative"
+      onClick={[Function]}
+    >
+      <div
+        className="absolute w-full h-full inset-0 z-30 bg-white opacity-50 pointer-events-none"
+      />
+      <label
+        className="inline-block text-sm mb-2 "
+        htmlFor="b"
+      >
+        I am a label
+      </label>
+      <div>
+        I am another thing
+      </div>
+    </fieldset>
+  </div>
+</div>
+`;

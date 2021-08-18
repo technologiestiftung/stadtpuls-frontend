@@ -43,6 +43,8 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
     height,
     yAxisUnit,
     xAxisUnit,
+    startDateTimeString,
+    endDateTimeString,
     showTooltip,
     hideTooltip,
     tooltipData,
@@ -55,7 +57,10 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
     const graphHeight: number = height - padding.top - padding.bottom;
 
     const xScale = scaleUtc<number>({
-      domain: extent(data, getX) as [Date, Date],
+      domain:
+        startDateTimeString && endDateTimeString
+          ? [new Date(startDateTimeString), new Date(endDateTimeString)]
+          : (extent(data, getX) as [Date, Date]),
       range: [0, graphWidth],
     });
 
@@ -155,6 +160,15 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               textAnchor: "end",
             })}
           />
+          <Group left={padding.left} top={padding.top}>
+            <LinePath
+              width={graphWidth}
+              height={graphHeight}
+              data={data}
+              startDateTimeString={startDateTimeString}
+              endDateTimeString={endDateTimeString}
+            />
+          </Group>
           {tooltipData && (
             <Group top={padding.top}>
               <Line
@@ -185,9 +199,6 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               />
             </Group>
           )}
-          <Group left={padding.left} top={padding.top}>
-            <LinePath width={graphWidth} height={graphHeight} data={data} />
-          </Group>
           <Bar
             x={padding.left}
             y={padding.top}

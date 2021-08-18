@@ -105,6 +105,13 @@
       font-style: normal
   }
 
+  @font-face {
+      font-family: "SpaceMono";
+      src: url("/fonts/SpaceMono-Regular.woff") format("woff");
+      font-weight: 400;
+      font-style: monospace
+  }
+
   main#home {
     max-width: 100vw;
     overflow-x: hidden;

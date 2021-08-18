@@ -4,7 +4,6 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { ProjectSummary } from "../ProjectSummary";
 import { DataTable } from "../DataTable";
 import { MarkerType, RecordType } from "../../common/interfaces";
-import { RadioTabs } from "../RadioTabs";
 import { LineChart } from "../LineChart";
 import { createDateValueArray } from "@lib/dateUtil";
 import { ApiInfo } from "../ApiInfo";
@@ -17,6 +16,18 @@ import {
   ProjectsType,
 } from "@common/types/supabase";
 import { Button } from "@components/Button";
+import { FormSelect } from "@components/FormSelect";
+import { DeviceLineChartFilters } from "@components/DeviceLineChartFilters";
+import { useDeviceRecords } from "@lib/hooks/useDeviceRecords";
+import { useDeviceLastRecordDate } from "@lib/hooks/useDeviceLastRecordDate";
+import moment from "moment";
+import { useDeviceRecordsCount } from "@lib/hooks/useDeviceRecordsCount";
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+const tenDaysAgo = new Date();
+tenDaysAgo.setDate(today.getDate() - 10);
+today.setHours(0, 0, 0, 0);
 
 const rawRecordToRecord = (rawRecord: RecordsType): RecordType => ({
   id: rawRecord.id,
@@ -48,15 +59,26 @@ const getCategoryUnit = (
 export const Project: FC<ProjectsType> = project => {
   const [selectedDeviceIndex, setSelectedDeviceIndex] = useState<number>(0);
   const selectedDevice = project?.devices?.[selectedDeviceIndex];
+  const [currentDatetimeRange, setCurrentDatetimeRange] = useState<{
+    startDateTimeString: string | undefined;
+    endDateTimeString: string | undefined;
+  }>({
+    startDateTimeString: tenDaysAgo.toISOString(),
+    endDateTimeString: today.toISOString(),
+  });
 
-  const MIN_NUMBER_OF_RECORDS_TO_DISPLAY = 100;
+  const {
+    records,
+    error: recordsFetchError,
+    isLoading: recordsAreLoading,
+  } = useDeviceRecords({
+    deviceId: selectedDevice?.id,
+    startDateString: currentDatetimeRange.startDateTimeString,
+    endDateString: currentDatetimeRange.endDateTimeString,
+  });
 
-  const [
-    numberOfRecordsToDisplay,
-    setNumberOfRecordsToDisplay,
-  ] = useState<number>(MIN_NUMBER_OF_RECORDS_TO_DISPLAY);
-
-  const [lineChartData, setLineChartData] = useState<RecordType[]>([]);
+  const { lastRecordDate } = useDeviceLastRecordDate(selectedDevice?.id);
+  const { count: recordsCount } = useDeviceRecordsCount(selectedDevice?.id);
 
   const [markerData, setMarkerData] = useState<MarkerType[]>([]);
 
@@ -64,26 +86,6 @@ export const Project: FC<ProjectsType> = project => {
     ViewportType,
     "latitude" | "longitude"
   > | null>(null);
-
-  useEffect(() => {
-    const device = project?.devices?.[selectedDeviceIndex];
-
-    if (!device || !device.records) return;
-
-    const initialNumberOfRecordsToDisplay =
-      device.records.length < 500 ? device.records.length : 500;
-    setNumberOfRecordsToDisplay(initialNumberOfRecordsToDisplay);
-  }, [selectedDeviceIndex, project.devices]);
-
-  useEffect(() => {
-    const device = project?.devices?.[selectedDeviceIndex];
-
-    if (!device || !device.records) return;
-
-    setLineChartData(
-      device.records.slice(0, numberOfRecordsToDisplay).map(rawRecordToRecord)
-    );
-  }, [selectedDeviceIndex, project.devices, numberOfRecordsToDisplay]);
 
   useEffect(() => {
     const devicesWithCoordinates = project?.devices?.filter(device => {
@@ -201,12 +203,8 @@ export const Project: FC<ProjectsType> = project => {
 
   return (
     <div className={["max-w-screen-xl", "p-4 mx-auto mt-0 md:mt-5"].join(" ")}>
-      <div
-        className={[
-          "grid gap-4 md:gap-12 grid-cols-1 md:grid-cols-[1fr,2fr]",
-        ].join(" ")}
-      >
-        <div>
+      <div className='grid gap-4 md:gap-12 grid-cols-1 lg:grid-cols-7'>
+        <div className='lg:col-span-2'>
           <a
             href='/projects'
             aria-label='Zurück zur Übersicht'
@@ -273,78 +271,62 @@ export const Project: FC<ProjectsType> = project => {
             </>
           )}
         </div>
-        <div>
+        <div className='lg:col-span-5'>
           <div className='bg-white border border-gray-100 shadow'>
             {project &&
               project.devices &&
               project.devices[selectedDeviceIndex] && (
-                <div
-                  className={[
-                    "grid grid-cols-1 md:grid-cols-[auto,max-content] gap-2 md:gap-0",
-                    "p-3",
-                    "border-b border-gray-100",
-                  ].join(" ")}
-                >
-                  <RadioTabs
-                    name={"devices"}
-                    options={project.devices.map((device, idx) => {
-                      return {
-                        title: device.name ? device.name : "Kein Titel",
-                        id: idx,
-                        isActive: idx === selectedDeviceIndex,
-                      };
-                    })}
-                    changeHandler={selected => setSelectedDeviceIndex(selected)}
-                  />
-                  <div>
-                    <dl
-                      className={[
-                        "grid gap-2 grid-cols-[100px,1fr]",
-                        "text-xs",
-                      ].join(" ")}
-                    >
-                      <dt>Letzter Eintrag:</dt>
-                      <dd className='ml-2'>
-                        {selectedDevice?.records?.length &&
-                        // TODO: Do not use hasOwnProperty here
-                        // eslint-disable-next-line no-prototype-builtins
-                        selectedDevice.records[0].hasOwnProperty("recordedAt")
-                          ? new Date(
-                              Math.max(
-                                ...selectedDevice.records.map(record =>
-                                  Date.parse(record.recordedAt || "")
-                                )
-                              )
-                            ).toLocaleDateString()
-                          : ""}
-                      </dd>
-                      <dt>Messwerte:</dt>
-                      <dd className='ml-2'>
-                        {selectedDevice && selectedDevice?.records?.length}
-                      </dd>
-                    </dl>
-                    {selectedDevice && (
-                      <div className='grid grid-cols-[100px,1fr,auto] gap-2 text-xs mt-2'>
-                        <label htmlFor='records-amount'>Angezeigt:</label>
-                        <input
-                          type='number'
-                          name='records-amount'
-                          value={numberOfRecordsToDisplay}
-                          min='1'
-                          max={`${selectedDevice?.records?.length || 0}`}
-                          step='1'
-                          id='records-amount'
-                          className='text-blue font-bold text-xs'
-                          onChange={event =>
-                            setNumberOfRecordsToDisplay(
-                              Number(event.target.value)
-                            )
-                          }
-                        />
-                      </div>
-                    )}
+                <>
+                  <div
+                    className={[
+                      "grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8",
+                      "p-4 border-b border-gray-100",
+                    ].join(" ")}
+                  >
+                    <FormSelect
+                      label='Sensor'
+                      name='device'
+                      options={project.devices.map(device => ({
+                        value: `${device.id}`,
+                        name: device.name || "Kein Titel",
+                      }))}
+                      defaultValue={`${project.devices[selectedDeviceIndex].id}`}
+                      onValueChange={(name: string): void => {
+                        const newIdx =
+                          project?.devices?.findIndex(
+                            ({ id }) => id === parseInt(name, 10)
+                          ) || 0;
+                        setSelectedDeviceIndex(newIdx);
+                      }}
+                    />
+                    <div>
+                      <dl
+                        className={[
+                          "grid gap-2 grid-cols-[100px,1fr]",
+                          "text-xs pt-8",
+                        ].join(" ")}
+                      >
+                        <dt>Letzter Eintrag:</dt>
+                        <dd className='ml-2'>
+                          {lastRecordDate
+                            ? moment(lastRecordDate).format("D. MMMM YYYY")
+                            : "–"}
+                        </dd>
+                        <dt>Messwerte:</dt>
+                        <dd className='ml-2'>{recordsCount || "–"}</dd>
+                      </dl>
+                    </div>
                   </div>
-                </div>
+                  <DeviceLineChartFilters
+                    startDateTimeString={
+                      currentDatetimeRange.startDateTimeString
+                    }
+                    endDateTimeString={currentDatetimeRange.endDateTimeString}
+                    onDatetimeRangeChange={vals =>
+                      setCurrentDatetimeRange(vals)
+                    }
+                  />
+                </>
               )}
             <div
               id='chart-wrapper'
@@ -356,26 +338,49 @@ export const Project: FC<ProjectsType> = project => {
                 project.devices.length > 0 &&
                 chartWidth &&
                 chartHeight &&
-                lineChartData && (
+                !recordsFetchError &&
+                !recordsAreLoading &&
+                records.length > 0 && (
                   <LineChart
                     width={chartWidth}
                     height={chartHeight}
                     yAxisUnit={getCategoryUnit(project.category?.name)}
                     xAxisUnit='Messdatum'
-                    data={createDateValueArray(lineChartData)}
+                    data={createDateValueArray(records)}
+                    startDateTimeString={
+                      currentDatetimeRange.startDateTimeString
+                    }
+                    endDateTimeString={currentDatetimeRange.endDateTimeString}
                   />
                 )}
               {project?.devices?.length === 0 && (
                 <div className='prose p-8 max-w-full h-80 grid text-center items-center'>
-                  <h3>Dieses Projekt enthält noch keine Sensoren.</h3>
+                  <p>Dieses Projekt enthält noch keine Sensoren.</p>
+                </div>
+              )}
+              {recordsFetchError && (
+                <div className='prose p-8 max-w-full h-80 grid text-center items-center'>
+                  <p>{recordsFetchError.message}</p>
+                </div>
+              )}
+              {!recordsFetchError &&
+                !recordsAreLoading &&
+                records.length === 0 && (
+                  <div className='prose p-8 max-w-full h-80 grid text-center items-center'>
+                    <p>Keine Daten für die aktuelle Filterkonfiguration</p>
+                  </div>
+                )}
+              {!recordsFetchError && recordsAreLoading && (
+                <div className='prose p-8 max-w-full h-80 grid text-center items-center'>
+                  <p>Daten werden geladen...</p>
                 </div>
               )}
             </div>
           </div>
-          {selectedDevice && selectedDevice.records && (
+          {records.length > 0 && !recordsFetchError && selectedDevice && (
             <div className='border border-gray-100 shadow mt-16 p-0'>
               <DataTable
-                data={selectedDevice.records.map(rawRecordToRecord)}
+                data={records.map(rawRecordToRecord)}
                 title={selectedDevice.name || ""}
               />
             </div>

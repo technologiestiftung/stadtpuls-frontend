@@ -204,6 +204,8 @@ export interface LineGraphType {
   data: Array<DateValueType>;
   yAxisUnit?: string;
   xAxisUnit?: string;
+  startDateTimeString?: string;
+  endDateTimeString?: string;
 }
 
 export interface RadioTabOptionType {
