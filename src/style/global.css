@@ -70,7 +70,7 @@
       src: url("/fonts/SpaceGrotesk-Light.woff2") format("woff2"),
         url("/fonts/SpaceGrotesk-Light.woff") format("woff");
       font-weight: 300;
-      font-style: normal
+      font-style: normal;
   }
 
   @font-face {
@@ -78,7 +78,7 @@
       src: url("/fonts/SpaceGrotesk-Regular.woff2") format("woff2"),
         url("/fonts/SpaceGrotesk-Regular.woff") format("woff");
       font-weight: 400;
-      font-style: normal
+      font-style: normal;
   }
 
   @font-face {
@@ -86,7 +86,7 @@
       src: url("/fonts/SpaceGrotesk-Medium.woff2") format("woff2"),
         url("/fonts/SpaceGrotesk-Medium.woff") format("woff");
       font-weight: 500;
-      font-style: normal
+      font-style: normal;
   }
 
   @font-face {
@@ -94,7 +94,7 @@
       src: url("/fonts/SpaceGrotesk-Bold.woff2") format("woff2"),
         url("/fonts/SpaceGrotesk-Bold.woff") format("woff");
       font-weight: 700;
-      font-style: normal
+      font-style: normal;
   }
 
   @font-face {
@@ -102,14 +102,15 @@
       src: url("/fonts/SpaceGrotesk[wght].woff2") format("woff2"),
         url("/fonts/SpaceGrotesk[wght].woff") format("woff");
       font-weight: 300 700;
-      font-style: normal
+      font-style: normal;
   }
 
   @font-face {
       font-family: "SpaceMono";
-      src: url("/fonts/SpaceMono-Regular.woff") format("woff");
-      font-weight: 400;
-      font-style: monospace
+      src: url("/fonts/SpaceGrotesk[wght].woff2") format("woff2"),
+        url("/fonts/SpaceGrotesk[wght].woff") format("woff");
+      font-weight: 300 900;
+      font-style: monospace;
   }
 
   main#home {
