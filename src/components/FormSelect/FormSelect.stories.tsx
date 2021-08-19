@@ -23,10 +23,7 @@ const Template: Story<{
       {
         required: true,
         min: 20,
-        onChange: evt =>
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          action(`Select "${args.name}" changed`)(evt.target.value),
+        onChange: val => action(`Select "${args.name}" changed`)(val),
       })}
       {...args}
     />
@@ -40,15 +37,15 @@ WithLabel.args = {
   options: [
     {
       name: "First option",
-      value: "First option",
+      value: "first_option",
     },
     {
       name: "Second option",
-      value: "Second option",
+      value: "second_option",
     },
     {
       name: "Third option",
-      value: "Third option",
+      value: "third_option",
     },
   ],
 };
@@ -59,15 +56,15 @@ WithoutLabel.args = {
   options: [
     {
       name: "First option",
-      value: "First option",
+      value: "first_option",
     },
     {
       name: "Second option",
-      value: "Second option",
+      value: "second_option",
     },
     {
       name: "Third option",
-      value: "Third option",
+      value: "third_option",
     },
   ],
 };
@@ -79,15 +76,15 @@ WithCustomPlaceholder.args = {
   options: [
     {
       name: "First option",
-      value: "First option",
+      value: "first_option",
     },
     {
       name: "Second option",
-      value: "Second option",
+      value: "second_option",
     },
     {
       name: "Third option",
-      value: "Third option",
+      value: "third_option",
     },
   ],
 };
@@ -98,15 +95,15 @@ WithErrors.args = {
   options: [
     {
       name: "First option",
-      value: "First option",
+      value: "first_option",
     },
     {
       name: "Second option",
-      value: "Second option",
+      value: "second_option",
     },
     {
       name: "Third option",
-      value: "Third option",
+      value: "third_option",
     },
   ],
   errors: ["This is an error message", "This is another error message"],
