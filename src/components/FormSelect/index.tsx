@@ -13,15 +13,15 @@ export interface SelectOptionType {
 }
 
 interface FormSelectPropType
-  extends Omit<HTMLProps<HTMLSelectElement>, "label" | "value"> {
+  extends Omit<HTMLProps<HTMLSelectElement>, "label" | "value" | "onChange"> {
   name: string;
   label?: ReactNode;
   placeholder?: string;
   options: SelectOptionType[];
   errors?: string[];
-  defaultValue?: string | number;
   value?: string | number;
-  onValueChange?: (name: string) => void;
+  defaultValue?: string | number;
+  onChange?: (name: string) => void;
 }
 
 // eslint-disable-next-line react/display-name
@@ -33,28 +33,26 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectPropType>(
       options,
       placeholder = "Bitte wähle eine Option",
       errors = [],
-      defaultValue,
       value,
-      onValueChange = () => undefined,
+      defaultValue,
+      onChange = () => undefined,
       ...selectProps
     },
     ref
   ) => {
-    const [selectValue, setSelectValue] = useState<string>(
-      `${value || defaultValue || placeholder}`
+    const [selectValue, setSelectValue] = useState<string | number | undefined>(
+      value || defaultValue
     );
-    const placeholderIsSelected =
-      selectValue === placeholder || selectValue === "";
 
     useEffect(() => {
-      defaultValue && setSelectValue(`${defaultValue}`);
-    }, [defaultValue]);
+      value && setSelectValue(`${value}`);
+    }, [value]);
 
     const handleSelect: ChangeEventHandler = evt => {
       evt.preventDefault();
       const target = evt.target as HTMLSelectElement;
-      const newVal = target.selectedOptions[0].value;
-      onValueChange ? onValueChange(newVal) : setSelectValue(newVal);
+      const newVal = target.value;
+      onChange ? onChange(newVal) : setSelectValue(newVal);
     };
 
     return (
@@ -67,6 +65,7 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectPropType>(
             {label}
           </label>
         )}
+        {/* eslint-disable-next-line jsx-a11y/no-onchange */}
         <select
           name={name}
           id={`${name}`}
@@ -74,13 +73,14 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectPropType>(
           required
           {...selectProps}
           className={`mb-2 ${
-            placeholderIsSelected ? "text-gray-500" : "text-blue"
+            !selectValue && placeholder ? "text-gray-500" : "text-blue"
           } ${errors.length ? "error" : ""}`}
-          onBlur={handleSelect}
           onChange={handleSelect}
-          defaultValue={selectValue}
+          value={selectValue}
         >
-          {!defaultValue && <option value=''>{placeholder}</option>}
+          {!selectValue && placeholder && (
+            <option value=''>{placeholder}</option>
+          )}
           {options.map(({ name, value: val }) => (
             <option value={`${val}`} key={`${val}`}>
               {name}

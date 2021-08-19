@@ -300,8 +300,8 @@ export const Project: FC<ProjectsType> = project => {
                         value: `${device.id}`,
                         name: device.name || "Kein Titel",
                       }))}
-                      defaultValue={`${project.devices[selectedDeviceIndex].id}`}
-                      onValueChange={(name: string): void => {
+                      value={`${project.devices[selectedDeviceIndex].id}`}
+                      onChange={(name: string): void => {
                         const newIdx =
                           project?.devices?.findIndex(
                             ({ id }) => id === parseInt(name, 10)
