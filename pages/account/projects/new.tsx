@@ -93,13 +93,12 @@ const AccountProjectNewPage: FC = () => {
               &#x26a0; Der Token ist nur einmalig und nur für Dich kurz nach
               erstellen Deines Projektes sichtbar!
               <br />
-              Nachdem Du Den Token erfolgreich kopiert hast, folge der
-              Anleitung{" "}
+              Nachdem Du Den Token erfolgreich kopiert hast, folge der Anleitung{" "}
               <a href='/docs/ttn-configuration'>
                 Applikation auf TTN konfigurieren
               </a>
               und nutze den Token, um Deine TTN-Webhook Integration korrekt zu
-              konfigurieren..
+              konfigurieren.
             </p>
           </ProjectCreatedInfo>
         )}
