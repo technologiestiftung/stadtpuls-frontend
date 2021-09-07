@@ -61,7 +61,7 @@ exports[`Storyshots Navigation/HeaderMenu Default 1`] = `
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
-          Mehr Infos
+          Dokumentation
         </a>
       </li>
     </ul>

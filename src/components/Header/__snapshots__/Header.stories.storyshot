@@ -80,7 +80,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
-                Mehr Infos
+                Dokumentation
               </a>
             </li>
           </ul>
@@ -226,7 +226,7 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
-                Mehr Infos
+                Dokumentation
               </a>
             </li>
           </ul>
