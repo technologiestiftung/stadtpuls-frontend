@@ -19,7 +19,8 @@ const MagicLinkConfirmationModal: FC<{
     Wir haben dir eine E-Mail mit einem Registrierungs-Link geschickt. Klicke
     den Link an, um deine E-Mail Adresse zu bestätigen.
     <br />
-    Bitte überprüfe auch Deinen Spam-Ordner.
+    <br />
+    Bitte überprüfe auch Deinen Spam-Ordner..
   </SmallModal>
 );
 
