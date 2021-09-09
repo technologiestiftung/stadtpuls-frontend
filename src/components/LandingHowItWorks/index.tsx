@@ -140,7 +140,7 @@ const columnsData = [
   {
     title: "Was wir bereitstellen",
     description:
-      "Hast Du erst einmal ein eigenes Stadtpuls-Projekt, stellen wir Dir automatisch und kostenlos folgendes bereit:",
+      "Hast du erst einmal ein eigenes Stadtpuls-Projekt, stellen wir dir automatisch und kostenlos folgendes bereit:",
     listItems: [
       {
         icon: "/images/icons/profile.svg",
@@ -186,11 +186,11 @@ export const LandingHowItWorks: FC = () => (
             </span>
           </h1>
           <p className='text-base mt-8'>
-            Durch die TTN-Anbindung kannst Du Deine TTN-Projekte ganz einfach
+            Durch die TTN-Anbindung kannst du deine TTN-Projekte ganz einfach
             über einen Webhook mit Stadtpuls verbinden und eigene Projekte
             anlegen. Deine Daten werden dadurch visualisiert und per API, sowie
             per CSV offen und kostenlos der gesamten Stadtgesellschaft zur
-            Verfügung gestellt. So trägst auch Du dazu bei, unsere Stadt ein
+            Verfügung gestellt. So trägst auch du dazu bei, unsere Stadt ein
             Stück smarter zu machen. Wir arbeiten parallel an weiteren
             Schnittstellen, um in Zukunft die Anbindung aller Protkolle und
             Sensortypen zu ermöglichen.

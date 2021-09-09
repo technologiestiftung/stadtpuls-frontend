@@ -11,7 +11,7 @@ export const SensorsListHeaderRow: FC = () => {
           <QuestionMarkTooltip
             id='device-id'
             title='Device-ID'
-            content='Nutze hier die exakte Device-ID aus Deiner TTN-Konsole. Die ID ist für andere Stadtpuls-Nutzer:innen nicht sichtbar.'
+            content='Nutze hier die exakte Device-ID aus deiner TTN-Konsole. Die ID ist für andere Stadtpuls-Nutzer:innen nicht sichtbar.'
             additionalClasses='hidden sm:inline-block'
           />
         </Th>

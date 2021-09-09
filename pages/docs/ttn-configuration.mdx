@@ -6,22 +6,22 @@ metaDescription: 'Konfiguration der Applikationen auf TTN'
 ---
   
 <p className="lead">
-  Oder auch: wie Du TTN mit Stadtpuls reden lässt.
+  Oder auch: wie du TTN mit Stadtpuls reden lässt.
 </p>
 
 Die nachfolgende Dokumentation basiert auf der neuen The Things Stack Community Edition, auch TTN V3 genannt. Stadtpuls funktioniert zwar auch mit dem alten TTN Stack (V2), unterstützt aber in der Doku und der weiteren Entwicklung ausschließlich TTN V3.
 
 ## TTN-Webhook in drei Minuten einrichten
 Die Webhook-Integration zu konfigurieren ist kein Hexenwerk und schnell erledigt. Man muss nur wissen, wo und wie es geht. First things first:
-1. Logge Dich auf <a href="https://www.thethingsnetwork.org/" target="_blank">https://www.thethingsnetwork.org/</a> in Deinen TTN-Account ein. Wichtig:
-2. Navigiere zu Deiner TTN-Applikation, die Du mit Stadtpuls verknüpfen möchtest.
-3. In der linken Seitenleiste siehst Du einen Menüpunkt namens **Integrations**. Klicke darauf, um das Dropdown-Menü zu öffnen und klicke anschließend auf **Webhooks**
+1. Logge dich auf <a href="https://www.thethingsnetwork.org/" target="_blank">https://www.thethingsnetwork.org/</a> in deinen TTN-Account ein. Wichtig:
+2. Navigiere zu deiner TTN-Applikation, die du mit Stadtpuls verknüpfen möchtest.
+3. In der linken Seitenleiste siehst du einen Menüpunkt namens **Integrations**. Klicke darauf, um das Dropdown-Menü zu öffnen und klicke anschließend auf **Webhooks**
 
-Dort angekommen, kannst Du einen neuen TTN-Webook für Deine TTN-Applikation einrichten. Klicke dazu auf **Add Webhook** und wähle **Custom Webhook** aus. 
+Dort angekommen, kannst du einen neuen TTN-Webook für deine TTN-Applikation einrichten. Klicke dazu auf **Add Webhook** und wähle **Custom Webhook** aus. 
 
 ### Webhook Parameter
 
-Die **Webhook ID**, respektive der Name Deines Webhooks, ist frei wählbar und ganz Dir überlassen.
+Die **Webhook ID**, respektive der Name deines Webhooks, ist frei wählbar und ganz dir überlassen.
 
 Das **Webhook format** ist JSON.
 
@@ -31,7 +31,7 @@ Unter den Endpoint Setting muss nun der API-Endpoint konfiguriert werden. In uns
 ```shell
 https://api.stadtpuls.com/
 ```
-Wir übergeben der API jedoch noch eine zusätzliche Information – **Additional headers** mit dem Namen *authorization* im Header: nämlich den Authorizierungs-Token Deines Stadtpuls-Projektes.
+Wir übergeben der API jedoch noch eine zusätzliche Information – **Additional headers** mit dem Namen *authorization* im Header: nämlich den Authorizierungs-Token deines Stadtpuls-Projektes.
 
    <figure>
   <img style={{maxHeight: 400, border: '1px solid rgba(0, 0, 0, 0.05)'}}
@@ -43,9 +43,9 @@ Wir übergeben der API jedoch noch eine zusätzliche Information – **Additiona
     </figcaption>
   </figure>
 
-&#x26a0; Nutze als Wert für *authorization* Deinen persönlichen Token aus Stadtpuls.
+&#x26a0; Nutze als Wert für *authorization* deinen persönlichen Token aus Stadtpuls.
 
-Wenn Du ein neues Projekt auf Stadtpuls erstellst, wird für Deine Projekt automatisch ein neuer Token generiert. Kopiere diesen mit dem Zusatz `Bearer ` in das Eingabefeld. Solltest Du Deinen Token verloren haben, kannst Du Dir in Deiner Projektansicht einen neuen Token generieren lassen. Der alte Token verliert damit automatisch seine Gültigkeit und kann nicht mehr für die Authentifizierung Deines Projekts bzw. Deiner Sensoren genutzt werden.
+Wenn du ein neues Projekt auf Stadtpuls erstellst, wird für deine Projekt automatisch ein neuer Token generiert. Kopiere diesen mit dem Zusatz `Bearer ` in das Eingabefeld. Solltest du deinen Token verloren haben, kannst du dir in deiner Projektansicht einen neuen Token generieren lassen. Der alte Token verliert damit automatisch seine Gültigkeit und kann nicht mehr für die Authentifizierung deines Projekts bzw. deiner Sensoren genutzt werden.
 
 Schließlich müssen wir dem Webhook noch mitteilen, bei welcher Art von Events er getriggert werden soll. In unserem Fall möchten wir bei jedem Uplink, also bei jedem Datenpaket, welches in der TTN-Applikation ankommt, einen POST-Request auf unsere Stadtpuls-API ausführen. Der Endpoint dafür lautet
 ```shell
