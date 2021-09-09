@@ -135,7 +135,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Sensordaten anschauen
+              Sensordaten nutzen
             </a>
           </li>
           <li

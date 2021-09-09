@@ -42,7 +42,7 @@ export const LandingHero: FC = () => (
             <strong className='text-green'>
               offene Datenplattform für IoT-Projekte
             </strong>{" "}
-            Deiner Stadt. Und das beste: jede*r kann mitmachen. Egal ob Du
+            deiner Stadt. Und das beste: jede*r kann mitmachen. Egal ob du
             offene Daten suchst oder bereits eigene Sensoren und Daten hast:
             Stadtpuls hilft dir, tiefer in die Welt der Stadt-Sensorik
             einzutauchen und deine Stadt besser zu verstehen.

@@ -85,19 +85,19 @@ const AccountProjectNewPage: FC = () => {
           >
             <p>
               Dein Projekt muss noch authentifiziert werden, damit die Messwerte
-              Deiner Sensoren künftig in unsere Datenbank geschrieben werden
-              können. Um Dein Projekt zu authentifizieren, kopiere den{" "}
+              deiner Sensoren künftig in unsere Datenbank geschrieben werden
+              können. Um dein Projekt zu authentifizieren, kopiere den{" "}
               <strong>Token</strong>
               unten in deine Ablage (Strg+C).
               <br />
-              &#x26a0; Der Token ist nur einmalig und nur für Dich kurz nach
-              erstellen Deines Projektes sichtbar!
+              &#x26a0; Der Token ist nur einmalig und nur für dich kurz nach
+              erstellen deines Projektes sichtbar!
               <br />
-              Nachdem Du Den Token erfolgreich kopiert hast, folge der Anleitung{" "}
+              Nachdem du den Token erfolgreich kopiert hast, folge der Anleitung{" "}
               <a href='/docs/ttn-configuration'>
                 Applikation auf TTN konfigurieren
               </a>
-              und nutze den Token, um Deine TTN-Webhook Integration korrekt zu
+              und nutze den Token, um deine TTN-Webhook Integration korrekt zu
               konfigurieren.
             </p>
           </ProjectCreatedInfo>
