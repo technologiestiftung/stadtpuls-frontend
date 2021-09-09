@@ -6,32 +6,32 @@ metaDescription: 'Sensordaten anschauen und nutzen.'
 ---
   
 <p className="lead">
-  Nutze die Sensordaten von Stadtpuls für Deine Analysen und Deine Forschung.
+  Nutze die Sensordaten von Stadtpuls für deine Analysen und Forschung.
 </p>
 
-Du kannst auf *Stadtpuls* nicht nur eigene IoT-Projekte hinzufügen und verwalten, sondern auch die IoT-Projekte anderer Nutzer:innen sehen und deren Daten für Deine Analysen nutzen.
-Denn: alle Sensordaten auf *Stadtpuls* sind offene Daten. Das heißt, sie können kostenlos und ohne Einschränkungen oder Verpflichtung gegünber Dritten von Dir heruntergeladen, verändert und verwertet werden. 
+Du kannst auf *Stadtpuls* nicht nur eigene IoT-Projekte hinzufügen und verwalten, sondern auch die IoT-Projekte anderer Nutzer:innen sehen und deren Daten für deine Analysen nutzen.
+Denn: alle Sensordaten auf *Stadtpuls* sind offene Daten. Das heißt, sie können kostenlos und ohne Einschränkungen oder Verpflichtung gegenüber Dritten von dir heruntergeladen, verändert und verwertet werden. 
 
-Mit Klick auf <a href="/projects">Projekte</a> in der Menüleiste oben rechts gelangst Du zur Projektübersicht. Hier findest Du die aktiven Projekte aller Nutzer:innen von *Stadtpuls*.
+Mit Klick auf <a href="/sensors">Sensoren</a> in der Menüleiste oben rechts gelangst du zur Sensorenübersicht. Hier findest du die aktiven Sensoren aller Nutzer:innen von *Stadtpuls*.
 
   <figure>
   <img style={{maxHeight: 400, border: '1px solid rgba(0, 0, 0, 0.05)'}}
     src="/images/viewProjects.png"
-    alt="Projektübersicht"
+    alt="Sensorenübersicht"
   />
     <figcaption>
-    Ansicht aller Projekte auf Stadtpuls (Ausschnitt)
+    Ansicht aller Sensoren auf Stadtpuls (Ausschnitt)
     </figcaption>
   </figure>
 
 ## Messwerte erkunden
-Mit Klick auf eines der Projekte gelangt man zur Detailansicht des Projektes. In der Projektansicht werden alle Messwerte aller Sensoren in einem **Linechart visualisiert** und kostenlos zum **Download bereitgestellt**.
-Du kannst die Ansicht des Linecharts verändern, indem Du:
-- einen (anderen) Sensor auswählst
-- die Messwerte nach einer ganz speziefischen Zeitspanne filterst
+Mit Klick auf einen Sensor gelangt man zur Detailansicht. Hier werden alle Messwerte in einem **Linechart visualisiert** und kostenlos zum **Download bereitgestellt**.
+Du kannst die Ansicht des Linecharts verändern, indem du:
+
+- die Messwerte nach einer ganz spezifischen Zeitspanne filterst
 - die Messwerte nach fixen Zeiträumen filterst
 
-Bewege Deine Maus über das Linechart, um den Messwert des Sensors an exakt dieser Stelle ablesen zu können.
+Bewege deine Maus über das Linechart, um den Messwert des Sensors an exakt dieser Stelle ablesen zu können.
 
   <figure>
   <img style={{maxHeight: 400, border: '1px solid rgba(0, 0, 0, 0.05)'}}
@@ -43,11 +43,11 @@ Bewege Deine Maus über das Linechart, um den Messwert des Sensors an exakt dies
     </figcaption>
   </figure>
 
-Spiele mit den Filtern herum! Wer weiß, vielleicht lassen sich so interessante Insights und Erkenntniss gewissen.
+Spiele mit den Filtern herum! Wer weiß, vielleicht lassen sich so interessante Insights und Erkenntnisse gewinnen.
 
 ## Messwerte nutzen
-In der linken Seite unterhalb der Kartensicht findet Du **je Sensor eine RESTful API**, die Du für eigene Prototypen nutzen kannst.
-Um die API zu nutzen und die Sensordaten als JSON im Browser einsehen zu können, klicke auf den Link rechtr neben dem Sensornamen. Wenn Du beispielsweise auf <a href="https://stadtpuls.com/api/v1/devices/33/records" target="_blank">https://stadtpuls.com/api/v1/devices/33/records</a> klickst, wird ein GET-Request an den API-Endpoint vom Sensor mit der Nummer 33 ausgeführt.
+In der linken Seite unterhalb der Kartensicht findet du **je Sensor eine RESTful API**, die du für eigene Prototypen nutzen kannst.
+Um die API zu nutzen und die Sensordaten als JSON im Browser einsehen zu können, klicke auf den Link rechts neben dem Sensornamen. Wenn du beispielsweise auf <a href="https://stadtpuls.com/api/v1/devices/33/records" target="_blank">https://stadtpuls.com/api/v1/devices/33/records</a> klickst, wird ein GET-Request an den API-Endpoint vom Sensor mit der Nummer 33 ausgeführt.
 
-Mit Klick auf **Alle Daten downloaden** kannst Du Dir schließlich auch die gesamten Sensordaten eines Projektes als CSV-Datei herunterladen.
+Mit Klick auf **Alle Daten downloaden** kannst du dir schließlich auch die gesamten Sensordaten als CSV-Datei herunterladen.
 
