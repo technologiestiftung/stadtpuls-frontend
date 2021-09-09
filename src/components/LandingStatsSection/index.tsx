@@ -28,7 +28,7 @@ export const LandingStatsSection: FC<{
         Wir stehen erst am Anfang
       </h2>
       <p className='mb-4 text-center text-base lg:text-left max-w-prose'>
-        Und sind auf der Suche nach Makern wie Dir! Wenn Du eigene
+        Und sind auf der Suche nach Makern wie dir! Wenn du eigene
         Sensor-Projekte hast, verknüpfe sie ganz einfach mit Stadtpuls und lass
         die Community wachsen.
       </p>

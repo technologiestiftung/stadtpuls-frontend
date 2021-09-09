@@ -138,7 +138,7 @@ exports[`Storyshots Layout/SensorsList Default 1`] = `
                     }
                   }
                 />
-                Nutze hier die exakte Device-ID aus Deiner TTN-Konsole. Die ID ist für andere Stadtpuls-Nutzer:innen nicht sichtbar.
+                Nutze hier die exakte Device-ID aus deiner TTN-Konsole. Die ID ist für andere Stadtpuls-Nutzer:innen nicht sichtbar.
               </span>
             </p>
           </th>
@@ -646,7 +646,7 @@ exports[`Storyshots Layout/SensorsList Empty 1`] = `
                     }
                   }
                 />
-                Nutze hier die exakte Device-ID aus Deiner TTN-Konsole. Die ID ist für andere Stadtpuls-Nutzer:innen nicht sichtbar.
+                Nutze hier die exakte Device-ID aus deiner TTN-Konsole. Die ID ist für andere Stadtpuls-Nutzer:innen nicht sichtbar.
               </span>
             </p>
           </th>

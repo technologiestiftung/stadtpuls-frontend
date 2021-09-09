@@ -48,7 +48,7 @@ const docsPages: PageType[] = [
     path: "/docs/ttn-configuration",
   },
   {
-    title: "Sensordaten anschauen",
+    title: "Sensordaten nutzen",
     path: "/docs/view-device-data",
   },
   {
