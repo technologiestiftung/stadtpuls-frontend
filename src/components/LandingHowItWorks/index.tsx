@@ -110,7 +110,7 @@ const columnsData = [
   {
     title: "Hardware",
     description:
-      "Die Wahl der Hardware  ist ganz dir überlassen. Arbeite mit Arduino, Raspberry Pi oder einer Open Sense Box. Wichtig ist, dass Dein Board über eine LoRaWan-Antenne verfügt.",
+      "Die Wahl der Hardware  ist ganz dir überlassen. Arbeite mit Arduino, Raspberry Pi oder einer Open Sense Box. Wichtig ist, dass dein Board über eine LoRaWan-Antenne verfügt.",
     listItems: [
       { icon: "/images/icons/arduino.svg", text: "Arduino" },
       { icon: "/images/icons/raspberry-pi.svg", text: "Raspberry Pi" },
@@ -140,11 +140,11 @@ const columnsData = [
   {
     title: "Was wir bereitstellen",
     description:
-      "Hast du erst einmal ein eigenes Stadtpuls-Projekt, stellen wir dir automatisch und kostenlos folgendes bereit:",
+      "Hast du erst einmal ein eigenes Stadtpuls-Account, stellen wir dir automatisch und kostenlos folgendes bereit:",
     listItems: [
       {
         icon: "/images/icons/profile.svg",
-        text: "Ein Profil für dein Projekt",
+        text: "Ein Profil für deine Sensoren",
       },
       {
         icon: "/images/icons/visualisations.svg",
