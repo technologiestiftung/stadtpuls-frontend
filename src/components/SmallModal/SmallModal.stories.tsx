@@ -31,6 +31,9 @@ WithoutFooterContent.args = {
     <p>
       Wir haben dir eine E-Mail mit einem Anmeldungs-Link geschickt. Klicke den
       Link an, um dich einzuloggen.
+      <br />
+      <br />
+      Bitte überprüfe auch Deinen Spam-Ordner..
     </p>
   ),
 };
