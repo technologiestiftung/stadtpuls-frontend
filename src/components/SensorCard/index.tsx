@@ -8,6 +8,7 @@ import { CategoriesType } from "@common/types/supabase";
 import { DateValueType } from "@common/interfaces";
 import { SensorSymbol } from "@components/SensorSymbol";
 import { CategoryIcon } from "@components/CategoryIcon";
+import { useWindowSize } from "@lib/hooks/useWindowSize";
 
 export interface SensorCardPropType {
   withMapBackground?: boolean;
@@ -42,11 +43,12 @@ export const SensorCard: FC<SensorCardPropType> = ({
   const [svgWrapperWidth, setSvgWrapperWidth] = useState(0);
   const [svgWrapperHeight, setSvgWrapperHeight] = useState(0);
   const [isInViewport, mapWrapperRef] = useIsInViewport({ threshold: 50 });
+  const { width: windowWidth } = useWindowSize();
 
   useEffect(() => {
     const updateWidthAndHeight = (): void => {
       if (parentRef.current === null) return;
-      setSvgWrapperWidth(parentRef.current.offsetWidth / 3);
+      setSvgWrapperWidth(parentRef.current.offsetWidth);
       setSvgWrapperHeight(parentRef.current.offsetHeight);
 
       animationFrameRef.current = requestAnimationFrame(updateWidthAndHeight);
@@ -73,9 +75,10 @@ export const SensorCard: FC<SensorCardPropType> = ({
           {isInViewport && (
             <div
               className={[
-                "absolute inset-0 left-auto w-1/3 overflow-hidden",
-                "pointer-events-none transition opacity-40",
-                "group-hover:opacity-60",
+                "absolute inset-0 bottom-auto sm:bottom-0 sm:left-auto sm:w-1/3",
+                "h-32 sm:h-full",
+                "pointer-events-none transition opacity-40 overflow-hidden",
+                "group-hover:opacity-60 bg-gray-50",
               ].join(" ")}
               style={{
                 animationDuration: "1s",
@@ -88,7 +91,11 @@ export const SensorCard: FC<SensorCardPropType> = ({
                 <>
                   <ProjectPreviewMap
                     viewport={geocoordinates}
-                    mapWidth={svgWrapperWidth}
+                    mapWidth={
+                      windowWidth && windowWidth < 640
+                        ? svgWrapperWidth
+                        : svgWrapperWidth / 3
+                    }
                     mapHeight={svgWrapperHeight}
                   />
                   <span
@@ -129,8 +136,8 @@ export const SensorCard: FC<SensorCardPropType> = ({
           )}
           <div
             className={[
-              "w-2/3 transition group-hover:animate-textpulse",
-              "px-4 py-3 sm:px-5 sm:py-4 md:px-8 md:py-7",
+              "sm:w-2/3 transition group-hover:animate-textpulse",
+              "px-4 pb-3 pt-36 sm:px-5 sm:py-4 md:px-8 md:py-7",
               "relative z-10",
             ].join(" ")}
           >

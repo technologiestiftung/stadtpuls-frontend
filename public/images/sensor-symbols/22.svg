@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Sensor Symbols / V</title>
-    <defs>
-        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
-    </defs>
-    <g id="Sensor-Symbols-/-V" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <mask id="mask-2" fill="white">
-            <use xlink:href="#path-1"></use>
-        </mask>
-        <use id="Rectangle" fill="#8330FF" xlink:href="#path-1"></use>
-        <rect id="Rectangle" fill="#F9FCFD" mask="url(#mask-2)" x="5" y="2" width="2" height="8" rx="1"></rect>
-        <rect id="Rectangle" fill="#46ECA1" mask="url(#mask-2)" transform="translate(18.000000, 6.000000) rotate(-270.000000) translate(-18.000000, -6.000000) " x="17" y="2" width="2" height="8" rx="1"></rect>
-        <rect id="Rectangle" fill="#46ECA1" mask="url(#mask-2)" transform="translate(6.000000, 18.000000) rotate(-270.000000) translate(-6.000000, -18.000000) " x="5" y="14" width="2" height="8" rx="1"></rect>
-        <rect id="Rectangle" fill="#F9FCFD" mask="url(#mask-2)" transform="translate(18.000000, 18.000000) rotate(-180.000000) translate(-18.000000, -18.000000) " x="17" y="14" width="2" height="8" rx="1"></rect>
-    </g>
-</svg>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 0h24v24H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><use fill="#8330FF" xlink:href="#a"/><path d="M6 2a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Z" fill="#F9FCFD" mask="url(#b)"/><path d="M22 6a1 1 0 0 1-1 1h-6a1 1 0 0 1 0-2h6a1 1 0 0 1 1 1ZM10 18a1 1 0 0 1-1 1H3a1 1 0 0 1 0-2h6a1 1 0 0 1 1 1Z" fill="#46ECA1" mask="url(#b)"/><path d="M18 22a1 1 0 0 1-1-1v-6a1 1 0 0 1 2 0v6a1 1 0 0 1-1 1Z" fill="#F9FCFD" mask="url(#b)"/></g></svg>

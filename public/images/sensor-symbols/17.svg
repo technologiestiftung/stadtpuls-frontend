@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Sensor Symbols / Q</title>
-    <g id="Sensor-Symbols-/-Q" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect id="Rectangle" fill="#46ECA1" x="0" y="12" width="12" height="12"></rect>
-        <rect id="Rectangle" fill="#46ECA1" x="12" y="0" width="12" height="12"></rect>
-        <rect id="Rectangle" fill="#0000C2" x="0" y="0" width="12" height="12"></rect>
-        <rect id="Rectangle" fill="#8330FF" x="12" y="12" width="12" height="12"></rect>
-    </g>
-</svg>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#46ECA1" d="M0 12h12v12H0zM12 0h12v12H12z"/><path fill="#0000C2" d="M0 0h12v12H0z"/><path fill="#8330FF" d="M12 12h12v12H12z"/></g></svg>

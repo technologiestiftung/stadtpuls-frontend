@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Sensor Symbols / B</title>
-    <defs>
-        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
-    </defs>
-    <g id="Sensor-Symbols-/-B" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <use id="Rectangle" fill="#46ECA1" xlink:href="#path-1"></use>
-            <path d="M7,-3 C8.65685425,-3 10,-1.65685425 10,-3.58113539e-12 C10,1.31179956 9.15804382,2.42694971 7.98504733,2.83453458 C7.99530518,2.88798638 8,2.94344492 8,3 L8,14 C8,14.5522847 7.55228475,15 7,15 C6.44771525,15 6,14.5522847 6,14 L6,3 C6,2.94344492 6.00469482,2.88798638 6.01371599,2.83399285 C4.84195618,2.42694971 4,1.31179956 4,-3.58113539e-12 C4,-1.65685425 5.34314575,-3 7,-3 Z" id="Combined-Shape" fill="#0000C2" mask="url(#mask-2)" transform="translate(7.000000, 6.000000) rotate(-180.000000) translate(-7.000000, -6.000000) "></path>
-            <path d="M17,-3 C18.6568542,-3 20,-1.65685425 20,-3.75210973e-12 C20,1.31179956 19.1580438,2.42694971 17.9850473,2.83453458 C17.9953052,2.88798638 18,2.94344492 18,3 L18,14 C18,14.5522847 17.5522847,15 17,15 C16.4477153,15 16,14.5522847 16,14 L16,3 C16,2.94344492 16.0046948,2.88798638 16.013716,2.83399285 C14.8419562,2.42694971 14,1.31179956 14,-3.75210973e-12 C14,-1.65685425 15.3431458,-3 17,-3 Z" id="Combined-Shape" fill="#8330FF" mask="url(#mask-2)" transform="translate(17.000000, 6.000000) rotate(-180.000000) translate(-17.000000, -6.000000) "></path>
-        </g>
-    </g>
-</svg>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#46ECA1" d="M0 0h24v24H0z"/><path d="M7 15a3 3 0 0 1-.985-5.835A.879.879 0 0 1 6 9V0h2v9c0 .057-.005.112-.014.166A3 3 0 0 1 7 15Z" fill="#0000C2"/><path d="M17 15a3 3 0 0 1-.985-5.835A.879.879 0 0 1 16 9V0h2v9c0 .057-.005.112-.014.166A3 3 0 0 1 17 15Z" fill="#8330FF"/></g></svg>

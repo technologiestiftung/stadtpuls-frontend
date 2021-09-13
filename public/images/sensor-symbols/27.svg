@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Sensor Symbols / Z2</title>
-    <defs>
-        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
-        <rect id="path-3" x="8.02081528" y="8.02081528" width="8" height="8"></rect>
-    </defs>
-    <g id="Sensor-Symbols-/-Z2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <mask id="mask-2" fill="white">
-            <use xlink:href="#path-1"></use>
-        </mask>
-        <use id="Rectangle" fill="#46ECA1" xlink:href="#path-1"></use>
-        <mask id="mask-4" fill="white">
-            <use xlink:href="#path-3"></use>
-        </mask>
-        <use id="Rectangle" fill="#F9FCFD" transform="translate(12.020815, 12.020815) rotate(-45.000000) translate(-12.020815, -12.020815) " xlink:href="#path-3"></use>
-    </g>
-</svg>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 0h24v24H0z"/><path id="b" d="M8.021 8.021h8v8h-8z"/></defs><g fill="none" fill-rule="evenodd"><use fill="#46ECA1" xlink:href="#a"/><use fill="#F9FCFD" transform="rotate(-45 12.02 12.02)" xlink:href="#b"/></g></svg>

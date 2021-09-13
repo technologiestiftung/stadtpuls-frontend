@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Sensor Symbols / Z5</title>
-    <defs>
-        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
-    </defs>
-    <g id="Sensor-Symbols-/-Z5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <mask id="mask-2" fill="white">
-            <use xlink:href="#path-1"></use>
-        </mask>
-        <use id="Rectangle" fill="#46ECA1" xlink:href="#path-1"></use>
-        <rect id="Mask" fill="#0000C2" mask="url(#mask-2)" transform="translate(7.000000, 11.500000) rotate(-180.000000) translate(-7.000000, -11.500000) " x="4" y="3" width="6" height="17"></rect>
-        <rect id="Rectangle" fill="#46ECA1" mask="url(#mask-2)" transform="translate(15.510408, 8.031223) rotate(-180.000000) translate(-15.510408, -8.031223) " x="14.5104076" y="3.53122292" width="2" height="9" rx="1"></rect>
-        <rect id="Rectangle" fill="#8330FF" mask="url(#mask-2)" transform="translate(14.000000, 7.500000) rotate(-180.000000) translate(-14.000000, -7.500000) " x="13" y="3" width="2" height="9" rx="1"></rect>
-        <rect id="Rectangle" fill="#8330FF" mask="url(#mask-2)" transform="translate(18.000000, 9.500000) rotate(-180.000000) translate(-18.000000, -9.500000) " x="17" y="7" width="2" height="5" rx="1"></rect>
-        <circle id="Oval" fill="#8330FF" mask="url(#mask-2)" cx="16" cy="17" r="3"></circle>
-    </g>
-</svg>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 0h24v24H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><use fill="#46ECA1" xlink:href="#a"/><path fill="#0000C2" mask="url(#b)" transform="rotate(-180 7 11.5)" d="M4 3h6v17H4z"/><path d="M15.51 12.531a1 1 0 0 1-1-1v-7a1 1 0 0 1 2 0v7a1 1 0 0 1-1 1Z" fill="#46ECA1" mask="url(#b)"/><path d="M14 12a1 1 0 0 1-1-1V4a1 1 0 0 1 2 0v7a1 1 0 0 1-1 1ZM18 12a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0v3a1 1 0 0 1-1 1Z" fill="#8330FF" mask="url(#b)"/><circle fill="#8330FF" mask="url(#b)" cx="16" cy="17" r="3"/></g></svg>

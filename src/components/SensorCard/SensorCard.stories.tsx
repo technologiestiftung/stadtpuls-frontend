@@ -549,8 +549,7 @@ export const NoMap = Template.bind({});
 NoMap.args = {
   id: "12",
   name: "LUFTY AAB3",
-  description:
-    "Luftqualität im Wagon AAB3 vom Ubahn der Linie 3Luftqualität im Wagon AAB3 vom Ubahn der Linie 3Luftqualität im Wagon AAB3 vom Ubahn der Linie 3",
+  description: "Luftqualität im Wagon AAB3 vom Ubahn der Linie 3",
   category: {
     id: 3,
     name: "Luftfeuchtigkeit",

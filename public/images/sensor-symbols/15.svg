@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Sensor Symbols / O</title>
-    <g id="Sensor-Symbols-/-O" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect id="Rectangle" fill="#46ECA1" x="0" y="0" width="24" height="24"></rect>
-        <g id="Group-2" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) translate(-0.000000, -0.000000)">
-            <path d="M12,0 C5.372583,0 0,5.372583 0,12 L12,12 L12,0 Z" id="Path" fill="#8330FF"></path>
-            <path d="M24,12 C17.372583,12 12,17.372583 12,24 L24,24 L24,12 Z" id="Path" fill="#F9FCFD" transform="translate(18.000000, 18.000000) rotate(-180.000000) translate(-18.000000, -18.000000) "></path>
-        </g>
-    </g>
-</svg>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#46ECA1" d="M0 0h24v24H0z"/><path d="M24 12c0-6.627-5.373-12-12-12v12h12Z" fill="#8330FF"/><path d="M0 12c0 6.627 5.373 12 12 12V12H0Z" fill="#F9FCFD"/></g></svg>
