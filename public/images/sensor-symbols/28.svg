@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Sensor Symbols / Z3</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+        <rect id="path-3" x="18.0208153" y="4.02081528" width="3" height="3"></rect>
+    </defs>
+    <g id="Sensor-Symbols-/-Z3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Rectangle" fill="#0000C2" xlink:href="#path-1"></use>
+        <rect id="Mask" fill="#F9FCFD" mask="url(#mask-2)" transform="translate(10.020815, 7.020815) rotate(-90.000000) translate(-10.020815, -7.020815) " x="7.02081528" y="1.02081528" width="6" height="12"></rect>
+        <rect id="Rectangle" fill="#46ECA1" mask="url(#mask-2)" transform="translate(16.500000, 15.000000) rotate(-90.000000) translate(-16.500000, -15.000000) " x="15.5" y="10.5" width="2" height="9" rx="1"></rect>
+        <rect id="Rectangle" fill="#46ECA1" mask="url(#mask-2)" transform="translate(16.500000, 19.000000) rotate(-90.000000) translate(-16.500000, -19.000000) " x="15.5" y="14.5" width="2" height="9" rx="1"></rect>
+        <mask id="mask-4" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <use id="Rectangle" fill="#F9FCFD" transform="translate(19.520815, 5.520815) rotate(-90.000000) translate(-19.520815, -5.520815) " xlink:href="#path-3"></use>
+    </g>
+</svg>

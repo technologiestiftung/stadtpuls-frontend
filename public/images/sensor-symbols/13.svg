@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Sensor Symbols / M</title>
+    <defs>
+        <rect id="path-1" x="-3.41104922e-12" y="3.55271368e-13" width="24" height="24"></rect>
+    </defs>
+    <g id="Sensor-Symbols-/-M" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Rectangle" fill="#8330FF" transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " xlink:href="#path-1"></use>
+        <g id="Group" mask="url(#mask-2)" fill="#46ECA1">
+            <path d="M12,0 C5.372583,0 0,5.372583 0,12 L12,12 L12,0 Z" id="Path"></path>
+        </g>
+        <path d="M24,12 C17.372583,12 12,17.372583 12,24 L24,24 L24,12 Z" id="Path" fill="#F9FCFD" mask="url(#mask-2)" transform="translate(18.000000, 18.000000) rotate(-180.000000) translate(-18.000000, -18.000000) "></path>
+    </g>
+</svg>

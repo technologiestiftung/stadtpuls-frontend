@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Sensor Symbols / Z6</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="Sensor-Symbols-/-Z6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Rectangle" fill="#8330FF" xlink:href="#path-1"></use>
+        <path d="M4,4 C4.55228475,4 5,4.44771525 5,5 L5,20 C5,20.5522847 4.55228475,21 4,21 C3.44771525,21 3,20.5522847 3,20 L3,5 C3,4.44771525 3.44771525,4 4,4 Z" id="Rectangle" fill="#46ECA1" mask="url(#mask-2)" transform="translate(4.000000, 12.500000) rotate(-180.000000) translate(-4.000000, -12.500000) "></path>
+        <path d="M16,12 C16.5522847,12 17,12.4477153 17,13 L17,20 C17,20.5522847 16.5522847,21 16,21 C15.4477153,21 15,20.5522847 15,20 L15,13 C15,12.4477153 15.4477153,12 16,12 Z" id="Rectangle" fill="#46ECA1" mask="url(#mask-2)" transform="translate(16.000000, 16.500000) scale(-1, 1) rotate(-180.000000) translate(-16.000000, -16.500000) "></path>
+        <path d="M12,16 C12.5522847,16 13,16.4477153 13,17 L13,20 C13,20.5522847 12.5522847,21 12,21 C11.4477153,21 11,20.5522847 11,20 L11,17 C11,16.4477153 11.4477153,16 12,16 Z" id="Rectangle" fill="#46ECA1" mask="url(#mask-2)" transform="translate(12.000000, 18.500000) scale(-1, 1) rotate(-180.000000) translate(-12.000000, -18.500000) "></path>
+        <path d="M8,8 C8.55228475,8 9,8.44771525 9,9 L9,20 C9,20.5522847 8.55228475,21 8,21 C7.44771525,21 7,20.5522847 7,20 L7,9 C7,8.44771525 7.44771525,8 8,8 Z" id="Rectangle" fill="#46ECA1" mask="url(#mask-2)" transform="translate(8.000000, 14.500000) rotate(-180.000000) translate(-8.000000, -14.500000) "></path>
+        <path d="M20,8 C20.5522847,8 21,8.44771525 21,9 L21,20 C21,20.5522847 20.5522847,21 20,21 C19.4477153,21 19,20.5522847 19,20 L19,9 C19,8.44771525 19.4477153,8 20,8 Z" id="Rectangle" fill="#46ECA1" mask="url(#mask-2)" transform="translate(20.000000, 14.500000) rotate(-180.000000) translate(-20.000000, -14.500000) "></path>
+    </g>
+</svg>

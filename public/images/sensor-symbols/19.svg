@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Sensor Symbols / S</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="Sensor-Symbols-/-S" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Rectangle" fill="#8330FF" xlink:href="#path-1"></use>
+        <circle id="Combined-Shape" fill="#0000C2" mask="url(#mask-2)" cx="18" cy="6" r="3"></circle>
+        <g id="Group-2" mask="url(#mask-2)">
+            <g transform="translate(12.000000, 12.000000) rotate(-225.000000) translate(-12.000000, -12.000000) translate(2.000000, 2.000000)" id="Group">
+                <g>
+                    <path d="M0,10 C0,15.5228475 4.4771525,20 10,20 M20,10 C20,4.4771525 15.5228475,7.89590615e-13 10,7.89590615e-13" id="Shape" stroke="#46ECA1" stroke-width="4" transform="translate(10.000000, 10.000000) rotate(-90.000000) translate(-10.000000, -10.000000) "></path>
+                    <path d="M4.28101998e-13,10 C4.28101998e-13,15.5228475 4.4771525,20 10,20 M20,10 C20,4.4771525 15.5228475,0 10,0" id="Shape" stroke="#0000C2" stroke-width="4" transform="translate(10.000000, 10.000000) rotate(-360.000000) translate(-10.000000, -10.000000) "></path>
+                </g>
+                <g transform="translate(10.000000, 10.000000) rotate(-270.000000) translate(-10.000000, -10.000000) translate(4.000000, 4.000000)">
+                    <path d="M2.00728323e-13,6 C2.00728323e-13,9.3137085 2.6862915,12 6,12 M12,6 C12,2.6862915 9.3137085,1.50192835e-12 6,1.50192835e-12" id="Shape" stroke="#46ECA1" stroke-width="4" transform="translate(6.000000, 6.000000) rotate(-90.000000) translate(-6.000000, -6.000000) "></path>
+                    <path d="M-2.27373675e-13,6 C-2.27373675e-13,9.3137085 2.6862915,12 6,12 M12,6 C12,2.6862915 9.3137085,-1.06623955e-12 6,-1.06623955e-12" id="Shape" stroke="#0000C2" stroke-width="4" transform="translate(6.000000, 6.000000) rotate(-360.000000) translate(-6.000000, -6.000000) "></path>
+                </g>
+                <g transform="translate(10.000000, 10.000000) rotate(-360.000000) translate(-10.000000, -10.000000) translate(8.000000, 8.000000)">
+                    <path d="M6.50990446e-13,2 C6.50990446e-13,3.1045695 0.8954305,4 2,4 M4,2 C4,0.8954305 3.1045695,9.89874849e-13 2,9.89874849e-13" id="Shape" stroke="#46ECA1" stroke-width="4" transform="translate(2.000000, 2.000000) rotate(-90.000000) translate(-2.000000, -2.000000) "></path>
+                    <path d="M1.28004281e-12,2 C1.28004281e-12,3.1045695 0.8954305,4 2,4 M4,2 C4,0.8954305 3.1045695,-4.54747351e-13 2,-4.54747351e-13" id="Shape" stroke="#0000C2" stroke-width="4" transform="translate(2.000000, 2.000000) rotate(-360.000000) translate(-2.000000, -2.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

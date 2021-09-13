@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Sensor Symbols / E</title>
+    <g id="Sensor-Symbols-/-E" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#0000C2" x="0" y="0" width="24" height="24"></rect>
+        <circle id="Combined-Shape" fill="#F9FCFD" cx="6" cy="18" r="3"></circle>
+        <circle id="Combined-Shape" fill="#46ECA1" cx="18" cy="18" r="3"></circle>
+        <circle id="Combined-Shape" fill="#46ECA1" cx="6" cy="6" r="3"></circle>
+        <circle id="Combined-Shape" fill="#F9FCFD" cx="18" cy="6" r="3"></circle>
+    </g>
+</svg>

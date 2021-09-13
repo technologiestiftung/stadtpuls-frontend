@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Sensor Symbols / Z5</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="Sensor-Symbols-/-Z5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Rectangle" fill="#46ECA1" xlink:href="#path-1"></use>
+        <rect id="Mask" fill="#0000C2" mask="url(#mask-2)" transform="translate(7.000000, 11.500000) rotate(-180.000000) translate(-7.000000, -11.500000) " x="4" y="3" width="6" height="17"></rect>
+        <rect id="Rectangle" fill="#46ECA1" mask="url(#mask-2)" transform="translate(15.510408, 8.031223) rotate(-180.000000) translate(-15.510408, -8.031223) " x="14.5104076" y="3.53122292" width="2" height="9" rx="1"></rect>
+        <rect id="Rectangle" fill="#8330FF" mask="url(#mask-2)" transform="translate(14.000000, 7.500000) rotate(-180.000000) translate(-14.000000, -7.500000) " x="13" y="3" width="2" height="9" rx="1"></rect>
+        <rect id="Rectangle" fill="#8330FF" mask="url(#mask-2)" transform="translate(18.000000, 9.500000) rotate(-180.000000) translate(-18.000000, -9.500000) " x="17" y="7" width="2" height="5" rx="1"></rect>
+        <circle id="Oval" fill="#8330FF" mask="url(#mask-2)" cx="16" cy="17" r="3"></circle>
+    </g>
+</svg>

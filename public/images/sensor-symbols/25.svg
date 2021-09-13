@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Sensor Symbols / Y</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="Sensor-Symbols-/-Y" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Rectangle" fill="#0000C2" xlink:href="#path-1"></use>
+        <g id="Group" mask="url(#mask-2)" fill="#46ECA1">
+            <g transform="translate(6.000000, 6.000000) rotate(-315.000000) translate(-6.000000, -6.000000) translate(2.000000, 2.000000)" id="Rectangle">
+                <rect x="6" y="0" width="2" height="8" rx="1"></rect>
+                <rect transform="translate(1.000000, 4.000000) rotate(-180.000000) translate(-1.000000, -4.000000) " x="0" y="3.18323146e-12" width="2" height="8" rx="1"></rect>
+            </g>
+        </g>
+        <g id="Group-3" mask="url(#mask-2)" fill="#F9FCFD">
+            <g transform="translate(18.000000, 6.000000) rotate(-45.000000) translate(-18.000000, -6.000000) translate(14.000000, 2.000000)" id="Rectangle">
+                <rect x="6" y="0" width="2" height="8" rx="1"></rect>
+                <rect transform="translate(1.000000, 4.000000) rotate(-180.000000) translate(-1.000000, -4.000000) " x="0" y="3.18323146e-12" width="2" height="8" rx="1"></rect>
+            </g>
+        </g>
+        <g id="Group-4" mask="url(#mask-2)" fill="#F9FCFD">
+            <g transform="translate(6.000000, 18.000000) rotate(-45.000000) translate(-6.000000, -18.000000) translate(2.000000, 14.000000)" id="Rectangle">
+                <rect transform="translate(7.000000, 4.000000) rotate(-180.000000) translate(-7.000000, -4.000000) " x="6" y="1.36424205e-12" width="2" height="8" rx="1"></rect>
+                <rect transform="translate(1.000000, 4.000000) rotate(-180.000000) translate(-1.000000, -4.000000) " x="0" y="0" width="2" height="8" rx="1"></rect>
+            </g>
+        </g>
+        <g id="Group-2" mask="url(#mask-2)" fill="#46ECA1">
+            <g transform="translate(18.000000, 18.000000) rotate(-315.000000) translate(-18.000000, -18.000000) translate(14.000000, 14.000000)" id="Rectangle">
+                <rect transform="translate(7.000000, 4.000000) rotate(-180.000000) translate(-7.000000, -4.000000) " x="6" y="1.36424205e-12" width="2" height="8" rx="1"></rect>
+                <rect transform="translate(1.000000, 4.000000) rotate(-180.000000) translate(-1.000000, -4.000000) " x="0" y="0" width="2" height="8" rx="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
