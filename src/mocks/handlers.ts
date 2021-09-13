@@ -18,6 +18,7 @@ import {
   ProjectsType,
   UserProfilesType,
 } from "@common/types/supabase_DEPRECATED";
+import { definitions } from "@common/types/supabase";
 import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
 
@@ -113,7 +114,7 @@ const supabaseHandlers = [
       );
     else return res(ctx.status(404, "Not found"));
   }),
-  rest.get(createApiUrl("/userprofiles"), (req, res, ctx) => {
+  rest.get(createApiUrl("/user_profiles"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const select = query.get("select");
@@ -122,27 +123,18 @@ const supabaseHandlers = [
       return res(ctx.status(201, "Mocked status"), ctx.json(userData));
     else return res(ctx.status(404, "Not found"));
   }),
-  //Devices add update delete
-  rest.post<DevicesType[]>(createApiUrl("/devices"), (req, res, ctx) => {
-    const payload = req.body[0];
+  // Sensors add update delete
+  rest.post<definitions["sensors"][]>(
+    createApiUrl("/sensors"),
+    (req, res, ctx) => {
+      const payload = req.body[0];
 
-    if (payload.projectId >= 1 && 4 >= payload.projectId)
       return res(
         ctx.status(201, "Mocked status"),
         ctx.json([{ ...payload, id: 12 }])
       );
-    else
-      return res(
-        ctx.status(409, "Conflict"),
-        ctx.json({
-          hint: null,
-          details: 'Key is not present in table "projects".',
-          code: "23503",
-          message:
-            'insert or update on table "devices" violates foreign key constraint "devices_projectId_fkey"',
-        })
-      );
-  }),
+    }
+  ),
   rest.patch<DevicesType>(createApiUrl("/devices"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
@@ -249,7 +241,7 @@ const supabaseHandlers = [
     return res(ctx.status(201, "Mocked status"), ctx.json([]));
   }),
   // Head calls
-  rest.head(createApiUrl("/userprofiles"), (req, res, ctx) => {
+  rest.head(createApiUrl("/user_profiles"), (req, res, ctx) => {
     if (req.headers.get("prefer") === "count=exact") {
       return res(
         ctx.set("content-range", "0-26/27"),
@@ -258,7 +250,7 @@ const supabaseHandlers = [
     }
     return res(ctx.status(404, "Not found"));
   }),
-  rest.head(createApiUrl("/devices"), (req, res, ctx) => {
+  rest.head(createApiUrl("/sensors"), (req, res, ctx) => {
     if (req.headers.get("prefer") === "count=exact") {
       return res(
         ctx.set("content-range", "0-28/29"),
