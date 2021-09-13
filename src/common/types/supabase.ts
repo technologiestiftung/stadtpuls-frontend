@@ -619,7 +619,7 @@ export interface definitions {
      */
     id: number;
     recorded_at: string;
-    measurements?: string;
+    measurements?: string[];
     /**
      * Note:
      * This is a Foreign Key to `sensors.id`.<fk table='sensors' column='id'/>
