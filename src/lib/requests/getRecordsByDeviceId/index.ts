@@ -1,5 +1,5 @@
 import { supabase } from "@auth/supabase";
-import { RecordsType } from "@common/types/supabase";
+import { RecordsType } from "@common/types/supabase_DEPRECATED";
 
 export interface GetRecordsOptionsType {
   startDate?: string;

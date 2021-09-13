@@ -1,7 +1,7 @@
 import { supabase } from "@auth/supabase";
 import useSWR from "swr";
 
-import { DevicesType, ProjectsType } from "@common/types/supabase";
+import { DevicesType, ProjectsType } from "@common/types/supabase_DEPRECATED";
 
 const RECORDS_LIMIT = 500;
 

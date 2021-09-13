@@ -1,4 +1,4 @@
-import { ProjectsType } from "@common/types/supabase";
+import { ProjectsType } from "@common/types/supabase_DEPRECATED";
 import {
   deleteProjectsProject,
   updateProjectsProject,

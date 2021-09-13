@@ -9,7 +9,7 @@ import {
   AuthenticatedUsersType,
   ProjectsType,
   DevicesType,
-} from "@common/types/supabase";
+} from "@common/types/supabase_DEPRECATED";
 import { useAuth } from "@auth/Auth";
 import {
   addProjectsDevice,

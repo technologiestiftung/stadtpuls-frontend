@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { RecordsType } from "@common/types/supabase";
+import { RecordsType } from "@common/types/supabase_DEPRECATED";
 import {
   getRecordsByDeviceId,
   GetRecordsOptionsType,

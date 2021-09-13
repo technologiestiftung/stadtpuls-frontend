@@ -1,6 +1,9 @@
 import { supabase } from "@auth/supabase";
 import { RecordType } from "@common/interfaces";
-import { DevicesType, UserProfilesType } from "@common/types/supabase";
+import {
+  DevicesType,
+  UserProfilesType,
+} from "@common/types/supabase_DEPRECATED";
 
 export interface LandingStatsReturnType {
   usersCount: number;

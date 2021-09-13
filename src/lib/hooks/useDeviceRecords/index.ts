@@ -1,4 +1,4 @@
-import { RecordsType } from "@common/types/supabase";
+import { RecordsType } from "@common/types/supabase_DEPRECATED";
 import { getRecordsByDeviceId } from "@lib/requests/getRecordsByDeviceId";
 import useSWR from "swr";
 

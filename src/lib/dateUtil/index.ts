@@ -1,6 +1,6 @@
 import { DateValueType } from "../../common/interfaces";
 import moment from "moment";
-import { RecordsType } from "@common/types/supabase";
+import { RecordsType } from "@common/types/supabase_DEPRECATED";
 moment.locale("de-DE");
 
 export const createDateValueArray = (input: RecordsType[]): DateValueType[] => {

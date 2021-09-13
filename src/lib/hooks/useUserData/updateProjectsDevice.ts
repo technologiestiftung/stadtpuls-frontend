@@ -1,4 +1,4 @@
-import { DevicesType, ProjectsType } from "@common/types/supabase";
+import { DevicesType, ProjectsType } from "@common/types/supabase_DEPRECATED";
 
 let lastDeviceId = 10000000;
 

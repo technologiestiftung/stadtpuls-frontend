@@ -1,4 +1,4 @@
-import { RecordsType } from "@common/types/supabase";
+import { RecordsType } from "@common/types/supabase_DEPRECATED";
 import { render, waitFor } from "@testing-library/react";
 import { FC, useEffect } from "react";
 import { SWRConfig } from "swr";

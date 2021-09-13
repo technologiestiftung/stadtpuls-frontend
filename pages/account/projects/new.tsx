@@ -7,7 +7,7 @@ import { useProjectCategories } from "@lib/hooks/useProjectCategories";
 import { useUserData } from "@lib/hooks/useUserData";
 import { useRouter } from "next/router";
 import { FC, useState } from "react";
-import { ProjectsType } from "@common/types/supabase";
+import { ProjectsType } from "@common/types/supabase_DEPRECATED";
 import { ProjectCreatedInfo } from "@components/ProjectCreatedInfo";
 
 const AccountProjectNewPage: FC = () => {

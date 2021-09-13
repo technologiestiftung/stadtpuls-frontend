@@ -1,4 +1,4 @@
-import { ProjectsType } from "@common/types/supabase";
+import { ProjectsType } from "@common/types/supabase_DEPRECATED";
 import { Project } from "@components/Project";
 import { getProjectData } from "@lib/requests/getProjectData";
 import { GetServerSideProps } from "next";

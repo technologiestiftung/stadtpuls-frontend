@@ -10,7 +10,7 @@ import { useProjectCategories } from "@lib/hooks/useProjectCategories";
 import { useUserData } from "@lib/hooks/useUserData";
 import { useRouter } from "next/router";
 import React, { FC, useState } from "react";
-import { ProjectsType } from "@common/types/supabase";
+import { ProjectsType } from "@common/types/supabase_DEPRECATED";
 import { ProjectNotFound } from "@components/PageError/ProjectNotFound";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { ButtonTextLink } from "@components/TextLink";

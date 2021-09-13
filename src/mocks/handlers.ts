@@ -17,7 +17,7 @@ import {
   DevicesType,
   ProjectsType,
   UserProfilesType,
-} from "@common/types/supabase";
+} from "@common/types/supabase_DEPRECATED";
 import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
 

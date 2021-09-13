@@ -1,4 +1,4 @@
-import { DevicesType } from "@common/types/supabase";
+import { DevicesType } from "@common/types/supabase_DEPRECATED";
 import moment from "moment";
 import { render, screen } from "@testing-library/react";
 import { SensorsListWithData as SensorsList } from ".";

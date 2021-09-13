@@ -1,4 +1,8 @@
-import { DevicesType, ProjectsType, RecordsType } from "@common/types/supabase";
+import {
+  DevicesType,
+  ProjectsType,
+  RecordsType,
+} from "@common/types/supabase_DEPRECATED";
 import { useUserData } from "@lib/hooks/useUserData";
 import { FC } from "react";
 import { SensorsList } from "..";

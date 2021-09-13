@@ -11,7 +11,7 @@ import {
   requiredProjectCategoryValidation,
   requiredProjectDescriptionValidation,
 } from "@lib/formValidationUtil";
-import { ProjectsType } from "@common/types/supabase";
+import { ProjectsType } from "@common/types/supabase_DEPRECATED";
 
 type EditableProjectFieldsType = Pick<
   ProjectsType,

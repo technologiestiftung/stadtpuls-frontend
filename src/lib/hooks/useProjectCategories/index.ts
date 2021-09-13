@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import { supabase } from "@auth/supabase";
-import { CategoriesType } from "@common/types/supabase";
+import { CategoriesType } from "@common/types/supabase_DEPRECATED";
 
 type CategoriesFetcherSignature = () => Promise<CategoriesType[] | null>;
 

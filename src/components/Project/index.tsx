@@ -14,7 +14,7 @@ import {
   CategoriesType,
   RecordsType,
   ProjectsType,
-} from "@common/types/supabase";
+} from "@common/types/supabase_DEPRECATED";
 import { Button } from "@components/Button";
 import { FormSelect } from "@components/FormSelect";
 import { DeviceLineChartFilters } from "@components/DeviceLineChartFilters";

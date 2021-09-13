@@ -1,5 +1,5 @@
 import { DateValueType } from "@common/interfaces";
-import { ProjectsType } from "@common/types/supabase";
+import { ProjectsType } from "@common/types/supabase_DEPRECATED";
 import { fakeDeviceRecords } from "./deviceRecords";
 
 const getFakeLineChartDates = (): DateValueType[] => [
