@@ -25,6 +25,7 @@ export const CategoryIcon: FC<CategoryIconPropType> = ({
       height='16'
       xmlns='http://www.w3.org/2000/svg'
       className={className || ""}
+      role='img'
     >
       <path d={d} fill='currentColor' fillRule='nonzero' />
     </svg>
