@@ -14,7 +14,7 @@ const categoriesFetcher: CategoriesFetcherSignature = async () => {
   return categories;
 };
 
-export const useProjectCategories = (): {
+export const useSensorCategories = (): {
   isLoading: boolean;
   categories: CategoriesType[] | null;
   error: Error | null;

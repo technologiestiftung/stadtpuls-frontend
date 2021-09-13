@@ -3,7 +3,7 @@ import { PleaseLogin } from "@components/PageError/PleaseLogin";
 import { ServerError } from "@components/PageError/ServerError";
 import { UserProjectsWrapper } from "@components/UserProjectsWrapper";
 import { CreateProjectForm } from "@components/CreateProjectForm";
-import { useProjectCategories } from "@lib/hooks/useProjectCategories";
+import { useSensorCategories } from "@lib/hooks/useSensorCategories";
 import { useUserData } from "@lib/hooks/useUserData";
 import { useRouter } from "next/router";
 import { FC, useState } from "react";
@@ -18,7 +18,7 @@ const AccountProjectNewPage: FC = () => {
     categories,
     isLoading: isLoadingCategories,
     error: categoriesError,
-  } = useProjectCategories();
+  } = useSensorCategories();
 
   const [projectWasCreated, setProjectWasCreated] = useState(false);
   const [newProjectId, setNewProjectId] = useState<number | undefined>(

@@ -6,7 +6,7 @@ import { ServerError } from "@components/PageError/ServerError";
 import { UserProjectsWrapper } from "@components/UserProjectsWrapper";
 import { Button } from "@components/Button";
 import { EditProjectForm } from "@components/EditProjectForm";
-import { useProjectCategories } from "@lib/hooks/useProjectCategories";
+import { useSensorCategories } from "@lib/hooks/useSensorCategories";
 import { useUserData } from "@lib/hooks/useUserData";
 import { useRouter } from "next/router";
 import React, { FC, useState } from "react";
@@ -32,7 +32,7 @@ const AccountProjectEditPage: FC = () => {
     categories,
     isLoading: isLoadingCategories,
     error: categoriesError,
-  } = useProjectCategories();
+  } = useSensorCategories();
 
   const parsedProjectId = Array.isArray(editingProjectId)
     ? editingProjectId[0]
