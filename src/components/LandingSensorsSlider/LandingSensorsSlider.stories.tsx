@@ -1,18 +1,16 @@
 import { PublicSensorType } from "@common/interfaces";
 import { curatedSensors } from "@mocks/supabaseData/sensors";
 import { Story, Meta } from "@storybook/react";
-import { LandingProjectsSlider } from ".";
+import { LandingSensorsSlider } from ".";
 
 export default {
-  title: "Promotional/LandingProjectsSlider",
-  component: LandingProjectsSlider,
+  title: "Promotional/LandingSensorsSlider",
+  component: LandingSensorsSlider,
 } as Meta;
 
 const Template: Story<{
   sensors: PublicSensorType[];
-}> = (args, { loaded: { sensors } }) => (
-  <LandingProjectsSlider {...args} {...sensors} />
-);
+}> = args => <LandingSensorsSlider {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

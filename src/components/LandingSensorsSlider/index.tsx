@@ -1,19 +1,19 @@
 import { FC, useEffect, useState } from "react";
 import Swiper from "swiper";
 import SwiperClass from "swiper/types/swiper-class";
-import styles from "./LandingProjectsSlider.module.css";
+import styles from "./LandingSensorsSlider.module.css";
 
 import "swiper/swiper-bundle.css";
 import { PublicSensorType } from "@common/interfaces";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
-interface LandingProjectsSliderPropType {
+interface LandingSensorsSliderPropType {
   sensors: PublicSensorType[];
   initialSlideIndex?: number;
   onSlideChange?: (slideIndex: number) => void;
 }
 
-export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
+export const LandingSensorsSlider: FC<LandingSensorsSliderPropType> = ({
   sensors,
   initialSlideIndex = 0,
   onSlideChange = () => undefined,

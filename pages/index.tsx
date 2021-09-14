@@ -3,7 +3,7 @@ import { LandingHeroBackgroundMap } from "@components/LandingHeroBackgroundMap";
 import { LandingHowItWorks } from "@components/LandingHowItWorks";
 import { LandingLabAbout } from "@components/LandingLabAbout";
 import { LandingProjectAbout } from "@components/LandingProjectAbout";
-import { LandingProjectsSlider } from "@components/LandingProjectsSlider";
+import { LandingSensorsSlider } from "@components/LandingSensorsSlider";
 import { LandingStatsSection } from "@components/LandingStatsSection";
 import { getCuratedSensors } from "@lib/hooks/useCuratedSensors";
 import { PublicSensorType } from "@common/interfaces";
@@ -45,7 +45,7 @@ const LandingPage: FC<{
       </div>
       <LandingHero />
       <LandingStatsSection stats={stats} />
-      <LandingProjectsSlider
+      <LandingSensorsSlider
         sensors={curatedSensors}
         initialSlideIndex={initialSlideIndex}
         onSlideChange={setActiveSlideIndex}
