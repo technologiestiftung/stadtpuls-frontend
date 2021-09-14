@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
+<div
+  className="inline-grid grid-cols-8 gap-4"
+>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 1"
+      src="/images/sensor-symbols/1.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 2"
+      src="/images/sensor-symbols/2.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 3"
+      src="/images/sensor-symbols/3.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 4"
+      src="/images/sensor-symbols/4.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 5"
+      src="/images/sensor-symbols/5.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 6"
+      src="/images/sensor-symbols/6.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 7"
+      src="/images/sensor-symbols/7.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 8"
+      src="/images/sensor-symbols/8.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 9"
+      src="/images/sensor-symbols/9.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 10"
+      src="/images/sensor-symbols/10.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 11"
+      src="/images/sensor-symbols/11.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 12"
+      src="/images/sensor-symbols/12.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 13"
+      src="/images/sensor-symbols/13.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 14"
+      src="/images/sensor-symbols/14.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 15"
+      src="/images/sensor-symbols/15.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 16"
+      src="/images/sensor-symbols/16.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 17"
+      src="/images/sensor-symbols/17.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 18"
+      src="/images/sensor-symbols/18.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 19"
+      src="/images/sensor-symbols/19.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 20"
+      src="/images/sensor-symbols/20.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 21"
+      src="/images/sensor-symbols/21.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 22"
+      src="/images/sensor-symbols/22.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 23"
+      src="/images/sensor-symbols/23.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 24"
+      src="/images/sensor-symbols/24.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 25"
+      src="/images/sensor-symbols/25.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 26"
+      src="/images/sensor-symbols/26.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 27"
+      src="/images/sensor-symbols/27.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 28"
+      src="/images/sensor-symbols/28.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 29"
+      src="/images/sensor-symbols/29.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 30"
+      src="/images/sensor-symbols/30.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 31"
+      src="/images/sensor-symbols/31.svg"
+    />
+  </span>
+  <span
+    className=" inline-block bg-gray-50 w-6 h-6"
+  >
+    <img
+      alt="Sensor Symbol 32"
+      src="/images/sensor-symbols/32.svg"
+    />
+  </span>
+</div>
+`;
