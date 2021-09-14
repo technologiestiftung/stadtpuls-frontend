@@ -17,6 +17,13 @@ export interface UserInfoHeaderPropType {
   onEditButtonClick?: () => void | undefined;
 }
 
+const numberFormatter = new Intl.NumberFormat("de-DE", {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  notation: "compact",
+  compactDisplay: "short",
+});
+
 export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
   displayName,
   description,
@@ -92,7 +99,7 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
                 "font-mono lg:font-light text-gray-700",
               ].join(" ")}
             >
-              {sensorsCount}
+              {numberFormatter.format(sensorsCount)}
             </span>
             <span>Sensoren</span>
           </div>
@@ -103,7 +110,7 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
                 "font-mono lg:font-light text-gray-700",
               ].join(" ")}
             >
-              {recordsCount}
+              {numberFormatter.format(recordsCount)}
             </span>
             <span>Meßwerte</span>
           </div>

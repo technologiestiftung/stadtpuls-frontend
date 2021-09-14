@@ -556,7 +556,7 @@ exports[`Storyshots UI Elements/UserInfoHeader Maximum Infos 1`] = `
         <span
           className="text-lg sm:text-xl lg:text-2xl pt-1 font-mono lg:font-light text-gray-700"
         >
-          12
+          12.342
         </span>
         <span>
           Sensoren
@@ -568,7 +568,7 @@ exports[`Storyshots UI Elements/UserInfoHeader Maximum Infos 1`] = `
         <span
           className="text-lg sm:text-xl lg:text-2xl pt-1 font-mono lg:font-light text-gray-700"
         >
-          11351256
+          11 Mio.
         </span>
         <span>
           Meßwerte

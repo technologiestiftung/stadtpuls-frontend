@@ -9,8 +9,8 @@ const testProps = {
     "Louis XIV, also known as Louis the Great or the Sun King, was King of France from 14 May 1643 until his death in 1715.",
   link:
     "http://www.webanddata.com/login.aspx?url=http://mailflick.com/Home/Tools/tool?id=123",
-  sensorsCount: 12,
-  recordsCount: 11351256,
+  sensorsCount: 12345,
+  recordsCount: 12345678,
 };
 
 describe("UserInfoHeader", () => {
@@ -31,8 +31,8 @@ describe("UserInfoHeader", () => {
     const link = screen.getByRole("link", {
       name: normalizeURL(testProps.link),
     });
-    const sensorsCount = screen.getByText(testProps.sensorsCount);
-    const recordsCount = screen.getByText(testProps.recordsCount);
+    const sensorsCount = screen.queryByText("12.345");
+    const recordsCount = screen.queryByText("12 Mio.");
     const editButton = screen.getByRole("button", { name: "Sensor editieren" });
     expect(title).toBeInTheDocument();
     expect(username).toBeInTheDocument();
@@ -58,8 +58,8 @@ describe("UserInfoHeader", () => {
     const link = screen.queryByRole("link", {
       name: normalizeURL(testProps.link),
     });
-    const sensorsCount = screen.queryByText(testProps.sensorsCount);
-    const recordsCount = screen.queryByText(testProps.recordsCount);
+    const sensorsCount = screen.queryByText("12.345");
+    const recordsCount = screen.queryByText("12 Mio.");
     expect(title).toBeInTheDocument();
     expect(username).toBeInTheDocument();
     expect(description).not.toBeInTheDocument();
