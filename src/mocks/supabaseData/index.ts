@@ -1,5 +1,5 @@
 import { DevicesType, ProjectsType } from "@common/types/supabase_DEPRECATED";
-import { fakeCategories } from "./categories";
+import { categories as fakeCategories } from "./categories";
 import { fakeProjects } from "./publicProjects";
 import { fakeDeviceRecords } from "./deviceRecords";
 import {
