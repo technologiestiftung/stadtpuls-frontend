@@ -25,5 +25,5 @@ WithActiveTab.args = {
     { id: "b", name: "Preparation", onClick: action("tab b clicked") },
     { id: "c", name: "Serving", href: "/c" },
   ],
-  activeTabIndex: 1,
+  activeTabIndex: 2,
 };

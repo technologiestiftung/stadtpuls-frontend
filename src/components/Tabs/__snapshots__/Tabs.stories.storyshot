@@ -3,24 +3,22 @@
 exports[`Storyshots UI Elements/Tabs Default 1`] = `
 <nav>
   <ul
-    className="flex pl-[1px] max-w-full overflow-x-auto overflow-y-hidden"
+    className="flex pl-[1px] max-w-full overflow-x-auto overflow-y-hidden ring-inset"
   >
     <li
       className=""
     >
-      <button
-        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 border-l border-t border-r border-b-0 ml-[-1px] inline-block relative border-gray-200 z-10 cursor-default"
-        onClick={[Function]}
-        tabIndex={-1}
+      <span
+        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 focus:outline-none border-l border-t border-r bg-none ring-inset border-b-0 ml-[-1px] inline-block relative border-gray-200 z-10 cursor-default"
       >
         Ingredients
-      </button>
+      </span>
     </li>
     <li
       className=""
     >
       <button
-        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 border-l border-t border-r border-b-0 ml-[-1px] inline-block relative hover:border-purple hover:text-purple cursor-pointer hover:z-20 border-gray-50 focus:z-20 focus:border-purple focus-offset focus:ring-green focus:outline-none text-gray-900"
+        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 focus:outline-none border-l border-t border-r bg-none ring-inset border-b-0 ml-[-1px] inline-block relative hover:border-purple hover:text-purple cursor-pointer hover:z-20 border-gray-50 text-gray-900 focus:z-20 focus:border-purple focus:ring-2 focus:ring-purple"
         onClick={[Function]}
       >
         Preparation
@@ -30,7 +28,7 @@ exports[`Storyshots UI Elements/Tabs Default 1`] = `
       className=""
     >
       <a
-        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 border-l border-t border-r border-b-0 ml-[-1px] inline-block relative hover:border-purple hover:text-purple cursor-pointer hover:z-20 border-gray-50 focus:z-20 focus:border-purple focus-offset focus:ring-green focus:outline-none text-gray-900"
+        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 focus:outline-none border-l border-t border-r bg-none ring-inset border-b-0 ml-[-1px] inline-block relative hover:border-purple hover:text-purple cursor-pointer hover:z-20 border-gray-50 text-gray-900 focus:z-20 focus:border-purple focus:ring-2 focus:ring-purple"
         href="/c"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -45,13 +43,13 @@ exports[`Storyshots UI Elements/Tabs Default 1`] = `
 exports[`Storyshots UI Elements/Tabs With Active Tab 1`] = `
 <nav>
   <ul
-    className="flex pl-[1px] max-w-full overflow-x-auto overflow-y-hidden"
+    className="flex pl-[1px] max-w-full overflow-x-auto overflow-y-hidden ring-inset"
   >
     <li
       className=""
     >
       <button
-        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 border-l border-t border-r border-b-0 ml-[-1px] inline-block relative hover:border-purple hover:text-purple cursor-pointer hover:z-20 border-gray-50 focus:z-20 focus:border-purple focus-offset focus:ring-green focus:outline-none text-gray-900"
+        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 focus:outline-none border-l border-t border-r bg-none ring-inset border-b-0 ml-[-1px] inline-block relative hover:border-purple hover:text-purple cursor-pointer hover:z-20 border-gray-50 text-gray-900 focus:z-20 focus:border-purple focus:ring-2 focus:ring-purple"
         onClick={[Function]}
       >
         Ingredients
@@ -61,9 +59,8 @@ exports[`Storyshots UI Elements/Tabs With Active Tab 1`] = `
       className=""
     >
       <button
-        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 border-l border-t border-r border-b-0 ml-[-1px] inline-block relative border-gray-200 z-10 cursor-default"
+        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 focus:outline-none border-l border-t border-r bg-none ring-inset border-b-0 ml-[-1px] inline-block relative hover:border-purple hover:text-purple cursor-pointer hover:z-20 border-gray-50 text-gray-900 focus:z-20 focus:border-purple focus:ring-2 focus:ring-purple"
         onClick={[Function]}
-        tabIndex={-1}
       >
         Preparation
       </button>
@@ -71,14 +68,11 @@ exports[`Storyshots UI Elements/Tabs With Active Tab 1`] = `
     <li
       className=""
     >
-      <a
-        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 border-l border-t border-r border-b-0 ml-[-1px] inline-block relative hover:border-purple hover:text-purple cursor-pointer hover:z-20 border-gray-50 focus:z-20 focus:border-purple focus-offset focus:ring-green focus:outline-none text-gray-900"
-        href="/c"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
+      <span
+        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 focus:outline-none border-l border-t border-r bg-none ring-inset border-b-0 ml-[-1px] inline-block relative border-gray-200 z-10 cursor-default"
       >
         Serving
-      </a>
+      </span>
     </li>
   </ul>
 </nav>

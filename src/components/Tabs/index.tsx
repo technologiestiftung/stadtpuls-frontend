@@ -16,20 +16,20 @@ export interface TabsPropType {
 const getTabInnerStyles = (isActive: boolean): string =>
   [
     "px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base",
-    "flex content-center items-center z-0",
-    "border-l border-t border-r",
+    "flex content-center items-center z-0 focus:outline-none",
+    "border-l border-t border-r bg-none ring-inset",
     "border-b-0 ml-[-1px] inline-block relative",
     !isActive && "hover:border-purple hover:text-purple",
-    !isActive && "cursor-pointer hover:z-20 border-gray-50",
-    !isActive && "focus:z-20 focus:border-purple focus-offset focus:ring-green",
-    !isActive && "focus:outline-none text-gray-900",
+    !isActive && "cursor-pointer hover:z-20 border-gray-50 text-gray-900",
+    !isActive && "focus:z-20 focus:border-purple",
+    !isActive && "focus:ring-2 focus:ring-purple",
     isActive && "border-gray-200 z-10 cursor-default",
   ]
     .filter(Boolean)
     .join(" ");
 export const Tabs: FC<TabsPropType> = ({ tabs, activeTabIndex = 0 }) => (
   <nav>
-    <ul className='flex pl-[1px] max-w-full overflow-x-auto overflow-y-hidden'>
+    <ul className='flex pl-[1px] max-w-full overflow-x-auto overflow-y-hidden ring-inset'>
       {tabs.map((tab, idx) => {
         const isActive = activeTabIndex === idx;
         const tabIndex = (isActive && -1) || undefined;
@@ -52,6 +52,9 @@ export const Tabs: FC<TabsPropType> = ({ tabs, activeTabIndex = 0 }) => (
               </a>
             </Link>
           );
+        }
+        if (isActive) {
+          tag = <span className={tabInnerStyles}>{name}</span>;
         }
         return (
           <li key={id} className={[].join(" ")}>
