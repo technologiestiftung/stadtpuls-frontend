@@ -1,6 +1,5 @@
 import { rest } from "msw";
 import {
-  publicCategories,
   deviceRecords,
   publicProjectsData,
   userData,
@@ -10,6 +9,7 @@ import {
   refreshToken,
   authToken,
 } from "./supabaseData";
+import { sensors } from "./supabaseData/sensors";
 import { createApiUrl } from "../lib/requests/createApiUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
 import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
@@ -21,6 +21,8 @@ import {
 import { definitions } from "@common/types/supabase";
 import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
+import { PublicSensorType } from "@common/interfaces";
+import { categories } from "./supabaseData/categories";
 
 const githubHandlers = [
   rest.get(`https://api.github.com/users/*`, (_req, res, ctx) => {
@@ -65,7 +67,7 @@ const tokenApiHandlers = [
 
 const supabaseHandlers = [
   rest.get(createApiUrl("/categories"), (_req, res, ctx) => {
-    return res(ctx.status(201, "Mocked status"), ctx.json(publicCategories));
+    return res(ctx.status(201, "Mocked status"), ctx.json(categories));
   }),
   rest.get(createApiUrl("/records"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"), ctx.json(deviceRecords));
@@ -135,6 +137,14 @@ const supabaseHandlers = [
       );
     }
   ),
+  rest.get<PublicSensorType>(createApiUrl("/sensors"), (_, res, ctx) => {
+    const sensorsResponse = [
+      ...sensors.withTtnIntegration,
+      ...sensors.withHttpIntegration,
+    ];
+
+    return res(ctx.status(201, "Mocked status"), ctx.json(sensorsResponse));
+  }),
   rest.patch<DevicesType>(createApiUrl("/devices"), (req, res, ctx) => {
     const query = req.url.searchParams;
 

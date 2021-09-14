@@ -1,3 +1,5 @@
+import { definitions } from "./types/supabase";
+
 interface Heading {
   fontFamily: string;
   lineHeight: string;
@@ -234,4 +236,23 @@ export interface TokenResponseObjectType {
   data: {
     token: string;
   };
+}
+
+// NOTE: From here on, you can find the interfaces according to our new Supabase instance. TODO: Other stuff will be removed soon
+
+type SensorType = definitions["sensors"];
+export interface SensorQueryResponseType extends SensorType {
+  records: definitions["records"][];
+  user: definitions["user_profiles"];
+  category: definitions["categories"];
+}
+
+export interface PublicSensorType
+  extends Pick<
+    SensorQueryResponseType,
+    "id" | "name" | "description" | "location"
+  > {
+  authorName: string | null;
+  parsedRecords: DateValueType[];
+  categoryName: string | null;
 }
