@@ -47,6 +47,8 @@ export const AreaPath: FC<LineGraphType> = ({ width, height, data }) => {
       fill='currentColor'
       fillOpacity='10%'
       shapeRendering='geometricPrecision'
+      vectorEffect='non-scaling-stroke'
+      strokeLinecap='round'
     />
   );
 };
