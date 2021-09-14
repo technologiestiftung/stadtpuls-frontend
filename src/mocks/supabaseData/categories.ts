@@ -1,17 +1,19 @@
-export const fakeCategories = [
+import { definitions } from "@common/types/supabase";
+
+export const fakeCategories: definitions["categories"][] = [
   {
     id: 1,
-    name: "Mock Category A",
-    description: "Description for A",
+    name: "Lautstärke",
+    description: "Description",
   },
   {
     id: 2,
-    name: "Mock Category B",
-    description: "Description for B",
+    name: "Temperatur",
+    description: "Description",
   },
   {
     id: 3,
-    name: "Mock Category C",
-    description: "Description for C",
+    name: "Luftdruck",
+    description: "Description",
   },
 ];
