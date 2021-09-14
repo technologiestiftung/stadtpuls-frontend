@@ -571,7 +571,7 @@ exports[`Storyshots UI Elements/UserInfoHeader Maximum Infos 1`] = `
           11 Mio.
         </span>
         <span>
-          Meßwerte
+          Messwerte
         </span>
       </div>
     </div>
@@ -1148,7 +1148,7 @@ exports[`Storyshots UI Elements/UserInfoHeader Minimal Infos 1`] = `
           0
         </span>
         <span>
-          Meßwerte
+          Messwerte
         </span>
       </div>
     </div>

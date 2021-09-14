@@ -112,7 +112,7 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
             >
               {numberFormatter.format(recordsCount)}
             </span>
-            <span>Meßwerte</span>
+            <span>Messwerte</span>
           </div>
         </div>
       </div>
