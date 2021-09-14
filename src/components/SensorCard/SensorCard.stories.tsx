@@ -1,6 +1,6 @@
+import { fakeDateValueRecords } from "@mocks/supabaseData/deviceRecords";
 import { Story, Meta } from "@storybook/react";
 import { SensorCard, SensorCardPropType } from ".";
-import { testRecords } from "./SensorCard.test";
 
 export default {
   title: "UI Elements/SensorCard",
@@ -27,7 +27,7 @@ LongFields.args = {
   symbol: 1,
   geocoordinates: { latitude: 52.4961458, longitude: 13.4335723 },
   authorName: "Atahualpa Yupanqui De la Vega Van Hilde",
-  records: testRecords,
+  records: fakeDateValueRecords,
 };
 
 export const MinimalFields = Template.bind({});
@@ -57,6 +57,6 @@ NoMap.args = {
   },
   symbol: 15,
   authorName: "Vogelino",
-  records: testRecords.slice(0, 15),
+  records: fakeDateValueRecords.slice(0, 15),
   withMapBackground: false,
 };

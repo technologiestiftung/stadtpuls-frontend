@@ -3,8 +3,8 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { InteractiveMapProps } from "react-map-gl/src/components/interactive-map";
 
 export const ProjectPreviewMap: React.FC<{
-  mapWidth: number;
-  mapHeight: number;
+  mapWidth: number | string;
+  mapHeight: number | string;
   viewport: Partial<InteractiveMapProps>;
 }> = ({ mapWidth, mapHeight, viewport }) => (
   <ReactMapGL

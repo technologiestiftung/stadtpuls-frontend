@@ -46,6 +46,7 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
             <svg
               className="mt-1"
               height="16"
+              role="img"
               width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -626,6 +627,7 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
             <svg
               className="mt-1"
               height="16"
+              role="img"
               width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -694,6 +696,7 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
             <svg
               className="mt-1"
               height="16"
+              role="img"
               width="16"
               xmlns="http://www.w3.org/2000/svg"
             >

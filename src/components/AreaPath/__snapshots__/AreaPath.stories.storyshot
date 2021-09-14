@@ -12,7 +12,9 @@ exports[`Storyshots Charts/AreaPath Default 1`] = `
     fillOpacity="10%"
     shapeRendering="geometricPrecision"
     stroke="currentColor"
+    strokeLinecap="round"
     strokeWidth={2}
+    vectorEffect="non-scaling-stroke"
   />
 </svg>
 `;

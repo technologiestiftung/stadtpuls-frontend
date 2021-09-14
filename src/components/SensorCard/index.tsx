@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, FC } from "react";
+import { FC } from "react";
 import Link from "next/link";
 import { ProjectPreviewMap } from "@components/ProjectPreviewMap";
 import useIsInViewport from "use-is-in-viewport";
@@ -8,7 +8,6 @@ import { CategoriesType } from "@common/types/supabase";
 import { DateValueType } from "@common/interfaces";
 import { SensorSymbol } from "@components/SensorSymbol";
 import { CategoryIcon } from "@components/CategoryIcon";
-import { useWindowSize } from "@lib/hooks/useWindowSize";
 
 export interface SensorCardPropType {
   withMapBackground?: boolean;
@@ -38,29 +37,11 @@ export const SensorCard: FC<SensorCardPropType> = ({
   category,
   withMapBackground = true,
 }) => {
-  const animationFrameRef = useRef(0);
-  const parentRef = useRef<HTMLDivElement>(null);
-  const [svgWrapperWidth, setSvgWrapperWidth] = useState(0);
-  const [svgWrapperHeight, setSvgWrapperHeight] = useState(0);
   const [isInViewport, mapWrapperRef] = useIsInViewport({ threshold: 50 });
-  const { width: windowWidth } = useWindowSize();
-
-  useEffect(() => {
-    const updateWidthAndHeight = (): void => {
-      if (parentRef.current === null) return;
-      setSvgWrapperWidth(parentRef.current.offsetWidth);
-      setSvgWrapperHeight(parentRef.current.offsetHeight);
-
-      animationFrameRef.current = requestAnimationFrame(updateWidthAndHeight);
-    };
-
-    animationFrameRef.current = requestAnimationFrame(updateWidthAndHeight);
-    return () => cancelAnimationFrame(animationFrameRef.current);
-  }, [parentRef]);
 
   return (
     <div
-      ref={parentRef}
+      ref={mapWrapperRef}
       className={[
         "bg-white shadow",
         "border border-gray-200 group",
@@ -71,7 +52,7 @@ export const SensorCard: FC<SensorCardPropType> = ({
       style={{ minHeight: 280 }}
     >
       <Link href={`/${id}`}>
-        <a href={`/${id}`} ref={mapWrapperRef}>
+        <a href={`/${id}`}>
           {isInViewport && (
             <div
               className={[
@@ -91,12 +72,8 @@ export const SensorCard: FC<SensorCardPropType> = ({
                 <>
                   <ProjectPreviewMap
                     viewport={geocoordinates}
-                    mapWidth={
-                      windowWidth && windowWidth < 640
-                        ? svgWrapperWidth
-                        : svgWrapperWidth / 3
-                    }
-                    mapHeight={svgWrapperHeight}
+                    mapWidth='100%'
+                    mapHeight='100%'
                   />
                   <span
                     className={[
@@ -115,9 +92,10 @@ export const SensorCard: FC<SensorCardPropType> = ({
               />
               <div className='absolute inset-0 overflow-hidden z-40'>
                 <svg
-                  viewBox={`0 0 ${svgWrapperWidth + 4} 82`}
+                  viewBox={`0 0 100 82`}
+                  preserveAspectRatio='none'
                   xmlns='http://www.w3.org/2000/svg'
-                  width={svgWrapperWidth + 4}
+                  width='104%'
                   height={82}
                   className={[
                     "overflow-visible absolute -bottom-1 -right-1 -left-1",
@@ -125,7 +103,7 @@ export const SensorCard: FC<SensorCardPropType> = ({
                   ].join(" ")}
                 >
                   <AreaPath
-                    width={svgWrapperWidth + 4}
+                    width={100}
                     height={82}
                     //FIXME: Figure out how we want to handle multiple data points
                     data={records}

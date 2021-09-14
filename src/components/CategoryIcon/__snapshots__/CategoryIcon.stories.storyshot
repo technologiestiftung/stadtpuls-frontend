@@ -7,6 +7,7 @@ exports[`Storyshots UI Elements/CategoryIcon Default 1`] = `
   <svg
     className=""
     height="16"
+    role="img"
     width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -19,6 +20,7 @@ exports[`Storyshots UI Elements/CategoryIcon Default 1`] = `
   <svg
     className=""
     height="16"
+    role="img"
     width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -31,6 +33,7 @@ exports[`Storyshots UI Elements/CategoryIcon Default 1`] = `
   <svg
     className=""
     height="16"
+    role="img"
     width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -43,6 +46,7 @@ exports[`Storyshots UI Elements/CategoryIcon Default 1`] = `
   <svg
     className=""
     height="16"
+    role="img"
     width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -55,6 +59,7 @@ exports[`Storyshots UI Elements/CategoryIcon Default 1`] = `
   <svg
     className=""
     height="16"
+    role="img"
     width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -67,6 +72,7 @@ exports[`Storyshots UI Elements/CategoryIcon Default 1`] = `
   <svg
     className=""
     height="16"
+    role="img"
     width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
