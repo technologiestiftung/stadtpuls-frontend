@@ -1,5 +1,5 @@
 import { normalizeURL } from "@lib/urlUtil";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { UserInfoHeader } from ".";
 
 const testProps = {
@@ -15,7 +15,14 @@ const testProps = {
 
 describe("UserInfoHeader", () => {
   it("renders correctly", () => {
-    render(<UserInfoHeader {...testProps} />);
+    const onEditButtonClick = jest.fn();
+    render(
+      <UserInfoHeader
+        {...testProps}
+        withEditButton
+        onEditButtonClick={onEditButtonClick}
+      />
+    );
     const title = screen.getByRole("heading", {
       name: testProps.displayName,
     });
@@ -26,12 +33,18 @@ describe("UserInfoHeader", () => {
     });
     const sensorsCount = screen.getByText(testProps.sensorsCount);
     const recordsCount = screen.getByText(testProps.recordsCount);
+    const editButton = screen.getByRole("button", { name: "Sensor editieren" });
     expect(title).toBeInTheDocument();
     expect(username).toBeInTheDocument();
     expect(description).toBeInTheDocument();
     expect(link).toBeInTheDocument();
     expect(sensorsCount).toBeInTheDocument();
     expect(recordsCount).toBeInTheDocument();
+    expect(editButton).toBeInTheDocument();
+
+    fireEvent.click(editButton);
+
+    expect(onEditButtonClick).toHaveBeenCalled();
   });
   it("renders the minimum", () => {
     render(

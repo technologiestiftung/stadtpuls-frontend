@@ -1,3 +1,4 @@
+import { action } from "@storybook/addon-actions";
 import { Story, Meta } from "@storybook/react";
 import { UserInfoHeader, UserInfoHeaderPropType } from ".";
 
@@ -20,6 +21,8 @@ MaximumInfos.args = {
     "http://www.webanddata.com/suburl/login.aspx?url=http://mailflick.com/Home/Tools/tool?id=123",
   sensorsCount: 12,
   recordsCount: 11351256,
+  withEditButton: true,
+  onEditButtonClick: action("Edit button clicked!"),
 };
 
 export const MinimalInfos = Template.bind({});
