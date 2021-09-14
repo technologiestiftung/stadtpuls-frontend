@@ -51,7 +51,7 @@ describe("HeaderMenu component", () => {
     const hamburgerIcon = screen.getByRole("button");
     fireEvent.click(hamburgerIcon);
 
-    const link = screen.getByRole("link", { name: "Projekte" });
+    const link = screen.getByRole("link", { name: "Sensoren" });
     expect(link).toBeInTheDocument();
 
     const menu = screen.getByRole("navigation");

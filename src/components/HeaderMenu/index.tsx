@@ -18,7 +18,7 @@ interface MenuLinkPropType extends MenuPageType {
 }
 
 const pages: MenuPageType[] = [
-  { href: "/projects", text: "Projekte" },
+  { href: "/sensors", text: "Sensoren" },
   { href: "/docs", text: "Dokumentation" },
 ];
 

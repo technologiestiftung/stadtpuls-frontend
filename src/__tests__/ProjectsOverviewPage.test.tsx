@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import { ThemeProvider } from "theme-ui";
 import theme from "../style/theme";
 
-import ProjectsOverviewPage from "../../pages/projects";
+import ProjectsOverviewPage from "../../pages/sensors";
 import { fakeCuratedProjects } from "@mocks/supabaseData/publicProjects";
 
 describe("home page", () => {
