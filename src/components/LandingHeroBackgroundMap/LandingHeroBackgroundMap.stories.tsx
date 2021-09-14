@@ -1,5 +1,5 @@
-import { PublicProject } from "@lib/hooks/usePublicProjects";
-import { fakeCuratedProjects } from "@mocks/supabaseData/publicProjects";
+import { PublicSensorType } from "@common/interfaces";
+import { curatedSensors } from "@mocks/supabaseData/sensors";
 import { Story, Meta } from "@storybook/react";
 import { LandingHeroBackgroundMap } from ".";
 
@@ -9,10 +9,10 @@ export default {
 } as Meta;
 
 const Template: Story<{
-  project: PublicProject;
+  sensor: PublicSensorType;
 }> = args => <LandingHeroBackgroundMap {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  project: fakeCuratedProjects[0],
+  sensor: curatedSensors[0],
 };

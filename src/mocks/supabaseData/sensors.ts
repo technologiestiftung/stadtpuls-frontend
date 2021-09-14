@@ -1,7 +1,8 @@
-import { SensorQueryResponseType } from "@common/interfaces";
+import { PublicSensorType, SensorQueryResponseType } from "@common/interfaces";
 import { getSensorRecords } from "./records";
 import { categories } from "./categories";
 import { userprofiles } from "./userprofiles";
+import { parseSensorRecords } from "@lib/hooks/usePublicSensors";
 
 export const sensors: {
   withTtnIntegration: SensorQueryResponseType[];
@@ -14,6 +15,7 @@ export const sensors: {
       connection_type: "ttn",
       external_id: "ttn-device-id-123",
       category_id: 1,
+      location: "Berlin",
       user_id: userprofiles[0].id,
       records: getSensorRecords({
         sensorId: 1,
@@ -29,6 +31,7 @@ export const sensors: {
       connection_type: "ttn",
       external_id: "ttn-device-id-456",
       category_id: 2,
+      location: "Berlin",
       user_id: userprofiles[0].id,
       records: getSensorRecords({
         sensorId: 2,
@@ -45,6 +48,7 @@ export const sensors: {
       created_at: "2021-08-25T011:00:00",
       connection_type: "http",
       category_id: 2,
+      location: "Berlin",
       user_id: userprofiles[0].id,
       records: getSensorRecords({
         sensorId: 3,
@@ -59,6 +63,7 @@ export const sensors: {
       created_at: "2021-09-03T008:00:00",
       connection_type: "http",
       category_id: 3,
+      location: "Berlin",
       user_id: userprofiles[0].id,
       records: getSensorRecords({
         sensorId: 4,
@@ -73,6 +78,7 @@ export const sensors: {
       created_at: "2021-09-12T022:00:00",
       connection_type: "http",
       category_id: 4,
+      location: "Berlin",
       user_id: userprofiles[0].id,
       records: getSensorRecords({
         sensorId: 5,
@@ -84,3 +90,24 @@ export const sensors: {
     },
   ],
 };
+
+export const curatedSensors: PublicSensorType[] = [
+  {
+    ...sensors.withHttpIntegration[0],
+    authorName: userprofiles[0].display_name || "",
+    parsedRecords: parseSensorRecords(sensors.withHttpIntegration[0].records),
+    categoryName: "CO2",
+  },
+  {
+    ...sensors.withHttpIntegration[1],
+    authorName: userprofiles[0].display_name || "",
+    parsedRecords: parseSensorRecords(sensors.withHttpIntegration[1].records),
+    categoryName: "Temperatur",
+  },
+  {
+    ...sensors.withTtnIntegration[0],
+    authorName: userprofiles[0].display_name || "",
+    parsedRecords: parseSensorRecords(sensors.withTtnIntegration[0].records),
+    categoryName: "Temperatur",
+  },
+];

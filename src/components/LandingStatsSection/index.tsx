@@ -55,7 +55,7 @@ export const LandingStatsSection: FC<{
             className='bg-green h-12 text-blue p-4 flex place-items-center'
             style={{ minWidth: "3rem" }}
           >
-            {stats.devicesCount}
+            {stats.sensorsCount}
           </strong>
           Sensoren
         </div>

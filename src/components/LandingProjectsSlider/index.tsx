@@ -4,18 +4,17 @@ import SwiperClass from "swiper/types/swiper-class";
 import styles from "./LandingProjectsSlider.module.css";
 
 import "swiper/swiper-bundle.css";
-import { ProjectPreview } from "@components/ProjectPreview";
-import { PublicProject } from "@lib/hooks/usePublicProjects";
+import { PublicSensorType } from "@common/interfaces";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
 interface LandingProjectsSliderPropType {
-  projects: PublicProject[];
+  sensors: PublicSensorType[];
   initialSlideIndex?: number;
   onSlideChange?: (slideIndex: number) => void;
 }
 
 export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
-  projects,
+  sensors,
   initialSlideIndex = 0,
   onSlideChange = () => undefined,
 }) => {
@@ -23,9 +22,9 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
     null
   );
   useEffect(() => {
-    const parentElement = document.getElementById("projects-slider");
+    const parentElement = document.getElementById("sensors-slider");
     if (!parentElement) return;
-    const swiper = new Swiper("#projects-slider", {
+    const swiper = new Swiper("#sensors-slider", {
       slidesPerView: 3,
       centeredSlides: true,
       spaceBetween: 24,
@@ -60,14 +59,20 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
       style={{ marginTop: "calc(93vh - 340px)" }}
     >
       <div className={styles.sliderParent}>
-        <div className='swiper-container' id='projects-slider'>
+        <div className='swiper-container' id='sensors-slider'>
           <div className='swiper-wrapper'>
-            {projects.map(project => (
+            {sensors.map(sensor => (
               <div
                 className={`swiper-slide ${styles.sliderSlide}`}
-                key={project.id}
+                key={sensor.id}
               >
-                <ProjectPreview {...project} withMapBackground={false} />
+                {/* Just a placeholder. TODO: use new sensor card */}
+                <div className='bg-gray-50 border border-error p-4'>
+                  <p>
+                    Sensor ID {sensor.id}{" "}
+                    <strong>Replace me with new sensor card</strong>{" "}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -88,8 +93,7 @@ export const LandingProjectsSlider: FC<LandingProjectsSliderPropType> = ({
           <button
             onClick={() => swiperInstance?.slideNext()}
             className={[
-              swiperInstance?.activeIndex === projects.length - 1 &&
-                "opacity-0",
+              swiperInstance?.activeIndex === sensors.length - 1 && "opacity-0",
               styles.sliderButton,
               styles.sliderNextButton,
             ]

@@ -1,11 +1,11 @@
 import { FC, useEffect, useState } from "react";
-import { PublicProject } from "@lib/hooks/usePublicProjects";
 import { ViewportType } from "@common/types/ReactMapGl";
 import { getGeocodedViewportByString } from "@lib/requests/getGeocodedViewportByString";
 import { MarkerMap } from "@components/MarkerMap";
+import { PublicSensorType } from "@common/interfaces";
 
 interface LandingHeroBackgroundMapPropType {
-  project: PublicProject;
+  sensor: PublicSensorType;
 }
 
 type LatLngType = Pick<ViewportType, "latitude" | "longitude">;
@@ -18,7 +18,7 @@ const getElTopOffset = (el: Element): number => {
 };
 
 export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
-  project,
+  sensor,
 }) => {
   const [mapHeight, setMapHeight] = useState(1000);
   const [mapWidth, setMapWidth] = useState(1000);
@@ -42,17 +42,17 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
 
   useEffect(() => {
     let isMounted = true;
-    if (!project.location) return;
-    const cachedViewport = location2ViewportCache[project.location];
+    if (!sensor.location) return;
+    const cachedViewport = location2ViewportCache[sensor.location];
 
     if (cachedViewport && isMounted) {
       setLocationViewport(cachedViewport);
       return;
     }
 
-    void getGeocodedViewportByString(project.location).then(viewport => {
-      if (!project.location || !viewport) return;
-      location2ViewportCache[project.location] = {
+    void getGeocodedViewportByString(sensor.location).then(viewport => {
+      if (!sensor.location || !viewport) return;
+      location2ViewportCache[sensor.location] = {
         latitude: viewport.latitude,
         longitude: viewport.longitude,
       };
@@ -61,7 +61,7 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
     return () => {
       isMounted = false;
     };
-  }, [project.location, locationViewport]);
+  }, [sensor.location, locationViewport]);
 
   if (!locationViewport) return null;
   return (

@@ -38,7 +38,7 @@ interface OptionsType {
   };
 }
 
-const parseSensorRecords = (
+export const parseSensorRecords = (
   records: definitions["records"][] | undefined
 ): DateValueType[] => {
   if (!records) return [];
@@ -57,7 +57,7 @@ export const mapPublicSensor = (
   const { id, name, description, location, user, category, records } = sensor;
   return {
     id,
-    name,
+    name: name || "",
     description: description || "",
     location: location || "",
     authorName: user?.name || null,
