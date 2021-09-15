@@ -1,11 +1,13 @@
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import { getRecordsCountByDeviceId } from ".";
+import { getRecordsCountBySensorId } from ".";
 import { createApiUrl } from "../createApiUrl";
-import { fakeDeviceWithFewRecords as fakeDevice } from "@mocks/supabaseData/publicProjects";
+import { sensors } from "@mocks/supabaseData/sensors";
 
-describe("utility function getRecordsCountByDeviceId", () => {
-  it("should return count for records belonging to provided deviceId", async (): Promise<void> => {
+const exampleSensor = sensors.withHttpIntegration[0];
+
+describe("utility function getRecordsCountBySensorId", () => {
+  it("should return count for records belonging to provided sensorId", async (): Promise<void> => {
     const server = setupServer(
       rest.head(createApiUrl(`/records`), (_req, res, ctx) => {
         return res(
@@ -15,7 +17,7 @@ describe("utility function getRecordsCountByDeviceId", () => {
       })
     );
     server.listen();
-    const count = await getRecordsCountByDeviceId(fakeDevice.id);
+    const count = await getRecordsCountBySensorId(exampleSensor.id);
 
     expect(count).toBe(29);
     server.resetHandlers();

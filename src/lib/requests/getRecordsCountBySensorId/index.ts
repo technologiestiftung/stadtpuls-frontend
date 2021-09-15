@@ -1,13 +1,13 @@
 import { supabase } from "@auth/supabase";
-import { RecordsType } from "@common/types/supabase_DEPRECATED";
+import { definitions } from "@common/types/supabase";
 
-export const getRecordsCountByDeviceId = async (
-  deviceId: number
+export const getRecordsCountBySensorId = async (
+  sensorId: number
 ): Promise<number | null> => {
   const { count, error } = await supabase
-    .from<RecordsType>("records")
+    .from<definitions["records"]>("records")
     .select("*", { count: "exact", head: true })
-    .eq("deviceId", deviceId);
+    .eq("sensor_id", sensorId);
 
   if (error) throw error;
   return count || null;

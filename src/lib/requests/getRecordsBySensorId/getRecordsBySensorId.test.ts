@@ -1,40 +1,28 @@
-// Copyright 2021 Dennis Ostendorf
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import { getRecordsByDeviceId } from ".";
+import { getRecordsBySensorId } from ".";
 import { createApiUrl } from "../createApiUrl";
-import { fakeDeviceWithFewRecords as fakeDevice } from "@mocks/supabaseData/publicProjects";
+import { sensors } from "@mocks/supabaseData/sensors";
 
-describe("utility function getRecordsByDeviceId", () => {
-  it("should return records belonging to provided deviceId", async (): Promise<void> => {
+const exampleSensor = sensors.withHttpIntegration[0];
+
+describe("utility function getRecordsBySensorId", () => {
+  it("should return records belonging to provided sensorId", async (): Promise<void> => {
     const server = setupServer(
       rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
         return res(
           ctx.status(200, "Mocked status"),
-          ctx.json(fakeDevice.records)
+          ctx.json(exampleSensor.records)
         );
       })
     );
     server.listen();
-    const records = await getRecordsByDeviceId(fakeDevice.id);
+    const records = await getRecordsBySensorId(exampleSensor.id);
 
     expect.assertions(2);
     expect(Array.isArray(records)).toBe(true);
     const allRecordsBelongToProvidedDevice = records.every(record => {
-      return record.deviceId === fakeDevice.id;
+      return record.sensor_id === exampleSensor.id;
     });
     expect(allRecordsBelongToProvidedDevice).toBe(true);
     server.resetHandlers();
@@ -42,23 +30,23 @@ describe("utility function getRecordsByDeviceId", () => {
   });
 
   it("should only return records within provided time range", async (): Promise<void> => {
-    const testStartDate = fakeDevice.records[0].recordedAt;
-    const testEndDate = fakeDevice.records[1].recordedAt;
+    const testStartDate = exampleSensor.records[0].recorded_at;
+    const testEndDate = exampleSensor.records[1].recorded_at;
 
     const server = setupServer(
       rest.get(createApiUrl(`/records`), (req, res, ctx) => {
         const query = req.url.searchParams;
 
-        const [gte, lte] = query.getAll("recordedAt");
+        const [gte, lte] = query.getAll("recorded_at");
         const gteValue = gte.replace("gte.", "");
         const lteValue = lte.replace("lte.", "");
 
         return res(
           ctx.status(200, "Mocked status"),
           ctx.json(
-            fakeDevice.records.filter(
+            exampleSensor.records.filter(
               record =>
-                record.recordedAt >= gteValue && record.recordedAt <= lteValue
+                record.recorded_at >= gteValue && record.recorded_at <= lteValue
             )
           )
         );
@@ -66,12 +54,12 @@ describe("utility function getRecordsByDeviceId", () => {
     );
     server.listen();
 
-    const records = await getRecordsByDeviceId(fakeDevice.id, {
+    const records = await getRecordsBySensorId(exampleSensor.id, {
       startDate: testStartDate,
       endDate: testEndDate,
     });
 
-    const returnedTimestamps = records.map(record => record.recordedAt);
+    const returnedTimestamps = records.map(record => record.recorded_at);
     const allTimestampsAreWithinProvidedRange = returnedTimestamps.every(
       timestamp => timestamp >= testStartDate && timestamp <= testEndDate
     );
@@ -85,30 +73,32 @@ describe("utility function getRecordsByDeviceId", () => {
   });
 
   it("should only return records greater or equal to provided startDate", async (): Promise<void> => {
-    const testStartDate = fakeDevice.records[1].recordedAt;
+    const testStartDate = exampleSensor.records[1].recorded_at;
 
     const server = setupServer(
       rest.get(createApiUrl(`/records`), (req, res, ctx) => {
         const query = req.url.searchParams;
 
-        const [gte] = query.getAll("recordedAt");
+        const [gte] = query.getAll("recorded_at");
         const gteValue = gte.replace("gte.", "");
 
         return res(
           ctx.status(200, "Mocked status"),
           ctx.json(
-            fakeDevice.records.filter(record => record.recordedAt >= gteValue)
+            exampleSensor.records.filter(
+              record => record.recorded_at >= gteValue
+            )
           )
         );
       })
     );
     server.listen();
 
-    const records = await getRecordsByDeviceId(fakeDevice.id, {
+    const records = await getRecordsBySensorId(exampleSensor.id, {
       startDate: testStartDate,
     });
 
-    const returnedTimestamps = records.map(record => record.recordedAt);
+    const returnedTimestamps = records.map(record => record.recorded_at);
     const allTimestampsAreWithinProvidedRange = returnedTimestamps.every(
       timestamp => timestamp >= testStartDate
     );
@@ -122,30 +112,32 @@ describe("utility function getRecordsByDeviceId", () => {
   });
 
   it("should only return records less or equal to provided endDate", async (): Promise<void> => {
-    const testEndDate = fakeDevice.records[1].recordedAt;
+    const testEndDate = exampleSensor.records[1].recorded_at;
 
     const server = setupServer(
       rest.get(createApiUrl(`/records`), (req, res, ctx) => {
         const query = req.url.searchParams;
 
-        const [lte] = query.getAll("recordedAt");
+        const [lte] = query.getAll("recorded_at");
         const lteValue = lte.replace("lte.", "");
 
         return res(
           ctx.status(200, "Mocked status"),
           ctx.json(
-            fakeDevice.records.filter(record => record.recordedAt <= lteValue)
+            exampleSensor.records.filter(
+              record => record.recorded_at <= lteValue
+            )
           )
         );
       })
     );
     server.listen();
 
-    const records = await getRecordsByDeviceId(fakeDevice.id, {
+    const records = await getRecordsBySensorId(exampleSensor.id, {
       endDate: testEndDate,
     });
 
-    const returnedTimestamps = records.map(record => record.recordedAt);
+    const returnedTimestamps = records.map(record => record.recorded_at);
     const allTimestampsAreWithinProvidedRange = returnedTimestamps.every(
       timestamp => timestamp <= testEndDate
     );
@@ -163,17 +155,17 @@ describe("utility function getRecordsByDeviceId", () => {
       rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
         return res(
           ctx.status(200, "Mocked status"),
-          ctx.json(fakeDevice.records)
+          ctx.json(exampleSensor.records)
         );
       })
     );
     server.listen();
 
-    const records = await getRecordsByDeviceId(fakeDevice.id, {});
+    const records = await getRecordsBySensorId(exampleSensor.id, {});
 
     expect.assertions(2);
     expect(Array.isArray(records)).toBe(true);
-    expect(records).toMatchObject(fakeDevice.records);
+    expect(records).toMatchObject(exampleSensor.records);
 
     server.resetHandlers();
     server.close();
@@ -192,7 +184,7 @@ describe("utility function getRecordsByDeviceId", () => {
 
     expect.assertions(1);
     try {
-      await getRecordsByDeviceId(id);
+      await getRecordsBySensorId(id);
     } catch (error) {
       expect(error).toEqual({
         message: "Error message",

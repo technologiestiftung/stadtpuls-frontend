@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useCallback, FC } from "react";
+import { FC } from "react";
+/* import React, { useEffect, useState, useCallback, FC } from "react";
 import { downloadMultiple } from "@lib/downloadCsvUtil";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { ProjectSummary } from "../ProjectSummary";
@@ -18,10 +19,10 @@ import {
 import { Button } from "@components/Button";
 import { FormSelect } from "@components/FormSelect";
 import { DeviceLineChartFilters } from "@components/DeviceLineChartFilters";
-import { useDeviceRecords } from "@lib/hooks/useDeviceRecords";
+import { useSensorRecords } from "@lib/hooks/useSensorRecords";
 import { useSensorLastRecordDate } from "@lib/hooks/useSensorLastRecordDate";
 import moment from "moment";
-import { useDeviceRecordsCount } from "@lib/hooks/useDeviceRecordsCount";
+import { useSensorRecordsCount } from "@lib/hooks/useSensorRecordsCount";
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -54,10 +55,10 @@ const getCategoryUnit = (
     default:
       return "";
   }
-};
+}; */
 
-export const Project: FC<ProjectsType> = project => {
-  const [selectedDeviceIndex, setSelectedDeviceIndex] = useState<number>(0);
+export const Project: FC = () => {
+  /* const [selectedDeviceIndex, setSelectedDeviceIndex] = useState<number>(0);
   const selectedDevice = project?.devices?.[selectedDeviceIndex];
   const [currentDatetimeRange, setCurrentDatetimeRange] = useState<{
     startDateTimeString: string | undefined;
@@ -71,14 +72,14 @@ export const Project: FC<ProjectsType> = project => {
     records,
     error: recordsFetchError,
     isLoading: recordsAreLoading,
-  } = useDeviceRecords({
+  } = useSensorRecords({
     deviceId: selectedDevice?.id,
     startDateString: currentDatetimeRange.startDateTimeString,
     endDateString: currentDatetimeRange.endDateTimeString,
   });
 
   const { lastRecordDate } = useSensorLastRecordDate(selectedDevice?.id);
-  const { count: recordsCount } = useDeviceRecordsCount(selectedDevice?.id);
+  const { count: recordsCount } = useSensorRecordsCount(selectedDevice?.id);
 
   const [markerData, setMarkerData] = useState<MarkerType[]>([]);
 
@@ -209,9 +210,12 @@ export const Project: FC<ProjectsType> = project => {
 
   const handleMarkerSelect = (deviceIndex: number): void => {
     setSelectedDeviceIndex(deviceIndex);
-  };
+  }; */
 
-  return (
+  return <div>Project component. TODO: Delete me!</div>;
+
+  /* return (
+    
     <div className={["max-w-screen-xl", "p-4 mx-auto mt-0 md:mt-5"].join(" ")}>
       <div className='grid gap-4 md:gap-12 grid-cols-1 lg:grid-cols-7'>
         <div className='lg:col-span-2'>
@@ -398,5 +402,5 @@ export const Project: FC<ProjectsType> = project => {
         </div>
       </div>
     </div>
-  );
+  ); */
 };

@@ -13,7 +13,7 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
     }
   >
     <a
-      href="/12"
+      href="/sensors/12"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
@@ -594,7 +594,7 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
     }
   >
     <a
-      href="/12"
+      href="/sensors/12"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
@@ -663,7 +663,7 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
     }
   >
     <a
-      href="/12"
+      href="/sensors/12"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >

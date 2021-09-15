@@ -52,8 +52,8 @@ export const SensorCard: FC<SensorCardPropType> = ({
       ].join(" ")}
       style={{ minHeight: 280 }}
     >
-      <Link href={`/${id}`}>
-        <a href={`/${id}`}>
+      <Link href={`/sensors/${id}`}>
+        <a href={`/sensors/${id}`}>
           {isInViewport && (
             <div
               className={[

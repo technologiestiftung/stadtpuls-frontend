@@ -29,7 +29,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
             }
           >
             <a
-              href="/3"
+              href="/sensors/3"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -602,7 +602,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
             }
           >
             <a
-              href="/4"
+              href="/sensors/4"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -1180,7 +1180,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
             }
           >
             <a
-              href="/5"
+              href="/sensors/5"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >

@@ -114,8 +114,6 @@ export const getPublicSensors = async (): Promise<PublicSensors> => {
   if (!data) return { sensors: [] };
   const sensors = data?.map(mapPublicSensor);
 
-  console.log("sensors list:", sensors[0]);
-
   return { sensors: sensors };
 };
 

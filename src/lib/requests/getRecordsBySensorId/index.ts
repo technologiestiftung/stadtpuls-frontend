@@ -1,24 +1,24 @@
 import { supabase } from "@auth/supabase";
-import { RecordsType } from "@common/types/supabase_DEPRECATED";
+import { definitions } from "@common/types/supabase";
 
 export interface GetRecordsOptionsType {
   startDate?: string;
   endDate?: string;
 }
 
-export const getRecordsByDeviceId = async (
-  deviceId: number,
+export const getRecordsBySensorId = async (
+  sensorId: number,
   options?: GetRecordsOptionsType
-): Promise<RecordsType[]> => {
+): Promise<definitions["records"][]> => {
   if (options) {
     switch (true) {
       case !!(options && options.startDate && options.endDate): {
         const { data: records, error } = await supabase
-          .from<RecordsType>("records")
+          .from<definitions["records"]>("records")
           .select("*")
-          .eq("deviceId", deviceId)
-          .gte("recordedAt", options.startDate)
-          .lte("recordedAt", options.endDate);
+          .eq("sensor_id", sensorId)
+          .gte("recorded_at", options.startDate)
+          .lte("recorded_at", options.endDate);
         if (error) throw error;
         if (!records) throw new Error(`No records found for this time range`);
 
@@ -27,10 +27,10 @@ export const getRecordsByDeviceId = async (
 
       case !!(options && options.startDate && !options.endDate): {
         const { data: records, error } = await supabase
-          .from<RecordsType>("records")
+          .from<definitions["records"]>("records")
           .select("*")
-          .eq("deviceId", deviceId)
-          .gte("recordedAt", options.startDate);
+          .eq("sensor_id", sensorId)
+          .gte("recorded_at", options.startDate);
 
         if (error) throw error;
         if (!records) throw new Error(`No records found for this time range`);
@@ -39,10 +39,10 @@ export const getRecordsByDeviceId = async (
 
       case !!(options && !options.startDate && options.endDate): {
         const { data: records, error } = await supabase
-          .from<RecordsType>("records")
+          .from<definitions["records"]>("records")
           .select("*")
-          .eq("deviceId", deviceId)
-          .lte("recordedAt", options.endDate);
+          .eq("sensor_id", sensorId)
+          .lte("recorded_at", options.endDate);
 
         if (error) throw error;
         if (!records) throw new Error(`No records found for this time range`);
@@ -51,9 +51,9 @@ export const getRecordsByDeviceId = async (
 
       default: {
         const { data: records, error } = await supabase
-          .from<RecordsType>("records")
+          .from<definitions["records"]>("records")
           .select("*")
-          .eq("deviceId", deviceId);
+          .eq("sensor_id", sensorId);
 
         if (error) throw error;
         if (!records) throw new Error(`No records found`);
@@ -62,12 +62,12 @@ export const getRecordsByDeviceId = async (
     }
   } else {
     const { data: records, error } = await supabase
-      .from<RecordsType>("records")
+      .from<definitions["records"]>("records")
       .select("*")
-      .eq("deviceId", deviceId);
+      .eq("sensor_id", sensorId);
 
     if (error) throw error;
-    if (!records) throw new Error(`No records found for device ID ${deviceId}`);
+    if (!records) throw new Error(`No records found for device ID ${sensorId}`);
     return records;
   }
 };

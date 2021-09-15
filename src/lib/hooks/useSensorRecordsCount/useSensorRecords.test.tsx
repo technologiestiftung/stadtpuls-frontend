@@ -3,19 +3,19 @@ import { setupServer } from "msw/node";
 import { render, waitFor } from "@testing-library/react";
 import { FC, useEffect } from "react";
 import { SWRConfig } from "swr";
-import { useDeviceRecordsCount } from ".";
+import { useSensorRecordsCount } from ".";
 import { createApiUrl } from "@lib/requests/createApiUrl";
 
 type OnSuccessType = (data: number | null) => void;
 type OnFailType = (error: string) => void;
 
 const createTestComponent = (
-  deviceId: number | undefined,
+  sensorId: number | undefined,
   onSuccess: OnSuccessType,
   onFail: OnFailType
 ): FC => {
   const TestComponent: FC = () => {
-    const { count, error, isLoading } = useDeviceRecordsCount(deviceId);
+    const { count, error, isLoading } = useSensorRecordsCount(sensorId);
     useEffect(() => {
       if (!error && !isLoading) onSuccess(count);
       if (error) onFail(error.message);
@@ -25,8 +25,8 @@ const createTestComponent = (
   return TestComponent;
 };
 
-describe("useDeviceRecordsCount hook", () => {
-  test("should return an empty array if no deviceId", async (): Promise<void> => {
+describe("useSensorRecordsCount hook", () => {
+  test("should return an empty array if no sensorId", async (): Promise<void> => {
     const server = setupServer(
       rest.head(createApiUrl(`/records`), (_req, res, ctx) => {
         return res(
@@ -52,7 +52,7 @@ describe("useDeviceRecordsCount hook", () => {
       server.close();
     });
   });
-  test("should return an array of records with deviceId", async (): Promise<void> => {
+  test("should return an array of records with sensorId", async (): Promise<void> => {
     const server = setupServer(
       rest.head(createApiUrl(`/records`), (_req, res, ctx) => {
         return res(

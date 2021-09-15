@@ -1,20 +1,20 @@
-import { RecordsType } from "@common/types/supabase_DEPRECATED";
+import { definitions } from "@common/types/supabase";
 import { render, waitFor } from "@testing-library/react";
 import { FC, useEffect } from "react";
 import { SWRConfig } from "swr";
-import { useDeviceRecords } from ".";
+import { useSensorRecords } from ".";
 
-type OnSuccessType = (data: RecordsType[]) => void;
+type OnSuccessType = (data: definitions["records"][]) => void;
 type OnFailType = (error: string) => void;
 
 const createTestComponent = (
-  deviceId: number | undefined,
+  sensorId: number | undefined,
   onSuccess: OnSuccessType,
   onFail: OnFailType
 ): FC => {
   const TestComponent: FC = () => {
-    const { records, error, isLoading } = useDeviceRecords({
-      deviceId,
+    const { records, error, isLoading } = useSensorRecords({
+      sensorId,
       startDateString: "2021-09-08T20:09:12.000-02:00",
       endDateString: "2021-10-13T22:39:10.000-02:00",
     });
@@ -27,10 +27,10 @@ const createTestComponent = (
   return TestComponent;
 };
 
-describe("useDeviceRecords hook", () => {
-  test("should return an empty array if no deviceId", async (): Promise<void> => {
+describe("useSensorRecords hook", () => {
+  test("should return an empty array if no sensorId", async (): Promise<void> => {
     const onSuccess = jest.fn();
-    const onSuccessWrapper = (data: RecordsType[]): void => {
+    const onSuccessWrapper = (data: definitions["records"][]): void => {
       onSuccess(data);
     };
     const onError = jest.fn();
@@ -50,9 +50,9 @@ describe("useDeviceRecords hook", () => {
       expect(onError).not.toHaveBeenCalled();
     });
   });
-  test("should return an array of records with deviceId", async (): Promise<void> => {
+  test("should return an array of records with sensorId", async (): Promise<void> => {
     const onSuccess = jest.fn();
-    const onSuccessWrapper = (data: RecordsType[]): void => {
+    const onSuccessWrapper = (data: definitions["records"][]): void => {
       onSuccess(data.length > 0);
     };
     const onError = jest.fn();

@@ -1,18 +1,18 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { RecordsType } from "@common/types/supabase_DEPRECATED";
 import {
-  getRecordsByDeviceId,
+  getRecordsBySensorId,
   GetRecordsOptionsType,
 } from "@lib/requests/getRecordsBySensorId";
 import {
   isValidTimestamp,
   VALID_TIMESTAMP_EXAMPLE,
 } from "@lib/timestampValidator";
+import { definitions } from "@common/types/supabase";
 
 export const recordsHandler = async (
   req: NextApiRequest,
   res: NextApiResponse<{
-    data?: RecordsType[];
+    data?: definitions["records"][];
     message?: string;
     [key: string]: unknown;
   }>
@@ -47,7 +47,7 @@ export const recordsHandler = async (
   endDate && (REQUEST_OPTIONS.endDate = endDate);
 
   try {
-    const records = await getRecordsByDeviceId(
+    const records = await getRecordsBySensorId(
       parsedRequestDeviceId,
       REQUEST_OPTIONS
     );
