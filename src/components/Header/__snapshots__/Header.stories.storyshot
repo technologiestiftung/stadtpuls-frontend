@@ -64,11 +64,11 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
             >
               <a
                 className="navigation-link p-4 block sm:inline"
-                href="/projects"
+                href="/sensors"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
-                Projekte
+                Sensoren
               </a>
             </li>
             <li
@@ -210,11 +210,11 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
             >
               <a
                 className="navigation-link p-4 block sm:inline"
-                href="/projects"
+                href="/sensors"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
-                Projekte
+                Sensoren
               </a>
             </li>
             <li

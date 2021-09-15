@@ -2,19 +2,18 @@ import { screen, render } from "@testing-library/react";
 import { ThemeProvider } from "theme-ui";
 import theme from "../../style/theme";
 import { ProjectsList } from ".";
-import { getPublicProjects } from "@lib/hooks/usePublicProjects";
-import { publicProjectsData } from "@mocks/supabaseData";
+import { getPublicSensors } from "@lib/hooks/usePublicSensors";
 describe("ProjectsList component", () => {
-  it("should render the fisrt project", async (): Promise<void> => {
-    const data = await getPublicProjects();
+  it("should render the first sensor", async (): Promise<void> => {
+    const data = await getPublicSensors();
     if (data)
       render(
         <ThemeProvider theme={theme}>
-          <ProjectsList {...data} />
+          <ProjectsList sensors={data.sensors} />
         </ThemeProvider>
       );
 
-    const h1 = screen.getByText(publicProjectsData[0].name);
+    const h1 = screen.getByText(data.sensors[0].name as string);
     expect(h1).toBeInTheDocument();
   });
 });

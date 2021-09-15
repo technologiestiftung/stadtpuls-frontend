@@ -4,8 +4,9 @@ import SwiperClass from "swiper/types/swiper-class";
 import styles from "./LandingSensorsSlider.module.css";
 
 import "swiper/swiper-bundle.css";
-import { PublicSensorType } from "@common/interfaces";
+import { PublicSensorType } from "@lib/hooks/usePublicSensors";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
+import { SensorCard } from "@components/SensorCard";
 
 interface LandingSensorsSliderPropType {
   sensors: PublicSensorType[];
@@ -66,13 +67,11 @@ export const LandingSensorsSlider: FC<LandingSensorsSliderPropType> = ({
                 className={`swiper-slide ${styles.sliderSlide}`}
                 key={sensor.id}
               >
-                {/* Just a placeholder. TODO: use new sensor card */}
-                <div className='bg-gray-50 border border-error p-4'>
-                  <p>
-                    Sensor ID {sensor.id}{" "}
-                    <strong>Replace me with new sensor card</strong>{" "}
-                  </p>
-                </div>
+                <SensorCard
+                  key={sensor.id}
+                  {...sensor}
+                  parsedRecords={sensor.parsedRecords}
+                />
               </div>
             ))}
           </div>
