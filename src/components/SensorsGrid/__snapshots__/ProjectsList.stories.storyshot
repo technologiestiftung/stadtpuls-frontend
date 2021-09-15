@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Pages/ProjectsList Default 1`] = `
+exports[`Storyshots Pages/SensorsGrid Default 1`] = `
 <div
   className="p-4 sm:p-6 md:p-8"
 >

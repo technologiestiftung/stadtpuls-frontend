@@ -2,18 +2,18 @@ import { withNextRouter } from "storybook-addon-next-router";
 import { Story, Meta } from "@storybook/react";
 import { ThemeProvider } from "theme-ui";
 import theme from "../../style/theme";
-import { ProjectsList } from ".";
+import { SensorsGrid } from ".";
 import { parsedSensors } from "@mocks/supabaseData/sensors";
 
 export default {
-  title: "Pages/ProjectsList",
-  component: ProjectsList,
+  title: "Pages/SensorsGrid",
+  component: SensorsGrid,
   decorators: [withNextRouter],
 } as Meta;
 
 const Template: Story = () => (
   <ThemeProvider theme={theme}>
-    <ProjectsList sensors={parsedSensors} />
+    <SensorsGrid sensors={parsedSensors} />
   </ThemeProvider>
 );
 

@@ -2,11 +2,11 @@ import { FC } from "react";
 import { SensorCard } from "@components/SensorCard";
 import { PublicSensorType } from "@lib/hooks/usePublicSensors";
 
-interface ProjectsListType {
+interface SensorsGridType {
   sensors: PublicSensorType[];
 }
 
-export const ProjectsList: FC<ProjectsListType> = ({ sensors }) => {
+export const SensorsGrid: FC<SensorsGridType> = ({ sensors }) => {
   return (
     <div className='p-4 sm:p-6 md:p-8'>
       <div
