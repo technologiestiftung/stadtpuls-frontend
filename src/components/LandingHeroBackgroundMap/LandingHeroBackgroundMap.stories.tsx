@@ -1,4 +1,4 @@
-import { PublicSensorType } from "@common/interfaces";
+import { PublicSensorType } from "@lib/hooks/usePublicSensors";
 import { curatedSensors } from "@mocks/supabaseData/sensors";
 import { Story, Meta } from "@storybook/react";
 import { LandingHeroBackgroundMap } from ".";
