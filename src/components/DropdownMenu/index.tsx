@@ -5,6 +5,7 @@ import { FC, HTMLProps, ReactNode } from "react";
 interface ItemType {
   id: string | number;
   title: ReactNode;
+  disabled?: boolean;
 }
 
 interface HrefItemType extends ItemType {
@@ -22,43 +23,56 @@ export interface DropdownMenuPropType {
   position?: "right" | "left";
 }
 
+const getItemStyles = ({ disabled }: ItemType): string =>
+  [
+    "group",
+    "block w-full last:border-b-0",
+    "px-4 py-3 transition text-left border-b border-gray-100",
+    !disabled &&
+      "hover:bg-purple hover:bg-opacity-5 hover:text-purple cursor-pointer",
+    disabled && "bg-gray-50 text-gray-700 cursor-not-allowed",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
 export const DropdownMenu: FC<DropdownMenuPropType> = ({
   children,
   items,
   position = "left",
-}) => {
-  const menuItemStyles = [
-    "group",
-    "block w-full text-black",
-    "px-4 py-1.5 cursor-pointer transition text-left",
-    "hover:bg-gray-50 hover:text-purple",
-  ]
-    .filter(Boolean)
-    .join(" ");
-  return (
-    <Dropdown
-      position={position}
-      dropdownContent={
-        <div className='py-2'>
-          {items.map(item => {
-            return "href" in item ? (
-              <Link key={item.href} href={item.href}>
+}) => (
+  <Dropdown
+    position={position}
+    dropdownContent={
+      <div>
+        {items.map(item => {
+          const menuItemStyles = getItemStyles(item);
+          if (item.disabled) {
+            return (
+              <span key={item.id} className={menuItemStyles}>
+                {item.title}
+              </span>
+            );
+          }
+          if ("href" in item) {
+            return (
+              <Link key={item.id} href={item.href}>
                 <a className={menuItemStyles}>{item.title}</a>
               </Link>
-            ) : (
-              <button
-                onClick={item.onClick}
-                key={item.id}
-                className={menuItemStyles}
-              >
-                {item.title}
-              </button>
             );
-          })}
-        </div>
-      }
-    >
-      {children}
-    </Dropdown>
-  );
-};
+          }
+          return (
+            <button
+              onClick={item.onClick}
+              key={item.id}
+              className={menuItemStyles}
+            >
+              {item.title}
+            </button>
+          );
+        })}
+      </div>
+    }
+  >
+    {children}
+  </Dropdown>
+);
