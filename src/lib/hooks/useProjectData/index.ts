@@ -1,5 +1,5 @@
 import { ProjectsType } from "@common/types/supabase_DEPRECATED";
-import { getProjectData } from "@lib/requests/getProjectData";
+import { getProjectData } from "@lib/requests/getProjectData_DEPRECATED";
 import useSWR from "swr";
 
 const getData = async (

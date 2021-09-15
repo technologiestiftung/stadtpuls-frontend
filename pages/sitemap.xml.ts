@@ -1,5 +1,5 @@
 import { ProjectsType } from "@common/types/supabase_DEPRECATED";
-import { getProjects } from "@lib/requests/getProjects";
+import { getProjects } from "@lib/requests/getProjects_DEPRECATED";
 import { NextPage, NextApiResponse } from "next";
 import { Component } from "react";
 

@@ -1,6 +1,6 @@
 import { ProjectsType } from "@common/types/supabase_DEPRECATED";
 import { Project } from "@components/Project";
-import { getProjectData } from "@lib/requests/getProjectData";
+import { getProjectData } from "@lib/requests/getProjectData_DEPRECATED";
 import { GetServerSideProps } from "next";
 import { FC } from "react";
 

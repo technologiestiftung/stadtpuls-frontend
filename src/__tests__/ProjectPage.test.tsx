@@ -5,7 +5,7 @@ import { ThemeProvider } from "theme-ui";
 import theme from "../style/theme";
 
 import ProjectPage from "../../pages/[id]";
-import { getProjectData } from "@lib/requests/getProjectData";
+import { getProjectData } from "@lib/requests/getProjectData_DEPRECATED";
 
 describe("project page", () => {
   it("should render without failing", async (): Promise<void> => {

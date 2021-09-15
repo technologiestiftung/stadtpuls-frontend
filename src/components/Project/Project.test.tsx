@@ -1,7 +1,7 @@
 import { screen, render, waitFor } from "@testing-library/react";
 import * as nextRouter from "next/router";
 import { Project } from ".";
-import { getProjectData } from "@lib/requests/getProjectData";
+import { getProjectData } from "@lib/requests/getProjectData_DEPRECATED";
 describe("Project component", () => {
   beforeAll(() => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
