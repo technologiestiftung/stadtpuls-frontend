@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { SensorPageHeader } from ".";
 
 const testProps = {
@@ -17,11 +17,15 @@ const testProps = {
     username: "yupank1",
     displayName: "Atahualpa Yupanqui De la Vega Van Hilde",
   },
+  withEditButton: true,
 };
 
 describe("SensorPageHeader component", () => {
   it("should render", () => {
-    render(<SensorPageHeader {...testProps} />);
+    const onEditButtonClick = jest.fn();
+    render(
+      <SensorPageHeader {...testProps} onEditButtonClick={onEditButtonClick} />
+    );
     const title = screen.getByRole("heading", {
       name: `Sensor Symbol ${testProps.symbol} ${testProps.name}`,
     });
@@ -32,6 +36,9 @@ describe("SensorPageHeader component", () => {
     });
     const description = screen.getByText(testProps.description);
     const apiRoute = screen.getByRole("textbox", { name: "API Schnittstelle" });
+    const editButton = screen.getByRole("button", {
+      name: "Sensor editieren",
+    });
 
     expect(title).toBeDefined();
     expect(backLink).toBeDefined();
@@ -39,5 +46,10 @@ describe("SensorPageHeader component", () => {
     expect(author).toBeDefined();
     expect(description).toBeDefined();
     expect(apiRoute).toBeDefined();
+    expect(editButton).toBeInTheDocument();
+
+    fireEvent.click(editButton);
+
+    expect(onEditButtonClick).toHaveBeenCalled();
   });
 });

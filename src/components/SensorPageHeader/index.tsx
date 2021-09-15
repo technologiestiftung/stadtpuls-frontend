@@ -6,6 +6,7 @@ import Link from "next/link";
 import { SensorSymbol } from "@components/SensorSymbol";
 import { CopyTextField } from "@components/CopyTextField";
 import { ProjectPreviewMap } from "@components/ProjectPreviewMap";
+import { Button } from "@components/Button";
 
 export interface SensorPageHeaderPropType {
   id: string;
@@ -18,6 +19,8 @@ export interface SensorPageHeaderPropType {
     displayName: string;
   };
   geocoordinates: { latitude: number; longitude: number };
+  withEditButton?: boolean;
+  onEditButtonClick?: () => void | undefined;
 }
 
 const MapBackground: FC<Pick<SensorPageHeaderPropType, "geocoordinates">> = ({
@@ -122,6 +125,8 @@ export const SensorPageHeader: FC<SensorPageHeaderPropType> = ({
   description,
   author,
   geocoordinates,
+  withEditButton = false,
+  onEditButtonClick = () => undefined,
 }) => {
   return (
     <div className='bg-gray-50 relative'>
@@ -144,6 +149,11 @@ export const SensorPageHeader: FC<SensorPageHeaderPropType> = ({
           <CopyTextField name='api-url' label='API Schnittstelle'>
             {`/api/v2/sensors/${id}/records`}
           </CopyTextField>
+          {withEditButton && onEditButtonClick && (
+            <div className='w-full order-last mt-6'>
+              <Button onClick={onEditButtonClick}>Sensor editieren</Button>
+            </div>
+          )}
         </aside>
       </div>
     </div>

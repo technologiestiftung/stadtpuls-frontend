@@ -27,6 +27,7 @@ MaximumProps.args = {
     username: "yupank1",
     displayName: "Atahualpa Yupanqui De la Vega Van Hilde",
   },
+  withEditButton: true,
 };
 
 export const MinimumProps = Template.bind({});

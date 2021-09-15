@@ -650,6 +650,17 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
           value="/api/v2/sensors/1/records"
         />
       </div>
+      <div
+        className="w-full order-last mt-6"
+      >
+        <button
+          className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
+          onClick={[Function]}
+          type="button"
+        >
+          Sensor editieren
+        </button>
+      </div>
     </aside>
   </div>
 </div>

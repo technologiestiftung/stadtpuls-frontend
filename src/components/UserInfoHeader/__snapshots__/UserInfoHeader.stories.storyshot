@@ -587,7 +587,7 @@ exports[`Storyshots UI Elements/UserInfoHeader Maximum Infos 1`] = `
         onClick={[Function]}
         type="button"
       >
-        Sensor editieren
+        Account editieren
       </button>
     </div>
   </div>

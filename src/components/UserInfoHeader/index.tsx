@@ -119,7 +119,7 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
       {withEditButton && onEditButtonClick && (
         <div className='pl-16 sm:pl-24 md:pl-28'>
           <div className='w-full order-last mt-4'>
-            <Button onClick={onEditButtonClick}>Sensor editieren</Button>
+            <Button onClick={onEditButtonClick}>Account editieren</Button>
           </div>
         </div>
       )}
