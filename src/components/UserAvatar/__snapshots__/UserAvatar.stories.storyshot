@@ -3,6 +3,7 @@
 exports[`Storyshots UI Elements/UserAvatar Custom Size 1`] = `
 <span
   className="inline-block align-middle rounded-full border border-gray-50"
+  role="img"
   style={
     Object {
       "height": 49,
@@ -503,6 +504,7 @@ exports[`Storyshots UI Elements/UserAvatar Custom Size 1`] = `
 exports[`Storyshots UI Elements/UserAvatar Default User Avatar 1`] = `
 <span
   className="inline-block align-middle rounded-full border border-gray-50"
+  role="img"
   style={
     Object {
       "height": 25,
@@ -1003,6 +1005,7 @@ exports[`Storyshots UI Elements/UserAvatar Default User Avatar 1`] = `
 exports[`Storyshots UI Elements/UserAvatar With Custom Class Name 1`] = `
 <span
   className="animate-spin inline-block align-middle rounded-full border border-gray-50"
+  role="img"
   style={
     Object {
       "height": 25,
