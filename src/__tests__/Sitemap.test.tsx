@@ -1,14 +1,14 @@
-import { fakeProjects } from "@mocks/supabaseData/publicProjects";
 import Sitemap from "../../pages/sitemap.xml";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { createApiUrl } from "@lib/requests/createApiUrl";
+import { parsedSensors as sensors } from "@mocks/supabaseData/sensors";
 
 describe("sitemap.xml", () => {
   it("should call the response handlers with the right params", async (): Promise<void> => {
     const server = setupServer(
       rest.get(createApiUrl(`/projects`), (_req, res, ctx) => {
-        return res(ctx.status(200, "Mocked status"), ctx.json(fakeProjects));
+        return res(ctx.status(200, "Mocked status"), ctx.json(sensors));
       })
     );
     server.listen();

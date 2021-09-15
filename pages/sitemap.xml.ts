@@ -1,5 +1,4 @@
-import { ProjectsType } from "@common/types/supabase_DEPRECATED";
-import { getProjects } from "@lib/requests/getProjects_DEPRECATED";
+import { getPublicSensors, PublicSensors } from "@lib/hooks/usePublicSensors";
 import { NextPage, NextApiResponse } from "next";
 import { Component } from "react";
 
@@ -13,15 +12,15 @@ const formatDate: (dateStr?: string) => string = dateStr => {
   }-${date.getUTCDate()}`;
 };
 
-export const getSitemap: (
-  projects: ProjectsType[]
-) => string = projects => `<?xml version="1.0" encoding="utf-8"?>
+export const getSitemap: (sensors: PublicSensors) => string = ({
+  sensors,
+}) => `<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>${createFullUrl("/")}</loc>
     <lastmod>${formatDate()}</lastmod>
   </url>
-  ${projects
+  ${sensors
     .map(
       ({ id }) => `
   <url>
@@ -38,9 +37,9 @@ class Sitemap extends Component<NextPage> {
   }: {
     res: NextApiResponse;
   }): Promise<void> {
-    const projects = await getProjects();
+    const sensors = await getPublicSensors();
     res.setHeader("Content-Type", "text/xml");
-    res.write(getSitemap(projects));
+    res.write(getSitemap(sensors));
     res.end();
   }
 }
