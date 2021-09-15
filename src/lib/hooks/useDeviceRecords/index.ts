@@ -1,5 +1,5 @@
 import { RecordsType } from "@common/types/supabase_DEPRECATED";
-import { getRecordsByDeviceId } from "@lib/requests/getRecordsByDeviceId";
+import { getRecordsByDeviceId } from "@lib/requests/getRecordsBySensorId";
 import useSWR from "swr";
 
 interface UseDeviceRecordsParamsType {

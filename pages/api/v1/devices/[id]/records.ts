@@ -3,7 +3,7 @@ import { RecordsType } from "@common/types/supabase_DEPRECATED";
 import {
   getRecordsByDeviceId,
   GetRecordsOptionsType,
-} from "@lib/requests/getRecordsByDeviceId";
+} from "@lib/requests/getRecordsBySensorId";
 import {
   isValidTimestamp,
   VALID_TIMESTAMP_EXAMPLE,
