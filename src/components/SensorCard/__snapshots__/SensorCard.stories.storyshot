@@ -637,7 +637,7 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
                 fillRule="nonzero"
               />
             </svg>
-            Druck
+            Luftdruck
           </p>
           
           <p

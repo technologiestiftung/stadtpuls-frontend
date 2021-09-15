@@ -8,17 +8,15 @@ describe("SensorCard", () => {
   it("renders correctly", () => {
     render(
       <SensorCard
-        id='test'
+        id={1}
         name='Test Sensor'
         description='I am your sensors favourite sensor'
-        category={{ name: "Temperatur", id: 2, description: "Temperatur" }}
-        symbol={4}
+        category={{ name: "Temperatur", id: 2 }}
+        icon_id={4}
         authorName='Vogelino'
-        records={fakeDateValueRecords}
-        geocoordinates={{
-          latitude: 12.124533,
-          longitude: 43.215353,
-        }}
+        parsedRecords={fakeDateValueRecords}
+        latitude={12.124533}
+        longitude={43.215353}
       />
     );
 
@@ -39,17 +37,15 @@ describe("SensorCard", () => {
       .join("");
     render(
       <SensorCard
-        id='test'
+        id={1}
         name='Test Sensor'
         description={tooLongDescription}
-        category={{ name: "Temperatur", id: 2, description: "Temperatur" }}
-        symbol={4}
+        category={{ name: "Temperatur", id: 2 }}
+        icon_id={4}
         authorName='Vogelino'
-        records={fakeDateValueRecords}
-        geocoordinates={{
-          latitude: 12.124533,
-          longitude: 43.215353,
-        }}
+        parsedRecords={fakeDateValueRecords}
+        latitude={12.124533}
+        longitude={43.215353}
       />
     );
 

@@ -4,24 +4,24 @@ import { ProjectPreviewMap } from "@components/ProjectPreviewMap";
 import useIsInViewport from "use-is-in-viewport";
 import { AreaPath } from "@components/AreaPath";
 import { UserAvatar } from "@components/UserAvatar";
-import { definitions } from "@common/types/supabase";
-import { DateValueType } from "@common/interfaces";
+import { PublicSensorType } from "@lib/hooks/usePublicSensors";
 import { SensorSymbol } from "@components/SensorSymbol";
 import { CategoryIcon } from "@components/CategoryIcon";
 
-export interface SensorCardPropType {
+export interface SensorCardPropType
+  extends Pick<
+    PublicSensorType,
+    | "id"
+    | "name"
+    | "icon_id"
+    | "description"
+    | "category"
+    | "latitude"
+    | "longitude"
+    | "authorName"
+    | "parsedRecords"
+  > {
   withMapBackground?: boolean;
-  id: string;
-  name: string;
-  symbol: number;
-  description?: string;
-  category: definitions["categories"];
-  geocoordinates?: {
-    latitude: number;
-    longitude: number;
-  };
-  records: DateValueType[];
-  authorName?: string;
 }
 
 const DESCRIPTION_MAX_LENGTH = 150;
@@ -29,10 +29,11 @@ const DESCRIPTION_MAX_LENGTH = 150;
 export const SensorCard: FC<SensorCardPropType> = ({
   id,
   name,
-  symbol,
-  geocoordinates,
+  icon_id,
+  latitude,
+  longitude,
   description,
-  records,
+  parsedRecords,
   authorName,
   category,
   withMapBackground = true,
@@ -68,10 +69,13 @@ export const SensorCard: FC<SensorCardPropType> = ({
                 animationDelay: "1s",
               }}
             >
-              {withMapBackground && geocoordinates && (
+              {withMapBackground && latitude && longitude && (
                 <>
                   <ProjectPreviewMap
-                    viewport={geocoordinates}
+                    viewport={{
+                      latitude,
+                      longitude,
+                    }}
                     mapWidth='100%'
                     mapHeight='100%'
                   />
@@ -106,7 +110,7 @@ export const SensorCard: FC<SensorCardPropType> = ({
                     width={100}
                     height={82}
                     //FIXME: Figure out how we want to handle multiple data points
-                    data={records}
+                    data={parsedRecords}
                   />
                 </svg>
               </div>
@@ -120,7 +124,7 @@ export const SensorCard: FC<SensorCardPropType> = ({
             ].join(" ")}
           >
             <div className='grid grid-cols-[24px,1fr] gap-3'>
-              <SensorSymbol symbol={symbol} className='mt-[1px]' />
+              <SensorSymbol symbol={icon_id || 1} className='mt-[1px]' />
               <h3
                 className={[
                   "text-xl leading-6 pt-1",
