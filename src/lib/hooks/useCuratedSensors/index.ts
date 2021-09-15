@@ -5,7 +5,10 @@ import {
 } from "../usePublicSensors";
 import { supabase } from "@auth/supabase";
 import useSWR from "swr";
-import { PublicSensorType, SensorQueryResponseType } from "@common/interfaces";
+import {
+  PublicSensorType,
+  SensorQueryResponseType,
+} from "@lib/hooks/usePublicSensors";
 
 const SENSORS_LIMIT = 3;
 
@@ -35,7 +38,7 @@ export const useCuratedSensors = (): {
   error: Error | null;
 } => {
   const { data, error } = useSWR<PublicSensorType[], Error>(
-    "useCuratedProjects",
+    "useCuratedSensors",
     getCuratedSensors
   );
 

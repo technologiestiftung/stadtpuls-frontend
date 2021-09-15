@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import { ViewportType } from "@common/types/ReactMapGl";
 import { getGeocodedViewportByString } from "@lib/requests/getGeocodedViewportByString";
 import { MarkerMap } from "@components/MarkerMap";
-import { PublicSensorType } from "@common/interfaces";
+import { PublicSensorType } from "@lib/hooks/usePublicSensors";
 
 interface LandingHeroBackgroundMapPropType {
   sensor: PublicSensorType;

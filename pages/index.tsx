@@ -6,7 +6,7 @@ import { LandingProjectAbout } from "@components/LandingProjectAbout";
 import { LandingSensorsSlider } from "@components/LandingSensorsSlider";
 import { LandingStatsSection } from "@components/LandingStatsSection";
 import { getCuratedSensors } from "@lib/hooks/useCuratedSensors";
-import { PublicSensorType } from "@common/interfaces";
+import { PublicSensorType } from "@lib/hooks/usePublicSensors";
 import {
   getLandingStats,
   LandingStatsReturnType,

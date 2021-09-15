@@ -21,7 +21,7 @@ import {
 import { definitions } from "@common/types/supabase";
 import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
-import { PublicSensorType } from "@common/interfaces";
+import { PublicSensorType } from "@lib/hooks/usePublicSensors";
 import { categories } from "./supabaseData/categories";
 
 const githubHandlers = [

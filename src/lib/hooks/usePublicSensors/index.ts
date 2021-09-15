@@ -1,30 +1,50 @@
 import { supabase } from "@auth/supabase";
 import useSWR from "swr";
 import { definitions } from "@common/types/supabase";
-import {
-  DateValueType,
-  PublicSensorType,
-  SensorQueryResponseType,
-} from "@common/interfaces";
+import { DateValueType } from "@common/interfaces";
 
 export const RECORDS_LIMIT = 500;
 
 export const sensorQueryString = `
   id,
   name,
+  created_at,
+  connection_type,
+  external_id,
   description,
   location,
+  latitude,
+  longitude,
+  altitude,
+  category_id,
+  icon_id,
+  user_id,
   records (
     recorded_at,
     measurements
   ),
   user:user_id (
-    name
+    name,
+    display_name
   ),
   category:category_id (
+    id,
     name
   )
 `;
+
+type SensorType = definitions["sensors"];
+export interface SensorQueryResponseType extends SensorType {
+  records: Pick<definitions["records"], "recorded_at" | "measurements">[];
+  user: Pick<definitions["user_profiles"], "name" | "display_name">;
+  category: Pick<definitions["categories"], "id" | "name">;
+}
+
+export interface PublicSensorType extends SensorQueryResponseType {
+  authorName: string | null;
+  parsedRecords: DateValueType[];
+  categoryName: string | null;
+}
 
 export interface PublicSensors {
   sensors: PublicSensorType[];
@@ -39,7 +59,9 @@ interface OptionsType {
 }
 
 export const parseSensorRecords = (
-  records: definitions["records"][] | undefined
+  records:
+    | Pick<definitions["records"], "recorded_at" | "measurements">[]
+    | undefined
 ): DateValueType[] => {
   if (!records) return [];
   if (records.length === 0) return [];
@@ -54,13 +76,22 @@ export const parseSensorRecords = (
 export const mapPublicSensor = (
   sensor: SensorQueryResponseType
 ): PublicSensorType => {
-  const { id, name, description, location, user, category, records } = sensor;
+  const {
+    name,
+    description,
+    location,
+    user,
+    category,
+    records,
+    icon_id,
+  } = sensor;
   return {
-    id,
+    ...sensor,
     name: name || "",
     description: description || "",
     location: location || "",
-    authorName: user?.name || null,
+    icon_id: icon_id || 1,
+    authorName: user?.display_name || null,
     parsedRecords: parseSensorRecords(records),
     categoryName: category?.name || null,
   };
@@ -82,6 +113,8 @@ export const getPublicSensors = async (): Promise<PublicSensors> => {
   if (error) throw error;
   if (!data) return { sensors: [] };
   const sensors = data?.map(mapPublicSensor);
+
+  console.log("sensors list:", sensors[0]);
 
   return { sensors: sensors };
 };
