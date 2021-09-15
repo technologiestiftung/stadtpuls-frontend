@@ -9,7 +9,7 @@ import {
   refreshToken,
   authToken,
 } from "./supabaseData";
-import { sensors } from "./supabaseData/sensors";
+import { parsedSensors, sensors } from "./supabaseData/sensors";
 import { createApiUrl } from "../lib/requests/createApiUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
 import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
@@ -23,6 +23,7 @@ import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
 import { PublicSensorType } from "@lib/hooks/usePublicSensors";
 import { categories } from "./supabaseData/categories";
+import { userprofiles } from "./supabaseData/userprofiles";
 
 const githubHandlers = [
   rest.get(`https://api.github.com/users/*`, (_req, res, ctx) => {
@@ -254,7 +255,10 @@ const supabaseHandlers = [
   rest.head(createApiUrl("/user_profiles"), (req, res, ctx) => {
     if (req.headers.get("prefer") === "count=exact") {
       return res(
-        ctx.set("content-range", "0-26/27"),
+        ctx.set(
+          "content-range",
+          `0-${userprofiles.length - 1}/${userprofiles.length}`
+        ),
         ctx.status(201, "Mocked status")
       );
     }
@@ -263,7 +267,10 @@ const supabaseHandlers = [
   rest.head(createApiUrl("/sensors"), (req, res, ctx) => {
     if (req.headers.get("prefer") === "count=exact") {
       return res(
-        ctx.set("content-range", "0-28/29"),
+        ctx.set(
+          "content-range",
+          `0-${parsedSensors.length - 1}/${parsedSensors.length}`
+        ),
         ctx.status(201, "Mocked status")
       );
     }

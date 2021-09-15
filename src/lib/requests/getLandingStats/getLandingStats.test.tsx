@@ -1,3 +1,5 @@
+import { parsedSensors } from "@mocks/supabaseData/sensors";
+import { userprofiles } from "@mocks/supabaseData/userprofiles";
 import { getLandingStats } from ".";
 
 describe("getLandingStats", () => {
@@ -5,8 +7,8 @@ describe("getLandingStats", () => {
     const stats = await getLandingStats();
 
     expect(stats).toMatchObject({
-      usersCount: 27,
-      sensorsCount: 29,
+      usersCount: userprofiles.length,
+      sensorsCount: parsedSensors.length,
       recordsCount: 10030,
     });
   });
