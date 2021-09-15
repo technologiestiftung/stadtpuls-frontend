@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Forms/CopyTextField Default 1`] = `
+<div
+  className="flex-col"
+>
+  <label
+    className="text-sm text-gray-500 mb-1 block"
+    htmlFor="api-route"
+  >
+    API Schnittstelle
+  </label>
+  <input
+    id="api-route"
+    name="api-route"
+    readOnly={true}
+    type="text"
+    value="/api/v2/sensors/32/records"
+  />
+</div>
+`;
