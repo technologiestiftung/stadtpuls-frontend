@@ -19,7 +19,7 @@ import { Button } from "@components/Button";
 import { FormSelect } from "@components/FormSelect";
 import { DeviceLineChartFilters } from "@components/DeviceLineChartFilters";
 import { useDeviceRecords } from "@lib/hooks/useDeviceRecords";
-import { useDeviceLastRecordDate } from "@lib/hooks/useDeviceLastRecordDate";
+import { useSensorLastRecordDate } from "@lib/hooks/useSensorLastRecordDate";
 import moment from "moment";
 import { useDeviceRecordsCount } from "@lib/hooks/useDeviceRecordsCount";
 
@@ -77,7 +77,7 @@ export const Project: FC<ProjectsType> = project => {
     endDateString: currentDatetimeRange.endDateTimeString,
   });
 
-  const { lastRecordDate } = useDeviceLastRecordDate(selectedDevice?.id);
+  const { lastRecordDate } = useSensorLastRecordDate(selectedDevice?.id);
   const { count: recordsCount } = useDeviceRecordsCount(selectedDevice?.id);
 
   const [markerData, setMarkerData] = useState<MarkerType[]>([]);

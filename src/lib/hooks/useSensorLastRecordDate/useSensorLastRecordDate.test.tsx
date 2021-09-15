@@ -1,24 +1,25 @@
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import { fakeDeviceRecords } from "@mocks/supabaseData/deviceRecords";
 import { render, waitFor } from "@testing-library/react";
 import { FC, useEffect } from "react";
 import { SWRConfig } from "swr";
-import { useDeviceLastRecordDate } from ".";
+import { useSensorLastRecordDate } from ".";
 import { createApiUrl } from "@lib/requests/createApiUrl";
-import { fakeDeviceWithRecords } from "@mocks/supabaseData/publicProjects";
+import { sensors } from "@mocks/supabaseData/sensors";
+
+const exampleSensor = sensors.withHttpIntegration[0];
 
 type OnSuccessType = (data: string | undefined) => void;
 type OnFailType = (error: string) => void;
 
 const createTestComponent = (
-  deviceId: number | undefined,
+  sensorId: number | undefined,
   onSuccess: OnSuccessType,
   onFail: OnFailType
 ): FC => {
   const TestComponent: FC = () => {
-    const { lastRecordDate, error, isLoading } = useDeviceLastRecordDate(
-      deviceId
+    const { lastRecordDate, error, isLoading } = useSensorLastRecordDate(
+      sensorId
     );
     useEffect(() => {
       if (!error && !isLoading) onSuccess(lastRecordDate);
@@ -29,13 +30,13 @@ const createTestComponent = (
   return TestComponent;
 };
 
-describe("useLastDeviceRecord hook", () => {
-  test("should return undefined if no deviceId", async (): Promise<void> => {
+describe("useSensorLastRecordDate hook", () => {
+  test("should return undefined if no sensorId", async (): Promise<void> => {
     const server = setupServer(
       rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
         return res(
           ctx.status(200, "Mocked status"),
-          ctx.json([fakeDeviceWithRecords.records[0]])
+          ctx.json([exampleSensor.records[0]])
         );
       })
     );
@@ -56,12 +57,12 @@ describe("useLastDeviceRecord hook", () => {
       server.close();
     });
   });
-  test("should return a record object with deviceId", async (): Promise<void> => {
+  test("should return a record object with sensorId", async (): Promise<void> => {
     const server = setupServer(
       rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
         return res(
           ctx.status(200, "Mocked status"),
-          ctx.json([fakeDeviceWithRecords.records[0]])
+          ctx.json([exampleSensor.records[0]])
         );
       })
     );
@@ -76,7 +77,9 @@ describe("useLastDeviceRecord hook", () => {
     );
 
     await waitFor(() => {
-      expect(onSuccess).toHaveBeenCalledWith(fakeDeviceRecords[0].recordedAt);
+      expect(onSuccess).toHaveBeenCalledWith(
+        exampleSensor.records[0].recorded_at
+      );
       expect(onError).not.toHaveBeenCalled();
       server.resetHandlers();
       server.close();

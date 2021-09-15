@@ -1,28 +1,28 @@
-import { getDeviceLastRecordDate } from "@lib/requests/getDeviceLastRecordDate";
+import { getSensorLastRecordDate } from "@lib/requests/getSensorLastRecordDate";
 import useSWR from "swr";
 
-interface UseDeviceLastRecordDateReturnType {
+interface useSensorLastRecordDateReturnType {
   isLoading: boolean;
   lastRecordDate: string | undefined;
   error: Error | null;
 }
 
-const fetchDeviceLastRecordDate = async (
+const fetchSensorLastRecordDate = async (
   deviceId: number | undefined
 ): Promise<string | null> => {
   if (!deviceId) return null;
 
-  const lastRecordDate = await getDeviceLastRecordDate(deviceId);
+  const lastRecordDate = await getSensorLastRecordDate(deviceId);
   return lastRecordDate || null;
 };
 
-export const useDeviceLastRecordDate = (
+export const useSensorLastRecordDate = (
   deviceId: number | undefined
-): UseDeviceLastRecordDateReturnType => {
+): useSensorLastRecordDateReturnType => {
   const params = [`device-${deviceId || "no"}-lastRecordDate`, deviceId];
   const { data: lastRecordDate, error } = useSWR<string | null, Error>(
     params,
-    () => fetchDeviceLastRecordDate(deviceId)
+    () => fetchSensorLastRecordDate(deviceId)
   );
 
   return {
