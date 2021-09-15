@@ -73,6 +73,7 @@ exports[`Storyshots UI Elements/SmallModal With Footer Content 1`] = `
         >
           <span
             className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+            role="img"
             style={
               Object {
                 "height": 25,

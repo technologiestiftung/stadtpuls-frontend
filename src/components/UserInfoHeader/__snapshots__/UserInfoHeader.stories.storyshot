@@ -15,6 +15,7 @@ exports[`Storyshots UI Elements/UserInfoHeader Maximum Infos 1`] = `
       >
         <span
           className="inline-block align-middle rounded-full border border-gray-50"
+          role="img"
           style={
             Object {
               "height": 49,
@@ -609,6 +610,7 @@ exports[`Storyshots UI Elements/UserInfoHeader Minimal Infos 1`] = `
       >
         <span
           className="inline-block align-middle rounded-full border border-gray-50"
+          role="img"
           style={
             Object {
               "height": 49,

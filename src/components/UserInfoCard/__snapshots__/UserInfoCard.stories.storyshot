@@ -10,6 +10,7 @@ exports[`Storyshots UI Elements/UserInfoCard Default User Info Card 1`] = `
     >
       <span
         className="mr-4 inline-block align-middle rounded-full border border-gray-50"
+        role="img"
         style={
           Object {
             "height": 49,
