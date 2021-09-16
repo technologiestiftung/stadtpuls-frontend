@@ -4,7 +4,7 @@ import { rest } from "msw";
 import { useCuratedSensors } from ".";
 import { server } from "@mocks/server";
 import { SWRConfig } from "swr";
-import { PublicSensorType } from "../usePublicSensors";
+import { PublicSensorType } from "@lib/hooks/usePublicSensors";
 
 type OnSuccessType = (data: PublicSensorType[]) => void;
 type OnFailType = (error: string) => void;
