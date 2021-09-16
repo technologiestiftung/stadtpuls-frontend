@@ -80,6 +80,8 @@ export const mapPublicSensor = (
     name,
     description,
     location,
+    latitude,
+    longitude,
     user,
     category,
     records,
@@ -94,6 +96,8 @@ export const mapPublicSensor = (
     authorName: user?.display_name || null,
     parsedRecords: parseSensorRecords(records),
     categoryName: category?.name || null,
+    latitude: latitude || 0,
+    longitude: longitude || 0,
   };
 };
 

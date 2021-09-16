@@ -1,3 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Promotional/LandingHeroBackgroundMap Default 1`] = `null`;
+exports[`Storyshots Promotional/LandingHeroBackgroundMap Default 1`] = `
+<div
+  className="relative overflow-hidden pointer-events-none"
+  style={
+    Object {
+      "height": 1000,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "cursor": "grab",
+        "height": 1700,
+        "position": "relative",
+        "width": 1000,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "position": "relative",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className=""
+        style={
+          Object {
+            "height": "100%",
+            "overflow": "hidden",
+            "position": "absolute",
+            "visibility": "inherit",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -16,7 +16,8 @@ export const MarkerMap: React.FC<{
   clickHandler: ClickHandlerType;
   mapWidth: number;
   mapHeight: number;
-}> = ({ markers, clickHandler, mapWidth, mapHeight }) => {
+  withMapLabels?: boolean;
+}> = ({ markers, clickHandler, mapWidth, mapHeight, withMapLabels = true }) => {
   const [viewport, setViewport] = useState<ViewportType>({
     latitude: 52.520952,
     longitude: 13.400033,
@@ -95,7 +96,9 @@ export const MarkerMap: React.FC<{
       width={mapWidth}
       height={mapHeight}
       mapStyle={
-        process.env.NEXT_PUBLIC_MAPBOX_TILESET_URL ||
+        (withMapLabels
+          ? process.env.NEXT_PUBLIC_MAPBOX_LABELS_TILESET_URL
+          : process.env.NEXT_PUBLIC_MAPBOX_NO_LABELS_TILESET_URL) ||
         "mapbox://styles/mapbox/light-v10"
       }
       onViewportChange={(nextViewport: ViewportType) =>

@@ -22,6 +22,7 @@ export interface SensorCardPropType
     | "parsedRecords"
   > {
   withMapBackground?: boolean;
+  withMapLabels?: boolean;
 }
 
 const DESCRIPTION_MAX_LENGTH = 150;
@@ -37,6 +38,7 @@ export const SensorCard: FC<SensorCardPropType> = ({
   authorName,
   category,
   withMapBackground = true,
+  withMapLabels = true,
 }) => {
   const [isInViewport, mapWrapperRef] = useIsInViewport({ threshold: 50 });
 
@@ -78,6 +80,7 @@ export const SensorCard: FC<SensorCardPropType> = ({
                     }}
                     mapWidth='100%'
                     mapHeight='100%'
+                    withMapLabels={withMapLabels}
                   />
                   <span
                     className={[
