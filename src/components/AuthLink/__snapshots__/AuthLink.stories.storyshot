@@ -5,6 +5,7 @@ exports[`Storyshots UI Elements/AuthLink Logged In 1`] = `
   className="group"
 >
   <a
+    className="focus-offset"
     href="/"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -33,6 +34,7 @@ exports[`Storyshots UI Elements/AuthLink Logged Out 1`] = `
   className="group"
 >
   <a
+    className="focus-offset"
     href="/"
     onClick={[Function]}
     onMouseEnter={[Function]}

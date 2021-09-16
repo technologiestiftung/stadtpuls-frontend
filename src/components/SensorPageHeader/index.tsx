@@ -62,6 +62,7 @@ const UserLink: FC<Pick<SensorPageHeaderPropType, "author">> = ({ author }) => (
       className={[
         "flex gap-2 items-center leading-tight",
         "hover:text-purple transition",
+        "focus-offset",
         "truncate",
       ].join(" ")}
     >
@@ -93,6 +94,7 @@ const BackLink: FC = () => (
       className={[
         "text-blue hover:text-purple transition items-center",
         "font-bold flex gap-2 mb-8 text-sm sm:text-base",
+        "focus-offset",
       ].join(" ")}
     >
       <ArrowBackIcon /> Zurück zu Sensoren

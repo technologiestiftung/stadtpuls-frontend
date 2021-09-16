@@ -51,7 +51,9 @@ export const ColouredAuthLink: FC<{
     <span className='group'>
       {href ? (
         <Link href={href}>
-          <a href={href}>{text}</a>
+          <a href={href} className='focus-offset'>
+            {text}
+          </a>
         </Link>
       ) : (
         text

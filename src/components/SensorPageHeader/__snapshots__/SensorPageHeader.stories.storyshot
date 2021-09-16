@@ -61,7 +61,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
       className="md:w-1/2 bg-white px-4 py-8 md:py-32 md:pr-12 md:max-w-[560px]"
     >
       <a
-        className="text-blue hover:text-purple transition items-center font-bold flex gap-2 mb-8 text-sm sm:text-base"
+        className="text-blue hover:text-purple transition items-center font-bold flex gap-2 mb-8 text-sm sm:text-base focus-offset"
         href="/sensors"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -115,7 +115,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
           Temperatur
         </span>
         <a
-          className="flex gap-2 items-center leading-tight hover:text-purple transition truncate"
+          className="flex gap-2 items-center leading-tight hover:text-purple transition focus-offset truncate"
           href="/accounts/yupank1"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -728,7 +728,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
       className="md:w-1/2 bg-white px-4 py-8 md:py-32 md:pr-12 md:max-w-[560px]"
     >
       <a
-        className="text-blue hover:text-purple transition items-center font-bold flex gap-2 mb-8 text-sm sm:text-base"
+        className="text-blue hover:text-purple transition items-center font-bold flex gap-2 mb-8 text-sm sm:text-base focus-offset"
         href="/sensors"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -782,7 +782,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
           CO2
         </span>
         <a
-          className="flex gap-2 items-center leading-tight hover:text-purple transition truncate"
+          className="flex gap-2 items-center leading-tight hover:text-purple transition focus-offset truncate"
           href="/accounts/lalushka"
           onClick={[Function]}
           onMouseEnter={[Function]}

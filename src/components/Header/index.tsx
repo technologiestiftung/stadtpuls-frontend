@@ -48,7 +48,7 @@ export const Header: React.FC = () => {
         <Link href='/'>
           <StadtpulsLogo
             className={[
-              "p-4 sm:border-r transition",
+              "p-4 sm:border-r transition focus-offset",
               hasDarkMode ? "border-purple" : "border-gray-100",
             ]
               .filter(Boolean)
