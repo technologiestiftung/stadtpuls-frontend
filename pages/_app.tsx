@@ -37,7 +37,7 @@ const App: FC<{
             id={pathname?.replace(/\//gi, "") || "home"}
             className='z-0 relative'
             style={{
-              paddingTop: pathname === "/" ? 0 : 62,
+              paddingTop: 0,
               minHeight: "calc(100vh - 215px)",
             }}
           >

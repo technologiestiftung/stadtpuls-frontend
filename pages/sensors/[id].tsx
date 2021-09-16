@@ -1,7 +1,8 @@
+import { SensorPageHeader } from "@components/SensorPageHeader";
 import { PublicSensorType } from "@lib/hooks/usePublicSensors";
 import { getSensorData } from "@lib/requests/getSensorData";
 import { GetServerSideProps } from "next";
-import { FC } from "react";
+import { FC, useRef } from "react";
 
 export const getServerSideProps: GetServerSideProps = async context => {
   try {
@@ -18,11 +19,21 @@ export const getServerSideProps: GetServerSideProps = async context => {
 const SensorPage: FC<{
   sensor: PublicSensorType;
 }> = ({ sensor }) => {
+  const fallbackIconId = useRef(Math.random() * 10);
   return (
     <>
-      <h1>Sensor page: {sensor.name || ""}</h1>
-      <p>I am a sensor page</p>
-      <p>ID: {sensor.id}</p>
+      <SensorPageHeader
+        id={sensor.id}
+        name={sensor.name || ""}
+        description={sensor.description}
+        category={sensor.category}
+        symbol={sensor.icon_id || fallbackIconId.current}
+        geocoordinates={{ latitude: 52.4961458, longitude: 13.4335723 }}
+        author={{
+          username: sensor.user.name || "anonymous",
+          displayName: sensor.user.display_name || "Anonymous",
+        }}
+      />
     </>
   );
 };

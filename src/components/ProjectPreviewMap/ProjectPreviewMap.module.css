@@ -1,8 +1,13 @@
+.mapParent button:focus {
+  @apply focus-offset;
+  outline: none;
+}
+
 .mapContainer div[class="mapboxgl-ctrl-bottom-left"] {
-  bottom: auto;
+  top: auto;
   right: 56px;
   left: auto;
-  top: 18px;
+  bottom: 10px;
   z-index: 0;
   pointer-events: none;
 }

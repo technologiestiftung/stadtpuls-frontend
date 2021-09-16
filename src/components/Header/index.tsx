@@ -33,7 +33,10 @@ export const Header: React.FC = () => {
         className={[
           "w-full border transition border-t-0",
           "flex place-content-between",
-          pathname === "/" && "container mx-auto max-w-8xl",
+          pathname === "/" ||
+            (pathname &&
+              pathname.startsWith("/sensors/") &&
+              "container mx-auto max-w-8xl"),
           hasDarkMode
             ? ["bg-black-dot-pattern border-purple text-white"]
             : ["bg-white border-gray-100 shadow text-blue"],
