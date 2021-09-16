@@ -1,8 +1,13 @@
-import { fakeDateValueRecords } from "@mocks/supabaseData/deviceRecords";
+import { parseSensorRecords } from "@lib/hooks/usePublicSensors";
+import { getSensorRecords } from "@mocks/supabaseData/records";
 import { render, screen } from "@testing-library/react";
 import { SensorCard } from ".";
 
 jest.mock("use-is-in-viewport", () => jest.fn().mockReturnValue([true, null]));
+
+const exampleParsedRecords = parseSensorRecords(
+  getSensorRecords({ sensorId: 1 })
+);
 
 describe("SensorCard", () => {
   it("renders correctly", () => {
@@ -14,7 +19,7 @@ describe("SensorCard", () => {
         category={{ name: "Temperatur", id: 2 }}
         icon_id={4}
         authorName='Vogelino'
-        parsedRecords={fakeDateValueRecords}
+        parsedRecords={exampleParsedRecords}
         latitude={12.124533}
         longitude={43.215353}
       />
@@ -43,7 +48,7 @@ describe("SensorCard", () => {
         category={{ name: "Temperatur", id: 2 }}
         icon_id={4}
         authorName='Vogelino'
-        parsedRecords={fakeDateValueRecords}
+        parsedRecords={exampleParsedRecords}
         latitude={12.124533}
         longitude={43.215353}
       />
