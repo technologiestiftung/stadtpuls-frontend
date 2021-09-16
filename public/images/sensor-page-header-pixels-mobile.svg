@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="336px" height="84px" viewBox="0 0 336 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Artboard</title>
-    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group" transform="translate(0.000000, -0.000000)" fill="#F9FCFD">
-            <g id="Pixels" transform="translate(168.000000, 42.000000) rotate(-90.000000) translate(-168.000000, -42.000000) translate(126.000000, -126.000000)">
-                <path d="M7.10542736e-15,280 L56,280 L56,308 L28,308 L28,336 L7.10542736e-15,336 L7.10542736e-15,280 Z M28,112 L28,140 L55,140 L55,168 L28,168 L28,196 L56,196 L56,252 L28,252 L28,224 L0,224 L0,112 L28,112 Z M56,28 L56,84 L7.10542736e-15,84 L7.10542736e-15,56 L28,56 L28,28 L56,28 Z M28,5.15576302e-14 L28,28 L7.10542736e-15,28 L7.10542736e-15,5.15576302e-14 L28,5.15576302e-14 Z" id="Shape"></path>
-                <polygon id="Rectangle" opacity="0.582542783" transform="translate(70.000000, 126.000000) rotate(-90.000000) translate(-70.000000, -126.000000) " points="56 112 84 112 84 140 56 140"></polygon>
-                <polygon id="Rectangle" opacity="0.582542783" transform="translate(42.000000, 98.000000) rotate(-90.000000) translate(-42.000000, -98.000000) " points="28 84 56 84 56 112 28 112"></polygon>
-            </g>
-            <g id="Pixels" transform="translate(280.000000, 28.000000) rotate(-90.000000) translate(-280.000000, -28.000000) translate(252.000000, 0.000000)" opacity="0.582542783">
-                <polygon id="Rectangle" transform="translate(42.000000, 42.000000) rotate(-90.000000) translate(-42.000000, -42.000000) " points="28 28 56 28 56 56 28 56"></polygon>
-                <polygon id="Rectangle" transform="translate(14.000000, 14.000000) rotate(-90.000000) translate(-14.000000, -14.000000) " points="-9.44082093e-16 -1.92032973e-12 28 -1.92032973e-12 28 28 -9.44082093e-16 28"></polygon>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="336" height="84" xmlns="http://www.w3.org/2000/svg"><g fill="#F9FCFD" fill-rule="evenodd"><path d="M280 84V28h28v28h28v28h-56ZM112 56h28V29h28v27h28V28h56v28h-28v28H112V56ZM28 28h56v56H56V56H28V28ZM0 56h28v28H0V56Z"/><path opacity=".583" d="M140 28h-28V0h28zM112 56H84V28h28z"/><g opacity=".583"><path d="M308 28h-28V0h28zM280 56h-28V28h28z"/></g></g></svg>
