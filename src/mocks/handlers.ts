@@ -1,8 +1,6 @@
 import { rest } from "msw";
 import {
-  publicProjectsData,
   userData,
-  userProjects,
   getDevice,
   getUserProject,
   refreshToken,
@@ -79,7 +77,8 @@ const supabaseHandlers = [
       ctx.json(getSensorRecords({ sensorId: 1 }))
     );
   }),
-  rest.get(createApiUrl("/projects"), (req, res, ctx) => {
+  // Keeping this for now for inspiration for how to mock different query options. TODO: Delete as soon as it's not needed anymore
+  /* rest.get(createApiUrl("/projects"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const select = query.get("select");
@@ -122,7 +121,7 @@ const supabaseHandlers = [
         ctx.json(publicProjectsData[0])
       );
     else return res(ctx.status(404, "Not found"));
-  }),
+  }), */
   rest.get(createApiUrl("/user_profiles"), (req, res, ctx) => {
     const query = req.url.searchParams;
 

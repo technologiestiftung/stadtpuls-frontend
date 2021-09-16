@@ -4,8 +4,10 @@ import { createApiUrl } from "../../../../../lib/requests/createApiUrl";
 import { createMocks } from "node-mocks-http";
 import recordsHandler from "../../../../../../pages/api/v1/devices/[id]/records";
 import { VALID_TIMESTAMP_EXAMPLE } from "@lib/timestampValidator";
-import { fakeDeviceWithFewRecords as fakeDevice } from "@mocks/supabaseData/publicProjects";
 import { NextApiRequest, NextApiResponse } from "next";
+import { sensors } from "@mocks/supabaseData/sensors";
+
+const fakeDevice = sensors[0];
 
 const REQUEST_BASICS = {
   method: "GET",

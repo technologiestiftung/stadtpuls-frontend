@@ -1,14 +1,11 @@
 import { DevicesType, ProjectsType } from "@common/types/supabase_DEPRECATED";
 import { categories as fakeCategories } from "./categories";
-import { fakeProjects } from "./publicProjects";
 import {
   fakeAuthToken,
   fakeRefreshToken,
   fakeUserData,
   fakeUserProjects,
 } from "./userData";
-
-export const publicProjectsData = fakeProjects;
 
 export const publicCategories = fakeCategories;
 //userData
