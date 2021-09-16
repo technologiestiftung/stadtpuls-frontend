@@ -7,7 +7,7 @@ import { categories } from "./categories";
 import { userprofiles } from "./userprofiles";
 import { parseSensorRecords } from "@lib/hooks/usePublicSensors";
 
-export const httpSensors: SensorQueryResponseType[] = [
+export const ttnSensors: SensorQueryResponseType[] = [
   {
     id: 1,
     name: "Temperatur Grunewaldstraße",
@@ -76,7 +76,7 @@ export const httpSensors: SensorQueryResponseType[] = [
   },
 ];
 
-export const ttnSensors: SensorQueryResponseType[] = [
+export const httpSensors: SensorQueryResponseType[] = [
   {
     id: 4,
     name: "Poison Thing",
@@ -120,6 +120,24 @@ export const ttnSensors: SensorQueryResponseType[] = [
     category: categories[3],
     user: userprofiles[0],
     icon_id: 13,
+  },
+  {
+    id: 6,
+    name: "Simple Broadcast",
+    created_at: "2021-09-15T020:00:00",
+    connection_type: "http",
+    description:
+      "Through perseverance many people win success out of what seemed destined to be certain failure. - Benjamin Disraeli",
+    category_id: 5,
+    location: "München",
+    user_id: userprofiles[0].id,
+    records: [],
+    latitude: 48.168577,
+    longitude: 11.551248,
+    altitude: 100,
+    category: categories[4],
+    user: userprofiles[0],
+    icon_id: 16,
   },
 ];
 
