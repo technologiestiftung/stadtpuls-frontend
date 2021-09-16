@@ -34,6 +34,16 @@ Default.args = {
   children: <TextLink>Click me</TextLink>,
 };
 
+export const WithDisabledItem = Template.bind({});
+WithDisabledItem.args = {
+  items: [
+    { id: 1, title: "Meine Projekte", href: "/projects" },
+    { id: 2, title: "Account", href: "/account", disabled: true },
+    { id: 3, title: "Logout", onClick: action("logged out!"), disabled: true },
+  ],
+  children: <TextLink>Click me</TextLink>,
+};
+
 export const WithCustomChildren = Template.bind({});
 WithCustomChildren.args = {
   items: [

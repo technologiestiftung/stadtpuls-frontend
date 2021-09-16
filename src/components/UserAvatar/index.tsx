@@ -36,6 +36,7 @@ export const UserAvatar: FC<UserAvatarPropType> = ({
       .filter(Boolean)
       .join(" ")}
     style={{ width: size + 1, height: size + 1 }}
+    role='img'
   >
     <BoringAvatar
       name={username}

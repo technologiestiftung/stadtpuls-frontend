@@ -96,6 +96,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                     >
                       <span
                         className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+                        role="img"
                         style={
                           Object {
                             "height": 21,
@@ -702,6 +703,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                     >
                       <span
                         className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+                        role="img"
                         style={
                           Object {
                             "height": 21,
@@ -1308,6 +1310,7 @@ exports[`Storyshots Promotional/LandingProjectsSlider Default 1`] = `
                     >
                       <span
                         className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+                        role="img"
                         style={
                           Object {
                             "height": 21,
