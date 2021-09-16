@@ -1,6 +1,5 @@
 import { rest } from "msw";
 import {
-  deviceRecords,
   publicProjectsData,
   userData,
   userProjects,
@@ -27,6 +26,7 @@ import {
 } from "@lib/hooks/usePublicSensors";
 import { categories } from "./supabaseData/categories";
 import { userprofiles } from "./supabaseData/userprofiles";
+import { getSensorRecords } from "./supabaseData/records";
 
 const githubHandlers = [
   rest.get(`https://api.github.com/users/*`, (_req, res, ctx) => {
@@ -74,7 +74,10 @@ const supabaseHandlers = [
     return res(ctx.status(201, "Mocked status"), ctx.json(categories));
   }),
   rest.get(createApiUrl("/records"), (_req, res, ctx) => {
-    return res(ctx.status(201, "Mocked status"), ctx.json(deviceRecords));
+    return res(
+      ctx.status(201, "Mocked status"),
+      ctx.json(getSensorRecords({ sensorId: 1 }))
+    );
   }),
   rest.get(createApiUrl("/projects"), (req, res, ctx) => {
     const query = req.url.searchParams;

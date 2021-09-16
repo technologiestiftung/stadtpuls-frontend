@@ -1,6 +1,5 @@
 import { DateValueType } from "@common/interfaces";
 import { ProjectsType } from "@common/types/supabase_DEPRECATED";
-import { fakeDeviceRecords } from "./deviceRecords";
 
 const getFakeLineChartDates = (): DateValueType[] => [
   {
@@ -95,7 +94,26 @@ export const fakeDeviceWithRecords = {
   id: 1,
   externalId: "device1",
   projectId: 10,
-  records: fakeDeviceRecords,
+  records: [
+    {
+      id: 1,
+      deviceId: 1234,
+      recordedAt: "2020-12-01T08:00:00",
+      measurements: [28.5],
+    },
+    {
+      id: 2,
+      deviceId: 1234,
+      recordedAt: "2020-12-02T15:00:00",
+      measurements: [24.1],
+    },
+    {
+      id: 3,
+      deviceId: 1234,
+      recordedAt: "2020-12-03T22:00:00",
+      measurements: [20.9],
+    },
+  ],
 };
 
 export const fakeProjects: ProjectsType[] = [
