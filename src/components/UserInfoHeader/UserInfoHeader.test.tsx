@@ -33,7 +33,9 @@ describe("UserInfoHeader", () => {
     });
     const sensorsCount = screen.queryByText("12.345");
     const recordsCount = screen.queryByText("12 Mio.");
-    const editButton = screen.getByRole("button", { name: "Sensor editieren" });
+    const editButton = screen.getByRole("button", {
+      name: "Account editieren",
+    });
     expect(title).toBeInTheDocument();
     expect(username).toBeInTheDocument();
     expect(description).toBeInTheDocument();
