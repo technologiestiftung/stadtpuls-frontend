@@ -6,14 +6,17 @@ export const ProjectPreviewMap: React.FC<{
   mapWidth: number | string;
   mapHeight: number | string;
   viewport: Partial<InteractiveMapProps>;
-}> = ({ mapWidth, mapHeight, viewport }) => (
+  withMapLabels?: boolean;
+}> = ({ mapWidth, mapHeight, viewport, withMapLabels = true }) => (
   <ReactMapGL
     zoom={10}
     {...viewport}
     width={mapWidth}
     height={mapHeight}
     mapStyle={
-      process.env.NEXT_PUBLIC_MAPBOX_TILESET_URL ||
+      (withMapLabels
+        ? process.env.NEXT_PUBLIC_MAPBOX_LABELS_TILESET_URL
+        : process.env.NEXT_PUBLIC_MAPBOX_NO_LABELS_TILESET_URL) ||
       "mapbox://styles/mapbox/light-v10"
     }
     mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
