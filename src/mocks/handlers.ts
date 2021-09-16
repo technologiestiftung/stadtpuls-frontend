@@ -21,7 +21,10 @@ import {
 import { definitions } from "@common/types/supabase";
 import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
-import { PublicSensorType } from "@lib/hooks/usePublicSensors";
+import {
+  SensorQueryResponseType,
+  sensorQueryString,
+} from "@lib/hooks/usePublicSensors";
 import { categories } from "./supabaseData/categories";
 import { userprofiles } from "./supabaseData/userprofiles";
 
@@ -138,14 +141,67 @@ const supabaseHandlers = [
       );
     }
   ),
-  rest.get<PublicSensorType>(createApiUrl("/sensors"), (_, res, ctx) => {
-    const sensorsResponse = [
-      ...sensors.withTtnIntegration,
-      ...sensors.withHttpIntegration,
-    ];
+  rest.get<SensorQueryResponseType>(
+    createApiUrl("/sensors"),
+    (req, res, ctx) => {
+      const query = req.url.searchParams;
 
-    return res(ctx.status(201, "Mocked status"), ctx.json(sensorsResponse));
-  }),
+      const select = query.get("select");
+      const id = query.get("id")?.replace("eq.", "");
+      const limit = query.get("limit");
+      const recordsLimit = query.get("records.limit");
+
+      // Regex removes whitespaces and line breaks. Necessary because sensorQueryString is constructed as template literal
+      const trimmedSensorSelectString = sensorQueryString.replace(
+        /(\r\n|\n|\r| )/gm,
+        ""
+      );
+
+      const specificSensorDataRequested = select === trimmedSensorSelectString;
+      const oneSensorRequestedById = specificSensorDataRequested && id;
+      const limitedSensorsRequested = specificSensorDataRequested && limit;
+
+      if (specificSensorDataRequested) {
+        if (oneSensorRequestedById && id) {
+          return res(
+            ctx.status(201, "Mocked status"),
+            ctx.json(
+              sensors.find(
+                sensor => sensor.id === parseInt(id, 10)
+              ) as definitions["sensors"]
+            )
+          );
+        }
+        if (limitedSensorsRequested && limit) {
+          const limitedSensors = sensors.slice(0, parseInt(limit, 10));
+          const limitedSensorsWithLimitedRecords = limitedSensors.map(
+            sensor => {
+              return recordsLimit
+                ? {
+                    ...sensor,
+                    records: sensor.records.slice(
+                      0,
+                      parseInt(recordsLimit, 10) - 1
+                    ),
+                  }
+                : { ...sensor };
+            }
+          );
+
+          return recordsLimit
+            ? res(
+                ctx.status(201, "Mocked status"),
+                ctx.json(limitedSensorsWithLimitedRecords)
+              )
+            : res(ctx.status(201, "Mocked status"), ctx.json(limitedSensors));
+        } else {
+          return res(ctx.status(201, "Mocked status"), ctx.json(sensors));
+        }
+      }
+
+      return res(ctx.status(201, "Mocked status"), ctx.json(sensors));
+    }
+  ),
   rest.patch<DevicesType>(createApiUrl("/devices"), (req, res, ctx) => {
     const query = req.url.searchParams;
 

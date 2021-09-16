@@ -4,7 +4,7 @@ import { getRecordsCountBySensorId } from ".";
 import { createApiUrl } from "../createApiUrl";
 import { sensors } from "@mocks/supabaseData/sensors";
 
-const exampleSensor = sensors.withHttpIntegration[0];
+const exampleSensor = sensors[0];
 
 describe("utility function getRecordsCountBySensorId", () => {
   it("should return count for records belonging to provided sensorId", async (): Promise<void> => {
