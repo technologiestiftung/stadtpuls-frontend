@@ -122,6 +122,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
         >
           <span
             className="inline-block align-middle rounded-full border border-gray-50"
+            role="img"
             style={
               Object {
                 "height": 25,
@@ -788,6 +789,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
         >
           <span
             className="inline-block align-middle rounded-full border border-gray-50"
+            role="img"
             style={
               Object {
                 "height": 25,
