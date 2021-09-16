@@ -76,6 +76,7 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
             >
               <span
                 className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+                role="img"
                 style={
                   Object {
                     "height": 21,
@@ -726,6 +727,7 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
             >
               <span
                 className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+                role="img"
                 style={
                   Object {
                     "height": 21,

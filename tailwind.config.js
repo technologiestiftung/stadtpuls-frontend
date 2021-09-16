@@ -44,6 +44,10 @@ module.exports = {
       none: "none",
     },
     extend: {
+      backgroundImage: {
+        'sensor-page-header': "url('/images/sensor-page-header-pixels.svg')",
+        'sensor-page-header-mobile': "url('/images/sensor-page-header-pixels-mobile.svg')",
+      },
       animation: {
         borderpulse: "border-pulse 3s ease-in-out infinite",
         "borderpulse-blue": "border-pulse-blue 3s ease-in-out infinite",

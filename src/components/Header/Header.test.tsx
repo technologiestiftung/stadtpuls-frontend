@@ -32,7 +32,7 @@ describe("Header component", () => {
   });
   it("should render the Stadtpuls logo", async () => {
     render(<Header />);
-    const logo = screen.getByRole("img");
+    const logo = screen.getAllByRole("img")[1];
     await waitFor(() => expect(logo).toBeInTheDocument());
   });
   it("should render the tsb logo", async () => {
