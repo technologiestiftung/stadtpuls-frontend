@@ -13,15 +13,21 @@ const fakeData: RecordType[] = [
 ];
 
 describe("DataTable component", () => {
-  it("should render the title", () => {
-    render(<DataTable data={[]} title='This is my title' />);
-    const title = screen.getByText(/This is my title/g);
-    expect(title).toBeInTheDocument();
-  });
   it("should render the data", () => {
-    render(<DataTable data={fakeData} title='This is my title' />);
-    const date = screen.getByText("4/8/2021");
-    const time = screen.getByText("13:23:04");
+    render(<DataTable data={fakeData} />);
+    const date = screen.getByText("08.04.2021");
+    const time = screen.getByText("15:23:04");
+    const value = screen.getByText("20");
+    const tableRows = document.querySelectorAll("tbody > tr");
+    expect(tableRows).toHaveLength(fakeData.length);
+    expect(date).toBeInTheDocument();
+    expect(time).toBeInTheDocument();
+    expect(value).toBeInTheDocument();
+  });
+  it("should render the data sorted", () => {
+    render(<DataTable data={fakeData} />);
+    const date = screen.getByText("08.04.2021");
+    const time = screen.getByText("15:23:04");
     const value = screen.getByText("20");
     const tableRows = document.querySelectorAll("tbody > tr");
     expect(tableRows).toHaveLength(fakeData.length);

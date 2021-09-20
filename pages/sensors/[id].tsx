@@ -187,11 +187,8 @@ const SensorPage: FC<{
           )}
         </div>
         {records.length > 0 && (
-          <div className='border border-gray-100 shadow mt-16 p-0'>
-            <DataTable
-              data={records.map(rawRecordToRecord)}
-              title={sensor.name || ""}
-            />
+          <div className='mt-16'>
+            <DataTable data={records.map(rawRecordToRecord)} />
           </div>
         )}
       </div>
