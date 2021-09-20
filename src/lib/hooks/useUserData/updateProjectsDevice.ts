@@ -1,76 +1,34 @@
-import { DevicesType, ProjectsType } from "@common/types/supabase_DEPRECATED";
+import { definitions } from "@common/types/supabase";
 
-let lastDeviceId = 10000000;
+let lastSensorId = 10000000;
 
-const updateDevices = (
-  devices: DevicesType[],
-  device: DevicesType
-): DevicesType[] =>
-  devices.reduce(
-    (devicesAcc, currDevice) => [
-      ...devicesAcc,
-      currDevice.id === device.id ? device : currDevice,
+export const updateSensorsLocally = (
+  sensors: definitions["sensors"][],
+  sensor: definitions["sensors"]
+): definitions["sensors"][] =>
+  sensors.reduce(
+    (sensorsAcc, currSensor) => [
+      ...sensorsAcc,
+      currSensor.id === sensor.id ? sensor : currSensor,
     ],
-    [] as DevicesType[]
+    [] as definitions["sensors"][]
   );
 
-const removeDevice = (
-  devices: DevicesType[],
-  deviceId: DevicesType["id"]
-): DevicesType[] => devices.filter(device => device.id !== deviceId);
+export const deleteSensorLocally = (
+  sensors: definitions["sensors"][],
+  sensorId: definitions["sensors"]["id"]
+): definitions["sensors"][] =>
+  sensors ? sensors.filter(sensor => sensor.id !== sensorId) : [];
 
-export const updateProjectsDevice = (
-  projects: ProjectsType[],
-  device: Omit<DevicesType, "projectId">
-): ProjectsType[] =>
-  projects.reduce(
-    (acc, project) => [
-      ...acc,
-      {
-        ...project,
-        devices: project.devices
-          ? updateDevices(project.devices, device as DevicesType)
-          : [],
-      },
-    ],
-    [] as ProjectsType[]
-  );
-
-export const deleteProjectsDevice = (
-  projects: ProjectsType[],
-  deviceId: DevicesType["id"]
-): ProjectsType[] =>
-  projects.reduce(
-    (acc, project) => [
-      ...acc,
-      {
-        ...project,
-        devices: project.devices ? removeDevice(project.devices, deviceId) : [],
-      },
-    ],
-    [] as ProjectsType[]
-  );
-
-export const addProjectsDevice = (
-  projects: ProjectsType[],
-  device: Omit<DevicesType, "id">
-): ProjectsType[] =>
-  projects.reduce(
-    (acc, project) => [
-      ...acc,
-      {
-        ...project,
-        devices:
-          project.devices && device.projectId === project.id
-            ? [
-                ...project.devices,
-                {
-                  ...device,
-                  id: lastDeviceId++,
-                },
-              ]
-            : project.devices || [],
-      },
-    ],
-    [] as ProjectsType[]
-  );
+export const createSensorLocally = (
+  sensors: definitions["sensors"][],
+  sensor: Omit<definitions["sensors"], "id">
+): definitions["sensors"][] => {
+  return [
+    ...sensors,
+    {
+      ...sensor,
+      id: lastSensorId++,
+    },
+  ];
+};
