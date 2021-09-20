@@ -28,17 +28,26 @@ const getTimeRangeByTimespan = (
   switch (timespan) {
     case "last24h":
       return {
-        startDateTimeString: moment(today).subtract(1, "days").toISOString(),
+        startDateTimeString: moment
+          .parseZone(today)
+          .subtract(1, "days")
+          .toISOString(),
         endDateTimeString: today.toISOString(),
       };
     case "last7days":
       return {
-        startDateTimeString: moment(today).subtract(7, "days").toISOString(),
+        startDateTimeString: moment
+          .parseZone(today)
+          .subtract(7, "days")
+          .toISOString(),
         endDateTimeString: today.toISOString(),
       };
     case "last30days":
       return {
-        startDateTimeString: moment(today).subtract(30, "days").toISOString(),
+        startDateTimeString: moment
+          .parseZone(today)
+          .subtract(30, "days")
+          .toISOString(),
         endDateTimeString: today.toISOString(),
       };
     default:
@@ -87,7 +96,7 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
   startDateTimeString,
   endDateTimeString,
   onDatetimeRangeChange,
-  today = moment(Date.now()),
+  today = moment.parseZone(Date.now()),
 }) => {
   const [activeFilterType, setActiveFilterType] = useState<FilterType>(
     "devicesByDatetimeRange"
@@ -108,12 +117,12 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
           startDateTimeString={
             startDateTimeString ||
             last7daysTimeRange.startDateTimeString ||
-            moment().toISOString()
+            moment.parseZone().toISOString()
           }
           endDateTimeString={
             endDateTimeString ||
             last7daysTimeRange.endDateTimeString ||
-            moment().toISOString()
+            moment.parseZone().toISOString()
           }
           onDatetimeRangeChange={onDatetimeRangeChange}
           tabIndex={activeFilterType === "devicesByDatetimeRange" ? 0 : -1}

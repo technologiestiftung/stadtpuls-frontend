@@ -1,5 +1,3 @@
-import { RecordType } from "@common/interfaces";
-import { definitions } from "@common/types/supabase";
 import { CategoriesType } from "@common/types/supabase_DEPRECATED";
 import { DataTable } from "@components/DataTable";
 import { DeviceLineChartFilters } from "@components/DeviceLineChartFilters";
@@ -55,14 +53,6 @@ const getCategoryUnit = (
   }
 };
 
-const rawRecordToRecord = (
-  rawRecord: Pick<definitions["records"], "id" | "recorded_at" | "measurements">
-): RecordType => ({
-  id: rawRecord.id,
-  recordedAt: rawRecord.recorded_at || "",
-  value: rawRecord.measurements ? rawRecord.measurements[0] : 0,
-});
-
 const SensorPage: FC<{
   sensor: PublicSensorType;
 }> = ({ sensor }) => {
@@ -89,14 +79,16 @@ const SensorPage: FC<{
     startDateString: currentDatetimeRange.startDateTimeString,
     endDateString: currentDatetimeRange.endDateTimeString,
   });
+  const parsedAndSortedRecords = createDateValueArray(records);
 
   useEffect(() => {
     if (!lastRecordDate) return;
     setCurrentDatetimeRange({
-      startDateTimeString: moment(lastRecordDate)
+      startDateTimeString: moment
+        .parseZone(lastRecordDate)
         .subtract(7, "days")
         .toISOString(),
-      endDateTimeString: moment(lastRecordDate).toISOString(),
+      endDateTimeString: moment.parseZone(lastRecordDate).toISOString(),
     });
   }, [lastRecordDate, setCurrentDatetimeRange]);
 
@@ -140,7 +132,7 @@ const SensorPage: FC<{
                 <dt>Letzter Eintrag:</dt>
                 <dd className='ml-2'>
                   {lastRecordDate
-                    ? moment(lastRecordDate).format("D. MMMM YYYY")
+                    ? moment.parseZone(lastRecordDate).format("D. MMMM YYYY")
                     : "–"}
                 </dd>
                 <dt>Messwerte:</dt>
@@ -165,7 +157,11 @@ const SensorPage: FC<{
               height={chartHeight || 400}
               yAxisUnit={getCategoryUnit(sensor.category?.name)}
               xAxisUnit='Messdatum'
-              data={createDateValueArray(records)}
+              data={parsedAndSortedRecords.map(({ id, date, value }) => ({
+                id,
+                date: date.toISOString(),
+                value,
+              }))}
               startDateTimeString={currentDatetimeRange.startDateTimeString}
               endDateTimeString={currentDatetimeRange.endDateTimeString}
             />
@@ -188,7 +184,7 @@ const SensorPage: FC<{
         </div>
         {records.length > 0 && (
           <div className='mt-16'>
-            <DataTable data={records.map(rawRecordToRecord)} />
+            <DataTable data={parsedAndSortedRecords} />
           </div>
         )}
       </div>

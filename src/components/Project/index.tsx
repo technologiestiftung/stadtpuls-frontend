@@ -91,10 +91,10 @@ export const Project: FC = () => {
   useEffect(() => {
     if (!lastRecordDate) return;
     setCurrentDatetimeRange({
-      startDateTimeString: moment(lastRecordDate)
+      startDateTimeString: moment.parseZone(lastRecordDate)
         .subtract(7, "days")
         .toISOString(),
-      endDateTimeString: moment(lastRecordDate).toISOString(),
+      endDateTimeString: moment.parseZone(lastRecordDate).toISOString(),
     });
   }, [lastRecordDate, setCurrentDatetimeRange]);
 
@@ -323,7 +323,7 @@ export const Project: FC = () => {
                         <dt>Letzter Eintrag:</dt>
                         <dd className='ml-2'>
                           {lastRecordDate
-                            ? moment(lastRecordDate).format("D. MMMM YYYY")
+                            ? moment.parseZone(lastRecordDate).format("D. MMMM YYYY")
                             : "–"}
                         </dd>
                         <dt>Messwerte:</dt>

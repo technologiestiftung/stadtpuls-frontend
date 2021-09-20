@@ -48,8 +48,14 @@ describe("component SensorsList", () => {
     expect(deviceC).toBeInTheDocument();
   });
   it("should render relative dates based on lastRecordedAt", () => {
-    const sensorA = createSensor(1, moment().subtract(3, "minutes").toDate());
-    const sensorB = createSensor(2, moment().subtract(2, "days").toDate());
+    const sensorA = createSensor(
+      1,
+      moment.parseZone().subtract(3, "minutes").toDate()
+    );
+    const sensorB = createSensor(
+      2,
+      moment.parseZone().subtract(2, "days").toDate()
+    );
     const sensorC = createSensor(3, null);
     const sensors = [sensorA, sensorB, sensorC];
     render(<SensorsList {...defaults} sensors={sensors} />);

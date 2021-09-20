@@ -3,7 +3,6 @@ import { bisector, extent, max } from "d3-array";
 import { Group } from "@visx/group";
 import { scaleLinear, scaleUtc } from "@visx/scale";
 import { AxisBottom, AxisLeft } from "@visx/axis";
-import { utcFormat } from "d3-time-format";
 import { DateValueType, LineGraphType } from "@common/interfaces";
 import { LinePath } from "../LinePath";
 
@@ -13,12 +12,14 @@ import { Bar, Line } from "@visx/shape";
 import { localPoint } from "@visx/event";
 import { GridRows as HorizontalGridLines } from "@visx/grid";
 import colors from "../../style/colors";
+import moment from "moment";
 
-const getX = (d: DateValueType): Date => new Date(d.date);
+const getX = (d: DateValueType): Date => {
+  return moment.parseZone(d.date).toDate();
+};
 const getY = (d: DateValueType): number => d.value;
 // eslint-disable-next-line @typescript-eslint/unbound-method
 const bisectDate = bisector<DateValueType, Date>(d => new Date(d.date)).left;
-const formatDate = utcFormat("%d.%m.%Y - %H:%M:%S");
 
 const tooltipStyles = {
   ...defaultStyles,
@@ -59,7 +60,10 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
     const xScale = scaleUtc<number>({
       domain:
         startDateTimeString && endDateTimeString
-          ? [new Date(startDateTimeString), new Date(endDateTimeString)]
+          ? [
+              moment.parseZone(startDateTimeString).toDate(),
+              moment.parseZone(endDateTimeString).toDate(),
+            ]
           : (extent(data, getX) as [Date, Date]),
       range: [0, graphWidth],
     });
@@ -236,7 +240,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               }}
               className='text-gray-900'
             >
-              {formatDate(getX(tooltipData))} (UTC)
+              {moment.utc(tooltipData.date).format("DD.MM.YYYY - HH:mm")} (ISO)
             </TooltipWithBounds>
           </div>
         )}

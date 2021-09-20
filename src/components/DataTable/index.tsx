@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-// import { createCSVStructure, downloadCSV } from "@lib/downloadCsvUtil";
 
 interface DataTableRowType {
-  id: string | number;
-  value: string | number;
-  recordedAt: string;
+  id: number;
+  value: number;
+  date: moment.Moment;
 }
 export interface DataTableType {
   data: DataTableRowType[];
@@ -23,16 +22,9 @@ export const DataTable: React.FC<DataTableType> = ({ data }) => {
     if (!data) return;
 
     setDisplayedData(
-      data
-        .sort((a, b) => Date.parse(b.recordedAt) - Date.parse(a.recordedAt))
-        .filter((_record, i: number) => i < numberOfRecordsToDisplay)
+      data.filter((_record, i: number) => i < numberOfRecordsToDisplay)
     );
   }, [data, numberOfRecordsToDisplay]);
-
-  // const handleDownload = (): void => {
-  //   const CSVData = createCSVStructure(data as RecordType[]);
-  //   downloadCSV(CSVData, title);
-  // };
 
   const handleLoadMore = (): void => {
     setNumberOfRecordsToDisplay(numberOfRecordsToDisplay + 500);
@@ -107,7 +99,7 @@ export const DataTable: React.FC<DataTableType> = ({ data }) => {
                       "border-r border-gray-200",
                     ].join(" ")}
                   >
-                    {moment(record.recordedAt).format("DD.MM.YYYY")}
+                    {record.date.format("DD.MM.YYYY")}
                   </span>
                 </td>
                 <td className='p-0'>
@@ -118,7 +110,7 @@ export const DataTable: React.FC<DataTableType> = ({ data }) => {
                       "border-r border-gray-200",
                     ].join(" ")}
                   >
-                    {moment(record.recordedAt).format("HH:mm:ss")}
+                    {record.date.format("HH:mm:ss")}
                   </span>
                 </td>
                 <td

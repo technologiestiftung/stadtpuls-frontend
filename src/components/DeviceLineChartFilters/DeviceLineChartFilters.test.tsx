@@ -5,7 +5,7 @@ import { FC } from "react";
 import { DeviceLineChartFilters, DeviceLineChartFiltersPropType } from ".";
 
 const todayString = "2021-12-31T12:34:56.789Z";
-const today = moment(todayString);
+const today = moment.parseZone(todayString);
 
 const TestComponent: FC<Partial<DeviceLineChartFiltersPropType>> = ({
   startDateTimeString = "2021-01-01T00:00:00.000Z",
@@ -103,8 +103,8 @@ describe("DeviceLineChartFilters", () => {
     fireEvent.change(time2, { target: { value: "00:01" } });
 
     expect(onDatetimeRangeChange).toHaveBeenLastCalledWith({
-      startDateTimeString: moment("2021-02-01 23:59").toISOString(),
-      endDateTimeString: moment("2021-12-24 00:01").toISOString(),
+      startDateTimeString: moment.parseZone("2021-02-01 23:59").toISOString(),
+      endDateTimeString: moment.parseZone("2021-12-24 00:01").toISOString(),
     });
   });
   test("onDatetimeRangeChange should call handler", () => {

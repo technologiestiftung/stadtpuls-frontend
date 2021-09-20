@@ -73,10 +73,23 @@ const supabaseHandlers = [
   rest.get(createApiUrl("/categories"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"), ctx.json(categories));
   }),
-  rest.get(createApiUrl("/records"), (_req, res, ctx) => {
+  rest.get(createApiUrl("/records"), (req, res, ctx) => {
+    const query = req.url.searchParams;
+    const recordedAts = query.getAll("recorded_at");
+    let firstRecordDate = recordedAts.find(a => a.startsWith("gte."));
+    firstRecordDate = firstRecordDate
+      ? firstRecordDate.replace("gte.", "")
+      : undefined;
+    let lastRecordDate = recordedAts.find(a => a.startsWith("lte."));
+    lastRecordDate = lastRecordDate
+      ? lastRecordDate.replace("lte.", "")
+      : undefined;
+
     return res(
       ctx.status(201, "Mocked status"),
-      ctx.json(getSensorRecords({ sensorId: 1 }))
+      ctx.json(
+        getSensorRecords({ sensorId: 1, firstRecordDate, lastRecordDate })
+      )
     );
   }),
   rest.get(createApiUrl("/projects"), (req, res, ctx) => {

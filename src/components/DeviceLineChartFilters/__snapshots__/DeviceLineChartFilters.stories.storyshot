@@ -43,7 +43,7 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
               style={Object {}}
               tabIndex={0}
               type="text"
-              value="15:13"
+              value="13:13"
             />
           </div>
           <span
@@ -68,7 +68,7 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
               style={Object {}}
               tabIndex={0}
               type="text"
-              value="21:19"
+              value="19:19"
             />
           </span>
         </div>

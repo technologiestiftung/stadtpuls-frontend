@@ -22,7 +22,7 @@ export const ttnSensors: SensorQueryResponseType[] = [
     records: getSensorRecords({
       sensorId: 1,
       numberOfRecords: 209,
-      firstRecordDate: "2020-12-01T08:00:00",
+      firstRecordDate: "2020-12-01T08:00:00Z",
     }),
     latitude: 52.48864,
     longitude: 13.342667,
@@ -45,7 +45,7 @@ export const ttnSensors: SensorQueryResponseType[] = [
     records: getSensorRecords({
       sensorId: 2,
       numberOfRecords: 708,
-      firstRecordDate: "2021-05-19T19:00:00",
+      firstRecordDate: "2021-05-19T19:00:00Z",
     }),
     latitude: 53.561847,
     longitude: 13.273557,
@@ -65,7 +65,7 @@ export const ttnSensors: SensorQueryResponseType[] = [
     records: getSensorRecords({
       sensorId: 3,
       numberOfRecords: 190,
-      firstRecordDate: "2021-08-25T12:00:00",
+      firstRecordDate: "2021-08-25T12:00:00Z",
     }),
     latitude: 53.551681,
     longitude: 9.939079,
@@ -90,7 +90,7 @@ export const httpSensors: SensorQueryResponseType[] = [
     records: getSensorRecords({
       sensorId: 4,
       numberOfRecords: 5,
-      firstRecordDate: "2021-09-03T09:00:00",
+      firstRecordDate: "2021-09-03T09:00:00Z",
     }),
     latitude: 50.799519,
     longitude: 6.474333,
@@ -112,7 +112,7 @@ export const httpSensors: SensorQueryResponseType[] = [
     records: getSensorRecords({
       sensorId: 5,
       numberOfRecords: 452,
-      firstRecordDate: "2021-09-12T23:00:00",
+      firstRecordDate: "2021-09-12T23:00:00Z",
     }),
     latitude: 48.05499,
     longitude: 8.459909,

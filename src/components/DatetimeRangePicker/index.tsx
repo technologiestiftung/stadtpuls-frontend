@@ -47,7 +47,7 @@ const getModifiedTimeRange: GetModifiedTimeRangeSignature = ({
   unit,
 }) => {
   if (unit === "day") {
-    const dayString = moment(val).format("DD/MM/YYYY");
+    const dayString = moment.parseZone(val).format("DD/MM/YYYY");
     return {
       startDateTimeString: (tail === "start"
         ? setDateDay(fromDate, dayString)
@@ -78,8 +78,8 @@ export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
   onDatetimeRangeChange,
   tabIndex = 1,
 }) => {
-  const fromDate = moment(startDateTimeString);
-  const toDate = moment(endDateTimeString);
+  const fromDate = moment.parseZone(startDateTimeString);
+  const toDate = moment.parseZone(endDateTimeString);
   const modifiers = { start: fromDate.toDate(), end: toDate.toDate() };
 
   const handleDateChange = (
