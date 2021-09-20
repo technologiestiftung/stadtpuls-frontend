@@ -6,7 +6,7 @@ import {
   createSensorLocally,
   deleteSensorLocally,
   updateSensorsLocally,
-} from "./updateProjectsDevice";
+} from "./manageSensorsLocally";
 import { useState } from "react";
 import { definitions } from "@common/types/supabase";
 import { sensorQueryString } from "../usePublicSensors";

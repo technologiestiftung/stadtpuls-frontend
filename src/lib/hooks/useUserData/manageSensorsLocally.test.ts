@@ -3,7 +3,7 @@ import {
   createSensorLocally,
   updateSensorsLocally,
   deleteSensorLocally,
-} from "./updateProjectsDevice";
+} from "./manageSensorsLocally";
 
 const createFakeSensor = (id: number): definitions["sensors"] => ({
   id: id,
