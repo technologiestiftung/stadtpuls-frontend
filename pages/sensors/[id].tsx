@@ -1,15 +1,20 @@
 import { CategoriesType } from "@common/types/supabase_DEPRECATED";
 import { DataTable } from "@components/DataTable";
 import { DeviceLineChartFilters } from "@components/DeviceLineChartFilters";
+import { DropdownMenu } from "@components/DropdownMenu";
 import { LineChart } from "@components/LineChart";
 import { SensorPageHeader } from "@components/SensorPageHeader";
+import { TextLink } from "@components/TextLink";
 import { createDateValueArray } from "@lib/dateUtil";
+import { createCSVStructure, downloadCSV } from "@lib/downloadCsvUtil";
 import { PublicSensorType } from "@lib/hooks/usePublicSensors";
 import { useSensorLastRecordDate } from "@lib/hooks/useSensorLastRecordDate";
 import { useSensorRecords } from "@lib/hooks/useSensorRecords";
 import { useSensorRecordsCount } from "@lib/hooks/useSensorRecordsCount";
 import { useUserData } from "@lib/hooks/useUserData";
+import { getRecordsBySensorId } from "@lib/requests/getRecordsBySensorId";
 import { getSensorData } from "@lib/requests/getSensorData";
+import DownloadIcon from "../../public/images/icons/16px/arrowDownWithHalfSquare.svg";
 import moment from "moment";
 import { GetServerSideProps } from "next";
 import { FC, useCallback, useEffect, useRef, useState } from "react";
@@ -26,7 +31,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     if (!sensorId || Array.isArray(sensorId)) return { notFound: true };
 
     const sensorData = await getSensorData(parseInt(sensorId, 10));
-    return { props: { sensor: sensorData, error: null } };
+    return { props: { sensor: { ...sensorData, id: sensorId }, error: null } };
   } catch (error) {
     return { notFound: true };
   }
@@ -123,11 +128,51 @@ const SensorPage: FC<{
       />
       <div className='container mx-auto max-w-8xl mb-32'>
         <div>
-          <DeviceLineChartFilters
-            startDateTimeString={currentDatetimeRange.startDateTimeString}
-            endDateTimeString={currentDatetimeRange.endDateTimeString}
-            onDatetimeRangeChange={vals => setCurrentDatetimeRange(vals)}
-          />
+          <div className='flex justify-between flex-wrap gap-4 pb-8 px-4'>
+            <DeviceLineChartFilters
+              startDateTimeString={currentDatetimeRange.startDateTimeString}
+              endDateTimeString={currentDatetimeRange.endDateTimeString}
+              onDatetimeRangeChange={vals => setCurrentDatetimeRange(vals)}
+            />
+            <div className='md:pt-4 lg:pt-8'>
+              <DropdownMenu
+                items={[
+                  {
+                    id: "all",
+                    title: "Alle Daten",
+                    onClick: async () => {
+                      const allRecords = await getRecordsBySensorId(sensor.id);
+                      downloadCSV(
+                        createCSVStructure(allRecords),
+                        `${moment.parseZone().format("YYYY-MM-DD")}-sensor-${
+                          sensor.id
+                        }-all-data`
+                      );
+                    },
+                  },
+                  {
+                    id: "all",
+                    title: "Gefilterte Daten",
+                    disabled: records.length === 0,
+                    onClick: () =>
+                      downloadCSV(
+                        createCSVStructure(records),
+                        `${moment
+                          .parseZone(currentDatetimeRange.startDateTimeString)
+                          .format("YYYY-MM-DD")}-to-${moment
+                          .parseZone(currentDatetimeRange.endDateTimeString)
+                          .format("YYYY-MM-DD")}-sensor-${sensor.id}`
+                      ),
+                  },
+                ]}
+              >
+                <span className='inline-flex gap-2 place-items-center'>
+                  <DownloadIcon className='text-black' />
+                  <TextLink>Herunterladen (CSV)</TextLink>
+                </span>
+              </DropdownMenu>
+            </div>
+          </div>
           <div
             className={[
               "px-4 pt-4 pb-8 mt-6 flex space-between flex-wrap gap-6",
@@ -163,17 +208,17 @@ const SensorPage: FC<{
             />
           )}
           {recordsFetchError && (
-            <div className='prose p-8 max-w-full h-80 grid text-center items-center'>
+            <div className='prose p-8 max-w-full h-80 grid place-content-center place-items-center'>
               <p>{recordsFetchError.message}</p>
             </div>
           )}
           {!recordsFetchError && !recordsAreLoading && records.length === 0 && (
-            <div className='prose p-8 max-w-full h-80 grid text-center items-center'>
+            <div className='prose p-8 max-w-full h-80 grid place-content-center place-items-center'>
               <p>Keine Daten für die aktuelle Filterkonfiguration</p>
             </div>
           )}
           {!recordsFetchError && recordsAreLoading && (
-            <div className='prose p-8 max-w-full h-80 grid text-center items-center'>
+            <div className='prose p-8 max-w-full h-80 grid place-content-center place-items-center'>
               <p>Daten werden geladen...</p>
             </div>
           )}

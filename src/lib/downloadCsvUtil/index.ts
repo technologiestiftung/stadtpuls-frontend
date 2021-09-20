@@ -1,14 +1,16 @@
-import { RecordType } from "../../common/interfaces";
+import { definitions } from "@common/types/supabase";
 
-export const createCSVStructure = (input: RecordType[] | undefined): string => {
-  let csv = "id,deviceId,recordedAt,value\n";
+export const createCSVStructure = (
+  input: definitions["records"][] | undefined
+): string => {
+  let csv = "id,recorded_at,value\n";
 
   if (!input) return csv;
 
-  input.forEach((record: RecordType) => {
-    csv += `${record.id},${record.deviceId || ""},${record.recordedAt},${
-      record.value
-    },`;
+  input.forEach(record => {
+    csv += `${record.id},${record.recorded_at || ""},${
+      (record.measurements && record.measurements[0]) || ""
+    }`;
     csv += "\n";
   });
 
@@ -24,14 +26,4 @@ export const downloadCSV = (input: string, title?: string): void => {
   }.csv`;
   hiddenElement.click();
   hiddenElement.remove();
-};
-
-export const downloadMultiple = (
-  input: RecordType[][],
-  titles: string[]
-): void => {
-  input.forEach((records: RecordType[], i: number) => {
-    const CSVData = createCSVStructure(records);
-    downloadCSV(CSVData, titles[i]);
-  });
 };

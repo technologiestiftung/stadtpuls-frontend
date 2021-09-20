@@ -1,13 +1,19 @@
-import { RecordType } from "@common/interfaces";
-import { createCSVStructure, downloadCSV, downloadMultiple } from ".";
+import { createCSVStructure, downloadCSV } from ".";
 
-const createFakeData = (amount: number): RecordType[] =>
+const createFakeData = (
+  amount: number
+): {
+  id: number;
+  sensor_id: number;
+  recorded_at: string;
+  measurements?: number[];
+}[] =>
   [...new Array(amount || 1).map((_, idx: number) => idx)].map(
     (_, idx: number) => ({
       id: idx + amount,
-      deviceId: idx + amount,
-      recordedAt: "2021-04-08T13:23:04.753Z",
-      value: idx * 10 + amount,
+      sensor_id: idx + amount,
+      recorded_at: "2021-04-08T13:23:04.753Z",
+      measurements: [idx * 10 + amount],
     })
   );
 describe("createCSVStructure", () => {
@@ -17,29 +23,18 @@ describe("createCSVStructure", () => {
   });
   it("should include a header", () => {
     const csvString = createCSVStructure([]);
-    expect(csvString.includes("id,deviceId,recordedAt,value")).toBe(true);
+    expect(csvString.includes("id,recorded_at,value")).toBe(true);
   });
-  it("should create a csv row with deviceId", () => {
+  it("should create a csv row with data", () => {
     const csvString = createCSVStructure([
       {
         id: 1,
-        deviceId: 2,
-        recordedAt: "2021-01-08T20:32:49.796Z",
-        value: 20,
+        sensor_id: 3,
+        recorded_at: "2021-01-08T20:32:49.796Z",
+        measurements: [20],
       },
     ]);
-    expect(csvString.includes("1,2,2021-01-08T20:32:49.796Z,20")).toBe(true);
-  });
-  it("should create a csv row without deviceId", () => {
-    const csvString = createCSVStructure([
-      {
-        id: 1,
-        deviceId: undefined,
-        recordedAt: "2021-01-08T20:32:49.796Z",
-        value: 20,
-      },
-    ]);
-    expect(csvString.includes("1,,2021-01-08T20:32:49.796Z,20")).toBe(true);
+    expect(csvString.includes("1,2021-01-08T20:32:49.796Z,20")).toBe(true);
   });
   it("should create as many rows as records provided", () => {
     const fakeRecords = createFakeData(4);
@@ -54,16 +49,5 @@ describe("downloadCSV", () => {
   });
   it("should not throw with title", () => {
     expect(() => downloadCSV("CONTENT", "TITLE")).not.toThrowError();
-  });
-});
-
-describe("downloadMultiple", () => {
-  it("should not throw", () => {
-    expect(() =>
-      downloadMultiple(
-        [createFakeData(2), createFakeData(4)],
-        ["TITLE1", "TITLE2"]
-      )
-    ).not.toThrowError();
   });
 });

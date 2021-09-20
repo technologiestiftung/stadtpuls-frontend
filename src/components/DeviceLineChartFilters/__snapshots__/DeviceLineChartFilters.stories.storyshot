@@ -5,7 +5,7 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
   className="grid place-content-center h-screen"
 >
   <div
-    className="p-4 pt-8 flex flex-wrap gap-8"
+    className="pb-4 pt-8 flex flex-wrap gap-8"
   >
     <fieldset
       className="relative"
