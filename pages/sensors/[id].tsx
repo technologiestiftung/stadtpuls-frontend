@@ -32,6 +32,13 @@ export const getServerSideProps: GetServerSideProps = async context => {
   }
 };
 
+const numberFormatter = new Intl.NumberFormat("de-DE", {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  notation: "compact",
+  compactDisplay: "short",
+});
+
 const getCategoryUnit = (
   category: CategoriesType["name"] | string | undefined
 ): string => {
@@ -116,35 +123,24 @@ const SensorPage: FC<{
       />
       <div className='container mx-auto max-w-8xl mb-32'>
         <div>
-          <div
-            className={[
-              "grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8",
-              "p-4 border-b border-gray-100",
-            ].join(" ")}
-          >
-            <div>
-              <dl
-                className={[
-                  "grid gap-2 grid-cols-[100px,1fr]",
-                  "text-xs pt-8",
-                ].join(" ")}
-              >
-                <dt>Letzter Eintrag:</dt>
-                <dd className='ml-2'>
-                  {lastRecordDate
-                    ? moment.parseZone(lastRecordDate).format("D. MMMM YYYY")
-                    : "–"}
-                </dd>
-                <dt>Messwerte:</dt>
-                <dd className='ml-2'>{recordsCount || "–"}</dd>
-              </dl>
-            </div>
-          </div>
           <DeviceLineChartFilters
             startDateTimeString={currentDatetimeRange.startDateTimeString}
             endDateTimeString={currentDatetimeRange.endDateTimeString}
             onDatetimeRangeChange={vals => setCurrentDatetimeRange(vals)}
           />
+          <div
+            className={[
+              "px-4 pt-4 pb-8 mt-6 flex space-between flex-wrap gap-6",
+              "border-t border-gray-100",
+            ].join(" ")}
+          >
+            <div className={["text-sm text-gray-500"].join(" ")}>
+              {numberFormatter.format(records.length)}
+              {` von `}
+              {recordsCount ? numberFormatter.format(recordsCount) : "–"}
+              {` Messwerte`}
+            </div>
+          </div>
         </div>
         <div
           id='chart-wrapper'

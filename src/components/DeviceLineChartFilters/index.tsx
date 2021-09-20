@@ -106,7 +106,7 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
   );
   const last7daysTimeRange = getTimeRangeByTimespan("last7days", today);
   return (
-    <div className='border-b border-gray-100 shadow p-4 flex flex-wrap gap-8'>
+    <div className='p-4 pt-8 flex flex-wrap gap-8'>
       <RadioFieldset
         isSelected={activeFilterType === "devicesByDatetimeRange"}
         label='Messwerte nach Zeitspanne'

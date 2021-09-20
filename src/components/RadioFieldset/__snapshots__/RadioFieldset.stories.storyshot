@@ -11,13 +11,26 @@ exports[`Storyshots Forms/RadioFieldset Default 1`] = `
       className="relative"
       onClick={[Function]}
     >
-      <label
-        className="inline-block text-sm mb-2 text-blue"
-        htmlFor="a"
+      <div
+        className="flex gap-1"
       >
-        I am a label
-      </label>
-      <div>
+        <input
+          checked={true}
+          name="a"
+          readOnly={true}
+          tabIndex={0}
+          type="radio"
+        />
+        <label
+          className="inline-block text-sm mb-2 text-blue"
+          htmlFor="a"
+        >
+          I am a label
+        </label>
+      </div>
+      <div
+        className="pl-7"
+      >
         I am some content
       </div>
     </fieldset>
@@ -26,15 +39,28 @@ exports[`Storyshots Forms/RadioFieldset Default 1`] = `
       onClick={[Function]}
     >
       <div
-        className="absolute w-full h-full inset-0 z-30 bg-white opacity-50 pointer-events-none"
+        className="absolute w-full h-full inset-0 left-7 z-30 bg-white opacity-50 pointer-events-none"
       />
-      <label
-        className="inline-block text-sm mb-2 "
-        htmlFor="b"
+      <div
+        className="flex gap-1"
       >
-        I am a label
-      </label>
-      <div>
+        <input
+          checked={false}
+          name="b"
+          readOnly={true}
+          tabIndex={0}
+          type="radio"
+        />
+        <label
+          className="inline-block text-sm mb-2 "
+          htmlFor="b"
+        >
+          I am a label
+        </label>
+      </div>
+      <div
+        className="pl-7"
+      >
         I am another thing
       </div>
     </fieldset>

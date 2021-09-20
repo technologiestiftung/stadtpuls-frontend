@@ -5,19 +5,32 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
   className="grid place-content-center h-screen"
 >
   <div
-    className="border-b border-gray-100 shadow p-4 flex flex-wrap gap-8"
+    className="p-4 pt-8 flex flex-wrap gap-8"
   >
     <fieldset
       className="relative"
       onClick={[Function]}
     >
-      <label
-        className="inline-block text-sm mb-2 text-blue"
-        htmlFor="devicesByDatetimeRange"
+      <div
+        className="flex gap-1"
       >
-        Messwerte nach Zeitspanne
-      </label>
-      <div>
+        <input
+          checked={true}
+          name="devicesByDatetimeRange"
+          readOnly={true}
+          tabIndex={0}
+          type="radio"
+        />
+        <label
+          className="inline-block text-sm mb-2 text-blue"
+          htmlFor="devicesByDatetimeRange"
+        >
+          Messwerte nach Zeitspanne
+        </label>
+      </div>
+      <div
+        className="pl-7"
+      >
         <div
           className="flex flex-wrap gap-2"
         >
@@ -79,15 +92,28 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
       onClick={[Function]}
     >
       <div
-        className="absolute w-full h-full inset-0 z-30 bg-white opacity-50 pointer-events-none"
+        className="absolute w-full h-full inset-0 left-7 z-30 bg-white opacity-50 pointer-events-none"
       />
-      <label
-        className="inline-block text-sm mb-2 "
-        htmlFor="devicesByTimespan"
+      <div
+        className="flex gap-1"
       >
-        Messwerte nach Zeitraum
-      </label>
-      <div>
+        <input
+          checked={false}
+          name="devicesByTimespan"
+          readOnly={true}
+          tabIndex={0}
+          type="radio"
+        />
+        <label
+          className="inline-block text-sm mb-2 "
+          htmlFor="devicesByTimespan"
+        >
+          Messwerte nach Zeitraum
+        </label>
+      </div>
+      <div
+        className="pl-7"
+      >
         <div
           className="flex"
         >
