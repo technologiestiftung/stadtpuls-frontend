@@ -5,6 +5,7 @@ describe("createDateValueArray", () => {
     const dateValueArray = createDateValueArray([
       {
         id: 1,
+        sensor_id: 1,
         recorded_at: "2021-04-08T20:32:49.796Z",
         measurements: [20],
       },
@@ -15,6 +16,7 @@ describe("createDateValueArray", () => {
     const dateValueArray = createDateValueArray([
       {
         id: 1,
+        sensor_id: 1,
         recorded_at: "2021-04-08T20:32:49.796Z",
         measurements: [20],
       },
@@ -27,16 +29,19 @@ describe("createDateValueArray", () => {
     const dateValueArray = createDateValueArray([
       {
         id: 2,
+        sensor_id: 1,
         recorded_at: "2021-02-08T20:32:49.796Z",
         measurements: [2],
       },
       {
         id: 3,
+        sensor_id: 1,
         recorded_at: "2021-03-08T20:32:49.796Z",
         measurements: [3],
       },
       {
         id: 1,
+        sensor_id: 1,
         recorded_at: "2021-01-08T20:32:49.796Z",
         measurements: [1],
       },
