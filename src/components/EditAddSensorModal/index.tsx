@@ -21,6 +21,7 @@ import { useSensorCategories } from "@lib/hooks/useSensorCategories";
 import { PreviewMap } from "@components/PreviewMap";
 import { CategoryIcon } from "@components/CategoryIcon";
 import { SensorSymbol } from "@components/SensorSymbol";
+import { InteractiveMapProps } from "react-map-gl/src/components/interactive-map";
 
 interface SumbitDataType {
   name: string;
@@ -68,17 +69,17 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
 }) => {
   const {
     control,
+    setValue,
     handleSubmit,
     formState: { errors },
   } = useForm<SumbitDataType>({
     resolver: yupResolver(formSchema),
   });
-  const [latitude, setLatitude] = useState<number>(
-    defaultValues?.latitude || DEFAULT_LAT
-  );
-  const [longitude, setLongitude] = useState<number>(
-    defaultValues?.longitude || DEFAULT_LNG
-  );
+  const [viewport, setViewport] = useState<Partial<InteractiveMapProps>>({
+    latitude: defaultValues?.latitude || DEFAULT_LAT,
+    longitude: defaultValues?.longitude || DEFAULT_LNG,
+    zoom: 12,
+  });
   const {
     categories,
     isLoading: isLoadingCategories,
@@ -206,15 +207,18 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
             <Controller
               name='latitude'
               control={control}
-              defaultValue={latitude}
+              defaultValue={viewport.latitude}
               render={({ field }) => (
                 <FormTextInput
                   {...field}
                   onChange={evt => {
                     field.onChange(evt);
-                    setLatitude(
-                      Number.parseFloat(`${field.value}`.slice(0, 10))
-                    );
+                    setViewport({
+                      ...viewport,
+                      latitude: Number.parseFloat(
+                        `${field.value}`.slice(0, 10)
+                      ),
+                    });
                   }}
                   label='Latitude'
                   placeholder={`${DEFAULT_LAT}`}
@@ -230,15 +234,18 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
             <Controller
               name='longitude'
               control={control}
-              defaultValue={longitude}
+              defaultValue={viewport.longitude}
               render={({ field }) => (
                 <FormTextInput
                   {...field}
                   onChange={evt => {
                     field.onChange(evt);
-                    setLongitude(
-                      Number.parseFloat(`${field.value}`.slice(0, 10))
-                    );
+                    setViewport({
+                      ...viewport,
+                      longitude: Number.parseFloat(
+                        `${field.value}`.slice(0, 10)
+                      ),
+                    });
                   }}
                   label='Longitude'
                   placeholder={`${DEFAULT_LNG}`}
@@ -258,14 +265,17 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
             className='mt-[-25px] relative border border-gray-200 w-[calc(100%-1px)]'
           >
             <PreviewMap
-              viewport={{
-                latitude: latitude || DEFAULT_LAT,
-                longitude: longitude || DEFAULT_LNG,
-              }}
+              interactive
+              viewport={viewport}
               mapWidth='100%'
               mapHeight='200px'
               withMapLabels
               className='pointer-events-none'
+              onViewportChange={viewport => {
+                setViewport(viewport);
+                setValue("latitude", viewport.latitude);
+                setValue("longitude", viewport.longitude);
+              }}
             />
             <span className='w-3 h-3 rounded-full bg-blue absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2' />
           </fieldset>
