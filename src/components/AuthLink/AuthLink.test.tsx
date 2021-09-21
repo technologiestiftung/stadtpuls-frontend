@@ -91,12 +91,10 @@ describe("component AuthLink while logged in", () => {
         <AuthLink />
       </AuthProvider>
     );
-    const projectsLink = screen.getByText(/Neues Projekt/gi);
     const accountLink = screen.getByText(/Account/gi);
     const logoutLink = screen.getByText(/Abmelden/gi);
 
     await waitFor(() => {
-      expect(projectsLink).toBeInTheDocument();
       expect(accountLink).toBeInTheDocument();
       expect(logoutLink).toBeInTheDocument();
     });
