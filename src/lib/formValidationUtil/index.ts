@@ -54,11 +54,15 @@ export const requiredUsernameValidation = yup
   )
   .required("Sie müssen einen Nutzernamen angeben");
 
-export const requiredDeviceId = yup
-  .string()
-  .min(3, "Min. 3 Zeichen")
-  .max(36, "Max. 36 Zeichen")
-  .required("Device-ID ist erforderlich");
+export const requiredTTNDeviceIDValidation = yup.string().when("integration", {
+  is: "ttn",
+  then: yup
+    .string()
+    .min(3, "Min. 3 Zeichen")
+    .max(36, "Max. 36 Zeichen")
+    .required("Device-ID ist erforderlich"),
+  otherwise: yup.string().optional(),
+});
 
 export const requiredDeviceName = yup
   .string()

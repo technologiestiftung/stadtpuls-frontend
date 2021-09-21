@@ -1,4 +1,4 @@
-// import * as yup from "yup";
+import * as yup from "yup";
 import {
   requiredEmailValidation,
   requiredUsernameValidation,
@@ -6,7 +6,7 @@ import {
   requiredSensorCategoryValidation,
   requiredSensorDescriptionValidation,
   requiredSensorIntegrationValidation,
-  requiredDeviceId,
+  requiredTTNDeviceIDValidation,
   requiredLatitude,
   requiredLongitude,
 } from ".";
@@ -125,16 +125,23 @@ describe("requiredUsernameValidation validation", () => {
   });
 });
 
-describe("requiredDeviceId validation", () => {
-  it("should not be valid if empty", async () => {
-    const isValid = await requiredDeviceId.isValid("");
+describe("requiredTTNDeviceIDValidation validation", () => {
+  const formSchema = yup.object().shape({
+    integration: requiredSensorIntegrationValidation,
+    ttnDeviceId: requiredTTNDeviceIDValidation,
+  });
+  it("should not be valid if empty and integration is ttn", async () => {
+    const isValid = await formSchema.isValid({
+      integration: "ttn",
+      ttnDeviceId: "",
+    });
     expect(isValid).toBe(false);
   });
-});
-
-describe("requiredDeviceName validation", () => {
-  it("should not be valid if smaller than 3 chars", async () => {
-    const isValid = await requiredDeviceId.isValid("12");
-    expect(isValid).toBe(false);
+  it("should be valid if empty and integration is http", async () => {
+    const isValid = await formSchema.isValid({
+      integration: "http",
+      ttnDeviceId: "",
+    });
+    expect(isValid).toBe(true);
   });
 });

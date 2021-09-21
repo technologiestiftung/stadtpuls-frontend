@@ -11,7 +11,8 @@ const baseTestData = {
 const successTestData = {
   categoryId: 1,
   description: "A description",
-  integration: "http",
+  integration: "http" as const,
+  ttnDeviceId: undefined,
   latitude: 48.8586383,
   longitude: 2.2946208,
   name: "A title",
@@ -81,7 +82,7 @@ describe("EditAddSensorModal component", () => {
     expect(integrationLabel).toBeInTheDocument();
 
     const integrationField = screen.getByRole("button", {
-      name: "Integration Wie möchtest du dein Sensor integrieren?",
+      name: "Integration HTTP",
     });
     expect(integrationField).toBeInTheDocument();
   });

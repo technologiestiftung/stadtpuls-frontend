@@ -1,4 +1,4 @@
-import { definitions, parameters } from "@common/types/supabase";
+import { definitions } from "@common/types/supabase";
 import { Button, Submit } from "@components/Button";
 import * as yup from "yup";
 import { FormTextInput } from "@components/FormTextInput";
@@ -12,6 +12,7 @@ import {
   requiredSensorCategoryValidation,
   requiredSensorIntegrationValidation,
   requiredSensorDescriptionValidation,
+  requiredTTNDeviceIDValidation,
 } from "@lib/formValidationUtil";
 import React, { FC, useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -23,15 +24,26 @@ import { CategoryIcon } from "@components/CategoryIcon";
 import { SensorSymbol } from "@components/SensorSymbol";
 import { InteractiveMapProps } from "react-map-gl/src/components/interactive-map";
 
-interface SumbitDataType {
+interface CommonDataType {
   name: string;
   symbolId: number;
   description: string;
   categoryId: definitions["categories"]["id"];
   latitude: number;
   longitude: number;
-  integration: parameters["rowFilter.sensors.connection_type"];
 }
+
+interface HTTPDataType extends CommonDataType {
+  integration: "http";
+  ttnDeviceId: undefined;
+}
+
+interface TTNDataType extends CommonDataType {
+  integration: "ttn";
+  ttnDeviceId: string;
+}
+
+type SumbitDataType = HTTPDataType | TTNDataType;
 
 export interface EditAddSensorModalPropType {
   title: string;
@@ -52,6 +64,7 @@ const formSchema = yup.object().shape({
   categoryId: requiredSensorCategoryValidation,
   description: requiredSensorDescriptionValidation,
   integration: requiredSensorIntegrationValidation,
+  ttnDeviceId: requiredTTNDeviceIDValidation,
 });
 
 const DEFAULT_LAT = 52.5;
@@ -75,6 +88,9 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
   } = useForm<SumbitDataType>({
     resolver: yupResolver(formSchema),
   });
+  const [integration, setIntegration] = useState(
+    defaultValues.integration || "http"
+  );
   const [viewport, setViewport] = useState<Partial<InteractiveMapProps>>({
     latitude: defaultValues?.latitude || DEFAULT_LAT,
     longitude: defaultValues?.longitude || DEFAULT_LNG,
@@ -183,24 +199,44 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
               />
             )}
           />
-          <Controller
-            name='integration'
-            control={control}
-            defaultValue={defaultValues?.integration}
-            render={({ field }) => (
-              <FormListBox
-                {...field}
-                label='Integration'
-                placeholder='Wie möchtest du dein Sensor integrieren?'
-                options={[
-                  { name: "HTTP", value: "http" },
-                  { name: "TTN", value: "ttn" },
-                ]}
-                errors={formatError(errors.integration?.message)}
-                className='xs:col-span-2 sm:col-span-1'
+          <div className='flex flex-col gap-2 xs:col-span-2 sm:col-span-1'>
+            <Controller
+              name='integration'
+              control={control}
+              defaultValue={integration}
+              render={({ field }) => (
+                <FormListBox
+                  {...field}
+                  onChange={evt => {
+                    field.onChange(evt);
+                    setIntegration(field.value === "ttn" ? "http" : "ttn");
+                  }}
+                  label='Integration'
+                  placeholder='Wie möchtest du dein Sensor integrieren?'
+                  options={[
+                    { name: "HTTP", value: "http" },
+                    { name: "TTN", value: "ttn" },
+                  ]}
+                  errors={formatError(errors.integration?.message)}
+                />
+              )}
+            />
+            {integration === "ttn" && (
+              <Controller
+                name='ttnDeviceId'
+                control={control}
+                render={({ field }) => (
+                  <FormTextInput
+                    {...field}
+                    label='TTN Device ID'
+                    placeholder='lorawan-heltec-24b'
+                    type='text'
+                    errors={formatError(errors.ttnDeviceId?.message)}
+                  />
+                )}
               />
             )}
-          />
+          </div>
         </fieldset>
         <div>
           <fieldset className='grid grid-cols-2'>
