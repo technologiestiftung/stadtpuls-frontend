@@ -33,7 +33,7 @@ const createSensor = (key: number): DevicesType => ({
   ],
 });
 
-describe("component SensorsListWithData", () => {
+describe.skip("component SensorsListWithData", () => {
   it("returns the most recent date", () => {
     render(<SensorsList {...defaults} devices={[createSensor(1)]} />);
     const lastRecordedAt = screen.getByText(/Vor 5 Minuten/i);
