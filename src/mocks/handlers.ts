@@ -4,7 +4,6 @@ import { parsedSensors, sensors } from "./supabaseData/sensors";
 import { createApiUrl } from "../lib/requests/createApiUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
 import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
-import { UserProfilesType } from "@common/types/supabase_DEPRECATED";
 import { definitions } from "@common/types/supabase";
 import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
@@ -272,8 +271,8 @@ const supabaseHandlers = [
   rest.post(createApiUrl("/rpc/delete_user"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"));
   }),
-  rest.patch<UserProfilesType>(
-    createApiUrl("/userprofiles"),
+  rest.patch<definitions["user_profiles"]>(
+    createApiUrl("/user_profiles"),
     (req, res, ctx) => {
       const query = req.url.searchParams;
       const payload = req.body;
@@ -287,7 +286,7 @@ const supabaseHandlers = [
             {
               ...payload,
               id,
-              createdAt,
+              created_at: createdAt,
               role: "maker",
             },
           ])

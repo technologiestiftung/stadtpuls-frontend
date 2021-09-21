@@ -1,13 +1,15 @@
 import { DateValueType } from "../../common/interfaces";
 import moment from "moment";
-import { RecordsType } from "@common/types/supabase_DEPRECATED";
+import { definitions } from "@common/types/supabase";
 moment.locale("de-DE");
 
-export const createDateValueArray = (input: RecordsType[]): DateValueType[] => {
-  const dateValueArray = input.map(({ measurements, recordedAt }) => ({
+export const createDateValueArray = (
+  input: definitions["records"][]
+): DateValueType[] => {
+  const dateValueArray = input.map(({ measurements, recorded_at }) => ({
     value: (measurements && measurements[0]) || 0,
-    date: recordedAt,
-    time: new Date(recordedAt).getTime(),
+    date: recorded_at,
+    time: new Date(recorded_at).getTime(),
   }));
   const sortedDateValueArray = dateValueArray.sort((a, b) => {
     return a.time - b.time;

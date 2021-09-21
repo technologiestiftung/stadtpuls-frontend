@@ -1,6 +1,6 @@
 import useSWR, { mutate } from "swr";
 import { supabase } from "@auth/supabase";
-import { AuthenticatedUsersType } from "@common/types/supabase_DEPRECATED";
+import { AuthenticatedUsersType } from "@common/types/authenticated_user";
 import { useAuth } from "@auth/Auth";
 import {
   createSensorLocally,
