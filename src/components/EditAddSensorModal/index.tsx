@@ -13,12 +13,14 @@ import {
   requiredSensorIntegrationValidation,
   requiredSensorDescriptionValidation,
 } from "@lib/formValidationUtil";
-import { FC } from "react";
+import React, { FC, useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormTextarea } from "@components/FormTextarea";
-import { FormSelect } from "@components/FormSelect";
+import { FormListBox } from "@components/FormListBox";
 import { useSensorCategories } from "@lib/hooks/useSensorCategories";
 import { ProjectPreviewMap } from "@components/ProjectPreviewMap";
+import { CategoryIcon } from "@components/CategoryIcon";
+import { SensorSymbol } from "@components/SensorSymbol";
 
 interface SumbitDataType {
   name: string;
@@ -51,6 +53,9 @@ const formSchema = yup.object().shape({
   integration: requiredSensorIntegrationValidation,
 });
 
+const DEFAULT_LAT = 52.5;
+const DEFAULT_LNG = 13.39;
+
 export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
   title,
   defaultValues = {},
@@ -68,6 +73,12 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
   } = useForm<SumbitDataType>({
     resolver: yupResolver(formSchema),
   });
+  const [latitude, setLatitude] = useState<number>(
+    defaultValues?.latitude || DEFAULT_LAT
+  );
+  const [longitude, setLongitude] = useState<number>(
+    defaultValues?.longitude || DEFAULT_LNG
+  );
   const {
     categories,
     isLoading: isLoadingCategories,
@@ -89,7 +100,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
         )}
         className='flex flex-col gap-2 sm:gap-4'
       >
-        <fieldset className='xs:grid xs:grid-cols-6 gap-4'>
+        <fieldset className='xs:grid xs:grid-cols-12 gap-4'>
           <Controller
             name='name'
             control={control}
@@ -101,7 +112,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
                 placeholder='Wie soll dein Sensor heißen?'
                 type='text'
                 errors={formatError(errors.name?.message)}
-                containerClassName='xs:col-span-4'
+                containerClassName='xs:col-span-9'
               />
             )}
           />
@@ -110,15 +121,20 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
             control={control}
             defaultValue={defaultValues?.symbolId}
             render={({ field }) => (
-              <FormSelect
+              <FormListBox
                 {...field}
                 label='Symbol'
+                containsIconList
                 options={Array.from(Array(32)).map((_, i) => ({
-                  name: `Symbol ${i + 1}`,
+                  name: (
+                    <span className='w-6 h-6 float-left inline-block'>
+                      <SensorSymbol symbol={i + 1} />
+                    </span>
+                  ),
                   value: i + 1,
                 }))}
                 errors={formatError(errors.symbolId?.message)}
-                className='xs:col-span-2'
+                className='xs:col-span-3'
               />
             )}
           />
@@ -142,16 +158,22 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
             control={control}
             defaultValue={defaultValues?.categoryId}
             render={({ field }) => (
-              <FormSelect
+              <FormListBox
                 {...field}
                 label='Kategorie'
+                placeholder='Wähle eine Kategorie'
                 options={
                   (categories &&
                     !isLoadingCategories &&
                     !categoriesError &&
                     categories.map(category => ({
                       value: category.id,
-                      name: category.name,
+                      name: (
+                        <span className='flex items-center gap-2'>
+                          <CategoryIcon categoryId={category.id} />
+                          {category.name}
+                        </span>
+                      ),
                     }))) ||
                   []
                 }
@@ -165,7 +187,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
             control={control}
             defaultValue={defaultValues?.integration}
             render={({ field }) => (
-              <FormSelect
+              <FormListBox
                 {...field}
                 label='Integration'
                 placeholder='Wie möchtest du dein Sensor integrieren?'
@@ -184,30 +206,48 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
             <Controller
               name='latitude'
               control={control}
-              defaultValue={defaultValues?.latitude}
+              defaultValue={latitude}
               render={({ field }) => (
                 <FormTextInput
                   {...field}
+                  onChange={evt => {
+                    field.onChange(evt);
+                    setLatitude(
+                      Number.parseFloat(`${field.value}`.slice(0, 10))
+                    );
+                  }}
                   label='Latitude'
-                  placeholder='12.648582'
-                  type='text'
+                  placeholder={`${DEFAULT_LAT}`}
+                  type='number'
                   errors={formatError(errors.latitude?.message)}
                   className='relative z-0 focus:z-10'
+                  min={-90}
+                  max={90}
+                  step={1 / 200}
                 />
               )}
             />
             <Controller
               name='longitude'
               control={control}
-              defaultValue={defaultValues?.longitude}
+              defaultValue={longitude}
               render={({ field }) => (
                 <FormTextInput
                   {...field}
+                  onChange={evt => {
+                    field.onChange(evt);
+                    setLongitude(
+                      Number.parseFloat(`${field.value}`.slice(0, 10))
+                    );
+                  }}
                   label='Longitude'
-                  placeholder='14.684681'
-                  type='text'
+                  placeholder={`${DEFAULT_LNG}`}
+                  type='number'
                   errors={formatError(errors.longitude?.message)}
                   className='ml-[-1px] relative z-0 focus:z-10'
+                  min={-180}
+                  max={180}
+                  step={1 / 400}
                 />
               )}
             />
@@ -218,7 +258,10 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
             className='mt-[-25px] relative border border-gray-200 w-[calc(100%-1px)]'
           >
             <ProjectPreviewMap
-              viewport={{ latitude: 52.484059, longitude: 13.387858 }}
+              viewport={{
+                latitude: latitude || DEFAULT_LAT,
+                longitude: longitude || DEFAULT_LNG,
+              }}
               mapWidth='100%'
               mapHeight='200px'
               withMapLabels

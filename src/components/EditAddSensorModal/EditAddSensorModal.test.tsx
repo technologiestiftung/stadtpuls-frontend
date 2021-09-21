@@ -37,8 +37,8 @@ describe("EditAddSensorModal component", () => {
     const sensorIconLabel = screen.getByText("Kategorie");
     expect(sensorIconLabel).toBeInTheDocument();
 
-    const sensorIconField = screen.getByRole("combobox", {
-      name: "Kategorie",
+    const sensorIconField = screen.getByRole("button", {
+      name: "Symbol Bitte wähle eine Option",
     });
     expect(sensorIconField).toBeInTheDocument();
 
@@ -53,21 +53,23 @@ describe("EditAddSensorModal component", () => {
     const categoryLabel = screen.getByText("Kategorie");
     expect(categoryLabel).toBeInTheDocument();
 
-    const categoryField = screen.getByRole("combobox", { name: "Kategorie" });
+    const categoryField = screen.getByRole("button", {
+      name: "Kategorie Wähle eine Kategorie",
+    });
     expect(categoryField).toBeInTheDocument();
 
     // LATITUDE INPUT
     const latLabel = screen.getByText("Latitude");
     expect(latLabel).toBeInTheDocument();
 
-    const latField = screen.getByRole("textbox", { name: "Latitude" });
+    const latField = screen.getByRole("spinbutton", { name: "Latitude" });
     expect(latField).toBeInTheDocument();
 
     // LONGITUDE INPUT
     const lngLabel = screen.getByText("Longitude");
     expect(lngLabel).toBeInTheDocument();
 
-    const lngField = screen.getByRole("textbox", { name: "Longitude" });
+    const lngField = screen.getByRole("spinbutton", { name: "Longitude" });
     expect(lngField).toBeInTheDocument();
 
     // LAT/LNG MAP
@@ -78,8 +80,8 @@ describe("EditAddSensorModal component", () => {
     const integrationLabel = screen.getByText("Integration");
     expect(integrationLabel).toBeInTheDocument();
 
-    const integrationField = screen.getByRole("combobox", {
-      name: "Integration",
+    const integrationField = screen.getByRole("button", {
+      name: "Integration Wie möchtest du dein Sensor integrieren?",
     });
     expect(integrationField).toBeInTheDocument();
   });
