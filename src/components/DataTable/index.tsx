@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { RecordType } from "@common/interfaces";
-import { createTimeOutput } from "@lib/dateUtil";
-import { createCSVStructure, downloadCSV } from "@lib/downloadCsvUtil";
-import colors from "../../style/colors";
-import { Button } from "@components/Button";
+import moment from "moment";
 
 interface DataTableRowType {
-  id: string | number;
-  value: string | number;
-  recordedAt: string;
+  id: number;
+  value: number;
+  date: moment.Moment;
 }
 export interface DataTableType {
   data: DataTableRowType[];
-  title: string | undefined;
 }
 
-export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
+export const DataTable: React.FC<DataTableType> = ({ data }) => {
   const [displayedData, setDisplayedData] = useState<DataTableRowType[]>([]);
 
   const [
@@ -27,91 +22,115 @@ export const DataTable: React.FC<DataTableType> = ({ data, title }) => {
     if (!data) return;
 
     setDisplayedData(
-      data
-        .sort((a, b) => Date.parse(b.recordedAt) - Date.parse(a.recordedAt))
-        .filter((_record, i: number) => i < numberOfRecordsToDisplay)
+      data.filter((_record, i: number) => i < numberOfRecordsToDisplay)
     );
   }, [data, numberOfRecordsToDisplay]);
-
-  const handleDownload = (): void => {
-    const CSVData = createCSVStructure(data as RecordType[]);
-    downloadCSV(CSVData, title);
-  };
 
   const handleLoadMore = (): void => {
     setNumberOfRecordsToDisplay(numberOfRecordsToDisplay + 500);
   };
 
   return (
-    <div className='h-[500px] overflow-y-scroll'>
-      <div
-        className={[
-          "grid grid-cols-[auto,max-content]",
-          "bg-white",
-          "p-3",
-          "border-b border-gray-100",
-          "sticky top-0",
-        ].join(" ")}
-      >
-        <div>{title}</div>
-        <div>
-          <Button onClick={handleDownload}>Download</Button>
-        </div>
-      </div>
-      <div
-        className={["p-3", "flex flex-wrap justify-center", "bg-white"].join(
-          " "
-        )}
-      >
-        <table className='w-full p-2 border-collapse'>
-          <thead>
-            <tr className='text-gray-600'>
-              <th
-                className={["py-2 px-1", "font-normal", "text-left"].join(" ")}
+    <div
+      className={[
+        "border border-gray-200 shadow",
+        "h-[500px] flex flex-wrap justify-center",
+        "bg-white relative overflow-y-scroll",
+      ].join(" ")}
+    >
+      <table className='h-[500px] w-full p-2 border-collapse'>
+        <thead className='sticky top-0 bottom-auto'>
+          <tr className=''>
+            <th className='text-left p-0'>
+              <span
+                className={[
+                  "block",
+                  "text-left font-headline text-lg",
+                  "py-3 px-4 font-normal shadow",
+                  "border-r border-gray-200",
+                  "border-b bg-white border-gray-200",
+                ].join(" ")}
               >
                 Datum
-              </th>
-              <th
-                className={["py-2 px-1", "font-normal", "text-left"].join(" ")}
+              </span>
+            </th>
+            <th className='text-left p-0'>
+              <span
+                className={[
+                  "block",
+                  "text-left font-headline text-lg",
+                  "py-3 px-4 font-normal shadow",
+                  "border-r border-gray-200",
+                  "border-b bg-white border-gray-200",
+                ].join(" ")}
               >
-                Uhrzeit (UTC)
-              </th>
-              <th
-                className={["py-2 px-1", "font-normal", "text-right"].join(" ")}
+                Uhrzeit (ISO)
+              </span>
+            </th>
+            <th className='text-left p-0'>
+              <span
+                className={[
+                  "block",
+                  "text-left font-headline text-lg",
+                  "py-3 px-4 font-normal shadow",
+                  "border-b bg-white border-gray-200",
+                ].join(" ")}
               >
                 Wert
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {displayedData.map((record: DataTableRowType, i: number) => {
-              return (
-                <tr
-                  key={record.id}
-                  style={{
-                    backgroundColor: `${
-                      i % 2 === 0 ? colors.gray["50"] : colors.white
-                    }`,
-                  }}
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {displayedData.map((record: DataTableRowType, i: number) => {
+            return (
+              <tr
+                key={record.id}
+                className={[
+                  "font-mono",
+                  i % 2 === 0 ? "bg-white-dot-pattern" : "bg-white",
+                ].join(" ")}
+              >
+                <td className='p-0'>
+                  <span
+                    className={[
+                      "block text-left",
+                      "py-3 px-4 font-normal",
+                      "border-r border-gray-200",
+                    ].join(" ")}
+                  >
+                    {record.date.format("DD.MM.YYYY")}
+                  </span>
+                </td>
+                <td className='p-0'>
+                  <span
+                    className={[
+                      "block text-left",
+                      "py-3 px-4 font-normal",
+                      "border-r border-gray-200",
+                    ].join(" ")}
+                  >
+                    {record.date.format("HH:mm:ss")}
+                  </span>
+                </td>
+                <td
+                  className={[
+                    "px-4 py-3 border-none",
+                    "border-b border-gray-200",
+                  ].join(" ")}
                 >
-                  <td className='p-2 border-none'>
-                    {new Date(record.recordedAt).toLocaleDateString()}
-                  </td>
-                  <td className='p-2 border-none'>
-                    {createTimeOutput(new Date(record.recordedAt))}
-                  </td>
-                  <td className='p-2 border-none text-right'>{record.value}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        {data && data.length > numberOfRecordsToDisplay && (
-          <button className='mt-3' onClick={handleLoadMore}>
-            Mehr anzeigen
-          </button>
-        )}
-      </div>
+                  {record.value}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      {data && data.length > numberOfRecordsToDisplay && (
+        <button className='mt-3' onClick={handleLoadMore}>
+          Mehr anzeigen
+        </button>
+      )}
     </div>
   );
 };

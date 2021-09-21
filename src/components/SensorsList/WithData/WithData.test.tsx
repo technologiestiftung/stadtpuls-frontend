@@ -18,17 +18,17 @@ const createSensor = (key: number): DevicesType => ({
     {
       id: 1,
       deviceId: key,
-      recordedAt: moment().subtract(20, "minutes").toISOString(),
+      recordedAt: moment.parseZone().subtract(20, "minutes").toISOString(),
     },
     {
       id: 2,
       deviceId: key,
-      recordedAt: moment().subtract(10, "minutes").toISOString(),
+      recordedAt: moment.parseZone().subtract(10, "minutes").toISOString(),
     },
     {
       id: 3,
       deviceId: key,
-      recordedAt: moment().subtract(5, "minutes").toISOString(),
+      recordedAt: moment.parseZone().subtract(5, "minutes").toISOString(),
     },
   ],
 });

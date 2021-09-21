@@ -26,7 +26,7 @@ describe("DeviceLineChartFilters", () => {
   test("should have a regular tabbing flow", () => {
     render(<TestComponent />);
 
-    const [, group2] = screen.getAllByRole("group");
+    const [radio1, radio2] = screen.getAllByRole("radio");
     const [
       twentyFourHoursB,
       sevenDaysB,
@@ -35,7 +35,10 @@ describe("DeviceLineChartFilters", () => {
     ] = screen.getAllByRole("button");
     const [date1, time1, date2, time2] = screen.getAllByRole("textbox");
 
-    date1.focus();
+    radio1.focus();
+    expect(radio1).toHaveFocus();
+
+    userEvent.tab();
     expect(date1).toHaveFocus();
 
     userEvent.tab();
@@ -49,7 +52,8 @@ describe("DeviceLineChartFilters", () => {
     userEvent.tab();
     expect(time2).toHaveFocus();
 
-    fireEvent.click(group2);
+    userEvent.tab();
+    expect(radio2).toHaveFocus();
 
     userEvent.tab();
     expect(twentyFourHoursB).toHaveFocus();
@@ -103,8 +107,8 @@ describe("DeviceLineChartFilters", () => {
     fireEvent.change(time2, { target: { value: "00:01" } });
 
     expect(onDatetimeRangeChange).toHaveBeenLastCalledWith({
-      startDateTimeString: moment("2021-02-01 23:59").toISOString(),
-      endDateTimeString: moment("2021-12-24 00:01").toISOString(),
+      startDateTimeString: moment.parseZone("2021-02-01 23:59").toISOString(),
+      endDateTimeString: moment.parseZone("2021-12-24 00:01").toISOString(),
     });
   });
   test("onDatetimeRangeChange should call handler", () => {

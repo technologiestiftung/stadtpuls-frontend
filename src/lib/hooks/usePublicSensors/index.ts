@@ -35,7 +35,10 @@ export const sensorQueryString = `
 
 type SensorType = definitions["sensors"];
 export interface SensorQueryResponseType extends SensorType {
-  records: Pick<definitions["records"], "recorded_at" | "measurements">[];
+  records: Pick<
+    definitions["records"],
+    "id" | "recorded_at" | "measurements"
+  >[];
   user: Pick<definitions["user_profiles"], "name" | "display_name">;
   category: Pick<definitions["categories"], "id" | "name">;
 }

@@ -24,6 +24,10 @@ export const ProjectPreviewMap: React.FC<{
     attributionControl={false}
     className={styles.mapContainer}
   >
-    <AttributionControl compact={true} style={{ top: 8, right: 8 }} />
+    <AttributionControl
+      compact={true}
+      style={{ bottom: 8, right: 8 }}
+      className={styles.mapParent}
+    />
   </ReactMapGL>
 );

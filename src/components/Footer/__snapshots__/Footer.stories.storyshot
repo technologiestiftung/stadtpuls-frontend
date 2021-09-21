@@ -21,7 +21,7 @@ exports[`Storyshots Layout/Footer Default 1`] = `
           </span>
           <a
             aria-label="Technologiestiftung Berlin"
-            className="mt-4 block"
+            className="mt-4 block focus-offset"
             href="https://technologiestiftung-berlin.de/"
             rel="noopener noreferrer"
             target="_blank"
@@ -43,7 +43,7 @@ exports[`Storyshots Layout/Footer Default 1`] = `
           </span>
           <a
             aria-label="CityLAB Berlin"
-            className="mt-4 block"
+            className="mt-4 block focus-offset"
             href="https://www.citylab-berlin.org"
             rel="noopener noreferrer"
             target="_blank"
@@ -65,7 +65,7 @@ exports[`Storyshots Layout/Footer Default 1`] = `
           </span>
           <a
             aria-label="berlin.de"
-            className="mt-4 block"
+            className="mt-4 block focus-offset"
             href="https://www.berlin.de/"
             rel="noopener noreferrer"
             target="_blank"
@@ -102,7 +102,7 @@ exports[`Storyshots Layout/Footer Default 1`] = `
       >
         <li>
           <a
-            className="text-sm text-gray-700"
+            className="text-sm text-gray-700 focus-offset"
             href="https://www.technologiestiftung-berlin.de/de/impressum/"
             rel="noopener noreferrer"
             target="_blank"
@@ -114,7 +114,7 @@ exports[`Storyshots Layout/Footer Default 1`] = `
           className="ml-4"
         >
           <a
-            className="text-sm text-gray-700"
+            className="text-sm text-gray-700 focus-offset"
             href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
             rel="noopener noreferrer"
             target="_blank"

@@ -34,11 +34,25 @@ describe("RadioFieldset component", () => {
 
     expect(onSelect).toHaveBeenCalledTimes(1);
   });
+  test("should render a checked radio button", () => {
+    render(<RadioFieldset isSelected label='Test' name='test' />);
+
+    const radio = screen.queryByRole("radio");
+    expect(radio).toBeInTheDocument();
+    expect(radio?.getAttribute("checked")).toBeDefined();
+  });
+  test("should render a unchecked radio button", () => {
+    render(<RadioFieldset isSelected={false} label='Test' name='test' />);
+
+    const radio = screen.queryByRole("radio");
+    expect(radio).toBeInTheDocument();
+    expect(radio?.getAttribute("checked")).toBeNull();
+  });
   test("should have a fallback onSelect if none provided", () => {
     render(<RadioFieldset isSelected={false} label='Test' name='test' />);
 
-    const fieldset = screen.getByRole("group");
+    const radio = screen.getByRole("radio");
 
-    fireEvent.click(fieldset);
+    fireEvent.click(radio);
   });
 });

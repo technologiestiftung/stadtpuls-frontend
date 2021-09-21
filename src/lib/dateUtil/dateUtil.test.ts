@@ -1,4 +1,4 @@
-import { createTimeOutput, createDateValueArray } from ".";
+import { createDateValueArray } from ".";
 
 describe("createDateValueArray", () => {
   it("should return an array", () => {
@@ -21,7 +21,9 @@ describe("createDateValueArray", () => {
         measurements: [20],
       },
     ]);
-    expect(dateValueArray[0].date).toBe("2021-04-08T20:32:49.796Z");
+    expect(dateValueArray[0].date.toISOString()).toBe(
+      "2021-04-08T20:32:49.796Z"
+    );
   });
   it("should return an array sorted by Date", () => {
     const dateValueArray = createDateValueArray([
@@ -47,20 +49,5 @@ describe("createDateValueArray", () => {
     expect(dateValueArray[0].value).toBe(1);
     expect(dateValueArray[1].value).toBe(2);
     expect(dateValueArray[2].value).toBe(3);
-  });
-});
-
-describe("createTimeOutput", () => {
-  it("should format a timestamp into a string", () => {
-    const formatttedTime = createTimeOutput(
-      new Date("2021-01-08T20:32:49.796Z")
-    );
-    expect(formatttedTime).toBe("20:32:49");
-  });
-  it("should add leading 0 to every unit", () => {
-    const formatttedTime = createTimeOutput(
-      new Date("2021-01-08T01:02:03.796Z")
-    );
-    expect(formatttedTime).toBe("01:02:03");
   });
 });

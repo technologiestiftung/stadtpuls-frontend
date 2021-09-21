@@ -34,7 +34,7 @@ const Template: Story<DeviceLineChartFiltersPropType> = ({
           setCurrentDatetimeRange(dateTimeRange);
           onDatetimeRangeChange(dateTimeRange);
         }}
-        today={moment("2021-08-05T10:23:01.908Z")}
+        today={moment.parseZone("2021-08-05T10:23:01.908Z")}
       />
     </div>
   );

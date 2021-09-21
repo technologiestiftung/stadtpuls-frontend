@@ -2,53 +2,47 @@
 
 exports[`Storyshots UI Elements/DataTable Default 1`] = `
 <div
-  className="h-[500px] overflow-y-scroll"
+  className="border border-gray-200 shadow h-[500px] flex flex-wrap justify-center bg-white relative overflow-y-scroll"
 >
-  <div
-    className="grid grid-cols-[auto,max-content] bg-white p-3 border-b border-gray-100 sticky top-0"
+  <table
+    className="h-[500px] w-full p-2 border-collapse"
   >
-    <div>
-      My supa dupa table
-    </div>
-    <div>
-      <button
-        className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
-        onClick={[Function]}
-        type="button"
-      >
-        Download
-      </button>
-    </div>
-  </div>
-  <div
-    className="p-3 flex flex-wrap justify-center bg-white"
-  >
-    <table
-      className="w-full p-2 border-collapse"
+    <thead
+      className="sticky top-0 bottom-auto"
     >
-      <thead>
-        <tr
-          className="text-gray-600"
+      <tr
+        className=""
+      >
+        <th
+          className="text-left p-0"
         >
-          <th
-            className="py-2 px-1 font-normal text-left"
+          <span
+            className="block text-left font-headline text-lg py-3 px-4 font-normal shadow border-r border-gray-200 border-b bg-white border-gray-200"
           >
             Datum
-          </th>
-          <th
-            className="py-2 px-1 font-normal text-left"
+          </span>
+        </th>
+        <th
+          className="text-left p-0"
+        >
+          <span
+            className="block text-left font-headline text-lg py-3 px-4 font-normal shadow border-r border-gray-200 border-b bg-white border-gray-200"
           >
-            Uhrzeit (UTC)
-          </th>
-          <th
-            className="py-2 px-1 font-normal text-right"
+            Uhrzeit (ISO)
+          </span>
+        </th>
+        <th
+          className="text-left p-0"
+        >
+          <span
+            className="block text-left font-headline text-lg py-3 px-4 font-normal shadow border-b bg-white border-gray-200"
           >
             Wert
-          </th>
-        </tr>
-      </thead>
-      <tbody />
-    </table>
-  </div>
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
 </div>
 `;

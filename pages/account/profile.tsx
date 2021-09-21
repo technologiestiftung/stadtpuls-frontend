@@ -45,7 +45,7 @@ const UserPage: FC = () => {
         <UserInfoCard
           username={name || ""}
           email={email || ""}
-          registerDate={moment(created_at).format("Do MMMM YYYY")}
+          registerDate={moment.parseZone(created_at).format("Do MMMM YYYY")}
           onUserDelete={() => {
             void router.push("/");
             void deleteUser();

@@ -9,10 +9,10 @@ import { ProjectPreviewMap } from "@components/ProjectPreviewMap";
 import { Button } from "@components/Button";
 
 export interface SensorPageHeaderPropType {
-  id: string;
+  id: string | number;
   name: string;
   symbol: number;
-  category: { id: number; name: string; description: string };
+  category: { id: number; name: string; description?: string };
   description?: string;
   author: {
     username: string;
@@ -28,7 +28,7 @@ const MapBackground: FC<Pick<SensorPageHeaderPropType, "geocoordinates">> = ({
 }) => (
   <div
     className={[
-      "md:absolute z-0 inset-0 bg-black",
+      "md:absolute z-0 inset-0 bg-purple bg-opacity-5",
       "grid md:grid-cols-2 h-80 md:h-auto",
     ].join(" ")}
   >
@@ -62,6 +62,7 @@ const UserLink: FC<Pick<SensorPageHeaderPropType, "author">> = ({ author }) => (
       className={[
         "flex gap-2 items-center leading-tight",
         "hover:text-purple transition",
+        "focus-offset",
         "truncate",
       ].join(" ")}
     >
@@ -93,6 +94,7 @@ const BackLink: FC = () => (
       className={[
         "text-blue hover:text-purple transition items-center",
         "font-bold flex gap-2 mb-8 text-sm sm:text-base",
+        "focus-offset",
       ].join(" ")}
     >
       <ArrowBackIcon /> Zurück zu Sensoren
@@ -132,11 +134,9 @@ export const SensorPageHeader: FC<SensorPageHeaderPropType> = ({
     <div className='bg-gray-50 relative'>
       <MapBackground geocoordinates={geocoordinates} />
       <div
-        className={["container max-w-screen-xl", "mx-auto relative z-10"].join(
-          " "
-        )}
+        className={["container max-w-8xl", "mx-auto relative z-10"].join(" ")}
       >
-        <aside className='md:w-1/2 bg-white px-4 py-8 md:py-20 md:pr-12 md:max-w-[480px]'>
+        <aside className='md:w-1/2 bg-white px-4 py-8 md:py-32 md:pr-12 md:max-w-[560px]'>
           <BackLink />
           <Title name={name} symbol={symbol} />
           <div className='flex gap-4'>

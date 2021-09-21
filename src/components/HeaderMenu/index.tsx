@@ -32,7 +32,7 @@ const HeaderLink: FC<MenuLinkPropType> = ({
     <ActiveLink activeClassName='navigation-link-active' href={href}>
       <a
         href={href}
-        className='navigation-link p-4 block sm:inline'
+        className='navigation-link p-4 block sm:inline focus-offset'
         onClick={onClick}
       >
         {text}

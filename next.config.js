@@ -1,6 +1,7 @@
 const withMdxEnhanced = require("next-mdx-enhanced");
+const withImages = require('next-images');
 
-module.exports = withMdxEnhanced({
+module.exports = withImages(withMdxEnhanced({
   layoutPath: "src/components/layouts",
   defaultLayout: true,
   fileExtensions: ["mdx"],
@@ -36,4 +37,4 @@ module.exports = withMdxEnhanced({
       },
     ];
   },
-});
+}));

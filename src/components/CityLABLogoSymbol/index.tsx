@@ -10,6 +10,7 @@ export const CityLABLogoSymbol = forwardRef<HTMLAnchorElement>(
       rel='noopener noreferrer'
       aria-label='Website des CityLAB Berlin'
       ref={ref}
+      className='focus-offset'
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'

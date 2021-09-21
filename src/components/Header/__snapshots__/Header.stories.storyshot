@@ -5,10 +5,10 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
   className="w-full z-50 fixed top-0 border-t-0"
 >
   <nav
-    className="w-full border transition border-t-0 flex place-content-between container mx-auto max-w-8xl bg-black-dot-pattern border-purple text-white"
+    className="w-full border transition border-t-0 flex place-content-between true bg-black-dot-pattern border-purple text-white"
   >
     <a
-      className="w-max flex items-center p-4 sm:border-r transition border-purple"
+      className="w-max flex items-center p-4 sm:border-r transition focus-offset border-purple"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -51,7 +51,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
               className="sm:hidden sm:inline-block text-xl sm:text-base"
             >
               <a
-                className="navigation-link-active navigation-link p-4 block sm:inline"
+                className="navigation-link-active navigation-link p-4 block sm:inline focus-offset"
                 href="/"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -63,7 +63,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
               className=" sm:inline-block text-xl sm:text-base"
             >
               <a
-                className="navigation-link p-4 block sm:inline"
+                className="navigation-link p-4 block sm:inline focus-offset"
                 href="/sensors"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -75,7 +75,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
               className=" sm:inline-block text-xl sm:text-base"
             >
               <a
-                className="navigation-link p-4 block sm:inline"
+                className="navigation-link p-4 block sm:inline focus-offset"
                 href="/docs"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -90,6 +90,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
         className="group"
       >
         <a
+          className="focus-offset"
           href="/signin"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -113,6 +114,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
       </span>
       <a
         aria-label="Website des CityLAB Berlin"
+        className="focus-offset"
         href="https://www.citylab-berlin.org"
         rel="noopener noreferrer"
         target="_blank"
@@ -151,10 +153,10 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
   className="w-full z-50 fixed top-0 border-t-0"
 >
   <nav
-    className="w-full border transition border-t-0 flex place-content-between container mx-auto max-w-8xl bg-black-dot-pattern border-purple text-white"
+    className="w-full border transition border-t-0 flex place-content-between true bg-black-dot-pattern border-purple text-white"
   >
     <a
-      className="w-max flex items-center p-4 sm:border-r transition border-purple"
+      className="w-max flex items-center p-4 sm:border-r transition focus-offset border-purple"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -197,7 +199,7 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
               className="sm:hidden sm:inline-block text-xl sm:text-base"
             >
               <a
-                className="navigation-link-active navigation-link p-4 block sm:inline"
+                className="navigation-link-active navigation-link p-4 block sm:inline focus-offset"
                 href="/"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -209,7 +211,7 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
               className=" sm:inline-block text-xl sm:text-base"
             >
               <a
-                className="navigation-link p-4 block sm:inline"
+                className="navigation-link p-4 block sm:inline focus-offset"
                 href="/sensors"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -221,7 +223,7 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
               className=" sm:inline-block text-xl sm:text-base"
             >
               <a
-                className="navigation-link p-4 block sm:inline"
+                className="navigation-link p-4 block sm:inline focus-offset"
                 href="/docs"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -236,6 +238,7 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
         className="group"
       >
         <a
+          className="focus-offset"
           href="/signin"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -259,6 +262,7 @@ exports[`Storyshots Layout/Header Logged Out 1`] = `
       </span>
       <a
         aria-label="Website des CityLAB Berlin"
+        className="focus-offset"
         href="https://www.citylab-berlin.org"
         rel="noopener noreferrer"
         target="_blank"
