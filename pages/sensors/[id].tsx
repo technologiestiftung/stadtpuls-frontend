@@ -151,7 +151,7 @@ const SensorPage: FC<{
                     },
                   },
                   {
-                    id: "all",
+                    id: "filtered",
                     title: "Gefilterte Daten",
                     disabled: records.length === 0,
                     onClick: () =>
