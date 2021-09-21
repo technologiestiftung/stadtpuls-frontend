@@ -18,13 +18,17 @@ export const getServerSideProps: GetServerSideProps = async () => {
     const sensorsData = await getPublicSensors();
     return { props: { sensorsData } };
   } catch (error) {
-    console.log(error);
+    console.error("Error when fetching sensors:");
+    console.error(error);
     return { notFound: true };
   }
 };
 
 const SensorsOverview: FC<SensorsOverviewPropType> = ({ sensorsData }) => {
-  if (!sensorsData) return null;
+  if (!sensorsData || sensorsData.sensors.length === 0)
+    return (
+      <h1 className='flex justify-center mt-8'>Keine Sensordaten vorhanden</h1>
+    );
   else return <SensorsGrid sensors={sensorsData.sensors} />;
 };
 

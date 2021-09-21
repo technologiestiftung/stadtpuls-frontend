@@ -1,22 +1,10 @@
 import { rest } from "msw";
-import {
-  publicProjectsData,
-  userData,
-  userProjects,
-  getDevice,
-  getUserProject,
-  refreshToken,
-  authToken,
-} from "./supabaseData";
+import { userData, refreshToken, authToken } from "./supabaseData";
 import { parsedSensors, sensors } from "./supabaseData/sensors";
 import { createApiUrl } from "../lib/requests/createApiUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
 import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
-import {
-  DevicesType,
-  ProjectsType,
-  UserProfilesType,
-} from "@common/types/supabase_DEPRECATED";
+import { UserProfilesType } from "@common/types/supabase_DEPRECATED";
 import { definitions } from "@common/types/supabase";
 import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
@@ -92,7 +80,8 @@ const supabaseHandlers = [
       )
     );
   }),
-  rest.get(createApiUrl("/projects"), (req, res, ctx) => {
+  // Keeping this for now for inspiration for how to mock different query options. TODO: Delete as soon as it's not needed anymore
+  /* rest.get(createApiUrl("/projects"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const select = query.get("select");
@@ -135,7 +124,7 @@ const supabaseHandlers = [
         ctx.json(publicProjectsData[0])
       );
     else return res(ctx.status(404, "Not found"));
-  }),
+  }), */
   rest.get(createApiUrl("/user_profiles"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
@@ -218,7 +207,7 @@ const supabaseHandlers = [
       return res(ctx.status(201, "Mocked status"), ctx.json(sensors));
     }
   ),
-  rest.patch<DevicesType>(createApiUrl("/devices"), (req, res, ctx) => {
+  /* rest.patch<DevicesType>(createApiUrl("/devices"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -236,8 +225,8 @@ const supabaseHandlers = [
         ])
       );
     else return res(ctx.status(404, "Not found"));
-  }),
-  rest.delete(createApiUrl("/devices"), (req, res, ctx) => {
+  }), */
+  /* rest.delete(createApiUrl("/devices"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -246,17 +235,17 @@ const supabaseHandlers = [
     if (userId == authToken.currentSession.user.id)
       return res(ctx.status(201, "Mocked status"), ctx.json(device));
     else return res(ctx.status(404, "Not found"));
-  }),
+  }), */
   //Projects add update delete
-  rest.post<ProjectsType[]>(createApiUrl("/projects"), (req, res, ctx) => {
+  /* rest.post<ProjectsType[]>(createApiUrl("/projects"), (req, res, ctx) => {
     const payload = req.body[0];
     const createdAt = new Date().toISOString();
     return res(
       ctx.status(201, "Mocked status"),
       ctx.json([{ ...payload, createdAt, id: 5 }])
     );
-  }),
-  rest.patch<ProjectsType>(createApiUrl("/projects"), (req, res, ctx) => {
+  }), */
+  /* rest.patch<ProjectsType>(createApiUrl("/projects"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -274,8 +263,8 @@ const supabaseHandlers = [
         ])
       );
     else return res(ctx.status(404, "Not found"));
-  }),
-  rest.delete(createApiUrl("/projects"), (req, res, ctx) => {
+  }), */
+  /* rest.delete(createApiUrl("/projects"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -284,7 +273,7 @@ const supabaseHandlers = [
     if (userId == authToken.currentSession.user.id)
       return res(ctx.status(201, "Mocked status"), ctx.json(project));
     else return res(ctx.status(404, "Not found"));
-  }),
+  }), */
   //Auth
   rest.post(
     "https://dyxublythmmlsositxtg.supabase.co/auth/v1/token",

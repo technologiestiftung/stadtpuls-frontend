@@ -1,12 +1,14 @@
 import useSWR from "swr";
 import { supabase } from "@auth/supabase";
-import { CategoriesType } from "@common/types/supabase_DEPRECATED";
+import { definitions } from "@common/types/supabase";
 
-type CategoriesFetcherSignature = () => Promise<CategoriesType[] | null>;
+type CategoriesFetcherSignature = () => Promise<
+  definitions["categories"][] | null
+>;
 
 const categoriesFetcher: CategoriesFetcherSignature = async () => {
   const { data: categories, error } = await supabase
-    .from<CategoriesType>("categories")
+    .from<definitions["categories"]>("categories")
     .select("*");
 
   if (error) throw error;
@@ -16,10 +18,10 @@ const categoriesFetcher: CategoriesFetcherSignature = async () => {
 
 export const useSensorCategories = (): {
   isLoading: boolean;
-  categories: CategoriesType[] | null;
+  categories: definitions["categories"][] | null;
   error: Error | null;
 } => {
-  const { data, error } = useSWR<CategoriesType[] | null, Error>(
+  const { data, error } = useSWR<definitions["categories"][] | null, Error>(
     "categories",
     categoriesFetcher
   );

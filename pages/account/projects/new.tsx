@@ -1,17 +1,17 @@
-import { useAuth } from "@auth/Auth";
+/* import { useAuth } from "@auth/Auth";
 import { PleaseLogin } from "@components/PageError/PleaseLogin";
 import { ServerError } from "@components/PageError/ServerError";
 import { UserProjectsWrapper } from "@components/UserProjectsWrapper";
 import { CreateProjectForm } from "@components/CreateProjectForm";
 import { useSensorCategories } from "@lib/hooks/useSensorCategories";
 import { useUserData } from "@lib/hooks/useUserData";
-import { useRouter } from "next/router";
-import { FC, useState } from "react";
-import { ProjectsType } from "@common/types/supabase_DEPRECATED";
-import { ProjectCreatedInfo } from "@components/ProjectCreatedInfo";
+import { useRouter } from "next/router"; */
+import { FC } from "react";
+/* import { ProjectsType } from "@common/types/supabase_DEPRECATED";
+import { ProjectCreatedInfo } from "@components/ProjectCreatedInfo"; */
 
 const AccountProjectNewPage: FC = () => {
-  const router = useRouter();
+  /* const router = useRouter();
   const { authenticatedUser, isLoadingAuth, error: authError } = useAuth();
   const { projects, addProject, error } = useUserData();
   const {
@@ -56,9 +56,11 @@ const AccountProjectNewPage: FC = () => {
       setNewProjectName(newProjectName);
       setProjectWasCreated(true);
     }
-  };
+  }; */
 
-  return (
+  return <div>New project page. TODO: To be deleted</div>;
+
+  /* return (
     <UserProjectsWrapper projects={projectsForSidebar || null}>
       <div className='p-6'>
         {!projectWasCreated && (
@@ -104,7 +106,7 @@ const AccountProjectNewPage: FC = () => {
         )}
       </div>
     </UserProjectsWrapper>
-  );
+  ); */
 };
 
 export default AccountProjectNewPage;

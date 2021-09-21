@@ -23,7 +23,7 @@ const createTestComponent = (
   return TestComponent;
 };
 
-describe("hook usePublicProjects", () => {
+describe("hook usePublicSensors", () => {
   it("should provide a data and error value", async (): Promise<void> => {
     const onSuccess = jest.fn();
     const onSuccessWrapper = (data: PublicSensors): void => {

@@ -1,13 +1,9 @@
-import {
-  DevicesType,
-  ProjectsType,
-  RecordsType,
-} from "@common/types/supabase_DEPRECATED";
-import { useUserData } from "@lib/hooks/useUserData";
+import { DevicesType, ProjectsType } from "@common/types/supabase_DEPRECATED";
+/* import { useUserData } from "@lib/hooks/useUserData"; */
 import { FC } from "react";
-import { SensorsList } from "..";
+/* import { SensorsList } from ".."; */
 
-const getLastRecordedAt = (records: RecordsType[]): Date | null => {
+/* const getLastRecordedAt = (records: RecordsType[]): Date | null => {
   const sortedRecords = records
     .filter(record => record.recordedAt)
     .map(record => ({
@@ -18,20 +14,19 @@ const getLastRecordedAt = (records: RecordsType[]): Date | null => {
 
   if (sortedRecords.length === 0) return null;
   return sortedRecords[0].recordedAt;
-};
+}; */
 
 interface SensorsListWithDataPropType {
   projectId: ProjectsType["id"];
   devices: DevicesType[];
 }
 
-export const SensorsListWithData: FC<SensorsListWithDataPropType> = ({
-  projectId,
-  devices,
-}) => {
-  const { updateDevice, addDevice, deleteDevice } = useUserData();
+export const SensorsListWithData: FC<SensorsListWithDataPropType> = () => {
+  /* const { updateDevice, addDevice, deleteDevice } = useUserData(); */
 
-  return (
+  return <div>SensorsList. TODO: To be deleted.</div>;
+
+  /* return (
     <SensorsList
       sensors={(devices || []).map(device => ({
         id: device.id,
@@ -50,5 +45,5 @@ export const SensorsListWithData: FC<SensorsListWithDataPropType> = ({
       onAdd={data => addDevice({ ...data, projectId })}
       onDelete={id => deleteDevice(parseInt(`${id}`, 10))}
     />
-  );
+  ); */
 };
