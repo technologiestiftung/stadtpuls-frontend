@@ -8,7 +8,14 @@ export const ProjectPreviewMap: React.FC<{
   mapHeight: number | string;
   viewport: Partial<InteractiveMapProps>;
   withMapLabels?: boolean;
-}> = ({ mapWidth, mapHeight, viewport, withMapLabels = true }) => (
+  className?: string;
+}> = ({
+  mapWidth,
+  mapHeight,
+  viewport,
+  withMapLabels = true,
+  className = "",
+}) => (
   <ReactMapGL
     zoom={10}
     {...viewport}
@@ -22,7 +29,7 @@ export const ProjectPreviewMap: React.FC<{
     }
     mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
     attributionControl={false}
-    className={styles.mapContainer}
+    className={`${className} ${styles.mapContainer}`}
   >
     <AttributionControl
       compact={true}

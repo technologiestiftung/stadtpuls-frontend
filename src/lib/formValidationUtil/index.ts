@@ -5,24 +5,42 @@ export const requiredEmailValidation = yup
   .email("Die angegebene E-Mail Adresse ist ungültig")
   .required("Sie müssen eine E-Mail Adresse angeben");
 
-export const requiredProjectTitleValidation = yup
+export const requiredSensorNameValidation = yup
   .string()
-  .required("Das Projekt muss einen Titel haben")
-  .max(60, "Der Titel darf maximal 60 Zeichen haben");
+  .required("Der Sensor muss eine Name haben")
+  .max(50, "Der Name darf maximal 50 Zeichen haben");
 
-export const requiredProjectCategoryValidation = yup
+export const requiredSensorCategoryValidation = yup
   .string()
   .required("Eine Kategorie muss ausgewählt sein");
 
-export const requiredProjectDescriptionValidation = yup
+export const requiredSymbolIdValidation = yup
+  .number()
+  .min(1, "Bitte wählen Sie ein gültiges Symbol")
+  .max(31, "Bitte wählen Sie ein gültiges Symbol")
+  .required("Bitte wählen Sie ein gültiges Symbol");
+
+export const requiredLatitude = yup
+  .number()
+  .min(-90, "Bitte wählen Sie ein gültige Latitude")
+  .max(90, "Bitte wählen Sie ein gültige Latitude")
+  .required("Bitte wählen Sie ein gültige Latitude");
+
+export const requiredLongitude = yup
+  .number()
+  .min(-180, "Bitte wählen Sie ein gültige Longitude")
+  .max(180, "Bitte wählen Sie ein gültige Longitude")
+  .required("Bitte wählen Sie ein gültige Longitude");
+
+export const requiredSensorDescriptionValidation = yup
   .string()
   .required(
-    "Das Projekt muss eine Beschreibung zwischen 10 und 140 Zeichen haben"
+    "Der Sensor muss eine Beschreibung zwischen 10 und 140 Zeichen haben"
   )
   .min(10, "Die Beschreibung kann 10 bis 140 Zeichen enthalten")
   .max(140, "Die Beschreibung kann 10 bis 140 Zeichen enthalten");
 
-export const requiredProjectConnectypeValidation = yup
+export const requiredSensorIntegrationValidation = yup
   .string()
   .required("Eine Integration muss ausgewählt sein");
 

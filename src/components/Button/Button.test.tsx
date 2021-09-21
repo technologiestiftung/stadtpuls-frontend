@@ -31,7 +31,7 @@ describe("Button component", () => {
   it("should have dangerous styles when dangerous", () => {
     render(<Button variant='dangerous'>Button</Button>);
     const button = screen.getByRole("button");
-    expect(button.getAttribute("class")?.includes("border-error")).toBe(true);
+    expect(button.getAttribute("class")?.includes("text-error")).toBe(true);
   });
   it("should have default disabled styles when default disabled", () => {
     render(<Button disabled>Button</Button>);
@@ -56,7 +56,7 @@ describe("Button component", () => {
       </Button>
     );
     const button = screen.getByRole("button");
-    expect(button.getAttribute("class")?.includes("border-error")).toBe(true);
+    expect(button.getAttribute("class")?.includes("text-error")).toBe(true);
   });
 });
 
@@ -90,7 +90,7 @@ describe("Submit component", () => {
   it("should have dangerous styles when dangerous", () => {
     render(<Submit variant='dangerous'>Submit</Submit>);
     const submit = screen.getByText("Submit");
-    expect(submit.getAttribute("class")?.includes("border-error")).toBe(true);
+    expect(submit.getAttribute("class")?.includes("text-error")).toBe(true);
   });
   it("should have default disabled styles when default disabled", () => {
     render(<Submit disabled>Submit</Submit>);

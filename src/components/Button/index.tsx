@@ -39,7 +39,7 @@ const getButtonStyles = ({
         classes.push("bg-gray-200 text-gray-400");
         break;
       case "dangerous":
-        classes.push("border border-error text-error");
+        classes.push("text-error");
         break;
       default:
         classes.push("border border-gray-400 text-gray-400");
@@ -56,7 +56,7 @@ const getButtonStyles = ({
         break;
       case "dangerous":
         classes.push(
-          "focus:ring-error border border-error text-error hover:bg-error hover:bg-opacity-10"
+          "focus:ring-error text-error hover:bg-error hover:bg-opacity-10"
         );
         break;
       default:

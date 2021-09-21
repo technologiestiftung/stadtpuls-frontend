@@ -1,4 +1,5 @@
 const colors = require("./src/style/colors");
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 const fallbackFonts = [
   "ui-sans-serif",
@@ -23,6 +24,10 @@ module.exports = {
   darkMode: false,
   theme: {
     colors,
+    screens: {
+      xs: '400px',
+      ...defaultTheme.screens,
+    },
     fontFamily: {
       headline: ["'SpaceGrotesk'", ...fallbackFonts],
       mono: ["'SpaceMono'", "monospace"],

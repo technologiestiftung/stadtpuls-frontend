@@ -33,7 +33,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
           }
         >
           <div
-            className=""
+            className=" undefined"
             style={
               Object {
                 "height": "100%",
@@ -700,7 +700,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
           }
         >
           <div
-            className=""
+            className=" undefined"
             style={
               Object {
                 "height": "100%",

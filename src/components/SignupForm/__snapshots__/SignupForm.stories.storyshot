@@ -2,10 +2,10 @@
 
 exports[`Storyshots Forms/Signup Default 1`] = `
 <div
-  className="max-w-md px-4 md:px-0"
+  className="max-w-md md:px-0 max-h-[calc(100vh-32px)] overflow-y-auto"
 >
   <div
-    className="bg-white border border-gray-200 shadow p-8 flex flex-col gap-8 place-content-between"
+    className="bg-white border border-gray-200 shadow p-4 sm:p-8 flex flex-col gap-8 place-content-between"
     style={
       Object {
         "minHeight": 360,

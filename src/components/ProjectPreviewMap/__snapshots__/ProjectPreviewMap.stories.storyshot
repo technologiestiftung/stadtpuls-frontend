@@ -21,7 +21,7 @@ exports[`Storyshots Map/ProjectPreviewMap Default 1`] = `
     }
   >
     <div
-      className=""
+      className=" undefined"
       style={
         Object {
           "height": "100%",
