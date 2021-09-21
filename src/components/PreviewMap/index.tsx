@@ -1,9 +1,9 @@
 import ReactMapGL, { AttributionControl } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { InteractiveMapProps } from "react-map-gl/src/components/interactive-map";
-import styles from "./ProjectPreviewMap.module.css";
+import styles from "./PreviewMap.module.css";
 
-export const ProjectPreviewMap: React.FC<{
+export const PreviewMap: React.FC<{
   mapWidth: number | string;
   mapHeight: number | string;
   viewport: Partial<InteractiveMapProps>;

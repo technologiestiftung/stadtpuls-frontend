@@ -18,7 +18,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { FormTextarea } from "@components/FormTextarea";
 import { FormListBox } from "@components/FormListBox";
 import { useSensorCategories } from "@lib/hooks/useSensorCategories";
-import { ProjectPreviewMap } from "@components/ProjectPreviewMap";
+import { PreviewMap } from "@components/PreviewMap";
 import { CategoryIcon } from "@components/CategoryIcon";
 import { SensorSymbol } from "@components/SensorSymbol";
 
@@ -257,7 +257,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
             role='region'
             className='mt-[-25px] relative border border-gray-200 w-[calc(100%-1px)]'
           >
-            <ProjectPreviewMap
+            <PreviewMap
               viewport={{
                 latitude: latitude || DEFAULT_LAT,
                 longitude: longitude || DEFAULT_LNG,

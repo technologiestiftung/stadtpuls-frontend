@@ -1,9 +1,9 @@
 import { render } from "@testing-library/react";
-import { ProjectPreviewMap } from ".";
+import { PreviewMap } from ".";
 
-describe("ProjectPreviewMap component", () => {
+describe("PreviewMap component", () => {
   it("should render a map container", (): void => {
-    render(<ProjectPreviewMap viewport={{}} mapWidth={600} mapHeight={300} />);
+    render(<PreviewMap viewport={{}} mapWidth={600} mapHeight={300} />);
     const mapContainer = document.querySelector(
       "div[style^='position: absolute;']"
     );
