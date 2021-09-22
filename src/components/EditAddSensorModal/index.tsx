@@ -333,8 +333,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
           </fieldset>
           <p className='text-sm text-gray-500 mt-2 grid grid-cols-[16px,1fr] gap-2 items-center'>
             <GrabbingHandIcon />
-            Setzen Sie den mittleren Punkt auf der Karte auf Ihren gewünschten
-            Standort.
+            Bewege die Karte, sodass der Punkt auf dein Standort liegt.
           </p>
         </div>
         <div className='flex w-full sm:justify-between flex-wrap gap-4 items-end'>
