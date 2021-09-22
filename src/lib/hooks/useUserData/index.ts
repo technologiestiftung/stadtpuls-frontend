@@ -87,7 +87,6 @@ const updateSensor = async ({
   const { error } = await supabase
     .from<definitions["sensors"]>("sensors")
     .update({
-      id,
       created_at,
       name,
       description,

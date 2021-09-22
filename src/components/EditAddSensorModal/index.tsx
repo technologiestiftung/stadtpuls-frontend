@@ -14,7 +14,7 @@ import {
   requiredSensorDescriptionValidation,
   requiredTTNDeviceIDValidation,
 } from "@lib/formValidationUtil";
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useCallback, useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormTextarea } from "@components/FormTextarea";
 import { FormListBox } from "@components/FormListBox";
@@ -26,31 +26,21 @@ import { SensorSymbol } from "@components/SensorSymbol";
 import { InteractiveMapProps } from "react-map-gl/src/components/interactive-map";
 import GrabbingHandIcon from "../../../public/images/icons/16px/grabbingHand.svg";
 
-interface CommonDataType {
+interface SubmitDataType {
   name: string;
   symbolId: number;
   description: string;
   categoryId: definitions["categories"]["id"];
   latitude: number;
   longitude: number;
+  integration: "http" | "ttn";
+  ttnDeviceId: string | undefined;
 }
-
-interface HTTPDataType extends CommonDataType {
-  integration: "http";
-  ttnDeviceId: undefined;
-}
-
-interface TTNDataType extends CommonDataType {
-  integration: "ttn";
-  ttnDeviceId: string;
-}
-
-type SumbitDataType = HTTPDataType | TTNDataType;
 
 export interface EditAddSensorModalPropType {
   title: string;
-  defaultValues?: Partial<SumbitDataType>;
-  onSubmit?: (sensorData: SumbitDataType) => void;
+  defaultValues?: Partial<SubmitDataType>;
+  onSubmit?: (sensorData: SubmitDataType) => void;
   submitButtonText?: string;
   onCancel?: () => void;
   cancelButtonText?: string;
@@ -86,8 +76,8 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
     control,
     setValue,
     handleSubmit,
-    formState: { errors },
-  } = useForm<SumbitDataType>({
+    formState: { errors, isDirty },
+  } = useForm<SubmitDataType>({
     resolver: yupResolver(formSchema),
   });
   const [integration, setIntegration] = useState(
@@ -107,8 +97,36 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
   const formatError = (errorMsg?: string): string[] =>
     errorMsg ? [errorMsg] : [];
 
+  const handleKeyDown = useCallback(
+    (evt: KeyboardEvent): void => {
+      if (evt.key === "Escape" && !isDirty) {
+        onCancel();
+      }
+    },
+    [isDirty, onCancel]
+  );
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [handleKeyDown]);
+
+  useEffect(() => {
+    if (
+      defaultValues.integration &&
+      defaultValues.integration !== integration
+    ) {
+      setIntegration(defaultValues.integration);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [defaultValues.integration]);
+
   return (
-    <SmallModalOverlay className='w-[640px] max-w-full' title={title}>
+    <SmallModalOverlay
+      className='w-[640px] max-w-full'
+      title={title}
+      onClickOutside={!isDirty ? onCancel : undefined}
+    >
       <form
         noValidate
         onSubmit={handleSubmit(data =>
@@ -205,13 +223,13 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
             <Controller
               name='integration'
               control={control}
-              defaultValue={integration}
+              defaultValue={defaultValues?.integration || integration}
               render={({ field }) => (
                 <FormListBox
                   {...field}
-                  onChange={evt => {
-                    field.onChange(evt);
-                    setIntegration(field.value === "ttn" ? "http" : "ttn");
+                  onChange={newValue => {
+                    field.onChange(newValue);
+                    setIntegration(newValue as "http" | "ttn");
                   }}
                   label='Integration'
                   placeholder='Wie möchtest du dein Sensor integrieren?'
@@ -227,6 +245,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
               <Controller
                 name='ttnDeviceId'
                 control={control}
+                defaultValue={defaultValues?.ttnDeviceId}
                 render={({ field }) => (
                   <FormTextInput
                     {...field}

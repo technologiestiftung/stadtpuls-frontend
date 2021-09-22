@@ -132,7 +132,7 @@ export const SensorPageHeader: FC<SensorPageHeaderPropType> = ({
       <div
         className={["container max-w-8xl", "mx-auto relative z-10"].join(" ")}
       >
-        <aside className='md:w-1/2 bg-white px-4 py-8 md:py-32 md:pr-12 md:max-w-[560px]'>
+        <aside className='md:w-1/2 bg-white px-4 py-8 md:py-40 md:pr-12 md:max-w-[560px]'>
           <BackLink />
           <Title name={name} symbol={symbol} />
           <div className='flex gap-4'>

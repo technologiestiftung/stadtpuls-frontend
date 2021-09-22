@@ -7,12 +7,18 @@ interface SmallModalOverlayPropType extends HTMLProps<HTMLFormElement> {
   variant?: "dangerous" | "primary";
   footerContent?: ReactNode;
   className?: string;
+  onClickOutside?: () => void;
 }
 
 export const SmallModalOverlay: FC<SmallModalOverlayPropType> = props => {
   const [container, setContainer] = useState<Element | null>(null);
+
   useEffect(() => {
     setContainer(document.querySelector("body"));
+    document.querySelector("html")?.classList.add("no-scroll");
+    return () => {
+      document.querySelector("html")?.classList.remove("no-scroll");
+    };
   }, [setContainer]);
 
   if (!container) return null;

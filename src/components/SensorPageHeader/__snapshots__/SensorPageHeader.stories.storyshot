@@ -58,7 +58,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
     className="container max-w-8xl mx-auto relative z-10"
   >
     <aside
-      className="md:w-1/2 bg-white px-4 py-8 md:py-32 md:pr-12 md:max-w-[560px]"
+      className="md:w-1/2 bg-white px-4 py-8 md:py-40 md:pr-12 md:max-w-[560px]"
     >
       <a
         className="text-blue hover:text-purple transition items-center font-bold flex gap-2 mb-8 text-sm sm:text-base focus-offset"
@@ -725,7 +725,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
     className="container max-w-8xl mx-auto relative z-10"
   >
     <aside
-      className="md:w-1/2 bg-white px-4 py-8 md:py-32 md:pr-12 md:max-w-[560px]"
+      className="md:w-1/2 bg-white px-4 py-8 md:py-40 md:pr-12 md:max-w-[560px]"
     >
       <a
         className="text-blue hover:text-purple transition items-center font-bold flex gap-2 mb-8 text-sm sm:text-base focus-offset"
