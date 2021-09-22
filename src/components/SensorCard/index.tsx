@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
-import { ProjectPreviewMap } from "@components/ProjectPreviewMap";
+import { SensorPreviewMap } from "@components/SensorPreviewMap";
 import useIsInViewport from "use-is-in-viewport";
 import { AreaPath } from "@components/AreaPath";
 import { UserAvatar } from "@components/UserAvatar";
@@ -74,7 +74,7 @@ export const SensorCard: FC<SensorCardPropType> = ({
           >
             {withMapBackground && latitude && longitude && (
               <>
-                <ProjectPreviewMap
+                <SensorPreviewMap
                   viewport={{
                     latitude,
                     longitude,
