@@ -135,20 +135,6 @@ const updateUser = async (
   if (nameReset.error) throw nameReset.error;
 };
 
-// We currently don't support updating the email. TODO: potentially delete this function
-/* const updateEmail = async (
-  newEmail: string,
-  userId: string | undefined
-): Promise<void> => {
-  if (!userId) throw new Error("Not authenticated");
-
-  const { error } = await supabase.rpc("update_email", {
-    new_email: newEmail,
-  });
-
-  if (error) throw error;
-}; */
-
 const deleteUser = async (userId: string | undefined): Promise<void> => {
   if (!userId) throw new Error("Not authenticated");
 
@@ -167,7 +153,6 @@ export const useUserData = (): {
   updateSensor: (sensor: Partial<definitions["sensors"]>) => Promise<void>;
   deleteSensor: (id: number) => Promise<void>;
   updateUser: (newName: string) => Promise<void>;
-  /* updateEmail: (newEmail: string) => Promise<void>; */
   deleteUser: () => Promise<void>;
 } => {
   const [actionError, setActionError] = useState<Error | null>(null);
@@ -227,12 +212,6 @@ export const useUserData = (): {
       await updateUser(name, userId).catch(setActionError);
       void mutate(userParams);
     },
-    /* updateEmail: async email => {
-      if (authenticatedUser?.email === email) return;
-      void mutate(userParams, { ...authenticatedUser, email }, false);
-      await updateEmail(email, userId).catch(setActionError);
-      void mutate(userParams);
-    }, */
     deleteUser: async () => {
       void mutate(userParams, null, false);
       await deleteUser(userId).catch(setActionError);
