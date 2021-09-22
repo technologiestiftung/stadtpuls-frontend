@@ -2,7 +2,7 @@
 
 exports[`Storyshots UI Elements/AnchorButton Dangerous Anchor Button 1`] = `
 <a
-  className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-error border border-error text-error hover:bg-error hover:bg-opacity-10"
+  className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-error text-error hover:bg-error hover:bg-opacity-10"
   href="/"
   variant="dangerous"
 >
