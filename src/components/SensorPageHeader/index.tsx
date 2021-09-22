@@ -5,7 +5,7 @@ import React, { FC } from "react";
 import Link from "next/link";
 import { SensorSymbol } from "@components/SensorSymbol";
 import { CopyTextField } from "@components/CopyTextField";
-import { ProjectPreviewMap } from "@components/ProjectPreviewMap";
+import { SensorPreviewMap } from "@components/SensorPreviewMap";
 import { Button } from "@components/Button";
 
 export interface SensorPageHeaderPropType {
@@ -34,7 +34,7 @@ const MapBackground: FC<Pick<SensorPageHeaderPropType, "geocoordinates">> = ({
   >
     <div className='bg-white hidden md:block' />
     <div className='relative'>
-      <ProjectPreviewMap
+      <SensorPreviewMap
         mapWidth='100%'
         mapHeight='100%'
         viewport={geocoordinates}
