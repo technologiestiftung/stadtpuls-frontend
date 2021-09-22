@@ -7,7 +7,7 @@ import {
   useCallback,
 } from "react";
 import { supabase } from "../supabase";
-import { AuthenticatedUsersType } from "@common/types/supabase";
+import { AuthenticatedUsersType } from "@common/types/supabase_DEPRECATED";
 interface AuthContextType {
   signIn: typeof supabase.auth.signIn;
   signOut: typeof supabase.auth.signOut;

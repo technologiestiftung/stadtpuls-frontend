@@ -1,6 +1,4 @@
 import { FC } from "react";
-import AddIcon from "@material-ui/icons/Add";
-import ProjectIcon from "@material-ui/icons/FormatListBulleted";
 import AccountIcon from "@material-ui/icons/AccountCircle";
 import LogoutIconn from "@material-ui/icons/ExitToApp";
 import Link from "next/link";
@@ -51,7 +49,9 @@ export const ColouredAuthLink: FC<{
     <span className='group'>
       {href ? (
         <Link href={href}>
-          <a href={href}>{text}</a>
+          <a href={href} className='focus-offset'>
+            {text}
+          </a>
         </Link>
       ) : (
         text
@@ -62,7 +62,7 @@ export const ColouredAuthLink: FC<{
 
 export const AuthLink: FC = () => {
   const { signOut } = useAuth();
-  const { projects, user } = useUserData();
+  const { user } = useUserData();
 
   const link = (
     <ColouredAuthLink
@@ -85,31 +85,13 @@ export const AuthLink: FC = () => {
             id: 0,
             title: (
               <>
-                <AddIcon {...iconProps} /> Neues Projekt
-              </>
-            ),
-            href: "/account/projects/new",
-          },
-          !!(projects && projects.length > 0) && {
-            id: 1,
-            title: (
-              <>
-                <ProjectIcon {...iconProps} /> Meine Projekte
-              </>
-            ),
-            href: `/account/projects/${projects[0].id}`,
-          },
-          {
-            id: 2,
-            title: (
-              <>
                 <AccountIcon {...iconProps} /> Account
               </>
             ),
             href: "/account/profile",
           },
           {
-            id: 3,
+            id: 1,
             title: (
               <>
                 <LogoutIconn {...iconProps} /> Abmelden

@@ -22,7 +22,6 @@ const UserPage: FC = () => {
     isLoading,
     error: userDataError,
     updateUser,
-    updateEmail,
     deleteUser,
   } = useUserData();
 
@@ -31,7 +30,7 @@ const UserPage: FC = () => {
   if (userDataError) return <ServerError error={userDataError.message} />;
   if (authError) return <ServerError error={authError} />;
 
-  const { name, createdAt } = user;
+  const { name, created_at } = user;
   const { email } = authenticatedUser;
 
   return (
@@ -46,7 +45,7 @@ const UserPage: FC = () => {
         <UserInfoCard
           username={name || ""}
           email={email || ""}
-          registerDate={moment(createdAt).format("Do MMMM YYYY")}
+          registerDate={moment.parseZone(created_at).format("Do MMMM YYYY")}
           onUserDelete={() => {
             void router.push("/");
             void deleteUser();
@@ -56,8 +55,8 @@ const UserPage: FC = () => {
         <UserInfoEdit
           username={name || ""}
           email={email || ""}
-          onSubmit={({ email, username }) => {
-            void updateEmail(email);
+          onSubmit={({ username }) => {
+            //void updateEmail(email);
             void updateUser(username);
           }}
         />

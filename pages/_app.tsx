@@ -13,7 +13,7 @@ import "../src/style/global.css";
 import { Head } from "@components/Head";
 
 if (process.env.NODE_ENV !== "production") {
-  // require("../src/mocks/index");
+  require("../src/mocks/index");
 }
 
 const App: FC<{
@@ -37,7 +37,7 @@ const App: FC<{
             id={pathname?.replace(/\//gi, "") || "home"}
             className='z-0 relative'
             style={{
-              paddingTop: pathname === "/" ? 0 : 62,
+              paddingTop: 0,
               minHeight: "calc(100vh - 215px)",
             }}
           >

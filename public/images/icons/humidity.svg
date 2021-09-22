@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="19px" height="27px" viewBox="0 0 19 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>humidity</title>
-    <defs>
-        <filter color-interpolation-filters="auto" id="filter-1">
-            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.974977 0 0 0 0 0.989612 0 0 0 0 0.991508 0 0 0 1.000000 0"></feColorMatrix>
-        </filter>
-    </defs>
-    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="humidity" transform="translate(-451.000000, -2456.000000)" filter="url(#filter-1)">
-            <g transform="translate(452.000000, 2458.000000)">
-                <path d="M17,16.1459367 C17,20.4433484 13.2366327,24 8.5,24 C3.76336727,24 0,20.4433484 0,16.1459367 C0,12.1640891 2.20060364,8.01922257 4.49626818,4.79991852 C5.63363,3.20495097 6.77236727,1.86729607 7.62683364,0.928554074 C7.97091364,0.55055818 8.26824364,0.2379401 8.5,0 C8.73175636,0.2379401 9.02908636,0.55055818 9.37316636,0.928554074 C10.2276327,1.86729607 11.36637,3.20495097 12.5037318,4.79991852 C14.7994273,8.01922257 17,12.1640891 17,16.1459367 Z" id="Path" stroke="#1E3791" stroke-width="1.5"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="19" height="27" xmlns="http://www.w3.org/2000/svg"><defs><filter color-interpolation-filters="auto" id="a"><feColorMatrix in="SourceGraphic" values="0 0 0 0 0.974977 0 0 0 0 0.989612 0 0 0 0 0.991508 0 0 0 1.000000 0"/></filter></defs><g transform="translate(-451 -2456)" filter="url(#a)" fill="none" fill-rule="evenodd"><path d="M469 2474.146c0 4.297-3.763 7.854-8.5 7.854s-8.5-3.557-8.5-7.854c0-3.982 2.2-8.127 4.496-11.346a42.465 42.465 0 0 1 4.004-4.8 42.465 42.465 0 0 1 4.004 4.8c2.295 3.22 4.496 7.364 4.496 11.346Z" stroke="#1E3791" stroke-width="1.5"/></g></svg>

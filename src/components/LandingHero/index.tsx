@@ -47,14 +47,14 @@ export const LandingHero: FC = () => (
             Stadtpuls hilft dir, tiefer in die Welt der Stadt-Sensorik
             einzutauchen und deine Stadt besser zu verstehen.
           </p>
-          <Link href='/projects'>
+          <Link href='/sensors'>
             <AnchorButton
-              href='/projects'
+              href='/sensors'
               variant='secondary'
               className='animate-slide-in mr-4 mb-2'
               style={{ animationDelay: "150ms" }}
             >
-              Projekte ansehen
+              Sensoren ansehen
             </AnchorButton>
           </Link>
           <Link href='/docs'>

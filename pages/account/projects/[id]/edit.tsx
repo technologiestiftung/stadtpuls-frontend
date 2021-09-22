@@ -1,4 +1,4 @@
-import { useAuth } from "@auth/Auth";
+/* import { useAuth } from "@auth/Auth";
 import { NoAccess } from "@components/PageError/NoAccess";
 import { PleaseLogin } from "@components/PageError/PleaseLogin";
 import { InvalidPageId } from "@components/PageError/InvalidPageId";
@@ -6,20 +6,20 @@ import { ServerError } from "@components/PageError/ServerError";
 import { UserProjectsWrapper } from "@components/UserProjectsWrapper";
 import { Button } from "@components/Button";
 import { EditProjectForm } from "@components/EditProjectForm";
-import { useProjectCategories } from "@lib/hooks/useProjectCategories";
+import { useSensorCategories } from "@lib/hooks/useSensorCategories";
 import { useUserData } from "@lib/hooks/useUserData";
-import { useRouter } from "next/router";
-import React, { FC, useState } from "react";
-import { ProjectsType } from "@common/types/supabase";
+import { useRouter } from "next/router"; */
+import React, { FC } from "react";
+/* import { ProjectsType } from "@common/types/supabase_DEPRECATED";
 import { ProjectNotFound } from "@components/PageError/ProjectNotFound";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { ButtonTextLink } from "@components/TextLink";
 import { TokenDisplay } from "@components/TokenDisplay";
 import { useProjectTokens } from "@lib/hooks/useProjectTokens";
-import { TokenResponseObjectType } from "@common/interfaces";
+import { TokenResponseObjectType } from "@common/interfaces"; */
 
 const AccountProjectEditPage: FC = () => {
-  const router = useRouter();
+  /* const router = useRouter();
   const { id: editingProjectId } = router.query;
   const {
     authenticatedUser,
@@ -32,7 +32,7 @@ const AccountProjectEditPage: FC = () => {
     categories,
     isLoading: isLoadingCategories,
     error: categoriesError,
-  } = useProjectCategories();
+  } = useSensorCategories();
 
   const parsedProjectId = Array.isArray(editingProjectId)
     ? editingProjectId[0]
@@ -110,9 +110,11 @@ const AccountProjectEditPage: FC = () => {
     void router.push(exitRoute);
   };
 
-  if (!project) return <ProjectNotFound projectId={editingProjectId} />;
+  if (!project) return <ProjectNotFound projectId={editingProjectId} />; */
 
-  return (
+  return <div>Edit project page. TODO: To be deleted</div>;
+
+  /* return (
     <>
       <UserProjectsWrapper projects={projectsForSidebar}>
         <div className='p-6'>
@@ -175,7 +177,7 @@ const AccountProjectEditPage: FC = () => {
         </SmallModalOverlay>
       )}
     </>
-  );
+  ); */
 };
 
 export default AccountProjectEditPage;

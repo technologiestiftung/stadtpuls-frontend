@@ -1,30 +1,28 @@
-import { DateValueType } from "../../common/interfaces";
 import moment from "moment";
-import { RecordsType } from "@common/types/supabase";
+import { definitions } from "@common/types/supabase";
 moment.locale("de-DE");
 
-export const createDateValueArray = (input: RecordsType[]): DateValueType[] => {
-  const dateValueArray = input.map(({ measurements, recordedAt }) => ({
-    value: (measurements && measurements[0]) || 0,
-    date: recordedAt,
-    time: new Date(recordedAt).getTime(),
+interface DateValueType {
+  id: number;
+  value: number;
+  date: moment.Moment;
+}
+
+export const createDateValueArray = (
+  input: Pick<definitions["records"], "id" | "recorded_at" | "measurements">[]
+): DateValueType[] => {
+  const dateValueArray = input.map(({ id, measurements, recorded_at }) => ({
+    id,
+    value: measurements && measurements.length >= 1 ? measurements[0] : 0,
+    date: moment.parseZone(recorded_at),
   }));
   const sortedDateValueArray = dateValueArray.sort((a, b) => {
-    return a.time - b.time;
-  });
-  return sortedDateValueArray as DateValueType[];
-};
-
-export const createTimeOutput = (input: Date): string => {
-  const hours = input.getUTCHours();
-  const minutes = input.getUTCMinutes();
-  const seconds = input.getUTCSeconds();
-  return `${hours < 10 ? `0${hours}` : hours}:${
-    minutes < 10 ? `0${minutes}` : minutes
-  }:${seconds < 10 ? `0${seconds}` : seconds}`;
+    return a.date.valueOf() - b.date.valueOf();
+  }) as DateValueType[];
+  return sortedDateValueArray;
 };
 
 export const formatDateFromNow = (date: Date): string => {
-  const fromNowStr = moment(date).fromNow();
+  const fromNowStr = moment.parseZone(date).fromNow();
   return `${fromNowStr.charAt(0).toUpperCase()}${fromNowStr.slice(1)}`;
 };

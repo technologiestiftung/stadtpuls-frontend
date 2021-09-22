@@ -32,7 +32,7 @@ exports[`Storyshots Navigation/HeaderMenu Default 1`] = `
         className="sm:hidden sm:inline-block text-xl sm:text-base"
       >
         <a
-          className="navigation-link p-4 block sm:inline"
+          className="navigation-link p-4 block sm:inline focus-offset"
           href="/"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -44,19 +44,19 @@ exports[`Storyshots Navigation/HeaderMenu Default 1`] = `
         className=" sm:inline-block text-xl sm:text-base"
       >
         <a
-          className="navigation-link p-4 block sm:inline"
-          href="/projects"
+          className="navigation-link p-4 block sm:inline focus-offset"
+          href="/sensors"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
-          Projekte
+          Sensoren
         </a>
       </li>
       <li
         className=" sm:inline-block text-xl sm:text-base"
       >
         <a
-          className="navigation-link p-4 block sm:inline"
+          className="navigation-link p-4 block sm:inline focus-offset"
           href="/docs"
           onClick={[Function]}
           onMouseEnter={[Function]}

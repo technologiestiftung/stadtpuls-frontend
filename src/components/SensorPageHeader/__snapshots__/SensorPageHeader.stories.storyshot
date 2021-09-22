@@ -5,7 +5,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
   className="bg-gray-50 relative"
 >
   <div
-    className="md:absolute z-0 inset-0 bg-black grid md:grid-cols-2 h-80 md:h-auto"
+    className="md:absolute z-0 inset-0 bg-purple bg-opacity-5 grid md:grid-cols-2 h-80 md:h-auto"
   >
     <div
       className="bg-white hidden md:block"
@@ -55,13 +55,13 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
     </div>
   </div>
   <div
-    className="container max-w-screen-xl mx-auto relative z-10"
+    className="container max-w-8xl mx-auto relative z-10"
   >
     <aside
-      className="md:w-1/2 bg-white px-4 py-8 md:py-20 md:pr-12 md:max-w-[480px]"
+      className="md:w-1/2 bg-white px-4 py-8 md:py-32 md:pr-12 md:max-w-[560px]"
     >
       <a
-        className="text-blue hover:text-purple transition items-center font-bold flex gap-2 mb-8 text-sm sm:text-base"
+        className="text-blue hover:text-purple transition items-center font-bold flex gap-2 mb-8 text-sm sm:text-base focus-offset"
         href="/sensors"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -115,7 +115,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
           Temperatur
         </span>
         <a
-          className="flex gap-2 items-center leading-tight hover:text-purple transition truncate"
+          className="flex gap-2 items-center leading-tight hover:text-purple transition focus-offset truncate"
           href="/accounts/yupank1"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -648,7 +648,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
           name="api-url"
           readOnly={true}
           type="text"
-          value="/api/v2/sensors/1/records"
+          value="/api/v1/sensors/1/records"
         />
       </div>
       <div
@@ -672,7 +672,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
   className="bg-gray-50 relative"
 >
   <div
-    className="md:absolute z-0 inset-0 bg-black grid md:grid-cols-2 h-80 md:h-auto"
+    className="md:absolute z-0 inset-0 bg-purple bg-opacity-5 grid md:grid-cols-2 h-80 md:h-auto"
   >
     <div
       className="bg-white hidden md:block"
@@ -722,13 +722,13 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
     </div>
   </div>
   <div
-    className="container max-w-screen-xl mx-auto relative z-10"
+    className="container max-w-8xl mx-auto relative z-10"
   >
     <aside
-      className="md:w-1/2 bg-white px-4 py-8 md:py-20 md:pr-12 md:max-w-[480px]"
+      className="md:w-1/2 bg-white px-4 py-8 md:py-32 md:pr-12 md:max-w-[560px]"
     >
       <a
-        className="text-blue hover:text-purple transition items-center font-bold flex gap-2 mb-8 text-sm sm:text-base"
+        className="text-blue hover:text-purple transition items-center font-bold flex gap-2 mb-8 text-sm sm:text-base focus-offset"
         href="/sensors"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -782,7 +782,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
           CO2
         </span>
         <a
-          className="flex gap-2 items-center leading-tight hover:text-purple transition truncate"
+          className="flex gap-2 items-center leading-tight hover:text-purple transition focus-offset truncate"
           href="/accounts/lalushka"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -1313,7 +1313,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
           name="api-url"
           readOnly={true}
           type="text"
-          value="/api/v2/sensors/1/records"
+          value="/api/v1/sensors/1/records"
         />
       </div>
     </aside>

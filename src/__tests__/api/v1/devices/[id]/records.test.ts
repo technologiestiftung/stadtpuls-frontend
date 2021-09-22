@@ -2,17 +2,19 @@ import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { createApiUrl } from "../../../../../lib/requests/createApiUrl";
 import { createMocks } from "node-mocks-http";
-import recordsHandler from "../../../../../../pages/api/v1/devices/[id]/records";
+import recordsHandler from "../../../../../../pages/api/v1/sensors/[id]/records";
 import { VALID_TIMESTAMP_EXAMPLE } from "@lib/timestampValidator";
-import { fakeDeviceWithFewRecords as fakeDevice } from "@mocks/supabaseData/publicProjects";
 import { NextApiRequest, NextApiResponse } from "next";
+import { sensors } from "@mocks/supabaseData/sensors";
+
+const fakeDevice = sensors[0];
 
 const REQUEST_BASICS = {
   method: "GET",
-  url: `${process.env.NEXT_PUBLIC_WEB_URL || ""}/api/v1/devices/1/records`,
+  url: `${process.env.NEXT_PUBLIC_WEB_URL || ""}/api/v1/sensors/1/records`,
 };
 
-describe("/api/v1/devices/[id]/records", () => {
+describe("/api/v1/sensors/[id]/records", () => {
   it("returns data for valid request", async () => {
     const supabaseServer = setupServer(
       rest.get(createApiUrl(`/records`), (_req, res, ctx) => {

@@ -1,4 +1,5 @@
-import { fakeDateValueRecords } from "@mocks/supabaseData/deviceRecords";
+import { parseSensorRecords } from "@lib/hooks/usePublicSensors";
+import { getSensorRecords } from "@mocks/supabaseData/records";
 import { Story, Meta } from "@storybook/react";
 import { SensorCard, SensorCardPropType } from ".";
 
@@ -15,48 +16,59 @@ const Template: Story<SensorCardPropType> = args => (
 
 export const LongFields = Template.bind({});
 LongFields.args = {
-  id: "12",
+  id: 12,
   name: "When Array is given multiple arguments",
   description:
     "@wdanxna when Array is given multiple arguments, it iterates over the arguments object and explicitly applies each value to the new array. When you call Array.apply with an array or an object with a length property Array is going to use the length to explicitly set each value of the new array. This is why Array(5) gives an array of 5 elisions, while Array.apply(null, Array(5)) gives an array of 5 undefineds. For more information, see this answer.",
   category: {
     id: 2,
     name: "Temperatur",
-    description: "Temperature sensor",
   },
-  symbol: 1,
-  geocoordinates: { latitude: 52.4961458, longitude: 13.4335723 },
+  icon_id: 1,
+  latitude: 41.4840064,
+  longitude: -72.961534,
   authorName: "Atahualpa Yupanqui De la Vega Van Hilde",
-  records: fakeDateValueRecords,
+  parsedRecords: parseSensorRecords(
+    getSensorRecords({
+      sensorId: 12,
+      numberOfRecords: 300,
+      firstRecordDate: "2020-12-01T08:00:00",
+    })
+  ),
 };
 
 export const MinimalFields = Template.bind({});
 MinimalFields.args = {
-  id: "12",
+  id: 12,
   name: "AOL",
   description: "",
   category: {
     id: 4,
-    name: "Druck",
-    description: "Temperature sensor",
+    name: "Luftdruck",
   },
-  symbol: 32,
-  geocoordinates: { latitude: 41.4840064, longitude: -72.961534 },
-  records: [],
+  icon_id: 32,
+  latitude: 41.4840064,
+  longitude: -72.961534,
+  parsedRecords: [],
 };
 
 export const NoMap = Template.bind({});
 NoMap.args = {
-  id: "12",
+  id: 12,
   name: "LUFTY AAB3",
   description: "Luftqualität im Wagon AAB3 vom Ubahn der Linie 3",
   category: {
     id: 3,
     name: "Luftfeuchtigkeit",
-    description: "Luftfeuchtigkeit sensor",
   },
-  symbol: 15,
+  icon_id: 15,
   authorName: "Vogelino",
-  records: fakeDateValueRecords.slice(0, 15),
+  parsedRecords: parseSensorRecords(
+    getSensorRecords({
+      sensorId: 12,
+      numberOfRecords: 15,
+      firstRecordDate: "2020-12-01T08:00:00",
+    })
+  ),
   withMapBackground: false,
 };

@@ -1,25 +1,19 @@
 import { rest } from "msw";
-import {
-  publicCategories,
-  deviceRecords,
-  publicProjectsData,
-  userData,
-  userProjects,
-  getDevice,
-  getUserProject,
-  refreshToken,
-  authToken,
-} from "./supabaseData";
+import { userData, refreshToken, authToken } from "./supabaseData";
+import { parsedSensors, sensors } from "./supabaseData/sensors";
 import { createApiUrl } from "../lib/requests/createApiUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
 import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
-import {
-  DevicesType,
-  ProjectsType,
-  UserProfilesType,
-} from "@common/types/supabase";
+import { definitions } from "@common/types/supabase";
 import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
+import {
+  SensorQueryResponseType,
+  sensorQueryString,
+} from "@lib/hooks/usePublicSensors";
+import { categories } from "./supabaseData/categories";
+import { userprofiles } from "./supabaseData/userprofiles";
+import { getSensorRecords } from "./supabaseData/records";
 
 const githubHandlers = [
   rest.get(`https://api.github.com/users/*`, (_req, res, ctx) => {
@@ -64,12 +58,29 @@ const tokenApiHandlers = [
 
 const supabaseHandlers = [
   rest.get(createApiUrl("/categories"), (_req, res, ctx) => {
-    return res(ctx.status(201, "Mocked status"), ctx.json(publicCategories));
+    return res(ctx.status(201, "Mocked status"), ctx.json(categories));
   }),
-  rest.get(createApiUrl("/records"), (_req, res, ctx) => {
-    return res(ctx.status(201, "Mocked status"), ctx.json(deviceRecords));
+  rest.get(createApiUrl("/records"), (req, res, ctx) => {
+    const query = req.url.searchParams;
+    const recordedAts = query.getAll("recorded_at");
+    let firstRecordDate = recordedAts.find(a => a.startsWith("gte."));
+    firstRecordDate = firstRecordDate
+      ? firstRecordDate.replace("gte.", "")
+      : undefined;
+    let lastRecordDate = recordedAts.find(a => a.startsWith("lte."));
+    lastRecordDate = lastRecordDate
+      ? lastRecordDate.replace("lte.", "")
+      : undefined;
+
+    return res(
+      ctx.status(201, "Mocked status"),
+      ctx.json(
+        getSensorRecords({ sensorId: 1, firstRecordDate, lastRecordDate })
+      )
+    );
   }),
-  rest.get(createApiUrl("/projects"), (req, res, ctx) => {
+  // Keeping this for now for inspiration for how to mock different query options. TODO: Delete as soon as it's not needed anymore
+  /* rest.get(createApiUrl("/projects"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const select = query.get("select");
@@ -112,8 +123,8 @@ const supabaseHandlers = [
         ctx.json(publicProjectsData[0])
       );
     else return res(ctx.status(404, "Not found"));
-  }),
-  rest.get(createApiUrl("/userprofiles"), (req, res, ctx) => {
+  }), */
+  rest.get(createApiUrl("/user_profiles"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const select = query.get("select");
@@ -122,28 +133,80 @@ const supabaseHandlers = [
       return res(ctx.status(201, "Mocked status"), ctx.json(userData));
     else return res(ctx.status(404, "Not found"));
   }),
-  //Devices add update delete
-  rest.post<DevicesType[]>(createApiUrl("/devices"), (req, res, ctx) => {
-    const payload = req.body[0];
+  // Sensors add update delete
+  rest.post<definitions["sensors"][]>(
+    createApiUrl("/sensors"),
+    (req, res, ctx) => {
+      const payload = req.body[0];
 
-    if (payload.projectId >= 1 && 4 >= payload.projectId)
       return res(
         ctx.status(201, "Mocked status"),
         ctx.json([{ ...payload, id: 12 }])
       );
-    else
-      return res(
-        ctx.status(409, "Conflict"),
-        ctx.json({
-          hint: null,
-          details: 'Key is not present in table "projects".',
-          code: "23503",
-          message:
-            'insert or update on table "devices" violates foreign key constraint "devices_projectId_fkey"',
-        })
+    }
+  ),
+  rest.get<SensorQueryResponseType>(
+    createApiUrl("/sensors"),
+    (req, res, ctx) => {
+      const query = req.url.searchParams;
+
+      const select = query.get("select");
+      const id = query.get("id")?.replace("eq.", "");
+      const limit = query.get("limit");
+      const recordsLimit = query.get("records.limit");
+
+      // Regex removes whitespaces and line breaks. Necessary because sensorQueryString is constructed as template literal
+      const trimmedSensorSelectString = sensorQueryString.replace(
+        /(\r\n|\n|\r| )/gm,
+        ""
       );
-  }),
-  rest.patch<DevicesType>(createApiUrl("/devices"), (req, res, ctx) => {
+
+      const specificSensorDataRequested = select === trimmedSensorSelectString;
+      const oneSensorRequestedById = specificSensorDataRequested && id;
+      const limitedSensorsRequested = specificSensorDataRequested && limit;
+
+      if (specificSensorDataRequested) {
+        if (oneSensorRequestedById && id) {
+          return res(
+            ctx.status(201, "Mocked status"),
+            ctx.json(
+              sensors.find(
+                sensor => sensor.id === parseInt(id, 10)
+              ) as definitions["sensors"]
+            )
+          );
+        }
+        if (limitedSensorsRequested && limit) {
+          const limitedSensors = sensors.slice(0, parseInt(limit, 10));
+          const limitedSensorsWithLimitedRecords = limitedSensors.map(
+            sensor => {
+              return recordsLimit
+                ? {
+                    ...sensor,
+                    records: sensor.records.slice(
+                      0,
+                      parseInt(recordsLimit, 10) - 1
+                    ),
+                  }
+                : { ...sensor };
+            }
+          );
+
+          return recordsLimit
+            ? res(
+                ctx.status(201, "Mocked status"),
+                ctx.json(limitedSensorsWithLimitedRecords)
+              )
+            : res(ctx.status(201, "Mocked status"), ctx.json(limitedSensors));
+        } else {
+          return res(ctx.status(201, "Mocked status"), ctx.json(sensors));
+        }
+      }
+
+      return res(ctx.status(201, "Mocked status"), ctx.json(sensors));
+    }
+  ),
+  /* rest.patch<DevicesType>(createApiUrl("/devices"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -161,8 +224,8 @@ const supabaseHandlers = [
         ])
       );
     else return res(ctx.status(404, "Not found"));
-  }),
-  rest.delete(createApiUrl("/devices"), (req, res, ctx) => {
+  }), */
+  /* rest.delete(createApiUrl("/devices"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -171,17 +234,17 @@ const supabaseHandlers = [
     if (userId == authToken.currentSession.user.id)
       return res(ctx.status(201, "Mocked status"), ctx.json(device));
     else return res(ctx.status(404, "Not found"));
-  }),
+  }), */
   //Projects add update delete
-  rest.post<ProjectsType[]>(createApiUrl("/projects"), (req, res, ctx) => {
+  /* rest.post<ProjectsType[]>(createApiUrl("/projects"), (req, res, ctx) => {
     const payload = req.body[0];
     const createdAt = new Date().toISOString();
     return res(
       ctx.status(201, "Mocked status"),
       ctx.json([{ ...payload, createdAt, id: 5 }])
     );
-  }),
-  rest.patch<ProjectsType>(createApiUrl("/projects"), (req, res, ctx) => {
+  }), */
+  /* rest.patch<ProjectsType>(createApiUrl("/projects"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -199,8 +262,8 @@ const supabaseHandlers = [
         ])
       );
     else return res(ctx.status(404, "Not found"));
-  }),
-  rest.delete(createApiUrl("/projects"), (req, res, ctx) => {
+  }), */
+  /* rest.delete(createApiUrl("/projects"), (req, res, ctx) => {
     const query = req.url.searchParams;
 
     const id = Number(query.get("id")?.slice(3));
@@ -209,7 +272,7 @@ const supabaseHandlers = [
     if (userId == authToken.currentSession.user.id)
       return res(ctx.status(201, "Mocked status"), ctx.json(project));
     else return res(ctx.status(404, "Not found"));
-  }),
+  }), */
   //Auth
   rest.post(
     "https://dyxublythmmlsositxtg.supabase.co/auth/v1/token",
@@ -221,8 +284,8 @@ const supabaseHandlers = [
   rest.post(createApiUrl("/rpc/delete_user"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"));
   }),
-  rest.patch<UserProfilesType>(
-    createApiUrl("/userprofiles"),
+  rest.patch<definitions["user_profiles"]>(
+    createApiUrl("/user_profiles"),
     (req, res, ctx) => {
       const query = req.url.searchParams;
       const payload = req.body;
@@ -236,7 +299,7 @@ const supabaseHandlers = [
             {
               ...payload,
               id,
-              createdAt,
+              created_at: createdAt,
               role: "maker",
             },
           ])
@@ -249,19 +312,25 @@ const supabaseHandlers = [
     return res(ctx.status(201, "Mocked status"), ctx.json([]));
   }),
   // Head calls
-  rest.head(createApiUrl("/userprofiles"), (req, res, ctx) => {
+  rest.head(createApiUrl("/user_profiles"), (req, res, ctx) => {
     if (req.headers.get("prefer") === "count=exact") {
       return res(
-        ctx.set("content-range", "0-26/27"),
+        ctx.set(
+          "content-range",
+          `0-${userprofiles.length - 1}/${userprofiles.length}`
+        ),
         ctx.status(201, "Mocked status")
       );
     }
     return res(ctx.status(404, "Not found"));
   }),
-  rest.head(createApiUrl("/devices"), (req, res, ctx) => {
+  rest.head(createApiUrl("/sensors"), (req, res, ctx) => {
     if (req.headers.get("prefer") === "count=exact") {
       return res(
-        ctx.set("content-range", "0-28/29"),
+        ctx.set(
+          "content-range",
+          `0-${parsedSensors.length - 1}/${parsedSensors.length}`
+        ),
         ctx.status(201, "Mocked status")
       );
     }

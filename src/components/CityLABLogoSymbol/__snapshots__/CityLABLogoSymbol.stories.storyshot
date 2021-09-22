@@ -3,6 +3,7 @@
 exports[`Storyshots Coporate identity/CityLAB Berlin Symbol Default 1`] = `
 <a
   aria-label="Website des CityLAB Berlin"
+  className="focus-offset"
   href="https://www.citylab-berlin.org"
   rel="noopener noreferrer"
   target="_blank"

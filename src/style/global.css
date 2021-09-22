@@ -118,10 +118,6 @@
     overflow-x: hidden;
   }
 
-  main:not(#home):not(#docs) {
-    @apply bg-white-dot-pattern;
-  }
-
   body {
     @apply font-sans;
   }
@@ -196,10 +192,6 @@
 
   p {
     @apply max-w-prose;
-  }
-
-  .font-bold {
-    
   }
 
   .prose h1,

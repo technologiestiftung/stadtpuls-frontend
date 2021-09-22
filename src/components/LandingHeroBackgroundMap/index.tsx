@@ -1,15 +1,10 @@
 import { FC, useEffect, useState } from "react";
-import { PublicProject } from "@lib/hooks/usePublicProjects";
-import { ViewportType } from "@common/types/ReactMapGl";
-import { getGeocodedViewportByString } from "@lib/requests/getGeocodedViewportByString";
 import { MarkerMap } from "@components/MarkerMap";
+import { PublicSensorType } from "@lib/hooks/usePublicSensors";
 
 interface LandingHeroBackgroundMapPropType {
-  project: PublicProject;
+  sensor: PublicSensorType;
 }
-
-type LatLngType = Pick<ViewportType, "latitude" | "longitude">;
-const location2ViewportCache: Record<string, LatLngType> = {};
 
 const getElTopOffset = (el: Element): number => {
   const rect = el.getBoundingClientRect();
@@ -18,13 +13,10 @@ const getElTopOffset = (el: Element): number => {
 };
 
 export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
-  project,
+  sensor,
 }) => {
   const [mapHeight, setMapHeight] = useState(1000);
   const [mapWidth, setMapWidth] = useState(1000);
-  const [locationViewport, setLocationViewport] = useState<LatLngType | null>(
-    null
-  );
 
   useEffect(() => {
     const updateWidthAndHeight = (): void => {
@@ -40,30 +32,6 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
     return () => window.removeEventListener("resize", updateWidthAndHeight);
   }, []);
 
-  useEffect(() => {
-    let isMounted = true;
-    if (!project.location) return;
-    const cachedViewport = location2ViewportCache[project.location];
-
-    if (cachedViewport && isMounted) {
-      setLocationViewport(cachedViewport);
-      return;
-    }
-
-    void getGeocodedViewportByString(project.location).then(viewport => {
-      if (!project.location || !viewport) return;
-      location2ViewportCache[project.location] = {
-        latitude: viewport.latitude,
-        longitude: viewport.longitude,
-      };
-      isMounted && setLocationViewport(viewport);
-    });
-    return () => {
-      isMounted = false;
-    };
-  }, [project.location, locationViewport]);
-
-  if (!locationViewport) return null;
   return (
     <div
       className='relative overflow-hidden pointer-events-none'
@@ -75,7 +43,8 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
         clickHandler={() => undefined}
         markers={[
           {
-            ...locationViewport,
+            latitude: sensor.latitude || 0,
+            longitude: sensor.longitude || 0,
             isActive: true,
             id: 0,
           },

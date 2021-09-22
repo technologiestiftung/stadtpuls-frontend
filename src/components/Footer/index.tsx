@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
                 href='https://technologiestiftung-berlin.de/'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='mt-4 block'
+                className='mt-4 block focus-offset'
                 aria-label='Technologiestiftung Berlin'
               >
                 <img
@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
                 href='https://www.citylab-berlin.org'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='mt-4 block'
+                className='mt-4 block focus-offset'
                 aria-label='CityLAB Berlin'
               >
                 <img
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
                 href='https://www.berlin.de/'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='mt-4 block'
+                className='mt-4 block focus-offset'
                 aria-label='berlin.de'
               >
                 <img src={BerlinLogo} alt='Berlin Logo' className='w-32' />
@@ -76,7 +76,7 @@ export const Footer: React.FC = () => {
                 href='https://www.technologiestiftung-berlin.de/de/impressum/'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-sm text-gray-700'
+                className='text-sm text-gray-700 focus-offset'
               >
                 Impressum
               </a>
@@ -86,7 +86,7 @@ export const Footer: React.FC = () => {
                 href='https://www.technologiestiftung-berlin.de/de/datenschutz/'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-sm text-gray-700'
+                className='text-sm text-gray-700 focus-offset'
               >
                 Datenschutzerklärung
               </a>

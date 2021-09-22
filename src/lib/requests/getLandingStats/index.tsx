@@ -1,32 +1,31 @@
 import { supabase } from "@auth/supabase";
-import { RecordType } from "@common/interfaces";
-import { DevicesType, UserProfilesType } from "@common/types/supabase";
+import { definitions } from "@common/types/supabase";
 
 export interface LandingStatsReturnType {
   usersCount: number;
-  devicesCount: number;
+  sensorsCount: number;
   recordsCount: number;
 }
 
 export async function getLandingStats(): Promise<LandingStatsReturnType> {
-  const [usersReq, devicesReq, recordsReq] = await Promise.all([
+  const [usersReq, sensorsReq, recordsReq] = await Promise.all([
     supabase
-      .from<UserProfilesType>("userprofiles")
+      .from<definitions["user_profiles"]>("user_profiles")
       .select("name", { count: "exact", head: true }),
     supabase
-      .from<DevicesType>("devices")
+      .from<definitions["sensors"]>("sensors")
       .select("name", { count: "exact", head: true }),
     supabase
-      .from<RecordType>("records")
+      .from<definitions["records"]>("records")
       .select("measurements", { count: "exact", head: true }),
   ]);
 
   if (usersReq.error) throw usersReq.error;
-  if (devicesReq.error) throw devicesReq.error;
+  if (sensorsReq.error) throw sensorsReq.error;
   if (recordsReq.error) throw recordsReq.error;
   return {
     usersCount: usersReq.count || 0,
-    devicesCount: devicesReq.count || 0,
+    sensorsCount: sensorsReq.count || 0,
     recordsCount: recordsReq.count || 0,
   };
 }

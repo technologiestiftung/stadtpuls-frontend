@@ -1,7 +1,5 @@
-import { DevicesType, ProjectsType } from "@common/types/supabase";
-import { fakeCategories } from "./categories";
-import { fakeProjects } from "./publicProjects";
-import { fakeDeviceRecords } from "./deviceRecords";
+import { DevicesType, ProjectsType } from "@common/types/supabase_DEPRECATED";
+import { categories as fakeCategories } from "./categories";
 import {
   fakeAuthToken,
   fakeRefreshToken,
@@ -9,15 +7,12 @@ import {
   fakeUserProjects,
 } from "./userData";
 
-export const publicProjectsData = fakeProjects;
-
 export const publicCategories = fakeCategories;
 //userData
 export const refreshToken = fakeRefreshToken;
 export const authToken = fakeAuthToken;
 export const userData = fakeUserData;
 export const userProjects = fakeUserProjects;
-export const deviceRecords = fakeDeviceRecords;
 export const getDevice = (id: number): null | DevicesType[] =>
   fakeUserProjects.reduce<null | DevicesType[]>((res, project) => {
     const device = project.devices.find(device => device.id == id);

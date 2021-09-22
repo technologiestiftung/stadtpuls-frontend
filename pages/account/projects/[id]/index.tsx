@@ -1,4 +1,4 @@
-import { useAuth } from "@auth/Auth";
+/* import { useAuth } from "@auth/Auth";
 import { NoAccess } from "@components/PageError/NoAccess";
 import { PleaseLogin } from "@components/PageError/PleaseLogin";
 import { InvalidPageId } from "@components/PageError/InvalidPageId";
@@ -6,13 +6,13 @@ import { ServerError } from "@components/PageError/ServerError";
 import { ProjectInfo } from "@components/ProjectInfo";
 import { UserProjectsWrapper } from "@components/UserProjectsWrapper";
 import { useUserData } from "@lib/hooks/useUserData";
-import { useRouter } from "next/router";
+import { useRouter } from "next/router"; */
 import { FC } from "react";
-import { SensorsListWithData } from "@components/SensorsList/WithData";
-import { ProjectNotFound } from "@components/PageError/ProjectNotFound";
+/* import { SensorsListWithData } from "@components/SensorsList/WithData";
+import { ProjectNotFound } from "@components/PageError/ProjectNotFound"; */
 
 const AccountProjectPage: FC = () => {
-  const router = useRouter();
+  /* const router = useRouter();
   const projectId = router.query.id;
   const { authenticatedUser, isLoadingAuth, error: authError } = useAuth();
   const { projects, error } = useUserData();
@@ -38,9 +38,11 @@ const AccountProjectPage: FC = () => {
     name,
   }));
 
-  if (!project) return <ProjectNotFound projectId={projectId} />;
+  if (!project) return <ProjectNotFound projectId={projectId} />; */
 
-  return (
+  return <div>Project page. TODO: To be deleted</div>;
+
+  /* return (
     <UserProjectsWrapper projects={projectsForSidebar}>
       <ProjectInfo
         title={project.name}
@@ -55,7 +57,7 @@ const AccountProjectPage: FC = () => {
         projectId={projectIdInt}
       />
     </UserProjectsWrapper>
-  );
+  ); */
 };
 
 export default AccountProjectPage;

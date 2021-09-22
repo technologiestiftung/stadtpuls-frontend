@@ -14,6 +14,6 @@ const Template: Story<LandingStatsReturnType> = stats => (
 export const Default = Template.bind({});
 Default.args = {
   usersCount: 123,
-  devicesCount: 432,
+  sensorsCount: 432,
   recordsCount: 100234,
 };
