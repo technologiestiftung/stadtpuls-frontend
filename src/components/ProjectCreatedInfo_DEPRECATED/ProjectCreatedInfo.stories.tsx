@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react";
 import { ProjectCreatedInfo, ProjectCreatedInfoType } from ".";
 
 export default {
-  title: "Layout/ProjectCreatedInfo",
+  title: "Layout/ProjectCreatedInfo_DEPRECATED",
   component: ProjectCreatedInfo,
 } as Meta;
 

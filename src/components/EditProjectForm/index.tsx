@@ -2,7 +2,7 @@ import { FC } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, useForm } from "react-hook-form";
-import { ProjectInfoFormWrapper } from "@components/ProjectInfoFormWrapper";
+import { ProjectInfoFormWrapper } from "@components/ProjectInfoFormWrapper_DEPRECATED";
 import { FormTextInput } from "@components/FormTextInput";
 import { FormSelect, SelectOptionType } from "@components/FormSelect";
 import { FormTextarea } from "@components/FormTextarea";
