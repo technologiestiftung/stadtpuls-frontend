@@ -28,7 +28,7 @@ WithoutDefaultValues.args = {
   title: "Add sensor",
   onSubmit: action("Form data submited"),
   onCancel: action("Form cancelled"),
-  onDelete: action("Delete button clicked"),
+  onDelete: (false as unknown) as () => void,
 };
 
 export const WithDefaultValues = Template.bind({});

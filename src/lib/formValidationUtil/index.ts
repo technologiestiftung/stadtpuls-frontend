@@ -2,8 +2,8 @@ import * as yup from "yup";
 
 export const requiredEmailValidation = yup
   .string()
-  .email("Die angegebene E-Mail Adresse ist ungültig")
-  .required("Sie müssen eine E-Mail Adresse angeben");
+  .email("Die angegebene E-Mail-Adresse ist ungültig")
+  .required("Eine E-Mail Adresse muss angeben werden");
 
 export const requiredSensorNameValidation = yup
   .string()
@@ -16,29 +16,27 @@ export const requiredSensorCategoryValidation = yup
 
 export const requiredSymbolIdValidation = yup
   .number()
-  .min(1, "Bitte wählen Sie ein gültiges Symbol")
-  .max(31, "Bitte wählen Sie ein gültiges Symbol")
-  .required("Bitte wählen Sie ein gültiges Symbol");
+  .min(1, "Ungültiges Symbol")
+  .max(31, "Ungültiges Symbol")
+  .required("Ungültiges Symbol");
 
 export const requiredLatitude = yup
   .number()
-  .min(-90, "Bitte wählen Sie ein gültige Latitude")
-  .max(90, "Bitte wählen Sie ein gültige Latitude")
-  .required("Bitte wählen Sie ein gültige Latitude");
+  .min(-90, "Ungültige Latitude")
+  .max(90, "Ungültige Latitude")
+  .required("Ungültige Latitude");
 
 export const requiredLongitude = yup
   .number()
-  .min(-180, "Bitte wählen Sie ein gültige Longitude")
-  .max(180, "Bitte wählen Sie ein gültige Longitude")
-  .required("Bitte wählen Sie ein gültige Longitude");
+  .min(-180, "Ungültige Longitude")
+  .max(180, "Ungültige Longitude")
+  .required("Ungültige Longitude");
 
 export const requiredSensorDescriptionValidation = yup
   .string()
-  .required(
-    "Der Sensor muss eine Beschreibung zwischen 10 und 140 Zeichen haben"
-  )
-  .min(10, "Die Beschreibung kann 10 bis 140 Zeichen enthalten")
-  .max(140, "Die Beschreibung kann 10 bis 140 Zeichen enthalten");
+  .required("Die Beschreibung zwischen 10 und 140 Zeichen lang sein")
+  .min(10, "Die Beschreibung zwischen 10 und 140 Zeichen lang sein")
+  .max(140, "Die Beschreibung zwischen 10 und 140 Zeichen lang sein");
 
 export const requiredSensorIntegrationValidation = yup
   .string()

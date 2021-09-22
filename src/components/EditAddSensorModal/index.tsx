@@ -21,8 +21,10 @@ import { FormListBox } from "@components/FormListBox";
 import { useSensorCategories } from "@lib/hooks/useSensorCategories";
 import { PreviewMap } from "@components/PreviewMap";
 import { CategoryIcon } from "@components/CategoryIcon";
+import { QuestionMarkTooltip } from "@components/QuestionMarkTooltip";
 import { SensorSymbol } from "@components/SensorSymbol";
 import { InteractiveMapProps } from "react-map-gl/src/components/interactive-map";
+import GrabbingHandIcon from "../../../public/images/icons/16px/grabbingHand.svg";
 
 interface CommonDataType {
   name: string;
@@ -75,7 +77,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
   defaultValues = {},
   onSubmit = () => undefined,
   onCancel = () => undefined,
-  onDelete = () => undefined,
+  onDelete,
   submitButtonText = "Speichern",
   cancelButtonText = "Abbrechen",
   deleteButtonText = "Löschen",
@@ -142,6 +144,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
                 {...field}
                 label='Symbol'
                 containsIconList
+                placeholder='Symbol'
                 options={Array.from(Array(32)).map((_, i) => ({
                   name: (
                     <span className='w-6 h-6 float-left inline-block'>
@@ -169,7 +172,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
             />
           )}
         />
-        <fieldset className='xs:grid grid-cols-6 sm:grid-cols-2 gap-4'>
+        <fieldset className='sm:grid sm:grid-cols-2 gap-4 relative z-50'>
           <Controller
             name='categoryId'
             control={control}
@@ -195,11 +198,10 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
                   []
                 }
                 errors={formatError(errors.categoryId?.message)}
-                className='xs:col-span-4 sm:col-span-1'
               />
             )}
           />
-          <div className='flex flex-col gap-2 xs:col-span-2 sm:col-span-1'>
+          <div className='flex flex-col gap-2'>
             <Controller
               name='integration'
               control={control}
@@ -228,7 +230,17 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
                 render={({ field }) => (
                   <FormTextInput
                     {...field}
-                    label='TTN Device ID'
+                    label={
+                      <>
+                        TTN Device-ID
+                        <QuestionMarkTooltip
+                          id='ttn-device-id'
+                          title='TTN Device-ID'
+                          content='Nutze hier die exakte TTN Device-ID aus deiner TTN-Konsole. Die ID ist für andere Stadtpuls-Nutzer:innen nicht sichtbar.'
+                          additionalClasses='inline-block ml-2'
+                        />
+                      </>
+                    }
                     placeholder='lorawan-heltec-24b'
                     type='text'
                     errors={formatError(errors.ttnDeviceId?.message)}
@@ -238,7 +250,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
             )}
           </div>
         </fieldset>
-        <div>
+        <div className='mb-6'>
           <fieldset className='grid grid-cols-2'>
             <Controller
               name='latitude'
@@ -296,9 +308,13 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
             />
           </fieldset>
           <fieldset
-            disabled
             role='region'
-            className='mt-[-25px] relative border border-gray-200 w-[calc(100%-1px)]'
+            className={[
+              !errors.latitude && !errors.longitude && "mt-[-25px]",
+              "relative border border-gray-200 w-[calc(100%-1px)]",
+            ]
+              .filter(Boolean)
+              .join(" ")}
           >
             <PreviewMap
               interactive
@@ -315,16 +331,23 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
             />
             <span className='w-3 h-3 rounded-full bg-blue absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2' />
           </fieldset>
+          <p className='text-sm text-gray-500 mt-2 grid grid-cols-[16px,1fr] gap-2 items-center'>
+            <GrabbingHandIcon />
+            Setzen Sie den mittleren Punkt auf der Karte auf Ihren gewünschten
+            Standort.
+          </p>
         </div>
         <div className='flex w-full sm:justify-between flex-wrap gap-4 items-end'>
           <div className='border-b sm:border-none w-full sm:w-auto pb-4 sm:pb-0'>
-            <Button
-              variant='dangerous'
-              onClick={onDelete}
-              className='w-full sm:w-auto'
-            >
-              {deleteButtonText}
-            </Button>
+            {typeof onDelete === "function" && (
+              <Button
+                variant='dangerous'
+                onClick={onDelete}
+                className='w-full sm:w-auto'
+              >
+                {deleteButtonText}
+              </Button>
+            )}
           </div>
           <div className='w-full sm:w-auto flex gap-4'>
             <Button variant='secondary' onClick={onCancel}>

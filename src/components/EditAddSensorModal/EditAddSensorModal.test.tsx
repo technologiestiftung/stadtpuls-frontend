@@ -39,7 +39,7 @@ describe("EditAddSensorModal component", () => {
     expect(sensorIconLabel).toBeInTheDocument();
 
     const sensorIconField = screen.getByRole("button", {
-      name: "Symbol Bitte wähle eine Option",
+      name: "Symbol Symbol",
     });
     expect(sensorIconField).toBeInTheDocument();
 

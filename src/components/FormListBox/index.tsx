@@ -70,10 +70,12 @@ export const FormListBox = forwardRef<HTMLButtonElement, FormListBoxPropType>(
               "group flex items-center content-center",
               "px-3 py-2 border bg-white pr-8",
               "font-headline block w-full text-left relative",
-              "focus:outline-none focus:border-purple focus:ring-2 focus:ring-green",
+              "focus:outline-none focus:ring-2",
               !selectValue && placeholder && "text-gray-500",
               selectValue && "text-black hover:text-blue",
-              errors.length > 0 ? "border-error" : "border-gray-200",
+              errors.length > 0
+                ? "border-error focus:border-error focus:ring-error"
+                : "border-gray-200 focus:border-purple focus:ring-green",
             ]
               .filter(Boolean)
               .join(" ")}
@@ -88,7 +90,9 @@ export const FormListBox = forwardRef<HTMLButtonElement, FormListBoxPropType>(
           </Listbox.Button>
           <Listbox.Options
             className={[
-              containsIconList && "flex flex-wrap right-0 min-w-[200px]",
+              containsIconList
+                ? "flex flex-wrap right-0 min-w-[200px]"
+                : "truncate whitespace-nowrap",
               "absolute z-10 mt-[-1px] w-full bg-white shadow",
               "max-h-56 text-base border border-gray-200",
               "overflow-y-auto focus:outline-none sm:text-sm",
@@ -123,15 +127,12 @@ export const FormListBox = forwardRef<HTMLButtonElement, FormListBoxPropType>(
                     {selected && (
                       <span
                         className={[
-                          "absolute w-5 h-5 text-green",
+                          "absolute text-green",
+                          "flex place-items-center place-content-center",
                           "rounded-full",
                           containsIconList &&
-                            "transform bottom-0 right-0 bg-blue",
-                          containsIconList &&
-                            "flex place-items-center place-content-center",
-                          containsIconList &&
-                            "flex place-items-center place-content-center",
-                          !containsIconList && "bg-white right-3",
+                            "transform bottom-0 right-0 bg-blue w-5 h-5",
+                          !containsIconList && "bg-white inset-y-0 right-3",
                         ].join(" ")}
                       >
                         <CheckmarkIcon />

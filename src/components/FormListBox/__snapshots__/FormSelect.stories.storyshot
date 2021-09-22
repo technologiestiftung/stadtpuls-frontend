@@ -7,7 +7,7 @@ exports[`Storyshots Forms/FormListBox With Custom Placeholder 1`] = `
   <button
     aria-expanded={false}
     aria-haspopup={true}
-    className="group flex items-center content-center px-3 py-2 border bg-white pr-8 font-headline block w-full text-left relative focus:outline-none focus:border-purple focus:ring-2 focus:ring-green text-gray-500 border-gray-200"
+    className="group flex items-center content-center px-3 py-2 border bg-white pr-8 font-headline block w-full text-left relative focus:outline-none focus:ring-2 text-gray-500 border-gray-200 focus:border-purple focus:ring-green"
     disabled={false}
     id="headlessui-listbox-button-10"
     onClick={[Function]}
@@ -45,7 +45,7 @@ exports[`Storyshots Forms/FormListBox With Disabled Option 1`] = `
   <button
     aria-expanded={false}
     aria-haspopup={true}
-    className="group flex items-center content-center px-3 py-2 border bg-white pr-8 font-headline block w-full text-left relative focus:outline-none focus:border-purple focus:ring-2 focus:ring-green text-gray-500 border-gray-200"
+    className="group flex items-center content-center px-3 py-2 border bg-white pr-8 font-headline block w-full text-left relative focus:outline-none focus:ring-2 text-gray-500 border-gray-200 focus:border-purple focus:ring-green"
     disabled={false}
     id="headlessui-listbox-button-14"
     onClick={[Function]}
@@ -83,7 +83,7 @@ exports[`Storyshots Forms/FormListBox With Errors 1`] = `
   <button
     aria-expanded={false}
     aria-haspopup={true}
-    className="group flex items-center content-center px-3 py-2 border bg-white pr-8 font-headline block w-full text-left relative focus:outline-none focus:border-purple focus:ring-2 focus:ring-green text-gray-500 border-error"
+    className="group flex items-center content-center px-3 py-2 border bg-white pr-8 font-headline block w-full text-left relative focus:outline-none focus:ring-2 text-gray-500 border-error focus:border-error focus:ring-error"
     disabled={false}
     id="headlessui-listbox-button-12"
     onClick={[Function]}
@@ -135,7 +135,7 @@ exports[`Storyshots Forms/FormListBox With Icons 1`] = `
   <button
     aria-expanded={false}
     aria-haspopup={true}
-    className="group flex items-center content-center px-3 py-2 border bg-white pr-8 font-headline block w-full text-left relative focus:outline-none focus:border-purple focus:ring-2 focus:ring-green text-black hover:text-blue border-gray-200"
+    className="group flex items-center content-center px-3 py-2 border bg-white pr-8 font-headline block w-full text-left relative focus:outline-none focus:ring-2 text-black hover:text-blue border-gray-200 focus:border-purple focus:ring-green"
     disabled={false}
     id="headlessui-listbox-button-8"
     onClick={[Function]}
@@ -194,7 +194,7 @@ exports[`Storyshots Forms/FormListBox With Label 1`] = `
   <button
     aria-expanded={false}
     aria-haspopup={true}
-    className="group flex items-center content-center px-3 py-2 border bg-white pr-8 font-headline block w-full text-left relative focus:outline-none focus:border-purple focus:ring-2 focus:ring-green text-gray-500 border-gray-200"
+    className="group flex items-center content-center px-3 py-2 border bg-white pr-8 font-headline block w-full text-left relative focus:outline-none focus:ring-2 text-gray-500 border-gray-200 focus:border-purple focus:ring-green"
     disabled={false}
     id="headlessui-listbox-button-2"
     onClick={[Function]}
@@ -232,7 +232,7 @@ exports[`Storyshots Forms/FormListBox With Selected Default 1`] = `
   <button
     aria-expanded={false}
     aria-haspopup={true}
-    className="group flex items-center content-center px-3 py-2 border bg-white pr-8 font-headline block w-full text-left relative focus:outline-none focus:border-purple focus:ring-2 focus:ring-green text-black hover:text-blue border-gray-200"
+    className="group flex items-center content-center px-3 py-2 border bg-white pr-8 font-headline block w-full text-left relative focus:outline-none focus:ring-2 text-black hover:text-blue border-gray-200 focus:border-purple focus:ring-green"
     disabled={false}
     id="headlessui-listbox-button-6"
     onClick={[Function]}
@@ -270,7 +270,7 @@ exports[`Storyshots Forms/FormListBox Without Label 1`] = `
   <button
     aria-expanded={false}
     aria-haspopup={true}
-    className="group flex items-center content-center px-3 py-2 border bg-white pr-8 font-headline block w-full text-left relative focus:outline-none focus:border-purple focus:ring-2 focus:ring-green text-gray-500 border-gray-200"
+    className="group flex items-center content-center px-3 py-2 border bg-white pr-8 font-headline block w-full text-left relative focus:outline-none focus:ring-2 text-gray-500 border-gray-200 focus:border-purple focus:ring-green"
     disabled={false}
     id="headlessui-listbox-button-4"
     onClick={[Function]}

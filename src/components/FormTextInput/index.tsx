@@ -1,8 +1,9 @@
-import { HTMLProps, forwardRef } from "react";
+import { HTMLProps, forwardRef, ReactNode } from "react";
 
-interface FormTextInputPropType extends HTMLProps<HTMLInputElement> {
+interface FormTextInputPropType
+  extends Omit<HTMLProps<HTMLInputElement>, "label"> {
   name: string;
-  label?: string;
+  label?: ReactNode;
   containerClassName?: string;
   errors?: string[];
   optional?: boolean;
