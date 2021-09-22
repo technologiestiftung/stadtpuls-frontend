@@ -147,7 +147,7 @@ export const SensorPageHeader: FC<SensorPageHeaderPropType> = ({
             <p className='text-sm sm:text-base max-w-prose'>{description}</p>
           </div>
           <CopyTextField name='api-url' label='API Schnittstelle'>
-            {`/api/v2/sensors/${id}/records`}
+            {`/api/v1/sensors/${id}/records`}
           </CopyTextField>
           {withEditButton && onEditButtonClick && (
             <div className='w-full order-last mt-6'>
