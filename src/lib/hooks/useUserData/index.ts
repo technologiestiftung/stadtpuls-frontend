@@ -56,9 +56,10 @@ const fetchUserSensors: SensorsFetcherSignature = async (
 };
 
 const createSensor = async (
-  sensor: Omit<definitions["sensors"], "id">
+  sensor: Omit<definitions["sensors"], "id">,
+  user_id: string | undefined
 ): Promise<void> => {
-  if (!sensor.user_id) throw new Error("Not authenticated");
+  if (!user_id) throw new Error("Not authenticated");
 
   const { error } = await supabase
     .from<definitions["sensors"]>("sensors")
@@ -185,7 +186,7 @@ export const useUserData = (): {
         createSensorLocally(sensors.data, sensor),
         false
       );
-      await createSensor(sensor).catch(setActionError);
+      await createSensor(sensor, userId).catch(setActionError);
       void mutate(sensorsParams);
     },
     updateSensor: async sensor => {
