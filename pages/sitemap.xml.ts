@@ -24,7 +24,7 @@ export const getSitemap: (sensors: PublicSensors) => string = ({
     .map(
       ({ id }) => `
   <url>
-    <loc>${createFullUrl(`/${id}`)}</loc>
+    <loc>${createFullUrl(`/sensors/${id}`)}</loc>
     <lastmod>${formatDate()}</lastmod>
   </url>`
     )
