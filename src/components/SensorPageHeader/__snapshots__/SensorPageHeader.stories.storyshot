@@ -648,7 +648,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
           name="api-url"
           readOnly={true}
           type="text"
-          value="/api/v2/sensors/1/records"
+          value="/api/v1/sensors/1/records"
         />
       </div>
       <div
@@ -1313,7 +1313,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
           name="api-url"
           readOnly={true}
           type="text"
-          value="/api/v2/sensors/1/records"
+          value="/api/v1/sensors/1/records"
         />
       </div>
     </aside>
