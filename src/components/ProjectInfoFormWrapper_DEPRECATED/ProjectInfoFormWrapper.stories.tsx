@@ -3,7 +3,7 @@ import { action } from "@storybook/addon-actions";
 import { ProjectInfoFormWrapper, ProjectInfoFormWrapperPropType } from ".";
 
 export default {
-  title: "Forms/ProjectInfoFormWrapper",
+  title: "Forms/ProjectInfoFormWrapper_DEPRECATED",
   component: ProjectInfoFormWrapper,
   argTypes: {
     handleCancel: {

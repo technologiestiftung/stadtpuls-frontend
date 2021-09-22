@@ -44,26 +44,4 @@ describe("utility function getSensorData", () => {
     server.resetHandlers();
     server.close();
   });
-
-  /* it.skip("should send error message when erroring", async (): Promise<void> => {
-    const server = setupServer(
-      rest.get(createApiUrl(`/projects`), (_req, res, ctx) => {
-        return res(ctx.status(404), ctx.json({ message: "Error message" }));
-      })
-    );
-
-    server.listen();
-
-    expect.assertions(1);
-    try {
-      await getProjects();
-    } catch (error) {
-      expect(error).toEqual({
-        message: "Error message",
-      });
-    }
-
-    server.resetHandlers();
-    server.close();
-  }); */
 });

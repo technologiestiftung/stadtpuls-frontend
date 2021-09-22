@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Map/SensorPreviewMap Default 1`] = `
+<div
+  style={
+    Object {
+      "cursor": "grab",
+      "height": 400,
+      "position": "relative",
+      "width": 600,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className=""
+      style={
+        Object {
+          "height": "100%",
+          "overflow": "hidden",
+          "position": "absolute",
+          "visibility": "inherit",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+</div>
+`;

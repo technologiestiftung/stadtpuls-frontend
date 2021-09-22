@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { ProjectCreatedInfo } from ".";
 
-describe("ProjectCreatedInfo component", () => {
+describe.skip("ProjectCreatedInfo component", () => {
   it("should render the given title", () => {
     render(
       <ProjectCreatedInfo projectId={1} projectTitle={"Some title"}>

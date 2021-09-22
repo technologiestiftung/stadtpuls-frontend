@@ -38,7 +38,7 @@ export const useSensorRecords = ({
   endDateString,
 }: useSensorRecordsParamsType): useSensorRecordsReturnType => {
   const params = [
-    `device-${sensorId || "no"}-records`,
+    `sensor-${sensorId || "no"}-records`,
     sensorId,
     startDateString,
     endDateString,
