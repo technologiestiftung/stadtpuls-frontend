@@ -2,7 +2,7 @@
 import { PleaseLogin } from "@components/PageError/PleaseLogin";
 import { ServerError } from "@components/PageError/ServerError";
 import { UserProjectsWrapper } from "@components/UserProjectsWrapper";
-import { CreateProjectForm } from "@components/CreateProjectForm";
+import { CreateProjectForm } from "@components/CreateProjectForm__DEPRECATED";
 import { useSensorCategories } from "@lib/hooks/useSensorCategories";
 import { useUserData } from "@lib/hooks/useUserData";
 import { useRouter } from "next/router"; */

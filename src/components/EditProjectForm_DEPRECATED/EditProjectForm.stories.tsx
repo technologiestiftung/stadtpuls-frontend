@@ -18,7 +18,7 @@ const exampleCategories = [
 ];
 
 export default {
-  title: "Forms/EditProjectForm",
+  title: "Forms/EditProjectForm_DEPRECATED",
   argTypes: {
     onSubmit: {
       description: "A callback called when the form has submitted",

@@ -25,7 +25,7 @@ const exampleIntegrations = [
 ];
 
 export default {
-  title: "Forms/CreateProjectForm",
+  title: "Forms/CreateProjectForm_DEPRECATED",
   argTypes: {
     onSubmit: {
       description: "A callback called when the form has submitted",
