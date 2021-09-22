@@ -8,21 +8,21 @@ interface useSensorLastRecordDateReturnType {
 }
 
 const fetchSensorLastRecordDate = async (
-  deviceId: number | undefined
+  sensorId: number | undefined
 ): Promise<string | null> => {
-  if (!deviceId) return null;
+  if (!sensorId) return null;
 
-  const lastRecordDate = await getSensorLastRecordDate(deviceId);
+  const lastRecordDate = await getSensorLastRecordDate(sensorId);
   return lastRecordDate || null;
 };
 
 export const useSensorLastRecordDate = (
-  deviceId: number | undefined
+  sensorId: number | undefined
 ): useSensorLastRecordDateReturnType => {
-  const params = [`device-${deviceId || "no"}-lastRecordDate`, deviceId];
+  const params = [`sensor-${sensorId || "no"}-lastRecordDate`, sensorId];
   const { data: lastRecordDate, error } = useSWR<string | null, Error>(
     params,
-    () => fetchSensorLastRecordDate(deviceId)
+    () => fetchSensorLastRecordDate(sensorId)
   );
 
   return {

@@ -67,7 +67,7 @@ export const getRecordsBySensorId = async (
       .eq("sensor_id", sensorId);
 
     if (error) throw error;
-    if (!records) throw new Error(`No records found for device ID ${sensorId}`);
+    if (!records) throw new Error(`No records found for sensor ID ${sensorId}`);
     return records;
   }
 };
