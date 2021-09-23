@@ -17,17 +17,17 @@ export const getServerSideProps: GetServerSideProps = async context => {
   }
 };
 
-interface AccountSensorsPagePropType {
+interface AccountTokensPagePropType {
   account: PublicAccountType;
 }
 
-const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({ account }) => {
+const AccountTokensPage: FC<AccountTokensPagePropType> = ({ account }) => {
   console.log(account);
   return (
     <>
-      <UserInfoWithData initialAccount={account} activeTabIndex={0} />
+      <UserInfoWithData initialAccount={account} activeTabIndex={1} />
     </>
   );
 };
 
-export default AccountSensorsPage;
+export default AccountTokensPage;
