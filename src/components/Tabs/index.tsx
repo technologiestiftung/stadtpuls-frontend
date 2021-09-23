@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
+import colors from "../../style/colors";
 
 interface TabPropType {
   id: string;
@@ -23,7 +24,7 @@ const getTabInnerStyles = (isActive: boolean): string =>
     !isActive && "cursor-pointer hover:z-20 border-gray-50 text-gray-900",
     !isActive && "focus:z-20 focus:border-purple",
     !isActive && "focus:ring-2 focus:ring-purple",
-    isActive && "border-gray-200 z-10 cursor-default",
+    isActive && "border-gray-200 z-10 cursor-default bg-white",
   ]
     .filter(Boolean)
     .join(" ");
@@ -57,7 +58,15 @@ export const Tabs: FC<TabsPropType> = ({ tabs, activeTabIndex = 0 }) => (
           tag = <span className={tabInnerStyles}>{name}</span>;
         }
         return (
-          <li key={id} className={[].join(" ")}>
+          <li
+            key={id}
+            className={[].join(" ")}
+            style={{
+              borderBottom: `1px solid ${
+                isActive ? colors.white : colors.gray["200"]
+              }`,
+            }}
+          >
             {tag}
           </li>
         );
