@@ -27,7 +27,7 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
   sensorsCount,
   recordsCount,
   withEditButton = false,
-  onEditButtonClick,
+  onEditButtonClick = () => undefined,
 }) => {
   const { width: windowWidth } = useWindowSize();
   const cleanURL = link ? normalizeURL(link) : undefined;
@@ -111,7 +111,7 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
           </div>
         </div>
       </div>
-      {withEditButton && onEditButtonClick && (
+      {withEditButton && (
         <div className='pl-16 sm:pl-24 md:pl-28'>
           <div className='w-full order-last mt-4'>
             <Button onClick={onEditButtonClick}>Account editieren</Button>

@@ -21,13 +21,10 @@ interface AccountSensorsPagePropType {
   account: PublicAccountType;
 }
 
-const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({ account }) => {
-  console.log(account);
-  return (
-    <>
-      <UserInfoWithData initialAccount={account} activeTabIndex={0} />
-    </>
-  );
-};
+const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({ account }) => (
+  <>
+    <UserInfoWithData initialAccount={account} activeTab='sensors' />
+  </>
+);
 
 export default AccountSensorsPage;
