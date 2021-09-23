@@ -3,6 +3,12 @@ import { PublicAccountType } from "@lib/hooks/usePublicAccounts";
 import { GetServerSideProps } from "next";
 import { FC } from "react";
 import { UserInfoWithData } from "@components/UserInfoHeader/withData";
+import { SensorsGrid } from "@components/SensorsGrid";
+import {
+  getPublicSensors,
+  PublicSensorType,
+  usePublicSensors,
+} from "@lib/hooks/usePublicSensors";
 
 export const getServerSideProps: GetServerSideProps = async context => {
   try {
@@ -10,7 +16,14 @@ export const getServerSideProps: GetServerSideProps = async context => {
     if (!username || Array.isArray(username)) return { notFound: true };
 
     const accountData = await getAccountDataByUsername(username);
-    return { props: { account: { ...accountData, username }, error: null } };
+    const sensorsData = await getPublicSensors();
+    return {
+      props: {
+        account: { ...accountData, username },
+        sensorsData,
+        error: null,
+      },
+    };
   } catch (error) {
     console.error(error);
     return { notFound: true };
@@ -19,12 +32,35 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
 interface AccountSensorsPagePropType {
   account: PublicAccountType;
+  sensorsData: {
+    sensors: PublicSensorType[];
+    count: number;
+  };
 }
 
-const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({ account }) => (
-  <>
-    <UserInfoWithData initialAccount={account} activeTab='sensors' />
-  </>
-);
+const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({
+  account,
+  sensorsData: initialSensorsData,
+}) => {
+  const { data: sensorsData } = usePublicSensors({
+    initialData: initialSensorsData,
+  });
+  return (
+    <>
+      <UserInfoWithData initialAccount={account} activeTab='sensors' />
+      <div className='container max-w-8xl mx-auto px-4 pt-8 pb-24'>
+        {sensorsData && sensorsData.sensors.length > 0 ? (
+          <SensorsGrid
+            sensors={(sensorsData.sensors || []).filter(
+              ({ user_id }) => user_id === account.id
+            )}
+          />
+        ) : (
+          <p>Keine Sensoren vorhanden</p>
+        )}
+      </div>
+    </>
+  );
+};
 
 export default AccountSensorsPage;
