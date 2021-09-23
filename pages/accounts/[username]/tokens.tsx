@@ -3,7 +3,7 @@ import { PublicAccountType } from "@lib/hooks/usePublicAccounts";
 import { GetServerSideProps } from "next";
 import React, { FC } from "react";
 import { UserInfoWithData } from "@components/UserInfoHeader/withData";
-// import { useUserData } from "@lib/hooks/useUserData";
+import { useUserData } from "@lib/hooks/useUserData";
 import { TextLink } from "@components/TextLink";
 import { Alert } from "@components/Alert";
 
@@ -25,8 +25,7 @@ interface AccountTokensPagePropType {
 }
 
 const AccountTokensPage: FC<AccountTokensPagePropType> = ({ account }) => {
-  // const { user } = useUserData();
-  const user = { name: "vogelino" }; // FIXME: Replace with line above
+  const { user } = useUserData();
   const isOwnerAndLoggedIn = !!user && user.name === account.username;
   return (
     <>

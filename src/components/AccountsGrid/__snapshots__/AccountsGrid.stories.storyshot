@@ -559,7 +559,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
           <span
             className="text-lg sm:text-xl pt-1 leading-snug sm:leading-snug font-mono text-gray-700 group-hover:animate-textpulse"
           >
-            12
+            457
           </span>
           <span
             className="text-sm"
@@ -1163,7 +1163,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
           <span
             className="text-lg sm:text-xl pt-1 leading-snug sm:leading-snug font-mono text-gray-700 group-hover:animate-textpulse"
           >
-            40
+            1107
           </span>
           <span
             className="text-sm"
@@ -1754,7 +1754,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
           <span
             className="text-lg sm:text-xl pt-1 leading-snug sm:leading-snug font-mono text-gray-700 group-hover:animate-textpulse"
           >
-            212
+            1564
           </span>
           <span
             className="text-sm"

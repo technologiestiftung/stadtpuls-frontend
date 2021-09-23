@@ -1,4 +1,3 @@
-import { getSensorRecords } from "@mocks/supabaseData/records";
 import { AccountQueryResponseType } from "@lib/hooks/usePublicAccounts";
 import { ttnSensors, httpSensors } from "./sensors";
 import { userprofiles } from "./userprofiles";
@@ -12,10 +11,6 @@ export const publicAccounts: AccountQueryResponseType[] = [
     description: "The dude with the arms",
     url: "https://api.github.com/users/vogelino",
     sensors: httpSensors,
-    records: getSensorRecords({
-      sensorId: 1,
-      numberOfRecords: 12,
-    }),
     user: userprofiles[0],
   },
   {
@@ -26,10 +21,6 @@ export const publicAccounts: AccountQueryResponseType[] = [
     description: "The dude with the nose",
     url: "https://api.github.com/users/dnsos",
     sensors: ttnSensors,
-    records: getSensorRecords({
-      sensorId: 2,
-      numberOfRecords: 40,
-    }),
     user: userprofiles[0],
   },
   {
@@ -40,10 +31,6 @@ export const publicAccounts: AccountQueryResponseType[] = [
     description: "The dude with the ear",
     url: "https://api.github.com/users/ff6347",
     sensors: [...ttnSensors, ...httpSensors],
-    records: getSensorRecords({
-      sensorId: 3,
-      numberOfRecords: 212,
-    }),
     user: userprofiles[0],
   },
 ];

@@ -13,7 +13,7 @@ import "../src/style/global.css";
 import { Head } from "@components/Head";
 
 if (process.env.NODE_ENV !== "production") {
-  // require("../src/mocks/index");
+  require("../src/mocks/index");
 }
 
 const App: FC<{

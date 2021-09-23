@@ -1,6 +1,6 @@
 import { Tabs } from "@components/Tabs";
 import { PublicAccountType } from "@lib/hooks/usePublicAccounts";
-// import { useUserData } from "@lib/hooks/useUserData";
+import { useUserData } from "@lib/hooks/useUserData";
 import { FC } from "react";
 import { UserInfoHeader } from ".";
 
@@ -13,8 +13,7 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
   initialAccount,
   activeTab,
 }) => {
-  // const { user } = useUserData();
-  const user = { name: "vogelino" }; // FIXME: Replace with line above
+  const { user } = useUserData();
   const isOwnerAndLoggedIn = !!user && user.name === initialAccount.username;
   const activeTabIndex = activeTab === "tokens" ? 1 : 0;
   const tabs = [
