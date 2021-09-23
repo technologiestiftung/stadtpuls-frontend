@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI Elements/TokenItem Default 1`] = `
+<div
+  className="flex flex-wrap place-content-between items-center py-6 border-gray-100 border-b"
+>
+  <div
+    className="flex py-2 text-gray-800"
+  >
+    <svg
+      aria-hidden={true}
+      className="flex-shrink-0 self-center"
+      height="16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        fill="none"
+        fillRule="evenodd"
+        stroke="currentColor"
+        strokeWidth="2"
+        transform="translate(0 5)"
+      >
+        <path
+          d="M5 3h10"
+          strokeLinecap="round"
+        />
+        <circle
+          cx="3"
+          cy="3"
+          r="2"
+        />
+        <path
+          d="M13 3v3m-3-3v2"
+          strokeLinecap="round"
+        />
+      </g>
+    </svg>
+    <p
+      className="ml-3"
+    >
+      Default personal token
+    </p>
+  </div>
+  <div
+    className="py-2 ml-7"
+  >
+    <button
+      aria-label="Default personal token neu generieren"
+      className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green mr-3 my-1"
+      onClick={[Function]}
+      type="button"
+    >
+      Neu generieren
+    </button>
+    <button
+      aria-label="Default personal token löschen"
+      className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-error text-error hover:bg-error hover:bg-opacity-10 my-1"
+      onClick={[Function]}
+      type="button"
+      variant="dangerous"
+    >
+      Löschen
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI Elements/TokenItem First Item In List 1`] = `
+<div
+  className="flex flex-wrap place-content-between items-center py-6 border-gray-100 border-b border-t"
+>
+  <div
+    className="flex py-2 text-gray-800"
+  >
+    <svg
+      aria-hidden={true}
+      className="flex-shrink-0 self-center"
+      height="16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        fill="none"
+        fillRule="evenodd"
+        stroke="currentColor"
+        strokeWidth="2"
+        transform="translate(0 5)"
+      >
+        <path
+          d="M5 3h10"
+          strokeLinecap="round"
+        />
+        <circle
+          cx="3"
+          cy="3"
+          r="2"
+        />
+        <path
+          d="M13 3v3m-3-3v2"
+          strokeLinecap="round"
+        />
+      </g>
+    </svg>
+    <p
+      className="ml-3"
+    >
+      I am the first token with a border-top
+    </p>
+  </div>
+  <div
+    className="py-2 ml-7"
+  >
+    <button
+      aria-label="I am the first token with a border-top neu generieren"
+      className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green mr-3 my-1"
+      onClick={[Function]}
+      type="button"
+    >
+      Neu generieren
+    </button>
+    <button
+      aria-label="I am the first token with a border-top löschen"
+      className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-error text-error hover:bg-error hover:bg-opacity-10 my-1"
+      onClick={[Function]}
+      type="button"
+      variant="dangerous"
+    >
+      Löschen
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI Elements/TokenItem Long Name 1`] = `
+<div
+  className="flex flex-wrap place-content-between items-center py-6 border-gray-100 border-b"
+>
+  <div
+    className="flex py-2 text-gray-800"
+  >
+    <svg
+      aria-hidden={true}
+      className="flex-shrink-0 self-center"
+      height="16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        fill="none"
+        fillRule="evenodd"
+        stroke="currentColor"
+        strokeWidth="2"
+        transform="translate(0 5)"
+      >
+        <path
+          d="M5 3h10"
+          strokeLinecap="round"
+        />
+        <circle
+          cx="3"
+          cy="3"
+          r="2"
+        />
+        <path
+          d="M13 3v3m-3-3v2"
+          strokeLinecap="round"
+        />
+      </g>
+    </svg>
+    <p
+      className="ml-3"
+    >
+      Default personal token with an extraordinary long name that might span multiple rows
+    </p>
+  </div>
+  <div
+    className="py-2 ml-7"
+  >
+    <button
+      aria-label="Default personal token with an extraordinary long name that might span multiple rows neu generieren"
+      className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green mr-3 my-1"
+      onClick={[Function]}
+      type="button"
+    >
+      Neu generieren
+    </button>
+    <button
+      aria-label="Default personal token with an extraordinary long name that might span multiple rows löschen"
+      className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-error text-error hover:bg-error hover:bg-opacity-10 my-1"
+      onClick={[Function]}
+      type="button"
+      variant="dangerous"
+    >
+      Löschen
+    </button>
+  </div>
+</div>
+`;
