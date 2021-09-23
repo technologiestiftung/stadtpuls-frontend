@@ -1,15 +1,10 @@
-import { definitions } from "@common/types/supabase";
+import { publicAccounts } from "@mocks/supabaseData/accounts";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { getAccountDataByUsername } from ".";
 import { createApiUrl } from "../createApiUrl";
 
-const exampleAccount: definitions["user_profiles"] = {
-  id: "1",
-  name: "bob",
-  created_at: new Date().toISOString(),
-  display_name: "Bob Der Handwerker",
-};
+const exampleAccount = publicAccounts[0];
 
 describe("utility function getAccountDataByUsername", () => {
   it("should return data belonging to provided username", async (): Promise<void> => {
@@ -26,9 +21,8 @@ describe("utility function getAccountDataByUsername", () => {
 
     expect(Array.isArray(accountData)).toBe(false);
     expect(accountData.id).toBe(exampleAccount.id);
-    expect(accountData.name).toBe(exampleAccount.name);
-    expect(accountData.created_at).toBe(exampleAccount.created_at);
-    expect(accountData.display_name).toBe(exampleAccount.display_name);
+    expect(accountData.username).toBe(exampleAccount.name);
+    expect(accountData.displayName).toBe(exampleAccount.display_name);
     server.resetHandlers();
     server.close();
   });

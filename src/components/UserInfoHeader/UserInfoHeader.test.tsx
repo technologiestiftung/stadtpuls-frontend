@@ -3,6 +3,8 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { UserInfoHeader } from ".";
 
 const testProps = {
+  id: "1",
+  categories: [1, 2, 3],
   displayName: "Louis Dieudonné de Bourbon",
   username: "looee14",
   description:
