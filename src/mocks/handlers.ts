@@ -1,6 +1,7 @@
 import { rest } from "msw";
-import { userData, refreshToken, authToken } from "./supabaseData";
+import { refreshToken, authToken } from "./supabaseData";
 import { parsedSensors, sensors } from "./supabaseData/sensors";
+import { publicAccounts } from "./supabaseData/accounts";
 import { createApiUrl } from "../lib/requests/createApiUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
 import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
@@ -11,6 +12,10 @@ import {
   SensorQueryResponseType,
   sensorQueryString,
 } from "@lib/hooks/usePublicSensors";
+import {
+  AccountQueryResponseType,
+  accountQueryString,
+} from "@lib/hooks/usePublicAccounts";
 import { categories } from "./supabaseData/categories";
 import { userprofiles } from "./supabaseData/userprofiles";
 import { getSensorRecords } from "./supabaseData/records";
@@ -124,15 +129,6 @@ const supabaseHandlers = [
       );
     else return res(ctx.status(404, "Not found"));
   }), */
-  rest.get(createApiUrl("/user_profiles"), (req, res, ctx) => {
-    const query = req.url.searchParams;
-
-    const select = query.get("select");
-    const id = query.get("id")?.slice(3);
-    if (select == "name" && id == authToken.currentSession.user.id)
-      return res(ctx.status(201, "Mocked status"), ctx.json(userData));
-    else return res(ctx.status(404, "Not found"));
-  }),
   // Sensors add update delete
   rest.post<definitions["sensors"][]>(
     createApiUrl("/sensors"),
@@ -143,6 +139,71 @@ const supabaseHandlers = [
         ctx.status(201, "Mocked status"),
         ctx.json([{ ...payload, id: 12 }])
       );
+    }
+  ),
+  rest.get<AccountQueryResponseType>(
+    createApiUrl("/user_profiles"),
+    (req, res, ctx) => {
+      const query = req.url.searchParams;
+
+      const select = query.get("select");
+      const id = query.get("id")?.replace("eq.", "");
+      const limit = query.get("limit");
+      const recordsLimit = query.get("records.limit");
+
+      // Regex removes whitespaces and line breaks. Necessary because accountQueryString is constructed as template literal
+      const trimmedAccountSelectString = accountQueryString.replace(
+        /(\r\n|\n|\r| )/gm,
+        ""
+      );
+
+      const specificAccountDataRequested =
+        select === trimmedAccountSelectString;
+      const oneAccountRequestedById = specificAccountDataRequested && id;
+      const limitedAccountsRequested = specificAccountDataRequested && limit;
+
+      if (specificAccountDataRequested) {
+        if (oneAccountRequestedById && id) {
+          return res(
+            ctx.status(201, "Mocked status"),
+            ctx.json(
+              publicAccounts.find(
+                account => String(account.id) === String(id)
+              ) as definitions["user_profiles"]
+            )
+          );
+        }
+        if (limitedAccountsRequested && limit) {
+          const limitedAccounts = publicAccounts.slice(0, parseInt(limit, 10));
+          const limitedAccountsWithLimitedRecords = limitedAccounts.map(
+            account => {
+              return recordsLimit
+                ? {
+                    ...account,
+                    records: account.records.slice(
+                      0,
+                      parseInt(recordsLimit, 10) - 1
+                    ),
+                  }
+                : { ...account };
+            }
+          );
+
+          return recordsLimit
+            ? res(
+                ctx.status(201, "Mocked status"),
+                ctx.json(limitedAccountsWithLimitedRecords)
+              )
+            : res(ctx.status(201, "Mocked status"), ctx.json(limitedAccounts));
+        } else {
+          return res(
+            ctx.status(201, "Mocked status"),
+            ctx.json(publicAccounts)
+          );
+        }
+      }
+
+      return res(ctx.status(201, "Mocked status"), ctx.json(publicAccounts));
     }
   ),
   rest.get<SensorQueryResponseType>(
