@@ -86,7 +86,7 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
               title='Fehler!'
               message={
                 <>
-                  Es ist beim editieren ein Fehler aufgetreten:{" "}
+                  Beim Editieren ist ein Fehler aufgetreten:{" "}
                   <code className='ml-4 px-2 py-1 font-mono bg-error bg-opacity-20'>
                     {error.message}
                   </code>
@@ -191,7 +191,7 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
           }
         >
           <div className='prose max-w-none'>
-            <p>Du bist dabeit der Sensor „{mergedSensor.name}“ zu löschen.</p>
+            <p>Du bist dabei, den Sensor „{mergedSensor.name}“ zu löschen.</p>
             <p>
               <strong>Diese Aktion is unwiderruflich.</strong>
             </p>

@@ -185,7 +185,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
             <FormTextarea
               {...field}
               label='Beschreibung'
-              placeholder='Beschreibe kurz der Sensor'
+              placeholder='Beschreibe kurz den Sensor'
               errors={formatError(errors.description?.message)}
             />
           )}
@@ -232,7 +232,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
                     setIntegration(newValue as "http" | "ttn");
                   }}
                   label='Integration'
-                  placeholder='Wie möchtest du dein Sensor integrieren?'
+                  placeholder='Wie möchtest du deinen Sensor integrieren?'
                   options={[
                     { name: "HTTP", value: "http" },
                     { name: "TTN", value: "ttn" },
