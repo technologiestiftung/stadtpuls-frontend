@@ -2,27 +2,43 @@ import * as yup from "yup";
 
 export const requiredEmailValidation = yup
   .string()
-  .email("Die angegebene E-Mail Adresse ist ungültig")
-  .required("Sie müssen eine E-Mail Adresse angeben");
+  .email("Die angegebene E-Mail-Adresse ist ungültig")
+  .required("Eine E-Mail Adresse muss angeben werden");
 
-export const requiredProjectTitleValidation = yup
+export const requiredSensorNameValidation = yup
   .string()
-  .required("Das Projekt muss einen Titel haben")
-  .max(60, "Der Titel darf maximal 60 Zeichen haben");
+  .required("Der Sensor muss eine Name haben")
+  .max(50, "Der Name darf maximal 50 Zeichen haben");
 
-export const requiredProjectCategoryValidation = yup
+export const requiredSensorCategoryValidation = yup
   .string()
   .required("Eine Kategorie muss ausgewählt sein");
 
-export const requiredProjectDescriptionValidation = yup
-  .string()
-  .required(
-    "Das Projekt muss eine Beschreibung zwischen 10 und 140 Zeichen haben"
-  )
-  .min(10, "Die Beschreibung kann 10 bis 140 Zeichen enthalten")
-  .max(140, "Die Beschreibung kann 10 bis 140 Zeichen enthalten");
+export const requiredSymbolIdValidation = yup
+  .number()
+  .min(1, "Ungültiges Symbol")
+  .max(31, "Ungültiges Symbol")
+  .required("Ungültiges Symbol");
 
-export const requiredProjectConnectypeValidation = yup
+export const requiredLatitude = yup
+  .number()
+  .min(-90, "Ungültige Latitude")
+  .max(90, "Ungültige Latitude")
+  .required("Ungültige Latitude");
+
+export const requiredLongitude = yup
+  .number()
+  .min(-180, "Ungültige Longitude")
+  .max(180, "Ungültige Longitude")
+  .required("Ungültige Longitude");
+
+export const requiredSensorDescriptionValidation = yup
+  .string()
+  .required("Die Beschreibung zwischen 10 und 140 Zeichen lang sein")
+  .min(10, "Die Beschreibung zwischen 10 und 140 Zeichen lang sein")
+  .max(140, "Die Beschreibung zwischen 10 und 140 Zeichen lang sein");
+
+export const requiredSensorIntegrationValidation = yup
   .string()
   .required("Eine Integration muss ausgewählt sein");
 
@@ -36,11 +52,15 @@ export const requiredUsernameValidation = yup
   )
   .required("Sie müssen einen Nutzernamen angeben");
 
-export const requiredDeviceId = yup
-  .string()
-  .min(3, "Min. 3 Zeichen")
-  .max(36, "Max. 36 Zeichen")
-  .required("Device-ID ist erforderlich");
+export const requiredTTNDeviceIDValidation = yup.string().when("integration", {
+  is: "ttn",
+  then: yup
+    .string()
+    .min(3, "Min. 3 Zeichen")
+    .max(36, "Max. 36 Zeichen")
+    .required("Device-ID ist erforderlich"),
+  otherwise: yup.string().optional(),
+});
 
 export const requiredDeviceName = yup
   .string()

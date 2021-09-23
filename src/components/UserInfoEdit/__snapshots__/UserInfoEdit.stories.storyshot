@@ -17,10 +17,12 @@ exports[`Storyshots Forms/UserInfoEdit Default User Info Edit 1`] = `
       className="mb-2"
     >
       <label
-        className="block mb-2 cursor-pointer transition hover:opacity-60"
+        className="undefined block mb-2 cursor-pointer transition"
         htmlFor="email"
       >
-        E-Mail
+        <span>
+          E-Mail
+        </span>
          
       </label>
       <input
@@ -39,10 +41,12 @@ exports[`Storyshots Forms/UserInfoEdit Default User Info Edit 1`] = `
       className="mb-2"
     >
       <label
-        className="block mb-2 cursor-pointer transition hover:opacity-60"
+        className="undefined block mb-2 cursor-pointer transition"
         htmlFor="username"
       >
-        Nutzername
+        <span>
+          Nutzername
+        </span>
          
       </label>
       <input

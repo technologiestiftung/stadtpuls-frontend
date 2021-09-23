@@ -62,6 +62,7 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
 
   return (
     <p
+      role='tooltip'
       className={classNames(
         `${
           additionalClasses ? additionalClasses : ""

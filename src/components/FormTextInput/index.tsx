@@ -1,8 +1,10 @@
-import { HTMLProps, forwardRef } from "react";
+import { HTMLProps, forwardRef, ReactNode } from "react";
+import styles from "./FormTextInput.module.css";
 
-interface FormTextInputPropType extends HTMLProps<HTMLInputElement> {
+interface FormTextInputPropType
+  extends Omit<HTMLProps<HTMLInputElement>, "label"> {
   name: string;
-  label?: string;
+  label?: ReactNode;
   containerClassName?: string;
   errors?: string[];
   optional?: boolean;
@@ -29,9 +31,9 @@ export const FormTextInput = forwardRef<
       {label && (
         <label
           htmlFor={name}
-          className='block mb-2 cursor-pointer transition hover:opacity-60'
+          className={`${styles.label} block mb-2 cursor-pointer transition`}
         >
-          {label}{" "}
+          {typeof label === "string" ? <span>{label}</span> : label}{" "}
           {optional && (
             <span className='text-gray-500 float-right text-sm transform translate-y-1'>
               (Optional)

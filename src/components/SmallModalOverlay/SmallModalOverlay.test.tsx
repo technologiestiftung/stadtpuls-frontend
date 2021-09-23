@@ -2,6 +2,11 @@ import { render, screen } from "@testing-library/react";
 import { SmallModalOverlay } from ".";
 
 describe("SmallModalOverlay component", () => {
+  it("should add a no-scroll class to the html tag on mount", () => {
+    render(<SmallModalOverlay title='Hello' />);
+    const html = document.querySelector("html.no-scroll");
+    expect(html).toBeInTheDocument();
+  });
   it("should render the provided title", () => {
     render(<SmallModalOverlay title='Hello' />);
     const title = screen.getByText(/Hello/g);

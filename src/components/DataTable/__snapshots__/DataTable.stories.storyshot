@@ -2,16 +2,16 @@
 
 exports[`Storyshots UI Elements/DataTable Default 1`] = `
 <div
-  className="border border-gray-200 shadow h-[500px] flex flex-wrap justify-center bg-white relative overflow-y-scroll"
+  className="border border-gray-200 shadow bg-white relative overflow-y-scroll"
 >
   <table
-    className="h-[500px] w-full p-2 border-collapse"
+    className="w-full p-2 border-collapse"
   >
     <thead
       className="sticky top-0 bottom-auto"
     >
       <tr
-        className=""
+        className="h-8"
       >
         <th
           className="text-left p-0"

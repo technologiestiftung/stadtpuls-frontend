@@ -1,24 +1,9 @@
 import { Story, Meta } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { EditProjectForm, ProjectForm } from ".";
-
-const exampleCategories = [
-  {
-    name: "some name A",
-    value: "1",
-  },
-  {
-    name: "some name B",
-    value: "2",
-  },
-  {
-    name: "some name C",
-    value: "3",
-  },
-];
+import { EditAddSensorModal, EditAddSensorModalPropType } from ".";
 
 export default {
-  title: "Forms/EditProjectForm_DEPRECATED",
+  title: "Forms/EditAddSensorModal",
   argTypes: {
     onSubmit: {
       description: "A callback called when the form has submitted",
@@ -29,35 +14,37 @@ export default {
     },
     onDelete: {
       description:
-        "A function called when the 'delete project' button is clicked",
+        "A function called when the 'delete sensor' button is clicked",
     },
   },
 } as Meta;
 
-const Template: Story<ProjectForm> = args => <EditProjectForm {...args} />;
+const Template: Story<EditAddSensorModalPropType> = args => (
+  <EditAddSensorModal {...args} />
+);
 
 export const WithoutDefaultValues = Template.bind({});
 WithoutDefaultValues.args = {
-  categoryOptions: exampleCategories,
+  title: "Add sensor",
   onSubmit: action("Form data submited"),
   onCancel: action("Form cancelled"),
-  onDelete: action("Delete project clicked"),
+  onDelete: (false as unknown) as () => void,
 };
 
 export const WithDefaultValues = Template.bind({});
 WithDefaultValues.args = {
+  title: "Edit sensor",
   defaultValues: {
     name: "A title",
-    categoryId: parseInt(
-      exampleCategories.map(category => category.value)[
-        exampleCategories.length - 1
-      ]
-    ),
+    symbolId: 1,
+    categoryId: 1,
     description: "A description",
-    location: "A location",
+    latitude: 48.8586383,
+    longitude: 2.2946208,
+    integration: "ttn",
+    ttnDeviceId: "lorawan-rapsbi-123",
   },
-  categoryOptions: exampleCategories,
   onSubmit: action("Form data submited"),
   onCancel: action("Form cancelled"),
-  onDelete: action("Delete project clicked"),
+  onDelete: action("Delete button clicked"),
 };

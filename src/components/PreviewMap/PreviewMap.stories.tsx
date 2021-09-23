@@ -1,18 +1,18 @@
 import { Story, Meta } from "@storybook/react";
 import { InteractiveMapProps } from "react-map-gl/src/components/interactive-map";
 
-import { SensorPreviewMap } from ".";
+import { PreviewMap } from ".";
 
 export default {
-  title: "Map/SensorPreviewMap",
-  component: SensorPreviewMap,
+  title: "Map/PreviewMap",
+  component: PreviewMap,
 } as Meta;
 
 const Template: Story<{
   mapWidth: number;
   mapHeight: number;
   viewport: InteractiveMapProps;
-}> = args => <SensorPreviewMap {...args} />;
+}> = args => <PreviewMap {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

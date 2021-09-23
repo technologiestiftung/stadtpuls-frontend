@@ -34,13 +34,12 @@ export const DataTable: React.FC<DataTableType> = ({ data }) => {
     <div
       className={[
         "border border-gray-200 shadow",
-        "h-[500px] flex flex-wrap justify-center",
         "bg-white relative overflow-y-scroll",
       ].join(" ")}
     >
-      <table className='h-[500px] w-full p-2 border-collapse'>
+      <table className='w-full p-2 border-collapse'>
         <thead className='sticky top-0 bottom-auto'>
-          <tr className=''>
+          <tr className='h-8'>
             <th className='text-left p-0'>
               <span
                 className={[
@@ -115,7 +114,7 @@ export const DataTable: React.FC<DataTableType> = ({ data }) => {
                 </td>
                 <td
                   className={[
-                    "px-4 py-3 border-none",
+                    "h-8 px-4 py-3 border-none",
                     "border-b border-gray-200",
                   ].join(" ")}
                 >
