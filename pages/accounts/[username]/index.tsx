@@ -45,16 +45,22 @@ const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({
   const { data: sensorsData } = usePublicSensors({
     initialData: initialSensorsData,
   });
+  const sensors = (sensorsData ? sensorsData.sensors : []).filter(
+    ({ user_id }) => user_id === account.id
+  );
   return (
     <>
       <UserInfoWithData initialAccount={account} activeTab='sensors' />
-      <div className='container max-w-8xl mx-auto px-4 pt-8 pb-24'>
-        {sensorsData && sensorsData.sensors.length > 0 ? (
-          <SensorsGrid
-            sensors={(sensorsData.sensors || []).filter(
-              ({ user_id }) => user_id === account.id
-            )}
-          />
+      <div
+        className={[
+          "container max-w-8xl mx-auto px-4 pt-8 pb-24 min-h-[500px]",
+          sensors.length === 0
+            ? "flex place-items-center place-content-center"
+            : "",
+        ].join(" ")}
+      >
+        {sensors.length > 0 ? (
+          <SensorsGrid sensors={sensors} />
         ) : (
           <p>Keine Sensoren vorhanden</p>
         )}
