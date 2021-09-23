@@ -147,7 +147,7 @@ const supabaseHandlers = [
       const query = req.url.searchParams;
 
       const select = query.get("select");
-      const id = query.get("id")?.replace("eq.", "");
+      const username = query.get("name")?.replace("eq.", "");
       const limit = query.get("limit");
       const recordsLimit = query.get("records.limit");
 
@@ -159,16 +159,16 @@ const supabaseHandlers = [
 
       const specificAccountDataRequested =
         select === trimmedAccountSelectString;
-      const oneAccountRequestedById = specificAccountDataRequested && id;
+      const oneAccountRequestedById = specificAccountDataRequested && username;
       const limitedAccountsRequested = specificAccountDataRequested && limit;
 
       if (specificAccountDataRequested) {
-        if (oneAccountRequestedById && id) {
+        if (oneAccountRequestedById && username) {
           return res(
             ctx.status(201, "Mocked status"),
             ctx.json(
               publicAccounts.find(
-                account => String(account.id) === String(id)
+                account => String(account.name) === String(username)
               ) as definitions["user_profiles"]
             )
           );

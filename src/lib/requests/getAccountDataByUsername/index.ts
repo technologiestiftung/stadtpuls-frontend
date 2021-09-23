@@ -20,10 +20,10 @@ export const getAccountDataByUsername = async (
   } = await supabase
     .from<AccountQueryResponseType>("user_profiles")
     .select(accountQueryString)
-    .eq("name", username);
-
+    .eq("name", username)
+    .single();
   if (error) throw error;
-  if (!accountData || accountData.length < 1)
+  if (!accountData)
     throw new Error(`No account found with username "${username}"`);
-  return mapPublicAccount(accountData[0]);
+  return mapPublicAccount(accountData);
 };
