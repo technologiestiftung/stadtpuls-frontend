@@ -11,6 +11,11 @@ import { useState } from "react";
 import { definitions } from "@common/types/supabase";
 import { sensorQueryString } from "../usePublicSensors";
 
+interface UseUserDataInitialDataType {
+  user?: definitions["user_profiles"];
+  sensors?: definitions["sensors"][];
+}
+
 type UserFetcherSignature = (
   userId?: AuthenticatedUsersType["id"],
   isLoadingAuth?: boolean
@@ -22,7 +27,7 @@ const fetchUser: UserFetcherSignature = async (userId, isLoadingAuth) => {
 
   const { data: user, error } = await supabase
     .from<definitions["user_profiles"]>("user_profiles")
-    .select("name")
+    .select("*")
     .eq("id", userId)
     .single();
 
@@ -122,15 +127,16 @@ const deleteSensor = async (
 };
 
 const updateUser = async (
-  newName: string,
-  userId: string | undefined
+  newUserData: Partial<definitions["user_profiles"]>
 ): Promise<void> => {
-  if (!userId) throw new Error("Not authenticated");
-
   const nameReset = await supabase
     .from<definitions["user_profiles"]>("user_profiles")
-    .update({ name: newName })
-    .eq("id", userId);
+    .update({
+      display_name: newUserData.display_name,
+      description: newUserData.description,
+      url: newUserData.url,
+    })
+    .eq("id", newUserData.id);
 
   if (nameReset.error) throw nameReset.error;
 };
@@ -143,7 +149,9 @@ const deleteUser = async (userId: string | undefined): Promise<void> => {
   if (error) throw error;
 };
 
-export const useUserData = (): {
+export const useUserData = (
+  initialData?: UseUserDataInitialDataType
+): {
   isLoading: boolean;
   authenticatedUser: AuthenticatedUsersType | null;
   user: definitions["user_profiles"] | null;
@@ -152,7 +160,9 @@ export const useUserData = (): {
   createSensor: (sensor: Omit<definitions["sensors"], "id">) => Promise<void>;
   updateSensor: (sensor: Partial<definitions["sensors"]>) => Promise<void>;
   deleteSensor: (id: number) => Promise<void>;
-  updateUser: (newName: string) => Promise<void>;
+  updateUser: (
+    newUserData: Partial<definitions["user_profiles"]>
+  ) => Promise<void>;
   deleteUser: () => Promise<void>;
 } => {
   const [actionError, setActionError] = useState<Error | null>(null);
@@ -162,13 +172,15 @@ export const useUserData = (): {
   const userParams = ["userData", userId, isLoadingAuth];
   const user = useSWR<definitions["user_profiles"] | null, Error>(
     userParams,
-    () => fetchUser(userId, isLoadingAuth)
+    () => fetchUser(userId, isLoadingAuth),
+    { initialData: initialData?.user }
   );
 
   const sensorsParams = ["sensors", userId, isLoadingAuth];
   const sensors = useSWR<definitions["sensors"][] | null, Error>(
     sensorsParams,
-    () => fetchUserSensors(userId, isLoadingAuth)
+    () => fetchUserSensors(userId, isLoadingAuth),
+    { initialData: initialData?.sensors }
   );
 
   return {
@@ -206,10 +218,10 @@ export const useUserData = (): {
       await deleteSensor(id, userId).catch(setActionError);
       void mutate(sensorsParams);
     },
-    updateUser: async name => {
-      if (user.data?.name === name) return;
-      void mutate(userParams, { ...user, name }, false);
-      await updateUser(name, userId).catch(setActionError);
+    updateUser: async (newUserData: Partial<definitions["user_profiles"]>) => {
+      if (!newUserData) return;
+      void mutate(userParams, newUserData, false);
+      await updateUser(newUserData).catch(setActionError);
       void mutate(userParams);
     },
     deleteUser: async () => {

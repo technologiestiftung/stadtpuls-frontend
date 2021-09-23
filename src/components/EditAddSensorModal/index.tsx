@@ -11,7 +11,7 @@ import {
   requiredLongitude,
   requiredSensorCategoryValidation,
   requiredSensorIntegrationValidation,
-  requiredSensorDescriptionValidation,
+  requiredDescriptionValidation,
   requiredTTNDeviceIDValidation,
 } from "@lib/formValidationUtil";
 import React, { FC, useEffect, useCallback, useState } from "react";
@@ -54,7 +54,7 @@ const formSchema = yup.object().shape({
   latitude: requiredLatitude,
   longitude: requiredLongitude,
   categoryId: requiredSensorCategoryValidation,
-  description: requiredSensorDescriptionValidation,
+  description: requiredDescriptionValidation,
   integration: requiredSensorIntegrationValidation,
   ttnDeviceId: requiredTTNDeviceIDValidation,
 });
