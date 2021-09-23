@@ -32,7 +32,7 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
   const { width: windowWidth } = useWindowSize();
   const cleanURL = link ? normalizeURL(link) : undefined;
   return (
-    <header className='py-16 sm:py-20 md:py-28 '>
+    <header className='pt-8 pb-16 sm:pb-20 md:pb-28'>
       <div
         className={[
           "flex flex-wrap md:flex-nowrap",

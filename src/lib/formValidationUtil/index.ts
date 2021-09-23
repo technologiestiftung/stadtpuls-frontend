@@ -5,6 +5,11 @@ export const requiredEmailValidation = yup
   .email("Die angegebene E-Mail-Adresse ist ungültig")
   .required("Eine E-Mail Adresse muss angeben werden");
 
+export const optionalLinkValidation = yup
+  .string()
+  .url("Die angegebene Url muss gültig sein")
+  .optional();
+
 export const requiredSensorNameValidation = yup
   .string()
   .required("Der Sensor muss eine Name haben")
@@ -32,7 +37,7 @@ export const requiredLongitude = yup
   .max(180, "Ungültige Longitude")
   .required("Ungültige Longitude");
 
-export const requiredSensorDescriptionValidation = yup
+export const requiredDescriptionValidation = yup
   .string()
   .required("Die Beschreibung zwischen 10 und 140 Zeichen lang sein")
   .min(10, "Die Beschreibung zwischen 10 und 140 Zeichen lang sein")
@@ -51,6 +56,12 @@ export const requiredUsernameValidation = yup
     "Nutzernamen dürfen nur Buchstaben, Zahlen und _ enthalten"
   )
   .required("Sie müssen einen Nutzernamen angeben");
+
+export const requiredDisplaynameValidation = yup
+  .string()
+  .min(3, "Anzeigenamen können 3 bis 50 Zeichen lang sein")
+  .max(50, "Anzeigenamen können 3 bis 50 Zeichen lang sein")
+  .required("Sie müssen einen Anzeigenamen angeben");
 
 export const requiredTTNDeviceIDValidation = yup.string().when("integration", {
   is: "ttn",

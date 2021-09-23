@@ -33,6 +33,7 @@ export interface PublicAccountType {
   id: string;
   username: string;
   displayName: string;
+  createdAt: string;
   link?: string;
   description?: string;
   categories: definitions["categories"]["id"][];
@@ -56,6 +57,7 @@ export const mapPublicAccount = ({
   id,
   name,
   display_name,
+  created_at,
   description,
   url,
   sensors,
@@ -63,6 +65,7 @@ export const mapPublicAccount = ({
   id: id,
   username: name || "anonymous",
   displayName: display_name || "Anonymous",
+  createdAt: created_at,
   link: url,
   description: description,
   sensorsCount: sensors.length || 0,

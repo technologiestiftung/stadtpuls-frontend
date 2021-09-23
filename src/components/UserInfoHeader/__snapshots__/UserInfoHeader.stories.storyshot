@@ -2,7 +2,7 @@
 
 exports[`Storyshots UI Elements/UserInfoHeader Maximum Infos 1`] = `
 <header
-  className="py-16 sm:py-20 md:py-28 "
+  className="pt-8 pb-16 sm:pb-20 md:pb-28"
 >
   <div
     className="flex flex-wrap md:flex-nowrap gap-4 sm:gap-6 md:gap-8 relative pl-16 sm:pl-24 md:pl-28"
@@ -597,7 +597,7 @@ exports[`Storyshots UI Elements/UserInfoHeader Maximum Infos 1`] = `
 
 exports[`Storyshots UI Elements/UserInfoHeader Minimal Infos 1`] = `
 <header
-  className="py-16 sm:py-20 md:py-28 "
+  className="pt-8 pb-16 sm:pb-20 md:pb-28"
 >
   <div
     className="flex flex-wrap md:flex-nowrap gap-4 sm:gap-6 md:gap-8 relative pl-16 sm:pl-24 md:pl-28"
