@@ -55,7 +55,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             type="checkbox"
-            value=""
+            value={false}
           />
           <div>
             <label
