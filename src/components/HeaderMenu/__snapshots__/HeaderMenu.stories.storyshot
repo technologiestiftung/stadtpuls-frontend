@@ -3,7 +3,7 @@
 exports[`Storyshots Navigation/HeaderMenu Default 1`] = `
 <div>
   <button
-    className="sm:hidden focus-offset relative z-0"
+    className="lg:hidden focus-offset relative z-0"
     onClick={[Function]}
   >
     <svg
@@ -18,7 +18,7 @@ exports[`Storyshots Navigation/HeaderMenu Default 1`] = `
     </svg>
   </button>
   <nav
-    className="fixed sm:static sm:top-auto left-0 sm:left-auto z-20 sm:z-auto w-full sm:w-auto shadow sm:shadow-none sm:py-4 sm:px-1 sm:p-0 sm:bg-opacity-0 bg-white transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
+    className="fixed lg:static lg:top-auto left-1/2 lg:left-auto transform -translate-x-1/2 lg:translate-x-0 sm:border-r lg:border-r-0 sm:border-l lg:border-l-0 z-20 lg:z-auto w-full lg:w-auto shadow lg:shadow-none container max-w-8xl mx-auto lg:py-4 lg:px-1 lg:p-0 lg:bg-opacity-0 bg-white transition opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto"
     style={
       Object {
         "top": 62,
@@ -26,13 +26,13 @@ exports[`Storyshots Navigation/HeaderMenu Default 1`] = `
     }
   >
     <ul
-      className="h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4"
+      className="h-full lg:w-auto lg:flex lg:gap-8 lg:mr-4"
     >
       <li
-        className="sm:hidden sm:inline-block text-xl sm:text-base"
+        className="lg:hidden lg:inline-block text-xl lg:text-base"
       >
         <a
-          className="navigation-link p-4 block sm:inline focus-offset"
+          className="navigation-link p-4 block lg:inline focus-offset"
           href="/"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -41,10 +41,22 @@ exports[`Storyshots Navigation/HeaderMenu Default 1`] = `
         </a>
       </li>
       <li
-        className=" sm:inline-block text-xl sm:text-base"
+        className=" lg:inline-block text-xl lg:text-base"
       >
         <a
-          className="navigation-link p-4 block sm:inline focus-offset"
+          className="navigation-link p-4 block lg:inline focus-offset"
+          href="/accounts"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Accounts
+        </a>
+      </li>
+      <li
+        className=" lg:inline-block text-xl lg:text-base"
+      >
+        <a
+          className="navigation-link p-4 block lg:inline focus-offset"
           href="/sensors"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -53,10 +65,10 @@ exports[`Storyshots Navigation/HeaderMenu Default 1`] = `
         </a>
       </li>
       <li
-        className=" sm:inline-block text-xl sm:text-base"
+        className=" lg:inline-block text-xl lg:text-base"
       >
         <a
-          className="navigation-link p-4 block sm:inline focus-offset"
+          className="navigation-link p-4 block lg:inline focus-offset"
           href="/docs"
           onClick={[Function]}
           onMouseEnter={[Function]}

@@ -9,10 +9,10 @@
     @apply focus:ring-2 focus:ring-offset-black focus:ring-offset-2 focus:outline-none focus:ring-green;
   }
   .navigation-link {
-    @apply transition font-headline border-purple sm:border-green border-b hover:border-purple hover:text-green sm:px-0 sm:py-0 sm:inline-block leading-tight;
+    @apply transition font-headline border-gray-200 lg:border-green border-b hover:border-purple hover:text-green lg:px-0 lg:py-0 lg:inline-block leading-tight;
   }
   .navigation-link-active {
-    @apply decoration-clone font-headline text-white bg-purple font-bold border-green hover:text-white hover:bg-purple hover:border-green cursor-default sm:px-2 sm:-ml-2 sm:py-0.5;
+    @apply decoration-clone font-headline text-white bg-purple font-bold border-green hover:text-white hover:bg-purple hover:border-green cursor-default lg:px-2 lg:-ml-2 lg:py-0.5;
   }
 
   @variants responsive {

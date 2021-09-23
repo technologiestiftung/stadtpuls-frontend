@@ -29,7 +29,11 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({ sensorsData }) => {
     return (
       <h1 className='flex justify-center mt-8'>Keine Sensordaten vorhanden</h1>
     );
-  else return <SensorsGrid sensors={sensorsData.sensors} />;
+  return (
+    <div className='container mx-auto max-w-8xl py-24 px-4'>
+      <SensorsGrid sensors={sensorsData.sensors} />
+    </div>
+  );
 };
 
 export default SensorsOverview;
