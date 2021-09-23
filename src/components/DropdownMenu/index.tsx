@@ -29,7 +29,7 @@ const getItemStyles = ({ disabled }: ItemType): string =>
     "block w-full last:border-b-0",
     "px-4 py-3 transition text-left border-b border-gray-100",
     !disabled &&
-      "hover:bg-purple hover:bg-opacity-5 hover:text-purple cursor-pointer",
+      "hover:bg-purple hover:bg-opacity-5 text-purple cursor-pointer",
     disabled && "bg-gray-50 text-gray-700 cursor-not-allowed",
   ]
     .filter(Boolean)

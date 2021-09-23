@@ -26,7 +26,7 @@ exports[`Storyshots UI Elements/DropdownMenu Default 1`] = `
     >
       <div>
         <a
-          className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 hover:text-purple cursor-pointer"
+          className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 text-purple cursor-pointer"
           href="/projects"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -34,7 +34,7 @@ exports[`Storyshots UI Elements/DropdownMenu Default 1`] = `
           Meine Projekte
         </a>
         <a
-          className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 hover:text-purple cursor-pointer"
+          className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 text-purple cursor-pointer"
           href="/account"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -42,7 +42,7 @@ exports[`Storyshots UI Elements/DropdownMenu Default 1`] = `
           Account
         </a>
         <button
-          className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 hover:text-purple cursor-pointer"
+          className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 text-purple cursor-pointer"
           onClick={[Function]}
         >
           Logout
@@ -79,7 +79,7 @@ exports[`Storyshots UI Elements/DropdownMenu With Custom Children 1`] = `
     >
       <div>
         <a
-          className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 hover:text-purple cursor-pointer"
+          className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 text-purple cursor-pointer"
           href="/account/projects"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -97,7 +97,7 @@ exports[`Storyshots UI Elements/DropdownMenu With Custom Children 1`] = `
            Meine Projekte
         </a>
         <a
-          className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 hover:text-purple cursor-pointer"
+          className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 text-purple cursor-pointer"
           href="/account/profile"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -115,7 +115,7 @@ exports[`Storyshots UI Elements/DropdownMenu With Custom Children 1`] = `
            Account
         </a>
         <button
-          className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 hover:text-purple cursor-pointer"
+          className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 text-purple cursor-pointer"
           onClick={[Function]}
         >
           <svg
@@ -162,7 +162,7 @@ exports[`Storyshots UI Elements/DropdownMenu With Disabled Item 1`] = `
     >
       <div>
         <a
-          className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 hover:text-purple cursor-pointer"
+          className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 text-purple cursor-pointer"
           href="/projects"
           onClick={[Function]}
           onMouseEnter={[Function]}
