@@ -115,4 +115,17 @@ describe("EditAddSensorModal component", () => {
       expect(baseTestData.onSubmit).toHaveBeenCalledWith(successTestData);
     });
   });
+  it("should set focus on name field after", async (): Promise<void> => {
+    render(<EditAddSensorModal {...baseTestData} />);
+
+    const nameField = screen.getByRole("textbox", { name: "Name" });
+    expect(nameField).toBeInTheDocument();
+
+    await waitFor(
+      () => {
+        expect(nameField).toHaveFocus();
+      },
+      { timeout: 110 }
+    );
+  });
 });

@@ -76,10 +76,11 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
     control,
     setValue,
     handleSubmit,
-    formState: { errors, isDirty },
+    formState: { errors, dirtyFields },
   } = useForm<SubmitDataType>({
     resolver: yupResolver(formSchema),
   });
+  const isDirty = Object.values(dirtyFields).length > 0;
   const [integration, setIntegration] = useState(
     defaultValues.integration || "http"
   );
@@ -105,6 +106,14 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
     },
     [isDirty, onCancel]
   );
+
+  useEffect(() => {
+    const to = setTimeout(() => {
+      const input = document.querySelector("input#name") as HTMLInputElement;
+      input?.focus();
+    }, 100);
+    return () => clearTimeout(to);
+  }, []);
 
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
