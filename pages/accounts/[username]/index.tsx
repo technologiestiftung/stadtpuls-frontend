@@ -60,7 +60,7 @@ const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({
         ].join(" ")}
       >
         {sensors.length > 0 ? (
-          <SensorsGrid sensors={sensors} />
+          <SensorsGrid sensors={sensors} showAuthorNames={false} />
         ) : (
           <p>Keine Sensoren vorhanden</p>
         )}
