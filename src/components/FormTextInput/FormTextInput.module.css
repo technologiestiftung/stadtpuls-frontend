@@ -1,0 +1,3 @@
+.label:hover > *:not([role="tooltip"]) {
+  opacity: 0.6;
+}

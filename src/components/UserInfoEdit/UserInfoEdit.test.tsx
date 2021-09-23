@@ -116,7 +116,7 @@ describe("component UserInfoEdit", () => {
     fireEvent.click(submitButton);
     await waitFor(() => {
       const emailError = screen.getByText(
-        "Die angegebene E-Mail Adresse ist ungültig"
+        "Die angegebene E-Mail-Adresse ist ungültig"
       );
       expect(emailError).toBeInTheDocument();
       expect(mySubmit).not.toHaveBeenCalled();

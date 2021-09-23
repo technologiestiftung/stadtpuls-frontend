@@ -5,7 +5,7 @@ import React, { FC } from "react";
 import Link from "next/link";
 import { SensorSymbol } from "@components/SensorSymbol";
 import { CopyTextField } from "@components/CopyTextField";
-import { SensorPreviewMap } from "@components/SensorPreviewMap";
+import { PreviewMap } from "@components/PreviewMap";
 import { Button } from "@components/Button";
 
 export interface SensorPageHeaderPropType {
@@ -34,11 +34,7 @@ const MapBackground: FC<Pick<SensorPageHeaderPropType, "geocoordinates">> = ({
   >
     <div className='bg-white hidden md:block' />
     <div className='relative'>
-      <SensorPreviewMap
-        mapWidth='100%'
-        mapHeight='100%'
-        viewport={geocoordinates}
-      />
+      <PreviewMap mapWidth='100%' mapHeight='100%' viewport={geocoordinates} />
       <span
         className={[
           "bg-blue w-3 h-3 rounded-full absolute inline-block",
@@ -136,7 +132,7 @@ export const SensorPageHeader: FC<SensorPageHeaderPropType> = ({
       <div
         className={["container max-w-8xl", "mx-auto relative z-10"].join(" ")}
       >
-        <aside className='md:w-1/2 bg-white px-4 py-8 md:py-32 md:pr-12 md:max-w-[560px]'>
+        <aside className='md:w-1/2 bg-white px-4 py-8 md:py-40 md:pr-12 md:max-w-[560px]'>
           <BackLink />
           <Title name={name} symbol={symbol} />
           <div className='flex gap-4'>

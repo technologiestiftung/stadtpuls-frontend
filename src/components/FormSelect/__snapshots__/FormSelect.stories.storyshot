@@ -2,7 +2,7 @@
 
 exports[`Storyshots Forms/FormSelect With Custom Placeholder 1`] = `
 <div
-  className="mb-2"
+  className=" mb-2"
 >
   <select
     className="mb-2 text-gray-500 "
@@ -38,7 +38,7 @@ exports[`Storyshots Forms/FormSelect With Custom Placeholder 1`] = `
 
 exports[`Storyshots Forms/FormSelect With Errors 1`] = `
 <div
-  className="mb-2"
+  className=" mb-2"
 >
   <select
     className="mb-2 text-gray-500 error"
@@ -84,7 +84,7 @@ exports[`Storyshots Forms/FormSelect With Errors 1`] = `
 
 exports[`Storyshots Forms/FormSelect With Label 1`] = `
 <div
-  className="mb-2"
+  className=" mb-2"
 >
   <label
     className="block mb-2 cursor-pointer transition hover:opacity-60"
@@ -126,7 +126,7 @@ exports[`Storyshots Forms/FormSelect With Label 1`] = `
 
 exports[`Storyshots Forms/FormSelect Without Label 1`] = `
 <div
-  className="mb-2"
+  className=" mb-2"
 >
   <select
     className="mb-2 text-gray-500 "

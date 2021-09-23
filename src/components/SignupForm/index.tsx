@@ -59,7 +59,7 @@ export const SignupForm: FC<{
       <Controller
         name='areConditionsAccepted'
         control={control}
-        defaultValue=''
+        defaultValue={false}
         render={({ field }) => (
           <FormCheckbox
             {...field}

@@ -4,6 +4,7 @@ export interface FormTextareaPropType
   extends Omit<HTMLProps<HTMLTextAreaElement>, "label" | "value"> {
   name: string;
   label?: string;
+  className?: string;
   placeholder?: string;
   maxCharacters?: number;
   minCharacters?: number;
@@ -19,7 +20,8 @@ export const FormTextarea = forwardRef<
     {
       name,
       label,
-      placeholder = "Bitte hier Text eingeben ...",
+      placeholder = "Bitte hier Text eingeben...",
+      className = "min-h-40",
       maxCharacters = 140,
       minCharacters = 10,
       errors = [],
@@ -27,7 +29,7 @@ export const FormTextarea = forwardRef<
     },
     ref
   ) => (
-    <div className='mb-2'>
+    <div className={`${className} mb-2`}>
       {label && (
         <label
           htmlFor={`${name}-textarea`}
@@ -45,7 +47,7 @@ export const FormTextarea = forwardRef<
         maxLength={maxCharacters}
         minLength={minCharacters}
         placeholder={placeholder}
-        className={`mb-2 ${errors.length ? "error" : ""}`}
+        className={`mb-2 h-32 ${errors.length ? "error" : ""}`}
         ref={ref}
       ></textarea>
       {errors.map(error => (

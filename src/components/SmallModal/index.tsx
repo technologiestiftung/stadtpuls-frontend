@@ -1,9 +1,12 @@
+import useClickOutside from "@lib/hooks/useClickOutside";
 import { FC, ReactNode } from "react";
 
 interface SmallModalPropType {
   title: string;
+  className?: string;
   variant?: "dangerous" | "primary";
   footerContent?: ReactNode;
+  onClickOutside?: () => void;
 }
 
 export const SmallModal: FC<SmallModalPropType> = ({
@@ -11,11 +14,17 @@ export const SmallModal: FC<SmallModalPropType> = ({
   children,
   footerContent,
   variant,
+  className = "max-w-md",
+  onClickOutside = () => undefined,
 }) => {
+  const ref = useClickOutside<HTMLDivElement>(onClickOutside);
   return (
-    <div className='max-w-md px-4 md:px-0'>
+    <div
+      ref={ref}
+      className={`${className} md:px-0 max-h-[calc(100vh-32px)] overflow-y-auto`}
+    >
       <div
-        className='bg-white border border-gray-200 shadow p-8 flex flex-col gap-8 place-content-between'
+        className='bg-white border border-gray-200 shadow p-4 sm:p-8 flex flex-col gap-8 place-content-between'
         style={{ minHeight: 360 }}
       >
         <div>

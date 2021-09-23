@@ -17,6 +17,7 @@ interface FormSelectPropType
   name: string;
   label?: ReactNode;
   placeholder?: string;
+  className?: string;
   options: SelectOptionType[];
   errors?: string[];
   value?: string | number;
@@ -32,6 +33,7 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectPropType>(
       label,
       options,
       placeholder = "Bitte wähle eine Option",
+      className = "",
       errors = [],
       value,
       defaultValue,
@@ -56,7 +58,7 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectPropType>(
     };
 
     return (
-      <div className='mb-2'>
+      <div className={`${className} mb-2`}>
         {label && (
           <label
             htmlFor={name}

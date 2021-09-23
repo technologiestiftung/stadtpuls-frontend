@@ -39,7 +39,7 @@ export interface SensorQueryResponseType extends SensorType {
     definitions["records"],
     "id" | "recorded_at" | "measurements"
   >[];
-  user: Pick<definitions["user_profiles"], "name" | "display_name">;
+  user: Pick<definitions["user_profiles"], "id" | "name" | "display_name">;
   category: Pick<definitions["categories"], "id" | "name">;
 }
 

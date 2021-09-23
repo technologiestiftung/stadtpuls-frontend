@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@headlessui/react": "1.4.1",
     "@hookform/resolvers": "2.2.0",
     "@material-ui/core": "4.11.3",
     "@material-ui/icons": "4.11.2",
@@ -28,7 +29,7 @@
     "react": "17.0.2",
     "react-day-picker": "7.4.10",
     "react-dom": "17.0.2",
-    "react-hook-form": "7.0.5",
+    "react-hook-form": "7.15.4",
     "react-map-gl": "5.3.11",
     "react-router-dom": "5.2.0",
     "react-simple-timefield": "3.2.3",

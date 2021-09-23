@@ -3,7 +3,6 @@ import { DataTable } from "@components/DataTable";
 import { DeviceLineChartFilters } from "@components/DeviceLineChartFilters";
 import { DropdownMenu } from "@components/DropdownMenu";
 import { LineChart } from "@components/LineChart";
-import { SensorPageHeader } from "@components/SensorPageHeader";
 import { TextLink } from "@components/TextLink";
 import { createDateValueArray } from "@lib/dateUtil";
 import { createCSVStructure, downloadCSV } from "@lib/downloadCsvUtil";
@@ -11,13 +10,13 @@ import { PublicSensorType } from "@lib/hooks/usePublicSensors";
 import { useSensorLastRecordDate } from "@lib/hooks/useSensorLastRecordDate";
 import { useSensorRecords } from "@lib/hooks/useSensorRecords";
 import { useSensorRecordsCount } from "@lib/hooks/useSensorRecordsCount";
-import { useUserData } from "@lib/hooks/useUserData";
 import { getRecordsBySensorId } from "@lib/requests/getRecordsBySensorId";
 import { getSensorData } from "@lib/requests/getSensorData";
 import DownloadIcon from "../../public/images/icons/16px/arrowDownWithHalfSquare.svg";
 import moment from "moment";
 import { GetServerSideProps } from "next";
-import { FC, useCallback, useEffect, useRef, useState } from "react";
+import React, { FC, useCallback, useEffect, useState } from "react";
+import { SensorPageHeaderWithData } from "@components/SensorPageHeader/withData";
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -68,9 +67,6 @@ const getCategoryUnit = (
 const SensorPage: FC<{
   sensor: PublicSensorType;
 }> = ({ sensor }) => {
-  const fallbackIconId = useRef(Math.random() * 10);
-  const { user } = useUserData();
-
   const [chartWidth, setChartWidth] = useState<number | undefined>(undefined);
   const [chartHeight, setChartHeight] = useState<number | undefined>(undefined);
   const [currentDatetimeRange, setCurrentDatetimeRange] = useState<{
@@ -113,19 +109,7 @@ const SensorPage: FC<{
 
   return (
     <>
-      <SensorPageHeader
-        id={sensor.id}
-        name={sensor.name || ""}
-        description={sensor.description}
-        category={sensor.category}
-        symbol={sensor.icon_id || fallbackIconId.current}
-        geocoordinates={{ latitude: 52.4961458, longitude: 13.4335723 }}
-        author={{
-          username: sensor.user.name || "anonymous",
-          displayName: sensor.user.display_name || "Anonymous",
-        }}
-        withEditButton={!!user && user.name === sensor.user?.name}
-      />
+      <SensorPageHeaderWithData initialSensor={sensor} />
       <div className='container mx-auto max-w-8xl mb-32'>
         <div>
           <div className='flex justify-between flex-wrap gap-4 pb-8 px-4'>
