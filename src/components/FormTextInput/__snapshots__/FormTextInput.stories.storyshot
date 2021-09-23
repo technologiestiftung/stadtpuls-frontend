@@ -5,10 +5,12 @@ exports[`Storyshots Forms/FormTextInput As Email 1`] = `
   className="mb-2"
 >
   <label
-    className="block mb-2 cursor-pointer transition hover:opacity-60"
+    className="undefined block mb-2 cursor-pointer transition"
     htmlFor="email"
   >
-    E-Mail
+    <span>
+      E-Mail
+    </span>
      
   </label>
   <input
@@ -29,10 +31,12 @@ exports[`Storyshots Forms/FormTextInput As Password 1`] = `
   className="mb-2"
 >
   <label
-    className="block mb-2 cursor-pointer transition hover:opacity-60"
+    className="undefined block mb-2 cursor-pointer transition"
     htmlFor="password"
   >
-    Passwort
+    <span>
+      Passwort
+    </span>
      
   </label>
   <input
@@ -53,10 +57,12 @@ exports[`Storyshots Forms/FormTextInput Optional Field 1`] = `
   className="mb-2"
 >
   <label
-    className="block mb-2 cursor-pointer transition hover:opacity-60"
+    className="undefined block mb-2 cursor-pointer transition"
     htmlFor="firstName"
   >
-    First name
+    <span>
+      First name
+    </span>
      
     <span
       className="text-gray-500 float-right text-sm transform translate-y-1"
@@ -82,10 +88,12 @@ exports[`Storyshots Forms/FormTextInput With Error 1`] = `
   className="mb-2"
 >
   <label
-    className="block mb-2 cursor-pointer transition hover:opacity-60"
+    className="undefined block mb-2 cursor-pointer transition"
     htmlFor="firstName"
   >
-    First name
+    <span>
+      First name
+    </span>
      
   </label>
   <input
@@ -116,10 +124,12 @@ exports[`Storyshots Forms/FormTextInput With Label 1`] = `
   className="mb-2"
 >
   <label
-    className="block mb-2 cursor-pointer transition hover:opacity-60"
+    className="undefined block mb-2 cursor-pointer transition"
     htmlFor="firstName"
   >
-    First name
+    <span>
+      First name
+    </span>
      
   </label>
   <input

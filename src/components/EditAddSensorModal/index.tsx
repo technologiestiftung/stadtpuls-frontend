@@ -251,7 +251,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
                     {...field}
                     label={
                       <>
-                        TTN Device-ID
+                        <span>TTN Device-ID</span>
                         <QuestionMarkTooltip
                           id='ttn-device-id'
                           title='TTN Device-ID'
