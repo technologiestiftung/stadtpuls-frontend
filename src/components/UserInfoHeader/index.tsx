@@ -5,14 +5,9 @@ import { FC } from "react";
 import Link from "next/link";
 import { normalizeURL } from "@lib/urlUtil";
 import { Button } from "@components/Button";
+import { PublicAccountType } from "@lib/hooks/usePublicAccounts";
 
-export interface UserInfoHeaderPropType {
-  displayName: string;
-  description?: string;
-  username: string;
-  link?: string;
-  sensorsCount: number;
-  recordsCount: number;
+export interface UserInfoHeaderPropType extends PublicAccountType {
   withEditButton?: boolean;
   onEditButtonClick?: () => void | undefined;
 }

@@ -1,5 +1,10 @@
+import {
+  AccountQueryResponseType,
+  accountQueryString,
+  mapPublicAccount,
+  PublicAccountType,
+} from "@lib/hooks/usePublicAccounts";
 import { supabase } from "@auth/supabase";
-import { definitions } from "@common/types/supabase";
 
 export interface GetRecordsOptionsType {
   startDate?: string;
@@ -8,14 +13,17 @@ export interface GetRecordsOptionsType {
 
 export const getAccountDataByUsername = async (
   username: string
-): Promise<definitions["user_profiles"]> => {
-  const { data: accountData, error } = await supabase
-    .from<definitions["user_profiles"]>("user_profiles")
-    .select("*")
+): Promise<PublicAccountType> => {
+  const {
+    data: accountData,
+    error,
+  } = await supabase
+    .from<AccountQueryResponseType>("user_profiles")
+    .select(accountQueryString)
     .eq("name", username);
 
   if (error) throw error;
   if (!accountData || accountData.length < 1)
     throw new Error(`No account found with username "${username}"`);
-  return accountData[0];
+  return mapPublicAccount(accountData[0]);
 };

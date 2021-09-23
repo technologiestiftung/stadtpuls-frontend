@@ -1,6 +1,6 @@
-import { definitions } from "@common/types/supabase";
 import { UserInfoHeader } from "@components/UserInfoHeader";
 import { getAccountDataByUsername } from "@lib/requests/getAccountDataByUsername";
+import { PublicAccountType } from "@lib/hooks/usePublicAccounts";
 import { GetServerSideProps } from "next";
 import { FC } from "react";
 
@@ -18,21 +18,18 @@ export const getServerSideProps: GetServerSideProps = async context => {
 };
 
 interface AccountSensorsPagePropType {
-  account: definitions["user_profiles"];
+  account: PublicAccountType;
 }
 
 const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({ account }) => {
   console.log(account);
   return (
     <>
-      <UserInfoHeader
-        username={account.name || ""}
-        displayName={account.display_name || ""}
-        link={account.url}
-        description={account.description}
-        sensorsCount={0}
-        recordsCount={0}
-      />
+      <div className='border-b border-gray-200 pt-8'>
+        <div className='container max-w-8xl mx-auto px-4'>
+          <UserInfoHeader {...account} />
+        </div>
+      </div>
     </>
   );
 };
