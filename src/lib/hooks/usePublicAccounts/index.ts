@@ -9,27 +9,23 @@ export const accountQueryString = `
   created_at,
   url,
   description,
-  records (
-    id
-  ),
   sensors (
-    id
-    category_id
-  ),
-  user:user_id (
-    name,
-    display_name
-  ),
-  category:category_id (
     id,
-    name
+    category_id,
+    records (
+      id
+    )
   )
 `;
 
 type AccountType = definitions["user_profiles"];
-export interface AccountQueryResponseType extends AccountType {
+
+interface SensorWithRecordsType
+  extends Pick<definitions["sensors"], "id" | "category_id"> {
   records: Pick<definitions["records"], "id">[];
-  sensors: Pick<definitions["sensors"], "id" | "category_id">[];
+}
+export interface AccountQueryResponseType extends AccountType {
+  sensors: SensorWithRecordsType[];
   user: Pick<definitions["user_profiles"], "name" | "display_name">;
 }
 
@@ -63,7 +59,6 @@ export const mapPublicAccount = ({
   description,
   url,
   sensors,
-  records,
 }: AccountQueryResponseType): PublicAccountType => ({
   id: id,
   username: name || "anonymous",
@@ -71,7 +66,10 @@ export const mapPublicAccount = ({
   link: url,
   description: description,
   sensorsCount: sensors.length || 0,
-  recordsCount: records.length || 0,
+  recordsCount: sensors.reduce(
+    (acc, { records }) => acc + records.length,
+    0 as number
+  ),
   categories: sensors
     .reduce((acc, sensor) => [...acc, sensor.category_id], [] as number[])
     .filter((val, ind, arr) => arr.indexOf(val) === ind),

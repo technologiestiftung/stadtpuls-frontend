@@ -149,7 +149,6 @@ const supabaseHandlers = [
       const select = query.get("select");
       const username = query.get("name")?.replace("eq.", "");
       const limit = query.get("limit");
-      const recordsLimit = query.get("records.limit");
 
       // Regex removes whitespaces and line breaks. Necessary because accountQueryString is constructed as template literal
       const trimmedAccountSelectString = accountQueryString.replace(
@@ -159,11 +158,12 @@ const supabaseHandlers = [
 
       const specificAccountDataRequested =
         select === trimmedAccountSelectString;
-      const oneAccountRequestedById = specificAccountDataRequested && username;
+      const oneAccountRequestedByName =
+        specificAccountDataRequested && username;
       const limitedAccountsRequested = specificAccountDataRequested && limit;
 
       if (specificAccountDataRequested) {
-        if (oneAccountRequestedById && username) {
+        if (oneAccountRequestedByName && username) {
           return res(
             ctx.status(201, "Mocked status"),
             ctx.json(
@@ -175,26 +175,10 @@ const supabaseHandlers = [
         }
         if (limitedAccountsRequested && limit) {
           const limitedAccounts = publicAccounts.slice(0, parseInt(limit, 10));
-          const limitedAccountsWithLimitedRecords = limitedAccounts.map(
-            account => {
-              return recordsLimit
-                ? {
-                    ...account,
-                    records: account.records.slice(
-                      0,
-                      parseInt(recordsLimit, 10) - 1
-                    ),
-                  }
-                : { ...account };
-            }
+          return res(
+            ctx.status(201, "Mocked status"),
+            ctx.json(limitedAccounts)
           );
-
-          return recordsLimit
-            ? res(
-                ctx.status(201, "Mocked status"),
-                ctx.json(limitedAccountsWithLimitedRecords)
-              )
-            : res(ctx.status(201, "Mocked status"), ctx.json(limitedAccounts));
         } else {
           return res(
             ctx.status(201, "Mocked status"),
