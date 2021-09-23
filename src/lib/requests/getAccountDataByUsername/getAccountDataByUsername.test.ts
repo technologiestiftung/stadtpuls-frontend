@@ -10,10 +10,7 @@ describe("utility function getAccountDataByUsername", () => {
   it("should return data belonging to provided username", async (): Promise<void> => {
     const server = setupServer(
       rest.get(createApiUrl(`/user_profiles`), (_req, res, ctx) => {
-        return res(
-          ctx.status(200, "Mocked status"),
-          ctx.json([exampleAccount])
-        );
+        return res(ctx.status(200, "Mocked status"), ctx.json(exampleAccount));
       })
     );
     server.listen();

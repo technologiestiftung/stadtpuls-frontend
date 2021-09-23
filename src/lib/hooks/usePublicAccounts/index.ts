@@ -56,31 +56,26 @@ interface OptionsType {
   };
 }
 
-export const mapPublicAccount = (
-  account: AccountQueryResponseType
-): PublicAccountType => {
-  const {
-    id,
-    name,
-    display_name,
-    description,
-    url,
-    sensors,
-    records,
-  } = account;
-  return {
-    id: id,
-    username: name || "anonymous",
-    displayName: display_name || "Anonymous",
-    link: url,
-    description: description,
-    sensorsCount: sensors.length || 0,
-    recordsCount: records.length || 0,
-    categories: sensors
-      .reduce((acc, sensor) => [...acc, sensor.category_id], [] as number[])
-      .filter((val, ind, arr) => arr.indexOf(val) === ind),
-  };
-};
+export const mapPublicAccount = ({
+  id,
+  name,
+  display_name,
+  description,
+  url,
+  sensors,
+  records,
+}: AccountQueryResponseType): PublicAccountType => ({
+  id: id,
+  username: name || "anonymous",
+  displayName: display_name || "Anonymous",
+  link: url,
+  description: description,
+  sensorsCount: sensors.length || 0,
+  recordsCount: records.length || 0,
+  categories: sensors
+    .reduce((acc, sensor) => [...acc, sensor.category_id], [] as number[])
+    .filter((val, ind, arr) => arr.indexOf(val) === ind),
+});
 
 export const getPublicAccounts = async (): Promise<PublicAccounts> => {
   const { data, error } = await supabase
