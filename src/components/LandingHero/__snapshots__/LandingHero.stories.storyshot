@@ -43,7 +43,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
           deiner Stadt. Und das beste: jede*r kann mitmachen. Egal ob du offene Daten suchst oder bereits eigene Sensoren und Daten hast: Stadtpuls hilft dir, tiefer in die Welt der Stadt-Sensorik einzutauchen und deine Stadt besser zu verstehen.
         </p>
         <a
-          className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green animate-slide-in mr-4 mb-2"
+          className="inline-block font-headline transition text-base sm:text-lg px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green animate-slide-in mr-4 mb-2"
           href="/sensors"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -57,7 +57,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
           Sensoren ansehen
         </a>
         <a
-          className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green animate-slide-in"
+          className="inline-block font-headline transition text-base sm:text-lg px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green animate-slide-in"
           href="/docs"
           onClick={[Function]}
           onMouseEnter={[Function]}
