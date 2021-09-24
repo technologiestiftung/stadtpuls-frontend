@@ -80,7 +80,6 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
   } = useForm<SubmitDataType>({
     resolver: yupResolver(formSchema),
   });
-  const isDirty = Object.values(dirtyFields).length > 0;
   const [integration, setIntegration] = useState(
     defaultValues.integration || "http"
   );
@@ -89,6 +88,10 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
     longitude: defaultValues?.longitude || DEFAULT_LNG,
     zoom: 12,
   });
+  const isDirty =
+    Object.values(dirtyFields).length > 0 ||
+    viewport.latitude !== defaultValues?.latitude ||
+    viewport.longitude !== defaultValues?.longitude;
   const {
     categories,
     isLoading: isLoadingCategories,
