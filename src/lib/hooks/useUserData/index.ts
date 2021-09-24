@@ -23,7 +23,7 @@ type UserFetcherSignature = (
 
 const fetchUser: UserFetcherSignature = async (userId, isLoadingAuth) => {
   if (isLoadingAuth || isLoadingAuth === undefined) return null;
-  if (!userId) throw new Error("Not authenticated");
+  if (!userId) return null;
 
   const { data: user, error } = await supabase
     .from<definitions["user_profiles"]>("user_profiles")
@@ -47,7 +47,7 @@ const fetchUserSensors: SensorsFetcherSignature = async (
   isLoadingAuth
 ) => {
   if (isLoadingAuth || isLoadingAuth === undefined) return null;
-  if (!userId) throw new Error("Not authenticated");
+  if (!userId) return null;
 
   const { data, error } = await supabase
     .from<definitions["sensors"]>("sensors")

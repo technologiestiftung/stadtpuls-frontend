@@ -31,6 +31,15 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({ sensorsData }) => {
     );
   return (
     <div className='container mx-auto max-w-8xl py-24 px-4'>
+      <h1
+        className={[
+          "font-bold text-xl sm:text-2xl md:text-3xl font-headline",
+          "sm:mt-1 md:mt-2",
+          "mb-4 sm:mb-5 md:mb-6",
+        ].join(" ")}
+      >
+        Alle Sensoren
+      </h1>
       <SensorsGrid sensors={sensorsData.sensors} />
     </div>
   );

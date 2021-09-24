@@ -60,8 +60,8 @@ export const SensorCard: FC<SensorCardPropType> = ({
         {isInViewport && (
           <div
             className={[
-              "absolute inset-0 bottom-auto sm:bottom-0 sm:left-auto sm:w-1/3",
-              "h-32 sm:h-full",
+              "absolute inset-0 bottom-auto lg:bottom-0 lg:left-auto lg:w-1/3",
+              "h-32 lg:h-full",
               "pointer-events-none transition opacity-40 overflow-hidden",
               "group-hover:opacity-60 bg-gray-50",
             ].join(" ")}
@@ -122,8 +122,8 @@ export const SensorCard: FC<SensorCardPropType> = ({
         )}
         <div
           className={[
-            "sm:w-2/3 transition group-hover:animate-textpulse",
-            "px-4 pb-3 pt-36 sm:px-5 sm:py-4 md:px-8 md:py-7",
+            "lg:w-2/3 transition group-hover:animate-textpulse",
+            "px-4 pb-3 pt-36 lg:px-5 lg:py-4",
             "relative z-10",
           ].join(" ")}
         >
@@ -132,8 +132,7 @@ export const SensorCard: FC<SensorCardPropType> = ({
             <h3
               className={[
                 "text-xl leading-6 pt-1",
-                "sm:leading-7 sm:text-2xl sm:pt-0",
-                "md:leading-8 md:text-3xl",
+                "lg:leading-7 lg:text-2xl lg:pt-0",
                 "font-headline font-bold inline",
               ].join(" ")}
             >
