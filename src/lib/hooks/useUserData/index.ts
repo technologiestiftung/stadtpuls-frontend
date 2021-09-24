@@ -63,14 +63,17 @@ const fetchUserSensors: SensorsFetcherSignature = async (
 const createSensor = async (
   sensor: Omit<definitions["sensors"], "id">,
   user_id: string | undefined
-): Promise<void> => {
+): Promise<number> => {
   if (!user_id) throw new Error("Not authenticated");
 
-  const { error } = await supabase
+  const { data, error } = await supabase
     .from<definitions["sensors"]>("sensors")
     .insert([{ ...sensor, id: undefined }]);
 
   if (error) throw error;
+  if (!data || !data[0].id)
+    throw "Sensor could not be created. Not ID returned.";
+  return data[0].id;
 };
 
 const updateSensor = async ({
@@ -157,7 +160,7 @@ export const useUserData = (
   user: definitions["user_profiles"] | null;
   sensors: definitions["sensors"][] | null;
   error: Error | null;
-  createSensor: (sensor: Omit<definitions["sensors"], "id">) => Promise<void>;
+  createSensor: (sensor: Omit<definitions["sensors"], "id">) => Promise<number>;
   updateSensor: (sensor: Partial<definitions["sensors"]>) => Promise<void>;
   deleteSensor: (id: number) => Promise<void>;
   updateUser: (
@@ -190,15 +193,16 @@ export const useUserData = (
     sensors: sensors.data || null,
     error: user.error || actionError || null,
     createSensor: async sensor => {
-      if (!sensors.data || sensors.error) return;
+      if (!sensors.data || sensors.error) throw "No Sensor data or error!";
       setActionError(null);
-      void mutate(
+      await mutate(
         sensorsParams,
         createSensorLocally(sensors.data, sensor),
         false
       );
-      await createSensor(sensor, userId).catch(setActionError);
-      void mutate(sensorsParams);
+      const newId = await createSensor(sensor, userId);
+      await mutate(sensorsParams);
+      return newId;
     },
     updateSensor: async sensor => {
       if (!sensors.data || sensors.error) return;

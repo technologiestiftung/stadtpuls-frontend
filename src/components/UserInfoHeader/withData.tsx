@@ -2,6 +2,7 @@ import { useAuth } from "@auth/Auth";
 import { Alert } from "@components/Alert";
 import { Button } from "@components/Button";
 import { EditAccountModal } from "@components/EditAccountModal";
+import { EditAddSensorModal } from "@components/EditAddSensorModal";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { Tabs } from "@components/Tabs";
 import {
@@ -23,7 +24,14 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
   activeTab,
 }) => {
   const router = useRouter();
-  const { user, sensors, error, updateUser, deleteUser } = useUserData({
+  const {
+    user,
+    sensors,
+    error,
+    createSensor,
+    updateUser,
+    deleteUser,
+  } = useUserData({
     user: {
       id: initialAccount.id,
       name: initialAccount.username,
@@ -41,6 +49,7 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
     ...(user && sensors ? dbUserToPublicAccount(user) : {}),
   };
   const [editModalIsOpen, setEditModalIsOpen] = useState(false);
+  const [newSensorModalIsOpen, setNewSensorModalIsOpen] = useState(false);
   const [
     deletionConfirmationIsOpened,
     setDeletionConfirmationIsOpened,
@@ -64,6 +73,29 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
   }
   return (
     <>
+      {newSensorModalIsOpen && (
+        <EditAddSensorModal
+          title='Neuer Sensor'
+          onCancel={() => setNewSensorModalIsOpen(false)}
+          submitButtonText='Hinzufügen'
+          onSubmit={data => {
+            if (!authenticatedUser?.id) return;
+            createSensor({
+              name: data.name,
+              icon_id: data.symbolId,
+              description: data.description,
+              connection_type: data.integration,
+              created_at: new Date().toISOString(),
+              category_id: data.categoryId,
+              latitude: data.latitude,
+              longitude: data.longitude,
+              user_id: authenticatedUser.id,
+            })
+              .then(newSensorId => router.push(`/sensors/${newSensorId}`))
+              .finally(() => setNewSensorModalIsOpen(false));
+          }}
+        />
+      )}
       {authenticatedUser && isOwnerAndLoggedIn && editModalIsOpen && (
         <EditAccountModal
           defaultValues={{
@@ -122,6 +154,17 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
           <div className='absolute left-4 bottom-[-1px] z-10'>
             <Tabs activeTabIndex={activeTabIndex} tabs={tabs} />
           </div>
+          {user && authenticatedUser && (
+            <span className='absolute bottom-0 sm:bottom-2 right-4'>
+              <Button
+                variant='primary'
+                onClick={() => setNewSensorModalIsOpen(true)}
+              >
+                <span className='sm:hidden'>+</span>
+                <span className='hidden sm:inline'>Neuer</span> Sensor
+              </Button>
+            </span>
+          )}
         </div>
       </div>
       {deletionConfirmationIsOpened && (
