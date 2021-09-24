@@ -21,7 +21,7 @@ export const accountQueryString = `
 type AccountType = definitions["user_profiles"];
 
 interface SensorWithRecordsType
-  extends Pick<definitions["sensors"], "id" | "category_id"> {
+  extends Pick<definitions["sensors"], "id" | "created_at" | "category_id"> {
   records: Pick<definitions["records"], "id">[];
 }
 export interface AccountQueryResponseType extends AccountType {
@@ -53,21 +53,22 @@ interface OptionsType {
   };
 }
 
+export const dbUserToPublicAccount = (
+  user: definitions["user_profiles"]
+): Omit<PublicAccountType, "sensorsCount" | "recordsCount" | "categories"> => ({
+  id: user.id,
+  username: user.name || "anonymous",
+  displayName: user.display_name || "Anonymous",
+  createdAt: user.created_at,
+  link: user.url,
+  description: user.description,
+});
+
 export const mapPublicAccount = ({
-  id,
-  name,
-  display_name,
-  created_at,
-  description,
-  url,
   sensors,
+  ...user
 }: AccountQueryResponseType): PublicAccountType => ({
-  id: id,
-  username: name || "anonymous",
-  displayName: display_name || "Anonymous",
-  createdAt: created_at,
-  link: url,
-  description: description,
+  ...dbUserToPublicAccount(user),
   sensorsCount: sensors.length || 0,
   recordsCount: sensors.reduce(
     (acc, { records }) => acc + records.length,

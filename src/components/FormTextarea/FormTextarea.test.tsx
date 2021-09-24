@@ -17,6 +17,11 @@ describe("FormTextarea component", () => {
     const label = screen.getByText(/Name/g);
     expect(label).toBeInTheDocument();
   });
+  it("should render an optional mention when provided", () => {
+    render(<FormTextarea name='name' label='Name' optional />);
+    const optional = screen.getByText(/Optional/g);
+    expect(optional).toBeInTheDocument();
+  });
   it("should render errors when provided", () => {
     render(<FormTextarea name='name' errors={["hey", "how"]} />);
     const hey = screen.getByText(/hey/g);

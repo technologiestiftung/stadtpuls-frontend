@@ -1,11 +1,13 @@
 import { useAuth } from "@auth/Auth";
-import { definitions } from "@common/types/supabase";
 import { Alert } from "@components/Alert";
 import { Button } from "@components/Button";
 import { EditAccountModal } from "@components/EditAccountModal";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { Tabs } from "@components/Tabs";
-import { PublicAccountType } from "@lib/hooks/usePublicAccounts";
+import {
+  dbUserToPublicAccount,
+  PublicAccountType,
+} from "@lib/hooks/usePublicAccounts";
 import { useUserData } from "@lib/hooks/useUserData";
 import { useRouter } from "next/router";
 import { FC, useState } from "react";
@@ -16,26 +18,12 @@ interface UserInfoWithDataPropType {
   activeTab: "sensors" | "tokens";
 }
 
-const mergeInitialAccountWithUserInfo = (
-  initialAccount: PublicAccountType,
-  userAccount?: definitions["user_profiles"]
-): PublicAccountType => {
-  return {
-    ...initialAccount,
-    id: userAccount?.id || initialAccount.id,
-    username: userAccount?.name || initialAccount.username,
-    displayName: userAccount?.display_name || initialAccount.displayName,
-    description: userAccount?.description || initialAccount.description,
-    link: userAccount?.url || initialAccount.link,
-  };
-};
-
 export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
   initialAccount,
   activeTab,
 }) => {
   const router = useRouter();
-  const { user, error, updateUser, deleteUser } = useUserData({
+  const { user, sensors, error, updateUser, deleteUser } = useUserData({
     user: {
       id: initialAccount.id,
       name: initialAccount.username,
@@ -48,9 +36,10 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
   const { authenticatedUser } = useAuth();
   const isOwnerAndLoggedIn =
     !!authenticatedUser && !!user && user.name === initialAccount.username;
-  const finalAccount = user
-    ? mergeInitialAccountWithUserInfo(initialAccount, user)
-    : initialAccount;
+  const finalAccount = {
+    ...initialAccount,
+    ...(user && sensors ? dbUserToPublicAccount(user) : {}),
+  };
   const [editModalIsOpen, setEditModalIsOpen] = useState(false);
   const [
     deletionConfirmationIsOpened,
@@ -125,7 +114,10 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
           <UserInfoHeader
             {...finalAccount}
             withEditButton={isOwnerAndLoggedIn}
-            onEditButtonClick={() => setEditModalIsOpen(true)}
+            onEditButtonClick={() => {
+              setEditModalIsOpen(true);
+              setShowEditSuccessAlert(false);
+            }}
           />
           <div className='absolute left-4 bottom-[-1px] z-10'>
             <Tabs activeTabIndex={activeTabIndex} tabs={tabs} />
