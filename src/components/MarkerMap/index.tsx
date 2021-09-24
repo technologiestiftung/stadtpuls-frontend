@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import ReactMapGL, { Marker, WebMercatorViewport } from "react-map-gl";
+import ReactMapGL, {
+  FlyToInterpolator,
+  Marker,
+  WebMercatorViewport,
+} from "react-map-gl";
 import { bbox, featureCollection, point } from "@turf/turf";
 import { MarkerType } from "../../common/interfaces";
 import { MarkerCircle } from "../MarkerCircle";
@@ -16,12 +20,20 @@ export const MarkerMap: React.FC<{
   clickHandler: ClickHandlerType;
   mapWidth: number;
   mapHeight: number;
+  mapZoom?: number;
   withMapLabels?: boolean;
-}> = ({ markers, clickHandler, mapWidth, mapHeight, withMapLabels = true }) => {
+}> = ({
+  markers,
+  clickHandler,
+  mapWidth,
+  mapHeight,
+  mapZoom = 12,
+  withMapLabels = true,
+}) => {
   const [viewport, setViewport] = useState<ViewportType>({
     latitude: 52.520952,
     longitude: 13.400033,
-    zoom: 12,
+    zoom: mapZoom,
     bearing: 0,
     pitch: 0,
     maxZoom: 16,
@@ -105,6 +117,8 @@ export const MarkerMap: React.FC<{
         setViewport(nextViewport)
       }
       mapboxApiAccessToken={MAPBOX_TOKEN}
+      transitionDuration={1000}
+      transitionInterpolator={new FlyToInterpolator()}
     >
       {!allDevicesHaveSameLocation &&
         markers.map((marker: MarkerType) => {

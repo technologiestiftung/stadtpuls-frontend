@@ -40,6 +40,7 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
       <MarkerMap
         mapWidth={mapWidth}
         mapHeight={typeof mapHeight === "string" ? mapHeight : mapHeight * 1.7}
+        mapZoom={9}
         clickHandler={() => undefined}
         markers={[
           {
