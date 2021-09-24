@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Layout/Header Logged In 1`] = `
+exports[`Storyshots Layout/Header Default 1`] = `
 <header
   className="w-full z-50 fixed top-0 border-t-0"
 >
@@ -18,7 +18,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
       />
     </a>
     <section
-      className="flex gap-4 sm:gap-8 items-center pr-4"
+      className="flex flex-row-reverse lg:flex-row gap-4 sm:gap-8 items-center pr-4"
     >
       <div>
         <button
@@ -48,7 +48,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
             className="h-full lg:w-auto lg:flex lg:gap-8 lg:mr-4"
           >
             <li
-              className="lg:hidden lg:inline-block text-xl lg:text-base"
+              className="lg:hidden text-xl lg:text-base"
             >
               <a
                 className="navigation-link-active navigation-link p-4 block lg:inline focus-offset"
@@ -60,7 +60,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
               </a>
             </li>
             <li
-              className=" lg:inline-block text-xl lg:text-base"
+              className=" text-xl lg:text-base"
             >
               <a
                 className="navigation-link p-4 block lg:inline focus-offset"
@@ -72,7 +72,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
               </a>
             </li>
             <li
-              className=" lg:inline-block text-xl lg:text-base"
+              className=" text-xl lg:text-base"
             >
               <a
                 className="navigation-link p-4 block lg:inline focus-offset"
@@ -84,7 +84,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
               </a>
             </li>
             <li
-              className=" lg:inline-block text-xl lg:text-base"
+              className=" text-xl lg:text-base"
             >
               <a
                 className="navigation-link p-4 block lg:inline focus-offset"
@@ -102,132 +102,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
         className="inline-flex items-center gap-6"
       >
         <a
-          className="text inline-flex gap-2 transition items-center font-headline font-semibold group-hover:text-green"
-          href="/signin"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          <svg
-            height="16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M15 0a1 1 0 0 1 1 1v11.14a1 1 0 0 1-.505.87l-5.013 2.859A1 1 0 0 1 8.987 15l-.001-2H5.199l2-2h1.787V5.179a1 1 0 0 1 .449-.834L12.977 2H7v2.8L5.004 2.806V1a1 1 0 0 1 1-1H15Zm-1 3.721-3.014 1.994v7.563L14 11.559V3.721ZM3 3l5 5-5 5-1.41-1.41L4.17 9H0V7h4.17L1.59 4.41 3 3Z"
-              fill="currentColor"
-            />
-          </svg>
-          Login
-        </a>
-      </span>
-    </section>
-  </nav>
-</header>
-`;
-
-exports[`Storyshots Layout/Header Logged Out 1`] = `
-<header
-  className="w-full z-50 fixed top-0 border-t-0"
->
-  <nav
-    className="w-full border transition border-t-0 flex place-content-between container mx-auto max-w-8xl bg-black-dot-pattern border-purple text-white"
-  >
-    <a
-      className="w-max flex items-center p-4 sm:border-r transition focus-offset border-purple"
-      href="/"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <span
-        role="img"
-      />
-    </a>
-    <section
-      className="flex gap-4 sm:gap-8 items-center pr-4"
-    >
-      <div>
-        <button
-          className="lg:hidden focus-offset relative z-0"
-          onClick={[Function]}
-        >
-          <svg
-            aria-hidden={true}
-            className="MuiSvgIcon-root"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-            />
-          </svg>
-        </button>
-        <nav
-          className="fixed lg:static lg:top-auto left-1/2 lg:left-auto transform -translate-x-1/2 lg:translate-x-0 sm:border-r lg:border-r-0 sm:border-l lg:border-l-0 z-20 lg:z-auto w-full lg:w-auto shadow lg:shadow-none container max-w-8xl mx-auto lg:py-4 lg:px-1 lg:p-0 lg:bg-opacity-0 bg-black transition opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto"
-          style={
-            Object {
-              "top": 62,
-            }
-          }
-        >
-          <ul
-            className="h-full lg:w-auto lg:flex lg:gap-8 lg:mr-4"
-          >
-            <li
-              className="lg:hidden lg:inline-block text-xl lg:text-base"
-            >
-              <a
-                className="navigation-link-active navigation-link p-4 block lg:inline focus-offset"
-                href="/"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-              >
-                Startseite
-              </a>
-            </li>
-            <li
-              className=" lg:inline-block text-xl lg:text-base"
-            >
-              <a
-                className="navigation-link p-4 block lg:inline focus-offset"
-                href="/accounts"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-              >
-                Accounts
-              </a>
-            </li>
-            <li
-              className=" lg:inline-block text-xl lg:text-base"
-            >
-              <a
-                className="navigation-link p-4 block lg:inline focus-offset"
-                href="/sensors"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-              >
-                Sensoren
-              </a>
-            </li>
-            <li
-              className=" lg:inline-block text-xl lg:text-base"
-            >
-              <a
-                className="navigation-link p-4 block lg:inline focus-offset"
-                href="/docs"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-              >
-                Dokumentation
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <span
-        className="inline-flex items-center gap-6"
-      >
-        <a
-          className="text inline-flex gap-2 transition items-center font-headline font-semibold group-hover:text-green"
+          className="inline-flex text gap-2 transition items-center font-headline font-semibold group-hover:text-green"
           href="/signin"
           onClick={[Function]}
           onMouseEnter={[Function]}

@@ -53,7 +53,7 @@ export const Header: React.FC = () => {
               .join(" ")}
           />
         </Link>
-        <section className='flex gap-4 sm:gap-8 items-center pr-4'>
+        <section className='flex flex-row-reverse lg:flex-row gap-4 sm:gap-8 items-center pr-4'>
           <HeaderMenu hasDarkMode={hasDarkMode} />
           <AuthLink
             loggedInUserName={

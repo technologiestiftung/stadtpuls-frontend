@@ -1,11 +1,16 @@
+import { useAuth } from "@auth/Auth";
 import { ActiveLink } from "@components/ActiveLink";
 import useClickOutside from "@lib/hooks/useClickOutside";
+import { useUserData } from "@lib/hooks/useUserData";
 import { Close, Menu } from "@material-ui/icons";
-import { FC, useState } from "react";
+import { FC, ReactNode, useState } from "react";
+import ArrowOutOfDoor from "../../../public/images/icons/16px/arrowOutOfDoor.svg";
 
 interface MenuPageType {
   href: string;
-  text: string;
+  text: ReactNode;
+  onClick?: () => void;
+  className?: string;
 }
 
 interface HeaderMenuPropType {
@@ -29,7 +34,7 @@ const HeaderLink: FC<MenuLinkPropType> = ({
   className = "",
   onClick,
 }) => (
-  <li className={`${className} lg:inline-block text-xl lg:text-base`}>
+  <li className={`${className} text-xl lg:text-base`}>
     <ActiveLink activeClassName='navigation-link-active' href={href}>
       <a
         href={href}
@@ -43,6 +48,8 @@ const HeaderLink: FC<MenuLinkPropType> = ({
 );
 
 export const HeaderMenu: FC<HeaderMenuPropType> = ({ hasDarkMode = false }) => {
+  const { signOut } = useAuth();
+  const { user, authenticatedUser } = useUserData();
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const toggleIsOpened = (): void => setIsOpened(!isOpened);
   const menuRef = useClickOutside<HTMLDivElement>(() => setIsOpened(false));
@@ -82,12 +89,42 @@ export const HeaderMenu: FC<HeaderMenuPropType> = ({ hasDarkMode = false }) => {
             className='lg:hidden'
             onClick={() => setIsOpened(false)}
           />
-          {pages.map(({ href, text }) => (
+          {[
+            ...pages,
+            ...(user && authenticatedUser
+              ? [
+                  {
+                    href: `/accounts/${user?.name || "anonymous"}`,
+                    text: "Deine Sensoren",
+                    className: "lg:hidden",
+                  },
+                  {
+                    href: `/accounts/${user?.name || "anonymous"}/tokens`,
+                    text: "Deine Tokens",
+                    className: "lg:hidden",
+                  },
+                  {
+                    href: `/`,
+                    text: (
+                      <span className='inline-flex gap-2 items-center font-bold font-headline'>
+                        <ArrowOutOfDoor /> Logout
+                      </span>
+                    ),
+                    onClick: () => signOut(),
+                    className: "lg:hidden",
+                  },
+                ]
+              : []),
+          ].map(({ href, onClick = () => undefined, className = "", text }) => (
             <HeaderLink
               key={href}
               href={href}
               text={text}
-              onClick={() => setIsOpened(false)}
+              className={className}
+              onClick={() => {
+                setIsOpened(false);
+                onClick();
+              }}
             />
           ))}
         </ul>
