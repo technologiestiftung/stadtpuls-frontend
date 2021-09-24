@@ -1,108 +1,53 @@
 import { FC } from "react";
-import AccountIcon from "@material-ui/icons/AccountCircle";
-import LogoutIconn from "@material-ui/icons/ExitToApp";
 import Link from "next/link";
 import { useAuth } from "@auth/Auth";
-import { DropdownMenu, DropdownMenuPropType } from "@components/DropdownMenu";
-import { useUserData } from "@lib/hooks/useUserData";
 import { UserAvatar } from "@components/UserAvatar";
-import { AccountCircle } from "@material-ui/icons";
+import ArrowIntoDoor from "../../../public/images/icons/16px/arrowIntoDoor.svg";
+import ArrowOutOfDoor from "../../../public/images/icons/16px/arrowOutOfDoor.svg";
 
-const iconProps = {
-  className: "transition mr-2 group-hover:text-purple",
-};
+interface AuthLinkPropType {
+  loggedInUserName?: string;
+}
 
-export const ColouredAuthLink: FC<{
-  withAvatar?: boolean;
-  variant: "primary" | "secondary";
-  href?: string;
-}> = ({ children, href, variant, withAvatar = false }) => {
+export const AuthLink: FC<AuthLinkPropType> = ({ loggedInUserName }) => {
+  const { signOut } = useAuth();
+
   const iconStyles = [
-    "icon transform -translate-y-0.5 transition inline-block align-middle mr-1",
-    variant === "secondary" && "group-hover:text-green",
-    variant === "primary" && "group-hover:opacity-60",
-  ]
-    .filter(Boolean)
-    .join(" ");
+    "icon transform -translate-y-0.5 transition inline-block",
+    "align-middle group-hover:text-green",
+  ].join(" ");
   const textStyles = [
-    "text inline-block ml-1 transition hidden sm:inline-block font-headline font-bold",
-    variant === "secondary" && "group-hover:text-green",
-    variant === "primary" && "font-semibold group-hover:text-green",
-  ]
-    .filter(Boolean)
-    .join(" ");
+    "text inline-flex gap-2 transition items-center",
+    "font-headline font-semibold group-hover:text-green",
+  ].join(" ");
+  const accountHref = `/accounts/${loggedInUserName || "anonymous"}`;
 
-  const text =
-    typeof children === "string" ? (
-      <>
-        {withAvatar ? (
-          <UserAvatar username={children} className={iconStyles} />
-        ) : (
-          <AccountCircle className={iconStyles} />
-        )}
-        <span className={textStyles}>{children}</span>
-      </>
-    ) : (
-      <span />
-    );
   return (
-    <span className='group'>
-      {href ? (
-        <Link href={href}>
-          <a href={href} className='focus-offset'>
-            {text}
+    <span className='inline-flex items-center gap-6'>
+      {loggedInUserName ? (
+        <>
+          <Link href={accountHref}>
+            <a href={accountHref}>
+              <UserAvatar
+                username={loggedInUserName || "anonymous"}
+                className={iconStyles}
+                size={32}
+              />
+            </a>
+          </Link>
+          <button className={textStyles} onClick={() => signOut()}>
+            <ArrowOutOfDoor />
+            Logout
+          </button>
+        </>
+      ) : (
+        <Link href='/signin'>
+          <a href='/signin' className={textStyles}>
+            <ArrowIntoDoor />
+            Login
           </a>
         </Link>
-      ) : (
-        text
       )}
     </span>
-  );
-};
-
-export const AuthLink: FC = () => {
-  const { signOut } = useAuth();
-  const { user } = useUserData();
-
-  const link = (
-    <ColouredAuthLink
-      withAvatar={!!user}
-      href={user ? undefined : "/signin"}
-      variant={user ? "primary" : "secondary"}
-    >
-      {user ? user.name || "Profil" : "Anmeldung"}
-    </ColouredAuthLink>
-  );
-
-  return !user ? (
-    link
-  ) : (
-    <DropdownMenu
-      position='right'
-      items={
-        [
-          {
-            id: 0,
-            title: (
-              <>
-                <AccountIcon {...iconProps} /> Account
-              </>
-            ),
-            href: "/account/profile",
-          },
-          {
-            id: 1,
-            title: (
-              <>
-                <LogoutIconn {...iconProps} /> Abmelden
-              </>
-            ),
-            onClick: () => void signOut(),
-          },
-        ].filter(Boolean) as DropdownMenuPropType["items"]
-      }
-    >
-      {link}
-    </DropdownMenu>
   );
 };

@@ -1,6 +1,5 @@
 import { AuthProvider } from "@auth/Auth";
 import { supabase } from "@auth/supabase";
-import * as userDataHook from "@lib/hooks/useUserData";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import React from "react";
 import { AuthLink } from ".";
@@ -9,9 +8,9 @@ const oldSessionFuncion = supabase.auth.session.bind(supabase.auth);
 const oldLogoutFuncion = supabase.auth.signOut.bind(supabase.auth);
 
 describe("component AuthLink while logged out", () => {
-  it("should render Anmeldung by default", () => {
+  it("should render Login by default", () => {
     render(<AuthLink />);
-    const anmeldung = screen.getByText(/Anmeldung/gi);
+    const anmeldung = screen.getByText(/Login/gi);
     expect(anmeldung).toBeInTheDocument();
   });
   it("should render an icon", () => {
@@ -19,96 +18,35 @@ describe("component AuthLink while logged out", () => {
     const icon = document.querySelector("svg");
     expect(icon).toBeInTheDocument();
   });
-  it("should have secondary styles", () => {
-    render(<AuthLink />);
-    const icon = document.querySelector("svg");
-    const anmeldung = screen.getByText(/Anmeldung/gi);
-    expect(icon?.getAttribute("class")?.includes("text-green")).toBe(true);
-    expect(anmeldung?.getAttribute("class")?.includes("text-green")).toBe(true);
-  });
 });
 
-const originalUserDataHook = userDataHook.useUserData;
 describe("component AuthLink while logged in", () => {
-  beforeEach(() => {
-    // Ignored because of the reassignment for mock purposes
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    userDataHook.useUserData = jest.fn().mockReturnValue({
-      user: { name: "JohnDoe" },
-    });
-  });
-
   afterEach(() => {
     supabase.auth.session = oldSessionFuncion;
-    // Ignored because of the reassignment for mock purposes
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    userDataHook.useUserData = originalUserDataHook;
     supabase.auth.signOut = oldLogoutFuncion;
   });
-  it("should render the user username if logged in", async () => {
+  it("should render the user icon and logout if logged in", async () => {
     render(
       <AuthProvider>
-        <AuthLink />
+        <AuthLink loggedInUserName='JohnDoe' />
       </AuthProvider>
     );
-    const username = screen.getByText(/JohnDoe/gi);
+    const logoutLink = screen.getByText(/Logout/gi);
+    const icon = document.querySelector("svg");
+    expect(icon).toBeInTheDocument();
 
-    await waitFor(() => expect(username).toBeInTheDocument());
-  });
-  it("should render the word Profile if logged in with empty username", async () => {
-    // Ignored because of the reassignment for mock purposes
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    userDataHook.useUserData = jest.fn().mockReturnValue({
-      user: { name: "" },
-    });
-    render(
-      <AuthProvider>
-        <AuthLink />
-      </AuthProvider>
-    );
-    const username = screen.getByText(/Profil/gi);
-
-    await waitFor(() => expect(username).toBeInTheDocument());
-  });
-  it("should have primary styles if logged in", async () => {
-    render(<AuthLink />);
-    const icon = document.querySelector("span.icon");
-    const anmeldung = screen.getByText(/JohnDoe/gi);
-
-    await waitFor(() => {
-      expect(icon?.getAttribute("class")?.includes("opacity-60")).toBe(true);
-      expect(anmeldung?.getAttribute("class")?.includes("font-semibold")).toBe(
-        true
-      );
-    });
-  });
-  it("should render the Dropdown menu links", async () => {
-    render(
-      <AuthProvider>
-        <AuthLink />
-      </AuthProvider>
-    );
-    const accountLink = screen.getByText(/Account/gi);
-    const logoutLink = screen.getByText(/Abmelden/gi);
-
-    await waitFor(() => {
-      expect(accountLink).toBeInTheDocument();
-      expect(logoutLink).toBeInTheDocument();
-    });
+    await waitFor(() => expect(logoutLink).toBeInTheDocument());
   });
   it("should call auth's logout function on logout click", async () => {
     const signOutFunction = jest.fn();
     supabase.auth.signOut = signOutFunction;
     render(
       <AuthProvider>
-        <AuthLink />
+        <AuthLink loggedInUserName='JohnDoe' />
       </AuthProvider>
     );
 
-    const logoutLink = screen.getByText(/Abmelden/gi);
+    const logoutLink = screen.getByText(/Logout/gi);
     fireEvent.click(logoutLink);
 
     await waitFor(() => expect(signOutFunction).toHaveBeenCalledTimes(1));
