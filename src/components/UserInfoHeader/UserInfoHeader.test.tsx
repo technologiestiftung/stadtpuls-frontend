@@ -7,6 +7,7 @@ const testProps = {
   categories: [1, 2, 3],
   displayName: "Louis Dieudonné de Bourbon",
   username: "looee14",
+  createdAt: "2021-01-01T00:00:00.000Z",
   description:
     "Louis XIV, also known as Louis the Great or the Sun King, was King of France from 14 May 1643 until his death in 1715.",
   link:

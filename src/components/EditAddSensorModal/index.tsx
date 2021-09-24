@@ -11,7 +11,7 @@ import {
   requiredLongitude,
   requiredSensorCategoryValidation,
   requiredSensorIntegrationValidation,
-  requiredDescriptionValidation,
+  optionalDescriptionValidation,
   requiredTTNDeviceIDValidation,
 } from "@lib/formValidationUtil";
 import React, { FC, useEffect, useCallback, useState } from "react";
@@ -54,7 +54,7 @@ const formSchema = yup.object().shape({
   latitude: requiredLatitude,
   longitude: requiredLongitude,
   categoryId: requiredSensorCategoryValidation,
-  description: requiredDescriptionValidation,
+  description: optionalDescriptionValidation,
   integration: requiredSensorIntegrationValidation,
   ttnDeviceId: requiredTTNDeviceIDValidation,
 });
@@ -193,6 +193,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
           render={({ field }) => (
             <FormTextarea
               {...field}
+              optional
               label='Beschreibung'
               placeholder='Beschreibe kurz den Sensor'
               errors={formatError(errors.description?.message)}

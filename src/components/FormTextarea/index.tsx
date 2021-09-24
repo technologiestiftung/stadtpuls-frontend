@@ -1,14 +1,15 @@
-import { HTMLProps, forwardRef } from "react";
+import { HTMLProps, forwardRef, ReactNode } from "react";
 
 export interface FormTextareaPropType
   extends Omit<HTMLProps<HTMLTextAreaElement>, "label" | "value"> {
   name: string;
-  label?: string;
+  label?: ReactNode;
   className?: string;
   placeholder?: string;
   maxCharacters?: number;
   minCharacters?: number;
   errors?: string[];
+  optional?: boolean;
 }
 
 // eslint-disable-next-line react/display-name
@@ -25,6 +26,7 @@ export const FormTextarea = forwardRef<
       maxCharacters = 140,
       minCharacters = 10,
       errors = [],
+      optional = false,
       ...textareaProps
     },
     ref
@@ -35,7 +37,12 @@ export const FormTextarea = forwardRef<
           htmlFor={`${name}-textarea`}
           className='block mb-2 cursor-pointer transition hover:opacity-60'
         >
-          {label}
+          {typeof label === "string" ? <span>{label}</span> : label}{" "}
+          {optional && (
+            <span className='text-gray-500 float-right text-sm transform translate-y-1'>
+              (Optional)
+            </span>
+          )}
         </label>
       )}
       <textarea

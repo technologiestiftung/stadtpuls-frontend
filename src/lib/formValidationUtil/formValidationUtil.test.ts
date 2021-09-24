@@ -4,7 +4,7 @@ import {
   requiredUsernameValidation,
   requiredSensorNameValidation,
   requiredSensorCategoryValidation,
-  requiredDescriptionValidation,
+  optionalDescriptionValidation,
   requiredSensorIntegrationValidation,
   requiredTTNDeviceIDValidation,
   requiredLatitude,
@@ -88,19 +88,15 @@ describe("requiredSensorCategoryValidation validation", () => {
   });
 });
 
-describe("requiredDescriptionValidation validation", () => {
-  it("should not be valid if empty", async () => {
-    const isValid = await requiredDescriptionValidation.isValid("");
-    expect(isValid).toBe(false);
-  });
-  it("should not be valid if less than 10 chars", async () => {
-    const isValid = await requiredDescriptionValidation.isValid("abc");
-    expect(isValid).toBe(false);
+describe("optionalDescriptionValidation validation", () => {
+  it("should be valid if undefined", async () => {
+    const isValid = await optionalDescriptionValidation.isValid(undefined);
+    expect(isValid).toBe(true);
   });
   it("should not be valid if more than 140 chars", async () => {
     const longString =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-    const isValid = await requiredDescriptionValidation.isValid(longString);
+    const isValid = await optionalDescriptionValidation.isValid(longString);
     expect(isValid).toBe(false);
   });
 });

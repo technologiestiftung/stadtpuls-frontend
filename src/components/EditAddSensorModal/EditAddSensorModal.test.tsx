@@ -47,7 +47,9 @@ describe("EditAddSensorModal component", () => {
     const descLabel = screen.getByText("Beschreibung");
     expect(descLabel).toBeInTheDocument();
 
-    const descField = screen.getByRole("textbox", { name: "Beschreibung" });
+    const descField = screen.getByRole("textbox", {
+      name: "Beschreibung (Optional)",
+    });
     expect(descField).toBeInTheDocument();
 
     // CATEGORY SELECT

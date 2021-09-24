@@ -7,7 +7,7 @@ import {
   requiredUsernameValidation,
   requiredEmailValidation,
   requiredDisplaynameValidation,
-  requiredDescriptionValidation,
+  optionalDescriptionValidation,
   optionalLinkValidation,
 } from "@lib/formValidationUtil";
 import React, { FC, useEffect, useCallback } from "react";
@@ -33,7 +33,7 @@ const formSchema = yup.object().shape({
   username: requiredUsernameValidation,
   displayName: requiredDisplaynameValidation,
   email: requiredEmailValidation,
-  description: requiredDescriptionValidation,
+  description: optionalDescriptionValidation,
   link: optionalLinkValidation,
 });
 
@@ -143,6 +143,7 @@ export const EditAccountModal: FC<EditAccountModalPropType> = ({
           render={({ field }) => (
             <FormTextarea
               {...field}
+              optional
               label='Beschreibung'
               placeholder='Gebe dein Profil eine kurze Beschreibung'
               errors={formatError(errors.description?.message)}

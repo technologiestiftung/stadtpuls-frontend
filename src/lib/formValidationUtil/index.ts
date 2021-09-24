@@ -37,11 +37,10 @@ export const requiredLongitude = yup
   .max(180, "Ungültige Longitude")
   .required("Ungültige Longitude");
 
-export const requiredDescriptionValidation = yup
+export const optionalDescriptionValidation = yup
   .string()
-  .required("Die Beschreibung zwischen 10 und 140 Zeichen lang sein")
-  .min(10, "Die Beschreibung zwischen 10 und 140 Zeichen lang sein")
-  .max(140, "Die Beschreibung zwischen 10 und 140 Zeichen lang sein");
+  .max(140, "Die Beschreibung darf nicht länger als 140 Zeichen sein")
+  .optional();
 
 export const requiredSensorIntegrationValidation = yup
   .string()
