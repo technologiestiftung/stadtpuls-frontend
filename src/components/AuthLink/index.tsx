@@ -17,7 +17,7 @@ export const AuthLink: FC<AuthLinkPropType> = ({ loggedInUserName }) => {
     "align-middle group-hover:text-green",
   ].join(" ");
   const textStyles = [
-    "text inline-flex gap-2 transition items-center",
+    "text gap-2 transition items-center",
     "font-headline font-semibold group-hover:text-green",
   ].join(" ");
   const accountHref = `/accounts/${loggedInUserName || "anonymous"}`;
@@ -35,14 +35,17 @@ export const AuthLink: FC<AuthLinkPropType> = ({ loggedInUserName }) => {
               />
             </a>
           </Link>
-          <button className={textStyles} onClick={() => signOut()}>
+          <button
+            className={["hidden lg:inline-flex", textStyles].join(" ")}
+            onClick={() => signOut()}
+          >
             <ArrowOutOfDoor />
             Logout
           </button>
         </>
       ) : (
         <Link href='/signin'>
-          <a href='/signin' className={textStyles}>
+          <a href='/signin' className={["inline-flex", textStyles].join(" ")}>
             <ArrowIntoDoor />
             Login
           </a>

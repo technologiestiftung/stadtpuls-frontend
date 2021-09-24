@@ -43,7 +43,7 @@ describe("Header component", () => {
   });
   it("should render the 'logout' link if logged in", async () => {
     render(<Header />);
-    const link = screen.getByText(/Logout/g);
-    await waitFor(() => expect(link).toBeInTheDocument());
+    const links = screen.getAllByText(/Logout/g);
+    await waitFor(() => expect(links).toHaveLength(2));
   });
 });

@@ -509,7 +509,7 @@ exports[`Storyshots UI Elements/AuthLink Logged In 1`] = `
     </span>
   </a>
   <button
-    className="text inline-flex gap-2 transition items-center font-headline font-semibold group-hover:text-green"
+    className="hidden lg:inline-flex text gap-2 transition items-center font-headline font-semibold group-hover:text-green"
     onClick={[Function]}
   >
     <svg
@@ -532,7 +532,7 @@ exports[`Storyshots UI Elements/AuthLink Logged Out 1`] = `
   className="inline-flex items-center gap-6"
 >
   <a
-    className="text inline-flex gap-2 transition items-center font-headline font-semibold group-hover:text-green"
+    className="inline-flex text gap-2 transition items-center font-headline font-semibold group-hover:text-green"
     href="/signin"
     onClick={[Function]}
     onMouseEnter={[Function]}
