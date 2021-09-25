@@ -2,7 +2,7 @@
 
 exports[`Storyshots UI Elements/DataTable Default 1`] = `
 <div
-  className="border border-gray-200 shadow bg-white relative overflow-y-scroll"
+  className="border border-gray-200 shadow bg-white relative overflow-y-scroll max-h-[500px]"
 >
   <table
     className="w-full p-2 border-collapse"
