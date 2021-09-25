@@ -14,6 +14,7 @@ const baseTestData = {
     link: "https://vogelino.com",
     createdAt: "2021-01-01T00:00:00.000Z",
     categories: [1, 2],
+    sensors: [],
     sensorsCount: 1234,
     recordsCount: 1234567,
   },

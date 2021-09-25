@@ -81,15 +81,9 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
           onSubmit={data => {
             if (!authenticatedUser?.id) return;
             createSensor({
-              name: data.name,
-              icon_id: data.symbolId,
-              description: data.description,
-              connection_type: data.integration,
-              created_at: new Date().toISOString(),
-              category_id: data.categoryId,
-              latitude: data.latitude,
-              longitude: data.longitude,
-              user_id: authenticatedUser.id,
+              ...data,
+              createdAt: new Date().toISOString(),
+              authorId: authenticatedUser.id,
             })
               .then(newSensorId => router.push(`/sensors/${newSensorId}`))
               .finally(() => setNewSensorModalIsOpen(false));

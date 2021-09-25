@@ -9,12 +9,23 @@ import {
 } from "./manageSensorsLocally";
 import { useState } from "react";
 import { definitions } from "@common/types/supabase";
-import { sensorQueryString } from "../usePublicSensors";
+import {
+  mapPublicSensor,
+  ParsedSensorType,
+  SensorQueryResponseType,
+  sensorQueryString,
+} from "../usePublicSensors";
+import { categories } from "@mocks/supabaseData/categories";
 
 interface UseUserDataInitialDataType {
   user?: definitions["user_profiles"];
-  sensors?: definitions["sensors"][];
+  sensors?: ParsedSensorType[];
 }
+
+type SensorWithEditablePropsType = Omit<
+  ParsedSensorType,
+  "id" | "categoryName" | "authorName" | "authorUsername" | "parsedRecords"
+>;
 
 type UserFetcherSignature = (
   userId?: AuthenticatedUsersType["id"],
@@ -40,35 +51,51 @@ const fetchUser: UserFetcherSignature = async (userId, isLoadingAuth) => {
 type SensorsFetcherSignature = (
   userId?: AuthenticatedUsersType["id"],
   isLoadingAuth?: boolean
-) => Promise<definitions["sensors"][] | null>;
+) => Promise<ParsedSensorType[] | null>;
 
-const fetchUserSensors: SensorsFetcherSignature = async (
-  userId,
-  isLoadingAuth
-) => {
-  if (isLoadingAuth || isLoadingAuth === undefined) return null;
-  if (!userId) return null;
+export const fetchUserSensors: SensorsFetcherSignature = async userId => {
+  if (!userId) return [];
 
   const { data, error } = await supabase
-    .from<definitions["sensors"]>("sensors")
+    .from<SensorQueryResponseType>("sensors")
     .select(sensorQueryString)
+    //FIXME: the ignorance
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    .order("recorded_at", {
+      foreignTable: "records",
+      ascending: false,
+    })
     .eq("user_id", userId);
 
   if (error) throw error;
   else if (!data)
     throw new Error(`Sensors for user with id "${userId} not found"`);
-  return data;
+  return data.map(mapPublicSensor);
 };
 
-const createSensor = async (
-  sensor: Omit<definitions["sensors"], "id">,
-  user_id: string | undefined
-): Promise<number> => {
-  if (!user_id) throw new Error("Not authenticated");
+const parsedSensorToRawSensor = (
+  sensor: SensorWithEditablePropsType
+): Omit<definitions["sensors"], "id"> => ({
+  created_at: sensor.createdAt,
+  name: sensor.name,
+  description: sensor.description,
+  external_id: sensor.ttnDeviceId,
+  latitude: sensor.latitude,
+  longitude: sensor.longitude,
+  connection_type: sensor.connectionType,
+  category_id: sensor.categoryId,
+  icon_id: sensor.symbolId,
+  user_id: sensor.authorId,
+});
 
+const createSensor = async (
+  sensor: SensorWithEditablePropsType
+): Promise<number> => {
+  const rawSensor = parsedSensorToRawSensor(sensor);
   const { data, error } = await supabase
     .from<definitions["sensors"]>("sensors")
-    .insert([{ ...sensor, id: undefined }]);
+    .insert([rawSensor]);
 
   if (error) throw error;
   if (!data || !data[0].id)
@@ -76,40 +103,13 @@ const createSensor = async (
   return data[0].id;
 };
 
-const updateSensor = async ({
-  id,
-  created_at,
-  name,
-  user_id,
-  external_id,
-  latitude,
-  longitude,
-  altitude,
-  connection_type,
-  category_id,
-  icon_id,
-  description,
-  location,
-}: Partial<definitions["sensors"]>): Promise<void> => {
-  if (!user_id) throw new Error("Not authenticated");
-
+const updateSensor = async (sensor: ParsedSensorType): Promise<void> => {
+  const rawSensor = parsedSensorToRawSensor(sensor);
   const { error } = await supabase
     .from<definitions["sensors"]>("sensors")
-    .update({
-      created_at,
-      name,
-      description,
-      external_id,
-      location,
-      latitude,
-      longitude,
-      altitude,
-      connection_type,
-      category_id,
-      icon_id,
-    })
-    .eq("id", id)
-    .eq("user_id", user_id);
+    .update({ ...rawSensor, id: undefined })
+    .eq("id", sensor.id)
+    .eq("user_id", sensor.authorId);
 
   if (error) throw error;
 };
@@ -158,15 +158,16 @@ export const useUserData = (
   isLoading: boolean;
   authenticatedUser: AuthenticatedUsersType | null;
   user: definitions["user_profiles"] | null;
-  sensors: definitions["sensors"][] | null;
+  sensors: ParsedSensorType[] | null;
   error: Error | null;
-  createSensor: (sensor: Omit<definitions["sensors"], "id">) => Promise<number>;
-  updateSensor: (sensor: Partial<definitions["sensors"]>) => Promise<void>;
+  createSensor: (sensor: SensorWithEditablePropsType) => Promise<number>;
+  updateSensor: (sensor: ParsedSensorType) => Promise<void>;
   deleteSensor: (id: number) => Promise<void>;
   updateUser: (
     newUserData: Partial<definitions["user_profiles"]>
   ) => Promise<void>;
   deleteUser: () => Promise<void>;
+  isLoggedIn: boolean;
 } => {
   const [actionError, setActionError] = useState<Error | null>(null);
   const { authenticatedUser, isLoadingAuth } = useAuth();
@@ -180,27 +181,34 @@ export const useUserData = (
   );
 
   const sensorsParams = ["sensors", userId, isLoadingAuth];
-  const sensors = useSWR<definitions["sensors"][] | null, Error>(
+  const sensors = useSWR<ParsedSensorType[] | null, Error>(
     sensorsParams,
-    () => fetchUserSensors(userId, isLoadingAuth),
+    () => fetchUserSensors(userId),
     { initialData: initialData?.sensors }
   );
 
   return {
+    isLoggedIn: Boolean(user.data && authenticatedUser),
     isLoading: !user.error && !user.data,
     authenticatedUser: authenticatedUser || null,
     user: user.data || null,
-    sensors: sensors.data || null,
+    sensors: sensors.data || [],
     error: user.error || actionError || null,
     createSensor: async sensor => {
       if (!sensors.data || sensors.error) throw "No Sensor data or error!";
       setActionError(null);
       await mutate(
         sensorsParams,
-        createSensorLocally(sensors.data, sensor),
+        createSensorLocally(sensors.data, {
+          ...sensor,
+          authorName: user.data?.display_name || "Anonymous",
+          authorUsername: user.data?.name || "anonymous",
+          categoryName: categories[sensor.categoryId - 1].name,
+          parsedRecords: [],
+        }),
         false
       );
-      const newId = await createSensor(sensor, userId);
+      const newId = await createSensor(sensor);
       await mutate(sensorsParams);
       return newId;
     },
@@ -209,7 +217,7 @@ export const useUserData = (
       setActionError(null);
       void mutate(
         sensorsParams,
-        updateSensorsLocally(sensors.data, sensor as definitions["sensors"]),
+        updateSensorsLocally(sensors.data, sensor),
         false
       );
       await updateSensor(sensor).catch(setActionError);

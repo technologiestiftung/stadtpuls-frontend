@@ -4,9 +4,9 @@ import { rest } from "msw";
 import { useCuratedSensors } from ".";
 import { server } from "@mocks/server";
 import { SWRConfig } from "swr";
-import { PublicSensorType } from "@lib/hooks/usePublicSensors";
+import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 
-type OnSuccessType = (data: PublicSensorType[]) => void;
+type OnSuccessType = (data: ParsedSensorType[]) => void;
 type OnFailType = (error: string) => void;
 
 const createTestComponent = (
@@ -27,7 +27,7 @@ const createTestComponent = (
 describe("hook useCuratedSensors", () => {
   it("should provide a data and error value", async (): Promise<void> => {
     const onSuccess = jest.fn();
-    const onSuccessWrapper = (data: PublicSensorType[]): void => {
+    const onSuccessWrapper = (data: ParsedSensorType[]): void => {
       onSuccess(data);
     };
     const onError = jest.fn();

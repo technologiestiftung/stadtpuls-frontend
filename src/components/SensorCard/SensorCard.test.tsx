@@ -1,35 +1,27 @@
-import { parseSensorRecords } from "@lib/hooks/usePublicSensors";
-import { getSensorRecords } from "@mocks/supabaseData/records";
+import { mapPublicSensor } from "@lib/hooks/usePublicSensors";
+import { sensors } from "@mocks/supabaseData/sensors";
 import { render, screen } from "@testing-library/react";
 import { SensorCard } from ".";
 
 jest.mock("use-is-in-viewport", () => jest.fn().mockReturnValue([true, null]));
 
-const exampleParsedRecords = parseSensorRecords(
-  getSensorRecords({ sensorId: 1 })
-);
-
 describe("SensorCard", () => {
   it("renders correctly", () => {
+    const testDescription = "I am a sensor";
+    const testAuthorName = "Jane Doe";
     render(
       <SensorCard
-        id={1}
-        name='Test Sensor'
-        description='I am your sensors favourite sensor'
-        category={{ name: "Temperatur", id: 2 }}
-        icon_id={4}
-        authorName='Vogelino'
-        parsedRecords={exampleParsedRecords}
-        latitude={12.124533}
-        longitude={43.215353}
+        {...mapPublicSensor(sensors[0])}
+        description={testDescription}
+        authorName={testAuthorName}
       />
     );
 
     const chart = document.querySelector(".visx-area-closed");
-    const title = screen.getByRole("heading", { name: "Test Sensor" });
-    const desc = screen.getByText("I am your sensors favourite sensor");
-    const category = screen.getByText("Temperatur");
-    const author = screen.getByText("Vogelino");
+    const title = screen.getByRole("heading", { name: sensors[0].name });
+    const desc = screen.getByText(testDescription);
+    const category = screen.getByText(sensors[0].category.name);
+    const author = screen.getByText(testAuthorName);
     expect(chart).toBeInTheDocument();
     expect(title).toBeInTheDocument();
     expect(desc).toBeInTheDocument();
@@ -42,15 +34,8 @@ describe("SensorCard", () => {
       .join("");
     render(
       <SensorCard
-        id={1}
-        name='Test Sensor'
+        {...mapPublicSensor(sensors[0])}
         description={tooLongDescription}
-        category={{ name: "Temperatur", id: 2 }}
-        icon_id={4}
-        authorName='Vogelino'
-        parsedRecords={exampleParsedRecords}
-        latitude={12.124533}
-        longitude={43.215353}
       />
     );
 

@@ -41,7 +41,7 @@ WithDefaultValues.args = {
     description: "A description",
     latitude: 48.8586383,
     longitude: 2.2946208,
-    integration: "ttn",
+    connectionType: "ttn",
     ttnDeviceId: "lorawan-rapsbi-123",
   },
   onSubmit: action("Form data submited"),

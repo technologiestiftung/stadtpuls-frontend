@@ -6,7 +6,7 @@ import { LandingProjectAbout } from "@components/LandingProjectAbout";
 import { LandingSensorsSlider } from "@components/LandingSensorsSlider";
 import { LandingStatsSection } from "@components/LandingStatsSection";
 import { getCuratedSensors } from "@lib/hooks/useCuratedSensors";
-import { PublicSensorType } from "@lib/hooks/usePublicSensors";
+import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import {
   getLandingStats,
   LandingStatsReturnType,
@@ -29,7 +29,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 const LandingPage: FC<{
   stats: LandingStatsReturnType;
-  curatedSensors?: PublicSensorType[];
+  curatedSensors?: ParsedSensorType[];
 }> = ({ stats, curatedSensors = [] }) => {
   const initialSlideIndex = Math.round(curatedSensors.length / 2) - 1;
   const [activeSlideIndex, setActiveSlideIndex] = useState<number>(

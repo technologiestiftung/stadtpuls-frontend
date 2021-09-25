@@ -1,6 +1,11 @@
 import { supabase } from "@auth/supabase";
 import useSWR from "swr";
 import { definitions } from "@common/types/supabase";
+import {
+  mapPublicSensor,
+  ParsedSensorType,
+  SensorQueryResponseType,
+} from "../usePublicSensors";
 
 export const accountQueryString = `
   id,
@@ -11,21 +16,36 @@ export const accountQueryString = `
   description,
   sensors (
     id,
+    name,
+    created_at,
+    connection_type,
+    external_id,
+    description,
+    location,
+    latitude,
+    longitude,
+    altitude,
     category_id,
+    icon_id,
+    user_id,
     records (
-      id
+      recorded_at,
+      measurements
+    ),
+    user:user_id (
+      name,
+      display_name
+    ),
+    category:category_id (
+      id,
+      name
     )
   )
 `;
 
 type AccountType = definitions["user_profiles"];
-
-interface SensorWithRecordsType
-  extends Pick<definitions["sensors"], "id" | "created_at" | "category_id"> {
-  records: Pick<definitions["records"], "id">[];
-}
 export interface AccountQueryResponseType extends AccountType {
-  sensors: SensorWithRecordsType[];
+  sensors: SensorQueryResponseType[];
   user: Pick<definitions["user_profiles"], "name" | "display_name">;
 }
 
@@ -39,6 +59,7 @@ export interface PublicAccountType {
   categories: definitions["categories"]["id"][];
   sensorsCount: number;
   recordsCount: number;
+  sensors: ParsedSensorType[];
 }
 
 export interface PublicAccounts {
@@ -55,7 +76,10 @@ interface OptionsType {
 
 export const dbUserToPublicAccount = (
   user: definitions["user_profiles"]
-): Omit<PublicAccountType, "sensorsCount" | "recordsCount" | "categories"> => ({
+): Omit<
+  PublicAccountType,
+  "sensors" | "sensorsCount" | "recordsCount" | "categories"
+> => ({
   id: user.id,
   username: user.name || "anonymous",
   displayName: user.display_name || "Anonymous",
@@ -77,6 +101,7 @@ export const mapPublicAccount = ({
   categories: sensors
     .reduce((acc, sensor) => [...acc, sensor.category_id], [] as number[])
     .filter((val, ind, arr) => arr.indexOf(val) === ind),
+  sensors: sensors.map(mapPublicSensor),
 });
 
 export const getPublicAccounts = async (): Promise<PublicAccounts> => {
