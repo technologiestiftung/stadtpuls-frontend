@@ -5,14 +5,14 @@ import { EditAccountModal } from "@components/EditAccountModal";
 import { EditAddSensorModal } from "@components/EditAddSensorModal";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { Tabs } from "@components/Tabs";
-import { PublicAccountType } from "@lib/hooks/usePublicAccounts";
+import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
 import { useUserData } from "@lib/hooks/useUserData";
 import { useRouter } from "next/router";
 import { FC, useState } from "react";
 import { UserInfoHeader } from ".";
 
 interface UserInfoWithDataPropType {
-  initialAccount: PublicAccountType;
+  initialAccount: ParsedAccountType;
   activeTab: "sensors" | "tokens";
 }
 

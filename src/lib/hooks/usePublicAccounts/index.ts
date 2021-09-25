@@ -26,7 +26,7 @@ export interface AccountQueryResponseType extends AccountType {
   user: Pick<definitions["user_profiles"], "name" | "display_name">;
 }
 
-export interface PublicAccountType {
+export interface ParsedAccountType {
   id: string;
   username: string;
   displayName: string;
@@ -42,7 +42,7 @@ export interface PublicAccountType {
 export const mapPublicAccount = ({
   sensors,
   ...user
-}: AccountQueryResponseType): PublicAccountType => ({
+}: AccountQueryResponseType): ParsedAccountType => ({
   id: user.id,
   username: user.name || "anonymous",
   displayName: user.display_name || "Anonymous",
@@ -60,7 +60,7 @@ export const mapPublicAccount = ({
   sensors: sensors.map(mapPublicSensor),
 });
 
-export const getPublicAccounts = async (): Promise<PublicAccountType[]> => {
+export const getPublicAccounts = async (): Promise<ParsedAccountType[]> => {
   const { data, error } = await supabase
     .from<AccountQueryResponseType>("user_profiles")
     .select(accountQueryString)
@@ -74,12 +74,12 @@ export const getPublicAccounts = async (): Promise<PublicAccountType[]> => {
 };
 
 export const usePublicAccounts = (
-  initialData?: PublicAccountType[]
+  initialData?: ParsedAccountType[]
 ): {
-  accounts: PublicAccountType[];
+  accounts: ParsedAccountType[];
   error: Error | null;
 } => {
-  const { data, error } = useSWR<PublicAccountType[] | null, Error>(
+  const { data, error } = useSWR<ParsedAccountType[] | null, Error>(
     ["usePublicAccounts"],
     () => getPublicAccounts(),
     { initialData }

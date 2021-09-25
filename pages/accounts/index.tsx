@@ -3,13 +3,13 @@ import { AccountsGrid } from "@components/AccountsGrid";
 import { GetServerSideProps } from "next";
 import {
   getPublicAccounts,
-  PublicAccountType,
+  ParsedAccountType,
   usePublicAccounts,
 } from "@lib/hooks/usePublicAccounts";
 import { Alert } from "@components/Alert";
 
 interface AccountsOverviewPropType {
-  initialAccounts: PublicAccountType[];
+  initialAccounts: ParsedAccountType[];
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {

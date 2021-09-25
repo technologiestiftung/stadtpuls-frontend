@@ -2,7 +2,7 @@ import {
   AccountQueryResponseType,
   accountQueryString,
   mapPublicAccount,
-  PublicAccountType,
+  ParsedAccountType,
 } from "@lib/hooks/usePublicAccounts";
 import { supabase } from "@auth/supabase";
 
@@ -13,7 +13,7 @@ export interface GetRecordsOptionsType {
 
 export const getAccountDataByUsername = async (
   username: string
-): Promise<PublicAccountType> => {
+): Promise<ParsedAccountType> => {
   const {
     data: accountData,
     error,
