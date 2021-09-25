@@ -12,24 +12,28 @@ import { FC, useState } from "react";
 import { UserInfoHeader } from ".";
 
 interface UserInfoWithDataPropType {
-  initialAccount: ParsedAccountType;
+  routeAccount: ParsedAccountType;
   activeTab: "sensors" | "tokens";
 }
 
 export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
-  initialAccount,
+  routeAccount,
   activeTab,
 }) => {
   const router = useRouter();
-  const { user, error, createSensor, updateUser, deleteUser } = useUserData({
-    user: initialAccount,
-  });
+  const {
+    isLoggedIn,
+    user: loggedInAccount,
+    error,
+    createSensor,
+    updateUser,
+    deleteUser,
+  } = useUserData();
   const { authenticatedUser } = useAuth();
-  const isOwnerAndLoggedIn = user?.username === initialAccount.username;
-  const finalAccount = {
-    ...initialAccount,
-    ...(user || {}),
-  };
+  const isOwnerAndLoggedIn =
+    isLoggedIn && loggedInAccount?.username === routeAccount.username;
+  const finalAccount =
+    isOwnerAndLoggedIn && loggedInAccount ? loggedInAccount : routeAccount;
   const [editModalIsOpen, setEditModalIsOpen] = useState(false);
   const [newSensorModalIsOpen, setNewSensorModalIsOpen] = useState(false);
   const [
@@ -43,14 +47,14 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
     {
       id: "sensors",
       name: "Sensoren",
-      href: `/accounts/${initialAccount.username}`,
+      href: `/accounts/${finalAccount.username}`,
     },
   ];
   if (isOwnerAndLoggedIn || activeTab === "tokens") {
     tabs.push({
       id: "tokens",
       name: "Tokens",
-      href: `/accounts/${initialAccount.username}/tokens`,
+      href: `/accounts/${finalAccount.username}/tokens`,
     });
   }
   return (
@@ -58,9 +62,9 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
       {newSensorModalIsOpen && (
         <EditAddSensorModal
           author={{
-            authorId: initialAccount.id,
-            authorName: initialAccount.displayName,
-            authorUsername: initialAccount.username,
+            authorId: finalAccount.id,
+            authorName: finalAccount.displayName,
+            authorUsername: finalAccount.username,
           }}
           title='Neuer Sensor'
           onCancel={() => setNewSensorModalIsOpen(false)}
@@ -136,7 +140,7 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
           <div className='absolute left-4 bottom-[-1px] z-10'>
             <Tabs activeTabIndex={activeTabIndex} tabs={tabs} />
           </div>
-          {user && authenticatedUser && (
+          {loggedInAccount && authenticatedUser && (
             <span className='absolute bottom-0 sm:bottom-2 right-4'>
               <Button
                 variant='primary'
