@@ -5,7 +5,7 @@ import { FC } from "react";
 import { UserInfoWithData } from "@components/UserInfoHeader/withData";
 import { SensorsGrid } from "@components/SensorsGrid";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
-import { fetchUserSensors, useUserData } from "@lib/hooks/useUserData";
+import { useUserData } from "@lib/hooks/useUserData";
 
 export const getServerSideProps: GetServerSideProps = async context => {
   try {
@@ -13,11 +13,9 @@ export const getServerSideProps: GetServerSideProps = async context => {
     if (!username || Array.isArray(username)) return { notFound: true };
 
     const accountData = await getAccountDataByUsername(username);
-    const sensorsData = await fetchUserSensors(accountData.id, false);
     return {
       props: {
         account: { ...accountData, username },
-        sensors: sensorsData || [],
         error: null,
       },
     };
@@ -33,16 +31,17 @@ interface AccountSensorsPagePropType {
 }
 
 const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({
-  account,
-  sensors: initialSensors,
+  account: routeAccount,
 }) => {
-  const { isLoggedIn, sensors: sensorsData } = useUserData({
-    sensors: initialSensors,
-  });
-  const sensors = isLoggedIn ? sensorsData || [] : initialSensors;
+  const { user: loggedInAccount } = useUserData();
+  const account =
+    loggedInAccount?.username === routeAccount?.username
+      ? loggedInAccount
+      : routeAccount;
+  const sensors = account.sensors;
   return (
     <>
-      <UserInfoWithData initialAccount={account} activeTab='sensors' />
+      <UserInfoWithData routeAccount={routeAccount} activeTab='sensors' />
       <div
         className={[
           "container max-w-8xl mx-auto px-4 pt-8 pb-24 min-h-[500px]",

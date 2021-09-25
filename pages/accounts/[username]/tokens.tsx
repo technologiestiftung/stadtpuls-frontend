@@ -12,8 +12,8 @@ export const getServerSideProps: GetServerSideProps = async context => {
     const username = context.query.username;
     if (!username || Array.isArray(username)) return { notFound: true };
 
-    const accountData = await getAccountDataByUsername(username);
-    return { props: { account: { ...accountData, username }, error: null } };
+    const routeAccount = await getAccountDataByUsername(username);
+    return { props: { routeAccount, error: null } };
   } catch (error) {
     console.error(error);
     return { notFound: true };
@@ -21,15 +21,20 @@ export const getServerSideProps: GetServerSideProps = async context => {
 };
 
 interface AccountTokensPagePropType {
-  account: ParsedAccountType;
+  routeAccount: ParsedAccountType;
 }
 
-const AccountTokensPage: FC<AccountTokensPagePropType> = ({ account }) => {
-  const { user } = useUserData();
-  const isOwnerAndLoggedIn = user?.username === account.username;
+const AccountTokensPage: FC<AccountTokensPagePropType> = ({ routeAccount }) => {
+  const { isLoggedIn, user: loggedInAccount } = useUserData();
+  const account =
+    loggedInAccount?.username === routeAccount?.username
+      ? loggedInAccount
+      : routeAccount;
+  const isOwnerAndLoggedIn =
+    isLoggedIn && loggedInAccount?.username === routeAccount.username;
   return (
     <>
-      <UserInfoWithData initialAccount={account} activeTab='tokens' />
+      <UserInfoWithData routeAccount={account} activeTab='tokens' />
       {!isOwnerAndLoggedIn && (
         <div className='container max-w-8xl mx-auto px-4 py-8'>
           <Alert

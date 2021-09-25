@@ -172,7 +172,7 @@ export const useUserData = (
   isLoggedIn: boolean;
 } => {
   const [actionError, setActionError] = useState<Error | null>(null);
-  const { authenticatedUser } = useAuth();
+  const { authenticatedUser, isLoadingAuth, isAuthenticating } = useAuth();
   const userId = authenticatedUser?.id;
 
   const userParams = ["userData", userId];
@@ -190,7 +190,9 @@ export const useUserData = (
   );
 
   return {
-    isLoggedIn: Boolean(user.data && authenticatedUser),
+    isLoggedIn: Boolean(
+      !!user.data && !!authenticatedUser && !isLoadingAuth && !isAuthenticating
+    ),
     isLoading: !user.error && !user.data,
     authenticatedUser: authenticatedUser || null,
     user: user.data || null,
