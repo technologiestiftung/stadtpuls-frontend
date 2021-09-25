@@ -39,25 +39,16 @@ export interface PublicAccountType {
   sensors: ParsedSensorType[];
 }
 
-export const dbUserToPublicAccount = (
-  user: definitions["user_profiles"]
-): Omit<
-  PublicAccountType,
-  "sensors" | "sensorsCount" | "recordsCount" | "categories"
-> => ({
+export const mapPublicAccount = ({
+  sensors,
+  ...user
+}: AccountQueryResponseType): PublicAccountType => ({
   id: user.id,
   username: user.name || "anonymous",
   displayName: user.display_name || "Anonymous",
   createdAt: user.created_at,
   link: user.url,
   description: user.description,
-});
-
-export const mapPublicAccount = ({
-  sensors,
-  ...user
-}: AccountQueryResponseType): PublicAccountType => ({
-  ...dbUserToPublicAccount(user),
   sensorsCount: sensors.length || 0,
   recordsCount: sensors.reduce(
     (acc, { records }) => acc + records.length,

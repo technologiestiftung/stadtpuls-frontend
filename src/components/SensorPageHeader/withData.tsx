@@ -19,7 +19,6 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
   const {
     isLoggedIn,
     user,
-    authenticatedUser,
     sensors,
     error,
     updateSensor,
@@ -47,6 +46,7 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
             "left-1/2 transform -translate-x-1/2 backdrop-filter backdrop-blur-md",
           ].join(" ")}
         >
+          {console.log(error)}
           {error && (
             <Alert
               type='error'
@@ -54,9 +54,11 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
               message={
                 <>
                   Beim Editieren ist ein Fehler aufgetreten:{" "}
-                  <code className='ml-4 px-2 py-1 font-mono bg-error bg-opacity-20'>
-                    {error.message}
-                  </code>
+                  {error.message && (
+                    <code className='ml-4 px-2 py-1 font-mono bg-error bg-opacity-20'>
+                      {error.message}
+                    </code>
+                  )}
                 </>
               }
             />
@@ -70,12 +72,12 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
           )}
         </div>
       )}
-      {isLoggedIn && editModalIsOpen && (
+      {isLoggedIn && user && editModalIsOpen && (
         <EditAddSensorModal
           author={{
-            authorName: user?.display_name || "Anonymous",
-            authorUsername: user?.name || "Anonymous",
-            authorId: user?.id || authenticatedUser?.id || "1",
+            authorId: user.id,
+            authorName: user.displayName,
+            authorUsername: user.username,
           }}
           title={`Sensor ${
             initialSensor.name ? `„${initialSensor.name}“ ` : ""
@@ -97,13 +99,13 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
       )}
       <SensorPageHeader
         {...mergedSensor}
-        withEditButton={!!user && user.name === mergedSensor.authorUsername}
+        withEditButton={!!user && user.username === mergedSensor.authorUsername}
         onEditButtonClick={() => {
           setEditModalIsOpen(true);
           setShowEditSuccessAlert(false);
         }}
       />
-      {deletionConfirmationIsOpened && (
+      {deletionConfirmationIsOpened && user && (
         <SmallModalOverlay
           title={`Sensor löschen`}
           footerContent={
@@ -112,11 +114,7 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
                 variant='dangerous'
                 onClick={() => {
                   deleteSensor(initialSensor.id)
-                    .then(() =>
-                      router.push(
-                        user?.name ? `/accounts/${user.name}` : `/sensors`
-                      )
-                    )
+                    .then(() => router.push(`/accounts/${user.username}`))
                     .finally(() => setEditModalIsOpen(false));
                 }}
               >

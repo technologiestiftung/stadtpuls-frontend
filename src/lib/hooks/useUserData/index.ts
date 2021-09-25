@@ -15,9 +15,15 @@ import {
   SensorQueryResponseType,
   sensorQueryString,
 } from "../usePublicSensors";
+import {
+  AccountQueryResponseType,
+  accountQueryString,
+  mapPublicAccount,
+  PublicAccountType,
+} from "../usePublicAccounts";
 
 interface UseUserDataInitialDataType {
-  user?: definitions["user_profiles"];
+  user?: PublicAccountType;
   sensors?: ParsedSensorType[];
 }
 
@@ -29,22 +35,21 @@ export type SensorWithEditablePropsType = Omit<
 type UserFetcherSignature = (
   userId?: AuthenticatedUsersType["id"],
   isLoadingAuth?: boolean
-) => Promise<definitions["user_profiles"] | null>;
+) => Promise<PublicAccountType | null>;
 
-const fetchUser: UserFetcherSignature = async (userId, isLoadingAuth) => {
-  if (isLoadingAuth || isLoadingAuth === undefined) return null;
+const fetchUser: UserFetcherSignature = async userId => {
   if (!userId) return null;
 
   const { data: user, error } = await supabase
-    .from<definitions["user_profiles"]>("user_profiles")
-    .select("*")
+    .from<AccountQueryResponseType>("user_profiles")
+    .select(accountQueryString)
     .eq("id", userId)
     .single();
 
   if (error) throw error;
   else if (!user) throw new Error(`User with id "${userId} was not found"`);
 
-  return user;
+  return mapPublicAccount(user);
 };
 
 type SensorsFetcherSignature = (
@@ -129,14 +134,14 @@ const deleteSensor = async (
 };
 
 const updateUser = async (
-  newUserData: Partial<definitions["user_profiles"]>
+  newUserData: Partial<PublicAccountType>
 ): Promise<void> => {
   const nameReset = await supabase
     .from<definitions["user_profiles"]>("user_profiles")
     .update({
-      display_name: newUserData.display_name,
+      display_name: newUserData.displayName,
       description: newUserData.description,
-      url: newUserData.url,
+      url: newUserData.link,
     })
     .eq("id", newUserData.id);
 
@@ -156,30 +161,28 @@ export const useUserData = (
 ): {
   isLoading: boolean;
   authenticatedUser: AuthenticatedUsersType | null;
-  user: definitions["user_profiles"] | null;
+  user: PublicAccountType | null;
   sensors: ParsedSensorType[] | null;
   error: Error | null;
   createSensor: (sensor: SensorWithEditablePropsType) => Promise<number>;
   updateSensor: (sensor: ParsedSensorType) => Promise<void>;
   deleteSensor: (id: number) => Promise<void>;
-  updateUser: (
-    newUserData: Partial<definitions["user_profiles"]>
-  ) => Promise<void>;
+  updateUser: (newUserData: PublicAccountType) => Promise<void>;
   deleteUser: () => Promise<void>;
   isLoggedIn: boolean;
 } => {
   const [actionError, setActionError] = useState<Error | null>(null);
-  const { authenticatedUser, isLoadingAuth } = useAuth();
+  const { authenticatedUser } = useAuth();
   const userId = authenticatedUser?.id;
 
-  const userParams = ["userData", userId, isLoadingAuth];
-  const user = useSWR<definitions["user_profiles"] | null, Error>(
+  const userParams = ["userData", userId];
+  const user = useSWR<PublicAccountType | null, Error>(
     userParams,
-    () => fetchUser(userId, isLoadingAuth),
+    () => fetchUser(userId),
     { initialData: initialData?.user }
   );
 
-  const sensorsParams = ["sensors", userId, isLoadingAuth];
+  const sensorsParams = ["sensors", userId];
   const sensors = useSWR<ParsedSensorType[] | null, Error>(
     sensorsParams,
     () => fetchUserSensors(userId),
@@ -223,7 +226,7 @@ export const useUserData = (
       await deleteSensor(id, userId).catch(setActionError);
       void mutate(sensorsParams);
     },
-    updateUser: async (newUserData: Partial<definitions["user_profiles"]>) => {
+    updateUser: async (newUserData: PublicAccountType) => {
       if (!newUserData) return;
       void mutate(userParams, newUserData, false);
       await updateUser(newUserData).catch(setActionError);

@@ -32,8 +32,10 @@ const AccountsOverview: FC<AccountsOverviewPropType> = ({
       <div className='container mx-auto max-w-8xl py-24 px-4'>
         <Alert
           title='Fehler'
+          type='error'
           message={
             <>
+              {console.log(error)}
               Es ist ein Fehler beim Laden der Accounts aufgetreten.
               <code className='ml-4 px-2 py-1 font-mono bg-error bg-opacity-20'>
                 {error.message}

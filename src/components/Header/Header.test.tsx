@@ -19,8 +19,7 @@ describe("Header component", () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     userDataHook.useUserData = jest.fn().mockReturnValue({
-      user: { name: "JohnDoe" },
-      authenticatedUser: { name: "JohnDoe" },
+      user: { username: "JohnDoe" },
     });
   });
 
