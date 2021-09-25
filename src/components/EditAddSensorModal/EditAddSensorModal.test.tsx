@@ -1,3 +1,4 @@
+import { parsedSensors } from "@mocks/supabaseData/sensors";
 import { fireEvent, waitFor, render, screen } from "@testing-library/react";
 import { EditAddSensorModal } from ".";
 
@@ -8,16 +9,7 @@ const baseTestData = {
   onSubmit: jest.fn(),
 };
 
-const successTestData = {
-  categoryId: 1,
-  description: "A description",
-  integration: "http" as const,
-  ttnDeviceId: undefined,
-  latitude: 48.8586383,
-  longitude: 2.2946208,
-  name: "A title",
-  symbolId: 1,
-};
+const successTestData = parsedSensors[0];
 
 describe("EditAddSensorModal component", () => {
   it("should render correctly", () => {
@@ -111,10 +103,18 @@ describe("EditAddSensorModal component", () => {
     const form = document.querySelector("form");
     if (!form) throw "From element was not found";
     fireEvent.submit(form);
-    fireEvent.click(submitButton);
 
     await waitFor(() => {
-      expect(baseTestData.onSubmit).toHaveBeenCalledWith(successTestData);
+      expect(baseTestData.onSubmit).toHaveBeenCalledWith({
+        name: successTestData.name,
+        symbolId: successTestData.symbolId,
+        description: successTestData.description,
+        categoryId: successTestData.categoryId,
+        latitude: successTestData.latitude,
+        longitude: successTestData.longitude,
+        connectionType: successTestData.connectionType,
+        ttnDeviceId: successTestData.ttnDeviceId,
+      });
     });
   });
   it("should set focus on name field after", async (): Promise<void> => {

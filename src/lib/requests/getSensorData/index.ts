@@ -1,43 +1,24 @@
 import { supabase } from "@auth/supabase";
 import {
   mapPublicSensor,
+  sensorQueryString,
+  ParsedSensorType,
   SensorQueryResponseType,
 } from "@lib/hooks/usePublicSensors";
 
 export const getSensorData = async (
   sensorId: number
-): Promise<SensorQueryResponseType> => {
+): Promise<ParsedSensorType> => {
   const { data, error } = await supabase
     .from<SensorQueryResponseType>("sensors")
-    .select(
-      `
-        id,
-        name,
-        created_at,
-        connection_type,
-        external_id,
-        description,
-        location,
-        latitude,
-        longitude,
-        altitude,
-        category_id,
-        icon_id,
-        user_id,
-        records (
-          recorded_at,
-          measurements
-        ),
-        user:user_id (
-          name,
-          display_name
-        ),
-        category:category_id (
-          id,
-          name
-        )
-      `
-    )
+    .select(sensorQueryString)
+    //FIXME: the ignorance
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    .order("recorded_at", {
+      foreignTable: "records",
+      ascending: false,
+    })
     .eq("id", sensorId)
     .single();
 

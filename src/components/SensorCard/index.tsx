@@ -4,23 +4,11 @@ import { PreviewMap } from "@components/PreviewMap";
 import useIsInViewport from "use-is-in-viewport";
 import { AreaPath } from "@components/AreaPath";
 import { UserAvatar } from "@components/UserAvatar";
-import { PublicSensorType } from "@lib/hooks/usePublicSensors";
+import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { SensorSymbol } from "@components/SensorSymbol";
 import { CategoryIcon } from "@components/CategoryIcon";
 
-export interface SensorCardPropType
-  extends Pick<
-    PublicSensorType,
-    | "id"
-    | "name"
-    | "icon_id"
-    | "description"
-    | "category"
-    | "latitude"
-    | "longitude"
-    | "authorName"
-    | "parsedRecords"
-  > {
+export interface SensorCardPropType extends ParsedSensorType {
   withMapBackground?: boolean;
   withMapLabels?: boolean;
 }
@@ -30,13 +18,14 @@ const DESCRIPTION_MAX_LENGTH = 150;
 export const SensorCard: FC<SensorCardPropType> = ({
   id,
   name,
-  icon_id,
+  symbolId,
   latitude,
   longitude,
   description,
   parsedRecords,
   authorName,
-  category,
+  categoryId,
+  categoryName,
   withMapBackground = true,
   withMapLabels = true,
 }) => {
@@ -128,7 +117,7 @@ export const SensorCard: FC<SensorCardPropType> = ({
           ].join(" ")}
         >
           <div className='grid grid-cols-[24px,1fr] gap-3'>
-            <SensorSymbol symbol={icon_id || 1} className='mt-[1px]' />
+            <SensorSymbol symbol={symbolId} className='mt-[1px]' />
             <h3
               className={[
                 "text-xl leading-6 pt-1",
@@ -141,11 +130,8 @@ export const SensorCard: FC<SensorCardPropType> = ({
           </div>
           <div className='pl-9 pt-2'>
             <p className='text-base mb-4 flex gap-x-1'>
-              <CategoryIcon
-                categoryId={category.id as 1 | 2 | 3 | 4 | 5 | 6}
-                className='mt-1'
-              />
-              {category.name}
+              <CategoryIcon categoryId={categoryId} className='mt-1' />
+              {categoryName}
             </p>
             {description && (
               <p className='text-base'>

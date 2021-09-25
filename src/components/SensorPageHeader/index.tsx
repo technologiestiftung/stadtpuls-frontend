@@ -7,25 +7,16 @@ import { SensorSymbol } from "@components/SensorSymbol";
 import { CopyTextField } from "@components/CopyTextField";
 import { PreviewMap } from "@components/PreviewMap";
 import { Button } from "@components/Button";
+import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 
-export interface SensorPageHeaderPropType {
-  id: string | number;
-  name: string;
-  symbol: number;
-  category: { id: number; name: string; description?: string };
-  description?: string;
-  author: {
-    username: string;
-    displayName: string;
-  };
-  geocoordinates: { latitude: number; longitude: number };
+export interface SensorPageHeaderPropType extends ParsedSensorType {
   withEditButton?: boolean;
   onEditButtonClick?: () => void | undefined;
 }
 
-const MapBackground: FC<Pick<SensorPageHeaderPropType, "geocoordinates">> = ({
-  geocoordinates,
-}) => (
+const MapBackground: FC<{
+  geocoordinates: Pick<ParsedSensorType, "latitude" | "longitude">;
+}> = ({ geocoordinates }) => (
   <div
     className={[
       "md:absolute z-0 inset-0 bg-purple bg-opacity-5",
@@ -52,8 +43,11 @@ const MapBackground: FC<Pick<SensorPageHeaderPropType, "geocoordinates">> = ({
   </div>
 );
 
-const UserLink: FC<Pick<SensorPageHeaderPropType, "author">> = ({ author }) => (
-  <Link href={`/accounts/${author.username}`}>
+const UserLink: FC<Pick<ParsedSensorType, "authorName" | "authorUsername">> = ({
+  authorName,
+  authorUsername,
+}) => (
+  <Link href={`/accounts/${authorUsername}`}>
     <a
       className={[
         "flex gap-2 items-center leading-tight",
@@ -62,15 +56,15 @@ const UserLink: FC<Pick<SensorPageHeaderPropType, "author">> = ({ author }) => (
         "truncate",
       ].join(" ")}
     >
-      <UserAvatar username={author.username} />
-      <span className='truncate'>{author.displayName}</span>
+      <UserAvatar username={authorUsername} />
+      <span className='truncate'>{authorName}</span>
     </a>
   </Link>
 );
 
-const CategoryLabel: FC<Pick<SensorPageHeaderPropType, "category">> = ({
-  category,
-}) => (
+const CategoryLabel: FC<
+  Pick<ParsedSensorType, "categoryName" | "categoryId">
+> = ({ categoryName, categoryId }) => (
   <span
     className={[
       "inline-flex gap-2 items-center px-2.5 py-2 text-blue",
@@ -78,8 +72,8 @@ const CategoryLabel: FC<Pick<SensorPageHeaderPropType, "category">> = ({
       "flex-grow-0",
     ].join(" ")}
   >
-    <CategoryIcon categoryId={category.id} />
-    {category.name}
+    <CategoryIcon categoryId={categoryId} />
+    {categoryName}
   </span>
 );
 
@@ -98,9 +92,9 @@ const BackLink: FC = () => (
   </Link>
 );
 
-const Title: FC<Pick<SensorPageHeaderPropType, "name" | "symbol">> = ({
+const Title: FC<Pick<ParsedSensorType, "name" | "symbolId">> = ({
   name,
-  symbol,
+  symbolId,
 }) => (
   <h1
     className={[
@@ -110,7 +104,7 @@ const Title: FC<Pick<SensorPageHeaderPropType, "name" | "symbol">> = ({
       "text-xl sm:text-2xl md:text-3xl",
     ].join(" ")}
   >
-    <SensorSymbol symbol={symbol} className='mt-1' />
+    <SensorSymbol symbol={symbolId} className='mt-1' />
     <span>{name}</span>
   </h1>
 );
@@ -118,26 +112,32 @@ const Title: FC<Pick<SensorPageHeaderPropType, "name" | "symbol">> = ({
 export const SensorPageHeader: FC<SensorPageHeaderPropType> = ({
   id,
   name,
-  symbol,
-  category,
+  symbolId,
+  categoryId,
+  categoryName,
   description,
-  author,
-  geocoordinates,
+  authorName,
+  authorUsername,
+  latitude,
+  longitude,
   withEditButton = false,
   onEditButtonClick = () => undefined,
 }) => {
   return (
     <div className='bg-gray-50 relative'>
-      <MapBackground geocoordinates={geocoordinates} />
+      <MapBackground geocoordinates={{ latitude, longitude }} />
       <div
         className={["container max-w-8xl", "mx-auto relative z-10"].join(" ")}
       >
         <aside className='md:w-1/2 bg-white px-4 py-8 md:py-40 md:pr-12 md:max-w-[560px]'>
           <BackLink />
-          <Title name={name} symbol={symbol} />
+          <Title name={name} symbolId={symbolId} />
           <div className='flex gap-4'>
-            <CategoryLabel category={category} />
-            <UserLink author={author} />
+            <CategoryLabel
+              categoryId={categoryId}
+              categoryName={categoryName}
+            />
+            <UserLink authorName={authorName} authorUsername={authorUsername} />
           </div>
           <div className='py-6'>
             <p className='text-sm sm:text-base max-w-prose'>{description}</p>

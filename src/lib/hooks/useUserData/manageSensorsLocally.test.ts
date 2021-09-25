@@ -1,22 +1,20 @@
-import { definitions } from "@common/types/supabase";
+import { parsedSensors } from "@mocks/supabaseData/sensors";
+import { ParsedSensorType } from "../usePublicSensors";
 import {
   createSensorLocally,
   updateSensorsLocally,
   deleteSensorLocally,
 } from "./manageSensorsLocally";
 
-const createFakeSensor = (id: number): definitions["sensors"] => ({
+const createFakeSensor = (id: number): ParsedSensorType => ({
+  ...parsedSensors[0],
   id: id,
-  created_at: "2021-09-20T00:00Z",
-  connection_type: "http",
-  category_id: 1,
-  user_id: "abcdefg",
 });
 
 describe("createSensorLocally", () => {
   it("creates a sensor locally", () => {
     const newSensor = createFakeSensor(5);
-    const sensors: definitions["sensors"][] = [
+    const sensors: ParsedSensorType[] = [
       createFakeSensor(14),
       createFakeSensor(255),
     ];
@@ -34,15 +32,15 @@ describe("createSensorLocally", () => {
 describe("updateSensorLocally", () => {
   it("updates a sensor locally", () => {
     const notYetUpdatedSensor = createFakeSensor(75);
-    const sensors: definitions["sensors"][] = [
+    const sensors: ParsedSensorType[] = [
       notYetUpdatedSensor,
       createFakeSensor(14),
       createFakeSensor(255),
     ];
 
-    const updatedSensor: definitions["sensors"] = {
+    const updatedSensor: ParsedSensorType = {
       ...notYetUpdatedSensor,
-      category_id: 2,
+      categoryId: 2,
     };
 
     const sensorsWithUpdatedSensor = updateSensorsLocally(
@@ -56,7 +54,7 @@ describe("updateSensorLocally", () => {
 
     expect(updatedSensorIsIncluded).toBe(true);
     expect(
-      sensorsWithUpdatedSensor.find(sensor => sensor.id === 75)?.category_id
+      sensorsWithUpdatedSensor.find(sensor => sensor.id === 75)?.categoryId
     ).toEqual(2);
   });
 });
@@ -65,7 +63,7 @@ describe("deleteSensorLocally", () => {
   it("deletes a sensor locally", () => {
     const sensorIdToBeDeleted = 38;
     const sensorToBeDeleted = createFakeSensor(sensorIdToBeDeleted);
-    const sensors: definitions["sensors"][] = [
+    const sensors: ParsedSensorType[] = [
       sensorToBeDeleted,
       createFakeSensor(14),
       createFakeSensor(255),

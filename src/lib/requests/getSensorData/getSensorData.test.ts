@@ -1,10 +1,11 @@
-import { sensors } from "@mocks/supabaseData/sensors";
+import { parsedSensors, sensors } from "@mocks/supabaseData/sensors";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { getSensorData } from ".";
 import { createApiUrl } from "../createApiUrl";
 
 const exampleSensor = sensors[0];
+const exampleParsedSensor = parsedSensors[0];
 
 describe("utility function getSensorData", () => {
   it("should return a sensor according to the provided ID", async (): Promise<void> => {
@@ -17,7 +18,7 @@ describe("utility function getSensorData", () => {
     const returnedSensor = await getSensorData(exampleSensor.id);
 
     expect.assertions(1);
-    expect(returnedSensor).toMatchObject(exampleSensor);
+    expect(returnedSensor).toMatchObject(exampleParsedSensor);
     server.resetHandlers();
     server.close();
   });

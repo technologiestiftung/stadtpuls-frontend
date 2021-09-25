@@ -1,4 +1,4 @@
-import { PublicSensorType } from "@lib/hooks/usePublicSensors";
+import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { curatedSensors } from "@mocks/supabaseData/sensors";
 import { Story, Meta } from "@storybook/react";
 import { LandingHeroBackgroundMap } from ".";
@@ -9,7 +9,7 @@ export default {
 } as Meta;
 
 const Template: Story<{
-  sensor: PublicSensorType;
+  sensor: ParsedSensorType;
 }> = args => <LandingHeroBackgroundMap {...args} />;
 
 export const Default = Template.bind({});

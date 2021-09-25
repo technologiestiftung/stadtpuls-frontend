@@ -1,4 +1,11 @@
-import { getPublicSensors, PublicSensors } from "@lib/hooks/usePublicSensors";
+import {
+  getPublicAccounts,
+  PublicAccountType,
+} from "@lib/hooks/usePublicAccounts";
+import {
+  getPublicSensors,
+  ParsedSensorType,
+} from "@lib/hooks/usePublicSensors";
 import { NextPage, NextApiResponse } from "next";
 import { Component } from "react";
 
@@ -12,12 +19,20 @@ const formatDate: (dateStr?: string) => string = dateStr => {
   }-${date.getUTCDate()}`;
 };
 
-export const getSitemap: (sensors: PublicSensors) => string = ({
+export const getSitemap: (params: {
+  sensors: ParsedSensorType[];
+  accounts: PublicAccountType[];
+}) => string = ({
   sensors,
+  accounts,
 }) => `<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>${createFullUrl("/")}</loc>
+    <lastmod>${formatDate()}</lastmod>
+  </url>
+  <url>
+    <loc>${createFullUrl("/sensors")}</loc>
     <lastmod>${formatDate()}</lastmod>
   </url>
   ${sensors
@@ -25,6 +40,19 @@ export const getSitemap: (sensors: PublicSensors) => string = ({
       ({ id }) => `
   <url>
     <loc>${createFullUrl(`/sensors/${id}`)}</loc>
+    <lastmod>${formatDate()}</lastmod>
+  </url>`
+    )
+    .join("")}
+  <url>
+    <loc>${createFullUrl("/accounts")}</loc>
+    <lastmod>${formatDate()}</lastmod>
+  </url>
+  ${accounts
+    .map(
+      ({ username }) => `
+  <url>
+    <loc>${createFullUrl(`/accounts/${username}`)}</loc>
     <lastmod>${formatDate()}</lastmod>
   </url>`
     )
@@ -38,8 +66,9 @@ class Sitemap extends Component<NextPage> {
     res: NextApiResponse;
   }): Promise<void> {
     const sensors = await getPublicSensors();
+    const { accounts } = await getPublicAccounts();
     res.setHeader("Content-Type", "text/xml");
-    res.write(getSitemap(sensors));
+    res.write(getSitemap({ sensors, accounts }));
     res.end();
   }
 }

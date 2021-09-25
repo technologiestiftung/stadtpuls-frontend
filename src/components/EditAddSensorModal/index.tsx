@@ -1,4 +1,3 @@
-import { definitions } from "@common/types/supabase";
 import { Button, Submit } from "@components/Button";
 import * as yup from "yup";
 import { FormTextInput } from "@components/FormTextInput";
@@ -25,21 +24,23 @@ import { QuestionMarkTooltip } from "@components/QuestionMarkTooltip";
 import { SensorSymbol } from "@components/SensorSymbol";
 import { InteractiveMapProps } from "react-map-gl/src/components/interactive-map";
 import GrabbingHandIcon from "../../../public/images/icons/16px/grabbingHand.svg";
+import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 
-interface SubmitDataType {
-  name: string;
-  symbolId: number;
-  description: string;
-  categoryId: definitions["categories"]["id"];
-  latitude: number;
-  longitude: number;
-  integration: "http" | "ttn";
-  ttnDeviceId: string | undefined;
-}
+type SubmitDataType = Pick<
+  ParsedSensorType,
+  | "name"
+  | "symbolId"
+  | "description"
+  | "categoryId"
+  | "latitude"
+  | "longitude"
+  | "connectionType"
+  | "ttnDeviceId"
+>;
 
 export interface EditAddSensorModalPropType {
   title: string;
-  defaultValues?: Partial<SubmitDataType>;
+  defaultValues?: SubmitDataType;
   onSubmit?: (sensorData: SubmitDataType) => void;
   submitButtonText?: string;
   onCancel?: () => void;
@@ -55,7 +56,7 @@ const formSchema = yup.object().shape({
   longitude: requiredLongitude,
   categoryId: requiredSensorCategoryValidation,
   description: optionalDescriptionValidation,
-  integration: requiredSensorIntegrationValidation,
+  connectionType: requiredSensorIntegrationValidation,
   ttnDeviceId: requiredTTNDeviceIDValidation,
 });
 
@@ -80,8 +81,8 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
   } = useForm<SubmitDataType>({
     resolver: yupResolver(formSchema),
   });
-  const [integration, setIntegration] = useState(
-    defaultValues.integration || "http"
+  const [connectionType, setConnectionType] = useState(
+    defaultValues.connectionType || "http"
   );
   const [viewport, setViewport] = useState<Partial<InteractiveMapProps>>({
     latitude: defaultValues?.latitude || DEFAULT_LAT,
@@ -125,13 +126,13 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
 
   useEffect(() => {
     if (
-      defaultValues.integration &&
-      defaultValues.integration !== integration
+      defaultValues.connectionType &&
+      defaultValues.connectionType !== connectionType
     ) {
-      setIntegration(defaultValues.integration);
+      setConnectionType(defaultValues.connectionType);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [defaultValues.integration]);
+  }, [defaultValues.connectionType]);
 
   return (
     <SmallModalOverlay
@@ -234,15 +235,15 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
           />
           <div className='flex flex-col gap-2'>
             <Controller
-              name='integration'
+              name='connectionType'
               control={control}
-              defaultValue={defaultValues?.integration || integration}
+              defaultValue={defaultValues?.connectionType || connectionType}
               render={({ field }) => (
                 <FormListBox
                   {...field}
                   onChange={newValue => {
                     field.onChange(newValue);
-                    setIntegration(newValue as "http" | "ttn");
+                    setConnectionType(newValue as "http" | "ttn");
                   }}
                   label='Integration'
                   placeholder='Wie möchtest du deinen Sensor integrieren?'
@@ -250,11 +251,11 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
                     { name: "HTTP", value: "http" },
                     { name: "TTN", value: "ttn" },
                   ]}
-                  errors={formatError(errors.integration?.message)}
+                  errors={formatError(errors.connectionType?.message)}
                 />
               )}
             />
-            {integration === "ttn" && (
+            {connectionType === "ttn" && (
               <Controller
                 name='ttnDeviceId'
                 control={control}

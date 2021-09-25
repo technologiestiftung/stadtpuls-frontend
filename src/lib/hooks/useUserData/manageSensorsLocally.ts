@@ -1,29 +1,29 @@
-import { definitions } from "@common/types/supabase";
+import { ParsedSensorType } from "../usePublicSensors";
 
 let lastSensorId = 10000000;
 
 export const updateSensorsLocally = (
-  sensors: definitions["sensors"][],
-  sensor: definitions["sensors"]
-): definitions["sensors"][] =>
+  sensors: ParsedSensorType[],
+  sensor: ParsedSensorType
+): ParsedSensorType[] =>
   sensors.reduce(
     (sensorsAcc, currSensor) => [
       ...sensorsAcc,
-      currSensor.id === sensor.id ? sensor : currSensor,
+      currSensor.id === sensor.id ? { ...currSensor, ...sensor } : currSensor,
     ],
-    [] as definitions["sensors"][]
+    [] as ParsedSensorType[]
   );
 
 export const deleteSensorLocally = (
-  sensors: definitions["sensors"][],
-  sensorId: definitions["sensors"]["id"]
-): definitions["sensors"][] =>
+  sensors: ParsedSensorType[],
+  sensorId: ParsedSensorType["id"]
+): ParsedSensorType[] =>
   sensors ? sensors.filter(sensor => sensor.id !== sensorId) : [];
 
 export const createSensorLocally = (
-  sensors: definitions["sensors"][],
-  sensor: Omit<definitions["sensors"], "id">
-): definitions["sensors"][] => {
+  sensors: ParsedSensorType[],
+  sensor: Omit<ParsedSensorType, "id">
+): ParsedSensorType[] => {
   return [
     ...sensors,
     {

@@ -1288,7 +1288,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
           <span
             className="truncate"
           >
-            Lala
+            La La
           </span>
         </a>
       </div>

@@ -1,11 +1,11 @@
 import {
-  PublicSensorType,
+  mapPublicSensor,
+  ParsedSensorType,
   SensorQueryResponseType,
 } from "@lib/hooks/usePublicSensors";
 import { getSensorRecords } from "./records";
 import { categories } from "./categories";
 import { userprofiles } from "./userprofiles";
-import { parseSensorRecords } from "@lib/hooks/usePublicSensors";
 
 export const ttnSensors: SensorQueryResponseType[] = [
   {
@@ -143,38 +143,6 @@ export const httpSensors: SensorQueryResponseType[] = [
 
 export const sensors = [...httpSensors, ...ttnSensors];
 
-export const parsedSensors: PublicSensorType[] = [
-  ...sensors.map(sensor => {
-    return {
-      ...sensor,
-      authorName:
-        userprofiles.find(profile => profile.id === sensor.user_id)
-          ?.display_name || "",
-      categoryName:
-        categories.find(category => category.id === sensor.category_id)?.name ||
-        "",
-      parsedRecords: parseSensorRecords(sensor.records),
-    };
-  }),
-];
+export const parsedSensors: ParsedSensorType[] = sensors.map(mapPublicSensor);
 
-export const curatedSensors: PublicSensorType[] = [
-  {
-    ...httpSensors[0],
-    authorName: userprofiles[0].display_name || "",
-    parsedRecords: parseSensorRecords(httpSensors[0].records),
-    categoryName: "CO2",
-  },
-  {
-    ...httpSensors[1],
-    authorName: userprofiles[0].display_name || "",
-    parsedRecords: parseSensorRecords(httpSensors[1].records),
-    categoryName: "Temperatur",
-  },
-  {
-    ...httpSensors[2],
-    authorName: userprofiles[0].display_name || "",
-    parsedRecords: parseSensorRecords(httpSensors[2].records),
-    categoryName: "Luftdruck",
-  },
-];
+export const curatedSensors: ParsedSensorType[] = parsedSensors.slice(0, 3);

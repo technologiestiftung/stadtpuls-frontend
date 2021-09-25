@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { SensorCard } from "@components/SensorCard";
-import { PublicSensorType } from "@lib/hooks/usePublicSensors";
+import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 
 interface SensorsGridType {
-  sensors: PublicSensorType[];
+  sensors: ParsedSensorType[];
   showAuthorNames?: boolean;
 }
 
@@ -18,9 +18,8 @@ export const SensorsGrid: FC<SensorsGridType> = ({
           return (
             <SensorCard
               {...sensor}
-              authorName={showAuthorNames ? sensor.authorName || null : null}
+              authorName={showAuthorNames ? sensor.authorName : ""}
               key={sensor.id}
-              parsedRecords={sensor.parsedRecords}
             />
           );
         })}

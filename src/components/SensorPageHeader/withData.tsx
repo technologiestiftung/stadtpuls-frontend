@@ -1,57 +1,30 @@
-import { useAuth } from "@auth/Auth";
 import { Alert } from "@components/Alert";
 import { Button } from "@components/Button";
 import { EditAddSensorModal } from "@components/EditAddSensorModal";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
-import { PublicSensorType } from "@lib/hooks/usePublicSensors";
-import { useSensorCategories } from "@lib/hooks/useSensorCategories";
+import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { useUserData } from "@lib/hooks/useUserData";
 import { useRouter } from "next/router";
-import { FC, useRef, useState } from "react";
+import { FC, useState } from "react";
 import { SensorPageHeader } from ".";
 
 interface SensorPageHeaderWithDataPropType {
-  initialSensor: PublicSensorType;
+  initialSensor: ParsedSensorType;
 }
-
-type MergedSensorType = Pick<
-  PublicSensorType,
-  | "name"
-  | "icon_id"
-  | "description"
-  | "category_id"
-  | "connection_type"
-  | "external_id"
-  | "latitude"
-  | "longitude"
->;
-
-const mergeInitialSensorWithUserSensor = (
-  initialSensor: MergedSensorType,
-  userSensor?: MergedSensorType
-): MergedSensorType => {
-  const userIntegration =
-    userSensor?.connection_type || initialSensor.connection_type;
-  return {
-    name: userSensor?.name || initialSensor.name,
-    icon_id: userSensor?.icon_id || initialSensor.icon_id || Math.random() * 10,
-    description: userSensor?.description || initialSensor.description,
-    category_id: userSensor?.category_id || initialSensor.category_id,
-    connection_type: userIntegration === "other" ? "http" : userIntegration,
-    external_id: userSensor?.external_id || initialSensor.external_id,
-    latitude: userSensor?.latitude || initialSensor.latitude,
-    longitude: userSensor?.longitude || initialSensor.longitude,
-  };
-};
 
 export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
   initialSensor,
 }) => {
   const router = useRouter();
-  const fallbackIconId = useRef(Math.random() * 10);
-  const { user, sensors, error, updateSensor, deleteSensor } = useUserData();
-  const { categories } = useSensorCategories();
-  const { authenticatedUser, isLoadingAuth } = useAuth();
+  const {
+    isLoggedIn,
+    user,
+    authenticatedUser,
+    sensors,
+    error,
+    updateSensor,
+    deleteSensor,
+  } = useUserData();
   const [editModalIsOpen, setEditModalIsOpen] = useState(false);
   const [
     deletionConfirmationIsOpened,
@@ -59,18 +32,12 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
   ] = useState(false);
   const [showEditSuccessAlert, setShowEditSuccessAlert] = useState(false);
 
-  const isLoggedIn = authenticatedUser && !isLoadingAuth;
   const userSensor = sensors?.find(
     ({ id }) => `${id}` === `${initialSensor.id}`
   );
 
-  const mergedSensor = mergeInitialSensorWithUserSensor(
-    initialSensor,
-    userSensor
-  );
-  const userCategory = categories?.find(
-    ({ id }) => `${id}` === String(userSensor?.category_id)
-  );
+  const mergedSensor = isLoggedIn && userSensor ? userSensor : initialSensor;
+
   return (
     <>
       {(error || showEditSuccessAlert) && (
@@ -109,32 +76,14 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
             initialSensor.name ? `„${initialSensor.name}“ ` : ""
           }editieren`}
           onCancel={() => setEditModalIsOpen(false)}
-          defaultValues={{
-            name: mergedSensor.name,
-            symbolId: mergedSensor.icon_id,
-            description: mergedSensor.description,
-            categoryId: mergedSensor.category_id,
-            integration:
-              mergedSensor.connection_type === "other"
-                ? undefined
-                : mergedSensor.connection_type,
-            ttnDeviceId: mergedSensor.external_id,
-            latitude: mergedSensor.latitude,
-            longitude: mergedSensor.longitude,
-          }}
+          defaultValues={mergedSensor}
           onSubmit={data => {
             updateSensor({
+              ...mergedSensor,
+              ...data,
               id: initialSensor.id,
-              external_id:
-                data.ttnDeviceId || mergedSensor.external_id || undefined,
-              name: data.name,
-              description: data.description,
-              connection_type: data.integration,
-              longitude: data.longitude,
-              latitude: data.latitude,
-              category_id: data.categoryId,
-              icon_id: data.symbolId,
-              user_id: authenticatedUser?.id,
+              ttnDeviceId: data.ttnDeviceId as "http" | "ttn",
+              authorId: authenticatedUser?.id || initialSensor.authorId,
             })
               .then(() => setShowEditSuccessAlert(true))
               .finally(() => setEditModalIsOpen(false));
@@ -143,20 +92,8 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
         />
       )}
       <SensorPageHeader
-        id={initialSensor.id}
-        name={mergedSensor.name || ""}
-        description={mergedSensor.description || ""}
-        category={userCategory || { id: 1, name: "C02", description: "" }}
-        symbol={mergedSensor.icon_id || fallbackIconId.current}
-        geocoordinates={{
-          latitude: mergedSensor.latitude || 52.4961458,
-          longitude: mergedSensor.longitude || 13.4335723,
-        }}
-        author={{
-          username: initialSensor.user.name || "anonymous",
-          displayName: initialSensor.user.display_name || "Anonymous",
-        }}
-        withEditButton={!!user && user.name === initialSensor.user?.name}
+        {...mergedSensor}
+        withEditButton={!!user && user.name === mergedSensor.authorUsername}
         onEditButtonClick={() => {
           setEditModalIsOpen(true);
           setShowEditSuccessAlert(false);
