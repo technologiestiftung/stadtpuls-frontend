@@ -1,3 +1,4 @@
+import { sensorQueryString } from "@lib/hooks/usePublicSensors";
 import { supabase } from "@auth/supabase";
 import useSWR from "swr";
 import { definitions } from "@common/types/supabase";
@@ -15,31 +16,7 @@ export const accountQueryString = `
   url,
   description,
   sensors (
-    id,
-    name,
-    created_at,
-    connection_type,
-    external_id,
-    description,
-    location,
-    latitude,
-    longitude,
-    altitude,
-    category_id,
-    icon_id,
-    user_id,
-    records (
-      recorded_at,
-      measurements
-    ),
-    user:user_id (
-      name,
-      display_name
-    ),
-    category:category_id (
-      id,
-      name
-    )
+    ${sensorQueryString}
   )
 `;
 
@@ -60,18 +37,6 @@ export interface PublicAccountType {
   sensorsCount: number;
   recordsCount: number;
   sensors: ParsedSensorType[];
-}
-
-export interface PublicAccounts {
-  accounts: PublicAccountType[];
-  count?: number;
-}
-
-interface OptionsType {
-  initialData: null | {
-    count: number;
-    accounts: PublicAccountType[];
-  };
 }
 
 export const dbUserToPublicAccount = (
@@ -104,38 +69,33 @@ export const mapPublicAccount = ({
   sensors: sensors.map(mapPublicSensor),
 });
 
-export const getPublicAccounts = async (): Promise<PublicAccounts> => {
+export const getPublicAccounts = async (): Promise<PublicAccountType[]> => {
   const { data, error } = await supabase
     .from<AccountQueryResponseType>("user_profiles")
     .select(accountQueryString)
     .order("created_at");
 
   if (error) throw error;
-  if (!data) return { accounts: [] };
+  if (!data) return [];
   const accounts = data.map(mapPublicAccount);
 
-  return { accounts };
-};
-
-const defaultOptions: OptionsType = {
-  initialData: null,
+  return accounts;
 };
 
 export const usePublicAccounts = (
-  options: Partial<OptionsType> = defaultOptions
+  initialData?: PublicAccountType[]
 ): {
-  data: PublicAccounts | null;
+  accounts: PublicAccountType[];
   error: Error | null;
 } => {
-  const initialData = options.initialData || defaultOptions.initialData;
-  const { data, error } = useSWR<PublicAccounts | null, Error>(
+  const { data, error } = useSWR<PublicAccountType[] | null, Error>(
     ["usePublicAccounts"],
     () => getPublicAccounts(),
     { initialData }
   );
 
   return {
-    data: data || null,
+    accounts: data || [],
     error: error || null,
   };
 };

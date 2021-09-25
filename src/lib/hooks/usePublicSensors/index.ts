@@ -139,7 +139,7 @@ export const getPublicSensors = async (): Promise<ParsedSensorType[]> => {
 };
 
 export const usePublicSensors = (
-  initialData = [] as ParsedSensorType[]
+  initialData?: ParsedSensorType[]
 ): {
   data: ParsedSensorType[];
   error: Error | null;
