@@ -38,7 +38,7 @@ const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({
     loggedInAccount?.username === routeAccount?.username
       ? loggedInAccount
       : routeAccount;
-  const sensors = account.sensors;
+  const sensors = account.sensors || [];
   return (
     <>
       <UserInfoWithData routeAccount={routeAccount} activeTab='sensors' />
