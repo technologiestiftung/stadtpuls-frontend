@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { AccountCard } from "@components/AccountCard";
-import { PublicAccountType } from "@lib/hooks/usePublicAccounts";
+import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
 
 interface AccountsGridType {
-  accounts: PublicAccountType[];
+  accounts: ParsedAccountType[];
 }
 
 export const AccountsGrid: FC<AccountsGridType> = ({ accounts }) => {

@@ -1,6 +1,6 @@
 import {
   getPublicAccounts,
-  PublicAccountType,
+  ParsedAccountType,
 } from "@lib/hooks/usePublicAccounts";
 import {
   getPublicSensors,
@@ -21,7 +21,7 @@ const formatDate: (dateStr?: string) => string = dateStr => {
 
 export const getSitemap: (params: {
   sensors: ParsedSensorType[];
-  accounts: PublicAccountType[];
+  accounts: ParsedAccountType[];
 }) => string = ({
   sensors,
   accounts,

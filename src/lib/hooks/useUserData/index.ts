@@ -19,11 +19,11 @@ import {
   AccountQueryResponseType,
   accountQueryString,
   mapPublicAccount,
-  PublicAccountType,
+  ParsedAccountType,
 } from "../usePublicAccounts";
 
 interface UseUserDataInitialDataType {
-  user?: PublicAccountType;
+  user?: ParsedAccountType;
   sensors?: ParsedSensorType[];
 }
 
@@ -35,7 +35,7 @@ export type SensorWithEditablePropsType = Omit<
 type UserFetcherSignature = (
   userId?: AuthenticatedUsersType["id"],
   isLoadingAuth?: boolean
-) => Promise<PublicAccountType | null>;
+) => Promise<ParsedAccountType | null>;
 
 const fetchUser: UserFetcherSignature = async userId => {
   if (!userId) return null;
@@ -134,7 +134,7 @@ const deleteSensor = async (
 };
 
 const updateUser = async (
-  newUserData: Partial<PublicAccountType>
+  newUserData: Partial<ParsedAccountType>
 ): Promise<void> => {
   const nameReset = await supabase
     .from<definitions["user_profiles"]>("user_profiles")
@@ -161,13 +161,13 @@ export const useUserData = (
 ): {
   isLoading: boolean;
   authenticatedUser: AuthenticatedUsersType | null;
-  user: PublicAccountType | null;
+  user: ParsedAccountType | null;
   sensors: ParsedSensorType[] | null;
   error: Error | null;
   createSensor: (sensor: SensorWithEditablePropsType) => Promise<number>;
   updateSensor: (sensor: ParsedSensorType) => Promise<void>;
   deleteSensor: (id: number) => Promise<void>;
-  updateUser: (newUserData: PublicAccountType) => Promise<void>;
+  updateUser: (newUserData: ParsedAccountType) => Promise<void>;
   deleteUser: () => Promise<void>;
   isLoggedIn: boolean;
 } => {
@@ -176,7 +176,7 @@ export const useUserData = (
   const userId = authenticatedUser?.id;
 
   const userParams = ["userData", userId];
-  const user = useSWR<PublicAccountType | null, Error>(
+  const user = useSWR<ParsedAccountType | null, Error>(
     userParams,
     () => fetchUser(userId),
     { initialData: initialData?.user }
@@ -226,7 +226,7 @@ export const useUserData = (
       await deleteSensor(id, userId).catch(setActionError);
       void mutate(sensorsParams);
     },
-    updateUser: async (newUserData: PublicAccountType) => {
+    updateUser: async (newUserData: ParsedAccountType) => {
       if (!newUserData) return;
       void mutate(userParams, newUserData, false);
       await updateUser(newUserData).catch(setActionError);

@@ -1,9 +1,9 @@
 import { FC, useEffect } from "react";
 import { render, waitFor } from "@testing-library/react";
-import { PublicAccountType, usePublicAccounts } from ".";
+import { ParsedAccountType, usePublicAccounts } from ".";
 import { SWRConfig } from "swr";
 
-type OnSuccessType = (data: PublicAccountType[]) => void;
+type OnSuccessType = (data: ParsedAccountType[]) => void;
 type OnFailType = (error: string) => void;
 
 const createTestComponent = (
@@ -24,7 +24,7 @@ const createTestComponent = (
 describe("hook usePublicAccounts", () => {
   it("should provide a data and error value", async (): Promise<void> => {
     const onSuccess = jest.fn();
-    const onSuccessWrapper = (data: PublicAccountType[]): void => {
+    const onSuccessWrapper = (data: ParsedAccountType[]): void => {
       onSuccess(data);
     };
     const onError = jest.fn();

@@ -13,9 +13,9 @@ import {
 import React, { FC, useEffect, useCallback } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormTextarea } from "@components/FormTextarea";
-import { PublicAccountType } from "@lib/hooks/usePublicAccounts";
+import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
 
-interface DefaultValuesType extends PublicAccountType {
+interface DefaultValuesType extends ParsedAccountType {
   email: string;
 }
 
