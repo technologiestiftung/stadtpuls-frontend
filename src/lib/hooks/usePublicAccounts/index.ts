@@ -1,4 +1,4 @@
-import { sensorQueryString } from "@lib/hooks/usePublicSensors";
+import { RECORDS_LIMIT, sensorQueryString } from "@lib/hooks/usePublicSensors";
 import { supabase } from "@auth/supabase";
 import useSWR from "swr";
 import { definitions } from "@common/types/supabase";
@@ -64,7 +64,15 @@ export const getPublicAccounts = async (): Promise<ParsedAccountType[]> => {
   const { data, error } = await supabase
     .from<AccountQueryResponseType>("user_profiles")
     .select(accountQueryString)
-    .order("created_at");
+    .order("created_at")
+    // FIXME: created_at is not recognized altought it is inherited from the definitions
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    .order("recorded_at", {
+      foreignTable: "sensors.records",
+      ascending: false,
+    })
+    .limit(RECORDS_LIMIT, { foreignTable: "sensors.records" });
 
   if (error) throw error;
   if (!data) return [];
