@@ -26,6 +26,11 @@ const Template: Story<EditAddSensorModalPropType> = args => (
 export const WithoutDefaultValues = Template.bind({});
 WithoutDefaultValues.args = {
   title: "Add sensor",
+  author: {
+    authorId: "123",
+    authorUsername: "test",
+    authorName: "Jana Van Test",
+  },
   onSubmit: action("Form data submited"),
   onCancel: action("Form cancelled"),
   onDelete: (false as unknown) as () => void,
@@ -34,6 +39,11 @@ WithoutDefaultValues.args = {
 export const WithDefaultValues = Template.bind({});
 WithDefaultValues.args = {
   title: "Edit sensor",
+  author: {
+    authorId: "123",
+    authorUsername: "test",
+    authorName: "Jana Van Test",
+  },
   defaultValues: {
     name: "A title",
     symbolId: 1,
