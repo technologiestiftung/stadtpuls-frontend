@@ -5,10 +5,7 @@ import { EditAccountModal } from "@components/EditAccountModal";
 import { EditAddSensorModal } from "@components/EditAddSensorModal";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { Tabs } from "@components/Tabs";
-import {
-  dbUserToPublicAccount,
-  PublicAccountType,
-} from "@lib/hooks/usePublicAccounts";
+import { PublicAccountType } from "@lib/hooks/usePublicAccounts";
 import { useUserData } from "@lib/hooks/useUserData";
 import { useRouter } from "next/router";
 import { FC, useState } from "react";
@@ -24,29 +21,14 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
   activeTab,
 }) => {
   const router = useRouter();
-  const {
-    user,
-    sensors,
-    error,
-    createSensor,
-    updateUser,
-    deleteUser,
-  } = useUserData({
-    user: {
-      id: initialAccount.id,
-      name: initialAccount.username,
-      display_name: initialAccount.displayName,
-      created_at: initialAccount.createdAt,
-      description: initialAccount.description,
-      url: initialAccount.link,
-    },
+  const { user, error, createSensor, updateUser, deleteUser } = useUserData({
+    user: initialAccount,
   });
   const { authenticatedUser } = useAuth();
-  const isOwnerAndLoggedIn =
-    !!authenticatedUser && !!user && user.name === initialAccount.username;
+  const isOwnerAndLoggedIn = user?.username === initialAccount.username;
   const finalAccount = {
     ...initialAccount,
-    ...(user && sensors ? dbUserToPublicAccount(user) : {}),
+    ...(user || {}),
   };
   const [editModalIsOpen, setEditModalIsOpen] = useState(false);
   const [newSensorModalIsOpen, setNewSensorModalIsOpen] = useState(false);
@@ -77,7 +59,7 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
         <EditAddSensorModal
           author={{
             authorId: initialAccount.id,
-            authorName: user?.display_name || initialAccount.displayName,
+            authorName: initialAccount.displayName,
             authorUsername: initialAccount.username,
           }}
           title='Neuer Sensor'
@@ -104,10 +86,8 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
           onCancel={() => setEditModalIsOpen(false)}
           onSubmit={data => {
             updateUser({
+              ...data,
               id: authenticatedUser.id,
-              display_name: data.displayName,
-              description: data.description,
-              url: data.link,
             })
               .then(() => setShowEditSuccessAlert(true))
               .finally(() => setEditModalIsOpen(false));
@@ -125,10 +105,13 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
                   title='Fehler!'
                   message={
                     <>
+                      {console.log(error)}
                       Beim Editieren ist ein Fehler aufgetreten:{" "}
-                      <code className='ml-4 px-2 py-1 font-mono bg-error bg-opacity-20'>
-                        {error.message}
-                      </code>
+                      {error.message && (
+                        <code className='ml-4 px-2 py-1 font-mono bg-error bg-opacity-20'>
+                          {error.message}
+                        </code>
+                      )}
                     </>
                   }
                 />

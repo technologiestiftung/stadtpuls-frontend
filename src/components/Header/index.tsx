@@ -10,7 +10,7 @@ const SCROLL_THRESHOLD = 100;
 
 export const Header: React.FC = () => {
   const { pathname } = useRouter();
-  const { user, authenticatedUser } = useUserData();
+  const { user } = useUserData();
   const [hasScrolled, setHasScrolled] = useState<boolean>(false);
   const hasDarkMode = pathname === "/" && !hasScrolled;
 
@@ -55,11 +55,7 @@ export const Header: React.FC = () => {
         </Link>
         <section className='flex flex-row-reverse lg:flex-row gap-4 sm:gap-8 items-center pr-4'>
           <HeaderMenu hasDarkMode={hasDarkMode} />
-          <AuthLink
-            loggedInUserName={
-              authenticatedUser && user?.name ? user.name : undefined
-            }
-          />
+          <AuthLink loggedInUserName={user?.username} />
         </section>
       </nav>
     </header>

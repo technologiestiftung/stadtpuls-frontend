@@ -169,7 +169,7 @@ const supabaseHandlers = [
             ctx.json(
               publicAccounts.find(
                 account => String(account.name) === String(username)
-              ) as definitions["user_profiles"]
+              )
             )
           );
         }

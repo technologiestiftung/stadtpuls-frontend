@@ -26,7 +26,7 @@ interface AccountTokensPagePropType {
 
 const AccountTokensPage: FC<AccountTokensPagePropType> = ({ account }) => {
   const { user } = useUserData();
-  const isOwnerAndLoggedIn = !!user && user.name === account.username;
+  const isOwnerAndLoggedIn = user?.username === account.username;
   return (
     <>
       <UserInfoWithData initialAccount={account} activeTab='tokens' />

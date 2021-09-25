@@ -49,7 +49,7 @@ const HeaderLink: FC<MenuLinkPropType> = ({
 
 export const HeaderMenu: FC<HeaderMenuPropType> = ({ hasDarkMode = false }) => {
   const { signOut } = useAuth();
-  const { user, authenticatedUser } = useUserData();
+  const { user } = useUserData();
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const toggleIsOpened = (): void => setIsOpened(!isOpened);
   const menuRef = useClickOutside<HTMLDivElement>(() => setIsOpened(false));
@@ -91,15 +91,15 @@ export const HeaderMenu: FC<HeaderMenuPropType> = ({ hasDarkMode = false }) => {
           />
           {[
             ...pages,
-            ...(user && authenticatedUser
+            ...(user
               ? [
                   {
-                    href: `/accounts/${user?.name || "anonymous"}`,
+                    href: `/accounts/${user.username}`,
                     text: "Deine Sensoren",
                     className: "lg:hidden",
                   },
                   {
-                    href: `/accounts/${user?.name || "anonymous"}/tokens`,
+                    href: `/accounts/${user.username}/tokens`,
                     text: "Deine Tokens",
                     className: "lg:hidden",
                   },
