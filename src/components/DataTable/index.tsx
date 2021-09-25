@@ -35,6 +35,7 @@ export const DataTable: React.FC<DataTableType> = ({ data }) => {
       className={[
         "border border-gray-200 shadow",
         "bg-white relative overflow-y-scroll",
+        "max-h-[500px]",
       ].join(" ")}
     >
       <table className='w-full p-2 border-collapse'>
