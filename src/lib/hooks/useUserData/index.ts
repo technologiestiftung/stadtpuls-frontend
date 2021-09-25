@@ -15,14 +15,13 @@ import {
   SensorQueryResponseType,
   sensorQueryString,
 } from "../usePublicSensors";
-import { categories } from "@mocks/supabaseData/categories";
 
 interface UseUserDataInitialDataType {
   user?: definitions["user_profiles"];
   sensors?: ParsedSensorType[];
 }
 
-type SensorWithEditablePropsType = Omit<
+export type SensorWithEditablePropsType = Omit<
   ParsedSensorType,
   "id" | "categoryName" | "authorName" | "authorUsername" | "parsedRecords"
 >;
@@ -199,13 +198,7 @@ export const useUserData = (
       setActionError(null);
       await mutate(
         sensorsParams,
-        createSensorLocally(sensors.data, {
-          ...sensor,
-          authorName: user.data?.display_name || "Anonymous",
-          authorUsername: user.data?.name || "anonymous",
-          categoryName: categories[sensor.categoryId - 1].name,
-          parsedRecords: [],
-        }),
+        createSensorLocally(sensors.data, sensor),
         false
       );
       const newId = await createSensor(sensor);

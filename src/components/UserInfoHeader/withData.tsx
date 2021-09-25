@@ -75,6 +75,11 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
     <>
       {newSensorModalIsOpen && (
         <EditAddSensorModal
+          author={{
+            authorId: initialAccount.id,
+            authorName: user?.display_name || initialAccount.displayName,
+            authorUsername: initialAccount.username,
+          }}
           title='Neuer Sensor'
           onCancel={() => setNewSensorModalIsOpen(false)}
           submitButtonText='Hinzufügen'

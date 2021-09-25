@@ -26,7 +26,7 @@ import { InteractiveMapProps } from "react-map-gl/src/components/interactive-map
 import GrabbingHandIcon from "../../../public/images/icons/16px/grabbingHand.svg";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 
-type SubmitDataType = Pick<
+type FormDataType = Pick<
   ParsedSensorType,
   | "name"
   | "symbolId"
@@ -38,9 +38,14 @@ type SubmitDataType = Pick<
   | "ttnDeviceId"
 >;
 
+type SubmitDataType = Omit<
+  ParsedSensorType,
+  "id" | "parsedRecords" | "createdAt"
+>;
 export interface EditAddSensorModalPropType {
   title: string;
-  defaultValues?: SubmitDataType;
+  author: Pick<ParsedSensorType, "authorId" | "authorName" | "authorUsername">;
+  defaultValues?: FormDataType;
   onSubmit?: (sensorData: SubmitDataType) => void;
   submitButtonText?: string;
   onCancel?: () => void;
@@ -65,6 +70,7 @@ const DEFAULT_LNG = 13.39;
 
 export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
   title,
+  author,
   defaultValues = {},
   onSubmit = () => undefined,
   onCancel = () => undefined,
@@ -78,7 +84,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
     setValue,
     handleSubmit,
     formState: { errors, dirtyFields },
-  } = useForm<SubmitDataType>({
+  } = useForm<FormDataType>({
     resolver: yupResolver(formSchema),
   });
   const [connectionType, setConnectionType] = useState(
@@ -142,12 +148,20 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
     >
       <form
         noValidate
-        onSubmit={handleSubmit(data =>
+        onSubmit={handleSubmit(data => {
+          if (!categories) return;
+          const category =
+            categories.find(
+              ({ id }) => String(id) === String(data.categoryId)
+            ) || categories[0];
           onSubmit({
+            ...defaultValues,
+            ...author,
             ...data,
             categoryId: parseInt(`${data.categoryId}`, 10),
-          })
-        )}
+            categoryName: category.name,
+          });
+        })}
         className='flex flex-col gap-2 sm:gap-4'
       >
         <fieldset className='xs:grid xs:grid-cols-12 gap-4'>

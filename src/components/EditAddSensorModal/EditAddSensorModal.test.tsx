@@ -1,8 +1,15 @@
 import { parsedSensors } from "@mocks/supabaseData/sensors";
 import { fireEvent, waitFor, render, screen } from "@testing-library/react";
 import { EditAddSensorModal } from ".";
+import * as sensorCategoriesHook from "@lib/hooks/useSensorCategories";
+import { categories } from "@mocks/supabaseData/categories";
 
 const baseTestData = {
+  author: {
+    authorName: "Lucas Vogel",
+    authorUsername: "vogelino",
+    authorId: "123",
+  },
   title: "Test Title",
   onDelete: jest.fn(),
   onCancel: jest.fn(),
@@ -12,6 +19,11 @@ const baseTestData = {
 const successTestData = parsedSensors[0];
 
 describe("EditAddSensorModal component", () => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  sensorCategoriesHook.useSensorCategories = jest
+    .fn()
+    .mockReturnValue({ categories, isLoading: false, error: null });
   it("should render correctly", () => {
     render(<EditAddSensorModal {...baseTestData} />);
 
@@ -106,14 +118,8 @@ describe("EditAddSensorModal component", () => {
 
     await waitFor(() => {
       expect(baseTestData.onSubmit).toHaveBeenCalledWith({
-        name: successTestData.name,
-        symbolId: successTestData.symbolId,
-        description: successTestData.description,
-        categoryId: successTestData.categoryId,
-        latitude: successTestData.latitude,
-        longitude: successTestData.longitude,
-        connectionType: successTestData.connectionType,
-        ttnDeviceId: successTestData.ttnDeviceId,
+        ...successTestData,
+        ...baseTestData.author,
       });
     });
   });

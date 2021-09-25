@@ -72,6 +72,11 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
       )}
       {isLoggedIn && editModalIsOpen && (
         <EditAddSensorModal
+          author={{
+            authorName: user?.display_name || "Anonymous",
+            authorUsername: user?.name || "Anonymous",
+            authorId: user?.id || authenticatedUser?.id || "1",
+          }}
           title={`Sensor ${
             initialSensor.name ? `„${initialSensor.name}“ ` : ""
           }editieren`}
@@ -83,7 +88,6 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
               ...data,
               id: initialSensor.id,
               ttnDeviceId: data.ttnDeviceId as "http" | "ttn",
-              authorId: authenticatedUser?.id || initialSensor.authorId,
             })
               .then(() => setShowEditSuccessAlert(true))
               .finally(() => setEditModalIsOpen(false));
