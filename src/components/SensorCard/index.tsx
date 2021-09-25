@@ -13,6 +13,7 @@ export interface SensorCardPropType extends ParsedSensorType {
   withMapLabels?: boolean;
 }
 
+const DISPLAYABLE_RECORDS_AMOUNT = 20;
 const DESCRIPTION_MAX_LENGTH = 150;
 
 export const SensorCard: FC<SensorCardPropType> = ({
@@ -103,7 +104,7 @@ export const SensorCard: FC<SensorCardPropType> = ({
                   width={100}
                   height={82}
                   //FIXME: Figure out how we want to handle multiple data points
-                  data={parsedRecords}
+                  data={parsedRecords.slice(DISPLAYABLE_RECORDS_AMOUNT * -1)}
                 />
               </svg>
             </div>
