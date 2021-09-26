@@ -77,7 +77,10 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
               authorId: authenticatedUser.id,
             })
               .then(newSensorId => router.push(`/sensors/${newSensorId}`))
-              .finally(() => setNewSensorModalIsOpen(false));
+              .finally(() => {
+                setNewSensorModalIsOpen(false);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              });
           }}
         />
       )}
@@ -94,7 +97,10 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
               id: authenticatedUser.id,
             })
               .then(() => setShowEditSuccessAlert(true))
-              .finally(() => setEditModalIsOpen(false));
+              .finally(() => {
+                setEditModalIsOpen(false);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              });
           }}
           onDelete={() => setDeletionConfirmationIsOpened(true)}
         />

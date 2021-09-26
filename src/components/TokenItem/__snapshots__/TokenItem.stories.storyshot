@@ -47,7 +47,7 @@ exports[`Storyshots UI Elements/TokenItem Default 1`] = `
   >
     <button
       aria-label="Default personal token neu generieren"
-      className="inline-block font-headline transition text-base sm:text-lg px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green mr-3 my-1"
+      className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green mr-3 my-1"
       onClick={[Function]}
       type="button"
     >
@@ -55,7 +55,7 @@ exports[`Storyshots UI Elements/TokenItem Default 1`] = `
     </button>
     <button
       aria-label="Default personal token löschen"
-      className="inline-block font-headline transition text-base sm:text-lg px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-error text-error hover:bg-error hover:bg-opacity-10 my-1"
+      className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-error text-error hover:bg-error hover:bg-opacity-10 my-1"
       onClick={[Function]}
       type="button"
       variant="dangerous"
@@ -113,7 +113,7 @@ exports[`Storyshots UI Elements/TokenItem First Item In List 1`] = `
   >
     <button
       aria-label="I am the first token with a border-top neu generieren"
-      className="inline-block font-headline transition text-base sm:text-lg px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green mr-3 my-1"
+      className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green mr-3 my-1"
       onClick={[Function]}
       type="button"
     >
@@ -121,7 +121,7 @@ exports[`Storyshots UI Elements/TokenItem First Item In List 1`] = `
     </button>
     <button
       aria-label="I am the first token with a border-top löschen"
-      className="inline-block font-headline transition text-base sm:text-lg px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-error text-error hover:bg-error hover:bg-opacity-10 my-1"
+      className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-error text-error hover:bg-error hover:bg-opacity-10 my-1"
       onClick={[Function]}
       type="button"
       variant="dangerous"
@@ -179,7 +179,7 @@ exports[`Storyshots UI Elements/TokenItem Long Name 1`] = `
   >
     <button
       aria-label="Default personal token with an extraordinary long name that might span multiple rows neu generieren"
-      className="inline-block font-headline transition text-base sm:text-lg px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green mr-3 my-1"
+      className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green mr-3 my-1"
       onClick={[Function]}
       type="button"
     >
@@ -187,7 +187,7 @@ exports[`Storyshots UI Elements/TokenItem Long Name 1`] = `
     </button>
     <button
       aria-label="Default personal token with an extraordinary long name that might span multiple rows löschen"
-      className="inline-block font-headline transition text-base sm:text-lg px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-error text-error hover:bg-error hover:bg-opacity-10 my-1"
+      className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-error text-error hover:bg-error hover:bg-opacity-10 my-1"
       onClick={[Function]}
       type="button"
       variant="dangerous"

@@ -584,7 +584,7 @@ exports[`Storyshots UI Elements/UserInfoHeader Maximum Infos 1`] = `
       className="w-full order-last mt-4"
     >
       <button
-        className="inline-block font-headline transition text-base sm:text-lg px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
+        className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
         onClick={[Function]}
         type="button"
       >

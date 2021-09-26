@@ -41,7 +41,7 @@ export const DataTable: React.FC<DataTableType> = ({ data }) => {
       <table className='w-full p-2 border-collapse'>
         <thead className='sticky top-0 bottom-auto'>
           <tr className='h-8'>
-            <th className='text-left p-0'>
+            <th className='text-left p-0 whitespace-nowrap'>
               <span
                 className={[
                   "block",
@@ -54,7 +54,7 @@ export const DataTable: React.FC<DataTableType> = ({ data }) => {
                 Datum
               </span>
             </th>
-            <th className='text-left p-0'>
+            <th className='text-left p-0 whitespace-nowrap'>
               <span
                 className={[
                   "block",
@@ -67,7 +67,7 @@ export const DataTable: React.FC<DataTableType> = ({ data }) => {
                 Uhrzeit (ISO)
               </span>
             </th>
-            <th className='text-left p-0'>
+            <th className='text-left p-0 whitespace-nowrap'>
               <span
                 className={[
                   "block",
@@ -91,7 +91,7 @@ export const DataTable: React.FC<DataTableType> = ({ data }) => {
                   i % 2 === 0 ? "bg-white-dot-pattern" : "bg-white",
                 ].join(" ")}
               >
-                <td className='p-0'>
+                <td className='p-0 whitespace-nowrap'>
                   <span
                     className={[
                       "block text-left",
@@ -102,7 +102,7 @@ export const DataTable: React.FC<DataTableType> = ({ data }) => {
                     {record.date.format("DD.MM.YYYY")}
                   </span>
                 </td>
-                <td className='p-0'>
+                <td className='p-0 whitespace-nowrap'>
                   <span
                     className={[
                       "block text-left",
@@ -117,6 +117,7 @@ export const DataTable: React.FC<DataTableType> = ({ data }) => {
                   className={[
                     "h-8 px-4 py-3 border-none",
                     "border-b border-gray-200",
+                    "whitespace-nowrap",
                   ].join(" ")}
                 >
                   {record.value}

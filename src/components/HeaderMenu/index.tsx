@@ -104,7 +104,7 @@ export const HeaderMenu: FC<HeaderMenuPropType> = ({ hasDarkMode = false }) => {
                     className: "lg:hidden",
                   },
                   {
-                    href: `/`,
+                    href: `#`,
                     text: (
                       <span className='inline-flex gap-2 items-center font-bold font-headline'>
                         <ArrowOutOfDoor /> Logout
