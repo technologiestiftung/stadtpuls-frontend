@@ -2,7 +2,7 @@
 
 exports[`Storyshots UI Elements/SmallModal With Dangerous Content 1`] = `
 <div
-  className="max-w-md md:px-0 max-h-[calc(100vh-32px)] overflow-y-auto"
+  className="max-w-md md:px-0 h-full overflow-y-auto"
 >
   <div
     className="bg-white border border-gray-200 shadow p-4 sm:p-8 flex flex-col gap-8 place-content-between"
@@ -50,7 +50,7 @@ exports[`Storyshots UI Elements/SmallModal With Dangerous Content 1`] = `
 
 exports[`Storyshots UI Elements/SmallModal With Footer Content 1`] = `
 <div
-  className="max-w-md md:px-0 max-h-[calc(100vh-32px)] overflow-y-auto"
+  className="max-w-md md:px-0 h-full overflow-y-auto"
 >
   <div
     className="bg-white border border-gray-200 shadow p-4 sm:p-8 flex flex-col gap-8 place-content-between"
@@ -598,7 +598,7 @@ exports[`Storyshots UI Elements/SmallModal With Footer Content 1`] = `
 
 exports[`Storyshots UI Elements/SmallModal Without Footer Content 1`] = `
 <div
-  className="max-w-md md:px-0 max-h-[calc(100vh-32px)] overflow-y-auto"
+  className="max-w-md md:px-0 h-full overflow-y-auto"
 >
   <div
     className="bg-white border border-gray-200 shadow p-4 sm:p-8 flex flex-col gap-8 place-content-between"
