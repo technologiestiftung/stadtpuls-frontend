@@ -12,7 +12,7 @@
     "@tailwindcss/typography": "0.4.1",
     "@turf/turf": "6.3.0",
     "@visx/axis": "1.7.0",
-    "@visx/curve": "1.7.0",
+    "@visx/curve": "2.1.0",
     "@visx/event": "1.7.0",
     "@visx/grid": "1.11.1",
     "@visx/group": "1.7.0",
