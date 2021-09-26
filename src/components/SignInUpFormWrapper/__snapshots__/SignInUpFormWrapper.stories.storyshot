@@ -52,7 +52,7 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signin 1`] = `
         }
       >
         <input
-          className="inline-block font-headline transition text-base sm:text-lg px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
+          className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
           form="signin-form"
           type="submit"
           value="Einloggen"
@@ -116,7 +116,7 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signup 1`] = `
         }
       >
         <input
-          className="inline-block font-headline transition text-base sm:text-lg px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
+          className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
           form="signup-form"
           type="submit"
           value="Registrieren"

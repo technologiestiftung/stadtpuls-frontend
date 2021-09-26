@@ -23,14 +23,14 @@ exports[`Storyshots Forms/ProjectInfoFormWrapper_DEPRECATED Create 1`] = `
       className="flex justify-end"
     >
       <button
-        className="inline-block font-headline transition text-base sm:text-lg px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
+        className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
         onClick={[Function]}
         type="button"
       >
         Abbrechen
       </button>
       <input
-        className="inline-block font-headline transition text-base sm:text-lg px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green ml-4"
+        className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green ml-4"
         form="create-project-form"
         type="submit"
         value="Weiter"
@@ -71,14 +71,14 @@ exports[`Storyshots Forms/ProjectInfoFormWrapper_DEPRECATED Edit 1`] = `
       </button>
       <div>
         <button
-          className="inline-block font-headline transition text-base sm:text-lg px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
+          className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
           onClick={[Function]}
           type="button"
         >
           Abbrechen
         </button>
         <input
-          className="inline-block font-headline transition text-base sm:text-lg px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green ml-4"
+          className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green ml-4"
           form="edit-project-form"
           type="submit"
           value="Speichern"

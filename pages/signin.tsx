@@ -35,7 +35,7 @@ const SigninPage: FC = () => {
   return (
     <div
       className='w-full h-full relative grid place-content-center'
-      style={{ padding: "10vmax 0" }}
+      style={{ padding: "calc(10vmax + 62px) 16px 10vmax" }}
     >
       {isAuthenticating && <SigningInState />}
       {!isAuthenticating && magicLinkWasSent && (

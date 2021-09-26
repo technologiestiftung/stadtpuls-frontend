@@ -110,9 +110,9 @@ const SensorPage: FC<{
   return (
     <>
       <SensorPageHeaderWithData initialSensor={sensor} />
-      <div className='container mx-auto max-w-8xl mb-32'>
+      <div className='container mx-auto max-w-8xl mb-32 px-4'>
         <div>
-          <div className='flex justify-between flex-wrap gap-4 pb-8 px-4'>
+          <div className='flex justify-between flex-wrap gap-4 pb-8'>
             <DeviceLineChartFilters
               startDateTimeString={currentDatetimeRange.startDateTimeString}
               endDateTimeString={currentDatetimeRange.endDateTimeString}
@@ -159,14 +159,14 @@ const SensorPage: FC<{
           </div>
           <div
             className={[
-              "px-4 pt-4 pb-8 mt-6 flex space-between flex-wrap gap-6",
+              "pt-4 pb-8 mt-6 flex space-between flex-wrap gap-6",
               "border-t border-gray-100",
             ].join(" ")}
           >
             <div className={["text-sm text-gray-500"].join(" ")}>
               {numberFormatter.format(records.length)}
               {` von `}
-              {recordsCount ? numberFormatter.format(recordsCount) : "–"}
+              {recordsCount || 0}
               {` Messwerte`}
             </div>
           </div>

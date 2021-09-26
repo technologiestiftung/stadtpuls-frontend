@@ -92,7 +92,10 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
               ttnDeviceId: data.ttnDeviceId as "http" | "ttn",
             })
               .then(() => setShowEditSuccessAlert(true))
-              .finally(() => setEditModalIsOpen(false));
+              .finally(() => {
+                setEditModalIsOpen(false);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              });
           }}
           onDelete={() => setDeletionConfirmationIsOpened(true)}
         />
