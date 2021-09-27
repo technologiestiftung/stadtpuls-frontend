@@ -36,7 +36,11 @@ const AccountTokensPage: FC<AccountTokensPagePropType> = ({ routeAccount }) => {
     <>
       <UserInfoWithData routeAccount={account} activeTab='tokens' />
       {!isOwnerAndLoggedIn && (
-        <div className='container max-w-8xl mx-auto px-4 py-8'>
+        <div
+          className='container max-w-8xl mx-auto px-4 py-8'
+          id='tab-content'
+          role='tabpanel'
+        >
           <Alert
             type='warning'
             title='Du bist nicht eingeloggt!'

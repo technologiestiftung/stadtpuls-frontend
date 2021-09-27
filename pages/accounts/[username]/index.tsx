@@ -43,6 +43,8 @@ const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({
     <>
       <UserInfoWithData routeAccount={routeAccount} activeTab='sensors' />
       <div
+        id='tab-content'
+        role='tabpanel'
         className={[
           "container max-w-8xl mx-auto px-4 pt-8 pb-24 min-h-[500px]",
           sensors.length === 0

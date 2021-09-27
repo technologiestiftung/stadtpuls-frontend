@@ -66,7 +66,7 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
             authorName: finalAccount.displayName,
             authorUsername: finalAccount.username,
           }}
-          title='Neuer Sensor'
+          title='Neuer Sensor hinzufügen'
           onCancel={() => setNewSensorModalIsOpen(false)}
           submitButtonText='Hinzufügen'
           onSubmit={data => {
@@ -144,9 +144,13 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
             }}
           />
           <div className='absolute left-4 bottom-[-1px] z-10'>
-            <Tabs activeTabIndex={activeTabIndex} tabs={tabs} />
+            <Tabs
+              tabPanelId='tab-content'
+              activeTabIndex={activeTabIndex}
+              tabs={tabs}
+            />
           </div>
-          {loggedInAccount && authenticatedUser && (
+          {isOwnerAndLoggedIn && (
             <span className='absolute bottom-0 sm:bottom-2 right-4'>
               <Button
                 variant='primary'
@@ -169,7 +173,10 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
                 onClick={() => {
                   deleteUser()
                     .then(() => router.push("/"))
-                    .finally(() => setEditModalIsOpen(false));
+                    .finally(() => {
+                      setEditModalIsOpen(false);
+                      setDeletionConfirmationIsOpened(false);
+                    });
                 }}
               >
                 Unwiderruflich löschen
