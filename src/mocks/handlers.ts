@@ -19,6 +19,7 @@ import {
 import { categories } from "./supabaseData/categories";
 import { userprofiles } from "./supabaseData/userprofiles";
 import { getSensorRecords } from "./supabaseData/records";
+import { tokens } from "./supabaseData/tokens";
 
 const githubHandlers = [
   rest.get(`https://api.github.com/users/*`, (_req, res, ctx) => {
@@ -138,6 +139,23 @@ const supabaseHandlers = [
       return res(
         ctx.status(201, "Mocked status"),
         ctx.json([{ ...payload, id: 12 }])
+      );
+    }
+  ),
+  rest.get<definitions["auth_tokens"]>(
+    createApiUrl("/auth_tokens"),
+    (req, res, ctx) => {
+      const query = req.url.searchParams;
+
+      const userId = query.get("user_id")?.replace("eq.", "");
+
+      if (!userId) {
+        res(ctx.status(400, "Please provide a valid user ID"));
+      }
+
+      return res(
+        ctx.status(201, "Mocked status"),
+        ctx.json(tokens.filter(token => token.user_id === userId))
       );
     }
   ),
