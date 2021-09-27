@@ -31,7 +31,6 @@ export interface TokenCreationModalPropType {
   tokenDescription: string;
   token: string;
   onClose: () => void;
-  onCloseText?: string;
 }
 
 export const TokenCreationModal: FC<TokenCreationModalPropType> = ({
