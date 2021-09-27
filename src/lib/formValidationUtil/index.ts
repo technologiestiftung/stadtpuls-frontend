@@ -8,6 +8,7 @@ export const requiredEmailValidation = yup
 export const optionalLinkValidation = yup
   .string()
   .url("Die angegebene Url muss gültig sein")
+  .max(100, "Der Name darf maximal 50 Zeichen haben")
   .optional();
 
 export const requiredSensorNameValidation = yup
@@ -22,7 +23,7 @@ export const requiredSensorCategoryValidation = yup
 export const requiredSymbolIdValidation = yup
   .number()
   .min(1, "Ungültiges Symbol")
-  .max(31, "Ungültiges Symbol")
+  .max(32, "Ungültiges Symbol")
   .required("Ungültiges Symbol");
 
 export const requiredLatitude = yup
@@ -39,7 +40,7 @@ export const requiredLongitude = yup
 
 export const optionalDescriptionValidation = yup
   .string()
-  .max(140, "Die Beschreibung darf nicht länger als 140 Zeichen sein")
+  .max(200, "Die Beschreibung darf nicht länger als 200 Zeichen sein")
   .optional();
 
 export const requiredSensorIntegrationValidation = yup
@@ -51,7 +52,7 @@ export const requiredUsernameValidation = yup
   .min(3, "Nutzernamen können 3 bis 20 Zeichen lang sein")
   .max(20, "Nutzernamen können 3 bis 20 Zeichen lang sein")
   .matches(
-    /^[\w_]{3,20}$/gm,
+    /^[a-zA-Z0-9_-]*$/gm,
     "Nutzernamen dürfen nur Buchstaben, Zahlen und _ enthalten"
   )
   .required("Sie müssen einen Nutzernamen angeben");
@@ -71,12 +72,6 @@ export const requiredTTNDeviceIDValidation = yup.string().when("integration", {
     .required("Device-ID ist erforderlich"),
   otherwise: yup.string().optional(),
 });
-
-export const requiredDeviceName = yup
-  .string()
-  .min(3, "Min. 3 Zeichen")
-  .max(20, "Max. 50 Zeichen")
-  .required("Geräte-ID ist erforderlich");
 
 export const requiredTokenDescriptionValidation = yup
   .string()
