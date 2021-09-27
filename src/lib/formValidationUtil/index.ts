@@ -67,3 +67,9 @@ export const requiredDeviceName = yup
   .min(3, "Min. 3 Zeichen")
   .max(20, "Max. 50 Zeichen")
   .required("Geräte-ID ist erforderlich");
+
+export const requiredTokenDescriptionValidation = yup
+  .string()
+  .min(3, "Token-Beschreibung muss mindestens 3 Zeichen haben")
+  .max(200, "Token-Beschreibung darf maximal 200 Zeichen haben")
+  .required("Eine Token-Beschreibung ist erforderlich");

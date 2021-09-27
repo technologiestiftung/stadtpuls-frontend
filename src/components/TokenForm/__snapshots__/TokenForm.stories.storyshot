@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI Elements/TokenForm Default 1`] = `
+<form
+  className="grid md:grid-cols-[1fr,auto] gap-4 py-6"
+  noValidate={true}
+  onSubmit={[Function]}
+>
+  <fieldset
+    className="w-full"
+  >
+    <div
+      className="mb-0"
+    >
+      <input
+        className=" mb-1"
+        id="tokenDescription"
+        name="tokenDescription"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Beschreibe dein neues Token"
+        type="text"
+      />
+    </div>
+  </fieldset>
+  <button
+    className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
+    type="button"
+    variant="primary"
+  >
+    Neues Token anlegen
+  </button>
+</form>
+`;
