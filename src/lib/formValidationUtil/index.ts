@@ -47,7 +47,7 @@ export const requiredUsernameValidation = yup
   .min(3, "Nutzernamen können 3 bis 20 Zeichen lang sein")
   .max(20, "Nutzernamen können 3 bis 20 Zeichen lang sein")
   .matches(
-    /^[\w_]{3,20}$/gm,
+    /^[a-zA-Z0-9_-]*$/gm,
     "Nutzernamen dürfen nur Buchstaben, Zahlen und _ enthalten"
   )
   .required("Sie müssen einen Nutzernamen angeben");

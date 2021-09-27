@@ -2,10 +2,17 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { SignupForm } from ".";
 
 describe("component SignupForm", () => {
+  it("should render an username input", () => {
+    render(<SignupForm />);
+    const usernameLabel = screen.getByText(/Nutzername/i);
+    const usernameInput = screen.getByRole("textbox", { name: /Nutzername/i });
+    expect(usernameLabel).toBeInTheDocument();
+    expect(usernameInput).toBeInTheDocument();
+  });
   it("should render an email input", () => {
     render(<SignupForm />);
     const emailLabel = screen.getByText(/E-Mail/i);
-    const emailInput = screen.getByRole("textbox");
+    const emailInput = screen.getByRole("textbox", { name: /E-Mail/i });
     expect(emailLabel).toBeInTheDocument();
     expect(emailInput).toBeInTheDocument();
   });
@@ -24,9 +31,15 @@ describe("component SignupForm", () => {
   it("should call the onSubmit handler on submit", async (): Promise<void> => {
     const mySubmit = jest.fn();
     render(<SignupForm onSubmit={mySubmit} />);
-    const emailInput = screen.getByRole("textbox");
+    const usernameInput = screen.getByRole("textbox", { name: /Nutzername/i });
+    const emailInput = screen.getByRole("textbox", { name: /E-Mail/i });
     const conditionsCheckbox = screen.getByRole("checkbox");
     const submitButton = screen.getByRole("button");
+    fireEvent.change(usernameInput, {
+      target: {
+        value: "example",
+      },
+    });
     fireEvent.change(emailInput, {
       target: {
         value: "contact@example.com",
@@ -36,6 +49,7 @@ describe("component SignupForm", () => {
     fireEvent.click(submitButton);
     await waitFor(() =>
       expect(mySubmit).toHaveBeenCalledWith({
+        username: "example",
         email: "contact@example.com",
         areConditionsAccepted: true,
       })

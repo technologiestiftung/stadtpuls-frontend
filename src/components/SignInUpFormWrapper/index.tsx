@@ -68,7 +68,12 @@ export const SignInUpFormWrapper: FC<SignInUpFormWrapperPropType> = ({
         </>
       }
     >
-      <form noValidate {...formProps} id={formId}>
+      <form
+        noValidate
+        {...formProps}
+        id={formId}
+        className='flex flex-col gap-2'
+      >
         {children}
       </form>
     </SmallModal>

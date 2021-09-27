@@ -6,14 +6,19 @@ import { TextLink } from "@components/TextLink";
 import { FormTextInput } from "@components/FormTextInput";
 import { FormCheckbox } from "@components/FormCheckbox";
 import { SignInUpFormWrapper } from "@components/SignInUpFormWrapper";
-import { requiredEmailValidation } from "@lib/formValidationUtil";
+import {
+  requiredEmailValidation,
+  requiredUsernameValidation,
+} from "@lib/formValidationUtil";
 
 interface SignupFormData {
+  username: string;
   email: string;
   areConditionsAccepted?: boolean;
 }
 
 const formSchema = yup.object().shape({
+  username: requiredUsernameValidation,
   email: requiredEmailValidation,
   areConditionsAccepted: yup
     .string()
@@ -42,6 +47,20 @@ export const SignupForm: FC<{
 
   return (
     <SignInUpFormWrapper onSubmit={onInternalSubmit} type='up'>
+      <Controller
+        name='username'
+        control={control}
+        defaultValue=''
+        render={({ field }) => (
+          <FormTextInput
+            {...field}
+            label='Nutzername'
+            placeholder='Dein einzigartigen Nutzername...'
+            type='text'
+            errors={formatError(errors.username?.message)}
+          />
+        )}
+      />
       <Controller
         name='email'
         control={control}
