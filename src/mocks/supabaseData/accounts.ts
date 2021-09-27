@@ -1,4 +1,7 @@
-import { AccountQueryResponseType } from "@lib/hooks/usePublicAccounts";
+import {
+  AccountQueryResponseType,
+  mapPublicAccount,
+} from "@lib/hooks/usePublicAccounts";
 import { ttnSensors, httpSensors } from "./sensors";
 import { userprofiles } from "./userprofiles";
 
@@ -34,3 +37,5 @@ export const publicAccounts: AccountQueryResponseType[] = [
     user: userprofiles[0],
   },
 ];
+
+export const parsedAccounts = publicAccounts.map(mapPublicAccount);
