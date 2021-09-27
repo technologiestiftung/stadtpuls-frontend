@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Layout/Header Logged In 1`] = `
+exports[`Storyshots Layout/Header Default 1`] = `
 <header
   className="w-full z-50 fixed top-0 border-t-0"
 >
   <nav
-    className="w-full border transition border-t-0 flex place-content-between true bg-black-dot-pattern border-purple text-white"
+    className="w-full border transition border-t-0 flex place-content-between container mx-auto max-w-8xl bg-black-dot-pattern border-purple text-white"
   >
     <a
       className="w-max flex items-center p-4 sm:border-r transition focus-offset border-purple"
@@ -18,11 +18,11 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
       />
     </a>
     <section
-      className="flex gap-4 sm:gap-8 items-center pr-4"
+      className="flex flex-row-reverse lg:flex-row gap-4 sm:gap-8 items-center pr-4"
     >
       <div>
         <button
-          className="sm:hidden focus-offset relative z-0"
+          className="lg:hidden focus-offset relative z-0"
           onClick={[Function]}
         >
           <svg
@@ -37,7 +37,7 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
           </svg>
         </button>
         <nav
-          className="fixed sm:static sm:top-auto left-0 sm:left-auto z-20 sm:z-auto w-full sm:w-auto shadow sm:shadow-none sm:py-4 sm:px-1 sm:p-0 sm:bg-opacity-0 bg-black transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
+          className="fixed lg:static lg:top-auto left-1/2 lg:left-auto transform -translate-x-1/2 lg:translate-x-0 sm:border-r lg:border-r-0 sm:border-l lg:border-l-0 z-20 lg:z-auto w-full lg:w-auto shadow lg:shadow-none container max-w-8xl mx-auto lg:py-4 lg:px-1 lg:p-0 lg:bg-opacity-0 bg-black transition opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto"
           style={
             Object {
               "top": 62,
@@ -45,13 +45,13 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
           }
         >
           <ul
-            className="h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4"
+            className="h-full lg:w-auto lg:flex lg:gap-8 lg:mr-4"
           >
             <li
-              className="sm:hidden sm:inline-block text-xl sm:text-base"
+              className="lg:hidden text-xl lg:text-base"
             >
               <a
-                className="navigation-link-active navigation-link p-4 block sm:inline focus-offset"
+                className="navigation-link-active navigation-link p-4 block lg:inline focus-offset"
                 href="/"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -60,10 +60,22 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
               </a>
             </li>
             <li
-              className=" sm:inline-block text-xl sm:text-base"
+              className=" text-xl lg:text-base"
             >
               <a
-                className="navigation-link p-4 block sm:inline focus-offset"
+                className="navigation-link p-4 block lg:inline focus-offset"
+                href="/accounts"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Accounts
+              </a>
+            </li>
+            <li
+              className=" text-xl lg:text-base"
+            >
+              <a
+                className="navigation-link p-4 block lg:inline focus-offset"
                 href="/sensors"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -72,10 +84,10 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
               </a>
             </li>
             <li
-              className=" sm:inline-block text-xl sm:text-base"
+              className=" text-xl lg:text-base"
             >
               <a
-                className="navigation-link p-4 block sm:inline focus-offset"
+                className="navigation-link p-4 block lg:inline focus-offset"
                 href="/docs"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -87,210 +99,27 @@ exports[`Storyshots Layout/Header Logged In 1`] = `
         </nav>
       </div>
       <span
-        className="group"
+        className="inline-flex items-center gap-6"
       >
         <a
-          className="focus-offset"
+          className="inline-flex text gap-2 transition items-center font-headline font-semibold group-hover:text-green"
           href="/signin"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <svg
-            aria-hidden={true}
-            className="MuiSvgIcon-root icon transform -translate-y-0.5 transition inline-block align-middle mr-1 group-hover:text-green"
-            focusable="false"
-            viewBox="0 0 24 24"
+            height="16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+              d="M15 0a1 1 0 0 1 1 1v11.14a1 1 0 0 1-.505.87l-5.013 2.859A1 1 0 0 1 8.987 15l-.001-2H5.199l2-2h1.787V5.179a1 1 0 0 1 .449-.834L12.977 2H7v2.8L5.004 2.806V1a1 1 0 0 1 1-1H15Zm-1 3.721-3.014 1.994v7.563L14 11.559V3.721ZM3 3l5 5-5 5-1.41-1.41L4.17 9H0V7h4.17L1.59 4.41 3 3Z"
+              fill="currentColor"
             />
           </svg>
-          <span
-            className="text inline-block ml-1 transition hidden sm:inline-block font-headline font-bold group-hover:text-green"
-          >
-            Anmeldung
-          </span>
+          Login
         </a>
       </span>
-      <a
-        aria-label="Website des CityLAB Berlin"
-        className="focus-offset"
-        href="https://www.citylab-berlin.org"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <svg
-          height="36"
-          viewBox="0 0 32 36"
-          width="32"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            fill="none"
-          >
-            <polygon
-              fill="#0000C2"
-              points="19.943 25.588 14.118 22.185 14.229 6.974 26.121 0 31.765 3.309 31.742 18.616"
-            />
-            <polygon
-              fill="#46ECA1"
-              points="14.118 4.834 12.236 5.954 12.187 12.763 5.51 16.738 5.422 29.118 0 25.903 .11 10.563 11.925 3.529"
-            />
-            <polygon
-              fill="#8330FF"
-              points="12.548 14.118 12.486 22.689 19.669 26.937 24.706 23.924 24.699 29.111 12.889 36.176 7.059 32.728 7.17 17.312"
-            />
-          </g>
-        </svg>
-      </a>
-    </section>
-  </nav>
-</header>
-`;
-
-exports[`Storyshots Layout/Header Logged Out 1`] = `
-<header
-  className="w-full z-50 fixed top-0 border-t-0"
->
-  <nav
-    className="w-full border transition border-t-0 flex place-content-between true bg-black-dot-pattern border-purple text-white"
-  >
-    <a
-      className="w-max flex items-center p-4 sm:border-r transition focus-offset border-purple"
-      href="/"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <span
-        role="img"
-      />
-    </a>
-    <section
-      className="flex gap-4 sm:gap-8 items-center pr-4"
-    >
-      <div>
-        <button
-          className="sm:hidden focus-offset relative z-0"
-          onClick={[Function]}
-        >
-          <svg
-            aria-hidden={true}
-            className="MuiSvgIcon-root"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-            />
-          </svg>
-        </button>
-        <nav
-          className="fixed sm:static sm:top-auto left-0 sm:left-auto z-20 sm:z-auto w-full sm:w-auto shadow sm:shadow-none sm:py-4 sm:px-1 sm:p-0 sm:bg-opacity-0 bg-black transition opacity-0 pointer-events-none sm:opacity-100 sm:pointer-events-auto"
-          style={
-            Object {
-              "top": 62,
-            }
-          }
-        >
-          <ul
-            className="h-full sm:w-auto sm:flex sm:gap-8 sm:mr-4"
-          >
-            <li
-              className="sm:hidden sm:inline-block text-xl sm:text-base"
-            >
-              <a
-                className="navigation-link-active navigation-link p-4 block sm:inline focus-offset"
-                href="/"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-              >
-                Startseite
-              </a>
-            </li>
-            <li
-              className=" sm:inline-block text-xl sm:text-base"
-            >
-              <a
-                className="navigation-link p-4 block sm:inline focus-offset"
-                href="/sensors"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-              >
-                Sensoren
-              </a>
-            </li>
-            <li
-              className=" sm:inline-block text-xl sm:text-base"
-            >
-              <a
-                className="navigation-link p-4 block sm:inline focus-offset"
-                href="/docs"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-              >
-                Dokumentation
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <span
-        className="group"
-      >
-        <a
-          className="focus-offset"
-          href="/signin"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          <svg
-            aria-hidden={true}
-            className="MuiSvgIcon-root icon transform -translate-y-0.5 transition inline-block align-middle mr-1 group-hover:text-green"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-            />
-          </svg>
-          <span
-            className="text inline-block ml-1 transition hidden sm:inline-block font-headline font-bold group-hover:text-green"
-          >
-            Anmeldung
-          </span>
-        </a>
-      </span>
-      <a
-        aria-label="Website des CityLAB Berlin"
-        className="focus-offset"
-        href="https://www.citylab-berlin.org"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <svg
-          height="36"
-          viewBox="0 0 32 36"
-          width="32"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            fill="none"
-          >
-            <polygon
-              fill="#0000C2"
-              points="19.943 25.588 14.118 22.185 14.229 6.974 26.121 0 31.765 3.309 31.742 18.616"
-            />
-            <polygon
-              fill="#46ECA1"
-              points="14.118 4.834 12.236 5.954 12.187 12.763 5.51 16.738 5.422 29.118 0 25.903 .11 10.563 11.925 3.529"
-            />
-            <polygon
-              fill="#8330FF"
-              points="12.548 14.118 12.486 22.689 19.669 26.937 24.706 23.924 24.699 29.111 12.889 36.176 7.059 32.728 7.17 17.312"
-            />
-          </g>
-        </svg>
-      </a>
     </section>
   </nav>
 </header>

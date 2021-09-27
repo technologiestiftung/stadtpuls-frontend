@@ -95,9 +95,11 @@ export const AccountCard: FC<AccountCardPropType> = ({
             </div>
           </div>
         </div>
-        <div className='flex flex-col-reverse gap-3 flex-grow-0 text-gray-500 group-hover:animate-textpulse'>
+        <div className='flex flex-col-reverse flex-grow-0 text-gray-500 group-hover:animate-textpulse'>
           {categories.slice(0, 4).map(id => (
-            <CategoryIcon key={id} categoryId={id} />
+            <span className='mt-3' key={id}>
+              <CategoryIcon categoryId={id} />
+            </span>
           ))}
           {categories.length > 4 && (
             <span className='text-xs font-bold'>+{categories.length - 4}</span>

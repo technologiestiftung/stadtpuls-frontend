@@ -33,7 +33,7 @@ const createTestComponent = (
           const token = await createToken("test");
           onTokenCreationSuccess(token);
         } catch (err) {
-          onTokenCreationFail(new Error(err).message);
+          onTokenCreationFail(new Error(err as string).message);
         }
       };
       void localCreateToken();

@@ -58,7 +58,10 @@ exports[`Storyshots Forms/FormTextarea With Label 1`] = `
     className="block mb-2 cursor-pointer transition hover:opacity-60"
     htmlFor="Textarea with label-textarea"
   >
-    Some label
+    <span>
+      Some label
+    </span>
+     
   </label>
   <textarea
     className="mb-2 h-32 "

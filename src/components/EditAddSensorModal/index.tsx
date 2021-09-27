@@ -1,4 +1,3 @@
-import { definitions } from "@common/types/supabase";
 import { Button, Submit } from "@components/Button";
 import * as yup from "yup";
 import { FormTextInput } from "@components/FormTextInput";
@@ -11,7 +10,7 @@ import {
   requiredLongitude,
   requiredSensorCategoryValidation,
   requiredSensorIntegrationValidation,
-  requiredSensorDescriptionValidation,
+  optionalDescriptionValidation,
   requiredTTNDeviceIDValidation,
 } from "@lib/formValidationUtil";
 import React, { FC, useEffect, useCallback, useState } from "react";
@@ -25,21 +24,28 @@ import { QuestionMarkTooltip } from "@components/QuestionMarkTooltip";
 import { SensorSymbol } from "@components/SensorSymbol";
 import { InteractiveMapProps } from "react-map-gl/src/components/interactive-map";
 import GrabbingHandIcon from "../../../public/images/icons/16px/grabbingHand.svg";
+import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 
-interface SubmitDataType {
-  name: string;
-  symbolId: number;
-  description: string;
-  categoryId: definitions["categories"]["id"];
-  latitude: number;
-  longitude: number;
-  integration: "http" | "ttn";
-  ttnDeviceId: string | undefined;
-}
+type FormDataType = Pick<
+  ParsedSensorType,
+  | "name"
+  | "symbolId"
+  | "description"
+  | "categoryId"
+  | "latitude"
+  | "longitude"
+  | "connectionType"
+  | "ttnDeviceId"
+>;
 
+type SubmitDataType = Omit<
+  ParsedSensorType,
+  "id" | "parsedRecords" | "createdAt"
+>;
 export interface EditAddSensorModalPropType {
   title: string;
-  defaultValues?: Partial<SubmitDataType>;
+  author: Pick<ParsedSensorType, "authorId" | "authorName" | "authorUsername">;
+  defaultValues?: FormDataType;
   onSubmit?: (sensorData: SubmitDataType) => void;
   submitButtonText?: string;
   onCancel?: () => void;
@@ -54,8 +60,8 @@ const formSchema = yup.object().shape({
   latitude: requiredLatitude,
   longitude: requiredLongitude,
   categoryId: requiredSensorCategoryValidation,
-  description: requiredSensorDescriptionValidation,
-  integration: requiredSensorIntegrationValidation,
+  description: optionalDescriptionValidation,
+  connectionType: requiredSensorIntegrationValidation,
   ttnDeviceId: requiredTTNDeviceIDValidation,
 });
 
@@ -64,6 +70,7 @@ const DEFAULT_LNG = 13.39;
 
 export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
   title,
+  author,
   defaultValues = {},
   onSubmit = () => undefined,
   onCancel = () => undefined,
@@ -77,18 +84,21 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
     setValue,
     handleSubmit,
     formState: { errors, dirtyFields },
-  } = useForm<SubmitDataType>({
+  } = useForm<FormDataType>({
     resolver: yupResolver(formSchema),
   });
-  const isDirty = Object.values(dirtyFields).length > 0;
-  const [integration, setIntegration] = useState(
-    defaultValues.integration || "http"
+  const [connectionType, setConnectionType] = useState(
+    defaultValues.connectionType || "http"
   );
   const [viewport, setViewport] = useState<Partial<InteractiveMapProps>>({
     latitude: defaultValues?.latitude || DEFAULT_LAT,
     longitude: defaultValues?.longitude || DEFAULT_LNG,
     zoom: 12,
   });
+  const isDirty =
+    Object.values(dirtyFields).length > 0 ||
+    viewport.latitude !== defaultValues?.latitude ||
+    viewport.longitude !== defaultValues?.longitude;
   const {
     categories,
     isLoading: isLoadingCategories,
@@ -122,13 +132,13 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
 
   useEffect(() => {
     if (
-      defaultValues.integration &&
-      defaultValues.integration !== integration
+      defaultValues.connectionType &&
+      defaultValues.connectionType !== connectionType
     ) {
-      setIntegration(defaultValues.integration);
+      setConnectionType(defaultValues.connectionType);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [defaultValues.integration]);
+  }, [defaultValues.connectionType]);
 
   return (
     <SmallModalOverlay
@@ -138,12 +148,20 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
     >
       <form
         noValidate
-        onSubmit={handleSubmit(data =>
+        onSubmit={handleSubmit(data => {
+          if (!categories) return;
+          const category =
+            categories.find(
+              ({ id }) => String(id) === String(data.categoryId)
+            ) || categories[0];
           onSubmit({
+            ...defaultValues,
+            ...author,
             ...data,
             categoryId: parseInt(`${data.categoryId}`, 10),
-          })
-        )}
+            categoryName: category.name,
+          });
+        })}
         className='flex flex-col gap-2 sm:gap-4'
       >
         <fieldset className='xs:grid xs:grid-cols-12 gap-4'>
@@ -193,6 +211,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
           render={({ field }) => (
             <FormTextarea
               {...field}
+              optional
               label='Beschreibung'
               placeholder='Beschreibe kurz den Sensor'
               errors={formatError(errors.description?.message)}
@@ -230,15 +249,15 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
           />
           <div className='flex flex-col gap-2'>
             <Controller
-              name='integration'
+              name='connectionType'
               control={control}
-              defaultValue={defaultValues?.integration || integration}
+              defaultValue={defaultValues?.connectionType || connectionType}
               render={({ field }) => (
                 <FormListBox
                   {...field}
                   onChange={newValue => {
                     field.onChange(newValue);
-                    setIntegration(newValue as "http" | "ttn");
+                    setConnectionType(newValue as "http" | "ttn");
                   }}
                   label='Integration'
                   placeholder='Wie möchtest du deinen Sensor integrieren?'
@@ -246,11 +265,11 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
                     { name: "HTTP", value: "http" },
                     { name: "TTN", value: "ttn" },
                   ]}
-                  errors={formatError(errors.integration?.message)}
+                  errors={formatError(errors.connectionType?.message)}
                 />
               )}
             />
-            {integration === "ttn" && (
+            {connectionType === "ttn" && (
               <Controller
                 name='ttnDeviceId'
                 control={control}

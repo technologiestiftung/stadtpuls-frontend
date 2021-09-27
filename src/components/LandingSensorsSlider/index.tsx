@@ -4,12 +4,12 @@ import SwiperClass from "swiper/types/swiper-class";
 import styles from "./LandingSensorsSlider.module.css";
 
 import "swiper/swiper-bundle.css";
-import { PublicSensorType } from "@lib/hooks/usePublicSensors";
+import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 import { SensorCard } from "@components/SensorCard";
 
 interface LandingSensorsSliderPropType {
-  sensors: PublicSensorType[];
+  sensors: ParsedSensorType[];
   initialSlideIndex?: number;
   onSlideChange?: (slideIndex: number) => void;
 }

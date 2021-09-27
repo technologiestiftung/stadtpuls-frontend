@@ -7,8 +7,8 @@ const BerlinLogo = "/images/berlin-logo.svg";
 export const Footer: React.FC = () => {
   return (
     <footer>
-      <section className='bg-white border-t border-gray-200'>
-        <div className='max-w-screen-2xl mx-auto p-8'>
+      <section className='bg-white border-t border-gray-100'>
+        <div className='container max-w-8xl mx-auto py-8 px-4'>
           <div className='w-full flex'>
             <div className='block'>
               <span className='w-full block text-xs text-gray-700'>
@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
         </div>
       </section>
       <section className='bg-white-dot-pattern'>
-        <div className='max-w-screen-2xl mx-auto px-8 py-6 block sm:flex justify-between'>
+        <div className='container max-w-8xl mx-auto px-4 py-6 block sm:flex justify-between'>
           <div className='flex items-center'>
             <p className='text-sm text-gray-700'>
               &copy; {new Date().getFullYear()} Technologiestiftung Berlin

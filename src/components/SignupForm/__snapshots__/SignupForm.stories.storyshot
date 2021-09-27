@@ -2,7 +2,7 @@
 
 exports[`Storyshots Forms/Signup Default 1`] = `
 <div
-  className="max-w-md md:px-0 max-h-[calc(100vh-32px)] overflow-y-auto"
+  className="max-w-md md:px-0 h-full overflow-y-auto"
 >
   <div
     className="bg-white border border-gray-200 shadow p-4 sm:p-8 flex flex-col gap-8 place-content-between"
@@ -101,7 +101,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
         }
       >
         <input
-          className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
+          className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
           form="signup-form"
           type="submit"
           value="Registrieren"

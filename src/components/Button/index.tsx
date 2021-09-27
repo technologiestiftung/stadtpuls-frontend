@@ -31,7 +31,12 @@ const getButtonStyles = ({
   isOnDark?: boolean;
   className?: string;
 }): string => {
-  const classes = ["inline-block text-lg px-4 py-2 font-headline transition"];
+  const classes = [
+    "inline-block font-headline transition",
+    "text-base sm:text-lg rounded-none",
+    "px-3 sm:px-4",
+    "py-1.5 sm:py-2",
+  ];
   if (disabled) {
     classes.push("cursor-default");
     switch (variant) {

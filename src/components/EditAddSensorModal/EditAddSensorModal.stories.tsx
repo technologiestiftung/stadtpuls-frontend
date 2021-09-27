@@ -26,6 +26,11 @@ const Template: Story<EditAddSensorModalPropType> = args => (
 export const WithoutDefaultValues = Template.bind({});
 WithoutDefaultValues.args = {
   title: "Add sensor",
+  author: {
+    authorId: "123",
+    authorUsername: "test",
+    authorName: "Jana Van Test",
+  },
   onSubmit: action("Form data submited"),
   onCancel: action("Form cancelled"),
   onDelete: (false as unknown) as () => void,
@@ -34,6 +39,11 @@ WithoutDefaultValues.args = {
 export const WithDefaultValues = Template.bind({});
 WithDefaultValues.args = {
   title: "Edit sensor",
+  author: {
+    authorId: "123",
+    authorUsername: "test",
+    authorName: "Jana Van Test",
+  },
   defaultValues: {
     name: "A title",
     symbolId: 1,
@@ -41,7 +51,7 @@ WithDefaultValues.args = {
     description: "A description",
     latitude: 48.8586383,
     longitude: 2.2946208,
-    integration: "ttn",
+    connectionType: "ttn",
     ttnDeviceId: "lorawan-rapsbi-123",
   },
   onSubmit: action("Form data submited"),

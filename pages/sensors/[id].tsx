@@ -6,7 +6,7 @@ import { LineChart } from "@components/LineChart";
 import { TextLink } from "@components/TextLink";
 import { createDateValueArray } from "@lib/dateUtil";
 import { createCSVStructure, downloadCSV } from "@lib/downloadCsvUtil";
-import { PublicSensorType } from "@lib/hooks/usePublicSensors";
+import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { useSensorLastRecordDate } from "@lib/hooks/useSensorLastRecordDate";
 import { useSensorRecords } from "@lib/hooks/useSensorRecords";
 import { useSensorRecordsCount } from "@lib/hooks/useSensorRecordsCount";
@@ -29,8 +29,8 @@ export const getServerSideProps: GetServerSideProps = async context => {
     const sensorId = context.query.id;
     if (!sensorId || Array.isArray(sensorId)) return { notFound: true };
 
-    const sensorData = await getSensorData(parseInt(sensorId, 10));
-    return { props: { sensor: { ...sensorData, id: sensorId }, error: null } };
+    const sensor = await getSensorData(parseInt(sensorId, 10));
+    return { props: { sensor, error: null } };
   } catch (error) {
     return { notFound: true };
   }
@@ -65,7 +65,7 @@ const getCategoryUnit = (
 };
 
 const SensorPage: FC<{
-  sensor: PublicSensorType;
+  sensor: ParsedSensorType;
 }> = ({ sensor }) => {
   const [chartWidth, setChartWidth] = useState<number | undefined>(undefined);
   const [chartHeight, setChartHeight] = useState<number | undefined>(undefined);
@@ -110,9 +110,9 @@ const SensorPage: FC<{
   return (
     <>
       <SensorPageHeaderWithData initialSensor={sensor} />
-      <div className='container mx-auto max-w-8xl mb-32'>
+      <div className='container mx-auto max-w-8xl mb-32 px-4'>
         <div>
-          <div className='flex justify-between flex-wrap gap-4 pb-8 px-4'>
+          <div className='flex justify-between flex-wrap gap-4 pb-8'>
             <DeviceLineChartFilters
               startDateTimeString={currentDatetimeRange.startDateTimeString}
               endDateTimeString={currentDatetimeRange.endDateTimeString}
@@ -159,14 +159,14 @@ const SensorPage: FC<{
           </div>
           <div
             className={[
-              "px-4 pt-4 pb-8 mt-6 flex space-between flex-wrap gap-6",
+              "pt-4 pb-8 mt-6 flex space-between flex-wrap gap-6",
               "border-t border-gray-100",
             ].join(" ")}
           >
             <div className={["text-sm text-gray-500"].join(" ")}>
               {numberFormatter.format(records.length)}
               {` von `}
-              {recordsCount ? numberFormatter.format(recordsCount) : "–"}
+              {recordsCount || 0}
               {` Messwerte`}
             </div>
           </div>
@@ -180,7 +180,7 @@ const SensorPage: FC<{
             <LineChart
               width={chartWidth || 1200}
               height={chartHeight || 400}
-              yAxisUnit={getCategoryUnit(sensor.category?.name)}
+              yAxisUnit={getCategoryUnit(sensor.categoryName)}
               xAxisUnit='Messdatum'
               data={parsedAndSortedRecords.map(({ id, date, value }) => ({
                 id,

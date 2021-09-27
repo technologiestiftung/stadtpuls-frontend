@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { StadtpulsLogo } from "@components/StadtpulsLogo";
-import { CityLABLogoSymbol } from "@components/CityLABLogoSymbol";
 import { AuthLink } from "@components/AuthLink";
 import { HeaderMenu } from "@components/HeaderMenu";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { useUserData } from "@lib/hooks/useUserData";
 
 const SCROLL_THRESHOLD = 100;
 
 export const Header: React.FC = () => {
   const { pathname } = useRouter();
+  const { user } = useUserData();
   const [hasScrolled, setHasScrolled] = useState<boolean>(false);
   const hasDarkMode = pathname === "/" && !hasScrolled;
 
@@ -33,10 +34,7 @@ export const Header: React.FC = () => {
         className={[
           "w-full border transition border-t-0",
           "flex place-content-between",
-          pathname === "/" ||
-            (pathname &&
-              pathname.startsWith("/sensors/") &&
-              "container mx-auto max-w-8xl"),
+          !pathname?.startsWith("/docs") && "container mx-auto max-w-8xl",
           hasDarkMode
             ? ["bg-black-dot-pattern border-purple text-white"]
             : ["bg-white border-gray-100 shadow text-blue"],
@@ -55,10 +53,9 @@ export const Header: React.FC = () => {
               .join(" ")}
           />
         </Link>
-        <section className='flex gap-4 sm:gap-8 items-center pr-4'>
+        <section className='flex flex-row-reverse lg:flex-row gap-4 sm:gap-8 items-center pr-4'>
           <HeaderMenu hasDarkMode={hasDarkMode} />
-          <AuthLink />
-          <CityLABLogoSymbol />
+          <AuthLink loggedInUserName={user?.username} />
         </section>
       </nav>
     </header>

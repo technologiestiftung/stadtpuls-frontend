@@ -31,7 +31,7 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
 
   return (
     <>
-      <div className='sm:grid sm:grid-cols-12'>
+      <div className='sm:grid sm:grid-cols-12 pt-[62px]'>
         <DocsSidebar isOpened={isOpened} />
         <article className='col-span-8 lg:col-span-7 xl:col-span-7'>
           <Head>

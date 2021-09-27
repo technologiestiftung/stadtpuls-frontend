@@ -16,7 +16,7 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
     }
   >
     <div
-      className="sm:w-2/3 transition group-hover:animate-textpulse px-4 pb-3 pt-36 sm:px-5 sm:py-4 md:px-8 md:py-7 relative z-10"
+      className="lg:w-2/3 transition group-hover:animate-textpulse px-4 pb-3 pt-36 lg:px-5 lg:py-4 relative z-10"
     >
       <div
         className="grid grid-cols-[24px,1fr] gap-3"
@@ -30,7 +30,7 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 sm:leading-7 sm:text-2xl sm:pt-0 md:leading-8 md:text-3xl font-headline font-bold inline"
+          className="text-xl leading-6 pt-1 lg:leading-7 lg:text-2xl lg:pt-0 font-headline font-bold inline"
         >
           When Array is given multiple arguments
         </h3>
@@ -595,7 +595,7 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
     }
   >
     <div
-      className="sm:w-2/3 transition group-hover:animate-textpulse px-4 pb-3 pt-36 sm:px-5 sm:py-4 md:px-8 md:py-7 relative z-10"
+      className="lg:w-2/3 transition group-hover:animate-textpulse px-4 pb-3 pt-36 lg:px-5 lg:py-4 relative z-10"
     >
       <div
         className="grid grid-cols-[24px,1fr] gap-3"
@@ -609,7 +609,7 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 sm:leading-7 sm:text-2xl sm:pt-0 md:leading-8 md:text-3xl font-headline font-bold inline"
+          className="text-xl leading-6 pt-1 lg:leading-7 lg:text-2xl lg:pt-0 font-headline font-bold inline"
         >
           AOL
         </h3>
@@ -638,7 +638,516 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
         
         <p
           className="mt-4 mb-2 flex gap-2 flex-wrap"
-        />
+        >
+          <span
+            className="inline-block truncate"
+            style={
+              Object {
+                "maxWidth": "calc(100vw - 64px)",
+              }
+            }
+          >
+            <span
+              className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+              role="img"
+              style={
+                Object {
+                  "height": 21,
+                  "width": 21,
+                }
+              }
+            >
+              <svg
+                colors={
+                  Array [
+                    "#F9FCFD",
+                    "#0000C2",
+                    "#0000C2",
+                    "#0000C2",
+                    "#100C53",
+                    "#46ECA1",
+                    "#46ECA1",
+                    "#46ECA1",
+                    "#8330FF",
+                    "#8330FF",
+                    "#8330FF",
+                    "#F2F3F8",
+                    "#E7EAF2",
+                    "#CFD0DC",
+                    "#B4B4C7",
+                    "#9695AE",
+                    "#787696",
+                    "#636188",
+                    "#4A4878",
+                    "#332F66",
+                    "#1E1A5A",
+                  ]
+                }
+                fill="none"
+                height={20}
+                name="Atahualpa Yupanqui De la Vega Van Hilde"
+                size={20}
+                viewBox="0 0 80 80"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <mask
+                  height={80}
+                  id="mask0"
+                  mask-type="alpha"
+                  maskUnits="userSpaceOnUse"
+                  width={80}
+                  x={0}
+                  y={0}
+                >
+                  <circle
+                    cx={40}
+                    cy={40}
+                    fill="white"
+                    r={40}
+                  />
+                </mask>
+                <g
+                  mask="url(#mask0)"
+                >
+                  <rect
+                    fill="#8330FF"
+                    height={10}
+                    width={10}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={20}
+                  />
+                  <rect
+                    fill="#8330FF"
+                    height={10}
+                    width={10}
+                    x={40}
+                  />
+                  <rect
+                    fill="#0000C2"
+                    height={10}
+                    width={10}
+                    x={60}
+                  />
+                  <rect
+                    fill="#0000C2"
+                    height={10}
+                    width={10}
+                    x={10}
+                  />
+                  <rect
+                    fill="#CFD0DC"
+                    height={10}
+                    width={10}
+                    x={30}
+                  />
+                  <rect
+                    fill="#8330FF"
+                    height={10}
+                    width={10}
+                    x={50}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={70}
+                  />
+                  <rect
+                    fill="#332F66"
+                    height={10}
+                    width={10}
+                    y={10}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    y={20}
+                  />
+                  <rect
+                    fill="#8330FF"
+                    height={10}
+                    width={10}
+                    y={30}
+                  />
+                  <rect
+                    fill="#0000C2"
+                    height={10}
+                    width={10}
+                    y={40}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    y={50}
+                  />
+                  <rect
+                    fill="#F9FCFD"
+                    height={10}
+                    width={10}
+                    y={60}
+                  />
+                  <rect
+                    fill="#0000C2"
+                    height={10}
+                    width={10}
+                    y={70}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={20}
+                    y={10}
+                  />
+                  <rect
+                    fill="#100C53"
+                    height={10}
+                    width={10}
+                    x={20}
+                    y={20}
+                  />
+                  <rect
+                    fill="#100C53"
+                    height={10}
+                    width={10}
+                    x={20}
+                    y={30}
+                  />
+                  <rect
+                    fill="#0000C2"
+                    height={10}
+                    width={10}
+                    x={20}
+                    y={40}
+                  />
+                  <rect
+                    fill="#636188"
+                    height={10}
+                    width={10}
+                    x={20}
+                    y={50}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={20}
+                    y={60}
+                  />
+                  <rect
+                    fill="#0000C2"
+                    height={10}
+                    width={10}
+                    x={20}
+                    y={70}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={40}
+                    y={10}
+                  />
+                  <rect
+                    fill="#CFD0DC"
+                    height={10}
+                    width={10}
+                    x={40}
+                    y={20}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={40}
+                    y={30}
+                  />
+                  <rect
+                    fill="#8330FF"
+                    height={10}
+                    width={10}
+                    x={40}
+                    y={40}
+                  />
+                  <rect
+                    fill="#CFD0DC"
+                    height={10}
+                    width={10}
+                    x={40}
+                    y={50}
+                  />
+                  <rect
+                    fill="#100C53"
+                    height={10}
+                    width={10}
+                    x={40}
+                    y={60}
+                  />
+                  <rect
+                    fill="#1E1A5A"
+                    height={10}
+                    width={10}
+                    x={40}
+                    y={70}
+                  />
+                  <rect
+                    fill="#332F66"
+                    height={10}
+                    width={10}
+                    x={60}
+                    y={10}
+                  />
+                  <rect
+                    fill="#0000C2"
+                    height={10}
+                    width={10}
+                    x={60}
+                    y={20}
+                  />
+                  <rect
+                    fill="#8330FF"
+                    height={10}
+                    width={10}
+                    x={60}
+                    y={30}
+                  />
+                  <rect
+                    fill="#332F66"
+                    height={10}
+                    width={10}
+                    x={60}
+                    y={40}
+                  />
+                  <rect
+                    fill="#8330FF"
+                    height={10}
+                    width={10}
+                    x={60}
+                    y={50}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={60}
+                    y={60}
+                  />
+                  <rect
+                    fill="#0000C2"
+                    height={10}
+                    width={10}
+                    x={60}
+                    y={70}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={10}
+                    y={10}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={10}
+                    y={20}
+                  />
+                  <rect
+                    fill="#787696"
+                    height={10}
+                    width={10}
+                    x={10}
+                    y={30}
+                  />
+                  <rect
+                    fill="#F9FCFD"
+                    height={10}
+                    width={10}
+                    x={10}
+                    y={40}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={10}
+                    y={50}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={10}
+                    y={60}
+                  />
+                  <rect
+                    fill="#332F66"
+                    height={10}
+                    width={10}
+                    x={10}
+                    y={70}
+                  />
+                  <rect
+                    fill="#E7EAF2"
+                    height={10}
+                    width={10}
+                    x={30}
+                    y={10}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={30}
+                    y={20}
+                  />
+                  <rect
+                    fill="#100C53"
+                    height={10}
+                    width={10}
+                    x={30}
+                    y={30}
+                  />
+                  <rect
+                    fill="#0000C2"
+                    height={10}
+                    width={10}
+                    x={30}
+                    y={40}
+                  />
+                  <rect
+                    fill="#100C53"
+                    height={10}
+                    width={10}
+                    x={30}
+                    y={50}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={30}
+                    y={60}
+                  />
+                  <rect
+                    fill="#E7EAF2"
+                    height={10}
+                    width={10}
+                    x={30}
+                    y={70}
+                  />
+                  <rect
+                    fill="#332F66"
+                    height={10}
+                    width={10}
+                    x={50}
+                    y={10}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={50}
+                    y={20}
+                  />
+                  <rect
+                    fill="#4A4878"
+                    height={10}
+                    width={10}
+                    x={50}
+                    y={30}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={50}
+                    y={40}
+                  />
+                  <rect
+                    fill="#F9FCFD"
+                    height={10}
+                    width={10}
+                    x={50}
+                    y={50}
+                  />
+                  <rect
+                    fill="#787696"
+                    height={10}
+                    width={10}
+                    x={50}
+                    y={60}
+                  />
+                  <rect
+                    fill="#CFD0DC"
+                    height={10}
+                    width={10}
+                    x={50}
+                    y={70}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={70}
+                    y={10}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={70}
+                    y={20}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={70}
+                    y={30}
+                  />
+                  <rect
+                    fill="#0000C2"
+                    height={10}
+                    width={10}
+                    x={70}
+                    y={40}
+                  />
+                  <rect
+                    fill="#46ECA1"
+                    height={10}
+                    width={10}
+                    x={70}
+                    y={50}
+                  />
+                  <rect
+                    fill="#CFD0DC"
+                    height={10}
+                    width={10}
+                    x={70}
+                    y={60}
+                  />
+                  <rect
+                    fill="#8330FF"
+                    height={10}
+                    width={10}
+                    x={70}
+                    y={70}
+                  />
+                </g>
+              </svg>
+            </span>
+            Atahualpa Yupanqui De la Vega Van Hilde
+          </span>
+        </p>
       </div>
     </div>
   </a>
@@ -661,7 +1170,7 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
     }
   >
     <div
-      className="sm:w-2/3 transition group-hover:animate-textpulse px-4 pb-3 pt-36 sm:px-5 sm:py-4 md:px-8 md:py-7 relative z-10"
+      className="lg:w-2/3 transition group-hover:animate-textpulse px-4 pb-3 pt-36 lg:px-5 lg:py-4 relative z-10"
     >
       <div
         className="grid grid-cols-[24px,1fr] gap-3"
@@ -675,7 +1184,7 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 sm:leading-7 sm:text-2xl sm:pt-0 md:leading-8 md:text-3xl font-headline font-bold inline"
+          className="text-xl leading-6 pt-1 lg:leading-7 lg:text-2xl lg:pt-0 font-headline font-bold inline"
         >
           LUFTY AAB3
         </h3>
