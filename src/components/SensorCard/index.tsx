@@ -4,39 +4,29 @@ import { PreviewMap } from "@components/PreviewMap";
 import useIsInViewport from "use-is-in-viewport";
 import { AreaPath } from "@components/AreaPath";
 import { UserAvatar } from "@components/UserAvatar";
-import { PublicSensorType } from "@lib/hooks/usePublicSensors";
+import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { SensorSymbol } from "@components/SensorSymbol";
 import { CategoryIcon } from "@components/CategoryIcon";
 
-export interface SensorCardPropType
-  extends Pick<
-    PublicSensorType,
-    | "id"
-    | "name"
-    | "icon_id"
-    | "description"
-    | "category"
-    | "latitude"
-    | "longitude"
-    | "authorName"
-    | "parsedRecords"
-  > {
+export interface SensorCardPropType extends ParsedSensorType {
   withMapBackground?: boolean;
   withMapLabels?: boolean;
 }
 
+const DISPLAYABLE_RECORDS_AMOUNT = 20;
 const DESCRIPTION_MAX_LENGTH = 150;
 
 export const SensorCard: FC<SensorCardPropType> = ({
   id,
   name,
-  icon_id,
+  symbolId,
   latitude,
   longitude,
   description,
   parsedRecords,
   authorName,
-  category,
+  categoryId,
+  categoryName,
   withMapBackground = true,
   withMapLabels = true,
 }) => {
@@ -60,8 +50,8 @@ export const SensorCard: FC<SensorCardPropType> = ({
         {isInViewport && (
           <div
             className={[
-              "absolute inset-0 bottom-auto sm:bottom-0 sm:left-auto sm:w-1/3",
-              "h-32 sm:h-full",
+              "absolute inset-0 bottom-auto lg:bottom-0 lg:left-auto lg:w-1/3",
+              "h-32 lg:h-full",
               "pointer-events-none transition opacity-40 overflow-hidden",
               "group-hover:opacity-60 bg-gray-50",
             ].join(" ")}
@@ -114,7 +104,7 @@ export const SensorCard: FC<SensorCardPropType> = ({
                   width={100}
                   height={82}
                   //FIXME: Figure out how we want to handle multiple data points
-                  data={parsedRecords}
+                  data={parsedRecords.slice(DISPLAYABLE_RECORDS_AMOUNT * -1)}
                 />
               </svg>
             </div>
@@ -122,18 +112,17 @@ export const SensorCard: FC<SensorCardPropType> = ({
         )}
         <div
           className={[
-            "sm:w-2/3 transition group-hover:animate-textpulse",
-            "px-4 pb-3 pt-36 sm:px-5 sm:py-4 md:px-8 md:py-7",
+            "lg:w-2/3 transition group-hover:animate-textpulse",
+            "px-4 pb-3 pt-36 lg:px-5 lg:py-4",
             "relative z-10",
           ].join(" ")}
         >
           <div className='grid grid-cols-[24px,1fr] gap-3'>
-            <SensorSymbol symbol={icon_id || 1} className='mt-[1px]' />
+            <SensorSymbol symbol={symbolId} className='mt-[1px]' />
             <h3
               className={[
                 "text-xl leading-6 pt-1",
-                "sm:leading-7 sm:text-2xl sm:pt-0",
-                "md:leading-8 md:text-3xl",
+                "lg:leading-7 lg:text-2xl lg:pt-0",
                 "font-headline font-bold inline",
               ].join(" ")}
             >
@@ -142,11 +131,8 @@ export const SensorCard: FC<SensorCardPropType> = ({
           </div>
           <div className='pl-9 pt-2'>
             <p className='text-base mb-4 flex gap-x-1'>
-              <CategoryIcon
-                categoryId={category.id as 1 | 2 | 3 | 4 | 5 | 6}
-                className='mt-1'
-              />
-              {category.name}
+              <CategoryIcon categoryId={categoryId} className='mt-1' />
+              {categoryName}
             </p>
             {description && (
               <p className='text-base'>

@@ -5,15 +5,15 @@ import { SensorsGrid } from ".";
 import { getPublicSensors } from "@lib/hooks/usePublicSensors";
 describe("SensorsGrid component", () => {
   it("should render the first sensor", async (): Promise<void> => {
-    const data = await getPublicSensors();
-    if (data)
+    const sensors = await getPublicSensors();
+    if (sensors)
       render(
         <ThemeProvider theme={theme}>
-          <SensorsGrid sensors={data.sensors} />
+          <SensorsGrid sensors={sensors} />
         </ThemeProvider>
       );
 
-    const h1 = screen.getByText(data.sensors[0].name as string);
+    const h1 = screen.getByText(sensors[0].name);
     expect(h1).toBeInTheDocument();
   });
 });

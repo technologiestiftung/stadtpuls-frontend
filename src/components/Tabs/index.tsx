@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
+import colors from "../../style/colors";
 
 interface TabPropType {
   id: string;
@@ -11,6 +12,7 @@ interface TabPropType {
 export interface TabsPropType {
   tabs: TabPropType[];
   activeTabIndex?: number;
+  tabPanelId: string;
 }
 
 const getTabInnerStyles = (isActive: boolean): string =>
@@ -23,13 +25,20 @@ const getTabInnerStyles = (isActive: boolean): string =>
     !isActive && "cursor-pointer hover:z-20 border-gray-50 text-gray-900",
     !isActive && "focus:z-20 focus:border-purple",
     !isActive && "focus:ring-2 focus:ring-purple",
-    isActive && "border-gray-200 z-10 cursor-default",
+    isActive && "border-gray-200 z-10 cursor-default bg-white",
   ]
     .filter(Boolean)
     .join(" ");
-export const Tabs: FC<TabsPropType> = ({ tabs, activeTabIndex = 0 }) => (
+export const Tabs: FC<TabsPropType> = ({
+  tabs,
+  tabPanelId,
+  activeTabIndex = 0,
+}) => (
   <nav>
-    <ul className='flex pl-[1px] max-w-full overflow-x-auto overflow-y-hidden ring-inset'>
+    <ul
+      role='tablist'
+      className='flex pl-[1px] max-w-full overflow-x-auto overflow-y-hidden ring-inset'
+    >
       {tabs.map((tab, idx) => {
         const isActive = activeTabIndex === idx;
         const tabIndex = (isActive && -1) || undefined;
@@ -37,6 +46,10 @@ export const Tabs: FC<TabsPropType> = ({ tabs, activeTabIndex = 0 }) => (
         const tabInnerStyles = getTabInnerStyles(isActive);
         let tag = (
           <button
+            role='tab'
+            aria-selected={tabIndex === activeTabIndex ? "true" : "false"}
+            aria-controls={tabPanelId}
+            id={id}
             onClick={onClick || (() => undefined)}
             className={tabInnerStyles}
             tabIndex={tabIndex}
@@ -47,17 +60,41 @@ export const Tabs: FC<TabsPropType> = ({ tabs, activeTabIndex = 0 }) => (
         if (href) {
           tag = (
             <Link href={href}>
-              <a href={href} className={tabInnerStyles} tabIndex={tabIndex}>
+              <a
+                role='tab'
+                aria-selected={tabIndex === activeTabIndex ? "true" : "false"}
+                aria-controls={tabPanelId}
+                href={href}
+                className={tabInnerStyles}
+                tabIndex={tabIndex}
+              >
                 {name}
               </a>
             </Link>
           );
         }
         if (isActive) {
-          tag = <span className={tabInnerStyles}>{name}</span>;
+          tag = (
+            <span
+              role='tab'
+              aria-selected={tabIndex === activeTabIndex ? "true" : "false"}
+              aria-controls={tabPanelId}
+              className={tabInnerStyles}
+            >
+              {name}
+            </span>
+          );
         }
         return (
-          <li key={id} className={[].join(" ")}>
+          <li
+            key={id}
+            className={[].join(" ")}
+            style={{
+              borderBottom: `1px solid ${
+                isActive ? colors.white : colors.gray["200"]
+              }`,
+            }}
+          >
             {tag}
           </li>
         );

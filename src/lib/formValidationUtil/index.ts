@@ -5,6 +5,12 @@ export const requiredEmailValidation = yup
   .email("Die angegebene E-Mail-Adresse ist ungültig")
   .required("Eine E-Mail Adresse muss angeben werden");
 
+export const optionalLinkValidation = yup
+  .string()
+  .url("Die angegebene Url muss gültig sein")
+  .max(100, "Der Name darf maximal 50 Zeichen haben")
+  .optional();
+
 export const requiredSensorNameValidation = yup
   .string()
   .required("Der Sensor muss eine Name haben")
@@ -17,7 +23,7 @@ export const requiredSensorCategoryValidation = yup
 export const requiredSymbolIdValidation = yup
   .number()
   .min(1, "Ungültiges Symbol")
-  .max(31, "Ungültiges Symbol")
+  .max(32, "Ungültiges Symbol")
   .required("Ungültiges Symbol");
 
 export const requiredLatitude = yup
@@ -32,11 +38,10 @@ export const requiredLongitude = yup
   .max(180, "Ungültige Longitude")
   .required("Ungültige Longitude");
 
-export const requiredSensorDescriptionValidation = yup
+export const optionalDescriptionValidation = yup
   .string()
-  .required("Die Beschreibung zwischen 10 und 140 Zeichen lang sein")
-  .min(10, "Die Beschreibung zwischen 10 und 140 Zeichen lang sein")
-  .max(140, "Die Beschreibung zwischen 10 und 140 Zeichen lang sein");
+  .max(200, "Die Beschreibung darf nicht länger als 200 Zeichen sein")
+  .optional();
 
 export const requiredSensorIntegrationValidation = yup
   .string()
@@ -52,6 +57,12 @@ export const requiredUsernameValidation = yup
   )
   .required("Sie müssen einen Nutzernamen angeben");
 
+export const requiredDisplaynameValidation = yup
+  .string()
+  .min(3, "Anzeigenamen können 3 bis 50 Zeichen lang sein")
+  .max(50, "Anzeigenamen können 3 bis 50 Zeichen lang sein")
+  .required("Sie müssen einen Anzeigenamen angeben");
+
 export const requiredTTNDeviceIDValidation = yup.string().when("integration", {
   is: "ttn",
   then: yup
@@ -61,9 +72,3 @@ export const requiredTTNDeviceIDValidation = yup.string().when("integration", {
     .required("Device-ID ist erforderlich"),
   otherwise: yup.string().optional(),
 });
-
-export const requiredDeviceName = yup
-  .string()
-  .min(3, "Min. 3 Zeichen")
-  .max(20, "Max. 50 Zeichen")
-  .required("Geräte-ID ist erforderlich");

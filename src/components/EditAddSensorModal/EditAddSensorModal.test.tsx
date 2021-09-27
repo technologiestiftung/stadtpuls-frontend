@@ -1,25 +1,29 @@
+import { parsedSensors } from "@mocks/supabaseData/sensors";
 import { fireEvent, waitFor, render, screen } from "@testing-library/react";
 import { EditAddSensorModal } from ".";
+import * as sensorCategoriesHook from "@lib/hooks/useSensorCategories";
+import { categories } from "@mocks/supabaseData/categories";
 
 const baseTestData = {
+  author: {
+    authorName: "Lucas Vogel",
+    authorUsername: "vogelino",
+    authorId: "123",
+  },
   title: "Test Title",
   onDelete: jest.fn(),
   onCancel: jest.fn(),
   onSubmit: jest.fn(),
 };
 
-const successTestData = {
-  categoryId: 1,
-  description: "A description",
-  integration: "http" as const,
-  ttnDeviceId: undefined,
-  latitude: 48.8586383,
-  longitude: 2.2946208,
-  name: "A title",
-  symbolId: 1,
-};
+const successTestData = parsedSensors[0];
 
 describe("EditAddSensorModal component", () => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  sensorCategoriesHook.useSensorCategories = jest
+    .fn()
+    .mockReturnValue({ categories, isLoading: false, error: null });
   it("should render correctly", () => {
     render(<EditAddSensorModal {...baseTestData} />);
 
@@ -47,7 +51,9 @@ describe("EditAddSensorModal component", () => {
     const descLabel = screen.getByText("Beschreibung");
     expect(descLabel).toBeInTheDocument();
 
-    const descField = screen.getByRole("textbox", { name: "Beschreibung" });
+    const descField = screen.getByRole("textbox", {
+      name: "Beschreibung (Optional)",
+    });
     expect(descField).toBeInTheDocument();
 
     // CATEGORY SELECT
@@ -109,10 +115,12 @@ describe("EditAddSensorModal component", () => {
     const form = document.querySelector("form");
     if (!form) throw "From element was not found";
     fireEvent.submit(form);
-    fireEvent.click(submitButton);
 
     await waitFor(() => {
-      expect(baseTestData.onSubmit).toHaveBeenCalledWith(successTestData);
+      expect(baseTestData.onSubmit).toHaveBeenCalledWith({
+        ...successTestData,
+        ...baseTestData.author,
+      });
     });
   });
   it("should set focus on name field after", async (): Promise<void> => {

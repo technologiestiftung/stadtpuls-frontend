@@ -46,7 +46,7 @@ exports[`Storyshots Layout/ProjectCreatedInfo_DEPRECATED Default 1`] = `
     className="mt-24 flex justify-end"
   >
     <a
-      className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
+      className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
       href="/account/projects/1"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -54,7 +54,7 @@ exports[`Storyshots Layout/ProjectCreatedInfo_DEPRECATED Default 1`] = `
       Zur Projektübersicht
     </a>
     <a
-      className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green ml-4"
+      className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green ml-4"
       href="https://console.thethingsnetwork.org/"
       rel="noopener noreferrer"
       target="_blank"

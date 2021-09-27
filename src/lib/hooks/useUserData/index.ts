@@ -9,99 +9,121 @@ import {
 } from "./manageSensorsLocally";
 import { useState } from "react";
 import { definitions } from "@common/types/supabase";
-import { sensorQueryString } from "../usePublicSensors";
+import {
+  mapPublicSensor,
+  ParsedSensorType,
+  RECORDS_LIMIT,
+  SensorQueryResponseType,
+  sensorQueryString,
+} from "../usePublicSensors";
+import {
+  AccountQueryResponseType,
+  accountQueryString,
+  mapPublicAccount,
+  ParsedAccountType,
+} from "../usePublicAccounts";
+
+interface UseUserDataInitialDataType {
+  user?: ParsedAccountType;
+  sensors?: ParsedSensorType[];
+}
+
+export type SensorWithEditablePropsType = Omit<
+  ParsedSensorType,
+  "id" | "categoryName" | "authorName" | "authorUsername" | "parsedRecords"
+>;
 
 type UserFetcherSignature = (
   userId?: AuthenticatedUsersType["id"],
   isLoadingAuth?: boolean
-) => Promise<definitions["user_profiles"] | null>;
+) => Promise<ParsedAccountType | null>;
 
-const fetchUser: UserFetcherSignature = async (userId, isLoadingAuth) => {
-  if (isLoadingAuth || isLoadingAuth === undefined) return null;
-  if (!userId) throw new Error("Not authenticated");
+const fetchUser: UserFetcherSignature = async userId => {
+  if (!userId) return null;
 
   const { data: user, error } = await supabase
-    .from<definitions["user_profiles"]>("user_profiles")
-    .select("name")
+    .from<AccountQueryResponseType>("user_profiles")
+    .select(accountQueryString)
+    // FIXME: created_at is not recognized altought it is inherited from the definitions
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    .order("recorded_at", {
+      foreignTable: "sensors.records",
+      ascending: false,
+    })
+    .limit(RECORDS_LIMIT, { foreignTable: "sensors.records" })
     .eq("id", userId)
     .single();
 
   if (error) throw error;
   else if (!user) throw new Error(`User with id "${userId} was not found"`);
 
-  return user;
+  return mapPublicAccount(user);
 };
 
 type SensorsFetcherSignature = (
   userId?: AuthenticatedUsersType["id"],
   isLoadingAuth?: boolean
-) => Promise<definitions["sensors"][] | null>;
+) => Promise<ParsedSensorType[] | null>;
 
-const fetchUserSensors: SensorsFetcherSignature = async (
-  userId,
-  isLoadingAuth
-) => {
-  if (isLoadingAuth || isLoadingAuth === undefined) return null;
-  if (!userId) throw new Error("Not authenticated");
+export const fetchUserSensors: SensorsFetcherSignature = async userId => {
+  if (!userId) return [];
 
   const { data, error } = await supabase
-    .from<definitions["sensors"]>("sensors")
+    .from<SensorQueryResponseType>("sensors")
     .select(sensorQueryString)
+    // FIXME: created_at is not recognized altought it is inherited from the definitions
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    .order("recorded_at", {
+      foreignTable: "records",
+      ascending: false,
+    })
+    .limit(RECORDS_LIMIT, { foreignTable: "records" })
     .eq("user_id", userId);
 
   if (error) throw error;
   else if (!data)
     throw new Error(`Sensors for user with id "${userId} not found"`);
-  return data;
+  return data.map(mapPublicSensor);
 };
+
+const parsedSensorToRawSensor = (
+  sensor: SensorWithEditablePropsType
+): Omit<definitions["sensors"], "id"> => ({
+  created_at: sensor.createdAt,
+  name: sensor.name,
+  description: sensor.description,
+  external_id: sensor.ttnDeviceId,
+  latitude: sensor.latitude,
+  longitude: sensor.longitude,
+  connection_type: sensor.connectionType,
+  category_id: sensor.categoryId,
+  icon_id: sensor.symbolId,
+  user_id: sensor.authorId,
+});
 
 const createSensor = async (
-  sensor: Omit<definitions["sensors"], "id">,
-  user_id: string | undefined
-): Promise<void> => {
-  if (!user_id) throw new Error("Not authenticated");
-
-  const { error } = await supabase
+  sensor: SensorWithEditablePropsType
+): Promise<number> => {
+  const rawSensor = parsedSensorToRawSensor(sensor);
+  const { data, error } = await supabase
     .from<definitions["sensors"]>("sensors")
-    .insert([{ ...sensor, id: undefined }]);
+    .insert([rawSensor]);
 
   if (error) throw error;
+  if (!data || !data[0].id)
+    throw "Sensor could not be created. Not ID returned.";
+  return data[0].id;
 };
 
-const updateSensor = async ({
-  id,
-  created_at,
-  name,
-  user_id,
-  external_id,
-  latitude,
-  longitude,
-  altitude,
-  connection_type,
-  category_id,
-  icon_id,
-  description,
-  location,
-}: Partial<definitions["sensors"]>): Promise<void> => {
-  if (!user_id) throw new Error("Not authenticated");
-
+const updateSensor = async (sensor: ParsedSensorType): Promise<void> => {
+  const rawSensor = parsedSensorToRawSensor(sensor);
   const { error } = await supabase
     .from<definitions["sensors"]>("sensors")
-    .update({
-      created_at,
-      name,
-      description,
-      external_id,
-      location,
-      latitude,
-      longitude,
-      altitude,
-      connection_type,
-      category_id,
-      icon_id,
-    })
-    .eq("id", id)
-    .eq("user_id", user_id);
+    .update({ ...rawSensor, id: undefined })
+    .eq("id", sensor.id)
+    .eq("user_id", sensor.authorId);
 
   if (error) throw error;
 };
@@ -122,15 +144,16 @@ const deleteSensor = async (
 };
 
 const updateUser = async (
-  newName: string,
-  userId: string | undefined
+  newUserData: Partial<ParsedAccountType>
 ): Promise<void> => {
-  if (!userId) throw new Error("Not authenticated");
-
   const nameReset = await supabase
     .from<definitions["user_profiles"]>("user_profiles")
-    .update({ name: newName })
-    .eq("id", userId);
+    .update({
+      display_name: newUserData.displayName,
+      description: newUserData.description,
+      url: newUserData.link,
+    })
+    .eq("id", newUserData.id);
 
   if (nameReset.error) throw nameReset.error;
 };
@@ -143,57 +166,66 @@ const deleteUser = async (userId: string | undefined): Promise<void> => {
   if (error) throw error;
 };
 
-export const useUserData = (): {
+export const useUserData = (
+  initialData?: UseUserDataInitialDataType
+): {
   isLoading: boolean;
   authenticatedUser: AuthenticatedUsersType | null;
-  user: definitions["user_profiles"] | null;
-  sensors: definitions["sensors"][] | null;
+  user: ParsedAccountType | null;
+  sensors: ParsedSensorType[] | null;
   error: Error | null;
-  createSensor: (sensor: Omit<definitions["sensors"], "id">) => Promise<void>;
-  updateSensor: (sensor: Partial<definitions["sensors"]>) => Promise<void>;
+  createSensor: (sensor: SensorWithEditablePropsType) => Promise<number>;
+  updateSensor: (sensor: ParsedSensorType) => Promise<void>;
   deleteSensor: (id: number) => Promise<void>;
-  updateUser: (newName: string) => Promise<void>;
+  updateUser: (newUserData: ParsedAccountType) => Promise<void>;
   deleteUser: () => Promise<void>;
+  isLoggedIn: boolean;
 } => {
   const [actionError, setActionError] = useState<Error | null>(null);
-  const { authenticatedUser, isLoadingAuth } = useAuth();
+  const { authenticatedUser, isLoadingAuth, isAuthenticating } = useAuth();
   const userId = authenticatedUser?.id;
 
-  const userParams = ["userData", userId, isLoadingAuth];
-  const user = useSWR<definitions["user_profiles"] | null, Error>(
+  const userParams = ["userData", userId];
+  const user = useSWR<ParsedAccountType | null, Error>(
     userParams,
-    () => fetchUser(userId, isLoadingAuth)
+    () => fetchUser(userId),
+    { initialData: initialData?.user }
   );
 
-  const sensorsParams = ["sensors", userId, isLoadingAuth];
-  const sensors = useSWR<definitions["sensors"][] | null, Error>(
+  const sensorsParams = ["sensors", userId];
+  const sensors = useSWR<ParsedSensorType[] | null, Error>(
     sensorsParams,
-    () => fetchUserSensors(userId, isLoadingAuth)
+    () => fetchUserSensors(userId),
+    { initialData: initialData?.sensors }
   );
 
   return {
+    isLoggedIn: Boolean(
+      !!user.data && !!authenticatedUser && !isLoadingAuth && !isAuthenticating
+    ),
     isLoading: !user.error && !user.data,
     authenticatedUser: authenticatedUser || null,
     user: user.data || null,
-    sensors: sensors.data || null,
+    sensors: sensors.data || [],
     error: user.error || actionError || null,
     createSensor: async sensor => {
-      if (!sensors.data || sensors.error) return;
+      if (!sensors.data || sensors.error) throw "No Sensor data or error!";
       setActionError(null);
-      void mutate(
+      await mutate(
         sensorsParams,
         createSensorLocally(sensors.data, sensor),
         false
       );
-      await createSensor(sensor, userId).catch(setActionError);
-      void mutate(sensorsParams);
+      const newId = await createSensor(sensor);
+      await mutate(sensorsParams);
+      return newId;
     },
     updateSensor: async sensor => {
       if (!sensors.data || sensors.error) return;
       setActionError(null);
       void mutate(
         sensorsParams,
-        updateSensorsLocally(sensors.data, sensor as definitions["sensors"]),
+        updateSensorsLocally(sensors.data, sensor),
         false
       );
       await updateSensor(sensor).catch(setActionError);
@@ -206,10 +238,10 @@ export const useUserData = (): {
       await deleteSensor(id, userId).catch(setActionError);
       void mutate(sensorsParams);
     },
-    updateUser: async name => {
-      if (user.data?.name === name) return;
-      void mutate(userParams, { ...user, name }, false);
-      await updateUser(name, userId).catch(setActionError);
+    updateUser: async (newUserData: ParsedAccountType) => {
+      if (!newUserData) return;
+      void mutate(userParams, newUserData, false);
+      await updateUser(newUserData).catch(setActionError);
       void mutate(userParams);
     },
     deleteUser: async () => {

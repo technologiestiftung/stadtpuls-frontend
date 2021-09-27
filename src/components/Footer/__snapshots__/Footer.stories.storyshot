@@ -3,10 +3,10 @@
 exports[`Storyshots Layout/Footer Default 1`] = `
 <footer>
   <section
-    className="bg-white border-t border-gray-200"
+    className="bg-white border-t border-gray-100"
   >
     <div
-      className="max-w-screen-2xl mx-auto p-8"
+      className="container max-w-8xl mx-auto py-8 px-4"
     >
       <div
         className="w-full flex"
@@ -84,7 +84,7 @@ exports[`Storyshots Layout/Footer Default 1`] = `
     className="bg-white-dot-pattern"
   >
     <div
-      className="max-w-screen-2xl mx-auto px-8 py-6 block sm:flex justify-between"
+      className="container max-w-8xl mx-auto px-4 py-6 block sm:flex justify-between"
     >
       <div
         className="flex items-center"

@@ -4,34 +4,57 @@ exports[`Storyshots UI Elements/Tabs Default 1`] = `
 <nav>
   <ul
     className="flex pl-[1px] max-w-full overflow-x-auto overflow-y-hidden ring-inset"
+    role="tablist"
   >
     <li
       className=""
+      style={
+        Object {
+          "borderBottom": "1px solid #F9FCFD",
+        }
+      }
     >
       <span
-        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 focus:outline-none border-l border-t border-r bg-none ring-inset border-b-0 ml-[-1px] inline-block relative border-gray-200 z-10 cursor-default"
+        aria-selected="false"
+        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 focus:outline-none border-l border-t border-r bg-none ring-inset border-b-0 ml-[-1px] inline-block relative border-gray-200 z-10 cursor-default bg-white"
+        role="tab"
       >
         Ingredients
       </span>
     </li>
     <li
       className=""
+      style={
+        Object {
+          "borderBottom": "1px solid #CFD0DC",
+        }
+      }
     >
       <button
+        aria-selected="false"
         className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 focus:outline-none border-l border-t border-r bg-none ring-inset border-b-0 ml-[-1px] inline-block relative hover:border-purple hover:text-purple cursor-pointer hover:z-20 border-gray-50 text-gray-900 focus:z-20 focus:border-purple focus:ring-2 focus:ring-purple"
+        id="b"
         onClick={[Function]}
+        role="tab"
       >
         Preparation
       </button>
     </li>
     <li
       className=""
+      style={
+        Object {
+          "borderBottom": "1px solid #CFD0DC",
+        }
+      }
     >
       <a
+        aria-selected="false"
         className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 focus:outline-none border-l border-t border-r bg-none ring-inset border-b-0 ml-[-1px] inline-block relative hover:border-purple hover:text-purple cursor-pointer hover:z-20 border-gray-50 text-gray-900 focus:z-20 focus:border-purple focus:ring-2 focus:ring-purple"
         href="/c"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        role="tab"
       >
         Serving
       </a>
@@ -44,32 +67,56 @@ exports[`Storyshots UI Elements/Tabs With Active Tab 1`] = `
 <nav>
   <ul
     className="flex pl-[1px] max-w-full overflow-x-auto overflow-y-hidden ring-inset"
+    role="tablist"
   >
     <li
       className=""
+      style={
+        Object {
+          "borderBottom": "1px solid #CFD0DC",
+        }
+      }
     >
       <button
+        aria-selected="false"
         className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 focus:outline-none border-l border-t border-r bg-none ring-inset border-b-0 ml-[-1px] inline-block relative hover:border-purple hover:text-purple cursor-pointer hover:z-20 border-gray-50 text-gray-900 focus:z-20 focus:border-purple focus:ring-2 focus:ring-purple"
+        id="a"
         onClick={[Function]}
+        role="tab"
       >
         Ingredients
       </button>
     </li>
     <li
       className=""
+      style={
+        Object {
+          "borderBottom": "1px solid #CFD0DC",
+        }
+      }
     >
       <button
+        aria-selected="false"
         className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 focus:outline-none border-l border-t border-r bg-none ring-inset border-b-0 ml-[-1px] inline-block relative hover:border-purple hover:text-purple cursor-pointer hover:z-20 border-gray-50 text-gray-900 focus:z-20 focus:border-purple focus:ring-2 focus:ring-purple"
+        id="b"
         onClick={[Function]}
+        role="tab"
       >
         Preparation
       </button>
     </li>
     <li
       className=""
+      style={
+        Object {
+          "borderBottom": "1px solid #F9FCFD",
+        }
+      }
     >
       <span
-        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 focus:outline-none border-l border-t border-r bg-none ring-inset border-b-0 ml-[-1px] inline-block relative border-gray-200 z-10 cursor-default"
+        aria-selected="false"
+        className="px-4 sm:px-5 py-2 sm:py-3 transition-all text-sm sm:text-base flex content-center items-center z-0 focus:outline-none border-l border-t border-r bg-none ring-inset border-b-0 ml-[-1px] inline-block relative border-gray-200 z-10 cursor-default bg-white"
+        role="tab"
       >
         Serving
       </span>

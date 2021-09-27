@@ -6,13 +6,13 @@ import {
 import { supabase } from "@auth/supabase";
 import useSWR from "swr";
 import {
-  PublicSensorType,
+  ParsedSensorType,
   SensorQueryResponseType,
 } from "@lib/hooks/usePublicSensors";
 
 const SENSORS_LIMIT = 3;
 
-export const getCuratedSensors = async (): Promise<PublicSensorType[]> => {
+export const getCuratedSensors = async (): Promise<ParsedSensorType[]> => {
   const { data, error } = await supabase
     .from<SensorQueryResponseType>("sensors")
     .select(sensorQueryString)
@@ -34,10 +34,10 @@ export const getCuratedSensors = async (): Promise<PublicSensorType[]> => {
 };
 
 export const useCuratedSensors = (): {
-  data: PublicSensorType[] | null;
+  data: ParsedSensorType[] | null;
   error: Error | null;
 } => {
-  const { data, error } = useSWR<PublicSensorType[], Error>(
+  const { data, error } = useSWR<ParsedSensorType[], Error>(
     "useCuratedSensors",
     getCuratedSensors
   );

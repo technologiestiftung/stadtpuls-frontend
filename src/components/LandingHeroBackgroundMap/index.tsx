@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from "react";
 import { MarkerMap } from "@components/MarkerMap";
-import { PublicSensorType } from "@lib/hooks/usePublicSensors";
+import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 
 interface LandingHeroBackgroundMapPropType {
-  sensor: PublicSensorType;
+  sensor: ParsedSensorType;
 }
 
 const getElTopOffset = (el: Element): number => {
@@ -40,6 +40,7 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
       <MarkerMap
         mapWidth={mapWidth}
         mapHeight={typeof mapHeight === "string" ? mapHeight : mapHeight * 1.7}
+        mapZoom={9}
         clickHandler={() => undefined}
         markers={[
           {

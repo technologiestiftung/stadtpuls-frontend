@@ -43,22 +43,23 @@ export interface SensorQueryResponseType extends SensorType {
   category: Pick<definitions["categories"], "id" | "name">;
 }
 
-export interface PublicSensorType extends SensorQueryResponseType {
-  authorName: string | null;
+export interface ParsedSensorType {
+  id: number;
+  name: string;
+  createdAt: string;
+  description?: string;
+  location?: string;
+  symbolId: number;
+  authorId: string;
+  authorName: string;
+  authorUsername: string;
   parsedRecords: DateValueType[];
-  categoryName: string | null;
-}
-
-export interface PublicSensors {
-  sensors: PublicSensorType[];
-  count?: number;
-}
-
-interface OptionsType {
-  initialData: null | {
-    count: number;
-    sensors: PublicSensorType[];
-  };
+  categoryId: number;
+  categoryName: string;
+  connectionType: "http" | "ttn";
+  ttnDeviceId?: string;
+  latitude: number;
+  longitude: number;
 }
 
 export const parseSensorRecords = (
@@ -78,37 +79,50 @@ export const parseSensorRecords = (
 
 export const mapPublicSensor = (
   sensor: SensorQueryResponseType
-): PublicSensorType => {
+): ParsedSensorType => {
   const {
     name,
+    created_at,
     description,
     location,
     latitude,
     longitude,
     user,
+    user_id,
     category,
+    external_id,
+    connection_type,
     records,
     icon_id,
   } = sensor;
   return {
-    ...sensor,
-    name: name || "",
-    description: description || "",
-    location: location || "",
-    icon_id: icon_id || 1,
-    authorName: user?.display_name || null,
+    id: sensor.id,
+    name: name || `Sensor ${sensor.id}`,
+    description: description,
+    createdAt: created_at,
+    location: location,
+    symbolId: icon_id || 1,
+    authorId: user_id,
+    authorName: user.display_name || "Anonymous",
+    authorUsername: user.name || "anonymous",
     parsedRecords: parseSensorRecords(records),
-    categoryName: category?.name || null,
+    categoryName: category?.name || "CO2",
+    categoryId: category?.id || 1,
+    connectionType:
+      !connection_type || connection_type === "other"
+        ? ("http" as const)
+        : connection_type,
+    ttnDeviceId: external_id,
     latitude: latitude || 0,
     longitude: longitude || 0,
   };
 };
 
-export const getPublicSensors = async (): Promise<PublicSensors> => {
+export const getPublicSensors = async (): Promise<ParsedSensorType[]> => {
   const { data, error } = await supabase
     .from<SensorQueryResponseType>("sensors")
     .select(sensorQueryString)
-    //FIXME: the ignorance
+    // FIXME: created_at is not recognized altought it is inherited from the definitions
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     .order("recorded_at", {
@@ -118,31 +132,26 @@ export const getPublicSensors = async (): Promise<PublicSensors> => {
     .limit(RECORDS_LIMIT, { foreignTable: "records" });
 
   if (error) throw error;
-  if (!data) return { sensors: [] };
+  if (!data) return [];
   const sensors = data?.map(mapPublicSensor);
 
-  return { sensors: sensors };
-};
-
-const defaultOptions: OptionsType = {
-  initialData: null,
+  return sensors;
 };
 
 export const usePublicSensors = (
-  options: Partial<OptionsType> = defaultOptions
+  initialData?: ParsedSensorType[]
 ): {
-  data: PublicSensors | null;
+  data: ParsedSensorType[];
   error: Error | null;
 } => {
-  const initialData = options.initialData || defaultOptions.initialData;
-  const { data, error } = useSWR<PublicSensors | null, Error>(
+  const { data, error } = useSWR<ParsedSensorType[], Error>(
     ["usePublicSensors"],
     () => getPublicSensors(),
     { initialData }
   );
 
   return {
-    data: data || null,
+    data: data || [],
     error: error || null,
   };
 };

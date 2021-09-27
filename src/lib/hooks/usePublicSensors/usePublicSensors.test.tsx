@@ -1,11 +1,9 @@
 import { FC, useEffect } from "react";
 import { render, waitFor } from "@testing-library/react";
-import { rest } from "msw";
-import { PublicSensors, usePublicSensors } from ".";
-import { server } from "@mocks/server";
+import { ParsedSensorType, usePublicSensors } from ".";
 import { SWRConfig } from "swr";
 
-type OnSuccessType = (data: PublicSensors) => void;
+type OnSuccessType = (data: ParsedSensorType[]) => void;
 type OnFailType = (error: string) => void;
 
 const createTestComponent = (
@@ -18,7 +16,7 @@ const createTestComponent = (
       if (data && !error) onSuccess(data);
       if (error) onFail(error.message);
     }, [data, error]);
-    return <div>{data ? data.count : error?.message}</div>;
+    return <div>{data ? data.length : error?.message}</div>;
   };
   return TestComponent;
 };
@@ -26,7 +24,7 @@ const createTestComponent = (
 describe("hook usePublicSensors", () => {
   it("should provide a data and error value", async (): Promise<void> => {
     const onSuccess = jest.fn();
-    const onSuccessWrapper = (data: PublicSensors): void => {
+    const onSuccessWrapper = (data: ParsedSensorType[]): void => {
       onSuccess(data);
     };
     const onError = jest.fn();
@@ -40,26 +38,6 @@ describe("hook usePublicSensors", () => {
     await waitFor(() => {
       expect(onSuccess).toHaveBeenCalled();
       expect(onError).not.toHaveBeenCalled();
-    });
-  });
-  it("should return an error if network has error", async (): Promise<void> => {
-    const testError = "Mammamamamma";
-    server.use(rest.get("*", (_req, res) => res.networkError(testError)));
-    const onSuccess = jest.fn();
-    const onError = jest.fn();
-    const onErrorWrapper = (error: string): void => {
-      onError(error.includes(testError) ? true : false);
-    };
-    const TestComponent = createTestComponent(onSuccess, onErrorWrapper);
-    render(
-      <SWRConfig value={{ dedupingInterval: 0 }}>
-        <TestComponent />
-      </SWRConfig>
-    );
-
-    await waitFor(() => {
-      expect(onError).toHaveBeenLastCalledWith(true);
-      expect(onSuccess).not.toHaveBeenCalled();
     });
   });
 });

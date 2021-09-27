@@ -26,8 +26,8 @@ export const SmallModalOverlay: FC<SmallModalOverlayPropType> = props => {
     return createPortal(
       <div
         className={[
-          "fixed top-0 left-0 bg-black bg-opacity-50",
-          "w-screen h-screen sm:flex items-center justify-center z-50",
+          "fixed inset-0 bg-black bg-opacity-50",
+          "sm:flex items-center justify-center z-50",
           "p-4",
         ].join(" ")}
       >

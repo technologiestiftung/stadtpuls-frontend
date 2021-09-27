@@ -2,7 +2,7 @@
 
 exports[`Storyshots UI Elements/DataTable Default 1`] = `
 <div
-  className="border border-gray-200 shadow bg-white relative overflow-y-scroll"
+  className="border border-gray-200 shadow bg-white relative overflow-y-scroll max-h-[500px]"
 >
   <table
     className="w-full p-2 border-collapse"
@@ -14,7 +14,7 @@ exports[`Storyshots UI Elements/DataTable Default 1`] = `
         className="h-8"
       >
         <th
-          className="text-left p-0"
+          className="text-left p-0 whitespace-nowrap"
         >
           <span
             className="block text-left font-headline text-lg py-3 px-4 font-normal shadow border-r border-gray-200 border-b bg-white border-gray-200"
@@ -23,7 +23,7 @@ exports[`Storyshots UI Elements/DataTable Default 1`] = `
           </span>
         </th>
         <th
-          className="text-left p-0"
+          className="text-left p-0 whitespace-nowrap"
         >
           <span
             className="block text-left font-headline text-lg py-3 px-4 font-normal shadow border-r border-gray-200 border-b bg-white border-gray-200"
@@ -32,7 +32,7 @@ exports[`Storyshots UI Elements/DataTable Default 1`] = `
           </span>
         </th>
         <th
-          className="text-left p-0"
+          className="text-left p-0 whitespace-nowrap"
         >
           <span
             className="block text-left font-headline text-lg py-3 px-4 font-normal shadow border-b bg-white border-gray-200"

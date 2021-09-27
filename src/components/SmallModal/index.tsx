@@ -19,10 +19,7 @@ export const SmallModal: FC<SmallModalPropType> = ({
 }) => {
   const ref = useClickOutside<HTMLDivElement>(onClickOutside);
   return (
-    <div
-      ref={ref}
-      className={`${className} md:px-0 max-h-[calc(100vh-32px)] overflow-y-auto`}
-    >
+    <div ref={ref} className={`${className} md:px-0 h-full overflow-y-auto`}>
       <div
         className='bg-white border border-gray-200 shadow p-4 sm:p-8 flex flex-col gap-8 place-content-between'
         style={{ minHeight: 360 }}
