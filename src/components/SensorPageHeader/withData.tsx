@@ -34,7 +34,6 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
   const userSensor = sensors?.find(
     ({ id }) => `${id}` === `${initialSensor.id}`
   );
-
   const mergedSensor = isLoggedIn && userSensor ? userSensor : initialSensor;
 
   return (
@@ -46,7 +45,6 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
             "left-1/2 transform -translate-x-1/2 backdrop-filter backdrop-blur-md",
           ].join(" ")}
         >
-          {console.log(error)}
           {error && (
             <Alert
               type='error'
@@ -79,9 +77,7 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
             authorName: user.displayName,
             authorUsername: user.username,
           }}
-          title={`Sensor ${
-            initialSensor.name ? `„${initialSensor.name}“ ` : ""
-          }editieren`}
+          title={`Sensor „${initialSensor.name}“ editieren`}
           onCancel={() => setEditModalIsOpen(false)}
           defaultValues={mergedSensor}
           onSubmit={data => {
@@ -118,7 +114,10 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
                 onClick={() => {
                   deleteSensor(initialSensor.id)
                     .then(() => router.push(`/accounts/${user.username}`))
-                    .finally(() => setEditModalIsOpen(false));
+                    .finally(() => {
+                      setEditModalIsOpen(false);
+                      setDeletionConfirmationIsOpened(false);
+                    });
                 }}
               >
                 Unwiderruflich löschen
