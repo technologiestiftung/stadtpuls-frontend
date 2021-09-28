@@ -30,7 +30,8 @@ describe("AuthProvider", () => {
           typeof auth?.isLoadingAuth !== "undefined" &&
           auth?.authenticatedUser === null &&
           auth?.error === null &&
-          typeof auth?.authenticate === "function" &&
+          typeof auth?.signIn === "function" &&
+          typeof auth?.signUp === "function" &&
           typeof auth?.signOut === "function" &&
           auth?.magicLinkWasSent === false &&
           auth?.isAuthenticating === false
@@ -57,7 +58,7 @@ describe("signIn aka. Authentication (because of magic link, also signUp)", () =
     supabase.auth.signIn = signInMock;
     const ChildComponent = createChildComponent({
       isReady: auth => !!(auth.magicLinkWasSent && !auth.isAuthenticating),
-      inEffect: auth => auth.authenticate({ email: "contact@example.com" }),
+      inEffect: auth => auth.signIn({ email: "contact@example.com" }),
     });
     act(() => {
       render(
@@ -81,8 +82,7 @@ describe("signIn aka. Authentication (because of magic link, also signUp)", () =
     supabase.auth.signIn = signInMock;
     const ChildComponent = createChildComponent({
       isReady: auth => !!auth.error,
-      inEffect: auth =>
-        auth.authenticate({ email: "spam@youdontwant.inyourinbox" }),
+      inEffect: auth => auth.signIn({ email: "spam@youdontwant.inyourinbox" }),
     });
     act(() => {
       render(

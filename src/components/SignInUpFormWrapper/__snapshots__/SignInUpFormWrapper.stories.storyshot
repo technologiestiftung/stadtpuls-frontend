@@ -19,6 +19,7 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signin 1`] = `
         Login
       </h1>
       <form
+        className="flex flex-col gap-2"
         id="signin-form"
         noValidate={true}
       >
@@ -83,6 +84,7 @@ exports[`Storyshots Forms/SignInUpFormWrapper Signup 1`] = `
         Registrierung
       </h1>
       <form
+        className="flex flex-col gap-2"
         id="signup-form"
         noValidate={true}
       >

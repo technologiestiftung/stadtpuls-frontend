@@ -51,7 +51,7 @@ const SigningUpError: FC<{ error: string; onReload: () => void }> = ({
 
 const SigninPage: FC = () => {
   const router = useRouter();
-  const { error, authenticate, isAuthenticating, magicLinkWasSent } = useAuth();
+  const { error, signUp, isAuthenticating, magicLinkWasSent } = useAuth();
 
   return (
     <div
@@ -66,7 +66,7 @@ const SigninPage: FC = () => {
         <MagicLinkConfirmationModal onClose={() => router.push("/")} />
       )}
       {!isAuthenticating && !magicLinkWasSent && !error && (
-        <SignupForm onSubmit={authenticate} />
+        <SignupForm onSubmit={signUp} />
       )}
     </div>
   );

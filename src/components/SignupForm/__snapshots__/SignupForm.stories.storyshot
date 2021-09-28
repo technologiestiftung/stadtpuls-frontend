@@ -19,10 +19,39 @@ exports[`Storyshots Forms/Signup Default 1`] = `
         Registrierung
       </h1>
       <form
+        className="flex flex-col gap-2"
         id="signup-form"
         noValidate={true}
         onSubmit={[Function]}
       >
+        <div
+          className="mb-2"
+        >
+          <div
+            className="mb-2"
+          >
+            <label
+              className="undefined block mb-2 cursor-pointer transition"
+              htmlFor="username"
+            >
+              <span>
+                Nutzername
+              </span>
+               
+            </label>
+            <input
+              className=" mb-0"
+              id="username"
+              name="username"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder="Dein einzigartigen Nutzername..."
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
         <div
           className="mb-2"
         >

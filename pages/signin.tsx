@@ -29,7 +29,7 @@ const SigningInState: FC = () => (
 );
 
 const SigninPage: FC = () => {
-  const { authenticate, isAuthenticating, magicLinkWasSent } = useAuth();
+  const { signIn, isAuthenticating, magicLinkWasSent } = useAuth();
   const router = useRouter();
 
   return (
@@ -42,7 +42,7 @@ const SigninPage: FC = () => {
         <MagicLinkConfirmationModal onClose={() => router.push("/")} />
       )}
       {!isAuthenticating && !magicLinkWasSent && (
-        <SigninForm onSubmit={authenticate} />
+        <SigninForm onSubmit={signIn} />
       )}
     </div>
   );

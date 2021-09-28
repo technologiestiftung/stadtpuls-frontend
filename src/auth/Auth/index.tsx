@@ -8,23 +8,6 @@ import {
 } from "react";
 import { supabase } from "../supabase";
 import { AuthenticatedUsersType } from "@common/types/supabase_DEPRECATED";
-interface AuthContextType {
-  signIn: typeof supabase.auth.signIn;
-  signOut: typeof supabase.auth.signOut;
-  authenticatedUser: AuthenticatedUsersType | null;
-  isLoadingAuth: boolean;
-  accessToken: string | null;
-}
-
-const defaultValue = {
-  signIn: supabase.auth.signIn.bind(supabase.auth),
-  signOut: supabase.auth.signOut.bind(supabase.auth),
-  authenticatedUser: null,
-  isLoadingAuth: true,
-  accessToken: null,
-};
-
-const AuthContext = createContext<AuthContextType>(defaultValue);
 
 export const AuthProvider: FC = ({ children }) => {
   const [authenticatedUser, setUser] = useState<
@@ -68,11 +51,68 @@ export const AuthProvider: FC = ({ children }) => {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
+interface SignUpDataType {
+  username: string;
+  email: string;
+}
+
+const signUp = async ({
+  username,
+  email,
+}: SignUpDataType): Promise<{
+  error: Error | null;
+}> => {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    redirect: "follow" as const,
+    body: JSON.stringify({ name: username, email }),
+  };
+
+  const baseUrl = process.env.NEXT_PUBLIC_TOKEN_API_URL || "";
+  const url = `${baseUrl}/api/v3/signup`;
+  try {
+    const response = await fetch(url, requestOptions);
+    const jsonResponse = (await response.json()) as {
+      error?: string;
+      message?: string;
+      statusCode?: number;
+    };
+    if (jsonResponse.statusCode !== 200)
+      return { error: new Error(jsonResponse.message) };
+    return { error: null };
+  } catch (e) {
+    return { error: e as Error };
+  }
+};
+interface AuthContextType {
+  signIn: typeof supabase.auth.signIn;
+  signOut: typeof supabase.auth.signOut;
+  authenticatedUser: AuthenticatedUsersType | null;
+  isLoadingAuth: boolean;
+  accessToken: string | null;
+}
+
+const defaultValue = {
+  signIn: supabase.auth.signIn.bind(supabase.auth),
+  signUp: supabase.auth.signIn.bind(supabase.auth),
+  signOut: supabase.auth.signOut.bind(supabase.auth),
+  authenticatedUser: null,
+  isLoadingAuth: true,
+  accessToken: null,
+};
+
+const AuthContext = createContext<AuthContextType>(defaultValue);
+
 interface AuthHookReturnType extends Omit<AuthContextType, "signIn"> {
   magicLinkWasSent: boolean;
   isAuthenticating: boolean;
   error: string | null;
-  authenticate: (data: { email: string }) => void;
+  signUp: (data: SignUpDataType) => Promise<void>;
+  signIn: (data: { email: string }) => Promise<void>;
 }
 
 export const useAuth = (): AuthHookReturnType => {
@@ -82,9 +122,10 @@ export const useAuth = (): AuthHookReturnType => {
   const [isAuthenticating, setIsAuthenticating] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  const authenticate = useCallback(
+  const signInHandler = useCallback(
     async (data: { email: string }): Promise<void> => {
       setIsAuthenticating(true);
+      setMagicLinkWasSent(false);
       const { error } = await signIn(data);
 
       if (error) setError(error.message);
@@ -93,11 +134,25 @@ export const useAuth = (): AuthHookReturnType => {
     },
     [signIn, setMagicLinkWasSent, setIsAuthenticating]
   );
+
+  const signUpHandler = useCallback(
+    async (data: { username: string; email: string }): Promise<void> => {
+      setIsAuthenticating(true);
+      setMagicLinkWasSent(false);
+      const { error } = await signUp(data);
+
+      if (error) setError(error.message);
+      if (!error) setMagicLinkWasSent(true);
+      setIsAuthenticating(false);
+    },
+    [setMagicLinkWasSent, setIsAuthenticating]
+  );
   return {
     ...auth,
     error,
     magicLinkWasSent,
     isAuthenticating,
-    authenticate,
+    signIn: signInHandler,
+    signUp: signUpHandler,
   };
 };
