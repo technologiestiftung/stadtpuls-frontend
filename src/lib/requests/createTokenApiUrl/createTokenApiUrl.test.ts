@@ -2,7 +2,7 @@ import { createTokenApiUrl } from ".";
 describe("utility function createTokenApiUrl", () => {
   it("should include the authtokens route", () => {
     const url = createTokenApiUrl();
-    expect(url.includes("/api/v2/authtokens")).toBe(true);
+    expect(url.includes("/api/v3/authtokens")).toBe(true);
   });
   it("should not include undefined", () => {
     const url = createTokenApiUrl();
