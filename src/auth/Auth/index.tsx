@@ -125,6 +125,7 @@ export const useAuth = (): AuthHookReturnType => {
   const signInHandler = useCallback(
     async (data: { email: string }): Promise<void> => {
       setIsAuthenticating(true);
+      setMagicLinkWasSent(false);
       const { error } = await signIn(data);
 
       if (error) setError(error.message);
@@ -137,6 +138,7 @@ export const useAuth = (): AuthHookReturnType => {
   const signUpHandler = useCallback(
     async (data: { username: string; email: string }): Promise<void> => {
       setIsAuthenticating(true);
+      setMagicLinkWasSent(false);
       const { error } = await signUp(data);
 
       if (error) setError(error.message);
