@@ -3,6 +3,7 @@
 exports[`Storyshots UI Elements/TokenForm Default 1`] = `
 <form
   className="grid md:grid-cols-[1fr,auto] gap-4 py-6"
+  id="token-form"
   noValidate={true}
   onSubmit={[Function]}
 >
@@ -23,12 +24,14 @@ exports[`Storyshots UI Elements/TokenForm Default 1`] = `
       />
     </div>
   </fieldset>
-  <button
-    className="inline-block text-lg px-4 py-2 font-headline transition cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green"
-    type="button"
-    variant="primary"
-  >
-    Neues Token anlegen
-  </button>
+  <div>
+    <input
+      className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green w-full"
+      form="token-form"
+      type="submit"
+      value="Neues Token anlegen"
+      variant="primary"
+    />
+  </div>
 </form>
 `;

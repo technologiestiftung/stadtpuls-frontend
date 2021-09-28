@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { TokenItem } from ".";
 
 const onRegenerateFunction = jest.fn();
-const onDeleteFunction = jest.fn();
+const onInitiateDeleteFunction = jest.fn();
 
 describe("TokenItem component", () => {
   it("displays the provided token name", () => {
@@ -11,7 +11,7 @@ describe("TokenItem component", () => {
       <TokenItem
         name='Super token'
         onRegenerate={onRegenerateFunction}
-        onDelete={onDeleteFunction}
+        onInitiateDelete={onInitiateDeleteFunction}
       />
     );
 
@@ -24,7 +24,7 @@ describe("TokenItem component", () => {
       <TokenItem
         name='Super token'
         onRegenerate={onRegenerateFunction}
-        onDelete={onDeleteFunction}
+        onInitiateDelete={onInitiateDeleteFunction}
       />
     );
 
@@ -32,17 +32,17 @@ describe("TokenItem component", () => {
 
     expect(onRegenerateFunction).toHaveBeenCalledTimes(1);
   });
-  it("calls a onDeleteFunction function on onDeleteFunction", () => {
+  it("calls a onInitiateDeleteFunction function on onInitiateDeleteFunction", () => {
     render(
       <TokenItem
         name='Super token'
         onRegenerate={onRegenerateFunction}
-        onDelete={onDeleteFunction}
+        onInitiateDelete={onInitiateDeleteFunction}
       />
     );
 
     userEvent.click(screen.getByLabelText(/Super token löschen/i));
 
-    expect(onDeleteFunction).toHaveBeenCalledTimes(1);
+    expect(onInitiateDeleteFunction).toHaveBeenCalledTimes(1);
   });
 });

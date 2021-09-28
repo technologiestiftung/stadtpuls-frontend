@@ -6,7 +6,7 @@ import KeyIcon from "../../../public/images/icons/16px/key.svg";
 export interface TokenItemType {
   name: string;
   onRegenerate: () => void;
-  onDelete: () => void;
+  onInitiateDelete: () => void;
   isFirstItem?: boolean;
   additionalClassNames?: string;
 }
@@ -14,7 +14,7 @@ export interface TokenItemType {
 export const TokenItem: FC<TokenItemType> = ({
   name,
   onRegenerate,
-  onDelete,
+  onInitiateDelete,
   isFirstItem,
   additionalClassNames,
 }) => {
@@ -43,7 +43,7 @@ export const TokenItem: FC<TokenItemType> = ({
         <Button
           variant='dangerous'
           className='my-1'
-          onClick={onDelete}
+          onClick={onInitiateDelete}
           aria-label={`${name} löschen`}
         >
           Löschen
