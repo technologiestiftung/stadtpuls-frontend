@@ -15,7 +15,7 @@ import {
   FormFieldRules,
   FormFieldRulesPropType,
 } from "@components/FormFieldRules";
-import useUniqueUsernameValidation from "@lib/hooks/useUniqueUsernameValidation";
+import { useUniqueUsernameValidation } from "@lib/hooks/useUniqueUsernameValidation";
 
 interface SignupFormData {
   username: string;
@@ -117,14 +117,10 @@ export const SignupForm: FC<{
               type='text'
               errors={usernameHasError ? [" "] : []}
               onFocus={() => setUsernameWasFocused(true)}
-              onBlur={() => {
-                field.onBlur();
-                setUsernameWasFocused(false);
-              }}
               className='mb-0'
             />
             <FormFieldRules
-              isTouched={!!usernameIsInvalid || usernameWasFocused}
+              isTouched={!!usernameIsInvalid && usernameWasFocused}
               rules={usernameRules}
               withSubmittedErrors={usernameHasError}
             />

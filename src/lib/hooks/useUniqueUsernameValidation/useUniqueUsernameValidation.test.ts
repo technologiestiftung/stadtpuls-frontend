@@ -4,7 +4,7 @@ import { renderHook } from "@testing-library/react-hooks";
 import * as sup from "@auth/supabase";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import useUniqueUsernameValidation from ".";
+import { useUniqueUsernameValidation } from ".";
 
 describe("useUniqueUsernameValidation", () => {
   it("should return default values", () => {

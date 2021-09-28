@@ -13,7 +13,7 @@ const checkIfUsernameIsUnique = async (username?: string): Promise<boolean> => {
   return !usersWithMatchingUsernames || usersWithMatchingUsernames.length === 0;
 };
 
-export default (
+export const useUniqueUsernameValidation = (
   username?: string
 ): {
   isUnique: boolean;
