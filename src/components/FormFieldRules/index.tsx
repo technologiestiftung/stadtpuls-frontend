@@ -12,6 +12,7 @@ interface RuleType {
 
 export interface FormFieldRulesPropType {
   isTouched: boolean;
+  withSubmittedErrors?: boolean;
   rules: RuleType[];
 }
 
@@ -20,6 +21,7 @@ const getIconByFulfilledStatus = (isFulfilled: boolean): ReactNode =>
 
 export const FormFieldRules: FC<FormFieldRulesPropType> = ({
   isTouched,
+  withSubmittedErrors = false,
   rules,
 }) =>
   isTouched && rules.length > 0 ? (
@@ -29,7 +31,8 @@ export const FormFieldRules: FC<FormFieldRulesPropType> = ({
           key={id}
           className={[
             "flex gap-1 items-center leading-tight text-sm",
-            !isFulfilled && "text-gray-500",
+            !isFulfilled &&
+              (withSubmittedErrors ? "text-error" : "text-gray-500"),
           ]
             .filter(Boolean)
             .join(" ")}

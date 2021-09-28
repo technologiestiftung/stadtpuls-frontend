@@ -1,7 +1,11 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { SignupForm } from ".";
+import * as swr from "swr";
 
 describe("component SignupForm", () => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  swr.default = jest.fn().mockReturnValue({ isUnique: true });
   it("should render an username input", () => {
     render(<SignupForm />);
     const usernameLabel = screen.getByText(/Nutzername/i);
