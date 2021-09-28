@@ -1,4 +1,4 @@
-import { Button } from "@components/Button";
+import { Submit } from "@components/Button";
 import classNames from "classnames";
 import * as yup from "yup";
 import { FC } from "react";
@@ -7,6 +7,8 @@ import { FormTextInput } from "@components/FormTextInput";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { definitions } from "@common/types/supabase";
 import { requiredTokenDescriptionValidation } from "@lib/formValidationUtil";
+
+const FORM_ID = "token-form";
 
 type TokenFormFields = Pick<definitions["auth_tokens"], "description">;
 
@@ -49,6 +51,7 @@ export const TokenForm: FC<TokenFormType> = ({
         "py-6",
         additionalClassNames
       )}
+      id={FORM_ID}
     >
       <fieldset className='w-full'>
         <Controller
@@ -68,7 +71,11 @@ export const TokenForm: FC<TokenFormType> = ({
           )}
         />
       </fieldset>
-      <Button variant='primary'>{submitMessage}</Button>
+      <div>
+        <Submit variant='primary' form={FORM_ID} className='w-full'>
+          {submitMessage}
+        </Submit>
+      </div>
     </form>
   );
 };
