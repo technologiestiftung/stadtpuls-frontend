@@ -48,6 +48,7 @@ export const TokenCreationModal: FC<TokenCreationModalPropType> = ({
         type='warning'
         title='Wichtig!'
         message='Kopiere dein neues Token jetzt. Du wirst es später nicht wieder einsehen können.'
+        isRemovable={false}
       />
       <div className='mt-8'>
         <TokenDescription description={tokenDescription} />
