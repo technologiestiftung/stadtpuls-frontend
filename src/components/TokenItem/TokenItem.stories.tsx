@@ -24,6 +24,14 @@ LongName.args = {
   onInitiateDelete: action("onInitiateDelete function executed"),
 };
 
+export const LongDescriptionWithoutSpaces = Template.bind({});
+LongDescriptionWithoutSpaces.args = {
+  name:
+    "Dlkdsjflkfsdnfjdnfjssdfsdfiuehwhuwfjbsmdbfsbuzuxghfhjbjchuhcuvuxcvxjhjxcgvxchvjnjhjhdhfsjkljajksdghjdshfbsdfbjsdfnkjhjdkfsjfjsdfsjfsb",
+  onRegenerate: action("onRegenerate function executed"),
+  onInitiateDelete: action("onInitiateDelete function executed"),
+};
+
 export const FirstItemInList = Template.bind({});
 FirstItemInList.args = {
   name: "I am the first token with a border-top",

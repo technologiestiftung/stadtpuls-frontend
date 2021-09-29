@@ -30,7 +30,7 @@ export const TokenItem: FC<TokenItemType> = ({
     >
       <div className={classNames("flex py-2", "text-gray-800")}>
         <KeyIcon className='flex-shrink-0 self-center' aria-hidden />
-        <p className='ml-3'>{name}</p>
+        <p className='ml-3 break-all'>{name}</p>
       </div>
       <div className='py-2 ml-7'>
         <Button

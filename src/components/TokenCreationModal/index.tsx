@@ -9,7 +9,7 @@ const TokenDescription: FC<{ description: string }> = ({ description }) => {
   return (
     <div className={classNames("flex py-2", "text-gray-800")}>
       <KeyIcon className='flex-shrink-0 self-center' aria-hidden />
-      <p className='ml-2 text-lg'>{description}</p>
+      <p className='ml-2 text-lg break-all'>{description}</p>
     </div>
   );
 };
