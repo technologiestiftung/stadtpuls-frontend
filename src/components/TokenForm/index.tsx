@@ -16,7 +16,7 @@ export interface TokenFormType {
   label?: string;
   placeholder?: string;
   submitMessage?: string;
-  onSubmit: () => void;
+  onSubmit: (description: TokenFormFields["description"]) => void;
   additionalClassNames?: string;
 }
 
@@ -45,7 +45,9 @@ export const TokenForm: FC<TokenFormType> = ({
   return (
     <form
       noValidate
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(data => {
+        onSubmit(data.description);
+      })}
       className={classNames(
         "grid md:grid-cols-[1fr,auto] gap-4",
         "py-6",
