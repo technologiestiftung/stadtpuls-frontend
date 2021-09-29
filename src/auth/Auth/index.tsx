@@ -79,8 +79,9 @@ const handleSigningCall = async (
   const url = createApiUrl(`/${route}`);
   try {
     const response = await fetch(url, requestOptions);
-    const errorAsText = await response.text();
-    const jsonResponse = (await JSON.parse(errorAsText)) as {
+    const textResponse = await response.text();
+    if (!textResponse) return { error: null };
+    const jsonResponse = (await JSON.parse(textResponse)) as {
       error?: string;
       message?: string;
       statusCode?: number;
