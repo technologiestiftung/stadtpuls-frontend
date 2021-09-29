@@ -1,12 +1,14 @@
+import { definitions } from "@common/types/supabase";
 import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
-import { AccessTokenType, TokenType } from ".";
 
-interface CreateTokenPayload {
-  scope?: TokenType["scope"];
-  description: TokenType["description"];
+type TokenType = Omit<definitions["auth_tokens"], "id">;
+type AccessTokenType = string;
+
+interface RegenerateTokenPayload {
+  nice_id: TokenType["nice_id"];
 }
 
-export interface CreateTokenResponseSignature {
+export interface RegenerateTokenResponseSignature {
   method: string;
   url: string;
   data: {
@@ -15,13 +17,13 @@ export interface CreateTokenResponseSignature {
   };
 }
 
-type CreateUserTokenSignature = (
-  params: CreateTokenPayload & {
+type RegenerateUserTokenSignature = (
+  params: RegenerateTokenPayload & {
     accessToken: AccessTokenType;
   }
-) => Promise<CreateTokenResponseSignature>;
+) => Promise<RegenerateTokenResponseSignature>;
 
-export const createUserToken: CreateUserTokenSignature = async ({
+export const regenerateUserToken: RegenerateUserTokenSignature = async ({
   accessToken,
   ...payload
 }) => {
@@ -30,13 +32,13 @@ export const createUserToken: CreateUserTokenSignature = async ({
   myHeaders.append("Content-Type", "application/json");
 
   const requestOptions = {
-    method: "POST",
+    method: "PUT",
     headers: myHeaders,
     redirect: "follow" as const,
     body: JSON.stringify(payload),
   };
 
   const tokenResponse = await fetch(createTokenApiUrl(), requestOptions);
-  const parsedTokenResponse = (await tokenResponse.json()) as CreateTokenResponseSignature;
+  const parsedTokenResponse = (await tokenResponse.json()) as RegenerateTokenResponseSignature;
   return parsedTokenResponse;
 };

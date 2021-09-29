@@ -1,5 +1,8 @@
+import { definitions } from "@common/types/supabase";
 import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
-import { AccessTokenType, TokenType } from ".";
+
+type TokenType = Omit<definitions["auth_tokens"], "id">;
+type AccessTokenType = string;
 
 interface DeleteTokenPayload {
   nice_id: TokenType["nice_id"];
