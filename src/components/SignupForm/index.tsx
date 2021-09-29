@@ -16,11 +16,18 @@ import {
   FormFieldRulesPropType,
 } from "@components/FormFieldRules";
 import { useUniqueUsernameValidation } from "@lib/hooks/useUniqueUsernameValidation";
+import { getTranslatedErrorMessage } from "@lib/translationUtil";
 
 interface SignupFormData {
   username: string;
   email: string;
   areConditionsAccepted?: boolean;
+}
+
+interface SignupFormPropType {
+  defaultValues?: Partial<SignupFormData>;
+  onSubmit?: (data: SignupFormData) => void;
+  serverErrors?: Partial<Record<keyof SignupFormData, string | undefined>>;
 }
 
 const formSchema = yup.object().shape({
@@ -60,15 +67,17 @@ const getUsernameRules = ({
   },
 ];
 
-export const SignupForm: FC<{
-  onSubmit?: (data: SignupFormData) => void;
-}> = ({ onSubmit = console.log }) => {
+export const SignupForm: FC<SignupFormPropType> = ({
+  defaultValues = {},
+  onSubmit = console.log,
+  serverErrors = {},
+}) => {
   const [usernameWasFocused, setUsernameWasFocused] = useState(false);
   const {
     control,
     handleSubmit,
     watch,
-    formState: { errors, isSubmitted },
+    formState: { errors, isSubmitted, touchedFields },
   } = useForm<SignupFormData>({
     resolver: yupResolver(formSchema),
   });
@@ -99,15 +108,12 @@ export const SignupForm: FC<{
   );
   const usernameHasError = isSubmitted && usernameIsInvalid;
 
-  const formatError = (errorMsg?: string): string[] =>
-    errorMsg ? [errorMsg] : [];
-
   return (
     <SignInUpFormWrapper onSubmit={onInternalSubmit} type='up'>
       <Controller
         name='username'
         control={control}
-        defaultValue=''
+        defaultValue={defaultValues.username || ""}
         render={({ field }) => (
           <div className='mb-2'>
             <FormTextInput
@@ -115,7 +121,9 @@ export const SignupForm: FC<{
               label='Nutzername'
               placeholder='Dein einzigartigen Nutzername...'
               type='text'
-              errors={usernameHasError ? [" "] : []}
+              errors={([
+                !touchedFields.username && serverErrors.username,
+              ].filter(Boolean) as string[]).map(getTranslatedErrorMessage)}
               onFocus={() => setUsernameWasFocused(true)}
               className='mb-0'
             />
@@ -130,21 +138,24 @@ export const SignupForm: FC<{
       <Controller
         name='email'
         control={control}
-        defaultValue=''
+        defaultValue={defaultValues.email || ""}
         render={({ field }) => (
           <FormTextInput
             {...field}
             label='E-Mail'
             placeholder='Deine E-Mail-Adresse...'
             type='email'
-            errors={formatError(errors.email?.message)}
+            errors={([
+              errors.email?.message ||
+                (!touchedFields.email && serverErrors.email),
+            ].filter(Boolean) as string[]).map(getTranslatedErrorMessage)}
           />
         )}
       />
       <Controller
         name='areConditionsAccepted'
         control={control}
-        defaultValue={false}
+        defaultValue={defaultValues.areConditionsAccepted || false}
         render={({ field }) => (
           <FormCheckbox
             {...field}
@@ -157,7 +168,11 @@ export const SignupForm: FC<{
                 .
               </>
             }
-            errors={formatError(errors.areConditionsAccepted?.message)}
+            errors={([
+              errors.areConditionsAccepted?.message ||
+                (!touchedFields.areConditionsAccepted &&
+                  serverErrors.areConditionsAccepted),
+            ].filter(Boolean) as string[]).map(getTranslatedErrorMessage)}
           />
         )}
       />

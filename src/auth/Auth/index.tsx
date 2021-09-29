@@ -56,70 +56,62 @@ interface SignUpDataType {
   email: string;
 }
 
+const handleSigningCall = async (
+  route: "signin" | "signup",
+  body: {
+    name?: string;
+    email: string;
+  }
+): Promise<{
+  error: string | null;
+}> => {
+  const defaultErrorMessage = "Es ist ein Fehler bei der Anmeldung aufgetreten";
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    redirect: "follow" as const,
+    body: JSON.stringify(body),
+  };
+
+  const baseUrl = process.env.NEXT_PUBLIC_TOKEN_API_URL || "";
+  const url = `${baseUrl}/api/v3/${route}`;
+  try {
+    const response = await fetch(url, requestOptions);
+    const errorAsText = await response.text();
+    const jsonResponse = (await JSON.parse(errorAsText)) as {
+      error?: string;
+      message?: string;
+      statusCode?: number;
+    };
+    if (jsonResponse.statusCode !== 204)
+      return {
+        error: jsonResponse.message || defaultErrorMessage,
+      };
+    return { error: null };
+  } catch (e) {
+    const error = new Error(e as string);
+    return {
+      error: error.message || defaultErrorMessage,
+    };
+  }
+};
+
 const signUp = async ({
   username,
   email,
 }: SignUpDataType): Promise<{
-  error: Error | null;
-}> => {
-  const myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-
-  const requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    redirect: "follow" as const,
-    body: JSON.stringify({ name: username, email }),
-  };
-
-  const baseUrl = process.env.NEXT_PUBLIC_TOKEN_API_URL || "";
-  const url = `${baseUrl}/api/v3/signup`;
-  try {
-    const response = await fetch(url, requestOptions);
-    const jsonResponse = (await response.json()) as {
-      error?: string;
-      message?: string;
-      statusCode?: number;
-    };
-    if (jsonResponse.statusCode !== 200)
-      return { error: new Error(jsonResponse.message) };
-    return { error: null };
-  } catch (e) {
-    return { error: e as Error };
-  }
-};
+  error: string | null;
+}> => handleSigningCall("signup", { name: username, email });
 
 const signIn = async ({
   email,
 }: Omit<SignUpDataType, "username">): Promise<{
-  error: Error | null;
-}> => {
-  const myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
+  error: string | null;
+}> => handleSigningCall("signin", { email });
 
-  const requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    redirect: "follow" as const,
-    body: JSON.stringify({ email }),
-  };
-
-  const baseUrl = process.env.NEXT_PUBLIC_TOKEN_API_URL || "";
-  const url = `${baseUrl}/api/v3/signin`;
-  try {
-    const response = await fetch(url, requestOptions);
-    const jsonResponse = (await response.json()) as {
-      error?: string;
-      message?: string;
-      statusCode?: number;
-    };
-    if (jsonResponse.statusCode !== 200)
-      return { error: new Error(jsonResponse.message) };
-    return { error: null };
-  } catch (e) {
-    return { error: e as Error };
-  }
-};
 interface AuthContextType {
   signOut: typeof supabase.auth.signOut;
   authenticatedUser: AuthenticatedUsersType | null;
@@ -159,7 +151,7 @@ export const useAuth = (): AuthHookReturnType => {
       setMagicLinkWasSent(false);
       const { error } = await signIn(data);
 
-      if (error) setError(error.message);
+      if (error) setError(error);
       if (!error) setMagicLinkWasSent(true);
       setIsAuthenticating(false);
     },
@@ -172,7 +164,7 @@ export const useAuth = (): AuthHookReturnType => {
       setMagicLinkWasSent(false);
       const { error } = await signUp(data);
 
-      if (error) setError(error.message);
+      if (error) setError(error);
       if (!error) setMagicLinkWasSent(true);
       setIsAuthenticating(false);
     },

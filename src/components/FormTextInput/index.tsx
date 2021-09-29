@@ -6,7 +6,7 @@ interface FormTextInputPropType
   name: string;
   label?: ReactNode;
   containerClassName?: string;
-  errors?: string[];
+  errors?: ReactNode[];
   optional?: boolean;
 }
 
@@ -49,7 +49,7 @@ export const FormTextInput = forwardRef<
         {...inputProps}
       />
       {errors.map(error => (
-        <p className='text-error text-sm' key={error}>
+        <p className='text-error text-sm' key={error?.toString()}>
           {error}
         </p>
       ))}
