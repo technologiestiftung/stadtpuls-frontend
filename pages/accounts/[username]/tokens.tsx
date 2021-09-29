@@ -82,6 +82,22 @@ const AccountTokensPage: FC<AccountTokensPagePropType> = ({ routeAccount }) => {
       )}
       {isOwnerAndLoggedIn && (
         <div className='container max-w-8xl mx-auto px-4 py-16'>
+          {error && (
+            <div className='mb-8'>
+              <Alert
+                title='Fehler:'
+                message={
+                  <>
+                    Ein unerwarteter Fehler ist aufgetreten.
+                    <code className='ml-4 px-2 py-1 font-mono bg-error bg-opacity-20'>
+                      {error}
+                    </code>
+                  </>
+                }
+                type='error'
+              />
+            </div>
+          )}
           <TokenForm
             onSubmit={async tokenDescription => {
               const tokenResponse = await createToken(tokenDescription);
@@ -89,11 +105,6 @@ const AccountTokensPage: FC<AccountTokensPagePropType> = ({ routeAccount }) => {
               setNewTokenDescription(tokenDescription);
             }}
           />
-          {error && (
-            <div>
-              <p>Ein Fehler ist aufgetreten</p>
-            </div>
-          )}
           {tokens && tokens.length === 0 && (
             <div className='text-gray-500 text-center mt-12'>
               Noch keine Tokens vorhanden.
