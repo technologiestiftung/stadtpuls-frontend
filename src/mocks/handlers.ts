@@ -4,7 +4,6 @@ import { parsedSensors, sensors } from "./supabaseData/sensors";
 import { publicAccounts } from "./supabaseData/accounts";
 import { createApiUrl } from "../lib/requests/createApiUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
-import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
 import { definitions } from "@common/types/supabase";
 import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
@@ -33,39 +32,6 @@ const mapBoxGeocodingHandlers = [
       return res(
         ctx.status(201, "Mocked status"),
         ctx.json(fakeGeocondingData)
-      );
-    }
-  ),
-];
-
-const tokenApiHandlers = [
-  rest.get<Omit<definitions["auth_tokens"], "id">[]>(
-    createTokenApiUrl(),
-    (_req, res, ctx) => {
-      return res(
-        ctx.status(200, "Mocked status"),
-        ctx.json({
-          data: [
-            {
-              nice_id: 1,
-              description: "Lorem ipsum dolor.",
-              scope: "sudo",
-              user_id: "abc",
-            },
-            {
-              nice_id: 2,
-              description: "Sit amet consectetur.",
-              scope: "sudo",
-              user_id: "abc",
-            },
-            {
-              nice_id: 3,
-              description: "Lipsum amet dolor.",
-              scope: "sudo",
-              user_id: "abc",
-            },
-          ],
-        })
       );
     }
   ),
@@ -435,5 +401,4 @@ export const handlers = [
   ...mapBoxGeocodingHandlers,
   ...supabaseHandlers,
   ...authHandlers,
-  ...tokenApiHandlers,
 ];
