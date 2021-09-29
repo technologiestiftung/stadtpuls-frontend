@@ -6,23 +6,23 @@ const onRegenerateFunction = jest.fn();
 const onInitiateDeleteFunction = jest.fn();
 
 describe("TokenItem component", () => {
-  it("displays the provided token name", () => {
+  it("displays the provided token description", () => {
     render(
       <TokenItem
-        name='Super token'
+        description='Super token'
         onRegenerate={onRegenerateFunction}
         onInitiateDelete={onInitiateDeleteFunction}
       />
     );
 
-    const tokenName = screen.getByText("Super token");
+    const tokenDescription = screen.getByText("Super token");
 
-    expect(tokenName).toBeInTheDocument();
+    expect(tokenDescription).toBeInTheDocument();
   });
   it("calls a onRegenerate function on onRegenerate", () => {
     render(
       <TokenItem
-        name='Super token'
+        description='Super token'
         onRegenerate={onRegenerateFunction}
         onInitiateDelete={onInitiateDeleteFunction}
       />
@@ -35,7 +35,7 @@ describe("TokenItem component", () => {
   it("calls a onInitiateDeleteFunction function on onInitiateDeleteFunction", () => {
     render(
       <TokenItem
-        name='Super token'
+        description='Super token'
         onRegenerate={onRegenerateFunction}
         onInitiateDelete={onInitiateDeleteFunction}
       />

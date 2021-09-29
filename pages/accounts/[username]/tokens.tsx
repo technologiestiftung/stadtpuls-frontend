@@ -116,7 +116,7 @@ const AccountTokensPage: FC<AccountTokensPagePropType> = ({ routeAccount }) => {
               return (
                 <TokenItem
                   key={`token-${token.nice_id}`}
-                  name={token.description}
+                  description={token.description}
                   onRegenerate={async () => {
                     const tokenResponse = await regenerateToken(token.nice_id);
                     setNewToken(tokenResponse.data.token);
