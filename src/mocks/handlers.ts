@@ -40,11 +40,25 @@ const mapBoxGeocodingHandlers = [
 ];
 
 const signingHandlers = [
-  rest.post(createSigningApiUrl("/signin"), (_req, res, ctx) => {
-    return res(ctx.status(200, "Mocked status"), ctx.json({}));
+  rest.post(createSigningApiUrl("signin"), (_req, res, ctx) => {
+    return res(
+      ctx.status(204, "Mocked status"),
+      ctx.text(
+        JSON.stringify({
+          statusCode: 204,
+        })
+      )
+    );
   }),
-  rest.post(createSigningApiUrl("/signup"), (_req, res, ctx) => {
-    return res(ctx.status(200, "Mocked status"), ctx.json({}));
+  rest.post(createSigningApiUrl("signup"), (_req, res, ctx) => {
+    return res(
+      ctx.status(204, "Mocked status"),
+      ctx.text(
+        JSON.stringify({
+          statusCode: 204,
+        })
+      )
+    );
   }),
 ];
 

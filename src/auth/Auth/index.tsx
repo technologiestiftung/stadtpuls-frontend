@@ -8,6 +8,7 @@ import {
 } from "react";
 import { supabase } from "../supabase";
 import { AuthenticatedUsersType } from "@common/types/supabase_DEPRECATED";
+import { createSigningApiUrl } from "@lib/requests/createSigningApiUrl";
 
 export const AuthProvider: FC = ({ children }) => {
   const [authenticatedUser, setUser] = useState<
@@ -41,7 +42,6 @@ export const AuthProvider: FC = ({ children }) => {
   }, []);
 
   const value = {
-    signIn: supabase.auth.signIn.bind(supabase.auth),
     signOut: supabase.auth.signOut.bind(supabase.auth),
     authenticatedUser: authenticatedUser ?? null,
     isLoadingAuth,
@@ -76,8 +76,7 @@ const handleSigningCall = async (
     body: JSON.stringify(body),
   };
 
-  const baseUrl = process.env.NEXT_PUBLIC_TOKEN_API_URL || "";
-  const url = `${baseUrl}/api/v3/${route}`;
+  const url = createSigningApiUrl(route);
   try {
     const response = await fetch(url, requestOptions);
     const errorAsText = await response.text();
@@ -139,8 +138,7 @@ interface AuthHookReturnType extends Omit<AuthContextType, "signIn"> {
 }
 
 export const useAuth = (): AuthHookReturnType => {
-  const authContext = useContext(AuthContext);
-  const auth = authContext;
+  const auth = useContext(AuthContext);
   const [magicLinkWasSent, setMagicLinkWasSent] = useState<boolean>(false);
   const [isAuthenticating, setIsAuthenticating] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
