@@ -39,7 +39,15 @@ export const createUserToken: CreateUserTokenSignature = async ({
     body: JSON.stringify(payload),
   };
 
-  const tokenResponse = await fetch(createTokenApiUrl(), requestOptions);
-  const parsedTokenResponse = (await tokenResponse.json()) as CreateTokenResponseSignature;
+  const response = await fetch(createTokenApiUrl(), requestOptions);
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  if (response.status !== 201) {
+    throw new Error(
+      `Wrong status code ${response.status} for successful token creation response`
+    );
+  }
+  const parsedTokenResponse = (await response.json()) as CreateTokenResponseSignature;
   return parsedTokenResponse;
 };

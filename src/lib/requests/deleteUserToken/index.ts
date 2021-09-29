@@ -29,5 +29,8 @@ export const deleteUserToken: DeleteUserTokenSignature = async ({
     body: JSON.stringify(payload),
   };
 
-  await fetch(createTokenApiUrl(), requestOptions);
+  const response = await fetch(createTokenApiUrl(), requestOptions);
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
 };
