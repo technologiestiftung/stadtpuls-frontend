@@ -8,7 +8,7 @@ import {
 } from "react";
 import { supabase } from "../supabase";
 import { AuthenticatedUsersType } from "@common/types/supabase_DEPRECATED";
-import { createSigningApiUrl } from "@lib/requests/createSigningApiUrl";
+import { createApiUrl } from "@lib/requests/createApiUrl";
 
 export const AuthProvider: FC = ({ children }) => {
   const [authenticatedUser, setUser] = useState<
@@ -76,7 +76,7 @@ const handleSigningCall = async (
     body: JSON.stringify(body),
   };
 
-  const url = createSigningApiUrl(route);
+  const url = createApiUrl(`/${route}`);
   try {
     const response = await fetch(url, requestOptions);
     const errorAsText = await response.text();

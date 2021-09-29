@@ -6,7 +6,7 @@ import { SWRConfig } from "swr";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { AuthProvider, useAuth } from ".";
-import { createSigningApiUrl } from "@lib/requests/createSigningApiUrl";
+import { createApiUrl } from "@lib/requests/createApiUrl";
 
 const HookWrapper: FC = ({ children }) => (
   <SWRConfig value={{ dedupingInterval: 0 }}>
@@ -74,7 +74,7 @@ describe("useAuth", () => {
   });
   it("should signin with happy path", async (): Promise<void> => {
     const server = setupServer(
-      rest.post(createSigningApiUrl("signin"), (_req, res, ctx) => {
+      rest.post(createApiUrl("/signin"), (_req, res, ctx) => {
         return res(
           ctx.status(204, "Mocked status"),
           ctx.text(
@@ -107,7 +107,7 @@ describe("useAuth", () => {
   });
   it("should signin with 404 error", async (): Promise<void> => {
     const server = setupServer(
-      rest.post(createSigningApiUrl("signin"), (_req, res, ctx) => {
+      rest.post(createApiUrl("/signin"), (_req, res, ctx) => {
         return res(
           ctx.status(404, "Mocked status"),
           ctx.text(
@@ -142,7 +142,7 @@ describe("useAuth", () => {
   });
   it("should signin with generic error name", async (): Promise<void> => {
     const server = setupServer(
-      rest.post(createSigningApiUrl("signin"), (_req, res, ctx) => {
+      rest.post(createApiUrl("/signin"), (_req, res, ctx) => {
         return res(
           ctx.status(500, "Mocked status"),
           ctx.text(
@@ -179,7 +179,7 @@ describe("useAuth", () => {
   });
   it("should signup with happy path", async (): Promise<void> => {
     const server = setupServer(
-      rest.post(createSigningApiUrl("signup"), (_req, res, ctx) => {
+      rest.post(createApiUrl("/signup"), (_req, res, ctx) => {
         return res(
           ctx.status(204, "Mocked status"),
           ctx.text(
@@ -215,7 +215,7 @@ describe("useAuth", () => {
   });
   it("should signup with 404 error", async (): Promise<void> => {
     const server = setupServer(
-      rest.post(createSigningApiUrl("signup"), (_req, res, ctx) => {
+      rest.post(createApiUrl("/signup"), (_req, res, ctx) => {
         return res(
           ctx.status(404, "Mocked status"),
           ctx.text(
@@ -253,7 +253,7 @@ describe("useAuth", () => {
   });
   it("should signup with generic error name", async (): Promise<void> => {
     const server = setupServer(
-      rest.post(createSigningApiUrl("signup"), (_req, res, ctx) => {
+      rest.post(createApiUrl("/signup"), (_req, res, ctx) => {
         return res(
           ctx.status(500, "Mocked status"),
           ctx.text(

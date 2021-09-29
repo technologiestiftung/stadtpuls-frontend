@@ -1,6 +1,6 @@
 import { useAuth } from "@auth/Auth";
 import { supabase } from "@auth/supabase";
-import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
+import { createApiUrl } from "@lib/requests/createApiUrl";
 import { useCallback } from "react";
 import useSWR, { mutate } from "swr";
 
@@ -62,7 +62,7 @@ const createProjectToken: CreateProjectTokenSignature = async ({
 
   if (deletionError) throw deletionError;
 
-  const rawToken = await fetch(createTokenApiUrl(), requestOptions);
+  const rawToken = await fetch(createApiUrl("/authtokens"), requestOptions);
   const stringToken = await rawToken.text();
   return stringToken;
 };
@@ -81,7 +81,7 @@ const getProjectTokens: GetProjectTokensSignature = async ({
     redirect: "follow" as const,
   };
 
-  const url = createTokenApiUrl({ projectId });
+  const url = createApiUrl("/authtokens", { projectId });
   const rawTokens = await fetch(url, requestOptions);
   const response = await (rawTokens.json() as Promise<{
     data: TokenType[];

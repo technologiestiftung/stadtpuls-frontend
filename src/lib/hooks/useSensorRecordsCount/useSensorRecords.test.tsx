@@ -4,7 +4,7 @@ import { render, waitFor } from "@testing-library/react";
 import { FC, useEffect } from "react";
 import { SWRConfig } from "swr";
 import { useSensorRecordsCount } from ".";
-import { createApiUrl } from "@lib/requests/createApiUrl";
+import { createSupabaseUrl } from "@lib/requests/createSupabaseUrl";
 
 type OnSuccessType = (data: number | null) => void;
 type OnFailType = (error: string) => void;
@@ -28,7 +28,7 @@ const createTestComponent = (
 describe("useSensorRecordsCount hook", () => {
   test("should return an empty array if no sensorId", async (): Promise<void> => {
     const server = setupServer(
-      rest.head(createApiUrl(`/records`), (_req, res, ctx) => {
+      rest.head(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(
           ctx.set("content-range", "0-28/29"),
           ctx.status(201, "Mocked status")
@@ -54,7 +54,7 @@ describe("useSensorRecordsCount hook", () => {
   });
   test("should return an array of records with sensorId", async (): Promise<void> => {
     const server = setupServer(
-      rest.head(createApiUrl(`/records`), (_req, res, ctx) => {
+      rest.head(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(
           ctx.set("content-range", "0-28/29"),
           ctx.status(201, "Mocked status")

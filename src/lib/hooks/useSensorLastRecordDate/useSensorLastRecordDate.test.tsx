@@ -4,7 +4,7 @@ import { render, waitFor } from "@testing-library/react";
 import { FC, useEffect } from "react";
 import { SWRConfig } from "swr";
 import { useSensorLastRecordDate } from ".";
-import { createApiUrl } from "@lib/requests/createApiUrl";
+import { createSupabaseUrl } from "@lib/requests/createSupabaseUrl";
 import { sensors } from "@mocks/supabaseData/sensors";
 
 const exampleSensor = sensors[0];
@@ -33,7 +33,7 @@ const createTestComponent = (
 describe("useSensorLastRecordDate hook", () => {
   test("should return undefined if no sensorId", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(
           ctx.status(200, "Mocked status"),
           ctx.json([exampleSensor.records[0]])
@@ -59,7 +59,7 @@ describe("useSensorLastRecordDate hook", () => {
   });
   test("should return a record object with sensorId", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(
           ctx.status(200, "Mocked status"),
           ctx.json([exampleSensor.records[0]])

@@ -14,7 +14,7 @@ export const getTranslatedErrorMessage = (errorMessage: string): ReactNode => {
   if (errorMessage === "Rate limit exceeded, retry in 10 seconds")
     return "Du hast in einem kurzen Zeitraum zu oft versucht, dich einzuloggen. Bitte probiere es in 10 Sekunden noch einmal.";
   if (errorMessage === "Rate limit exceeded, retry in 1 minute")
-    return "Du hast in einem kurzen Zeitraum zu oft versucht, dich einzuloggen. Bitte probiere es in eine Minute noch einmal.";
+    return "Du hast in einem kurzen Zeitraum zu oft versucht, dich einzuloggen. Bitte probiere es in einer Minute noch einmal.";
   if (
     errorMessage.startsWith("The email ") &&
     errorMessage.endsWith(" is already taken")

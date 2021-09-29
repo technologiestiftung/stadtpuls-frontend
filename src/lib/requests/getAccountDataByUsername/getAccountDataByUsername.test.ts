@@ -2,14 +2,14 @@ import { publicAccounts } from "@mocks/supabaseData/accounts";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { getAccountDataByUsername } from ".";
-import { createApiUrl } from "../createApiUrl";
+import { createSupabaseUrl } from "../createSupabaseUrl";
 
 const exampleAccount = publicAccounts[0];
 
 describe("utility function getAccountDataByUsername", () => {
   it("should return data belonging to provided username", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createApiUrl(`/user_profiles`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/user_profiles`), (_req, res, ctx) => {
         return res(ctx.status(200, "Mocked status"), ctx.json(exampleAccount));
       })
     );

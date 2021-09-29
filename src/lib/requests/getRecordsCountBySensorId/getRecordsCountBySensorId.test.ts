@@ -1,7 +1,7 @@
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { getRecordsCountBySensorId } from ".";
-import { createApiUrl } from "../createApiUrl";
+import { createSupabaseUrl } from "../createSupabaseUrl";
 import { sensors } from "@mocks/supabaseData/sensors";
 
 const exampleSensor = sensors[0];
@@ -9,7 +9,7 @@ const exampleSensor = sensors[0];
 describe("utility function getRecordsCountBySensorId", () => {
   it("should return count for records belonging to provided sensorId", async (): Promise<void> => {
     const server = setupServer(
-      rest.head(createApiUrl(`/records`), (_req, res, ctx) => {
+      rest.head(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(
           ctx.set("content-range", "0-28/29"),
           ctx.status(201, "Mocked status")
