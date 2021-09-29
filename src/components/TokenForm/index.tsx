@@ -34,9 +34,13 @@ export const TokenForm: FC<TokenFormType> = ({
   const {
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<TokenFormFields>({
     resolver: yupResolver(formSchema),
+    defaultValues: {
+      description: "",
+    },
   });
 
   const formatError = (errorMsg?: string): string[] =>
@@ -46,6 +50,7 @@ export const TokenForm: FC<TokenFormType> = ({
     <form
       noValidate
       onSubmit={handleSubmit(data => {
+        reset();
         onSubmit(data.description);
       })}
       className={classNames(
@@ -69,6 +74,7 @@ export const TokenForm: FC<TokenFormType> = ({
               errors={formatError(errors.description?.message)}
               containerClassName='mb-0'
               className='mb-1'
+              defaultValue=''
             />
           )}
         />

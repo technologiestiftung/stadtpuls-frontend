@@ -15,12 +15,14 @@ exports[`Storyshots UI Elements/TokenForm Default 1`] = `
     >
       <input
         className=" mb-1"
+        defaultValue=""
         id="tokenDescription"
         name="tokenDescription"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Beschreibe dein neues Token"
         type="text"
+        value=""
       />
     </div>
   </fieldset>
