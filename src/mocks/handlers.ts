@@ -19,7 +19,6 @@ import {
 import { categories } from "./supabaseData/categories";
 import { userprofiles } from "./supabaseData/userprofiles";
 import { getSensorRecords } from "./supabaseData/records";
-import { tokens } from "./supabaseData/tokens";
 
 const githubHandlers = [
   rest.get(`https://api.github.com/users/*`, (_req, res, ctx) => {
@@ -40,18 +39,34 @@ const mapBoxGeocodingHandlers = [
 ];
 
 const tokenApiHandlers = [
-  rest.get(createTokenApiUrl({ projectId: "10" }), (_req, res, ctx) => {
-    return res(
-      ctx.status(201, "Mocked status"),
-      ctx.json({
-        data: [
-          { niceId: 1, description: "Lorem ipsum dolor.", projectId: 10 },
-          { niceId: 2, description: "Sit amet consectetur.", projectId: 10 },
-          { niceId: 3, description: "Lipsum amet dolor.", projectId: 10 },
-        ],
-      })
-    );
-  }),
+  rest.get<Omit<definitions["auth_tokens"], "id">[]>(
+    createTokenApiUrl(),
+    (_req, res, ctx) => {
+      return res(
+        ctx.status(200, "Mocked status"),
+        ctx.json([
+          {
+            nice_id: 1,
+            description: "Lorem ipsum dolor.",
+            scope: "sudo",
+            user_id: "abc",
+          },
+          {
+            nice_id: 2,
+            description: "Sit amet consectetur.",
+            scope: "sudo",
+            user_id: "abc",
+          },
+          {
+            nice_id: 3,
+            description: "Lipsum amet dolor.",
+            scope: "sudo",
+            user_id: "abc",
+          },
+        ])
+      );
+    }
+  ),
   rest.post(createTokenApiUrl(), (_req, res, ctx) => {
     return res(
       ctx.status(201, "Mocked status"),
@@ -139,23 +154,6 @@ const supabaseHandlers = [
       return res(
         ctx.status(201, "Mocked status"),
         ctx.json([{ ...payload, id: 12 }])
-      );
-    }
-  ),
-  rest.get<definitions["auth_tokens"]>(
-    createApiUrl("/auth_tokens"),
-    (req, res, ctx) => {
-      const query = req.url.searchParams;
-
-      const userId = query.get("user_id")?.replace("eq.", "");
-
-      if (!userId) {
-        res(ctx.status(400, "Please provide a valid user ID"));
-      }
-
-      return res(
-        ctx.status(201, "Mocked status"),
-        ctx.json(tokens.filter(token => token.user_id === userId))
       );
     }
   ),
