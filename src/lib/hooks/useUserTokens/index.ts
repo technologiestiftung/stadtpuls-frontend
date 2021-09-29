@@ -5,13 +5,13 @@ import useSWR, { mutate } from "swr";
 import {
   CreateTokenResponseSignature,
   createUserToken,
-} from "../../requests/createUserToken";
-import { deleteUserToken } from "../../requests/deleteUserToken";
-import { getUserTokens } from "../../requests/getUserTokens";
+} from "@lib/requests/createUserToken";
+import { deleteUserToken } from "@lib/requests/deleteUserToken";
+import { getUserTokens } from "@lib/requests/getUserTokens";
 import {
   RegenerateTokenResponseSignature,
   regenerateUserToken,
-} from "../../requests/regenerateUserToken";
+} from "@lib/requests/regenerateUserToken";
 
 export type TokenType = Omit<definitions["auth_tokens"], "id">;
 export type AccessTokenType = string;
