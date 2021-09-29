@@ -18,10 +18,20 @@ export const getUserTokens: GetUserTokensSignature = async accessToken => {
 
   const url = createTokenApiUrl();
 
-  const rawTokens = await fetch(url, requestOptions);
-  const response = await (rawTokens.json() as Promise<{
+  const response = await fetch(url, requestOptions);
+
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  if (response.status !== 200) {
+    throw new Error(
+      `Wrong status code ${response.status} for successful tokens response`
+    );
+  }
+
+  const parsedResponse = await (response.json() as Promise<{
     data: TokenType[];
   }>);
 
-  return response.data;
+  return parsedResponse.data;
 };

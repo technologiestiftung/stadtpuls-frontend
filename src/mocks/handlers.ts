@@ -44,26 +44,28 @@ const tokenApiHandlers = [
     (_req, res, ctx) => {
       return res(
         ctx.status(200, "Mocked status"),
-        ctx.json([
-          {
-            nice_id: 1,
-            description: "Lorem ipsum dolor.",
-            scope: "sudo",
-            user_id: "abc",
-          },
-          {
-            nice_id: 2,
-            description: "Sit amet consectetur.",
-            scope: "sudo",
-            user_id: "abc",
-          },
-          {
-            nice_id: 3,
-            description: "Lipsum amet dolor.",
-            scope: "sudo",
-            user_id: "abc",
-          },
-        ])
+        ctx.json({
+          data: [
+            {
+              nice_id: 1,
+              description: "Lorem ipsum dolor.",
+              scope: "sudo",
+              user_id: "abc",
+            },
+            {
+              nice_id: 2,
+              description: "Sit amet consectetur.",
+              scope: "sudo",
+              user_id: "abc",
+            },
+            {
+              nice_id: 3,
+              description: "Lipsum amet dolor.",
+              scope: "sudo",
+              user_id: "abc",
+            },
+          ],
+        })
       );
     }
   ),
