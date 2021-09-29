@@ -39,6 +39,7 @@ export const Alert: FC<AlertPropType> = ({
             "hover:text-purple transition hover:rotate-180 p-2 rounded-full focus-offset",
           ].join(" ")}
           onClick={() => setIsClosed(true)}
+          aria-label='Schließen'
         >
           <svg width='16' height='16' xmlns='http://www.w3.org/2000/svg'>
             <path

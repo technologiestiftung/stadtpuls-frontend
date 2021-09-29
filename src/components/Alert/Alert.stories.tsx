@@ -50,6 +50,14 @@ Success.args = {
   message: "Dein Token wurde erfolgreich angelegt",
 };
 
+export const NonRemovable = Template.bind({});
+NonRemovable.args = {
+  isRemovable: false,
+  type: "warning",
+  title: "Achtung!",
+  message: "This alert should not be removable because it's too important",
+};
+
 export const NoTitle = Template.bind({});
 NoTitle.args = {
   message: "Less is more",
