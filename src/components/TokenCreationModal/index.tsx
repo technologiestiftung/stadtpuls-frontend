@@ -47,7 +47,7 @@ export const TokenCreationModal: FC<TokenCreationModalPropType> = ({
       <Alert
         type='warning'
         title='Wichtig!'
-        message='Kopiere dein neues Token jetzt. Du wirst es später nicht wieder einsehen können.'
+        message='Kopiere deinen neuen Token jetzt. Du wirst ihn später nicht wieder einsehen können.'
         isRemovable={false}
       />
       <div className='mt-8'>

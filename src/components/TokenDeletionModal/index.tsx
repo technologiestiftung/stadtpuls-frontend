@@ -53,7 +53,7 @@ export const TokenDeletionModal: FC<TokenDeletionModalPropType> = ({
       <Alert
         type='warning'
         title='Achtung!'
-        message='Dieses Token wird unwiderruflich gelöscht.'
+        message='Dieser Token wird unwiderruflich gelöscht.'
         isRemovable={false}
       />
       <div className='mt-8'>

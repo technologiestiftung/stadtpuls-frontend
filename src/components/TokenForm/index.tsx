@@ -22,8 +22,8 @@ export interface TokenFormType {
 
 export const TokenForm: FC<TokenFormType> = ({
   label,
-  placeholder = "Beschreibe dein neues Token",
-  submitMessage = "Neues Token anlegen",
+  placeholder = "Beschreibe deinen neuen Token",
+  submitMessage = "Neuen Token anlegen",
   onSubmit,
   additionalClassNames,
 }) => {

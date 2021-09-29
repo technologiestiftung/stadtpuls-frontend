@@ -20,7 +20,7 @@ exports[`Storyshots UI Elements/TokenForm Default 1`] = `
         name="tokenDescription"
         onBlur={[Function]}
         onChange={[Function]}
-        placeholder="Beschreibe dein neues Token"
+        placeholder="Beschreibe deinen neuen Token"
         type="text"
         value=""
       />
@@ -31,7 +31,7 @@ exports[`Storyshots UI Elements/TokenForm Default 1`] = `
       className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green w-full"
       form="token-form"
       type="submit"
-      value="Neues Token anlegen"
+      value="Neuen Token anlegen"
       variant="primary"
     />
   </div>
