@@ -11,29 +11,9 @@ import { TokenItem } from "@components/TokenItem";
 import { definitions } from "@common/types/supabase";
 import { TokenCreationModal } from "@components/TokenCreationModal";
 import { TokenDeletionModal } from "@components/TokenDeletionModal";
+import { useUserTokens } from "@lib/hooks/useUserTokens";
 
 type TokenType = Omit<definitions["auth_tokens"], "id">;
-
-const tokens: TokenType[] = [
-  {
-    description: "My first token",
-    nice_id: 19,
-    scope: "sudo",
-    user_id: "my-user-id",
-  },
-  {
-    description: "Another token",
-    nice_id: 55,
-    scope: "sudo",
-    user_id: "my-user-id",
-  },
-  {
-    description: "Token Token Token",
-    nice_id: 329,
-    scope: "sudo",
-    user_id: "my-user-id",
-  },
-];
 
 export const getServerSideProps: GetServerSideProps = async context => {
   try {
@@ -61,11 +41,24 @@ const AccountTokensPage: FC<AccountTokensPagePropType> = ({ routeAccount }) => {
   const isOwnerAndLoggedIn =
     isLoggedIn && loggedInAccount?.username === routeAccount.username;
 
-  const [creationModalIsOpen, setCreationModalIsOpen] = useState(false);
-  const [deletionModalIsOpen, setDeletionModalIsOpen] = useState(false);
+  const [deleteIsInitiated, setDeleteIsInitiated] = useState(false);
   const [touchedToken, setTouchedToken] = useState<TokenType | undefined>(
     undefined
   );
+
+  const {
+    tokens,
+    createToken,
+    deleteToken,
+    regenerateToken,
+    error,
+  } = useUserTokens();
+
+  const [newToken, setNewToken] = useState<string | undefined>(undefined);
+  const [newTokenDescription, setNewTokenDescription] = useState<
+    string | undefined
+  >(undefined);
+
   return (
     <>
       <UserInfoWithData routeAccount={account} activeTab='tokens' />
@@ -81,7 +74,7 @@ const AccountTokensPage: FC<AccountTokensPagePropType> = ({ routeAccount }) => {
             message={
               <span className='flex gap-4'>
                 Du kannst hier nur deine Tokens sehen wenn du eingeloggt bist
-                <TextLink href='/login'>Einloggen</TextLink>
+                <TextLink href='/signin'>Einloggen</TextLink>
               </span>
             }
           />
@@ -90,13 +83,18 @@ const AccountTokensPage: FC<AccountTokensPagePropType> = ({ routeAccount }) => {
       {isOwnerAndLoggedIn && (
         <div className='container max-w-8xl mx-auto px-4 py-16'>
           <TokenForm
-            onSubmit={() => {
-              console.log("Creating token");
-              // TODO: create new token
-              setCreationModalIsOpen(true);
+            onSubmit={async tokenDescription => {
+              const tokenResponse = await createToken(tokenDescription);
+              setNewToken(tokenResponse.data.token);
+              setNewTokenDescription(tokenDescription);
             }}
           />
-          {tokens.length === 0 && (
+          {error && (
+            <div>
+              <p>Ein Fehler ist aufgetreten</p>
+            </div>
+          )}
+          {tokens && tokens.length === 0 && (
             <div className='text-gray-500 text-center mt-12'>
               Noch keine Tokens vorhanden.
             </div>
@@ -108,42 +106,41 @@ const AccountTokensPage: FC<AccountTokensPagePropType> = ({ routeAccount }) => {
                 <TokenItem
                   key={`token-${token.nice_id}`}
                   name={token.description}
-                  onRegenerate={() => {
-                    console.log("Regenerating old token:", touchedToken);
-                    setTouchedToken(token);
-                    // TODO: delete old token and create new token
-                    setCreationModalIsOpen(true);
+                  onRegenerate={async () => {
+                    const tokenResponse = await regenerateToken(token.nice_id);
+                    setNewToken(tokenResponse.data.token);
+                    setNewTokenDescription(token.description);
                   }}
                   onInitiateDelete={() => {
-                    console.log("Token about to be deleted");
                     setTouchedToken(token);
-                    setDeletionModalIsOpen(true);
+                    setDeleteIsInitiated(true);
                   }}
                 />
               );
             })}
         </div>
       )}
-      {creationModalIsOpen && (
+      {newToken && newTokenDescription && (
         <TokenCreationModal
-          tokenDescription='My newly generated token'
-          token='1234567'
-          onClose={() => setCreationModalIsOpen(false)}
+          tokenDescription={newTokenDescription}
+          token={newToken}
+          onClose={() => {
+            setNewToken(undefined);
+            setNewTokenDescription(undefined);
+          }}
         />
       )}
-      {deletionModalIsOpen && touchedToken && (
+      {deleteIsInitiated && touchedToken && (
         <TokenDeletionModal
           tokenDescription={touchedToken.description}
           onDelete={() => {
-            console.log("Deleting token:", touchedToken);
-
-            // TODO: delete token
+            void deleteToken(touchedToken.nice_id);
             setTouchedToken(undefined);
-            setDeletionModalIsOpen(false);
+            setDeleteIsInitiated(false);
           }}
           onCancel={() => {
             setTouchedToken(undefined);
-            setDeletionModalIsOpen(false);
+            setDeleteIsInitiated(false);
           }}
         />
       )}
