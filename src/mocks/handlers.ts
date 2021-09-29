@@ -19,6 +19,7 @@ import {
 import { categories } from "./supabaseData/categories";
 import { userprofiles } from "./supabaseData/userprofiles";
 import { getSensorRecords } from "./supabaseData/records";
+import { createSigningApiUrl } from "@lib/requests/createSigningApiUrl";
 
 const githubHandlers = [
   rest.get(`https://api.github.com/users/*`, (_req, res, ctx) => {
@@ -36,6 +37,15 @@ const mapBoxGeocodingHandlers = [
       );
     }
   ),
+];
+
+const signingHandlers = [
+  rest.post(createSigningApiUrl("/signin"), (_req, res, ctx) => {
+    return res(ctx.status(200, "Mocked status"), ctx.json({}));
+  }),
+  rest.post(createSigningApiUrl("/signup"), (_req, res, ctx) => {
+    return res(ctx.status(200, "Mocked status"), ctx.json({}));
+  }),
 ];
 
 const tokenApiHandlers = [
@@ -426,4 +436,5 @@ export const handlers = [
   ...supabaseHandlers,
   ...authHandlers,
   ...tokenApiHandlers,
+  ...signingHandlers,
 ];

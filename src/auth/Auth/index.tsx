@@ -88,8 +88,39 @@ const signUp = async ({
     return { error: e as Error };
   }
 };
+
+const signIn = async ({
+  email,
+}: Omit<SignUpDataType, "username">): Promise<{
+  error: Error | null;
+}> => {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    redirect: "follow" as const,
+    body: JSON.stringify({ email }),
+  };
+
+  const baseUrl = process.env.NEXT_PUBLIC_TOKEN_API_URL || "";
+  const url = `${baseUrl}/api/v3/signin`;
+  try {
+    const response = await fetch(url, requestOptions);
+    const jsonResponse = (await response.json()) as {
+      error?: string;
+      message?: string;
+      statusCode?: number;
+    };
+    if (jsonResponse.statusCode !== 200)
+      return { error: new Error(jsonResponse.message) };
+    return { error: null };
+  } catch (e) {
+    return { error: e as Error };
+  }
+};
 interface AuthContextType {
-  signIn: typeof supabase.auth.signIn;
   signOut: typeof supabase.auth.signOut;
   authenticatedUser: AuthenticatedUsersType | null;
   isLoadingAuth: boolean;
@@ -97,8 +128,8 @@ interface AuthContextType {
 }
 
 const defaultValue = {
-  signIn: supabase.auth.signIn.bind(supabase.auth),
-  signUp: supabase.auth.signIn.bind(supabase.auth),
+  signIn,
+  signUp,
   signOut: supabase.auth.signOut.bind(supabase.auth),
   authenticatedUser: null,
   isLoadingAuth: true,
@@ -117,7 +148,7 @@ interface AuthHookReturnType extends Omit<AuthContextType, "signIn"> {
 
 export const useAuth = (): AuthHookReturnType => {
   const authContext = useContext(AuthContext);
-  const { signIn, ...auth } = authContext;
+  const auth = authContext;
   const [magicLinkWasSent, setMagicLinkWasSent] = useState<boolean>(false);
   const [isAuthenticating, setIsAuthenticating] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -132,7 +163,7 @@ export const useAuth = (): AuthHookReturnType => {
       if (!error) setMagicLinkWasSent(true);
       setIsAuthenticating(false);
     },
-    [signIn, setMagicLinkWasSent, setIsAuthenticating]
+    [setMagicLinkWasSent, setIsAuthenticating]
   );
 
   const signUpHandler = useCallback(
