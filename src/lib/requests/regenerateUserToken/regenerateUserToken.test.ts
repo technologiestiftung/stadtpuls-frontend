@@ -96,26 +96,4 @@ describe("regenerateUserToken utility", () => {
     server.resetHandlers();
     server.close();
   });
-  it("fails when wrong status code returned", async () => {
-    const server = setupServer(
-      rest.put(createTokenApiUrl(), (_req, res, ctx) => {
-        return res(ctx.status(201, "Mocked status"), ctx.json({}));
-      })
-    );
-    server.listen();
-
-    try {
-      await regenerateUserToken({
-        nice_id: 8,
-        accessToken: "1234567",
-      });
-    } catch (error: unknown) {
-      expect((error as Error).message).toEqual(
-        "Wrong status code 201 for successful token regeneration response"
-      );
-    }
-
-    server.resetHandlers();
-    server.close();
-  });
 });

@@ -42,11 +42,6 @@ export const regenerateUserToken: RegenerateUserTokenSignature = async ({
   if (!response.ok) {
     throw new Error(await response.text());
   }
-  if (response.status !== 204) {
-    throw new Error(
-      `Wrong status code ${response.status} for successful token regeneration response`
-    );
-  }
 
   const parsedTokenResponse = (await response.json()) as RegenerateTokenResponseSignature;
   return parsedTokenResponse;
