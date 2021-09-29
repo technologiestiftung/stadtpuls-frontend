@@ -35,7 +35,8 @@ export const createSensorLocally = (
     {
       ...sensor,
       id: lastSensorId++,
-      authorName: authorInfo?.authorName || "Anonymous",
+      authorName:
+        authorInfo?.authorName || authorInfo?.authorUsername || "Anonymous",
       authorUsername: authorInfo?.authorUsername || "anonymous",
       categoryName: categories[sensor.categoryId - 1].name,
       parsedRecords: [],
