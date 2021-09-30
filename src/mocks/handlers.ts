@@ -173,7 +173,12 @@ const supabaseHandlers = [
       const query = req.url.searchParams;
 
       const select = query.get("select");
-      const username = query.get("name")?.replace("eq.", "");
+      const username = query
+        .get("name")
+        ?.replace("eq.", "")
+        .replace("ilike.", "")
+        .replace("%", "")
+        .replace("%", "");
       const limit = query.get("limit");
 
       // Regex removes whitespaces and line breaks. Necessary because accountQueryString is constructed as template literal
