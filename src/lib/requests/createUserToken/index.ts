@@ -1,5 +1,5 @@
 import { definitions } from "@common/types/supabase";
-import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
+import { createApiUrl } from "@lib/requests/createApiUrl";
 
 type TokenType = Omit<definitions["auth_tokens"], "id">;
 type AccessTokenType = string;
@@ -39,7 +39,7 @@ export const createUserToken: CreateUserTokenSignature = async ({
     body: JSON.stringify(payload),
   };
 
-  const response = await fetch(createTokenApiUrl(), requestOptions);
+  const response = await fetch(createApiUrl("/authtokens"), requestOptions);
   if (!response.ok) {
     throw new Error(await response.text());
   }

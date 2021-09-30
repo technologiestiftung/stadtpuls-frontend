@@ -1,146 +1,294 @@
 import { supabase } from "@auth/supabase";
-import { act, render, screen, waitFor } from "@testing-library/react";
-import { FC, useEffect } from "react";
+import { waitFor } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react-hooks";
+import { FC } from "react";
+import { SWRConfig } from "swr";
+import { rest } from "msw";
+import { setupServer } from "msw/node";
 import { AuthProvider, useAuth } from ".";
+import { createApiUrl } from "@lib/requests/createApiUrl";
 
-const createChildComponent = ({
-  isReady = () => true,
-  inEffect = () => undefined,
-}: {
-  isReady?: (auth: ReturnType<typeof useAuth>) => boolean;
-  inEffect?: (auth: ReturnType<typeof useAuth>) => Promise<void> | void;
-}): FC => {
-  const ChildComponent: FC = () => {
-    const auth = useAuth();
-    useEffect(() => {
-      void inEffect(auth);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-    const ready = isReady(auth);
-    return <div>{ready && "READY"}</div>;
-  };
-  return ChildComponent;
-};
+const HookWrapper: FC = ({ children }) => (
+  <SWRConfig value={{ dedupingInterval: 0 }}>
+    <AuthProvider>{children}</AuthProvider>
+  </SWRConfig>
+);
 
-describe("AuthProvider", () => {
-  it("should provide its children with context values", async () => {
-    const ChildComponent = createChildComponent({
-      isReady: auth =>
-        !!(
-          typeof auth?.isLoadingAuth !== "undefined" &&
-          auth?.authenticatedUser === null &&
-          auth?.error === null &&
-          typeof auth?.signIn === "function" &&
-          typeof auth?.signUp === "function" &&
-          typeof auth?.signOut === "function" &&
-          auth?.magicLinkWasSent === false &&
-          auth?.isAuthenticating === false
-        ),
-    });
-    act(() => {
-      render(
-        <AuthProvider>
-          <ChildComponent />
-        </AuthProvider>
-      );
-    });
-
-    await waitFor(() => expect(screen.getByText("READY")).toBeInTheDocument());
-  });
+const supabaseSignOut = jest.fn().mockReturnValue({
+  user: {
+    id: "test-user-id",
+    app_metadata: {},
+    user_metadata: {},
+    aud: "test-aud",
+  },
+  access_token: "test-token",
 });
 
-describe("signIn aka. Authentication (because of magic link, also signUp)", () => {
-  it("should send a magic link after authenticating", async () => {
-    const oldSignIn = supabase.auth.signIn.bind(supabase.auth);
-    const signInMock = jest
-      .fn()
-      .mockReturnValue(Promise.resolve({ error: false }));
-    supabase.auth.signIn = signInMock;
-    const ChildComponent = createChildComponent({
-      isReady: auth => !!(auth.magicLinkWasSent && !auth.isAuthenticating),
-      inEffect: auth => auth.signIn({ email: "contact@example.com" }),
-    });
-    act(() => {
-      render(
-        <AuthProvider>
-          <ChildComponent />
-        </AuthProvider>
-      );
-    });
+describe("useAuth", () => {
+  beforeEach(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    supabase.auth.session = supabaseSignOut;
+  });
+  it("should have default values when logged out", async (): Promise<void> => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    supabase.auth.session = jest.fn().mockReturnValue({});
+    const { result } = renderHook(() => useAuth(), { wrapper: HookWrapper });
 
     await waitFor(() => {
-      expect(screen.getByText("READY")).toBeInTheDocument();
-      expect(signInMock).toHaveBeenCalled();
-      supabase.auth.signIn = oldSignIn;
+      expect(result.current.authenticatedUser).toBe(null);
+      expect(result.current.accessToken).toBe(null);
+      expect(result.current.isAuthenticating).toBe(false);
+      expect(result.current.isLoadingAuth).toBe(false);
+      expect(result.current.magicLinkWasSent).toBe(false);
+      expect(result.current.error).toBe(null);
+      expect(typeof result.current.signIn).toBe("function");
+      expect(typeof result.current.signUp).toBe("function");
     });
   });
-  it("should authenticate with errors", async () => {
-    const oldSignIn = supabase.auth.signIn.bind(supabase.auth);
-    const signInMock = jest
-      .fn()
-      .mockResolvedValue({ error: new Error("WRONG") });
-    supabase.auth.signIn = signInMock;
-    const ChildComponent = createChildComponent({
-      isReady: auth => !!auth.error,
-      inEffect: auth => auth.signIn({ email: "spam@youdontwant.inyourinbox" }),
-    });
-    act(() => {
-      render(
-        <AuthProvider>
-          <ChildComponent />
-        </AuthProvider>
-      );
+  it("should retrieve the user and token from the session", async (): Promise<void> => {
+    const { result } = renderHook(() => useAuth(), {
+      wrapper: HookWrapper,
     });
 
     await waitFor(() => {
-      expect(screen.getByText("READY")).toBeInTheDocument();
-      supabase.auth.signIn = oldSignIn;
+      const current = result.current;
+      expect(current.authenticatedUser?.id).toBe("test-user-id");
+      expect(current.accessToken).toBe("test-token");
     });
   });
-  it("should retrieve the user from the session", async () => {
-    const oldSessionFuncion = supabase.auth.session.bind(supabase.auth);
-    supabase.auth.session = jest.fn().mockReturnValue({
-      user: {
-        email: "contact@example.com",
-      },
-    });
-    const ChildComponent = createChildComponent({
-      isReady: auth => auth.authenticatedUser?.email === "contact@example.com",
-    });
-    act(() => {
-      render(
-        <AuthProvider>
-          <ChildComponent />
-        </AuthProvider>
-      );
+  it("should call supabase signout when calling signout", async (): Promise<void> => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    supabase.auth.signOut = jest.fn();
+    const { result } = renderHook(() => useAuth(), {
+      wrapper: HookWrapper,
     });
 
+    void result.current.signOut();
+
     await waitFor(() => {
-      expect(screen.getByText("READY")).toBeInTheDocument();
-      supabase.auth.session = oldSessionFuncion;
+      expect(supabaseSignOut).toHaveBeenCalled();
     });
   });
-});
-
-describe("signOut", () => {
-  it("should signOut", async () => {
-    const signOutMock = jest
-      .fn()
-      .mockReturnValue(Promise.resolve({ error: false }));
-    supabase.auth.signOut = signOutMock;
-    const ChildComponent = createChildComponent({
-      inEffect: auth => void auth.signOut(),
+  it("should signin with happy path", async (): Promise<void> => {
+    const server = setupServer(
+      rest.post(createApiUrl("/signin"), (_req, res, ctx) => {
+        return res(
+          ctx.status(204, "Mocked status"),
+          ctx.text(
+            JSON.stringify({
+              statusCode: 204,
+            })
+          )
+        );
+      })
+    );
+    server.listen();
+    const { result, waitForNextUpdate } = renderHook(() => useAuth(), {
+      wrapper: HookWrapper,
     });
+
     act(() => {
-      render(
-        <AuthProvider>
-          <ChildComponent />
-        </AuthProvider>
+      void result.current.signIn({ email: "test@example.com" });
+    });
+
+    await waitForNextUpdate();
+
+    await waitFor(() => {
+      expect(result.current.isAuthenticating).toBe(false);
+      expect(result.current.magicLinkWasSent).toBe(true);
+      expect(result.current.error).toBe(null);
+    });
+
+    server.resetHandlers();
+    server.close();
+  });
+  it("should signin with 404 error", async (): Promise<void> => {
+    const server = setupServer(
+      rest.post(createApiUrl("/signin"), (_req, res, ctx) => {
+        return res(
+          ctx.status(404, "Mocked status"),
+          ctx.text(
+            JSON.stringify({
+              statusCode: 404,
+              error: "Not found",
+              message: "Not found",
+            })
+          )
+        );
+      })
+    );
+    server.listen();
+    const { result, waitForNextUpdate } = renderHook(() => useAuth(), {
+      wrapper: HookWrapper,
+    });
+
+    act(() => {
+      void result.current.signIn({ email: "test@example.com" });
+    });
+
+    await waitForNextUpdate();
+
+    await waitFor(() => {
+      expect(result.current.isAuthenticating).toBe(false);
+      expect(result.current.magicLinkWasSent).toBe(false);
+      expect(result.current.error).toBe("Not found");
+    });
+
+    server.resetHandlers();
+    server.close();
+  });
+  it("should signin with generic error name", async (): Promise<void> => {
+    const server = setupServer(
+      rest.post(createApiUrl("/signin"), (_req, res, ctx) => {
+        return res(
+          ctx.status(500, "Mocked status"),
+          ctx.text(
+            JSON.stringify({
+              statusCode: 500,
+              error: "",
+              message: "",
+            })
+          )
+        );
+      })
+    );
+    server.listen();
+    const { result, waitForNextUpdate } = renderHook(() => useAuth(), {
+      wrapper: HookWrapper,
+    });
+
+    act(() => {
+      void result.current.signIn({ email: "test@example.com" });
+    });
+
+    await waitForNextUpdate();
+
+    await waitFor(() => {
+      expect(result.current.isAuthenticating).toBe(false);
+      expect(result.current.magicLinkWasSent).toBe(false);
+      expect(result.current.error).toBe(
+        "Es ist ein Fehler bei der Anmeldung aufgetreten"
       );
     });
 
-    await waitFor(() => {
-      expect(signOutMock).toHaveBeenCalled();
+    server.resetHandlers();
+    server.close();
+  });
+  it("should signup with happy path", async (): Promise<void> => {
+    const server = setupServer(
+      rest.post(createApiUrl("/signup"), (_req, res, ctx) => {
+        return res(
+          ctx.status(204, "Mocked status"),
+          ctx.text(
+            JSON.stringify({
+              statusCode: 204,
+            })
+          )
+        );
+      })
+    );
+    server.listen();
+    const { result, waitForNextUpdate } = renderHook(() => useAuth(), {
+      wrapper: HookWrapper,
     });
+
+    act(() => {
+      void result.current.signUp({
+        username: "test",
+        email: "test@example.com",
+      });
+    });
+
+    await waitForNextUpdate();
+
+    await waitFor(() => {
+      expect(result.current.isAuthenticating).toBe(false);
+      expect(result.current.magicLinkWasSent).toBe(true);
+      expect(result.current.error).toBe(null);
+    });
+
+    server.resetHandlers();
+    server.close();
+  });
+  it("should signup with 404 error", async (): Promise<void> => {
+    const server = setupServer(
+      rest.post(createApiUrl("/signup"), (_req, res, ctx) => {
+        return res(
+          ctx.status(404, "Mocked status"),
+          ctx.text(
+            JSON.stringify({
+              statusCode: 404,
+              error: "Not found",
+              message: "Not found",
+            })
+          )
+        );
+      })
+    );
+    server.listen();
+    const { result, waitForNextUpdate } = renderHook(() => useAuth(), {
+      wrapper: HookWrapper,
+    });
+
+    act(() => {
+      void result.current.signUp({
+        username: "test",
+        email: "test@example.com",
+      });
+    });
+
+    await waitForNextUpdate();
+
+    await waitFor(() => {
+      expect(result.current.isAuthenticating).toBe(false);
+      expect(result.current.magicLinkWasSent).toBe(false);
+      expect(result.current.error).toBe("Not found");
+    });
+
+    server.resetHandlers();
+    server.close();
+  });
+  it("should signup with generic error name", async (): Promise<void> => {
+    const server = setupServer(
+      rest.post(createApiUrl("/signup"), (_req, res, ctx) => {
+        return res(
+          ctx.status(500, "Mocked status"),
+          ctx.text(
+            JSON.stringify({
+              statusCode: 500,
+              error: "",
+              message: "",
+            })
+          )
+        );
+      })
+    );
+    server.listen();
+    const { result, waitForNextUpdate } = renderHook(() => useAuth(), {
+      wrapper: HookWrapper,
+    });
+
+    act(() => {
+      void result.current.signUp({
+        username: "test",
+        email: "test@example.com",
+      });
+    });
+
+    await waitForNextUpdate();
+
+    await waitFor(() => {
+      expect(result.current.isAuthenticating).toBe(false);
+      expect(result.current.magicLinkWasSent).toBe(false);
+      expect(result.current.error).toBe(
+        "Es ist ein Fehler bei der Anmeldung aufgetreten"
+      );
+    });
+
+    server.resetHandlers();
+    server.close();
   });
 });

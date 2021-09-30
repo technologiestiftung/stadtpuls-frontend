@@ -9,6 +9,7 @@ export const optionalLinkValidation = yup
   .string()
   .url("Die angegebene Url muss gültig sein")
   .max(100, "Der Name darf maximal 50 Zeichen haben")
+  .nullable()
   .optional();
 
 export const requiredSensorNameValidation = yup
@@ -41,6 +42,7 @@ export const requiredLongitude = yup
 export const optionalDescriptionValidation = yup
   .string()
   .max(200, "Die Beschreibung darf nicht länger als 200 Zeichen sein")
+  .nullable()
   .optional();
 
 export const requiredSensorIntegrationValidation = yup

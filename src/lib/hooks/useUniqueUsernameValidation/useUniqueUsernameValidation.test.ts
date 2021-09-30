@@ -1,4 +1,4 @@
-import { createApiUrl } from "@lib/requests/createApiUrl";
+import { createSupabaseUrl } from "@lib/requests/createSupabaseUrl";
 import { publicAccounts } from "@mocks/supabaseData/accounts";
 import { renderHook } from "@testing-library/react-hooks";
 import * as sup from "@auth/supabase";
@@ -15,7 +15,7 @@ describe("useUniqueUsernameValidation", () => {
   });
   it("should return true if no users with same name found", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createApiUrl(`/user_profiles`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/user_profiles`), (_req, res, ctx) => {
         return res(ctx.status(200, "Mocked status"), ctx.json([]));
       })
     );
@@ -35,7 +35,7 @@ describe("useUniqueUsernameValidation", () => {
   });
   it("should return false if a user with same name was found", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createApiUrl(`/user_profiles`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/user_profiles`), (_req, res, ctx) => {
         return res(
           ctx.status(200, "Mocked status"),
           ctx.json(publicAccounts.slice(0, 1))
@@ -58,7 +58,7 @@ describe("useUniqueUsernameValidation", () => {
   });
   it("should return an error if there is a network error", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createApiUrl(`/user_profiles`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/user_profiles`), (_req, res, ctx) => {
         return res(ctx.status(200, "Mocked status"), ctx.json([]));
       })
     );

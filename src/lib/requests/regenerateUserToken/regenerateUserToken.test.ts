@@ -2,7 +2,7 @@ import { regenerateUserToken } from ".";
 import * as auth from "@auth/Auth";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import { createTokenApiUrl } from "../createTokenApiUrl";
+import { createApiUrl } from "../createApiUrl";
 import { tokens } from "@mocks/supabaseData/tokens";
 
 describe("regenerateUserToken utility", () => {
@@ -27,7 +27,7 @@ describe("regenerateUserToken utility", () => {
       },
     };
     const server = setupServer(
-      rest.put(createTokenApiUrl(), (_req, res, ctx) => {
+      rest.put(createApiUrl("/authtokens"), (_req, res, ctx) => {
         return res(
           ctx.status(204, "Mocked status"),
           ctx.json(actualTokenResponse)
@@ -48,7 +48,7 @@ describe("regenerateUserToken utility", () => {
   });
   it("fails without accessToken", async () => {
     const server = setupServer(
-      rest.put(createTokenApiUrl(), (_req, res, ctx) => {
+      rest.put(createApiUrl("/authtokens"), (_req, res, ctx) => {
         return res(
           ctx.status(401, "Mocked status"),
           ctx.text("Not authenticated")
@@ -73,7 +73,7 @@ describe("regenerateUserToken utility", () => {
   });
   it("fails without nice_id", async () => {
     const server = setupServer(
-      rest.put(createTokenApiUrl(), (_req, res, ctx) => {
+      rest.put(createApiUrl("/authtokens"), (_req, res, ctx) => {
         return res(
           ctx.status(400, "Mocked status"),
           ctx.text("nice_id missing")

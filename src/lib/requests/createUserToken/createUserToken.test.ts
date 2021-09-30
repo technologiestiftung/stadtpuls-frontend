@@ -2,7 +2,7 @@ import { createUserToken } from ".";
 import * as auth from "@auth/Auth";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import { createTokenApiUrl } from "../createTokenApiUrl";
+import { createApiUrl } from "../createApiUrl";
 import { tokens } from "@mocks/supabaseData/tokens";
 
 describe("createUserToken utility", () => {
@@ -27,7 +27,7 @@ describe("createUserToken utility", () => {
       },
     };
     const server = setupServer(
-      rest.post(createTokenApiUrl(), (_req, res, ctx) => {
+      rest.post(createApiUrl("/authtokens"), (_req, res, ctx) => {
         return res(
           ctx.status(201, "Mocked status"),
           ctx.json(actualTokenResponse)
@@ -54,7 +54,7 @@ describe("createUserToken utility", () => {
       authenticatedUser: undefined,
     });
     const server = setupServer(
-      rest.post(createTokenApiUrl(), (_req, res, ctx) => {
+      rest.post(createApiUrl("/authtokens"), (_req, res, ctx) => {
         return res(
           ctx.status(401, "Mocked status"),
           ctx.text("Not authenticated")
@@ -79,7 +79,7 @@ describe("createUserToken utility", () => {
   });
   it("fails when wrong status code returned", async () => {
     const server = setupServer(
-      rest.post(createTokenApiUrl(), (_req, res, ctx) => {
+      rest.post(createApiUrl("/authtokens"), (_req, res, ctx) => {
         return res(ctx.status(200, "Mocked status"), ctx.json({}));
       })
     );

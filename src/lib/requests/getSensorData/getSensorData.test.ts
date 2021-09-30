@@ -2,7 +2,7 @@ import { parsedSensors, sensors } from "@mocks/supabaseData/sensors";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { getSensorData } from ".";
-import { createApiUrl } from "../createApiUrl";
+import { createSupabaseUrl } from "../createSupabaseUrl";
 
 const exampleSensor = sensors[0];
 const exampleParsedSensor = parsedSensors[0];
@@ -10,7 +10,7 @@ const exampleParsedSensor = parsedSensors[0];
 describe("utility function getSensorData", () => {
   it("should return a sensor according to the provided ID", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createApiUrl(`/sensors`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/sensors`), (_req, res, ctx) => {
         return res(ctx.status(200, "Mocked status"), ctx.json(exampleSensor));
       })
     );
@@ -25,7 +25,7 @@ describe("utility function getSensorData", () => {
 
   it("should return an error message when no sensor found", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createApiUrl(`/sensors`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/sensors`), (_req, res, ctx) => {
         return res(
           ctx.status(404, "Mocked status"),
           ctx.json({ message: "Error message" })

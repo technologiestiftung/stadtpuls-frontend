@@ -2,14 +2,14 @@ import { userprofiles } from "@mocks/supabaseData/userprofiles";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { isUsernameAlreadyTaken } from ".";
-import { createApiUrl } from "../createApiUrl";
+import { createSupabaseUrl } from "../createSupabaseUrl";
 
 const exampleUser = userprofiles[0];
 
 describe("utility function isUsernameAlreadyTaken", () => {
   it("should return true if username already taken", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createApiUrl(`/user_profiles`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/user_profiles`), (_req, res, ctx) => {
         return res(
           ctx.status(201, "Mocked status"),
           ctx.json({
@@ -27,7 +27,7 @@ describe("utility function isUsernameAlreadyTaken", () => {
   });
   it("should return false if username not taken", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createApiUrl(`/user_profiles`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/user_profiles`), (_req, res, ctx) => {
         return res(ctx.status(201, "Mocked status"), ctx.json(undefined));
       })
     );

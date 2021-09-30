@@ -8,6 +8,7 @@ import {
 } from "react";
 import { supabase } from "../supabase";
 import { AuthenticatedUsersType } from "@common/types/supabase_DEPRECATED";
+import { createApiUrl } from "@lib/requests/createApiUrl";
 
 export const AuthProvider: FC = ({ children }) => {
   const [authenticatedUser, setUser] = useState<
@@ -41,7 +42,6 @@ export const AuthProvider: FC = ({ children }) => {
   }, []);
 
   const value = {
-    signIn: supabase.auth.signIn.bind(supabase.auth),
     signOut: supabase.auth.signOut.bind(supabase.auth),
     authenticatedUser: authenticatedUser ?? null,
     isLoadingAuth,
@@ -56,12 +56,16 @@ interface SignUpDataType {
   email: string;
 }
 
-const signUp = async ({
-  username,
-  email,
-}: SignUpDataType): Promise<{
-  error: Error | null;
+const handleSigningCall = async (
+  route: "signin" | "signup",
+  body: {
+    name?: string;
+    email: string;
+  }
+): Promise<{
+  error: string | null;
 }> => {
+  const defaultErrorMessage = "Es ist ein Fehler bei der Anmeldung aufgetreten";
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -69,27 +73,46 @@ const signUp = async ({
     method: "POST",
     headers: myHeaders,
     redirect: "follow" as const,
-    body: JSON.stringify({ name: username, email }),
+    body: JSON.stringify(body),
   };
 
-  const baseUrl = process.env.NEXT_PUBLIC_TOKEN_API_URL || "";
-  const url = `${baseUrl}/api/v3/signup`;
+  const url = createApiUrl(`/${route}`);
   try {
     const response = await fetch(url, requestOptions);
-    const jsonResponse = (await response.json()) as {
+    const textResponse = await response.text();
+    if (!textResponse) return { error: null };
+    const jsonResponse = (await JSON.parse(textResponse)) as {
       error?: string;
       message?: string;
       statusCode?: number;
     };
-    if (jsonResponse.statusCode !== 200)
-      return { error: new Error(jsonResponse.message) };
+    if (jsonResponse.statusCode !== 204)
+      return {
+        error: jsonResponse.message || defaultErrorMessage,
+      };
     return { error: null };
   } catch (e) {
-    return { error: e as Error };
+    const error = new Error(e as string);
+    return {
+      error: error.message || defaultErrorMessage,
+    };
   }
 };
+
+const signUp = async ({
+  username,
+  email,
+}: SignUpDataType): Promise<{
+  error: string | null;
+}> => handleSigningCall("signup", { name: username, email });
+
+const signIn = async ({
+  email,
+}: Omit<SignUpDataType, "username">): Promise<{
+  error: string | null;
+}> => handleSigningCall("signin", { email });
+
 interface AuthContextType {
-  signIn: typeof supabase.auth.signIn;
   signOut: typeof supabase.auth.signOut;
   authenticatedUser: AuthenticatedUsersType | null;
   isLoadingAuth: boolean;
@@ -97,8 +120,8 @@ interface AuthContextType {
 }
 
 const defaultValue = {
-  signIn: supabase.auth.signIn.bind(supabase.auth),
-  signUp: supabase.auth.signIn.bind(supabase.auth),
+  signIn,
+  signUp,
   signOut: supabase.auth.signOut.bind(supabase.auth),
   authenticatedUser: null,
   isLoadingAuth: true,
@@ -116,8 +139,7 @@ interface AuthHookReturnType extends Omit<AuthContextType, "signIn"> {
 }
 
 export const useAuth = (): AuthHookReturnType => {
-  const authContext = useContext(AuthContext);
-  const { signIn, ...auth } = authContext;
+  const auth = useContext(AuthContext);
   const [magicLinkWasSent, setMagicLinkWasSent] = useState<boolean>(false);
   const [isAuthenticating, setIsAuthenticating] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -128,11 +150,11 @@ export const useAuth = (): AuthHookReturnType => {
       setMagicLinkWasSent(false);
       const { error } = await signIn(data);
 
-      if (error) setError(error.message);
+      if (error) setError(error);
       if (!error) setMagicLinkWasSent(true);
       setIsAuthenticating(false);
     },
-    [signIn, setMagicLinkWasSent, setIsAuthenticating]
+    [setMagicLinkWasSent, setIsAuthenticating]
   );
 
   const signUpHandler = useCallback(
@@ -141,7 +163,7 @@ export const useAuth = (): AuthHookReturnType => {
       setMagicLinkWasSent(false);
       const { error } = await signUp(data);
 
-      if (error) setError(error.message);
+      if (error) setError(error);
       if (!error) setMagicLinkWasSent(true);
       setIsAuthenticating(false);
     },

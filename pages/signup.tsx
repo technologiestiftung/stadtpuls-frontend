@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useRouter } from "next/router";
 import { SignupForm } from "@components/SignupForm";
 import { useAuth } from "@auth/Auth";
@@ -30,27 +30,53 @@ const SigningUpLoading: FC = () => (
   </SmallModal>
 );
 
-const SigningUpError: FC<{ error: string; onReload: () => void }> = ({
-  error,
-  onReload,
-}) => (
-  <SmallModal
-    title='Registrierung Fehler'
-    footerContent={
-      <div className='block w-full text-right'>
-        <Button onClick={onReload}>Neuladen</Button>
-      </div>
-    }
-  >
-    Es ist bei der Registrierung deines Kontos einen Fehler aufgetreten:
-    <pre className='p-4 border border-gray-300 bg-gray-50 mt-3 text-gray-500'>
-      {error}
-    </pre>
-  </SmallModal>
-);
+const parseServerErrors = (
+  error: string | null
+): {
+  username?: string;
+  email?: string;
+  areConditionsAccepted?: string;
+} => {
+  const errorObj: Record<string, string | undefined> = {
+    username: undefined,
+    email: undefined,
+    areConditionsAccepted: undefined,
+  };
+  if (!error) return errorObj;
+  if (
+    error &&
+    error.startsWith("The email ") &&
+    error.endsWith(" is already taken")
+  ) {
+    errorObj.email = error;
+    return errorObj;
+  }
+  if (error && error === 'body.email should match format "email"') {
+    errorObj.email = error;
+    return errorObj;
+  }
+  if (
+    error &&
+    error.startsWith("The username ") &&
+    error.endsWith(" is already taken")
+  ) {
+    errorObj.username = error;
+    return errorObj;
+  }
+  errorObj.username = error;
+  return errorObj;
+};
 
 const SigninPage: FC = () => {
   const router = useRouter();
+  const [previouslySubmittedData, setPreviouslySubmittedData] = useState<
+    | {
+        email?: string;
+        username?: string;
+        areConditionsAccepted?: boolean;
+      }
+    | undefined
+  >(undefined);
   const { error, signUp, isAuthenticating, magicLinkWasSent } = useAuth();
 
   return (
@@ -59,14 +85,18 @@ const SigninPage: FC = () => {
       style={{ padding: "calc(10vmax + 62px) 16px 10vmax" }}
     >
       {isAuthenticating && <SigningUpLoading />}
-      {error && (
-        <SigningUpError error={error} onReload={() => router.reload()} />
-      )}
       {!isAuthenticating && magicLinkWasSent && (
         <MagicLinkConfirmationModal onClose={() => router.push("/")} />
       )}
-      {!isAuthenticating && !magicLinkWasSent && !error && (
-        <SignupForm onSubmit={signUp} />
+      {!isAuthenticating && !magicLinkWasSent && (
+        <SignupForm
+          onSubmit={data => {
+            void signUp(data);
+            setPreviouslySubmittedData(data);
+          }}
+          defaultValues={previouslySubmittedData}
+          serverErrors={parseServerErrors(error)}
+        />
       )}
     </div>
   );

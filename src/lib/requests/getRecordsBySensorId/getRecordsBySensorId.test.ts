@@ -1,7 +1,7 @@
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { getRecordsBySensorId } from ".";
-import { createApiUrl } from "../createApiUrl";
+import { createSupabaseUrl } from "../createSupabaseUrl";
 import { sensors } from "@mocks/supabaseData/sensors";
 
 const exampleSensor = sensors[0];
@@ -9,7 +9,7 @@ const exampleSensor = sensors[0];
 describe("utility function getRecordsBySensorId", () => {
   it("should return records belonging to provided sensorId", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(
           ctx.status(200, "Mocked status"),
           ctx.json(exampleSensor.records)
@@ -34,7 +34,7 @@ describe("utility function getRecordsBySensorId", () => {
     const testEndDate = exampleSensor.records[1].recorded_at;
 
     const server = setupServer(
-      rest.get(createApiUrl(`/records`), (req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/records`), (req, res, ctx) => {
         const query = req.url.searchParams;
 
         const [gte, lte] = query.getAll("recorded_at");
@@ -76,7 +76,7 @@ describe("utility function getRecordsBySensorId", () => {
     const testStartDate = exampleSensor.records[1].recorded_at;
 
     const server = setupServer(
-      rest.get(createApiUrl(`/records`), (req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/records`), (req, res, ctx) => {
         const query = req.url.searchParams;
 
         const [gte] = query.getAll("recorded_at");
@@ -115,7 +115,7 @@ describe("utility function getRecordsBySensorId", () => {
     const testEndDate = exampleSensor.records[1].recorded_at;
 
     const server = setupServer(
-      rest.get(createApiUrl(`/records`), (req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/records`), (req, res, ctx) => {
         const query = req.url.searchParams;
 
         const [lte] = query.getAll("recorded_at");
@@ -152,7 +152,7 @@ describe("utility function getRecordsBySensorId", () => {
 
   it("should return all records when empty options object provided", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(
           ctx.status(200, "Mocked status"),
           ctx.json(exampleSensor.records)
@@ -175,7 +175,7 @@ describe("utility function getRecordsBySensorId", () => {
     const id = 99999999;
 
     const server = setupServer(
-      rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(ctx.status(404), ctx.json({ message: "Error message" }));
       })
     );

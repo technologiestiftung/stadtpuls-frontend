@@ -4,7 +4,7 @@ interface FormCheckboxPropType
   extends Omit<HTMLProps<HTMLInputElement>, "label" | "value"> {
   name: string;
   label?: ReactNode;
-  errors?: string[];
+  errors?: ReactNode[];
   optional?: boolean;
 }
 
@@ -34,7 +34,7 @@ export const FormCheckbox = forwardRef<HTMLInputElement, FormCheckboxPropType>(
             </label>
           )}
           {errors.map(error => (
-            <p className='text-error text-sm' key={error}>
+            <p className='text-error text-sm' key={error?.toString()}>
               {error}
             </p>
           ))}

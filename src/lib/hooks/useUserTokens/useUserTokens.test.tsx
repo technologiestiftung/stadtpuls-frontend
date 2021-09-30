@@ -3,7 +3,7 @@ import * as auth from "@auth/Auth";
 import { useUserTokens } from ".";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
+import { createApiUrl } from "@lib/requests/createApiUrl";
 import { SWRConfig } from "swr";
 import { FC } from "react";
 import { definitions } from "@common/types/supabase";
@@ -63,7 +63,7 @@ describe("useUserTokens hook", () => {
     const ingosTokens = allTokens.filter(token => token.user_id === "ingo");
 
     const server = setupServer(
-      rest.get(createTokenApiUrl(), (_req, res, ctx) => {
+      rest.get(createApiUrl("/authtokens"), (_req, res, ctx) => {
         return res(
           ctx.status(200, "Mocked status"),
           ctx.json({

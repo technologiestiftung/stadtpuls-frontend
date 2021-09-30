@@ -29,7 +29,7 @@ export const AuthLink: FC<AuthLinkPropType> = ({ loggedInUserName }) => {
           <Link href={accountHref}>
             <a href={accountHref}>
               <UserAvatar
-                username={loggedInUserName || "anonymous"}
+                username={loggedInUserName}
                 className={iconStyles}
                 size={32}
               />

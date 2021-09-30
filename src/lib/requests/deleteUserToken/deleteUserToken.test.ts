@@ -2,7 +2,7 @@ import { deleteUserToken } from ".";
 import * as auth from "@auth/Auth";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import { createTokenApiUrl } from "../createTokenApiUrl";
+import { createApiUrl } from "../createApiUrl";
 
 describe("deleteUserToken utility", () => {
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe("deleteUserToken utility", () => {
   });
   it("deletes a user token when nice_id and valid accessToken provided", async () => {
     const server = setupServer(
-      rest.delete(createTokenApiUrl(), (_req, res, ctx) => {
+      rest.delete(createApiUrl("/authtokens"), (_req, res, ctx) => {
         return res(ctx.status(204, "Mocked status"));
       })
     );
@@ -40,7 +40,7 @@ describe("deleteUserToken utility", () => {
     });
 
     const server = setupServer(
-      rest.delete(createTokenApiUrl(), (_req, res, ctx) => {
+      rest.delete(createApiUrl("/authtokens"), (_req, res, ctx) => {
         return res(
           ctx.status(401, "Mocked status"),
           ctx.text("Not authenticated")
@@ -65,7 +65,7 @@ describe("deleteUserToken utility", () => {
   });
   it("fails without nice_id", async () => {
     const server = setupServer(
-      rest.delete(createTokenApiUrl(), (_req, res, ctx) => {
+      rest.delete(createApiUrl("/authtokens"), (_req, res, ctx) => {
         return res(
           ctx.status(400, "Mocked status"),
           ctx.text("nice_id missing")

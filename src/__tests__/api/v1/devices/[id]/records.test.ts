@@ -1,6 +1,6 @@
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import { createApiUrl } from "../../../../../lib/requests/createApiUrl";
+import { createSupabaseUrl } from "../../../../../lib/requests/createSupabaseUrl";
 import { createMocks } from "node-mocks-http";
 import recordsHandler from "../../../../../../pages/api/v1/sensors/[id]/records";
 import { VALID_TIMESTAMP_EXAMPLE } from "@lib/timestampValidator";
@@ -17,7 +17,7 @@ const REQUEST_BASICS = {
 describe("/api/v1/sensors/[id]/records", () => {
   it("returns data for valid request", async () => {
     const supabaseServer = setupServer(
-      rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(
           ctx.status(200, "Mocked status"),
           ctx.json(fakeDevice.records)
@@ -48,7 +48,7 @@ describe("/api/v1/sensors/[id]/records", () => {
 
   it("returns '400 Bad Request' when more than one id provided in query params", async () => {
     const supabaseServer = setupServer(
-      rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(
           ctx.status(200, "Mocked status"),
           ctx.json(fakeDevice.records)
@@ -77,7 +77,7 @@ describe("/api/v1/sensors/[id]/records", () => {
 
   it("returns '400 Bad Request' when more than one startDate provided in query params", async () => {
     const supabaseServer = setupServer(
-      rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(
           ctx.status(200, "Mocked status"),
           ctx.json(fakeDevice.records)
@@ -107,7 +107,7 @@ describe("/api/v1/sensors/[id]/records", () => {
 
   it("returns '400 Bad Request' when invalid timestamp provided", async () => {
     const supabaseServer = setupServer(
-      rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(
           ctx.status(200, "Mocked status"),
           ctx.json(fakeDevice.records)
@@ -137,7 +137,7 @@ describe("/api/v1/sensors/[id]/records", () => {
 
   it("returns '404 Not Found' when no records are found", async () => {
     const supabaseServer = setupServer(
-      rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(ctx.status(200, "Mocked status"), ctx.json([]));
       })
     );
@@ -163,7 +163,7 @@ describe("/api/v1/sensors/[id]/records", () => {
 
   it("returns '500 Internal Server Error' for unexpected errors", async () => {
     const supabaseServer = setupServer(
-      rest.get(createApiUrl(`/records`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(ctx.status(500, "Mocked status"));
       })
     );

@@ -1,5 +1,5 @@
 import { definitions } from "@common/types/supabase";
-import { createTokenApiUrl } from "@lib/requests/createTokenApiUrl";
+import { createApiUrl } from "@lib/requests/createApiUrl";
 
 type TokenType = Omit<definitions["auth_tokens"], "id">;
 type AccessTokenType = string;
@@ -19,7 +19,7 @@ export const getUserTokens: GetUserTokensSignature = async accessToken => {
     redirect: "follow" as const,
   };
 
-  const url = createTokenApiUrl();
+  const url = createApiUrl("/authtokens");
 
   const response = await fetch(url, requestOptions);
 

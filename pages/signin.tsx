@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useRouter } from "next/router";
 import { SigninForm } from "@components/SigninForm";
 import { useAuth } from "@auth/Auth";
@@ -29,7 +29,10 @@ const SigningInState: FC = () => (
 );
 
 const SigninPage: FC = () => {
-  const { signIn, isAuthenticating, magicLinkWasSent } = useAuth();
+  const [emailUsedToSignIn, setEmailUsedToSignIn] = useState<
+    string | undefined
+  >(undefined);
+  const { error, signIn, isAuthenticating, magicLinkWasSent } = useAuth();
   const router = useRouter();
 
   return (
@@ -42,7 +45,14 @@ const SigninPage: FC = () => {
         <MagicLinkConfirmationModal onClose={() => router.push("/")} />
       )}
       {!isAuthenticating && !magicLinkWasSent && (
-        <SigninForm onSubmit={signIn} />
+        <SigninForm
+          onSubmit={data => {
+            void signIn(data);
+            setEmailUsedToSignIn(data.email);
+          }}
+          serverError={error}
+          defaultValues={{ email: emailUsedToSignIn }}
+        />
       )}
     </div>
   );

@@ -45,7 +45,7 @@ export const mapPublicAccount = ({
 }: AccountQueryResponseType): ParsedAccountType => ({
   id: user.id,
   username: user.name || "anonymous",
-  displayName: user.display_name || "Anonymous",
+  displayName: user.display_name || user.name || "Anonymous",
   createdAt: user.created_at,
   link: user.url,
   description: user.description,
