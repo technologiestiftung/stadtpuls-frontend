@@ -62,8 +62,8 @@ const getUsernameRules = ({
   },
   {
     id: "length",
-    msg: "Nicht länger als 20 Zeichen",
-    isFulfilled: !!value && value.length > 0 && value.length <= 20,
+    msg: "Zwischen 3 und 20 Zeichen",
+    isFulfilled: !!value && value.length > 3 && value.length <= 20,
   },
 ];
 
