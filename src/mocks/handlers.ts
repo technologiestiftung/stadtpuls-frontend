@@ -1,5 +1,5 @@
 import { rest } from "msw";
-import { refreshToken, authToken } from "./supabaseData";
+import { fakeAuthToken } from "./supabaseData/userData";
 import { parsedSensors, sensors } from "./supabaseData/sensors";
 import { publicAccounts } from "./supabaseData/accounts";
 import { createSupabaseUrl } from "../lib/requests/createSupabaseUrl";
@@ -61,32 +61,6 @@ const signingHandlers = [
   }),
 ];
 
-const tokenApiHandlers = [
-  rest.get(
-    createApiUrl("/authtokens", { projectId: "10" }),
-    (_req, res, ctx) => {
-      return res(
-        ctx.status(201, "Mocked status"),
-        ctx.json({
-          data: [
-            { niceId: 1, description: "Lorem ipsum dolor.", projectId: 10 },
-            { niceId: 2, description: "Sit amet consectetur.", projectId: 10 },
-            { niceId: 3, description: "Lipsum amet dolor.", projectId: 10 },
-          ],
-        })
-      );
-    }
-  ),
-  rest.post(createApiUrl("/authtokens"), (_req, res, ctx) => {
-    return res(
-      ctx.status(201, "Mocked status"),
-      ctx.text(
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjYTNmMjY3My0wNWNkLTRiNjMtYTJiZC1lZjhmYWY5MzFlZWYiLCJwcm9qZWN0SWQiOjEwLCJkZXNjcmlwdGlvbiI6Im15IGZhbmN5IHRva2VuIiwianRpIjoiOTlmMGNjY2EtYTA3MC00MjBmLTk0N2EtZDk3Y2QxYTAzN2RmIiwiaXNzIjoidGVjaG5vbG9naWVzdGlmdHVuZy1iZXJsaW4uZGUiLCJpYXQiOjE2MTkwNzkzOTB9.IBZ4qrsi8ibAUcUi8LsZtiWSE1Q5DzjFJZMPwzMZrKA"
-      )
-    );
-  }),
-];
-
 const supabaseHandlers = [
   rest.get(createSupabaseUrl("/categories"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"), ctx.json(categories));
@@ -110,51 +84,6 @@ const supabaseHandlers = [
       )
     );
   }),
-  // Keeping this for now for inspiration for how to mock different query options. TODO: Delete as soon as it's not needed anymore
-  /* rest.get(createSupabaseUrl("/projects"), (req, res, ctx) => {
-    const query = req.url.searchParams;
-
-    const select = query.get("select");
-    // const offset = query.get("offset");
-    const limit = query.get("limit");
-    const recordsLimit = query.get("devices.records.limit");
-    const recordsOrder = query.get("devices.records.order");
-    const userId = query.get("userId")?.slice(3);
-    const id = query.get("id")?.slice(3);
-    if (
-      recordsLimit == "500" &&
-      recordsOrder == "recordedAt.desc.nullslast" &&
-      // limit == "10" &&
-      // offset == "0" &&
-      select ==
-        "id,name,description,location,devices(records(recordedAt,measurements)),user:userId(name),category:categoryId(name)"
-    )
-      return res(
-        ctx.set("content-range", "0-9/14"),
-        ctx.status(201, "Mocked status"),
-        ctx.json(
-          limit
-            ? publicProjectsData.slice(0, parseInt(limit, 10))
-            : publicProjectsData
-        )
-      );
-    else if (
-      select ==
-        "id,name,description,connectype,location,category:categoryId(id,name,description),devices(id,externalId,name,records(id,recordedAt))" &&
-      userId == authToken.currentSession.user.id
-    )
-      return res(ctx.status(201, "Mocked status"), ctx.json(userProjects));
-    else if (
-      select ==
-        "id,name,connectype,createdAt,location,category:categoryId(id,name,description),devices(id,externalId,name,records(id,recordedAt,measurements,longitude,latitude,altitude))" &&
-      id == "10"
-    )
-      return res(
-        ctx.status(201, "Mocked status"),
-        ctx.json(publicProjectsData[0])
-      );
-    else return res(ctx.status(404, "Not found"));
-  }), */
   // Sensors add update delete
   rest.post<definitions["sensors"][]>(
     createSupabaseUrl("/sensors"),
@@ -277,80 +206,6 @@ const supabaseHandlers = [
       return res(ctx.status(201, "Mocked status"), ctx.json(sensors));
     }
   ),
-  /* rest.patch<DevicesType>(createSupabaseUrl("/devices"), (req, res, ctx) => {
-    const query = req.url.searchParams;
-
-    const id = Number(query.get("id")?.slice(3));
-    const userId = query.get("userId")?.slice(3);
-    const device = getDevice(id);
-    const payload = req.body;
-    if (userId == authToken.currentSession.user.id && device)
-      return res(
-        ctx.status(201, "Mocked status"),
-        ctx.json([
-          {
-            ...device,
-            ...payload,
-          },
-        ])
-      );
-    else return res(ctx.status(404, "Not found"));
-  }), */
-  /* rest.delete(createSupabaseUrl("/devices"), (req, res, ctx) => {
-    const query = req.url.searchParams;
-
-    const id = Number(query.get("id")?.slice(3));
-    const userId = query.get("userId")?.slice(3);
-    const device = getDevice(id);
-    if (userId == authToken.currentSession.user.id)
-      return res(ctx.status(201, "Mocked status"), ctx.json(device));
-    else return res(ctx.status(404, "Not found"));
-  }), */
-  //Projects add update delete
-  /* rest.post<ProjectsType[]>(createSupabaseUrl("/projects"), (req, res, ctx) => {
-    const payload = req.body[0];
-    const createdAt = new Date().toISOString();
-    return res(
-      ctx.status(201, "Mocked status"),
-      ctx.json([{ ...payload, createdAt, id: 5 }])
-    );
-  }), */
-  /* rest.patch<ProjectsType>(createSupabaseUrl("/projects"), (req, res, ctx) => {
-    const query = req.url.searchParams;
-
-    const id = Number(query.get("id")?.slice(3));
-    const userId = query.get("userId")?.slice(3);
-    const project = getUserProject(id);
-    const payload = req.body;
-    if (userId == authToken.currentSession.user.id && project)
-      return res(
-        ctx.status(201, "Mocked status"),
-        ctx.json([
-          {
-            ...project,
-            ...payload,
-          },
-        ])
-      );
-    else return res(ctx.status(404, "Not found"));
-  }), */
-  /* rest.delete(createSupabaseUrl("/projects"), (req, res, ctx) => {
-    const query = req.url.searchParams;
-
-    const id = Number(query.get("id")?.slice(3));
-    const userId = query.get("userId")?.slice(3);
-    const project = getUserProject(id);
-    if (userId == authToken.currentSession.user.id)
-      return res(ctx.status(201, "Mocked status"), ctx.json(project));
-    else return res(ctx.status(404, "Not found"));
-  }), */
-  //Auth
-  rest.post(
-    "https://dyxublythmmlsositxtg.supabase.co/auth/v1/token",
-    (_req, res, ctx) => {
-      return res(ctx.status(201, "Mocked status"), ctx.json(refreshToken));
-    }
-  ),
   //User
   rest.post(createSupabaseUrl("/rpc/delete_user"), (_req, res, ctx) => {
     return res(ctx.status(201, "Mocked status"));
@@ -363,7 +218,7 @@ const supabaseHandlers = [
 
       const id = query.get("id")?.slice(3);
       const createdAt = new Date().toISOString();
-      if (id == authToken.currentSession.user.id)
+      if (id == fakeAuthToken.currentSession.user.id)
         return res(
           ctx.status(201, "Mocked status"),
           ctx.json([
@@ -451,6 +306,5 @@ export const handlers = [
   ...mapBoxGeocodingHandlers,
   ...supabaseHandlers,
   ...authHandlers,
-  ...tokenApiHandlers,
   ...signingHandlers,
 ];

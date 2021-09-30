@@ -2,12 +2,12 @@ import Sitemap from "../../pages/sitemap.xml";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { createSupabaseUrl } from "@lib/requests/createSupabaseUrl";
-import { parsedSensors as sensors } from "@mocks/supabaseData/sensors";
+import { sensors } from "@mocks/supabaseData/sensors";
 
 describe("sitemap.xml", () => {
   it("should call the response handlers with the right params", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createSupabaseUrl(`/projects`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/sensors`), (_req, res, ctx) => {
         return res(ctx.status(200, "Mocked status"), ctx.json(sensors));
       })
     );

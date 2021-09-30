@@ -6,6 +6,6 @@ exports[`Storyshots UI Elements/PageError No Access Error 1`] = `null`;
 
 exports[`Storyshots UI Elements/PageError Please Login Error 1`] = `null`;
 
-exports[`Storyshots UI Elements/PageError Project Not Found Error 1`] = `null`;
+exports[`Storyshots UI Elements/PageError Sensor Not Found Error 1`] = `null`;
 
 exports[`Storyshots UI Elements/PageError Server Error Error 1`] = `null`;

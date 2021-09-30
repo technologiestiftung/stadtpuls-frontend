@@ -95,11 +95,11 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           >
             <a
               className="navigation-link p-4 block sm:inline"
-              href="/docs/new-project"
+              href="/docs/new-sensor"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Neues Projekt anlegen
+              Neues Sensor anlegen
             </a>
           </li>
           <li

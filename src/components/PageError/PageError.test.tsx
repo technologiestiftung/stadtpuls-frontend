@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { InvalidPageId } from "./InvalidPageId";
 import { NoAccess } from "./NoAccess";
 import { PleaseLogin } from "./PleaseLogin";
-import { ProjectNotFound } from "./ProjectNotFound";
+import { SensorNotFound } from "./SensorNotFound";
 import { ServerError } from "./ServerError";
 
 describe("component InvalidPageId", () => {
@@ -34,11 +34,11 @@ describe("component ServerError", () => {
   });
 });
 
-describe("component ProjectNotFound", () => {
+describe("component SensorNotFound", () => {
   it("should render without problem", () => {
-    render(<ProjectNotFound projectId='12' />);
+    render(<SensorNotFound sensorId='12' />);
     expect(
-      screen.getByText(/Sie haben kein Projekt mit der ID "12"/gi)
+      screen.getByText(/Sie haben keinen Sensor mit der ID "12"/gi)
     ).toBeInTheDocument();
   });
 });

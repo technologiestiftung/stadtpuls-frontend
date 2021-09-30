@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react";
 import { InvalidPageId } from "./InvalidPageId";
 import { NoAccess } from "./NoAccess";
 import { PleaseLogin } from "./PleaseLogin";
-import { ProjectNotFound } from "./ProjectNotFound";
+import { SensorNotFound } from "./SensorNotFound";
 import { ServerError } from "./ServerError";
 
 export default {
@@ -13,9 +13,9 @@ const InvalidPageIdTemplate: Story<{
   pageType: string;
   id: string;
 }> = args => <InvalidPageId {...args} />;
-const ProjectNotFoundTemplate: Story<{
-  projectId: string;
-}> = args => <ProjectNotFound {...args} />;
+const SensorNotFoundTemplate: Story<{
+  sensorId: number;
+}> = args => <SensorNotFound {...args} />;
 const NoAccessTemplate: Story = args => <NoAccess {...args} />;
 const PleaseLoginTemplate: Story = args => <PleaseLogin {...args} />;
 const ServerErrorTemplate: Story<{
@@ -28,9 +28,9 @@ InvalidPageIdError.args = {
   pageType: "Projekt",
 };
 
-export const ProjectNotFoundError = ProjectNotFoundTemplate.bind({});
-ProjectNotFoundError.args = {
-  projectId: "1234",
+export const SensorNotFoundError = SensorNotFoundTemplate.bind({});
+SensorNotFoundError.args = {
+  sensorId: 1234,
 };
 
 export const NoAccessError = NoAccessTemplate.bind({});

@@ -3,19 +3,19 @@ import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import Link from "next/link";
 import { FC } from "react";
 
-export const ProjectNotFound: FC<{
-  projectId: string | number;
-}> = ({ projectId }) => (
+export const SensorNotFound: FC<{
+  sensorId: string | number;
+}> = ({ sensorId }) => (
   <SmallModalOverlay
-    title='Projekt nicht gefunden'
+    title='Sensor nicht gefunden'
     footerContent={
       <div className='block w-full text-right'>
-        <Link href='/account/profile'>
-          <AnchorButton href='/account/profile'>Zu meinem profil</AnchorButton>
+        <Link href='/sensors'>
+          <AnchorButton href='/sensors'>Zu alle Sensoren</AnchorButton>
         </Link>
       </div>
     }
   >
-    {`Sie haben kein Projekt mit der ID "${projectId}".`}
+    {`Sie haben keinen Sensor mit der ID "${sensorId}".`}
   </SmallModalOverlay>
 );
