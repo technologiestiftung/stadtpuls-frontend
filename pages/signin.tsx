@@ -20,7 +20,7 @@ const MagicLinkConfirmationModal: FC<{
     Link an, um dich einzuloggen.
     <br />
     <br />
-    Bitte überprüfe auch Deinen Spam-Ordner..
+    Bitte überprüfe auch Deinen Spam-Ordner.
   </SmallModal>
 );
 
