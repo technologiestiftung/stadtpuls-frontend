@@ -74,3 +74,9 @@ export const requiredTTNDeviceIDValidation = yup.string().when("integration", {
     .required("Device-ID ist erforderlich"),
   otherwise: yup.string().optional(),
 });
+
+export const requiredTokenDescriptionValidation = yup
+  .string()
+  .min(3, "Token-Beschreibung muss mindestens 3 Zeichen haben")
+  .max(200, "Token-Beschreibung darf maximal 200 Zeichen haben")
+  .required("Eine Token-Beschreibung ist erforderlich");

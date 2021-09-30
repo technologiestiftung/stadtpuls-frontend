@@ -47,6 +47,11 @@ describe("Alert component", () => {
     const alert = screen.queryByRole("alert");
     expect(alert).not.toBeInTheDocument();
   });
+  it("should not render a clickable close icon because the alert should be non-removable", () => {
+    render(<Alert message='test' isRemovable={false} />);
+    const closeButton = screen.queryByLabelText("Schließen");
+    expect(closeButton).not.toBeInTheDocument();
+  });
   it("should render JSX content", () => {
     render(
       <Alert

@@ -4,17 +4,17 @@ import { FC } from "react";
 import KeyIcon from "../../../public/images/icons/16px/key.svg";
 
 export interface TokenItemType {
-  name: string;
+  description: string;
   onRegenerate: () => void;
-  onDelete: () => void;
+  onInitiateDelete: () => void;
   isFirstItem?: boolean;
   additionalClassNames?: string;
 }
 
 export const TokenItem: FC<TokenItemType> = ({
-  name,
+  description,
   onRegenerate,
-  onDelete,
+  onInitiateDelete,
   isFirstItem,
   additionalClassNames,
 }) => {
@@ -30,21 +30,21 @@ export const TokenItem: FC<TokenItemType> = ({
     >
       <div className={classNames("flex py-2", "text-gray-800")}>
         <KeyIcon className='flex-shrink-0 self-center' aria-hidden />
-        <p className='ml-3'>{name}</p>
+        <p className='ml-3 break-all'>{description}</p>
       </div>
       <div className='py-2 ml-7'>
         <Button
           onClick={onRegenerate}
           className='mr-3 my-1'
-          aria-label={`${name} neu generieren`}
+          aria-label={`${description} neu generieren`}
         >
           Neu generieren
         </Button>
         <Button
           variant='dangerous'
           className='my-1'
-          onClick={onDelete}
-          aria-label={`${name} löschen`}
+          onClick={onInitiateDelete}
+          aria-label={`${description} löschen`}
         >
           Löschen
         </Button>

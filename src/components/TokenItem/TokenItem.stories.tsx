@@ -11,23 +11,31 @@ const Template: Story<TokenItemType> = args => <TokenItem {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  name: "Default personal token",
+  description: "Default personal token",
   onRegenerate: action("onRegenerate function executed"),
-  onDelete: action("onDelete function executed"),
+  onInitiateDelete: action("onInitiateDelete function executed"),
 };
 
 export const LongName = Template.bind({});
 LongName.args = {
-  name:
+  description:
     "Default personal token with an extraordinary long name that might span multiple rows",
   onRegenerate: action("onRegenerate function executed"),
-  onDelete: action("onDelete function executed"),
+  onInitiateDelete: action("onInitiateDelete function executed"),
+};
+
+export const LongDescriptionWithoutSpaces = Template.bind({});
+LongDescriptionWithoutSpaces.args = {
+  description:
+    "Dlkdsjflkfsdnfjdnfjssdfsdfiuehwhuwfjbsmdbfsbuzuxghfhjbjchuhcuvuxcvxjhjxcgvxchvjnjhjhdhfsjkljajksdghjdshfbsdfbjsdfnkjhjdkfsjfjsdfsjfsb",
+  onRegenerate: action("onRegenerate function executed"),
+  onInitiateDelete: action("onInitiateDelete function executed"),
 };
 
 export const FirstItemInList = Template.bind({});
 FirstItemInList.args = {
-  name: "I am the first token with a border-top",
+  description: "I am the first token with a border-top",
   isFirstItem: true,
   onRegenerate: action("onRegenerate function executed"),
-  onDelete: action("onDelete function executed"),
+  onInitiateDelete: action("onInitiateDelete function executed"),
 };
