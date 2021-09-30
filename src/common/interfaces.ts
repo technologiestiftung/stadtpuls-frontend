@@ -172,18 +172,6 @@ export interface LineGraphType {
   endDateTimeString?: string;
 }
 
-export interface RadioTabOptionType {
-  title: string;
-  id: number;
-  isActive: boolean;
-}
-
-export interface RadioTabsType {
-  name: string;
-  options: RadioTabOptionType[];
-  changeHandler: (selected: number) => void;
-}
-
 export interface MarkerType {
   latitude: number;
   longitude: number;
