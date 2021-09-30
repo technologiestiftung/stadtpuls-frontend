@@ -150,7 +150,7 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
               tabs={tabs}
             />
           </div>
-          {isOwnerAndLoggedIn && (
+          {isOwnerAndLoggedIn && activeTab === "sensors" && (
             <span className='absolute bottom-0 sm:bottom-2 right-4'>
               <Button
                 variant='primary'

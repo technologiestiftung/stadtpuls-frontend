@@ -2,7 +2,7 @@ export const createTokenApiUrl = (params?: Record<string, string>): string => {
   const url = new URL(
     `${
       process.env.NEXT_PUBLIC_TOKEN_API_URL || "https://fake-token-api-url.com"
-    }/api/v2/authtokens`
+    }/api/v3/authtokens`
   );
 
   if (params) {
