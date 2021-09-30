@@ -1,34 +1,7 @@
 import { FC, useState } from "react";
-import { useRouter } from "next/router";
 import { SignupForm } from "@components/SignupForm";
 import { useAuth } from "@auth/Auth";
-import { SmallModal } from "@components/SmallModal";
-import { Button } from "@components/Button";
-
-const MagicLinkConfirmationModal: FC<{
-  onClose: () => void;
-}> = ({ onClose }) => (
-  <SmallModal
-    title='Bestätige deine E-Mail Adresse'
-    footerContent={
-      <div className='block w-full text-right'>
-        <Button onClick={onClose}>Alles klar</Button>
-      </div>
-    }
-  >
-    Wir haben dir eine E-Mail mit einem Registrierungs-Link geschickt. Klicke
-    den Link an, um deine E-Mail Adresse zu bestätigen.
-    <br />
-    <br />
-    Bitte überprüfe auch Deinen Spam-Ordner..
-  </SmallModal>
-);
-
-const SigningUpLoading: FC = () => (
-  <SmallModal title='Registrierung'>
-    Ein Bestätigungs-Link wird an deine E-Mail Adresse gesendet.
-  </SmallModal>
-);
+import { MagicLinkModal } from "@components/MagicLinkModal";
 
 const parseServerErrors = (
   error: string | null
@@ -68,7 +41,6 @@ const parseServerErrors = (
 };
 
 const SigninPage: FC = () => {
-  const router = useRouter();
   const [previouslySubmittedData, setPreviouslySubmittedData] = useState<
     | {
         email?: string;
@@ -79,16 +51,13 @@ const SigninPage: FC = () => {
   >(undefined);
   const { error, signUp, isAuthenticating, magicLinkWasSent } = useAuth();
 
+  const registrationDataWasSubmitted = isAuthenticating || magicLinkWasSent;
   return (
     <div
-      className='w-full h-full relative grid place-content-center'
+      className='w-full h-full relative flex flex-col justify-center items-center'
       style={{ padding: "calc(10vmax + 62px) 16px 10vmax" }}
     >
-      {isAuthenticating && <SigningUpLoading />}
-      {!isAuthenticating && magicLinkWasSent && (
-        <MagicLinkConfirmationModal onClose={() => router.push("/")} />
-      )}
-      {!isAuthenticating && !magicLinkWasSent && (
+      {!registrationDataWasSubmitted && (
         <SignupForm
           onSubmit={data => {
             void signUp(data);
@@ -96,6 +65,12 @@ const SigninPage: FC = () => {
           }}
           defaultValues={previouslySubmittedData}
           serverErrors={parseServerErrors(error)}
+        />
+      )}
+      {registrationDataWasSubmitted && (
+        <MagicLinkModal
+          isLoading={isAuthenticating && !magicLinkWasSent}
+          email={previouslySubmittedData?.email || ""}
         />
       )}
     </div>
