@@ -8,6 +8,8 @@ import { CopyTextField } from "@components/CopyTextField";
 import { PreviewMap } from "@components/PreviewMap";
 import { Button } from "@components/Button";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
+import { createApiUrl } from "@lib/requests/createApiUrl";
+import { normalizeURL } from "@lib/urlUtil";
 
 export interface SensorPageHeaderPropType extends ParsedSensorType {
   withEditButton?: boolean;
@@ -109,6 +111,14 @@ const Title: FC<Pick<ParsedSensorType, "name" | "symbolId">> = ({
   </h1>
 );
 
+const ApiUrl: FC<{ url: string }> = ({ url }) => {
+  return (
+    <CopyTextField name='api-url' label='API Schnittstelle'>
+      {normalizeURL(url) || url}
+    </CopyTextField>
+  );
+};
+
 export const SensorPageHeader: FC<SensorPageHeaderPropType> = ({
   id,
   name,
@@ -142,9 +152,7 @@ export const SensorPageHeader: FC<SensorPageHeaderPropType> = ({
           <div className='py-6'>
             <p className='text-sm sm:text-base max-w-prose'>{description}</p>
           </div>
-          <CopyTextField name='api-url' label='API Schnittstelle'>
-            {`/api/v1/sensors/${id}/records`}
-          </CopyTextField>
+          <ApiUrl url={`${createApiUrl()}sensors/${id}/records`} />
           {withEditButton && onEditButtonClick && (
             <div className='w-full order-last mt-6'>
               <Button onClick={onEditButtonClick}>Sensor editieren</Button>
