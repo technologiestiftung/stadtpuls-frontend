@@ -66,7 +66,7 @@ describe("useUniqueUsernameValidation", () => {
     // @ts-ignore
     sup.supabase.from = jest.fn().mockReturnValue({
       select: jest.fn().mockReturnValue({
-        eq: jest.fn().mockReturnValue({
+        ilike: jest.fn().mockReturnValue({
           data: null,
           error: new Error("Network error"),
         }),

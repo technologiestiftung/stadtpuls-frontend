@@ -46,7 +46,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
-              placeholder="Dein einzigartigen Nutzername..."
+              placeholder="Dein Nutzername..."
               type="text"
               value=""
             />

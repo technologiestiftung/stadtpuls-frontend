@@ -1,11 +1,13 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { SignupForm } from ".";
-import * as swr from "swr";
+import * as uniqueHook from "@lib/hooks/useUniqueUsernameValidation";
 
 describe("component SignupForm", () => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  swr.default = jest.fn().mockReturnValue({ isUnique: true });
+  uniqueHook.useUniqueUsernameValidation = jest
+    .fn()
+    .mockReturnValue({ isUnique: true, isLoading: false });
   it("should render an username input", () => {
     render(<SignupForm />);
     const usernameLabel = screen.getByText(/Nutzername/i);
