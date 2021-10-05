@@ -209,7 +209,7 @@ const SensorPage: FC<{
         </div>
         {records.length > 0 && (
           <div className='mt-16'>
-            <DataTable data={parsedAndSortedRecords} />
+            <DataTable data={parsedAndSortedRecords.reverse()} />
           </div>
         )}
       </div>
