@@ -27,11 +27,11 @@ exports[`Storyshots UI Elements/DropdownMenu Default 1`] = `
       <div>
         <a
           className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 text-purple cursor-pointer"
-          href="/projects"
+          href="/sensors"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
-          Meine Projekte
+          Alle Sensoren
         </a>
         <a
           className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 text-purple cursor-pointer"
@@ -80,7 +80,7 @@ exports[`Storyshots UI Elements/DropdownMenu With Custom Children 1`] = `
       <div>
         <a
           className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 text-purple cursor-pointer"
-          href="/account/projects"
+          href="/account/sensors"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -163,11 +163,11 @@ exports[`Storyshots UI Elements/DropdownMenu With Disabled Item 1`] = `
       <div>
         <a
           className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 hover:bg-purple hover:bg-opacity-5 text-purple cursor-pointer"
-          href="/projects"
+          href="/sensores"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
-          Meine Projekte
+          Alle Sensoren
         </a>
         <span
           className="group block w-full last:border-b-0 px-4 py-3 transition text-left border-b border-gray-100 bg-gray-50 text-gray-700 cursor-not-allowed"

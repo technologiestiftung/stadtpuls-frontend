@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 import { LandingSensorsSlider } from ".";
 
 describe("LandingSensorsSlider component", () => {
-  it("should 3 slides by project", () => {
+  it("should render 3 slides", () => {
     render(<LandingSensorsSlider sensors={curatedSensors} />);
     const headings = document.getElementsByClassName("swiper-slide");
     expect(headings).toHaveLength(curatedSensors.length);

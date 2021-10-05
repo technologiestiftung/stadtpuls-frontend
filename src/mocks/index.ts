@@ -4,14 +4,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 // @ts-ignore
-
-import { authToken } from "./supabaseData";
+import { fakeAuthToken } from "./supabaseData/userData";
 
 if (typeof window === "undefined") {
   const { server } = require("./server");
   server.listen();
 } else {
   const { worker } = require("./browser");
-  localStorage.setItem("supabase.auth.token", JSON.stringify(authToken));
+  localStorage.setItem("supabase.auth.token", JSON.stringify(fakeAuthToken));
   worker.start();
 }

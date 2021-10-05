@@ -1,4 +1,3 @@
-import { CategoriesType } from "@common/types/supabase_DEPRECATED";
 import { DataTable } from "@components/DataTable";
 import { DeviceLineChartFilters } from "@components/DeviceLineChartFilters";
 import { DropdownMenu } from "@components/DropdownMenu";
@@ -17,6 +16,7 @@ import moment from "moment";
 import { GetServerSideProps } from "next";
 import React, { FC, useCallback, useEffect, useState } from "react";
 import { SensorPageHeaderWithData } from "@components/SensorPageHeader/withData";
+import { definitions } from "@common/types/supabase";
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -44,7 +44,7 @@ const numberFormatter = new Intl.NumberFormat("de-DE", {
 });
 
 const getCategoryUnit = (
-  category: CategoriesType["name"] | string | undefined
+  category: definitions["categories"]["name"] | string | undefined
 ): string => {
   switch (category) {
     case "Temperatur":

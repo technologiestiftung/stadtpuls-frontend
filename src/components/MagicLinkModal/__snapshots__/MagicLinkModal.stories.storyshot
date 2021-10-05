@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Map/MagicLinkModal Loading 1`] = `
+<div
+  className="w-full max-w-md md:px-0 h-full overflow-y-auto"
+>
+  <div
+    className="bg-white border border-gray-200 shadow p-4 sm:p-8 flex flex-col gap-8 place-content-between"
+    style={
+      Object {
+        "minHeight": 360,
+      }
+    }
+  >
+    <div>
+      <h1
+        className="text-3xl font-bold font-headline m-0 mb-4 text-purple"
+      >
+        Überprüfe deine E-Mails
+      </h1>
+      <img
+        alt="closed envelope"
+        src="/images/magick-link-loading.svg"
+      />
+    </div>
+    <div
+      className="flex gap-4 place-content-between"
+    >
+      <div
+        className="flex h-16 justify-end flex-col gap-3"
+      >
+        <p>
+          Ein Link wird gesendet...
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Map/MagicLinkModal Sent 1`] = `
+<div
+  className="w-full max-w-md md:px-0 h-full overflow-y-auto"
+>
+  <div
+    className="bg-white border border-gray-200 shadow p-4 sm:p-8 flex flex-col gap-8 place-content-between"
+    style={
+      Object {
+        "minHeight": 360,
+      }
+    }
+  >
+    <div>
+      <h1
+        className="text-3xl font-bold font-headline m-0 mb-4 text-purple"
+      >
+        Überprüfe deine E-Mails
+      </h1>
+      <img
+        alt="opened envelope"
+        src="/images/magick-link-sent.svg"
+      />
+    </div>
+    <div
+      className="flex gap-4 place-content-between"
+    >
+      <div
+        className="flex h-16 justify-end flex-col gap-3"
+      >
+        <p>
+          Ein Link wurde gesendet an:
+          <br />
+          <strong>
+            contact@example.com
+          </strong>
+        </p>
+        <p>
+          Bitte schaue auch in deinen Spam-Ordner.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, useForm } from "react-hook-form";
@@ -62,8 +62,8 @@ const getUsernameRules = ({
   },
   {
     id: "length",
-    msg: "Nicht länger als 20 Zeichen",
-    isFulfilled: !!value && value.length > 0 && value.length <= 20,
+    msg: "Zwischen 3 und 20 Zeichen",
+    isFulfilled: !!value && value.length > 3 && value.length <= 20,
   },
 ];
 
@@ -73,11 +73,12 @@ export const SignupForm: FC<SignupFormPropType> = ({
   serverErrors = {},
 }) => {
   const [usernameWasFocused, setUsernameWasFocused] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const {
     control,
     handleSubmit,
     watch,
-    formState: { errors, isSubmitted, touchedFields },
+    formState: { errors, isSubmitted: formIsSubmitted, touchedFields },
   } = useForm<SignupFormData>({
     resolver: yupResolver(formSchema),
   });
@@ -91,12 +92,8 @@ export const SignupForm: FC<SignupFormPropType> = ({
   const { isUnique: isUsernameUnique, isLoading } = useUniqueUsernameValidation(
     debouncedUsername
   );
-  const onInternalSubmit = handleSubmit(data =>
-    onSubmit({
-      ...data,
-      areConditionsAccepted: Boolean(data.areConditionsAccepted),
-    })
-  );
+
+  useEffect(() => setIsSubmitted(formIsSubmitted), [formIsSubmitted]);
 
   const usernameRules = getUsernameRules({
     value: watchUsername,
@@ -107,6 +104,15 @@ export const SignupForm: FC<SignupFormPropType> = ({
     ({ isFulfilled }) => !isFulfilled
   );
   const usernameHasError = isSubmitted && usernameIsInvalid;
+
+  const onInternalSubmit = handleSubmit(data => {
+    setIsSubmitted(true);
+    if (usernameIsInvalid) return;
+    onSubmit({
+      ...data,
+      areConditionsAccepted: Boolean(data.areConditionsAccepted),
+    });
+  });
 
   return (
     <SignInUpFormWrapper onSubmit={onInternalSubmit} type='up'>
@@ -119,10 +125,11 @@ export const SignupForm: FC<SignupFormPropType> = ({
             <FormTextInput
               {...field}
               label='Nutzername'
-              placeholder='Dein einzigartigen Nutzername...'
+              placeholder='Dein Nutzername...'
               type='text'
               errors={([
                 !touchedFields.username && serverErrors.username,
+                usernameHasError && " ",
               ].filter(Boolean) as string[]).map(getTranslatedErrorMessage)}
               onFocus={() => setUsernameWasFocused(true)}
               className='mb-0'

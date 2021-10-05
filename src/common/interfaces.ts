@@ -157,42 +157,6 @@ export interface Theme {
   };
 }
 
-export interface ProjectType {
-  id: number;
-  title: string;
-  city?: string;
-  description: string;
-  ttnAppId?: string;
-  userId?: number;
-}
-
-export interface DeviceType {
-  description?: string;
-  id: number;
-  latitude?: number;
-  longitude?: number;
-  projectId?: number;
-  ttnDeviceId: string;
-  records: RecordType[];
-}
-
-export interface RecordType {
-  id: number;
-  deviceId?: number;
-  recordedAt: string;
-  value: number;
-}
-
-export interface CompleteProjectType extends ProjectType {
-  devices: DeviceType[];
-}
-
-export interface SummaryType {
-  title: string;
-  description: string;
-  noOfDevices: number;
-}
-
 export interface DateValueType {
   date: string;
   value: number;
@@ -208,30 +172,9 @@ export interface LineGraphType {
   endDateTimeString?: string;
 }
 
-export interface RadioTabOptionType {
-  title: string;
-  id: number;
-  isActive: boolean;
-}
-
-export interface RadioTabsType {
-  name: string;
-  options: RadioTabOptionType[];
-  changeHandler: (selected: number) => void;
-}
-
 export interface MarkerType {
   latitude: number;
   longitude: number;
   id: number;
   isActive: boolean;
-}
-
-export interface TokenResponseObjectType {
-  comment: string;
-  method: string;
-  url: string;
-  data: {
-    token: string;
-  };
 }
