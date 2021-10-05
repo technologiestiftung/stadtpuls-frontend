@@ -11,6 +11,8 @@ import { AuthProvider } from "@auth/Auth";
 import theme from "../src/style/theme";
 import "../src/style/global.css";
 import { Head } from "@components/Head";
+import NextNProgress from "nextjs-progressbar";
+import colors from "../src/style/colors";
 
 if (process.env.NODE_ENV !== "production") {
   // require("../src/mocks/index");
@@ -32,6 +34,7 @@ const App: FC<{
       <ThemeProvider theme={theme}>
         <AuthProvider>
           <Head />
+          <NextNProgress stopDelayMs={50} color={colors.green} />
           <Header />
           <main
             id={pathname?.replace(/\//gi, "") || "home"}
