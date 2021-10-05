@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/react";
-import ProjectIcon from "@material-ui/icons/FormatListBulleted";
+import SensorsIcon from "@material-ui/icons/FormatListBulleted";
 import AccountIcon from "@material-ui/icons/AccountCircle";
 import LogoutIconn from "@material-ui/icons/ExitToApp";
 import { ReactNode } from "react";
@@ -27,7 +27,7 @@ const Template: Story<
 export const Default = Template.bind({});
 Default.args = {
   items: [
-    { id: 1, title: "Meine Projekte", href: "/projects" },
+    { id: 1, title: "Alle Sensoren", href: "/sensors" },
     { id: 2, title: "Account", href: "/account" },
     { id: 3, title: "Logout", onClick: action("logged out!") },
   ],
@@ -37,7 +37,7 @@ Default.args = {
 export const WithDisabledItem = Template.bind({});
 WithDisabledItem.args = {
   items: [
-    { id: 1, title: "Meine Projekte", href: "/projects" },
+    { id: 1, title: "Alle Sensoren", href: "/sensores" },
     { id: 2, title: "Account", href: "/account", disabled: true },
     { id: 3, title: "Logout", onClick: action("logged out!"), disabled: true },
   ],
@@ -51,10 +51,10 @@ WithCustomChildren.args = {
       id: 0,
       title: (
         <>
-          <ProjectIcon {...iconProps} /> Meine Projekte
+          <SensorsIcon {...iconProps} /> Meine Projekte
         </>
       ),
-      href: "/account/projects",
+      href: "/account/sensors",
     },
     {
       id: 2,

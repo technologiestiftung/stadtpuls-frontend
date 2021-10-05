@@ -36,8 +36,8 @@ const docsPages: PageType[] = [
     path: "/docs/stadtpuls-account",
   },
   {
-    title: "Neues Projekt anlegen",
-    path: "/docs/new-project",
+    title: "Neues Sensor anlegen",
+    path: "/docs/new-sensor",
   },
   {
     title: "Neues Gerät anlegen",

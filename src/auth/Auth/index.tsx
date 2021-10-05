@@ -7,7 +7,7 @@ import {
   useCallback,
 } from "react";
 import { supabase } from "../supabase";
-import { AuthenticatedUsersType } from "@common/types/supabase_DEPRECATED";
+import { AuthenticatedUsersType } from "@common/types/authenticated_user";
 import { createApiUrl } from "@lib/requests/createApiUrl";
 
 export const AuthProvider: FC = ({ children }) => {
