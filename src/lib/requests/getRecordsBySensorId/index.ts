@@ -18,7 +18,8 @@ export const getRecordsBySensorId = async (
           .select("*")
           .eq("sensor_id", sensorId)
           .gte("recorded_at", options.startDate)
-          .lte("recorded_at", options.endDate);
+          .lte("recorded_at", options.endDate)
+          .order("recorded_at", { ascending: false });
         if (error) throw error;
         if (!records) throw new Error(`No records found for this time range`);
 
@@ -30,7 +31,8 @@ export const getRecordsBySensorId = async (
           .from<definitions["records"]>("records")
           .select("*")
           .eq("sensor_id", sensorId)
-          .gte("recorded_at", options.startDate);
+          .gte("recorded_at", options.startDate)
+          .order("recorded_at", { ascending: false });
 
         if (error) throw error;
         if (!records) throw new Error(`No records found for this time range`);
@@ -42,7 +44,8 @@ export const getRecordsBySensorId = async (
           .from<definitions["records"]>("records")
           .select("*")
           .eq("sensor_id", sensorId)
-          .lte("recorded_at", options.endDate);
+          .lte("recorded_at", options.endDate)
+          .order("recorded_at", { ascending: false });
 
         if (error) throw error;
         if (!records) throw new Error(`No records found for this time range`);
@@ -53,7 +56,8 @@ export const getRecordsBySensorId = async (
         const { data: records, error } = await supabase
           .from<definitions["records"]>("records")
           .select("*")
-          .eq("sensor_id", sensorId);
+          .eq("sensor_id", sensorId)
+          .order("recorded_at", { ascending: false });
 
         if (error) throw error;
         if (!records) throw new Error(`No records found`);
@@ -64,7 +68,8 @@ export const getRecordsBySensorId = async (
     const { data: records, error } = await supabase
       .from<definitions["records"]>("records")
       .select("*")
-      .eq("sensor_id", sensorId);
+      .eq("sensor_id", sensorId)
+      .order("recorded_at", { ascending: false });
 
     if (error) throw error;
     if (!records) throw new Error(`No records found for sensor ID ${sensorId}`);
