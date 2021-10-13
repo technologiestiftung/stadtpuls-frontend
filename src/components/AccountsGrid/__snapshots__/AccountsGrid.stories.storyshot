@@ -29,35 +29,8 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
         }
       >
         <svg
-          colors={
-            Array [
-              "#F9FCFD",
-              "#0000C2",
-              "#0000C2",
-              "#0000C2",
-              "#100C53",
-              "#46ECA1",
-              "#46ECA1",
-              "#46ECA1",
-              "#8330FF",
-              "#8330FF",
-              "#8330FF",
-              "#F2F3F8",
-              "#E7EAF2",
-              "#CFD0DC",
-              "#B4B4C7",
-              "#9695AE",
-              "#787696",
-              "#636188",
-              "#4A4878",
-              "#332F66",
-              "#1E1A5A",
-            ]
-          }
           fill="none"
           height={48}
-          name="vogelino"
-          size={48}
           viewBox="0 0 80 80"
           width={48}
           xmlns="http://www.w3.org/2000/svg"
@@ -71,11 +44,11 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
             x={0}
             y={0}
           >
-            <circle
-              cx={40}
-              cy={40}
+            <rect
               fill="white"
-              r={40}
+              height={80}
+              rx={160}
+              width={80}
             />
           </mask>
           <g
@@ -645,35 +618,8 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
         }
       >
         <svg
-          colors={
-            Array [
-              "#F9FCFD",
-              "#0000C2",
-              "#0000C2",
-              "#0000C2",
-              "#100C53",
-              "#46ECA1",
-              "#46ECA1",
-              "#46ECA1",
-              "#8330FF",
-              "#8330FF",
-              "#8330FF",
-              "#F2F3F8",
-              "#E7EAF2",
-              "#CFD0DC",
-              "#B4B4C7",
-              "#9695AE",
-              "#787696",
-              "#636188",
-              "#4A4878",
-              "#332F66",
-              "#1E1A5A",
-            ]
-          }
           fill="none"
           height={48}
-          name="dnsos"
-          size={48}
           viewBox="0 0 80 80"
           width={48}
           xmlns="http://www.w3.org/2000/svg"
@@ -687,11 +633,11 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
             x={0}
             y={0}
           >
-            <circle
-              cx={40}
-              cy={40}
+            <rect
               fill="white"
-              r={40}
+              height={80}
+              rx={160}
+              width={80}
             />
           </mask>
           <g
@@ -1244,35 +1190,8 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
         }
       >
         <svg
-          colors={
-            Array [
-              "#F9FCFD",
-              "#0000C2",
-              "#0000C2",
-              "#0000C2",
-              "#100C53",
-              "#46ECA1",
-              "#46ECA1",
-              "#46ECA1",
-              "#8330FF",
-              "#8330FF",
-              "#8330FF",
-              "#F2F3F8",
-              "#E7EAF2",
-              "#CFD0DC",
-              "#B4B4C7",
-              "#9695AE",
-              "#787696",
-              "#636188",
-              "#4A4878",
-              "#332F66",
-              "#1E1A5A",
-            ]
-          }
           fill="none"
           height={48}
-          name="ff6347"
-          size={48}
           viewBox="0 0 80 80"
           width={48}
           xmlns="http://www.w3.org/2000/svg"
@@ -1286,11 +1205,11 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
             x={0}
             y={0}
           >
-            <circle
-              cx={40}
-              cy={40}
+            <rect
               fill="white"
-              r={40}
+              height={80}
+              rx={160}
+              width={80}
             />
           </mask>
           <g

@@ -54,9 +54,7 @@ Requests to the Supabase API and [our custom API](https://github.com/technologie
 
 ### Styling
 
-This project uses [Theme UI](https://theme-ui.com/home) for styling. Main style definitions can be found in `src/style/theme.ts`. The theme can be referenced in every component. For visual consistency, definitions from the theme should be used whenever possible. Information about using the theme can be found in Theme UI's docs.
-
-**We are in the process of refactoring the codebase to use TailwindCSS.**
+For styling we use [TailwindCSS](https://tailwindcss.com/). Configuration can be found in `tailwind.config.js`.
 
 ## Workflow
 
