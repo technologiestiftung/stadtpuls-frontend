@@ -83,35 +83,8 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
               }
             >
               <svg
-                colors={
-                  Array [
-                    "#F9FCFD",
-                    "#0000C2",
-                    "#0000C2",
-                    "#0000C2",
-                    "#100C53",
-                    "#46ECA1",
-                    "#46ECA1",
-                    "#46ECA1",
-                    "#8330FF",
-                    "#8330FF",
-                    "#8330FF",
-                    "#F2F3F8",
-                    "#E7EAF2",
-                    "#CFD0DC",
-                    "#B4B4C7",
-                    "#9695AE",
-                    "#787696",
-                    "#636188",
-                    "#4A4878",
-                    "#332F66",
-                    "#1E1A5A",
-                  ]
-                }
                 fill="none"
                 height={20}
-                name="Atahualpa Yupanqui De la Vega Van Hilde"
-                size={20}
                 viewBox="0 0 80 80"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
@@ -125,11 +98,11 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
                   x={0}
                   y={0}
                 >
-                  <circle
-                    cx={40}
-                    cy={40}
+                  <rect
                     fill="white"
-                    r={40}
+                    height={80}
+                    rx={160}
+                    width={80}
                   />
                 </mask>
                 <g
@@ -213,7 +186,7 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
                     y={50}
                   />
                   <rect
-                    fill="#F9FCFD"
+                    fill="#FFFFFF"
                     height={10}
                     width={10}
                     y={60}
@@ -393,7 +366,7 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
                     y={30}
                   />
                   <rect
-                    fill="#F9FCFD"
+                    fill="#FFFFFF"
                     height={10}
                     width={10}
                     x={10}
@@ -498,7 +471,7 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
                     y={40}
                   />
                   <rect
-                    fill="#F9FCFD"
+                    fill="#FFFFFF"
                     height={10}
                     width={10}
                     x={50}
@@ -658,35 +631,8 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
               }
             >
               <svg
-                colors={
-                  Array [
-                    "#F9FCFD",
-                    "#0000C2",
-                    "#0000C2",
-                    "#0000C2",
-                    "#100C53",
-                    "#46ECA1",
-                    "#46ECA1",
-                    "#46ECA1",
-                    "#8330FF",
-                    "#8330FF",
-                    "#8330FF",
-                    "#F2F3F8",
-                    "#E7EAF2",
-                    "#CFD0DC",
-                    "#B4B4C7",
-                    "#9695AE",
-                    "#787696",
-                    "#636188",
-                    "#4A4878",
-                    "#332F66",
-                    "#1E1A5A",
-                  ]
-                }
                 fill="none"
                 height={20}
-                name="Atahualpa Yupanqui De la Vega Van Hilde"
-                size={20}
                 viewBox="0 0 80 80"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
@@ -700,11 +646,11 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
                   x={0}
                   y={0}
                 >
-                  <circle
-                    cx={40}
-                    cy={40}
+                  <rect
                     fill="white"
-                    r={40}
+                    height={80}
+                    rx={160}
+                    width={80}
                   />
                 </mask>
                 <g
@@ -788,7 +734,7 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
                     y={50}
                   />
                   <rect
-                    fill="#F9FCFD"
+                    fill="#FFFFFF"
                     height={10}
                     width={10}
                     y={60}
@@ -968,7 +914,7 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
                     y={30}
                   />
                   <rect
-                    fill="#F9FCFD"
+                    fill="#FFFFFF"
                     height={10}
                     width={10}
                     x={10}
@@ -1073,7 +1019,7 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
                     y={40}
                   />
                   <rect
-                    fill="#F9FCFD"
+                    fill="#FFFFFF"
                     height={10}
                     width={10}
                     x={50}
@@ -1237,35 +1183,8 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
               }
             >
               <svg
-                colors={
-                  Array [
-                    "#F9FCFD",
-                    "#0000C2",
-                    "#0000C2",
-                    "#0000C2",
-                    "#100C53",
-                    "#46ECA1",
-                    "#46ECA1",
-                    "#46ECA1",
-                    "#8330FF",
-                    "#8330FF",
-                    "#8330FF",
-                    "#F2F3F8",
-                    "#E7EAF2",
-                    "#CFD0DC",
-                    "#B4B4C7",
-                    "#9695AE",
-                    "#787696",
-                    "#636188",
-                    "#4A4878",
-                    "#332F66",
-                    "#1E1A5A",
-                  ]
-                }
                 fill="none"
                 height={20}
-                name="Vogelino"
-                size={20}
                 viewBox="0 0 80 80"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
@@ -1279,11 +1198,11 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
                   x={0}
                   y={0}
                 >
-                  <circle
-                    cx={40}
-                    cy={40}
+                  <rect
                     fill="white"
-                    r={40}
+                    height={80}
+                    rx={160}
+                    width={80}
                   />
                 </mask>
                 <g
@@ -1343,7 +1262,7 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
                     y={10}
                   />
                   <rect
-                    fill="#F9FCFD"
+                    fill="#FFFFFF"
                     height={10}
                     width={10}
                     y={20}
@@ -1442,7 +1361,7 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#F9FCFD"
+                    fill="#FFFFFF"
                     height={10}
                     width={10}
                     x={40}
@@ -1610,7 +1529,7 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
                     y={50}
                   />
                   <rect
-                    fill="#F9FCFD"
+                    fill="#FFFFFF"
                     height={10}
                     width={10}
                     x={30}
@@ -1701,7 +1620,7 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
                     y={40}
                   />
                   <rect
-                    fill="#F9FCFD"
+                    fill="#FFFFFF"
                     height={10}
                     width={10}
                     x={70}
