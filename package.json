@@ -87,7 +87,7 @@
     "node-mocks-http": "1.11.0",
     "postcss": "8.3.9",
     "prettier": "2.4.1",
-    "storybook-addon-next-router": "3.0.8",
+    "storybook-addon-next-router": "2.0.4",
     "storybook-css-modules-preset": "1.1.1",
     "tailwindcss": "2.2.16",
     "tsconfig-paths-webpack-plugin": "3.5.1",
