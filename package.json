@@ -18,7 +18,7 @@
     "@visx/group": "2.1.0",
     "@visx/mock-data": "2.1.2",
     "@visx/scale": "2.1.2",
-    "@visx/shape": "1.7.0",
+    "@visx/shape": "2.1.2",
     "@visx/tooltip": "1.7.2",
     "boring-avatars": "1.5.5",
     "d3-array": "2.12.1",
