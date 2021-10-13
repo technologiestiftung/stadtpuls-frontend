@@ -27,12 +27,8 @@ describe("DeviceLineChartFilters", () => {
     render(<TestComponent />);
 
     const [radio1, radio2] = screen.getAllByRole("radio");
-    const [
-      twentyFourHoursB,
-      sevenDaysB,
-      thrityDaysB,
-      allB,
-    ] = screen.getAllByRole("button");
+    const [twentyFourHoursB, sevenDaysB, thrityDaysB, allB] =
+      screen.getAllByRole("button");
     const [date1, time1, date2, time2] = screen.getAllByRole("textbox");
 
     radio1.focus();
@@ -114,12 +110,8 @@ describe("DeviceLineChartFilters", () => {
   test("onDatetimeRangeChange should call handler", () => {
     const onDatetimeRangeChange = jest.fn();
     render(<TestComponent onDatetimeRangeChange={onDatetimeRangeChange} />);
-    const [
-      twentyFourHoursB,
-      sevenDaysB,
-      thrityDaysB,
-      allB,
-    ] = screen.getAllByRole("button");
+    const [twentyFourHoursB, sevenDaysB, thrityDaysB, allB] =
+      screen.getAllByRole("button");
 
     fireEvent.click(twentyFourHoursB);
     expect(onDatetimeRangeChange).toHaveBeenLastCalledWith({

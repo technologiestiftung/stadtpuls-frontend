@@ -5,8 +5,7 @@ const theme: Theme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   breakpoints: ["768px", "1024px", "1408px"],
   fonts: {
-    body:
-      '"Sora", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: '"Sora", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading:
       '"SpaceGrotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     monospace: "Menlo, monospace",

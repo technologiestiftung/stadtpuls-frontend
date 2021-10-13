@@ -33,7 +33,7 @@ WithoutDefaultValues.args = {
   },
   onSubmit: action("Form data submited"),
   onCancel: action("Form cancelled"),
-  onDelete: (false as unknown) as () => void,
+  onDelete: false as unknown as () => void,
 };
 
 export const WithDefaultValues = Template.bind({});

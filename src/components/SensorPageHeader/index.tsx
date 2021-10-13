@@ -64,20 +64,19 @@ const UserLink: FC<Pick<ParsedSensorType, "authorName" | "authorUsername">> = ({
   </Link>
 );
 
-const CategoryLabel: FC<
-  Pick<ParsedSensorType, "categoryName" | "categoryId">
-> = ({ categoryName, categoryId }) => (
-  <span
-    className={[
-      "inline-flex gap-2 items-center px-2.5 py-2 text-blue",
-      "leading-tight bg-green bg-opacity-10 text-sm",
-      "flex-grow-0",
-    ].join(" ")}
-  >
-    <CategoryIcon categoryId={categoryId} />
-    {categoryName}
-  </span>
-);
+const CategoryLabel: FC<Pick<ParsedSensorType, "categoryName" | "categoryId">> =
+  ({ categoryName, categoryId }) => (
+    <span
+      className={[
+        "inline-flex gap-2 items-center px-2.5 py-2 text-blue",
+        "leading-tight bg-green bg-opacity-10 text-sm",
+        "flex-grow-0",
+      ].join(" ")}
+    >
+      <CategoryIcon categoryId={categoryId} />
+      {categoryName}
+    </span>
+  );
 
 const BackLink: FC = () => (
   <Link href='/sensors'>

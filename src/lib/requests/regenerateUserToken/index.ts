@@ -43,6 +43,7 @@ export const regenerateUserToken: RegenerateUserTokenSignature = async ({
     throw new Error(await response.text());
   }
 
-  const parsedTokenResponse = (await response.json()) as RegenerateTokenResponseSignature;
+  const parsedTokenResponse =
+    (await response.json()) as RegenerateTokenResponseSignature;
   return parsedTokenResponse;
 };

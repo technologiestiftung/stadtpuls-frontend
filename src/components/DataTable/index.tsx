@@ -13,10 +13,8 @@ export interface DataTableType {
 export const DataTable: React.FC<DataTableType> = ({ data }) => {
   const [displayedData, setDisplayedData] = useState<DataTableRowType[]>([]);
 
-  const [
-    numberOfRecordsToDisplay,
-    setNumberOfRecordsToDisplay,
-  ] = useState<number>(500);
+  const [numberOfRecordsToDisplay, setNumberOfRecordsToDisplay] =
+    useState<number>(500);
 
   useEffect(() => {
     if (!data) return;

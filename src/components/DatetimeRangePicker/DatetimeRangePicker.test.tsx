@@ -10,12 +10,8 @@ describe("DatetimeRangePicker component", () => {
         onDatetimeRangeChange={jest.fn()}
       />
     );
-    const [
-      datePicker1,
-      timePicker1,
-      datePicker2,
-      timePicker2,
-    ] = screen.getAllByRole("textbox");
+    const [datePicker1, timePicker1, datePicker2, timePicker2] =
+      screen.getAllByRole("textbox");
     expect(datePicker1).toBeInTheDocument();
     expect(timePicker1).toBeInTheDocument();
     expect(datePicker2).toBeInTheDocument();
