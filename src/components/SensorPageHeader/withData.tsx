@@ -16,19 +16,11 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
   initialSensor,
 }) => {
   const router = useRouter();
-  const {
-    isLoggedIn,
-    user,
-    sensors,
-    error,
-    updateSensor,
-    deleteSensor,
-  } = useUserData();
+  const { isLoggedIn, user, sensors, error, updateSensor, deleteSensor } =
+    useUserData();
   const [editModalIsOpen, setEditModalIsOpen] = useState(false);
-  const [
-    deletionConfirmationIsOpened,
-    setDeletionConfirmationIsOpened,
-  ] = useState(false);
+  const [deletionConfirmationIsOpened, setDeletionConfirmationIsOpened] =
+    useState(false);
   const [showEditSuccessAlert, setShowEditSuccessAlert] = useState(false);
 
   const userSensor = sensors?.find(

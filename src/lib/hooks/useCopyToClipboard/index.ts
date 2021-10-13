@@ -38,13 +38,13 @@ export const useCopyToClipboard = (): {
 
   const startTimeout = useCallback(() => {
     setHascopied(true);
-    to.current = (setTimeout(
+    to.current = setTimeout(
       () => setHascopied(false),
       3000
-    ) as unknown) as number;
+    ) as unknown as number;
   }, []);
 
-  useEffect(() => () => clearTimeout((to as unknown) as number), []);
+  useEffect(() => () => clearTimeout(to as unknown as number), []);
 
   return {
     hasCopied,

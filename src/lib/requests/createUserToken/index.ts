@@ -48,6 +48,7 @@ export const createUserToken: CreateUserTokenSignature = async ({
       `Wrong status code ${response.status} for successful token creation response`
     );
   }
-  const parsedTokenResponse = (await response.json()) as CreateTokenResponseSignature;
+  const parsedTokenResponse =
+    (await response.json()) as CreateTokenResponseSignature;
   return parsedTokenResponse;
 };

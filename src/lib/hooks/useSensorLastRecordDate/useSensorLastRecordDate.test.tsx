@@ -18,9 +18,8 @@ const createTestComponent = (
   onFail: OnFailType
 ): FC => {
   const TestComponent: FC = () => {
-    const { lastRecordDate, error, isLoading } = useSensorLastRecordDate(
-      sensorId
-    );
+    const { lastRecordDate, error, isLoading } =
+      useSensorLastRecordDate(sensorId);
     useEffect(() => {
       if (!error && !isLoading) onSuccess(lastRecordDate);
       if (error) onFail(error.message);

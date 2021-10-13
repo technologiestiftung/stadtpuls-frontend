@@ -27,9 +27,7 @@ async function fetchGithubUser(
   return user;
 }
 
-export default function useGithubUser(
-  username: string
-): {
+export default function useGithubUser(username: string): {
   user: GithubUserType | null;
   isLoading: boolean;
   error: Error | null;

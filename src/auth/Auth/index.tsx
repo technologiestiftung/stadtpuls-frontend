@@ -11,15 +11,12 @@ import { AuthenticatedUsersType } from "@common/types/authenticated_user";
 import { createApiUrl } from "@lib/requests/createApiUrl";
 
 export const AuthProvider: FC = ({ children }) => {
-  const [authenticatedUser, setUser] = useState<
-    AuthContextType["authenticatedUser"]
-  >();
-  const [isLoadingAuth, setLoading] = useState<
-    AuthContextType["isLoadingAuth"]
-  >(true);
-  const [accessToken, setAccessToken] = useState<
-    AuthContextType["accessToken"]
-  >(null);
+  const [authenticatedUser, setUser] =
+    useState<AuthContextType["authenticatedUser"]>();
+  const [isLoadingAuth, setLoading] =
+    useState<AuthContextType["isLoadingAuth"]>(true);
+  const [accessToken, setAccessToken] =
+    useState<AuthContextType["accessToken"]>(null);
 
   useEffect(() => {
     const session = supabase.auth.session();

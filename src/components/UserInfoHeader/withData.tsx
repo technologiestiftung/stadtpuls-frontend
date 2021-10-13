@@ -36,10 +36,8 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
     isOwnerAndLoggedIn && loggedInAccount ? loggedInAccount : routeAccount;
   const [editModalIsOpen, setEditModalIsOpen] = useState(false);
   const [newSensorModalIsOpen, setNewSensorModalIsOpen] = useState(false);
-  const [
-    deletionConfirmationIsOpened,
-    setDeletionConfirmationIsOpened,
-  ] = useState(false);
+  const [deletionConfirmationIsOpened, setDeletionConfirmationIsOpened] =
+    useState(false);
   const [showEditSuccessAlert, setShowEditSuccessAlert] = useState(false);
 
   const activeTabIndex = activeTab === "tokens" ? 1 : 0;

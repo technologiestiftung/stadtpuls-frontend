@@ -25,9 +25,8 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
   const [questionMarkXCoord, setQuestionMarkXCoord] = useState<
     number | undefined
   >(undefined);
-  const [tooltipMightOverflowScreen, setTooltipMightOverflowScreen] = useState(
-    false
-  );
+  const [tooltipMightOverflowScreen, setTooltipMightOverflowScreen] =
+    useState(false);
 
   const tooltipPositionClass = {
     start: "-left-2",

@@ -12,7 +12,7 @@ window.resizeTo = function resizeTo(width, height) {
 
 test("should return new values on window resize", () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  const { result } = (renderHook(() => useWindowSize()) as unknown) as {
+  const { result } = renderHook(() => useWindowSize()) as unknown as {
     result: {
       current: WindowSizeType;
     };

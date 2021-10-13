@@ -89,9 +89,8 @@ export const SignupForm: FC<SignupFormPropType> = ({
     watchUsername,
     500
   ) as string[];
-  const { isUnique: isUsernameUnique, isLoading } = useUniqueUsernameValidation(
-    debouncedUsername
-  );
+  const { isUnique: isUsernameUnique, isLoading } =
+    useUniqueUsernameValidation(debouncedUsername);
 
   useEffect(() => setIsSubmitted(formIsSubmitted), [formIsSubmitted]);
 
@@ -127,10 +126,12 @@ export const SignupForm: FC<SignupFormPropType> = ({
               label='Nutzername'
               placeholder='Dein Nutzername...'
               type='text'
-              errors={([
-                !touchedFields.username && serverErrors.username,
-                usernameHasError && " ",
-              ].filter(Boolean) as string[]).map(getTranslatedErrorMessage)}
+              errors={(
+                [
+                  !touchedFields.username && serverErrors.username,
+                  usernameHasError && " ",
+                ].filter(Boolean) as string[]
+              ).map(getTranslatedErrorMessage)}
               onFocus={() => setUsernameWasFocused(true)}
               className='mb-0'
             />
@@ -152,10 +153,12 @@ export const SignupForm: FC<SignupFormPropType> = ({
             label='E-Mail'
             placeholder='Deine E-Mail-Adresse...'
             type='email'
-            errors={([
-              errors.email?.message ||
-                (!touchedFields.email && serverErrors.email),
-            ].filter(Boolean) as string[]).map(getTranslatedErrorMessage)}
+            errors={(
+              [
+                errors.email?.message ||
+                  (!touchedFields.email && serverErrors.email),
+              ].filter(Boolean) as string[]
+            ).map(getTranslatedErrorMessage)}
           />
         )}
       />
@@ -175,11 +178,13 @@ export const SignupForm: FC<SignupFormPropType> = ({
                 .
               </>
             }
-            errors={([
-              errors.areConditionsAccepted?.message ||
-                (!touchedFields.areConditionsAccepted &&
-                  serverErrors.areConditionsAccepted),
-            ].filter(Boolean) as string[]).map(getTranslatedErrorMessage)}
+            errors={(
+              [
+                errors.areConditionsAccepted?.message ||
+                  (!touchedFields.areConditionsAccepted &&
+                    serverErrors.areConditionsAccepted),
+              ].filter(Boolean) as string[]
+            ).map(getTranslatedErrorMessage)}
           />
         )}
       />

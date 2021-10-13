@@ -10,8 +10,7 @@ const testProps = {
   createdAt: "2021-01-01T00:00:00.000Z",
   description:
     "Louis XIV, also known as Louis the Great or the Sun King, was King of France from 14 May 1643 until his death in 1715.",
-  link:
-    "http://www.webanddata.com/login.aspx?url=http://mailflick.com/Home/Tools/tool?id=123",
+  link: "http://www.webanddata.com/login.aspx?url=http://mailflick.com/Home/Tools/tool?id=123",
   sensors: [],
   sensorsCount: 12345,
   recordsCount: 12345678,

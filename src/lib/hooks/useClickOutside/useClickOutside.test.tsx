@@ -2,16 +2,18 @@ import { FC } from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import useClickOutside from ".";
 
-// eslint-disable-next-line react/display-name
-const createChildComponent = (clickOutsideHandler: () => void): FC => () => {
-  const ref = useClickOutside<HTMLDivElement>(clickOutsideHandler);
-  return (
-    <>
-      <article ref={ref} />
-      <button>Trigger outside</button>
-    </>
-  );
-};
+const createChildComponent =
+  (clickOutsideHandler: () => void): FC =>
+  // eslint-disable-next-line react/display-name
+  () => {
+    const ref = useClickOutside<HTMLDivElement>(clickOutsideHandler);
+    return (
+      <>
+        <article ref={ref} />
+        <button>Trigger outside</button>
+      </>
+    );
+  };
 
 describe("useClickOutside hook", () => {
   it("should call the callback when clicked outside", () => {

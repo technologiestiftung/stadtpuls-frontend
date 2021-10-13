@@ -47,9 +47,11 @@ export const SigninForm: FC<SigninFormPropType> = ({
             label='E-Mail'
             placeholder='Deine E-Mail-Adresse...'
             type='email'
-            errors={([
-              errors.email?.message || (!touchedFields.email && serverError),
-            ].filter(Boolean) as string[]).map(getTranslatedErrorMessage)}
+            errors={(
+              [
+                errors.email?.message || (!touchedFields.email && serverError),
+              ].filter(Boolean) as string[]
+            ).map(getTranslatedErrorMessage)}
           />
         )}
       />

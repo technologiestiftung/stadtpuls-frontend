@@ -46,13 +46,8 @@ const AccountTokensPage: FC<AccountTokensPagePropType> = ({ routeAccount }) => {
     undefined
   );
 
-  const {
-    tokens,
-    createToken,
-    deleteToken,
-    regenerateToken,
-    error,
-  } = useUserTokens();
+  const { tokens, createToken, deleteToken, regenerateToken, error } =
+    useUserTokens();
 
   const [newToken, setNewToken] = useState<string | undefined>(undefined);
   const [newTokenDescription, setNewTokenDescription] = useState<

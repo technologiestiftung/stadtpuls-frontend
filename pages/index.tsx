@@ -32,9 +32,8 @@ const LandingPage: FC<{
   curatedSensors?: ParsedSensorType[];
 }> = ({ stats, curatedSensors = [] }) => {
   const initialSlideIndex = Math.round(curatedSensors.length / 2) - 1;
-  const [activeSlideIndex, setActiveSlideIndex] = useState<number>(
-    initialSlideIndex
-  );
+  const [activeSlideIndex, setActiveSlideIndex] =
+    useState<number>(initialSlideIndex);
 
   return (
     <>

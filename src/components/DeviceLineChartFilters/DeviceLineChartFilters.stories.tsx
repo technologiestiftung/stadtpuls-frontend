@@ -18,13 +18,11 @@ const Template: Story<DeviceLineChartFiltersPropType> = ({
   endDateTimeString,
   onDatetimeRangeChange,
 }) => {
-  const [
-    currentDatetimeRange,
-    setCurrentDatetimeRange,
-  ] = useState<DatetimeRangeType>({
-    startDateTimeString,
-    endDateTimeString,
-  });
+  const [currentDatetimeRange, setCurrentDatetimeRange] =
+    useState<DatetimeRangeType>({
+      startDateTimeString,
+      endDateTimeString,
+    });
   return (
     <div className='grid place-content-center h-screen'>
       <DeviceLineChartFilters
