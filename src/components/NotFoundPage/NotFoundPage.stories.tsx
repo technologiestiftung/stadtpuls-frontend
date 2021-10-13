@@ -1,7 +1,4 @@
 import { Story, Meta } from "@storybook/react";
-import { ThemeProvider } from "theme-ui";
-
-import theme from "../../style/theme";
 import { NotFoundPage } from ".";
 
 export default {
@@ -9,11 +6,7 @@ export default {
   component: NotFoundPage,
 } as Meta;
 
-const Template: Story = args => (
-  <ThemeProvider theme={theme}>
-    <NotFoundPage {...args} />
-  </ThemeProvider>
-);
+const Template: Story = args => <NotFoundPage {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

@@ -1,18 +1,13 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import React from "react";
-import { jsx, Text, Heading, Container, Link } from "theme-ui";
+import { FC } from "react";
 
-export const NotFoundPage: React.FC = () => {
+export const NotFoundPage: FC = () => {
   return (
-    <Container mt={[0, 5, 5]} p={4}>
-      <Heading as='h1' variant='h2'>
-        Die angeforderte Seite existiert nicht.
-      </Heading>
-      <Text mt={2}>
+    <div className='mt-0 md:mt-5 p-4'>
+      <h2>Die angeforderte Seite existiert nicht.</h2>
+      <p className='mt-2'>
         Zurück zur&nbsp;
-        <Link href='/'>Startseite</Link>
-      </Text>
-    </Container>
+        <a href='/'>Startseite</a>
+      </p>
+    </div>
   );
 };
