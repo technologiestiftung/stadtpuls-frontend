@@ -22,7 +22,7 @@
     "@visx/tooltip": "1.7.2",
     "boring-avatars": "1.5.5",
     "d3-array": "2.12.1",
-    "d3-time-format": "3.0.0",
+    "d3-time-format": "4.0.0",
     "moment": "2.29.1",
     "next-images": "1.8.1",
     "next-mdx-enhanced": "5.0.0",
