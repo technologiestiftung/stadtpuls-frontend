@@ -6,7 +6,7 @@ describe("NotFoundPage component", () => {
     render(<NotFoundPage />);
 
     const message = screen.getByText(
-      /Die angeforderte Seite existiert nicht/gi
+      /Die angeforderte Seite existiert leider nicht/gi
     );
     expect(message).toBeInTheDocument();
   });
