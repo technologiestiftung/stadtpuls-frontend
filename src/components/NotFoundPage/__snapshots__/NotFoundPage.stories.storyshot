@@ -2,23 +2,20 @@
 
 exports[`Storyshots Pages/NotFoundPage Default 1`] = `
 <div
-  className="css-v6ij9w"
+  className="mt-0 md:mt-5 p-4"
 >
-  <h1
-    className="css-1c7mi02"
-  >
+  <h2>
     Die angeforderte Seite existiert nicht.
-  </h1>
-  <div
-    className="css-1qa1a31"
+  </h2>
+  <p
+    className="mt-2"
   >
     Zurück zur 
     <a
-      className="css-p944lt"
       href="/"
     >
       Startseite
     </a>
-  </div>
+  </p>
 </div>
 `;
