@@ -216,7 +216,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
                   y={20}
                 />
                 <rect
-                  fill="#FFFFFF"
+                  fill="#F9FCFD"
                   height={10}
                   width={10}
                   y={30}
@@ -267,7 +267,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
                   y={30}
                 />
                 <rect
-                  fill="#FFFFFF"
+                  fill="#F9FCFD"
                   height={10}
                   width={10}
                   x={20}
@@ -477,7 +477,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
                   y={50}
                 />
                 <rect
-                  fill="#FFFFFF"
+                  fill="#F9FCFD"
                   height={10}
                   width={10}
                   x={30}
@@ -505,7 +505,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
                   y={20}
                 />
                 <rect
-                  fill="#FFFFFF"
+                  fill="#F9FCFD"
                   height={10}
                   width={10}
                   x={50}
@@ -902,7 +902,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
                   y={50}
                 />
                 <rect
-                  fill="#FFFFFF"
+                  fill="#F9FCFD"
                   height={10}
                   width={10}
                   y={60}
@@ -942,7 +942,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
                   y={40}
                 />
                 <rect
-                  fill="#FFFFFF"
+                  fill="#F9FCFD"
                   height={10}
                   width={10}
                   x={20}
@@ -1082,7 +1082,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
                   y={30}
                 />
                 <rect
-                  fill="#FFFFFF"
+                  fill="#F9FCFD"
                   height={10}
                   width={10}
                   x={10}
@@ -1166,7 +1166,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
                   y={10}
                 />
                 <rect
-                  fill="#FFFFFF"
+                  fill="#F9FCFD"
                   height={10}
                   width={10}
                   x={50}

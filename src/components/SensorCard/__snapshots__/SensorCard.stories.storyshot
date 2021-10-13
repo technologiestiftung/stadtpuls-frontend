@@ -186,7 +186,7 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
                     y={50}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     y={60}
@@ -366,7 +366,7 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
                     y={30}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={10}
@@ -471,7 +471,7 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
                     y={40}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={50}
@@ -734,7 +734,7 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
                     y={50}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     y={60}
@@ -914,7 +914,7 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
                     y={30}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={10}
@@ -1019,7 +1019,7 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
                     y={40}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={50}
@@ -1262,7 +1262,7 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
                     y={10}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     y={20}
@@ -1361,7 +1361,7 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={40}
@@ -1529,7 +1529,7 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
                     y={50}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={30}
@@ -1620,7 +1620,7 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
                     y={40}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={70}

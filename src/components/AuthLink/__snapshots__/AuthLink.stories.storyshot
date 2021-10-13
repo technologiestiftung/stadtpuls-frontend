@@ -268,7 +268,7 @@ exports[`Storyshots UI Elements/AuthLink Logged In 1`] = `
             y={50}
           />
           <rect
-            fill="#FFFFFF"
+            fill="#F9FCFD"
             height={10}
             width={10}
             x={60}
@@ -282,7 +282,7 @@ exports[`Storyshots UI Elements/AuthLink Logged In 1`] = `
             y={70}
           />
           <rect
-            fill="#FFFFFF"
+            fill="#F9FCFD"
             height={10}
             width={10}
             x={10}

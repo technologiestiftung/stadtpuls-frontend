@@ -168,7 +168,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     y={30}
@@ -212,7 +212,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={20}
@@ -324,7 +324,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={40}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={60}
@@ -485,7 +485,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={60}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={50}
@@ -506,7 +506,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={70}
@@ -713,7 +713,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     y={30}
@@ -757,7 +757,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={20}
@@ -869,7 +869,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={40}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={60}
@@ -1030,7 +1030,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={60}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={50}
@@ -1051,7 +1051,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={70}
@@ -1258,7 +1258,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     y={30}
@@ -1302,7 +1302,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={20}
@@ -1414,7 +1414,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={40}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={60}
@@ -1575,7 +1575,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={60}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={50}
@@ -1596,7 +1596,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={70}
@@ -1803,7 +1803,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     y={30}
@@ -1847,7 +1847,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={20}
@@ -1959,7 +1959,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={40}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={60}
@@ -2120,7 +2120,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={60}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={50}
@@ -2141,7 +2141,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={70}
@@ -2348,7 +2348,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     y={30}
@@ -2392,7 +2392,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={20}
@@ -2504,7 +2504,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={40}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={60}
@@ -2665,7 +2665,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={60}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={50}
@@ -2686,7 +2686,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={70}
@@ -2888,7 +2888,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     y={30}
@@ -2932,7 +2932,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={20}
@@ -3044,7 +3044,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={40}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={60}
@@ -3205,7 +3205,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={60}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={50}
@@ -3226,7 +3226,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
                     y={20}
                   />
                   <rect
-                    fill="#FFFFFF"
+                    fill="#F9FCFD"
                     height={10}
                     width={10}
                     x={70}

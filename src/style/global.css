@@ -119,7 +119,7 @@
   }
 
   body {
-    @apply font-sans;
+    @apply font-sans bg-white;
   }
 
   html.no-scroll {

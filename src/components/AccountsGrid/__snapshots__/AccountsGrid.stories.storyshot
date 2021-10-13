@@ -78,7 +78,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
               x={60}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#F9FCFD"
               height={10}
               width={10}
               x={10}
@@ -277,7 +277,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
               y={50}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#F9FCFD"
               height={10}
               width={10}
               x={60}
@@ -305,7 +305,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
               y={20}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#F9FCFD"
               height={10}
               width={10}
               x={10}
@@ -333,7 +333,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
               y={60}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#F9FCFD"
               height={10}
               width={10}
               x={10}
@@ -417,7 +417,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
               y={40}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#F9FCFD"
               height={10}
               width={10}
               x={50}
@@ -473,7 +473,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
               y={50}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#F9FCFD"
               height={10}
               width={10}
               x={70}
@@ -679,7 +679,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
               x={30}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#F9FCFD"
               height={10}
               width={10}
               x={50}
@@ -740,7 +740,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
               y={10}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#F9FCFD"
               height={10}
               width={10}
               x={20}
@@ -908,7 +908,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
               y={40}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#F9FCFD"
               height={10}
               width={10}
               x={10}
@@ -1216,7 +1216,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
             mask="url(#mask0)"
           >
             <rect
-              fill="#FFFFFF"
+              fill="#F9FCFD"
               height={10}
               width={10}
             />
@@ -1233,7 +1233,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
               x={40}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#F9FCFD"
               height={10}
               width={10}
               x={60}
@@ -1293,7 +1293,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
               y={50}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#F9FCFD"
               height={10}
               width={10}
               y={60}
@@ -1333,7 +1333,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
               y={40}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#F9FCFD"
               height={10}
               width={10}
               x={20}
@@ -1473,7 +1473,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
               y={30}
             />
             <rect
-              fill="#FFFFFF"
+              fill="#F9FCFD"
               height={10}
               width={10}
               x={10}

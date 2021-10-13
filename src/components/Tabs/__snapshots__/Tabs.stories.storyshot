@@ -10,7 +10,7 @@ exports[`Storyshots UI Elements/Tabs Default 1`] = `
       className=""
       style={
         Object {
-          "borderBottom": "1px solid #FFFFFF",
+          "borderBottom": "1px solid #F9FCFD",
         }
       }
     >
@@ -109,7 +109,7 @@ exports[`Storyshots UI Elements/Tabs With Active Tab 1`] = `
       className=""
       style={
         Object {
-          "borderBottom": "1px solid #FFFFFF",
+          "borderBottom": "1px solid #F9FCFD",
         }
       }
     >
