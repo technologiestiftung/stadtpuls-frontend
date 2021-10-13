@@ -1,7 +1,4 @@
 import { Story, Meta } from "@storybook/react";
-import { ThemeProvider } from "theme-ui";
-
-import theme from "../../style/theme";
 import { MarkerMap } from ".";
 import { MarkerType } from "@common/interfaces";
 
@@ -15,11 +12,7 @@ const Template: Story<{
   clickHandler: (markerId: number) => void;
   mapWidth: number;
   mapHeight: number;
-}> = args => (
-  <ThemeProvider theme={theme}>
-    <MarkerMap {...args} />
-  </ThemeProvider>
-);
+}> = args => <MarkerMap {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

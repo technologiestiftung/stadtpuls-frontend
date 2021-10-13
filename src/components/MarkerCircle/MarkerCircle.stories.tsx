@@ -1,7 +1,4 @@
 import { Story, Meta } from "@storybook/react";
-import { ThemeProvider } from "theme-ui";
-
-import theme from "../../style/theme";
 import { MarkerCircle } from ".";
 
 export default {
@@ -11,11 +8,7 @@ export default {
 
 const Template: Story<{
   isActive: boolean;
-}> = args => (
-  <ThemeProvider theme={theme}>
-    <MarkerCircle {...args} />
-  </ThemeProvider>
-);
+}> = args => <MarkerCircle {...args} />;
 
 export const Active = Template.bind({});
 Active.args = { isActive: true };
