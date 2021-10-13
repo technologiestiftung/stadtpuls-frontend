@@ -16,7 +16,7 @@
     "@visx/event": "2.1.2",
     "@visx/grid": "2.1.2",
     "@visx/group": "2.1.0",
-    "@visx/mock-data": "1.7.0",
+    "@visx/mock-data": "2.1.2",
     "@visx/scale": "1.7.0",
     "@visx/shape": "1.7.0",
     "@visx/tooltip": "1.7.2",
