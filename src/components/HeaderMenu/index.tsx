@@ -82,7 +82,7 @@ export const HeaderMenu: FC<HeaderMenuPropType> = ({ hasDarkMode = false }) => {
         ].join(" ")}
         style={{ top: 62 }}
       >
-        <ul className='h-full lg:w-auto lg:flex lg:gap-8 lg:mr-4'>
+        <ul className='h-full lg:w-auto lg:flex lg:mr-4'>
           <HeaderLink
             href='/'
             text='Startseite'
@@ -106,7 +106,7 @@ export const HeaderMenu: FC<HeaderMenuPropType> = ({ hasDarkMode = false }) => {
                   {
                     href: `#`,
                     text: (
-                      <span className='inline-flex gap-2 items-center font-bold font-headline'>
+                      <span className='inline-flex items-center font-bold font-headline'>
                         <ArrowOutOfDoor /> Logout
                       </span>
                     ),
@@ -115,18 +115,25 @@ export const HeaderMenu: FC<HeaderMenuPropType> = ({ hasDarkMode = false }) => {
                   },
                 ]
               : []),
-          ].map(({ href, onClick = () => undefined, className = "", text }) => (
-            <HeaderLink
-              key={href}
-              href={href}
-              text={text}
-              className={className}
-              onClick={() => {
-                setIsOpened(false);
-                onClick();
-              }}
-            />
-          ))}
+          ].map(
+            ({
+              href,
+              onClick = () => undefined,
+              className = "lg:ml-8",
+              text,
+            }) => (
+              <HeaderLink
+                key={href}
+                href={href}
+                text={text}
+                className={className}
+                onClick={() => {
+                  setIsOpened(false);
+                  onClick();
+                }}
+              />
+            )
+          )}
         </ul>
       </nav>
     </div>

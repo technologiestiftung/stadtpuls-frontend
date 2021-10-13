@@ -26,7 +26,7 @@ exports[`Storyshots Navigation/HeaderMenu Default 1`] = `
     }
   >
     <ul
-      className="h-full lg:w-auto lg:flex lg:gap-8 lg:mr-4"
+      className="h-full lg:w-auto lg:flex lg:mr-4"
     >
       <li
         className="lg:hidden text-xl lg:text-base"
@@ -41,7 +41,7 @@ exports[`Storyshots Navigation/HeaderMenu Default 1`] = `
         </a>
       </li>
       <li
-        className=" text-xl lg:text-base"
+        className="lg:ml-8 text-xl lg:text-base"
       >
         <a
           className="navigation-link p-4 block lg:inline focus-offset"
@@ -53,7 +53,7 @@ exports[`Storyshots Navigation/HeaderMenu Default 1`] = `
         </a>
       </li>
       <li
-        className=" text-xl lg:text-base"
+        className="lg:ml-8 text-xl lg:text-base"
       >
         <a
           className="navigation-link p-4 block lg:inline focus-offset"
@@ -65,7 +65,7 @@ exports[`Storyshots Navigation/HeaderMenu Default 1`] = `
         </a>
       </li>
       <li
-        className=" text-xl lg:text-base"
+        className="lg:ml-8 text-xl lg:text-base"
       >
         <a
           className="navigation-link p-4 block lg:inline focus-offset"
