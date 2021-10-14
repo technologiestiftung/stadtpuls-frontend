@@ -12,8 +12,35 @@ exports[`Storyshots UI Elements/UserAvatar Custom Size 1`] = `
   }
 >
   <svg
+    colors={
+      Array [
+        "#F9FCFD",
+        "#0000C2",
+        "#0000C2",
+        "#0000C2",
+        "#100C53",
+        "#46ECA1",
+        "#46ECA1",
+        "#46ECA1",
+        "#8330FF",
+        "#8330FF",
+        "#8330FF",
+        "#F2F3F8",
+        "#E7EAF2",
+        "#CFD0DC",
+        "#B4B4C7",
+        "#9695AE",
+        "#787696",
+        "#636188",
+        "#4A4878",
+        "#332F66",
+        "#1E1A5A",
+      ]
+    }
     fill="none"
     height={48}
+    name="Dennis"
+    size={48}
     viewBox="0 0 80 80"
     width={48}
     xmlns="http://www.w3.org/2000/svg"
@@ -27,11 +54,11 @@ exports[`Storyshots UI Elements/UserAvatar Custom Size 1`] = `
       x={0}
       y={0}
     >
-      <rect
+      <circle
+        cx={40}
+        cy={40}
         fill="white"
-        height={80}
-        rx={160}
-        width={80}
+        r={40}
       />
     </mask>
     <g
@@ -486,8 +513,35 @@ exports[`Storyshots UI Elements/UserAvatar Default User Avatar 1`] = `
   }
 >
   <svg
+    colors={
+      Array [
+        "#F9FCFD",
+        "#0000C2",
+        "#0000C2",
+        "#0000C2",
+        "#100C53",
+        "#46ECA1",
+        "#46ECA1",
+        "#46ECA1",
+        "#8330FF",
+        "#8330FF",
+        "#8330FF",
+        "#F2F3F8",
+        "#E7EAF2",
+        "#CFD0DC",
+        "#B4B4C7",
+        "#9695AE",
+        "#787696",
+        "#636188",
+        "#4A4878",
+        "#332F66",
+        "#1E1A5A",
+      ]
+    }
     fill="none"
     height={24}
+    name="ffthornton"
+    size={24}
     viewBox="0 0 80 80"
     width={24}
     xmlns="http://www.w3.org/2000/svg"
@@ -501,11 +555,11 @@ exports[`Storyshots UI Elements/UserAvatar Default User Avatar 1`] = `
       x={0}
       y={0}
     >
-      <rect
+      <circle
+        cx={40}
+        cy={40}
         fill="white"
-        height={80}
-        rx={160}
-        width={80}
+        r={40}
       />
     </mask>
     <g
@@ -960,8 +1014,35 @@ exports[`Storyshots UI Elements/UserAvatar With Custom Class Name 1`] = `
   }
 >
   <svg
+    colors={
+      Array [
+        "#F9FCFD",
+        "#0000C2",
+        "#0000C2",
+        "#0000C2",
+        "#100C53",
+        "#46ECA1",
+        "#46ECA1",
+        "#46ECA1",
+        "#8330FF",
+        "#8330FF",
+        "#8330FF",
+        "#F2F3F8",
+        "#E7EAF2",
+        "#CFD0DC",
+        "#B4B4C7",
+        "#9695AE",
+        "#787696",
+        "#636188",
+        "#4A4878",
+        "#332F66",
+        "#1E1A5A",
+      ]
+    }
     fill="none"
     height={24}
+    name="Fabian"
+    size={24}
     viewBox="0 0 80 80"
     width={24}
     xmlns="http://www.w3.org/2000/svg"
@@ -975,11 +1056,11 @@ exports[`Storyshots UI Elements/UserAvatar With Custom Class Name 1`] = `
       x={0}
       y={0}
     >
-      <rect
+      <circle
+        cx={40}
+        cy={40}
         fill="white"
-        height={80}
-        rx={160}
-        width={80}
+        r={40}
       />
     </mask>
     <g
