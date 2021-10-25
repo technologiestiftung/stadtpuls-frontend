@@ -3,7 +3,7 @@ import Swiper from "swiper";
 import SwiperClass from "swiper/types/swiper-class";
 import styles from "./LandingSensorsSlider.module.css";
 
-import "swiper/swiper-bundle.css";
+import "swiper/css/bundle";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 import { SensorCard } from "@components/SensorCard";
@@ -60,7 +60,7 @@ export const LandingSensorsSlider: FC<LandingSensorsSliderPropType> = ({
       style={{ marginTop: "calc(93vh - 340px)" }}
     >
       <div className={styles.sliderParent}>
-        <div className='swiper-container' id='sensors-slider'>
+        <div className='swiper' id='sensors-slider'>
           <div className='swiper-wrapper'>
             {sensors.map(sensor => (
               <div
