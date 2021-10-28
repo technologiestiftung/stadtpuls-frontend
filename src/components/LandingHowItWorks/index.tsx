@@ -128,14 +128,17 @@ const columnsData = [
       { icon: "/images/icons/pressure.svg", text: "Druck" },
       { icon: "/images/icons/lightness.svg", text: "Helligkeit" },
       { icon: "/images/icons/decibels.svg", text: "Lautstärke" },
-      { icon: "/images/icons/crowd.svg", text: "Personenzähler" },
+      { icon: "/images/icons/unit-counter.svg", text: "Unit Counter" },
     ],
   },
   {
     title: "Protokolle",
     description:
       "Stadtpuls unterstützt bislang ein Protokoll: LoRaWan über TTN. Wir arbeiten aber bereits an weiteren Anbindungen.",
-    listItems: [{ icon: "/images/icons/arduino.svg", text: "LoRaWAN (TTN)" }],
+    listItems: [
+      { icon: "/images/icons/HTTP.svg", text: "HTTP" },
+      { icon: "/images/icons/lorawan.svg", text: "LoRaWAN (TTN)" },
+    ],
   },
   {
     title: "Was wir bereitstellen",

@@ -497,14 +497,14 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
             style={
               Object {
-                "backgroundImage": "url(/images/icons/crowd.svg)",
+                "backgroundImage": "url(/images/icons/unit-counter.svg)",
               }
             }
           />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
-            Personenzähler
+            Unit Counter
           </span>
         </li>
       </ul>
@@ -528,7 +528,29 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
             style={
               Object {
-                "backgroundImage": "url(/images/icons/arduino.svg)",
+                "backgroundImage": "url(/images/icons/HTTP.svg)",
+              }
+            }
+          />
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            HTTP
+          </span>
+        </li>
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 "
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/lorawan.svg)",
               }
             }
           />
