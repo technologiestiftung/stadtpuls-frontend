@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { CopyTextField } from ".";
 import * as copyToClipboardHook from "@lib/hooks/useCopyToClipboard";
 
@@ -13,6 +13,11 @@ copyToClipboardHook.useCopyToClipboard = useCopyToClipboard.mockReturnValue({
 
 describe("CopyTextField component", () => {
   it("should render", () => {
+    const copyToClipboard = jest.fn();
+    useCopyToClipboard.mockReturnValue({
+      copyToClipboard: copyToClipboard,
+      hasCopied: false,
+    });
     render(
       <CopyTextField name='name' label='label'>
         content
@@ -20,6 +25,10 @@ describe("CopyTextField component", () => {
     );
     const input = screen.getByRole("textbox", { name: "label" });
     expect(input).toBeInTheDocument();
+
+    fireEvent.click(input);
+
+    expect(copyToClipboard).toHaveBeenCalledWith("content");
   });
   it("should not show a copied indicator by default", () => {
     render(
@@ -32,39 +41,24 @@ describe("CopyTextField component", () => {
     );
     expect(copiedIndicator).not.toBeVisible();
   });
-  it("should indicate the copied state when clicked", () => {
+  it("should copy contentToCopy prop if provided", () => {
+    const copyToClipboard = jest.fn();
     useCopyToClipboard.mockReturnValue({
-      copyToClipboard: jest.fn(),
+      copyToClipboard: copyToClipboard,
       hasCopied: false,
     });
 
-    const { rerender } = render(
-      <CopyTextField name='name' label='label'>
-        content
+    render(
+      <CopyTextField name='name' label='label' contentToCopy='A'>
+        B
       </CopyTextField>
     );
 
-    const copiedIndicator = screen.getByLabelText("In Zwischenablage kopiert!");
+    const input = screen.getByRole("textbox", { name: "label" });
+    expect(input).toBeInTheDocument();
 
-    expect(copiedIndicator).toHaveAttribute("aria-hidden", "true");
-    expect(copiedIndicator.getAttribute("class")?.includes("opacity-0")).toBe(
-      true
-    );
+    fireEvent.click(input);
 
-    useCopyToClipboard.mockReturnValue({
-      copyToClipboard: jest.fn(),
-      hasCopied: true,
-    });
-
-    rerender(
-      <CopyTextField name='name' label='label'>
-        content
-      </CopyTextField>
-    );
-
-    expect(copiedIndicator).toHaveAttribute("aria-hidden", "false");
-    expect(copiedIndicator.getAttribute("class")?.includes("opacity-100")).toBe(
-      true
-    );
+    expect(copyToClipboard).toHaveBeenCalledWith("A");
   });
 });

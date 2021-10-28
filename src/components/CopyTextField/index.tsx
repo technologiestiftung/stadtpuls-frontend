@@ -7,12 +7,14 @@ export interface CopyTextFieldPropType {
   name: string;
   label: string;
   children: string;
+  contentToCopy?: string;
 }
 
 export const CopyTextField: FC<CopyTextFieldPropType> = ({
   name,
   label,
   children,
+  contentToCopy = children,
 }) => {
   const { hasCopied, copyToClipboard } = useCopyToClipboard();
   return (
@@ -28,7 +30,7 @@ export const CopyTextField: FC<CopyTextFieldPropType> = ({
         value={children}
         className='text-sm'
         onClick={() => {
-          copyToClipboard(children);
+          copyToClipboard(contentToCopy);
         }}
       />
       <div

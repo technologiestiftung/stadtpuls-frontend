@@ -111,9 +111,14 @@ const Title: FC<Pick<ParsedSensorType, "name" | "symbolId">> = ({
 );
 
 const ApiUrl: FC<{ url: string }> = ({ url }) => {
+  const normalizedUrl = normalizeURL(url);
   return (
-    <CopyTextField name='api-url' label='API Schnittstelle'>
-      {normalizeURL(url) || url}
+    <CopyTextField
+      name='api-url'
+      label='API Schnittstelle'
+      contentToCopy={normalizedUrl ? `https://${normalizedUrl}` : url}
+    >
+      {normalizedUrl || url}
     </CopyTextField>
   );
 };
