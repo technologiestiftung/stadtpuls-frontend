@@ -25,6 +25,7 @@ import { SensorSymbol } from "@components/SensorSymbol";
 import { InteractiveMapProps } from "react-map-gl/src/components/interactive-map";
 import GrabbingHandIcon from "../../../public/images/icons/16px/grabbingHand.svg";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
+import { integrations, IntegrationType } from "@lib/integrationsUtil";
 
 type FormDataType = Pick<
   ParsedSensorType,
@@ -88,7 +89,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
     resolver: yupResolver(formSchema),
   });
   const [connectionType, setConnectionType] = useState(
-    defaultValues.connectionType || "http"
+    defaultValues.connectionType || integrations[0]
   );
   const [viewport, setViewport] = useState<Partial<InteractiveMapProps>>({
     latitude: defaultValues?.latitude || DEFAULT_LAT,
@@ -257,14 +258,14 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
                   {...field}
                   onChange={newValue => {
                     field.onChange(newValue);
-                    setConnectionType(newValue as "http" | "ttn");
+                    setConnectionType(newValue as IntegrationType);
                   }}
                   label='Integration'
                   placeholder='Wie möchtest du deinen Sensor integrieren?'
-                  options={[
-                    { name: "HTTP", value: "http" },
-                    { name: "TTN", value: "ttn" },
-                  ]}
+                  options={integrations.map(integration => ({
+                    name: integration.toUpperCase(),
+                    value: integration,
+                  }))}
                   errors={formatError(errors.connectionType?.message)}
                 />
               )}
