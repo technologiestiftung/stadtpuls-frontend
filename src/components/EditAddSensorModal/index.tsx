@@ -45,7 +45,7 @@ type SubmitDataType = Omit<
 export interface EditAddSensorModalPropType {
   title: string;
   author: Pick<ParsedSensorType, "authorId" | "authorName" | "authorUsername">;
-  defaultValues?: FormDataType;
+  defaultValues?: Partial<FormDataType>;
   onSubmit?: (sensorData: SubmitDataType) => void;
   submitButtonText?: string;
   onCancel?: () => void;

@@ -402,7 +402,7 @@ describe("EditAddSensorModal", () => {
 
     // SENSOR ICON SELECT
     const sensorIconField = screen.getByRole("button", {
-      name: "Symbol Symbol",
+      name: /^Symbol Sensor Symbol \d+$/,
     });
     expect(sensorIconField).toBeInTheDocument();
 

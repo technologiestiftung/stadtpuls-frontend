@@ -16,6 +16,9 @@ interface UserInfoWithDataPropType {
   activeTab: "sensors" | "tokens";
 }
 
+export const getRandomSensorId = (): number =>
+  Math.round(Math.random() * (32 - 1) + 1);
+
 export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
   routeAccount,
   activeTab,
@@ -29,6 +32,7 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
     updateUser,
     deleteUser,
   } = useUserData();
+  const [randomSymbolId, setRandomSymbolId] = useState(getRandomSensorId());
   const { authenticatedUser } = useAuth();
   const isOwnerAndLoggedIn =
     isLoggedIn && loggedInAccount?.username === routeAccount.username;
@@ -59,6 +63,7 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
     <>
       {newSensorModalIsOpen && (
         <EditAddSensorModal
+          defaultValues={{ symbolId: randomSymbolId }}
           author={{
             authorId: finalAccount.id,
             authorName: finalAccount.displayName,
@@ -152,7 +157,10 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
             <span className='absolute bottom-0 sm:bottom-2 right-4'>
               <Button
                 variant='primary'
-                onClick={() => setNewSensorModalIsOpen(true)}
+                onClick={() => {
+                  setNewSensorModalIsOpen(true);
+                  setRandomSymbolId(getRandomSensorId());
+                }}
               >
                 <span className='sm:hidden'>+</span>
                 <span className='hidden sm:inline'>Neuer</span> Sensor
