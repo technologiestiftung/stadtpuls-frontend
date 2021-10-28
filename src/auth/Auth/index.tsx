@@ -9,8 +9,10 @@ import {
 import { supabase } from "../supabase";
 import { AuthenticatedUsersType } from "@common/types/authenticated_user";
 import { createApiUrl } from "@lib/requests/createApiUrl";
+import { useRouter } from "next/router";
 
 export const AuthProvider: FC = ({ children }) => {
+  const router = useRouter();
   const [authenticatedUser, setUser] =
     useState<AuthContextType["authenticatedUser"]>();
   const [isLoadingAuth, setLoading] =
@@ -27,8 +29,13 @@ export const AuthProvider: FC = ({ children }) => {
 
     const { data: listener } = supabase.auth.onAuthStateChange(
       (_event, session) => {
-        setUser(session?.user ?? null);
-        setAccessToken(session?.access_token ?? null);
+        const user = session?.user ?? null;
+        if (user) {
+          setUser(user);
+          setAccessToken(session?.access_token ?? null);
+        } else {
+          void router.push("/");
+        }
         setLoading(false);
       }
     );
@@ -36,7 +43,7 @@ export const AuthProvider: FC = ({ children }) => {
     return () => {
       listener?.unsubscribe();
     };
-  }, []);
+  }, [router]);
 
   const value = {
     signOut: supabase.auth.signOut.bind(supabase.auth),
