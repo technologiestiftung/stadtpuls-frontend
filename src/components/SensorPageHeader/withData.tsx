@@ -4,6 +4,7 @@ import { EditAddSensorModal } from "@components/EditAddSensorModal";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { useUserData } from "@lib/hooks/useUserData";
+import { IntegrationType } from "@lib/integrationsUtil";
 import { useRouter } from "next/router";
 import { FC, useState } from "react";
 import { SensorPageHeader } from ".";
@@ -77,7 +78,7 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
               ...mergedSensor,
               ...data,
               id: initialSensor.id,
-              ttnDeviceId: data.ttnDeviceId as "http" | "ttn",
+              ttnDeviceId: data.ttnDeviceId as IntegrationType,
             })
               .then(() => setShowEditSuccessAlert(true))
               .finally(() => {

@@ -2,6 +2,7 @@ import { supabase } from "@auth/supabase";
 import useSWR from "swr";
 import { definitions } from "@common/types/supabase";
 import { DateValueType } from "@common/interfaces";
+import { IntegrationType } from "@lib/integrationsUtil";
 
 export const RECORDS_LIMIT = 500;
 
@@ -56,7 +57,7 @@ export interface ParsedSensorType {
   parsedRecords: DateValueType[];
   categoryId: number;
   categoryName: string;
-  connectionType: "http" | "ttn";
+  connectionType: IntegrationType;
   ttnDeviceId?: string;
   latitude: number;
   longitude: number;
