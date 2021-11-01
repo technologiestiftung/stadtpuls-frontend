@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { extent, max } from "d3-array";
+import { extent, max, min } from "d3-array";
 import { curveLinear } from "@visx/curve";
 import { AreaClosed } from "@visx/shape";
 import { scaleLinear, scaleUtc } from "@visx/scale";
@@ -30,8 +30,10 @@ export const AreaPath: FC<LineGraphType> = ({ width, height, data }) => {
     range: [0, width],
   });
 
+  const minVal = min(normalizedData, getY) || 0;
+  const maxVal = max(normalizedData, getY) || 0;
   const yScale = scaleLinear<number>({
-    domain: [0, max(normalizedData, getY) as number],
+    domain: [minVal > 0 ? 0 : minVal, maxVal < 0 ? 0 : maxVal],
     range: [height, 0],
   });
 

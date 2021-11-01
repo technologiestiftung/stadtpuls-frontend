@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { bisector, extent, max } from "d3-array";
+import { bisector, extent, max, min } from "d3-array";
 import { Group } from "@visx/group";
 import { scaleLinear, scaleUtc } from "@visx/scale";
 import { AxisBottom, AxisLeft } from "@visx/axis";
@@ -68,8 +68,10 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
       range: [0, graphWidth],
     });
 
+    const minVal = min(data, getY) || 0;
+    const maxVal = (max(data, getY) || 0) * 1.2;
     const yScale = scaleLinear<number>({
-      domain: [0, (max(data, getY) as number) * 1.2],
+      domain: [minVal > 0 ? 0 : minVal, maxVal < 0 ? 0 : maxVal],
       range: [graphHeight, 0],
     });
 
