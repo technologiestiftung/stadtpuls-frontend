@@ -54,41 +54,45 @@ export const DayPickerInput: FC<DayPickerInputExtendedProps> = ({
   dayPickerProps,
   nextElSelector,
   ...props
-}) => (
-  <OriginalDayPickerInput
-    value={value}
-    format='DD/MM/YYYY'
-    placeholder='DD/MM/YYYY'
-    formatDate={formatDate}
-    parseDate={parseDate}
-    dayPickerProps={{
-      localeUtils: moment,
-      locale: "de",
-      numberOfMonths: 1,
-      classNames: {
-        ...dayPickerClassNames,
-        ...props.classNames,
-      },
-      onDayClick:
-        dayPickerProps?.onDayClick ||
-        (() => {
-          if (!nextElSelector) return;
-          const nextEl = document.querySelector(
-            nextElSelector
-          ) as HTMLInputElement;
-          if (!nextEl) return;
-          nextEl.focus();
-          nextEl.setSelectionRange(0, 0);
-        }),
-      ...dayPickerProps,
-    }}
-    onDayChange={onDayChange}
-    classNames={{
-      container: styles.inputContainer,
-      overlayWrapper: "",
-      overlay: "",
-    }}
-    inputProps={{ tabIndex }}
-    {...props}
-  />
-);
+}) => {
+  return (
+    <OriginalDayPickerInput
+      value={value}
+      format='DD/MM/YYYY'
+      placeholder='DD/MM/YYYY'
+      formatDate={formatDate}
+      parseDate={parseDate}
+      dayPickerProps={{
+        localeUtils: moment,
+        locale: "de",
+        numberOfMonths: 1,
+        classNames: {
+          ...dayPickerClassNames,
+          ...props.classNames,
+        },
+        onDayClick:
+          dayPickerProps?.onDayClick ||
+          (() => {
+            if (!nextElSelector) return;
+            const nextEl = document.querySelector(
+              nextElSelector
+            ) as HTMLInputElement;
+            if (!nextEl) return;
+            nextEl.focus();
+            nextEl.setSelectionRange(0, 0);
+          }),
+        ...dayPickerProps,
+      }}
+      onDayChange={selectedDay => {
+        typeof selectedDay !== "undefined" && onDayChange(selectedDay);
+      }}
+      classNames={{
+        container: styles.inputContainer,
+        overlayWrapper: "",
+        overlay: "",
+      }}
+      inputProps={{ tabIndex }}
+      {...props}
+    />
+  );
+};

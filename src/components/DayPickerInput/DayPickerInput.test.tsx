@@ -18,7 +18,7 @@ describe("DayPickerInput", () => {
   });
   test("should call onDayChange when input changes", () => {
     const initialValue = "01/01/2021";
-    const targetValue = new Date("12/24/2021");
+    const targetValue = new Date("01/12/2021");
     const onDayChange = jest.fn();
     render(
       <DayPickerInput
@@ -32,11 +32,7 @@ describe("DayPickerInput", () => {
     fireEvent.change(input, {
       target: { value: formatDate(targetValue) },
     });
-    expect(onDayChange).toHaveBeenCalledWith(
-      targetValue,
-      expect.anything(),
-      expect.anything()
-    );
+    expect(onDayChange).toHaveBeenCalledWith(targetValue);
   });
   test("should focus nextEl if defined after day click", () => {
     render(
