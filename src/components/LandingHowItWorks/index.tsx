@@ -133,8 +133,7 @@ const columnsData = [
   },
   {
     title: "Protokolle",
-    description:
-      "Stadtpuls unterstützt bislang ein Protokoll: LoRaWan über TTN. Wir arbeiten aber bereits an weiteren Anbindungen.",
+    description: "Stadtpuls unterstützt aktuell HTTP und LoRaWan über TTN.",
     listItems: [
       { icon: "/images/icons/HTTP.svg", text: "HTTP" },
       { icon: "/images/icons/lorawan.svg", text: "LoRaWAN (TTN)" },
@@ -168,81 +167,11 @@ export const LandingHowItWorks: FC = () => (
       className={[
         "container mx-auto max-w-8xl",
         "px-4 sm:px-6 md:px-8",
-        "py-8 sm:py-12 md:py-16",
+        "sm:py-24 lg:py-32",
       ].join(" ")}
     >
-      <div className='grid grid-cols-2 lg:grid-cols-9'>
-        <div className='col-span-6 lg:pr-12'>
-          <h1
-            className={[
-              "text-xl sm:text-2xl md:text-3xl",
-              "text-purple font-bold font-headline",
-              "mt-6 mb-1",
-            ].join(" ")}
-          >
-            <span>Stadtpuls unterstützt die Anbindung </span>
-            <span className='inline sm:inline-block'>
-              an TTN!{" "}
-              <span className='text-[11px] md:text-xs text-black inline-block bg-gray-100 px-1 py-0 leading-5 md:py-0.5 align-middle'>
-                More coming soon{" "}
-              </span>
-            </span>
-          </h1>
-          <p className='text-base mt-8'>
-            Durch die TTN-Anbindung kannst du deine TTN-Projekte ganz einfach
-            über einen Webhook mit Stadtpuls verbinden und eigene Projekte
-            anlegen. Deine Daten werden dadurch visualisiert und per API, sowie
-            per CSV offen und kostenlos der gesamten Stadtgesellschaft zur
-            Verfügung gestellt. So trägst auch du dazu bei, unsere Stadt ein
-            Stück smarter zu machen. Wir arbeiten parallel an weiteren
-            Schnittstellen, um in Zukunft die Anbindung aller Protkolle und
-            Sensortypen zu ermöglichen.
-          </p>
-        </div>
-        <aside
-          className={[
-            "col-span-3 self-center",
-            "grid gap-2 grid-cols-[32px,1fr]",
-            "w-full",
-            "p-5 mt-8 lg:mt-0",
-            "border border-green shadow-green",
-          ].join(" ")}
-        >
-          <img
-            src='/images/illustrations/microcontroller-2.svg'
-            alt='Microcontroller'
-            className='align-top'
-          />
-          <h3 className='text-lg md:text-2xl font-headline font-bold'>
-            TTN? LoRa-Was?
-          </h3>
-          <p className='text-xs col-span-2'>
-            In Berlin gibt es ein offenes{" "}
-            <a
-              href='https://de.wikipedia.org/wiki/Long_Range_Wide_Area_Network'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='underline hover:text-blue transition-colors'
-            >
-              LoRaWan-Netzwerk
-            </a>
-            , welches seit 2017 durch die{" "}
-            <a
-              href='https://www.thethingsnetwork.org/'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='underline hover:text-blue transition-colors'
-            >
-              The Things Network (TTN)
-            </a>{" "}
-            Community betrieben wird. Jeder kann und darf es komplett kostenlos
-            benutzten, seine Sensoren mit dem Netzwerk verbinden und die Stadt
-            auf eigene Faust vermessen.
-          </p>
-        </aside>
-      </div>
       <div
-        className={`grid grid-cols-2 lg:grid-cols-9 gap-x-4 sm:gap-x-0 mt-32 ${styles.gridContainer}`}
+        className={`grid grid-cols-2 lg:grid-cols-9 gap-x-4 sm:gap-x-0 ${styles.gridContainer}`}
       >
         {columnsData.map(({ title }, idx) => (
           <HowItWorksColumn
@@ -277,6 +206,78 @@ export const LandingHowItWorks: FC = () => (
             area={`list-${idx + 1}`}
           />
         ))}
+      </div>
+      <div className='grid grid-cols-2 lg:grid-cols-9 mt-32'>
+        <div className='col-span-6 lg:pr-12'>
+          <h1
+            className={[
+              "text-xl sm:text-2xl md:text-3xl",
+              "text-purple font-bold font-headline",
+              "mb-4 mt-8",
+            ].join(" ")}
+          >
+            Stadtpuls unterstützt die Anbindung an TTN!
+          </h1>
+          <p className='mb-3'>
+            Durch die TTN-Anbindung kannst du deine TTN-Projekte ganz einfach
+            über einen Webhook mit Stadtpuls verbinden und eigene Projekte
+            anlegen. Deine Daten werden dadurch visualisiert und per API, sowie
+            per CSV offen und kostenlos der gesamten Stadtgesellschaft zur
+            Verfügung gestellt.
+          </p>
+          <p>
+            So trägst auch du dazu bei, unsere Stadt ein Stück smarter zu
+            machen. Wir arbeiten parallel an weiteren Schnittstellen, um in
+            Zukunft die Anbindung aller Protkolle und Sensortypen zu
+            ermöglichen.
+          </p>
+        </div>
+        <aside
+          className={[
+            "col-span-3",
+            "w-full",
+            "p-8 mt-8 lg:mt-0",
+            "border border-green shadow-green",
+          ].join(" ")}
+        >
+          <h3
+            className={[
+              "flex gap-4 items-center",
+              "font-headline font-bold",
+              "text-xl sm:text-2xl md:text-3xl",
+              "mb-4",
+            ].join(" ")}
+          >
+            <img
+              src='/images/illustrations/microcontroller-2.svg'
+              alt='Microcontroller'
+            />
+            TTN? LoRa-Was?
+          </h3>
+          <p className='col-span-2'>
+            In Berlin gibt es ein offenes{" "}
+            <a
+              href='https://de.wikipedia.org/wiki/Long_Range_Wide_Area_Network'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='underline hover:text-blue transition-colors'
+            >
+              LoRaWan-Netzwerk
+            </a>
+            , welches seit 2017 durch die{" "}
+            <a
+              href='https://www.thethingsnetwork.org/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='underline hover:text-blue transition-colors'
+            >
+              The Things Network (TTN)
+            </a>{" "}
+            Community betrieben wird. Jeder kann und darf es komplett kostenlos
+            benutzten, seine Sensoren mit dem Netzwerk verbinden und die Stadt
+            auf eigene Faust vermessen.
+          </p>
+        </aside>
       </div>
     </section>
   </div>
