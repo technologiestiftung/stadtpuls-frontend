@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { extent, max } from "d3-array";
+import { extent, max, min } from "d3-array";
 import { curveLinear } from "@visx/curve";
 import { LinePath as Path } from "@visx/shape";
 import { scaleLinear, scaleUtc } from "@visx/scale";
@@ -25,7 +25,7 @@ export const LinePath: FC<LineGraphType> = ({
   });
 
   const yScale = scaleLinear<number>({
-    domain: [0, (max(data, getY) as number) * 1.2],
+    domain: [min(data, getY) || 0, (max(data, getY) || 0) * 1.2],
     range: [height, 0],
   });
 
