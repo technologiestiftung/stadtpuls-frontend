@@ -68,8 +68,10 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
       range: [0, graphWidth],
     });
 
+    const minVal = min(data, getY) || 0;
+    const maxVal = (max(data, getY) || 0) * 1.2;
     const yScale = scaleLinear<number>({
-      domain: [min(data, getY) || 0, (max(data, getY) || 0) * 1.2],
+      domain: [minVal > 0 ? 0 : minVal, maxVal < 0 ? 0 : maxVal],
       range: [graphHeight, 0],
     });
 
