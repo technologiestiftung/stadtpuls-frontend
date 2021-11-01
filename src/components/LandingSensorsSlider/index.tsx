@@ -55,7 +55,7 @@ export const LandingSensorsSlider: FC<LandingSensorsSliderPropType> = ({
     <section
       className={[
         "overflow-hidden px-8 md:px-24 lg:px-32 xl:px-40",
-        "my-12 sm:my-24 md:mt-40 md:mb-16 z-20 relative",
+        "mt-12 sm:mt-24 md:mt-40 z-20 relative",
       ].join(" ")}
       style={{ marginTop: "calc(93vh - 340px)" }}
     >
