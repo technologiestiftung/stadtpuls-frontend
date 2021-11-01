@@ -3,6 +3,7 @@ import { Alert } from "@components/Alert";
 import { Button } from "@components/Button";
 import { EditAccountModal } from "@components/EditAccountModal";
 import { EditAddSensorModal } from "@components/EditAddSensorModal";
+import { NUMBER_OF_SENSOR_SYMBOLS } from "@components/SensorSymbol";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { Tabs } from "@components/Tabs";
 import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
@@ -17,7 +18,7 @@ interface UserInfoWithDataPropType {
 }
 
 export const getRandomSensorId = (): number =>
-  Math.round(Math.random() * (32 - 1) + 1);
+  Math.round(Math.random() * (NUMBER_OF_SENSOR_SYMBOLS - 1) + 1);
 
 export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
   routeAccount,

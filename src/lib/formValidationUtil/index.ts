@@ -1,3 +1,4 @@
+import { NUMBER_OF_SENSOR_SYMBOLS } from "@components/SensorSymbol";
 import * as yup from "yup";
 
 export const requiredEmailValidation = yup
@@ -24,7 +25,7 @@ export const requiredSensorCategoryValidation = yup
 export const requiredSymbolIdValidation = yup
   .number()
   .min(1, "Ungültiges Symbol")
-  .max(32, "Ungültiges Symbol")
+  .max(NUMBER_OF_SENSOR_SYMBOLS, "Ungültiges Symbol")
   .required("Ungültiges Symbol");
 
 export const requiredLatitude = yup
