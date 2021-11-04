@@ -17,10 +17,7 @@ describe("utility function getRecordsBySensorId", () => {
       })
     );
     server.listen();
-    const records = await getRecordsBySensorId(exampleSensor.id);
-
-    expect.assertions(2);
-    expect(Array.isArray(records)).toBe(true);
+    const { records } = await getRecordsBySensorId(exampleSensor.id);
     const allRecordsBelongToProvidedDevice = records.every(record => {
       return record.sensor_id === exampleSensor.id;
     });
@@ -54,7 +51,7 @@ describe("utility function getRecordsBySensorId", () => {
     );
     server.listen();
 
-    const records = await getRecordsBySensorId(exampleSensor.id, {
+    const { records } = await getRecordsBySensorId(exampleSensor.id, {
       startDate: testStartDate,
       endDate: testEndDate,
     });
@@ -94,7 +91,7 @@ describe("utility function getRecordsBySensorId", () => {
     );
     server.listen();
 
-    const records = await getRecordsBySensorId(exampleSensor.id, {
+    const { records } = await getRecordsBySensorId(exampleSensor.id, {
       startDate: testStartDate,
     });
 
@@ -133,7 +130,7 @@ describe("utility function getRecordsBySensorId", () => {
     );
     server.listen();
 
-    const records = await getRecordsBySensorId(exampleSensor.id, {
+    const { records } = await getRecordsBySensorId(exampleSensor.id, {
       endDate: testEndDate,
     });
 
@@ -161,7 +158,7 @@ describe("utility function getRecordsBySensorId", () => {
     );
     server.listen();
 
-    const records = await getRecordsBySensorId(exampleSensor.id, {});
+    const { records } = await getRecordsBySensorId(exampleSensor.id, {});
 
     expect.assertions(2);
     expect(Array.isArray(records)).toBe(true);

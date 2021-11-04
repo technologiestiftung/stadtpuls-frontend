@@ -9,6 +9,8 @@ import colors from "../../style/colors";
 const getX = (d: DateValueType): Date => new Date(d.date);
 const getY = (d: DateValueType): number => d.value;
 
+export const MAX_RENDERABLE_VALUES = 3000;
+
 export const LinePath: FC<LineGraphType> = ({
   width,
   height,
