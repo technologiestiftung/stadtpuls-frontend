@@ -4,12 +4,11 @@ import { DropdownMenu } from "@components/DropdownMenu";
 import { LineChart } from "@components/LineChart";
 import { TextLink } from "@components/TextLink";
 import { createDateValueArray } from "@lib/dateUtil";
-import { createCSVStructure, downloadCSV } from "@lib/downloadCsvUtil";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { useSensorLastRecordDate } from "@lib/hooks/useSensorLastRecordDate";
 import { useSensorRecords } from "@lib/hooks/useSensorRecords";
 import { useSensorRecordsCount } from "@lib/hooks/useSensorRecordsCount";
-import { getRecordsBySensorId } from "@lib/requests/getRecordsBySensorId";
+import { GetRecordsOptionsType } from "@lib/requests/getRecordsBySensorId";
 import { getSensorData } from "@lib/requests/getSensorData";
 import DownloadIcon from "../../public/images/icons/16px/arrowDownWithHalfSquare.svg";
 import moment from "moment";
@@ -17,6 +16,8 @@ import { GetServerSideProps } from "next";
 import React, { FC, useCallback, useEffect, useState } from "react";
 import { SensorPageHeaderWithData } from "@components/SensorPageHeader/withData";
 import { definitions } from "@common/types/supabase";
+import { useDownloadQueue } from "@lib/hooks/useDownloadQueue";
+import { downloadCSVString } from "@lib/downloadCsvUtil";
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -67,6 +68,7 @@ const getCategoryUnit = (
 const SensorPage: FC<{
   sensor: ParsedSensorType;
 }> = ({ sensor }) => {
+  const { pushToQueue } = useDownloadQueue();
   const [chartWidth, setChartWidth] = useState<number | undefined>(undefined);
   const [chartHeight, setChartHeight] = useState<number | undefined>(undefined);
   const [currentDatetimeRange, setCurrentDatetimeRange] = useState<{
@@ -107,6 +109,34 @@ const SensorPage: FC<{
     setChartHeight(width / 2);
   }, []);
 
+  const handleDownload = useCallback(
+    (options?: GetRecordsOptionsType): void => {
+      const CSVTitle = !options
+        ? `${moment.parseZone().format("YYYY-MM-DD")}-sensor-${
+            sensor.id
+          }-all-data`
+        : `${moment
+            .parseZone(currentDatetimeRange.startDateTimeString)
+            .format("YYYY-MM-DD")}-to-${moment
+            .parseZone(currentDatetimeRange.endDateTimeString)
+            .format("YYYY-MM-DD")}-sensor-${sensor.id}`;
+      pushToQueue({
+        id: sensor.id,
+        title: CSVTitle,
+        totalCount: recordsCount || 0,
+        options,
+        callback: ({ result }) => result && downloadCSVString(result, CSVTitle),
+      });
+    },
+    [
+      currentDatetimeRange.endDateTimeString,
+      currentDatetimeRange.startDateTimeString,
+      pushToQueue,
+      recordsCount,
+      sensor.id,
+    ]
+  );
+
   return (
     <>
       <SensorPageHeaderWithData initialSensor={sensor} />
@@ -124,29 +154,20 @@ const SensorPage: FC<{
                   {
                     id: "all",
                     title: "Alle Daten",
-                    onClick: async () => {
-                      const allRecords = await getRecordsBySensorId(sensor.id);
-                      downloadCSV(
-                        createCSVStructure(allRecords),
-                        `${moment.parseZone().format("YYYY-MM-DD")}-sensor-${
-                          sensor.id
-                        }-all-data`
-                      );
+                    onClick: () => {
+                      void handleDownload();
                     },
                   },
                   {
                     id: "filtered",
                     title: "Gefilterte Daten",
                     disabled: records.length === 0,
-                    onClick: () =>
-                      downloadCSV(
-                        createCSVStructure(records),
-                        `${moment
-                          .parseZone(currentDatetimeRange.startDateTimeString)
-                          .format("YYYY-MM-DD")}-to-${moment
-                          .parseZone(currentDatetimeRange.endDateTimeString)
-                          .format("YYYY-MM-DD")}-sensor-${sensor.id}`
-                      ),
+                    onClick: () => {
+                      void handleDownload({
+                        startDate: currentDatetimeRange.startDateTimeString,
+                        endDate: currentDatetimeRange.endDateTimeString,
+                      });
+                    },
                   },
                 ]}
               >
