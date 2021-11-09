@@ -45,6 +45,7 @@
     "./src/**/*.tsx",
     "./pages/**/*.ts",
     "./pages/**/*.tsx",
+    "./workers/*.worker.ts",
   ],
   "exclude": [
     "node_modules",

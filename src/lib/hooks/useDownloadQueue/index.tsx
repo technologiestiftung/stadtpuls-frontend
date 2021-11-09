@@ -44,9 +44,12 @@ export const DownloadQueueProvider: FC = ({ children }) => {
   const [queue, setQueue] = useState<DownloadQueueContextType["queue"]>({});
 
   useEffect(() => {
-    workerRef.current = new Worker("/workers/downloadQueue.worker.js", {
+    workerRef.current = new Worker("/workers/downloadQueueWorker.js", {
       type: "module",
     });
+    workerRef.current.onerror = () => {
+      console.error(`Error while loading the WebWorker`);
+    };
     workerRef.current.onmessage = ({ data }: { data: QueueItemType }) => {
       setQueue(currentQueue => {
         const existingEl = currentQueue[data.id] || {};

@@ -9,3 +9,7 @@ declare module "*.module.css" {
 declare module "*.svg" {
   export default ReactNode;
 }
+
+// Default type of `self` is `WorkerGlobalScope & typeof globalThis`
+// https://github.com/microsoft/TypeScript/issues/14877
+declare const self: WebWorkerGlobalScope;
