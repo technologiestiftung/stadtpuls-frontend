@@ -8,7 +8,7 @@ exports[`Storyshots UI Elements/Pagination Few Pages 1`] = `
     className="flex gap-0 font-mono text-gray-500"
   >
     <li
-      className="border-l border-t border-b rounded-tl-md rounded-bl-md hover:bg-gray-50 pointer-events-none text-gray-200 border-gray-100"
+      className="border-r border-l border-t border-b rounded-tl-md rounded-bl-md hover:bg-purple hover:bg-opacity-10 pointer-events-none text-gray-200 border-gray-100"
     >
       <a
         aria-disabled="true"
@@ -24,7 +24,7 @@ exports[`Storyshots UI Elements/Pagination Few Pages 1`] = `
       </a>
     </li>
     <li
-      className="text-center border-r border-t border-b border-gray-200 hover:bg-gray-50 bg-purple bg-opacity-10 text-purple border border-purple"
+      className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10 bg-purple bg-opacity-10 text-purple z-20 undefined"
     >
       <a
         aria-current="page"
@@ -39,7 +39,7 @@ exports[`Storyshots UI Elements/Pagination Few Pages 1`] = `
       </a>
     </li>
     <li
-      className="text-center border-r border-t border-b border-gray-200 hover:bg-gray-50"
+      className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10"
     >
       <a
         aria-current={null}
@@ -54,7 +54,7 @@ exports[`Storyshots UI Elements/Pagination Few Pages 1`] = `
       </a>
     </li>
     <li
-      className="text-center border-r border-t border-b border-gray-200 hover:bg-gray-50"
+      className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10"
     >
       <a
         aria-current={null}
@@ -69,7 +69,7 @@ exports[`Storyshots UI Elements/Pagination Few Pages 1`] = `
       </a>
     </li>
     <li
-      className="border-r border-t border-b rounded-tr-md rounded-br-md hover:bg-gray-50"
+      className="border-r border-t border-b rounded-tr-md rounded-br-md hover:bg-purple hover:bg-opacity-10"
     >
       <a
         aria-disabled="false"
@@ -96,7 +96,7 @@ exports[`Storyshots UI Elements/Pagination Many Pages 1`] = `
     className="flex gap-0 font-mono text-gray-500"
   >
     <li
-      className="border-l border-t border-b rounded-tl-md rounded-bl-md hover:bg-gray-50 pointer-events-none text-gray-200 border-gray-100"
+      className="border-r border-l border-t border-b rounded-tl-md rounded-bl-md hover:bg-purple hover:bg-opacity-10 pointer-events-none text-gray-200 border-gray-100"
     >
       <a
         aria-disabled="true"
@@ -112,7 +112,7 @@ exports[`Storyshots UI Elements/Pagination Many Pages 1`] = `
       </a>
     </li>
     <li
-      className="text-center border-r border-t border-b border-gray-200 hover:bg-gray-50 bg-purple bg-opacity-10 text-purple border border-purple"
+      className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10 bg-purple bg-opacity-10 text-purple z-20 undefined"
     >
       <a
         aria-current="page"
@@ -127,7 +127,7 @@ exports[`Storyshots UI Elements/Pagination Many Pages 1`] = `
       </a>
     </li>
     <li
-      className="text-center border-r border-t border-b border-gray-200 hover:bg-gray-50"
+      className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10"
     >
       <a
         aria-current={null}
@@ -142,7 +142,7 @@ exports[`Storyshots UI Elements/Pagination Many Pages 1`] = `
       </a>
     </li>
     <li
-      className="text-center border-r border-t border-b border-gray-200 hover:bg-gray-50"
+      className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10"
     >
       <a
         aria-current={null}
@@ -154,6 +154,36 @@ exports[`Storyshots UI Elements/Pagination Many Pages 1`] = `
         tabIndex="0"
       >
         3
+      </a>
+    </li>
+    <li
+      className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10"
+    >
+      <a
+        aria-current={null}
+        aria-label="Page 4"
+        className="px-2 py-0.5 min-w-[3ch] inline-block"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        4
+      </a>
+    </li>
+    <li
+      className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10"
+    >
+      <a
+        aria-current={null}
+        aria-label="Page 5"
+        className="px-2 py-0.5 min-w-[3ch] inline-block"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        5
       </a>
     </li>
     <li
@@ -170,37 +200,7 @@ exports[`Storyshots UI Elements/Pagination Many Pages 1`] = `
       </a>
     </li>
     <li
-      className="text-center border-r border-t border-b border-gray-200 hover:bg-gray-50"
-    >
-      <a
-        aria-current={null}
-        aria-label="Page 35"
-        className="px-2 py-0.5 min-w-[3ch] inline-block"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        35
-      </a>
-    </li>
-    <li
-      className="text-center border-r border-t border-b border-gray-200 hover:bg-gray-50"
-    >
-      <a
-        aria-current={null}
-        aria-label="Page 36"
-        className="px-2 py-0.5 min-w-[3ch] inline-block"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        36
-      </a>
-    </li>
-    <li
-      className="text-center border-r border-t border-b border-gray-200 hover:bg-gray-50"
+      className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10"
     >
       <a
         aria-current={null}
@@ -215,7 +215,7 @@ exports[`Storyshots UI Elements/Pagination Many Pages 1`] = `
       </a>
     </li>
     <li
-      className="border-r border-t border-b rounded-tr-md rounded-br-md hover:bg-gray-50"
+      className="border-r border-t border-b rounded-tr-md rounded-br-md hover:bg-purple hover:bg-opacity-10"
     >
       <a
         aria-disabled="false"
