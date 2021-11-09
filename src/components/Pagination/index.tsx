@@ -5,15 +5,13 @@ import styles from "./Pagination.module.css";
 
 export type PickedReactPaginationProps = Pick<
   ReactPaginateProps,
-  | "pageCount"
-  | "pageRangeDisplayed"
-  | "marginPagesDisplayed"
-  | "onPageChange"
-  | "initialPage"
+  "pageCount" | "marginPagesDisplayed" | "onPageChange"
 >;
 
 export interface PaginationType extends PickedReactPaginationProps {
   currentPage: number;
+  numberOfDisplayedPages?: number;
+  initialPageIndex?: number;
 }
 
 const linkClasses = "px-2 py-0.5 min-w-[3ch] inline-block";
@@ -21,17 +19,17 @@ const linkClasses = "px-2 py-0.5 min-w-[3ch] inline-block";
 export const Pagination: FC<PaginationType> = ({
   currentPage,
   pageCount,
-  pageRangeDisplayed = 5,
+  numberOfDisplayedPages = 5,
   marginPagesDisplayed = 1,
   onPageChange = () => undefined,
-  initialPage = currentPage - 1,
+  initialPageIndex = currentPage - 1,
 }) => {
   return (
     <ReactPaginate
       pageCount={pageCount}
       marginPagesDisplayed={marginPagesDisplayed}
-      pageRangeDisplayed={pageRangeDisplayed - 1} // because react-paginate works 0-indexed
-      initialPage={initialPage}
+      pageRangeDisplayed={numberOfDisplayedPages - 1} // because react-paginate works 0-indexed
+      initialPage={initialPageIndex} // because react-paginate works 0-indexed
       onPageChange={onPageChange}
       previousLabel={"←"}
       nextLabel={"→"}

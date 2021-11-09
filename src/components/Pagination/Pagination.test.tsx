@@ -17,7 +17,7 @@ describe("Pagination component", () => {
         currentPage={counts.startPage}
         pageCount={counts.pages}
         marginPagesDisplayed={counts.marginPagesDisplayed}
-        pageRangeDisplayed={counts.pageRangeDisplayed}
+        numberOfDisplayedPages={counts.pageRangeDisplayed}
       />
     );
 
