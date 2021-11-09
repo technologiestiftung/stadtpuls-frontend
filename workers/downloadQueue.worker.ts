@@ -37,13 +37,47 @@ interface QueueItemType {
 
 // eslint-disable-next-line no-undef
 self.addEventListener("message", event => {
-  void getAllRecrodsBySensorId(event.data);
+  void getRecordsCount(event.data).then((totalCount: number) => {
+    void getAllRecrodsBySensorId({ ...event.data, totalCount });
+  });
 });
+
+// eslint-disable-next-line no-undef
+const headers = new Headers({
+  "content-type": "application/json",
+  apikey: process.env.NEXT_PUBLIC_SUPABASE_PUBLIC_KEY || "",
+  authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_PUBLIC_KEY || ""}`,
+  prefer: "count=exact",
+});
+
+async function getRecordsCount(data: QueueItemType): Promise<number> {
+  const { id, options } = data;
+
+  const url = new URL(
+    `${process.env.NEXT_PUBLIC_SUPABASE_URL || ""}/rest/v1/records`
+  );
+
+  const params = { select: "*", sensor_id: `eq.${id}` };
+  url.search = new URLSearchParams(params).toString();
+
+  if (options && options.startDate && options.endDate) {
+    url.search += `&recorded_at=gte.${options.startDate}&recorded_at=lte.${options.endDate}`;
+  }
+
+  // eslint-disable-next-line no-undef
+  const response = await fetch(url.toString(), { method: "HEAD", headers });
+  const count = parseInt(
+    response.headers.get("content-range")?.split("/")[1] || `${maxRows}`,
+    10
+  );
+  return count;
+}
 
 async function getAllRecrodsBySensorId(
   data: QueueItemType,
+  iterationIndex = 0,
   prevRecords: definitions["records"][] = []
-): Promise<QueueItemType> {
+): Promise<QueueItemType | void> {
   const { id, totalCount, options } = data;
   const max = Math.min(totalCount, MAX_DOWNLOADABLE_RECORDS);
 
@@ -56,7 +90,7 @@ async function getAllRecrodsBySensorId(
     sensor_id: `eq.${id}`,
     order: `recorded_at.desc.nullslast`,
     limit: `${maxRows}`,
-    offset: `${prevRecords.length / maxRows}`,
+    offset: `${iterationIndex * maxRows}`,
   };
 
   url.search = new URLSearchParams(params).toString();
@@ -65,14 +99,6 @@ async function getAllRecrodsBySensorId(
     url.search += `&recorded_at=gte.${options.startDate}&recorded_at=lte.${options.endDate}`;
   }
 
-  // eslint-disable-next-line no-undef
-  const headers = new Headers({
-    "content-type": "application/json",
-    apikey: process.env.NEXT_PUBLIC_SUPABASE_PUBLIC_KEY || "",
-    authorization: `Bearer ${
-      process.env.NEXT_PUBLIC_SUPABASE_PUBLIC_KEY || ""
-    }`,
-  });
   // eslint-disable-next-line no-undef
   const response = await fetch(url.toString(), { headers });
   const records = (await response.json()) as definitions["records"][];
@@ -85,20 +111,24 @@ async function getAllRecrodsBySensorId(
     );
 
   const aggregatedRecords = [...prevRecords, ...records];
-  if (records.length < maxRows || aggregatedRecords.length >= max) {
+  if (
+    aggregatedRecords.length >= totalCount ||
+    aggregatedRecords.length >= max
+  ) {
     self.postMessage(
       Object.assign({}, data, {
         result: createCSVStructure(aggregatedRecords),
         progress: 100,
       })
     );
+    return;
   }
   self.postMessage(
     Object.assign({}, data, {
       progress: (aggregatedRecords.length / totalCount) * 100,
     })
   );
-  return getAllRecrodsBySensorId(data, aggregatedRecords);
+  return getAllRecrodsBySensorId(data, iterationIndex + 1, aggregatedRecords);
 }
 
 export {};
