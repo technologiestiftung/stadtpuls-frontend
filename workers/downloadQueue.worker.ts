@@ -1,7 +1,10 @@
 import { definitions } from "@common/types/supabase";
 
-const MAX_DOWNLOADABLE_RECORDS = 1000000;
-const NEXT_PUBLIC_SUPABASE_MAX_ROWS = 30;
+const MAX_DOWNLOADABLE_RECORDS = 1e6;
+const maxRows = parseInt(
+  `${process.env.NEXT_PUBLIC_SUPABASE_MAX_ROWS || 30}`,
+  10
+);
 
 const createCSVStructure = (input: definitions["records"][]): string => {
   let csv = "id,recorded_at,value\n";
@@ -52,8 +55,8 @@ async function getAllRecrodsBySensorId(
     select: "*",
     sensor_id: `eq.${id}`,
     order: `recorded_at.desc.nullslast`,
-    limit: `${NEXT_PUBLIC_SUPABASE_MAX_ROWS}`,
-    offset: `${prevRecords.length / NEXT_PUBLIC_SUPABASE_MAX_ROWS}`,
+    limit: `${maxRows}`,
+    offset: `${prevRecords.length / maxRows}`,
   };
 
   url.search = new URLSearchParams(params).toString();
@@ -77,15 +80,12 @@ async function getAllRecrodsBySensorId(
   if (!records)
     throw new Error(
       `No records found for sensor ID ${id} at range "${prevRecords.length},${
-        prevRecords.length + NEXT_PUBLIC_SUPABASE_MAX_ROWS
+        prevRecords.length + maxRows
       }"`
     );
 
   const aggregatedRecords = [...prevRecords, ...records];
-  if (
-    records.length < NEXT_PUBLIC_SUPABASE_MAX_ROWS ||
-    aggregatedRecords.length >= max
-  ) {
+  if (records.length < maxRows || aggregatedRecords.length >= max) {
     self.postMessage(
       Object.assign({}, data, {
         result: createCSVStructure(aggregatedRecords),
