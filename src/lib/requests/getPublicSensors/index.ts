@@ -6,6 +6,10 @@ import {
 } from "@lib/hooks/usePublicSensors";
 
 export const RECORDS_LIMIT = 500;
+export const errors = {
+  rangeEndGreaterThanRangeStart: "rangeEnd can not be smaller than rangeStart",
+  onlyOneRangeValue: "rangeStart and rangeEnd must both be provided",
+};
 
 export const sensorQueryString = `
   id,
@@ -49,7 +53,7 @@ export const getPublicSensors = async (
     typeof options.rangeEnd !== "undefined" &&
     options.rangeEnd <= options.rangeStart
   )
-    throw new Error("rangeEnd can not be smaller than rangeStart");
+    throw new Error(errors.rangeEndGreaterThanRangeStart);
 
   if (
     (options &&
@@ -59,7 +63,7 @@ export const getPublicSensors = async (
       typeof options.rangeStart === "undefined" &&
       typeof options.rangeEnd !== "undefined")
   )
-    throw new Error("rangeStart and rangeEnd mus both be provided");
+    throw new Error(errors.onlyOneRangeValue);
 
   if (options && options.rangeStart && options.rangeEnd) {
     const { data, error } = await supabase
