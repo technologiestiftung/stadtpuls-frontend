@@ -5,7 +5,7 @@ import {
   ParsedAccountType,
 } from "@lib/hooks/usePublicAccounts";
 import { supabase } from "@auth/supabase";
-import { RECORDS_LIMIT } from "@lib/hooks/usePublicSensors";
+import { RECORDS_LIMIT } from "@lib/requests/getPublicSensors";
 
 export interface GetRecordsOptionsType {
   startDate?: string;
