@@ -81,7 +81,7 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({
       <div className='mt-12 flex justify-center'>
         <Pagination
           pageCount={pageCount}
-          pageRangeDisplayed={5}
+          numberOfDisplayedPages={5}
           marginPagesDisplayed={1}
           currentPage={page}
           onPageChange={handlePageChange}
