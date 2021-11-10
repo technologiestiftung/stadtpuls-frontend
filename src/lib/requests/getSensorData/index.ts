@@ -1,11 +1,10 @@
 import { supabase } from "@auth/supabase";
 import {
   mapPublicSensor,
-  sensorQueryString,
   ParsedSensorType,
   SensorQueryResponseType,
-  RECORDS_LIMIT,
 } from "@lib/hooks/usePublicSensors";
+import { sensorQueryString, RECORDS_LIMIT } from "../getPublicSensors";
 
 export const getSensorData = async (
   sensorId: number

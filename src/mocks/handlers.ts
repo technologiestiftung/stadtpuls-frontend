@@ -8,10 +8,7 @@ import { createApiUrl } from "@lib/requests/createApiUrl";
 import { definitions } from "@common/types/supabase";
 import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
-import {
-  SensorQueryResponseType,
-  sensorQueryString,
-} from "@lib/hooks/usePublicSensors";
+import { SensorQueryResponseType } from "@lib/hooks/usePublicSensors";
 import {
   AccountQueryResponseType,
   accountQueryString,
@@ -19,6 +16,7 @@ import {
 import { categories } from "./supabaseData/categories";
 import { userprofiles } from "./supabaseData/userprofiles";
 import { getSensorRecords } from "./supabaseData/records";
+import { sensorQueryString } from "@lib/requests/getPublicSensors";
 
 const githubHandlers = [
   rest.get(`https://api.github.com/users/*`, (_req, res, ctx) => {
