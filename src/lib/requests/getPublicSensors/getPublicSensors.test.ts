@@ -30,21 +30,28 @@ describe("utility function getPublicSensors", () => {
   });
 
   it("returns a limited amount of sensors if range is provided", async (): Promise<void> => {
-    const rangeStart = 2;
-    const rangeEnd = 5;
+    const rangeStart = 0;
+    const rangeEnd = 3;
     let filteredSensors: SensorQueryResponseType[] = [];
 
     const server = setupServer(
-      rest.get(createSupabaseUrl(`/sensors`), (_req, res, ctx) => {
+      rest.get(createSupabaseUrl(`/sensors`), (req, res, ctx) => {
         const { fromIndex, toIndex } = getIndexesFromRange(
           rangeStart,
           rangeEnd
         );
+
+        const limit = req.url.searchParams.get("limit");
+        const offset = req.url.searchParams.get("offset");
+
         filteredSensors = exampleSensors.filter((_, index) => {
           return index >= fromIndex && index <= toIndex;
         });
 
-        return res(ctx.status(200, "Mocked status"), ctx.json(filteredSensors));
+        return res(
+          ctx.status(200, "Mocked status"),
+          ctx.json(limit && offset ? filteredSensors : exampleSensors)
+        );
       })
     );
     server.listen();
@@ -53,6 +60,12 @@ describe("utility function getPublicSensors", () => {
     expect(fetchedSensors.length).toEqual(filteredSensors.length);
 
     const expectedSensorIds = filteredSensors.map(sensor => sensor.id);
+    console.log("Expected IDs:", expectedSensorIds);
+    console.log(
+      "Fetched IDs:",
+      fetchedSensors.map(sensor => sensor.id)
+    );
+
     const allReturnedIdsAreIncludedInExpectedIds = fetchedSensors.every(
       sensor => expectedSensorIds.includes(sensor.id)
     );

@@ -65,7 +65,11 @@ export const getPublicSensors = async (
   )
     throw new Error(errors.onlyOneRangeValue);
 
-  if (options && options.rangeStart && options.rangeEnd) {
+  if (
+    options &&
+    (options.rangeStart || options.rangeStart === 0) &&
+    options.rangeEnd
+  ) {
     const { data, error } = await supabase
       .from<SensorQueryResponseType>("sensors")
       .select(sensorQueryString)
