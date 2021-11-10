@@ -36,9 +36,19 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   }
 };
 
-const handlePageChange = ({ selected }: { selected: number }): void => {
+const handlePageChange = ({
+  selectedPage,
+  pageCount,
+}: {
+  selectedPage: number;
+  pageCount: number;
+}): void => {
   const path = router.pathname;
-  const query = selected === 0 ? "" : `page=${selected + 1}`;
+  const query =
+    selectedPage === 1 || selectedPage > pageCount
+      ? ""
+      : `page=${selectedPage}`;
+
   void router.push({
     pathname: path,
     query: query,
@@ -50,12 +60,14 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({
   sensorsCount,
   page,
 }) => {
-  if (!sensors || sensors.length === 0)
+  const pageCount = Math.ceil(sensorsCount / MAX_SENSORS_PER_PAGE);
+  const pageIsWithinPageCount = page <= pageCount;
+  const pageToRender = pageIsWithinPageCount ? page : 1;
+
+  if ((!sensors || sensors.length === 0) && pageIsWithinPageCount)
     return (
       <h1 className='flex justify-center mt-32'>Keine Sensordaten vorhanden</h1>
     );
-
-  const pageCount = Math.ceil(sensorsCount / MAX_SENSORS_PER_PAGE);
 
   return (
     <div className='container mx-auto max-w-8xl py-24 px-4'>
@@ -83,8 +95,10 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({
           pageCount={pageCount}
           numberOfDisplayedPages={5}
           marginPagesDisplayed={1}
-          currentPage={page}
-          onPageChange={handlePageChange}
+          currentPage={pageToRender}
+          onPageChange={({ selected: selectedIndex }) => {
+            handlePageChange({ selectedPage: selectedIndex + 1, pageCount });
+          }}
         />
       </div>
     </div>
