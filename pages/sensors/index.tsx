@@ -59,7 +59,7 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({
 
   return (
     <div className='container mx-auto max-w-8xl py-24 px-4'>
-      <hgroup
+      <div
         className={classNames(
           "sm:mt-1 md:mt-2",
           "mb-4 sm:mb-5 md:mb-6",
@@ -76,7 +76,7 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({
         <h2 className='text-gray-600 mt-0 md:mt-2'>
           Seite {page} von {pageCount}
         </h2>
-      </hgroup>
+      </div>
       <SensorsGrid sensors={sensors} />
       <div className='mt-12 flex justify-center'>
         <Pagination
