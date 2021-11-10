@@ -60,11 +60,6 @@ describe("utility function getPublicSensors", () => {
     expect(fetchedSensors.length).toEqual(filteredSensors.length);
 
     const expectedSensorIds = filteredSensors.map(sensor => sensor.id);
-    console.log("Expected IDs:", expectedSensorIds);
-    console.log(
-      "Fetched IDs:",
-      fetchedSensors.map(sensor => sensor.id)
-    );
 
     const allReturnedIdsAreIncludedInExpectedIds = fetchedSensors.every(
       sensor => expectedSensorIds.includes(sensor.id)
