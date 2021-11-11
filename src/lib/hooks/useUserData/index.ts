@@ -12,9 +12,7 @@ import { definitions } from "@common/types/supabase";
 import {
   mapPublicSensor,
   ParsedSensorType,
-  RECORDS_LIMIT,
   SensorQueryResponseType,
-  sensorQueryString,
 } from "../usePublicSensors";
 import {
   AccountQueryResponseType,
@@ -22,6 +20,10 @@ import {
   mapPublicAccount,
   ParsedAccountType,
 } from "../usePublicAccounts";
+import {
+  RECORDS_LIMIT,
+  sensorQueryString,
+} from "@lib/requests/getPublicSensors";
 
 interface UseUserDataInitialDataType {
   user?: ParsedAccountType;

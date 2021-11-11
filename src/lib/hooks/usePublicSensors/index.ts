@@ -1,38 +1,11 @@
-import { supabase } from "@auth/supabase";
 import useSWR from "swr";
 import { definitions } from "@common/types/supabase";
 import { DateValueType } from "@common/interfaces";
 import { IntegrationType } from "@lib/integrationsUtil";
-
-export const RECORDS_LIMIT = 500;
-
-export const sensorQueryString = `
-  id,
-  name,
-  created_at,
-  connection_type,
-  external_id,
-  description,
-  location,
-  latitude,
-  longitude,
-  altitude,
-  category_id,
-  icon_id,
-  user_id,
-  records (
-    recorded_at,
-    measurements
-  ),
-  user:user_id (
-    name,
-    display_name
-  ),
-  category:category_id (
-    id,
-    name
-  )
-`;
+import {
+  getPublicSensors,
+  GetSensorsOptionsType,
+} from "@lib/requests/getPublicSensors";
 
 type SensorType = definitions["sensors"];
 export interface SensorQueryResponseType extends SensorType {
@@ -119,35 +92,30 @@ export const mapPublicSensor = (
   };
 };
 
-export const getPublicSensors = async (): Promise<ParsedSensorType[]> => {
-  const { data, error } = await supabase
-    .from<SensorQueryResponseType>("sensors")
-    .select(sensorQueryString)
-    // FIXME: created_at is not recognized altought it is inherited from the definitions
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    .order("recorded_at", {
-      foreignTable: "records",
-      ascending: false,
-    })
-    .limit(RECORDS_LIMIT, { foreignTable: "records" });
-
-  if (error) throw error;
-  if (!data) return [];
-  const sensors = data?.map(mapPublicSensor);
-
-  return sensors;
-};
+interface usePublicSensorsParamsType {
+  rangeStart: GetSensorsOptionsType["rangeStart"];
+  rangeEnd: GetSensorsOptionsType["rangeEnd"];
+  initialData: ParsedSensorType[] | undefined;
+}
 
 export const usePublicSensors = (
-  initialData?: ParsedSensorType[]
+  {
+    rangeStart,
+    rangeEnd,
+    initialData,
+  }: usePublicSensorsParamsType = {} as usePublicSensorsParamsType
 ): {
   data: ParsedSensorType[];
   error: Error | null;
 } => {
+  const params = ["usePublicSensors", rangeStart, rangeEnd, initialData];
   const { data, error } = useSWR<ParsedSensorType[], Error>(
-    ["usePublicSensors"],
-    () => getPublicSensors(),
+    params,
+    () =>
+      getPublicSensors({
+        rangeStart,
+        rangeEnd,
+      }),
     { initialData }
   );
 

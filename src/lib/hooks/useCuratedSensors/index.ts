@@ -1,14 +1,14 @@
-import {
-  mapPublicSensor,
-  sensorQueryString,
-  RECORDS_LIMIT,
-} from "../usePublicSensors";
+import { mapPublicSensor } from "../usePublicSensors";
 import { supabase } from "@auth/supabase";
 import useSWR from "swr";
 import {
   ParsedSensorType,
   SensorQueryResponseType,
 } from "@lib/hooks/usePublicSensors";
+import {
+  sensorQueryString,
+  RECORDS_LIMIT,
+} from "@lib/requests/getPublicSensors";
 
 const SENSORS_LIMIT = 3;
 
