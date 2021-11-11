@@ -1,6 +1,6 @@
 ---
 name: Custom issue template
-about: Its not a buf nor a feature
+about: Its not a bug nor a feature
 title: "[MISC]"
 labels: question
 assignees: vogelino, dnsos
