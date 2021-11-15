@@ -11,16 +11,16 @@ import {
   getLandingStats,
   LandingStatsReturnType,
 } from "@lib/requests/getLandingStats";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import { FC, useState } from "react";
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   try {
     const [stats, curatedSensors] = await Promise.all([
       getLandingStats(),
       getCuratedSensors(),
     ]);
-    return { props: { stats, curatedSensors } };
+    return { props: { stats, curatedSensors }, revalidate: 60 };
   } catch (error) {
     console.log(error);
     return { notFound: true };
