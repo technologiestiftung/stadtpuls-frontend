@@ -1,0 +1,6 @@
+.activePaginationItem {
+  outline-color: #8330FF;
+  outline-width: 2px;
+  outline-style: solid;
+  outline-offset: -1px;
+}

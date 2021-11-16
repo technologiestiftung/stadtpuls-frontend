@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
+import { Button } from "@components/Button";
 
 interface DataTableRowType {
   id: number;
@@ -126,9 +127,11 @@ export const DataTable: React.FC<DataTableType> = ({ data }) => {
         </tbody>
       </table>
       {data && data.length > numberOfRecordsToDisplay && (
-        <button className='mt-3' onClick={handleLoadMore}>
-          Mehr anzeigen
-        </button>
+        <div className='my-3 flex items-center justify-center'>
+          <Button variant='secondary' onClick={handleLoadMore}>
+            Mehr anzeigen
+          </Button>
+        </div>
       )}
     </div>
   );

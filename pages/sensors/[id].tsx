@@ -18,6 +18,8 @@ import { SensorPageHeaderWithData } from "@components/SensorPageHeader/withData"
 import { definitions } from "@common/types/supabase";
 import { useDownloadQueue } from "@lib/hooks/useDownloadQueue";
 import { downloadCSVString } from "@lib/downloadCsvUtil";
+import { Alert } from "@components/Alert";
+import { MAX_RENDERABLE_VALUES as MAX_RENDERABLE_VALUES_LINE_CHART } from "@components/LinePath";
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -82,12 +84,14 @@ const SensorPage: FC<{
   const { count: recordsCount } = useSensorRecordsCount(sensor.id);
   const {
     records,
+    recordsCount: requestedRecordsCount,
     error: recordsFetchError,
     isLoading: recordsAreLoading,
   } = useSensorRecords({
     sensorId: sensor.id,
     startDateString: currentDatetimeRange.startDateTimeString,
     endDateString: currentDatetimeRange.endDateTimeString,
+    maxRows: MAX_RENDERABLE_VALUES_LINE_CHART,
   });
   const parsedAndSortedRecords = createDateValueArray(records);
 
@@ -178,6 +182,26 @@ const SensorPage: FC<{
               </DropdownMenu>
             </div>
           </div>
+          {requestedRecordsCount &&
+            requestedRecordsCount > MAX_RENDERABLE_VALUES_LINE_CHART && (
+              <Alert
+                type='warning'
+                title='Achtung'
+                message={
+                  <>
+                    Das Diagramm kann maximal{" "}
+                    <mark className='px-1 py-0.5 font-mono font-bold bg-warning bg-opacity-50'>
+                      {MAX_RENDERABLE_VALUES_LINE_CHART}
+                    </mark>{" "}
+                    Datenpunkte darstellen. Im gewählten Zeitraum befinden sich{" "}
+                    <mark className='px-1 py-0.5 font-mono font-bold bg-warning bg-opacity-50'>
+                      {requestedRecordsCount}
+                    </mark>{" "}
+                    Datenpunkte. <b>Die ältesten werden nicht dargestellt.</b>
+                  </>
+                }
+              />
+            )}
           <div
             className={[
               "pt-4 pb-8 mt-6 flex space-between flex-wrap gap-6",

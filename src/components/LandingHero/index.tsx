@@ -17,7 +17,7 @@ export const LandingHero: FC = () => (
           "text-white",
         ].join(" ")}
       >
-        <div>
+        <div className='z-20 lg:z-auto'>
           <h1
             className={[
               "animate-slide-in",
