@@ -74,6 +74,13 @@ export const getPublicSensors = async (
       .from<SensorQueryResponseType>("sensors")
       .select(sensorQueryString)
       .order("created_at", { ascending: false })
+      // FIXME: recorded_at is not recognized altought it is inherited from the definitions
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      .order("recorded_at", {
+        foreignTable: "records",
+        ascending: false,
+      })
       .range(options.rangeStart, options.rangeEnd)
       .limit(RECORDS_LIMIT, { foreignTable: "records" });
 
@@ -88,6 +95,13 @@ export const getPublicSensors = async (
       .from<SensorQueryResponseType>("sensors")
       .select(sensorQueryString)
       .order("created_at", { ascending: false })
+      // FIXME: recorded_at is not recognized altought it is inherited from the definitions
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      .order("recorded_at", {
+        foreignTable: "records",
+        ascending: false,
+      })
       .limit(RECORDS_LIMIT, { foreignTable: "records" });
 
     if (error) throw error;
