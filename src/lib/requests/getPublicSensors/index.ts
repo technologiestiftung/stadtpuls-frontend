@@ -73,7 +73,8 @@ export const getPublicSensors = async (
     const { data, error } = await supabase
       .from<SensorQueryResponseType>("sensors")
       .select(sensorQueryString)
-      // FIXME: created_at is not recognized altought it is inherited from the definitions
+      .order("created_at", { ascending: false })
+      // FIXME: recorded_at is not recognized altought it is inherited from the definitions
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       .order("recorded_at", {
@@ -92,7 +93,8 @@ export const getPublicSensors = async (
     const { data, error } = await supabase
       .from<SensorQueryResponseType>("sensors")
       .select(sensorQueryString)
-      // FIXME: created_at is not recognized altought it is inherited from the definitions
+      .order("created_at", { ascending: false })
+      // FIXME: recorded_at is not recognized altought it is inherited from the definitions
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       .order("recorded_at", {
