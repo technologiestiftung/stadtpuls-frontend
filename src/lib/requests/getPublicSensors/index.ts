@@ -86,7 +86,6 @@ export const getPublicSensors = async (
 
     if (error) throw error;
     if (!data) return [];
-    console.log(data[0].records);
     const sensors = data?.map(mapPublicSensor);
 
     return sensors;
@@ -106,7 +105,6 @@ export const getPublicSensors = async (
 
     if (error) throw error;
     if (!data) return [];
-    console.log(data[0].records);
     const sensors = data?.map(mapPublicSensor);
 
     return sensors;
