@@ -73,18 +73,13 @@ export const getPublicSensors = async (
     const { data, error } = await supabase
       .from<SensorQueryResponseType>("sensors")
       .select(sensorQueryString)
-      // FIXME: created_at is not recognized altought it is inherited from the definitions
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      .order("recorded_at", {
-        foreignTable: "records",
-        ascending: false,
-      })
+      .order("created_at", { ascending: false })
       .range(options.rangeStart, options.rangeEnd)
       .limit(RECORDS_LIMIT, { foreignTable: "records" });
 
     if (error) throw error;
     if (!data) return [];
+    console.log(data[0].records);
     const sensors = data?.map(mapPublicSensor);
 
     return sensors;
@@ -92,17 +87,12 @@ export const getPublicSensors = async (
     const { data, error } = await supabase
       .from<SensorQueryResponseType>("sensors")
       .select(sensorQueryString)
-      // FIXME: created_at is not recognized altought it is inherited from the definitions
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      .order("recorded_at", {
-        foreignTable: "records",
-        ascending: false,
-      })
+      .order("created_at", { ascending: false })
       .limit(RECORDS_LIMIT, { foreignTable: "records" });
 
     if (error) throw error;
     if (!data) return [];
+    console.log(data[0].records);
     const sensors = data?.map(mapPublicSensor);
 
     return sensors;
