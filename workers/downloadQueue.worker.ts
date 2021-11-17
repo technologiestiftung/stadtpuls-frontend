@@ -35,8 +35,14 @@ interface QueueItemType {
   callback: (data: QueueItemType) => void;
 }
 
+const cancellationList: Record<string, boolean> = {};
+
 // eslint-disable-next-line no-undef
 self.addEventListener("message", event => {
+  if (typeof event.data === "number" || typeof event.data === "string") {
+    cancellationList[`${event.data}`] = true;
+    return;
+  }
   void getRecordsCount(event.data).then((totalCount: number) => {
     void getAllRecrodsBySensorId({ ...event.data, totalCount });
   });
@@ -81,6 +87,11 @@ async function getAllRecrodsBySensorId(
   const { id, totalCount, options } = data;
   const max = Math.min(totalCount, MAX_DOWNLOADABLE_RECORDS);
 
+  if (cancellationList[id]) {
+    delete cancellationList[id];
+    return;
+  }
+
   const url = new URL(
     `${process.env.NEXT_PUBLIC_SUPABASE_URL || ""}/rest/v1/records`
   );
@@ -110,6 +121,11 @@ async function getAllRecrodsBySensorId(
       }"`
     );
 
+  if (cancellationList[id]) {
+    delete cancellationList[id];
+    return;
+  }
+
   const aggregatedRecords = [...prevRecords, ...records];
   if (
     aggregatedRecords.length >= totalCount ||
@@ -125,7 +141,7 @@ async function getAllRecrodsBySensorId(
   }
   self.postMessage(
     Object.assign({}, data, {
-      progress: (aggregatedRecords.length / totalCount) * 100,
+      progress: Math.ceil((aggregatedRecords.length / totalCount) * 100),
     })
   );
   return getAllRecrodsBySensorId(data, iterationIndex + 1, aggregatedRecords);

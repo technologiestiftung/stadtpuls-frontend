@@ -31,8 +31,6 @@ describe("getUserTokens utility", () => {
 
     const tokenResponse = await getUserTokens("1234567");
 
-    console.log(tokenResponse);
-
     expect(tokenResponse).toMatchObject(tokens);
 
     server.resetHandlers();

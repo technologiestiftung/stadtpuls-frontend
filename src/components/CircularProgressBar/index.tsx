@@ -26,6 +26,10 @@ export const CircularProgressBar: FC<CircularProgressBarPropType> = ({
       rotation: 0,
       strokeLinecap: "round",
       pathTransitionDuration: 0.3,
+      pathTransition:
+        percentage === 0
+          ? "none"
+          : "stroke-dashoffset 0.5s cubic-bezier(.13,.67,.17,.99) 0s",
       pathColor: colors.purple,
       textColor: colors.blue,
       trailColor: colors.gray[50],

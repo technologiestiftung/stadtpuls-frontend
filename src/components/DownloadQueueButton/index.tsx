@@ -20,7 +20,7 @@ export const DownloadQueueButton: FC<DownloadQueueButtonPropType> = ({
     (acc, curr) => acc + curr.progress,
     0
   );
-  const progress = Math.round(progressTotal / queueArray.length);
+  const progress = Math.round(progressTotal / queueArray.length) || 0;
 
   return (
     <DropdownMenu

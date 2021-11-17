@@ -32,12 +32,14 @@ interface DownloadQueueContextType {
   queue: DownloadQueueType;
   queueSize: number;
   pushToQueue: PushToQueueSignature;
+  removeFromQueue: (id: string) => void;
 }
 
 const defaultValue = {
   queue: {},
   queueSize: 0,
   pushToQueue: () => undefined,
+  removeFromQueue: () => undefined,
 };
 
 const DownloadQueueContext =
@@ -62,14 +64,16 @@ export const DownloadQueueProvider: FC = ({ children }) => {
           [data.id]: { ...existingEl, ...data },
         };
       });
-      if (data.progress === 100) {
+
+      if (data.progress >= 100) {
         setQueue(currentQueue => {
           const currentItem = currentQueue[data.id];
           if (!currentItem) return currentQueue;
           typeof currentItem?.callback === "function" &&
             void currentItem.callback(data);
-          delete currentQueue[data.id];
-          return currentQueue;
+          const newQueue = { ...currentQueue };
+          delete newQueue[data.id];
+          return newQueue;
         });
       }
     };
@@ -106,6 +110,15 @@ export const DownloadQueueProvider: FC = ({ children }) => {
             options,
             totalCount,
           });
+        },
+        removeFromQueue: id => {
+          setQueue(currentQueue => {
+            const newQueue = { ...currentQueue };
+            if (!newQueue[id]) return currentQueue;
+            delete newQueue[id];
+            return newQueue;
+          });
+          workerRef.current?.postMessage(id);
         },
       }}
     >
