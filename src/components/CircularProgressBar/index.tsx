@@ -27,7 +27,7 @@ export const CircularProgressBar: FC<CircularProgressBarPropType> = ({
       strokeLinecap: "round",
       pathTransitionDuration: 0.3,
       pathColor: colors.purple,
-      textColor: colors.black,
+      textColor: colors.blue,
       trailColor: colors.gray[50],
       backgroundColor: colors.white,
     })}

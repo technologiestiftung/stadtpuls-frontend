@@ -1,6 +1,7 @@
 import { CircularProgressBar } from "@components/CircularProgressBar";
 import { DropdownMenu } from "@components/DropdownMenu";
 import { DownloadQueueType } from "@lib/hooks/useDownloadQueue";
+import ArrowDownWithHalfSquare from "../../../public/images/icons/16px/arrowDownWithHalfSquare.svg";
 import { FC } from "react";
 
 interface DownloadQueueButtonPropType {
@@ -44,11 +45,12 @@ export const DownloadQueueButton: FC<DownloadQueueButtonPropType> = ({
         ),
         href: `/sensors/${id}`,
       }))}
+      buttonClassNames='hover:bg-gray-50 transition-all rounded-full transform hover:scale-110 active:scale-90'
     >
       <span
         className={[
           "relative h-10 overflow-hidden",
-          "transition-all float-left",
+          "transition-all float-left group",
           isVisible ? "w-10" : "w-0",
         ].join(" ")}
         aria-hidden={!isVisible}
@@ -62,7 +64,11 @@ export const DownloadQueueButton: FC<DownloadQueueButtonPropType> = ({
               : "-translate-x-full opacity-0 delay-100",
           ].join(" ")}
         >
-          <CircularProgressBar percentage={progress} />
+          <CircularProgressBar percentage={progress}>
+            <span className='text-blue group-hover:text-purple transition-colors'>
+              <ArrowDownWithHalfSquare />
+            </span>
+          </CircularProgressBar>
         </div>
       </span>
     </DropdownMenu>

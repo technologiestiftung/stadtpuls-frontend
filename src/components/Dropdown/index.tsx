@@ -4,12 +4,14 @@ import { FC, ReactNode, useState } from "react";
 interface DropdownPropType {
   dropdownContent: ReactNode | ReactNode[];
   position?: "left" | "right";
+  buttonClassNames?: string;
 }
 
 export const Dropdown: FC<DropdownPropType> = ({
   children,
   dropdownContent,
   position = "left",
+  buttonClassNames = "",
 }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const ref = useClickOutside<HTMLButtonElement>(() => setIsVisible(false));
@@ -33,7 +35,8 @@ export const Dropdown: FC<DropdownPropType> = ({
     <div className='inline-block relative'>
       <button
         className={[
-          "cursor-pointer rounded-none",
+          buttonClassNames,
+          "cursor-pointer",
           "focus:ring-2 focus:outline-none focus:ring-green",
         ].join(" ")}
         onClick={evt => {
