@@ -8,7 +8,7 @@ import {
   useContext,
 } from "react";
 
-interface QueueItemType {
+export interface QueueItemType {
   id: string;
   title: string;
   progress: number;
@@ -26,13 +26,17 @@ type PushToQueueSignature = (config: {
   callback?: (data: QueueItemType) => void;
 }) => void;
 
+export type DownloadQueueType = Record<string, QueueItemType>;
+
 interface DownloadQueueContextType {
-  queue: Record<string, QueueItemType>;
+  queue: DownloadQueueType;
+  queueSize: number;
   pushToQueue: PushToQueueSignature;
 }
 
 const defaultValue = {
   queue: {},
+  queueSize: 0,
   pushToQueue: () => undefined,
 };
 
@@ -79,6 +83,7 @@ export const DownloadQueueProvider: FC = ({ children }) => {
     <DownloadQueueContext.Provider
       value={{
         queue,
+        queueSize: Object.values(queue).filter(Boolean).length || 0,
         pushToQueue: ({
           id,
           title,

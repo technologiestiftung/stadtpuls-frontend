@@ -121,5 +121,8 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "proxy": "http://localhost:4000"
+  "proxy": "http://localhost:4000",
+  "msw": {
+    "workerDirectory": "public"
+  }
 }
