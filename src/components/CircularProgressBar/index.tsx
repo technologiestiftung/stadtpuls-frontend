@@ -25,7 +25,6 @@ export const CircularProgressBar: FC<CircularProgressBarPropType> = ({
     styles={buildStyles({
       rotation: 0,
       strokeLinecap: "round",
-      pathTransitionDuration: 0.3,
       pathTransition:
         percentage === 0
           ? "none"
