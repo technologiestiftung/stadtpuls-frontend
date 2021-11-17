@@ -6,24 +6,15 @@ import { UserInfoWithData } from "@components/UserInfoHeader/withData";
 import { SensorsGrid } from "@components/SensorsGrid";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { useUserData } from "@lib/hooks/useUserData";
-import { getUserNames } from "@lib/requests/getUserNames";
 
 export const getServerSideProps: GetServerSideProps = async context => {
   try {
     const username = context.query.username;
     if (!username || Array.isArray(username)) return { notFound: true };
-
-    const allUsernames = await getUserNames();
-    const parsedUsername = allUsernames.find(
-      name => name.toLowerCase() === username.toLowerCase()
-    );
-
-    if (!parsedUsername) return { notFound: true };
-
-    const accountData = await getAccountDataByUsername(parsedUsername);
+    const accountData = await getAccountDataByUsername(username);
     return {
       props: {
-        account: { ...accountData, username: parsedUsername },
+        account: { ...accountData, username },
         error: null,
       },
     };
