@@ -64,7 +64,7 @@ exports[`Storyshots UI Elements/CircularProgressBar Default 1`] = `
                 "strokeLinecap": "round",
                 "transform": "rotate(0turn)",
                 "transformOrigin": "center center",
-                "transitionDuration": "0.3s",
+                "transition": "none",
               }
             }
           />
