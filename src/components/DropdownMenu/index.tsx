@@ -1,6 +1,6 @@
 import { Dropdown } from "@components/Dropdown";
 import Link from "next/link";
-import { FC, HTMLProps, ReactNode } from "react";
+import { useEffect, FC, HTMLProps, ReactNode } from "react";
 
 interface ItemType {
   id: string | number;
@@ -45,41 +45,50 @@ export const DropdownMenu: FC<DropdownMenuPropType> = ({
   items,
   position = "left",
   buttonClassNames = "",
-}) => (
-  <Dropdown
-    position={position}
-    buttonClassNames={buttonClassNames}
-    dropdownContent={
-      <div>
-        {items.map(item => {
-          const menuItemStyles = getItemStyles(item);
-          if (item.disabled) {
-            return (
-              <span key={item.id} className={menuItemStyles}>
-                {item.title}
-              </span>
-            );
-          }
-          if ("href" in item) {
-            return (
-              <Link key={item.id} href={item.href}>
-                <a className={menuItemStyles}>{item.title}</a>
-              </Link>
-            );
-          }
-          return (
-            <button
-              onClick={item.onClick}
-              key={item.id}
-              className={menuItemStyles}
-            >
-              {item.title}
-            </button>
-          );
-        })}
-      </div>
+}) => {
+  useEffect(() => {
+    if (items.length === 0 && "activeElement" in document) {
+      (document.activeElement as HTMLElement)?.click();
+      (document.activeElement as HTMLElement)?.blur();
     }
-  >
-    {children}
-  </Dropdown>
-);
+  }, [items]);
+
+  return (
+    <Dropdown
+      position={position}
+      buttonClassNames={buttonClassNames}
+      dropdownContent={
+        <div>
+          {items.map(item => {
+            const menuItemStyles = getItemStyles(item);
+            if (item.disabled) {
+              return (
+                <span key={item.id} className={menuItemStyles}>
+                  {item.title}
+                </span>
+              );
+            }
+            if ("href" in item) {
+              return (
+                <Link key={item.id} href={item.href}>
+                  <a className={menuItemStyles}>{item.title}</a>
+                </Link>
+              );
+            }
+            return (
+              <button
+                onClick={item.onClick}
+                key={item.id}
+                className={menuItemStyles}
+              >
+                {item.title}
+              </button>
+            );
+          })}
+        </div>
+      }
+    >
+      {children}
+    </Dropdown>
+  );
+};

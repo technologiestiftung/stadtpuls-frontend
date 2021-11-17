@@ -2,14 +2,17 @@ import { CircularProgressBar } from "@components/CircularProgressBar";
 import { DropdownMenu } from "@components/DropdownMenu";
 import { DownloadQueueType } from "@lib/hooks/useDownloadQueue";
 import ArrowDownWithHalfSquare from "../../../public/images/icons/16px/arrowDownWithHalfSquare.svg";
+import CrossShort from "../../../public/images/icons/16px/crossShort.svg";
 import { FC } from "react";
 
 interface DownloadQueueButtonPropType {
   queue?: DownloadQueueType;
+  onDownloadCancel?: (id: string) => void;
 }
 
 export const DownloadQueueButton: FC<DownloadQueueButtonPropType> = ({
   queue = {},
+  onDownloadCancel = () => undefined,
 }) => {
   const queueArray = Object.values(queue).filter(Boolean);
   const isVisible = queueArray.length > 0;
@@ -25,8 +28,8 @@ export const DownloadQueueButton: FC<DownloadQueueButtonPropType> = ({
       items={queueArray.map(({ id, title, progress }) => ({
         id,
         title: (
-          <span className='flex gap-8 items-center content-center'>
-            <span>{title}</span>
+          <span className='grid grid-cols-[1fr,auto,auto] w-80 gap-4 items-center content-center'>
+            <span className='overflow-ellipsis truncate'>{title}</span>
             <span className='flex gap-2 items-center content-center'>
               <span className='h-1 rounded w-10 bg-gray-100 inline-block relative'>
                 <span
@@ -37,10 +40,23 @@ export const DownloadQueueButton: FC<DownloadQueueButtonPropType> = ({
                   style={{ width: `${progress}%` }}
                 />
               </span>
-              <span className='ml-1 text-xs leading-[10px] font-mono text-gray-400'>
+              <span className='ml-1 text-xs leading-[10px] w-6 font-mono text-gray-400'>
                 {progress}%
               </span>
             </span>
+            <button
+              className={[
+                "rounded-full focus-ring text-gray-500 hover:text-purple transition-colors",
+                "relative z-10",
+              ].join(" ")}
+              onClick={evt => {
+                evt.preventDefault();
+                evt.stopPropagation();
+                onDownloadCancel(id);
+              }}
+            >
+              <CrossShort />
+            </button>
           </span>
         ),
         href: `/sensors/${id}`,
