@@ -11,11 +11,10 @@ export const getServerSideProps: GetServerSideProps = async context => {
   try {
     const username = context.query.username;
     if (!username || Array.isArray(username)) return { notFound: true };
-
     const accountData = await getAccountDataByUsername(username);
     return {
       props: {
-        account: { ...accountData, username },
+        account: { ...accountData },
         error: null,
       },
     };

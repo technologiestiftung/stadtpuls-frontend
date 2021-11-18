@@ -1,4 +1,7 @@
-import { RECORDS_LIMIT, sensorQueryString } from "@lib/hooks/usePublicSensors";
+import {
+  RECORDS_LIMIT,
+  sensorQueryString,
+} from "@lib/requests/getPublicSensors";
 import { supabase } from "@auth/supabase";
 import useSWR from "swr";
 import { definitions } from "@common/types/supabase";

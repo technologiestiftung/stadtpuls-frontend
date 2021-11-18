@@ -5,7 +5,7 @@ import {
   ParsedAccountType,
 } from "@lib/hooks/usePublicAccounts";
 import { supabase } from "@auth/supabase";
-import { RECORDS_LIMIT } from "@lib/hooks/usePublicSensors";
+import { RECORDS_LIMIT } from "@lib/requests/getPublicSensors";
 
 export interface GetRecordsOptionsType {
   startDate?: string;
@@ -18,7 +18,7 @@ export const getAccountDataByUsername = async (
   const { data: accountData, error } = await supabase
     .from<AccountQueryResponseType>("user_profiles")
     .select(accountQueryString)
-    .eq("name", username)
+    .ilike("name", username)
     // FIXME: created_at is not recognized altought it is inherited from the definitions
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
