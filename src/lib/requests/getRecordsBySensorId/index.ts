@@ -1,9 +1,11 @@
 import { supabase } from "@auth/supabase";
 import { definitions } from "@common/types/supabase";
 
-const MAX_DOWNLOADABLE_RECORDS = 1000000;
-const NEXT_PUBLIC_SUPABASE_MAX_ROWS = 5;
-
+const MAX_DOWNLOADABLE_RECORDS = 1e6;
+const maxRows = parseInt(
+  `${process.env.NEXT_PUBLIC_SUPABASE_MAX_ROWS || "1000"}`,
+  10
+);
 export interface GetRecordsOptionsType {
   startDate?: string;
   endDate?: string;
@@ -24,21 +26,18 @@ async function getAllRecrodsBySensorId(
     .select("*")
     .eq("sensor_id", sensorId)
     .order("recorded_at", { ascending: false })
-    .range(
-      prevRecords.length,
-      prevRecords.length + NEXT_PUBLIC_SUPABASE_MAX_ROWS
-    );
+    .range(prevRecords.length, prevRecords.length + maxRows);
 
   if (error) throw error;
   if (!records)
     throw new Error(
       `No records found for sensor ID ${sensorId} at range "${
         prevRecords.length
-      },${prevRecords.length + NEXT_PUBLIC_SUPABASE_MAX_ROWS}"`
+      },${prevRecords.length + maxRows}"`
     );
 
   const aggregatedRecords = [...prevRecords, ...records];
-  if (records.length <= NEXT_PUBLIC_SUPABASE_MAX_ROWS) return aggregatedRecords;
+  if (records.length <= maxRows) return aggregatedRecords;
   if (aggregatedRecords.length >= MAX_DOWNLOADABLE_RECORDS)
     return aggregatedRecords;
   return getAllRecrodsBySensorId(sensorId, aggregatedRecords);

@@ -1,10 +1,9 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import {
   CircularProgressbarWithChildren,
   buildStyles,
 } from "react-circular-progressbar";
 import { CircularProgressbarProps } from "react-circular-progressbar/dist/types";
-import { ReactNode } from "react-transition-group/node_modules/@types/react";
 import colors from "../../style/colors";
 
 export interface CircularProgressBarPropType
@@ -14,7 +13,7 @@ export interface CircularProgressBarPropType
 }
 
 export const CircularProgressBar: FC<CircularProgressBarPropType> = ({
-  percentage = 66,
+  percentage = 0,
   children = "",
   ...rest
 }) => (

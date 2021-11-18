@@ -19,5 +19,5 @@ require('esbuild').build({
   .then(() => { console.log("Build succeeded.") })
   .catch((e) => {
     console.log("Error building:", e.message);
-    process.exisst(1)
+    process.exit(1)
   });
