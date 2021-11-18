@@ -14,10 +14,6 @@ exports[`Storyshots UI Elements/Dropdown Default 1`] = `
       Click me
     </a>
   </button>
-  <span
-    aria-hidden={true}
-    className="absolute top-full w-3 h-3 bg-white border border-gray-200 shadow transition transform -translate-x-1/2 rotate-45 translate-y-2 left-1/2 opacity-0"
-  />
   <section
     className="absolute top-full transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 transform-x-3 left-0 opacity-0 pointer-events-none"
   >

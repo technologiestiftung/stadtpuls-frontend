@@ -49,36 +49,28 @@ export const DropdownMenu: FC<DropdownMenuPropType> = ({
   <Dropdown
     position={position}
     buttonClassNames={buttonClassNames}
-    dropdownContent={
-      <div>
-        {items.map(item => {
-          const menuItemStyles = getItemStyles(item);
-          if (item.disabled) {
-            return (
-              <span key={item.id} className={menuItemStyles}>
-                {item.title}
-              </span>
-            );
-          }
-          if ("href" in item) {
-            return (
-              <Link key={item.id} href={item.href}>
-                <a className={menuItemStyles}>{item.title}</a>
-              </Link>
-            );
-          }
-          return (
-            <button
-              onClick={item.onClick}
-              key={item.id}
-              className={menuItemStyles}
-            >
-              {item.title}
-            </button>
-          );
-        })}
-      </div>
-    }
+    dropdownContent={items.map(item => {
+      const menuItemStyles = getItemStyles(item);
+      if (item.disabled) {
+        return (
+          <span key={item.id} className={menuItemStyles}>
+            {item.title}
+          </span>
+        );
+      }
+      if ("href" in item) {
+        return (
+          <Link key={item.id} href={item.href}>
+            <a className={menuItemStyles}>{item.title}</a>
+          </Link>
+        );
+      }
+      return (
+        <button onClick={item.onClick} key={item.id} className={menuItemStyles}>
+          {item.title}
+        </button>
+      );
+    })}
   >
     {children}
   </Dropdown>

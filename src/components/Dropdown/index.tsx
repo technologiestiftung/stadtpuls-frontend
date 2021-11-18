@@ -1,5 +1,5 @@
 import useClickOutside from "@lib/hooks/useClickOutside";
-import { FC, ReactNode, useState } from "react";
+import { Children, FC, ReactNode, useState } from "react";
 
 interface DropdownPropType {
   dropdownContent: ReactNode | ReactNode[];
@@ -13,8 +13,9 @@ export const Dropdown: FC<DropdownPropType> = ({
   position = "left",
   buttonClassNames = "",
 }) => {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-  const ref = useClickOutside<HTMLButtonElement>(() => setIsVisible(false));
+  const [isOpened, setIsOpened] = useState<boolean>(false);
+  const ref = useClickOutside<HTMLDivElement>(() => setIsOpened(false));
+  const isVisible = Boolean(isOpened && Children.count(dropdownContent) > 0);
   const dropdownStyles = [
     "absolute top-full transform transition whitespace-nowrap pt-3",
     "w-auto max-width-md transform-y-4 transform-x-3",
@@ -27,12 +28,12 @@ export const Dropdown: FC<DropdownPropType> = ({
   const caretStyles = [
     "absolute top-full w-3 h-3 bg-white border border-gray-200 shadow transition",
     "transform -translate-x-1/2 rotate-45 translate-y-2 left-1/2",
-    isVisible ? "opacity-100" : "opacity-0",
   ]
     .filter(Boolean)
     .join(" ");
+
   return (
-    <div className='inline-block relative'>
+    <div className='inline-block relative' ref={ref}>
       <button
         className={[
           buttonClassNames,
@@ -42,13 +43,12 @@ export const Dropdown: FC<DropdownPropType> = ({
         onClick={evt => {
           evt.preventDefault();
           evt.stopPropagation();
-          setIsVisible(!isVisible);
+          setIsOpened(!isOpened);
         }}
-        ref={ref}
       >
         {children}
       </button>
-      <span aria-hidden className={caretStyles} />
+      {isVisible && <span aria-hidden className={caretStyles} />}
       <section className={dropdownStyles}>
         <div className='bg-white border border-gray-200 shadow'>
           {dropdownContent}

@@ -3,7 +3,7 @@ import { DropdownMenu } from "@components/DropdownMenu";
 import { DownloadQueueType } from "@lib/hooks/useDownloadQueue";
 import ArrowDownWithHalfSquare from "../../../public/images/icons/16px/arrowDownWithHalfSquare.svg";
 import CrossShort from "../../../public/images/icons/16px/crossShort.svg";
-import { FC } from "react";
+import { useEffect, FC } from "react";
 
 interface DownloadQueueButtonPropType {
   queue?: DownloadQueueType;
@@ -15,12 +15,18 @@ export const DownloadQueueButton: FC<DownloadQueueButtonPropType> = ({
   onDownloadCancel = () => undefined,
 }) => {
   const queueArray = Object.values(queue).filter(Boolean);
-  const isVisible = queueArray.length > 0;
   const progressTotal = queueArray.reduce(
     (acc, curr) => acc + curr.progress,
     0
   );
   const progress = Math.round(progressTotal / queueArray.length) || 0;
+  const isVisible = progress > 0 && progress < 100;
+
+  useEffect(() => {
+    if (progress === 0 && "activeElement" in document) {
+      (document.activeElement as HTMLElement).blur();
+    }
+  }, [progress]);
 
   return (
     <DropdownMenu
