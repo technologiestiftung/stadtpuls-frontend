@@ -73,6 +73,16 @@ export const Footer: React.FC = () => {
           <ul className='flex items-center mt-2 sm:mt-0'>
             <li>
               <a
+                href='/docs/terms'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-sm text-gray-700 focus-offset'
+              >
+                Nutzungsbedingungen
+              </a>
+            </li>
+            <li className='ml-4'>
+              <a
                 href='https://www.technologiestiftung-berlin.de/de/impressum/'
                 target='_blank'
                 rel='noopener noreferrer'
