@@ -65,7 +65,7 @@ export const DownloadQueueProvider: FC = ({ children }) => {
         };
       });
 
-      if (data.progress >= 100) {
+      if (data.progress >= 100 && !!data.result) {
         setQueue(currentQueue => {
           const currentItem = currentQueue[data.id];
           if (!currentItem) return currentQueue;

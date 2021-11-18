@@ -129,7 +129,8 @@ const SensorPage: FC<{
         title: CSVTitle,
         totalCount: recordsCount || 0,
         options,
-        callback: ({ result }) => result && downloadCSVString(result, CSVTitle),
+        callback: ({ title, result }) =>
+          result && downloadCSVString(result, title),
       });
     },
     [
