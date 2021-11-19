@@ -98,8 +98,18 @@ exports[`Storyshots Layout/Footer Default 1`] = `
         </p>
       </div>
       <ul
-        className="flex items-center mt-2 sm:mt-0"
+        className="flex items-center mt-2 sm:mt-0 flex-wrap gap-x-4 gap-y-2"
       >
+        <li>
+          <a
+            className="text-sm text-gray-700 focus-offset"
+            href="/docs/terms"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Nutzungsbedingungen
+          </a>
+        </li>
         <li>
           <a
             className="text-sm text-gray-700 focus-offset"
@@ -110,9 +120,7 @@ exports[`Storyshots Layout/Footer Default 1`] = `
             Impressum
           </a>
         </li>
-        <li
-          className="ml-4"
-        >
+        <li>
           <a
             className="text-sm text-gray-700 focus-offset"
             href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
