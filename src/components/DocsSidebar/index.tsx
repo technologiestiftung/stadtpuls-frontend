@@ -28,6 +28,10 @@ const infoPages: PageType[] = [
     title: "Changelog",
     path: "/docs/changelog",
   },
+  {
+    title: "Nutzungsbedingungen",
+    path: "/docs/terms",
+  },
 ];
 
 const docsPages: PageType[] = [

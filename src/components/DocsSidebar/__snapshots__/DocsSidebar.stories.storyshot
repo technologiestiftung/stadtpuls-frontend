@@ -69,6 +69,18 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
               Changelog
             </a>
           </li>
+          <li
+            className="mb-3"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/docs/terms"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Nutzungsbedingungen
+            </a>
+          </li>
         </ul>
         <h4
           className="font-bold text-xl 2xl:text-2xl mb-2"
