@@ -113,9 +113,9 @@ const SensorPage: FC<{
             sensor.id
           }-all-data`
         : `${moment
-            .parseZone(currentDatetimeRange.startDateTimeString)
+            .parseZone(currentStartDateTimeString)
             .format("YYYY-MM-DD")}-to-${moment
-            .parseZone(currentDatetimeRange.endDateTimeString)
+            .parseZone(currentEndDateTimeString)
             .format("YYYY-MM-DD")}-sensor-${sensor.id}`;
       pushToQueue({
         id: sensor.id,
@@ -127,8 +127,8 @@ const SensorPage: FC<{
       });
     },
     [
-      currentDatetimeRange.endDateTimeString,
-      currentDatetimeRange.startDateTimeString,
+      currentEndDateTimeString,
+      currentStartDateTimeString,
       pushToQueue,
       recordsCount,
       sensor.id,
