@@ -27,3 +27,6 @@ yarn-error.log*
 .vercel
 .tsconfig-lint.json
 storybook-static
+
+# Web Workers
+public/workers

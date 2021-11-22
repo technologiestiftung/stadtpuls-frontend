@@ -21,6 +21,23 @@ window.IntersectionObserver = jest.fn(() => ({
   disconnect,
 }));
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+window.Worker = class Worker {
+  url: string;
+  onmessage: (msg: string) => void;
+  onerror: () => void;
+  constructor(stringUrl: string) {
+    this.url = stringUrl;
+    this.onmessage = () => undefined;
+    this.onerror = () => undefined;
+  }
+
+  postMessage(msg: string): void {
+    this.onmessage(msg);
+  }
+};
+
 beforeAll(() => {
   // Enable the mocking in tests.
   server.listen();

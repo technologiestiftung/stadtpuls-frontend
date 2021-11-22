@@ -8,7 +8,6 @@ module.exports = {
 	endOfLine: "lf",
 	htmlWhitespaceSensitivity: "css",
 	insertPragma: false,
-	jsxBracketSameLine: false,
 	printWidth: 80,
 	proseWrap: "preserve",
 	quoteProps: "as-needed",

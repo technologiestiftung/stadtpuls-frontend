@@ -520,7 +520,11 @@ exports[`Storyshots UI Elements/AuthLink Logged Out 1`] = `
         fill="currentColor"
       />
     </svg>
-    Login
+    <span
+      className="hidden xs:inline-block"
+    >
+      Login
+    </span>
   </a>
 </span>
 `;

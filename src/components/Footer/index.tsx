@@ -70,7 +70,17 @@ export const Footer: React.FC = () => {
               &copy; {new Date().getFullYear()} Technologiestiftung Berlin
             </p>
           </div>
-          <ul className='flex items-center mt-2 sm:mt-0'>
+          <ul className='flex items-center mt-2 sm:mt-0 flex-wrap gap-x-4 gap-y-2'>
+            <li>
+              <a
+                href='/docs/terms'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-sm text-gray-700 focus-offset'
+              >
+                Nutzungsbedingungen
+              </a>
+            </li>
             <li>
               <a
                 href='https://www.technologiestiftung-berlin.de/de/impressum/'
@@ -81,7 +91,7 @@ export const Footer: React.FC = () => {
                 Impressum
               </a>
             </li>
-            <li className='ml-4'>
+            <li>
               <a
                 href='https://www.technologiestiftung-berlin.de/de/datenschutz/'
                 target='_blank'

@@ -3,3 +3,4 @@ out
 *.setup.js
 .*.js
 storybook-static
+public

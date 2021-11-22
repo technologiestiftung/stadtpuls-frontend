@@ -1,0 +1,103 @@
+---
+layout: 'docs'
+title: 'Neuen TTN-Sensor anlegen'
+metaTitle: 'Neuer TTN-Sensor'
+metaDescription: 'Folge dieser einfachen Schritt-für-Schritt-Anleitung, um einen neuen TTN-Sensor auf Stadtpuls hinzuzufügen.'
+---
+  
+<p className="lead">
+  Wie du deine TTN-Sensoren mit Stadtpuls reden lässt.
+</p>
+
+Bislang verfügt *Stadtpuls* über zwei verschiedene Integrationsmöglichkeiten:
+1. die TTN-Integration von The Things Network
+2. eine HTTP-Integration mittels RESTful-API
+
+Du hast bereits eigene Sensoren bei <a href="https://www.thethingsnetwork.org/" target="_blank">The Things Network</a>? Fantastisch! In dieser Sektion erklären wir wie du deinem Account Leben einhauchen und deine TTN-Sensoren in nur wenigen Minuten zu *Stadtpuls* hinzufügen kannst. 
+
+Du hast keine Ahnung was *The Things Network* sein soll möchtest aber trotzdem einen Sensor auf *Stadtpuls* registrieren? Dann ist unsere <a href="/docs/http-sensor">HTTP-Integration</a> vielleicht ein guter Start für dich.
+
+## TTN-Sensor zu Stadtpuls hinzufügen
+In dieser Sektion erklären wir, wie du deinem Account einen neuen Sensor mittels TTN-Integration hinzufügen kannst. Klicke dazu in der Menüleiste oben rechts auf dein **Account-Icon** und dann auf **Neuer Sensor**. 
+Dir wird nun die Eingabemaske für den neuen Sensor angezeigt. 
+   <figure>
+  <img style={{maxHeight: 400, border: '1px solid rgba(0, 0, 0, 0.05)'}}
+    src="/images/newDeviceTTN.png"
+    alt="neuen Sensor hinzufügen"
+  />
+    <figcaption>
+    Eingabemaske, um einen neuen Sensor auf <em>Stadtpuls</em> hinzuzufügen
+  </figcaption>
+  </figure>
+
+Wähle als Typ der Integration **TTN** aus und trage alle weiteren Informationen in das Formular ein. Keine Angst! Du kannst alle Angaben wie **Name**, **Beschreibung**, **Standort** und **Kategorie** deines Sensors nachträglich ändern und anpassen.
+
+### Die richtige Sensor-ID 
+Um deine TTN-Sensoren mit *Stadtpuls* erfolgreich verknüpfen zu können ist es wichtig, dass du als **Device-ID** die exakt gleiche Device-ID wie die aus deiner TTN-Applikation nutzt.
+Diese Device-ID findest du im persönlichen Account auf <a href="https://www.thethingsnetwork.org/" target="_blank">The Things Network</a>, nicht auf *Stadtpuls*.
+Ein kleines Beispiel: dein Sensor heißt in deiner TTN-Konsole `node-temp-001`. Demnach lautet deine Device-ID in Stadtpuls ebenfalls `node-temp-001`. Klicke nun auf **Hinzufügen**.
+
+Hurray, how easy was that! Du hast deinem Account einen neuen Sensor hinzugefügt.
+
+Damit Dein TTN-Sensor mit jedem Messwert automatisch einen POST-Request an unsere *Stadtpuls* API stellt und die Sensormesswerte in unserer Datenbank ankommen, muss nun noch der **TTN-Webhook** eingerichtet werden.
+
+## TTN-Webhook einrichten
+*Die nachfolgende Dokumentation basiert auf der neuen **The Things Stack Community Edition**, auch TTN V3 genannt. Stadtpuls funktioniert zwar auch mit dem alten TTN Stack (V2), unterstützt aber in der Doku und der weiteren Entwicklung ausschließlich TTN V3.*
+
+Die Konfiguration der Webhook-Integration ist kein Hexenwerk und schnell erledigt.
+First things first:
+
+1. Logge dich auf <a href="https://www.thethingsnetwork.org/" target="_blank">https://www.thethingsnetwork.org/</a> in deinen TTN-Account ein
+2. Navigiere zu deiner TTN-Applikation, die du mit Stadtpuls verknüpfen möchtest
+3. In der linken Seitenleiste siehst du einen Menüpunkt namens **Integrations**. Klicke darauf, um das Dropdown-Menü zu öffnen und klicke anschließend auf **Webhooks**
+
+Dort angekommen, kannst du einen neuen TTN-Webook für deine TTN-Applikation einrichten. Klicke dazu auf **Add Webhook** und wähle **Custom Webhook** aus. 
+
+### Webhook Parameter
+
+Die **Webhook ID**, respektive der Name deines Webhooks, ist frei wählbar und ganz dir überlassen. Das **Webhook format** ist JSON.
+
+&#x1f4a1; Was beim TTN V3 Stack der Webhook ist, war beim TTN V2 Stack die HTTP-Integration. Die Funktionsweise ist die gleiche: sowohl die HTTP-Integration als auch der Webhook können *POST* und *GET* Operationen über HTTP an einem bestimmten Endpoint ausführen.
+
+Unter den Endpoint Settings muss nun der API-Endpoint konfiguriert werden. In unserem Falle nutzen wir als **Base URL** des Endpoints die RESTful API von Stadtpuls: 
+
+```shell
+https://api.stadtpuls.com/
+```
+
+Wir übergeben der API jedoch noch eine zusätzliche Information – **Additional headers** mit dem Namen *authorization* im Header: nämlich einen Authorizierungs-Token.
+Navigiere zu deinem Stadtpuls-Account, klicke auf **Tokens** und erstelle dir einen neuen Token für deinen Sensor.
+
+**&#x26a0; Wichtig** kopiere dir den Token in deine Zwischenablage!
+
+   <figure>
+  <img style={{maxHeight: 400, border: '1px solid rgba(0, 0, 0, 0.05)'}}
+    src="/images/ttnWebhook2.png"
+    alt="Konfiguration der TTN-Webhook-Integration"
+  />
+    <figcaption>
+    So sieht die Konfiguration der TTN-Webhook-Integration aus
+    </figcaption>
+  </figure>
+
+Füge diesen Token mit dem Zusatz `Bearer ` am Anfang des Textes in das Eingabefeld. Solltest du deinen Token verloren haben, kannst du dir in deinem Account einen neuen Token generieren lassen. 
+
+Schließlich müssen wir dem Webhook noch mitteilen, bei welcher Art von Events er getriggert werden soll. In unserem Fall möchten wir bei jedem Uplink, also bei jedem Datenpaket, welches in der TTN-Applikation ankommt, einen POST-Request auf unsere Stadtpuls-API ausführen. Der Endpoint dafür lautet
+
+```shell
+/api/v2/integrations/ttn/v3
+```
+
+   <figure>
+  <img style={{maxHeight: 400, border: '1px solid rgba(0, 0, 0, 0.05)'}}
+    src="/images/ttnMessages.png"
+    alt="Konfiguration der TTN-Webhook-Integration"
+  />
+    <figcaption>
+    Webhook wird bei Uplinks der Sensoren getriggert
+    </figcaption>
+  </figure>
+
+Hurray! Du hast TTN erfolgreich mit Stadtpuls verknüpft.
+Damit sollten künftig alle Messwerte deines Sensors auf *Stadtpuls* sichtbar sein.
+
