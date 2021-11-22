@@ -15,7 +15,7 @@ export const BetaBanner: FC = () => {
     <div className='bg-blue text-white relative' role='alert'>
       <div
         className={[
-          "container max-w-8xl mx-auto px-4 py-2 flex",
+          "container max-w-8xl mx-auto p-4 flex",
           "flex-wrap lg:flex-nowrap gap-x-4 gap-y-2 items-start",
         ].join(" ")}
       >
