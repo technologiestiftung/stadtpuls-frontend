@@ -28,11 +28,13 @@ export const BetaBanner: FC = () => {
           BETA
         </span>
         <p className='max-w-none opacity-90 text-sm sm:text-base'>
-          Stadtpuls befindet sich noch in der Betaphase und kann Fehler enthalten oder es kann Datenverlust auftreten. Die Benutzung erfolgt auf eigene Gefahr.
+          Stadtpuls befindet sich noch in der Betaphase und kann Fehler
+          enthalten oder es kann Datenverlust auftreten. Die Benutzung erfolgt
+          auf eigene Gefahr.
         </p>
         <button
           className={[
-            "absolute right-2 top-1",
+            "absolute right-2 top-3",
             "text-green hover:text-purple transition",
             "hover:rotate-180 p-2 rounded-full focus-offset",
           ].join(" ")}
