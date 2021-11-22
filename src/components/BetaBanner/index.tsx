@@ -1,7 +1,15 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 export const BetaBanner: FC = () => {
   const [isClosed, setIsClosed] = useState(false);
+
+  useEffect(() => {
+    const hasClosedBetaBanner = sessionStorage.getItem("hasClosedBetaBanner");
+    if (hasClosedBetaBanner === "true") {
+      setIsClosed(true);
+    }
+  }, []);
+
   if (isClosed) return null;
   return (
     <div className='bg-blue text-white relative' role='alert'>
@@ -26,11 +34,14 @@ export const BetaBanner: FC = () => {
         </p>
         <button
           className={[
-            "absolute right-2 top-2",
+            "absolute right-2 top-1",
             "text-green hover:text-purple transition",
             "hover:rotate-180 p-2 rounded-full focus-offset",
           ].join(" ")}
-          onClick={() => setIsClosed(true)}
+          onClick={() => {
+            setIsClosed(true);
+            sessionStorage.setItem("hasClosedBetaBanner", "true");
+          }}
           aria-label='Schließen'
         >
           <svg width='16' height='16' xmlns='http://www.w3.org/2000/svg'>
