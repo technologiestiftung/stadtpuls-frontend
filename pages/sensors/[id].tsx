@@ -21,10 +21,10 @@ import { Alert } from "@components/Alert";
 import { MAX_RENDERABLE_VALUES as MAX_RENDERABLE_VALUES_LINE_CHART } from "@components/LinePath";
 
 const today = new Date();
-today.setHours(0, 0, 0, 0);
-const tenDaysAgo = new Date();
-tenDaysAgo.setDate(today.getDate() - 10);
-today.setHours(0, 0, 0, 0);
+today.setUTCHours(0, 0, 0, 0);
+const sevenDaysAgo = new Date();
+sevenDaysAgo.setDate(today.getDate() - 7);
+sevenDaysAgo.setUTCHours(0, 0, 0, 0);
 
 export const getServerSideProps: GetServerSideProps = async context => {
   try {
@@ -71,13 +71,12 @@ const SensorPage: FC<{
 }> = ({ sensor }) => {
   const [chartWidth, setChartWidth] = useState<number | undefined>(undefined);
   const [chartHeight, setChartHeight] = useState<number | undefined>(undefined);
-  const [currentDatetimeRange, setCurrentDatetimeRange] = useState<{
-    startDateTimeString: string | undefined;
-    endDateTimeString: string | undefined;
-  }>({
-    startDateTimeString: tenDaysAgo.toISOString(),
-    endDateTimeString: today.toISOString(),
-  });
+  const [currentStartDateTimeString, setCurrentStartDateTimeString] = useState<
+    string | undefined
+  >(sevenDaysAgo.toISOString());
+  const [currentEndDateTimeString, setCurrentEndDateTimeString] = useState<
+    string | undefined
+  >(today.toISOString());
   const { lastRecordDate } = useSensorLastRecordDate(sensor.id);
   const { count: recordsCount } = useSensorRecordsCount(sensor.id);
   const {
@@ -87,22 +86,16 @@ const SensorPage: FC<{
     isLoading: recordsAreLoading,
   } = useSensorRecords({
     sensorId: sensor.id,
-    startDateString: currentDatetimeRange.startDateTimeString,
-    endDateString: currentDatetimeRange.endDateTimeString,
+    startDateString: currentStartDateTimeString,
+    endDateString: currentEndDateTimeString,
     maxRows: MAX_RENDERABLE_VALUES_LINE_CHART,
   });
   const parsedAndSortedRecords = createDateValueArray(records);
 
   useEffect(() => {
     if (!lastRecordDate) return;
-    setCurrentDatetimeRange({
-      startDateTimeString: moment
-        .parseZone(lastRecordDate)
-        .subtract(7, "days")
-        .toISOString(),
-      endDateTimeString: moment.parseZone(lastRecordDate).toISOString(),
-    });
-  }, [lastRecordDate, setCurrentDatetimeRange]);
+    setCurrentEndDateTimeString(moment.parseZone(lastRecordDate).toISOString());
+  }, [lastRecordDate, setCurrentEndDateTimeString]);
 
   const chartWrapper = useCallback((node: HTMLDivElement | null) => {
     if (!node) return;
@@ -118,9 +111,12 @@ const SensorPage: FC<{
         <div>
           <div className='flex justify-between flex-wrap gap-4 pb-8'>
             <DeviceLineChartFilters
-              startDateTimeString={currentDatetimeRange.startDateTimeString}
-              endDateTimeString={currentDatetimeRange.endDateTimeString}
-              onDatetimeRangeChange={vals => setCurrentDatetimeRange(vals)}
+              startDateTimeString={currentStartDateTimeString}
+              endDateTimeString={currentEndDateTimeString}
+              onDatetimeRangeChange={vals => {
+                setCurrentStartDateTimeString(vals.startDateTimeString);
+                setCurrentEndDateTimeString(vals.endDateTimeString);
+              }}
             />
             <div className='md:pt-4 lg:pt-8'>
               <DropdownMenu
@@ -147,9 +143,9 @@ const SensorPage: FC<{
                       downloadCSV(
                         createCSVStructure(records),
                         `${moment
-                          .parseZone(currentDatetimeRange.startDateTimeString)
+                          .parseZone(currentStartDateTimeString)
                           .format("YYYY-MM-DD")}-to-${moment
-                          .parseZone(currentDatetimeRange.endDateTimeString)
+                          .parseZone(currentEndDateTimeString)
                           .format("YYYY-MM-DD")}-sensor-${sensor.id}`
                       ),
                   },
@@ -212,8 +208,8 @@ const SensorPage: FC<{
                 date: date.toISOString(),
                 value,
               }))}
-              startDateTimeString={currentDatetimeRange.startDateTimeString}
-              endDateTimeString={currentDatetimeRange.endDateTimeString}
+              startDateTimeString={currentStartDateTimeString}
+              endDateTimeString={currentEndDateTimeString}
             />
           )}
           {recordsFetchError && (
