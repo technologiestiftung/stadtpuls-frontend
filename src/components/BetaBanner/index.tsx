@@ -28,9 +28,8 @@ export const BetaBanner: FC = () => {
           BETA
         </span>
         <p className='max-w-none opacity-90 text-sm sm:text-base'>
-          Stadtpuls ist noch Beta software und kann Fehler behinhalten. Es kann
-          ebenfalls zu Datenverluste kommen. Die Verwendung erfolgt auf eigene
-          Gefahr.
+          Stadtpuls ist noch Beta-Software und kann Fehler enthalten. Auch kann
+          es zu Datenverlusten kommen. Die Benutzung erfolgt auf eigene Gefahr.
         </p>
         <button
           className={[
