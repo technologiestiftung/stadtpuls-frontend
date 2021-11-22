@@ -11,6 +11,7 @@ import "../src/style/global.css";
 import { Head } from "@components/Head";
 import NextNProgress from "nextjs-progressbar";
 import colors from "../src/style/colors";
+import { DownloadQueueProvider } from "@lib/hooks/useDownloadQueue";
 
 if (process.env.NODE_ENV !== "production") {
   // require("../src/mocks/index");
@@ -30,20 +31,22 @@ const App: FC<{
   return (
     <StrictMode>
       <AuthProvider>
-        <Head />
-        <NextNProgress stopDelayMs={50} color={colors.green} />
-        <Header />
-        <main
-          id={pathname?.replace(/\//gi, "") || "home"}
-          className='z-0 relative'
-          style={{
-            paddingTop: 0,
-            minHeight: "calc(100vh - 215px)",
-          }}
-        >
-          <Component {...pageProps} />
-        </main>
-        <Footer />
+        <DownloadQueueProvider>
+          <Head />
+          <NextNProgress stopDelayMs={50} color={colors.green} />
+          <Header />
+          <main
+            id={pathname?.replace(/\//gi, "") || "home"}
+            className='z-0 relative'
+            style={{
+              paddingTop: 0,
+              minHeight: "calc(100vh - 215px)",
+            }}
+          >
+            <Component {...pageProps} />
+          </main>
+          <Footer />
+        </DownloadQueueProvider>
       </AuthProvider>
     </StrictMode>
   );

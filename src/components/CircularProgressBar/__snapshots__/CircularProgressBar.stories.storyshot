@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI Elements/CircularProgressBar Default 1`] = `
+<div
+  className="flex flex-col gap-6"
+>
+  <div
+    className="w-10 h-10"
+  >
+    <div
+      data-test-id="CircularProgressbarWithChildren"
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <svg
+          className="CircularProgressbar "
+          data-test-id="CircularProgressbar"
+          style={Object {}}
+          viewBox="0 0 100 100"
+        >
+          <path
+            className="CircularProgressbar-trail"
+            d="
+      M 50,50
+      m 0,-47
+      a 47,47 0 1 1 0,94
+      a 47,47 0 1 1 0,-94
+    "
+            fillOpacity={0}
+            strokeWidth={6}
+            style={
+              Object {
+                "stroke": "#F2F3F8",
+                "strokeDasharray": "295.3097094374406px 295.3097094374406px",
+                "strokeDashoffset": "0px",
+                "strokeLinecap": "round",
+                "transform": "rotate(0turn)",
+                "transformOrigin": "center center",
+              }
+            }
+          />
+          <path
+            className="CircularProgressbar-path"
+            d="
+      M 50,50
+      m 0,-47
+      a 47,47 0 1 1 0,94
+      a 47,47 0 1 1 0,-94
+    "
+            fillOpacity={0}
+            strokeWidth={6}
+            style={
+              Object {
+                "stroke": "#8330FF",
+                "strokeDasharray": "295.3097094374406px 295.3097094374406px",
+                "strokeDashoffset": "295.3097094374406px",
+                "strokeLinecap": "round",
+                "transform": "rotate(0turn)",
+                "transformOrigin": "center center",
+                "transition": "none",
+              }
+            }
+          />
+        </svg>
+        <div
+          data-test-id="CircularProgressbarWithChildren__children"
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+              "flexDirection": "column",
+              "height": "100%",
+              "justifyContent": "center",
+              "marginTop": "-100%",
+              "position": "absolute",
+              "width": "100%",
+            }
+          }
+        >
+          <span
+            className="text-blue"
+          >
+            <svg
+              className=""
+              height="16"
+              role="img"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m15.976 10.445-.015.112a3.994 3.994 0 0 1-.024.155l-.018.093a3.136 3.136 0 0 1-.07.285 3.91 3.91 0 0 1-.166.474l-.034.075c-.04.092-.086.183-.134.271l-.048.085.048-.085A4 4 0 0 1 12 14H4a4 4 0 0 1-1.971-7.481 4.002 4.002 0 0 1 3.49-3.49A4 4 0 0 1 13 5l.002 1.126c.045.012.083.022.12.034l-.12-.034c.074.02.148.04.22.064l.054.018c.048.016.095.032.142.05l.044.018c.05.019.098.039.146.06l.039.018c.054.024.107.049.159.075l.024.014c.044.022.087.045.13.069l.041.024.04.022a4 4 0 0 1 .091.056L14 6.536a4.062 4.062 0 0 1 .289.183 3.979 3.979 0 0 1 1.239 1.394l.027.052c.022.042.043.085.064.129l.012.027c.026.054.05.11.073.165A3.91 3.91 0 0 1 16 9.952v.093c0 .133-.009.266-.024.4ZM9 3c-.673 0-1.286.334-1.654.876l-.087.14-.499.878-1.003.12A2.003 2.003 0 0 0 4.04 6.598l-.026.159-.12 1.003-.878.498a2 2 0 0 0 .835 3.736L4 12h8a2 2 0 0 0 1.954-1.57l.024-.134a2.016 2.016 0 0 0-.032-.757l.012.052a2.012 2.012 0 0 0-.04-.16l.028.108a1.992 1.992 0 0 0-.036-.134l.007.026a2.012 2.012 0 0 0-.038-.117l.03.091a1.995 1.995 0 0 0-.053-.15l.023.06a2.009 2.009 0 0 0-.052-.13l.029.07a2 2 0 0 0-.06-.136l.03.066a2.004 2.004 0 0 0-.065-.133l.035.067a2.005 2.005 0 0 0-.077-.141l.042.074a1.997 1.997 0 0 0-.075-.129l.033.055a2.01 2.01 0 0 0-.082-.128l.049.073a1.99 1.99 0 0 0-.094-.135l.045.062a2.011 2.011 0 0 0-.1-.13l.055.068a1.986 1.986 0 0 0-.089-.108l.034.04a2.01 2.01 0 0 0-.084-.095l.05.055a1.984 1.984 0 0 0-.102-.108l.052.053a2.008 2.008 0 0 0-.107-.105l.055.052a1.989 1.989 0 0 0-.126-.114l.071.062a2.003 2.003 0 0 0-.11-.094l.039.032a2.001 2.001 0 0 0-.124-.094l.084.062a1.996 1.996 0 0 0-.117-.085l.033.023a2.024 2.024 0 0 0-.134-.086l.101.063a1.99 1.99 0 0 0-.134-.083l.016.01a2.017 2.017 0 0 0-.302-.143l.045.018A2 2 0 0 0 10.268 9a1 1 0 0 1-1.732-1A3.988 3.988 0 0 1 11 6.127V5a2 2 0 0 0-2-2Z"
+                fill="currentColor"
+                fillRule="nonzero"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="flex gap-4"
+  >
+    <button
+      className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
+      onClick={[Function]}
+      type="button"
+    >
+      0
+    </button>
+    <button
+      className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
+      onClick={[Function]}
+      type="button"
+    >
+      33
+    </button>
+    <button
+      className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
+      onClick={[Function]}
+      type="button"
+    >
+      66
+    </button>
+    <button
+      className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
+      onClick={[Function]}
+      type="button"
+    >
+      100
+    </button>
+  </div>
+</div>
+`;

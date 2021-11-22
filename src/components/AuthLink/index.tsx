@@ -47,7 +47,7 @@ export const AuthLink: FC<AuthLinkPropType> = ({ loggedInUserName }) => {
         <Link href='/signin'>
           <a href='/signin' className={["inline-flex", textStyles].join(" ")}>
             <ArrowIntoDoor />
-            Login
+            <span className='hidden xs:inline-block'>Login</span>
           </a>
         </Link>
       )}
