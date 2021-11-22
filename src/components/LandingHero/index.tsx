@@ -13,7 +13,7 @@ export const LandingHero: FC = () => (
           "grid lg:grid-cols-2 gap-16",
           "px-6 md:px-8",
           "pt-16 sm:pt-24 lg:pt-40",
-          "pb-96 md:pt-24 lg:pb-40",
+          "pb-[514px] md:pt-24 lg:pb-40",
           "text-white",
         ].join(" ")}
       >

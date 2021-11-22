@@ -16,11 +16,11 @@ exports[`Storyshots UI Elements/BetaBanner Default 1`] = `
     <p
       className="max-w-none opacity-90 text-sm sm:text-base"
     >
-      Stadtpuls ist noch Beta-Software und kann Fehler enthalten. Auch kann es zu Datenverlusten kommen. Die Benutzung erfolgt auf eigene Gefahr.
+      Stadtpuls befindet sich noch in der Betaphase und kann Fehler enthalten oder es kann Datenverlust auftreten. Die Benutzung erfolgt auf eigene Gefahr.
     </p>
     <button
       aria-label="Schließen"
-      className="absolute right-2 top-1 text-green hover:text-purple transition hover:rotate-180 p-2 rounded-full focus-offset"
+      className="absolute right-2 top-3 text-green hover:text-purple transition hover:rotate-180 p-2 rounded-full focus-offset"
       onClick={[Function]}
     >
       <svg
