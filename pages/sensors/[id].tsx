@@ -15,7 +15,6 @@ import moment from "moment";
 import { GetServerSideProps } from "next";
 import React, { FC, useCallback, useEffect, useState } from "react";
 import { SensorPageHeaderWithData } from "@components/SensorPageHeader/withData";
-import { definitions } from "@common/types/supabase";
 import { useDownloadQueue } from "@lib/hooks/useDownloadQueue";
 import { downloadCSVString } from "@lib/downloadCsvUtil";
 import { Alert } from "@components/Alert";
@@ -45,27 +44,6 @@ const numberFormatter = new Intl.NumberFormat("de-DE", {
   notation: "compact",
   compactDisplay: "short",
 });
-
-const getCategoryUnit = (
-  category: definitions["categories"]["name"] | string | undefined
-): string => {
-  switch (category) {
-    case "Temperatur":
-      return "°C";
-    case "CO2":
-      return "ppm";
-    case "Luftfeuchtigkeit":
-      return "%";
-    case "Lautstärke":
-      return "dB";
-    case "Druck":
-      return "hPa";
-    case "PAXCounter":
-      return "Personen";
-    default:
-      return "";
-  }
-};
 
 const SensorPage: FC<{
   sensor: ParsedSensorType;
@@ -226,7 +204,7 @@ const SensorPage: FC<{
             <LineChart
               width={chartWidth || 1200}
               height={chartHeight || 400}
-              yAxisUnit={getCategoryUnit(sensor.categoryName)}
+              yAxisUnit=''
               xAxisUnit='Messdatum'
               data={parsedAndSortedRecords.map(({ id, date, value }) => ({
                 id,
