@@ -53,18 +53,13 @@ export const useSensorRecords = ({
     endDateString,
     maxRows,
   ];
-  const { data, error } = useSWR<GetRecordsResponseType, Error>(
-    params,
-    () =>
-      fetchSensorRecords({
-        sensorId,
-        startDateString,
-        endDateString,
-        maxRows,
-      }),
-    {
-      revalidateOnFocus: false,
-    }
+  const { data, error } = useSWR<GetRecordsResponseType, Error>(params, () =>
+    fetchSensorRecords({
+      sensorId,
+      startDateString,
+      endDateString,
+      maxRows,
+    })
   );
 
   return {
