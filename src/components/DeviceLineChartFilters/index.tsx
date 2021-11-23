@@ -4,7 +4,7 @@ import moment from "moment";
 import { FC, useState } from "react";
 
 type FilterType = "devicesByTimespan" | "devicesByDatetimeRange";
-type TimespanType = "last24h" | "last7days" | "last30days" | "all";
+type TimespanType = "last24h" | "last7days" | "last30days" | "max";
 
 export interface DatetimeRangeType {
   startDateTimeString: string | undefined;
@@ -183,15 +183,15 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
           <TemporalityButton
             isActive={
               activeFilterType === "devicesByTimespan" &&
-              temporalityOfRecords === "all"
+              temporalityOfRecords === "max"
             }
             onClick={() => {
               setActiveFilterType("devicesByTimespan");
-              setTemporaityOfRecords("all");
-              onDatetimeRangeChange(getTimeRangeByTimespan("all", today));
+              setTemporaityOfRecords("max");
+              onDatetimeRangeChange(getTimeRangeByTimespan("max", today));
             }}
           >
-            Alle
+            Max.
           </TemporalityButton>
         </div>
       </RadioFieldset>
