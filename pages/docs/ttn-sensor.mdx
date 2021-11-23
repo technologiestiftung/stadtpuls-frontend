@@ -17,8 +17,15 @@ Du hast bereits eigene Sensoren bei <a href="https://www.thethingsnetwork.org/" 
 
 Du hast keine Ahnung was *The Things Network* sein soll möchtest aber trotzdem einen Sensor auf *Stadtpuls* registrieren? Dann ist unsere <a href="/docs/http-sensor">HTTP-Integration</a> vielleicht ein guter Start für dich.
 
-## TTN-Sensor zu Stadtpuls hinzufügen
-In dieser Sektion erklären wir, wie du deinem Account einen neuen Sensor mittels TTN-Integration hinzufügen kannst. Klicke dazu in der Menüleiste oben rechts auf dein **Account-Icon** und dann auf **Neuer Sensor**. 
+In dieser Sektion erklären wir, wie du deinem Account einen neuen Sensor mittels TTN-Integration hinzufügen kannst. Alles in Allem besteht die Einrichtung aus drei essentiellen Schritten:
+1. Sensor auf *Stadtpuls* hinzufügen
+2. TTN Webhook einrichten
+3. TTN Payload Formatter einrichten
+
+Und lost geht's mit Schritt numero uno!
+
+## 1. TTN-Sensor zu Stadtpuls hinzufügen
+Klicke dazu in der Menüleiste oben rechts auf dein **Account-Icon** und dann auf **Neuer Sensor**. 
 Dir wird nun die Eingabemaske für den neuen Sensor angezeigt. 
    <figure>
   <img style={{maxHeight: 400, border: '1px solid rgba(0, 0, 0, 0.05)'}}
@@ -41,7 +48,7 @@ Hurray, how easy was that! Du hast deinem Account einen neuen Sensor hinzugefüg
 
 Damit Dein TTN-Sensor mit jedem Messwert automatisch einen POST-Request an unsere *Stadtpuls* API stellt und die Sensormesswerte in unserer Datenbank ankommen, muss nun noch der **TTN-Webhook** eingerichtet werden.
 
-## TTN-Webhook einrichten
+## 2. TTN-Webhook einrichten
 *Die nachfolgende Dokumentation basiert auf der neuen **The Things Stack Community Edition**, auch TTN V3 genannt. Stadtpuls funktioniert zwar auch mit dem alten TTN Stack (V2), unterstützt aber in der Doku und der weiteren Entwicklung ausschließlich TTN V3.*
 
 Die Konfiguration der Webhook-Integration ist kein Hexenwerk und schnell erledigt.
@@ -85,7 +92,7 @@ Füge diesen Token mit dem Zusatz `Bearer ` am Anfang des Textes in das Eingabef
 Schließlich müssen wir dem Webhook noch mitteilen, bei welcher Art von Events er getriggert werden soll. In unserem Fall möchten wir bei jedem Uplink, also bei jedem Datenpaket, welches in der TTN-Applikation ankommt, einen POST-Request auf unsere Stadtpuls-API ausführen. Der Endpoint dafür lautet
 
 ```shell
-/api/v2/integrations/ttn/v3
+/api/v3/integrations/ttn/v3
 ```
 
    <figure>
@@ -94,10 +101,97 @@ Schließlich müssen wir dem Webhook noch mitteilen, bei welcher Art von Events 
     alt="Konfiguration der TTN-Webhook-Integration"
   />
     <figcaption>
-    Webhook wird bei Uplinks der Sensoren getriggert
+    Der Webhook wird bei Uplinks der Sensoren getriggert
     </figcaption>
   </figure>
 
-Hurray! Du hast TTN erfolgreich mit Stadtpuls verknüpft.
-Damit sollten künftig alle Messwerte deines Sensors auf *Stadtpuls* sichtbar sein.
+Speichern nicht vergessen und weiter geht's mit dem dritten und letzten Schritt.
 
+## 3. Payload Formatter einrichten
+Der <a href="https://www.thethingsindustries.com/docs/integrations/payload-formatters/create/" target="_blank">Payload Formatter von TTN</a> ermöglicht es den TTN-Nutzer:innen ihre Uplinks und Downlinks zu formattieren. Dabei sind Uplinks all' die Payloads (Datenpackete) die von einem Sensor zu einem Gateway geschickt werden, wohingegen Downlinks all' jene Payloads sind, die von einem Gatway zu einem Sensor geschickt werden.
+Wir interessen uns bei Stadtpuls für alle Messwerte der einzelnen Sensore – also für alle Uplinks. 
+
+
+### Payload packen
+
+Mit Hilfe des Payload Formatters kann jedes einzelne Byte des Uplinks in ein menschelesbares Format gebracht werden. Dabei ist es wichtig zu wissen, wie sich das Datenpaket bzw. der Uplink meines Sensors überhaupt zusammensetzt. Das nachfolgenden Beispiel (geschrieben als Arduino Code) zeigt beispielhaft wie ein Datenpaket mit insgesamt vier Messwerten (temperatur, airpressure, humidity, dezibel) in ein Payload gepackt werden kann.
+
+```shell
+void generate_payload(float temperature, float airpressure, float humidity, float dezibel) {
+
+  uint8_t payload[7];
+  
+  int tmp = ((int)(temperature * 100)) + 5000;
+  int pressure = (int)(airpressure * 10);
+  byte hum = (int)(humidity * 2);
+  int dezi = (int)(dezibel * 10);
+
+  payload[0] = tmp >> 8;
+  payload[1] = tmp;
+  payload[2] = pressure >> 8;
+  payload[3] = pressure;
+  payload[4] = hum;
+  payload[5] = dezi >> 8;
+  payload[6] = dezi;
+
+  int i = 0;
+  while (i < sizeof(payload)) {
+    tx_payload[i] = payload[i];
+    i++;
+  }
+}
+```
+
+Der Payload besteht schließlich aus insgesamt 7 Bytes, wobei:
+- *temperature* als Integer durch das erste und zweite Byte, 
+- *airpressure* als Integer durch das dritte und vierte Byte,
+- *humidity* als einzelner Byte durch Byte fünf und 
+- *dezibel* als Integer wieederumg durch Byte sechs und sieben
+
+beschrieben wird. Jede:r *Stadtpuls*-Nuter:in kann seine/ihre Datenpacket natürlich wie er oder sie möchte packen und versenden. Wichtig ist allerdings zu wissen, an welcher Stelle (an welchem Byte) im Payload welcher Messwert steht. Mit diesem Wissen können wir den Payload nämlich nach Übertragung an das LoRaWan-Gateway ordentlich decodieren und mit Hilfe des Payload Formatters so formattieren, dass unsere *Stadtpuls*-API den Payload richtig interpretieren kann.
+
+### Payload entpacken
+Die Daten, die in der TTN-Applikation ankommen wurden bereits von TTN entschlüsselt und sind hexadezimale Darstellungen der entschlüsselten "Binärdaten". Dabei stellen zwei Characters (Zahlen oder Buchstaben) ein Byte dar. 
+   <figure>
+  <img style={{maxHeight: 400, border: '1px solid rgba(0, 0, 0, 0.05)'}}
+    src="/images/ttnHexa.png"
+    alt="Hexadezimale Darstellung des Payloads '12 A3 B9 77'"
+  />
+    <figcaption>
+    Hexadezimale Darstellung des Payloads '12 A3 B9 77'
+    </figcaption>
+  </figure>
+
+Mit Hilfe des Payload Formatters können wir die Hexadezimalwerte in menschenlesbare Werte übertragen und für unsere API aufbereiten.
+Unsere RESTful API von *Stadtpuls* erwartet genau einen Wert: **ein Array vom Typ Float mit dem namen 'measurements'**
+
+Passend zum gepackten Payload oben, muss die Payload Function also wie folgt aussehen:
+
+```shell
+function decodeUplink(input) {
+  var dezi = input.bytes[0];
+  
+  return {
+    data: {
+      bytes: input.bytes,
+      measurements: [dezi]
+    },
+    warnings: [],
+    errors: []
+  };
+}
+```
+In der Konsole sollte nun der Hexadezimalwert '12 A3 B9 77' im Array *measurements* als Dezimalzahl (4676) dargestellt werden.
+   <figure>
+  <img style={{maxHeight: 400, border: '1px solid rgba(0, 0, 0, 0.05)'}}
+    src="/images/ttnDezimal.png"
+    alt="Dezimale Darstellung des Payloads '12 A3 B9 77'"
+  />
+    <figcaption>
+    Dezimale Darstellung des Payloads '12 A3 B9 77'
+    </figcaption>
+  </figure>
+
+In diesem Falle hat unsere Sensor also den Messwert '4676' gemessen. Da der Wert im Array **measurements** abgespeichert wurde, wird er schließlich auch als Messwert von unserer API richtig interpretiert und deinem Sensor zugeordnet.
+
+Du hast es bis hierhin geschafft? Hurray! Dann hast du deinen TTN-Sensor erfolgreich mit *Stadtpuls* verknüpft.
