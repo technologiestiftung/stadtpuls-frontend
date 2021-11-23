@@ -11,8 +11,24 @@ export const Footer: React.FC = () => {
         <div className='container max-w-8xl mx-auto py-8 px-4'>
           <div className='w-full flex'>
             <div className='block'>
+              <span className='w-full block text-xs text-gray-700'>&nbsp;</span>
+              <a
+                href='https://www.citylab-berlin.org'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='mt-4 block focus-offset'
+                aria-label='CityLAB Berlin'
+              >
+                <img
+                  src={CityLABLogo}
+                  alt='Logo des CityLAB Berlin'
+                  className='w-40'
+                />
+              </a>
+            </div>
+            <div className='ml-8 md:ml-12 block'>
               <span className='w-full block text-xs text-gray-700'>
-                Ein Projekt der:
+              Ein Projekt der:
               </span>
               <a
                 href='https://technologiestiftung-berlin.de/'
@@ -25,24 +41,6 @@ export const Footer: React.FC = () => {
                   src={TSBLogo}
                   alt='Logo der Technologiestiftung Berlin'
                   className='w-32'
-                />
-              </a>
-            </div>
-            <div className='ml-8 md:ml-12 block'>
-              <span className='w-full block text-xs text-gray-700'>
-                Durchgeführt vom:
-              </span>
-              <a
-                href='https://www.citylab-berlin.org'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='mt-4 block focus-offset'
-                aria-label='CityLAB Berlin'
-              >
-                <img
-                  src={CityLABLogo}
-                  alt='Logo des CityLAB Berlin'
-                  className='w-40'
                 />
               </a>
             </div>

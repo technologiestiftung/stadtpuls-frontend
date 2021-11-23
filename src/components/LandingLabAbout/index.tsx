@@ -68,8 +68,8 @@ export const LandingLabAbout: FC = () => {
             </div>
             <div className='md:text-right'>
               <img
-                src='/images/tsb-logo.svg'
-                alt='Logo der Technologiestiftung'
+                src='/images/citylab-logo.svg'
+                alt='Logo des CityLAB Berlin'
                 className='max-w-full h-16 mt-8 inline-block'
               />
             </div>
