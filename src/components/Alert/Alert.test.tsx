@@ -4,12 +4,12 @@ import { Alert } from ".";
 describe("Alert component", () => {
   it("should render an info alert without type", () => {
     render(<Alert message='Info' />);
-    const alert = document.querySelector(".border-blue.bg-blue");
+    const alert = document.querySelector(".border-blue.bg-gray-300");
     expect(alert).toBeInTheDocument();
   });
   it("should render an info alert with info type", () => {
     render(<Alert type='info' message='Info' />);
-    const alert = document.querySelector(".border-blue.bg-blue");
+    const alert = document.querySelector(".border-blue.bg-gray-300");
     expect(alert).toBeInTheDocument();
   });
   it("should render an error alert with error type", () => {

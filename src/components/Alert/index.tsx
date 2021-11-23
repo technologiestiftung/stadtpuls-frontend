@@ -11,7 +11,7 @@ const getStylesByType = (type: AlertPropType["type"]): string =>
   [
     "border px-5 py-3 bg-opacity-5",
     "flex gap-x-5 pr-8 relative flex-wrap",
-    type === "info" && "border-blue bg-blue",
+    type === "info" && "border-blue bg-gray-300",
     type === "error" && "border-error bg-error",
     type === "success" && "border-green bg-green",
     type === "warning" && "border-warning bg-warning",

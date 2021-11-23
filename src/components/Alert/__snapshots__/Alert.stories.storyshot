@@ -40,7 +40,7 @@ exports[`Storyshots UI Elements/Alert Error 1`] = `
 
 exports[`Storyshots UI Elements/Alert Info 1`] = `
 <div
-  className="border px-5 py-3 bg-opacity-5 flex gap-x-5 pr-8 relative flex-wrap border-blue bg-blue"
+  className="border px-5 py-3 bg-opacity-5 flex gap-x-5 pr-8 relative flex-wrap border-blue bg-gray-300"
   role="alert"
 >
   <h4
@@ -78,7 +78,7 @@ exports[`Storyshots UI Elements/Alert Info 1`] = `
 
 exports[`Storyshots UI Elements/Alert No Title 1`] = `
 <div
-  className="border px-5 py-3 bg-opacity-5 flex gap-x-5 pr-8 relative flex-wrap border-blue bg-blue"
+  className="border px-5 py-3 bg-opacity-5 flex gap-x-5 pr-8 relative flex-wrap border-blue bg-gray-300"
   role="alert"
 >
   <p>
