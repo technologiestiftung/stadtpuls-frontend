@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
             </div>
             <div className='ml-8 md:ml-12 block'>
               <span className='w-full block text-xs text-gray-700'>
-              Ein Projekt der:
+                Ein Projekt der:
               </span>
               <a
                 href='https://technologiestiftung-berlin.de/'
