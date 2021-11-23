@@ -34,6 +34,8 @@ describe("DeviceLineChartFilters", () => {
     radio1.focus();
     expect(radio1).toHaveFocus();
 
+    radio1.click();
+
     userEvent.tab();
     expect(date1).toHaveFocus();
 
