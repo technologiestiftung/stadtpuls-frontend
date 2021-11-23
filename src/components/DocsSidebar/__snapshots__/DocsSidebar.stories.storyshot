@@ -62,11 +62,11 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           >
             <a
               className="navigation-link p-4 block sm:inline"
-              href="/docs/changelog"
+              href="/docs/terms"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Changelog
+              Nutzungsbedingungen
             </a>
           </li>
         </ul>

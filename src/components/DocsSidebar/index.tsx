@@ -25,8 +25,8 @@ const infoPages: PageType[] = [
     path: "/docs/faq",
   },
   {
-    title: "Changelog",
-    path: "/docs/changelog",
+    title: "Nutzungsbedingungen",
+    path: "/docs/terms",
   },
 ];
 
