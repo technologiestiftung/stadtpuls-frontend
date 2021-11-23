@@ -139,7 +139,7 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
             className="border border-gray-200 px-2 sm:px-3 py-2 text-sm relative transition focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30 focus:ring-offset focus:ring-offset-white focus:ring-offset-2 hover:bg-purple hover:bg-opacity-10 hover:text-purple hover:border-purple hover:z-10 ml-[-1px]"
             onClick={[Function]}
           >
-            Alle
+            Max.
           </button>
         </div>
       </div>
