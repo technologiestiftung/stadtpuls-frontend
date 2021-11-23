@@ -7,862 +7,852 @@ exports[`Storyshots Promotional/LandingHeroImage Default 1`] = `
   <div
     className="relative h-screen z-10 container mx-auto max-w-8xl"
   >
-    <svg
-      className="absolute bottom-0 right-0 z-10 "
-      height="870px"
-      version="1.1"
-      viewBox="0 0 870 870"
-      width="870px"
-      xmlns="http://www.w3.org/2000/svg"
+    <div
+      className="absolute bottom-0 right-0 z-10 overflow-hidden "
     >
-      <defs>
-        <pattern
-          height="100%"
-          id="top-right-square-image-pattern"
-          patternUnits="objectBoundingBox"
-          width="100%"
-          x="0"
-          y="0"
-        >
-          <use
-            xlinkHref="#top-right-square-image-pattern-image"
-          />
-        </pattern>
-        <image
-          height="116"
-          id="top-right-square-image-pattern-image"
-          width="116"
-          xlinkHref="/images/photos/microcontroller-header-04.jpg"
-        />
-        <pattern
-          height="6"
-          id="black-dot-pattern"
-          patternUnits="userSpaceOnUse"
-          width="6"
-          x="3"
-          y="3"
-        >
-          <use
-            transform="scale(0.5,0.5)"
-            xlinkHref="#black-dot-pattern-image"
-          />
-        </pattern>
-        <image
-          height="12"
-          id="black-dot-pattern-image"
-          width="12"
-          xlinkHref="/images/patterns/black.svg"
-        />
-        <pattern
-          height="100%"
-          id="main-image-pattern"
-          patternUnits="objectBoundingBox"
-          width="103.351724%"
-          x="-3.35172414%"
-        >
-          <use
-            transform="scale(0.64,0.64)"
-            xlinkHref="#main-image-pattern-image"
-          />
-        </pattern>
-        <image
-          height="725"
-          id="main-image-pattern-image"
-          width="967"
-          xlinkHref="/images/photos/header-woman.jpeg"
-        />
-        <pattern
-          height="100%"
-          id="bottom-square-image-pattern"
-          patternUnits="objectBoundingBox"
-          width="100%"
-          x="0"
-          y="0"
-        >
-          <use
-            xlinkHref="#bottom-square-image-pattern-image"
-          />
-        </pattern>
-        <image
-          height="116"
-          id="bottom-square-image-pattern-image"
-          width="116"
-          xlinkHref="/images/photos/microcontroller-header-03.jpg"
-        />
-        <pattern
-          height="100%"
-          id="bottom-left-square-image-pattern"
-          patternUnits="objectBoundingBox"
-          width="100%"
-          x="0"
-          y="0"
-        >
-          <use
-            xlinkHref="#bottom-left-square-image-pattern-image"
-          />
-        </pattern>
-        <image
-          height="116"
-          id="bottom-left-square-image-pattern-image"
-          width="116"
-          xlinkHref="/images/photos/microcontroller-header-02.jpg"
-        />
-        <pattern
-          height="100%"
-          id="top-left-square-image-pattern"
-          patternUnits="objectBoundingBox"
-          width="100%"
-          x="0"
-          y="0"
-        >
-          <use
-            xlinkHref="#top-left-square-image-pattern-image"
-          />
-        </pattern>
-        <image
-          height="116"
-          id="top-left-square-image-pattern-image"
-          width="116"
-          xlinkHref="/images/photos/microcontroller-header-01.jpg"
-        />
-      </defs>
-      <g
-        fill="none"
-        fillRule="evenodd"
-        stroke="none"
-        strokeWidth="1"
+      <svg
+        height="870px"
+        version="1.1"
+        viewBox="0 0 870 870"
+        width="870px"
+        xmlns="http://www.w3.org/2000/svg"
       >
+        <defs>
+          <pattern
+            height="100%"
+            id="top-right-square-image-pattern"
+            patternUnits="objectBoundingBox"
+            width="100%"
+            x="0"
+            y="0"
+          >
+            <use
+              xlinkHref="#top-right-square-image-pattern-image"
+            />
+          </pattern>
+          <image
+            height="116"
+            id="top-right-square-image-pattern-image"
+            width="116"
+            xlinkHref="/images/photos/microcontroller-header-04.jpg"
+          />
+          <pattern
+            height="6"
+            id="black-dot-pattern"
+            patternUnits="userSpaceOnUse"
+            width="6"
+            x="3"
+            y="3"
+          >
+            <use
+              transform="scale(0.5,0.5)"
+              xlinkHref="#black-dot-pattern-image"
+            />
+          </pattern>
+          <image
+            height="12"
+            id="black-dot-pattern-image"
+            width="12"
+            xlinkHref="/images/patterns/black.svg"
+          />
+          <pattern
+            height="100%"
+            id="main-image-pattern"
+            patternUnits="objectBoundingBox"
+            width="103.351724%"
+            x="-3.35172414%"
+          >
+            <use
+              transform="scale(0.64,0.64)"
+              xlinkHref="#main-image-pattern-image"
+            />
+          </pattern>
+          <image
+            height="725"
+            id="main-image-pattern-image"
+            width="967"
+            xlinkHref="/images/photos/header-woman.jpeg"
+          />
+          <pattern
+            height="100%"
+            id="bottom-square-image-pattern"
+            patternUnits="objectBoundingBox"
+            width="100%"
+            x="0"
+            y="0"
+          >
+            <use
+              xlinkHref="#bottom-square-image-pattern-image"
+            />
+          </pattern>
+          <image
+            height="116"
+            id="bottom-square-image-pattern-image"
+            width="116"
+            xlinkHref="/images/photos/microcontroller-header-03.jpg"
+          />
+          <pattern
+            height="100%"
+            id="bottom-left-square-image-pattern"
+            patternUnits="objectBoundingBox"
+            width="100%"
+            x="0"
+            y="0"
+          >
+            <use
+              xlinkHref="#bottom-left-square-image-pattern-image"
+            />
+          </pattern>
+          <image
+            height="116"
+            id="bottom-left-square-image-pattern-image"
+            width="116"
+            xlinkHref="/images/photos/microcontroller-header-02.jpg"
+          />
+          <pattern
+            height="100%"
+            id="top-left-square-image-pattern"
+            patternUnits="objectBoundingBox"
+            width="100%"
+            x="0"
+            y="0"
+          >
+            <use
+              xlinkHref="#top-left-square-image-pattern-image"
+            />
+          </pattern>
+          <image
+            height="116"
+            id="top-left-square-image-pattern-image"
+            width="116"
+            xlinkHref="/images/photos/microcontroller-header-01.jpg"
+          />
+        </defs>
         <g
-          transform="translate(-578.000000, -24.000000)"
+          fill="none"
+          fillRule="evenodd"
+          stroke="none"
+          strokeWidth="1"
         >
           <g
-            transform="translate(578.000000, 24.000000)"
+            transform="translate(-578.000000, -24.000000)"
           >
-            <rect
-              className="animate-slide-in"
-              fill="#E7EAF2"
-              height="116"
-              style={
-                Object {
-                  "animationDelay": "25ms",
+            <g
+              transform="translate(578.000000, 24.000000)"
+            >
+              <rect
+                className="animate-slide-in"
+                fill="#E7EAF2"
+                height="116"
+                style={
+                  Object {
+                    "animationDelay": "25ms",
+                  }
                 }
-              }
-              width="116"
-              x="290"
-              y="580"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#46ECA1"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "50ms",
+                width="116"
+                x="290"
+                y="580"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#46ECA1"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "50ms",
+                  }
                 }
-              }
-              width="58"
-              x="464"
-              y="522"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="url(#top-right-square-image-pattern)"
-              height="116"
-              style={
-                Object {
-                  "animationDelay": "75ms",
+                width="58"
+                x="464"
+                y="522"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="url(#top-right-square-image-pattern)"
+                height="116"
+                style={
+                  Object {
+                    "animationDelay": "75ms",
+                  }
                 }
-              }
-              width="116"
-              x="754"
-              y="58"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#8330FF"
-              height="116"
-              style={
-                Object {
-                  "animationDelay": "100ms",
-                  "mixBlendMode": "screen",
+                width="116"
+                x="754"
+                y="58"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#8330FF"
+                height="116"
+                style={
+                  Object {
+                    "animationDelay": "100ms",
+                    "mixBlendMode": "screen",
+                  }
                 }
-              }
-              width="116"
-              x="754"
-              y="58"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#46ECA1"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "125ms",
+                width="116"
+                x="754"
+                y="58"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#46ECA1"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "125ms",
+                  }
                 }
-              }
-              width="58"
-              x="116"
-              y="522"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#E7EAF2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "150ms",
+                width="58"
+                x="116"
+                y="522"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#E7EAF2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "150ms",
+                  }
                 }
-              }
-              width="58"
-              x="174"
-              y="464"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#E7EAF2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "175ms",
+                width="58"
+                x="174"
+                y="464"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#E7EAF2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "175ms",
+                  }
                 }
-              }
-              width="58"
-              x="116"
-              y="464"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#46ECA1"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "200ms",
+                width="58"
+                x="116"
+                y="464"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#46ECA1"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "200ms",
+                  }
                 }
-              }
-              width="58"
-              x="290"
-              y="696"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#46ECA1"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "225ms",
+                width="58"
+                x="290"
+                y="696"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#46ECA1"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "225ms",
+                  }
                 }
-              }
-              width="58"
-              x="0"
-              y="638"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#46ECA1"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "250ms",
+                width="58"
+                x="0"
+                y="638"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#46ECA1"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "250ms",
+                  }
                 }
-              }
-              width="58"
-              x="522"
-              y="812"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#46ECA1"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "275ms",
+                width="58"
+                x="522"
+                y="812"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#46ECA1"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "275ms",
+                  }
                 }
-              }
-              width="58"
-              x="638"
-              y="696"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#46ECA1"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "300ms",
+                width="58"
+                x="638"
+                y="696"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#46ECA1"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "300ms",
+                  }
                 }
-              }
-              width="58"
-              x="812"
-              y="696"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="url(#black-dot-pattern)"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "325ms",
+                width="58"
+                x="812"
+                y="696"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="url(#black-dot-pattern)"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "325ms",
+                  }
                 }
-              }
-              width="58"
-              x="464"
-              y="754"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#0000C2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "350ms",
+                width="58"
+                x="464"
+                y="754"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#0000C2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "350ms",
+                  }
                 }
-              }
-              width="58"
-              x="232"
-              y="638"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#0000C2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "375ms",
+                width="58"
+                x="232"
+                y="638"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#0000C2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "375ms",
+                  }
                 }
-              }
-              width="58"
-              x="0"
-              y="522"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#46ECA1"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "400ms",
+                width="58"
+                x="0"
+                y="522"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#46ECA1"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "400ms",
+                  }
                 }
-              }
-              width="58"
-              x="348"
-              y="580"
-            />
-            <path
-              d="M290,464 L232,464 L232,406 L290,406 L290,348 L348,348 L348,116 L696,116 L696,58 L754,58 L754,232 L812,232 L812,348 L754,348 L754,522 L348,522 L348,406 L290,406 L290,464 Z"
-              fill="url(#main-image-pattern)"
-              role="img"
-            />
-            <path
-              d="M290,464 L232,464 L232,406 L290,406 L290,348 L348,348 L348,116 L696,116 L696,58 L754,58 L754,232 L812,232 L812,348 L754,348 L754,522 L348,522 L348,406 L290,406 L290,464 Z"
-              fill="#0000C2"
-              opacity="0.501464844"
-              style={
-                Object {
-                  "mixBlendMode": "lighten",
+                width="58"
+                x="348"
+                y="580"
+              />
+              <path
+                d="M290,464 L232,464 L232,406 L290,406 L290,348 L348,348 L348,116 L696,116 L696,58 L754,58 L754,232 L812,232 L812,348 L754,348 L754,522 L348,522 L348,406 L290,406 L290,464 Z"
+                fill="url(#main-image-pattern)"
+                role="img"
+              />
+              <path
+                d="M290,464 L232,464 L232,406 L290,406 L290,348 L348,348 L348,116 L696,116 L696,58 L754,58 L754,232 L812,232 L812,348 L754,348 L754,522 L348,522 L348,406 L290,406 L290,464 Z"
+                fill="#0000C2"
+                opacity="0.501464844"
+                style={
+                  Object {
+                    "mixBlendMode": "lighten",
+                  }
                 }
-              }
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#E7EAF2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "425ms",
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#E7EAF2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "425ms",
+                  }
                 }
-              }
-              width="58"
-              x="290"
-              y="406"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#E7EAF2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "450ms",
+                width="58"
+                x="290"
+                y="406"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#E7EAF2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "450ms",
+                  }
                 }
-              }
-              width="58"
-              x="696"
-              y="348"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#E7EAF2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "475ms",
+                width="58"
+                x="696"
+                y="348"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#E7EAF2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "475ms",
+                  }
                 }
-              }
-              width="58"
-              x="812"
-              y="174"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="url(#black-dot-pattern)"
-              height="116"
-              style={
-                Object {
-                  "animationDelay": "500ms",
+                width="58"
+                x="812"
+                y="174"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="url(#black-dot-pattern)"
+                height="116"
+                style={
+                  Object {
+                    "animationDelay": "500ms",
+                  }
                 }
-              }
-              width="116"
-              x="754"
-              y="522"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#E7EAF2"
-              height="116"
-              style={
-                Object {
-                  "animationDelay": "525ms",
+                width="116"
+                x="754"
+                y="522"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#E7EAF2"
+                height="116"
+                style={
+                  Object {
+                    "animationDelay": "525ms",
+                  }
                 }
-              }
-              width="116"
-              x="522"
-              y="522"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="url(#bottom-square-image-pattern)"
-              height="116"
-              style={
-                Object {
-                  "animationDelay": "550ms",
+                width="116"
+                x="522"
+                y="522"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="url(#bottom-square-image-pattern)"
+                height="116"
+                style={
+                  Object {
+                    "animationDelay": "550ms",
+                  }
                 }
-              }
-              width="116"
-              x="406"
-              y="580"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#46ECA1"
-              height="116"
-              style={
-                Object {
-                  "animationDelay": "575ms",
-                  "mixBlendMode": "screen",
+                width="116"
+                x="406"
+                y="580"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#46ECA1"
+                height="116"
+                style={
+                  Object {
+                    "animationDelay": "575ms",
+                    "mixBlendMode": "screen",
+                  }
                 }
-              }
-              width="116"
-              x="406"
-              y="580"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#8330FF"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "600ms",
+                width="116"
+                x="406"
+                y="580"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#8330FF"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "600ms",
+                  }
                 }
-              }
-              width="58"
-              x="522"
-              y="580"
-            />
-            <rect
-              className="animate-slide-in undefined"
-              fill="#8330FF"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "625ms",
+                width="58"
+                x="522"
+                y="580"
+              />
+              <rect
+                className="animate-slide-in undefined"
+                fill="#8330FF"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "625ms",
+                  }
                 }
-              }
-              width="58"
-              x="348"
-              y="58"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="url(#bottom-left-square-image-pattern)"
-              height="116"
-              style={
-                Object {
-                  "animationDelay": "650ms",
+                width="58"
+                x="348"
+                y="58"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="url(#bottom-left-square-image-pattern)"
+                height="116"
+                style={
+                  Object {
+                    "animationDelay": "650ms",
+                  }
                 }
-              }
-              width="116"
-              x="174"
-              y="522"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#8330FF"
-              height="116"
-              style={
-                Object {
-                  "animationDelay": "675ms",
-                  "mixBlendMode": "screen",
+                width="116"
+                x="174"
+                y="522"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#8330FF"
+                height="116"
+                style={
+                  Object {
+                    "animationDelay": "675ms",
+                    "mixBlendMode": "screen",
+                  }
                 }
-              }
-              width="116"
-              x="174"
-              y="522"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="url(#top-left-square-image-pattern)"
-              height="116"
-              style={
-                Object {
-                  "animationDelay": "700ms",
+                width="116"
+                x="174"
+                y="522"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="url(#top-left-square-image-pattern)"
+                height="116"
+                style={
+                  Object {
+                    "animationDelay": "700ms",
+                  }
                 }
-              }
-              width="116"
-              x="290"
-              y="174"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#46ECA1"
-              height="116"
-              style={
-                Object {
-                  "animationDelay": "725ms",
-                  "mixBlendMode": "screen",
+                width="116"
+                x="290"
+                y="174"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#46ECA1"
+                height="116"
+                style={
+                  Object {
+                    "animationDelay": "725ms",
+                    "mixBlendMode": "screen",
+                  }
                 }
-              }
-              width="116"
-              x="290"
-              y="174"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="url(#black-dot-pattern)"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "750ms",
+                width="116"
+                x="290"
+                y="174"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="url(#black-dot-pattern)"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "750ms",
+                  }
                 }
-              }
-              width="58"
-              x="58"
-              y="522"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="url(#black-dot-pattern)"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "775ms",
+                width="58"
+                x="58"
+                y="522"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="url(#black-dot-pattern)"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "775ms",
+                  }
                 }
-              }
-              width="58"
-              x="290"
-              y="522"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#8330FF"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "800ms",
+                width="58"
+                x="290"
+                y="522"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#8330FF"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "800ms",
+                  }
                 }
-              }
-              width="58"
-              x="290"
-              y="638"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#8330FF"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "825ms",
+                width="58"
+                x="290"
+                y="638"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#8330FF"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "825ms",
+                  }
                 }
-              }
-              width="58"
-              x="58"
-              y="580"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#8330FF"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "850ms",
+                width="58"
+                x="58"
+                y="580"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#8330FF"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "850ms",
+                  }
                 }
-              }
-              width="58"
-              x="522"
-              y="754"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#8330FF"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "875ms",
+                width="58"
+                x="522"
+                y="754"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#8330FF"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "875ms",
+                  }
                 }
-              }
-              width="58"
-              x="754"
-              y="638"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#8330FF"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "900ms",
+                width="58"
+                x="754"
+                y="638"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#8330FF"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "900ms",
+                  }
                 }
-              }
-              width="58"
-              x="812"
-              y="348"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#8330FF"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "925ms",
+                width="58"
+                x="812"
+                y="348"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#8330FF"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "925ms",
+                  }
                 }
-              }
-              width="58"
-              x="174"
-              y="290"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="url(#black-dot-pattern)"
-              height="116"
-              style={
-                Object {
-                  "animationDelay": "1000ms",
+                width="58"
+                x="174"
+                y="290"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="url(#black-dot-pattern)"
+                height="116"
+                style={
+                  Object {
+                    "animationDelay": "1000ms",
+                  }
                 }
-              }
-              width="116"
-              x="522"
-              y="464"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#46ECA1"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1025ms",
+                width="116"
+                x="522"
+                y="464"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#46ECA1"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "1025ms",
+                  }
                 }
-              }
-              width="58"
-              x="696"
-              y="522"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#E7EAF2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1050ms",
+                width="58"
+                x="696"
+                y="522"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#E7EAF2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "1050ms",
+                  }
                 }
-              }
-              width="58"
-              x="812"
-              y="464"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#E7EAF2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1075ms",
+                width="58"
+                x="812"
+                y="464"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#E7EAF2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "1100ms",
+                  }
                 }
-              }
-              width="58"
-              x="812"
-              y="290"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#E7EAF2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1100ms",
+                width="58"
+                x="812"
+                y="232"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#0000C2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "1125ms",
+                  }
                 }
-              }
-              width="58"
-              x="812"
-              y="232"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#0000C2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1125ms",
+                width="58"
+                x="696"
+                y="406"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#0000C2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "1150ms",
+                  }
                 }
-              }
-              width="58"
-              x="696"
-              y="406"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#0000C2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1150ms",
+                width="58"
+                x="580"
+                y="464"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#0000C2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "1175ms",
+                  }
                 }
-              }
-              width="58"
-              x="580"
-              y="464"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#0000C2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1175ms",
+                width="58"
+                x="232"
+                y="116"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#0000C2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "1200ms",
+                  }
                 }
-              }
-              width="58"
-              x="232"
-              y="116"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#0000C2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1200ms",
+                width="58"
+                x="754"
+                y="406"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="url(#black-dot-pattern)"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "1225ms",
+                  }
                 }
-              }
-              width="58"
-              x="754"
-              y="406"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="url(#black-dot-pattern)"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1225ms",
+                width="58"
+                x="406"
+                y="522"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#0000C2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "1250ms",
+                  }
                 }
-              }
-              width="58"
-              x="406"
-              y="522"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#0000C2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1250ms",
+                width="58"
+                x="696"
+                y="580"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="url(#black-dot-pattern)"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "1275ms",
+                  }
                 }
-              }
-              width="58"
-              x="696"
-              y="580"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="url(#black-dot-pattern)"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1275ms",
+                width="58"
+                x="348"
+                y="522"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="url(#black-dot-pattern)"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "1300ms",
+                  }
                 }
-              }
-              width="58"
-              x="348"
-              y="522"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="url(#black-dot-pattern)"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1300ms",
+                width="58"
+                x="348"
+                y="464"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#8330FF"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "1325ms",
+                  }
                 }
-              }
-              width="58"
-              x="348"
-              y="464"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#8330FF"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1325ms",
+                width="58"
+                x="522"
+                y="464"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="url(#black-dot-pattern)"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "1375ms",
+                  }
                 }
-              }
-              width="58"
-              x="522"
-              y="464"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="url(#black-dot-pattern)"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1375ms",
+                width="58"
+                x="812"
+                y="638"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#0000C2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "1400ms",
+                  }
                 }
-              }
-              width="58"
-              x="812"
-              y="638"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#0000C2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1400ms",
+                width="58"
+                x="812"
+                y="232"
+              />
+              <rect
+                className="animate-slide-in"
+                fill="#0000C2"
+                height="58"
+                style={
+                  Object {
+                    "animationDelay": "1425ms",
+                  }
                 }
-              }
-              width="58"
-              x="812"
-              y="232"
-            />
-            <rect
-              className="animate-slide-in"
-              fill="#0000C2"
-              height="58"
-              style={
-                Object {
-                  "animationDelay": "1425ms",
-                }
-              }
-              width="58"
-              x="812"
-              y="0"
-            />
+                width="58"
+                x="812"
+                y="0"
+              />
+            </g>
           </g>
         </g>
-      </g>
-    </svg>
+      </svg>
+    </div>
   </div>
 </section>
 `;

@@ -28,14 +28,20 @@ export const Header: React.FC = () => {
     document.addEventListener("scroll", onScroll);
     return () => document.removeEventListener("scroll", onScroll);
   }, [setHasScrolled]);
+  const isDocs = pathname?.startsWith("/docs");
 
   return (
-    <header className={["w-full z-50", "fixed top-0 border-t-0"].join(" ")}>
+    <header
+      className={[
+        "w-full z-50 top-0 border-t-0",
+        isDocs ? "fixed" : "sticky float-left",
+      ].join(" ")}
+    >
       <nav
         className={[
           "w-full border transition border-t-0",
           "flex place-content-between",
-          !pathname?.startsWith("/docs") && "container mx-auto max-w-8xl",
+          !isDocs && "container mx-auto max-w-8xl",
           hasDarkMode
             ? ["bg-black-dot-pattern border-purple text-white"]
             : ["bg-white border-gray-100 shadow text-blue"],

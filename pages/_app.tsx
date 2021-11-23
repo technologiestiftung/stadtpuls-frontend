@@ -12,6 +12,7 @@ import { Head } from "@components/Head";
 import NextNProgress from "nextjs-progressbar";
 import colors from "../src/style/colors";
 import { DownloadQueueProvider } from "@lib/hooks/useDownloadQueue";
+import { BetaBanner } from "@components/BetaBanner";
 
 if (process.env.NODE_ENV !== "production") {
   // require("../src/mocks/index");
@@ -34,15 +35,16 @@ const App: FC<{
         <DownloadQueueProvider>
           <Head />
           <NextNProgress stopDelayMs={50} color={colors.green} />
-          <Header />
+          {!pathname?.startsWith("/docs") && <BetaBanner />}
           <main
             id={pathname?.replace(/\//gi, "") || "home"}
-            className='z-0 relative'
+            className='z-0 relative w-full'
             style={{
               paddingTop: 0,
               minHeight: "calc(100vh - 215px)",
             }}
           >
+            <Header />
             <Component {...pageProps} />
           </main>
           <Footer />

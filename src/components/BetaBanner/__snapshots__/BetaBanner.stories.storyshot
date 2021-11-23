@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI Elements/BetaBanner Default 1`] = `
+<div
+  className="bg-blue text-white relative"
+  role="alert"
+>
+  <div
+    className="container max-w-8xl mx-auto p-4 flex flex-wrap lg:flex-nowrap gap-x-4 gap-y-2 items-start"
+  >
+    <span
+      className="inline-block px-1 text-[11px] mt-1 tracking-wider font-bold bg-green text-blue"
+    >
+      BETA
+    </span>
+    <p
+      className="max-w-none opacity-90 text-sm sm:text-base"
+    >
+      Stadtpuls befindet sich noch in einer frühen Betaphase und kann daher noch einige Fehler enthalten und hier und da etwas haken. Wir arbeiten mit Begeisterung an der Verbesserung des Angebotes, bitten aber um etwas Geduld. Wenn Du Feedback für uns hast, schreibe uns in der
+       
+      <a
+        className="navigation-link"
+        href="https://github.com/technologiestiftung/stadtpuls/discussions"
+        rel="noreferrer"
+        target="_blank"
+      >
+        Github Discussions Gruppe
+      </a>
+      .
+    </p>
+    <button
+      aria-label="Schließen"
+      className="absolute right-2 top-3 text-green hover:text-purple transition hover:rotate-180 p-2 rounded-full focus-offset"
+      onClick={[Function]}
+    >
+      <svg
+        height="16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M.387.21a1 1 0 0 1 1.226 0l.094.083L8 6.585 14.293.293l.094-.083a1 1 0 0 1 1.403 1.403l-.083.094L9.415 8l6.292 6.293a1 1 0 0 1-1.32 1.497l-.094-.083L8 9.415l-6.293 6.292a1 1 0 0 1-1.32.083l-.094-.083a1 1 0 0 1-.083-1.32l.083-.094L6.585 8 .293 1.707.21 1.613a1 1 0 0 1 0-1.226L.293.293.387.21Z"
+          fill="currentColor"
+          fillRule="nonzero"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;

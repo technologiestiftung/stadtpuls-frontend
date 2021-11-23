@@ -1,20 +1,26 @@
 .wrapper {
   --pixelSize: 58px;
-  transform: translate(calc(2 * var(--pixelSize, 58px)), calc(6 * var(--pixelSize, 58px)));
+  transform: translateY(calc(6 * var(--pixelSize, 58px)));
 }
 
 @media screen and (max-width: 1280px) {
-  .wrapper {
-    transform: translate(calc(3 * var(--pixelSize, 58px)), calc(6 * var(--pixelSize, 58px)));
+  .wrapper > svg {
+    transform: translateX(calc(3 * var(--pixelSize, 58px)));
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .wrapper {
-    transform: translate(calc(3 * var(--pixelSize, 58px)), calc(7 * var(--pixelSize, 58px)));
+  .wrapper > svg {
+    transform: translateX(0);
   }
 
   .hiddenSmall {
     display: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .wrapper > svg {
+    transform: translateX(calc(2 * var(--pixelSize, 58px)));
   }
 }

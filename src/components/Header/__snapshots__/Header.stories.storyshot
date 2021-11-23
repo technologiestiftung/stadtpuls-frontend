@@ -2,7 +2,7 @@
 
 exports[`Storyshots Layout/Header Default 1`] = `
 <header
-  className="w-full z-50 fixed top-0 border-t-0"
+  className="w-full z-50 top-0 border-t-0 sticky float-left"
 >
   <nav
     className="w-full border transition border-t-0 flex place-content-between container mx-auto max-w-8xl bg-black-dot-pattern border-purple text-white"
@@ -14,8 +14,17 @@ exports[`Storyshots Layout/Header Default 1`] = `
       onMouseEnter={[Function]}
     >
       <span
-        role="img"
-      />
+        className="relative inline-flex h-[29px] items-center sm:gap-4"
+      >
+        <span
+          role="img"
+        />
+        <span
+          className="inline-block absolute sm:static top-0 right-0 px-1 text-[11px] tracking-wider font-bold bg-blue text-green transform -translate-y-2.5 translate-x-6 sm:transform-none"
+        >
+          BETA
+        </span>
+      </span>
     </a>
     <section
       className="flex flex-row-reverse lg:flex-row gap-2 sm:gap-4 items-center pr-4"

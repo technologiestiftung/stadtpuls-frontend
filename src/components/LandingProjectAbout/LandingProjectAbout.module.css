@@ -1,4 +1,5 @@
 .image {
+  width: calc(50% - var(--pixelSize, 58px));
   height: calc(100% + (2 * var(--pixelSize, 58px)));
   top: calc(var(--pixelSize, 58px) * -1);
   left: calc(50% + var(--pixelSize, 58px));
@@ -11,6 +12,7 @@
 
 @media screen and (max-width: 1280px) {
   .image {
+    width: calc(40% - var(--pixelSize, 58px));
     left: calc(60% + var(--pixelSize, 58px));
   }
 }

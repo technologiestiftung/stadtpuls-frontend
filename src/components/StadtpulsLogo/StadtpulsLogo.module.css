@@ -1,11 +1,11 @@
-.logo {
+.logoImage {
   display: inline-block;
   width: 157px;
   height: 29px;
   background: url(/images/logo-sprite.svg) no-repeat 0 -0;
 }
 
-.logo:hover {
+.logoContainer:hover .logoImage {
   animation: logo-hover 1s linear infinite;
 }
 
