@@ -98,11 +98,10 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
   onDatetimeRangeChange,
   today = moment.parseZone(Date.now()),
 }) => {
-  const [activeFilterType, setActiveFilterType] = useState<FilterType>(
-    "devicesByDatetimeRange"
-  );
+  const [activeFilterType, setActiveFilterType] =
+    useState<FilterType>("devicesByTimespan");
   const [temporalityOfRecords, setTemporaityOfRecords] =
-    useState<TimespanType>("last24h");
+    useState<TimespanType>("max");
   const last7daysTimeRange = getTimeRangeByTimespan("last7days", today);
   return (
     <div className='pb-4 pt-8 flex flex-wrap gap-8'>

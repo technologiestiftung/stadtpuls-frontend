@@ -5,7 +5,6 @@ import { LineChart } from "@components/LineChart";
 import { TextLink } from "@components/TextLink";
 import { createDateValueArray } from "@lib/dateUtil";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
-import { useSensorLastRecordDate } from "@lib/hooks/useSensorLastRecordDate";
 import { useSensorRecords } from "@lib/hooks/useSensorRecords";
 import { useSensorRecordsCount } from "@lib/hooks/useSensorRecordsCount";
 import { GetRecordsOptionsType } from "@lib/requests/getRecordsBySensorId";
@@ -13,7 +12,7 @@ import { getSensorData } from "@lib/requests/getSensorData";
 import DownloadIcon from "../../public/images/icons/16px/arrowDownWithHalfSquare.svg";
 import moment from "moment";
 import { GetServerSideProps } from "next";
-import React, { FC, useCallback, useEffect, useState } from "react";
+import React, { FC, useCallback, useState } from "react";
 import { SensorPageHeaderWithData } from "@components/SensorPageHeader/withData";
 import { useDownloadQueue } from "@lib/hooks/useDownloadQueue";
 import { downloadCSVString } from "@lib/downloadCsvUtil";
@@ -55,10 +54,9 @@ const SensorPage: FC<{
     startDateTimeString: string | undefined;
     endDateTimeString: string | undefined;
   }>({
-    startDateTimeString: tenDaysAgo.toISOString(),
-    endDateTimeString: today.toISOString(),
+    startDateTimeString: undefined,
+    endDateTimeString: undefined,
   });
-  const { lastRecordDate } = useSensorLastRecordDate(sensor.id);
   const { count: recordsCount } = useSensorRecordsCount(sensor.id);
   const {
     records,
@@ -72,17 +70,6 @@ const SensorPage: FC<{
     maxRows: MAX_RENDERABLE_VALUES_LINE_CHART,
   });
   const parsedAndSortedRecords = createDateValueArray(records);
-
-  useEffect(() => {
-    if (!lastRecordDate) return;
-    setCurrentDatetimeRange({
-      startDateTimeString: moment
-        .parseZone(lastRecordDate)
-        .subtract(7, "days")
-        .toISOString(),
-      endDateTimeString: moment.parseZone(lastRecordDate).toISOString(),
-    });
-  }, [lastRecordDate, setCurrentDatetimeRange]);
 
   const chartWrapper = useCallback((node: HTMLDivElement | null) => {
     if (!node) return;
