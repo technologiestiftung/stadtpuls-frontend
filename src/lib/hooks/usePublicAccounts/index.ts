@@ -67,8 +67,8 @@ export const getPublicAccounts = async (): Promise<ParsedAccountType[]> => {
   const { data, error } = await supabase
     .from<AccountQueryResponseType>("user_profiles")
     .select(accountQueryString)
-    .order("created_at")
-    // FIXME: created_at is not recognized altought it is inherited from the definitions
+    .order("name")
+    // FIXME: recorded_at is not recognized altought it is inherited from the definitions
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     .order("recorded_at", {
