@@ -103,6 +103,16 @@ exports[`Storyshots Layout/Footer Default 1`] = `
         <li>
           <a
             className="text-sm text-gray-700 focus-offset"
+            href="https://github.com/technologiestiftung/stadtpuls/discussions"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Feedback
+          </a>
+        </li>
+        <li>
+          <a
+            className="text-sm text-gray-700 focus-offset"
             href="/docs/terms"
             rel="noopener noreferrer"
             target="_blank"
