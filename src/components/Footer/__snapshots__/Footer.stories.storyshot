@@ -17,6 +17,28 @@ exports[`Storyshots Layout/Footer Default 1`] = `
           <span
             className="w-full block text-xs text-gray-700"
           >
+             
+          </span>
+          <a
+            aria-label="CityLAB Berlin"
+            className="mt-4 block focus-offset"
+            href="https://www.citylab-berlin.org"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="Logo des CityLAB Berlin"
+              className="w-40"
+              src="/images/citylab-logo.svg"
+            />
+          </a>
+        </div>
+        <div
+          className="ml-8 md:ml-12 block"
+        >
+          <span
+            className="w-full block text-xs text-gray-700"
+          >
             Ein Projekt der:
           </span>
           <a
@@ -30,28 +52,6 @@ exports[`Storyshots Layout/Footer Default 1`] = `
               alt="Logo der Technologiestiftung Berlin"
               className="w-32"
               src="/images/tsb-logo.svg"
-            />
-          </a>
-        </div>
-        <div
-          className="ml-8 md:ml-12 block"
-        >
-          <span
-            className="w-full block text-xs text-gray-700"
-          >
-            Durchgeführt vom:
-          </span>
-          <a
-            aria-label="CityLAB Berlin"
-            className="mt-4 block focus-offset"
-            href="https://www.citylab-berlin.org"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <img
-              alt="Logo des CityLAB Berlin"
-              className="w-40"
-              src="/images/citylab-logo.svg"
             />
           </a>
         </div>

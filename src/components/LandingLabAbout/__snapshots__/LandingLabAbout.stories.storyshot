@@ -52,9 +52,9 @@ exports[`Storyshots Promotional/LandingLabAbout Default 1`] = `
           className="md:text-right"
         >
           <img
-            alt="Logo der Technologiestiftung"
+            alt="Logo des CityLAB Berlin"
             className="max-w-full h-16 mt-8 inline-block"
-            src="/images/tsb-logo.svg"
+            src="/images/citylab-logo.svg"
           />
         </div>
       </div>
