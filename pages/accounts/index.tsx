@@ -27,6 +27,9 @@ const AccountsOverview: FC<AccountsOverviewPropType> = ({
   initialAccounts,
 }) => {
   const { accounts, error } = usePublicAccounts(initialAccounts);
+  const accountsWithAtLeastOneSensor = accounts.filter(
+    account => account.sensors.length > 0
+  );
   if (error)
     return (
       <div className='container mx-auto max-w-8xl py-24 px-4'>
@@ -45,7 +48,7 @@ const AccountsOverview: FC<AccountsOverviewPropType> = ({
         />
       </div>
     );
-  if (accounts.length === 0)
+  if (accountsWithAtLeastOneSensor.length === 0)
     return (
       <div className='container mx-auto max-w-8xl py-24 px-4'>
         <h1 className='flex justify-center mt-8'>Keine Accounts vorhanden</h1>
@@ -62,7 +65,11 @@ const AccountsOverview: FC<AccountsOverviewPropType> = ({
       >
         Alle Accounts
       </h1>
-      <AccountsGrid accounts={accounts} />
+      <AccountsGrid accounts={accountsWithAtLeastOneSensor} />
+      <p className='mt-20 text-sm text-gray-500 mx-auto text-center'>
+        Es werden nur Accounts gezeigt, die über mindestens einen Sensor
+        verfügen.
+      </p>
     </div>
   );
 };
