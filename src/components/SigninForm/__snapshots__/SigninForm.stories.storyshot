@@ -53,18 +53,8 @@ exports[`Storyshots Forms/Signin Default 1`] = `
       className="flex gap-4 place-content-between"
     >
       <section
-        className="text-gray-500"
-      >
-        Hast du noch keinen Account? 
-        <a
-          className="underline transition cursor-pointer text-left font-headline focus:ring-green text-blue underline-green hover:text-purple focus-offset inline-block"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Registriere dich
-        </a>
-      </section>
+        className="text-gray-500 min-w-[140px]"
+      />
       <section
         className="flex flex-col"
         style={
