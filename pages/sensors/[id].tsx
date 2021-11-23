@@ -164,19 +164,17 @@ const SensorPage: FC<{
           {requestedRecordsCount &&
             requestedRecordsCount > MAX_RENDERABLE_VALUES_LINE_CHART && (
               <Alert
-                type='warning'
-                title='Achtung'
                 message={
                   <>
                     Das Diagramm kann maximal{" "}
-                    <mark className='px-1 py-0.5 font-mono font-bold bg-warning bg-opacity-50'>
+                    <mark className='px-1 py-0.5 font-mono font-bold bg-gray-100 text-blue'>
                       {MAX_RENDERABLE_VALUES_LINE_CHART}
                     </mark>{" "}
                     Datenpunkte darstellen. Im gewählten Zeitraum befinden sich{" "}
-                    <mark className='px-1 py-0.5 font-mono font-bold bg-warning bg-opacity-50'>
+                    <mark className='px-1 py-0.5 font-mono font-bold bg-gray-100 text-blue'>
                       {requestedRecordsCount}
                     </mark>{" "}
-                    Datenpunkte. <b>Die ältesten werden nicht dargestellt.</b>
+                    Datenpunkte. Die ältesten werden nicht dargestellt.
                   </>
                 }
               />
