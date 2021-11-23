@@ -28,9 +28,19 @@ export const BetaBanner: FC = () => {
           BETA
         </span>
         <p className='max-w-none opacity-90 text-sm sm:text-base'>
-          Stadtpuls befindet sich noch in der Betaphase und kann Fehler
-          enthalten oder es kann Datenverlust auftreten. Die Benutzung erfolgt
-          auf eigene Gefahr.
+          Stadtpuls befindet sich noch in einer frühen Betaphase und kann daher
+          noch einige Fehler enthalten und hier und da etwas haken. Wir arbeiten
+          mit Begeisterung an der Verbesserung des Angebotes, bitten aber um
+          etwas Geduld. Wenn Du Feedback für uns hast, schreibe uns in der{" "}
+          <a
+            href='https://github.com/technologiestiftung/stadtpuls/discussions'
+            target='_blank'
+            rel='noreferrer'
+            className='navigation-link'
+          >
+            Github Discussions Gruppe
+          </a>
+          .
         </p>
         <button
           className={[
