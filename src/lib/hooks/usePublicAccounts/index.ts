@@ -1,8 +1,4 @@
-import {
-  RECORDS_LIMIT,
-  sensorQueryString,
-} from "@lib/requests/getPublicSensors";
-import { supabase } from "@auth/supabase";
+import { sensorQueryString } from "@lib/requests/getPublicSensors";
 import useSWR from "swr";
 import { definitions } from "@common/types/supabase";
 import {
@@ -10,6 +6,10 @@ import {
   ParsedSensorType,
   SensorQueryResponseType,
 } from "../usePublicSensors";
+import {
+  GetAccountsOptionsType,
+  getPublicAccounts,
+} from "@lib/requests/getPublicAccounts";
 
 export const accountQueryString = `
   id,
@@ -63,36 +63,29 @@ export const mapPublicAccount = ({
   sensors: sensors.map(mapPublicSensor),
 });
 
-export const getPublicAccounts = async (): Promise<ParsedAccountType[]> => {
-  const { data, error } = await supabase
-    .from<AccountQueryResponseType>("user_profiles")
-    .select(accountQueryString)
-    .order("name")
-    // FIXME: recorded_at is not recognized altought it is inherited from the definitions
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    .order("recorded_at", {
-      foreignTable: "sensors.records",
-      ascending: false,
-    })
-    .limit(RECORDS_LIMIT, { foreignTable: "sensors.records" });
-
-  if (error) throw error;
-  if (!data) return [];
-  const accounts = data.map(mapPublicAccount);
-
-  return accounts;
-};
+interface usePublicAccountsParamsType {
+  rangeStart: GetAccountsOptionsType["rangeStart"];
+  rangeEnd: GetAccountsOptionsType["rangeEnd"];
+  initialData: ParsedAccountType[] | undefined;
+}
 
 export const usePublicAccounts = (
-  initialData?: ParsedAccountType[]
+  {
+    rangeStart,
+    rangeEnd,
+    initialData,
+  }: usePublicAccountsParamsType = {} as usePublicAccountsParamsType
 ): {
   accounts: ParsedAccountType[];
   error: Error | null;
 } => {
   const { data, error } = useSWR<ParsedAccountType[] | null, Error>(
-    ["usePublicAccounts"],
-    () => getPublicAccounts(),
+    ["usePublicAccounts", rangeStart, rangeEnd, initialData],
+    () =>
+      getPublicAccounts({
+        rangeStart,
+        rangeEnd,
+      }),
     { initialData }
   );
 
