@@ -73,6 +73,16 @@ export const Footer: React.FC = () => {
           <ul className='flex items-center mt-2 sm:mt-0 flex-wrap gap-x-4 gap-y-2'>
             <li>
               <a
+                href='https://github.com/technologiestiftung/stadtpuls/discussions'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-sm text-gray-700 focus-offset'
+              >
+                Feedback
+              </a>
+            </li>
+            <li>
+              <a
                 href='/docs/terms'
                 target='_blank'
                 rel='noopener noreferrer'
