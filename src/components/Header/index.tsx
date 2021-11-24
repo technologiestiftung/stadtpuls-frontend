@@ -30,12 +30,17 @@ export const Header: React.FC = () => {
   }, [setHasScrolled]);
   const isDocs = pathname?.startsWith("/docs");
   const isHome = pathname === "/";
+  const isSensorPage = pathname?.startsWith("/sensors/[id]");
 
   return (
     <header
       className={[
         "w-full z-50 top-0 border-t-0",
-        isHome ? "sticky float-left" : !isDocs ? "sticky" : "fixed",
+        isHome || isSensorPage
+          ? "sticky float-left"
+          : !isDocs
+          ? "sticky"
+          : "fixed",
       ].join(" ")}
     >
       <nav
