@@ -41,13 +41,14 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
             <meta name='description' content={frontMatter.metaDescription} />
           </Head>
           <div className='md:bg-white-dot-pattern'>
-            <div
-              className={[
-                "relative z-0 md:bg-gradient-to-l from-white",
-                "px-4 pb-0 py-6 sm:px-8 sm:pt-12 md:p-12 md:pt-18 lg:p-18 lg:pt-24",
-              ].join(" ")}
-            >
-              <div className='container mx-auto' style={{ maxWidth: "89ch" }}>
+            <div className='relative z-0 md:bg-gradient-to-l from-white'>
+              <div
+                className={[
+                  "text-base",
+                  "container max-w-none",
+                  "px-4 pb-0 py-6 sm:p-8 sm:pt-12 md:pt-18 md:px-12 lg:px-18 lg:pt-24",
+                ].join(" ")}
+              >
                 <h1
                   id='main-headline'
                   className={[
@@ -63,7 +64,7 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
           <div
             className={[
               "relative z-0",
-              "container mx-auto prose lg:prose-lg 2xl:prose-2xl prose-purple",
+              "container prose lg:prose-lg 2xl:prose-xl prose-purple",
               "px-4 py-6 sm:p-8 sm:pb-12 md:p-12 md:pb-18 lg:p-18 lg:pb-24",
             ].join(" ")}
           >
