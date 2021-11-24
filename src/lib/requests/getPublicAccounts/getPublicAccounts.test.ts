@@ -30,6 +30,22 @@ describe("utility function getPublicAccounts", () => {
     server.close();
   });
 
+  it("returns accounts alphabetically (case-insensitively!)", async (): Promise<void> => {
+    const server = setupServer(
+      rest.get(createSupabaseUrl(`/user_profiles`), (_req, res, ctx) => {
+        return res(ctx.status(200, "Mocked status"), ctx.json(exampleAccounts));
+      })
+    );
+    server.listen();
+    const fetchedAccounts = await getPublicAccounts();
+    expect(fetchedAccounts[0].username).toEqual("aName");
+    expect(fetchedAccounts[fetchedAccounts.length - 1].username).toEqual(
+      "XXName"
+    );
+    server.resetHandlers();
+    server.close();
+  });
+
   it("returns a limited amount of accounts if range is provided", async (): Promise<void> => {
     const rangeStart = 0;
     const rangeEnd = 3;

@@ -36,6 +36,22 @@ export const publicAccounts: AccountQueryResponseType[] = [
     sensors: [...ttnSensors, ...httpSensors],
     user: userprofiles[0],
   },
+  {
+    id: "4",
+    name: "XXName",
+    display_name: "XXName",
+    created_at: "2021-01-09T18:20:10.934324+00:00",
+    sensors: ttnSensors,
+    user: userprofiles[0],
+  },
+  {
+    id: "5",
+    name: "aName",
+    display_name: "aName",
+    created_at: "2021-01-018T18:20:10.934324+00:00",
+    sensors: ttnSensors,
+    user: userprofiles[0],
+  },
 ];
 
 export const parsedAccounts = publicAccounts.map(mapPublicAccount);
