@@ -70,7 +70,7 @@ const PagesGroup: FC<PagesGroupPropType> = ({ title, pages }) => (
       {pages.map(page => (
         <li key={page.path} className='mb-3'>
           <ActiveLink activeClassName='navigation-link-active' href={page.path}>
-            <a href={page.path} className='navigation-link p-4 block sm:inline'>
+            <a href={page.path} className='navigation-link block sm:inline'>
               {page.title}
             </a>
           </ActiveLink>
