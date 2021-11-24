@@ -95,11 +95,11 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           >
             <a
               className="navigation-link p-4 block sm:inline"
-              href="/docs/ttn-sensor"
+              href="/docs/sensors"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Neuen TTN-Sensor anlegen
+              Neuen Sensor anlegen
             </a>
           </li>
           <li
@@ -107,11 +107,35 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           >
             <a
               className="navigation-link p-4 block sm:inline"
-              href="/docs/http-sensor"
+              href="/docs/tokens"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Neuen HTTP-Sensor anlegen
+              Neuen Token anlegen
+            </a>
+          </li>
+          <li
+            className="mb-3"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/docs/ttn-sensor"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              TTN-Sensor einrichten
+            </a>
+          </li>
+          <li
+            className="mb-3"
+          >
+            <a
+              className="navigation-link p-4 block sm:inline"
+              href="/docs/http-requests"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              HTTP Anfragen
             </a>
           </li>
           <li
