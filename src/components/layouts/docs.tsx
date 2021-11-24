@@ -64,7 +64,7 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
           <div
             className={[
               "relative z-0",
-              "container prose lg:prose-lg 2xl:prose-xl prose-purple",
+              "container prose prose-purple",
               "px-4 py-6 sm:p-8 sm:pb-12 md:p-12 md:pb-18 lg:p-18 lg:pb-24",
             ].join(" ")}
           >
