@@ -15,7 +15,9 @@ Als erstes Beispiel erklären wir dir wie du mit einem einfachen Python Skript W
 
 ## Daten Senden mit Python
 
-Folgende Vorraussetzungen sollten gegeben sein.
+### Vorraussetzungen
+
+Folgende Vorraussetzungen sollten erfüllt sein.
 
 1. Du hast einen stadtpuls.com Account
 2. Du hast bereits einen Sensor vom Type HTTP angelegt
@@ -136,3 +138,58 @@ Herzlichen Glückwunsch! Du hast dein erstes stadtpuls.com Python Skript erstell
 
 
 ## Daten Senden mit Javascript
+
+Javascript kann auf verschiedenste Weisen ausgeführt werden, mit Node.js, mit Replit.com, auf codesandbox.io, via GitHub Codespaces, auf JSBin und an vielen anderen Plätzen. Um die Einstiegshürde so gering wie möglich zu halten empfehlen wir hier [JSBin](https://jsbin.com/?js,console) oder für Firefox Nutzer:innen den [Multi Line Editor](https://developer.mozilla.org/en-US/docs/Tools/Web_Console/The_command_line_interpreter#multi-line_mode) der Web Console.
+
+### Vorraussetzungen
+
+Folgende Vorraussetzungen sollten erfüllt sein.
+
+1. Du hast einen stadtpuls.com Account
+2. Du hast bereits einen Sensor vom Type HTTP angelegt
+3. Du hast einen Token erstellt und dir sicher gespeichert
+4. Du hast entweder JSBin oder den FireFox Multi Line Editor \*
+
+\* Brave, Safari, Chrome, Edge Benutzer:innen können mit SHIFT + ENTER direkt  in der Console schreiben.
+
+TBD
+
+
+
+das gesamte Javascript siehst du nochmal hier.
+
+```js
+{
+  const url = "https://api.stadtpuls.com/api/v3/sensors/<DEINE SENSOR ID>/records";
+  const token = "<DEIN TOKEN HIER EINFÜGEN>";
+  const headers = new Headers({
+    authorization: `Bearer ${token}`,
+    "content-type": "application/json",
+  });
+  const data = {
+    measurements: [123],
+  };
+
+  fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("response not ok");
+      }
+      if (response.status !== 201) {
+        throw new Error("status not 201");
+      }
+      return reponse.json();
+    })
+    .then((json) => {
+      console.info(json);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+```
