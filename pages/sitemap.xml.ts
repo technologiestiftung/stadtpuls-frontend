@@ -1,8 +1,6 @@
-import {
-  getPublicAccounts,
-  ParsedAccountType,
-} from "@lib/hooks/usePublicAccounts";
+import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
+import { getPublicAccounts } from "@lib/requests/getPublicAccounts";
 import { getPublicSensors } from "@lib/requests/getPublicSensors";
 import { NextPage, NextApiResponse } from "next";
 import { Component } from "react";

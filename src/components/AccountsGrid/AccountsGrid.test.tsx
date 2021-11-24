@@ -1,6 +1,6 @@
 import { screen, render } from "@testing-library/react";
 import { AccountsGrid } from ".";
-import { getPublicAccounts } from "@lib/hooks/usePublicAccounts";
+import { getPublicAccounts } from "@lib/requests/getPublicAccounts";
 describe("AccountsGrid component", () => {
   it("should render the first sensor", async (): Promise<void> => {
     const accounts = await getPublicAccounts();
