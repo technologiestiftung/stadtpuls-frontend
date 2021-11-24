@@ -29,12 +29,13 @@ export const Header: React.FC = () => {
     return () => document.removeEventListener("scroll", onScroll);
   }, [setHasScrolled]);
   const isDocs = pathname?.startsWith("/docs");
+  const isHome = pathname === "/";
 
   return (
     <header
       className={[
         "w-full z-50 top-0 border-t-0",
-        isDocs ? "fixed" : "sticky",
+        isHome ? "sticky float-left" : !isDocs ? "sticky" : "fixed",
       ].join(" ")}
     >
       <nav
