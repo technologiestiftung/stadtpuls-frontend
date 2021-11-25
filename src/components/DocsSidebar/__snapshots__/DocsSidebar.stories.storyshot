@@ -94,7 +94,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
             className="mb-3"
           >
             <a
-              className="navigation-link p-4 block sm:inline"
+              className="navigation-link block sm:inline"
               href="/docs/sensors"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -106,7 +106,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
             className="mb-3"
           >
             <a
-              className="navigation-link p-4 block sm:inline"
+              className="navigation-link block sm:inline"
               href="/docs/tokens"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -118,7 +118,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
             className="mb-3"
           >
             <a
-              className="navigation-link p-4 block sm:inline"
+              className="navigation-link block sm:inline"
               href="/docs/ttn-sensor"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -130,7 +130,7 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
             className="mb-3"
           >
             <a
-              className="navigation-link p-4 block sm:inline"
+              className="navigation-link block sm:inline"
               href="/docs/http-requests"
               onClick={[Function]}
               onMouseEnter={[Function]}
