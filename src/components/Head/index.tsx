@@ -107,6 +107,8 @@ export const Head: FC<Partial<HeadPropType>> = ({
       <link rel='manifest' href='/manifest.json' />
 
       <link rel='author' href='https://odis-berlin.de' />
+
+      <link rel='stylesheet' href='/styles/prism-shades-of-purple.min.css' />
     </NextHead>
   );
 };

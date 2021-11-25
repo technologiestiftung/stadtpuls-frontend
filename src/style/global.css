@@ -203,6 +203,15 @@
     @apply font-headline;
   }
 
+  main .prose pre {
+    @apply bg-black text-gray-50;
+  }
+
+  main code[class*='language-'],
+  main pre[class*='language-'] {
+    text-shadow: none;
+  }
+
   main#docs .prose a {
     @apply text-blue underline-green hover:text-purple transition font-headline font-bold;
   }
