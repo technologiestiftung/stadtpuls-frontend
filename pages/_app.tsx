@@ -34,7 +34,11 @@ const App: FC<{
       <AuthProvider>
         <DownloadQueueProvider>
           <Head />
-          <NextNProgress stopDelayMs={50} color={colors.green} />
+          <NextNProgress
+            stopDelayMs={50}
+            color={colors.green}
+            options={{ showSpinner: false }}
+          />
           {!pathname?.startsWith("/docs") && <BetaBanner />}
           <main
             id={pathname?.replace(/\//gi, "") || "home"}

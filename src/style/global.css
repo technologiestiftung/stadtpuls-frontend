@@ -113,6 +113,10 @@
       font-style: monospace;
   }
 
+  :root {
+    --headerHeight: 62px;
+  }
+
   main#home {
     max-width: 100vw;
   }
@@ -210,6 +214,21 @@
   main code[class*='language-'],
   main pre[class*='language-'] {
     text-shadow: none;
+  }
+  
+  main .prose code {
+    display: inline-block;
+    @apply bg-gray-100 font-mono;
+    font-size: 1.05em;
+    padding: 0 .4rem;
+    margin: 0 .1rem;
+    font-weight: 500;
+  }
+
+  .prose code::after,
+  .prose code::before {
+    content: "";
+    display: none;
   }
 
   main#docs .prose a {
