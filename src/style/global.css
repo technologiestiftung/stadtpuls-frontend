@@ -113,6 +113,10 @@
       font-style: monospace;
   }
 
+  :root {
+    --headerHeight: 62px;
+  }
+
   main#home {
     max-width: 100vw;
     overflow-x: hidden;

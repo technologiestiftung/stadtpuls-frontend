@@ -138,7 +138,7 @@ export const SensorPageHeader: FC<SensorPageHeaderPropType> = ({
   onEditButtonClick = () => undefined,
 }) => {
   return (
-    <div className='bg-gray-50 relative'>
+    <div className='bg-gray-50 relative mt-[calc(-1*var(--headerHeight))]'>
       <MapBackground geocoordinates={{ latitude, longitude }} />
       <div
         className={["container max-w-8xl", "mx-auto relative z-10"].join(" ")}

@@ -29,7 +29,12 @@ export const Header: React.FC = () => {
   }, [setHasScrolled]);
 
   return (
-    <header className={["w-full z-50", "fixed top-0 border-t-0"].join(" ")}>
+    <header
+      className={[
+        "w-full z-50 top-0 border-t-0",
+        isDocs ? "fixed" : "sticky",
+      ].join(" ")}
+    >
       <nav
         className={[
           "w-full border transition border-t-0",
