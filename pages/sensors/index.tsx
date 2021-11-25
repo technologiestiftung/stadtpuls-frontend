@@ -70,7 +70,7 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({
     );
 
   return (
-    <div className='container mx-auto max-w-8xl py-24 px-4'>
+    <div className='container mx-auto max-w-8xl pt-12 pb-24 px-4'>
       <div
         className={classNames(
           "sm:mt-1 md:mt-2",
