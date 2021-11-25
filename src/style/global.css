@@ -207,6 +207,15 @@
     @apply font-headline;
   }
 
+  main .prose pre {
+    @apply bg-black text-gray-50;
+  }
+
+  main code[class*='language-'],
+  main pre[class*='language-'] {
+    text-shadow: none;
+  }
+  
   main .prose code {
     display: inline-block;
     @apply bg-gray-100 font-mono;
