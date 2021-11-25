@@ -207,6 +207,21 @@
     @apply font-headline;
   }
 
+  main .prose code {
+    display: inline-block;
+    @apply bg-gray-100 font-mono;
+    font-size: 1.05em;
+    padding: 0 .4rem;
+    margin: 0 .1rem;
+    font-weight: 500;
+  }
+
+  .prose code::after,
+  .prose code::before {
+    content: "";
+    display: none;
+  }
+
   main#docs .prose a {
     @apply text-blue underline-green hover:text-purple transition font-headline font-bold;
   }
