@@ -62,12 +62,12 @@ const AccountsOverview: FC<AccountsOverviewPropType> = ({
 
   if ((!accounts || accounts.length === 0) && pageIsWithinPageCount)
     return (
-      <div className='container mx-auto max-w-8xl py-24 px-4'>
+      <div className='container mx-auto max-w-8xl pt-12 pb-24 px-4'>
         <h1 className='flex justify-center mt-8'>Keine Accounts vorhanden</h1>
       </div>
     );
   return (
-    <div className='container mx-auto max-w-8xl py-24 px-4'>
+    <div className='container mx-auto max-w-8xl pt-12 pb-24 px-4'>
       <div
         className={classNames(
           "sm:mt-1 md:mt-2",
