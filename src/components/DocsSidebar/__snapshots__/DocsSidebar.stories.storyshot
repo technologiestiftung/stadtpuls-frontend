@@ -95,11 +95,11 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           >
             <a
               className="navigation-link block sm:inline"
-              href="/docs/sensors"
+              href="/docs/tokens"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Neuen Sensor anlegen
+              Neuen Token anlegen
             </a>
           </li>
           <li
@@ -107,11 +107,11 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           >
             <a
               className="navigation-link block sm:inline"
-              href="/docs/tokens"
+              href="/docs/sensors"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Neuen Token anlegen
+              Neuen Sensor anlegen
             </a>
           </li>
           <li
