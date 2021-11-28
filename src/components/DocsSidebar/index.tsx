@@ -36,12 +36,12 @@ const docsPages: PageType[] = [
     path: "/docs/stadtpuls-account",
   },
   {
-    title: "Neuen Sensor anlegen",
-    path: "/docs/sensors",
-  },
-  {
     title: "Neuen Token anlegen",
     path: "/docs/tokens",
+  },
+  {
+    title: "Neuen Sensor anlegen",
+    path: "/docs/sensors",
   },
   {
     title: "TTN-Sensor einrichten",
