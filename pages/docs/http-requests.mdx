@@ -1,0 +1,195 @@
+---
+layout: 'docs'
+title: 'HTTP Anfragen'
+metaTitle: 'HTTP Anfragen mit Python oder Javascript'
+metaDescription: 'Folge dieser Schritt-für-Schritt-Anleitung, um eine HTTP Anfrage mit Python oder Javascript zu stellen.'
+---
+
+<p className="lead">
+  Wie du deine Sensoren mit Stadtpuls reden lässt.
+</p>
+
+Stadtpuls erlaubt dir, Daten über HTTP zu deinen Sensoren hinzuzufügen. Dies eröffnet viele Möglickeiten wie du mit der Plattform interagieren kannst. Zum Beispiel könnte ein Raspberry Pi, ein Arduino Board, dein Browser, ein Webserver oder dein Mobiltelefon (um nur einige zu nennen) Daten sammeln und sie auf Stadtpuls veröffentlichen. Vorraussetzung ist, dass dein Endgerät das ["Hypertext Transfer Protocol" (HTTP)](https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol) spricht.
+
+Als erstes Beispiel erklären wir dir wie du mit einem einfachen Python-Skript Werte zu deinem Sensor hinzufügen kannst.
+
+## Daten senden mit Python
+
+### Voraussetzungen
+
+Folgende Voraussetzungen sollten erfüllt sein:
+
+1. Du hast einen [stadtpuls.com Account](/docs/stadtpuls-account)
+2. Du hast bereits [einen Sensor vom Type HTTP angelegt](/docs/sensors)
+3. Du hast [einen Token erstellt](/docs/tokens) und dir sicher gespeichert
+4. Du hast Python (3)\* installiert
+5. Du hast einen Code Editor wie VSCode, Pycharm, Sublime Text, VIM, Nano oder ähnlich installiert
+6. Du hast ein Terminal Emulator installiert\*\*
+
+\* Python 2 geht auch, das Skript ist jedoch nur mit Python 3 getestet und möglicherwiese nicht kompatibel mit Python 2.
+
+\*\* Jede Platform hat ihr eigenes Terminal. Wir gehen hier von Linux oder MacOS aus und verwenden die BASH Shell. Auf Windows gibt es Powershell oder WSL um zu dem gleichen Ergebnis zu kommen.
+
+
+
+Erstelle eine neue Datei mit dem Name `stadtpuls.py`. Als erstes solltest du folgende Zeilen einfügen und speichern:
+
+```python
+import requests
+import json
+```
+
+Diese Zeilen sagen Python welche Bibliotheken du benötigst. Führe die Datei aus, um zu sehen was passiert. Starte eine neue Shell Session in deinem Terminal und navigiere zu deinem Python Skript. Dann führe folgenden Befehl aus:
+
+```bash
+python3 stadtpuls.py
+```
+Wenn du keinen Fehler bekommst, bist du bereit weiter zu machen. Es könnte aber passieren, dass eine Fehlermeldung erscheint:
+
+```bash
+Traceback (most recent call last):
+  File "stadtpuls.py", line 2, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+```
+
+Das bedeutet, dass die Bibliothek `requests` nicht installiert ist. Diese kannst du mit dem Package Manager `pip` und folgendem Befehl intallieren:
+
+```bash
+pip install requests
+```
+
+Die `json`-Bibliothek ist eine System-Bibliothek und sollte standardmäßig vorhanden sein. Probier es noch einmal. Nun sollte dein Skript keinen Fehler mehr melden.
+
+Als nächstes erstellen wir ein paar Variablen die wir im Laufe des Skripts benötigen. Unterhalb von den `import`-Befehlen fügen wir die folgenden Zeilen ein:
+
+```python
+sensor_url = "https://api.stadtpuls.com/api/v3/sensors/<DEINE SENSOR ID>/records"
+token = "<DEINEN TOKEN HIER EINFÜGEN>"
+headers = {"authorization": "Bearer {}".format(token)}
+json = {"measurements": [42]}
+```
+
+Du musst hier deine eigen Sensor-URL einfügen und natürlich deinen eigenen Token einfügen.
+
+*(Bonus. Gehe auf die Seite [jwt.io](https://jwt.io/) und füge deinen Token in das Feld "Encoded" ein. Damit kannst du sehen, welche Informationen in dieser Zeichenkette gespeichert sind.)*
+
+Die Variable `headers` ist für die HTTP POST Anfrage und transportiert deinen Token, damit dein Sensor die Daten erhält. Ohne diese würde die API deine Anfrage zurückweisen, weil du nicht authorisiert bist.
+
+Die Variable `json` beinhaltet deine Daten. Wir geben hier einen Wert von `42` in das Array `measurements` ein. Die API erwartet diese Struktur und würde ein JSON, das anders benannt ist, zurückweisen.
+
+Deine Sensor-URL kannst du in deinem Account auf der Seite deines Sensors finden. Du kannst die URL auch im Browser öffnen, um eine HTTP GET Anfrage zu stellen. Wenn dein Sensor noch keine Daten hat, solltest du so etwas sehen:
+
+```plain
+{"data":[]}
+```
+
+Damit sind die Vorbereitungen abgesclossen. Nun folgt die eigentliche Anfrage mit der `requests`-Bibliothek. Füge die folgenden Zeilen an dein Skript an.
+
+```python
+try:
+    response = requests.post(sensor_url, json=json, headers=headers)
+    if response.status_code != 201:
+        print("Fehler beim Senden der Daten: {}".format(response.status_code))
+    else:
+        print("Daten wurden erfolgreich gesendet")
+except requests.exceptions.RequestException as error:
+    print(error)
+```
+
+Wir starten diesen Block mit einem `try` und `except` Block. Dadurch können wir etwaige Fehler, die der Code innnerhalb des `try` Blocks werfen könnte, mit dem `except` Block auffangen. In diesem Fall fangen wir mit `requests.exceptions.RequestException` nur Fehler der `requests` Bibliothek auf. Syntaxfehler würden ebenfalls einen Fehler erzeugen, werden aber nicht mit unserem `print` Befehl gehandhabt.
+  Die Zeile
+
+```python
+response = requests.post(sensor_url, json=json, headers=headers)
+```
+
+ist der Kern unseres Skriptes. Das object requests macht eine HTTP POST Anfrage (`post`) an die URL `sensor_url` mit den Header-Informationen `headers` und den Daten `json`.
+  Das Ergebnis der Anfrage speichern wir in der Variable `response` und führen mit der Zeile
+
+```python
+if response.status_code != 201:
+```
+
+einen Test aus, ob die Antwort der API etwas anderes als den HTTP Statuscode `201` hat. Wenn dies der Fall ist, wird eine Fehlermeldung in der folgenden Zeile mit dem `print` Befehl ausgegeben. Wenn der erwartetete Statuscode `201` von der API zurückgegeben wurde, geben wir eine Erfolgsmeldung aus.
+
+Hier siehst du nochmal das gesamte Python-Skript.
+
+```python
+import requests
+import json
+
+sensor_url = "https://api.stadtpuls.com/api/v3/sensors/<DEINE SENSOR ID>/records"
+token = "<DEINEN TOKEN HIER EINFÜGEN>"
+headers = {"authorization": "Bearer {}".format(token)}
+json = {"measurements": [1]}
+
+try:
+    response = requests.post(sensor_url, json=json, headers=headers)
+    if response.status_code != 201:
+        print("Fehler beim Senden der Daten: {}".format(response.status_code))
+    else:
+        print("Daten wurden erfolgreich gesendet")
+except requests.exceptions.RequestException as error:
+    print(error)
+```
+
+Herzlichen Glückwunsch! Du hast dein erstes stadtpuls.com Python-Skript erstellt.
+
+
+## Daten senden mit Javascript
+
+Javascript kann auf verschiedenste Weisen ausgeführt werden, mit Node.js, mit Replit.com, auf codesandbox.io, via GitHub Codespaces, auf JSBin und an vielen anderen Plätzen. Um die Einstiegshürde so gering wie möglich zu halten empfehlen wir hier [JSBin](https://jsbin.com/?js,console) oder für Firefox-Nutzer:innen den [Multi Line Editor](https://developer.mozilla.org/en-US/docs/Tools/Web_Console/The_command_line_interpreter#multi-line_mode) der Web Console.
+
+### Voraussetzungen
+
+Folgende Voraussetzungen sollten erfüllt sein:
+
+1. Du hast einen [stadtpuls.com Account](/docs/stadtpuls-account)
+2. Du hast bereits [einen Sensor vom Type HTTP angelegt](/docs/sensors)
+3. Du hast [einen Token erstellt](/docs/tokens) und dir sicher gespeichert
+4. Du hast entweder JSBin oder den FireFox Multi Line Editor \*
+
+\* Brave, Safari, Chrome, Edge Benutzer:innen können mit SHIFT + ENTER direkt  in der Console schreiben.
+
+TBD
+
+
+
+das gesamte Javascript siehst du nochmal hier.
+
+```js
+{
+  const url = "https://api.stadtpuls.com/api/v3/sensors/<DEINE SENSOR ID>/records";
+  const token = "<DEIN TOKEN HIER EINFÜGEN>";
+  const headers = new Headers({
+    authorization: `Bearer ${token}`,
+    "content-type": "application/json",
+  });
+  const data = {
+    measurements: [123],
+  };
+
+  fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("response not ok");
+      }
+      if (response.status !== 201) {
+        throw new Error("status not 201");
+      }
+      return reponse.json();
+    })
+    .then((json) => {
+      console.info(json);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+```
