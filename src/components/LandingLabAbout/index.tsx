@@ -35,16 +35,20 @@ export const LandingLabAbout: FC = () => {
         >
           <div className='grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 gap-4 md:gap-8'>
             <div className='sm:col-span-2 lg:col-span-1'>
-              <AboutTitle>Wir bauen Prototypen</AboutTitle>
-              <p className='text-lg mb-8'>Für die Stadtgesellschaft</p>
+              <AboutTitle>Offene Daten — Offene Stadt</AboutTitle>
+              <p className='text-lg mb-8'>
+                Das CityLAB baut Prototypen für die Stadtgesellschaft
+              </p>
               <div className='prose max-w-none'>
                 <p className='max-w-none'>
-                  In der Technologiestiftung Berlin arbeiten Expert*innen aus
-                  den Bereichen Frontend- und Backendentwicklung, Data Science,
-                  Datenvisualisierung, sowie UI/UX zusammen, um zu evaluieren
-                  und aufzuzeigen, wie unsere Stadtgesellschaft von Technologie
-                  profitieren kann. Das CityLAB Berlin ist Hauptakteur bei der
-                  Umsetzung der Prototypen.
+                  Gemeinsam mit Stadtgesellschaft und Verwaltung arbeiten wir an
+                  der digitalen Zukunft für das Berlin von Morgen. Das{" "}
+                  <a href='https://www.citylab-berlin.org'>CityLAB Berlin</a>{" "}
+                  verbindet Partizipation und Teilhabe, Open Data, Ideation und
+                  Prototyping und fördert damit Open Innovation für die
+                  Hauptstadt. Im Sinne von &quot;Public Code, Public Money&quot;
+                  veröffentlichen wir den Source-Code unserer Projekte auf
+                  Github.
                 </p>
                 <p>
                   Neugierig geworden? Dann besuche einige unserer{" "}

@@ -137,7 +137,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
               height="725"
               id="main-image-pattern-image"
               width="967"
-              xlinkHref="/images/photos/header-woman.jpeg"
+              xlinkHref="/images/photos/header-sensor.jpg"
             />
             <pattern
               height="100%"

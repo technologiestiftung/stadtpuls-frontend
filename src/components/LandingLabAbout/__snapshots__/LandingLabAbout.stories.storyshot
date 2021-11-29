@@ -19,12 +19,12 @@ exports[`Storyshots Promotional/LandingLabAbout Default 1`] = `
           <h1
             className="text-xl sm:text-2xl md:text-3xl text-purple font-bold font-headline mt-6 mb-1"
           >
-            Wir bauen Prototypen
+            Offene Daten — Offene Stadt
           </h1>
           <p
             className="text-lg mb-8"
           >
-            Für die Stadtgesellschaft
+            Das CityLAB baut Prototypen für die Stadtgesellschaft
           </p>
           <div
             className="prose max-w-none"
@@ -32,7 +32,15 @@ exports[`Storyshots Promotional/LandingLabAbout Default 1`] = `
             <p
               className="max-w-none"
             >
-              In der Technologiestiftung Berlin arbeiten Expert*innen aus den Bereichen Frontend- und Backendentwicklung, Data Science, Datenvisualisierung, sowie UI/UX zusammen, um zu evaluieren und aufzuzeigen, wie unsere Stadtgesellschaft von Technologie profitieren kann. Das CityLAB Berlin ist Hauptakteur bei der Umsetzung der Prototypen.
+              Gemeinsam mit Stadtgesellschaft und Verwaltung arbeiten wir an der digitalen Zukunft für das Berlin von Morgen. Das
+               
+              <a
+                href="https://www.citylab-berlin.org"
+              >
+                CityLAB Berlin
+              </a>
+               
+              verbindet Partizipation und Teilhabe, Open Data, Ideation und Prototyping und fördert damit Open Innovation für die Hauptstadt. Im Sinne von "Public Code, Public Money" veröffentlichen wir den Source-Code unserer Projekte auf Github.
             </p>
             <p>
               Neugierig geworden? Dann besuche einige unserer
