@@ -1,7 +1,7 @@
 import { mapPublicSensor } from "@lib/hooks/usePublicSensors";
 import { sensors } from "@mocks/supabaseData/sensors";
 import { render, screen } from "@testing-library/react";
-import { SensorCard } from ".";
+import { DESCRIPTION_MAX_LENGTH, SensorCard } from ".";
 
 jest.mock("use-is-in-viewport", () => jest.fn().mockReturnValue([true, null]));
 
@@ -29,7 +29,7 @@ describe("SensorCard", () => {
     expect(author).toBeInTheDocument();
   });
   it("should trim too long descriptions", () => {
-    const tooLongDescription = Array.from(Array(300))
+    const tooLongDescription = Array.from(Array(500))
       .map(() => "A")
       .join("");
     render(
@@ -39,7 +39,9 @@ describe("SensorCard", () => {
       />
     );
 
-    const desc = screen.getByText(`${tooLongDescription.slice(0, 150)}...`);
+    const desc = screen.getByText(
+      `${tooLongDescription.slice(0, DESCRIPTION_MAX_LENGTH)}...`
+    );
     expect(desc).toBeInTheDocument();
   });
 });
