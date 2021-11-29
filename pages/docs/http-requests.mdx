@@ -207,7 +207,7 @@ fetch(url, {
 ```
 
 Wir übergeben an die Methode `fetch` die `url` zu deinem Sensor und ein Objekt mit, unserem `headers` und `data`. `data` wird mit der Methode `JSON.stringify` von einem Javascript Objekt in einen Zeichenkette umgewandelt und als `body` an `fetch` gegeben.
-`fetch` gibt uns [ein `Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) zurück. Dieses Promise verarbeiten wir mit dem folgeden Befehl, denn wir direkt an die schliessenden Klammern von unserem fetch anhängen.
+`fetch` gibt uns [ein `Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) zurück. Dieses Promise verarbeiten wir mit dem folgenden Befehl, den wir direkt an die schließenden Klammern von unserem `fetch` anhängen.
 
 
 ```js
@@ -222,8 +222,9 @@ Wir übergeben an die Methode `fetch` die `url` zu deinem Sensor und ein Objekt 
 })
 ```
 
-der Befehl `.then` erwartet eine Funktion die das Ergebnis des erfolgreich aufgelößten Promise von `fetch` übernimmt. Das Ergebnis wird als Argument an die Funktion gegeben. In unserem Fall nenne wir das Ergebnis `response`. Wir füren mit den Abfragen `if (!response.ok)`*(if response not okay)* und `if (response.status !== 201)` *'(if status code is not 201)'* zwei Tests durch um sicher zu stellen, dass unsere Anfrage erfolgreich war. Wenn einer der Beiden nicht erfüllt ist, wird ein Fehler ausgelöst. Wir könnten hier schon mit unserem Skript fertig sein. Der Vollständigkeit halber verarbeiten wir jedoch die Informationen aus der Antwort. Mit den Befehlen `return reponse.json();` geben wir ein weiteres Promise von der Methode `.json()` an die nächste `.then` Methode.
-Dafür fügen wir an unser erste .then Methode ein weitere an.
+Der Befehl `.then` erwartet eine Funktion die das Ergebnis des erfolgreich aufgelösten Promise von `fetch` übernimmt. Das Ergebnis wird als Argument an die Funktion gegeben. In unserem Fall nennen wir das Ergebnis `response`. Wir führen mit den Abfragen `if (!response.ok)`*(if response not okay)* und `if (response.status !== 201)` *'(if status code is not 201)'* zwei Tests durch um sicher zu stellen, dass unsere Anfrage erfolgreich war. Wenn einer der Beiden nicht erfüllt ist, wird ein Fehler ausgelöst. Wir könnten hier schon mit unserem Skript fertig sein. Der Vollständigkeit halber verarbeiten wir jedoch die Informationen aus der Antwort. Mit den Befehlen `return reponse.json();` geben wir ein weiteres Promise von der Methode `.json()` an die nächste `.then` Methode.
+
+Dafür fügen wir an unser erste `.then` Methode ein weitere an.
 
 ```js
 .then((json) => {
@@ -241,14 +242,14 @@ Zu guter letzt fügen wir eine andere Methode genannt `.catch` an.
   });
 ```
 
-Damit werden alle `Error` die wir innnerhalb unserer `.then` Methoden werfen und auch Fehler die die `fetch` Methode werfen könnte gefangen und verarbeitet.
+Damit werden alle `Error`, die wir innnerhalb unserer `.then` Methoden werfen und auch Fehler die, die `fetch` Methode werfen könnte, "gefangen" und verarbeitet.
 
 
 
-### Das Gesamte Javascript
+### Das gesamte Javascript
 
 
-das gesamte Javascript siehst du nochmal hier.
+Das gesamte Javascript siehst du nochmal hier.
 
 ```js
 {
