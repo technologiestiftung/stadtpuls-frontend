@@ -275,7 +275,7 @@ Das gesamte Javascript siehst du nochmal hier.
       if (response.status !== 201) {
         throw new Error("status not 201");
       }
-      return reponse.json();
+      return response.json();
     })
     .then((json) => {
       console.info(json);
