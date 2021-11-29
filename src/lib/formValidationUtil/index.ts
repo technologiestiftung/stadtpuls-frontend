@@ -42,7 +42,7 @@ export const requiredLongitude = yup
 
 export const optionalDescriptionValidation = yup
   .string()
-  .max(200, "Die Beschreibung darf nicht länger als 200 Zeichen sein")
+  .max(500, "Die Beschreibung darf nicht länger als 500 Zeichen sein")
   .nullable()
   .optional();
 

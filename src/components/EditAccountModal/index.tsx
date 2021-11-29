@@ -145,6 +145,7 @@ export const EditAccountModal: FC<EditAccountModalPropType> = ({
               {...field}
               optional
               label='Beschreibung'
+              maxCharacters={500}
               placeholder='Gebe deinem Profil eine kurze Beschreibung'
               errors={formatError(errors.description?.message)}
             />
