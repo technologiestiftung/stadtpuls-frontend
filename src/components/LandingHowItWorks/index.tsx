@@ -128,7 +128,7 @@ const columnsData = [
       { icon: "/images/icons/pressure.svg", text: "Druck" },
       { icon: "/images/icons/lightness.svg", text: "Helligkeit" },
       { icon: "/images/icons/decibels.svg", text: "Lautstärke" },
-      { icon: "/images/icons/unit-counter.svg", text: "Unit Counter" },
+      { icon: "/images/icons/unit-counter.svg", text: "Zähler" },
     ],
   },
   {
