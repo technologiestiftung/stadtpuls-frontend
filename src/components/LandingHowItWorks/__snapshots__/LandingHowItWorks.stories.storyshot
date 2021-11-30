@@ -140,7 +140,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           <p
             className="text-sm mb-8 text-gray-500"
           >
-            Die Wahl der Hardware  ist ganz dir überlassen. Arbeite mit Arduino, Raspberry Pi oder einer Open Sense Box. Wichtig ist, dass dein Board über eine LoRaWan-Antenne verfügt.
+            Die Wahl der Hardware  ist ganz dir überlassen. Arbeite mit Arduino, Raspberry Pi oder direkt am PC. Stadtpuls setzt deiner Kreativität keine Grenzen.
           </p>
         </header>
       </div>
@@ -158,7 +158,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           <p
             className="text-sm mb-8 text-gray-500"
           >
-            Prinzipiell kannst du jeden Sensor verbinden. Wir unterstützen aktuell die folgenden, für die Umwelt relevanten, Sensortypen und machen sie mit einer Kategorie sichtbar.
+            Prinzipiell kannst du jeden Sensor verbinden. Die folgenden Sensortypen unterstützen wir bereits mit einer eigenen Kategorie.
           </p>
         </header>
       </div>
@@ -176,7 +176,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           <p
             className="text-sm mb-8 text-gray-500"
           >
-            Stadtpuls unterstützt aktuell HTTP und LoRaWan über TTN.
+            Mit HTTP und LoRaWan über TTN stehen dir bereits zwei wichtige Protokolle zur Verfügung. Weitere folgen in Kürze.
           </p>
         </header>
       </div>
