@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { AccountCard } from ".";
+import { AccountCard, DESCRIPTION_MAX_LENGTH } from ".";
 
 const testProps = {
   displayName: "Louis Dieudonné de Bourbon",
@@ -19,7 +19,7 @@ describe("AccountCard component", () => {
     const name = screen.getByRole("heading", { name: testProps.displayName });
     const username = screen.getByText(`@${testProps.username}`);
     const description = screen.getByText(
-      `${testProps.description.slice(0, 50)}...`
+      `${testProps.description.slice(0, DESCRIPTION_MAX_LENGTH)}...`
     );
     const sensorsCount = screen.queryByText("12.345");
     const recordsCount = screen.queryByText("12 Mio.");
