@@ -14,7 +14,7 @@ const AboutTitle: FC = ({ children }) => (
   </h1>
 );
 
-const furtherProjects = [
+const repositories = [
   {
     name: "Stadtpuls Main Repository auf Github",
     repo: "stadtpuls",
@@ -73,7 +73,7 @@ export const LandingLabAbout: FC = () => {
           </div>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mt-12'>
             <div className='lg:col-span-2 grid lg:grid-cols-2 gap-4 xl:gap-8'>
-              {furtherProjects.map(({ name, repo, logo }) => (
+              {repositories.map(({ name, repo, logo }) => (
                 <a
                   key={name}
                   href={`https://github.com/technologiestiftung/${repo}`}
