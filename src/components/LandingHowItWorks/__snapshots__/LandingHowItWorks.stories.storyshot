@@ -432,7 +432,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
-            Unit Counter
+            Zähler
           </span>
         </li>
       </ul>
