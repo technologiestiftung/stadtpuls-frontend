@@ -6,12 +6,12 @@ metaDescription: 'Folge dieser Schritt-für-Schritt-Anleitung, um eine HTTP Anfr
 ---
 
 <p className="lead">
-  Wie du deine Sensoren über HTTP mit Stadtpuls reden lässt.
+  Wie du deine Sensoren über HTTP mit *Stadtpuls* reden lässt.
 </p>
 
-Stadtpuls erlaubt dir, Daten über HTTP zu deinen Sensoren hinzuzufügen. Dies eröffnet viele Möglickeiten wie du mit der Plattform interagieren kannst. Zum Beispiel könnte ein Raspberry Pi, ein Arduino Board, dein Browser, ein Webserver oder dein Mobiltelefon (um nur einige zu nennen) Daten sammeln und sie auf Stadtpuls veröffentlichen. Vorraussetzung ist, dass dein Endgerät das ["Hypertext Transfer Protocol" (HTTP)](https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol) spricht.
+*Stadtpuls* erlaubt dir, Sensor-Daten über HTTP hinzuzufügen. Dies eröffnet viele Möglickeiten, wie du mit der Plattform interagieren kannst. Zum Beispiel könnte ein Raspberry Pi, ein Arduino Board, dein Browser, ein Webserver oder dein Smartphone (um nur einige zu nennen) Daten sammeln und sie auf *Stadtpuls* veröffentlichen. Voraussetzung ist, dass dein Endgerät das ["Hypertext Transfer Protocol" (HTTP)](https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol) spricht.
 
-Als erstes Beispiel erklären wir dir wie du mit einem einfachen Python-Skript Werte zu deinem Sensor hinzufügen kannst.
+Im erstes Beispiel erklären wir dir, wie du mit einem einfachen Python-Script Werte auf *Stadtpuls* hinzufügen kannst.
 
 ## Daten senden mit Python
 
@@ -19,18 +19,18 @@ Als erstes Beispiel erklären wir dir wie du mit einem einfachen Python-Skript W
 
 Folgende Voraussetzungen sollten erfüllt sein:
 
-1. Du hast einen [stadtpuls.com Account](/docs/stadtpuls-account)
-2. Du hast [einen Token erstellt](/docs/tokens) und dir sicher gespeichert
-3. Du hast bereits [einen Sensor vom Type HTTP angelegt](/docs/sensors)
-4. Du hast Python (3)\* installiert
-5. Du hast einen Code Editor wie VSCode, Pycharm, Sublime Text, VIM, Nano oder ähnlich installiert
-6. Du hast ein Terminal Emulator installiert\*\*
+&checkmark; Du hast einen [Stadtpuls Account](/docs/stadtpuls-account)  
+&checkmark; Du hast [einen Token erstellt](/docs/tokens) und dir sicher gespeichert  
+&checkmark; Du hast bereits [einen Sensor vom Typ HTTP angelegt](/docs/sensors)  
+&checkmark; Du hast Python (3)\* installiert  
+&checkmark; Du hast einen Code Editor wie VSCode, Pycharm, Sublime Text, VIM, Nano oder ähnlich installiert  
+&checkmark; Du hast ein Terminal Emulator installiert\*\*  
 
-\* Python 2 geht auch, das Skript ist jedoch nur mit Python 3 getestet und möglicherwiese nicht kompatibel mit Python 2.
+\* *Python 2 geht auch, das Script ist jedoch nur mit Python 3 getestet und möglicherwiese nicht kompatibel mit Python 2.*
 
-\*\* Jede Platform hat ihr eigenes Terminal. Wir gehen hier von Linux oder MacOS aus und verwenden die BASH Shell. Auf Windows gibt es Powershell oder WSL um zu dem gleichen Ergebnis zu kommen.
+\*\* Jede Plattform hat ihr eigenes Terminal. Wir gehen hier von *Linux* oder *MacOS* aus und verwenden die BASH Shell. Für *Windows* gibt es z.B. die *Powershell* oder *WSL*, um zu dem gleichen Ergebnis zu kommen.
 
-### Python Skript Schritt für Schritt
+### Python Script Schritt für Schritt
 
 Erstelle eine neue Datei mit dem Name `stadtpuls.py`. Als erstes solltest du folgende Zeilen einfügen und speichern:
 
@@ -39,12 +39,12 @@ import requests
 import json
 ```
 
-Diese Zeilen sagen Python welche Bibliotheken du benötigst. Führe die Datei aus, um zu sehen was passiert. Starte eine neue Shell Session in deinem Terminal und navigiere zu deinem Python Skript. Dann führe folgenden Befehl aus:
+Diese Zeilen sagen Python, welche Bibliotheken du benötigst. Führe die Datei aus, um zu sehen was passiert. Starte eine neue Shell Session in deinem Terminal und navigiere zu deinem Python Script. Dann führe folgenden Befehl aus:
 
 ```bash
 python3 stadtpuls.py
 ```
-Wenn du keinen Fehler bekommst, bist du bereit weiter zu machen. Es könnte aber passieren, dass eine Fehlermeldung erscheint:
+Wenn du keinen Fehler bekommst, bist du bereit, weiter zu machen. Es könnte aber passieren, dass eine Fehlermeldung erscheint:
 
 ```bash
 Traceback (most recent call last):
@@ -59,9 +59,9 @@ Das bedeutet, dass die Bibliothek `requests` nicht installiert ist. Diese kannst
 pip install requests
 ```
 
-Die `json`-Bibliothek ist eine System-Bibliothek und sollte standardmäßig vorhanden sein. Probier es noch einmal. Nun sollte dein Skript keinen Fehler mehr melden.
+Die `json`-Bibliothek ist eine System-Bibliothek und sollte standardmäßig vorhanden sein. Probier es noch einmal. Nun sollte dein Script keinen Fehler mehr melden.
 
-Als nächstes erstellen wir ein paar Variablen, die wir im Laufe des Skripts benötigen. Unterhalb von den `import`-Befehlen fügen wir die folgenden Zeilen ein:
+Als nächstes erstellen wir einige Variablen, die wir im Laufe des Scripts benötigen. Unterhalb von den `import`-Befehlen fügen wir die folgenden Zeilen ein:
 
 ```python
 sensor_url = "https://api.stadtpuls.com/api/v3/sensors/<DEINE SENSOR ID>/records"
@@ -70,13 +70,13 @@ headers = {"authorization": "Bearer {}".format(token)}
 json = {"measurements": [42]}
 ```
 
-Du musst hier deine eigen Sensor-URL einfügen und natürlich deinen eigenen Token einfügen.
+Du solltest hier deine eigene Sensor-URL und deinen Token einfügen.
 
 *(Bonus. Gehe auf die Seite [jwt.io](https://jwt.io/) und füge deinen Token in das Feld "Encoded" ein. Damit kannst du sehen, welche Informationen in dieser Zeichenkette gespeichert sind.)*
 
 Die Variable `headers` ist für die HTTP POST Anfrage und transportiert deinen Token, damit dein Sensor die Daten erhält. Ohne diese würde die API deine Anfrage zurückweisen, weil du nicht authorisiert bist.
 
-Die Variable `json` beinhaltet deine Daten. Wir geben hier einen Wert von `42` in das Array `measurements` ein. Die API erwartet diese Struktur und würde ein JSON, das anders benannt ist, zurückweisen.
+Die Variable `json` beinhaltet deine Daten. Wir geben hier einen Wert von `42` in das Array `measurements` ein. Die API erwartet diese Struktur und würde ein *JSON*, das anders benannt ist, zurückweisen.
 
 Deine Sensor-URL kannst du in deinem Account auf der Seite deines Sensors finden. Du kannst die URL auch im Browser öffnen, um eine HTTP GET Anfrage zu stellen. Wenn dein Sensor noch keine Daten hat, solltest du so etwas sehen:
 
@@ -84,7 +84,7 @@ Deine Sensor-URL kannst du in deinem Account auf der Seite deines Sensors finden
 {"data":[]}
 ```
 
-Damit sind die Vorbereitungen abgeschlossen. Nun folgt die eigentliche Anfrage mit der `requests`-Bibliothek. Füge die folgenden Zeilen an dein Skript an.
+Damit sind die Vorbereitungen abgeschlossen. Nun folgt die eigentliche Anfrage mit der `requests`-Bibliothek. Füge die folgenden Zeilen an dein Script an.
 
 ```python
 try:
@@ -104,7 +104,7 @@ Wir starten diesen Block mit einem `try` und `except` Block. Dadurch können wir
 response = requests.post(sensor_url, json=json, headers=headers)
 ```
 
-ist der Kern unseres Skriptes. Das object requests macht eine HTTP POST Anfrage (`requests.post`) an die URL `sensor_url` mit den Header-Informationen `headers` und den Daten `json`.
+ist der Kern unseres Scriptes. Das object requests macht eine HTTP POST Anfrage (`requests.post`) an die URL `sensor_url` mit den Header-Informationen `headers` und den Daten `json`.
   Das Ergebnis der Anfrage speichern wir in der Variable `response` und führen mit der Zeile
 
 ```python
@@ -113,9 +113,9 @@ if response.status_code != 201:
 
 einen Test aus, ob die Antwort der API etwas anderes als den HTTP Statuscode `201` hat. Wenn dies der Fall ist, wird eine Fehlermeldung in der folgenden Zeile mit dem `print` Befehl ausgegeben. Wenn der erwartetete Statuscode `201` von der API zurückgegeben wurde, geben wir eine Erfolgsmeldung aus.
 
-### Das Gesamte Python-Skript
+### Das Gesamte Python-Script
 
-Hier siehst du nochmal das gesamte Python-Skript.
+Hier siehst du nochmal das gesamte Python-Script.
 
 ```python
 import requests
@@ -136,28 +136,28 @@ except requests.exceptions.RequestException as error:
     print(error)
 ```
 
-Herzlichen Glückwunsch! Du hast dein erstes stadtpuls.com Python-Skript erstellt.
+Herzlichen Glückwunsch! Du hast dein erstes *Stadtpuls* Python-Script erstellt.
 
 
 ## Daten senden mit Javascript
 
-Javascript kann auf verschiedenste Weisen ausgeführt werden, mit Node.js, mit Replit.com, auf codesandbox.io, via GitHub Codespaces, auf JSBin und an vielen anderen Plätzen. Um die Einstiegshürde so gering wie möglich zu halten empfehlen wir hier [JSBin](https://jsbin.com/?js,console) oder für Firefox-Nutzer:innen den [Multi Line Editor](https://developer.mozilla.org/en-US/docs/Tools/Web_Console/The_command_line_interpreter#multi-line_mode) der Web Console.
+Javascript kann auf verschiedenste Weisen ausgeführt werden, mit Node.js, mit Replit.com, auf codesandbox.io, via GitHub Codespaces, auf JSBin und an vielen anderen Plätzen. Um die Einstiegshürde so gering wie möglich zu halten, empfehlen wir hier [JSBin](https://jsbin.com/?js,console) oder für Firefox-Nutzer:innen den [Multi Line Editor](https://developer.mozilla.org/en-US/docs/Tools/Web_Console/The_command_line_interpreter#multi-line_mode) der Web Console.
 
 ### Voraussetzungen
 
 Folgende Voraussetzungen sollten erfüllt sein:
 
-1. Du hast einen [stadtpuls.com Account](/docs/stadtpuls-account)
-2. Du hast [einen Token erstellt](/docs/tokens) und dir sicher gespeichert
-3. Du hast bereits [einen Sensor vom Type HTTP angelegt](/docs/sensors)
-4. Du hast entweder JSBin oder den FireFox Multi Line Editor \*
+&checkmark; Du hast einen [Stadtpuls Account](/docs/stadtpuls-account)  
+&checkmark; Du hast [einen Token erstellt](/docs/tokens) und dir sicher gespeichert  
+&checkmark; Du hast bereits [einen Sensor vom Type HTTP angelegt](/docs/sensors)  
+&checkmark; Du hast entweder JSBin oder den FireFox Multi Line Editor \*  
 
-\* Brave, Safari, Chrome, Edge Benutzer:innen können mit SHIFT + ENTER direkt in der Console schreiben.
+\* *Brave, Safari, Chrome, Edge Benutzer:innen können mit SHIFT + ENTER direkt in der Console schreiben.*
 
 
 ### Javascript Schritt für Schritt
 
-Um sicherzustellen, dass Firefox uns nicht mit Fehlern ärgert, die uns sagen, dass unsere `const` Variablen bereits definiert sind, kapseln wir unser gesamtes Skript in einem [Closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures). Alle weiteren Befehlszeilen werden in die geschwungenen Klammern geschrieben.
+Um sicherzustellen, dass Firefox uns nicht mit Fehlern ärgert, die uns sagen, dass unsere `const` Variablen bereits definiert sind, kapseln wir unser gesamtes Script in einem [Closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures). Alle weiteren Befehlszeilen werden in die geschwungenen Klammern geschrieben.
 
 ```js
 {
@@ -165,7 +165,7 @@ Um sicherzustellen, dass Firefox uns nicht mit Fehlern ärgert, die uns sagen, d
 }
 ```
 
-Als nächstes erstellen wir einige Variablen, die wir im Laufe unseres Skripts benötigen. Innerhalb unserer geschwungenen Klammern fügen wir folgende Zeilen ein:
+Als nächstes erstellen wir einige Variablen, die wir im Laufe unseres Scripts benötigen. Innerhalb unserer geschwungenen Klammern fügen wir folgende Zeilen ein:
 
 
 ```js
@@ -181,12 +181,13 @@ const data = {
 ```
 
 
-Du musst hier deine eigen Sensor-URL einfügen und natürlich deinen eigenen Token einfügen.
+Du solltrst hier deine eigene Sensor-URL und deinen eigenen Token einfügen.  
+
 *(Bonus. Gehe auf die Seite [jwt.io](https://jwt.io/) und füge deinen Token in das Feld "Encoded" ein. Damit kannst du sehen, welche Informationen in dieser Zeichenkette gespeichert sind.)*
 
-Die Variable `headers` ist für die HTTP POST Anfrage und transportiert deinen Token damit dein Sensor die Daten erhält und den `content-type`  der Anfrage, also was wir den genau senden. In diesem Fall ist das `application/json` also JSON. Ohne diese Einträge würde die API deine Anfrage zurückweisen, weil du nicht authorisiert bist oder den falschen Datentyp sendest.
+Die Variable `headers` ist für die HTTP POST Anfrage und transportiert deinen Token damit dein Sensor die Daten erhält und den `content-type`  der Anfrage, also was wir denn genau senden. In diesem Fall ist das `application/json` also *JSON*. Ohne diese Einträge würde die API deine Anfrage zurückweisen, weil du nicht authorisiert bist oder den falschen Datentyp sendest.
 
-Die Variable `data` beinhaltet deine Daten. Wir geben hier einen Wert von `42` in das Array `measurements` ein. Die API erwartet diese Struktur und würde ein JSON, das anders benannt ist, zurückweisen.
+Die Variable `data` beinhaltet deine Daten. Wir geben hier einen Wert von `42` in das Array `measurements` ein. Die API erwartet diese Struktur und würde ein *JSON*, das anders benannt ist, zurückweisen.
 
 Deine Sensor-URL kannst du in deinem Account auf der Seite deines Sensors finden. Du kannst die URL auch im Browser öffnen, um eine HTTP GET Anfrage zu stellen. Wenn dein Sensor noch keine Daten hat, solltest du so etwas sehen:
 
@@ -196,7 +197,7 @@ Deine Sensor-URL kannst du in deinem Account auf der Seite deines Sensors finden
 
 Damit sind die Vorbereitungen abgeschlossen. 
 
-Nun folgt die eigentliche Anfrage mit der [Browser eigenen Methode `fetch`](https://developer.mozilla.org/en-US/docs/Web/API/fetch). Füge die folgenden Zeilen an dein Skript unterhalb deiner data Variable an.
+Nun folgt die eigentliche Anfrage mit der [browsereigenen Methode `fetch`](https://developer.mozilla.org/en-US/docs/Web/API/fetch). Füge die folgenden Zeilen an dein Script unterhalb deiner `data` Variable an.
 
 ```js
 fetch(url, {
@@ -206,8 +207,8 @@ fetch(url, {
 })
 ```
 
-Wir übergeben an die Methode `fetch` die `url` zu deinem Sensor und ein Objekt mit, unserem `headers` und `data`. `data` wird mit der Methode `JSON.stringify` von einem Javascript Objekt in einen Zeichenkette umgewandelt und als `body` an `fetch` gegeben.
-`fetch` gibt uns [ein `Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) zurück. Dieses Promise verarbeiten wir mit dem folgenden Befehl, den wir direkt an die schließenden Klammern von unserem `fetch` anhängen.
+Wir übergeben an die Methode `fetch` die `url` zu deinem Sensor und ein Objekt mit unserem `headers` und `data`. `data` wird mit der Methode `JSON.stringify` von einem Javascript Objekt in eine Zeichenkette umgewandelt und als `body` an `fetch` übergegeben.
+`fetch` gibt uns ein [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) zurück. Dieses Promise verarbeiten wir mit dem folgenden Befehl, den wir direkt an die schließenden Klammern von unserem `fetch` anhängen.
 
 
 ```js
@@ -222,7 +223,7 @@ Wir übergeben an die Methode `fetch` die `url` zu deinem Sensor und ein Objekt 
 })
 ```
 
-Der Befehl `.then` erwartet eine Funktion die das Ergebnis des erfolgreich aufgelösten Promise von `fetch` übernimmt. Das Ergebnis wird als Argument an die Funktion gegeben. In unserem Fall nennen wir das Ergebnis `response`. Wir führen mit den Abfragen `if (!response.ok)`*(if response not okay)* und `if (response.status !== 201)` *'(if status code is not 201)'* zwei Tests durch um sicher zu stellen, dass unsere Anfrage erfolgreich war. Wenn einer der Beiden nicht erfüllt ist, wird ein Fehler ausgelöst. Wir könnten hier schon mit unserem Skript fertig sein. Der Vollständigkeit halber verarbeiten wir jedoch die Informationen aus der Antwort. Mit den Befehlen `return reponse.json();` geben wir ein weiteres Promise von der Methode `.json()` an die nächste `.then` Methode.
+Der Befehl `.then` erwartet eine Funktion, welche das Ergebnis des erfolgreich aufgelösten Promise von `fetch` übernimmt. Das Ergebnis wird als Argument an die Funktion gegeben. In unserem Fall nennen wir das Ergebnis `response`. Wir führen mit den Abfragen `if (!response.ok)`*(if response not okay)* und `if (response.status !== 201)` *(if status code is not 201)* zwei Tests durch, um sicher zu stellen, dass unsere Anfrage erfolgreich war. Wenn eine der beiden Bedingungen nicht erfüllt ist, wird ein Fehler ausgelöst. Wir könnten hier schon mit unserem Script fertig sein. Der Vollständigkeit halber verarbeiten wir jedoch die Informationen aus der Antwort. Mit den Befehlen `return reponse.json();` geben wir ein weiteres Promise von der Methode `.json()` an die nächste `.then` Methode.
 
 Dafür fügen wir an unser erste `.then` Methode ein weitere an.
 
@@ -234,7 +235,7 @@ Dafür fügen wir an unser erste `.then` Methode ein weitere an.
 
 Das Ergebnis der Methode `.json()` aus der vorherigen `.then` Methode wird wiederum als Argument an die Funktion gegeben. In unserem Fall wird das Ergebnis nur in der Konsole ausgegeben.
 
-Zu guter letzt fügen wir eine andere Methode genannt `.catch` an.
+Zu guter letzt fügen wir eine andere Methode, genannt `.catch`, an.
 
 ```js
 .catch((error) => {
@@ -242,7 +243,7 @@ Zu guter letzt fügen wir eine andere Methode genannt `.catch` an.
   });
 ```
 
-Damit werden alle `Error`, die wir innnerhalb unserer `.then` Methoden werfen und auch Fehler die, die `fetch` Methode werfen könnte, "gefangen" und verarbeitet.
+Damit werden alle `Error`, die wir innnerhalb unserer `.then` Methoden werfen und auch Fehler, die die `fetch` Methode werfen könnte, "gefangen" und verarbeitet.
 
 
 
@@ -286,4 +287,4 @@ Das gesamte Javascript siehst du nochmal hier.
 }
 ```
 
-Herzlichen Glückwunsch! Du hast dein erstes stadtpuls.com Javascript erstellt.
+Herzlichen Glückwunsch! Du hast dein erstes *Stadtpuls* Javascript erstellt.
