@@ -5,13 +5,13 @@ describe("CategoryIcon component", () => {
   it("should render", () => {
     render(
       <>
-        {Array.from(Array(6)).map((_, i) => (
+        {Array.from(Array(8)).map((_, i) => (
           <CategoryIcon key={i} categoryId={i + 1} />
         ))}
       </>
     );
     const imgs = screen.getAllByRole("img");
-    expect(imgs).toHaveLength(6);
+    expect(imgs).toHaveLength(8);
   });
 
   it("should not render if id is lower than 1", () => {
@@ -19,8 +19,8 @@ describe("CategoryIcon component", () => {
     const img = screen.queryByRole("img");
     expect(img).not.toBeInTheDocument();
   });
-  it("should not render if id is higher than 6", () => {
-    render(<CategoryIcon categoryId={7} />);
+  it("should not render if id is higher than 8", () => {
+    render(<CategoryIcon categoryId={9} />);
     const img = screen.queryByRole("img");
     expect(img).not.toBeInTheDocument();
   });
