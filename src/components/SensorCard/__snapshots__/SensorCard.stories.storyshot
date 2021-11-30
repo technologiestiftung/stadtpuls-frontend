@@ -59,7 +59,7 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
         <p
           className="text-base"
         >
-          @wdanxna when Array is given multiple arguments, it iterates over the arguments object and explicitly applies each value to the new array. When you ca...
+          @wdanxna when Array is given multiple arguments, it iterates over the arguments object and explicitl...
         </p>
         <p
           className="mt-4 mb-2 flex gap-2 flex-wrap"

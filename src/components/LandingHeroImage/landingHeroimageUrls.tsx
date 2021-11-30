@@ -7,4 +7,4 @@ export const topRightSquareImageUrl =
   "/images/photos/microcontroller-header-04.jpg";
 export const bottomSquareImageUrl =
   "/images/photos/microcontroller-header-03.jpg";
-export const mainImageUrl = "/images/photos/header-woman.jpeg";
+export const mainImageUrl = "/images/photos/header-sensor.jpg";

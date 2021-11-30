@@ -5,6 +5,6 @@ describe("LandingLabAbout component", () => {
   it("should render three headings", () => {
     render(<LandingLabAbout />);
     const headings = screen.getAllByRole("heading");
-    expect(headings).toHaveLength(3);
+    expect(headings).toHaveLength(2);
   });
 });

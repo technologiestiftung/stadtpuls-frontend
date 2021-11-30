@@ -1149,7 +1149,7 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
         <p
           className="text-base"
         >
-          Through perseverance many people win success out of what seemed destined to be certain failure. - Benjamin Disraeli
+          Through perseverance many people win success out of what seemed destined to be certain failure. - Be...
         </p>
         <p
           className="mt-4 mb-2 flex gap-2 flex-wrap"
