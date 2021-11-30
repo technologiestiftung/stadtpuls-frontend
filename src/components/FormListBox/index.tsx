@@ -94,7 +94,7 @@ export const FormListBox = forwardRef<HTMLButtonElement, FormListBoxPropType>(
                 ? "flex flex-wrap right-0 min-w-[200px]"
                 : "truncate whitespace-nowrap",
               "absolute z-10 mt-[-1px] w-full bg-white shadow",
-              "max-h-56 text-base border border-gray-200",
+              "max-h-80 text-base border border-gray-200",
               "overflow-y-auto focus:outline-none sm:text-sm",
             ].join(" ")}
           >

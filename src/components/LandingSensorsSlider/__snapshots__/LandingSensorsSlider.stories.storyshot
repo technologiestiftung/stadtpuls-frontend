@@ -1168,7 +1168,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                       fillRule="nonzero"
                     />
                   </svg>
-                  Unit Counter
+                  Zähler
                 </p>
                 <p
                   className="text-base"
