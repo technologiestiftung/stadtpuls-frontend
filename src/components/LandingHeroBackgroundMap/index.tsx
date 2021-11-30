@@ -2,8 +2,9 @@ import { FC, useEffect, useState } from "react";
 import { MarkerMap } from "@components/MarkerMap";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 
-interface LandingHeroBackgroundMapPropType {
-  sensor: ParsedSensorType;
+export interface LandingHeroBackgroundMapPropType {
+  sensors: ParsedSensorType[];
+  activeMarkerIndex: number;
 }
 
 const getElTopOffset = (el: Element): number => {
@@ -13,7 +14,8 @@ const getElTopOffset = (el: Element): number => {
 };
 
 export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
-  sensor,
+  sensors,
+  activeMarkerIndex,
 }) => {
   const [mapHeight, setMapHeight] = useState(1000);
   const [mapWidth, setMapWidth] = useState(1000);
@@ -41,15 +43,15 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
         mapWidth={mapWidth}
         mapHeight={typeof mapHeight === "string" ? mapHeight : mapHeight * 1.7}
         mapZoom={9}
-        clickHandler={() => undefined}
-        markers={[
-          {
-            latitude: sensor.latitude || 0,
-            longitude: sensor.longitude || 0,
-            isActive: true,
-            id: 0,
-          },
-        ]}
+        clickHandler={id => console.log(id)}
+        markers={sensors.map((sensor, markerIndex) => {
+          return {
+            latitude: sensor.latitude,
+            longitude: sensor.longitude,
+            isActive: markerIndex === activeMarkerIndex,
+            id: sensor.id,
+          };
+        })}
       />
     </div>
   );
