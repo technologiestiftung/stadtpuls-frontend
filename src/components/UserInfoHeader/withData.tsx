@@ -70,7 +70,7 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
             authorName: finalAccount.displayName,
             authorUsername: finalAccount.username,
           }}
-          title='Neuer Sensor hinzufügen'
+          title='Neuen Sensor hinzufügen'
           onCancel={() => setNewSensorModalIsOpen(false)}
           submitButtonText='Hinzufügen'
           onSubmit={data => {
