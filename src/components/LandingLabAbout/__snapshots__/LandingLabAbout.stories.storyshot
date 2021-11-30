@@ -19,12 +19,12 @@ exports[`Storyshots Promotional/LandingLabAbout Default 1`] = `
           <h1
             className="text-xl sm:text-2xl md:text-3xl text-purple font-bold font-headline mt-6 mb-1"
           >
-            Offene Daten — Offene Stadt
+            Stadtpuls ist ein Open Source Projekt
           </h1>
           <p
             className="text-lg mb-8"
           >
-            Das CityLAB baut Prototypen für die Stadtgesellschaft
+            ...entwickelt vom CityLAB Berlin ❤️
           </p>
           <div
             className="prose max-w-none"
@@ -32,15 +32,21 @@ exports[`Storyshots Promotional/LandingLabAbout Default 1`] = `
             <p
               className="max-w-none"
             >
-              Gemeinsam mit Stadtgesellschaft und Verwaltung arbeiten wir an der digitalen Zukunft für das Berlin von Morgen. Das
+              Das
                
               <a
                 href="https://www.citylab-berlin.org"
+                rel="noreferrer"
+                target="_blank"
               >
-                CityLAB Berlin
+                CityLAB
               </a>
                
-              verbindet Partizipation und Teilhabe, Open Data, Ideation und Prototyping und fördert damit Open Innovation für die Hauptstadt. Im Sinne von "Public Code, Public Money" veröffentlichen wir den Source-Code unserer Projekte auf Github.
+              ist Berlins öffentliches Innovationslabor: Gemeinsam mit Stadtgesellschaft und öffentlicher Verwaltung entwickeln wir Ideen und Prototypen, um den digitalen Wandel zu gestalten. Als gemeinnützige Einrichtung veröffentlichen wir all unsere Projekte unter einer Open Source-Lizenz, denn wir finden:
+               
+              <strong>
+                Public Money – Public Code!
+              </strong>
             </p>
             <p>
               Neugierig geworden? Dann besuche einige unserer
