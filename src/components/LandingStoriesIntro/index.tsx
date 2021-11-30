@@ -1,8 +1,8 @@
 import { AnchorButton } from "@components/Button";
 import { FC } from "react";
-import styles from "./LandingStatsSection.module.css";
+import styles from "./LandingStoriesIntro.module.css";
 
-export const LandingStatsSection: FC = () => (
+export const LandingStoriesIntro: FC = () => (
   <section
     className={[
       "relative z-10",

@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import { LandingStatsSection } from ".";
+import { LandingStoriesIntro } from ".";
 
-describe("LandingStatsSection component", () => {
+describe("LandingStoriesIntro component", () => {
   it("should render the story block", () => {
-    render(<LandingStatsSection />);
+    render(<LandingStoriesIntro />);
     const headline = screen.getByText("Der Puls des Wrangelkiez");
     const subline = screen.getByText("Stadtpuls Story #1");
     const text = screen.getByText(
