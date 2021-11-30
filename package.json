@@ -102,7 +102,7 @@
   },
   "scripts": {
     "cm": "cz",
-    "dev": "npm run watch:workers & next dev",
+    "dev": "npm run watch:workers & next dev -p 3333",
     "build:workers": "NODE_ENV=production && node buildWorkers.js",
     "watch:workers": "NODE_ENV=development && node buildWorkers.js",
     "build": "npm run build:workers && next build",

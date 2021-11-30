@@ -49,8 +49,8 @@ const LandingPage: FC<{
         initialSlideIndex={initialSlideIndex}
         onSlideChange={setActiveSlideIndex}
       />
-      <LandingHowItWorks />
       <LandingProjectAbout />
+      <LandingHowItWorks />
       <LandingLabAbout />
     </>
   );
