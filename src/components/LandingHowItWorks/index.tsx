@@ -114,7 +114,10 @@ const columnsData = [
     listItems: [
       { icon: "/images/icons/arduino.svg", text: "Arduino" },
       { icon: "/images/icons/raspberry-pi.svg", text: "Raspberry Pi" },
-      { icon: "/images/icons/open-sense-box.svg", text: "Open Sense Box" },
+      { icon: "/images/icons/phone.svg", text: "Smartphone" },
+      { icon: "/images/icons/browser.svg", text: "Web-Browser" },
+      { icon: "/images/icons/laptop.svg", text: "PC/Mac" },
+      { icon: "/images/icons/other-hardware.svg", text: "Und vieles mehr" },
     ],
   },
   {
