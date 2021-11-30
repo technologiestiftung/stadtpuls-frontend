@@ -2,18 +2,17 @@ import { render, screen } from "@testing-library/react";
 import { LandingStatsSection } from ".";
 
 describe("LandingStatsSection component", () => {
-  it("should render the stats", () => {
-    const testStats = {
-      usersCount: 123,
-      sensorsCount: 432,
-      recordsCount: 100234,
-    };
-    render(<LandingStatsSection stats={testStats} />);
-    const usersCount = screen.getByText(`${testStats.usersCount}`);
-    const sensorsCount = screen.getByText(`${testStats.sensorsCount}`);
-    const recordsCount = screen.getByText(`${testStats.recordsCount}`);
-    expect(usersCount).toBeInTheDocument();
-    expect(sensorsCount).toBeInTheDocument();
-    expect(recordsCount).toBeInTheDocument();
+  it("should render the story block", () => {
+    render(<LandingStatsSection />);
+    const headline = screen.getByText("Der Puls des Wrangelkiez");
+    const subline = screen.getByText("Stadtpuls Story #1");
+    const text = screen.getByText(
+      "Eine Boombox dröhnt im Park, die U1 quietscht über die Hochbahnstrecke und die Polizei rückt mal wieder mit Sirenen an: Eine typische Soundkulisse im Berliner Szenekiez. Wir haben uns gefragt, welche Rolle Lärm für die Identität eines Kiezes spielt und welche Muster es gibt. Hier erzählen wir die Geschichte von versteckten Hinterhöfen, einem lauten Supermarkt und einer Entführung."
+    );
+    const link = screen.getByRole("link", { name: "Zur Story" });
+    expect(headline).toBeInTheDocument();
+    expect(subline).toBeInTheDocument();
+    expect(text).toBeInTheDocument();
+    expect(link).toBeInTheDocument();
   });
 });
