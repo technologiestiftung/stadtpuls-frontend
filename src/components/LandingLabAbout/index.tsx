@@ -35,20 +35,26 @@ export const LandingLabAbout: FC = () => {
         >
           <div className='grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 gap-4 md:gap-8'>
             <div className='sm:col-span-2 lg:col-span-1'>
-              <AboutTitle>Offene Daten — Offene Stadt</AboutTitle>
+              <AboutTitle>Stadtpuls ist ein Open Source Projekt</AboutTitle>
               <p className='text-lg mb-8'>
-                Das CityLAB baut Prototypen für die Stadtgesellschaft
+                ...entwickelt vom CityLAB Berlin &#10084;&#65039;
               </p>
               <div className='prose max-w-none'>
                 <p className='max-w-none'>
-                  Gemeinsam mit Stadtgesellschaft und Verwaltung arbeiten wir an
-                  der digitalen Zukunft für das Berlin von Morgen. Das{" "}
-                  <a href='https://www.citylab-berlin.org'>CityLAB Berlin</a>{" "}
-                  verbindet Partizipation und Teilhabe, Open Data, Ideation und
-                  Prototyping und fördert damit Open Innovation für die
-                  Hauptstadt. Im Sinne von &quot;Public Code, Public Money&quot;
-                  veröffentlichen wir den Source-Code unserer Projekte auf
-                  Github.
+                  Das{" "}
+                  <a
+                    href='https://www.citylab-berlin.org'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    CityLAB
+                  </a>{" "}
+                  ist Berlins öffentliches Innovationslabor: Gemeinsam mit
+                  Stadtgesellschaft und öffentlicher Verwaltung entwickeln wir
+                  Ideen und Prototypen, um den digitalen Wandel zu gestalten.
+                  Als gemeinnützige Einrichtung veröffentlichen wir all unsere
+                  Projekte unter einer Open Source-Lizenz, denn wir finden:{" "}
+                  <strong>Public Money – Public Code!</strong>
                 </p>
                 <p>
                   Neugierig geworden? Dann besuche einige unserer{" "}
