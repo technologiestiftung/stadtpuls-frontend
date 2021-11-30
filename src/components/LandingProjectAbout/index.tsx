@@ -1,4 +1,3 @@
-import { GitHub } from "@material-ui/icons";
 import { FC } from "react";
 import styles from "./LandingProjectAbout.module.css";
 
@@ -18,19 +17,6 @@ const AboutTitle: FC = ({ children }) => (
     {children}
   </h1>
 );
-
-const techInfoColumns = [
-  {
-    title: "Backend",
-    repo: "stadtpuls-api",
-    bgImage: "/images/icons/stadtpuls-api-technologies.svg",
-  },
-  {
-    title: "Frontend",
-    repo: "stadtpuls-frontend",
-    bgImage: "/images/icons/stadtpuls-frontend-technologies.svg",
-  },
-];
 
 export const LandingProjectAbout: FC = () => (
   <div className='bg-black-dot-pattern relative mt-16'>
@@ -68,29 +54,6 @@ export const LandingProjectAbout: FC = () => (
               vernetzten Stadt.
             </p>
           </div>
-          {techInfoColumns.map(({ repo, title, bgImage }) => (
-            <a
-              href={`https://github.com/technologiestiftung/${repo}`}
-              title={`Das Code-Repository von der Stadtpuls ${title}`}
-              key={title}
-              className={[
-                styles.repoLink,
-                "border border-blue shadow-blue",
-                "mt-8 p-8 block hover:animate-borderpulse-blue",
-                "bg-no-repeat",
-              ].join(" ")}
-              style={{ backgroundImage: `url(${bgImage})` }}
-            >
-              <h4 className='text-xl font-bold mb-1 text-green font-headline'>
-                {title}
-              </h4>
-              <p className='text-sm text-gray-500 block'>
-                <GitHub className='mr-1 transform scale-75 align-top inline-block' />
-                technologiestiftung/
-                <span className='text-white'>{repo}</span>
-              </p>
-            </a>
-          ))}
         </div>
       </div>
     </section>
