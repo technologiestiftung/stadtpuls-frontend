@@ -116,7 +116,7 @@ const columnsData = [
       { icon: "/images/icons/raspberry-pi.svg", text: "Raspberry Pi" },
       { icon: "/images/icons/phone.svg", text: "Smartphone" },
       { icon: "/images/icons/browser.svg", text: "Web-Browser" },
-      { icon: "/images/icons/laptop.svg", text: "Laptop" },
+      { icon: "/images/icons/laptop.svg", text: "PC/Mac" },
       { icon: "/images/icons/other-hardware.svg", text: "Und vieles mehr" },
     ],
   },
