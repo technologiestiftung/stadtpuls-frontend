@@ -262,14 +262,80 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
             style={
               Object {
-                "backgroundImage": "url(/images/icons/open-sense-box.svg)",
+                "backgroundImage": "url(/images/icons/phone.svg)",
               }
             }
           />
           <span
             className="text-sm sm:text-base break-words sm:break-normal"
           >
-            Open Sense Box
+            Smartphone
+          </span>
+        </li>
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 "
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/browser.svg)",
+              }
+            }
+          />
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Web-Browser
+          </span>
+        </li>
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 "
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/laptop.svg)",
+              }
+            }
+          />
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Laptop
+          </span>
+        </li>
+        <li
+          className="grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50 "
+          style={
+            Object {
+              "gridTemplateColumns": "auto 1fr",
+            }
+          }
+        >
+          <span
+            className="w-14 h-14 bg-no-repeat bg-center bg-purple text-white"
+            style={
+              Object {
+                "backgroundImage": "url(/images/icons/other-hardware.svg)",
+              }
+            }
+          />
+          <span
+            className="text-sm sm:text-base break-words sm:break-normal"
+          >
+            Und vieles mehr
           </span>
         </li>
       </ul>
