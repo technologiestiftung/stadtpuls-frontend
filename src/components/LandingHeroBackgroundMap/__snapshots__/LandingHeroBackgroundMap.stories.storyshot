@@ -2,7 +2,7 @@
 
 exports[`Storyshots Promotional/LandingHeroBackgroundMap Default 1`] = `
 <div
-  className="relative overflow-hidden"
+  className="relative overflow-hidden pointer-events-none"
   style={
     Object {
       "height": 1000,
@@ -13,7 +13,7 @@ exports[`Storyshots Promotional/LandingHeroBackgroundMap Default 1`] = `
     style={
       Object {
         "cursor": "grab",
-        "height": 1700,
+        "height": 1000,
         "position": "relative",
         "width": 1000,
       }
