@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FC } from "react";
 
 export const LandingHero: FC = () => (
-  <section className='bg-black-dot-pattern relative z-0 mt-[calc(-1*var(--headerHeight))]'>
+  <section className='bg-black-dot-pattern relative z-20 mt-[calc(-1*var(--headerHeight))]'>
     <div>
       <div
         className={[
