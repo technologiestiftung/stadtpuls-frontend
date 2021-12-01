@@ -6,13 +6,11 @@ import { useWindowSize } from "@lib/hooks/useWindowSize";
 export interface LandingHeroBackgroundMapPropType {
   sensors: ParsedSensorType[];
   activeMarkerIndex: number;
-  onMarkerChange: (markerIndex: number) => void;
 }
 
 export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
   sensors,
   activeMarkerIndex,
-  onMarkerChange,
 }) => {
   const [mapHeight, setMapHeight] = useState(1000);
   const [mapWidth, setMapWidth] = useState(1000);
@@ -47,7 +45,7 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
         scrollZoom={false}
         dragPan={false}
         dragRotate={false}
-        clickHandler={markerIndex => onMarkerChange(markerIndex)}
+        clickHandler={() => undefined}
         markers={sensors.map((sensor, markerIndex) => {
           return {
             latitude: sensor.latitude,
