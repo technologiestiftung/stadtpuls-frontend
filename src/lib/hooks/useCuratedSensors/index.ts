@@ -20,8 +20,8 @@ export const getCuratedSensors = async (): Promise<ParsedSensorType[]> => {
       // In the future we might wanna save them in a DB table
       // TODO: Refactor this!
       process.env["NODE_ENV"] === "production"
-        ? [22, 23, 24, 25, 26, 27, 28, 29, 30] // -> Production
-        : [35, 36, 37, 38, 39, 40, 41] // -> Staging
+        ? [22, 23, 24, 25, 26, 27, 28, 29] // -> Production
+        : [35, 36, 37, 38, 39, 40, 41, 44] // -> Staging
     )
     //FIXME: the ignorance
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
