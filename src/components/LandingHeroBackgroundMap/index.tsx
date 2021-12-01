@@ -5,17 +5,13 @@ import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 export interface LandingHeroBackgroundMapPropType {
   sensors: ParsedSensorType[];
   activeMarkerIndex: number;
+  onMarkerChange: (markerIndex: number) => void;
 }
-
-const getElTopOffset = (el: Element): number => {
-  const rect = el.getBoundingClientRect();
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  return rect.top + scrollTop + rect.height / 2;
-};
 
 export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
   sensors,
   activeMarkerIndex,
+  onMarkerChange,
 }) => {
   const [mapHeight, setMapHeight] = useState(1000);
   const [mapWidth, setMapWidth] = useState(1000);
@@ -25,7 +21,7 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
       const slider = document.getElementsByClassName("swiper-wrapper")[0];
       if (!slider) return;
 
-      setMapHeight(getElTopOffset(slider));
+      setMapHeight(window.innerWidth / 3);
       setMapWidth(window.innerWidth);
     };
 
@@ -41,15 +37,18 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
     >
       <MarkerMap
         mapWidth={mapWidth}
-        mapHeight={typeof mapHeight === "string" ? mapHeight : mapHeight * 1.7}
+        mapHeight={mapHeight}
         mapZoom={9}
-        clickHandler={id => console.log(id)}
+        scrollZoom={false}
+        dragPan={false}
+        dragRotate={false}
+        clickHandler={markerIndex => onMarkerChange(markerIndex)}
         markers={sensors.map((sensor, markerIndex) => {
           return {
             latitude: sensor.latitude,
             longitude: sensor.longitude,
             isActive: markerIndex === activeMarkerIndex,
-            id: sensor.id,
+            id: markerIndex,
           };
         })}
       />

@@ -2,7 +2,7 @@
 
 exports[`Storyshots Promotional/LandingHeroBackgroundMap Default 1`] = `
 <div
-  className="relative overflow-hidden pointer-events-none"
+  className="relative overflow-hidden"
   style={
     Object {
       "height": 1000,
