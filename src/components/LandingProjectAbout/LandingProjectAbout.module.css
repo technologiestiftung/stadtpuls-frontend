@@ -3,7 +3,7 @@
   height: calc(100% + (2 * var(--pixelSize, 58px)));
   top: calc(var(--pixelSize, 58px) * -1);
   left: calc(50% + var(--pixelSize, 58px));
-  background-image: url(/images/photos/about-us-project.png);
+  background-image: url(/images/photos/about-us-project.jpg);
 }
 
 .repoLink {
