@@ -110,7 +110,7 @@ const columnsData = [
   {
     title: "Hardware",
     description:
-      "Die Wahl der Hardware  ist ganz dir überlassen. Arbeite mit Arduino, Raspberry Pi oder einer Open Sense Box. Wichtig ist, dass dein Board über eine LoRaWan-Antenne verfügt.",
+      "Die Wahl der Hardware  ist ganz dir überlassen. Arbeite mit Arduino, Raspberry Pi oder direkt am PC. Stadtpuls setzt deiner Kreativität keine Grenzen.",
     listItems: [
       { icon: "/images/icons/arduino.svg", text: "Arduino" },
       { icon: "/images/icons/raspberry-pi.svg", text: "Raspberry Pi" },
@@ -123,7 +123,7 @@ const columnsData = [
   {
     title: "Sensoren",
     description:
-      "Prinzipiell kannst du jeden Sensor verbinden. Wir unterstützen aktuell die folgenden, für die Umwelt relevanten, Sensortypen und machen sie mit einer Kategorie sichtbar.",
+      "Prinzipiell kannst du jeden Sensor verbinden. Die folgenden Sensortypen unterstützen wir bereits mit einer eigenen Kategorie.",
     listItems: [
       { icon: "/images/icons/temperature.svg", text: "Temperatur" },
       { icon: "/images/icons/co2.svg", text: "CO2" },
@@ -136,7 +136,8 @@ const columnsData = [
   },
   {
     title: "Protokolle",
-    description: "Stadtpuls unterstützt aktuell HTTP und LoRaWan über TTN.",
+    description:
+      "Mit HTTP und LoRaWan über TTN stehen dir bereits zwei wichtige Protokolle zur Verfügung. Weitere folgen in Kürze.",
     listItems: [
       { icon: "/images/icons/HTTP.svg", text: "HTTP" },
       { icon: "/images/icons/lorawan.svg", text: "LoRaWAN (TTN)" },
