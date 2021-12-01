@@ -19,7 +19,8 @@ export const getCuratedSensors = async (): Promise<ParsedSensorType[]> => {
       // The following is a quickfix because we currently know what our curated sensors are
       // In the future we might wanna save them in a DB table
       // TODO: Refactor this!
-      process.env["NODE_ENV"] === "production"
+      process.env["NODE_ENV"] === "production" &&
+        process.env["VERCEL_ENV"] !== "preview"
         ? [22, 23, 24, 25, 26, 27, 28, 29] // -> Production
         : [35, 36, 37, 38, 39, 40, 41, 44] // -> Staging
     )
