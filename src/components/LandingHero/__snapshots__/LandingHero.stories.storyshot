@@ -47,7 +47,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
         </p>
         <a
           className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green animate-slide-in mr-4 mb-2"
-          href="/docs"
+          href="/docs/join"
           onClick={[Function]}
           onMouseEnter={[Function]}
           style={

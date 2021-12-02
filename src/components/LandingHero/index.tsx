@@ -52,7 +52,7 @@ export const LandingHero: FC = () => (
 
           <Link href='/docs'>
             <AnchorButton
-              href='/docs'
+              href='/docs/join'
               variant='primary'
               className='animate-slide-in mr-4 mb-2'
               style={{ animationDelay: "200ms" }}
