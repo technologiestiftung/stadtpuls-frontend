@@ -50,7 +50,7 @@ export const LandingHero: FC = () => (
             deine Stadt besser zu verstehen.
           </p>
 
-          <Link href='/docs'>
+          <Link href='/docs/join'>
             <AnchorButton
               href='/docs/join'
               variant='primary'
