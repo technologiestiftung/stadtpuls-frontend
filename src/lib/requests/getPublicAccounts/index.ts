@@ -7,6 +7,19 @@ import {
 } from "@lib/hooks/usePublicAccounts";
 import { errors, RECORDS_LIMIT } from "../getPublicSensors";
 
+const alphabeticalAccountsSorter = (
+  a: ParsedAccountType,
+  b: ParsedAccountType
+): number => {
+  if (a.username.toLowerCase() < b.username.toLowerCase()) {
+    return -1;
+  }
+  if (a.username.toLowerCase() > b.username.toLowerCase()) {
+    return 1;
+  }
+  return 0;
+};
+
 export interface GetAccountsOptionsType {
   rangeStart?: number;
   rangeEnd?: number;
@@ -54,7 +67,9 @@ export const getPublicAccounts = async (
 
     if (error) throw error;
     if (!data) return [];
-    const accounts = data.map(mapPublicAccount);
+    const accounts = data
+      .map(mapPublicAccount)
+      .sort(alphabeticalAccountsSorter);
 
     return accounts;
   } else {
@@ -73,7 +88,9 @@ export const getPublicAccounts = async (
 
     if (error) throw error;
     if (!data) return [];
-    const accounts = data.map(mapPublicAccount);
+    const accounts = data
+      .map(mapPublicAccount)
+      .sort(alphabeticalAccountsSorter);
 
     return accounts;
   }
