@@ -17,8 +17,8 @@ const infoPages: PageType[] = [
     path: "/docs",
   },
   {
-    title: "Über dieses Projekt",
-    path: "/docs/about",
+    title: "Mitmachen",
+    path: "/docs/join",
   },
   {
     title: "FAQ",

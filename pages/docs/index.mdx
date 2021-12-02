@@ -7,17 +7,24 @@ metaDescription: 'Willkommensseite der Plattform Stadtpuls.'
 
 import { Button } from "@components/Button";
 
-<p className="lead">
-  Fühle den Puls deiner Stadt, entdecke die Welt der urbanen IoT-Sensorik und werde Teil einer riesigen Community.
-</p>
+## Sensordaten von und für Berlin
 
-Die Plattform *Stadtpuls* sammelt Daten verschiedenster Sensoren in Berlin, bereitet diese auf und stellt sie der Berliner Stadtgesellschaft frei zugänglich zur Verfügung.
-Egal ob du Forscher:in, Tüftler:in, Datenjournalist:in oder IoT-Neuling bist: du kannst aktiver Teil der Plattform werden!
+Die Fenster im Altbau an der Skalitzer Strasse vibrieren im Takt der U1, der morgendliche Verkehr fließt im Rhythmus der Ampelschaltungen, Mülleimer füllen und leeren sich wieder und Temperatur und Tageszeit bestimmen, an welchen Orten wir verweilen: wie ein stetiger Puls durchfliessen Daten unsere Stadt. 
 
-Erkunde die Daten deiner Stadt, nutze die Daten bereits registrierter <a href='/sensors'>Sensoren</a> für deine Datenanalysen oder erstelle deinen ganz eigenen Account und spende so die Daten deiner Sensoren.
+Mit <a href="https://www.stadtpuls.com">Stadtpuls</a> haben wir eine offene Plattform geschaffen, die dabei unterstützt, Sensordaten zu erfassen, zu visualisieren und für weitere Datenauswertung bereitzustellen. *Wie laut ist es in meiner Straße? Wie hoch ist der CO2-Wert in meinem Klassenraum? Ist es im Wedding wärmer als in Friedrichshain? Wie hoch ist die Feinstaubbelastung vor meiner Haustür?* 
 
-Drei Gründe, die für *Stadtpuls* sprechen:
+*Stadtpuls* hilft, Deine Umwelt zu erklären.
 
+Egal ob du Forscher:in, Tüftler:in, Datenjournalist:in oder IoT-Neuling bist: du kannst aktiver Teil der Plattform werden! Erkunde die Daten deiner Stadt, nutze die Daten bereits registrierter <a href='/sensors'>Sensoren</a> für deine Datenanalysen oder erstelle deinen ganz eigenen Account und spende so die Daten deiner Sensoren.
+
+
+## Entdecke die Welt der urbanen IoT-Sensorik und werde Teil einer riesigen Community.
+
+Die Sensor- und Echtzeitdaten stammen aus unterschiedlichen Datenquellen der Forschung, Verwaltung und Stadtgesellschaft. *Stadtpuls* visualisiert die Daten, um Betrachter:innen ein erstes Gefühl für die Datenbasis zu geben und eine Gesprächsgrundlage für weitere Verwertungsszenarien zu bieten. Alle Daten auf *Stadtpuls* werden als Open Data zum Download, sowie per RESTful-API kostenlos zur Verfügung gestellt.
+
+
+### Drei gute Gründe, die für *Stadtpuls* sprechen:
+<br/>
 <span className="w-12 h-12 rounded-full bg-gray-200" style={{padding: '0.3em 0.5em 0.3em 0.5em'}}>→</span> Der gesamte Quellcode ist <strong>Open Source</strong>
 <br></br>
 <br></br>
@@ -26,45 +33,13 @@ Drei Gründe, die für *Stadtpuls* sprechen:
 <br></br>
 <span className="w-12 h-12 rounded-full bg-gray-200" style={{padding: '0.3em 0.5em 0.3em 0.5em'}}>→</span> Die Nutzung der Plattform ist komplett <strong>kostenlos</strong>
 
----
-
-## Du möchtest den digitalen Puls deiner Stadt fühlen?
-Dann bist du hier genau richtig! Die Stadt Berlin, deren Hochschulen, aber auch Privatpersonen erheben bereits eine Vielzahl Sensordaten über unsere Stadt. Dabei spielen Klimadaten, aber auch städtische Echtzeit-Sensordaten zu Themen wie "Lärmbelästigung" oder "Füllstände von Mülleimern" eine wichtige Rolle.
-Diese Daten in einer gemeinsamen Datenbasis vorzuhalten, zugänglich zu machen und zu visualisieren ist ein erster Schritt in Richtung *smarte vernetzte Stadt* und legt den Grundstein für weitere Analysen, Prozessoptimierung und für eine bessere Stadtplanung.
-Man könnte sagen:
-<blockquote>
-  <p>Eine gute Datenbasis an Sensordaten legt den Grundstein für die smarte Stadt der Zukunft.</p>
-</blockquote>
-
-Mit Klick auf die <a href='/sensors'>Sensoren</a> gelangst du zur Übersicht aller Sensoren.
-Du siehst auf einen Blick alle wichtigen Informationen je Sensor, sowie natürlich die dazugehörigen Messwerte.
-
-## Du hast bereits ein IoT-Projekt?
-Wunderbar! Erstelle dir einen Account und stelle deine Sensordaten für andere Nutzer:innen und die Öffentlichkeit zur Verfügung. Die Plattform unterstützt bislang die Anbindung an das <a href="https://www.thethingsnetwork.org/" target="_blank">The Things Network (TTN)</a>, sodass du Sensoren, die du bereits in TTN registriert hast, einfach über die <a href="https://www.thethingsnetwork.org/docs/applications/http/" target="_blank">HTTP-Integration von TTN</a> mit *Stadtpuls* verknüpfen kannst. Darüber hinaus kannst du deine Sensoren auch über die RESTful-API von *Stadtpuls* an die Plattform anbinden.
-
-<br/>
-Nach erfolgreicher Verknüpfung werden die Daten deiner Sensoren auf einer eigenen Seite visualisiert, <strong>frei als Open Data</strong> zum Download bereitgestellt und verfügen sogar über ihren ganz eigenen RESTful-API Endpoint.
-
-Im linken Menü findest du unter dem Punkt *Dokumentation* eine ausführliche Erläuterung dazu, wie du dir einen Account anlegst oder deine Sensoren aus TTN mit *Stadtpuls* verknüpfst.
-<Button><a href='/signup'>Jetzt Account anlegen</a></Button>
-
-
-## Du brauchst Daten für deine Analyse?
-
-Dann browse durch die <a href='/sensors'>Sensorenübersicht</a> und finde den passenden Datensatz für deine Datenanalyse.
-Damit du dich bei all den Messwerten schneller zurecht findest, klassifizieren wir die Sensordaten bislang nach <strong>sieben verschiedenen Kategorien</strong>:
-
-1. CO2
-2. Druck
-3. Einheitenzähler
-4. Helligkeit
-5. Lautstärke
-6. Luftfeuchtigkeit
-7. Temperatur
-
-Alle Daten werden als Open Data bereitgestellt und können entweder als *JSON* oder *CSV-Datei* heruntergeladen sowie über eine *RESTful-API* kostenlos für eigene Projekte genutzt werden. 
+Damit wollen wir unseren Beitrag zu einer offenen, transparenten Stadt beitragen.
 
 ---
 
 Wenn du Fragen, Feedback oder Anregungen hast, dann schreib uns eine E-Mail an: *info@citylab-berlin.org* oder nutze <a href="https://github.com/technologiestiftung/stadtpuls/discussions">Github Discussions</a>, um dich mit uns und der Community auszutauschen. Bugs kannst du als <a href="https://github.com/technologiestiftung/stadtpuls-community/issues">Github Issue</a> reporten.
+
+*Stadtpuls* ist ein Projekt der <a href="https://www.technologiestiftung-berlin.de" target="_blank">Technologiestiftung Berlin</a>, wird durchgeführt vom <a href="https://www.citylab-berlin.org" target="_blank">CityLAB Berlin</a> und gefördert durch die <a href="https://www.berlin.de/rbmskzl/" target="_blank">Senatskanzlei Berlin</a>.
+
+Made with love in Berlin &#10084;&#65039;
 

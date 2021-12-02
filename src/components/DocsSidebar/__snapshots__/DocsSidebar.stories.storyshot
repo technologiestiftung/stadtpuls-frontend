@@ -38,11 +38,11 @@ exports[`Storyshots Navigation/DocsSidebar Default 1`] = `
           >
             <a
               className="navigation-link block sm:inline"
-              href="/docs/about"
+              href="/docs/join"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Über dieses Projekt
+              Mitmachen
             </a>
           </li>
           <li
