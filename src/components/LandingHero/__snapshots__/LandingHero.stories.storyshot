@@ -2,7 +2,7 @@
 
 exports[`Storyshots Promotional/LandingHero Default 1`] = `
 <section
-  className="bg-black-dot-pattern relative z-0 mt-[calc(-1*var(--headerHeight))]"
+  className="bg-black-dot-pattern relative z-20 mt-[calc(-1*var(--headerHeight))]"
 >
   <div>
     <div
@@ -331,19 +331,6 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
                   height="58"
                   style={
                     Object {
-                      "animationDelay": "250ms",
-                    }
-                  }
-                  width="58"
-                  x="522"
-                  y="812"
-                />
-                <rect
-                  className="animate-slide-in"
-                  fill="#46ECA1"
-                  height="58"
-                  style={
-                    Object {
                       "animationDelay": "275ms",
                     }
                   }
@@ -363,19 +350,6 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
                   width="58"
                   x="812"
                   y="696"
-                />
-                <rect
-                  className="animate-slide-in"
-                  fill="url(#black-dot-pattern)"
-                  height="58"
-                  style={
-                    Object {
-                      "animationDelay": "325ms",
-                    }
-                  }
-                  width="58"
-                  x="464"
-                  y="754"
                 />
                 <rect
                   className="animate-slide-in"
@@ -654,19 +628,6 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
                   width="58"
                   x="58"
                   y="580"
-                />
-                <rect
-                  className="animate-slide-in"
-                  fill="#8330FF"
-                  height="58"
-                  style={
-                    Object {
-                      "animationDelay": "850ms",
-                    }
-                  }
-                  width="58"
-                  x="522"
-                  y="754"
                 />
                 <rect
                   className="animate-slide-in"
