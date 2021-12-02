@@ -1,15 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Map/MarkerCircle Active 1`] = `
-<button
-  className="w-6 h-6 rounded-full bg-blue text-center -translate-x-3 -translate-y-3 cursor-default"
-  onClick={[Function]}
-/>
+<div
+  className="w-6 h-6 flex"
+>
+  <div
+    className="motion-safe:animate-ping absolute -top-3 -left-3 inline-flex h-full w-full rounded-full bg-green opacity-90"
+  />
+  <button
+    className="relative inline-flex w-6 h-6 rounded-full bg-blue border-white border-2 text-center -translate-x-3 -translate-y-3 cursor-default"
+    onClick={[Function]}
+  />
+</div>
 `;
 
 exports[`Storyshots Map/MarkerCircle Inactive 1`] = `
-<button
-  className="w-6 h-6 rounded-full bg-gray-500 text-center -translate-x-3 -translate-y-3 cursor-default"
-  onClick={[Function]}
-/>
+<div
+  className="w-6 h-6 flex"
+>
+  <div
+    className="motion-safe:animate-ping absolute -top-3 -left-3 inline-flex h-full w-full rounded-full bg-green opacity-90"
+  />
+  <button
+    className="relative inline-flex w-6 h-6 rounded-full bg-gray-500 border-white border-2 text-center -translate-x-3 -translate-y-3 cursor-default"
+    onClick={[Function]}
+  />
+</div>
 `;

@@ -29,13 +29,16 @@ const LandingPage: FC<{
 
   return (
     <>
-      <div className='absolute z-0 top-0 left-0 right-0 pointer-events-none'>
-        {curatedSensors.length > 0 && (
-          <LandingHeroBackgroundMap sensor={curatedSensors[activeSlideIndex]} />
-        )}
-      </div>
       <LandingHero />
       <LandingStoriesIntro />
+      {curatedSensors.length > 0 && (
+        <section>
+          <LandingHeroBackgroundMap
+            sensors={curatedSensors}
+            activeMarkerIndex={activeSlideIndex}
+          />
+        </section>
+      )}
       <LandingSensorsSlider
         sensors={curatedSensors}
         initialSlideIndex={initialSlideIndex}

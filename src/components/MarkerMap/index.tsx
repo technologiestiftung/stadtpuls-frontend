@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactMapGL, {
   FlyToInterpolator,
+  InteractiveMapProps,
   Marker,
   WebMercatorViewport,
 } from "react-map-gl";
@@ -15,14 +16,16 @@ const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
 type ClickHandlerType = (markerId: number) => void;
 
-export const MarkerMap: React.FC<{
+export interface MarkerMapType extends InteractiveMapProps {
   markers: MarkerType[];
   clickHandler: ClickHandlerType;
+  withMapLabels?: boolean;
   mapWidth: number;
   mapHeight: number;
   mapZoom?: number;
-  withMapLabels?: boolean;
-}> = ({
+}
+
+export const MarkerMap: React.FC<MarkerMapType> = ({
   markers,
   clickHandler,
   mapWidth,
