@@ -214,6 +214,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
               {...field}
               optional
               label='Beschreibung'
+              maxCharacters={500}
               placeholder='Beschreibe kurz den Sensor'
               errors={formatError(errors.description?.message)}
             />

@@ -13,7 +13,7 @@ exports[`Storyshots Promotional/LandingHeroBackgroundMap Default 1`] = `
     style={
       Object {
         "cursor": "grab",
-        "height": 1700,
+        "height": 1000,
         "position": "relative",
         "width": 1000,
       }

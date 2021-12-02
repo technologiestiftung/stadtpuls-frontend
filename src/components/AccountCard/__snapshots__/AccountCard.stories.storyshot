@@ -502,7 +502,7 @@ exports[`Storyshots UI Elements/AccountCard Default 1`] = `
       <p
         className="pt-2"
       >
-        Louis XIV, also known as Louis the Great or the Su...
+        Louis XIV, also known as Louis the Great or the Sun King, was King of France from 14 May 1643 until ...
       </p>
       <div
         className="flex gap-4 sm:gap-6 md:gap-8 justify-self-end items-center pt-6"
@@ -1640,7 +1640,7 @@ exports[`Storyshots UI Elements/AccountCard Too Many Categories 1`] = `
       <p
         className="pt-2"
       >
-        Louis XIV, also known as Louis the Great or the Su...
+        Louis XIV, also known as Louis the Great or the Sun King, was King of France from 14 May 1643 until ...
       </p>
       <div
         className="flex gap-4 sm:gap-6 md:gap-8 justify-self-end items-center pt-6"

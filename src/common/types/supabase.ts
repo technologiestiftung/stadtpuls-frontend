@@ -608,8 +608,10 @@ export interface definitions {
       | "CO2"
       | "Luftfeuchtigkeit"
       | "Luftdruck"
-      | "Unit Counter"
-      | "Lautstärke";
+      | "Zähler"
+      | "Lautstärke"
+      | "Helligkeit"
+      | "Sonstige";
     description: string;
   };
   records: {

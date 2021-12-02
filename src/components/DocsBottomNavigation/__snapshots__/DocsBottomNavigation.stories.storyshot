@@ -35,12 +35,12 @@ exports[`Storyshots Navigation/DocsBottomNavigation Default 1`] = `
       <li>
         <a
           className=" block p-4 sm:p-8 border rounded bg-white-dot-pattern text-purple flex justify-between transition hover:border-purple hover:bg-gray-50"
-          href="/docs/about"
+          href="/docs/join"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <span>
-            Über dieses Projekt
+            Mitmachen
           </span>
           <svg
             aria-hidden={true}

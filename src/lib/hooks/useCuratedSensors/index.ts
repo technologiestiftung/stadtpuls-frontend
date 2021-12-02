@@ -10,12 +10,20 @@ import {
   RECORDS_LIMIT,
 } from "@lib/requests/getPublicSensors";
 
-const SENSORS_LIMIT = 3;
-
 export const getCuratedSensors = async (): Promise<ParsedSensorType[]> => {
   const { data, error } = await supabase
     .from<SensorQueryResponseType>("sensors")
     .select(sensorQueryString)
+    .in(
+      "id",
+      // The following is a quickfix because we currently know what our curated sensors are
+      // In the future we might wanna save them in a DB table
+      // TODO: Refactor this!
+      process.env["NODE_ENV"] === "production" &&
+        process.env["VERCEL_ENV"] !== "preview"
+        ? [22, 23, 24, 25, 26, 27, 28, 29] // -> Production
+        : [35, 36, 37, 38, 39, 40, 41, 44] // -> Staging
+    )
     //FIXME: the ignorance
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
@@ -23,7 +31,6 @@ export const getCuratedSensors = async (): Promise<ParsedSensorType[]> => {
       foreignTable: "records",
       ascending: false,
     })
-    .limit(SENSORS_LIMIT)
     .limit(RECORDS_LIMIT, { foreignTable: "records" });
 
   if (error) throw error;

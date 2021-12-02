@@ -7,13 +7,15 @@ export default {
 } as Meta;
 
 const Template: Story = () => (
-  <div className='inline-grid grid-cols-6 gap-4'>
+  <div className='inline-grid grid-cols-8 gap-4'>
     <CategoryIcon categoryId={1} />
     <CategoryIcon categoryId={2} />
     <CategoryIcon categoryId={3} />
     <CategoryIcon categoryId={4} />
     <CategoryIcon categoryId={5} />
     <CategoryIcon categoryId={6} />
+    <CategoryIcon categoryId={7} />
+    <CategoryIcon categoryId={8} />
   </div>
 );
 

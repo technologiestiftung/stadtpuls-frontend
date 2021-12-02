@@ -14,7 +14,7 @@ export interface SensorCardPropType extends ParsedSensorType {
 }
 
 const DISPLAYABLE_RECORDS_AMOUNT = 20;
-const DESCRIPTION_MAX_LENGTH = 150;
+export const DESCRIPTION_MAX_LENGTH = 100;
 
 export const SensorCard: FC<SensorCardPropType> = ({
   id,
