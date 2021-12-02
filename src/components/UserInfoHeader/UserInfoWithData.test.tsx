@@ -387,7 +387,7 @@ describe("EditAddSensorModal", () => {
     await waitFor(() => {
       // MODAL TITLE
       const title = screen.getByRole("heading", {
-        name: "Neuer Sensor hinzufügen",
+        name: "Neuen Sensor hinzufügen",
       });
       expect(title).toBeInTheDocument();
     });

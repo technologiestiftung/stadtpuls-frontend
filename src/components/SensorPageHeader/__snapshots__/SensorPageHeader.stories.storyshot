@@ -2,7 +2,7 @@
 
 exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
 <div
-  className="bg-gray-50 relative"
+  className="bg-gray-50 relative mt-[calc(-1*var(--headerHeight))]"
 >
   <div
     className="md:absolute z-0 inset-0 bg-purple bg-opacity-5 grid md:grid-cols-2 h-80 md:h-auto"
@@ -670,7 +670,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
 
 exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
 <div
-  className="bg-gray-50 relative"
+  className="bg-gray-50 relative mt-[calc(-1*var(--headerHeight))]"
 >
   <div
     className="md:absolute z-0 inset-0 bg-purple bg-opacity-5 grid md:grid-cols-2 h-80 md:h-auto"

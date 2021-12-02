@@ -32,98 +32,28 @@ exports[`Storyshots Promotional/LandingProjectAbout Default 1`] = `
           <p
             className="max-w-none"
           >
-            Die Plattform 
+            Mit 
             <em>
               Stadtpuls
             </em>
-             ist eine prototypische Offene Datenplattform, welche
-             
-            <strong
-              className="text-green"
-            >
-              Sensordaten von & für Berlin
-            </strong>
-             
-            als Open Data sammelt, frei zugänglich macht und der Stadt Berlin auf ihrem Weg zur smarten Stadt der Zukunft helfen soll.
+             haben wir eine offene Plattform geschaffen, die dabei unterstützt, Sensordaten zu erfassen, zu visualisieren und für weitere Datenauswertung bereitzustellen. Wie laut ist es in meiner Straße? Wie hoch ist der CO2-Wert in meinem Klassenraum? Wie hoch ist die Feinstaubbelastung vor meiner Haustür?
+            <br />
+            <em>
+              Stadtpuls
+            </em>
+             hilft, deine Stadt zu erklären.
           </p>
           <p
             className="mt-4"
           >
-            Ziel der Plattform ist es Sensordaten der Stadt Berlin aufzubereiten, zu visualisieren und für alle Akteure der Stadtgesellschaft frei und kostenlos zur Verfügung zu stellen. Nutzer:innen können sich über einzelne IoT-Projekte informieren, selber Projekte und Sensoren anlegen oder Daten aus Projekten für die eigene Analyse nutzen. Dabei spielen Klimadaten, aber auch städtische Sensordaten ein große Rolle. Diese Daten in einer gemeinsamen Datenbasis vorzuhalten, zugänglich zu machen und zu visualisieren ist ein erster Schritt in Richtung einer smarten, vernetzten Stadt.
+            So wie es Github für Open Source Software gibt, stellt
+             
+            <em>
+              Stadtpuls
+            </em>
+             die Sensordaten von IoT-Devices (Internet of Things) frei zur Verfügung und bringt Maker (z.B. Hobbybastler:innen, Schulprojekte, Forschungstreibende, städtische Betriebe) und Taker (z.B. Data Scientists, Datenjournalisten, Wissenschafter:innen) zusammen. Egal ob du offene Daten suchst oder bereits eigene Sensoren und Daten hast: Stadtpuls hilft dir, tiefer in die Welt der Stadt-Sensorik einzutauchen und deine Stadt besser zu verstehen.
           </p>
         </div>
-        <a
-          className=" border border-blue shadow-blue mt-8 p-8 block hover:animate-borderpulse-blue bg-no-repeat"
-          href="https://github.com/technologiestiftung/stadtpuls-api"
-          style={
-            Object {
-              "backgroundImage": "url(/images/icons/stadtpuls-api-technologies.svg)",
-            }
-          }
-          title="Das Code-Repository von der Stadtpuls Backend"
-        >
-          <h4
-            className="text-xl font-bold mb-1 text-green font-headline"
-          >
-            Backend
-          </h4>
-          <p
-            className="text-sm text-gray-500 block"
-          >
-            <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root mr-1 transform scale-75 align-top inline-block"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"
-              />
-            </svg>
-            technologiestiftung/
-            <span
-              className="text-white"
-            >
-              stadtpuls-api
-            </span>
-          </p>
-        </a>
-        <a
-          className=" border border-blue shadow-blue mt-8 p-8 block hover:animate-borderpulse-blue bg-no-repeat"
-          href="https://github.com/technologiestiftung/stadtpuls-frontend"
-          style={
-            Object {
-              "backgroundImage": "url(/images/icons/stadtpuls-frontend-technologies.svg)",
-            }
-          }
-          title="Das Code-Repository von der Stadtpuls Frontend"
-        >
-          <h4
-            className="text-xl font-bold mb-1 text-green font-headline"
-          >
-            Frontend
-          </h4>
-          <p
-            className="text-sm text-gray-500 block"
-          >
-            <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root mr-1 transform scale-75 align-top inline-block"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"
-              />
-            </svg>
-            technologiestiftung/
-            <span
-              className="text-white"
-            >
-              stadtpuls-frontend
-            </span>
-          </p>
-        </a>
       </div>
     </div>
   </section>

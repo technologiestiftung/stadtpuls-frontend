@@ -5,7 +5,7 @@ module.exports = withImages(withMdxEnhanced({
   layoutPath: "src/components/layouts",
   defaultLayout: true,
   fileExtensions: ["mdx"],
-  remarkPlugins: [require("remark-slug")],
+  remarkPlugins: [require("remark-slug"), require("remark-prism")],
   rehypePlugins: [],
   usesSrc: false,
   extendFrontMatter: {

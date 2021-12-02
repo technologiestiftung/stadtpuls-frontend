@@ -70,7 +70,7 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
             authorName: finalAccount.displayName,
             authorUsername: finalAccount.username,
           }}
-          title='Neuer Sensor hinzufügen'
+          title='Neuen Sensor hinzufügen'
           onCancel={() => setNewSensorModalIsOpen(false)}
           submitButtonText='Hinzufügen'
           onSubmit={data => {
@@ -109,7 +109,7 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
           onDelete={() => setDeletionConfirmationIsOpened(true)}
         />
       )}
-      <div className={`border-b border-gray-200 pt-20`}>
+      <div className={`border-b border-gray-200 pt-4`}>
         <div className='container max-w-8xl mx-auto px-4 relative'>
           {(error || showEditSuccessAlert) && (
             <div className={["w-full z-50"].join(" ")}>

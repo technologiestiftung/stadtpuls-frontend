@@ -5,6 +5,6 @@ describe("LandingHowItWorks component", () => {
   it("should render four headings", () => {
     render(<LandingHowItWorks />);
     const headings = screen.getAllByRole("heading");
-    expect(headings).toHaveLength(6);
+    expect(headings).toHaveLength(4);
   });
 });

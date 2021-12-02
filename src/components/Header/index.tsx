@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
     <header
       className={[
         "w-full z-50 top-0 border-t-0",
-        isDocs ? "fixed" : "sticky float-left",
+        isDocs ? "fixed" : "sticky",
       ].join(" ")}
     >
       <nav

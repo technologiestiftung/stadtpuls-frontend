@@ -1,0 +1,46 @@
+---
+layout: 'docs'
+title: 'Sensoren'
+metaTitle: 'Neue Sensoren Anlegen'
+metaDescription: 'Anweisungen zum Anlegen neuer Sensoren.'
+---
+
+ 
+<p className="lead">
+  In dieser Sektion zeigen wir, wie du deinem Account einen neuen Sensor hinzufügst.
+</p>
+
+Bislang verfügt *Stadtpuls* über zwei Integrationsmöglichkeiten:
+1. die TTN-Integration von <a href="https://www.thethingsnetwork.org" target="_blank">The Things Network</a>
+2. eine HTTP-Integration mittels RESTful-API
+
+Du hast bereits eigene Sensoren bei <a href="https://www.thethingsnetwork.org/" target="_blank">The Things Network</a> oder einen Raspberry Pi der Zuhause auf dem Balkon das Wetter beobachtet? Fantastisch! In dieser Sektion erklären wir, wie du deinem Account Leben einhauchen und deine Sensoren zu *Stadtpuls* hinzufügen kannst. 
+
+## 1. Sensor zu Stadtpuls hinzufügen
+
+Klicke dazu in der Menüleiste oben rechts auf dein **Account-Icon** und dann auf **Neuer Sensor**. 
+Dir wird nun die Eingabemaske für den neuen Sensor angezeigt. 
+   <figure>
+  <img style={{maxHeight: 400, border: '1px solid rgba(0, 0, 0, 0.05)'}}
+    src="/images/newDeviceTTN.png"
+    alt="neuen Sensor hinzufügen"
+  />
+    <figcaption>
+    Eingabemaske, um einen neuen Sensor auf <em>Stadtpuls</em> hinzuzufügen
+  </figcaption>
+  </figure>
+
+Wähle als Typ der Integration **TTN** oder **HTTP** aus und trage alle weiteren Informationen in das Formular ein. 
+
+&#x1f4a1; *Du kannst alle Angaben wie **Name**, **Beschreibung**, **Standort** und **Kategorie** deines Sensors auch nachträglich ändern und anpassen.*
+
+### Die TTN Sensor-ID 
+
+Um deine TTN-Sensoren mit *Stadtpuls* erfolgreich verknüpfen zu können, ist es wichtig, dass du als **Device-ID** die exakt gleiche Device-ID wie die aus deiner TTN-Applikation nutzt.
+Diese Device-ID findest du im persönlichen Account auf <a href="https://www.thethingsnetwork.org/" target="_blank">The Things Network</a>, nicht auf *Stadtpuls*.
+
+&#x1f4a1; *Ein kleines Beispiel: dein Sensor heißt in deiner TTN-Konsole `node-temp-001`. Demnach lautet deine Device-ID in Stadtpuls ebenfalls `node-temp-001`.*
+
+Klicke nun auf **Hinzufügen**.
+
+Damit dein TTN-Sensor mit jedem Messwert automatisch einen POST-Request an unsere *Stadtpuls*-API stellt und die Sensormesswerte in unserer Datenbank ankommen, muss nun noch der **TTN-Webhook** eingerichtet werden.

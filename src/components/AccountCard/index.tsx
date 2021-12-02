@@ -13,7 +13,7 @@ export interface AccountCardPropType {
   categories?: number[];
 }
 
-const DESCRIPTION_MAX_LENGTH = 50;
+export const DESCRIPTION_MAX_LENGTH = 100;
 
 const numberFormatter = new Intl.NumberFormat("de-DE", {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
