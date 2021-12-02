@@ -57,7 +57,7 @@ export const LandingHero: FC = () => (
               className='animate-slide-in mr-4 mb-2'
               style={{ animationDelay: "200ms" }}
             >
-              Jetzt mitmachen & Sensoren erstellen
+              Jetzt mitmachen
             </AnchorButton>
           </Link>
           <Link href='/sensors'>
