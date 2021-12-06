@@ -2,7 +2,7 @@ import React from "react";
 
 const TSBLogo = "/images/tsb-logo.svg";
 const CityLABLogo = "/images/citylab-logo.svg";
-const BerlinLogo = "/images/berlin-logo.svg";
+const BerlinLogo = "/images/berlin-skzl-logo.svg";
 
 export const Footer: React.FC = () => {
   return (
@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
                 <img
                   src={CityLABLogo}
                   alt='Logo des CityLAB Berlin'
-                  className='w-40'
+                  className='w-44'
                 />
               </a>
             </div>
@@ -40,22 +40,26 @@ export const Footer: React.FC = () => {
                 <img
                   src={TSBLogo}
                   alt='Logo der Technologiestiftung Berlin'
-                  className='w-32'
+                  className='w-40'
                 />
               </a>
             </div>
             <div className='ml-8 md:ml-12 block'>
               <span className='w-full block text-xs text-gray-700'>
-                Gefördert von:
+                Gefördert durch:
               </span>
               <a
-                href='https://www.berlin.de/'
+                href='https://www.berlin.de/rbmskzl/'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='mt-4 block focus-offset'
-                aria-label='berlin.de'
+                aria-label='Der Regierende Bürgermeister von Berlin - Senatskanzlei'
               >
-                <img src={BerlinLogo} alt='Berlin Logo' className='w-32' />
+                <img
+                  src={BerlinLogo}
+                  alt='Logo: Der Regierende Bürgermeister von Berlin - Senatskanzlei'
+                  className='w-32'
+                />
               </a>
             </div>
           </div>
