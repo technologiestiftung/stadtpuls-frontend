@@ -29,7 +29,7 @@ export const sensorQueryString = `
     recorded_at,
     measurements
   ),
-  user:user_id (
+  user:user_profiles!user_id (
     name,
     display_name
   ),
