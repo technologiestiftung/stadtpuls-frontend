@@ -1,7 +1,7 @@
 import { rest } from "msw";
 import { fakeAuthToken } from "./supabaseData/userData";
 import { parsedSensors, sensors } from "./supabaseData/sensors";
-import { publicAccounts } from "./supabaseData/accounts";
+import { extendedUserProfiles, rawUserProfiles } from "./supabaseData/accounts";
 import { createSupabaseUrl } from "../lib/requests/createSupabaseUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
 import { createApiUrl } from "@lib/requests/createApiUrl";
@@ -125,14 +125,14 @@ const supabaseHandlers = [
           return res(
             ctx.status(201, "Mocked status"),
             ctx.json(
-              publicAccounts.find(
+              rawUserProfiles.find(
                 account => String(account.name) === String(username)
               )
             )
           );
         }
         if (limitedAccountsRequested && limit) {
-          const limitedAccounts = publicAccounts.slice(0, parseInt(limit, 10));
+          const limitedAccounts = rawUserProfiles.slice(0, parseInt(limit, 10));
           return res(
             ctx.status(201, "Mocked status"),
             ctx.json(limitedAccounts)
@@ -140,12 +140,21 @@ const supabaseHandlers = [
         } else {
           return res(
             ctx.status(201, "Mocked status"),
-            ctx.json(publicAccounts)
+            ctx.json(rawUserProfiles)
           );
         }
       }
 
-      return res(ctx.status(201, "Mocked status"), ctx.json(publicAccounts));
+      return res(ctx.status(201, "Mocked status"), ctx.json(rawUserProfiles));
+    }
+  ),
+  rest.get<definitions["extended_user_profiles"]>(
+    createSupabaseUrl("/extended_user_profiles"),
+    (_req, res, ctx) => {
+      return res(
+        ctx.status(200, "Mocked status"),
+        ctx.json(extendedUserProfiles)
+      );
     }
   ),
   rest.get<SensorQueryResponseType>(
