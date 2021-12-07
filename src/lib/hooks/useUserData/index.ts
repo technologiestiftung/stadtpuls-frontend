@@ -13,7 +13,7 @@ import {
   mapPublicSensor,
   ParsedSensorType,
   SensorQueryResponseType,
-} from "../usePublicSensors";
+} from "@lib/hooks/usePublicSensors";
 import { mapPublicAccount } from "@lib/hooks/usePublicAccounts";
 import {
   RECORDS_LIMIT,
