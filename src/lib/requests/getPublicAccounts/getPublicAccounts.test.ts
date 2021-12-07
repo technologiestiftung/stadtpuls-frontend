@@ -2,9 +2,9 @@ import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { getPublicAccounts } from ".";
 import { createSupabaseUrl } from "../createSupabaseUrl";
-import { publicAccounts as exampleAccounts } from "@mocks/supabaseData/accounts";
+import { extendedUserProfiles as exampleAccounts } from "@mocks/supabaseData/accounts";
 import { errors } from "../getPublicSensors";
-import { AccountQueryResponseType } from "@lib/hooks/usePublicAccounts";
+import { definitions } from "@common/types/supabase";
 
 const getIndexesFromRange = (
   rangeStart: number,
@@ -19,9 +19,15 @@ const getIndexesFromRange = (
 describe("utility function getPublicAccounts", () => {
   it("returns all public accounts", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createSupabaseUrl(`/user_profiles`), (_req, res, ctx) => {
-        return res(ctx.status(200, "Mocked status"), ctx.json(exampleAccounts));
-      })
+      rest.get(
+        createSupabaseUrl(`/extended_user_profiles`),
+        (_req, res, ctx) => {
+          return res(
+            ctx.status(200, "Mocked status"),
+            ctx.json(exampleAccounts)
+          );
+        }
+      )
     );
     server.listen();
     const fetchedAccounts = await getPublicAccounts();
@@ -32,15 +38,21 @@ describe("utility function getPublicAccounts", () => {
 
   it("returns accounts alphabetically (case-insensitively!)", async (): Promise<void> => {
     const server = setupServer(
-      rest.get(createSupabaseUrl(`/user_profiles`), (_req, res, ctx) => {
-        return res(ctx.status(200, "Mocked status"), ctx.json(exampleAccounts));
-      })
+      rest.get(
+        createSupabaseUrl(`/extended_user_profiles`),
+        (_req, res, ctx) => {
+          return res(
+            ctx.status(200, "Mocked status"),
+            ctx.json(exampleAccounts)
+          );
+        }
+      )
     );
     server.listen();
     const fetchedAccounts = await getPublicAccounts();
-    expect(fetchedAccounts[0].username).toEqual("aName");
+    expect(fetchedAccounts[0].username).toEqual("dennis");
     expect(fetchedAccounts[fetchedAccounts.length - 1].username).toEqual(
-      "XXName"
+      "XXDennis"
     );
     server.resetHandlers();
     server.close();
@@ -49,27 +61,30 @@ describe("utility function getPublicAccounts", () => {
   it("returns a limited amount of accounts if range is provided", async (): Promise<void> => {
     const rangeStart = 0;
     const rangeEnd = 3;
-    let filteredAccounts: AccountQueryResponseType[] = [];
+    let filteredAccounts: definitions["extended_user_profiles"][] = [];
 
     const server = setupServer(
-      rest.get(createSupabaseUrl(`/user_profiles`), (req, res, ctx) => {
-        const { fromIndex, toIndex } = getIndexesFromRange(
-          rangeStart,
-          rangeEnd
-        );
+      rest.get(
+        createSupabaseUrl(`/extended_user_profiles`),
+        (req, res, ctx) => {
+          const { fromIndex, toIndex } = getIndexesFromRange(
+            rangeStart,
+            rangeEnd
+          );
 
-        const limit = req.url.searchParams.get("limit");
-        const offset = req.url.searchParams.get("offset");
+          const limit = req.url.searchParams.get("limit");
+          const offset = req.url.searchParams.get("offset");
 
-        filteredAccounts = exampleAccounts.filter((_, index) => {
-          return index >= fromIndex && index <= toIndex;
-        });
+          filteredAccounts = exampleAccounts.filter((_, index) => {
+            return index >= fromIndex && index <= toIndex;
+          });
 
-        return res(
-          ctx.status(200, "Mocked status"),
-          ctx.json(limit && offset ? filteredAccounts : exampleAccounts)
-        );
-      })
+          return res(
+            ctx.status(200, "Mocked status"),
+            ctx.json(limit && offset ? filteredAccounts : exampleAccounts)
+          );
+        }
+      )
     );
     server.listen();
 

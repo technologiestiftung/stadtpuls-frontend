@@ -1,6 +1,6 @@
 import { Story, Meta } from "@storybook/react";
 import { AccountsGrid } from ".";
-import { publicAccounts } from "@mocks/supabaseData/accounts";
+import { extendedUserProfiles } from "@mocks/supabaseData/accounts";
 import { mapPublicAccount } from "@lib/hooks/usePublicAccounts";
 
 export default {
@@ -9,7 +9,7 @@ export default {
 } as Meta;
 
 const Template: Story = () => (
-  <AccountsGrid accounts={publicAccounts.map(mapPublicAccount)} />
+  <AccountsGrid accounts={extendedUserProfiles.map(mapPublicAccount)} />
 );
 
 export const Default = Template.bind({});
