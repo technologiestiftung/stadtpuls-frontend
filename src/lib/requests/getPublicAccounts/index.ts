@@ -1,24 +1,10 @@
 import { supabase } from "@auth/supabase";
+import { definitions } from "@common/types/supabase";
 import {
-  ParsedAccountType,
-  AccountQueryResponseType,
-  accountQueryString,
   mapPublicAccount,
+  ParsedAccountType,
 } from "@lib/hooks/usePublicAccounts";
-import { errors, RECORDS_LIMIT } from "../getPublicSensors";
-
-const alphabeticalAccountsSorter = (
-  a: ParsedAccountType,
-  b: ParsedAccountType
-): number => {
-  if (a.username.toLowerCase() < b.username.toLowerCase()) {
-    return -1;
-  }
-  if (a.username.toLowerCase() > b.username.toLowerCase()) {
-    return 1;
-  }
-  return 0;
-};
+import { errors } from "@lib/requests/getPublicSensors";
 
 export interface GetAccountsOptionsType {
   rangeStart?: number;
@@ -46,52 +32,22 @@ export const getPublicAccounts = async (
   )
     throw new Error(errors.onlyOneRangeValue);
 
-  if (
-    options &&
-    (options.rangeStart || options.rangeStart === 0) &&
-    options.rangeEnd
-  ) {
-    const { data, error } = await supabase
-      .from<AccountQueryResponseType>("user_profiles")
-      .select(accountQueryString)
-      .order("name")
-      // FIXME: recorded_at is not recognized altought it is inherited from the definitions
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      .order("recorded_at", {
-        foreignTable: "sensors.records",
-        ascending: false,
-      })
-      .range(options.rangeStart, options.rangeEnd)
-      .limit(RECORDS_LIMIT, { foreignTable: "sensors.records" });
+  const defaultRangeStart = 0;
+  const defaultRangeEnd =
+    Number.parseInt(process.env.NEXT_PUBLIC_SUPABASE_MAX_ROWS as string) ||
+    1000;
 
-    if (error) throw error;
-    if (!data) return [];
-    const accounts = data
-      .map(mapPublicAccount)
-      .sort(alphabeticalAccountsSorter);
+  const { data: extended_user_profiles, error } = await supabase
+    .from<definitions["extended_user_profiles"]>("extended_user_profiles")
+    .select("*")
+    .range(
+      options?.rangeStart || defaultRangeStart,
+      options?.rangeEnd || defaultRangeEnd
+    );
 
-    return accounts;
-  } else {
-    const { data, error } = await supabase
-      .from<AccountQueryResponseType>("user_profiles")
-      .select(accountQueryString)
-      .order("name")
-      // FIXME: recorded_at is not recognized altought it is inherited from the definitions
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      .order("recorded_at", {
-        foreignTable: "sensors.records",
-        ascending: false,
-      })
-      .limit(RECORDS_LIMIT, { foreignTable: "sensors.records" });
+  if (error) throw error;
+  if (!extended_user_profiles) return [];
 
-    if (error) throw error;
-    if (!data) return [];
-    const accounts = data
-      .map(mapPublicAccount)
-      .sort(alphabeticalAccountsSorter);
-
-    return accounts;
-  }
+  const accounts = extended_user_profiles.map(mapPublicAccount);
+  return accounts;
 };

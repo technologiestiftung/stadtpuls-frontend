@@ -533,7 +533,8 @@ exports[`Storyshots UI Elements/UserInfoHeader Maximum Infos 1`] = `
           12.342
         </span>
         <span>
-          Sensoren
+          Sensor
+          en
         </span>
       </div>
       <div
@@ -545,7 +546,8 @@ exports[`Storyshots UI Elements/UserInfoHeader Maximum Infos 1`] = `
           11 Mio.
         </span>
         <span>
-          Messwerte
+          Messwert
+          e
         </span>
       </div>
     </div>
@@ -1084,7 +1086,8 @@ exports[`Storyshots UI Elements/UserInfoHeader Minimal Infos 1`] = `
           0
         </span>
         <span>
-          Sensoren
+          Sensor
+          en
         </span>
       </div>
       <div
@@ -1096,7 +1099,8 @@ exports[`Storyshots UI Elements/UserInfoHeader Minimal Infos 1`] = `
           0
         </span>
         <span>
-          Messwerte
+          Messwert
+          e
         </span>
       </div>
     </div>
