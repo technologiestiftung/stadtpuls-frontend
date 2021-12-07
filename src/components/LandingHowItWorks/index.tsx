@@ -146,7 +146,7 @@ const columnsData = [
   {
     title: "Was wir bereitstellen",
     description:
-      "Hast du erst einmal ein eigenes Stadtpuls-Account, stellen wir dir automatisch und kostenlos folgendes bereit:",
+      "Hast du erst einmal einen eigenen Stadtpuls-Account, stellen wir dir automatisch und kostenlos folgendes bereit:",
     listItems: [
       {
         icon: "/images/icons/profile.svg",

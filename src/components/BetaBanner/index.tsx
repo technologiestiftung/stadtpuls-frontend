@@ -28,10 +28,11 @@ export const BetaBanner: FC = () => {
           BETA
         </span>
         <p className='max-w-none opacity-90 text-sm sm:text-base'>
-          Stadtpuls befindet sich noch in einer frühen Betaphase und kann daher
-          noch einige Fehler enthalten und hier und da etwas haken. Wir arbeiten
-          mit Begeisterung an der Verbesserung des Angebotes, bitten aber um
-          etwas Geduld. Wenn Du Feedback für uns hast, schreibe uns in der{" "}
+          <em>Stadtpuls</em> befindet sich noch in einer frühen Betaphase und
+          kann daher noch einige Fehler enthalten und hier und da etwas haken.
+          Wir arbeiten mit Begeisterung an der Verbesserung des Angebotes,
+          bitten aber um etwas Geduld. Wenn du Feedback für uns hast, schreibe
+          uns in der{" "}
           <a
             href='https://github.com/technologiestiftung/stadtpuls/discussions'
             target='_blank'

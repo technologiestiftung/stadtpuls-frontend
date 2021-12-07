@@ -54,7 +54,15 @@ export const LandingLabAbout: FC = () => {
                   Ideen und Prototypen, um den digitalen Wandel zu gestalten.
                   Als gemeinnützige Einrichtung veröffentlichen wir all unsere
                   Projekte unter einer Open Source-Lizenz, denn wir finden:{" "}
-                  <strong>Public Money – Public Code!</strong>
+                  <strong>
+                    <a
+                      href='https://publiccode.eu/de/'
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      Public Money – Public Code!
+                    </a>
+                  </strong>
                 </p>
                 <p>
                   Neugierig geworden? Dann besuche einige unserer{" "}
