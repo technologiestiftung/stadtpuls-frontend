@@ -1,5 +1,7 @@
-import { getAccountDataByUsername } from "@lib/requests/getAccountDataByUsername";
-import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
+import {
+  AccountWithSensorsType,
+  getAccountDataByUsername,
+} from "@lib/requests/getAccountDataByUsername";
 import { GetServerSideProps } from "next";
 import React, { FC, useState } from "react";
 import { UserInfoWithData } from "@components/UserInfoHeader/withData";
@@ -29,7 +31,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 };
 
 interface AccountTokensPagePropType {
-  routeAccount: ParsedAccountType;
+  routeAccount: AccountWithSensorsType;
 }
 
 const AccountTokensPage: FC<AccountTokensPagePropType> = ({ routeAccount }) => {
