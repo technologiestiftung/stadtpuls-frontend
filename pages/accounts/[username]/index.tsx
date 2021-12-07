@@ -5,7 +5,6 @@ import { FC } from "react";
 import { UserInfoWithData } from "@components/UserInfoHeader/withData";
 import { SensorsGrid } from "@components/SensorsGrid";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
-import { useUserData } from "@lib/hooks/useUserData";
 
 export const getServerSideProps: GetServerSideProps = async context => {
   try {
@@ -15,6 +14,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     return {
       props: {
         account: { ...accountData },
+        sensors: accountData.sensors,
         error: null,
       },
     };
@@ -30,17 +30,12 @@ interface AccountSensorsPagePropType {
 }
 
 const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({
-  account: routeAccount,
+  account,
+  sensors,
 }) => {
-  const { user: loggedInAccount } = useUserData();
-  const account =
-    loggedInAccount?.username === routeAccount?.username
-      ? loggedInAccount
-      : routeAccount;
-  const sensors = account.sensors || [];
   return (
     <>
-      <UserInfoWithData routeAccount={routeAccount} activeTab='sensors' />
+      <UserInfoWithData routeAccount={account} activeTab='sensors' />
       <div
         id='tab-content'
         role='tabpanel'
