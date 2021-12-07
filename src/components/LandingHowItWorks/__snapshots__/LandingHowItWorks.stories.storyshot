@@ -194,7 +194,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           <p
             className="text-sm mb-8 text-gray-500 sm:text-gray-300"
           >
-            Hast du erst einmal ein eigenes Stadtpuls-Account, stellen wir dir automatisch und kostenlos folgendes bereit:
+            Hast du erst einmal einen eigenen Stadtpuls-Account, stellen wir dir automatisch und kostenlos folgendes bereit:
           </p>
         </header>
       </div>
