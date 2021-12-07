@@ -64,7 +64,7 @@ exports[`Storyshots Promotional/LandingStoriesIntro Default 1`] = `
           Stadtpuls Stories
         </a>
          
-        verbinden Citizen Science und Datenjournalismus. Hast Du Lust, deine eigene Geschichte mit Sensordaten zu erzählen? Wir stellen Dir hier
+        verbinden Citizen Science und Datenjournalismus. Hast du Lust, deine eigene Geschichte mit Sensordaten zu erzählen? Wir stellen dir hier
          
         <a
           className="underline"

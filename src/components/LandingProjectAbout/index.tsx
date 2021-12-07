@@ -35,9 +35,12 @@ export const LandingProjectAbout: FC = () => (
             <p className='max-w-none'>
               Mit <em>Stadtpuls</em> haben wir eine offene Plattform geschaffen,
               die dabei unterstützt, Sensordaten zu erfassen, zu visualisieren
-              und für weitere Datenauswertung bereitzustellen. Wie laut ist es
-              in meiner Straße? Wie hoch ist der CO2-Wert in meinem Klassenraum?
-              Wie hoch ist die Feinstaubbelastung vor meiner Haustür?
+              und für weitere Datenauswertung bereitzustellen.{" "}
+              <em>
+                Wie laut ist es in meiner Straße? Was ist der CO2-Wert in meinem
+                Klassenraum? Wie hoch ist die Feinstaubbelastung vor meiner
+                Haustür?
+              </em>
               <br />
               <em>Stadtpuls</em> hilft, deine Stadt zu erklären.
             </p>
@@ -48,9 +51,9 @@ export const LandingProjectAbout: FC = () => (
               Hobbybastler:innen, Schulprojekte, Forschungstreibende, städtische
               Betriebe) und Taker (z.B. Data Scientists, Datenjournalisten,
               Wissenschafter:innen) zusammen. Egal ob du offene Daten suchst
-              oder bereits eigene Sensoren und Daten hast: Stadtpuls hilft dir,
-              tiefer in die Welt der Stadt-Sensorik einzutauchen und deine Stadt
-              besser zu verstehen.
+              oder bereits eigene Sensoren und Daten hast: <em>Stadtpuls</em>{" "}
+              hilft dir, tiefer in die Welt der Stadt-Sensorik einzutauchen und
+              deine Stadt besser zu verstehen.
             </p>
           </div>
         </div>

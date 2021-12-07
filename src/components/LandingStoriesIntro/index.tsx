@@ -81,8 +81,8 @@ export const LandingStoriesIntro: FC = () => (
           >
             Stadtpuls Stories
           </a>{" "}
-          verbinden Citizen Science und Datenjournalismus. Hast Du Lust, deine
-          eigene Geschichte mit Sensordaten zu erzählen? Wir stellen Dir hier{" "}
+          verbinden Citizen Science und Datenjournalismus. Hast du Lust, deine
+          eigene Geschichte mit Sensordaten zu erzählen? Wir stellen dir hier{" "}
           <a
             href='https://stories.stadtpuls.com/template'
             target='_blank'
