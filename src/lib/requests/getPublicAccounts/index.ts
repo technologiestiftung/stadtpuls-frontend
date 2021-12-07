@@ -32,30 +32,22 @@ export const getPublicAccounts = async (
   )
     throw new Error(errors.onlyOneRangeValue);
 
-  if (
-    options &&
-    (options.rangeStart || options.rangeStart === 0) &&
-    options.rangeEnd
-  ) {
-    const { data: extended_user_profiles, error } = await supabase
-      .from<definitions["extended_user_profiles"]>("extended_user_profiles")
-      .select("*")
-      .range(options.rangeStart, options.rangeEnd);
+  const defaultRangeStart = 0;
+  const defaultRangeEnd =
+    Number.parseInt(process.env.NEXT_PUBLIC_SUPABASE_MAX_ROWS as string) ||
+    1000;
 
-    if (error) throw error;
-    if (!extended_user_profiles) return [];
+  const { data: extended_user_profiles, error } = await supabase
+    .from<definitions["extended_user_profiles"]>("extended_user_profiles")
+    .select("*")
+    .range(
+      options?.rangeStart || defaultRangeStart,
+      options?.rangeEnd || defaultRangeEnd
+    );
 
-    const accounts = extended_user_profiles.map(mapPublicAccount);
-    return accounts;
-  } else {
-    const { data: extended_user_profiles, error } = await supabase
-      .from<definitions["extended_user_profiles"]>("extended_user_profiles")
-      .select("*");
+  if (error) throw error;
+  if (!extended_user_profiles) return [];
 
-    if (error) throw error;
-    if (!extended_user_profiles) return [];
-
-    const accounts = extended_user_profiles.map(mapPublicAccount);
-    return accounts;
-  }
+  const accounts = extended_user_profiles.map(mapPublicAccount);
+  return accounts;
 };
