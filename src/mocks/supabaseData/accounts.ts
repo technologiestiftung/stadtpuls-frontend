@@ -1,9 +1,9 @@
 import { definitions } from "@common/types/supabase";
 import { mapPublicAccount } from "@lib/hooks/usePublicAccounts";
 
-export const rawUserProfiles: definitions["user_profiles"][] = [
+export const userProfiles: definitions["user_profiles"][] = [
   {
-    id: "1",
+    id: "adf295d4-5c12-40e2-8398-d9f32a3f4aca",
     name: "vogelino",
     display_name: "Lucas Vogel",
     created_at: "2021-09-16T12:27:17.934324+00:00",
@@ -11,7 +11,7 @@ export const rawUserProfiles: definitions["user_profiles"][] = [
     url: "https://api.github.com/users/vogelino",
   },
   {
-    id: "2",
+    id: "abf295e4-5c14-40e2-8348-d0f32a3f2dfe",
     name: "dennis",
     display_name: "Dennis",
     created_at: "2021-01-07T18:20:10.934324+00:00",
@@ -19,7 +19,7 @@ export const rawUserProfiles: definitions["user_profiles"][] = [
     url: "https://api.github.com/users/dnsos",
   },
   {
-    id: "3",
+    id: "cef292e4-5c10-49e2-8348-d9a32a3f4dad",
     name: "ff6347",
     display_name: "Fabian",
     created_at: "2020-04-018T18:20:10.934324+00:00",
@@ -27,7 +27,7 @@ export const rawUserProfiles: definitions["user_profiles"][] = [
     url: "https://api.github.com/users/ff6347",
   },
   {
-    id: "4",
+    id: "bbf292e5-5c10-19e2-8348-d9e36a3f9dcc",
     name: "XXDennis",
     display_name: "Dennis 2",
     created_at: "2021-01-13T18:20:10.934324+00:00",
@@ -37,7 +37,7 @@ export const rawUserProfiles: definitions["user_profiles"][] = [
 ];
 
 export const extendedUserProfiles: definitions["extended_user_profiles"][] = [
-  // Differs from rawUserProfiles in this way:
+  // Differs from userProfiles in this way:
   // - already sorted (DB view handles that)
   // - different column names (provided by DB view)
   // - added sensors_count, records_count, categories, and sensors

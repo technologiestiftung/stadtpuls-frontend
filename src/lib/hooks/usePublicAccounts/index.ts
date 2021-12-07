@@ -1,7 +1,7 @@
 import { sensorQueryString } from "@lib/requests/getPublicSensors";
 import useSWR from "swr";
 import { definitions } from "@common/types/supabase";
-import { SensorQueryResponseType } from "../usePublicSensors";
+import { SensorQueryResponseType } from "@lib/hooks/usePublicSensors";
 import {
   GetAccountsOptionsType,
   getPublicAccounts,

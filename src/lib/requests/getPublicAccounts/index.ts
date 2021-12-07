@@ -4,7 +4,7 @@ import {
   mapPublicAccount,
   ParsedAccountType,
 } from "@lib/hooks/usePublicAccounts";
-import { errors } from "../getPublicSensors";
+import { errors } from "@lib/requests/getPublicSensors";
 
 export interface GetAccountsOptionsType {
   rangeStart?: number;

@@ -9,7 +9,7 @@ import {
   ParsedSensorType,
   SensorQueryResponseType,
 } from "@lib/hooks/usePublicSensors";
-import { sensorQueryString } from "../getPublicSensors";
+import { sensorQueryString } from "@lib/requests/getPublicSensors";
 
 export interface GetRecordsOptionsType {
   startDate?: string;
