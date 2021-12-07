@@ -39,7 +39,7 @@ export const getAccountDataByUsername = async (
     .eq("user_id", accountData.id as string);
   if (sensorsError) throw sensorsError;
   if (!accountData)
-    throw new Error(`No account found with username "${username}"`);
+    throw new Error(`No sensors found for username "${username}"`);
 
   const accountDataWithSensors = {
     ...mapPublicAccount(accountData),
