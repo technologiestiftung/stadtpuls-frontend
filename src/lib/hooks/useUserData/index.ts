@@ -14,12 +14,7 @@ import {
   ParsedSensorType,
   SensorQueryResponseType,
 } from "../usePublicSensors";
-import {
-  AccountQueryResponseType,
-  accountQueryString,
-  mapPublicAccount,
-  ParsedAccountType,
-} from "../usePublicAccounts";
+import { mapPublicAccount, ParsedAccountType } from "../usePublicAccounts";
 import {
   RECORDS_LIMIT,
   sensorQueryString,
@@ -44,16 +39,8 @@ const fetchUser: UserFetcherSignature = async userId => {
   if (!userId) return null;
 
   const { data: user, error } = await supabase
-    .from<AccountQueryResponseType>("user_profiles")
-    .select(accountQueryString)
-    // FIXME: created_at is not recognized altought it is inherited from the definitions
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    .order("recorded_at", {
-      foreignTable: "sensors.records",
-      ascending: false,
-    })
-    .limit(RECORDS_LIMIT, { foreignTable: "sensors.records" })
+    .from<definitions["extended_user_profiles"]>("extended_user_profiles")
+    .select("*")
     .eq("id", userId)
     .single();
 
