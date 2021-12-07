@@ -94,7 +94,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
   const [viewport, setViewport] = useState<Partial<InteractiveMapProps>>({
     latitude: defaultValues?.latitude || DEFAULT_LAT,
     longitude: defaultValues?.longitude || DEFAULT_LNG,
-    zoom: 12,
+    zoom: 16,
   });
   const isDirty =
     Object.values(dirtyFields).length > 0 ||
