@@ -518,7 +518,8 @@ exports[`Storyshots UI Elements/AccountCard Default 1`] = `
           <span
             className="text-sm"
           >
-            Sensoren
+            Sensor
+            en
           </span>
         </div>
         <div
@@ -532,7 +533,8 @@ exports[`Storyshots UI Elements/AccountCard Default 1`] = `
           <span
             className="text-sm"
           >
-            Messwerte
+            Messwert
+            e
           </span>
         </div>
       </div>
@@ -1112,7 +1114,8 @@ exports[`Storyshots UI Elements/AccountCard Minimal Props 1`] = `
           <span
             className="text-sm"
           >
-            Sensoren
+            Sensor
+            en
           </span>
         </div>
         <div
@@ -1126,7 +1129,8 @@ exports[`Storyshots UI Elements/AccountCard Minimal Props 1`] = `
           <span
             className="text-sm"
           >
-            Messwerte
+            Messwert
+            e
           </span>
         </div>
       </div>
@@ -1656,7 +1660,8 @@ exports[`Storyshots UI Elements/AccountCard Too Many Categories 1`] = `
           <span
             className="text-sm"
           >
-            Sensoren
+            Sensor
+            en
           </span>
         </div>
         <div
@@ -1670,7 +1675,8 @@ exports[`Storyshots UI Elements/AccountCard Too Many Categories 1`] = `
           <span
             className="text-sm"
           >
-            Messwerte
+            Messwert
+            e
           </span>
         </div>
       </div>

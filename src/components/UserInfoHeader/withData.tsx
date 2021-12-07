@@ -6,14 +6,14 @@ import { EditAddSensorModal } from "@components/EditAddSensorModal";
 import { NUMBER_OF_SENSOR_SYMBOLS } from "@components/SensorSymbol";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { Tabs } from "@components/Tabs";
-import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
 import { useUserData } from "@lib/hooks/useUserData";
+import { AccountWithSensorsType } from "@lib/requests/getAccountDataByUsername";
 import { useRouter } from "next/router";
 import { FC, useState } from "react";
 import { UserInfoHeader } from ".";
 
 interface UserInfoWithDataPropType {
-  routeAccount: ParsedAccountType;
+  routeAccount: AccountWithSensorsType;
   activeTab: "sensors" | "tokens";
 }
 

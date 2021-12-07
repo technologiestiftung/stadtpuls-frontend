@@ -1,11 +1,7 @@
 import { sensorQueryString } from "@lib/requests/getPublicSensors";
 import useSWR from "swr";
 import { definitions } from "@common/types/supabase";
-import {
-  mapPublicSensor,
-  ParsedSensorType,
-  SensorQueryResponseType,
-} from "../usePublicSensors";
+import { SensorQueryResponseType } from "@lib/hooks/usePublicSensors";
 import {
   GetAccountsOptionsType,
   getPublicAccounts,
@@ -39,34 +35,28 @@ export interface ParsedAccountType {
   categories: definitions["categories"]["id"][];
   sensorsCount: number;
   recordsCount: number;
-  sensors: ParsedSensorType[];
+  sensors: definitions["extended_user_profiles"]["sensors"];
 }
 
 export const mapPublicAccount = ({
-  sensors,
   ...user
-}: AccountQueryResponseType): ParsedAccountType => ({
-  id: user.id,
-  username: user.name || "anonymous",
-  displayName: user.display_name || user.name || "Anonymous",
-  createdAt: user.created_at,
-  link: user.url,
+}: definitions["extended_user_profiles"]): ParsedAccountType => ({
+  id: user.id || "",
+  username: user.username || "anonymous",
+  displayName: user.display_name || user.username || "Anonymous",
+  createdAt: user.created_at || "",
+  link: user.link,
   description: user.description,
-  sensorsCount: sensors.length || 0,
-  recordsCount: sensors.reduce(
-    (acc, { records }) => acc + records.length,
-    0 as number
-  ),
-  categories: sensors
-    .reduce((acc, sensor) => [...acc, sensor.category_id], [] as number[])
-    .filter((val, ind, arr) => arr.indexOf(val) === ind),
-  sensors: sensors.map(mapPublicSensor),
+  sensorsCount: user.sensors_count || 0,
+  recordsCount: user.records_count || 0,
+  categories: user.categories || [],
+  sensors: user.sensors,
 });
 
 interface usePublicAccountsParamsType {
   rangeStart: GetAccountsOptionsType["rangeStart"];
   rangeEnd: GetAccountsOptionsType["rangeEnd"];
-  initialData: ParsedAccountType[] | undefined;
+  initialData?: ParsedAccountType[];
 }
 
 export const usePublicAccounts = (

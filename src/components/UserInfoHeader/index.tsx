@@ -5,9 +5,9 @@ import { FC } from "react";
 import Link from "next/link";
 import { normalizeURL } from "@lib/urlUtil";
 import { Button } from "@components/Button";
-import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
+import { AccountWithSensorsType } from "@lib/requests/getAccountDataByUsername";
 
-export interface UserInfoHeaderPropType extends ParsedAccountType {
+export interface UserInfoHeaderPropType extends AccountWithSensorsType {
   withEditButton?: boolean;
   onEditButtonClick?: () => void | undefined;
 }
@@ -96,7 +96,7 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
             >
               {numberFormatter.format(sensorsCount)}
             </span>
-            <span>Sensoren</span>
+            <span>Sensor{sensorsCount === 1 ? "" : "en"}</span>
           </div>
           <div className='flex flex-col'>
             <span
@@ -107,7 +107,7 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
             >
               {numberFormatter.format(recordsCount)}
             </span>
-            <span>Messwerte</span>
+            <span>Messwert{recordsCount === 1 ? "" : "e"}</span>
           </div>
         </div>
       </div>
