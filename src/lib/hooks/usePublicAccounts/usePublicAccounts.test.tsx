@@ -6,8 +6,7 @@ describe("hook usePublicAccounts", () => {
   it("returns the correct fields", () => {
     const { result } = renderHook(() => usePublicAccounts());
 
-    expect(typeof result.current.accounts).toBe("object");
-    expect(typeof result.current.error).toBe("object");
+    expect(Array.isArray(result.current.accounts)).toBe(true);
   });
   it("returns the public accounts", () => {
     const { result } = renderHook(() =>
