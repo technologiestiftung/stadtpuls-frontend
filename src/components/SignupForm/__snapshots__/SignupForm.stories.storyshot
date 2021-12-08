@@ -95,7 +95,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
                
               <a
                 className="underline transition cursor-pointer text-left font-headline focus:ring-green text-blue underline-green hover:text-purple focus-offset"
-                href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
+                href="docs/terms"
                 rel="noopener noreferrer"
                 target="_blank"
               >
