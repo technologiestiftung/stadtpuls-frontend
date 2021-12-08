@@ -16,6 +16,37 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
     }
   >
     <div
+      className="absolute inset-0 bottom-auto lg:bottom-0 lg:left-auto lg:w-1/3 h-32 lg:h-full pointer-events-none transition overflow-hidden group-hover:opacity-60 bg-gray-50"
+    >
+      <div
+        className="absolute right-0 bottom-0 left-0 h-1/2 pointer-events-none bg-gradient-to-t from-white z-30"
+      />
+      <div
+        className="absolute inset-0 overflow-hidden z-40"
+      >
+        <svg
+          className="overflow-visible absolute -bottom-1 -right-1 -left-1 text-purple group-hover:animate-textpulse"
+          height={82}
+          preserveAspectRatio="none"
+          viewBox="0 0 100 82"
+          width="104%"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            className="visx-area-closed"
+            d="M0,41L25,41L50,41L75,41L100,41L100,82L75,82L50,82L25,82L0,82Z"
+            fill="currentColor"
+            fillOpacity="10%"
+            shapeRendering="geometricPrecision"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeWidth={2}
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
       className="lg:w-2/3 transition group-hover:animate-textpulse px-4 pb-3 pt-36 lg:px-5 lg:py-4 relative z-10"
     >
       <div
@@ -560,6 +591,37 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
       }
     }
   >
+    <div
+      className="absolute inset-0 bottom-auto lg:bottom-0 lg:left-auto lg:w-1/3 h-32 lg:h-full pointer-events-none transition overflow-hidden group-hover:opacity-60 bg-gray-50"
+    >
+      <div
+        className="absolute right-0 bottom-0 left-0 h-1/2 pointer-events-none bg-gradient-to-t from-white z-30"
+      />
+      <div
+        className="absolute inset-0 overflow-hidden z-40"
+      >
+        <svg
+          className="overflow-visible absolute -bottom-1 -right-1 -left-1 text-purple group-hover:animate-textpulse"
+          height={82}
+          preserveAspectRatio="none"
+          viewBox="0 0 100 82"
+          width="104%"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            className="visx-area-closed"
+            d="M0,44.44197530864197L5.263157894736842,66.81481481481482L10.526315789473683,56.03333333333333L15.789473684210526,73.77975308641975L21.052631578947366,81.87092592592593L26.31578947368421,0.7693827160493796L31.57894736842105,72.16L36.84210526315789,0L42.10526315789473,64.3041975308642L47.368421052631575,1.2148148148148166L52.63157894736842,59.52592592592592L57.89473684210527,8.503703703703707L63.1578947368421,57.33925925925926L68.42105263157895,18.22222222222222L73.68421052631578,59.7283950617284L78.94736842105263,35.675061728395065L84.21052631578947,65.23555555555555L89.47368421052632,55.921975308641976L94.73684210526315,82L100,82L100,82L94.73684210526315,82L89.47368421052632,82L84.21052631578947,82L78.94736842105263,82L73.68421052631578,82L68.42105263157895,82L63.1578947368421,82L57.89473684210527,82L52.63157894736842,82L47.368421052631575,82L42.10526315789473,82L36.84210526315789,82L31.57894736842105,82L26.31578947368421,82L21.052631578947366,82L15.789473684210526,82L10.526315789473683,82L5.263157894736842,82L0,82Z"
+            fill="currentColor"
+            fillOpacity="10%"
+            shapeRendering="geometricPrecision"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeWidth={2}
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
+    </div>
     <div
       className="lg:w-2/3 transition group-hover:animate-textpulse px-4 pb-3 pt-36 lg:px-5 lg:py-4 relative z-10"
     >
@@ -1106,6 +1168,37 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
     }
   >
     <div
+      className="absolute inset-0 bottom-auto lg:bottom-0 lg:left-auto lg:w-1/3 h-32 lg:h-full pointer-events-none transition overflow-hidden group-hover:opacity-60 bg-gray-50"
+    >
+      <div
+        className="absolute right-0 bottom-0 left-0 h-1/2 pointer-events-none bg-gradient-to-t from-white z-30"
+      />
+      <div
+        className="absolute inset-0 overflow-hidden z-40"
+      >
+        <svg
+          className="overflow-visible absolute -bottom-1 -right-1 -left-1 text-purple group-hover:animate-textpulse"
+          height={82}
+          preserveAspectRatio="none"
+          viewBox="0 0 100 82"
+          width="104%"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            className="visx-area-closed"
+            d="M100,41L0,41L0,82L100,82Z"
+            fill="currentColor"
+            fillOpacity="10%"
+            shapeRendering="geometricPrecision"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeWidth={2}
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
       className="lg:w-2/3 transition group-hover:animate-textpulse px-4 pb-3 pt-36 lg:px-5 lg:py-4 relative z-10"
     >
       <div
@@ -1650,6 +1743,37 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
       }
     }
   >
+    <div
+      className="absolute inset-0 bottom-auto lg:bottom-0 lg:left-auto lg:w-1/3 h-32 lg:h-full pointer-events-none transition overflow-hidden group-hover:opacity-60 bg-gray-50"
+    >
+      <div
+        className="absolute right-0 bottom-0 left-0 h-1/2 pointer-events-none bg-gradient-to-t from-white z-30"
+      />
+      <div
+        className="absolute inset-0 overflow-hidden z-40"
+      >
+        <svg
+          className="overflow-visible absolute -bottom-1 -right-1 -left-1 text-purple group-hover:animate-textpulse"
+          height={82}
+          preserveAspectRatio="none"
+          viewBox="0 0 100 82"
+          width="104%"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            className="visx-area-closed"
+            d="M0,79.8050931949913L5.263157894736842,71.19174679351775L10.526315789473683,80.34273450833939L15.789473684210526,70.82592899268298L21.052631578947366,54.72994575595248L26.31578947368421,31.00721564121196L31.57894736842105,0L36.84210526315789,78.91964783615256L42.10526315789473,68.5312536965375L47.368421052631575,49.78724842421887L52.63157894736842,21.640062862260674L57.89473684210527,68.8056170471636L63.1578947368421,82L68.42105263157895,81.60092603545296L73.68421052631578,79.29793669837943L78.94736842105263,81.49007215641211L84.21052631578947,78.00926035452963L89.47368421052632,71.091978302381L94.73684210526315,59.69065684303023L100,43.411764705882355L100,82L94.73684210526315,82L89.47368421052632,82L84.21052631578947,82L78.94736842105263,82L73.68421052631578,82L68.42105263157895,82L63.1578947368421,82L57.89473684210527,82L52.63157894736842,82L47.368421052631575,82L42.10526315789473,82L36.84210526315789,82L31.57894736842105,82L26.31578947368421,82L21.052631578947366,82L15.789473684210526,82L10.526315789473683,82L5.263157894736842,82L0,82Z"
+            fill="currentColor"
+            fillOpacity="10%"
+            shapeRendering="geometricPrecision"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeWidth={2}
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
+    </div>
     <div
       className="lg:w-2/3 transition group-hover:animate-textpulse px-4 pb-3 pt-36 lg:px-5 lg:py-4 relative z-10"
     >
@@ -2196,6 +2320,37 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
     }
   >
     <div
+      className="absolute inset-0 bottom-auto lg:bottom-0 lg:left-auto lg:w-1/3 h-32 lg:h-full pointer-events-none transition overflow-hidden group-hover:opacity-60 bg-gray-50"
+    >
+      <div
+        className="absolute right-0 bottom-0 left-0 h-1/2 pointer-events-none bg-gradient-to-t from-white z-30"
+      />
+      <div
+        className="absolute inset-0 overflow-hidden z-40"
+      >
+        <svg
+          className="overflow-visible absolute -bottom-1 -right-1 -left-1 text-purple group-hover:animate-textpulse"
+          height={82}
+          preserveAspectRatio="none"
+          viewBox="0 0 100 82"
+          width="104%"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            className="visx-area-closed"
+            d="M0,82L5.263157894736842,62.77322608445849L10.526315789473683,71.8942832519391L15.789473684210526,78.39586325768457L21.052631578947366,55.28698649813271L26.31578947368421,68.5445561620224L31.57894736842105,73.42545245619075L36.84210526315789,45.723068083883945L42.10526315789473,64.88035047400172L47.368421052631575,68.30428037920137L52.63157894736842,36.02723355357656L57.89473684210527,80.91875897730537L63.1578947368421,62.38925596093077L68.42105263157895,25.203045101982195L73.68421052631578,78.37466245331801L78.94736842105263,55.6379775926458L84.21052631578947,13.20810112036771L89.47368421052632,75.28641195058891L94.73684210526315,48.00804366561333L100,0L100,82L94.73684210526315,82L89.47368421052632,82L84.21052631578947,82L78.94736842105263,82L73.68421052631578,82L68.42105263157895,82L63.1578947368421,82L57.89473684210527,82L52.63157894736842,82L47.368421052631575,82L42.10526315789473,82L36.84210526315789,82L31.57894736842105,82L26.31578947368421,82L21.052631578947366,82L15.789473684210526,82L10.526315789473683,82L5.263157894736842,82L0,82Z"
+            fill="currentColor"
+            fillOpacity="10%"
+            shapeRendering="geometricPrecision"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeWidth={2}
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
       className="lg:w-2/3 transition group-hover:animate-textpulse px-4 pb-3 pt-36 lg:px-5 lg:py-4 relative z-10"
     >
       <div
@@ -2740,6 +2895,37 @@ exports[`Storyshots Pages/SensorsGrid Default 1`] = `
       }
     }
   >
+    <div
+      className="absolute inset-0 bottom-auto lg:bottom-0 lg:left-auto lg:w-1/3 h-32 lg:h-full pointer-events-none transition overflow-hidden group-hover:opacity-60 bg-gray-50"
+    >
+      <div
+        className="absolute right-0 bottom-0 left-0 h-1/2 pointer-events-none bg-gradient-to-t from-white z-30"
+      />
+      <div
+        className="absolute inset-0 overflow-hidden z-40"
+      >
+        <svg
+          className="overflow-visible absolute -bottom-1 -right-1 -left-1 text-purple group-hover:animate-textpulse"
+          height={82}
+          preserveAspectRatio="none"
+          viewBox="0 0 100 82"
+          width="104%"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            className="visx-area-closed"
+            d="M0,55.05142200517093L5.263157894736842,74.6068989901222L10.526315789473683,50.68804278169404L15.789473684210526,11.765540406160916L21.052631578947366,67.12682032130466L26.31578947368421,73.04854926745188L31.57894736842105,47.79059951826398L36.84210526315789,6.655602943451266L42.10526315789473,82L47.368421052631575,81.836916889488L52.63157894736842,79.9052880472013L57.89473684210527,74.38945484277285L63.1578947368421,79.87991956334386L68.42105263157895,69.80138333370164L73.68421052631578,81.01062912956047L78.94736842105263,70.83786710273351L84.21052631578947,77.01690495657746L89.47368421052632,62.08755220648355L94.73684210526315,37.11952798709478L100,0L100,82L94.73684210526315,82L89.47368421052632,82L84.21052631578947,82L78.94736842105263,82L73.68421052631578,82L68.42105263157895,82L63.1578947368421,82L57.89473684210527,82L52.63157894736842,82L47.368421052631575,82L42.10526315789473,82L36.84210526315789,82L31.57894736842105,82L26.31578947368421,82L21.052631578947366,82L15.789473684210526,82L10.526315789473683,82L5.263157894736842,82L0,82Z"
+            fill="currentColor"
+            fillOpacity="10%"
+            shapeRendering="geometricPrecision"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeWidth={2}
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
+    </div>
     <div
       className="lg:w-2/3 transition group-hover:animate-textpulse px-4 pb-3 pt-36 lg:px-5 lg:py-4 relative z-10"
     >
