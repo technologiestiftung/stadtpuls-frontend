@@ -174,6 +174,7 @@ export const SignupForm: FC<SignupFormPropType> = ({
                 Ich akzeptiere die{" "}
                 <TextLink
                   target='_blank'
+                  rel='noopener noreferrer'
                   href='https://www.technologiestiftung-berlin.de/de/datenschutz/'
                 >
                   Nutzungsbedingungen
