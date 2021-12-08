@@ -27,7 +27,11 @@ const MapBackground: FC<{
   >
     <div className='bg-white hidden md:block' />
     <div className='relative'>
-      <PreviewMap mapWidth='100%' mapHeight='100%' viewport={geocoordinates} />
+      <PreviewMap
+        mapWidth='100%'
+        mapHeight='100%'
+        viewport={{ ...geocoordinates, zoom: 16 }}
+      />
       <span
         className={[
           "bg-blue w-3 h-3 rounded-full absolute inline-block",

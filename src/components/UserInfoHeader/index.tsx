@@ -86,11 +86,11 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
             </TextLink>
           )}
         </div>
-        <div className='flex gap-8 justify-self-end items-center'>
+        <div className='md:mt-12 self-start flex flex-wrap md:flex-nowrap gap-4 sm:gap-8 justify-self-end items-center'>
           <div className='flex flex-col'>
             <span
               className={[
-                "text-lg sm:text-xl lg:text-2xl pt-1",
+                "text-md sm:text-xl lg:text-2xl pt-1",
                 "font-mono lg:font-light text-gray-700",
               ].join(" ")}
             >
@@ -101,7 +101,7 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
           <div className='flex flex-col'>
             <span
               className={[
-                "text-lg sm:text-xl lg:text-2xl pt-1",
+                "text-md sm:text-xl lg:text-2xl pt-1",
                 "font-mono lg:font-light text-gray-700",
               ].join(" ")}
             >
