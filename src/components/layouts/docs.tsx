@@ -104,7 +104,7 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
           )}
         </Button>
         {!isOpened && (
-          <Button variant='secondary' onClick={scrollUp}>
+          <Button variant='secondary' onClick={scrollUp} className='bg-white'>
             <ArrowUpwardIcon />
           </Button>
         )}
