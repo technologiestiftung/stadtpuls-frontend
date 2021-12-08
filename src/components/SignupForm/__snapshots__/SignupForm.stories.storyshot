@@ -96,7 +96,7 @@ exports[`Storyshots Forms/Signup Default 1`] = `
               <a
                 className="underline transition cursor-pointer text-left font-headline focus:ring-green text-blue underline-green hover:text-purple focus-offset"
                 href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
-                target="blank"
+                target="_blank"
               >
                 Nutzungsbedingungen
               </a>
@@ -110,8 +110,18 @@ exports[`Storyshots Forms/Signup Default 1`] = `
       className="flex gap-4 place-content-between"
     >
       <section
-        className="text-gray-500 min-w-[140px]"
-      />
+        className="text-gray-500"
+      >
+        Hast du schon einen Account? 
+        <a
+          className="underline transition cursor-pointer text-left font-headline focus:ring-green text-blue underline-green hover:text-purple focus-offset inline-block"
+          href="/signin"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Logge dich ein
+        </a>
+      </section>
       <section
         className="flex flex-col"
         style={
