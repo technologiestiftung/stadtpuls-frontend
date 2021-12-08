@@ -9,7 +9,10 @@ import {
   ParsedSensorType,
   SensorQueryResponseType,
 } from "@lib/hooks/usePublicSensors";
-import { sensorQueryString } from "@lib/requests/getPublicSensors";
+import {
+  RECORDS_LIMIT,
+  sensorQueryString,
+} from "@lib/requests/getPublicSensors";
 
 export interface GetRecordsOptionsType {
   startDate?: string;
@@ -36,7 +39,8 @@ export const getAccountDataByUsername = async (
   const { data: sensors, error: sensorsError } = await supabase
     .from<SensorQueryResponseType>("sensors")
     .select(sensorQueryString)
-    .eq("user_id", accountData.id as string);
+    .eq("user_id", accountData.id as string)
+    .limit(RECORDS_LIMIT, { foreignTable: "records" });
   if (sensorsError) throw sensorsError;
   if (!accountData)
     throw new Error(`No sensors found for username "${username}"`);
