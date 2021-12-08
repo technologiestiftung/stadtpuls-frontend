@@ -94,12 +94,18 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
   const [viewport, setViewport] = useState<Partial<InteractiveMapProps>>({
     latitude: defaultValues?.latitude || DEFAULT_LAT,
     longitude: defaultValues?.longitude || DEFAULT_LNG,
-    zoom: 12,
+    zoom: 16,
   });
   const isDirty =
     Object.values(dirtyFields).length > 0 ||
     viewport.latitude !== defaultValues?.latitude ||
     viewport.longitude !== defaultValues?.longitude;
+
+  useEffect(() => {
+    viewport.latitude && setValue("latitude", viewport.latitude);
+    viewport.longitude && setValue("longitude", viewport.longitude);
+  }, [viewport.latitude, viewport.longitude, setValue]);
+
   const {
     categories,
     isLoading: isLoadingCategories,
@@ -374,15 +380,13 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
               className='pointer-events-none'
               onViewportChange={viewport => {
                 setViewport(viewport);
-                setValue("latitude", viewport.latitude);
-                setValue("longitude", viewport.longitude);
               }}
             />
             <span className='w-3 h-3 rounded-full bg-blue absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2' />
           </fieldset>
           <p className='text-sm text-gray-500 mt-2 grid grid-cols-[16px,1fr] gap-2 items-center'>
             <GrabbingHandIcon />
-            Bewege die Karte, sodass der Punkt auf dein Standort liegt.
+            Bewege die Karte so, dass der Punkt auf deinen Sensor zeigt.
           </p>
         </div>
         <div className='flex w-full sm:justify-between flex-wrap gap-4 items-end'>
