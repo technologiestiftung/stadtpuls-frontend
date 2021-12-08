@@ -84,7 +84,7 @@ const ListWithIcons: FC<ListWithIconsPropType> = ({
   >
     {listItems.map(({ text, icon = "#" }) => (
       <li
-        key={text?.toString()}
+        key={icon}
         className={[
           "grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50",
           final ? "sm:bg-green sm:bg-opacity-10 sm:text-white" : "",
@@ -98,7 +98,7 @@ const ListWithIcons: FC<ListWithIconsPropType> = ({
           ].join(" ")}
           style={{ backgroundImage: `url(${icon})` }}
         />
-        <span className='text-sm sm:text-base break-words sm:break-normal'>
+        <span className='leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2'>
           {text}
         </span>
       </li>
@@ -112,12 +112,12 @@ const columnsData = [
     description:
       "Die Wahl der Hardware  ist ganz dir überlassen. Arbeite mit Arduino, Raspberry Pi oder direkt am PC. Stadtpuls setzt deiner Kreativität keine Grenzen.",
     listItems: [
-      { icon: "/images/icons/arduino.svg", text: "Arduino" },
-      { icon: "/images/icons/raspberry-pi.svg", text: "Raspberry Pi" },
-      { icon: "/images/icons/phone.svg", text: "Smartphone" },
-      { icon: "/images/icons/browser.svg", text: "Web-Browser" },
-      { icon: "/images/icons/laptop.svg", text: "PC/Mac" },
-      { icon: "/images/icons/other-hardware.svg", text: "Und vieles mehr" },
+      { icon: "/images/icons/arduino.svg", text: <>Ardui&shy;no</> },
+      { icon: "/images/icons/raspberry-pi.svg", text: <>Rasp&shy;berry Pi</> },
+      { icon: "/images/icons/phone.svg", text: <>Smart&shy;phone</> },
+      { icon: "/images/icons/browser.svg", text: <>Web-Brow&shy;ser</> },
+      { icon: "/images/icons/laptop.svg", text: <>PC/&shy;Mac</> },
+      { icon: "/images/icons/other-hardware.svg", text: <>Und vieles mehr</> },
     ],
   },
   {
@@ -125,13 +125,19 @@ const columnsData = [
     description:
       "Prinzipiell kannst du jeden Sensor verbinden. Die folgenden Sensortypen unterstützen wir bereits mit einer eigenen Kategorie.",
     listItems: [
-      { icon: "/images/icons/temperature.svg", text: "Temperatur" },
-      { icon: "/images/icons/co2.svg", text: "CO2" },
-      { icon: "/images/icons/humidity.svg", text: "Luftfeuchtigkeit" },
-      { icon: "/images/icons/pressure.svg", text: "Druck" },
-      { icon: "/images/icons/lightness.svg", text: "Helligkeit" },
-      { icon: "/images/icons/decibels.svg", text: "Lautstärke" },
-      { icon: "/images/icons/unit-counter.svg", text: "Zähler" },
+      {
+        icon: "/images/icons/temperature.svg",
+        text: <>Tem&shy;pe&shy;ra&shy;tur</>,
+      },
+      { icon: "/images/icons/co2.svg", text: <>CO2</> },
+      {
+        icon: "/images/icons/humidity.svg",
+        text: <>Luft&shy;feuch&shy;tig&shy;keit</>,
+      },
+      { icon: "/images/icons/pressure.svg", text: <>Druck</> },
+      { icon: "/images/icons/lightness.svg", text: <>Hell&shy;ig&shy;keit</> },
+      { icon: "/images/icons/decibels.svg", text: <>Laut&shy;stärke</> },
+      { icon: "/images/icons/unit-counter.svg", text: <>Zäh&shy;ler</> },
     ],
   },
   {
@@ -154,7 +160,7 @@ const columnsData = [
       },
       {
         icon: "/images/icons/visualisations.svg",
-        text: <>Daten&shy;visualisierungen</>,
+        text: <>Daten&shy;visu&shy;ali&shy;sierungen</>,
       },
       { icon: "/images/icons/api.svg", text: "REST-API für alle Sensoren" },
       {
@@ -175,11 +181,11 @@ export const LandingHowItWorks: FC = () => (
       ].join(" ")}
     >
       <div
-        className={`grid grid-cols-2 lg:grid-cols-9 gap-x-4 sm:gap-x-0 ${styles.gridContainer}`}
+        className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-9 gap-x-4 sm:gap-x-0 ${styles.gridContainer}`}
       >
         {columnsData.map(({ title }, idx) => (
           <HowItWorksColumn
-            key={title}
+            key={`${title}-how-it-works-title`}
             final={idx + 1 === columnsData.length}
             area={`title-${idx + 1}`}
           >
@@ -191,9 +197,9 @@ export const LandingHowItWorks: FC = () => (
             </HowItWorksTitle>
           </HowItWorksColumn>
         ))}
-        {columnsData.map(({ description }, idx) => (
+        {columnsData.map(({ title, description }, idx) => (
           <HowItWorksColumn
-            key={description}
+            key={`${title}-how-it-works-description`}
             final={idx + 1 === columnsData.length}
             area={`description-${idx + 1}`}
           >
@@ -204,7 +210,7 @@ export const LandingHowItWorks: FC = () => (
         ))}
         {columnsData.map(({ title, listItems }, idx) => (
           <ListWithIcons
-            key={title}
+            key={`${title}-how-it-works-icons`}
             final={idx + 1 === columnsData.length}
             listItems={listItems}
             area={`list-${idx + 1}`}
