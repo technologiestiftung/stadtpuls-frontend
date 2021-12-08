@@ -40,6 +40,13 @@ export const getAccountDataByUsername = async (
     .from<SensorQueryResponseType>("sensors")
     .select(sensorQueryString)
     .eq("user_id", accountData.id as string)
+    //FIXME: recorded_at is not recognized altought it is inherited from the definitions
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    .order("recorded_at", {
+      foreignTable: "records",
+      ascending: false,
+    })
     .limit(RECORDS_LIMIT, { foreignTable: "records" });
   if (sensorsError) throw sensorsError;
   if (!accountData)
