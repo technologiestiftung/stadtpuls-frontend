@@ -2,7 +2,7 @@
 
 exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
 <section
-  className="overflow-hidden px-8 md:px-24 lg:px-32 xl:px-40 -mt-4 md:-mt-8 lg:-mt-12 z-20 relative"
+  className="overflow-hidden px-8 md:px-24 lg:px-32 xl:px-40 -translate-y-4 z-20 relative"
 >
   <div>
     <div
