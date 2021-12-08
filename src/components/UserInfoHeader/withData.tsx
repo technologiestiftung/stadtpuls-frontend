@@ -147,27 +147,30 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
               setShowEditSuccessAlert(false);
             }}
           />
-          <div className='absolute left-4 bottom-[-1px] z-10'>
-            <Tabs
-              tabPanelId='tab-content'
-              activeTabIndex={activeTabIndex}
-              tabs={tabs}
-            />
+          <div className='grid gap-4 grid-cols-1 sm:grid-cols-2'>
+            <div className='z-10 translate-y-0.5'>
+              <Tabs
+                tabPanelId='tab-content'
+                activeTabIndex={activeTabIndex}
+                tabs={tabs}
+              />
+            </div>
+            {isOwnerAndLoggedIn && activeTab === "sensors" && (
+              <span className='justify-self-end order-first sm:order-none w-full sm:w-auto'>
+                <Button
+                  variant='primary'
+                  onClick={() => {
+                    setNewSensorModalIsOpen(true);
+                    setRandomSymbolId(getRandomSensorId());
+                  }}
+                  className='w-full sm:w-auto'
+                >
+                  <span className='sm:hidden'>+</span>
+                  <span className='hidden sm:inline'>Neuer</span> Sensor
+                </Button>
+              </span>
+            )}
           </div>
-          {isOwnerAndLoggedIn && activeTab === "sensors" && (
-            <span className='absolute bottom-0 sm:bottom-2 right-4'>
-              <Button
-                variant='primary'
-                onClick={() => {
-                  setNewSensorModalIsOpen(true);
-                  setRandomSymbolId(getRandomSensorId());
-                }}
-              >
-                <span className='sm:hidden'>+</span>
-                <span className='hidden sm:inline'>Neuer</span> Sensor
-              </Button>
-            </span>
-          )}
         </div>
       </div>
       {deletionConfirmationIsOpened && (
