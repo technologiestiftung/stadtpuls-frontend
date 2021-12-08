@@ -197,6 +197,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
                 label='Symbol'
                 containsIconList
                 placeholder='Symbol'
+                listBoxOptionsCssProperties={{ zIndex: 100 }}
                 options={Array.from(Array(32)).map((_, i) => ({
                   name: (
                     <span className='w-6 h-6 float-left inline-block'>
