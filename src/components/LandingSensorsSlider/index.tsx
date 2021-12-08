@@ -7,6 +7,7 @@ import "swiper/swiper-bundle.css";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 import { SensorCard } from "@components/SensorCard";
+import { getCuratedSensorImageById } from "@lib/hooks/useCuratedSensors";
 
 interface LandingSensorsSliderPropType {
   sensors: ParsedSensorType[];
@@ -72,7 +73,7 @@ export const LandingSensorsSlider: FC<LandingSensorsSliderPropType> = ({
                   parsedRecords={sensor.parsedRecords}
                   withMapLabels={false}
                   withMapBackground={false}
-                  backgroundImage={`/images/sensors/${sensor.id}.jpeg`}
+                  backgroundImage={getCuratedSensorImageById(sensor.id)}
                 />
               </div>
             ))}

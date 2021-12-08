@@ -32,7 +32,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
               <img
                 alt="Location of sensor \\"Poison Thing\\""
                 className="w-full h-full object-cover"
-                src="/images/sensors/4.jpeg"
+                src="/images/sensors/undefined.jpeg"
               />
               <div
                 className="absolute right-0 bottom-0 left-0 h-1/2 pointer-events-none bg-gradient-to-t from-white z-30"
@@ -617,7 +617,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
               <img
                 alt="Location of sensor \\"Delicate Collapse\\""
                 className="w-full h-full object-cover"
-                src="/images/sensors/5.jpeg"
+                src="/images/sensors/undefined.jpeg"
               />
               <div
                 className="absolute right-0 bottom-0 left-0 h-1/2 pointer-events-none bg-gradient-to-t from-white z-30"
@@ -1202,7 +1202,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
               <img
                 alt="Location of sensor \\"Simple Broadcast\\""
                 className="w-full h-full object-cover"
-                src="/images/sensors/6.jpeg"
+                src="/images/sensors/undefined.jpeg"
               />
               <div
                 className="absolute right-0 bottom-0 left-0 h-1/2 pointer-events-none bg-gradient-to-t from-white z-30"
