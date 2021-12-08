@@ -1,7 +1,7 @@
 import { Submit } from "@components/Button";
 import { SmallModal } from "@components/SmallModal";
-// import { TextLink } from "@components/TextLink";
-// import Link from "next/link";
+import { TextLink } from "@components/TextLink";
+import Link from "next/link";
 import { HTMLProps, FC } from "react";
 
 interface SignInUpFormWrapperPropType extends HTMLProps<HTMLFormElement> {
@@ -46,10 +46,8 @@ export const SignInUpFormWrapper: FC<SignInUpFormWrapperPropType> = ({
       title={texts.title}
       footerContent={
         <>
-          {/* TODO: Remove min-w-[...] class on launch */}
-          <section className='text-gray-500 min-w-[140px]'>
-            {/* TODO: Reactivate on launch */}
-            {/* {`${texts.switchQuestion} `}
+          <section className='text-gray-500'>
+            {`${texts.switchQuestion} `}
             <Link href={`/${texts.switchLinkRoute}`}>
               <TextLink
                 href={`/${texts.switchLinkRoute}`}
@@ -57,7 +55,7 @@ export const SignInUpFormWrapper: FC<SignInUpFormWrapperPropType> = ({
               >
                 {texts.switchLinkText}
               </TextLink>
-            </Link> */}
+            </Link>
           </section>
           <section
             className='flex flex-col'

@@ -45,7 +45,13 @@ exports[`Storyshots Promotional/LandingLabAbout Default 1`] = `
               ist Berlins öffentliches Innovationslabor: Gemeinsam mit Stadtgesellschaft und öffentlicher Verwaltung entwickeln wir Ideen und Prototypen, um den digitalen Wandel zu gestalten. Als gemeinnützige Einrichtung veröffentlichen wir all unsere Projekte unter einer Open Source-Lizenz, denn wir finden:
                
               <strong>
-                Public Money – Public Code!
+                <a
+                  href="https://publiccode.eu/de/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Public Money – Public Code!
+                </a>
               </strong>
             </p>
             <p>

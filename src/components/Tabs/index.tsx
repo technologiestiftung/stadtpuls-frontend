@@ -90,9 +90,9 @@ export const Tabs: FC<TabsPropType> = ({
             key={id}
             className={[].join(" ")}
             style={{
-              borderBottom: `1px solid ${
-                isActive ? colors.white : colors.gray["200"]
-              }`,
+              borderBottomWidth: "1px",
+              borderBottomStyle: "solid",
+              borderBottomColor: isActive ? colors.white : "transparent",
             }}
           >
             {tag}

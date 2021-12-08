@@ -55,7 +55,7 @@ export const LandingSensorsSlider: FC<LandingSensorsSliderPropType> = ({
     <section
       className={[
         "overflow-hidden px-8 md:px-24 lg:px-32 xl:px-40",
-        "-mt-4 md:-mt-8 lg:-mt-12 z-20 relative",
+        "-translate-y-4 z-20 relative",
       ].join(" ")}
     >
       <div className={styles.sliderParent}>
@@ -71,6 +71,8 @@ export const LandingSensorsSlider: FC<LandingSensorsSliderPropType> = ({
                   {...sensor}
                   parsedRecords={sensor.parsedRecords}
                   withMapLabels={false}
+                  withMapBackground={false}
+                  backgroundImage={`/images/sensors/${sensor.id}.jpeg`}
                 />
               </div>
             ))}

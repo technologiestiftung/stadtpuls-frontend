@@ -1,5 +1,5 @@
 import { createSupabaseUrl } from "@lib/requests/createSupabaseUrl";
-import { publicAccounts } from "@mocks/supabaseData/accounts";
+import { extendedUserProfiles } from "@mocks/supabaseData/accounts";
 import { renderHook } from "@testing-library/react-hooks";
 import * as sup from "@auth/supabase";
 import { rest } from "msw";
@@ -38,7 +38,7 @@ describe("useUniqueUsernameValidation", () => {
       rest.get(createSupabaseUrl(`/user_profiles`), (_req, res, ctx) => {
         return res(
           ctx.status(200, "Mocked status"),
-          ctx.json(publicAccounts.slice(0, 1))
+          ctx.json(extendedUserProfiles.slice(0, 1))
         );
       })
     );

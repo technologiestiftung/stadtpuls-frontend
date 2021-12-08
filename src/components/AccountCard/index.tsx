@@ -78,7 +78,9 @@ export const AccountCard: FC<AccountCardPropType> = ({
               >
                 {numberFormatter.format(sensorsCount)}
               </span>
-              <span className='text-sm'>Sensoren</span>
+              <span className='text-sm'>
+                Sensor{sensorsCount === 1 ? "" : "en"}
+              </span>
             </div>
             <div className='flex flex-col'>
               <span
@@ -91,7 +93,9 @@ export const AccountCard: FC<AccountCardPropType> = ({
               >
                 {numberFormatter.format(recordsCount)}
               </span>
-              <span className='text-sm'>Messwerte</span>
+              <span className='text-sm'>
+                Messwert{recordsCount === 1 ? "" : "e"}
+              </span>
             </div>
           </div>
         </div>

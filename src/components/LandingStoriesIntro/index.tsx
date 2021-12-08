@@ -7,7 +7,7 @@ export const LandingStoriesIntro: FC = () => (
     className={[
       "relative z-10",
       "w-full",
-      "pt-64 lg:pt-56",
+      "pt-64",
       "px-4",
       "bg-white-dot-pattern",
     ].join(" ")}
@@ -18,7 +18,7 @@ export const LandingStoriesIntro: FC = () => (
         "border border-gray-200 shadow",
         "grid grid-cols-1 md:grid-cols-8",
         "mx-auto max-w-screen-lg",
-        "translate-y-4 md:translate-y-8 lg:translate-y-12",
+        "translate-y-4",
       ].join(" ")}
     >
       <div className={`col-span-3 relative -order-1 md:order-1`}>
@@ -81,8 +81,8 @@ export const LandingStoriesIntro: FC = () => (
           >
             Stadtpuls Stories
           </a>{" "}
-          verbinden Citizen Science und Datenjournalismus. Hast Du Lust, deine
-          eigene Geschichte mit Sensordaten zu erzählen? Wir stellen Dir hier{" "}
+          verbinden Citizen Science und Datenjournalismus. Hast du Lust, deine
+          eigene Geschichte mit Sensordaten zu erzählen? Wir stellen dir hier{" "}
           <a
             href='https://stories.stadtpuls.com/template'
             target='_blank'

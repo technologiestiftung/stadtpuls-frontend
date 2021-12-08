@@ -3,13 +3,13 @@ import { useRouter } from "next/router";
 import { useUserData } from "@lib/hooks/useUserData";
 import sensors from "pages/sensors";
 import { UserInfoWithData } from "@components/UserInfoHeader/withData";
-import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
+import { AccountWithSensorsType } from "@lib/requests/getAccountDataByUsername";
 
 const AccountRedirectionPage: FC = () => {
   const { user: loggedInAccount } = useUserData();
   const router = useRouter();
 
-  const loggedOutFakeAccount: ParsedAccountType = {
+  const loggedOutFakeAccount: AccountWithSensorsType = {
     id: "",
     categories: [],
     username: "...",

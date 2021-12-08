@@ -1,43 +1,22 @@
-import { FC, useEffect } from "react";
-import { render, waitFor } from "@testing-library/react";
-import { ParsedAccountType, usePublicAccounts } from ".";
-import { SWRConfig } from "swr";
-
-type OnSuccessType = (data: ParsedAccountType[]) => void;
-type OnFailType = (error: string) => void;
-
-const createTestComponent = (
-  onSuccess: OnSuccessType,
-  onFail: OnFailType
-): FC => {
-  const TestComponent: FC = () => {
-    const { accounts, error } = usePublicAccounts();
-    useEffect(() => {
-      if (accounts.length > 0 && !error) onSuccess(accounts);
-      if (error) onFail(error.message);
-    }, [accounts, error]);
-    return <div>{accounts ? accounts.length : error?.message}</div>;
-  };
-  return TestComponent;
-};
+import { usePublicAccounts } from ".";
+import { renderHook } from "@testing-library/react-hooks";
+import { parsedAccounts } from "@mocks/supabaseData/accounts";
 
 describe("hook usePublicAccounts", () => {
-  it("should provide a data and error value", async (): Promise<void> => {
-    const onSuccess = jest.fn();
-    const onSuccessWrapper = (data: ParsedAccountType[]): void => {
-      onSuccess(data);
-    };
-    const onError = jest.fn();
-    const TestComponent = createTestComponent(onSuccessWrapper, onError);
-    render(
-      <SWRConfig value={{ dedupingInterval: 0 }}>
-        <TestComponent />
-      </SWRConfig>
+  it("returns the correct fields", () => {
+    const { result } = renderHook(() => usePublicAccounts());
+
+    expect(Array.isArray(result.current.accounts)).toBe(true);
+  });
+  it("returns the public accounts", () => {
+    const { result } = renderHook(() =>
+      usePublicAccounts({
+        rangeStart: undefined,
+        rangeEnd: undefined,
+        initialData: parsedAccounts,
+      })
     );
 
-    await waitFor(() => {
-      expect(onSuccess).toHaveBeenCalled();
-      expect(onError).not.toHaveBeenCalled();
-    });
+    expect(result.current.accounts).toMatchObject(parsedAccounts);
   });
 });

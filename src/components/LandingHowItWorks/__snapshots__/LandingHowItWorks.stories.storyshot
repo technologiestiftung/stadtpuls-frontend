@@ -3,10 +3,10 @@
 exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
 <div>
   <section
-    className="container mx-auto max-w-8xl px-4 sm:px-6 md:px-8 sm:py-24 lg:py-32"
+    className="container mx-auto max-w-8xl px-4 sm:px-6 md:px-8 py-8 sm:py-24 lg:py-32"
   >
     <div
-      className="grid grid-cols-2 lg:grid-cols-9 gap-x-4 sm:gap-x-0 undefined"
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-9 gap-x-4 sm:gap-x-0 undefined"
     >
       <div
         className="sm:pr-4 md:pr-8 "
@@ -194,7 +194,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
           <p
             className="text-sm mb-8 text-gray-500 sm:text-gray-300"
           >
-            Hast du erst einmal ein eigenes Stadtpuls-Account, stellen wir dir automatisch und kostenlos folgendes bereit:
+            Hast du erst einmal einen eigenen Stadtpuls-Account, stellen wir dir automatisch und kostenlos folgendes bereit:
           </p>
         </header>
       </div>
@@ -223,9 +223,9 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
-            Arduino
+            Ardui­no
           </span>
         </li>
         <li
@@ -245,9 +245,9 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
-            Raspberry Pi
+            Rasp­berry Pi
           </span>
         </li>
         <li
@@ -267,9 +267,9 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
-            Smartphone
+            Smart­phone
           </span>
         </li>
         <li
@@ -289,9 +289,9 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
-            Web-Browser
+            Web-Brow­ser
           </span>
         </li>
         <li
@@ -311,9 +311,9 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
-            PC/Mac
+            PC/­Mac
           </span>
         </li>
         <li
@@ -333,7 +333,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
             Und vieles mehr
           </span>
@@ -364,9 +364,9 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
-            Temperatur
+            Tem­pe­ra­tur
           </span>
         </li>
         <li
@@ -386,7 +386,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
             CO2
           </span>
@@ -408,9 +408,9 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
-            Luftfeuchtigkeit
+            Luft­feuch­tig­keit
           </span>
         </li>
         <li
@@ -430,7 +430,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
             Druck
           </span>
@@ -452,9 +452,9 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
-            Helligkeit
+            Hell­ig­keit
           </span>
         </li>
         <li
@@ -474,9 +474,9 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
-            Lautstärke
+            Laut­stärke
           </span>
         </li>
         <li
@@ -496,9 +496,9 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
-            Zähler
+            Zäh­ler
           </span>
         </li>
       </ul>
@@ -527,7 +527,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
             HTTP
           </span>
@@ -549,7 +549,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
             LoRaWAN (TTN)
           </span>
@@ -580,7 +580,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
             Ein Profil für deine Sensoren
           </span>
@@ -602,9 +602,9 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
-            Daten­visualisierungen
+            Daten­visu­ali­sierungen
           </span>
         </li>
         <li
@@ -624,7 +624,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
             REST-API für alle Sensoren
           </span>
@@ -646,7 +646,7 @@ exports[`Storyshots Promotional/LandingHowItWorks Default 1`] = `
             }
           />
           <span
-            className="text-sm sm:text-base break-words sm:break-normal"
+            className="leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2"
           >
             Daten-Downloads (CSV)
           </span>

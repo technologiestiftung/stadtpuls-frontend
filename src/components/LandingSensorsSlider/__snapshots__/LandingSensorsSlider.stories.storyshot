@@ -2,7 +2,7 @@
 
 exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
 <section
-  className="overflow-hidden px-8 md:px-24 lg:px-32 xl:px-40 -mt-4 md:-mt-8 lg:-mt-12 z-20 relative"
+  className="overflow-hidden px-8 md:px-24 lg:px-32 xl:px-40 -translate-y-4 z-20 relative"
 >
   <div>
     <div
@@ -26,6 +26,42 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
               }
             }
           >
+            <div
+              className="absolute inset-0 bottom-auto lg:bottom-0 lg:left-auto lg:w-1/3 h-32 lg:h-full pointer-events-none transition overflow-hidden group-hover:opacity-60 bg-gray-50"
+            >
+              <img
+                alt="Location of sensor \\"Poison Thing\\""
+                className="w-full h-full object-cover"
+                src="/images/sensors/4.jpeg"
+              />
+              <div
+                className="absolute right-0 bottom-0 left-0 h-1/2 pointer-events-none bg-gradient-to-t from-white z-30"
+              />
+              <div
+                className="absolute inset-0 overflow-hidden z-40"
+              >
+                <svg
+                  className="overflow-visible absolute -bottom-1 -right-1 -left-1 text-purple group-hover:animate-textpulse"
+                  height={82}
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 82"
+                  width="104%"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    className="visx-area-closed"
+                    d="M0,41L25,41L50,41L75,41L100,41L100,82L75,82L50,82L25,82L0,82Z"
+                    fill="currentColor"
+                    fillOpacity="10%"
+                    shapeRendering="geometricPrecision"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeWidth={2}
+                    vectorEffect="non-scaling-stroke"
+                  />
+                </svg>
+              </div>
+            </div>
             <div
               className="lg:w-2/3 transition group-hover:animate-textpulse px-4 pb-3 pt-36 lg:px-5 lg:py-4 relative z-10"
             >
@@ -576,6 +612,42 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
             }
           >
             <div
+              className="absolute inset-0 bottom-auto lg:bottom-0 lg:left-auto lg:w-1/3 h-32 lg:h-full pointer-events-none transition overflow-hidden group-hover:opacity-60 bg-gray-50"
+            >
+              <img
+                alt="Location of sensor \\"Delicate Collapse\\""
+                className="w-full h-full object-cover"
+                src="/images/sensors/5.jpeg"
+              />
+              <div
+                className="absolute right-0 bottom-0 left-0 h-1/2 pointer-events-none bg-gradient-to-t from-white z-30"
+              />
+              <div
+                className="absolute inset-0 overflow-hidden z-40"
+              >
+                <svg
+                  className="overflow-visible absolute -bottom-1 -right-1 -left-1 text-purple group-hover:animate-textpulse"
+                  height={82}
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 82"
+                  width="104%"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    className="visx-area-closed"
+                    d="M0,44.44197530864197L5.263157894736842,66.81481481481482L10.526315789473683,56.03333333333333L15.789473684210526,73.77975308641975L21.052631578947366,81.87092592592593L26.31578947368421,0.7693827160493796L31.57894736842105,72.16L36.84210526315789,0L42.10526315789473,64.3041975308642L47.368421052631575,1.2148148148148166L52.63157894736842,59.52592592592592L57.89473684210527,8.503703703703707L63.1578947368421,57.33925925925926L68.42105263157895,18.22222222222222L73.68421052631578,59.7283950617284L78.94736842105263,35.675061728395065L84.21052631578947,65.23555555555555L89.47368421052632,55.921975308641976L94.73684210526315,82L100,82L100,82L94.73684210526315,82L89.47368421052632,82L84.21052631578947,82L78.94736842105263,82L73.68421052631578,82L68.42105263157895,82L63.1578947368421,82L57.89473684210527,82L52.63157894736842,82L47.368421052631575,82L42.10526315789473,82L36.84210526315789,82L31.57894736842105,82L26.31578947368421,82L21.052631578947366,82L15.789473684210526,82L10.526315789473683,82L5.263157894736842,82L0,82Z"
+                    fill="currentColor"
+                    fillOpacity="10%"
+                    shapeRendering="geometricPrecision"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeWidth={2}
+                    vectorEffect="non-scaling-stroke"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
               className="lg:w-2/3 transition group-hover:animate-textpulse px-4 pb-3 pt-36 lg:px-5 lg:py-4 relative z-10"
             >
               <div
@@ -1124,6 +1196,42 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
               }
             }
           >
+            <div
+              className="absolute inset-0 bottom-auto lg:bottom-0 lg:left-auto lg:w-1/3 h-32 lg:h-full pointer-events-none transition overflow-hidden group-hover:opacity-60 bg-gray-50"
+            >
+              <img
+                alt="Location of sensor \\"Simple Broadcast\\""
+                className="w-full h-full object-cover"
+                src="/images/sensors/6.jpeg"
+              />
+              <div
+                className="absolute right-0 bottom-0 left-0 h-1/2 pointer-events-none bg-gradient-to-t from-white z-30"
+              />
+              <div
+                className="absolute inset-0 overflow-hidden z-40"
+              >
+                <svg
+                  className="overflow-visible absolute -bottom-1 -right-1 -left-1 text-purple group-hover:animate-textpulse"
+                  height={82}
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 82"
+                  width="104%"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    className="visx-area-closed"
+                    d="M100,41L0,41L0,82L100,82Z"
+                    fill="currentColor"
+                    fillOpacity="10%"
+                    shapeRendering="geometricPrecision"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeWidth={2}
+                    vectorEffect="non-scaling-stroke"
+                  />
+                </svg>
+              </div>
+            </div>
             <div
               className="lg:w-2/3 transition group-hover:animate-textpulse px-4 pb-3 pt-36 lg:px-5 lg:py-4 relative z-10"
             >

@@ -21,7 +21,7 @@ export const getCuratedSensors = async (): Promise<ParsedSensorType[]> => {
       // TODO: Refactor this!
       process.env["NODE_ENV"] === "production" &&
         process.env["VERCEL_ENV"] !== "preview"
-        ? [22, 23, 24, 25, 26, 27, 28, 29] // -> Production
+        ? [22, 23, 24, 25, 27, 28, 29] // -> Production
         : [35, 36, 37, 38, 39, 40, 41, 44] // -> Staging
     )
     //FIXME: the ignorance
