@@ -71,6 +71,8 @@ export const LandingSensorsSlider: FC<LandingSensorsSliderPropType> = ({
                   {...sensor}
                   parsedRecords={sensor.parsedRecords}
                   withMapLabels={false}
+                  withMapBackground={false}
+                  backgroundImage={`/images/sensors/${sensor.id}.jpeg`}
                 />
               </div>
             ))}
