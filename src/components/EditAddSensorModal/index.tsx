@@ -101,13 +101,10 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
     viewport.latitude !== defaultValues?.latitude ||
     viewport.longitude !== defaultValues?.longitude;
 
-  const [latitude, setLatitude] = useState(viewport.latitude || DEFAULT_LAT);
-  const [longitude, setLongitude] = useState(viewport.longitude || DEFAULT_LNG);
-
   useEffect(() => {
-    setValue("latitude", latitude);
-    setValue("longitude", longitude);
-  }, [latitude, longitude, setValue]);
+    viewport.latitude && setValue("latitude", viewport.latitude);
+    viewport.longitude && setValue("longitude", viewport.longitude);
+  }, [viewport.latitude, viewport.longitude, setValue]);
 
   const {
     categories,
@@ -382,8 +379,6 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
               withMapLabels
               className='pointer-events-none'
               onViewportChange={viewport => {
-                setLatitude(viewport.latitude);
-                setLongitude(viewport.longitude);
                 setViewport(viewport);
               }}
             />
