@@ -39,7 +39,7 @@ export const FormListBox = forwardRef<HTMLButtonElement, FormListBoxPropType>(
       defaultValue,
       onChange = () => undefined,
       containsIconList = false,
-      listBoxOptionsCssProperties: listBoxOptionsStyle,
+      listBoxOptionsCssProperties,
     },
     ref
   ) => {
@@ -94,7 +94,7 @@ export const FormListBox = forwardRef<HTMLButtonElement, FormListBoxPropType>(
             </span>
           </Listbox.Button>
           <Listbox.Options
-            style={listBoxOptionsStyle}
+            style={listBoxOptionsCssProperties}
             className={[
               containsIconList
                 ? "flex flex-wrap right-0 min-w-[200px]"
