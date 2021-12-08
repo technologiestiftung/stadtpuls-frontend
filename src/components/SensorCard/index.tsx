@@ -11,6 +11,7 @@ import { CategoryIcon } from "@components/CategoryIcon";
 export interface SensorCardPropType extends ParsedSensorType {
   withMapBackground?: boolean;
   withMapLabels?: boolean;
+  backgroundImage?: string;
 }
 
 const DISPLAYABLE_RECORDS_AMOUNT = 20;
@@ -29,6 +30,7 @@ export const SensorCard: FC<SensorCardPropType> = ({
   categoryName,
   withMapBackground = true,
   withMapLabels = true,
+  backgroundImage,
 }) => {
   const [isInViewport, mapWrapperRef] = useIsInViewport({ threshold: 50 });
 
@@ -47,23 +49,28 @@ export const SensorCard: FC<SensorCardPropType> = ({
         ].join(" ")}
         style={{ minHeight: 280 }}
       >
-        {isInViewport && (
-          <div
-            className={[
-              "absolute inset-0 bottom-auto lg:bottom-0 lg:left-auto lg:w-1/3",
-              "h-32 lg:h-full",
-              "pointer-events-none transition opacity-40 overflow-hidden",
-              "group-hover:opacity-60 bg-gray-50",
-            ].join(" ")}
-            style={{
-              animationDuration: "1s",
-              animationFillMode: "both",
-              animationName: "fadeIn",
-              animationDelay: "1s",
-            }}
-          >
-            {withMapBackground && latitude && longitude && (
-              <>
+        <div
+          className={[
+            "absolute inset-0 bottom-auto lg:bottom-0 lg:left-auto lg:w-1/3",
+            "h-32 lg:h-full",
+            "pointer-events-none transition overflow-hidden",
+            "group-hover:opacity-60 bg-gray-50",
+          ].join(" ")}
+        >
+          {!backgroundImage &&
+            isInViewport &&
+            withMapBackground &&
+            latitude &&
+            longitude && (
+              <div
+                className={["transition absolute inset-0"].join(" ")}
+                style={{
+                  animationDuration: "1s",
+                  animationFillMode: "both",
+                  animationName: "fadeIn",
+                  animationDelay: "1s",
+                }}
+              >
                 <PreviewMap
                   viewport={{
                     latitude,
@@ -80,36 +87,42 @@ export const SensorCard: FC<SensorCardPropType> = ({
                     "left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2",
                   ].join(" ")}
                 />
-              </>
+              </div>
             )}
-            <div
-              className={[
-                "absolute right-0 bottom-0 left-0 h-1/2 pointer-events-none",
-                "bg-gradient-to-t from-white z-30",
-              ].join(" ")}
+          {backgroundImage && (
+            <img
+              src={backgroundImage}
+              alt={`Location of sensor "${name}"`}
+              className='w-full h-full object-cover'
             />
-            <div className='absolute inset-0 overflow-hidden z-40'>
-              <svg
-                viewBox={`0 0 100 82`}
-                preserveAspectRatio='none'
-                xmlns='http://www.w3.org/2000/svg'
-                width='104%'
+          )}
+          <div
+            className={[
+              "absolute right-0 bottom-0 left-0 h-1/2 pointer-events-none",
+              "bg-gradient-to-t from-white z-30",
+            ].join(" ")}
+          />
+          <div className='absolute inset-0 overflow-hidden z-40'>
+            <svg
+              viewBox={`0 0 100 82`}
+              preserveAspectRatio='none'
+              xmlns='http://www.w3.org/2000/svg'
+              width='104%'
+              height={82}
+              className={[
+                "overflow-visible absolute -bottom-1 -right-1 -left-1",
+                "text-purple group-hover:animate-textpulse",
+              ].join(" ")}
+            >
+              <AreaPath
+                width={100}
                 height={82}
-                className={[
-                  "overflow-visible absolute -bottom-1 -right-1 -left-1",
-                  "text-purple group-hover:animate-textpulse",
-                ].join(" ")}
-              >
-                <AreaPath
-                  width={100}
-                  height={82}
-                  //FIXME: Figure out how we want to handle multiple data points
-                  data={parsedRecords.slice(DISPLAYABLE_RECORDS_AMOUNT * -1)}
-                />
-              </svg>
-            </div>
+                //FIXME: Figure out how we want to handle multiple data points
+                data={parsedRecords.slice(DISPLAYABLE_RECORDS_AMOUNT * -1)}
+              />
+            </svg>
           </div>
-        )}
+        </div>
         <div
           className={[
             "lg:w-2/3 transition group-hover:animate-textpulse",
