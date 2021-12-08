@@ -177,7 +177,7 @@ export const LandingHowItWorks: FC = () => (
       className={[
         "container mx-auto max-w-8xl",
         "px-4 sm:px-6 md:px-8",
-        "sm:py-24 lg:py-32",
+        "py-8 sm:py-24 lg:py-32",
       ].join(" ")}
     >
       <div
