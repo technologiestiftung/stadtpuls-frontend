@@ -30,16 +30,16 @@ export const getAccountDataByUsername = async (
   const { data: accountData, error: usersError } = await supabase
     .from<definitions["extended_user_profiles"]>("extended_user_profiles")
     .select("*")
-    .ilike("username", username)
+    .ilike("username", username.trim())
     .single();
   if (usersError) throw usersError;
   if (!accountData)
-    throw new Error(`No account found with username "${username}"`);
+    throw new Error(`No account found with username "${username.trim()}"`);
 
   const { data: sensors, error: sensorsError } = await supabase
     .from<SensorQueryResponseType>("sensors")
     .select(sensorQueryString)
-    .eq("user_id", accountData.id as string)
+    .eq("user_id", String(accountData.id).trim())
     //FIXME: recorded_at is not recognized altought it is inherited from the definitions
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
@@ -50,7 +50,7 @@ export const getAccountDataByUsername = async (
     .limit(RECORDS_LIMIT, { foreignTable: "records" });
   if (sensorsError) throw sensorsError;
   if (!accountData)
-    throw new Error(`No sensors found for username "${username}"`);
+    throw new Error(`No sensors found for username "${username.trim()}"`);
 
   const accountDataWithSensors = {
     ...mapPublicAccount(accountData),

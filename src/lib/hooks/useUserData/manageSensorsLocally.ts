@@ -27,18 +27,21 @@ export const createSensorLocally = (
   sensor: SensorWithEditablePropsType
 ): ParsedSensorType[] => {
   const sensorsFromSameAuthor = sensors.filter(
-    ({ authorId }) => authorId === sensor.authorId
+    ({ authorId }) => authorId.trim() === sensor.authorId.trim()
   );
   const authorInfo = sensorsFromSameAuthor[0];
   return [
     ...sensors,
     {
       ...sensor,
+      name: sensor.name.trim(),
       id: lastSensorId++,
       authorName:
-        authorInfo?.authorName || authorInfo?.authorUsername || "Anonymous",
-      authorUsername: authorInfo?.authorUsername || "anonymous",
-      categoryName: categories[sensor.categoryId - 1].name,
+        authorInfo?.authorName?.trim() ||
+        authorInfo?.authorUsername?.trim() ||
+        "Anonymous",
+      authorUsername: authorInfo?.authorUsername?.trim() || "anonymous",
+      categoryName: categories[sensor.categoryId - 1].name?.trim(),
       parsedRecords: [],
     },
   ];

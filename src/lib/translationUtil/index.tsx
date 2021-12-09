@@ -40,7 +40,8 @@ export const getTranslatedErrorMessage = (errorMessage: string): ReactNode => {
   ) {
     const username = errorMessage
       .replace("The username ", "")
-      .replace(" is already taken", "");
+      .replace(" is already taken", "")
+      .trim();
     return (
       <>
         Der Nutzername {username} ist bereits vergeben.{" "}

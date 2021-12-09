@@ -126,7 +126,8 @@ const supabaseHandlers = [
             ctx.status(201, "Mocked status"),
             ctx.json(
               userProfiles.find(
-                account => String(account.name) === String(username)
+                account =>
+                  String(account.name).trim() === String(username).trim()
               )
             )
           );

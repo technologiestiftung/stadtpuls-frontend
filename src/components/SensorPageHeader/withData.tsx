@@ -67,8 +67,8 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
         <EditAddSensorModal
           author={{
             authorId: user.id,
-            authorName: user.displayName,
-            authorUsername: user.username,
+            authorName: user.displayName.trim(),
+            authorUsername: user.username.trim(),
           }}
           title={`Sensor „${initialSensor.name}“ editieren`}
           onCancel={() => setEditModalIsOpen(false)}
@@ -106,7 +106,9 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
                 variant='dangerous'
                 onClick={() => {
                   deleteSensor(initialSensor.id)
-                    .then(() => router.push(`/accounts/${user.username}`))
+                    .then(() =>
+                      router.push(`/accounts/${user.username.trim()}`)
+                    )
                     .finally(() => {
                       setEditModalIsOpen(false);
                       setDeletionConfirmationIsOpened(false);

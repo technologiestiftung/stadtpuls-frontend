@@ -63,7 +63,7 @@ export const Header: React.FC = () => {
         <section className='flex flex-row-reverse lg:flex-row gap-2 sm:gap-4 items-center pr-4'>
           <HeaderMenu hasDarkMode={hasDarkMode} />
           <DownloadQueueButton />
-          <AuthLink loggedInUserName={user?.username} />
+          <AuthLink loggedInUserName={user?.username.trim()} />
         </section>
       </nav>
     </header>

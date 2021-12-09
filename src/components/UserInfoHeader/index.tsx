@@ -43,7 +43,7 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
         <div className='absolute top-0 left-0'>
           <span className='inline-block shadow rounded-full'>
             <UserAvatar
-              username={username}
+              username={username.trim()}
               size={windowWidth && windowWidth > 640 ? 80 : 48}
             />
           </span>
@@ -63,16 +63,16 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
               <p className='max-w-prose text-sm sm:text-base'>{description}</p>
             </div>
           )}
-          <Link href={`/accounts/${username}`}>
+          <Link href={`/accounts/${username.trim()}`}>
             <a
-              href={`/accounts/${username}`}
+              href={`/accounts/${username.trim()}`}
               className={[
                 "text-purple hover:text-blue transition-colors",
                 "inline-block order-2 sm:order-3",
                 "mt-0 sm:mt-3",
               ].join(" ")}
             >
-              @{username}
+              @{username.trim()}
             </a>
           </Link>
           {cleanURL && (

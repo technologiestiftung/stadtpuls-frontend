@@ -77,7 +77,7 @@ export const mapPublicSensor = (
     location: location,
     symbolId: icon_id || 1,
     authorId: user_id,
-    authorName: user.display_name || user.name || "Anonymous",
+    authorName: user.display_name?.trim() || user.name?.trim() || "Anonymous",
     authorUsername: user.name || "anonymous",
     parsedRecords: parseSensorRecords(records),
     categoryName: category?.name || "CO2",
