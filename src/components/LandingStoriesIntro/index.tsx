@@ -28,7 +28,7 @@ export const LandingStoriesIntro: FC = () => (
           <img
             src='/images/photos/wrangelkiez_street.jpg'
             alt='Eine herbstliche Straße im Berliner Wrangelkiez'
-            className={`object-cover w-full h-full`}
+            className={`object-cover w-full max-h-56 md:min-h-full md:max-h-full`}
           />
         </div>
       </div>
