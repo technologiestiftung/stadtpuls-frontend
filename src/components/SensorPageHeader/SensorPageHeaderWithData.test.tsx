@@ -245,7 +245,7 @@ describe("EditAddSensorModal", () => {
     });
     await waitFor(() => {
       expect(routerPush).toHaveBeenCalledWith(
-        `/accounts/${loggedInAccount.username.trim()}`
+        `/accounts/${loggedInAccount.username}`
       );
     });
 

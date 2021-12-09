@@ -17,7 +17,7 @@ describe("AccountCard component", () => {
     const wrapperLink = screen.getByRole("link");
     const [profilePic, ...categories] = screen.getAllByRole("img");
     const name = screen.getByRole("heading", { name: testProps.displayName });
-    const username = screen.getByText(`@${testProps.username.trim()}`);
+    const username = screen.getByText(`@${testProps.username}`);
     const description = screen.getByText(
       `${testProps.description.slice(0, DESCRIPTION_MAX_LENGTH)}...`
     );

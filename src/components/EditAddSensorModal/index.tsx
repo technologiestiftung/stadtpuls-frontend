@@ -175,7 +175,7 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
           <Controller
             name='name'
             control={control}
-            defaultValue={defaultValues?.name?.trim() || ""}
+            defaultValue={defaultValues?.name}
             render={({ field }) => (
               <FormTextInput
                 {...field}

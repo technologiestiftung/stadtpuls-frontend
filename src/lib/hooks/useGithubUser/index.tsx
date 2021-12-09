@@ -18,12 +18,10 @@ async function fetchGithubUser(
     method: "GET",
     headers: myHeaders,
   };
-  const url = `https://api.github.com/users/${username.trim()}`;
+  const url = `https://api.github.com/users/${username}`;
   const res = await fetch(url, requestOptions);
   if (!res.ok)
-    throw new Error(
-      `The following GitHub user wasn't found: "${username.trim()}"`
-    );
+    throw new Error(`The following GitHub user wasn't found: "${username}"`);
   const user = (await res.json()) as GithubUserType;
 
   return user;

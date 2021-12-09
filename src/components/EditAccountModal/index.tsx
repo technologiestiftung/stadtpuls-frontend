@@ -97,7 +97,7 @@ export const EditAccountModal: FC<EditAccountModalPropType> = ({
           <Controller
             name='username'
             control={control}
-            defaultValue={defaultValues?.username.trim()}
+            defaultValue={defaultValues?.username}
             render={({ field }) => (
               <FormTextInput
                 {...field}

@@ -39,7 +39,7 @@ export const UserAvatar: FC<UserAvatarPropType> = ({
     role='img'
   >
     <BoringAvatar
-      name={username.trim()}
+      name={username}
       size={size}
       variant='pixel'
       colors={avatarColors}

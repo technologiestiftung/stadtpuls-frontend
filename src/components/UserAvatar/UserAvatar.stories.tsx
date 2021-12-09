@@ -11,7 +11,7 @@ const Template: Story<{
   size?: number;
   className?: string;
 }> = ({ username, size, className }) => (
-  <UserAvatar username={username.trim()} size={size} className={className} />
+  <UserAvatar username={username} size={size} className={className} />
 );
 
 export const DefaultUserAvatar = Template.bind({});

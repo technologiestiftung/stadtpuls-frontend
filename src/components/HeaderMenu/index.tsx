@@ -94,12 +94,12 @@ export const HeaderMenu: FC<HeaderMenuPropType> = ({ hasDarkMode = false }) => {
             ...(user
               ? [
                   {
-                    href: `/accounts/${user.username.trim()}`,
+                    href: `/accounts/${user.username}`,
                     text: "Deine Sensoren",
                     className: "lg:hidden",
                   },
                   {
-                    href: `/accounts/${user.username.trim()}/tokens`,
+                    href: `/accounts/${user.username}/tokens`,
                     text: "Deine Tokens",
                     className: "lg:hidden",
                   },

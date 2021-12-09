@@ -43,8 +43,7 @@ export const mapPublicAccount = ({
 }: definitions["extended_user_profiles"]): ParsedAccountType => ({
   id: user.id || "",
   username: user.username || "anonymous",
-  displayName:
-    user.display_name?.trim() || user?.username?.trim() || "Anonymous",
+  displayName: user.display_name || user?.username || "Anonymous",
   createdAt: user.created_at || "",
   link: user.link,
   description: user.description,

@@ -29,7 +29,7 @@ describe("UserInfoHeader", () => {
     const title = screen.getByRole("heading", {
       name: testProps.displayName,
     });
-    const username = screen.getByText(`@${testProps.username.trim()}`);
+    const username = screen.getByText(`@${testProps.username}`);
     const description = screen.getByText(testProps.description);
     const link = screen.getByRole("link", {
       name: normalizeURL(testProps.link),
@@ -58,7 +58,7 @@ describe("UserInfoHeader", () => {
     const title = screen.queryByRole("heading", {
       name: testProps.displayName,
     });
-    const username = screen.queryByText(`@${testProps.username.trim()}`);
+    const username = screen.queryByText(`@${testProps.username}`);
     const description = screen.queryByText(testProps.description);
     const link = screen.queryByRole("link", {
       name: normalizeURL(testProps.link),

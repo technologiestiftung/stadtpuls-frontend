@@ -35,9 +35,9 @@ export const AccountCard: FC<AccountCardPropType> = ({
   const isMd = windowWidth && windowWidth >= 640 && windowWidth < 768;
   const avatarSize = isSm ? 32 : isMd ? 40 : 48;
   return (
-    <Link href={`/accounts/${username.trim()}`}>
+    <Link href={`/accounts/${username}`}>
       <a
-        href={`/accounts/${username.trim()}`}
+        href={`/accounts/${username}`}
         className={[
           "group border border-gray-200 bg-white shadow block",
           "flex gap-x-3 sm:gap-x-4 md:gap-x-5",
@@ -47,7 +47,7 @@ export const AccountCard: FC<AccountCardPropType> = ({
         ].join(" ")}
       >
         <div className='flex-grow-0'>
-          <UserAvatar username={username.trim()} size={avatarSize} />
+          <UserAvatar username={username} size={avatarSize} />
         </div>
         <div className='flex-grow group-hover:animate-textpulse'>
           <h4
@@ -59,7 +59,7 @@ export const AccountCard: FC<AccountCardPropType> = ({
             {displayName}
           </h4>
           <span className='text-purple group-hover:animate-textpulse'>
-            @{username.trim()}
+            @{username}
           </span>
           <p className='pt-2'>
             {description && description.length > DESCRIPTION_MAX_LENGTH
