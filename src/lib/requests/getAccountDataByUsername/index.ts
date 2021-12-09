@@ -34,7 +34,7 @@ export const getAccountDataByUsername = async (
     .single();
   if (usersError) throw usersError;
   if (!accountData)
-    throw new Error(`No account found with username "${username.trim()}"`);
+    throw new Error(`No account found with username "${username}"`);
 
   const { data: sensors, error: sensorsError } = await supabase
     .from<SensorQueryResponseType>("sensors")
@@ -50,7 +50,7 @@ export const getAccountDataByUsername = async (
     .limit(RECORDS_LIMIT, { foreignTable: "records" });
   if (sensorsError) throw sensorsError;
   if (!accountData)
-    throw new Error(`No sensors found for username "${username.trim()}"`);
+    throw new Error(`No sensors found for username "${username}"`);
 
   const accountDataWithSensors = {
     ...mapPublicAccount(accountData),
