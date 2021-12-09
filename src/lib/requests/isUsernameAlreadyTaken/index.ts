@@ -6,7 +6,7 @@ export const isUsernameAlreadyTaken = async (
   const { data: user } = await supabase
     .from<{ name: string }>("user_profiles")
     .select("name", { count: "exact" })
-    .eq("name", username)
+    .eq("name", username?.trim())
     .single();
   return Boolean(user);
 };
