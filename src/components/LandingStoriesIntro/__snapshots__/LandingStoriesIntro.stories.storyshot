@@ -15,7 +15,7 @@ exports[`Storyshots Promotional/LandingStoriesIntro Default 1`] = `
       >
         <img
           alt="Eine herbstliche Straße im Berliner Wrangelkiez"
-          className="object-cover w-full h-full"
+          className="object-cover w-full max-h-56 md:min-h-full md:max-h-full"
           src="/images/photos/wrangelkiez_street.jpg"
         />
       </div>
