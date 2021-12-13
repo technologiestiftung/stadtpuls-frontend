@@ -1,4 +1,4 @@
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import {
   getRecordsBySensorId,
   GetRecordsResponseType,
@@ -69,7 +69,7 @@ export const useSensorRecords = ({
 
   return {
     isLoading: data?.records === undefined,
-    records: data?.records || ([] as definitions["records"][]),
+    records: data?.records || [],
     recordsCount: data?.count || null,
     error: error || null,
   };

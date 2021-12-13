@@ -1,4 +1,4 @@
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { supabase } from "@auth/supabase";
 import useSWR from "swr";
 

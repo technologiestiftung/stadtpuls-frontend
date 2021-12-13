@@ -10,6 +10,7 @@
     "@supabase/supabase-js": "1.24.0",
     "@tailwindcss/forms": "0.3.4",
     "@tailwindcss/typography": "0.4.1",
+    "@technologiestiftung/stadtpuls-supabase-definitions": "0.0.2",
     "@turf/turf": "6.5.0",
     "@visx/axis": "2.1.2",
     "@visx/curve": "2.1.0",

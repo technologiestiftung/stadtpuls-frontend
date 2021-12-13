@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { DateValueType } from "@common/interfaces";
 import { IntegrationType } from "@lib/integrationsUtil";
 import {

@@ -1,6 +1,6 @@
 import { sensorQueryString } from "@lib/requests/getPublicSensors";
 import useSWR from "swr";
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { SensorQueryResponseType } from "@lib/hooks/usePublicSensors";
 import {
   GetAccountsOptionsType,

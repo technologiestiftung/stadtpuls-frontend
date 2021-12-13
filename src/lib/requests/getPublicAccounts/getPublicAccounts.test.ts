@@ -4,7 +4,7 @@ import { getPublicAccounts } from ".";
 import { createSupabaseUrl } from "../createSupabaseUrl";
 import { extendedUserProfiles as exampleAccounts } from "@mocks/supabaseData/accounts";
 import { errors } from "../getPublicSensors";
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 
 const getIndexesFromRange = (
   rangeStart: number,

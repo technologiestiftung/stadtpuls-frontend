@@ -1,5 +1,5 @@
 import { supabase } from "@auth/supabase";
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 
 const MAX_DOWNLOADABLE_RECORDS = 1e6;
 const maxRows = parseInt(

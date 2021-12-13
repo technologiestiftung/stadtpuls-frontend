@@ -5,7 +5,7 @@ import { extendedUserProfiles, userProfiles } from "./supabaseData/accounts";
 import { createSupabaseUrl } from "../lib/requests/createSupabaseUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
 import { createApiUrl } from "@lib/requests/createApiUrl";
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
 import { SensorQueryResponseType } from "@lib/hooks/usePublicSensors";
