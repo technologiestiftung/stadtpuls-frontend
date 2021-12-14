@@ -10,6 +10,7 @@ import { Button } from "@components/Button";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { createApiUrl } from "@lib/requests/createApiUrl";
 import { normalizeURL } from "@lib/urlUtil";
+import ReactAutolinker from "react-autolinker";
 
 export interface SensorPageHeaderPropType extends ParsedSensorType {
   withEditButton?: boolean;
@@ -158,7 +159,29 @@ export const SensorPageHeader: FC<SensorPageHeaderPropType> = ({
             <UserLink authorName={authorName} authorUsername={authorUsername} />
           </div>
           <div className='py-6'>
-            <p className='text-sm sm:text-base max-w-prose'>{description}</p>
+            {description && (
+              <ReactAutolinker
+                className='text-sm sm:text-base max-w-prose break-words'
+                tagName='p'
+                renderLink={({ attrs, innerHtml: text }) => {
+                  const url = new URL(attrs.href);
+                  const isTwitter = url.host === "twitter.com";
+                  if (isTwitter) return text;
+                  return (
+                    <a
+                      key={attrs.key}
+                      className='underline underline-green text-blue hover:text-purple transition'
+                      href={url.href}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      {`${url.host}${url.pathname}`}
+                    </a>
+                  );
+                }}
+                text={description}
+              />
+            )}
           </div>
           <ApiUrl url={`${createApiUrl()}sensors/${id}/records`} />
           {withEditButton && onEditButtonClick && (

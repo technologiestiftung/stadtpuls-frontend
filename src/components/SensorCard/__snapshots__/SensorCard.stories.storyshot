@@ -88,9 +88,11 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
           Temperatur
         </p>
         <p
-          className="text-base"
+          className="text-base break-words"
         >
-          @wdanxna when Array is given multiple arguments, it iterates over the arguments object and explicitl...
+          
+          @wdanxna
+           when Array is given multiple arguments, it iterates over the arguments object and explicitl...
         </p>
         <p
           className="mt-4 mb-2 flex gap-2 flex-wrap"
@@ -1250,7 +1252,7 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
           Luftfeuchtigkeit
         </p>
         <p
-          className="text-base"
+          className="text-base break-words"
         >
           Luftqualität im Wagon AAB3 vom Ubahn der Linie 3
         </p>
