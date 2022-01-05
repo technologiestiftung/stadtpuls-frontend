@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import { supabase } from "@auth/supabase";
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 
 type CategoriesFetcherSignature = () => Promise<
   definitions["categories"][] | null

@@ -7,6 +7,7 @@ import { UserAvatar } from "@components/UserAvatar";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { SensorSymbol } from "@components/SensorSymbol";
 import { CategoryIcon } from "@components/CategoryIcon";
+import ReactAutolinker from "react-autolinker";
 
 export interface SensorCardPropType extends ParsedSensorType {
   withMapBackground?: boolean;
@@ -148,11 +149,26 @@ export const SensorCard: FC<SensorCardPropType> = ({
               {categoryName}
             </p>
             {description && (
-              <p className='text-base'>
-                {description.length > DESCRIPTION_MAX_LENGTH
-                  ? `${description.slice(0, DESCRIPTION_MAX_LENGTH)}...`
-                  : description}
-              </p>
+              <ReactAutolinker
+                className='text-base break-words'
+                tagName='p'
+                renderLink={({ attrs, innerHtml: text }) => {
+                  const url = new URL(attrs.href);
+                  const isTwitter = url.host === "twitter.com";
+                  if (isTwitter) return text;
+                  return (
+                    <span
+                      key={attrs.key}
+                      className='underline underline-gray'
+                    >{`${url.host}`}</span>
+                  );
+                }}
+                text={
+                  description.length > DESCRIPTION_MAX_LENGTH
+                    ? `${description.slice(0, DESCRIPTION_MAX_LENGTH)}...`
+                    : description
+                }
+              />
             )}
             <p className='mt-4 mb-2 flex gap-2 flex-wrap'>
               {authorName && (

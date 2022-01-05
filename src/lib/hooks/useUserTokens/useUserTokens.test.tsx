@@ -6,7 +6,7 @@ import { setupServer } from "msw/node";
 import { createApiUrl } from "@lib/requests/createApiUrl";
 import { SWRConfig } from "swr";
 import { FC } from "react";
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 
 describe("useUserTokens hook", () => {
   beforeEach(() => {
@@ -44,6 +44,7 @@ describe("useUserTokens hook", () => {
         description: "Lorem ipsum dolor.",
         scope: "sudo",
         user_id: "ingo",
+        salt: "",
       },
       {
         id: "some-hash",
@@ -51,6 +52,7 @@ describe("useUserTokens hook", () => {
         description: "Sit amet consectetur.",
         scope: "sudo",
         user_id: "fabian",
+        salt: "",
       },
       {
         id: "some-hash",
@@ -58,6 +60,7 @@ describe("useUserTokens hook", () => {
         description: "Lipsum amet dolor.",
         scope: "sudo",
         user_id: "lucas",
+        salt: "",
       },
     ];
     const ingosTokens = allTokens.filter(token => token.user_id === "ingo");

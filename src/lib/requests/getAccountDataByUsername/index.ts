@@ -3,7 +3,7 @@ import {
   ParsedAccountType,
 } from "@lib/hooks/usePublicAccounts";
 import { supabase } from "@auth/supabase";
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import {
   mapPublicSensor,
   ParsedSensorType,

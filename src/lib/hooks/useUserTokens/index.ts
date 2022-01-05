@@ -1,5 +1,5 @@
 import { useAuth } from "@auth/Auth";
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { useCallback } from "react";
 import useSWR, { mutate } from "swr";
 import {

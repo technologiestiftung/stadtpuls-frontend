@@ -1,5 +1,5 @@
 import { supabase } from "@auth/supabase";
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 
 export const getRecordsCountBySensorId = async (
   sensorId: number

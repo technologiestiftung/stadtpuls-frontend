@@ -104,7 +104,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                   Luftfeuchtigkeit
                 </p>
                 <p
-                  className="text-base"
+                  className="text-base break-words"
                 >
                   Ambition is the path to success. Persistence is the vehicle you arrive in. - Bill Bradley
                 </p>
@@ -689,7 +689,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                   Luftdruck
                 </p>
                 <p
-                  className="text-base"
+                  className="text-base break-words"
                 >
                   Sadness flies away on the wings of time. - Jean de La Fontaine
                 </p>
@@ -1274,7 +1274,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                   Zähler
                 </p>
                 <p
-                  className="text-base"
+                  className="text-base break-words"
                 >
                   Through perseverance many people win success out of what seemed destined to be certain failure. - Be...
                 </p>

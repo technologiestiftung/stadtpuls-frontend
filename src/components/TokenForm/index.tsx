@@ -5,7 +5,7 @@ import { FC } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { FormTextInput } from "@components/FormTextInput";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { requiredTokenDescriptionValidation } from "@lib/formValidationUtil";
 
 const FORM_ID = "token-form";

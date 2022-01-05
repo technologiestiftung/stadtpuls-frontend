@@ -1,4 +1,4 @@
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { mapPublicAccount } from "@lib/hooks/usePublicAccounts";
 
 export const userProfiles: definitions["user_profiles"][] = [
