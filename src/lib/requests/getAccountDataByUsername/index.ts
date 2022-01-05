@@ -30,7 +30,7 @@ export const getAccountDataByUsername = async (
   const { data: accountData, error: usersError } = await supabase
     .from<definitions["extended_user_profiles"]>("extended_user_profiles")
     .select("*")
-    .ilike("username", username)
+    .ilike("username", username.trim())
     .single();
   if (usersError) throw usersError;
   if (!accountData)
@@ -39,7 +39,7 @@ export const getAccountDataByUsername = async (
   const { data: sensors, error: sensorsError } = await supabase
     .from<SensorQueryResponseType>("sensors")
     .select(sensorQueryString)
-    .eq("user_id", accountData.id as string)
+    .eq("user_id", String(accountData.id).trim())
     //FIXME: recorded_at is not recognized altought it is inherited from the definitions
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore

@@ -42,7 +42,7 @@ const fetchUser: UserFetcherSignature = async userId => {
   const { data: userData, error } = await supabase
     .from<definitions["extended_user_profiles"]>("extended_user_profiles")
     .select("*")
-    .eq("id", userId)
+    .eq("id", userId.trim())
     .single();
 
   if (error) throw error;
@@ -51,7 +51,7 @@ const fetchUser: UserFetcherSignature = async userId => {
   const { data: sensors, error: sensorsError } = await supabase
     .from<SensorQueryResponseType>("sensors")
     .select(sensorQueryString)
-    .eq("user_id", userId);
+    .eq("user_id", userId.trim());
   if (sensorsError) throw sensorsError;
   if (!sensors) throw new Error(`No sensors found for user id "${userId}"`);
 
@@ -81,7 +81,7 @@ export const fetchUserSensors: SensorsFetcherSignature = async userId => {
       ascending: false,
     })
     .limit(RECORDS_LIMIT, { foreignTable: "records" })
-    .eq("user_id", userId);
+    .eq("user_id", userId.trim());
 
   if (error) throw error;
   else if (!data)
@@ -93,9 +93,9 @@ const parsedSensorToRawSensor = (
   sensor: SensorWithEditablePropsType
 ): Omit<definitions["sensors"], "id"> => ({
   created_at: sensor.createdAt,
-  name: sensor.name,
+  name: sensor.name.trim(),
   description: sensor.description,
-  external_id: sensor.ttnDeviceId,
+  external_id: sensor.ttnDeviceId?.trim(),
   latitude: sensor.latitude,
   longitude: sensor.longitude,
   connection_type: sensor.connectionType,
@@ -110,7 +110,12 @@ const createSensor = async (
   const rawSensor = parsedSensorToRawSensor(sensor);
   const { data, error } = await supabase
     .from<definitions["sensors"]>("sensors")
-    .insert([rawSensor]);
+    .insert([
+      {
+        ...rawSensor,
+        name: rawSensor.name?.trim() || "",
+      },
+    ]);
 
   if (error) throw error;
   if (!data || !data[0].id)
@@ -122,9 +127,9 @@ const updateSensor = async (sensor: ParsedSensorType): Promise<void> => {
   const rawSensor = parsedSensorToRawSensor(sensor);
   const { error } = await supabase
     .from<definitions["sensors"]>("sensors")
-    .update({ ...rawSensor, id: undefined })
+    .update({ ...rawSensor, name: rawSensor.name?.trim() || "", id: undefined })
     .eq("id", sensor.id)
-    .eq("user_id", sensor.authorId);
+    .eq("user_id", sensor.authorId.trim());
 
   if (error) throw error;
 };
@@ -139,7 +144,7 @@ const deleteSensor = async (
     .from<definitions["sensors"]>("sensors")
     .delete()
     .eq("id", id)
-    .eq("user_id", user_id);
+    .eq("user_id", user_id.trim());
 
   if (error) throw error;
 };
@@ -150,11 +155,11 @@ const updateUser = async (
   const nameReset = await supabase
     .from<definitions["user_profiles"]>("user_profiles")
     .update({
-      display_name: newUserData.displayName,
+      display_name: newUserData.displayName?.trim(),
       description: newUserData.description,
       url: newUserData.link,
     })
-    .eq("id", newUserData.id);
+    .eq("id", newUserData.id?.trim());
 
   if (nameReset.error) throw nameReset.error;
 };
