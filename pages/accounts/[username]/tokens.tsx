@@ -10,7 +10,7 @@ import { TextLink } from "@components/TextLink";
 import { Alert } from "@components/Alert";
 import { TokenForm } from "@components/TokenForm";
 import { TokenItem } from "@components/TokenItem";
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { TokenCreationModal } from "@components/TokenCreationModal";
 import { TokenDeletionModal } from "@components/TokenDeletionModal";
 import { useUserTokens } from "@lib/hooks/useUserTokens";

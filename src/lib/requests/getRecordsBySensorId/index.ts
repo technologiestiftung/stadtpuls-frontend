@@ -1,5 +1,5 @@
 import { supabase } from "@auth/supabase";
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 
 const MAX_DOWNLOADABLE_RECORDS = 1e6;
 const maxRows = parseInt(
@@ -63,8 +63,8 @@ export const getRecordsBySensorId = async (
           .select("*", { count: "exact", head: false })
           .limit(MAX_ROWS)
           .eq("sensor_id", sensorId)
-          .gte("recorded_at", options.startDate)
-          .lte("recorded_at", options.endDate)
+          .gte("recorded_at", options.startDate || "")
+          .lte("recorded_at", options.endDate || "")
           .order("recorded_at", { ascending: false });
         if (error) throw error;
         if (!records) throw new Error(`No records found for this time range`);
@@ -81,7 +81,7 @@ export const getRecordsBySensorId = async (
           .select("*", { count: "exact" })
           .limit(MAX_ROWS)
           .eq("sensor_id", sensorId)
-          .gte("recorded_at", options.startDate)
+          .gte("recorded_at", options.startDate || "")
           .order("recorded_at", { ascending: false });
 
         if (error) throw error;
@@ -99,7 +99,7 @@ export const getRecordsBySensorId = async (
           .select("*", { count: "exact" })
           .limit(MAX_ROWS)
           .eq("sensor_id", sensorId)
-          .lte("recorded_at", options.endDate)
+          .lte("recorded_at", options.endDate || "")
           .order("recorded_at", { ascending: false });
 
         if (error) throw error;
