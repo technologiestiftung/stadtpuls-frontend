@@ -1,3 +1,4 @@
+name: 'Prevent merge from non-staging to main'
 on:
   pull_request:
     types: [opened, synchronize, reopened]
