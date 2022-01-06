@@ -26,16 +26,16 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 lg:text-2xl md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
         >
           Poison Thing
         </h3>
       </div>
       <p
-        className="inline-grid md:grid grid-cols-[16px,1fr] gap-3 items-center"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <span
-          className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+          className="inline-block align-middle rounded-full border border-gray-50"
           role="img"
           style={
             Object {
@@ -506,16 +506,16 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           </svg>
         </span>
         <span
-          className="inline-block truncate whitespace-nowrap text-sm text-gray-600"
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
         >
           John Doe
         </span>
       </p>
       <p
-        className="inline-flex md:flex text-sm gap-x-1 text-gray-600"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <svg
-          className="mt-1"
+          className="text-gray-500"
           height="16"
           role="img"
           width="16"
@@ -527,7 +527,11 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
             fillRule="nonzero"
           />
         </svg>
-        Luftfeuchtigkeit
+        <span
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
+        >
+          Luftfeuchtigkeit
+        </span>
       </p>
       <p
         className="text-sm text-gray-600 break-words md:hidden xl:block"
@@ -570,8 +574,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
             <path
               className="visx-linepath"
               d="M0,36L35,36L70,36L105,36L140,36"
-              fill="#F9FCFD"
-              fillOpacity="100%"
+              fill="transparent"
               shapeRendering="geometricPrecision"
               stroke="currentColor"
               strokeLinecap="round"
@@ -605,16 +608,16 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 lg:text-2xl md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
         >
           Delicate Collapse
         </h3>
       </div>
       <p
-        className="inline-grid md:grid grid-cols-[16px,1fr] gap-3 items-center"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <span
-          className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+          className="inline-block align-middle rounded-full border border-gray-50"
           role="img"
           style={
             Object {
@@ -1085,16 +1088,16 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           </svg>
         </span>
         <span
-          className="inline-block truncate whitespace-nowrap text-sm text-gray-600"
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
         >
           John Doe
         </span>
       </p>
       <p
-        className="inline-flex md:flex text-sm gap-x-1 text-gray-600"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <svg
-          className="mt-1"
+          className="text-gray-500"
           height="16"
           role="img"
           width="16"
@@ -1106,7 +1109,11 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
             fillRule="nonzero"
           />
         </svg>
-        Luftdruck
+        <span
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
+        >
+          Luftdruck
+        </span>
       </p>
       <p
         className="text-sm text-gray-600 break-words md:hidden xl:block"
@@ -1143,14 +1150,13 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={140}
               x2={140}
-              y1={37.67901234567901}
+              y1={56}
               y2={2}
             />
             <path
               className="visx-linepath"
               d="M0,37.67901234567901L7.368421052631579,48.592592592592595L14.736842105263158,43.33333333333333L22.105263157894736,51.99012345679012L29.473684210526315,55.93703703703704L36.84210526315789,16.37530864197531L44.21052631578947,51.2L51.57894736842105,16L58.94736842105263,47.367901234567896L66.3157894736842,16.592592592592595L73.68421052631578,45.03703703703703L81.05263157894737,20.14814814814815L88.42105263157895,43.970370370370375L95.78947368421053,24.888888888888886L103.1578947368421,45.135802469135804L110.52631578947368,33.40246913580247L117.89473684210526,47.82222222222222L125.26315789473685,43.27901234567901L132.6315789473684,56L140,56"
-              fill="#F9FCFD"
-              fillOpacity="100%"
+              fill="transparent"
               shapeRendering="geometricPrecision"
               stroke="currentColor"
               strokeLinecap="round"
@@ -1184,16 +1190,16 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 lg:text-2xl md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
         >
           Simple Broadcast
         </h3>
       </div>
       <p
-        className="inline-grid md:grid grid-cols-[16px,1fr] gap-3 items-center"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <span
-          className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+          className="inline-block align-middle rounded-full border border-gray-50"
           role="img"
           style={
             Object {
@@ -1664,16 +1670,16 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           </svg>
         </span>
         <span
-          className="inline-block truncate whitespace-nowrap text-sm text-gray-600"
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
         >
           John Doe
         </span>
       </p>
       <p
-        className="inline-flex md:flex text-sm gap-x-1 text-gray-600"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <svg
-          className="mt-1"
+          className="text-gray-500"
           height="16"
           role="img"
           width="16"
@@ -1685,7 +1691,11 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
             fillRule="nonzero"
           />
         </svg>
-        Zähler
+        <span
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
+        >
+          Zähler
+        </span>
       </p>
       <p
         className="text-sm text-gray-600 break-words md:hidden xl:block"
@@ -1728,8 +1738,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
             <path
               className="visx-linepath"
               d="M140,36L0,36"
-              fill="#F9FCFD"
-              fillOpacity="100%"
+              fill="transparent"
               shapeRendering="geometricPrecision"
               stroke="currentColor"
               strokeLinecap="round"
@@ -1763,16 +1772,16 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 lg:text-2xl md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
         >
           Temperatur Grunewaldstraße
         </h3>
       </div>
       <p
-        className="inline-grid md:grid grid-cols-[16px,1fr] gap-3 items-center"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <span
-          className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+          className="inline-block align-middle rounded-full border border-gray-50"
           role="img"
           style={
             Object {
@@ -2243,16 +2252,16 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           </svg>
         </span>
         <span
-          className="inline-block truncate whitespace-nowrap text-sm text-gray-600"
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
         >
           John Doe
         </span>
       </p>
       <p
-        className="inline-flex md:flex text-sm gap-x-1 text-gray-600"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <svg
-          className="mt-1"
+          className="text-gray-500"
           height="16"
           role="img"
           width="16"
@@ -2264,7 +2273,11 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
             fillRule="nonzero"
           />
         </svg>
-        CO2
+        <span
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
+        >
+          CO2
+        </span>
       </p>
       <p
         className="text-sm text-gray-600 break-words md:hidden xl:block"
@@ -2301,14 +2314,13 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={140}
               x2={140}
-              y1={54.9293137536543}
+              y1={37.1764705882353}
               y2={2}
             />
             <path
               className="visx-linepath"
               d="M0,54.9293137536543L7.368421052631579,50.727681362691584L14.736842105263158,55.19157780894604L22.105263157894736,50.5492336549673L29.473684210526315,42.69753451509877L36.84210526315789,31.125471044493636L44.21052631578947,16L51.57894736842105,54.4973891883671L58.94736842105263,49.42987985196952L66.3157894736842,40.28646264596043L73.68421052631578,26.556128225493012L81.05263157894737,49.56371563276273L88.42105263157895,56L95.78947368421053,55.80532977339168L103.1578947368421,54.681920340672896L110.52631578947368,55.75125471044493L117.89473684210526,54.05329773391689L125.26315789473685,50.67901380603951L132.6315789473684,45.11739358196596L140,37.1764705882353"
-              fill="#F9FCFD"
-              fillOpacity="100%"
+              fill="transparent"
               shapeRendering="geometricPrecision"
               stroke="currentColor"
               strokeLinecap="round"
@@ -2342,16 +2354,16 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 lg:text-2xl md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
         >
           Plan of Simplicity
         </h3>
       </div>
       <p
-        className="inline-grid md:grid grid-cols-[16px,1fr] gap-3 items-center"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <span
-          className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+          className="inline-block align-middle rounded-full border border-gray-50"
           role="img"
           style={
             Object {
@@ -2822,16 +2834,16 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           </svg>
         </span>
         <span
-          className="inline-block truncate whitespace-nowrap text-sm text-gray-600"
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
         >
           John Doe
         </span>
       </p>
       <p
-        className="inline-flex md:flex text-sm gap-x-1 text-gray-600"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <svg
-          className="mt-1"
+          className="text-gray-500"
           height="16"
           role="img"
           width="16"
@@ -2843,7 +2855,11 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
             fillRule="nonzero"
           />
         </svg>
-        Temperatur
+        <span
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
+        >
+          Temperatur
+        </span>
       </p>
       <p
         className="text-sm text-gray-600 break-words md:hidden xl:block"
@@ -2880,14 +2896,13 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={140}
               x2={140}
-              y1={56}
+              y1={16}
               y2={2}
             />
             <path
               className="visx-linepath"
               d="M0,56L7.368421052631579,46.6210858948578L14.736842105263158,51.07038207411664L22.105263157894736,54.24188451594369L29.473684210526315,42.9692617064062L36.84210526315789,49.43636885952312L44.21052631578947,51.817293881068665L51.57894736842105,38.3039356506751L58.94736842105263,47.64895145073255L66.3157894736842,49.319161160586034L73.68421052631578,33.57426027003734L81.05263157894737,55.472565354783114L88.42105263157895,46.433783395575986L95.78947368421053,28.29416834243034L103.1578947368421,54.23154266015513L110.52631578947368,43.14047687446136L117.89473684210526,22.442976156276934L125.26315789473685,52.72507900028728L132.6315789473684,39.41855788566504L140,16"
-              fill="#F9FCFD"
-              fillOpacity="100%"
+              fill="transparent"
               shapeRendering="geometricPrecision"
               stroke="currentColor"
               strokeLinecap="round"
@@ -2921,16 +2936,16 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 lg:text-2xl md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
         >
           Shadow of Struggle
         </h3>
       </div>
       <p
-        className="inline-grid md:grid grid-cols-[16px,1fr] gap-3 items-center"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <span
-          className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+          className="inline-block align-middle rounded-full border border-gray-50"
           role="img"
           style={
             Object {
@@ -3401,16 +3416,16 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           </svg>
         </span>
         <span
-          className="inline-block truncate whitespace-nowrap text-sm text-gray-600"
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
         >
           John Doe
         </span>
       </p>
       <p
-        className="inline-flex md:flex text-sm gap-x-1 text-gray-600"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <svg
-          className="mt-1"
+          className="text-gray-500"
           height="16"
           role="img"
           width="16"
@@ -3422,7 +3437,11 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
             fillRule="nonzero"
           />
         </svg>
-        Temperatur
+        <span
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
+        >
+          Temperatur
+        </span>
       </p>
       <div
         className="hidden xl:block"
@@ -3457,14 +3476,13 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={140}
               x2={140}
-              y1={42.85435219764435}
+              y1={16}
               y2={2}
             />
             <path
               className="visx-linepath"
               d="M0,42.85435219764435L7.368421052631579,52.39360926347425L14.736842105263158,40.72587452765563L22.105263157894736,21.739288003005328L29.473684210526315,48.74479040063642L36.84210526315789,51.633438667049695L44.21052631578947,39.31248756988487L51.57894736842105,19.24663558217135L58.94736842105263,56L66.3157894736842,55.920447263164874L73.68421052631578,54.978189291317705L81.05263157894737,52.287538947694074L88.42105263157895,54.96581442114334L95.78947368421053,50.04945528473251L103.1578947368421,55.51738006320023L110.52631578947368,50.55505712328464L117.89473684210526,53.569221930037784L125.26315789473685,46.286610832431L132.6315789473684,34.10708682297306L140,16"
-              fill="#F9FCFD"
-              fillOpacity="100%"
+              fill="transparent"
               shapeRendering="geometricPrecision"
               stroke="currentColor"
               strokeLinecap="round"

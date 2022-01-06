@@ -1,52 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Charts/ChartThumbnail Default 1`] = `
-<svg
-  height={200}
-  width={400}
+<div
+  className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
 >
-  <div
-    className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+  <span
+    className="absolute bottom-0 left-0 text-xs text-gray-300"
   >
-    <span
-      className="absolute bottom-0 left-0 text-xs text-gray-300"
-    >
-      Zul. vor 9 Monaten
-    </span>
-    <span
-      className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
-    >
-      15
-    </span>
-    <svg
-      className="block w-full h-[76px] text-purple group-hover:animate-textpulse"
-      preserveAspectRatio="none"
-      viewBox="0 0 140 76"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <line
-        shapeRendering="geometricPrecision"
-        stroke="#CFD0DC"
-        strokeLinecap="round"
-        strokeWidth={2}
-        vectorEffect="non-scaling-stroke"
-        x1={140}
-        x2={140}
-        y1={36}
-        y2={2}
-      />
-      <path
-        className="visx-linepath"
-        d="M140,36L70,16L0,26"
-        fill="#F9FCFD"
-        fillOpacity="100%"
-        shapeRendering="geometricPrecision"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeWidth={2}
-        vectorEffect="non-scaling-stroke"
-      />
-    </svg>
-  </div>
-</svg>
+    Zul. vor 9 Monaten
+  </span>
+  <span
+    className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
+  >
+    10
+  </span>
+  <svg
+    className="block w-full h-[76px] text-purple group-hover:animate-textpulse"
+    preserveAspectRatio="none"
+    viewBox="0 0 140 76"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line
+      shapeRendering="geometricPrecision"
+      stroke="#CFD0DC"
+      strokeLinecap="round"
+      strokeWidth={2}
+      vectorEffect="non-scaling-stroke"
+      x1={140}
+      x2={140}
+      y1={36}
+      y2={2}
+    />
+    <path
+      className="visx-linepath"
+      d="M0,26L70,16L140,36"
+      fill="transparent"
+      shapeRendering="geometricPrecision"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeWidth={2}
+      vectorEffect="non-scaling-stroke"
+    />
+  </svg>
+</div>
 `;

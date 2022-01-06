@@ -24,16 +24,16 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 lg:text-2xl md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
         >
           When Array is given multiple arguments
         </h3>
       </div>
       <p
-        className="inline-grid md:grid grid-cols-[16px,1fr] gap-3 items-center"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <span
-          className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+          className="inline-block align-middle rounded-full border border-gray-50"
           role="img"
           style={
             Object {
@@ -504,16 +504,16 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
           </svg>
         </span>
         <span
-          className="inline-block truncate whitespace-nowrap text-sm text-gray-600"
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
         >
           Atahualpa Yupanqui De la Vega Van Hilde
         </span>
       </p>
       <p
-        className="inline-flex md:flex text-sm gap-x-1 text-gray-600"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <svg
-          className="mt-1"
+          className="text-gray-500"
           height="16"
           role="img"
           width="16"
@@ -525,7 +525,11 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
             fillRule="nonzero"
           />
         </svg>
-        Temperatur
+        <span
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
+        >
+          Temperatur
+        </span>
       </p>
       <p
         className="text-sm text-gray-600 break-words md:hidden xl:block"
@@ -564,14 +568,13 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={140}
               x2={140}
-              y1={16.59917695473251}
+              y1={29.805526161081715}
               y2={2}
             />
             <path
               className="visx-linepath"
               d="M0,16.59917695473251L7.368421052631579,52.64761904761905L14.736842105263158,49.99506172839506L22.105263157894736,51.76719576719577L29.473684210526315,18.46913580246914L36.84210526315789,16L44.21052631578947,19.123809523809523L51.57894736842105,54.09617871840094L58.94736842105263,56L66.3157894736842,56L73.68421052631578,54.572134038800705L81.05263157894737,53.31358024691358L88.42105263157895,52.77178130511464L95.78947368421053,55.917225161669606L103.1578947368421,53.55814226925338L110.52631578947368,51.358024691358025L117.89473684210526,49.876543209876544L125.26315789473685,49.94238683127572L132.6315789473684,51.86125808348031L140,29.805526161081715"
-              fill="#F9FCFD"
-              fillOpacity="100%"
+              fill="transparent"
               shapeRendering="geometricPrecision"
               stroke="currentColor"
               strokeLinecap="round"
@@ -610,16 +613,16 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 lg:text-2xl md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
         >
           AOL
         </h3>
       </div>
       <p
-        className="inline-grid md:grid grid-cols-[16px,1fr] gap-3 items-center"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <span
-          className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+          className="inline-block align-middle rounded-full border border-gray-50"
           role="img"
           style={
             Object {
@@ -1090,16 +1093,16 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
           </svg>
         </span>
         <span
-          className="inline-block truncate whitespace-nowrap text-sm text-gray-600"
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
         >
           Atahualpa Yupanqui De la Vega Van Hilde
         </span>
       </p>
       <p
-        className="inline-flex md:flex text-sm gap-x-1 text-gray-600"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <svg
-          className="mt-1"
+          className="text-gray-500"
           height="16"
           role="img"
           width="16"
@@ -1111,7 +1114,11 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
             fillRule="nonzero"
           />
         </svg>
-        Luftdruck
+        <span
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
+        >
+          Luftdruck
+        </span>
       </p>
       <div
         className="hidden xl:block"
@@ -1152,8 +1159,7 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
             <path
               className="visx-linepath"
               d="M140,36L0,36"
-              fill="#F9FCFD"
-              fillOpacity="100%"
+              fill="transparent"
               shapeRendering="geometricPrecision"
               stroke="currentColor"
               strokeLinecap="round"
@@ -1192,16 +1198,16 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 lg:text-2xl md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
         >
           LUFTY AAB3
         </h3>
       </div>
       <p
-        className="inline-grid md:grid grid-cols-[16px,1fr] gap-3 items-center"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <span
-          className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
+          className="inline-block align-middle rounded-full border border-gray-50"
           role="img"
           style={
             Object {
@@ -1672,16 +1678,16 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
           </svg>
         </span>
         <span
-          className="inline-block truncate whitespace-nowrap text-sm text-gray-600"
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
         >
           Vogelino
         </span>
       </p>
       <p
-        className="inline-flex md:flex text-sm gap-x-1 text-gray-600"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <svg
-          className="mt-1"
+          className="text-gray-500"
           height="16"
           role="img"
           width="16"
@@ -1693,7 +1699,11 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
             fillRule="nonzero"
           />
         </svg>
-        Luftfeuchtigkeit
+        <span
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5"
+        >
+          Luftfeuchtigkeit
+        </span>
       </p>
       <p
         className="text-sm text-gray-600 break-words md:hidden xl:block"
@@ -1730,14 +1740,13 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={140}
               x2={140}
-              y1={56}
+              y1={32.36193871487989}
               y2={2}
             />
             <path
               className="visx-linepath"
               d="M0,56L10,55.538239538239544L20,53.80663780663781L30,45.304812834224606L40,53.54689754689755L50,16L60,39.76623376623376L70,32.36193871487989L80,55.538239538239544L90,53.80663780663781L100,45.304812834224606L110,53.54689754689755L120,16L130,39.76623376623376L140,32.36193871487989"
-              fill="#F9FCFD"
-              fillOpacity="100%"
+              fill="transparent"
               shapeRendering="geometricPrecision"
               stroke="currentColor"
               strokeLinecap="round"

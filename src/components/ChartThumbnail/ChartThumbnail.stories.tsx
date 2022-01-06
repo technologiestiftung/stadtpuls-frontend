@@ -14,28 +14,22 @@ const Template: Story<{
     date: string;
     value: number;
   }>;
-}> = args => (
-  <svg width={args.width} height={args.height}>
-    <ChartThumbnail {...args} />
-  </svg>
-);
+}> = args => <ChartThumbnail {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  width: 400,
-  height: 200,
   data: [
     {
-      date: "2021-04-09T12:10:01.908Z",
-      value: 10,
+      date: "2021-04-07T12:10:01.908Z",
+      value: 15,
     },
     {
       date: "2021-04-08T12:10:01.908Z",
       value: 20,
     },
     {
-      date: "2021-04-07T12:10:01.908Z",
-      value: 15,
+      date: "2021-04-09T12:10:01.908Z",
+      value: 10,
     },
   ],
 };

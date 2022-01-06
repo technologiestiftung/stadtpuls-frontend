@@ -42,24 +42,24 @@ export const SensorsListRow: FC<ParsedSensorType> = ({
           <h3
             className={[
               "text-xl leading-6 pt-1 md:whitespace-nowrap",
-              "md:leading-7 lg:text-2xl md:pt-0",
+              "md:leading-7 md:pt-0",
               "font-headline font-bold block md:truncate",
             ].join(" ")}
           >
             {name}
           </h3>
         </div>
-        <p className='inline-grid md:grid grid-cols-[16px,1fr] gap-3 items-center'>
-          {authorName && (
-            <UserAvatar username={authorName} size={16} className='mr-1.5' />
-          )}
-          <span className='inline-block truncate whitespace-nowrap text-sm text-gray-600'>
+        <p className='inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center'>
+          {authorName && <UserAvatar username={authorName} size={16} />}
+          <span className='inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5'>
             {authorName}
           </span>
         </p>
-        <p className='inline-flex md:flex text-sm gap-x-1 text-gray-600'>
-          <CategoryIcon categoryId={categoryId} className='mt-1' />
-          {categoryName}
+        <p className='inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center'>
+          <CategoryIcon categoryId={categoryId} className='text-gray-500' />
+          <span className='inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5'>
+            {categoryName}
+          </span>
         </p>
         {description ? (
           <ReactAutolinker

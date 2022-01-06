@@ -47,7 +47,7 @@ export const ChartThumbnail: FC<ChartThumbnailPropType> = ({ data }) => {
     domain: [minVal > 0 ? 0 : minVal, maxVal < 0 ? 0 : maxVal],
     range: [height - 20, 16],
   });
-
+  console.log(normalizedData);
   return (
     <div
       className={[
@@ -76,7 +76,7 @@ export const ChartThumbnail: FC<ChartThumbnailPropType> = ({ data }) => {
       >
         <line
           x1={width}
-          y1={yScale(getY(normalizedData[0]))}
+          y1={yScale(getY(normalizedData[normalizedData.length - 1]))}
           x2={width}
           y2={2}
           stroke={colors.gray[200]}
@@ -92,8 +92,6 @@ export const ChartThumbnail: FC<ChartThumbnailPropType> = ({ data }) => {
           y={d => yScale(getY(d))}
           strokeWidth={2}
           stroke='currentColor'
-          fill={colors.white}
-          fillOpacity='100%'
           shapeRendering='geometricPrecision'
           vectorEffect='non-scaling-stroke'
           strokeLinecap='round'
