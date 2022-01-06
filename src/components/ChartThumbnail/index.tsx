@@ -11,8 +11,10 @@ interface ChartThumbnailPropType {
   data: Array<DateValueType>;
 }
 
-const width = 140;
-const height = 76;
+const CHART_WIDTH = 140;
+const CHART_HEIGHT = 76;
+const MARGIN_SIZE = 24;
+const STROKE_WIDTH = 2;
 
 const getX = (d: DateValueType): Date => new Date(d.date);
 const getY = (d: DateValueType): number => d.value;
@@ -42,14 +44,14 @@ export const ChartThumbnail: FC<ChartThumbnailPropType> = ({ data }) => {
   const normalizedData = normalizeData(data);
   const xScale = scaleUtc<number>({
     domain: extent(normalizedData, getX) as [Date, Date],
-    range: [0, width],
+    range: [0, CHART_WIDTH],
   });
 
   const minVal = min(normalizedData, getY) || 0;
   const maxVal = max(normalizedData, getY) || 0;
   const yScale = scaleLinear<number>({
     domain: [minVal > 0 ? 0 : minVal, maxVal < 0 ? 0 : maxVal],
-    range: [height - 20, 16],
+    range: [CHART_HEIGHT - MARGIN_SIZE, MARGIN_SIZE],
   });
   const lastItem = normalizedData[normalizedData.length - 1];
 
@@ -65,42 +67,51 @@ export const ChartThumbnail: FC<ChartThumbnailPropType> = ({ data }) => {
           ? `Zul. ${moment(lastItem.date).fromNow()}`
           : "Keine Daten"}
       </span>
-      <span className='absolute top-0 right-2 text-xs text-purple font-mono font-semibold'>
-        {data.length ? numberFormatter.format(lastItem.value) : ""}
-      </span>
       {data.length > 1 && (
-        <svg
-          viewBox={`0 0 ${width} ${height}`}
-          preserveAspectRatio='none'
-          xmlns='http://www.w3.org/2000/svg'
-          className={[
-            "block w-full h-[76px]",
-            "text-purple group-hover:animate-textpulse",
-          ].join(" ")}
-        >
-          <line
-            x1={width}
-            y1={yScale(getY(lastItem))}
-            x2={width}
-            y2={2}
-            stroke={colors.gray[200]}
-            strokeWidth={2}
-            vectorEffect='non-scaling-stroke'
-            shapeRendering='geometricPrecision'
-            strokeLinecap='round'
-          />
-          <LinePath<DateValueType>
-            curve={curveLinear}
-            data={normalizedData}
-            x={d => xScale(getX(d))}
-            y={d => yScale(getY(d))}
-            strokeWidth={2}
-            stroke='currentColor'
-            shapeRendering='geometricPrecision'
-            vectorEffect='non-scaling-stroke'
-            strokeLinecap='round'
-          />
-        </svg>
+        <>
+          <span
+            className={[
+              "absolute top-0 right-0 bg-white",
+              "text-xs text-purple font-mono font-semibold",
+              "px-0.5 py-[1px] border border-gray-200 leading-3",
+            ].join(" ")}
+          >
+            {numberFormatter.format(lastItem.value)}
+          </span>
+          <svg
+            viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}
+            preserveAspectRatio='none'
+            xmlns='http://www.w3.org/2000/svg'
+            className={[
+              "block w-full",
+              "text-purple group-hover:animate-textpulse",
+            ].join(" ")}
+            height={CHART_HEIGHT}
+          >
+            <line
+              x1={CHART_WIDTH}
+              y1={yScale(getY(lastItem))}
+              x2={CHART_WIDTH}
+              y2={STROKE_WIDTH}
+              stroke={colors.gray[200]}
+              strokeWidth={STROKE_WIDTH}
+              vectorEffect='non-scaling-stroke'
+              shapeRendering='geometricPrecision'
+              strokeLinecap='round'
+            />
+            <LinePath<DateValueType>
+              curve={curveLinear}
+              data={normalizedData}
+              x={d => xScale(getX(d))}
+              y={d => yScale(getY(d))}
+              strokeWidth={STROKE_WIDTH}
+              stroke='currentColor'
+              shapeRendering='geometricPrecision'
+              vectorEffect='non-scaling-stroke'
+              strokeLinecap='round'
+            />
+          </svg>
+        </>
       )}
     </div>
   );

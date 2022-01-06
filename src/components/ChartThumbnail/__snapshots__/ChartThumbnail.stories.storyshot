@@ -10,12 +10,13 @@ exports[`Storyshots Charts/ChartThumbnail Default 1`] = `
     Zul. vor 9 Monaten
   </span>
   <span
-    className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
+    className="absolute top-0 right-0 bg-white text-xs text-purple font-mono font-semibold px-0.5 py-[1px] border border-gray-200 leading-3"
   >
     10
   </span>
   <svg
-    className="block w-full h-[76px] text-purple group-hover:animate-textpulse"
+    className="block w-full text-purple group-hover:animate-textpulse"
+    height={76}
     preserveAspectRatio="none"
     viewBox="0 0 140 76"
     xmlns="http://www.w3.org/2000/svg"
@@ -28,12 +29,12 @@ exports[`Storyshots Charts/ChartThumbnail Default 1`] = `
       vectorEffect="non-scaling-stroke"
       x1={140}
       x2={140}
-      y1={36}
+      y1={38}
       y2={2}
     />
     <path
       className="visx-linepath"
-      d="M0,26L70,16L140,36"
+      d="M0,31L70,24L140,38"
       fill="transparent"
       shapeRendering="geometricPrecision"
       stroke="currentColor"

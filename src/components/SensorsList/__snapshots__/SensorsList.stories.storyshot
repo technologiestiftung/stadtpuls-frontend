@@ -550,12 +550,13 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
             Zul. vor 4 Monaten
           </span>
           <span
-            className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
+            className="absolute top-0 right-0 bg-white text-xs text-purple font-mono font-semibold px-0.5 py-[1px] border border-gray-200 leading-3"
           >
             0
           </span>
           <svg
-            className="block w-full h-[76px] text-purple group-hover:animate-textpulse"
+            className="block w-full text-purple group-hover:animate-textpulse"
+            height={76}
             preserveAspectRatio="none"
             viewBox="0 0 140 76"
             xmlns="http://www.w3.org/2000/svg"
@@ -568,12 +569,12 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={140}
               x2={140}
-              y1={36}
+              y1={38}
               y2={2}
             />
             <path
               className="visx-linepath"
-              d="M0,36L35,36L70,36L105,36L140,36"
+              d="M0,38L35,38L70,38L105,38L140,38"
               fill="transparent"
               shapeRendering="geometricPrecision"
               stroke="currentColor"
@@ -1132,12 +1133,13 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
             Zul. vor 3 Monaten
           </span>
           <span
-            className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
+            className="absolute top-0 right-0 bg-white text-xs text-purple font-mono font-semibold px-0.5 py-[1px] border border-gray-200 leading-3"
           >
             0
           </span>
           <svg
-            className="block w-full h-[76px] text-purple group-hover:animate-textpulse"
+            className="block w-full text-purple group-hover:animate-textpulse"
+            height={76}
             preserveAspectRatio="none"
             viewBox="0 0 140 76"
             xmlns="http://www.w3.org/2000/svg"
@@ -1150,12 +1152,12 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={140}
               x2={140}
-              y1={56}
+              y1={52}
               y2={2}
             />
             <path
               className="visx-linepath"
-              d="M0,37.67901234567901L7.368421052631579,48.592592592592595L14.736842105263158,43.33333333333333L22.105263157894736,51.99012345679012L29.473684210526315,55.93703703703704L36.84210526315789,16.37530864197531L44.21052631578947,51.2L51.57894736842105,16L58.94736842105263,47.367901234567896L66.3157894736842,16.592592592592595L73.68421052631578,45.03703703703703L81.05263157894737,20.14814814814815L88.42105263157895,43.970370370370375L95.78947368421053,24.888888888888886L103.1578947368421,45.135802469135804L110.52631578947368,33.40246913580247L117.89473684210526,47.82222222222222L125.26315789473685,43.27901234567901L132.6315789473684,56L140,56"
+              d="M0,39.175308641975306L7.368421052631579,46.81481481481482L14.736842105263158,43.13333333333333L22.105263157894736,49.19308641975309L29.473684210526315,51.955925925925925L36.84210526315789,24.262716049382718L44.21052631578947,48.64L51.57894736842105,24L58.94736842105263,45.95753086419753L66.3157894736842,24.414814814814818L73.68421052631578,44.32592592592592L81.05263157894737,26.903703703703705L88.42105263157895,43.57925925925926L95.78947368421053,30.22222222222222L103.1578947368421,44.39506172839506L110.52631578947368,36.181728395061725L117.89473684210526,46.275555555555556L125.26315789473685,43.09530864197531L132.6315789473684,52L140,52"
               fill="transparent"
               shapeRendering="geometricPrecision"
               stroke="currentColor"
@@ -1713,11 +1715,6 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           >
             Keine Daten
           </span>
-          <span
-            className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
-          >
-            
-          </span>
         </div>
       </div>
     </a>
@@ -2268,12 +2265,13 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
             Zul. vor einem Jahr
           </span>
           <span
-            className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
+            className="absolute top-0 right-0 bg-white text-xs text-purple font-mono font-semibold px-0.5 py-[1px] border border-gray-200 leading-3"
           >
             27.848
           </span>
           <svg
-            className="block w-full h-[76px] text-purple group-hover:animate-textpulse"
+            className="block w-full text-purple group-hover:animate-textpulse"
+            height={76}
             preserveAspectRatio="none"
             viewBox="0 0 140 76"
             xmlns="http://www.w3.org/2000/svg"
@@ -2286,12 +2284,12 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={140}
               x2={140}
-              y1={37.1764705882353}
+              y1={38.82352941176471}
               y2={2}
             />
             <path
               className="visx-linepath"
-              d="M0,54.9293137536543L7.368421052631579,50.727681362691584L14.736842105263158,55.19157780894604L22.105263157894736,50.5492336549673L29.473684210526315,42.69753451509877L36.84210526315789,31.125471044493636L44.21052631578947,16L51.57894736842105,54.4973891883671L58.94736842105263,49.42987985196952L66.3157894736842,40.28646264596043L73.68421052631578,26.556128225493012L81.05263157894737,49.56371563276273L88.42105263157895,56L95.78947368421053,55.80532977339168L103.1578947368421,54.681920340672896L110.52631578947368,55.75125471044493L117.89473684210526,54.05329773391689L125.26315789473685,50.67901380603951L132.6315789473684,45.11739358196596L140,37.1764705882353"
+              d="M0,51.250519627558006L7.368421052631579,48.30937695388411L14.736842105263158,51.434104466262234L22.105263157894736,48.18446355847711L29.473684210526315,42.688274160569144L36.84210526315789,34.58782973114555L44.21052631578947,24L51.57894736842105,50.94817243185697L58.94736842105263,47.40091589637866L66.3157894736842,41.0005238521723L73.68421052631578,31.38928975784511L81.05263157894737,47.49460094293391L88.42105263157895,52L95.78947368421053,51.863730841374185L103.1578947368421,51.07734423847103L110.52631578947368,51.825878297311455L117.89473684210526,50.63730841374183L125.26315789473685,48.27530966422766L132.6315789473684,44.382175507376175L140,38.82352941176471"
               fill="transparent"
               shapeRendering="geometricPrecision"
               stroke="currentColor"
@@ -2850,12 +2848,13 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
             Zul. vor 7 Monaten
           </span>
           <span
-            className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
+            className="absolute top-0 right-0 bg-white text-xs text-purple font-mono font-semibold px-0.5 py-[1px] border border-gray-200 leading-3"
           >
             69.620
           </span>
           <svg
-            className="block w-full h-[76px] text-purple group-hover:animate-textpulse"
+            className="block w-full text-purple group-hover:animate-textpulse"
+            height={76}
             preserveAspectRatio="none"
             viewBox="0 0 140 76"
             xmlns="http://www.w3.org/2000/svg"
@@ -2868,12 +2867,12 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={140}
               x2={140}
-              y1={16}
+              y1={24}
               y2={2}
             />
             <path
               className="visx-linepath"
-              d="M0,56L7.368421052631579,46.6210858948578L14.736842105263158,51.07038207411664L22.105263157894736,54.24188451594369L29.473684210526315,42.9692617064062L36.84210526315789,49.43636885952312L44.21052631578947,51.817293881068665L51.57894736842105,38.3039356506751L58.94736842105263,47.64895145073255L66.3157894736842,49.319161160586034L73.68421052631578,33.57426027003734L81.05263157894737,55.472565354783114L88.42105263157895,46.433783395575986L95.78947368421053,28.29416834243034L103.1578947368421,54.23154266015513L110.52631578947368,43.14047687446136L117.89473684210526,22.442976156276934L125.26315789473685,52.72507900028728L132.6315789473684,39.41855788566504L140,16"
+              d="M0,52L7.368421052631579,45.43476012640046L14.736842105263158,48.54926745188165L22.105263157894736,50.76931916116059L29.473684210526315,42.87848319448434L36.84210526315789,47.405458201666185L44.21052631578947,49.07210571674806L51.57894736842105,39.61275495547257L58.94736842105263,46.15426601551278L66.3157894736842,47.323412812410226L73.68421052631578,36.30198218902614L81.05263157894737,51.63079574834818L88.42105263157895,45.30364837690319L95.78947368421053,32.605917839701235L103.1578947368421,50.76207986210859L110.52631578947368,42.99833381212296L117.89473684210526,28.51008330939385L125.26315789473685,49.70755530020109L132.6315789473684,40.39299051996552L140,24"
               fill="transparent"
               shapeRendering="geometricPrecision"
               stroke="currentColor"
@@ -3430,12 +3429,13 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
             Zul. vor 4 Monaten
           </span>
           <span
-            className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
+            className="absolute top-0 right-0 bg-white text-xs text-purple font-mono font-semibold px-0.5 py-[1px] border border-gray-200 leading-3"
           >
             45.253
           </span>
           <svg
-            className="block w-full h-[76px] text-purple group-hover:animate-textpulse"
+            className="block w-full text-purple group-hover:animate-textpulse"
+            height={76}
             preserveAspectRatio="none"
             viewBox="0 0 140 76"
             xmlns="http://www.w3.org/2000/svg"
@@ -3448,12 +3448,12 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={140}
               x2={140}
-              y1={16}
+              y1={24}
               y2={2}
             />
             <path
               className="visx-linepath"
-              d="M0,42.85435219764435L7.368421052631579,52.39360926347425L14.736842105263158,40.72587452765563L22.105263157894736,21.739288003005328L29.473684210526315,48.74479040063642L36.84210526315789,51.633438667049695L44.21052631578947,39.31248756988487L51.57894736842105,19.24663558217135L58.94736842105263,56L66.3157894736842,55.920447263164874L73.68421052631578,54.978189291317705L81.05263157894737,52.287538947694074L88.42105263157895,54.96581442114334L95.78947368421053,50.04945528473251L103.1578947368421,55.51738006320023L110.52631578947368,50.55505712328464L117.89473684210526,53.569221930037784L125.26315789473685,46.286610832431L132.6315789473684,34.10708682297306L140,16"
+              d="M0,42.798046538351045L7.368421052631579,49.475526484431974L14.736842105263158,41.30811216935894L22.105263157894736,28.017501602103728L29.473684210526315,46.921353280445494L36.84210526315789,48.94340706693479L44.21052631578947,40.318741298919406L51.57894736842105,26.272644907519947L58.94736842105263,52L66.3157894736842,51.94431308421541L73.68421052631578,51.28473250392239L81.05263157894737,49.40127726338585L88.42105263157895,51.276070094800346L95.78947368421053,47.834618699312756L103.1578947368421,51.66216604424016L110.52631578947368,48.18853998629925L117.89473684210526,50.29845535102645L125.26315789473685,45.2006275827017L132.6315789473684,36.67496077608114L140,24"
               fill="transparent"
               shapeRendering="geometricPrecision"
               stroke="currentColor"
