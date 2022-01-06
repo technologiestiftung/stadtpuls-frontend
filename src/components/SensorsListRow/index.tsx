@@ -9,7 +9,7 @@ import ReactAutolinker from "react-autolinker";
 import moment from "moment";
 
 const DISPLAYABLE_RECORDS_AMOUNT = 20;
-export const DESCRIPTION_MAX_LENGTH = 100;
+export const DESCRIPTION_MAX_LENGTH = 70;
 
 const numberFormatter = new Intl.NumberFormat("de-DE", {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -34,44 +34,44 @@ export const SensorsListRow: FC<ParsedSensorType> = ({
         href={`/sensors/${id}`}
         title={`${name} - ${categoryName} Sensor von ${authorName}`}
         className={[
-          "grid focus-offset gap-2 md:gap-8 p-4 md:py-2",
-          "grid-cols-1",
-          "md:grid-cols-[2fr,1fr,1fr,140px]",
-          "xl:grid-cols-[2fr,1fr,1fr,2fr,140px]",
-          "bg-white justify-between",
+          "flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2",
+          "grid-cols-1 focus-offset",
+          "md:grid-cols-[5fr,2fr,2fr,140px]",
+          "xl:grid-cols-[5fr,2fr,2fr,4fr,140px]",
+          "bg-white md:justify-between",
           "group border border-white border-b-gray-100",
           "hover:animate-borderpulse hover:z-10",
           "cursor-pointer transition-all",
-          "relative group items-center",
+          "relative group md:items-center",
         ].join(" ")}
       >
-        <div className='grid grid-cols-[24px,1fr] gap-3 items-center'>
+        <div className='grid grid-cols-[24px,1fr] w-full gap-3 items-center'>
           <SensorSymbol symbol={symbolId} />
           <h3
             className={[
               "text-xl leading-6 pt-1 md:whitespace-nowrap",
-              "md:leading-7 md:text-2xl md:pt-0",
+              "md:leading-7 lg:text-2xl md:pt-0",
               "font-headline font-bold block md:truncate",
             ].join(" ")}
           >
             {name}
           </h3>
         </div>
-        <p className='grid grid-cols-[20px,1fr] gap-3 items-center'>
+        <p className='inline-grid md:grid grid-cols-[16px,1fr] gap-3 items-center'>
           {authorName && (
-            <UserAvatar username={authorName} size={20} className='mr-1.5' />
+            <UserAvatar username={authorName} size={16} className='mr-1.5' />
           )}
-          <span className='inline-block truncate whitespace-nowrap'>
+          <span className='inline-block truncate whitespace-nowrap text-sm text-gray-600'>
             {authorName}
           </span>
         </p>
-        <p className='text-base flex gap-x-1'>
+        <p className='inline-flex md:flex text-sm gap-x-1 text-gray-600'>
           <CategoryIcon categoryId={categoryId} className='mt-1' />
           {categoryName}
         </p>
         {description ? (
           <ReactAutolinker
-            className='text-base break-words hidden xl:block'
+            className='text-sm text-gray-600 break-words md:hidden xl:block'
             tagName='p'
             renderLink={({ attrs, innerHtml: text }) => {
               const url = new URL(attrs.href);

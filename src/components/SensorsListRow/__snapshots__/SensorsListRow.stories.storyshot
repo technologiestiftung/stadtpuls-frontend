@@ -6,14 +6,14 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
     className="list-none"
   >
     <a
-      className="grid focus-offset gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 md:grid-cols-[2fr,1fr,1fr,140px] xl:grid-cols-[2fr,1fr,1fr,2fr,140px] bg-white justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,4fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
       href="/sensors/12"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="When Array is given multiple arguments - Temperatur Sensor von Atahualpa Yupanqui De la Vega Van Hilde"
     >
       <div
-        className="grid grid-cols-[24px,1fr] gap-3 items-center"
+        className="grid grid-cols-[24px,1fr] w-full gap-3 items-center"
       >
         <span
           className=" inline-block bg-gray-50 w-6 h-6"
@@ -24,29 +24,29 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:text-2xl md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 lg:text-2xl md:pt-0 font-headline font-bold block md:truncate"
         >
           When Array is given multiple arguments
         </h3>
       </div>
       <p
-        className="grid grid-cols-[20px,1fr] gap-3 items-center"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-3 items-center"
       >
         <span
           className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
           role="img"
           style={
             Object {
-              "height": 21,
-              "width": 21,
+              "height": 17,
+              "width": 17,
             }
           }
         >
           <svg
             fill="none"
-            height={20}
+            height={16}
             viewBox="0 0 80 80"
-            width={20}
+            width={16}
             xmlns="http://www.w3.org/2000/svg"
           >
             <mask
@@ -504,13 +504,13 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
           </svg>
         </span>
         <span
-          className="inline-block truncate whitespace-nowrap"
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600"
         >
           Atahualpa Yupanqui De la Vega Van Hilde
         </span>
       </p>
       <p
-        className="text-base flex gap-x-1"
+        className="inline-flex md:flex text-sm gap-x-1 text-gray-600"
       >
         <svg
           className="mt-1"
@@ -528,11 +528,11 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
         Temperatur
       </p>
       <p
-        className="text-base break-words hidden xl:block"
+        className="text-sm text-gray-600 break-words md:hidden xl:block"
       >
         
         @wdanxna
-         when Array is given multiple arguments, it iterates over the arguments object and explicitl...
+         when Array is given multiple arguments, it iterates over the ...
       </p>
       <div
         className="w-full xl:w-[140px] h-[72px] pt-[12px] pb-[20px] relative flex-shrink-0 flex-grow-0 justify-self-end"
@@ -577,14 +577,14 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
     className="list-none"
   >
     <a
-      className="grid focus-offset gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 md:grid-cols-[2fr,1fr,1fr,140px] xl:grid-cols-[2fr,1fr,1fr,2fr,140px] bg-white justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,4fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
       href="/sensors/12"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="AOL - Luftdruck Sensor von Atahualpa Yupanqui De la Vega Van Hilde"
     >
       <div
-        className="grid grid-cols-[24px,1fr] gap-3 items-center"
+        className="grid grid-cols-[24px,1fr] w-full gap-3 items-center"
       >
         <span
           className=" inline-block bg-gray-50 w-6 h-6"
@@ -595,29 +595,29 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:text-2xl md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 lg:text-2xl md:pt-0 font-headline font-bold block md:truncate"
         >
           AOL
         </h3>
       </div>
       <p
-        className="grid grid-cols-[20px,1fr] gap-3 items-center"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-3 items-center"
       >
         <span
           className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
           role="img"
           style={
             Object {
-              "height": 21,
-              "width": 21,
+              "height": 17,
+              "width": 17,
             }
           }
         >
           <svg
             fill="none"
-            height={20}
+            height={16}
             viewBox="0 0 80 80"
-            width={20}
+            width={16}
             xmlns="http://www.w3.org/2000/svg"
           >
             <mask
@@ -1075,13 +1075,13 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
           </svg>
         </span>
         <span
-          className="inline-block truncate whitespace-nowrap"
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600"
         >
           Atahualpa Yupanqui De la Vega Van Hilde
         </span>
       </p>
       <p
-        className="text-base flex gap-x-1"
+        className="inline-flex md:flex text-sm gap-x-1 text-gray-600"
       >
         <svg
           className="mt-1"
@@ -1144,14 +1144,14 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
     className="list-none"
   >
     <a
-      className="grid focus-offset gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 md:grid-cols-[2fr,1fr,1fr,140px] xl:grid-cols-[2fr,1fr,1fr,2fr,140px] bg-white justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,4fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
       href="/sensors/12"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="LUFTY AAB3 - Luftfeuchtigkeit Sensor von Vogelino"
     >
       <div
-        className="grid grid-cols-[24px,1fr] gap-3 items-center"
+        className="grid grid-cols-[24px,1fr] w-full gap-3 items-center"
       >
         <span
           className=" inline-block bg-gray-50 w-6 h-6"
@@ -1162,29 +1162,29 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:text-2xl md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 lg:text-2xl md:pt-0 font-headline font-bold block md:truncate"
         >
           LUFTY AAB3
         </h3>
       </div>
       <p
-        className="grid grid-cols-[20px,1fr] gap-3 items-center"
+        className="inline-grid md:grid grid-cols-[16px,1fr] gap-3 items-center"
       >
         <span
           className="mr-1.5 inline-block align-middle rounded-full border border-gray-50"
           role="img"
           style={
             Object {
-              "height": 21,
-              "width": 21,
+              "height": 17,
+              "width": 17,
             }
           }
         >
           <svg
             fill="none"
-            height={20}
+            height={16}
             viewBox="0 0 80 80"
-            width={20}
+            width={16}
             xmlns="http://www.w3.org/2000/svg"
           >
             <mask
@@ -1642,13 +1642,13 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
           </svg>
         </span>
         <span
-          className="inline-block truncate whitespace-nowrap"
+          className="inline-block truncate whitespace-nowrap text-sm text-gray-600"
         >
           Vogelino
         </span>
       </p>
       <p
-        className="text-base flex gap-x-1"
+        className="inline-flex md:flex text-sm gap-x-1 text-gray-600"
       >
         <svg
           className="mt-1"
@@ -1666,7 +1666,7 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
         Luftfeuchtigkeit
       </p>
       <p
-        className="text-base break-words hidden xl:block"
+        className="text-sm text-gray-600 break-words md:hidden xl:block"
       >
         Luftqualität im Wagon AAB3 vom Ubahn der Linie 3
       </p>
