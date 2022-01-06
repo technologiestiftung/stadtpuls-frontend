@@ -625,7 +625,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
           onClick={[Function]}
           readOnly={true}
           type="text"
-          value="fake-token-api-url.com/api/v3/yupank1/1/records"
+          value="fake-token-api-url.com/api/v3/sensors/1/records"
         />
         <div
           aria-hidden={true}
@@ -1287,7 +1287,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
           onClick={[Function]}
           readOnly={true}
           type="text"
-          value="fake-token-api-url.com/api/v3/lalushka/1/records"
+          value="fake-token-api-url.com/api/v3/sensors/1/records"
         />
         <div
           aria-hidden={true}
