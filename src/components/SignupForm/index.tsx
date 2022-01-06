@@ -10,6 +10,7 @@ import { useDebounce } from "use-debounce";
 import {
   requiredEmailValidation,
   requiredUsernameValidation,
+  RESERVED_USERNAMES,
 } from "@lib/formValidationUtil";
 import {
   FormFieldRules,
@@ -17,23 +18,6 @@ import {
 } from "@components/FormFieldRules";
 import { useUniqueUsernameValidation } from "@lib/hooks/useUniqueUsernameValidation";
 import { getTranslatedErrorMessage } from "@lib/translationUtil";
-
-const RESERVED_USERNAMES = [
-  "sensors",
-  "sensor",
-  "account",
-  "accounts",
-  "devices",
-  "device",
-  "project",
-  "projects",
-  "docs",
-  "signin",
-  "signup",
-  "robots",
-  "manifest",
-  "sitemap",
-];
 
 interface SignupFormData {
   username: string;
