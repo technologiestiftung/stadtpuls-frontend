@@ -8,11 +8,11 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,4fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
       href="/sensors/4"
       onClick={[Function]}
       onMouseEnter={[Function]}
-      title="Poison Thing - Luftfeuchtigkeit Sensor von John Doe"
+      title="Betäubungsmittelverschreibungsverordnung - Luftfeuchtigkeit Sensor von John Doe"
     >
       <div
         className="grid grid-cols-[24px,1fr] w-full gap-3 items-center"
@@ -28,7 +28,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         <h3
           className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
         >
-          Poison Thing
+          Betäubungsmittelverschreibungsverordnung
         </h3>
       </div>
       <p
@@ -534,9 +534,9 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         </span>
       </p>
       <p
-        className="text-sm text-gray-600 break-words md:hidden xl:block"
+        className="text-sm break-words text-gray-600 md:hidden xl:block flex-grow-0"
       >
-        Ambition is the path to success. Persistence is the vehicle you arrive...
+        Absolute Stille, das gibt es praktisch nur im Vakuum. Da, wo sich Scha...
       </p>
       <div
         className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
@@ -591,11 +591,11 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,4fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
       href="/sensors/5"
       onClick={[Function]}
       onMouseEnter={[Function]}
-      title="Delicate Collapse - Luftdruck Sensor von John Doe"
+      title="Donaudampfschiffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft - Luftdruck Sensor von John Doe"
     >
       <div
         className="grid grid-cols-[24px,1fr] w-full gap-3 items-center"
@@ -611,7 +611,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         <h3
           className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
         >
-          Delicate Collapse
+          Donaudampfschiffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft
         </h3>
       </div>
       <p
@@ -1117,9 +1117,9 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         </span>
       </p>
       <p
-        className="text-sm text-gray-600 break-words md:hidden xl:block"
+        className="text-sm break-words text-gray-600 md:hidden xl:block flex-grow-0"
       >
-        Sadness flies away on the wings of time. - Jean de La Fontaine
+        Offene Verwaltungsdaten helfen uns, die Lärmbelastung in Berlin zu ver...
       </p>
       <div
         className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
@@ -1174,7 +1174,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,4fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
       href="/sensors/6"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -1700,9 +1700,9 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         </span>
       </p>
       <p
-        className="text-sm text-gray-600 break-words md:hidden xl:block"
+        className="text-sm break-words text-gray-600 md:hidden xl:block flex-grow-0"
       >
-        Through perseverance many people win success out of what seemed destin...
+        Wir wollten wissen: Wie wird die Lebensqualität im Kiez durch Lärm bee...
       </p>
       <div
         className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
@@ -1723,11 +1723,11 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,4fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
       href="/sensors/1"
       onClick={[Function]}
       onMouseEnter={[Function]}
-      title="Temperatur Grunewaldstraße - CO2 Sensor von John Doe"
+      title="Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz - CO2 Sensor von John Doe"
     >
       <div
         className="grid grid-cols-[24px,1fr] w-full gap-3 items-center"
@@ -1743,7 +1743,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         <h3
           className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
         >
-          Temperatur Grunewaldstraße
+          Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz
         </h3>
       </div>
       <p
@@ -2249,9 +2249,9 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         </span>
       </p>
       <p
-        className="text-sm text-gray-600 break-words md:hidden xl:block"
+        className="text-sm break-words text-gray-600 md:hidden xl:block flex-grow-0"
       >
-        Temperaturmessung den Räumlichkeiten der Technologiestiftung Berlin in...
+        Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz Temper...
       </p>
       <div
         className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
@@ -2306,11 +2306,11 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,4fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
       href="/sensors/2"
       onClick={[Function]}
       onMouseEnter={[Function]}
-      title="Plan of Simplicity - Temperatur Sensor von John Doe"
+      title="ok - Temperatur Sensor von John Doe"
     >
       <div
         className="grid grid-cols-[24px,1fr] w-full gap-3 items-center"
@@ -2326,7 +2326,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         <h3
           className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
         >
-          Plan of Simplicity
+          ok
         </h3>
       </div>
       <p
@@ -2832,9 +2832,9 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         </span>
       </p>
       <p
-        className="text-sm text-gray-600 break-words md:hidden xl:block"
+        className="text-sm break-words text-gray-600 md:hidden xl:block flex-grow-0"
       >
-        What is once well done is done forever. - Henry David Thoreau
+        Eine Boombox dröhnt im Park, die U1 quietscht über die Hochbahnstrecke...
       </p>
       <div
         className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
@@ -2889,11 +2889,11 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,4fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
       href="/sensors/3"
       onClick={[Function]}
       onMouseEnter={[Function]}
-      title="Shadow of Struggle - Temperatur Sensor von John Doe"
+      title="Donaudampfschifffahrtsgesellschaftskapitän - Temperatur Sensor von John Doe"
     >
       <div
         className="grid grid-cols-[24px,1fr] w-full gap-3 items-center"
@@ -2909,7 +2909,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         <h3
           className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
         >
-          Shadow of Struggle
+          Donaudampfschifffahrtsgesellschaftskapitän
         </h3>
       </div>
       <p

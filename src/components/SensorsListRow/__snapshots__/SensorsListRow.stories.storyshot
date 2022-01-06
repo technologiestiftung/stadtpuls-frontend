@@ -6,7 +6,7 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,4fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
       href="/sensors/12"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -532,7 +532,7 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
         </span>
       </p>
       <p
-        className="text-sm text-gray-600 break-words md:hidden xl:block"
+        className="text-sm break-words text-gray-600 md:hidden xl:block flex-grow-0"
       >
         
         @wdanxna
@@ -596,7 +596,7 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,4fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
       href="/sensors/12"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -1148,7 +1148,7 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,4fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
       href="/sensors/12"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -1674,7 +1674,7 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
         </span>
       </p>
       <p
-        className="text-sm text-gray-600 break-words md:hidden xl:block"
+        className="text-sm break-words text-gray-600 md:hidden xl:block flex-grow-0"
       >
         Luftqualität im Wagon AAB3 vom Ubahn der Linie 3
       </p>
