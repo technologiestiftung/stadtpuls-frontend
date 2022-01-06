@@ -183,7 +183,7 @@ export const SensorPageHeader: FC<SensorPageHeaderPropType> = ({
               />
             )}
           </div>
-          <ApiUrl url={`${createApiUrl()}sensors/${id}/records`} />
+          <ApiUrl url={`${createApiUrl()}${authorUsername}/${id}/records`} />
           {withEditButton && onEditButtonClick && (
             <div className='w-full order-last mt-6'>
               <Button onClick={onEditButtonClick}>Sensor editieren</Button>

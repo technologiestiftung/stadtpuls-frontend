@@ -80,7 +80,9 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
               createdAt: new Date().toISOString(),
               authorId: authenticatedUser.id,
             })
-              .then(newSensorId => router.push(`/sensors/${newSensorId}`))
+              .then(newSensorId =>
+                router.push(`/${finalAccount.username}/${newSensorId}`)
+              )
               .finally(() => {
                 setNewSensorModalIsOpen(false);
                 window.scrollTo({ top: 0, behavior: "smooth" });

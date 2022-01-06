@@ -27,6 +27,7 @@ export const SensorCard: FC<SensorCardPropType> = ({
   description,
   parsedRecords,
   authorName,
+  authorUsername,
   categoryId,
   categoryName,
   withMapBackground = true,
@@ -36,9 +37,9 @@ export const SensorCard: FC<SensorCardPropType> = ({
   const [isInViewport, mapWrapperRef] = useIsInViewport({ threshold: 50 });
 
   return (
-    <Link href={`/sensors/${id}`}>
+    <Link href={`/${authorUsername}/${id}`}>
       <a
-        href={`/sensors/${id}`}
+        href={`/${authorUsername}/${id}`}
         ref={mapWrapperRef}
         className={[
           "block focus-offset",
