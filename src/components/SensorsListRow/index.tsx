@@ -30,10 +30,10 @@ export const SensorsListRow: FC<ParsedSensorType> = ({
           "grid-cols-1 focus-offset",
           "md:grid-cols-[5fr,2fr,2fr,140px]",
           "xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px]",
-          "bg-white md:justify-between shadow-none",
+          "bg-white md:justify-between",
           "group border border-white border-b-gray-100",
           "hover:border-purple hover:z-10 hover:shadow-purple",
-          "cursor-pointer transition",
+          "cursor-pointer",
           "relative group md:items-center",
         ].join(" ")}
       >
