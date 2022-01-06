@@ -32,7 +32,11 @@ const defaultArr = [
 ];
 
 const normalizeData = (data: DateValueType[]): DateValueType[] =>
-  data.length <= 1 ? defaultArr : data;
+  data.length <= 1
+    ? defaultArr
+    : data.sort(
+        (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+      );
 
 export const ChartThumbnail: FC<ChartThumbnailPropType> = ({ data }) => {
   const normalizedData = normalizeData(data);
@@ -47,7 +51,7 @@ export const ChartThumbnail: FC<ChartThumbnailPropType> = ({ data }) => {
     domain: [minVal > 0 ? 0 : minVal, maxVal < 0 ? 0 : maxVal],
     range: [height - 20, 16],
   });
-  const lastItem = data[data.length - 1];
+  const lastItem = normalizedData[normalizedData.length - 1];
 
   return (
     <div

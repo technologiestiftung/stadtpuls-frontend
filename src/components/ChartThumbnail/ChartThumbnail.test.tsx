@@ -44,14 +44,20 @@ describe("ChartThumbnail component", () => {
     expect(lineElement).not.toBeInTheDocument();
   });
   it("should render a formatted value and date", () => {
-    const date = new Date();
-    date.setMonth(date.getMonth() - 2);
+    const dateA = new Date();
+    dateA.setMonth(dateA.getMonth() - 4);
+    const dateB = new Date();
+    dateB.setMonth(dateB.getMonth() - 2);
     render(
       <ChartThumbnail
         data={[
           {
-            date: date.toISOString(),
+            date: dateB.toISOString(),
             value: 123456789,
+          },
+          {
+            date: dateA.toISOString(),
+            value: 0,
           },
         ]}
       />
