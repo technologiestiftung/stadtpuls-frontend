@@ -30,19 +30,19 @@ export const SensorsListRow: FC<ParsedSensorType> = ({
           "grid-cols-1 focus-offset",
           "md:grid-cols-[5fr,2fr,2fr,140px]",
           "xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px]",
-          "bg-white md:justify-between",
+          "bg-white md:justify-between shadow-none",
           "group border border-white border-b-gray-100",
-          "hover:animate-borderpulse hover:z-10",
-          "cursor-pointer transition-all",
+          "hover:border-purple hover:z-10 hover:shadow-purple",
+          "cursor-pointer transition",
           "relative group md:items-center",
         ].join(" ")}
       >
-        <div className='grid grid-cols-[24px,1fr] w-full gap-3 items-center'>
+        <div className='grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center'>
           <SensorSymbol symbol={symbolId} />
           <h3
             className={[
               "text-xl leading-6 pt-1 md:whitespace-nowrap",
-              "md:leading-7 md:pt-0",
+              "md:leading-7 md:pt-0 break-words",
               "font-headline font-bold block md:truncate",
             ].join(" ")}
           >

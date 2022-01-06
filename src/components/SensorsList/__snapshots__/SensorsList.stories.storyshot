@@ -8,14 +8,14 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between shadow-none group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer transition relative group md:items-center"
       href="/sensors/4"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="Betäubungsmittelverschreibungsverordnung - Luftfeuchtigkeit Sensor von John Doe"
     >
       <div
-        className="grid grid-cols-[24px,1fr] w-full gap-3 items-center"
+        className="grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center"
       >
         <span
           className=" inline-block bg-gray-50 w-6 h-6"
@@ -26,7 +26,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 break-words font-headline font-bold block md:truncate"
         >
           Betäubungsmittelverschreibungsverordnung
         </h3>
@@ -591,14 +591,14 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between shadow-none group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer transition relative group md:items-center"
       href="/sensors/5"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="Donaudampfschiffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft - Luftdruck Sensor von John Doe"
     >
       <div
-        className="grid grid-cols-[24px,1fr] w-full gap-3 items-center"
+        className="grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center"
       >
         <span
           className=" inline-block bg-gray-50 w-6 h-6"
@@ -609,7 +609,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 break-words font-headline font-bold block md:truncate"
         >
           Donaudampfschiffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft
         </h3>
@@ -1174,14 +1174,14 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between shadow-none group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer transition relative group md:items-center"
       href="/sensors/6"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="Simple Broadcast - Zähler Sensor von John Doe"
     >
       <div
-        className="grid grid-cols-[24px,1fr] w-full gap-3 items-center"
+        className="grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center"
       >
         <span
           className=" inline-block bg-gray-50 w-6 h-6"
@@ -1192,7 +1192,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 break-words font-headline font-bold block md:truncate"
         >
           Simple Broadcast
         </h3>
@@ -1723,14 +1723,14 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between shadow-none group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer transition relative group md:items-center"
       href="/sensors/1"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz - CO2 Sensor von John Doe"
     >
       <div
-        className="grid grid-cols-[24px,1fr] w-full gap-3 items-center"
+        className="grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center"
       >
         <span
           className=" inline-block bg-gray-50 w-6 h-6"
@@ -1741,7 +1741,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 break-words font-headline font-bold block md:truncate"
         >
           Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz
         </h3>
@@ -2306,14 +2306,14 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between shadow-none group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer transition relative group md:items-center"
       href="/sensors/2"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="ok - Temperatur Sensor von John Doe"
     >
       <div
-        className="grid grid-cols-[24px,1fr] w-full gap-3 items-center"
+        className="grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center"
       >
         <span
           className=" inline-block bg-gray-50 w-6 h-6"
@@ -2324,7 +2324,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 break-words font-headline font-bold block md:truncate"
         >
           ok
         </h3>
@@ -2889,14 +2889,14 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:animate-borderpulse hover:z-10 cursor-pointer transition-all relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between shadow-none group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer transition relative group md:items-center"
       href="/sensors/3"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="Donaudampfschifffahrtsgesellschaftskapitän - Temperatur Sensor von John Doe"
     >
       <div
-        className="grid grid-cols-[24px,1fr] w-full gap-3 items-center"
+        className="grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center"
       >
         <span
           className=" inline-block bg-gray-50 w-6 h-6"
@@ -2907,7 +2907,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 break-words font-headline font-bold block md:truncate"
         >
           Donaudampfschifffahrtsgesellschaftskapitän
         </h3>
