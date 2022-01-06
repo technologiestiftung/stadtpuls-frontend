@@ -47,7 +47,8 @@ export const ChartThumbnail: FC<ChartThumbnailPropType> = ({ data }) => {
     domain: [minVal > 0 ? 0 : minVal, maxVal < 0 ? 0 : maxVal],
     range: [height - 20, 16],
   });
-  console.log(normalizedData);
+  const lastItem = data[data.length - 1];
+
   return (
     <div
       className={[
@@ -57,11 +58,11 @@ export const ChartThumbnail: FC<ChartThumbnailPropType> = ({ data }) => {
     >
       <span className='absolute bottom-0 left-0 text-xs text-gray-300'>
         {data.length
-          ? `Zul. ${moment(data[data.length - 1].date).fromNow()}`
+          ? `Zul. ${moment(lastItem.date).fromNow()}`
           : "Keine Daten"}
       </span>
       <span className='absolute top-0 right-2 text-xs text-purple font-mono font-semibold'>
-        {data.length ? numberFormatter.format(data[data.length - 1].value) : ""}
+        {data.length ? numberFormatter.format(lastItem.value) : ""}
       </span>
       {data.length > 1 && (
         <svg
@@ -75,7 +76,7 @@ export const ChartThumbnail: FC<ChartThumbnailPropType> = ({ data }) => {
         >
           <line
             x1={width}
-            y1={yScale(getY(normalizedData[normalizedData.length - 1]))}
+            y1={yScale(getY(lastItem))}
             x2={width}
             y2={2}
             stroke={colors.gray[200]}
