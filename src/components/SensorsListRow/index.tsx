@@ -1,22 +1,14 @@
 import { FC } from "react";
 import Link from "next/link";
-import { LinePath } from "@components/LinePath";
+import { ChartThumbnail } from "@components/ChartThumbnail";
 import { UserAvatar } from "@components/UserAvatar";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { SensorSymbol } from "@components/SensorSymbol";
 import { CategoryIcon } from "@components/CategoryIcon";
 import ReactAutolinker from "react-autolinker";
-import moment from "moment";
 
 const DISPLAYABLE_RECORDS_AMOUNT = 20;
 export const DESCRIPTION_MAX_LENGTH = 70;
-
-const numberFormatter = new Intl.NumberFormat("de-DE", {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  notation: "compact",
-  compactDisplay: "short",
-});
 
 export const SensorsListRow: FC<ParsedSensorType> = ({
   id,
@@ -95,40 +87,14 @@ export const SensorsListRow: FC<ParsedSensorType> = ({
         )}
         <div
           className={[
-            "w-full xl:w-[140px] h-[72px] pt-[12px] pb-[20px]",
+            "w-full xl:w-[140px] h-[72px]",
             "relative flex-shrink-0 flex-grow-0 justify-self-end",
           ].join(" ")}
         >
-          <span className='absolute bottom-0 left-0 text-xs text-gray-300'>
-            {parsedRecords.length
-              ? `Zul. ${moment(
-                  parsedRecords[parsedRecords.length - 1].date
-                ).fromNow()}`
-              : "Keine Daten"}
-          </span>
-          <span className='absolute top-0 right-0 text-xs text-purple font-mono font-semibold'>
-            {parsedRecords.length
-              ? numberFormatter.format(
-                  parsedRecords[parsedRecords.length - 1].value
-                )
-              : "–"}
-          </span>
-          <svg
-            viewBox={`0 0 140 40`}
-            preserveAspectRatio='none'
-            xmlns='http://www.w3.org/2000/svg'
-            className={[
-              "block w-full md:w-[140px] h-[40px]",
-              "text-purple group-hover:animate-textpulse",
-            ].join(" ")}
-          >
-            <LinePath
-              width={140}
-              height={40}
-              //FIXME: Figure out how we want to handle multiple data points
-              data={parsedRecords.slice(DISPLAYABLE_RECORDS_AMOUNT * -1)}
-            />
-          </svg>
+          <ChartThumbnail
+            //FIXME: Figure out how we want to handle multiple data points
+            data={parsedRecords.slice(DISPLAYABLE_RECORDS_AMOUNT * -1)}
+          />
         </div>
       </a>
     </Link>

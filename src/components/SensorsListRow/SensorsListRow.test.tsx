@@ -44,4 +44,18 @@ describe("SensorsListRow", () => {
     );
     expect(desc).toBeInTheDocument();
   });
+  it("should not transform hashtags and arobases into twitter links", () => {
+    const description = "I am a sensor #hashtag and @author";
+    render(
+      <SensorsListRow
+        {...mapPublicSensor(sensors[0])}
+        description={description}
+      />
+    );
+
+    const desc = screen.getByText(description);
+    const links = desc.querySelectorAll("a");
+    expect(desc).toBeInTheDocument();
+    expect(links.length).toBe(0);
+  });
 });

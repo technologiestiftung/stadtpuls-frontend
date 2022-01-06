@@ -535,36 +535,51 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         Ambition is the path to success. Persistence is the vehicle you arrive...
       </p>
       <div
-        className="w-full xl:w-[140px] h-[72px] pt-[12px] pb-[20px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
       >
-        <span
-          className="absolute bottom-0 left-0 text-xs text-gray-300"
+        <div
+          className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
         >
-          Zul. vor 4 Monaten
-        </span>
-        <span
-          className="absolute top-0 right-0 text-xs text-purple font-mono font-semibold"
-        >
-          0
-        </span>
-        <svg
-          className="block w-full md:w-[140px] h-[40px] text-purple group-hover:animate-textpulse"
-          preserveAspectRatio="none"
-          viewBox="0 0 140 40"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            className="visx-linepath"
-            d="M0,20L35,20L70,20L105,20L140,20"
-            fill="transparent"
-            shapeRendering="geometricPrecision"
-            stroke="#8330FF"
-            strokeLinecap="round"
-            strokeOpacity={1}
-            strokeWidth={2}
-            vectorEffect="non-scaling-stroke"
-          />
-        </svg>
+          <span
+            className="absolute bottom-0 left-0 text-xs text-gray-300"
+          >
+            Zul. vor 4 Monaten
+          </span>
+          <span
+            className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
+          >
+            0
+          </span>
+          <svg
+            className="block w-full h-[76px] text-purple group-hover:animate-textpulse"
+            preserveAspectRatio="none"
+            viewBox="0 0 140 76"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              shapeRendering="geometricPrecision"
+              stroke="#CFD0DC"
+              strokeLinecap="round"
+              strokeWidth={2}
+              vectorEffect="non-scaling-stroke"
+              x1={140}
+              x2={140}
+              y1={36}
+              y2={1}
+            />
+            <path
+              className="visx-linepath"
+              d="M0,36L35,36L70,36L105,36L140,36"
+              fill="#F9FCFD"
+              fillOpacity="100%"
+              shapeRendering="geometricPrecision"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeWidth={2}
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+        </div>
       </div>
     </a>
   </li>
@@ -1099,36 +1114,51 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         Sadness flies away on the wings of time. - Jean de La Fontaine
       </p>
       <div
-        className="w-full xl:w-[140px] h-[72px] pt-[12px] pb-[20px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
       >
-        <span
-          className="absolute bottom-0 left-0 text-xs text-gray-300"
+        <div
+          className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
         >
-          Zul. vor 3 Monaten
-        </span>
-        <span
-          className="absolute top-0 right-0 text-xs text-purple font-mono font-semibold"
-        >
-          0
-        </span>
-        <svg
-          className="block w-full md:w-[140px] h-[40px] text-purple group-hover:animate-textpulse"
-          preserveAspectRatio="none"
-          viewBox="0 0 140 40"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            className="visx-linepath"
-            d="M0,24.73251028806584L7.368421052631579,33.82716049382716L14.736842105263158,29.444444444444446L22.105263157894736,36.65843621399177L29.473684210526315,39.94753086419753L36.84210526315789,6.979423868312757L44.21052631578947,36L51.57894736842105,6.666666666666665L58.94736842105263,32.806584362139915L66.3157894736842,7.1604938271604945L73.68421052631578,30.864197530864196L81.05263157894737,10.123456790123457L88.42105263157895,29.975308641975307L95.78947368421053,14.074074074074074L103.1578947368421,30.94650205761317L110.52631578947368,21.16872427983539L117.89473684210526,33.18518518518518L125.26315789473685,29.39917695473251L132.6315789473684,40L140,40"
-            fill="transparent"
-            shapeRendering="geometricPrecision"
-            stroke="#8330FF"
-            strokeLinecap="round"
-            strokeOpacity={1}
-            strokeWidth={2}
-            vectorEffect="non-scaling-stroke"
-          />
-        </svg>
+          <span
+            className="absolute bottom-0 left-0 text-xs text-gray-300"
+          >
+            Zul. vor 3 Monaten
+          </span>
+          <span
+            className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
+          >
+            0
+          </span>
+          <svg
+            className="block w-full h-[76px] text-purple group-hover:animate-textpulse"
+            preserveAspectRatio="none"
+            viewBox="0 0 140 76"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              shapeRendering="geometricPrecision"
+              stroke="#CFD0DC"
+              strokeLinecap="round"
+              strokeWidth={2}
+              vectorEffect="non-scaling-stroke"
+              x1={140}
+              x2={140}
+              y1={56}
+              y2={1}
+            />
+            <path
+              className="visx-linepath"
+              d="M0,37.67901234567901L7.368421052631579,48.592592592592595L14.736842105263158,43.33333333333333L22.105263157894736,51.99012345679012L29.473684210526315,55.93703703703704L36.84210526315789,16.37530864197531L44.21052631578947,51.2L51.57894736842105,16L58.94736842105263,47.367901234567896L66.3157894736842,16.592592592592595L73.68421052631578,45.03703703703703L81.05263157894737,20.14814814814815L88.42105263157895,43.970370370370375L95.78947368421053,24.888888888888886L103.1578947368421,45.135802469135804L110.52631578947368,33.40246913580247L117.89473684210526,47.82222222222222L125.26315789473685,43.27901234567901L132.6315789473684,56L140,56"
+              fill="#F9FCFD"
+              fillOpacity="100%"
+              shapeRendering="geometricPrecision"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeWidth={2}
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+        </div>
       </div>
     </a>
   </li>
@@ -1663,36 +1693,51 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         Through perseverance many people win success out of what seemed destin...
       </p>
       <div
-        className="w-full xl:w-[140px] h-[72px] pt-[12px] pb-[20px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
       >
-        <span
-          className="absolute bottom-0 left-0 text-xs text-gray-300"
+        <div
+          className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
         >
-          Keine Daten
-        </span>
-        <span
-          className="absolute top-0 right-0 text-xs text-purple font-mono font-semibold"
-        >
-          –
-        </span>
-        <svg
-          className="block w-full md:w-[140px] h-[40px] text-purple group-hover:animate-textpulse"
-          preserveAspectRatio="none"
-          viewBox="0 0 140 40"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            className="visx-linepath"
-            d=""
-            fill="transparent"
-            shapeRendering="geometricPrecision"
-            stroke="#8330FF"
-            strokeLinecap="round"
-            strokeOpacity={1}
-            strokeWidth={2}
-            vectorEffect="non-scaling-stroke"
-          />
-        </svg>
+          <span
+            className="absolute bottom-0 left-0 text-xs text-gray-300"
+          >
+            Keine Daten
+          </span>
+          <span
+            className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
+          >
+            –
+          </span>
+          <svg
+            className="block w-full h-[76px] text-purple group-hover:animate-textpulse"
+            preserveAspectRatio="none"
+            viewBox="0 0 140 76"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              shapeRendering="geometricPrecision"
+              stroke="#CFD0DC"
+              strokeLinecap="round"
+              strokeWidth={2}
+              vectorEffect="non-scaling-stroke"
+              x1={140}
+              x2={140}
+              y1={36}
+              y2={1}
+            />
+            <path
+              className="visx-linepath"
+              d="M140,36L0,36"
+              fill="#F9FCFD"
+              fillOpacity="100%"
+              shapeRendering="geometricPrecision"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeWidth={2}
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+        </div>
       </div>
     </a>
   </li>
@@ -2227,36 +2272,51 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         Temperaturmessung den Räumlichkeiten der Technologiestiftung Berlin in...
       </p>
       <div
-        className="w-full xl:w-[140px] h-[72px] pt-[12px] pb-[20px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
       >
-        <span
-          className="absolute bottom-0 left-0 text-xs text-gray-300"
+        <div
+          className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
         >
-          Zul. vor einem Jahr
-        </span>
-        <span
-          className="absolute top-0 right-0 text-xs text-purple font-mono font-semibold"
-        >
-          27.848
-        </span>
-        <svg
-          className="block w-full md:w-[140px] h-[40px] text-purple group-hover:animate-textpulse"
-          preserveAspectRatio="none"
-          viewBox="0 0 140 40"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            className="visx-linepath"
-            d="M0,39.10776146137857L7.368421052631579,35.60640113557632L14.736842105263158,39.32631484078837L22.105263157894736,35.45769471247275L29.473684210526315,28.914612095915643L36.84210526315789,19.271225870411364L44.21052631578947,6.666666666666665L51.57894736842105,38.74782432363925L58.94736842105263,34.524899876641264L66.3157894736842,26.90538553830035L73.68421052631578,15.463440187910841L81.05263157894737,34.63642969396894L88.42105263157895,40L95.78947368421053,39.83777481115974L103.1578947368421,38.90160028389408L110.52631578947368,39.792712258704114L117.89473684210526,38.37774811159741L125.26315789473685,35.56584483836626L132.6315789473684,30.93116131830497L140,24.313725490196077"
-            fill="transparent"
-            shapeRendering="geometricPrecision"
-            stroke="#8330FF"
-            strokeLinecap="round"
-            strokeOpacity={1}
-            strokeWidth={2}
-            vectorEffect="non-scaling-stroke"
-          />
-        </svg>
+          <span
+            className="absolute bottom-0 left-0 text-xs text-gray-300"
+          >
+            Zul. vor einem Jahr
+          </span>
+          <span
+            className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
+          >
+            27.848
+          </span>
+          <svg
+            className="block w-full h-[76px] text-purple group-hover:animate-textpulse"
+            preserveAspectRatio="none"
+            viewBox="0 0 140 76"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              shapeRendering="geometricPrecision"
+              stroke="#CFD0DC"
+              strokeLinecap="round"
+              strokeWidth={2}
+              vectorEffect="non-scaling-stroke"
+              x1={140}
+              x2={140}
+              y1={37.1764705882353}
+              y2={1}
+            />
+            <path
+              className="visx-linepath"
+              d="M0,54.9293137536543L7.368421052631579,50.727681362691584L14.736842105263158,55.19157780894604L22.105263157894736,50.5492336549673L29.473684210526315,42.69753451509877L36.84210526315789,31.125471044493636L44.21052631578947,16L51.57894736842105,54.4973891883671L58.94736842105263,49.42987985196952L66.3157894736842,40.28646264596043L73.68421052631578,26.556128225493012L81.05263157894737,49.56371563276273L88.42105263157895,56L95.78947368421053,55.80532977339168L103.1578947368421,54.681920340672896L110.52631578947368,55.75125471044493L117.89473684210526,54.05329773391689L125.26315789473685,50.67901380603951L132.6315789473684,45.11739358196596L140,37.1764705882353"
+              fill="#F9FCFD"
+              fillOpacity="100%"
+              shapeRendering="geometricPrecision"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeWidth={2}
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+        </div>
       </div>
     </a>
   </li>
@@ -2791,36 +2851,51 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         What is once well done is done forever. - Henry David Thoreau
       </p>
       <div
-        className="w-full xl:w-[140px] h-[72px] pt-[12px] pb-[20px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
       >
-        <span
-          className="absolute bottom-0 left-0 text-xs text-gray-300"
+        <div
+          className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
         >
-          Zul. vor 7 Monaten
-        </span>
-        <span
-          className="absolute top-0 right-0 text-xs text-purple font-mono font-semibold"
-        >
-          69.620
-        </span>
-        <svg
-          className="block w-full md:w-[140px] h-[40px] text-purple group-hover:animate-textpulse"
-          preserveAspectRatio="none"
-          viewBox="0 0 140 40"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            className="visx-linepath"
-            d="M0,40L7.368421052631579,32.18423824571483L14.736842105263158,35.89198506176386L22.105263157894736,38.53490376328641L29.473684210526315,29.141051422005173L36.84210526315789,34.53030738293594L44.21052631578947,36.51441156755722L51.57894736842105,25.25327970889591L58.94736842105263,33.04079287561046L66.3157894736842,34.43263430048837L73.68421052631578,21.311883558364457L81.05263157894737,39.560471128985924L88.42105263157895,32.02815282964665L95.78947368421053,16.91180695202528L103.1578947368421,38.52628555012927L110.52631578947368,29.283730728717803L117.89473684210526,12.035813463564109L125.26315789473685,37.27089916690606L132.6315789473684,26.182131571387536L140,6.666666666666665"
-            fill="transparent"
-            shapeRendering="geometricPrecision"
-            stroke="#8330FF"
-            strokeLinecap="round"
-            strokeOpacity={1}
-            strokeWidth={2}
-            vectorEffect="non-scaling-stroke"
-          />
-        </svg>
+          <span
+            className="absolute bottom-0 left-0 text-xs text-gray-300"
+          >
+            Zul. vor 7 Monaten
+          </span>
+          <span
+            className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
+          >
+            69.620
+          </span>
+          <svg
+            className="block w-full h-[76px] text-purple group-hover:animate-textpulse"
+            preserveAspectRatio="none"
+            viewBox="0 0 140 76"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              shapeRendering="geometricPrecision"
+              stroke="#CFD0DC"
+              strokeLinecap="round"
+              strokeWidth={2}
+              vectorEffect="non-scaling-stroke"
+              x1={140}
+              x2={140}
+              y1={16}
+              y2={1}
+            />
+            <path
+              className="visx-linepath"
+              d="M0,56L7.368421052631579,46.6210858948578L14.736842105263158,51.07038207411664L22.105263157894736,54.24188451594369L29.473684210526315,42.9692617064062L36.84210526315789,49.43636885952312L44.21052631578947,51.817293881068665L51.57894736842105,38.3039356506751L58.94736842105263,47.64895145073255L66.3157894736842,49.319161160586034L73.68421052631578,33.57426027003734L81.05263157894737,55.472565354783114L88.42105263157895,46.433783395575986L95.78947368421053,28.29416834243034L103.1578947368421,54.23154266015513L110.52631578947368,43.14047687446136L117.89473684210526,22.442976156276934L125.26315789473685,52.72507900028728L132.6315789473684,39.41855788566504L140,16"
+              fill="#F9FCFD"
+              fillOpacity="100%"
+              shapeRendering="geometricPrecision"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeWidth={2}
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+        </div>
       </div>
     </a>
   </li>
@@ -3353,36 +3428,51 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         className="hidden xl:block"
       />
       <div
-        className="w-full xl:w-[140px] h-[72px] pt-[12px] pb-[20px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
       >
-        <span
-          className="absolute bottom-0 left-0 text-xs text-gray-300"
+        <div
+          className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
         >
-          Zul. vor 4 Monaten
-        </span>
-        <span
-          className="absolute top-0 right-0 text-xs text-purple font-mono font-semibold"
-        >
-          45.253
-        </span>
-        <svg
-          className="block w-full md:w-[140px] h-[40px] text-purple group-hover:animate-textpulse"
-          preserveAspectRatio="none"
-          viewBox="0 0 140 40"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            className="visx-linepath"
-            d="M0,29.045293498036962L7.368421052631579,36.99467438622854L14.736842105263158,27.271562106379687L22.105263157894736,11.449406669171104L29.473684210526315,33.953992000530356L36.84210526315789,36.36119888920808L44.21052631578947,26.09373964157072L51.57894736842105,9.372196318476123L58.94736842105263,40L66.3157894736842,39.93370605263739L73.68421052631578,39.14849107609808L81.05263157894737,36.90628245641173L88.42105263157895,39.138178684286125L95.78947368421053,35.041212737277085L103.1578947368421,39.59781671933352L110.52631578947368,35.4625476027372L117.89473684210526,37.97435160836483L125.26315789473685,31.905509027025833L132.6315789473684,21.755905685810887L140,6.666666666666665"
-            fill="transparent"
-            shapeRendering="geometricPrecision"
-            stroke="#8330FF"
-            strokeLinecap="round"
-            strokeOpacity={1}
-            strokeWidth={2}
-            vectorEffect="non-scaling-stroke"
-          />
-        </svg>
+          <span
+            className="absolute bottom-0 left-0 text-xs text-gray-300"
+          >
+            Zul. vor 4 Monaten
+          </span>
+          <span
+            className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
+          >
+            45.253
+          </span>
+          <svg
+            className="block w-full h-[76px] text-purple group-hover:animate-textpulse"
+            preserveAspectRatio="none"
+            viewBox="0 0 140 76"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              shapeRendering="geometricPrecision"
+              stroke="#CFD0DC"
+              strokeLinecap="round"
+              strokeWidth={2}
+              vectorEffect="non-scaling-stroke"
+              x1={140}
+              x2={140}
+              y1={16}
+              y2={1}
+            />
+            <path
+              className="visx-linepath"
+              d="M0,42.85435219764435L7.368421052631579,52.39360926347425L14.736842105263158,40.72587452765563L22.105263157894736,21.739288003005328L29.473684210526315,48.74479040063642L36.84210526315789,51.633438667049695L44.21052631578947,39.31248756988487L51.57894736842105,19.24663558217135L58.94736842105263,56L66.3157894736842,55.920447263164874L73.68421052631578,54.978189291317705L81.05263157894737,52.287538947694074L88.42105263157895,54.96581442114334L95.78947368421053,50.04945528473251L103.1578947368421,55.51738006320023L110.52631578947368,50.55505712328464L117.89473684210526,53.569221930037784L125.26315789473685,46.286610832431L132.6315789473684,34.10708682297306L140,16"
+              fill="#F9FCFD"
+              fillOpacity="100%"
+              shapeRendering="geometricPrecision"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeWidth={2}
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+        </div>
       </div>
     </a>
   </li>
