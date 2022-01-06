@@ -4,6 +4,7 @@ import { DownloadQueueButton } from ".";
 const testQueue = {
   1: {
     id: "1",
+    username: "potus",
     title: "Sensor 1",
     progress: 66,
     totalCount: 123,
@@ -11,6 +12,7 @@ const testQueue = {
   },
   2: {
     id: "2",
+    username: "potus",
     title: "Sensor 2",
     progress: 75,
     totalCount: 456,
