@@ -1716,36 +1716,8 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           <span
             className="absolute top-0 right-2 text-xs text-purple font-mono font-semibold"
           >
-            –
+            
           </span>
-          <svg
-            className="block w-full h-[76px] text-purple group-hover:animate-textpulse"
-            preserveAspectRatio="none"
-            viewBox="0 0 140 76"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <line
-              shapeRendering="geometricPrecision"
-              stroke="#CFD0DC"
-              strokeLinecap="round"
-              strokeWidth={2}
-              vectorEffect="non-scaling-stroke"
-              x1={140}
-              x2={140}
-              y1={36}
-              y2={2}
-            />
-            <path
-              className="visx-linepath"
-              d="M140,36L0,36"
-              fill="transparent"
-              shapeRendering="geometricPrecision"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeWidth={2}
-              vectorEffect="non-scaling-stroke"
-            />
-          </svg>
         </div>
       </div>
     </a>

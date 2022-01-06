@@ -61,42 +61,42 @@ export const ChartThumbnail: FC<ChartThumbnailPropType> = ({ data }) => {
           : "Keine Daten"}
       </span>
       <span className='absolute top-0 right-2 text-xs text-purple font-mono font-semibold'>
-        {data.length
-          ? numberFormatter.format(data[data.length - 1].value)
-          : "–"}
+        {data.length ? numberFormatter.format(data[data.length - 1].value) : ""}
       </span>
-      <svg
-        viewBox={`0 0 ${width} ${height}`}
-        preserveAspectRatio='none'
-        xmlns='http://www.w3.org/2000/svg'
-        className={[
-          "block w-full h-[76px]",
-          "text-purple group-hover:animate-textpulse",
-        ].join(" ")}
-      >
-        <line
-          x1={width}
-          y1={yScale(getY(normalizedData[normalizedData.length - 1]))}
-          x2={width}
-          y2={2}
-          stroke={colors.gray[200]}
-          strokeWidth={2}
-          vectorEffect='non-scaling-stroke'
-          shapeRendering='geometricPrecision'
-          strokeLinecap='round'
-        />
-        <LinePath<DateValueType>
-          curve={curveLinear}
-          data={normalizedData}
-          x={d => xScale(getX(d))}
-          y={d => yScale(getY(d))}
-          strokeWidth={2}
-          stroke='currentColor'
-          shapeRendering='geometricPrecision'
-          vectorEffect='non-scaling-stroke'
-          strokeLinecap='round'
-        />
-      </svg>
+      {data.length > 1 && (
+        <svg
+          viewBox={`0 0 ${width} ${height}`}
+          preserveAspectRatio='none'
+          xmlns='http://www.w3.org/2000/svg'
+          className={[
+            "block w-full h-[76px]",
+            "text-purple group-hover:animate-textpulse",
+          ].join(" ")}
+        >
+          <line
+            x1={width}
+            y1={yScale(getY(normalizedData[normalizedData.length - 1]))}
+            x2={width}
+            y2={2}
+            stroke={colors.gray[200]}
+            strokeWidth={2}
+            vectorEffect='non-scaling-stroke'
+            shapeRendering='geometricPrecision'
+            strokeLinecap='round'
+          />
+          <LinePath<DateValueType>
+            curve={curveLinear}
+            data={normalizedData}
+            x={d => xScale(getX(d))}
+            y={d => yScale(getY(d))}
+            strokeWidth={2}
+            stroke='currentColor'
+            shapeRendering='geometricPrecision'
+            vectorEffect='non-scaling-stroke'
+            strokeLinecap='round'
+          />
+        </svg>
+      )}
     </div>
   );
 };

@@ -3,7 +3,29 @@ import React from "react";
 import { ChartThumbnail } from ".";
 
 describe("ChartThumbnail component", () => {
-  it("should render a path and a line", () => {
+  it("should render a path and a line if data", () => {
+    render(
+      <ChartThumbnail
+        data={[
+          {
+            date: new Date().toISOString(),
+            value: 20,
+          },
+          {
+            date: new Date().toISOString(),
+            value: 40,
+          },
+        ]}
+      />
+    );
+    const svgElement = document.querySelector("svg");
+    const pathElement = document.querySelector("path");
+    const lineElement = document.querySelector("line");
+    expect(svgElement).toBeInTheDocument();
+    expect(pathElement).toBeInTheDocument();
+    expect(lineElement).toBeInTheDocument();
+  });
+  it("should render a path and a line if not enough data", () => {
     render(
       <ChartThumbnail
         data={[
@@ -17,9 +39,9 @@ describe("ChartThumbnail component", () => {
     const svgElement = document.querySelector("svg");
     const pathElement = document.querySelector("path");
     const lineElement = document.querySelector("line");
-    expect(svgElement).toBeInTheDocument();
-    expect(pathElement).toBeInTheDocument();
-    expect(lineElement).toBeInTheDocument();
+    expect(svgElement).not.toBeInTheDocument();
+    expect(pathElement).not.toBeInTheDocument();
+    expect(lineElement).not.toBeInTheDocument();
   });
   it("should render a formatted value and date", () => {
     const date = new Date();
