@@ -565,7 +565,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
               x1={140}
               x2={140}
               y1={36}
-              y2={1}
+              y2={2}
             />
             <path
               className="visx-linepath"
@@ -1143,8 +1143,8 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={140}
               x2={140}
-              y1={56}
-              y2={1}
+              y1={37.67901234567901}
+              y2={2}
             />
             <path
               className="visx-linepath"
@@ -1723,7 +1723,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
               x1={140}
               x2={140}
               y1={36}
-              y2={1}
+              y2={2}
             />
             <path
               className="visx-linepath"
@@ -2301,8 +2301,8 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={140}
               x2={140}
-              y1={37.1764705882353}
-              y2={1}
+              y1={54.9293137536543}
+              y2={2}
             />
             <path
               className="visx-linepath"
@@ -2880,8 +2880,8 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={140}
               x2={140}
-              y1={16}
-              y2={1}
+              y1={56}
+              y2={2}
             />
             <path
               className="visx-linepath"
@@ -3457,8 +3457,8 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={140}
               x2={140}
-              y1={16}
-              y2={1}
+              y1={42.85435219764435}
+              y2={2}
             />
             <path
               className="visx-linepath"

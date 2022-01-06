@@ -5,7 +5,7 @@ import {
 import { GetServerSideProps } from "next";
 import { FC } from "react";
 import { UserInfoWithData } from "@components/UserInfoHeader/withData";
-import { SensorsGrid } from "@components/SensorsGrid";
+import { SensorsList } from "@components/SensorsList";
 
 export const getServerSideProps: GetServerSideProps = async context => {
   try {
@@ -43,7 +43,7 @@ const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({ account }) => {
         ].join(" ")}
       >
         {account.sensors.length > 0 ? (
-          <SensorsGrid sensors={account.sensors} showAuthorNames={false} />
+          <SensorsList sensors={account.sensors} showAuthorNames={false} />
         ) : (
           <p>Keine Sensoren vorhanden</p>
         )}

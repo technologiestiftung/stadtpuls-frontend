@@ -76,9 +76,9 @@ export const ChartThumbnail: FC<ChartThumbnailPropType> = ({ data }) => {
       >
         <line
           x1={width}
-          y1={yScale(getY(normalizedData[normalizedData.length - 1]))}
+          y1={yScale(getY(normalizedData[0]))}
           x2={width}
-          y2={1}
+          y2={2}
           stroke={colors.gray[200]}
           strokeWidth={2}
           vectorEffect='non-scaling-stroke'
