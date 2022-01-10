@@ -9,7 +9,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
   const sensor = await getSensorData(parseInt(sensorId, 10));
   return {
     redirect: {
-      destination: `/${sensor.authorUsername}/${sensor.id}`,
+      destination: `/${sensor.authorUsername}/sensors/${sensor.id}`,
       permanent: true,
     },
     props: {},

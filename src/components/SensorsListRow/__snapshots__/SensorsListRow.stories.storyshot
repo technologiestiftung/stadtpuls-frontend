@@ -7,7 +7,7 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
   >
     <a
       className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
-      href="/undefined/12"
+      href="/undefined/sensors/12"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="When Array is given multiple arguments - Temperatur Sensor von Atahualpa Yupanqui De la Vega Van Hilde"
@@ -597,7 +597,7 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
   >
     <a
       className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
-      href="/undefined/12"
+      href="/undefined/sensors/12"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="AOL - Luftdruck Sensor von Atahualpa Yupanqui De la Vega Van Hilde"
@@ -1149,7 +1149,7 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
   >
     <a
       className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
-      href="/undefined/12"
+      href="/undefined/sensors/12"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="LUFTY AAB3 - Luftfeuchtigkeit Sensor von Vogelino"

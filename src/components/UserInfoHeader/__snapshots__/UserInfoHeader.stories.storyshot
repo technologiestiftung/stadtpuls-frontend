@@ -505,7 +505,7 @@ exports[`Storyshots UI Elements/UserInfoHeader Maximum Infos 1`] = `
       </div>
       <a
         className="text-purple hover:text-blue transition-colors inline-block order-2 sm:order-3 mt-0 sm:mt-3"
-        href="/looee14"
+        href="/looee14/sensors"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -1066,7 +1066,7 @@ exports[`Storyshots UI Elements/UserInfoHeader Minimal Infos 1`] = `
       </h1>
       <a
         className="text-purple hover:text-blue transition-colors inline-block order-2 sm:order-3 mt-0 sm:mt-3"
-        href="/looee14"
+        href="/looee14/sensors"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >

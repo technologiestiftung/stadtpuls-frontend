@@ -9,7 +9,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
   >
     <a
       className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
-      href="/john.doe/4"
+      href="/john.doe/sensors/4"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="Betäubungsmittelverschreibungsverordnung - Luftfeuchtigkeit Sensor von John Doe"
@@ -592,7 +592,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
   >
     <a
       className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
-      href="/john.doe/5"
+      href="/john.doe/sensors/5"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="Donaudampfschiffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft - Luftdruck Sensor von John Doe"
@@ -1175,7 +1175,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
   >
     <a
       className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
-      href="/john.doe/6"
+      href="/john.doe/sensors/6"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="Simple Broadcast - Zähler Sensor von John Doe"
@@ -1724,7 +1724,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
   >
     <a
       className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
-      href="/john.doe/1"
+      href="/john.doe/sensors/1"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz - CO2 Sensor von John Doe"
@@ -2307,7 +2307,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
   >
     <a
       className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
-      href="/john.doe/2"
+      href="/john.doe/sensors/2"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="ok - Temperatur Sensor von John Doe"
@@ -2890,7 +2890,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
   >
     <a
       className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
-      href="/john.doe/3"
+      href="/john.doe/sensors/3"
       onClick={[Function]}
       onMouseEnter={[Function]}
       title="Donaudampfschifffahrtsgesellschaftskapitän - Temperatur Sensor von John Doe"

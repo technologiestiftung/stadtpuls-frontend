@@ -244,7 +244,9 @@ describe("EditAddSensorModal", () => {
       expect(customDeleteSensor).toHaveBeenCalled();
     });
     await waitFor(() => {
-      expect(routerPush).toHaveBeenCalledWith(`/${loggedInAccount.username}`);
+      expect(routerPush).toHaveBeenCalledWith(
+        `/${loggedInAccount.username}/sensors`
+      );
     });
 
     // DELETION MODAL TITLE
