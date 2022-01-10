@@ -13,6 +13,7 @@ export default {
 let lastId = 0;
 const createQueueEl = (): QueueItemType => ({
   id: `${(lastId += 1)}`,
+  username: "potus",
   title: `Sensoqwfffffqf qf qwf qwf qwfqwfqwf qwfqwffqwfr ${lastId}`,
   progress: Math.round(Math.random() * 100),
   totalCount: Math.round(Math.random() * 1000),
