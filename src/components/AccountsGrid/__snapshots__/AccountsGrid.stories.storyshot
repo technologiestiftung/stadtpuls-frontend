@@ -11,7 +11,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
 >
   <a
     className="group border border-gray-200 bg-white shadow block flex gap-x-3 sm:gap-x-4 md:gap-x-5 py-4 sm:py-5 md:py-6 px-4 sm:px-5 md:px-6 transition hover:border-blue hover:animate-borderpulse"
-    href="/dennis"
+    href="/dennis/sensors"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >
@@ -585,7 +585,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
   </a>
   <a
     className="group border border-gray-200 bg-white shadow block flex gap-x-3 sm:gap-x-4 md:gap-x-5 py-4 sm:py-5 md:py-6 px-4 sm:px-5 md:px-6 transition hover:border-blue hover:animate-borderpulse"
-    href="/ff6347"
+    href="/ff6347/sensors"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >
@@ -1193,7 +1193,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
   </a>
   <a
     className="group border border-gray-200 bg-white shadow block flex gap-x-3 sm:gap-x-4 md:gap-x-5 py-4 sm:py-5 md:py-6 px-4 sm:px-5 md:px-6 transition hover:border-blue hover:animate-borderpulse"
-    href="/vogelino"
+    href="/vogelino/sensors"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >
@@ -1784,7 +1784,7 @@ exports[`Storyshots Pages/AccountsGrid Default 1`] = `
   </a>
   <a
     className="group border border-gray-200 bg-white shadow block flex gap-x-3 sm:gap-x-4 md:gap-x-5 py-4 sm:py-5 md:py-6 px-4 sm:px-5 md:px-6 transition hover:border-blue hover:animate-borderpulse"
-    href="/XXDennis"
+    href="/XXDennis/sensors"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >

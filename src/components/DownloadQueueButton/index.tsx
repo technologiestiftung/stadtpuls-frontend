@@ -65,7 +65,7 @@ export const DownloadQueueButton: FC<DownloadQueueButtonPropType> = ({
             </button>
           </span>
         ),
-        href: `/${username}/${id}`,
+        href: `/${username}/sensors/${id}`,
       }))}
       buttonClassNames='hover:bg-gray-50 transition-all rounded-full transform hover:scale-110 active:scale-90'
     >

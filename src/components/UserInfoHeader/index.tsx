@@ -63,9 +63,9 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
               <p className='max-w-prose text-sm sm:text-base'>{description}</p>
             </div>
           )}
-          <Link href={`/${username}`}>
+          <Link href={`/${username}/sensors`}>
             <a
-              href={`/${username}`}
+              href={`/${username}/sensors`}
               className={[
                 "text-purple hover:text-blue transition-colors",
                 "inline-block order-2 sm:order-3",

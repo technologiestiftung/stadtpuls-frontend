@@ -9,7 +9,7 @@ import { useSensorRecords } from "@lib/hooks/useSensorRecords";
 import { useSensorRecordsCount } from "@lib/hooks/useSensorRecordsCount";
 import { GetRecordsOptionsType } from "@lib/requests/getRecordsBySensorId";
 import { getSensorData } from "@lib/requests/getSensorData";
-import DownloadIcon from "../../public/images/icons/16px/arrowDownWithHalfSquare.svg";
+import DownloadIcon from "../../../public/images/icons/16px/arrowDownWithHalfSquare.svg";
 import moment from "moment";
 import { GetServerSideProps } from "next";
 import React, { FC, useCallback, useState } from "react";

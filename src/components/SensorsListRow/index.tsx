@@ -22,9 +22,9 @@ export const SensorsListRow: FC<ParsedSensorType> = ({
   categoryName,
 }) => (
   <li className='list-none'>
-    <Link href={`/${authorUsername}/${id}`}>
+    <Link href={`/${authorUsername}/sensors/${id}`}>
       <a
-        href={`/${authorUsername}/${id}`}
+        href={`/${authorUsername}/sensors/${id}`}
         title={`${name} - ${categoryName} Sensor von ${authorName}`}
         className={[
           "flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2",

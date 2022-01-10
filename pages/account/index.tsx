@@ -24,7 +24,7 @@ const AccountRedirectionPage: FC = () => {
     if (!loggedInAccount) return;
 
     void router.replace({
-      pathname: "/[username]",
+      pathname: "/[username]/sensors",
       query: { username: loggedInAccount.username },
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps

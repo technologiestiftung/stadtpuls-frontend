@@ -50,7 +50,7 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
     {
       id: "sensors",
       name: "Sensoren",
-      href: `/${finalAccount.username}`,
+      href: `/${finalAccount.username}/sensors`,
     },
   ];
   if (isOwnerAndLoggedIn || activeTab === "tokens") {
@@ -81,7 +81,7 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
               authorId: authenticatedUser.id,
             })
               .then(newSensorId =>
-                router.push(`/${finalAccount.username}/${newSensorId}`)
+                router.push(`/${finalAccount.username}/sensors/${newSensorId}`)
               )
               .finally(() => {
                 setNewSensorModalIsOpen(false);

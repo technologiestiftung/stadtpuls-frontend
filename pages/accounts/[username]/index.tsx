@@ -7,7 +7,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
   if (typeof username !== "string") return { notFound: true };
   return {
     redirect: {
-      destination: `/${username}`,
+      destination: `/${username}/sensors`,
       permanent: true,
     },
     props: {},

@@ -94,7 +94,7 @@ export const HeaderMenu: FC<HeaderMenuPropType> = ({ hasDarkMode = false }) => {
             ...(user
               ? [
                   {
-                    href: `/${user.username}`,
+                    href: `/${user.username}/sensors`,
                     text: "Deine Sensoren",
                     className: "lg:hidden",
                   },
