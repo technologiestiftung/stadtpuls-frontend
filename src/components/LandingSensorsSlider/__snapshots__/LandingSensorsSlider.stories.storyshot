@@ -17,7 +17,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
         >
           <a
             className="block focus-offset bg-white shadow border border-gray-200 group hover:animate-borderpulse cursor-pointer transition-all relative overflow-hidden group"
-            href="/sensors/4"
+            href="/john.doe/4"
             onClick={[Function]}
             onMouseEnter={[Function]}
             style={
@@ -602,7 +602,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
         >
           <a
             className="block focus-offset bg-white shadow border border-gray-200 group hover:animate-borderpulse cursor-pointer transition-all relative overflow-hidden group"
-            href="/sensors/5"
+            href="/john.doe/5"
             onClick={[Function]}
             onMouseEnter={[Function]}
             style={
@@ -1187,7 +1187,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
         >
           <a
             className="block focus-offset bg-white shadow border border-gray-200 group hover:animate-borderpulse cursor-pointer transition-all relative overflow-hidden group"
-            href="/sensors/6"
+            href="/john.doe/6"
             onClick={[Function]}
             onMouseEnter={[Function]}
             style={

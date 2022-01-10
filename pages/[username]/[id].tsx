@@ -31,6 +31,10 @@ export const getServerSideProps: GetServerSideProps = async context => {
     if (!sensorId || Array.isArray(sensorId)) return { notFound: true };
 
     const sensor = await getSensorData(parseInt(sensorId, 10));
+
+    if (sensor.authorUsername !== context.query.username)
+      return { notFound: true };
+
     return { props: { sensor, error: null } };
   } catch (error) {
     return { notFound: true };
@@ -89,8 +93,10 @@ const SensorPage: FC<{
             .format("YYYY-MM-DD")}-to-${moment
             .parseZone(currentDatetimeRange.endDateTimeString)
             .format("YYYY-MM-DD")}-sensor-${sensor.id}`;
+
       pushToQueue({
         id: sensor.id,
+        username: sensor.authorUsername,
         title: CSVTitle,
         totalCount: recordsCount || 0,
         options,
@@ -104,6 +110,7 @@ const SensorPage: FC<{
       pushToQueue,
       recordsCount,
       sensor.id,
+      sensor.authorUsername,
     ]
   );
 

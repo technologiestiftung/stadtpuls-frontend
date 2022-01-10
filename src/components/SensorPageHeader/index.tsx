@@ -54,7 +54,7 @@ const UserLink: FC<Pick<ParsedSensorType, "authorName" | "authorUsername">> = ({
   authorName,
   authorUsername,
 }) => (
-  <Link href={`/accounts/${authorUsername}`}>
+  <Link href={`/${authorUsername}`}>
     <a
       className={[
         "flex gap-2 items-center leading-tight",

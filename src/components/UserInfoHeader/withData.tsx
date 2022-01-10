@@ -50,14 +50,14 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
     {
       id: "sensors",
       name: "Sensoren",
-      href: `/accounts/${finalAccount.username}`,
+      href: `/${finalAccount.username}`,
     },
   ];
   if (isOwnerAndLoggedIn || activeTab === "tokens") {
     tabs.push({
       id: "tokens",
       name: "Tokens",
-      href: `/accounts/${finalAccount.username}/tokens`,
+      href: `/${finalAccount.username}/tokens`,
     });
   }
   return (
@@ -80,7 +80,9 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
               createdAt: new Date().toISOString(),
               authorId: authenticatedUser.id,
             })
-              .then(newSensorId => router.push(`/sensors/${newSensorId}`))
+              .then(newSensorId =>
+                router.push(`/${finalAccount.username}/${newSensorId}`)
+              )
               .finally(() => {
                 setNewSensorModalIsOpen(false);
                 window.scrollTo({ top: 0, behavior: "smooth" });

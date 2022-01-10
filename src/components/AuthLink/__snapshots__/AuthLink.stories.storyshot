@@ -5,7 +5,7 @@ exports[`Storyshots UI Elements/AuthLink Logged In 1`] = `
   className="inline-flex items-center gap-6"
 >
   <a
-    href="/accounts/JohnDoe"
+    href="/JohnDoe"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >

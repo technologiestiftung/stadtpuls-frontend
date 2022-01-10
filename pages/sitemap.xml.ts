@@ -33,9 +33,9 @@ export const getSitemap: (params: {
   </url>
   ${sensors
     .map(
-      ({ id }) => `
+      ({ id, authorUsername }) => `
   <url>
-    <loc>${createFullUrl(`/sensors/${id}`)}</loc>
+    <loc>${createFullUrl(`/${authorUsername}/${id}`)}</loc>
     <lastmod>${formatDate()}</lastmod>
   </url>`
     )
@@ -48,7 +48,7 @@ export const getSitemap: (params: {
     .map(
       ({ username }) => `
   <url>
-    <loc>${createFullUrl(`/accounts/${username}`)}</loc>
+    <loc>${createFullUrl(`/${username}`)}</loc>
     <lastmod>${formatDate()}</lastmod>
   </url>`
     )

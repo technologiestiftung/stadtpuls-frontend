@@ -116,7 +116,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
         </span>
         <a
           className="flex gap-2 items-center leading-tight hover:text-purple transition focus-offset truncate"
-          href="/accounts/yupank1"
+          href="/yupank1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -786,7 +786,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
         </span>
         <a
           className="flex gap-2 items-center leading-tight hover:text-purple transition focus-offset truncate"
-          href="/accounts/lalushka"
+          href="/lalushka"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
