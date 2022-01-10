@@ -14,6 +14,7 @@ exports[`Storyshots Charts/LinePath Default 1`] = `
     strokeLinecap="round"
     strokeOpacity={1}
     strokeWidth={2}
+    vectorEffect="non-scaling-stroke"
   />
 </svg>
 `;

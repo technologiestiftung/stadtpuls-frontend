@@ -48,7 +48,7 @@ export const getSitemap: (params: {
     .map(
       ({ username }) => `
   <url>
-    <loc>${createFullUrl(`/accounts/${username}`)}</loc>
+    <loc>${createFullUrl(`/${username}`)}</loc>
     <lastmod>${formatDate()}</lastmod>
   </url>`
     )

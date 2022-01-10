@@ -50,14 +50,14 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
     {
       id: "sensors",
       name: "Sensoren",
-      href: `/accounts/${finalAccount.username}`,
+      href: `/${finalAccount.username}`,
     },
   ];
   if (isOwnerAndLoggedIn || activeTab === "tokens") {
     tabs.push({
       id: "tokens",
       name: "Tokens",
-      href: `/accounts/${finalAccount.username}/tokens`,
+      href: `/${finalAccount.username}/tokens`,
     });
   }
   return (

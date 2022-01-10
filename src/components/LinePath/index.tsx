@@ -43,6 +43,7 @@ export const LinePath: FC<LineGraphType> = ({
       strokeWidth={2}
       strokeOpacity={1}
       shapeRendering='geometricPrecision'
+      vectorEffect='non-scaling-stroke'
     />
   );
 };
