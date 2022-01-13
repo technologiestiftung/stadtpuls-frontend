@@ -67,6 +67,8 @@ export const MarkerMap: FC<MarkerMapType> = ({
     ...smoothFlyToProps,
   } as ViewportType);
 
+  const idsString = markers.map(m => m.id).join(",");
+
   useEffect(() => {
     if (width == 0 || height == 0) return;
     if (markers.length === 1) {
@@ -107,7 +109,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
 
     setViewport(newViewport);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loaded, width, height]);
+  }, [loaded, width, height, idsString]);
 
   const markersGroupedByLatLng = markers.reduce<Record<string, MarkerType>>(
     (acc, marker) => {

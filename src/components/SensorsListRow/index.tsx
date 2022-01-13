@@ -27,9 +27,10 @@ export const SensorsListRow: FC<ParsedSensorType> = ({
         href={`/${authorUsername}/sensors/${id}`}
         title={`${name} - ${categoryName} Sensor von ${authorName}`}
         className={[
-          "flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2",
+          "flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2",
           "grid-cols-1 focus-offset",
-          "md:grid-cols-[5fr,2fr,2fr,140px]",
+          "xl:grid-cols-[5fr,2fr,2fr,120px]",
+          "2xl:grid-cols-[5fr,2fr,2fr,140px]",
           "bg-white md:justify-between",
           "group border border-white border-b-gray-100",
           "hover:border-purple hover:z-10 hover:shadow-purple",
@@ -41,21 +42,21 @@ export const SensorsListRow: FC<ParsedSensorType> = ({
           <SensorSymbol symbol={symbolId} />
           <h3
             className={[
-              "text-xl leading-6 pt-1 md:whitespace-nowrap",
-              "md:leading-7 md:pt-0 break-words",
-              "font-headline font-bold block md:truncate",
+              "text-xl leading-6 pt-1 xl:whitespace-nowrap",
+              "xl:leading-7 xl:pt-0 break-words",
+              "font-headline font-bold block xl:truncate",
             ].join(" ")}
           >
             {name}
           </h3>
         </div>
-        <p className='inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center'>
+        <p className='inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center'>
           {authorName && <UserAvatar username={authorName} size={16} />}
           <span className='inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5'>
             {authorName}
           </span>
         </p>
-        <p className='inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center'>
+        <p className='inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center'>
           <CategoryIcon categoryId={categoryId} className='text-gray-500' />
           <span className='inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5'>
             {categoryName}
@@ -63,7 +64,7 @@ export const SensorsListRow: FC<ParsedSensorType> = ({
         </p>
         {description && (
           <ReactAutolinker
-            className='text-sm break-words text-gray-600 md:hidden flex-grow-0'
+            className='text-sm break-words text-gray-600 xl:hidden flex-grow-0'
             tagName='p'
             renderLink={({ attrs, innerHtml: text }) => {
               const url = new URL(attrs.href);

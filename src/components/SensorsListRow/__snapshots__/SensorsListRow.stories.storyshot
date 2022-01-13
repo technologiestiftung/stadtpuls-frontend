@@ -6,7 +6,7 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+      className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
       href="/undefined/sensors/12"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -24,13 +24,13 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 break-words font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 xl:whitespace-nowrap xl:leading-7 xl:pt-0 break-words font-headline font-bold block xl:truncate"
         >
           When Array is given multiple arguments
         </h3>
       </div>
       <p
-        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+        className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <span
           className="inline-block align-middle rounded-full border border-gray-50"
@@ -510,7 +510,7 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
         </span>
       </p>
       <p
-        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+        className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <svg
           className="text-gray-500"
@@ -532,7 +532,7 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
         </span>
       </p>
       <p
-        className="text-sm break-words text-gray-600 md:hidden flex-grow-0"
+        className="text-sm break-words text-gray-600 xl:hidden flex-grow-0"
       >
         
         @wdanxna
@@ -596,7 +596,7 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+      className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
       href="/undefined/sensors/12"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -614,13 +614,13 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 break-words font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 xl:whitespace-nowrap xl:leading-7 xl:pt-0 break-words font-headline font-bold block xl:truncate"
         >
           AOL
         </h3>
       </div>
       <p
-        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+        className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <span
           className="inline-block align-middle rounded-full border border-gray-50"
@@ -1100,7 +1100,7 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
         </span>
       </p>
       <p
-        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+        className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <svg
           className="text-gray-500"
@@ -1146,7 +1146,7 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+      className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
       href="/undefined/sensors/12"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -1164,13 +1164,13 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
           />
         </span>
         <h3
-          className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 break-words font-headline font-bold block md:truncate"
+          className="text-xl leading-6 pt-1 xl:whitespace-nowrap xl:leading-7 xl:pt-0 break-words font-headline font-bold block xl:truncate"
         >
           LUFTY AAB3
         </h3>
       </div>
       <p
-        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+        className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <span
           className="inline-block align-middle rounded-full border border-gray-50"
@@ -1650,7 +1650,7 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
         </span>
       </p>
       <p
-        className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+        className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
       >
         <svg
           className="text-gray-500"
@@ -1672,7 +1672,7 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
         </span>
       </p>
       <p
-        className="text-sm break-words text-gray-600 md:hidden flex-grow-0"
+        className="text-sm break-words text-gray-600 xl:hidden flex-grow-0"
       >
         Luftqualität im Wagon AAB3 vom Ubahn der Linie 3
       </p>

@@ -2,24 +2,36 @@
 
 exports[`Storyshots Pages/SensorsMap Default 1`] = `
 <section
-  className="grid grid-cols-2 h-screen"
+  className="grid grid-cols-2 relative"
 >
   <aside
-    className="p-4 bg-white"
+    className="p-4 bg-white overflow-y-auto"
   >
-    <h2
-      className="text-xl font-bold"
+    <div
+      className="sm:mt-1 md:mt-2 mb-4 sm:mb-5 md:mb-6 flex place-content-between px-2"
     >
-      Sensors
-    </h2>
+      <h1
+        className="font-bold text-lg sm:text-xl md:text-2xl font-headline"
+      >
+        Alle Sensoren
+      </h1>
+      <h2
+        className="text-gray-600 mt-0 md:mt-2"
+      >
+        Seite 
+        3
+         von 
+        12
+      </h2>
+    </div>
     <ul
-      className="flex flex-col"
+      className="flex flex-col w-[calc(100%+16px)] ml-[-8px]"
     >
       <li
         className="list-none"
       >
         <a
-          className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
           href="/john.doe/sensors/4"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -37,13 +49,13 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
               />
             </span>
             <h3
-              className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 break-words font-headline font-bold block md:truncate"
+              className="text-xl leading-6 pt-1 xl:whitespace-nowrap xl:leading-7 xl:pt-0 break-words font-headline font-bold block xl:truncate"
             >
               Betäubungsmittelverschreibungsverordnung
             </h3>
           </div>
           <p
-            className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+            className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
           >
             <span
               className="inline-block align-middle rounded-full border border-gray-50"
@@ -523,7 +535,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+            className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
           >
             <svg
               className="text-gray-500"
@@ -545,7 +557,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="text-sm break-words text-gray-600 md:hidden flex-grow-0"
+            className="text-sm break-words text-gray-600 xl:hidden flex-grow-0"
           >
             Absolute Stille, das gibt es praktisch nur im Vakuum. Da, wo sich Scha...
           </p>
@@ -602,7 +614,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
         className="list-none"
       >
         <a
-          className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
           href="/john.doe/sensors/5"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -620,13 +632,13 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
               />
             </span>
             <h3
-              className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 break-words font-headline font-bold block md:truncate"
+              className="text-xl leading-6 pt-1 xl:whitespace-nowrap xl:leading-7 xl:pt-0 break-words font-headline font-bold block xl:truncate"
             >
               Donaudampfschiffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft
             </h3>
           </div>
           <p
-            className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+            className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
           >
             <span
               className="inline-block align-middle rounded-full border border-gray-50"
@@ -1106,7 +1118,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+            className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
           >
             <svg
               className="text-gray-500"
@@ -1128,7 +1140,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="text-sm break-words text-gray-600 md:hidden flex-grow-0"
+            className="text-sm break-words text-gray-600 xl:hidden flex-grow-0"
           >
             Offene Verwaltungsdaten helfen uns, die Lärmbelastung in Berlin zu ver...
           </p>
@@ -1185,7 +1197,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
         className="list-none"
       >
         <a
-          className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
           href="/john.doe/sensors/6"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -1203,13 +1215,13 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
               />
             </span>
             <h3
-              className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 break-words font-headline font-bold block md:truncate"
+              className="text-xl leading-6 pt-1 xl:whitespace-nowrap xl:leading-7 xl:pt-0 break-words font-headline font-bold block xl:truncate"
             >
               Simple Broadcast
             </h3>
           </div>
           <p
-            className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+            className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
           >
             <span
               className="inline-block align-middle rounded-full border border-gray-50"
@@ -1689,7 +1701,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+            className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
           >
             <svg
               className="text-gray-500"
@@ -1711,7 +1723,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="text-sm break-words text-gray-600 md:hidden flex-grow-0"
+            className="text-sm break-words text-gray-600 xl:hidden flex-grow-0"
           >
             Wir wollten wissen: Wie wird die Lebensqualität im Kiez durch Lärm bee...
           </p>
@@ -1734,7 +1746,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
         className="list-none"
       >
         <a
-          className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
           href="/john.doe/sensors/1"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -1752,13 +1764,13 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
               />
             </span>
             <h3
-              className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 break-words font-headline font-bold block md:truncate"
+              className="text-xl leading-6 pt-1 xl:whitespace-nowrap xl:leading-7 xl:pt-0 break-words font-headline font-bold block xl:truncate"
             >
               Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz
             </h3>
           </div>
           <p
-            className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+            className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
           >
             <span
               className="inline-block align-middle rounded-full border border-gray-50"
@@ -2238,7 +2250,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+            className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
           >
             <svg
               className="text-gray-500"
@@ -2260,7 +2272,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="text-sm break-words text-gray-600 md:hidden flex-grow-0"
+            className="text-sm break-words text-gray-600 xl:hidden flex-grow-0"
           >
             Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz Temper...
           </p>
@@ -2317,7 +2329,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
         className="list-none"
       >
         <a
-          className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
           href="/john.doe/sensors/2"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -2335,13 +2347,13 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
               />
             </span>
             <h3
-              className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 break-words font-headline font-bold block md:truncate"
+              className="text-xl leading-6 pt-1 xl:whitespace-nowrap xl:leading-7 xl:pt-0 break-words font-headline font-bold block xl:truncate"
             >
               ok
             </h3>
           </div>
           <p
-            className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+            className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
           >
             <span
               className="inline-block align-middle rounded-full border border-gray-50"
@@ -2821,7 +2833,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+            className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
           >
             <svg
               className="text-gray-500"
@@ -2843,7 +2855,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="text-sm break-words text-gray-600 md:hidden flex-grow-0"
+            className="text-sm break-words text-gray-600 xl:hidden flex-grow-0"
           >
             Eine Boombox dröhnt im Park, die U1 quietscht über die Hochbahnstrecke...
           </p>
@@ -2900,7 +2912,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
         className="list-none"
       >
         <a
-          className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
           href="/john.doe/sensors/3"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -2918,13 +2930,13 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
               />
             </span>
             <h3
-              className="text-xl leading-6 pt-1 md:whitespace-nowrap md:leading-7 md:pt-0 break-words font-headline font-bold block md:truncate"
+              className="text-xl leading-6 pt-1 xl:whitespace-nowrap xl:leading-7 xl:pt-0 break-words font-headline font-bold block xl:truncate"
             >
               Donaudampfschifffahrtsgesellschaftskapitän
             </h3>
           </div>
           <p
-            className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+            className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
           >
             <span
               className="inline-block align-middle rounded-full border border-gray-50"
@@ -3404,7 +3416,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="inline-grid md:grid grid-cols-[16px,1fr] gap-2 items-center"
+            className="inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center"
           >
             <svg
               className="text-gray-500"
@@ -3475,9 +3487,152 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
         </a>
       </li>
     </ul>
+    <div
+      className="mt-12 flex justify-center"
+    >
+      <ul
+        className="flex gap-0 font-mono text-gray-500"
+      >
+        <li
+          className="border-r border-l border-t border-b rounded-tl-md rounded-bl-md hover:bg-purple hover:bg-opacity-10"
+        >
+          <a
+            aria-disabled="false"
+            aria-label="Previous page"
+            className="px-2 py-0.5 min-w-[3ch] inline-block"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            rel="prev"
+            role="button"
+            tabIndex="0"
+          >
+            ←
+          </a>
+        </li>
+        <li
+          className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10"
+        >
+          <a
+            aria-current={null}
+            aria-label="Page 1"
+            className="px-2 py-0.5 min-w-[3ch] inline-block"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            1
+          </a>
+        </li>
+        <li
+          className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10"
+        >
+          <a
+            aria-current={null}
+            aria-label="Page 2"
+            className="px-2 py-0.5 min-w-[3ch] inline-block"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            2
+          </a>
+        </li>
+        <li
+          className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10 bg-purple bg-opacity-10 text-purple z-20 undefined"
+        >
+          <a
+            aria-current="page"
+            aria-label="Page 3 is your current page"
+            className="px-2 py-0.5 min-w-[3ch] inline-block font-bold"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            3
+          </a>
+        </li>
+        <li
+          className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10"
+        >
+          <a
+            aria-current={null}
+            aria-label="Page 4"
+            className="px-2 py-0.5 min-w-[3ch] inline-block"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            4
+          </a>
+        </li>
+        <li
+          className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10"
+        >
+          <a
+            aria-current={null}
+            aria-label="Page 5"
+            className="px-2 py-0.5 min-w-[3ch] inline-block"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            5
+          </a>
+        </li>
+        <li
+          className="border-t border-b border-r pointer-events-none"
+        >
+          <a
+            className="px-2 py-0.5 min-w-[3ch] inline-block"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            ...
+          </a>
+        </li>
+        <li
+          className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10"
+        >
+          <a
+            aria-current={null}
+            aria-label="Page 12"
+            className="px-2 py-0.5 min-w-[3ch] inline-block"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            12
+          </a>
+        </li>
+        <li
+          className="border-r border-t border-b rounded-tr-md rounded-br-md hover:bg-purple hover:bg-opacity-10"
+        >
+          <a
+            aria-disabled="false"
+            aria-label="Next page"
+            className="px-2 py-0.5 min-w-[3ch] inline-block"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            rel="next"
+            role="button"
+            tabIndex="0"
+          >
+            →
+          </a>
+        </li>
+      </ul>
+    </div>
   </aside>
-  <section
-    className="grid"
+  <div
+    className="h-[calc(100vh-62px)] sticky w-full top-[62px]"
   >
     <div
       className="w-full h-full"
@@ -3516,6 +3671,6 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </section>
 `;
