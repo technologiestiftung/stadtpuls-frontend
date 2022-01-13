@@ -39,7 +39,9 @@ const App: FC<{
             color={colors.green}
             options={{ showSpinner: false }}
           />
-          {!pathname?.startsWith("/docs") && <BetaBanner />}
+          {!pathname?.startsWith("/docs") && pathname !== "/sensors" && (
+            <BetaBanner />
+          )}
           <main
             id={pathname?.replace(/\//gi, "") || "home"}
             className='z-0 relative w-full'
