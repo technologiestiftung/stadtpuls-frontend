@@ -1,37 +1,177 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Map/MarkerMap Default 1`] = `
-<div
-  style={
-    Object {
-      "cursor": "grab",
-      "height": 400,
-      "position": "relative",
-      "width": 600,
-    }
-  }
+exports[`Storyshots Map/MarkerMap Berlin 1`] = `
+<main
+  className="w-screen h-screen"
 >
   <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
+    className="w-full h-full"
   >
     <div
-      className=""
       style={
         Object {
-          "height": "100%",
-          "overflow": "hidden",
-          "position": "absolute",
-          "visibility": "inherit",
-          "width": "100%",
+          "cursor": "grab",
+          "height": 0,
+          "position": "relative",
+          "width": 0,
         }
       }
-    />
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className=""
+          style={
+            Object {
+              "height": "100%",
+              "overflow": "hidden",
+              "position": "absolute",
+              "visibility": "inherit",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
   </div>
-</div>
+</main>
+`;
+
+exports[`Storyshots Map/MarkerMap Germany 1`] = `
+<main
+  className="w-screen h-screen"
+>
+  <div
+    className="w-full h-full"
+  >
+    <div
+      style={
+        Object {
+          "cursor": "grab",
+          "height": 0,
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className=""
+          style={
+            Object {
+              "height": "100%",
+              "overflow": "hidden",
+              "position": "absolute",
+              "visibility": "inherit",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</main>
+`;
+
+exports[`Storyshots Map/MarkerMap Park 1`] = `
+<main
+  className="w-screen h-screen"
+>
+  <div
+    className="w-full h-full"
+  >
+    <div
+      style={
+        Object {
+          "cursor": "grab",
+          "height": 0,
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className=""
+          style={
+            Object {
+              "height": "100%",
+              "overflow": "hidden",
+              "position": "absolute",
+              "visibility": "inherit",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</main>
+`;
+
+exports[`Storyshots Map/MarkerMap World 1`] = `
+<main
+  className="w-screen h-screen"
+>
+  <div
+    className="w-full h-full"
+  >
+    <div
+      style={
+        Object {
+          "cursor": "grab",
+          "height": 0,
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className=""
+          style={
+            Object {
+              "height": "100%",
+              "overflow": "hidden",
+              "position": "absolute",
+              "visibility": "inherit",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</main>
 `;

@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 interface Heading {
   fontFamily: string;
   lineHeight: string;
@@ -177,4 +178,6 @@ export interface MarkerType {
   longitude: number;
   id: number;
   isActive: boolean;
+  isPulsating?: boolean;
+  children?: ReactNode;
 }

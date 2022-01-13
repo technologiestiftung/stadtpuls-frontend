@@ -30,7 +30,6 @@ export const SensorsListRow: FC<ParsedSensorType> = ({
           "flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2",
           "grid-cols-1 focus-offset",
           "md:grid-cols-[5fr,2fr,2fr,140px]",
-          "xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px]",
           "bg-white md:justify-between",
           "group border border-white border-b-gray-100",
           "hover:border-purple hover:z-10 hover:shadow-purple",
@@ -62,9 +61,9 @@ export const SensorsListRow: FC<ParsedSensorType> = ({
             {categoryName}
           </span>
         </p>
-        {description ? (
+        {description && (
           <ReactAutolinker
-            className='text-sm break-words text-gray-600 md:hidden xl:block flex-grow-0'
+            className='text-sm break-words text-gray-600 md:hidden flex-grow-0'
             tagName='p'
             renderLink={({ attrs, innerHtml: text }) => {
               const url = new URL(attrs.href);
@@ -83,8 +82,6 @@ export const SensorsListRow: FC<ParsedSensorType> = ({
                 : description
             }
           />
-        ) : (
-          <div className='hidden xl:block' />
         )}
         <div
           className={[

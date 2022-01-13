@@ -14,8 +14,6 @@ describe("MarkerMap component", () => {
           },
         ]}
         clickHandler={jest.fn()}
-        mapWidth={600}
-        mapHeight={300}
       />
     );
     const mapContainer = document.querySelector(

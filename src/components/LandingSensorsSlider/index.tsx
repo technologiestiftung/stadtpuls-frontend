@@ -11,13 +11,13 @@ import { getCuratedSensorImageById } from "@lib/hooks/useCuratedSensors";
 
 interface LandingSensorsSliderPropType {
   sensors: ParsedSensorType[];
-  initialSlideIndex?: number;
+  slideIndex?: number;
   onSlideChange?: (slideIndex: number) => void;
 }
 
 export const LandingSensorsSlider: FC<LandingSensorsSliderPropType> = ({
   sensors,
-  initialSlideIndex = 0,
+  slideIndex = 0,
   onSlideChange = () => undefined,
 }) => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
@@ -31,7 +31,7 @@ export const LandingSensorsSlider: FC<LandingSensorsSliderPropType> = ({
       centeredSlides: true,
       spaceBetween: 24,
       loop: false,
-      initialSlide: initialSlideIndex,
+      initialSlide: slideIndex,
       height: 340,
       slideActiveClass: styles.sliderSlideActive || "active",
       on: {
@@ -51,6 +51,12 @@ export const LandingSensorsSlider: FC<LandingSensorsSliderPropType> = ({
     return () => swiper.destroy();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (!swiperInstance) return;
+    swiperInstance.slideTo(slideIndex);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slideIndex]);
 
   return (
     <section

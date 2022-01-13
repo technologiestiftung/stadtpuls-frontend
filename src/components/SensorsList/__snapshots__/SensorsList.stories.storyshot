@@ -8,7 +8,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
       href="/john.doe/sensors/4"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -534,7 +534,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         </span>
       </p>
       <p
-        className="text-sm break-words text-gray-600 md:hidden xl:block flex-grow-0"
+        className="text-sm break-words text-gray-600 md:hidden flex-grow-0"
       >
         Absolute Stille, das gibt es praktisch nur im Vakuum. Da, wo sich Scha...
       </p>
@@ -591,7 +591,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
       href="/john.doe/sensors/5"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -1117,7 +1117,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         </span>
       </p>
       <p
-        className="text-sm break-words text-gray-600 md:hidden xl:block flex-grow-0"
+        className="text-sm break-words text-gray-600 md:hidden flex-grow-0"
       >
         Offene Verwaltungsdaten helfen uns, die Lärmbelastung in Berlin zu ver...
       </p>
@@ -1174,7 +1174,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
       href="/john.doe/sensors/6"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -1700,7 +1700,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         </span>
       </p>
       <p
-        className="text-sm break-words text-gray-600 md:hidden xl:block flex-grow-0"
+        className="text-sm break-words text-gray-600 md:hidden flex-grow-0"
       >
         Wir wollten wissen: Wie wird die Lebensqualität im Kiez durch Lärm bee...
       </p>
@@ -1723,7 +1723,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
       href="/john.doe/sensors/1"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -2249,7 +2249,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         </span>
       </p>
       <p
-        className="text-sm break-words text-gray-600 md:hidden xl:block flex-grow-0"
+        className="text-sm break-words text-gray-600 md:hidden flex-grow-0"
       >
         Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz Temper...
       </p>
@@ -2306,7 +2306,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
       href="/john.doe/sensors/2"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -2832,7 +2832,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
         </span>
       </p>
       <p
-        className="text-sm break-words text-gray-600 md:hidden xl:block flex-grow-0"
+        className="text-sm break-words text-gray-600 md:hidden flex-grow-0"
       >
         Eine Boombox dröhnt im Park, die U1 quietscht über die Hochbahnstrecke...
       </p>
@@ -2889,7 +2889,7 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
     className="list-none"
   >
     <a
-      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] xl:grid-cols-[5fr,2fr,2fr,minmax(0,4fr),140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+      className="flex flex-wrap md:grid gap-2 md:gap-8 p-4 md:py-2 grid-cols-1 focus-offset md:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
       href="/john.doe/sensors/3"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -3414,9 +3414,6 @@ exports[`Storyshots Pages/SensorsList Default 1`] = `
           Temperatur
         </span>
       </p>
-      <div
-        className="hidden xl:block"
-      />
       <div
         className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
       >

@@ -2,44 +2,49 @@
 
 exports[`Storyshots Promotional/LandingHeroBackgroundMap Default 1`] = `
 <div
-  className="relative overflow-hidden pointer-events-none"
+  className="relative overflow-hidden"
   style={
     Object {
       "height": 1000,
+      "width": 1000,
     }
   }
 >
   <div
-    style={
-      Object {
-        "cursor": "grab",
-        "height": 1000,
-        "position": "relative",
-        "width": 1000,
-      }
-    }
+    className="w-full h-full"
   >
     <div
       style={
         Object {
-          "height": "100%",
+          "cursor": "grab",
+          "height": 0,
           "position": "relative",
-          "width": "100%",
+          "width": 0,
         }
       }
     >
       <div
-        className=""
         style={
           Object {
             "height": "100%",
-            "overflow": "hidden",
-            "position": "absolute",
-            "visibility": "inherit",
+            "position": "relative",
             "width": "100%",
           }
         }
-      />
+      >
+        <div
+          className=""
+          style={
+            Object {
+              "height": "100%",
+              "overflow": "hidden",
+              "position": "absolute",
+              "visibility": "inherit",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
     </div>
   </div>
 </div>
