@@ -6,7 +6,7 @@ const BerlinLogo = "/images/berlin-skzl-logo.svg";
 
 export const Footer: React.FC = () => {
   return (
-    <footer>
+    <footer id='main-footer'>
       <section className='bg-white border-t border-gray-100'>
         <div className='container max-w-8xl mx-auto py-8 px-4'>
           <div className='w-full flex'>

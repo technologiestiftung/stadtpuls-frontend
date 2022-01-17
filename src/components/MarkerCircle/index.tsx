@@ -3,6 +3,7 @@ import { FC } from "react";
 export interface MarkerCirclePropType {
   isActive?: boolean;
   isPulsating?: boolean;
+  isHighlighted?: boolean;
   clickHandler?: () => void;
   mouseEnterHandler?: () => void;
   mouseLeaveHandler?: () => void;
@@ -11,6 +12,7 @@ export interface MarkerCirclePropType {
 export const MarkerCircle: FC<MarkerCirclePropType> = ({
   isActive = false,
   isPulsating = false,
+  isHighlighted = false,
   clickHandler,
   mouseEnterHandler,
   mouseLeaveHandler,
@@ -32,8 +34,9 @@ export const MarkerCircle: FC<MarkerCirclePropType> = ({
         className={[
           "relative rounded-full inline-flex",
           sizeClass,
-          isActive && "bg-blue",
-          !isActive && " bg-gray-400",
+          isActive && !isHighlighted && "bg-blue",
+          isHighlighted && "bg-green",
+          !isActive && !isHighlighted && "bg-gray-400",
           isInteractive && "hover:bg-green hover:text-blue",
           "border-white border-2",
           "text-center transition-colors",

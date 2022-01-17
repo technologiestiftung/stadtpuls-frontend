@@ -1,17 +1,14 @@
-import {
-  ParsedSensorType,
-  parseSensorRecords,
-} from "@lib/hooks/usePublicSensors";
+import { parseSensorRecords } from "@lib/hooks/usePublicSensors";
 import { getSensorRecords } from "@mocks/supabaseData/records";
 import { Story, Meta } from "@storybook/react";
-import { SensorsListRow } from ".";
+import { SensorsListRow, SensorsListRowPropType } from ".";
 
 export default {
   title: "UI Elements/SensorsListRow",
   component: SensorsListRow,
 } as Meta;
 
-const Template: Story<ParsedSensorType> = args => (
+const Template: Story<SensorsListRowPropType> = args => (
   <div>
     <SensorsListRow {...args} />
   </div>

@@ -56,11 +56,14 @@ export const MarkerMap: FC<MarkerMapType> = ({
   markersPadding = 80,
   ...otherProps
 }) => {
+  const defaultCoordinates = {
+    latitude: markers[0]?.latitude || 52.52,
+    longitude: markers[0]?.longitude || 13.405,
+  };
   const [loaded, setLoaded] = useState(false);
   const [mapContainerRef, { width, height }] = useMeasure<HTMLDivElement>();
   const [viewport, setViewport] = useState<ViewportType>({
-    latitude: markers[0].latitude,
-    longitude: markers[0].longitude,
+    ...defaultCoordinates,
     width: width || 1200,
     height: height || 800,
     zoom: mapZoom,
@@ -74,8 +77,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
     if (markers.length === 1) {
       setViewport({
         ...viewport,
-        latitude: markers[0].latitude,
-        longitude: markers[0].longitude,
+        ...defaultCoordinates,
         ...smoothFlyToProps,
       });
       return;

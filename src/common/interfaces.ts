@@ -179,5 +179,6 @@ export interface MarkerType {
   id: number;
   isActive: boolean;
   isPulsating?: boolean;
+  isHighlighted?: boolean;
   children?: ReactNode;
 }

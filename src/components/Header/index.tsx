@@ -33,6 +33,7 @@ export const Header: React.FC = () => {
 
   return (
     <header
+      id='main-header'
       className={[
         "w-full z-50 top-0 border-t-0",
         isDocs || isSensors ? "fixed" : "sticky",
