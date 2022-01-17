@@ -13,6 +13,41 @@ interface SensorsMapType {
   >;
 }
 
+function isInViewport(el: HTMLLIElement): boolean {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+function scrollToTargetAdjusted(el: HTMLLIElement): void {
+  if (isInViewport(el)) return;
+  const paddingTop = 10;
+  const elementPosition = el.getBoundingClientRect().top;
+  const footerHeight =
+    document.querySelector("#__next > footer")?.getBoundingClientRect()
+      .height || 0;
+  const headerHeight =
+    document.querySelector("#__next > main > header")?.getBoundingClientRect()
+      .height || 0;
+  const maxScrollDist =
+    document.documentElement.scrollHeight -
+    window.outerHeight -
+    footerHeight +
+    headerHeight;
+  const offsetPosition =
+    elementPosition + window.pageYOffset - headerHeight - paddingTop;
+
+  window.scrollTo({
+    top: Math.min(offsetPosition, maxScrollDist),
+    behavior: "smooth",
+  });
+}
+
 export const SensorsMap: FC<SensorsMapType> = ({
   sensors = [],
   paginationProps,
@@ -48,6 +83,7 @@ export const SensorsMap: FC<SensorsMapType> = ({
               isHighlighted={hoveredSensorId === sensor.id}
               onMouseEnter={() => setHoveredSensorId(sensor.id)}
               onMouseLeave={() => setHoveredSensorId(null)}
+              onHighlighted={(_id, el) => scrollToTargetAdjusted(el)}
               key={sensor.id}
             />
           ))}
