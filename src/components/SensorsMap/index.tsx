@@ -53,7 +53,13 @@ export const SensorsMap: FC<SensorsMapType> = ({
   paginationProps,
 }) => {
   const { push } = useRouter();
-  const [hoveredSensorId, setHoveredSensorId] = useState<number | null>(null);
+  const [hoveredSensorIds, setHoveredSensorIds] = useState<number[]>([]);
+
+  const markers = sensors.map(sensor => ({
+    ...sensor,
+    isActive: true,
+    isHighlighted: hoveredSensorIds.includes(sensor.id),
+  }));
   return (
     <section className='grid grid-cols-2 relative'>
       <aside className='p-4 bg-white overflow-y-auto'>
@@ -77,14 +83,14 @@ export const SensorsMap: FC<SensorsMapType> = ({
           </h2>
         </div>
         <ul className='flex flex-col w-[calc(100%+16px)] ml-[-8px]'>
-          {sensors.map((sensor: ParsedSensorType) => (
+          {markers.map(marker => (
             <SensorsListRow
-              {...sensor}
-              isHighlighted={hoveredSensorId === sensor.id}
-              onMouseEnter={() => setHoveredSensorId(sensor.id)}
-              onMouseLeave={() => setHoveredSensorId(null)}
+              {...marker}
+              isHighlighted={!!hoveredSensorIds.find(s => s === marker.id)}
+              onMouseEnter={() => setHoveredSensorIds([marker.id])}
+              onMouseLeave={() => setHoveredSensorIds([])}
               onHighlighted={(_id, el) => scrollToTargetAdjusted(el)}
-              key={sensor.id}
+              key={marker.id}
             />
           ))}
         </ul>
@@ -98,19 +104,16 @@ export const SensorsMap: FC<SensorsMapType> = ({
       </aside>
       <div className='h-[calc(100vh-62px)] sticky w-full top-[62px]'>
         <MarkerMap
-          clickHandler={id => {
-            const sensor = sensors.find(s => s.id === id);
+          clickHandler={ids => {
+            if (ids.length === 0) return;
+            const sensor = sensors.find(s => s.id === ids[0]);
             if (!sensor) return;
             void push(`${sensor.authorUsername}/sensors/${sensor.id}`);
           }}
-          highlightedMarkerId={hoveredSensorId || undefined}
-          mouseEnterHandler={id => setHoveredSensorId(id)}
-          mouseLeaveHandler={() => setHoveredSensorId(null)}
-          markers={sensors.map(sensor => ({
-            ...sensor,
-            isActive: true,
-            isHighlighted: hoveredSensorId === sensor.id,
-          }))}
+          highlightedMarkerIds={hoveredSensorIds}
+          mouseEnterHandler={ids => setHoveredSensorIds(ids)}
+          mouseLeaveHandler={() => setHoveredSensorIds([])}
+          markers={markers}
         />
       </div>
     </section>

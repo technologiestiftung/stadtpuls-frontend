@@ -10,7 +10,6 @@ import useSupercluster from "use-supercluster";
 import { MarkerType } from "../../common/interfaces";
 import { MarkerCircle } from "../MarkerCircle";
 import { ViewportType } from "@common/types/ReactMapGl";
-
 import "mapbox-gl/dist/mapbox-gl.css";
 import {
   fitFeatureToBounds,
@@ -19,6 +18,7 @@ import {
 } from "@lib/mapUtil";
 import { easeInOutQuint, linear } from "@lib/easingUtil";
 import { BBox } from "@turf/turf";
+import Supercluster from "supercluster";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
@@ -42,7 +42,7 @@ const directFlyToProps: FlyToPropType = {
 
 const fallbackBounds = [0, 0, 0, 0, 0, 0] as BBox;
 
-type ClickHandlerType = (markerId: number) => void;
+type ClickHandlerType = (markerIds: number[]) => void;
 
 export interface MarkerMapType extends InteractiveMapProps {
   markers: MarkerType[];
@@ -52,7 +52,7 @@ export interface MarkerMapType extends InteractiveMapProps {
   withMapLabels?: boolean;
   mapZoom?: number;
   markersPadding?: number;
-  highlightedMarkerId?: number;
+  highlightedMarkerIds?: number[];
 }
 
 interface MapType {
@@ -96,7 +96,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
   mapZoom = 12,
   withMapLabels = true,
   markersPadding = 80,
-  highlightedMarkerId,
+  highlightedMarkerIds = [],
   ...otherProps
 }) => {
   const defaultCoordinates = {
@@ -116,28 +116,47 @@ export const MarkerMap: FC<MarkerMapType> = ({
   const map = mapRef.current?.getMap() as MapType | undefined;
   const bounds = map?.getBounds().toArray().flat() || fallbackBounds;
   const points = markersArrayToFeatures(markers);
-  const { clusters } = useSupercluster({
+  const useSuperClusterResult = useSupercluster({
     points,
     bounds,
     zoom: viewport.zoom,
-    options: { radius: 20, maxZoom: 20 },
+    options: { radius: 30, maxZoom: 20 },
   });
+  const clusters = useSuperClusterResult.clusters;
+  const supercluster = useSuperClusterResult.supercluster as Supercluster;
 
   const idsString = markers.map(m => m.id).join(",");
 
   useEffect(() => {
-    if (!highlightedMarkerId || !mapRef.current) return;
-    const highlightedMarker = markers.find(m => m.id === highlightedMarkerId);
-    if (!highlightedMarker) return;
-    if (isWithinBounds(bounds, highlightedMarker)) return;
-    setViewport((prevViewport: ViewportType) => ({
-      ...prevViewport,
-      latitude: highlightedMarker.latitude,
-      longitude: highlightedMarker.longitude,
-      ...smoothFlyToProps,
-    }));
+    if (highlightedMarkerIds.length === 0 || !map) return;
+    const highlightedMarkers = markers.filter(m =>
+      highlightedMarkerIds.find(id => id === m.id)
+    );
+    if (!highlightedMarkers || highlightedMarkers.length === 0) return;
+    if (highlightedMarkers.every(m => isWithinBounds(bounds, m))) return;
+    if (highlightedMarkers.length === 1) {
+      setViewport((prevViewport: ViewportType) => ({
+        ...prevViewport,
+        latitude: highlightedMarkers[0].latitude,
+        longitude: highlightedMarkers[0].longitude,
+        ...smoothFlyToProps,
+      }));
+    } else {
+      const { latitude, longitude, zoom } = fitFeatureToBounds(
+        markers,
+        viewport,
+        markersPadding
+      );
+      setViewport((prevViewport: ViewportType) => ({
+        ...prevViewport,
+        latitude,
+        longitude,
+        zoom,
+        ...smoothFlyToProps,
+      }));
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [highlightedMarkerId]);
+  }, [highlightedMarkerIds]);
 
   useEffect(() => {
     if (width == 0 || height == 0) return;
@@ -208,16 +227,49 @@ export const MarkerMap: FC<MarkerMapType> = ({
               "point_count" in cluster.properties
                 ? cluster.properties.point_count
                 : 0;
+            const id = "id" in cluster.properties ? cluster.properties.id : 0;
+            const leaves = isCluster
+              ? supercluster.getLeaves(cluster.id, Infinity)
+              : [];
+            const leavesIds = leaves.map(
+              leaf => (leaf?.properties?.id as number) || 0
+            );
 
             const handlers = !isCluster
               ? {
-                  clickHandler: () => clickHandler && clickHandler(cluster.id),
+                  clickHandler: () => clickHandler && clickHandler([id]),
                   mouseEnterHandler: () =>
-                    mouseEnterHandler && mouseEnterHandler(cluster.id),
+                    mouseEnterHandler && mouseEnterHandler([id]),
                   mouseLeaveHandler: () =>
-                    mouseLeaveHandler && mouseLeaveHandler(cluster.id),
+                    mouseLeaveHandler && mouseLeaveHandler([id]),
                 }
-              : {};
+              : {
+                  clickHandler: () => {
+                    const expansionZoom = Math.min(
+                      supercluster.getClusterExpansionZoom(cluster.id),
+                      20
+                    );
+                    setViewport({
+                      ...viewport,
+                      latitude: cluster.geometry.coordinates[1],
+                      longitude: cluster.geometry.coordinates[0],
+                      zoom: expansionZoom,
+                      ...smoothFlyToProps,
+                    });
+                  },
+                  mouseEnterHandler: () =>
+                    mouseEnterHandler && mouseEnterHandler(leavesIds),
+                  mouseLeaveHandler: () =>
+                    mouseLeaveHandler && mouseLeaveHandler(leavesIds),
+                };
+
+            const isHighlighted = isCluster
+              ? supercluster
+                  .getLeaves(cluster.id)
+                  .some(leaf =>
+                    highlightedMarkerIds.find(id => id === leaf?.properties?.id)
+                  )
+              : cluster.properties.isHighlighted;
 
             return (
               <Marker
@@ -229,6 +281,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
                   {...cluster.properties}
                   {...handlers}
                   isActive={isActive}
+                  isHighlighted={isHighlighted}
                 >
                   {isCluster && pointCount > 1 ? pointCount : null}
                 </MarkerCircle>

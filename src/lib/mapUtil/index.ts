@@ -17,16 +17,25 @@ export function isWithinBounds(
   );
 }
 
-export const markersArrayToFeatures = (markers: MarkerType[]): Feature[] =>
+interface PointFeatureType extends Omit<Feature, "geometry"> {
+  geometry: {
+    type: "Point";
+    coordinates: [number, number];
+  };
+}
+
+export const markersArrayToFeatures = (
+  markers: MarkerType[]
+): PointFeatureType[] =>
   markers.map(marker => ({
-    type: "Feature",
+    type: "Feature" as const,
     id: marker.id,
     properties: {
       cluster: false,
       ...marker,
     },
     geometry: {
-      type: "Point",
+      type: "Point" as const,
       coordinates: [marker.longitude, marker.latitude],
     },
   }));

@@ -34,16 +34,16 @@ export const MarkerCircle: FC<MarkerCirclePropType> = ({
         className={[
           "relative rounded-full inline-flex",
           sizeClass,
-          isActive && !isHighlighted && "bg-blue",
-          isHighlighted && "bg-green",
-          !isActive && !isHighlighted && "bg-gray-400",
+          isActive && !isHighlighted && "bg-blue text-white",
+          isHighlighted && "bg-green text-blue",
+          !isActive && !isHighlighted && "bg-gray-400 text-white",
           isInteractive && "hover:bg-green hover:text-blue",
           "border-white border-2",
           "text-center transition-colors",
           "-translate-x-1/2 -translate-y-1/2",
           `${isInteractive ? "cursor-pointer" : "cursor-default"}`,
           "place-items-center place-content-center",
-          "text-sm font-monospace text-white px-2",
+          "text-sm font-monospace px-2",
         ].join(" ")}
         onClick={() => (clickHandler ? clickHandler() : null)}
         onMouseEnter={() => (mouseEnterHandler ? mouseEnterHandler() : null)}
