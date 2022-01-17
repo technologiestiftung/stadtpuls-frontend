@@ -1,29 +1,35 @@
+import { MarkerType } from "@common/interfaces";
 import { ViewportType } from "@common/types/ReactMapGl";
-import { bbox, featureCollection, point } from "@turf/turf";
+import { BBox, bbox, Feature, featureCollection, point } from "@turf/turf";
 import { WebMercatorViewport } from "react-map-gl";
 
 interface CoordinatesType {
   latitude: number;
   longitude: number;
 }
-interface BoundsType {
-  north: number;
-  south: number;
-  east: number;
-  west: number;
-}
 
 export function isWithinBounds(
-  bounds: BoundsType,
+  [west, south, east, north]: BBox,
   { latitude, longitude }: CoordinatesType
 ): boolean {
   return (
-    latitude < bounds.north &&
-    latitude > bounds.south &&
-    longitude < bounds.east &&
-    longitude > bounds.west
+    latitude < north && latitude > south && longitude < east && longitude > west
   );
 }
+
+export const markersArrayToFeatures = (markers: MarkerType[]): Feature[] =>
+  markers.map(marker => ({
+    type: "Feature",
+    id: marker.id,
+    properties: {
+      cluster: false,
+      ...marker,
+    },
+    geometry: {
+      type: "Point",
+      coordinates: [marker.longitude, marker.latitude],
+    },
+  }));
 
 export function fitFeatureToBounds(
   items: CoordinatesType[],

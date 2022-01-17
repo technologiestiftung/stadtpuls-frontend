@@ -6,13 +6,19 @@ import ReactMapGL, {
   Marker,
 } from "react-map-gl";
 import { useMeasure } from "react-use";
+import useSupercluster from "use-supercluster";
 import { MarkerType } from "../../common/interfaces";
 import { MarkerCircle } from "../MarkerCircle";
 import { ViewportType } from "@common/types/ReactMapGl";
 
 import "mapbox-gl/dist/mapbox-gl.css";
-import { fitFeatureToBounds, isWithinBounds } from "@lib/mapUtil";
+import {
+  fitFeatureToBounds,
+  isWithinBounds,
+  markersArrayToFeatures,
+} from "@lib/mapUtil";
 import { easeInOutQuint, linear } from "@lib/easingUtil";
+import { BBox } from "@turf/turf";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
@@ -34,10 +40,7 @@ const directFlyToProps: FlyToPropType = {
   transitionEasing: linear,
 };
 
-const fallbackBounds = {
-  _ne: { lat: 0, lng: 0 },
-  _sw: { lat: 0, lng: 0 },
-};
+const fallbackBounds = [0, 0, 0, 0, 0, 0] as BBox;
 
 type ClickHandlerType = (markerId: number) => void;
 
@@ -56,6 +59,32 @@ interface MapType {
   getBounds: () => {
     _ne: { lat: number; lng: number };
     _sw: { lat: number; lng: number };
+    toArray: () => {
+      flat: () => BBox;
+    };
+  };
+}
+
+interface ClusterBaseType {
+  type: "Feature";
+  id: number;
+  geometry: {
+    coordinates: [number, number];
+    type: "Point";
+  };
+}
+interface ClusterType extends ClusterBaseType {
+  properties: {
+    cluster_id: number;
+    cluster: true;
+    point_count: number;
+    point_count_abbreviated: number;
+  };
+}
+
+interface NonClusterType extends ClusterBaseType {
+  properties: MarkerType & {
+    cluster: false;
   };
 }
 
@@ -84,22 +113,23 @@ export const MarkerMap: FC<MarkerMapType> = ({
     zoom: mapZoom,
     ...smoothFlyToProps,
   } as ViewportType);
+  const map = mapRef.current?.getMap() as MapType | undefined;
+  const bounds = map?.getBounds().toArray().flat() || fallbackBounds;
+  const points = markersArrayToFeatures(markers);
+  const { clusters } = useSupercluster({
+    points,
+    bounds,
+    zoom: viewport.zoom,
+    options: { radius: 20, maxZoom: 20 },
+  });
 
   const idsString = markers.map(m => m.id).join(",");
 
   useEffect(() => {
     if (!highlightedMarkerId || !mapRef.current) return;
-    const mapGL = mapRef.current.getMap() as MapType | undefined;
-    const bounds = mapGL?.getBounds() || fallbackBounds;
-    const limits = {
-      north: bounds._ne.lat,
-      south: bounds._sw.lat,
-      west: bounds._sw.lng,
-      east: bounds._ne.lng,
-    };
     const highlightedMarker = markers.find(m => m.id === highlightedMarkerId);
     if (!highlightedMarker) return;
-    if (isWithinBounds(limits, highlightedMarker)) return;
+    if (isWithinBounds(bounds, highlightedMarker)) return;
     setViewport((prevViewport: ViewportType) => ({
       ...prevViewport,
       latitude: highlightedMarker.latitude,
@@ -138,24 +168,6 @@ export const MarkerMap: FC<MarkerMapType> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loaded, width, height, idsString]);
 
-  const markersGroupedByLatLng = markers.reduce<Record<string, MarkerType>>(
-    (acc, marker) => {
-      const latLngKey = `${marker.latitude}-${marker.longitude}`;
-      const prevElWithSameLatLng = acc[latLngKey];
-      return {
-        ...acc,
-        [latLngKey]: {
-          ...marker,
-          children:
-            typeof prevElWithSameLatLng?.children === "number"
-              ? prevElWithSameLatLng.children + 1
-              : 1,
-        },
-      };
-    },
-    {}
-  );
-
   return (
     <div ref={mapContainerRef} className='w-full h-full'>
       <ReactMapGL
@@ -185,26 +197,44 @@ export const MarkerMap: FC<MarkerMapType> = ({
         {loaded &&
           width > 0 &&
           height > 0 &&
-          Object.values(markersGroupedByLatLng).map(marker => (
-            <Marker
-              key={marker.id}
-              latitude={marker.latitude}
-              longitude={marker.longitude}
-            >
-              <MarkerCircle
-                {...marker}
-                clickHandler={() => clickHandler && clickHandler(marker.id)}
-                mouseEnterHandler={() =>
-                  mouseEnterHandler && mouseEnterHandler(marker.id)
+          (clusters as ClusterType[] | NonClusterType[]).map(cluster => {
+            const [longitude, latitude] = cluster.geometry.coordinates;
+            const isCluster = cluster.properties.cluster;
+            const isActive =
+              "isActive" in cluster.properties
+                ? cluster.properties.isActive
+                : true;
+            const pointCount =
+              "point_count" in cluster.properties
+                ? cluster.properties.point_count
+                : 0;
+
+            const handlers = !isCluster
+              ? {
+                  clickHandler: () => clickHandler && clickHandler(cluster.id),
+                  mouseEnterHandler: () =>
+                    mouseEnterHandler && mouseEnterHandler(cluster.id),
+                  mouseLeaveHandler: () =>
+                    mouseLeaveHandler && mouseLeaveHandler(cluster.id),
                 }
-                mouseLeaveHandler={() =>
-                  mouseLeaveHandler && mouseLeaveHandler(marker.id)
-                }
+              : {};
+
+            return (
+              <Marker
+                key={cluster.id}
+                latitude={latitude}
+                longitude={longitude}
               >
-                {marker.children && marker.children > 1 ? marker.children : ""}
-              </MarkerCircle>
-            </Marker>
-          ))}
+                <MarkerCircle
+                  {...cluster.properties}
+                  {...handlers}
+                  isActive={isActive}
+                >
+                  {isCluster && pointCount > 1 ? pointCount : null}
+                </MarkerCircle>
+              </Marker>
+            );
+          })}
       </ReactMapGL>
     </div>
   );
