@@ -103,6 +103,7 @@ export const SensorsMap: FC<SensorsMapType> = ({
             if (!sensor) return;
             void push(`${sensor.authorUsername}/sensors/${sensor.id}`);
           }}
+          highlightedMarkerId={hoveredSensorId || undefined}
           mouseEnterHandler={id => setHoveredSensorId(id)}
           mouseLeaveHandler={() => setHoveredSensorId(null)}
           markers={sensors.map(sensor => ({
