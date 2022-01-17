@@ -29,9 +29,11 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
     >
       <li
         className="list-none"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         <a
-          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] md:justify-between z-10 relative group border hover:border-purple hover:bg-white hover:z-20 hover:shadow-purple cursor-pointer focus:z-20 relative group md:items-center bg-white border-white border-b-gray-100"
           href="/john.doe/sensors/4"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -612,9 +614,11 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
       </li>
       <li
         className="list-none"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         <a
-          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] md:justify-between z-10 relative group border hover:border-purple hover:bg-white hover:z-20 hover:shadow-purple cursor-pointer focus:z-20 relative group md:items-center bg-white border-white border-b-gray-100"
           href="/john.doe/sensors/5"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -1195,9 +1199,11 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
       </li>
       <li
         className="list-none"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         <a
-          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] md:justify-between z-10 relative group border hover:border-purple hover:bg-white hover:z-20 hover:shadow-purple cursor-pointer focus:z-20 relative group md:items-center bg-white border-white border-b-gray-100"
           href="/john.doe/sensors/6"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -1744,9 +1750,11 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
       </li>
       <li
         className="list-none"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         <a
-          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] md:justify-between z-10 relative group border hover:border-purple hover:bg-white hover:z-20 hover:shadow-purple cursor-pointer focus:z-20 relative group md:items-center bg-white border-white border-b-gray-100"
           href="/john.doe/sensors/1"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -2327,9 +2335,11 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
       </li>
       <li
         className="list-none"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         <a
-          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] md:justify-between z-10 relative group border hover:border-purple hover:bg-white hover:z-20 hover:shadow-purple cursor-pointer focus:z-20 relative group md:items-center bg-white border-white border-b-gray-100"
           href="/john.doe/sensors/2"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -2868,7 +2878,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
               <span
                 className="absolute bottom-0 left-0 text-xs text-gray-300"
               >
-                Zul. vor 7 Monaten
+                Zul. vor 8 Monaten
               </span>
               <span
                 className="absolute top-0 right-0 bg-white text-xs text-purple font-mono font-semibold px-0.5 py-[1px] border border-gray-200 leading-3"
@@ -2910,9 +2920,11 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
       </li>
       <li
         className="list-none"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         <a
-          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] bg-white md:justify-between group border border-white border-b-gray-100 hover:border-purple hover:z-10 hover:shadow-purple cursor-pointer relative group md:items-center"
+          className="flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2 grid-cols-1 focus-offset xl:grid-cols-[5fr,2fr,2fr,120px] 2xl:grid-cols-[5fr,2fr,2fr,140px] md:justify-between z-10 relative group border hover:border-purple hover:bg-white hover:z-20 hover:shadow-purple cursor-pointer focus:z-20 relative group md:items-center bg-white border-white border-b-gray-100"
           href="/john.doe/sensors/3"
           onClick={[Function]}
           onMouseEnter={[Function]}

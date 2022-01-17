@@ -4,22 +4,15 @@ import ReactMapGL, {
   InteractiveMapProps,
   MapRef,
   Marker,
-  WebMercatorViewport,
 } from "react-map-gl";
 import { useMeasure } from "react-use";
-import {
-  bbox,
-  FeatureCollection,
-  featureCollection,
-  Point,
-  point,
-  Properties,
-} from "@turf/turf";
 import { MarkerType } from "../../common/interfaces";
 import { MarkerCircle } from "../MarkerCircle";
 import { ViewportType } from "@common/types/ReactMapGl";
 
 import "mapbox-gl/dist/mapbox-gl.css";
+import { fitFeatureToBounds, isWithinBounds } from "@lib/mapUtil";
+import { easeInOutQuint, linear } from "@lib/easingUtil";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
@@ -28,8 +21,6 @@ type FlyToPropType = Pick<
   "transitionDuration" | "transitionEasing" | "transitionInterpolator"
 >;
 
-const easeInOutQuint = (t: number): number =>
-  t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t;
 const flyInterpolator: FlyToInterpolator = new FlyToInterpolator();
 const smoothFlyToProps: FlyToPropType = {
   transitionDuration: 1000,
@@ -40,7 +31,12 @@ const smoothFlyToProps: FlyToPropType = {
 const directFlyToProps: FlyToPropType = {
   transitionDuration: 0,
   transitionInterpolator: undefined,
-  transitionEasing: t => t,
+  transitionEasing: linear,
+};
+
+const fallbackBounds = {
+  _ne: { lat: 0, lng: 0 },
+  _sw: { lat: 0, lng: 0 },
 };
 
 type ClickHandlerType = (markerId: number) => void;
@@ -56,48 +52,11 @@ export interface MarkerMapType extends InteractiveMapProps {
   highlightedMarkerId?: number;
 }
 
-interface CoordinatesType {
-  latitude: number;
-  longitude: number;
-}
-interface BoundsType {
-  north: number;
-  south: number;
-  east: number;
-  west: number;
-}
-
-function isWithinBounds(
-  bounds: BoundsType,
-  { latitude, longitude }: CoordinatesType
-): boolean {
-  return (
-    latitude < bounds.north &&
-    latitude > bounds.south &&
-    longitude < bounds.east &&
-    longitude > bounds.west
-  );
-}
-
-function fitFeatureToBounds(
-  features: FeatureCollection<Point, Properties>,
-  viewport: ViewportType,
-  padding: number
-): CoordinatesType & {
-  zoom: number;
-} {
-  const [minX, minY, maxX, maxY] = bbox(features);
-
-  const { latitude, longitude, zoom } = new WebMercatorViewport(
-    viewport
-  ).fitBounds(
-    [
-      [minX, minY],
-      [maxX, maxY],
-    ],
-    { padding: padding }
-  );
-  return { latitude, longitude, zoom };
+interface MapType {
+  getBounds: () => {
+    _ne: { lat: number; lng: number };
+    _sw: { lat: number; lng: number };
+  };
 }
 
 export const MarkerMap: FC<MarkerMapType> = ({
@@ -130,18 +89,8 @@ export const MarkerMap: FC<MarkerMapType> = ({
 
   useEffect(() => {
     if (!highlightedMarkerId || !mapRef.current) return;
-    const mapGL = mapRef.current.getMap() as
-      | {
-          getBounds: () => {
-            _ne: { lat: number; lng: number };
-            _sw: { lat: number; lng: number };
-          };
-        }
-      | undefined;
-    const bounds = mapGL?.getBounds() || {
-      _ne: { lat: 0, lng: 0 },
-      _sw: { lat: 0, lng: 0 },
-    };
+    const mapGL = mapRef.current.getMap() as MapType | undefined;
+    const bounds = mapGL?.getBounds() || fallbackBounds;
     const limits = {
       north: bounds._ne.lat,
       south: bounds._sw.lat,
@@ -171,14 +120,8 @@ export const MarkerMap: FC<MarkerMapType> = ({
       return;
     }
 
-    const features = featureCollection(
-      markers.map((marker: MarkerType) =>
-        point([marker.longitude, marker.latitude])
-      )
-    );
-
     const { latitude, longitude, zoom } = fitFeatureToBounds(
-      features,
+      markers,
       viewport,
       markersPadding
     );
