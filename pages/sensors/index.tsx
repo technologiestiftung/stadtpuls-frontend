@@ -12,7 +12,7 @@ interface SensorsOverviewPropType {
   page: number;
 }
 
-export const MAX_SENSORS_PER_PAGE = 15;
+export const MAX_SENSORS_PER_PAGE = 30;
 
 export const getRangeByPageNumber = (page: number): [number, number] => {
   const rangeStart = (page - 1) * MAX_SENSORS_PER_PAGE;

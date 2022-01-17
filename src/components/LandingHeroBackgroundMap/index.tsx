@@ -45,7 +45,7 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
         scrollZoom={false}
         dragPan={false}
         dragRotate={false}
-        clickHandler={onMarkerClick}
+        clickHandler={ids => onMarkerClick(ids[0])}
         markers={sensors.map((sensor, markerIndex) => {
           return {
             latitude: sensor.latitude,

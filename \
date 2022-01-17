@@ -1,0 +1,378 @@
+feat(SensorsMap): Implement cluster highlighting
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch feat/STADTPULS-632-sensors-map
+# Your branch is ahead of 'origin/feat/STADTPULS-632-sensors-map' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	modified:   package-lock.json
+#	modified:   package.json
+#	modified:   src/components/MarkerCircle/__snapshots__/MarkerCircle.stories.storyshot
+#	modified:   src/components/MarkerCircle/index.tsx
+#	modified:   src/components/MarkerMap/index.tsx
+#	modified:   src/components/SensorsMap/index.tsx
+#	modified:   src/lib/mapUtil/index.ts
+#
+# ------------------------ >8 ------------------------
+# Do not modify or remove the line above.
+# Everything below it will be ignored.
+diff --git a/package-lock.json b/package-lock.json
+index 5b325b6..7100041 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -7030,6 +7030,15 @@
+         }
+       }
+     },
++    "@types/supercluster": {
++      "version": "5.0.3",
++      "resolved": "https://registry.npmjs.org/@types/supercluster/-/supercluster-5.0.3.tgz",
++      "integrity": "sha512-XMSqQEr7YDuNtFwSgaHHOjsbi0ZGL62V9Js4CW45RBuRYlNWSW/KDqN+RFFE7HdHcGhJPtN0klKvw06r9Kg7rg==",
++      "dev": true,
++      "requires": {
++        "@types/geojson": "*"
++      }
++    },
+     "@types/tapable": {
+       "version": "1.0.8",
+       "resolved": "https://registry.npmjs.org/@types/tapable/-/tapable-1.0.8.tgz",
+diff --git a/package.json b/package.json
+index a9814cc..753731f 100644
+--- a/package.json
++++ b/package.json
+@@ -72,6 +72,7 @@
+     "@types/react-map-gl": "5.2.11",
+     "@types/react-paginate": "7.1.1",
+     "@types/react-router-dom": "5.3.2",
++    "@types/supercluster": "5.0.3",
+     "@types/theme-ui": "0.3.7",
+     "@typescript-eslint/eslint-plugin": "4.33.0",
+     "@typescript-eslint/parser": "4.33.0",
+diff --git a/src/components/MarkerCircle/__snapshots__/MarkerCircle.stories.storyshot b/src/components/MarkerCircle/__snapshots__/MarkerCircle.stories.storyshot
+index e896e84..819598b 100644
+--- a/src/components/MarkerCircle/__snapshots__/MarkerCircle.stories.storyshot
++++ b/src/components/MarkerCircle/__snapshots__/MarkerCircle.stories.storyshot
+@@ -8,7 +8,7 @@ exports[`Storyshots Map/MarkerCircle Active 1`] = `
+     className="min-w-5 h-5 relative"
+   >
+     <button
+-      className="relative rounded-full inline-flex min-w-5 h-5 bg-blue false false hover:bg-green hover:text-blue border-white border-2 text-center transition-colors -translate-x-1/2 -translate-y-1/2 cursor-pointer place-items-center place-content-center text-sm font-monospace text-white px-2"
++      className="relative rounded-full inline-flex min-w-5 h-5 bg-blue text-white false false hover:bg-green hover:text-blue border-white border-2 text-center transition-colors -translate-x-1/2 -translate-y-1/2 cursor-pointer place-items-center place-content-center text-sm font-monospace px-2"
+       onClick={[Function]}
+       onMouseEnter={[Function]}
+       onMouseLeave={[Function]}
+@@ -25,7 +25,7 @@ exports[`Storyshots Map/MarkerCircle Inactive 1`] = `
+     className="min-w-5 h-5 relative"
+   >
+     <button
+-      className="relative rounded-full inline-flex min-w-5 h-5 false false bg-gray-400 hover:bg-green hover:text-blue border-white border-2 text-center transition-colors -translate-x-1/2 -translate-y-1/2 cursor-pointer place-items-center place-content-center text-sm font-monospace text-white px-2"
++      className="relative rounded-full inline-flex min-w-5 h-5 false false bg-gray-400 text-white hover:bg-green hover:text-blue border-white border-2 text-center transition-colors -translate-x-1/2 -translate-y-1/2 cursor-pointer place-items-center place-content-center text-sm font-monospace px-2"
+       onClick={[Function]}
+       onMouseEnter={[Function]}
+       onMouseLeave={[Function]}
+@@ -45,7 +45,7 @@ exports[`Storyshots Map/MarkerCircle Pulsating 1`] = `
+       className="motion-safe:animate-ping absolute -top-1/2 -left-1/2 h-full w-full rounded-full bg-green opacity-90"
+     />
+     <button
+-      className="relative rounded-full inline-flex min-w-5 h-5 bg-blue false false hover:bg-green hover:text-blue border-white border-2 text-center transition-colors -translate-x-1/2 -translate-y-1/2 cursor-pointer place-items-center place-content-center text-sm font-monospace text-white px-2"
++      className="relative rounded-full inline-flex min-w-5 h-5 bg-blue text-white false false hover:bg-green hover:text-blue border-white border-2 text-center transition-colors -translate-x-1/2 -translate-y-1/2 cursor-pointer place-items-center place-content-center text-sm font-monospace px-2"
+       onClick={[Function]}
+       onMouseEnter={[Function]}
+       onMouseLeave={[Function]}
+diff --git a/src/components/MarkerCircle/index.tsx b/src/components/MarkerCircle/index.tsx
+index ff0f49b..db0bfe5 100644
+--- a/src/components/MarkerCircle/index.tsx
++++ b/src/components/MarkerCircle/index.tsx
+@@ -34,16 +34,16 @@ export const MarkerCircle: FC<MarkerCirclePropType> = ({
+         className={[
+           "relative rounded-full inline-flex",
+           sizeClass,
+-          isActive && !isHighlighted && "bg-blue",
+-          isHighlighted && "bg-green",
+-          !isActive && !isHighlighted && "bg-gray-400",
++          isActive && !isHighlighted && "bg-blue text-white",
++          isHighlighted && "bg-green text-blue",
++          !isActive && !isHighlighted && "bg-gray-400 text-white",
+           isInteractive && "hover:bg-green hover:text-blue",
+           "border-white border-2",
+           "text-center transition-colors",
+           "-translate-x-1/2 -translate-y-1/2",
+           `${isInteractive ? "cursor-pointer" : "cursor-default"}`,
+           "place-items-center place-content-center",
+-          "text-sm font-monospace text-white px-2",
++          "text-sm font-monospace px-2",
+         ].join(" ")}
+         onClick={() => (clickHandler ? clickHandler() : null)}
+         onMouseEnter={() => (mouseEnterHandler ? mouseEnterHandler() : null)}
+diff --git a/src/components/MarkerMap/index.tsx b/src/components/MarkerMap/index.tsx
+index 6681376..1ca0e6f 100644
+--- a/src/components/MarkerMap/index.tsx
++++ b/src/components/MarkerMap/index.tsx
+@@ -10,7 +10,6 @@ import useSupercluster from "use-supercluster";
+ import { MarkerType } from "../../common/interfaces";
+ import { MarkerCircle } from "../MarkerCircle";
+ import { ViewportType } from "@common/types/ReactMapGl";
+-
+ import "mapbox-gl/dist/mapbox-gl.css";
+ import {
+   fitFeatureToBounds,
+@@ -19,6 +18,7 @@ import {
+ } from "@lib/mapUtil";
+ import { easeInOutQuint, linear } from "@lib/easingUtil";
+ import { BBox } from "@turf/turf";
++import Supercluster from "supercluster";
+ 
+ const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
+ 
+@@ -42,7 +42,7 @@ const directFlyToProps: FlyToPropType = {
+ 
+ const fallbackBounds = [0, 0, 0, 0, 0, 0] as BBox;
+ 
+-type ClickHandlerType = (markerId: number) => void;
++type ClickHandlerType = (markerIds: number[]) => void;
+ 
+ export interface MarkerMapType extends InteractiveMapProps {
+   markers: MarkerType[];
+@@ -52,7 +52,7 @@ export interface MarkerMapType extends InteractiveMapProps {
+   withMapLabels?: boolean;
+   mapZoom?: number;
+   markersPadding?: number;
+-  highlightedMarkerId?: number;
++  highlightedMarkerIds?: number[];
+ }
+ 
+ interface MapType {
+@@ -96,7 +96,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
+   mapZoom = 12,
+   withMapLabels = true,
+   markersPadding = 80,
+-  highlightedMarkerId,
++  highlightedMarkerIds = [],
+   ...otherProps
+ }) => {
+   const defaultCoordinates = {
+@@ -116,28 +116,47 @@ export const MarkerMap: FC<MarkerMapType> = ({
+   const map = mapRef.current?.getMap() as MapType | undefined;
+   const bounds = map?.getBounds().toArray().flat() || fallbackBounds;
+   const points = markersArrayToFeatures(markers);
+-  const { clusters } = useSupercluster({
++  const useSuperClusterResult = useSupercluster({
+     points,
+     bounds,
+     zoom: viewport.zoom,
+-    options: { radius: 20, maxZoom: 20 },
++    options: { radius: 30, maxZoom: 20 },
+   });
++  const clusters = useSuperClusterResult.clusters;
++  const supercluster = useSuperClusterResult.supercluster as Supercluster;
+ 
+   const idsString = markers.map(m => m.id).join(",");
+ 
+   useEffect(() => {
+-    if (!highlightedMarkerId || !mapRef.current) return;
+-    const highlightedMarker = markers.find(m => m.id === highlightedMarkerId);
+-    if (!highlightedMarker) return;
+-    if (isWithinBounds(bounds, highlightedMarker)) return;
+-    setViewport((prevViewport: ViewportType) => ({
+-      ...prevViewport,
+-      latitude: highlightedMarker.latitude,
+-      longitude: highlightedMarker.longitude,
+-      ...smoothFlyToProps,
+-    }));
++    if (highlightedMarkerIds.length === 0 || !map) return;
++    const highlightedMarkers = markers.filter(m =>
++      highlightedMarkerIds.find(id => id === m.id)
++    );
++    if (!highlightedMarkers || highlightedMarkers.length === 0) return;
++    if (highlightedMarkers.every(m => isWithinBounds(bounds, m))) return;
++    if (highlightedMarkers.length === 1) {
++      setViewport((prevViewport: ViewportType) => ({
++        ...prevViewport,
++        latitude: highlightedMarkers[0].latitude,
++        longitude: highlightedMarkers[0].longitude,
++        ...smoothFlyToProps,
++      }));
++    } else {
++      const { latitude, longitude, zoom } = fitFeatureToBounds(
++        markers,
++        viewport,
++        markersPadding
++      );
++      setViewport((prevViewport: ViewportType) => ({
++        ...prevViewport,
++        latitude,
++        longitude,
++        zoom,
++        ...smoothFlyToProps,
++      }));
++    }
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+-  }, [highlightedMarkerId]);
++  }, [highlightedMarkerIds]);
+ 
+   useEffect(() => {
+     if (width == 0 || height == 0) return;
+@@ -208,16 +227,49 @@ export const MarkerMap: FC<MarkerMapType> = ({
+               "point_count" in cluster.properties
+                 ? cluster.properties.point_count
+                 : 0;
++            const id = "id" in cluster.properties ? cluster.properties.id : 0;
++            const leaves = isCluster
++              ? supercluster.getLeaves(cluster.id, Infinity)
++              : [];
++            const leavesIds = leaves.map(
++              leaf => (leaf?.properties?.id as number) || 0
++            );
+ 
+             const handlers = !isCluster
+               ? {
+-                  clickHandler: () => clickHandler && clickHandler(cluster.id),
++                  clickHandler: () => clickHandler && clickHandler([id]),
+                   mouseEnterHandler: () =>
+-                    mouseEnterHandler && mouseEnterHandler(cluster.id),
++                    mouseEnterHandler && mouseEnterHandler([id]),
+                   mouseLeaveHandler: () =>
+-                    mouseLeaveHandler && mouseLeaveHandler(cluster.id),
++                    mouseLeaveHandler && mouseLeaveHandler([id]),
+                 }
+-              : {};
++              : {
++                  clickHandler: () => {
++                    const expansionZoom = Math.min(
++                      supercluster.getClusterExpansionZoom(cluster.id),
++                      20
++                    );
++                    setViewport({
++                      ...viewport,
++                      latitude: cluster.geometry.coordinates[1],
++                      longitude: cluster.geometry.coordinates[0],
++                      zoom: expansionZoom,
++                      ...smoothFlyToProps,
++                    });
++                  },
++                  mouseEnterHandler: () =>
++                    mouseEnterHandler && mouseEnterHandler(leavesIds),
++                  mouseLeaveHandler: () =>
++                    mouseLeaveHandler && mouseLeaveHandler(leavesIds),
++                };
++
++            const isHighlighted = isCluster
++              ? supercluster
++                  .getLeaves(cluster.id)
++                  .some(leaf =>
++                    highlightedMarkerIds.find(id => id === leaf?.properties?.id)
++                  )
++              : cluster.properties.isHighlighted;
+ 
+             return (
+               <Marker
+@@ -229,6 +281,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
+                   {...cluster.properties}
+                   {...handlers}
+                   isActive={isActive}
++                  isHighlighted={isHighlighted}
+                 >
+                   {isCluster && pointCount > 1 ? pointCount : null}
+                 </MarkerCircle>
+diff --git a/src/components/SensorsMap/index.tsx b/src/components/SensorsMap/index.tsx
+index b3fedbc..0f03e69 100644
+--- a/src/components/SensorsMap/index.tsx
++++ b/src/components/SensorsMap/index.tsx
+@@ -53,7 +53,13 @@ export const SensorsMap: FC<SensorsMapType> = ({
+   paginationProps,
+ }) => {
+   const { push } = useRouter();
+-  const [hoveredSensorId, setHoveredSensorId] = useState<number | null>(null);
++  const [hoveredSensorIds, setHoveredSensorIds] = useState<number[]>([]);
++
++  const markers = sensors.map(sensor => ({
++    ...sensor,
++    isActive: true,
++    isHighlighted: hoveredSensorIds.includes(sensor.id),
++  }));
+   return (
+     <section className='grid grid-cols-2 relative'>
+       <aside className='p-4 bg-white overflow-y-auto'>
+@@ -77,14 +83,14 @@ export const SensorsMap: FC<SensorsMapType> = ({
+           </h2>
+         </div>
+         <ul className='flex flex-col w-[calc(100%+16px)] ml-[-8px]'>
+-          {sensors.map((sensor: ParsedSensorType) => (
++          {markers.map(marker => (
+             <SensorsListRow
+-              {...sensor}
+-              isHighlighted={hoveredSensorId === sensor.id}
+-              onMouseEnter={() => setHoveredSensorId(sensor.id)}
+-              onMouseLeave={() => setHoveredSensorId(null)}
++              {...marker}
++              isHighlighted={!!hoveredSensorIds.find(s => s === marker.id)}
++              onMouseEnter={() => setHoveredSensorIds([marker.id])}
++              onMouseLeave={() => setHoveredSensorIds([])}
+               onHighlighted={(_id, el) => scrollToTargetAdjusted(el)}
+-              key={sensor.id}
++              key={marker.id}
+             />
+           ))}
+         </ul>
+@@ -98,19 +104,16 @@ export const SensorsMap: FC<SensorsMapType> = ({
+       </aside>
+       <div className='h-[calc(100vh-62px)] sticky w-full top-[62px]'>
+         <MarkerMap
+-          clickHandler={id => {
+-            const sensor = sensors.find(s => s.id === id);
++          clickHandler={ids => {
++            if (ids.length === 0) return;
++            const sensor = sensors.find(s => s.id === ids[0]);
+             if (!sensor) return;
+             void push(`${sensor.authorUsername}/sensors/${sensor.id}`);
+           }}
+-          highlightedMarkerId={hoveredSensorId || undefined}
+-          mouseEnterHandler={id => setHoveredSensorId(id)}
+-          mouseLeaveHandler={() => setHoveredSensorId(null)}
+-          markers={sensors.map(sensor => ({
+-            ...sensor,
+-            isActive: true,
+-            isHighlighted: hoveredSensorId === sensor.id,
+-          }))}
++          highlightedMarkerIds={hoveredSensorIds}
++          mouseEnterHandler={ids => setHoveredSensorIds(ids)}
++          mouseLeaveHandler={() => setHoveredSensorIds([])}
++          markers={markers}
+         />
+       </div>
+     </section>
+diff --git a/src/lib/mapUtil/index.ts b/src/lib/mapUtil/index.ts
+index 60e751e..8ae9ad5 100644
+--- a/src/lib/mapUtil/index.ts
++++ b/src/lib/mapUtil/index.ts
+@@ -17,16 +17,25 @@ export function isWithinBounds(
+   );
+ }
+ 
+-export const markersArrayToFeatures = (markers: MarkerType[]): Feature[] =>
++interface PointFeatureType extends Omit<Feature, "geometry"> {
++  geometry: {
++    type: "Point";
++    coordinates: [number, number];
++  };
++}
++
++export const markersArrayToFeatures = (
++  markers: MarkerType[]
++): PointFeatureType[] =>
+   markers.map(marker => ({
+-    type: "Feature",
++    type: "Feature" as const,
+     id: marker.id,
+     properties: {
+       cluster: false,
+       ...marker,
+     },
+     geometry: {
+-      type: "Point",
++      type: "Point" as const,
+       coordinates: [marker.longitude, marker.latitude],
+     },
+   }));
