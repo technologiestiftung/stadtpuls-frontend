@@ -4,6 +4,7 @@ import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { MarkerMap } from "@components/MarkerMap";
 import { Pagination, PaginationType } from "@components/Pagination";
 import { useRouter } from "next/router";
+import { SensorsListRowLoadingSkeleton } from "@components/SensorsListRowLoadingSkeleton";
 
 interface SensorsMapType {
   sensors?: ParsedSensorType[];
@@ -11,6 +12,7 @@ interface SensorsMapType {
     PaginationType,
     "numberOfDisplayedPages" | "marginPagesDisplayed"
   >;
+  sensorsAreLoading?: boolean;
 }
 
 function isInViewport(el: HTMLLIElement): boolean {
@@ -51,6 +53,7 @@ function scrollToTargetAdjusted(el: HTMLLIElement): void {
 export const SensorsMap: FC<SensorsMapType> = ({
   sensors = [],
   paginationProps,
+  sensorsAreLoading = false,
 }) => {
   const { push } = useRouter();
   const [hoveredSensorIds, setHoveredSensorIds] = useState<number[]>([]);
@@ -83,16 +86,20 @@ export const SensorsMap: FC<SensorsMapType> = ({
           </h2>
         </div>
         <ul className='flex flex-col w-[calc(100%+16px)] ml-[-8px]'>
-          {markers.map(marker => (
-            <SensorsListRow
-              {...marker}
-              isHighlighted={!!hoveredSensorIds.find(s => s === marker.id)}
-              onMouseEnter={() => setHoveredSensorIds([marker.id])}
-              onMouseLeave={() => setHoveredSensorIds([])}
-              onHighlighted={(_id, el) => scrollToTargetAdjusted(el)}
-              key={marker.id}
-            />
-          ))}
+          {markers.map(marker =>
+            sensorsAreLoading ? (
+              <SensorsListRowLoadingSkeleton key={marker.id} />
+            ) : (
+              <SensorsListRow
+                {...marker}
+                isHighlighted={!!hoveredSensorIds.find(s => s === marker.id)}
+                onMouseEnter={() => setHoveredSensorIds([marker.id])}
+                onMouseLeave={() => setHoveredSensorIds([])}
+                onHighlighted={(_id, el) => scrollToTargetAdjusted(el)}
+                key={marker.id}
+              />
+            )
+          )}
         </ul>
         <div className='mt-12 flex justify-center'>
           <Pagination

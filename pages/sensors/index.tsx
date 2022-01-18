@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { GetServerSideProps } from "next";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import router from "next/router";
@@ -40,14 +40,14 @@ const handlePageChange = ({
 }: {
   selectedPage: number;
   pageCount: number;
-}): void => {
+}): Promise<boolean> => {
   const path = router.pathname;
   const query =
     selectedPage === 1 || selectedPage > pageCount
       ? ""
       : `page=${selectedPage}`;
 
-  void router.push({
+  return router.push({
     pathname: path,
     query: query,
   });
@@ -58,6 +58,7 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({
   sensorsCount,
   page,
 }) => {
+  const [isLoading, setLoading] = useState(false);
   const pageCount = Math.ceil(sensorsCount / MAX_SENSORS_PER_PAGE);
   const pageIsWithinPageCount = page <= pageCount;
   const pageToRender = pageIsWithinPageCount ? page : 1;
@@ -71,11 +72,18 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({
     <div className='pt-[62px]'>
       <SensorsMap
         sensors={sensors}
+        sensorsAreLoading={isLoading}
         paginationProps={{
           currentPage: pageToRender,
           pageCount,
-          onPageChange: ({ selected: selectedIndex }) => {
-            handlePageChange({ selectedPage: selectedIndex + 1, pageCount });
+          onPageChange: async ({ selected: selectedIndex }) => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            setLoading(true);
+            await handlePageChange({
+              selectedPage: selectedIndex + 1,
+              pageCount,
+            });
+            setLoading(false);
           },
         }}
       />

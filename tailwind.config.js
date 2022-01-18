@@ -55,7 +55,7 @@ module.exports = {
       },
       animation: {
         borderpulse: "border-pulse 3s ease-in-out infinite",
-        "borderpulse-blue": "border-pulse-blue 3s ease-in-out infinite",
+        "bordezrpulse-blue": "border-pulse-blue 3s ease-in-out infinite",
         textpulse: "text-pulse 3s ease-out infinite",
         bgpulse: "bg-pulse 3s linear infinite",
       },
