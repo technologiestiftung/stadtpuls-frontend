@@ -86,20 +86,20 @@ export const SensorsMap: FC<SensorsMapType> = ({
           </h2>
         </div>
         <ul className='flex flex-col w-[calc(100%+16px)] ml-[-8px]'>
-          {markers.map(marker =>
-            sensorsAreLoading ? (
-              <SensorsListRowLoadingSkeleton key={marker.id} />
-            ) : (
-              <SensorsListRow
-                {...marker}
-                isHighlighted={!!hoveredSensorIds.find(s => s === marker.id)}
-                onMouseEnter={() => setHoveredSensorIds([marker.id])}
-                onMouseLeave={() => setHoveredSensorIds([])}
-                onHighlighted={(_id, el) => scrollToTargetAdjusted(el)}
-                key={marker.id}
-              />
-            )
-          )}
+          {sensorsAreLoading
+            ? Array.from(Array(30).keys()).map(i => (
+                <SensorsListRowLoadingSkeleton key={i} />
+              ))
+            : markers.map(marker => (
+                <SensorsListRow
+                  {...marker}
+                  isHighlighted={!!hoveredSensorIds.find(s => s === marker.id)}
+                  onMouseEnter={() => setHoveredSensorIds([marker.id])}
+                  onMouseLeave={() => setHoveredSensorIds([])}
+                  onHighlighted={(_id, el) => scrollToTargetAdjusted(el)}
+                  key={marker.id}
+                />
+              ))}
         </ul>
         <div className='mt-12 flex justify-center'>
           <Pagination

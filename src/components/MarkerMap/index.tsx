@@ -128,7 +128,8 @@ export const MarkerMap: FC<MarkerMapType> = ({
   const idsString = markers.map(m => m.id).join(",");
 
   useEffect(() => {
-    if (highlightedMarkerIds.length === 0 || !map) return;
+    if (highlightedMarkerIds.length === 0 || !map || markers.length === 0)
+      return;
     const highlightedMarkers = markers.filter(m =>
       highlightedMarkerIds.find(id => id === m.id)
     );
@@ -160,7 +161,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
 
   useEffect(() => {
     if (width == 0 || height == 0) return;
-    if (markers.length === 1) {
+    if (markers.length <= 1) {
       setViewport({
         ...viewport,
         ...defaultCoordinates,

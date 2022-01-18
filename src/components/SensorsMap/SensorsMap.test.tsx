@@ -15,8 +15,8 @@ nextRouter.useRouter = useRouter.mockReturnValue({
 });
 describe("SensorsMap component", () => {
   it("should render the first sensor", async (): Promise<void> => {
-    const sensors = await getPublicSensors();
-    if (sensors)
+    const { sensors } = await getPublicSensors();
+    if (sensors && sensors.length > 0)
       render(
         <SensorsMap
           sensors={sensors}
@@ -31,7 +31,7 @@ describe("SensorsMap component", () => {
     render(<SensorsMap paginationProps={{ currentPage: 1, pageCount: 12 }} />);
   });
   it("should manage the highlighted sensor state", async (): Promise<void> => {
-    const sensors = await getPublicSensors();
+    const { sensors } = await getPublicSensors();
     if (sensors)
       render(
         <SensorsMap

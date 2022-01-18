@@ -163,6 +163,10 @@ const supabaseHandlers = [
       const id = query.get("id")?.replace("eq.", "");
       const limit = query.get("limit");
       const recordsLimit = query.get("records.limit");
+      const countTransformer = ctx.set(
+        "content-range",
+        `0-${sensors.length - 1}/${sensors.length}`
+      );
 
       // Regex removes whitespaces and line breaks. Necessary because sensorQueryString is constructed as template literal
       const trimmedSensorSelectString = sensorQueryString.replace(
@@ -203,16 +207,29 @@ const supabaseHandlers = [
 
           return recordsLimit
             ? res(
+                countTransformer,
                 ctx.status(201, "Mocked status"),
                 ctx.json(limitedSensorsWithLimitedRecords)
               )
-            : res(ctx.status(201, "Mocked status"), ctx.json(limitedSensors));
+            : res(
+                countTransformer,
+                ctx.status(201, "Mocked status"),
+                ctx.json(limitedSensors)
+              );
         } else {
-          return res(ctx.status(201, "Mocked status"), ctx.json(sensors));
+          return res(
+            countTransformer,
+            ctx.status(201, "Mocked status"),
+            ctx.json(sensors)
+          );
         }
       }
 
-      return res(ctx.status(201, "Mocked status"), ctx.json(sensors));
+      return res(
+        countTransformer,
+        ctx.status(201, "Mocked status"),
+        ctx.json(sensors)
+      );
     }
   ),
   //User

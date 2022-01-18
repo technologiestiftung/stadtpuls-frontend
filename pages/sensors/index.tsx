@@ -1,15 +1,16 @@
-import { FC, useState } from "react";
+import { useState, FC, useEffect } from "react";
 import { GetServerSideProps } from "next";
-import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
+import { usePublicSensors } from "@lib/hooks/usePublicSensors";
 import router from "next/router";
-import { getLandingStats } from "@lib/requests/getLandingStats";
-import { getPublicSensors } from "@lib/requests/getPublicSensors";
 import { SensorsMap } from "@components/SensorsMap";
+import { supabase } from "@auth/supabase";
+import { definitions } from "@common/types/supabase";
 
 interface SensorsOverviewPropType {
-  sensors: ParsedSensorType[];
-  sensorsCount: number;
+  rangeStart: number;
+  rangeEnd: number;
   page: number;
+  totalSensors: number;
 }
 
 export const MAX_SENSORS_PER_PAGE = 30;
@@ -23,15 +24,18 @@ export const getRangeByPageNumber = (page: number): [number, number] => {
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const page = Array.isArray(query.page) ? 1 : Number.parseInt(query.page) || 1;
   const [rangeStart, rangeEnd] = getRangeByPageNumber(page);
-  try {
-    const sensors = await getPublicSensors({ rangeStart, rangeEnd });
-    const { sensorsCount } = await getLandingStats();
-    return { props: { sensors, sensorsCount, page } };
-  } catch (error) {
-    console.error("Error when fetching sensors:");
+
+  const { count: totalSensors, error } = await supabase
+    .from<definitions["sensors"]>("sensors")
+    .select("name", { count: "exact", head: true });
+
+  if (error) {
+    console.error("Error when fetching totalSensors");
     console.error(error);
     return { notFound: true };
   }
+
+  return { props: { page, rangeStart, rangeEnd, totalSensors } };
 };
 
 const handlePageChange = ({
@@ -54,36 +58,47 @@ const handlePageChange = ({
 };
 
 const SensorsOverview: FC<SensorsOverviewPropType> = ({
-  sensors,
-  sensorsCount,
+  rangeStart,
+  rangeEnd,
   page,
+  totalSensors,
 }) => {
-  const [isLoading, setLoading] = useState(false);
-  const pageCount = Math.ceil(sensorsCount / MAX_SENSORS_PER_PAGE);
-  const pageIsWithinPageCount = page <= pageCount;
+  const [isLoading, setIsLoading] = useState(true);
+  const { sensors, error } = usePublicSensors({
+    rangeStart,
+    rangeEnd,
+  });
+  const sensorsAreThere = Array.isArray(sensors) && sensors.length > 0;
+  const totalPages = Math.ceil(totalSensors / MAX_SENSORS_PER_PAGE);
+  const pageIsWithinPageCount = page <= totalPages;
   const pageToRender = pageIsWithinPageCount ? page : 1;
 
-  if ((!sensors || sensors.length === 0) && pageIsWithinPageCount)
+  useEffect(() => {
+    if (error || sensors?.length !== 0) {
+      setIsLoading(false);
+    }
+  }, [sensors, error]);
+
+  if (error)
     return (
-      <h1 className='flex justify-center mt-32'>Keine Sensordaten vorhanden</h1>
+      <h1 className='flex justify-center mt-32 text-error'>{error.message}</h1>
     );
 
   return (
     <div className='pt-[62px]'>
       <SensorsMap
-        sensors={sensors}
+        sensors={!isLoading && sensorsAreThere ? sensors : []}
         sensorsAreLoading={isLoading}
         paginationProps={{
           currentPage: pageToRender,
-          pageCount,
+          pageCount: totalPages,
           onPageChange: async ({ selected: selectedIndex }) => {
             window.scrollTo({ top: 0, behavior: "smooth" });
-            setLoading(true);
+            setIsLoading(true);
             await handlePageChange({
               selectedPage: selectedIndex + 1,
-              pageCount,
+              pageCount: totalPages,
             });
-            setLoading(false);
           },
         }}
       />

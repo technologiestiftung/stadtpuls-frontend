@@ -19,12 +19,19 @@ describe("utility function getPublicSensors", () => {
   it("returns all public sensors", async (): Promise<void> => {
     const server = setupServer(
       rest.get(createSupabaseUrl(`/sensors`), (_req, res, ctx) => {
-        return res(ctx.status(200, "Mocked status"), ctx.json(exampleSensors));
+        return res(
+          ctx.set(
+            "content-range",
+            `0-${exampleSensors.length - 1}/${exampleSensors.length}`
+          ),
+          ctx.status(200, "Mocked status"),
+          ctx.json(exampleSensors)
+        );
       })
     );
     server.listen();
-    const fetchedSensors = await getPublicSensors();
-    expect(fetchedSensors.length).toEqual(exampleSensors.length);
+    const { sensors } = await getPublicSensors();
+    expect(sensors.length).toEqual(exampleSensors.length);
     server.resetHandlers();
     server.close();
   });
@@ -49,6 +56,10 @@ describe("utility function getPublicSensors", () => {
         });
 
         return res(
+          ctx.set(
+            "content-range",
+            `0-${exampleSensors.length - 1}/${exampleSensors.length}`
+          ),
           ctx.status(200, "Mocked status"),
           ctx.json(limit && offset ? filteredSensors : exampleSensors)
         );
@@ -56,13 +67,13 @@ describe("utility function getPublicSensors", () => {
     );
     server.listen();
 
-    const fetchedSensors = await getPublicSensors({ rangeStart, rangeEnd });
-    expect(fetchedSensors.length).toEqual(filteredSensors.length);
+    const { sensors } = await getPublicSensors({ rangeStart, rangeEnd });
+    expect(sensors.length).toEqual(filteredSensors.length);
 
     const expectedSensorIds = filteredSensors.map(sensor => sensor.id);
 
-    const allReturnedIdsAreIncludedInExpectedIds = fetchedSensors.every(
-      sensor => expectedSensorIds.includes(sensor.id)
+    const allReturnedIdsAreIncludedInExpectedIds = sensors.every(sensor =>
+      expectedSensorIds.includes(sensor.id)
     );
     expect(allReturnedIdsAreIncludedInExpectedIds).toBe(true);
 

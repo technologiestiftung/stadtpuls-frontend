@@ -46,7 +46,10 @@ export interface GetSensorsOptionsType {
 
 export const getPublicSensors = async (
   options?: GetSensorsOptionsType
-): Promise<ParsedSensorType[]> => {
+): Promise<{
+  sensors: ParsedSensorType[];
+  count: number;
+}> => {
   if (
     options &&
     typeof options.rangeStart !== "undefined" &&
@@ -70,9 +73,9 @@ export const getPublicSensors = async (
     (options.rangeStart || options.rangeStart === 0) &&
     options.rangeEnd
   ) {
-    const { data, error } = await supabase
+    const { data, count, error } = await supabase
       .from<SensorQueryResponseType>("sensors")
-      .select(sensorQueryString)
+      .select(sensorQueryString, { count: "exact" })
       .order("created_at", { ascending: false })
       // FIXME: recorded_at is not recognized altought it is inherited from the definitions
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -85,14 +88,14 @@ export const getPublicSensors = async (
       .limit(RECORDS_LIMIT, { foreignTable: "records" });
 
     if (error) throw error;
-    if (!data) return [];
+    if (!data || typeof count !== "number") return { sensors: [], count: 0 };
     const sensors = data?.map(mapPublicSensor);
 
-    return sensors;
+    return { sensors, count };
   } else {
-    const { data, error } = await supabase
+    const { data, count, error } = await supabase
       .from<SensorQueryResponseType>("sensors")
-      .select(sensorQueryString)
+      .select(sensorQueryString, { count: "exact" })
       .order("created_at", { ascending: false })
       // FIXME: recorded_at is not recognized altought it is inherited from the definitions
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -104,9 +107,9 @@ export const getPublicSensors = async (
       .limit(RECORDS_LIMIT, { foreignTable: "records" });
 
     if (error) throw error;
-    if (!data) return [];
+    if (!data || typeof count !== "number") return { sensors: [], count: 0 };
     const sensors = data?.map(mapPublicSensor);
 
-    return sensors;
+    return { sensors, count };
   }
 };

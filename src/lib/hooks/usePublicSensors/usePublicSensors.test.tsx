@@ -11,12 +11,12 @@ const createTestComponent = (
   onFail: OnFailType
 ): FC => {
   const TestComponent: FC = () => {
-    const { data, error } = usePublicSensors();
+    const { sensors, error } = usePublicSensors();
     useEffect(() => {
-      if (data && !error) onSuccess(data);
+      if (sensors && !error) onSuccess(sensors);
       if (error) onFail(error.message);
-    }, [data, error]);
-    return <div>{data ? data.length : error?.message}</div>;
+    }, [sensors, error]);
+    return <div>{sensors ? sensors.length : error?.message}</div>;
   };
   return TestComponent;
 };
