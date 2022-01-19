@@ -5,6 +5,7 @@ import { MarkerMap } from "@components/MarkerMap";
 import { Pagination, PaginationType } from "@components/Pagination";
 import { useRouter } from "next/router";
 import { SensorsListRowLoadingSkeleton } from "@components/SensorsListRowLoadingSkeleton";
+import { Alert } from "@components/Alert";
 
 interface SensorsMapType {
   sensors?: ParsedSensorType[];
@@ -13,6 +14,7 @@ interface SensorsMapType {
     "numberOfDisplayedPages" | "marginPagesDisplayed"
   >;
   sensorsAreLoading?: boolean;
+  error?: Error;
 }
 
 function isInViewport(el: HTMLLIElement): boolean {
@@ -54,6 +56,7 @@ export const SensorsMap: FC<SensorsMapType> = ({
   sensors = [],
   paginationProps,
   sensorsAreLoading = false,
+  error,
 }) => {
   const { push } = useRouter();
   const [hoveredSensorIds, setHoveredSensorIds] = useState<number[]>([]);
@@ -85,22 +88,41 @@ export const SensorsMap: FC<SensorsMapType> = ({
             Seite {paginationProps.currentPage} von {paginationProps.pageCount}
           </h2>
         </div>
-        <ul className='flex flex-col w-[calc(100%+16px)] ml-[-8px]'>
-          {sensorsAreLoading
-            ? Array.from(Array(30).keys()).map(i => (
-                <SensorsListRowLoadingSkeleton key={i} />
-              ))
-            : markers.map(marker => (
-                <SensorsListRow
-                  {...marker}
-                  isHighlighted={!!hoveredSensorIds.find(s => s === marker.id)}
-                  onMouseEnter={() => setHoveredSensorIds([marker.id])}
-                  onMouseLeave={() => setHoveredSensorIds([])}
-                  onHighlighted={(_id, el) => scrollToTargetAdjusted(el)}
-                  key={marker.id}
-                />
-              ))}
-        </ul>
+        {error?.message && (
+          <Alert
+            type='error'
+            title='Fehler'
+            message={
+              <>
+                Die Sensoren konnten nicht geladen werden: <br />
+                <code className='px-2 py-1 font-mono bg-error bg-opacity-20'>
+                  {error.message}
+                </code>
+              </>
+            }
+            isRemovable={false}
+          />
+        )}
+        {!error && (
+          <ul className='flex flex-col w-[calc(100%+16px)] ml-[-8px]'>
+            {sensorsAreLoading
+              ? Array.from(Array(30).keys()).map(i => (
+                  <SensorsListRowLoadingSkeleton key={i} />
+                ))
+              : markers.map(marker => (
+                  <SensorsListRow
+                    {...marker}
+                    isHighlighted={
+                      !!hoveredSensorIds.find(s => s === marker.id)
+                    }
+                    onMouseEnter={() => setHoveredSensorIds([marker.id])}
+                    onMouseLeave={() => setHoveredSensorIds([])}
+                    onHighlighted={(_id, el) => scrollToTargetAdjusted(el)}
+                    key={marker.id}
+                  />
+                ))}
+          </ul>
+        )}
         <div className='mt-12 flex justify-center'>
           <Pagination
             {...paginationProps}

@@ -1,7 +1,7 @@
 import { useState, FC, useEffect } from "react";
 import { GetServerSideProps } from "next";
 import { usePublicSensors } from "@lib/hooks/usePublicSensors";
-import router from "next/router";
+import router, { useRouter } from "next/router";
 import { SensorsMap } from "@components/SensorsMap";
 import { supabase } from "@auth/supabase";
 import { definitions } from "@common/types/supabase";
@@ -63,12 +63,14 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({
   page,
   totalSensors,
 }) => {
+  const { reload } = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const { sensors, error } = usePublicSensors({
     rangeStart,
     rangeEnd,
   });
-  const sensorsAreThere = Array.isArray(sensors) && sensors.length > 0;
+  const sensorsAreThere =
+    !error && Array.isArray(sensors) && sensors.length > 0;
   const totalPages = Math.ceil(totalSensors / MAX_SENSORS_PER_PAGE);
   const pageIsWithinPageCount = page <= totalPages;
   const pageToRender = pageIsWithinPageCount ? page : 1;
@@ -79,14 +81,12 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({
     }
   }, [sensors, error]);
 
-  if (error)
-    return (
-      <h1 className='flex justify-center mt-32 text-error'>{error.message}</h1>
-    );
+  if (error?.message === "JWT expired") reload();
 
   return (
     <div className='pt-[62px]'>
       <SensorsMap
+        error={error || undefined}
         sensors={!isLoading && sensorsAreThere ? sensors : []}
         sensorsAreLoading={isLoading}
         paginationProps={{
