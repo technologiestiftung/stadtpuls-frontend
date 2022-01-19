@@ -1,46 +1,28 @@
-import { useState, useEffect, useRef, FC } from "react";
-import ReactMapGL, {
-  FlyToInterpolator,
-  InteractiveMapProps,
-  MapRef,
-  Marker,
-} from "react-map-gl";
+import {
+  useState,
+  useEffect,
+  FC,
+  SetStateAction,
+  Dispatch,
+  RefObject,
+} from "react";
+import ReactMapGL, { InteractiveMapProps, MapRef, Marker } from "react-map-gl";
 import { useMeasure } from "react-use";
-import useSupercluster from "use-supercluster";
 import { MarkerType } from "../../common/interfaces";
 import { MarkerCircle } from "../MarkerCircle";
 import { ViewportType } from "@common/types/ReactMapGl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import {
+  directFlyToProps,
   fitFeatureToBounds,
   isWithinBounds,
-  markersArrayToFeatures,
+  smoothFlyToProps,
 } from "@lib/mapUtil";
-import { easeInOutQuint, linear } from "@lib/easingUtil";
-import { BBox } from "@turf/turf";
+import { Properties } from "@turf/turf";
 import Supercluster from "supercluster";
+import { useSuperClusterMap } from "@lib/hooks/useSuperClusterMap";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
-
-type FlyToPropType = Pick<
-  ViewportType,
-  "transitionDuration" | "transitionEasing" | "transitionInterpolator"
->;
-
-const flyInterpolator: FlyToInterpolator = new FlyToInterpolator();
-const smoothFlyToProps: FlyToPropType = {
-  transitionDuration: 1000,
-  transitionInterpolator: flyInterpolator,
-  transitionEasing: easeInOutQuint,
-};
-
-const directFlyToProps: FlyToPropType = {
-  transitionDuration: 0,
-  transitionInterpolator: undefined,
-  transitionEasing: linear,
-};
-
-const fallbackBounds = [0, 0, 0, 0, 0, 0] as BBox;
 
 type ClickHandlerType = (markerIds: number[]) => void;
 
@@ -53,16 +35,7 @@ export interface MarkerMapType extends InteractiveMapProps {
   mapZoom?: number;
   markersPadding?: number;
   highlightedMarkerIds?: number[];
-}
-
-interface MapType {
-  getBounds: () => {
-    _ne: { lat: number; lng: number };
-    _sw: { lat: number; lng: number };
-    toArray: () => {
-      flat: () => BBox;
-    };
-  };
+  markersAreLoading?: boolean;
 }
 
 interface ClusterBaseType {
@@ -88,43 +61,40 @@ interface NonClusterType extends ClusterBaseType {
   };
 }
 
-export const MarkerMap: FC<MarkerMapType> = ({
-  markers,
-  clickHandler,
-  mouseEnterHandler,
-  mouseLeaveHandler,
-  mapZoom = 12,
-  withMapLabels = true,
-  markersPadding = 80,
-  highlightedMarkerIds = [],
-  ...otherProps
-}) => {
-  const defaultCoordinates = {
-    latitude: markers[0]?.latitude || 52.52,
-    longitude: markers[0]?.longitude || 13.405,
-  };
-  const [loaded, setLoaded] = useState(false);
-  const mapRef = useRef<MapRef>(null);
-  const [mapContainerRef, { width, height }] = useMeasure<HTMLDivElement>();
-  const [viewport, setViewport] = useState<ViewportType>({
-    ...defaultCoordinates,
-    width: width || 1200,
-    height: height || 800,
-    zoom: mapZoom,
-    ...smoothFlyToProps,
-  } as ViewportType);
-  const map = mapRef.current?.getMap() as MapType | undefined;
-  const bounds = map?.getBounds().toArray().flat() || fallbackBounds;
-  const points = markersArrayToFeatures(markers);
-  const useSuperClusterResult = useSupercluster({
-    points,
-    bounds,
-    zoom: viewport.zoom,
-    options: { radius: 30, maxZoom: 20 },
-  });
-  const clusters = useSuperClusterResult.clusters;
-  const supercluster = useSuperClusterResult.supercluster as Supercluster;
+interface UseClusterMarkersMapInputType {
+  markers: MarkerType[];
+  defaultViewport: ViewportType;
+  readyForDisplay: boolean;
+  highlightedMarkerIds: number[];
+  markersPadding: number;
+}
 
+type SuperClusterType =
+  | Supercluster.PointFeature<Properties>
+  | Supercluster.PointFeature<
+      Supercluster.ClusterProperties & Supercluster.AnyProps
+    >;
+
+interface UseClusterMarkersMapOutputType {
+  viewport: ViewportType;
+  setViewport: Dispatch<SetStateAction<ViewportType>>;
+  clusters: SuperClusterType[];
+  supercluster: Supercluster;
+  mapRef: RefObject<MapRef>;
+}
+
+const useClusterMarkersMap = ({
+  markers,
+  defaultViewport,
+  readyForDisplay,
+  highlightedMarkerIds,
+  markersPadding,
+}: UseClusterMarkersMapInputType): UseClusterMarkersMapOutputType => {
+  const [viewport, setViewport] = useState<ViewportType>(defaultViewport);
+  const { mapRef, map, clusters, supercluster, bounds } = useSuperClusterMap({
+    markers,
+    zoom: viewport.zoom,
+  });
   const idsString = markers.map(m => m.id).join(",");
 
   useEffect(() => {
@@ -160,13 +130,9 @@ export const MarkerMap: FC<MarkerMapType> = ({
   }, [highlightedMarkerIds]);
 
   useEffect(() => {
-    if (width == 0 || height == 0) return;
+    if (!readyForDisplay) return;
     if (markers.length <= 1) {
-      setViewport({
-        ...viewport,
-        ...defaultCoordinates,
-        ...smoothFlyToProps,
-      });
+      setViewport(defaultViewport);
       return;
     }
 
@@ -176,17 +142,53 @@ export const MarkerMap: FC<MarkerMapType> = ({
       markersPadding
     );
 
-    const newViewport: ViewportType = {
-      ...viewport,
+    setViewport((prevViewport: ViewportType) => ({
+      ...prevViewport,
       longitude,
       latitude,
       zoom,
       ...smoothFlyToProps,
-    };
-
-    setViewport(newViewport);
+    }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loaded, width, height, idsString]);
+  }, [readyForDisplay, idsString]);
+
+  return { viewport, setViewport, mapRef, clusters, supercluster };
+};
+
+export const MarkerMap: FC<MarkerMapType> = ({
+  markers,
+  clickHandler,
+  mouseEnterHandler,
+  mouseLeaveHandler,
+  mapZoom = 12,
+  withMapLabels = true,
+  markersPadding = 80,
+  highlightedMarkerIds = [],
+  markersAreLoading = false,
+  ...otherProps
+}) => {
+  const defaultCoordinates = {
+    latitude: markers[0]?.latitude || 52.52,
+    longitude: markers[0]?.longitude || 13.405,
+  };
+  const [mapIsLoaded, setLoaded] = useState(false);
+  const [mapContainerRef, { width, height }] = useMeasure<HTMLDivElement>();
+  const readyForDisplay =
+    !markersAreLoading && mapIsLoaded && width > 0 && height > 0;
+  const { mapRef, supercluster, clusters, viewport, setViewport } =
+    useClusterMarkersMap({
+      readyForDisplay,
+      markers,
+      markersPadding,
+      highlightedMarkerIds,
+      defaultViewport: {
+        ...defaultCoordinates,
+        width: width || 1200,
+        height: height || 800,
+        zoom: mapZoom,
+        ...smoothFlyToProps,
+      } as ViewportType,
+    });
 
   return (
     <div ref={mapContainerRef} className='w-full h-full'>
@@ -214,7 +216,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
           otherProps.onLoad && otherProps?.onLoad(evt);
         }}
       >
-        {loaded &&
+        {mapIsLoaded &&
           width > 0 &&
           height > 0 &&
           (clusters as ClusterType[] | NonClusterType[]).map(cluster => {

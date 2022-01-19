@@ -115,12 +115,14 @@ export const SensorsMap: FC<SensorsMapType> = ({
             if (ids.length === 0) return;
             const sensor = sensors.find(s => s.id === ids[0]);
             if (!sensor) return;
-            void push(`${sensor.authorUsername}/sensors/${sensor.id}`);
+            const path = `${sensor.authorUsername}/sensors/${sensor.id}`;
+            void push(path, path, { scroll: false });
           }}
           highlightedMarkerIds={hoveredSensorIds}
           mouseEnterHandler={ids => setHoveredSensorIds(ids)}
           mouseLeaveHandler={() => setHoveredSensorIds([])}
           markers={markers}
+          markersAreLoading={sensorsAreLoading}
         />
       </div>
     </section>
