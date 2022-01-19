@@ -9,6 +9,7 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    environment: remote-development
     if: "!contains(github.event.head_commit.message, 'skip ci')"
     steps:
       - name: Checkout
@@ -20,3 +21,5 @@ jobs:
         with:
           build: npm run build
           start: npm start -- -p 3333
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
