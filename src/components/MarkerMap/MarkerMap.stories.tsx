@@ -1,4 +1,5 @@
 import { Story, Meta } from "@storybook/react";
+import { useEffect, useState } from "react";
 import { MarkerMap, MarkerMapType } from ".";
 
 export default {
@@ -6,11 +7,23 @@ export default {
   component: MarkerMap,
 } as Meta;
 
-const Template: Story<MarkerMapType> = args => (
-  <main className='w-screen h-screen'>
-    <MarkerMap {...args} />
-  </main>
-);
+const Template: Story<MarkerMapType> = args => {
+  const [markers, setMarkers] = useState<MarkerMapType["markers"]>([]);
+
+  useEffect(() => {
+    const to = setTimeout(() => {
+      setMarkers(args.markers || []);
+    }, 500);
+    return () => clearTimeout(to);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return (
+    <main className='w-[calc(100vw-40px)] h-[calc(100vh-40px)]'>
+      <MarkerMap markers={markers} />
+    </main>
+  );
+};
 
 export const World = Template.bind({});
 World.args = {
@@ -72,15 +85,15 @@ Germany.args = {
     },
     {
       id: 3,
-      latitude: 53.5584902,
-      longitude: 9.7877409,
+      latitude: 53.571634,
+      longitude: 9.892816,
       isActive: false,
       isPulsating: false,
     },
     {
       id: 4,
-      latitude: 53.5584902,
-      longitude: 9.7877409,
+      latitude: 53.614652,
+      longitude: 10.111745,
       isActive: false,
       isPulsating: false,
     },

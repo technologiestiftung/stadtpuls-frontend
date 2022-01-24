@@ -2,7 +2,7 @@
 
 exports[`Storyshots Map/MarkerMap Berlin 1`] = `
 <main
-  className="w-screen h-screen"
+  className="w-[calc(100vw-40px)] h-[calc(100vh-40px)]"
 >
   <div
     className="w-full h-full"
@@ -46,7 +46,7 @@ exports[`Storyshots Map/MarkerMap Berlin 1`] = `
 
 exports[`Storyshots Map/MarkerMap Germany 1`] = `
 <main
-  className="w-screen h-screen"
+  className="w-[calc(100vw-40px)] h-[calc(100vh-40px)]"
 >
   <div
     className="w-full h-full"
@@ -90,7 +90,7 @@ exports[`Storyshots Map/MarkerMap Germany 1`] = `
 
 exports[`Storyshots Map/MarkerMap Park 1`] = `
 <main
-  className="w-screen h-screen"
+  className="w-[calc(100vw-40px)] h-[calc(100vh-40px)]"
 >
   <div
     className="w-full h-full"
@@ -134,7 +134,7 @@ exports[`Storyshots Map/MarkerMap Park 1`] = `
 
 exports[`Storyshots Map/MarkerMap World 1`] = `
 <main
-  className="w-screen h-screen"
+  className="w-[calc(100vw-40px)] h-[calc(100vh-40px)]"
 >
   <div
     className="w-full h-full"

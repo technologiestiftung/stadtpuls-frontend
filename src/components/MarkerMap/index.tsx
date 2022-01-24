@@ -21,6 +21,7 @@ import {
 import { Properties } from "@turf/turf";
 import Supercluster from "supercluster";
 import { useSuperClusterMap } from "@lib/hooks/useSuperClusterMap";
+import { MapControls } from "@components/MapControls";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
@@ -36,6 +37,7 @@ export interface MarkerMapType extends InteractiveMapProps {
   markersPadding?: number;
   highlightedMarkerIds?: number[];
   markersAreLoading?: boolean;
+  withControls?: boolean;
 }
 
 interface ClusterBaseType {
@@ -90,7 +92,10 @@ const useClusterMarkersMap = ({
   highlightedMarkerIds,
   markersPadding,
 }: UseClusterMarkersMapInputType): UseClusterMarkersMapOutputType => {
-  const [viewport, setViewport] = useState<ViewportType>(defaultViewport);
+  const [viewport, setViewport] = useState<ViewportType>({
+    ...defaultViewport,
+    bearing: 0,
+  });
   const { mapRef, map, clusters, supercluster, bounds } = useSuperClusterMap({
     markers,
     zoom: viewport.zoom,
@@ -110,6 +115,7 @@ const useClusterMarkersMap = ({
         ...prevViewport,
         latitude: highlightedMarkers[0].latitude,
         longitude: highlightedMarkers[0].longitude,
+        bearing: 0,
         ...smoothFlyToProps,
       }));
     } else {
@@ -123,6 +129,7 @@ const useClusterMarkersMap = ({
         latitude,
         longitude,
         zoom,
+        bearing: 0,
         ...smoothFlyToProps,
       }));
     }
@@ -132,7 +139,7 @@ const useClusterMarkersMap = ({
   useEffect(() => {
     if (!readyForDisplay) return;
     if (markers.length <= 1) {
-      setViewport(defaultViewport);
+      setViewport({ ...defaultViewport, bearing: 0 });
       return;
     }
 
@@ -141,12 +148,12 @@ const useClusterMarkersMap = ({
       viewport,
       markersPadding
     );
-
     setViewport((prevViewport: ViewportType) => ({
       ...prevViewport,
       longitude,
       latitude,
       zoom,
+      bearing: 0,
       ...smoothFlyToProps,
     }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -165,6 +172,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
   markersPadding = 80,
   highlightedMarkerIds = [],
   markersAreLoading = false,
+  withControls = true,
   ...otherProps
 }) => {
   const defaultCoordinates = {
@@ -207,6 +215,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
           setViewport({
             ...nextViewport,
             ...directFlyToProps,
+            bearing: 0,
           })
         }
         mapboxApiAccessToken={MAPBOX_TOKEN}
@@ -216,6 +225,22 @@ export const MarkerMap: FC<MarkerMapType> = ({
           otherProps.onLoad && otherProps?.onLoad(evt);
         }}
       >
+        {withControls && (
+          <MapControls
+            style={{
+              bottom: 32,
+              right: 16,
+            }}
+            onViewportChange={(nextViewport: ViewportType) => {
+              setViewport({
+                ...nextViewport,
+                ...smoothFlyToProps,
+                transitionDuration: 500,
+                bearing: 0,
+              });
+            }}
+          />
+        )}
         {mapIsLoaded &&
           width > 0 &&
           height > 0 &&
@@ -257,6 +282,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
                       latitude: cluster.geometry.coordinates[1],
                       longitude: cluster.geometry.coordinates[0],
                       zoom: expansionZoom,
+                      bearing: 0,
                       ...smoothFlyToProps,
                     });
                   },

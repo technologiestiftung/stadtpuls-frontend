@@ -1,0 +1,32 @@
+.root > div[class^="mapboxgl-ctrl"]:not(:empty) {
+  @apply bg-gray-50 transition border border-gray-200 rounded-none shadow flex flex-col;
+}
+
+.root > div[class^="mapboxgl-ctrl"]:not(:empty) button {
+  @apply w-10 h-10 text-blue relative;
+}
+
+.root > div[class^="mapboxgl-ctrl"]:not(:empty) button::before {
+  content: " ";
+  @apply absolute transition inset-0 h-full w-full bg-gray-400 mix-blend-color z-10;
+}
+
+.root > div[class^="mapboxgl-ctrl"]:not(:empty) button:hover {
+  @apply bg-none;
+}
+
+.root > div[class^="mapboxgl-ctrl"]:not(:empty) button:hover::before {
+  @apply bg-blue;
+}
+
+.root > div[class^="mapboxgl-ctrl"]:not(:empty) button[class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"] > span {
+  background-image: url('/images/icons/16px/plus.svg');
+}
+
+.root > div[class^="mapboxgl-ctrl"]:not(:empty) button[class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"] > span {
+  background-image: url('/images/icons/16px/minus.svg');
+}
+
+.root > div[class^="mapboxgl-ctrl"]:not(:empty) button[class="mapboxgl-ctrl-icon mapboxgl-ctrl-compass"] > span {
+  background-image: url('/images/icons/target.svg');
+}
