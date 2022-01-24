@@ -3654,7 +3654,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
     className="h-[calc(100vh-62px)] sticky w-full top-[62px]"
   >
     <div
-      className="w-full h-full"
+      className="w-full h-full relative"
     >
       <div
         style={

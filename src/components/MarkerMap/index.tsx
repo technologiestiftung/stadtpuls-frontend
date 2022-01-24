@@ -28,6 +28,7 @@ import Supercluster from "supercluster";
 import { useSuperClusterMap } from "@lib/hooks/useSuperClusterMap";
 import { MapControls } from "@components/MapControls";
 import styles from "./MarkerMap.module.css";
+import MapIcon from "../../../public/images/icons/16px/map.svg";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
@@ -206,7 +207,19 @@ export const MarkerMap: FC<MarkerMapType> = ({
     });
 
   return (
-    <div ref={mapContainerRef} className='w-full h-full'>
+    <div ref={mapContainerRef} className='w-full h-full relative'>
+      {markersAreLoading && (
+        <div
+          className={[
+            "absolute inset-0 bg-white bg-opacity-90 grid items-center",
+            "justify-center z-10 font-bold",
+          ].join(" ")}
+        >
+          <span className='flex gap-2 items-center leading-3'>
+            <MapIcon /> Karte Lädt...
+          </span>
+        </div>
+      )}
       <ReactMapGL
         {...viewport}
         width={width}
