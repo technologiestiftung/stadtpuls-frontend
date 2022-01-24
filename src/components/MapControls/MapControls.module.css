@@ -1,9 +1,9 @@
 .root {
-  @apply z-20;
+  @apply z-20 shadow;
 }
 
 .root > div[class^="mapboxgl-ctrl"]:not(:empty) {
-  @apply bg-gray-50 transition border border-gray-200 rounded-none shadow flex flex-col z-20;
+  @apply bg-white transition border border-gray-200 rounded-none shadow-none flex flex-col z-20;
 }
 
 .root > div[class^="mapboxgl-ctrl"]:not(:empty) button {
