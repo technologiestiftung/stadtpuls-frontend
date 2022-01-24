@@ -44,10 +44,11 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             className="grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center"
           >
             <span
-              className=" inline-block bg-gray-50 w-6 h-6"
+              className=" inline-block bg-gray-50 w-6 h-6}"
             >
               <img
                 alt="Sensor Symbol 3"
+                className="w-6 h-6"
                 src="/images/sensor-symbols/3.svg"
               />
             </span>
@@ -629,10 +630,11 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             className="grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center"
           >
             <span
-              className=" inline-block bg-gray-50 w-6 h-6"
+              className=" inline-block bg-gray-50 w-6 h-6}"
             >
               <img
                 alt="Sensor Symbol 13"
+                className="w-6 h-6"
                 src="/images/sensor-symbols/13.svg"
               />
             </span>
@@ -1214,10 +1216,11 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             className="grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center"
           >
             <span
-              className=" inline-block bg-gray-50 w-6 h-6"
+              className=" inline-block bg-gray-50 w-6 h-6}"
             >
               <img
                 alt="Sensor Symbol 16"
+                className="w-6 h-6"
                 src="/images/sensor-symbols/16.svg"
               />
             </span>
@@ -1765,10 +1768,11 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             className="grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center"
           >
             <span
-              className=" inline-block bg-gray-50 w-6 h-6"
+              className=" inline-block bg-gray-50 w-6 h-6}"
             >
               <img
                 alt="Sensor Symbol 1"
+                className="w-6 h-6"
                 src="/images/sensor-symbols/1.svg"
               />
             </span>
@@ -2350,10 +2354,11 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             className="grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center"
           >
             <span
-              className=" inline-block bg-gray-50 w-6 h-6"
+              className=" inline-block bg-gray-50 w-6 h-6}"
             >
               <img
                 alt="Sensor Symbol 4"
+                className="w-6 h-6"
                 src="/images/sensor-symbols/4.svg"
               />
             </span>
@@ -2935,10 +2940,11 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             className="grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center"
           >
             <span
-              className=" inline-block bg-gray-50 w-6 h-6"
+              className=" inline-block bg-gray-50 w-6 h-6}"
             >
               <img
                 alt="Sensor Symbol 19"
+                className="w-6 h-6"
                 src="/images/sensor-symbols/19.svg"
               />
             </span>
@@ -3670,7 +3676,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
           }
         >
           <div
-            className=""
+            className=" undefined"
             style={
               Object {
                 "height": "100%",

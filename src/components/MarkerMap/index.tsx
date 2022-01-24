@@ -6,7 +6,12 @@ import {
   Dispatch,
   RefObject,
 } from "react";
-import ReactMapGL, { InteractiveMapProps, MapRef, Marker } from "react-map-gl";
+import ReactMapGL, {
+  AttributionControl,
+  InteractiveMapProps,
+  MapRef,
+  Marker,
+} from "react-map-gl";
 import { useMeasure } from "react-use";
 import { MarkerType } from "../../common/interfaces";
 import { MarkerCircle } from "../MarkerCircle";
@@ -22,6 +27,7 @@ import { Properties } from "@turf/turf";
 import Supercluster from "supercluster";
 import { useSuperClusterMap } from "@lib/hooks/useSuperClusterMap";
 import { MapControls } from "@components/MapControls";
+import styles from "./MarkerMap.module.css";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
@@ -173,6 +179,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
   highlightedMarkerIds = [],
   markersAreLoading = false,
   withControls = true,
+  className = "",
   ...otherProps
 }) => {
   const defaultCoordinates = {
@@ -205,6 +212,8 @@ export const MarkerMap: FC<MarkerMapType> = ({
         width={width}
         height={height}
         ref={mapRef}
+        attributionControl={false}
+        className={`${className} ${styles.mapContainer}`}
         mapStyle={
           (withMapLabels
             ? process.env.NEXT_PUBLIC_MAPBOX_LABELS_TILESET_URL
@@ -317,6 +326,11 @@ export const MarkerMap: FC<MarkerMapType> = ({
               </Marker>
             );
           })}
+        <AttributionControl
+          compact={true}
+          style={{ top: 16, left: 16 }}
+          className={styles.mapParent}
+        />
       </ReactMapGL>
     </div>
   );
