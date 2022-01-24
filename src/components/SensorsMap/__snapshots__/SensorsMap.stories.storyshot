@@ -2,7 +2,7 @@
 
 exports[`Storyshots Pages/SensorsMap Default 1`] = `
 <section
-  className="grid grid-cols-2 relative"
+  className="sm:grid sm:grid-cols-2 relative"
 >
   <aside
     className="p-4 bg-white overflow-y-auto"
@@ -20,7 +20,8 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
       >
         Seite 
         3
-         von 
+         von
+         
         12
       </h2>
     </div>
@@ -559,12 +560,12 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="text-sm break-words text-gray-600 xl:hidden flex-grow-0"
+            className="text-sm break-words text-gray-600 xl:hidden flex-grow-0 max-w-full"
           >
             Absolute Stille, das gibt es praktisch nur im Vakuum. Da, wo sich Scha...
           </p>
           <div
-            className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+            className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end"
           >
             <div
               className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
@@ -1144,12 +1145,12 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="text-sm break-words text-gray-600 xl:hidden flex-grow-0"
+            className="text-sm break-words text-gray-600 xl:hidden flex-grow-0 max-w-full"
           >
             Offene Verwaltungsdaten helfen uns, die Lärmbelastung in Berlin zu ver...
           </p>
           <div
-            className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+            className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end"
           >
             <div
               className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
@@ -1729,12 +1730,12 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="text-sm break-words text-gray-600 xl:hidden flex-grow-0"
+            className="text-sm break-words text-gray-600 xl:hidden flex-grow-0 max-w-full"
           >
             Wir wollten wissen: Wie wird die Lebensqualität im Kiez durch Lärm bee...
           </p>
           <div
-            className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+            className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end"
           >
             <div
               className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
@@ -2280,12 +2281,12 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="text-sm break-words text-gray-600 xl:hidden flex-grow-0"
+            className="text-sm break-words text-gray-600 xl:hidden flex-grow-0 max-w-full"
           >
             Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz Temper...
           </p>
           <div
-            className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+            className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end"
           >
             <div
               className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
@@ -2865,12 +2866,12 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <p
-            className="text-sm break-words text-gray-600 xl:hidden flex-grow-0"
+            className="text-sm break-words text-gray-600 xl:hidden flex-grow-0 max-w-full"
           >
             Eine Boombox dröhnt im Park, die U1 quietscht über die Hochbahnstrecke...
           </p>
           <div
-            className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+            className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end"
           >
             <div
               className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
@@ -3450,7 +3451,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             </span>
           </p>
           <div
-            className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+            className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end"
           >
             <div
               className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"

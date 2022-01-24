@@ -534,14 +534,14 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
         </span>
       </p>
       <p
-        className="text-sm break-words text-gray-600 xl:hidden flex-grow-0"
+        className="text-sm break-words text-gray-600 xl:hidden flex-grow-0 max-w-full"
       >
         
         @wdanxna
          when Array is given multiple arguments, it iterates over the ...
       </p>
       <div
-        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end"
       >
         <div
           className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
@@ -1127,7 +1127,7 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
       </p>
       
       <div
-        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end"
       >
         <div
           className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
@@ -1678,12 +1678,12 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
         </span>
       </p>
       <p
-        className="text-sm break-words text-gray-600 xl:hidden flex-grow-0"
+        className="text-sm break-words text-gray-600 xl:hidden flex-grow-0 max-w-full"
       >
         Luftqualität im Wagon AAB3 vom Ubahn der Linie 3
       </p>
       <div
-        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 justify-self-end"
+        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end"
       >
         <div
           className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"

@@ -13,6 +13,7 @@ import NextNProgress from "nextjs-progressbar";
 import colors from "../src/style/colors";
 import { DownloadQueueProvider } from "@lib/hooks/useDownloadQueue";
 import { BetaBanner } from "@components/BetaBanner";
+import { useWindowSize } from "@lib/hooks/useWindowSize";
 
 if (process.env.NODE_ENV !== "production") {
   // require("../src/mocks/index");
@@ -24,6 +25,11 @@ const App: FC<{
 }> = ({ Component, pageProps }) => {
   useMatomo();
   const { pathname } = useRouter();
+  const { width: windowWidth } = useWindowSize();
+  const isMobile = windowWidth && windowWidth < 640;
+  const isSensorsPage = pathname?.startsWith("/sensors");
+  const isDocsPage = pathname?.startsWith("/docs");
+  const isSensorsMap = isSensorsPage && isMobile;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -39,9 +45,7 @@ const App: FC<{
             color={colors.green}
             options={{ showSpinner: false }}
           />
-          {!pathname?.startsWith("/docs") && pathname !== "/sensors" && (
-            <BetaBanner />
-          )}
+          {!isDocsPage && !isSensorsPage && <BetaBanner />}
           <main
             id={pathname?.replace(/\//gi, "") || "home"}
             className='z-0 relative w-full'
@@ -53,7 +57,7 @@ const App: FC<{
             <Header />
             <Component {...pageProps} />
           </main>
-          <Footer />
+          {!isSensorsMap && <Footer />}
         </DownloadQueueProvider>
       </AuthProvider>
     </StrictMode>

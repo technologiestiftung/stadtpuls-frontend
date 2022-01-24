@@ -228,7 +228,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
         {withControls && (
           <MapControls
             style={{
-              bottom: 32,
+              top: 16,
               right: 16,
             }}
             onViewportChange={(nextViewport: ViewportType) => {

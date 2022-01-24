@@ -92,7 +92,7 @@ export const SensorsListRow: FC<SensorsListRowPropType> = ({
           </p>
           {description && (
             <ReactAutolinker
-              className='text-sm break-words text-gray-600 xl:hidden flex-grow-0'
+              className='text-sm break-words text-gray-600 xl:hidden flex-grow-0 max-w-full'
               tagName='p'
               renderLink={({ attrs, innerHtml: text }) => {
                 const url = new URL(attrs.href);
@@ -115,7 +115,7 @@ export const SensorsListRow: FC<SensorsListRowPropType> = ({
           <div
             className={[
               "w-full xl:w-[140px] h-[72px]",
-              "relative flex-shrink-0 flex-grow-0 justify-self-end",
+              "relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end",
             ].join(" ")}
           >
             <ChartThumbnail
