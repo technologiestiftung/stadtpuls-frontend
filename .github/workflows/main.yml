@@ -9,18 +9,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: remote-development
     if: "!contains(github.event.head_commit.message, 'skip ci')"
     strategy:
       matrix:
         node-version: [14.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - uses: szenius/set-timezone@v1.0
+      - name: Set timezone
+        uses: szenius/set-timezone@v1.0
         with:
           timezoneLinux: "Europe/Berlin"
       - run: npm ci
@@ -30,3 +33,11 @@ jobs:
       - run: npm run test:ci 
         env:
           CI: true
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm start -- -p 3333
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_PUBLIC_KEY }}
