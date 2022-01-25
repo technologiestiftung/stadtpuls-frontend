@@ -27,6 +27,7 @@ module.exports = {
     screens: {
       xs: '400px',
       ...defaultTheme.screens,
+      '3xl': '1920px',
     },
     fontFamily: {
       headline: ["'SpaceGrotesk'", ...fallbackFonts],

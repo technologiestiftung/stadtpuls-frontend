@@ -50,10 +50,11 @@ export const SensorsListRow: FC<SensorsListRowPropType> = ({
           title={`${name} - ${categoryName} Sensor von ${authorName}`}
           aria-current={isHighlighted ? "page" : undefined}
           className={[
-            "flex flex-wrap xl:grid gap-2 xl:gap-8 p-4 xl:py-2",
+            "grid flex-wrap gap-2 xl:gap-4 p-4 xl:py-2",
             "grid-cols-1 focus-offset",
-            "xl:grid-cols-[5fr,2fr,2fr,120px]",
-            "2xl:grid-cols-[5fr,2fr,2fr,140px]",
+            "xl:grid-cols-[4fr,2fr,120px]",
+            "2xl:grid-cols-[8fr,2fr,120px]",
+            "3xl:grid-cols-[8fr,4fr,120px]",
             "md:justify-between z-10 relative",
             "group border",
             "hover:border-purple hover:bg-white hover:z-20 hover:shadow-purple",
@@ -66,52 +67,59 @@ export const SensorsListRow: FC<SensorsListRowPropType> = ({
             .filter(Boolean)
             .join(" ")}
         >
-          <div className='grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center'>
-            <SensorSymbol symbol={symbolId} />
-            <h3
-              className={[
-                "text-xl leading-6 pt-1 xl:whitespace-nowrap",
-                "xl:leading-7 xl:pt-0 break-words",
-                "font-headline font-bold block xl:truncate",
-              ].join(" ")}
-            >
-              {name}
-            </h3>
+          <div className='flex flex-col 2xl:grid xl:grid-cols-2 gap-2 xl:gap-4'>
+            <div className='grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center'>
+              <SensorSymbol symbol={symbolId} />
+              <h3
+                className={[
+                  "text-xl leading-6 pt-1 xl:whitespace-nowrap",
+                  "xl:leading-7 xl:pt-0 break-words",
+                  "font-headline font-bold block xl:truncate",
+                ].join(" ")}
+              >
+                {name}
+              </h3>
+            </div>
+            {description && (
+              <ReactAutolinker
+                className={[
+                  "text-sm leading-5 xl:hidden 2xl:block",
+                  "break-words text-gray-600 flex-grow-0 max-w-full",
+                ].join(" ")}
+                tagName='p'
+                renderLink={({ attrs, innerHtml: text }) => {
+                  const url = new URL(attrs.href);
+                  const isTwitter = url.host === "twitter.com";
+                  if (isTwitter) return text;
+                  return (
+                    <span
+                      key={attrs.key}
+                      className='underline underline-gray break-all'
+                    >{`${url.host}`}</span>
+                  );
+                }}
+                text={
+                  description.length > DESCRIPTION_MAX_LENGTH
+                    ? `${description.slice(0, DESCRIPTION_MAX_LENGTH)}...`
+                    : description
+                }
+              />
+            )}
           </div>
-          <p className='inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center'>
-            {authorName && <UserAvatar username={authorName} size={16} />}
-            <span className='inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5'>
-              {authorName}
+          <div className='flex xl:flex-col 3xl:grid 3xl:grid-cols-2 gap-3 xl:gap-2'>
+            <span className='inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center'>
+              {authorName && <UserAvatar username={authorName} size={16} />}
+              <span className='inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5'>
+                {authorName}
+              </span>
             </span>
-          </p>
-          <p className='inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center'>
-            <CategoryIcon categoryId={categoryId} className='text-gray-500' />
-            <span className='inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5'>
-              {categoryName}
+            <span className='inline-grid xl:grid grid-cols-[16px,1fr] gap-2 items-center'>
+              <CategoryIcon categoryId={categoryId} className='text-gray-500' />
+              <span className='inline-block truncate whitespace-nowrap text-sm text-gray-600 leading-4 mt-0.5'>
+                {categoryName}
+              </span>
             </span>
-          </p>
-          {description && (
-            <ReactAutolinker
-              className='text-sm break-words text-gray-600 xl:hidden flex-grow-0 max-w-full'
-              tagName='p'
-              renderLink={({ attrs, innerHtml: text }) => {
-                const url = new URL(attrs.href);
-                const isTwitter = url.host === "twitter.com";
-                if (isTwitter) return text;
-                return (
-                  <span
-                    key={attrs.key}
-                    className='underline underline-gray break-all'
-                  >{`${url.host}`}</span>
-                );
-              }}
-              text={
-                description.length > DESCRIPTION_MAX_LENGTH
-                  ? `${description.slice(0, DESCRIPTION_MAX_LENGTH)}...`
-                  : description
-              }
-            />
-          )}
+          </div>
           <div
             className={[
               "w-full xl:w-[140px] h-[72px]",
