@@ -30,3 +30,6 @@ storybook-static
 
 # Web Workers
 public/workers
+
+# Cypress
+cypress.env.json

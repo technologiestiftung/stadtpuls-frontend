@@ -1,4 +1,5 @@
 {
   "baseUrl": "http://localhost:3333",
-  "testFiles": "**/*.test.*"
+  "testFiles": "**/*.test.*",
+  "video": false
 }
