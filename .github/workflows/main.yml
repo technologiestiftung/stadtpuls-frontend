@@ -51,7 +51,7 @@ jobs:
         ports:
           - 6379:6379
       api:
-        image: technologiestiftung/stadtpuls-api:3.0.0
+        image: technologiestiftung/stadtpuls-api:v3.0.0
         ports:
           - 4000:4000
 
