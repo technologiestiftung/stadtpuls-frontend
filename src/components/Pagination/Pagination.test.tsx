@@ -26,7 +26,8 @@ describe("Pagination component", () => {
       counts.pageRangeDisplayed +
       counts.breakItem +
       counts.marginPagesDisplayed +
-      counts.nextButton;
+      counts.nextButton -
+      1; // - 1 because the currently selected page is not considered a listitem by react-paginate anymore
 
     const listItems = screen.getAllByRole("listitem");
     expect(listItems.length).toBe(expectedNumberOfListItems);
