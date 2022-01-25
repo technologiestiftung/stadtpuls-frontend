@@ -8,5 +8,5 @@ git clone \
   --sparse \
   --branch v4.0.0 \
   https://github.com/technologiestiftung/stadtpuls-supabase.git supabase \
-  && cd stadtpuls-supabase \
+  && cd supabase \
   && git sparse-checkout set supabase-docker-compose
