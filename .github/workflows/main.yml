@@ -32,7 +32,7 @@ env:
   KONG_PORT: 8000
   KONG_PORT_TLS: 8443
   SUPABASE_MAX_ROWS: 3000
-  REDIS_URL: http://redis:6379
+  REDIS_URL: redis://localhost:6379
   STAGE: test
 on:
   push:
@@ -86,6 +86,7 @@ jobs:
           --env PORT=$PORT \
           --env DATABASE_URL=$DATABASE_URL \
           --env REDIS_URL=$REDIS_URL \
+          --network host \
           --env STAGE=$STAGE \
           technologiestiftung/stadtpuls-api:staging
       # run the api for local usage
@@ -103,6 +104,7 @@ jobs:
           --env PORT=$PORT \
           --env DATABASE_URL=$DATABASE_URL \
           --env REDIS_URL=$REDIS_URL \
+          --network host \
           --env STAGE=$STAGE \
           technologiestiftung/stadtpuls-api:main
 
