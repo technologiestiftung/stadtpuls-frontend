@@ -36,6 +36,8 @@ We also use the [storyshots addon](https://storybook.js.org/docs/react/workflows
 
 ### Testing
 
+#### Unit Testing
+
 We use [jest](https://jestjs.io/) to unit test our code. We also use a [testing-library](https://testing-library.com/) to test our react components, user events, and other things.
 
 To run the tests enter:
@@ -45,8 +47,31 @@ npm t
 
 Or in watch mode:
 ```sh
-nom run test:watch
+npm run test:watch
 ```
+
+If you want to explicitly update the testing snapshots, run:
+```sh
+npm run test -- -u
+```
+
+#### Integration Testing
+We use [Cypress](https://docs.cypress.io/guides/guides/environment-variables) for integration tests. You will find integration tests in two scenarios:
+
+1. **CI**: GitHub Actions will run the Cypress tests for each PR against `main` or `staging`. The configuration for these tests is already defined in a GitHub environment.
+2. **Local development**: When working locally, you will have to run Cypress yourself. See the next section for details.
+
+##### Running Cypress locally
+
+First, make sure to add a file `/cypress.env.json`. This will hold the details loaded into the [Cypress environment variables](https://docs.cypress.io/guides/guides/environment-variables). Ask your team mates for the required contents of this file. It holds sensitive information and should never be added to source control.
+
+After adding and filling out the `/cypress.env.json` file, you can start the Cypress integration tests using
+
+```sh
+npm run cypress:open
+```
+
+> Make sure that you have you local development server running, otherwise the integration tests can not be launched.
 
 ### Requests
 
