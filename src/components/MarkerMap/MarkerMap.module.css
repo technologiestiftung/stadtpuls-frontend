@@ -24,8 +24,10 @@
 }
 
 .mapContainer div[class="mapboxgl-ctrl-bottom-left"] {
-  top: 18px;
-  left: 40px;
-  z-index: 1;
-  pointer-events: none;
+  @apply bottom-14 sm:bottom-0.5 left-8 z-10 pointer-events-none transform -translate-y-0.5;
+}
+
+.mapParent a,
+.mapContainer a {
+  @apply focus-offset;
 }

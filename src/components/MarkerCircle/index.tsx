@@ -38,7 +38,7 @@ export const MarkerCircle: FC<MarkerCirclePropType> = ({
           isHighlighted && "bg-green text-blue",
           !isActive && !isHighlighted && "bg-gray-400 text-white",
           isInteractive && "hover:bg-green hover:text-blue",
-          "border-white border-2",
+          "border-white border-2 focus-offset",
           "text-center transition-colors",
           "-translate-x-1/2 -translate-y-1/2",
           `${isInteractive ? "cursor-pointer" : "cursor-default"}`,

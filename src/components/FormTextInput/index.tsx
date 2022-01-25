@@ -1,4 +1,4 @@
-import { HTMLProps, forwardRef, ReactNode } from "react";
+import { HTMLProps, forwardRef, ReactNode, ChangeEvent } from "react";
 import styles from "./FormTextInput.module.css";
 
 interface FormTextInputPropType
@@ -8,6 +8,7 @@ interface FormTextInputPropType
   containerClassName?: string;
   errors?: ReactNode[];
   optional?: boolean;
+  onChange?: (evt: ChangeEvent<HTMLInputElement>) => void;
 }
 
 // eslint-disable-next-line react/display-name

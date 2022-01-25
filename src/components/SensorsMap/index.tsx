@@ -69,7 +69,7 @@ const MapListSwitch: FC<{
     <div
       className={[
         "bg-white rounded-full border border-gray-200",
-        "fixed w-[calc(100vw-2rem)] left-4 bottom-4 z-20",
+        "fixed w-[calc(100vw-1rem)] left-2 bottom-2 z-30",
         "shadow flex transform justify-center gap-2",
         "transition-transform translate-y-0",
       ].join(" ")}

@@ -33,7 +33,7 @@ exports[`Storyshots Promotional/LandingHeroBackgroundMap Default 1`] = `
         }
       >
         <div
-          className=" undefined"
+          className=" undefined undefined"
           style={
             Object {
               "height": "100%",

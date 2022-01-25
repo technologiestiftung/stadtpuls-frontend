@@ -11,6 +11,7 @@ import ReactMapGL, {
   InteractiveMapProps,
   MapRef,
   Marker,
+  WebMercatorViewport,
 } from "react-map-gl";
 import { useMeasure } from "react-use";
 import { MarkerType } from "../../common/interfaces";
@@ -29,6 +30,8 @@ import { useSuperClusterMap } from "@lib/hooks/useSuperClusterMap";
 import { MapControls } from "@components/MapControls";
 import styles from "./MarkerMap.module.css";
 import MapIcon from "../../../public/images/icons/16px/map.svg";
+import { useWindowSize } from "@lib/hooks/useWindowSize";
+import { GeoSearchField } from "@components/GeoSearchField";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
@@ -45,6 +48,7 @@ export interface MarkerMapType extends InteractiveMapProps {
   highlightedMarkerIds?: number[];
   markersAreLoading?: boolean;
   withControls?: boolean;
+  withPlaceSearch?: boolean;
 }
 
 interface ClusterBaseType {
@@ -180,6 +184,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
   highlightedMarkerIds = [],
   markersAreLoading = false,
   withControls = true,
+  withPlaceSearch = true,
   className = "",
   ...otherProps
 }) => {
@@ -205,28 +210,20 @@ export const MarkerMap: FC<MarkerMapType> = ({
         ...smoothFlyToProps,
       } as ViewportType,
     });
+  const { width: windowWidth } = useWindowSize();
+  const isSm = windowWidth && windowWidth < 640;
 
   return (
     <div ref={mapContainerRef} className='w-full h-full relative'>
-      {markersAreLoading && (
-        <div
-          className={[
-            "absolute inset-0 bg-white bg-opacity-90 grid items-center",
-            "justify-center z-10 font-bold",
-          ].join(" ")}
-        >
-          <span className='flex gap-2 items-center leading-3'>
-            <MapIcon /> Karte Lädt...
-          </span>
-        </div>
-      )}
       <ReactMapGL
         {...viewport}
         width={width}
         height={height}
         ref={mapRef}
         attributionControl={false}
-        className={`${className} ${styles.mapContainer}`}
+        className={`${className} ${styles.mapContainer} ${
+          withPlaceSearch ? styles.withSearch : ""
+        }`}
         mapStyle={
           (withMapLabels
             ? process.env.NEXT_PUBLIC_MAPBOX_LABELS_TILESET_URL
@@ -246,12 +243,13 @@ export const MarkerMap: FC<MarkerMapType> = ({
           setLoaded(true);
           otherProps.onLoad && otherProps?.onLoad(evt);
         }}
+        keyboard={false}
       >
         {withControls && (
           <MapControls
             style={{
-              top: 16,
-              right: 16,
+              bottom: isSm && withPlaceSearch ? 64 : 8,
+              right: 8,
             }}
             onViewportChange={(nextViewport: ViewportType) => {
               setViewport({
@@ -341,9 +339,49 @@ export const MarkerMap: FC<MarkerMapType> = ({
           })}
         <AttributionControl
           compact={true}
-          style={{ top: 16, left: 16 }}
-          className={styles.mapParent}
+          style={{ bottom: isSm ? 64 : 8, left: 8 }}
+          className={`${styles.mapParent}`}
         />
+        {withPlaceSearch && (
+          <GeoSearchField
+            onPlaceClick={item => {
+              let newViewport = {
+                latitude: item.latitude,
+                longitude: item.longitude,
+                zoom: mapZoom,
+              };
+              if (item.bbox) {
+                const { latitude, longitude, zoom } = new WebMercatorViewport(
+                  viewport
+                ).fitBounds(
+                  [
+                    [item.bbox[0], item.bbox[1]],
+                    [item.bbox[2], item.bbox[3]],
+                  ],
+                  { padding: markersPadding }
+                );
+                newViewport = { latitude, longitude, zoom };
+              }
+              setViewport((prevViewport: ViewportType) => ({
+                ...prevViewport,
+                ...smoothFlyToProps,
+                ...newViewport,
+              }));
+            }}
+          />
+        )}
+        {markersAreLoading && (
+          <div
+            className={[
+              "absolute inset-0 bg-white bg-opacity-90 grid items-center",
+              "justify-center z-50 font-bold",
+            ].join(" ")}
+          >
+            <span className='flex gap-2 items-center leading-3'>
+              <MapIcon /> Karte Lädt...
+            </span>
+          </div>
+        )}
       </ReactMapGL>
     </div>
   );
