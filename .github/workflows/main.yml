@@ -85,6 +85,7 @@ jobs:
           --env PORT=$PORT \
           --env DATABASE_URL=$DATABASE_URL \
           --env REDIS_URL=$REDIS_URL \
+          --env STAGE=$STAGE \
           technologiestiftung/stadtpuls-api:staging
       # run the api for local usage
       - name: stadtpuls-api#main
@@ -100,6 +101,7 @@ jobs:
           --env PORT=$PORT \
           --env DATABASE_URL=$DATABASE_URL \
           --env REDIS_URL=$REDIS_URL \
+          --env STAGE=$STAGE \
           technologiestiftung/stadtpuls-api:main
 
       - name: Read .nvmrc
