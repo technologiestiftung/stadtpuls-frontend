@@ -78,8 +78,9 @@ jobs:
           docker run --publish "$PORT:4000" \
           --env SUPABASE_SERVICE_ROLE_KEY=$SUPABASE_SERVICE_ROLE_KEY \
           --env SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY \
-          --env JWT_SECRET=$JWT_SECRET \
+          --env SUPABASE_MAX_ROWS=$SUPABASE_MAX_ROWS \
           --env SUPABASE_URL=$SUPABASE_URL \
+          --env JWT_SECRET=$JWT_SECRET \
           --env ISSUER=$ISSUER \
           --env LOG_LEVEL=$LOG_LEVEL \
           --env PORT=$PORT \
@@ -94,8 +95,9 @@ jobs:
           docker run --publish "$PORT:4000" \
           --env SUPABASE_SERVICE_ROLE_KEY=$SUPABASE_SERVICE_ROLE_KEY \
           --env SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY \
-          --env JWT_SECRET=$JWT_SECRET \
+          --env SUPABASE_MAX_ROWS=$SUPABASE_MAX_ROWS \
           --env SUPABASE_URL=$SUPABASE_URL \
+          --env JWT_SECRET=$JWT_SECRET \
           --env ISSUER=$ISSUER \
           --env LOG_LEVEL=$LOG_LEVEL \
           --env PORT=$PORT \
