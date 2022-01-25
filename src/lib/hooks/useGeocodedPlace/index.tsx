@@ -1,4 +1,5 @@
 import { BBox } from "@turf/turf";
+import { useState } from "react";
 import useSWR from "swr";
 
 interface RawSearchResultType {
@@ -45,12 +46,26 @@ export const useGeocodedPlace = (
   searchTerm: string
 ): {
   results: SearchResultType[];
+  isLoading: boolean;
   error: Error | null;
 } => {
+  const [isLoading, setIsLoading] = useState(true);
   const { data: results, error } = useSWR<SearchResultType[], Error>(
     ["sidebarSearch", searchTerm],
-    () => fetchSearch(searchTerm)
+    async () => {
+      setIsLoading(true);
+      try {
+        return await fetchSearch(searchTerm);
+      } finally {
+        setIsLoading(false);
+      }
+      return [];
+    }
   );
 
-  return { results: results || [], error: error || null };
+  return {
+    results: results || [],
+    isLoading,
+    error: error || null,
+  };
 };

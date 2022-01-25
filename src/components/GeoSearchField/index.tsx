@@ -4,8 +4,16 @@ import {
   SearchResultType,
   useGeocodedPlace,
 } from "@lib/hooks/useGeocodedPlace";
-import React, { ChangeEvent, FC, KeyboardEvent, useState } from "react";
+import React, {
+  ChangeEvent,
+  ElementType,
+  FC,
+  KeyboardEvent,
+  useState,
+} from "react";
 import GeoPinIcon from "../../../public/images/icons/16px/geopin.svg";
+import LoupIcon from "../../../public/images/icons/16px/magnifyingGlass.svg";
+import SpinnerIcon from "../../../public/images/icons/16px/spinner.svg";
 
 interface GeoSearchFieldPropType {
   onPlaceClick: (item: SearchResultType) => void;
@@ -66,56 +74,68 @@ export const GeoSearchField: FC<GeoSearchFieldPropType> = ({
   const searchInputRef = useClickOutside<HTMLDivElement>(() =>
     setSearchInputIsOpened(false)
   );
-  const { results } = useGeocodedPlace(searchInput);
+  const { results, isLoading } = useGeocodedPlace(searchInput);
   const [highlightedResult, setHighlightedResult] = useState<number>(0);
+  const Icon = (isLoading ? SpinnerIcon : LoupIcon) as ElementType;
 
   return (
     <div
       className='absolute top-2 left-2 w-[calc(100%-16px)] max-w-sm z-40'
       ref={searchInputRef}
     >
-      <FormTextInput
-        type='text'
-        name='searchInput'
-        placeholder='Nach einen Ort suchen'
-        value={searchInput}
-        onChange={(evt: ChangeEvent<HTMLInputElement>) => {
-          setSearchInput(evt.target.value);
-          !searchInputIsOpened && setSearchInputIsOpened(true);
-        }}
-        containerClassName='m-0'
-        className='w-full shadow'
-        onKeyDown={(evt: KeyboardEvent<HTMLInputElement>) => {
-          const highlightedItem = results[highlightedResult] || results[0];
-          switch (evt.key) {
-            case "ArrowDown":
-              setHighlightedResult(
-                highlightedResult === results.length - 1
-                  ? 0
-                  : highlightedResult + 1
-              );
-              break;
-            case "ArrowUp":
-              setHighlightedResult(
-                highlightedResult === 0
-                  ? results.length - 1
-                  : highlightedResult - 1
-              );
-              break;
-            case "Enter":
-              setSearchInput(highlightedItem.name);
-              setHighlightedResult(0);
-              onPlaceClick(highlightedItem);
-              setSearchInputIsOpened(false);
-              break;
-            case "Escape":
-              setSearchInputIsOpened(false);
-              break;
-            default:
-              break;
-          }
-        }}
-      />
+      <div className='relative'>
+        <span
+          className={[
+            "absolute right-3 top-1/2 transform -translate-y-1/2",
+            "text-gray-300 group-hover:text-blue transition-colors",
+            "pointer-events-none rotate-0",
+          ].join(" ")}
+        >
+          <Icon className={isLoading ? "animate-spin" : ""} />
+        </span>
+        <FormTextInput
+          type='text'
+          name='searchInput'
+          placeholder='Nach einen Ort suchen'
+          value={searchInput}
+          onChange={(evt: ChangeEvent<HTMLInputElement>) => {
+            setSearchInput(evt.target.value);
+            !searchInputIsOpened && setSearchInputIsOpened(true);
+          }}
+          containerClassName='m-0'
+          className='w-full shadow pr-10'
+          onKeyDown={(evt: KeyboardEvent<HTMLInputElement>) => {
+            const highlightedItem = results[highlightedResult] || results[0];
+            switch (evt.key) {
+              case "ArrowDown":
+                setHighlightedResult(
+                  highlightedResult === results.length - 1
+                    ? 0
+                    : highlightedResult + 1
+                );
+                break;
+              case "ArrowUp":
+                setHighlightedResult(
+                  highlightedResult === 0
+                    ? results.length - 1
+                    : highlightedResult - 1
+                );
+                break;
+              case "Enter":
+                setSearchInput(highlightedItem.name);
+                setHighlightedResult(0);
+                onPlaceClick(highlightedItem);
+                setSearchInputIsOpened(false);
+                break;
+              case "Escape":
+                setSearchInputIsOpened(false);
+                break;
+              default:
+                break;
+            }
+          }}
+        />
+      </div>
       {searchInputIsOpened && (
         <ul className='bg-white shadow -mt-4 focus-offset'>
           {results.map((item: SearchResultType, idx) => (
