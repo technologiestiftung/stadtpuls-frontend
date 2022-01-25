@@ -50,6 +50,12 @@ jobs:
         image: redis:6.2.6-alpine
         ports:
           - 6379:6379
+      api:
+        image: technologiestiftung/stadtpuls-api:3.0.0
+        ports:
+          - 4000:4000
+
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -71,42 +77,42 @@ jobs:
           path: supabase
       - name: Run supabase
         run: docker-compose --env-file supabase/supabase-docker-compose/.env.example --file supabase/supabase-docker-compose/docker-compose.yml up --detach --build --force-recreate
+      # # run the api for local usage
+      # - name: stadtpuls-api#staging
+      #   if: github.event.pull_request.base.ref == 'staging' || github.ref == 'refs/heads/staging'
+      #   run: |
+      #     docker run --publish "$PORT:4000" \
+      #     --env SUPABASE_SERVICE_ROLE_KEY=$SUPABASE_SERVICE_ROLE_KEY \
+      #     --env SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY \
+      #     --env SUPABASE_MAX_ROWS=$SUPABASE_MAX_ROWS \
+      #     --env SUPABASE_URL=$SUPABASE_URL \
+      #     --env JWT_SECRET=$JWT_SECRET \
+      #     --env ISSUER=$ISSUER \
+      #     --env LOG_LEVEL=$LOG_LEVEL \
+      #     --env PORT=$PORT \
+      #     --env DATABASE_URL=$DATABASE_URL \
+      #     --env REDIS_URL=$REDIS_URL \
+      #     --network host \
+      #     --env STAGE=$STAGE \
+      #     technologiestiftung/stadtpuls-api:staging
       # run the api for local usage
-      - name: stadtpuls-api#staging
-        if: github.event.pull_request.base.ref == 'staging' || github.ref == 'refs/heads/staging'
-        run: |
-          docker run --publish "$PORT:4000" \
-          --env SUPABASE_SERVICE_ROLE_KEY=$SUPABASE_SERVICE_ROLE_KEY \
-          --env SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY \
-          --env SUPABASE_MAX_ROWS=$SUPABASE_MAX_ROWS \
-          --env SUPABASE_URL=$SUPABASE_URL \
-          --env JWT_SECRET=$JWT_SECRET \
-          --env ISSUER=$ISSUER \
-          --env LOG_LEVEL=$LOG_LEVEL \
-          --env PORT=$PORT \
-          --env DATABASE_URL=$DATABASE_URL \
-          --env REDIS_URL=$REDIS_URL \
-          --network host \
-          --env STAGE=$STAGE \
-          technologiestiftung/stadtpuls-api:staging
-      # run the api for local usage
-      - name: stadtpuls-api#main
-        if: github.event.pull_request.base.ref == 'main' || github.ref == 'refs/heads/main'
-        run: |
-          docker run --publish "$PORT:4000" \
-          --env SUPABASE_SERVICE_ROLE_KEY=$SUPABASE_SERVICE_ROLE_KEY \
-          --env SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY \
-          --env SUPABASE_MAX_ROWS=$SUPABASE_MAX_ROWS \
-          --env SUPABASE_URL=$SUPABASE_URL \
-          --env JWT_SECRET=$JWT_SECRET \
-          --env ISSUER=$ISSUER \
-          --env LOG_LEVEL=$LOG_LEVEL \
-          --env PORT=$PORT \
-          --env DATABASE_URL=$DATABASE_URL \
-          --env REDIS_URL=$REDIS_URL \
-          --network host \
-          --env STAGE=$STAGE \
-          technologiestiftung/stadtpuls-api:main
+      # - name: stadtpuls-api#main
+      #   if: github.event.pull_request.base.ref == 'main' || github.ref == 'refs/heads/main'
+      #   run: |
+      #     docker run --publish "$PORT:4000" \
+      #     --env SUPABASE_SERVICE_ROLE_KEY=$SUPABASE_SERVICE_ROLE_KEY \
+      #     --env SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY \
+      #     --env SUPABASE_MAX_ROWS=$SUPABASE_MAX_ROWS \
+      #     --env SUPABASE_URL=$SUPABASE_URL \
+      #     --env JWT_SECRET=$JWT_SECRET \
+      #     --env ISSUER=$ISSUER \
+      #     --env LOG_LEVEL=$LOG_LEVEL \
+      #     --env PORT=$PORT \
+      #     --env DATABASE_URL=$DATABASE_URL \
+      #     --env REDIS_URL=$REDIS_URL \
+      #     --network host \
+      #     --env STAGE=$STAGE \
+      #     technologiestiftung/stadtpuls-api:main
 
       - name: Read .nvmrc
         run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
