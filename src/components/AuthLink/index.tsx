@@ -20,7 +20,7 @@ export const AuthLink: FC<AuthLinkPropType> = ({ loggedInUserName }) => {
     "text gap-2 transition items-center",
     "font-headline font-semibold group-hover:text-green",
   ].join(" ");
-  const accountHref = `/accounts/${loggedInUserName || "anonymous"}`;
+  const accountHref = `/${loggedInUserName || "anonymous"}/sensors`;
 
   return (
     <span className='inline-flex items-center gap-6'>

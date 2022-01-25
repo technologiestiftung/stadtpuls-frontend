@@ -4,6 +4,11 @@ import { LandingHeroBackgroundMap } from ".";
 
 describe("LandingHeroBackgroundMap component", () => {
   it("should render without crashing", () => {
-    render(<LandingHeroBackgroundMap sensor={curatedSensors[0]} />);
+    render(
+      <LandingHeroBackgroundMap
+        sensors={curatedSensors}
+        activeMarkerIndex={0}
+      />
+    );
   });
 });

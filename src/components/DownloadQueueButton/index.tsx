@@ -31,7 +31,7 @@ export const DownloadQueueButton: FC<DownloadQueueButtonPropType> = ({
   return (
     <DropdownMenu
       position='right'
-      items={queueArray.map(({ id, title, progress }) => ({
+      items={queueArray.map(({ id, username, title, progress }) => ({
         id,
         title: (
           <span className='grid grid-cols-[1fr,auto,auto] w-80 gap-4 items-center content-center'>
@@ -65,7 +65,7 @@ export const DownloadQueueButton: FC<DownloadQueueButtonPropType> = ({
             </button>
           </span>
         ),
-        href: `/sensors/${id}`,
+        href: `/${username}/sensors/${id}`,
       }))}
       buttonClassNames='hover:bg-gray-50 transition-all rounded-full transform hover:scale-110 active:scale-90'
     >

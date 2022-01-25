@@ -1,5 +1,5 @@
 import moment from "moment";
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 moment.locale("de-DE");
 
 interface DateValueType {

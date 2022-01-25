@@ -6,7 +6,7 @@ exports[`Storyshots UI Elements/AccountCard Default 1`] = `
 >
   <a
     className="group border border-gray-200 bg-white shadow block flex gap-x-3 sm:gap-x-4 md:gap-x-5 py-4 sm:py-5 md:py-6 px-4 sm:px-5 md:px-6 transition hover:border-blue hover:animate-borderpulse"
-    href="/accounts/looee14"
+    href="/looee14/sensors"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >
@@ -502,7 +502,7 @@ exports[`Storyshots UI Elements/AccountCard Default 1`] = `
       <p
         className="pt-2"
       >
-        Louis XIV, also known as Louis the Great or the Su...
+        Louis XIV, also known as Louis the Great or the Sun King, was King of France from 14 May 1643 until ...
       </p>
       <div
         className="flex gap-4 sm:gap-6 md:gap-8 justify-self-end items-center pt-6"
@@ -518,7 +518,8 @@ exports[`Storyshots UI Elements/AccountCard Default 1`] = `
           <span
             className="text-sm"
           >
-            Sensoren
+            Sensor
+            en
           </span>
         </div>
         <div
@@ -532,7 +533,8 @@ exports[`Storyshots UI Elements/AccountCard Default 1`] = `
           <span
             className="text-sm"
           >
-            Messwerte
+            Messwert
+            e
           </span>
         </div>
       </div>
@@ -602,7 +604,7 @@ exports[`Storyshots UI Elements/AccountCard Minimal Props 1`] = `
 >
   <a
     className="group border border-gray-200 bg-white shadow block flex gap-x-3 sm:gap-x-4 md:gap-x-5 py-4 sm:py-5 md:py-6 px-4 sm:px-5 md:px-6 transition hover:border-blue hover:animate-borderpulse"
-    href="/accounts/looee14"
+    href="/looee14/sensors"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >
@@ -1112,7 +1114,8 @@ exports[`Storyshots UI Elements/AccountCard Minimal Props 1`] = `
           <span
             className="text-sm"
           >
-            Sensoren
+            Sensor
+            en
           </span>
         </div>
         <div
@@ -1126,7 +1129,8 @@ exports[`Storyshots UI Elements/AccountCard Minimal Props 1`] = `
           <span
             className="text-sm"
           >
-            Messwerte
+            Messwert
+            e
           </span>
         </div>
       </div>
@@ -1144,7 +1148,7 @@ exports[`Storyshots UI Elements/AccountCard Too Many Categories 1`] = `
 >
   <a
     className="group border border-gray-200 bg-white shadow block flex gap-x-3 sm:gap-x-4 md:gap-x-5 py-4 sm:py-5 md:py-6 px-4 sm:px-5 md:px-6 transition hover:border-blue hover:animate-borderpulse"
-    href="/accounts/looee14"
+    href="/looee14/sensors"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >
@@ -1640,7 +1644,7 @@ exports[`Storyshots UI Elements/AccountCard Too Many Categories 1`] = `
       <p
         className="pt-2"
       >
-        Louis XIV, also known as Louis the Great or the Su...
+        Louis XIV, also known as Louis the Great or the Sun King, was King of France from 14 May 1643 until ...
       </p>
       <div
         className="flex gap-4 sm:gap-6 md:gap-8 justify-self-end items-center pt-6"
@@ -1656,7 +1660,8 @@ exports[`Storyshots UI Elements/AccountCard Too Many Categories 1`] = `
           <span
             className="text-sm"
           >
-            Sensoren
+            Sensor
+            en
           </span>
         </div>
         <div
@@ -1670,7 +1675,8 @@ exports[`Storyshots UI Elements/AccountCard Too Many Categories 1`] = `
           <span
             className="text-sm"
           >
-            Messwerte
+            Messwert
+            e
           </span>
         </div>
       </div>

@@ -10,6 +10,7 @@ import {
 
 export interface QueueItemType {
   id: string;
+  username: string;
   title: string;
   progress: number;
   totalCount: number;
@@ -20,6 +21,7 @@ export interface QueueItemType {
 
 type PushToQueueSignature = (config: {
   id: number;
+  username: string;
   title: string;
   totalCount: number;
   options?: GetRecordsOptionsType;
@@ -90,6 +92,7 @@ export const DownloadQueueProvider: FC = ({ children }) => {
         queueSize: Object.values(queue).filter(Boolean).length || 0,
         pushToQueue: ({
           id,
+          username,
           title,
           options,
           totalCount,
@@ -99,6 +102,7 @@ export const DownloadQueueProvider: FC = ({ children }) => {
             ...currentQueue,
             [id]: {
               id,
+              username,
               title,
               progress: 0,
               callback,
@@ -106,6 +110,7 @@ export const DownloadQueueProvider: FC = ({ children }) => {
           }));
           workerRef.current?.postMessage({
             id,
+            username,
             title,
             options,
             totalCount,

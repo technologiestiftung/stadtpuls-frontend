@@ -1,4 +1,4 @@
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 
 export const categories: definitions["categories"][] = [
   {
@@ -27,14 +27,26 @@ export const categories: definitions["categories"][] = [
   },
   {
     id: 5,
-    name: "Unit Counter",
+    name: "Zähler",
     description:
-      "Unit Counter können bspw. Handys in der Umgebung anhand ihrer WLAN- und Bluetooth-Signale zählen. Damit eignen sie sich gut, um Besucherströme und Auslastungen an einem bestimmten Ort zu bestimmen.",
+      "Zähler können bspw. Handys in der Umgebung anhand ihrer WLAN- und Bluetooth-Signale zählen. Damit eignen sie sich gut, um Besucherströme und Auslastungen an einem bestimmten Ort zu bestimmen.",
   },
   {
     id: 6,
     name: "Lautstärke",
     description:
       "Ein Lautstärkesensor erfasst die Umgebungsgeräusche (Lautstärke) in Form des Schalldrucks und gibt die Messwerte in Dezibel aus. Als Referenz: ein Staubsauger erreicht einen Schalldruck von ca. 70 dB.",
+  },
+  {
+    id: 7,
+    name: "Helligkeit",
+    description:
+      "Als Helligkeitssensor werden elektronische Bauelemente bezeichnet, die Licht unter Benutzung des photoelektrischen Effekts in ein elektrisches Signal umwandeln.",
+  },
+  {
+    id: 8,
+    name: "Sonstige",
+    description:
+      "Diese Sensoren sind nicht in den anderen Kategorien zu finden. Wir sind über Vorschläge für weitere Kategorien dankbar.",
   },
 ];

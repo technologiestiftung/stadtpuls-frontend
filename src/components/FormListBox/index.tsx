@@ -20,6 +20,10 @@ interface FormListBoxPropType {
   defaultValue?: string | number;
   onChange?: (name: string | number | undefined) => void;
   containsIconList?: boolean;
+  //FIXME: Property is related to STADTPULS-606
+  // If we find a better way we can remove this property
+
+  listBoxOptionsCssProperties?: React.CSSProperties;
 }
 
 // eslint-disable-next-line react/display-name
@@ -35,6 +39,7 @@ export const FormListBox = forwardRef<HTMLButtonElement, FormListBoxPropType>(
       defaultValue,
       onChange = () => undefined,
       containsIconList = false,
+      listBoxOptionsCssProperties,
     },
     ref
   ) => {
@@ -89,12 +94,13 @@ export const FormListBox = forwardRef<HTMLButtonElement, FormListBoxPropType>(
             </span>
           </Listbox.Button>
           <Listbox.Options
+            style={listBoxOptionsCssProperties}
             className={[
               containsIconList
                 ? "flex flex-wrap right-0 min-w-[200px]"
                 : "truncate whitespace-nowrap",
               "absolute z-10 mt-[-1px] w-full bg-white shadow",
-              "max-h-56 text-base border border-gray-200",
+              "max-h-80 text-base border border-gray-200",
               "overflow-y-auto focus:outline-none sm:text-sm",
             ].join(" ")}
           >

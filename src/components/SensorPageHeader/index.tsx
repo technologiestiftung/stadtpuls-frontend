@@ -10,6 +10,7 @@ import { Button } from "@components/Button";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { createApiUrl } from "@lib/requests/createApiUrl";
 import { normalizeURL } from "@lib/urlUtil";
+import ReactAutolinker from "react-autolinker";
 
 export interface SensorPageHeaderPropType extends ParsedSensorType {
   withEditButton?: boolean;
@@ -27,7 +28,11 @@ const MapBackground: FC<{
   >
     <div className='bg-white hidden md:block' />
     <div className='relative'>
-      <PreviewMap mapWidth='100%' mapHeight='100%' viewport={geocoordinates} />
+      <PreviewMap
+        mapWidth='100%'
+        mapHeight='100%'
+        viewport={{ ...geocoordinates, zoom: 16 }}
+      />
       <span
         className={[
           "bg-blue w-3 h-3 rounded-full absolute inline-block",
@@ -49,7 +54,7 @@ const UserLink: FC<Pick<ParsedSensorType, "authorName" | "authorUsername">> = ({
   authorName,
   authorUsername,
 }) => (
-  <Link href={`/accounts/${authorUsername}`}>
+  <Link href={`/${authorUsername}/sensors`}>
     <a
       className={[
         "flex gap-2 items-center leading-tight",
@@ -154,7 +159,29 @@ export const SensorPageHeader: FC<SensorPageHeaderPropType> = ({
             <UserLink authorName={authorName} authorUsername={authorUsername} />
           </div>
           <div className='py-6'>
-            <p className='text-sm sm:text-base max-w-prose'>{description}</p>
+            {description && (
+              <ReactAutolinker
+                className='text-sm sm:text-base max-w-prose break-words'
+                tagName='p'
+                renderLink={({ attrs, innerHtml: text }) => {
+                  const url = new URL(attrs.href);
+                  const isTwitter = url.host === "twitter.com";
+                  if (isTwitter) return text;
+                  return (
+                    <a
+                      key={attrs.key}
+                      className='underline underline-green text-blue hover:text-purple transition'
+                      href={url.href}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      {`${url.host}${url.pathname}`}
+                    </a>
+                  );
+                }}
+                text={description}
+              />
+            )}
           </div>
           <ApiUrl url={`${createApiUrl()}sensors/${id}/records`} />
           {withEditButton && onEditButtonClick && (

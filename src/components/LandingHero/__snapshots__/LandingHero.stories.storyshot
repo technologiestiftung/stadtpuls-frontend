@@ -2,7 +2,7 @@
 
 exports[`Storyshots Promotional/LandingHero Default 1`] = `
 <section
-  className="bg-black-dot-pattern relative z-0 mt-[calc(-1*var(--headerHeight))]"
+  className="bg-black-dot-pattern relative z-20 mt-[calc(-1*var(--headerHeight))]"
 >
   <div>
     <div
@@ -14,7 +14,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
         <h1
           className="animate-slide-in text-xl sm:text-2xl md:text-3xl text-green font-headline font-bold mt-6 mb-1"
         >
-          Deine Sensoren erklären die (Um)welt?
+          Deine Sensoren erklären Berlin!
         </h1>
         <h2
           className="animate-slide-in text-white text-lg font-sans font-normal mb-4"
@@ -24,7 +24,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
             }
           }
         >
-          Teile die Daten und dein Wissen!
+          Teile deine Daten und dein Wissen für eine smarte Stadt
         </h2>
         <p
           className="animate-slide-in mb-8 max-w-prose"
@@ -39,13 +39,28 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
           <strong
             className="text-green"
           >
-            offene Datenplattform für IoT-Projekte
+            offene Datenplattform für IoT-Projekte in Berlin
           </strong>
-           
-          deiner Stadt. Und das beste: jede*r kann mitmachen. Egal ob du offene Daten suchst oder bereits eigene Sensoren und Daten hast: Stadtpuls hilft dir, tiefer in die Welt der Stadt-Sensorik einzutauchen und deine Stadt besser zu verstehen.
+          .
+          <br />
+          Jede:r kann mitmachen, egal ob du offene Daten suchst oder bereits eigene Sensoren und Daten hast, die du teilen möchtest. Stadtpuls hilft dir, tiefer in die Welt der Echtzeit-Sensorik einzutauchen und deine Stadt besser zu verstehen.
         </p>
         <a
-          className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green animate-slide-in mr-4 mb-2"
+          className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green animate-slide-in mr-4 mb-2"
+          href="/docs/join"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          style={
+            Object {
+              "animationDelay": "200ms",
+            }
+          }
+          variant="primary"
+        >
+          Jetzt mitmachen
+        </a>
+        <a
+          className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green animate-slide-in "
           href="/sensors"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -57,20 +72,6 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
           variant="secondary"
         >
           Sensoren ansehen
-        </a>
-        <a
-          className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green bg-purple text-white font-bold hover:bg-blue hover:text-green animate-slide-in"
-          href="/docs"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          style={
-            Object {
-              "animationDelay": "200ms",
-            }
-          }
-          variant="primary"
-        >
-          Mitmachen
         </a>
       </div>
       <div
@@ -137,7 +138,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
               height="725"
               id="main-image-pattern-image"
               width="967"
-              xlinkHref="/images/photos/header-woman.jpeg"
+              xlinkHref="/images/photos/header-sensor.jpg"
             />
             <pattern
               height="100%"
@@ -330,19 +331,6 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
                   height="58"
                   style={
                     Object {
-                      "animationDelay": "250ms",
-                    }
-                  }
-                  width="58"
-                  x="522"
-                  y="812"
-                />
-                <rect
-                  className="animate-slide-in"
-                  fill="#46ECA1"
-                  height="58"
-                  style={
-                    Object {
                       "animationDelay": "275ms",
                     }
                   }
@@ -362,19 +350,6 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
                   width="58"
                   x="812"
                   y="696"
-                />
-                <rect
-                  className="animate-slide-in"
-                  fill="url(#black-dot-pattern)"
-                  height="58"
-                  style={
-                    Object {
-                      "animationDelay": "325ms",
-                    }
-                  }
-                  width="58"
-                  x="464"
-                  y="754"
                 />
                 <rect
                   className="animate-slide-in"
@@ -653,19 +628,6 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
                   width="58"
                   x="58"
                   y="580"
-                />
-                <rect
-                  className="animate-slide-in"
-                  fill="#8330FF"
-                  height="58"
-                  style={
-                    Object {
-                      "animationDelay": "850ms",
-                    }
-                  }
-                  width="58"
-                  x="522"
-                  y="754"
                 />
                 <rect
                   className="animate-slide-in"

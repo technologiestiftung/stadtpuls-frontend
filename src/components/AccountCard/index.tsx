@@ -13,7 +13,7 @@ export interface AccountCardPropType {
   categories?: number[];
 }
 
-const DESCRIPTION_MAX_LENGTH = 50;
+export const DESCRIPTION_MAX_LENGTH = 100;
 
 const numberFormatter = new Intl.NumberFormat("de-DE", {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -35,9 +35,9 @@ export const AccountCard: FC<AccountCardPropType> = ({
   const isMd = windowWidth && windowWidth >= 640 && windowWidth < 768;
   const avatarSize = isSm ? 32 : isMd ? 40 : 48;
   return (
-    <Link href={`/accounts/${username}`}>
+    <Link href={`/${username}/sensors`}>
       <a
-        href={`/accounts/${username}`}
+        href={`/${username}/sensors`}
         className={[
           "group border border-gray-200 bg-white shadow block",
           "flex gap-x-3 sm:gap-x-4 md:gap-x-5",
@@ -78,7 +78,9 @@ export const AccountCard: FC<AccountCardPropType> = ({
               >
                 {numberFormatter.format(sensorsCount)}
               </span>
-              <span className='text-sm'>Sensoren</span>
+              <span className='text-sm'>
+                Sensor{sensorsCount === 1 ? "" : "en"}
+              </span>
             </div>
             <div className='flex flex-col'>
               <span
@@ -91,7 +93,9 @@ export const AccountCard: FC<AccountCardPropType> = ({
               >
                 {numberFormatter.format(recordsCount)}
               </span>
-              <span className='text-sm'>Messwerte</span>
+              <span className='text-sm'>
+                Messwert{recordsCount === 1 ? "" : "e"}
+              </span>
             </div>
           </div>
         </div>

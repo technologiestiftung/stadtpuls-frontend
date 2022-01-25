@@ -27,7 +27,7 @@ interface HeadPropType {
 }
 
 export const Head: FC<Partial<HeadPropType>> = ({
-  description = "Stadtpuls ist eine prototypische Offene Datenplattform, die Sensordaten aus Forschungsprojekten der Technologiestiftung Berlin speichert und frei verfügbar macht",
+  description = "Stadtpuls ist die offene Datenplattform für IoT-Projekte in Berlin. Jede:r kann mitmachen, egal ob du offene Daten suchst oder bereits eigene Sensoren und Daten hast, die du teilen möchtest.",
   siteTitle = "Stadtpuls",
   pageTitle = "",
   fbAppId = "",

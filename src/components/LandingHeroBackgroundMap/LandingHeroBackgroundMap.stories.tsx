@@ -1,18 +1,18 @@
-import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { curatedSensors } from "@mocks/supabaseData/sensors";
 import { Story, Meta } from "@storybook/react";
-import { LandingHeroBackgroundMap } from ".";
+import { LandingHeroBackgroundMap, LandingHeroBackgroundMapPropType } from ".";
 
 export default {
   title: "Promotional/LandingHeroBackgroundMap",
   component: LandingHeroBackgroundMap,
 } as Meta;
 
-const Template: Story<{
-  sensor: ParsedSensorType;
-}> = args => <LandingHeroBackgroundMap {...args} />;
+const Template: Story<LandingHeroBackgroundMapPropType> = args => (
+  <LandingHeroBackgroundMap {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {
-  sensor: curatedSensors[0],
+  sensors: curatedSensors,
+  activeMarkerIndex: 0,
 };

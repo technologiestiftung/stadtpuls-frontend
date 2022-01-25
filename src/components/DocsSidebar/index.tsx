@@ -17,8 +17,8 @@ const infoPages: PageType[] = [
     path: "/docs",
   },
   {
-    title: "Über dieses Projekt",
-    path: "/docs/about",
+    title: "Mitmachen",
+    path: "/docs/join",
   },
   {
     title: "FAQ",
@@ -36,16 +36,20 @@ const docsPages: PageType[] = [
     path: "/docs/stadtpuls-account",
   },
   {
-    title: "Neues Sensor anlegen",
-    path: "/docs/new-sensor",
+    title: "Neuen Token anlegen",
+    path: "/docs/tokens",
   },
   {
-    title: "Neues Gerät anlegen",
-    path: "/docs/new-device",
+    title: "Neuen Sensor anlegen",
+    path: "/docs/sensors",
   },
   {
-    title: "Applikation auf TTN konfigurieren",
-    path: "/docs/ttn-configuration",
+    title: "TTN-Sensor einrichten",
+    path: "/docs/ttn-sensor",
+  },
+  {
+    title: "HTTP Anfragen",
+    path: "/docs/http-requests",
   },
   {
     title: "Sensordaten nutzen",

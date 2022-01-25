@@ -106,7 +106,7 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
                 variant='dangerous'
                 onClick={() => {
                   deleteSensor(initialSensor.id)
-                    .then(() => router.push(`/accounts/${user.username}`))
+                    .then(() => router.push(`/${user.username}/sensors`))
                     .finally(() => {
                       setEditModalIsOpen(false);
                       setDeletionConfirmationIsOpened(false);

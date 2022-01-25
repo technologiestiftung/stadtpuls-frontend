@@ -4,11 +4,18 @@ import { UserInfoWithData } from "./withData";
 import * as userDataHook from "@lib/hooks/useUserData";
 import * as authHook from "@auth/Auth";
 import * as nextRouter from "next/router";
-import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
-import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
+import { mapPublicSensor, ParsedSensorType } from "@lib/hooks/usePublicSensors";
+import { AccountWithSensorsType } from "@lib/requests/getAccountDataByUsername";
+import { httpSensors, ttnSensors } from "@mocks/supabaseData/sensors";
 
-const routeAccount: ParsedAccountType = parsedAccounts[1];
-const loggedInAccount: ParsedAccountType = parsedAccounts[0];
+const routeAccount: AccountWithSensorsType = {
+  ...parsedAccounts[1],
+  sensors: httpSensors.map(mapPublicSensor),
+};
+const loggedInAccount: AccountWithSensorsType = {
+  ...parsedAccounts[0],
+  sensors: ttnSensors.map(mapPublicSensor),
+};
 const baseUserDataReturn = {
   isLoggedIn: false,
   user: null,
@@ -387,7 +394,7 @@ describe("EditAddSensorModal", () => {
     await waitFor(() => {
       // MODAL TITLE
       const title = screen.getByRole("heading", {
-        name: "Neuer Sensor hinzufügen",
+        name: "Neuen Sensor hinzufügen",
       });
       expect(title).toBeInTheDocument();
     });

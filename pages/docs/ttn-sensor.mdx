@@ -1,74 +1,46 @@
 ---
 layout: 'docs'
-title: 'Neuen TTN-Sensor anlegen'
-metaTitle: 'Neuer TTN-Sensor'
-metaDescription: 'Folge dieser einfachen Schritt-für-Schritt-Anleitung, um einen neuen TTN-Sensor auf Stadtpuls hinzuzufügen.'
+title: 'TTN-Sensor konfigurieren'
+metaTitle: 'TTN-Sensor konfigurieren'
+metaDescription: 'Folge dieser einfachen Schritt-für-Schritt-Anleitung, um einen TTN-Sensor mit Stadtpuls sprechen zu lassen.'
 ---
   
 <p className="lead">
   Wie du deine TTN-Sensoren mit Stadtpuls reden lässt.
 </p>
 
-Bislang verfügt *Stadtpuls* über zwei verschiedene Integrationsmöglichkeiten:
-1. die TTN-Integration von The Things Network
-2. eine HTTP-Integration mittels RESTful-API
+Voraussetzungen:
 
-Du hast bereits eigene Sensoren bei <a href="https://www.thethingsnetwork.org/" target="_blank">The Things Network</a>? Fantastisch! In dieser Sektion erklären wir wie du deinem Account Leben einhauchen und deine TTN-Sensoren in nur wenigen Minuten zu *Stadtpuls* hinzufügen kannst. 
+&checkmark; The Things Network Account  
+&checkmark; Stadtpuls Account  
+&checkmark; TTN Sensor angelegt  
+&checkmark; Token angelegt  
 
-Du hast keine Ahnung was *The Things Network* sein soll möchtest aber trotzdem einen Sensor auf *Stadtpuls* registrieren? Dann ist unsere <a href="/docs/http-sensor">HTTP-Integration</a> vielleicht ein guter Start für dich.
-
-## TTN-Sensor zu Stadtpuls hinzufügen
-In dieser Sektion erklären wir, wie du deinem Account einen neuen Sensor mittels TTN-Integration hinzufügen kannst. Klicke dazu in der Menüleiste oben rechts auf dein **Account-Icon** und dann auf **Neuer Sensor**. 
-Dir wird nun die Eingabemaske für den neuen Sensor angezeigt. 
-   <figure>
-  <img style={{maxHeight: 400, border: '1px solid rgba(0, 0, 0, 0.05)'}}
-    src="/images/newDeviceTTN.png"
-    alt="neuen Sensor hinzufügen"
-  />
-    <figcaption>
-    Eingabemaske, um einen neuen Sensor auf <em>Stadtpuls</em> hinzuzufügen
-  </figcaption>
-  </figure>
-
-Wähle als Typ der Integration **TTN** aus und trage alle weiteren Informationen in das Formular ein. Keine Angst! Du kannst alle Angaben wie **Name**, **Beschreibung**, **Standort** und **Kategorie** deines Sensors nachträglich ändern und anpassen.
-
-### Die richtige Sensor-ID 
-Um deine TTN-Sensoren mit *Stadtpuls* erfolgreich verknüpfen zu können ist es wichtig, dass du als **Device-ID** die exakt gleiche Device-ID wie die aus deiner TTN-Applikation nutzt.
-Diese Device-ID findest du im persönlichen Account auf <a href="https://www.thethingsnetwork.org/" target="_blank">The Things Network</a>, nicht auf *Stadtpuls*.
-Ein kleines Beispiel: dein Sensor heißt in deiner TTN-Konsole `node-temp-001`. Demnach lautet deine Device-ID in Stadtpuls ebenfalls `node-temp-001`. Klicke nun auf **Hinzufügen**.
-
-Hurray, how easy was that! Du hast deinem Account einen neuen Sensor hinzugefügt.
-
-Damit Dein TTN-Sensor mit jedem Messwert automatisch einen POST-Request an unsere *Stadtpuls* API stellt und die Sensormesswerte in unserer Datenbank ankommen, muss nun noch der **TTN-Webhook** eingerichtet werden.
+In dieser Sektion erklären wir, wie du deinem Sensor auf TTN konfigurierst um mit *Stadtpuls* zu kommunizieren.
 
 ## TTN-Webhook einrichten
-*Die nachfolgende Dokumentation basiert auf der neuen **The Things Stack Community Edition**, auch TTN V3 genannt. Stadtpuls funktioniert zwar auch mit dem alten TTN Stack (V2), unterstützt aber in der Doku und der weiteren Entwicklung ausschließlich TTN V3.*
 
-Die Konfiguration der Webhook-Integration ist kein Hexenwerk und schnell erledigt.
-First things first:
+&#x1f4a1; *Die nachfolgende Dokumentation basiert auf der neuen **The Things Stack Community Edition**, auch TTN V3 genannt. Stadtpuls funktioniert zwar auch mit dem alten TTN Stack (V2), unterstützt aber in der Doku und der weiteren Entwicklung ausschließlich TTN V3. Diese Anleitung wurde im November 2021 verfasst - es kann daher sein, dass sich die Schritte auf der Website von The Things Network zwischenzeitlich geändert haben.*
 
 1. Logge dich auf <a href="https://www.thethingsnetwork.org/" target="_blank">https://www.thethingsnetwork.org/</a> in deinen TTN-Account ein
 2. Navigiere zu deiner TTN-Applikation, die du mit Stadtpuls verknüpfen möchtest
 3. In der linken Seitenleiste siehst du einen Menüpunkt namens **Integrations**. Klicke darauf, um das Dropdown-Menü zu öffnen und klicke anschließend auf **Webhooks**
 
-Dort angekommen, kannst du einen neuen TTN-Webook für deine TTN-Applikation einrichten. Klicke dazu auf **Add Webhook** und wähle **Custom Webhook** aus. 
+Dort angekommen, kannst du einen neuen Webook für deine Applikation einrichten. Klicke dazu auf **Add Webhook** und wähle **Custom Webhook** aus. 
 
 ### Webhook Parameter
 
-Die **Webhook ID**, respektive der Name deines Webhooks, ist frei wählbar und ganz dir überlassen. Das **Webhook format** ist JSON.
+Die **Webhook ID**, respektive der Name deines Webhooks, ist frei wählbar und ganz dir überlassen. Das **Webhook-Format** ist *JSON*.
 
-&#x1f4a1; Was beim TTN V3 Stack der Webhook ist, war beim TTN V2 Stack die HTTP-Integration. Die Funktionsweise ist die gleiche: sowohl die HTTP-Integration als auch der Webhook können *POST* und *GET* Operationen über HTTP an einem bestimmten Endpoint ausführen.
+&#x1f4a1; *Was beim TTN V3 Stack der Webhook ist, war beim TTN V2 Stack die HTTP-Integration. Die Funktionsweise ist die gleiche: sowohl die HTTP-Integration als auch der Webhook können *POST* und *GET* Operationen über HTTP an einem bestimmten Endpoint ausführen.*
 
-Unter den Endpoint Settings muss nun der API-Endpoint konfiguriert werden. In unserem Falle nutzen wir als **Base URL** des Endpoints die RESTful API von Stadtpuls: 
+Unter den Endpoint-Settings muss nun die API URL konfiguriert werden. In unserem Falle nutzen wir als **Base URL** des Endpoints die RESTful API von Stadtpuls: 
 
-```shell
-https://api.stadtpuls.com/
+```plain
+https://api.stadtpuls.com
 ```
 
-Wir übergeben der API jedoch noch eine zusätzliche Information – **Additional headers** mit dem Namen *authorization* im Header: nämlich einen Authorizierungs-Token.
-Navigiere zu deinem Stadtpuls-Account, klicke auf **Tokens** und erstelle dir einen neuen Token für deinen Sensor.
-
-**&#x26a0; Wichtig** kopiere dir den Token in deine Zwischenablage!
+Wir übergeben der API jedoch noch eine zusätzliche Information – **Additional headers** mit dem Namen *authorization* im Header: nämlich deinen Authentifizierungs-Token, den du dir bereits angelegt hast.
 
    <figure>
   <img style={{maxHeight: 400, border: '1px solid rgba(0, 0, 0, 0.05)'}}
@@ -76,16 +48,16 @@ Navigiere zu deinem Stadtpuls-Account, klicke auf **Tokens** und erstelle dir ei
     alt="Konfiguration der TTN-Webhook-Integration"
   />
     <figcaption>
-    So sieht die Konfiguration der TTN-Webhook-Integration aus
+    So sieht die Konfiguration der TTN-Webhook-Integration aus (11.2021)
     </figcaption>
   </figure>
 
-Füge diesen Token mit dem Zusatz `Bearer ` am Anfang des Textes in das Eingabefeld. Solltest du deinen Token verloren haben, kannst du dir in deinem Account einen neuen Token generieren lassen. 
+Füge diesen Token mit dem Zusatz `Bearer ` am Anfang des Textes in das Eingabefeld. **Achtung! Bearer und dein Token müssen durch ein Leerzeichen getrennt sein.** Solltest du deinen Token verloren haben, kannst du dir in deinem Account einen neuen Token generieren lassen. 
 
-Schließlich müssen wir dem Webhook noch mitteilen, bei welcher Art von Events er getriggert werden soll. In unserem Fall möchten wir bei jedem Uplink, also bei jedem Datenpaket, welches in der TTN-Applikation ankommt, einen POST-Request auf unsere Stadtpuls-API ausführen. Der Endpoint dafür lautet
+Schließlich müssen wir dem Webhook noch mitteilen, bei welcher Art von Events er ausgelößt werden soll. In unserem Fall möchten wir bei jedem Uplink, also bei jedem Datenpaket, welches in der TTN-Applikation ankommt, einen POST-Request auf unsere `api.stadtpuls.com` ausführen. Der Endpoint dafür lautet
 
-```shell
-/api/v2/integrations/ttn/v3
+```plain
+/api/v3/integrations/ttn/v3
 ```
 
    <figure>
@@ -94,10 +66,101 @@ Schließlich müssen wir dem Webhook noch mitteilen, bei welcher Art von Events 
     alt="Konfiguration der TTN-Webhook-Integration"
   />
     <figcaption>
-    Webhook wird bei Uplinks der Sensoren getriggert
+    Der Webhook wird bei Uplinks der Sensoren getriggert
     </figcaption>
   </figure>
 
-Hurray! Du hast TTN erfolgreich mit Stadtpuls verknüpft.
-Damit sollten künftig alle Messwerte deines Sensors auf *Stadtpuls* sichtbar sein.
+Speichern nicht vergessen! Weiter geht es mit dem Payload Formatter.
 
+## Payload Formatter einrichten
+Der <a href="https://www.thethingsindustries.com/docs/integrations/payload-formatters/create/" target="_blank">Payload Formatter von TTN</a> ermöglicht es den TTN-Nutzer:innen ihre Uplinks und Downlinks zu formatieren. Dabei sind Uplinks die Payloads (Datenpakete), die von einem Sensor zu einem Gateway geschickt werden, wohingegen Downlinks jene Payloads sind, die von einem Gatway zu einem Sensor geschickt werden.
+Wir interessen uns bei *Stadtpuls* für alle Messwerte der einzelnen Sensoren – also für die Uplinks. 
+
+
+### Payload packen
+
+Mit Hilfe des Payload Formatters kann jedes einzelne Byte des Uplinks in ein von Menschen lesbares Format gebracht werden. Dabei ist es wichtig zu wissen, wie sich das Datenpaket bzw. der Uplink deines Sensors überhaupt zusammensetzt. Das nachfolgende Beispiel (geschrieben als Arduino Code) zeigt beispielhaft, wie ein Datenpaket mit insgesamt vier Messwerten (temperature, air pressure, humidity, decibel) in einen Payload gepackt werden kann.
+
+```shell
+void generate_payload(float temperature, float airpressure, float humidity, float decibel) {
+
+  uint8_t payload[7];
+  
+  int tmp = ((int)(temperature * 100)) + 5000;
+  int pressure = (int)(airpressure * 10);
+  byte hum = (int)(humidity * 2);
+  int deci = (int)(decibel * 10);
+
+  payload[0] = tmp >> 8;
+  payload[1] = tmp;
+  payload[2] = pressure >> 8;
+  payload[3] = pressure;
+  payload[4] = hum;
+  payload[5] = deci >> 8;
+  payload[6] = deci;
+
+  int i = 0;
+  while (i < sizeof(payload)) {
+    tx_payload[i] = payload[i];
+    i++;
+  }
+}
+```
+
+Der Payload besteht schließlich aus insgesamt 7 Bytes, wobei:
+
+- *temperature* als Integer durch das erste und zweite Byte, 
+- *airpressure* als Integer durch das dritte und vierte Byte,
+- *humidity* als einzelner Byte durch Byte fünf und 
+- *decibel* als Integer wiederum durch Byte sechs und sieben
+
+beschrieben wird. *Stadtpuls*-Nutzer:innen können Datenpakete nach persönlicher Präferenz packen und versenden. Wichtig ist allerdings zu wissen, an welcher Stelle (an welchem Byte) im Payload welcher Messwert steht. Mit diesem Wissen können wir den Payload nämlich nach Übertragung an das LoRaWan-Gateway sinnvoll decodieren und mit Hilfe des Payload-Formatters so formatieren, dass die *Stadtpuls*-API den Payload korrekt interpretieren kann.
+
+### Payload entpacken
+
+Die Daten, die in der TTN-Applikation ankommen, wurden bereits von TTN entschlüsselt und sind hexadezimale Darstellungen der entschlüsselten "Binärdaten". Dabei stellen zwei Zeichen (Zahlen oder Buchstaben) ein Byte dar. 
+   <figure>
+  <img style={{maxHeight: 400, border: '1px solid rgba(0, 0, 0, 0.05)'}}
+    src="/images/ttnHexa.png"
+    alt="Hexadezimale Darstellung des Payloads '12 A3 B9 77'"
+  />
+    <figcaption>
+    Hexadezimale Darstellung des Payloads '12 A3 B9 77'
+    </figcaption>
+  </figure>
+
+Mit Hilfe des Payload-Formatters können wir die Hexadezimalwerte in menschenlesbare Werte übertragen und für unsere API aufbereiten. Du kannst Payload-Formatters für deine gesamte Applikation einrichten, oder für ein einzelnes Gerät. Unsere RESTful API erwartet eine *JSON* mit einem Array vom Typ <code>float</code> und dem Namen `measurements`.
+
+Passend zum gepackten Payload oben, muss die Payload Function also wie folgt aussehen:
+
+```shell
+function decodeUplink(input) {
+  var deci = input.bytes[0];
+  
+  return {
+    data: {
+      bytes: input.bytes,
+      measurements: [deci]
+    },
+    warnings: [],
+    errors: []
+  };
+}
+```
+In der Konsole sollte nun der Hexadezimalwert '12 A3 B9 77' im Array `measurements` als Dezimalzahl (4676) dargestellt werden.
+
+   <figure>
+  <img style={{maxHeight: 400, border: '1px solid rgba(0, 0, 0, 0.05)'}}
+    src="/images/ttnDezimal.png"
+    alt="Dezimale Darstellung des Payloads '12 A3 B9 77'"
+  />
+    <figcaption>
+    Dezimale Darstellung des Payloads '12 A3 B9 77'
+    </figcaption>
+  </figure>
+
+In diesem Falle hat unsere Sensor also den Messwert `4676` gemessen. Da der Wert im Array `measurements` abgespeichert wurde, wird er schließlich auch als Messwert von unserer API richtig interpretiert und deinem Sensor zugeordnet. 
+
+&#x1f4a1; *Tipp: du kannst in dem Array mehr als einen Wert ablegen. Zum Beispiel `measurements: [tmp, pressure, hum, deci]`. Das Interface von *Stadtpuls* stellt aktuell nur den ersten Wert dar, bis wir eine sinnvolle Darstellung für komplexe Datensätze gefunden haben. Über die API kannst du jedoch alle Werte auch wieder abrufen.*
+
+Dein TTN-Sensor sollte nun mit *Stadtpuls* verknüpft sein.
