@@ -1,39 +1,9 @@
 name: Test and Build
 env:
   SUPABASE_ANON_KEY: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsImlhdCI6MTYyNzIwODU0MCwiZXhwIjoxOTc0MzYzNzQwLCJhdWQiOiIiLCJzdWIiOiIiLCJyb2xlIjoiYW5vbiJ9.sUHErUOiKZ3nHQIxy-7jND6B80Uzf9G4NtMLmL6HXPQ"
-  SUPABASE_SERVICE_ROLE_KEY: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsImlhdCI6MTYyNzIwNzUzMiwiZXhwIjoxNjkwMjc5NTMyLCJhdWQiOiIiLCJzdWIiOiIiLCJyb2xlIjoic2VydmljZV9yb2xlIn0.hfdXFZV5PdvUdo2xK0vStb1i97GJukSkRqfwd4YIh2M"
-  JWT_SECRET: "your-super-secret-jwt-token-with-at-least-32-characters-long"
+
   SUPABASE_URL: http://localhost:8000
-  PORT: 4000
-  ISSUER: "stadtpuls.com"
-  LOG_LEVEL: "info"
-  DATABASE_URL: "postgres://postgres:your-super-secret-and-long-postgres-password@localhost:5432/postgres"
-  POSTGRES_PASSWORD: "your-super-secret-and-long-postgres-password"
-  OPERATOR_TOKEN: your-super-secret-operator-token
-      # some SMTP server to send your auth-mails with
-      # uses inbucket http://localhost:9000
-  SMTP_HOST: mail
-  SMTP_PORT: 2500
-  SMTP_USER: admin
-  SMTP_PASS: 123456
-  SMTP_ADMIN_EMAIL: info@stadtpuls.com
-      # storage config
-  STORAGE_BACKENDP: file # file | s3
-  STORAGE_S3_BUCKET: supa-storage-testing # name of s3 bucket where you want to store objects
-  STORAGE_REGION: us-east-1 # region where your bucket is located
-      # STORAGE_AWS_ACCESS_KEY_ID=XXXX # replace-with-your-aws-key and don't commit this to github
-      # STORAGE_AWS_SECRET_ACCESS_KEY=XXXX # replace-with-your-aws-key and don't commit this to github
-  FILE_SIZE_LIMIT: 52428800 # max file size (in bytes)
-      # predefined; don't change these unless you know what you're doing
-  POSTGRES_PORT: 5432
-  AUTH_PORT: 9999
-  REST_PORT: 3000
-  REALTIME_PORT: 4000
-  KONG_PORT: 8000
-  KONG_PORT_TLS: 8443
-  SUPABASE_MAX_ROWS: 3000
-  REDIS_URL: redis://redis:6379
-  STAGE: test
+
 on:
   push:
     branches: [main, staging]
@@ -52,7 +22,7 @@ jobs:
       - name: Clone Stadtpuls Supabase v4.0.0
         run: ./scripts/supabase-test-setup.sh
       - name: Run supabase
-        run: docker-compose --env-file supabase/supabase-docker-compose/.env.example --file supabase/supabase-docker-compose/docker-compose.yml  --file supabase/supabase-docker-compose/docker-compose.override.yml up --detach --build --force-recreate
+        run: docker-compose --env-file supabase/supabase-docker-compose/.env --file supabase/supabase-docker-compose/docker-compose.yml  --file supabase/supabase-docker-compose/docker-compose.override.yml up --detach --build --force-recreate
       - name: Read .nvmrc
         run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
         id: nvm
@@ -76,5 +46,5 @@ jobs:
           build: npm run build
           start: npm start -- -p 3333
         env:
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_PUBLIC_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: $SUPABASE_URL
+          NEXT_PUBLIC_SUPABASE_PUBLIC_KEY: $SUPABASE_ANON_KEY
