@@ -23,11 +23,15 @@
   max-width: 200px;
 }
 
-.mapContainer div[class="mapboxgl-ctrl-bottom-left"] {
-  @apply bottom-14 sm:bottom-0.5 left-8 z-10 pointer-events-none transform -translate-y-0.5;
+.mapContainer:not(.withSearch) div[class="mapboxgl-ctrl-bottom-left"] {
+  @apply top-6 left-10 z-10 pointer-events-none transform -translate-y-0.5;
 }
 
 .mapParent a,
 .mapContainer a {
   @apply focus-offset;
+}
+
+.mapContainer.withSearch div[class="mapboxgl-ctrl-bottom-left"] {
+  @apply bottom-14 sm:bottom-0.5 top-auto;
 }

@@ -339,7 +339,11 @@ export const MarkerMap: FC<MarkerMapType> = ({
           })}
         <AttributionControl
           compact={true}
-          style={{ bottom: isSm ? 64 : 8, left: 8 }}
+          style={
+            withPlaceSearch
+              ? { bottom: isSm ? 64 : 8, left: 8 }
+              : { top: 20, left: 16 }
+          }
           className={`${styles.mapParent}`}
         />
         {withPlaceSearch && (

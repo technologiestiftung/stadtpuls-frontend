@@ -42,6 +42,7 @@ export const LandingHeroBackgroundMap: FC<LandingHeroBackgroundMapPropType> = ({
     >
       <MarkerMap
         withControls={false}
+        withPlaceSearch={false}
         mapZoom={9}
         scrollZoom={false}
         dragPan={false}
