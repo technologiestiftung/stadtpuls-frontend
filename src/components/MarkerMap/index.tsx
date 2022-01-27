@@ -212,6 +212,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
     });
   const { width: windowWidth } = useWindowSize();
   const isSm = windowWidth && windowWidth < 640;
+  const maxZoom = otherProps.maxZoom || 20;
 
   return (
     <div ref={mapContainerRef} className='w-full h-full relative'>
@@ -238,6 +239,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
           })
         }
         mapboxApiAccessToken={MAPBOX_TOKEN}
+        maxZoom={maxZoom}
         {...otherProps}
         onLoad={evt => {
           setLoaded(true);
@@ -295,7 +297,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
                   clickHandler: () => {
                     const expansionZoom = Math.min(
                       supercluster.getClusterExpansionZoom(cluster.id),
-                      20
+                      maxZoom
                     );
                     setViewport({
                       ...viewport,
@@ -313,11 +315,9 @@ export const MarkerMap: FC<MarkerMapType> = ({
                 };
 
             const isHighlighted = isCluster
-              ? supercluster
-                  .getLeaves(cluster.id)
-                  .some(leaf =>
-                    highlightedMarkerIds.find(id => id === leaf?.properties?.id)
-                  )
+              ? leaves.some(leaf =>
+                  highlightedMarkerIds.find(id => id === leaf?.properties?.id)
+                )
               : cluster.properties.isHighlighted;
 
             return (
@@ -326,14 +326,67 @@ export const MarkerMap: FC<MarkerMapType> = ({
                 latitude={latitude}
                 longitude={longitude}
               >
-                <MarkerCircle
-                  {...cluster.properties}
-                  {...handlers}
-                  isActive={isActive}
-                  isHighlighted={isHighlighted}
-                >
-                  {isCluster && pointCount > 1 ? pointCount : null}
-                </MarkerCircle>
+                {viewport.zoom >= maxZoom && isCluster ? (
+                  <div
+                    className={[
+                      "bg-white rounded-xl",
+                      "transform -translate-x-1/2 -translate-y-1/2",
+                      "grid",
+                      leaves.length === 2 ||
+                        (leaves.length === 4 && "grid-cols-2"),
+                      (leaves.length === 3 ||
+                        leaves.length === 5 ||
+                        leaves.length === 6 ||
+                        leaves.length === 7 ||
+                        leaves.length === 9) &&
+                        "grid-cols-3",
+                      leaves.length >= 10 &&
+                        leaves.length < 17 &&
+                        "grid-cols-4",
+                      leaves.length >= 17 &&
+                        leaves.length < 26 &&
+                        "grid-cols-5",
+                      leaves.length >= 26 && "grid-cols-6",
+                    ]
+                      .filter(Boolean)
+                      .join(" ")}
+                  >
+                    {leaves.map(leaf => (
+                      <MarkerCircle
+                        key={leaf.id}
+                        {...leaf.properties}
+                        clickHandler={() =>
+                          clickHandler &&
+                          typeof leaf.id === "number" &&
+                          clickHandler([leaf.id])
+                        }
+                        mouseEnterHandler={() =>
+                          mouseEnterHandler &&
+                          typeof leaf.id === "number" &&
+                          mouseEnterHandler([leaf.id])
+                        }
+                        mouseLeaveHandler={() =>
+                          mouseLeaveHandler &&
+                          typeof leaf.id === "number" &&
+                          mouseLeaveHandler([leaf.id])
+                        }
+                        isActive={Boolean(leaf.properties.isActive)}
+                        isHighlighted={Boolean(leaf.properties.isHighlighted)}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <span className='inline-block transform -translate-x-1/2 -translate-y-1/2'>
+                    <MarkerCircle
+                      {...cluster.properties}
+                      {...handlers}
+                      isActive={isActive}
+                      isHighlighted={isHighlighted}
+                    >
+                      {isCluster && pointCount > 1 ? pointCount : null}
+                    </MarkerCircle>
+                  </span>
+                )}
               </Marker>
             );
           })}
