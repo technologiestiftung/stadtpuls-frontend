@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 IFS=$'\n\t'
-git config advice.detachedHead false
-git clone \
-  --depth 1  \
-  --filter=blob:none  \
-  --sparse \
-  --branch v4.0.0 \
-  https://github.com/technologiestiftung/stadtpuls-supabase.git supabase \
-  && cd supabase \
-  && git sparse-checkout set supabase-docker-compose
 
+git clone --no-checkout https://github.com/technologiestiftung/stadtpuls-supabase.git supabase \
+  && cd supabase \
+  && git config core.sparsecheckout true \
+  && git config advice.detachedHead false \
+  && mkdir .git/info \
+  && echo supabase-docker-compose >> .git/info/sparse-checkout \
+  && git checkout v4.0.0
+
+# now we create a docker compose override file from the heredoc below
 cat >> ./supabase-docker-compose/docker-compose.override.yml << 'EOF'
 
 services:
