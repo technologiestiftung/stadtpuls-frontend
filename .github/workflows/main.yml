@@ -22,7 +22,15 @@ jobs:
       - name: Clone Stadtpuls Supabase v4.0.0
         run: ./scripts/supabase-test-setup.sh
       - name: Run supabase
-        run: docker-compose --env-file supabase/supabase-docker-compose/.env --file supabase/supabase-docker-compose/docker-compose.yml  --file supabase/supabase-docker-compose/docker-compose.override.yml up --detach --build --force-recreate
+        run: |
+          docker-compose \
+          --env-file supabase/supabase-docker-compose/.env \
+          --file supabase/supabase-docker-compose/docker-compose.yml  \
+          --file supabase/supabase-docker-compose/docker-compose.override.yml \
+          up \
+          --detach \
+          --build \
+          --force-recreate
       - name: Read .nvmrc
         run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
         id: nvm
