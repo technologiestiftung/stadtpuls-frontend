@@ -6,7 +6,7 @@ git clone --no-checkout https://github.com/technologiestiftung/stadtpuls-supabas
   && cd supabase \
   && git config core.sparsecheckout true \
   && git config advice.detachedHead false \
-  && mkdir .git/info \
+  && mkdir -p .git/info \
   && echo supabase-docker-compose >> .git/info/sparse-checkout \
   && git checkout v4.0.0
 
