@@ -23,7 +23,7 @@
   max-width: 200px;
 }
 
-.mapContainer:not(.withSearch) div[class="mapboxgl-ctrl-bottom-left"] {
+.mapContainer div[class="mapboxgl-ctrl-bottom-left"] {
   @apply top-6 left-10 z-10 pointer-events-none transform -translate-y-0.5;
 }
 
@@ -33,5 +33,5 @@
 }
 
 .mapContainer.withSearch div[class="mapboxgl-ctrl-bottom-left"] {
-  @apply bottom-14 sm:bottom-0.5 top-auto;
+  @apply bottom-14 left-8 sm:bottom-0 top-auto;
 }
