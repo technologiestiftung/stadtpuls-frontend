@@ -121,7 +121,8 @@
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     "prepare": "husky install",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook -s ./public"
+    "build-storybook": "build-storybook -s ./public",
+    "backend:setup": "./scripts/supabase-test-setup.sh"
   },
   "config": {
     "commitizen": {
