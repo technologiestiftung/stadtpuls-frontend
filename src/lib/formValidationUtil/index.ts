@@ -1,6 +1,23 @@
 import { NUMBER_OF_SENSOR_SYMBOLS } from "@components/SensorSymbol";
 import * as yup from "yup";
 
+export const RESERVED_USERNAMES = [
+  "sensors",
+  "sensor",
+  "account",
+  "accounts",
+  "devices",
+  "device",
+  "project",
+  "projects",
+  "docs",
+  "signin",
+  "signup",
+  "robots",
+  "manifest",
+  "sitemap",
+];
+
 export const requiredEmailValidation = yup
   .string()
   .email("Die angegebene E-Mail-Adresse ist ungültig")
@@ -42,7 +59,7 @@ export const requiredLongitude = yup
 
 export const optionalDescriptionValidation = yup
   .string()
-  .max(200, "Die Beschreibung darf nicht länger als 200 Zeichen sein")
+  .max(500, "Die Beschreibung darf nicht länger als 500 Zeichen sein")
   .nullable()
   .optional();
 
@@ -54,6 +71,7 @@ export const requiredUsernameValidation = yup
   .string()
   .min(3, "Nutzernamen können 3 bis 20 Zeichen lang sein")
   .max(20, "Nutzernamen können 3 bis 20 Zeichen lang sein")
+  .notOneOf(RESERVED_USERNAMES, "Diese Nutzername darf nicht verwendet werden")
   .matches(
     /^[a-zA-Z0-9_-]*$/gm,
     "Nutzernamen dürfen nur Buchstaben, Zahlen und _ enthalten"

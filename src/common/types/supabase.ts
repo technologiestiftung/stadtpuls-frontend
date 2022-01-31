@@ -204,6 +204,120 @@ export interface paths {
       };
     };
   };
+  "/extended_user_profiles": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.extended_user_profiles.id"];
+          username?: parameters["rowFilter.extended_user_profiles.username"];
+          display_name?: parameters["rowFilter.extended_user_profiles.display_name"];
+          created_at?: parameters["rowFilter.extended_user_profiles.created_at"];
+          link?: parameters["rowFilter.extended_user_profiles.link"];
+          description?: parameters["rowFilter.extended_user_profiles.description"];
+          sensors_count?: parameters["rowFilter.extended_user_profiles.sensors_count"];
+          records_count?: parameters["rowFilter.extended_user_profiles.records_count"];
+          categories?: parameters["rowFilter.extended_user_profiles.categories"];
+          sensors?: parameters["rowFilter.extended_user_profiles.sensors"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["extended_user_profiles"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** extended_user_profiles */
+          extended_user_profiles?: definitions["extended_user_profiles"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.extended_user_profiles.id"];
+          username?: parameters["rowFilter.extended_user_profiles.username"];
+          display_name?: parameters["rowFilter.extended_user_profiles.display_name"];
+          created_at?: parameters["rowFilter.extended_user_profiles.created_at"];
+          link?: parameters["rowFilter.extended_user_profiles.link"];
+          description?: parameters["rowFilter.extended_user_profiles.description"];
+          sensors_count?: parameters["rowFilter.extended_user_profiles.sensors_count"];
+          records_count?: parameters["rowFilter.extended_user_profiles.records_count"];
+          categories?: parameters["rowFilter.extended_user_profiles.categories"];
+          sensors?: parameters["rowFilter.extended_user_profiles.sensors"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.extended_user_profiles.id"];
+          username?: parameters["rowFilter.extended_user_profiles.username"];
+          display_name?: parameters["rowFilter.extended_user_profiles.display_name"];
+          created_at?: parameters["rowFilter.extended_user_profiles.created_at"];
+          link?: parameters["rowFilter.extended_user_profiles.link"];
+          description?: parameters["rowFilter.extended_user_profiles.description"];
+          sensors_count?: parameters["rowFilter.extended_user_profiles.sensors_count"];
+          records_count?: parameters["rowFilter.extended_user_profiles.records_count"];
+          categories?: parameters["rowFilter.extended_user_profiles.categories"];
+          sensors?: parameters["rowFilter.extended_user_profiles.sensors"];
+        };
+        body: {
+          /** extended_user_profiles */
+          extended_user_profiles?: definitions["extended_user_profiles"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/records": {
     get: {
       parameters: {
@@ -608,9 +722,27 @@ export interface definitions {
       | "CO2"
       | "Luftfeuchtigkeit"
       | "Luftdruck"
-      | "Unit Counter"
-      | "Lautstärke";
+      | "Zähler"
+      | "Lautstärke"
+      | "Helligkeit"
+      | "Sonstige";
     description: string;
+  };
+  extended_user_profiles: {
+    /**
+     * Note:
+     * This is a Primary Key.<pk/>
+     */
+    id?: string;
+    username?: string;
+    display_name?: string;
+    created_at?: string;
+    link?: string;
+    description?: string;
+    sensors_count?: number;
+    records_count?: number;
+    categories?: number[];
+    sensors?: number[];
   };
   records: {
     /**
@@ -697,6 +829,18 @@ export interface parameters {
   "rowFilter.categories.id": string;
   "rowFilter.categories.name": string;
   "rowFilter.categories.description": string;
+  /** extended_user_profiles */
+  "body.extended_user_profiles": definitions["extended_user_profiles"];
+  "rowFilter.extended_user_profiles.id": string;
+  "rowFilter.extended_user_profiles.username": string;
+  "rowFilter.extended_user_profiles.display_name": string;
+  "rowFilter.extended_user_profiles.created_at": string;
+  "rowFilter.extended_user_profiles.link": string;
+  "rowFilter.extended_user_profiles.description": string;
+  "rowFilter.extended_user_profiles.sensors_count": string;
+  "rowFilter.extended_user_profiles.records_count": string;
+  "rowFilter.extended_user_profiles.categories": string;
+  "rowFilter.extended_user_profiles.sensors": string;
   /** records */
   "body.records": definitions["records"];
   "rowFilter.records.id": string;

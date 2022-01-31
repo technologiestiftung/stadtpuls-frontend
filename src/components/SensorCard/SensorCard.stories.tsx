@@ -27,6 +27,7 @@ LongFields.args = {
   longitude: -72.961534,
   authorId: "1",
   authorName: "Atahualpa Yupanqui De la Vega Van Hilde",
+  authorUsername: "atahualpa",
   parsedRecords: parseSensorRecords(
     getSensorRecords({
       sensorId: 12,
@@ -46,6 +47,7 @@ MinimalFields.args = {
   symbolId: 32,
   authorId: "1",
   authorName: "Atahualpa Yupanqui De la Vega Van Hilde",
+  authorUsername: "atahualpa",
   latitude: 41.4840064,
   longitude: -72.961534,
   parsedRecords: [],
@@ -61,6 +63,7 @@ NoMap.args = {
   symbolId: 15,
   authorId: "3",
   authorName: "Vogelino",
+  authorUsername: "vogelino",
   parsedRecords: parseSensorRecords(
     getSensorRecords({
       sensorId: 12,

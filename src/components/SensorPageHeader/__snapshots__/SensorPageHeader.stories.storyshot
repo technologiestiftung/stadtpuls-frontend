@@ -116,7 +116,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
         </span>
         <a
           className="flex gap-2 items-center leading-tight hover:text-purple transition focus-offset truncate"
-          href="/accounts/yupank1"
+          href="/yupank1/sensors"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -602,9 +602,11 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
         className="py-6"
       >
         <p
-          className="text-sm sm:text-base max-w-prose"
+          className="text-sm sm:text-base max-w-prose break-words"
         >
-          @wdanxna when Array is given multiple arguments, it iterates over the arguments object and explicitly applies each value to the new array. When you call Array.apply with an array or an object with a length property Array is going to use the length to explicitly set each value of the new array. This is why Array(5) gives an array of 5 elisions, while Array.apply(null, Array(5)) gives an array of 5 undefineds. For more information, see this answer.
+          
+          @wdanxna
+           when Array is given multiple arguments, it iterates over the arguments object and explicitly applies each value to the new array. When you call Array.apply with an array or an object with a length property Array is going to use the length to explicitly set each value of the new array. This is why Array(5) gives an array of 5 elisions, while Array.apply(null, Array(5)) gives an array of 5 undefineds. For more information, see this answer.
         </p>
       </div>
       <div
@@ -784,7 +786,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
         </span>
         <a
           className="flex gap-2 items-center leading-tight hover:text-purple transition focus-offset truncate"
-          href="/accounts/lalushka"
+          href="/lalushka/sensors"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -1268,11 +1270,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
       </div>
       <div
         className="py-6"
-      >
-        <p
-          className="text-sm sm:text-base max-w-prose"
-        />
-      </div>
+      />
       <div
         className="flex-col"
       >

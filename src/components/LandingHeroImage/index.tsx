@@ -219,15 +219,6 @@ export const LandingHeroImage: FC = () => {
               />
               <rect
                 className='animate-slide-in'
-                style={{ animationDelay: `${Math.round(500 * animFactor)}ms` }}
-                fill={colors.green}
-                x='522'
-                y='812'
-                width='58'
-                height='58'
-              />
-              <rect
-                className='animate-slide-in'
                 style={{ animationDelay: `${Math.round(550 * animFactor)}ms` }}
                 fill={colors.green}
                 x='638'
@@ -241,15 +232,6 @@ export const LandingHeroImage: FC = () => {
                 fill={colors.green}
                 x='812'
                 y='696'
-                width='58'
-                height='58'
-              />
-              <rect
-                className='animate-slide-in'
-                style={{ animationDelay: `${Math.round(650 * animFactor)}ms` }}
-                fill='url(#black-dot-pattern)'
-                x='464'
-                y='754'
                 width='58'
                 height='58'
               />
@@ -450,15 +432,6 @@ export const LandingHeroImage: FC = () => {
                 fill={colors.purple}
                 x='58'
                 y='580'
-                width='58'
-                height='58'
-              />
-              <rect
-                className='animate-slide-in'
-                style={{ animationDelay: `${Math.round(1700 * animFactor)}ms` }}
-                fill={colors.purple}
-                x='522'
-                y='754'
                 width='58'
                 height='58'
               />

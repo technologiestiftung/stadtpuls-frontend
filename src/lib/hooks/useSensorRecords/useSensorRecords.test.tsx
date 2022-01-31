@@ -1,4 +1,4 @@
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { render, waitFor } from "@testing-library/react";
 import { FC, useEffect } from "react";
 import { SWRConfig } from "swr";

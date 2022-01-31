@@ -505,7 +505,7 @@ exports[`Storyshots UI Elements/UserInfoHeader Maximum Infos 1`] = `
       </div>
       <a
         className="text-purple hover:text-blue transition-colors inline-block order-2 sm:order-3 mt-0 sm:mt-3"
-        href="/accounts/looee14"
+        href="/looee14/sensors"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -522,30 +522,32 @@ exports[`Storyshots UI Elements/UserInfoHeader Maximum Infos 1`] = `
       </a>
     </div>
     <div
-      className="flex gap-8 justify-self-end items-center"
+      className="md:mt-12 self-start flex flex-wrap md:flex-nowrap gap-4 sm:gap-8 justify-self-end items-center"
     >
       <div
         className="flex flex-col"
       >
         <span
-          className="text-lg sm:text-xl lg:text-2xl pt-1 font-mono lg:font-light text-gray-700"
+          className="text-md sm:text-xl lg:text-2xl pt-1 font-mono lg:font-light text-gray-700"
         >
           12.342
         </span>
         <span>
-          Sensoren
+          Sensor
+          en
         </span>
       </div>
       <div
         className="flex flex-col"
       >
         <span
-          className="text-lg sm:text-xl lg:text-2xl pt-1 font-mono lg:font-light text-gray-700"
+          className="text-md sm:text-xl lg:text-2xl pt-1 font-mono lg:font-light text-gray-700"
         >
           11 Mio.
         </span>
         <span>
-          Messwerte
+          Messwert
+          e
         </span>
       </div>
     </div>
@@ -1064,7 +1066,7 @@ exports[`Storyshots UI Elements/UserInfoHeader Minimal Infos 1`] = `
       </h1>
       <a
         className="text-purple hover:text-blue transition-colors inline-block order-2 sm:order-3 mt-0 sm:mt-3"
-        href="/accounts/looee14"
+        href="/looee14/sensors"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -1073,30 +1075,32 @@ exports[`Storyshots UI Elements/UserInfoHeader Minimal Infos 1`] = `
       </a>
     </div>
     <div
-      className="flex gap-8 justify-self-end items-center"
+      className="md:mt-12 self-start flex flex-wrap md:flex-nowrap gap-4 sm:gap-8 justify-self-end items-center"
     >
       <div
         className="flex flex-col"
       >
         <span
-          className="text-lg sm:text-xl lg:text-2xl pt-1 font-mono lg:font-light text-gray-700"
+          className="text-md sm:text-xl lg:text-2xl pt-1 font-mono lg:font-light text-gray-700"
         >
           0
         </span>
         <span>
-          Sensoren
+          Sensor
+          en
         </span>
       </div>
       <div
         className="flex flex-col"
       >
         <span
-          className="text-lg sm:text-xl lg:text-2xl pt-1 font-mono lg:font-light text-gray-700"
+          className="text-md sm:text-xl lg:text-2xl pt-1 font-mono lg:font-light text-gray-700"
         >
           0
         </span>
         <span>
-          Messwerte
+          Messwert
+          e
         </span>
       </div>
     </div>

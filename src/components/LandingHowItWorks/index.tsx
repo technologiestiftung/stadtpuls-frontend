@@ -84,7 +84,7 @@ const ListWithIcons: FC<ListWithIconsPropType> = ({
   >
     {listItems.map(({ text, icon = "#" }) => (
       <li
-        key={text?.toString()}
+        key={icon}
         className={[
           "grid mb-2 sm:mb-3 gap-3 sm:gap-4 items-center bg-gray-50",
           final ? "sm:bg-green sm:bg-opacity-10 sm:text-white" : "",
@@ -98,7 +98,7 @@ const ListWithIcons: FC<ListWithIconsPropType> = ({
           ].join(" ")}
           style={{ backgroundImage: `url(${icon})` }}
         />
-        <span className='text-sm sm:text-base break-words sm:break-normal'>
+        <span className='leading-tight text-sm sm:text-base sm:leading-tight break-words sm:break-normal pr-2'>
           {text}
         </span>
       </li>
@@ -110,30 +110,40 @@ const columnsData = [
   {
     title: "Hardware",
     description:
-      "Die Wahl der Hardware  ist ganz dir überlassen. Arbeite mit Arduino, Raspberry Pi oder einer Open Sense Box. Wichtig ist, dass dein Board über eine LoRaWan-Antenne verfügt.",
+      "Die Wahl der Hardware  ist ganz dir überlassen. Arbeite mit Arduino, Raspberry Pi oder direkt am PC. Stadtpuls setzt deiner Kreativität keine Grenzen.",
     listItems: [
-      { icon: "/images/icons/arduino.svg", text: "Arduino" },
-      { icon: "/images/icons/raspberry-pi.svg", text: "Raspberry Pi" },
-      { icon: "/images/icons/open-sense-box.svg", text: "Open Sense Box" },
+      { icon: "/images/icons/arduino.svg", text: <>Ardui&shy;no</> },
+      { icon: "/images/icons/raspberry-pi.svg", text: <>Rasp&shy;berry Pi</> },
+      { icon: "/images/icons/phone.svg", text: <>Smart&shy;phone</> },
+      { icon: "/images/icons/browser.svg", text: <>Web-Brow&shy;ser</> },
+      { icon: "/images/icons/laptop.svg", text: <>PC/&shy;Mac</> },
+      { icon: "/images/icons/other-hardware.svg", text: <>Und vieles mehr</> },
     ],
   },
   {
     title: "Sensoren",
     description:
-      "Prinzipiell kannst du jeden Sensor verbinden. Wir unterstützen aktuell die folgenden, für die Umwelt relevanten, Sensortypen und machen sie mit einer Kategorie sichtbar.",
+      "Prinzipiell kannst du jeden Sensor verbinden. Die folgenden Sensortypen unterstützen wir bereits mit einer eigenen Kategorie.",
     listItems: [
-      { icon: "/images/icons/temperature.svg", text: "Temperatur" },
-      { icon: "/images/icons/co2.svg", text: "CO2" },
-      { icon: "/images/icons/humidity.svg", text: "Luftfeuchtigkeit" },
-      { icon: "/images/icons/pressure.svg", text: "Druck" },
-      { icon: "/images/icons/lightness.svg", text: "Helligkeit" },
-      { icon: "/images/icons/decibels.svg", text: "Lautstärke" },
-      { icon: "/images/icons/unit-counter.svg", text: "Unit Counter" },
+      {
+        icon: "/images/icons/temperature.svg",
+        text: <>Tem&shy;pe&shy;ra&shy;tur</>,
+      },
+      { icon: "/images/icons/co2.svg", text: <>CO2</> },
+      {
+        icon: "/images/icons/humidity.svg",
+        text: <>Luft&shy;feuch&shy;tig&shy;keit</>,
+      },
+      { icon: "/images/icons/pressure.svg", text: <>Druck</> },
+      { icon: "/images/icons/lightness.svg", text: <>Hell&shy;ig&shy;keit</> },
+      { icon: "/images/icons/decibels.svg", text: <>Laut&shy;stärke</> },
+      { icon: "/images/icons/unit-counter.svg", text: <>Zäh&shy;ler</> },
     ],
   },
   {
     title: "Protokolle",
-    description: "Stadtpuls unterstützt aktuell HTTP und LoRaWan über TTN.",
+    description:
+      "Mit HTTP und LoRaWan über TTN stehen dir bereits zwei wichtige Protokolle zur Verfügung. Weitere folgen in Kürze.",
     listItems: [
       { icon: "/images/icons/HTTP.svg", text: "HTTP" },
       { icon: "/images/icons/lorawan.svg", text: "LoRaWAN (TTN)" },
@@ -142,7 +152,7 @@ const columnsData = [
   {
     title: "Was wir bereitstellen",
     description:
-      "Hast du erst einmal ein eigenes Stadtpuls-Account, stellen wir dir automatisch und kostenlos folgendes bereit:",
+      "Hast du erst einmal einen eigenen Stadtpuls-Account, stellen wir dir automatisch und kostenlos folgendes bereit:",
     listItems: [
       {
         icon: "/images/icons/profile.svg",
@@ -150,7 +160,7 @@ const columnsData = [
       },
       {
         icon: "/images/icons/visualisations.svg",
-        text: <>Daten&shy;visualisierungen</>,
+        text: <>Daten&shy;visu&shy;ali&shy;sierungen</>,
       },
       { icon: "/images/icons/api.svg", text: "REST-API für alle Sensoren" },
       {
@@ -167,15 +177,15 @@ export const LandingHowItWorks: FC = () => (
       className={[
         "container mx-auto max-w-8xl",
         "px-4 sm:px-6 md:px-8",
-        "sm:py-24 lg:py-32",
+        "py-8 sm:py-24 lg:py-32",
       ].join(" ")}
     >
       <div
-        className={`grid grid-cols-2 lg:grid-cols-9 gap-x-4 sm:gap-x-0 ${styles.gridContainer}`}
+        className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-9 gap-x-4 sm:gap-x-0 ${styles.gridContainer}`}
       >
         {columnsData.map(({ title }, idx) => (
           <HowItWorksColumn
-            key={title}
+            key={`${title}-how-it-works-title`}
             final={idx + 1 === columnsData.length}
             area={`title-${idx + 1}`}
           >
@@ -187,9 +197,9 @@ export const LandingHowItWorks: FC = () => (
             </HowItWorksTitle>
           </HowItWorksColumn>
         ))}
-        {columnsData.map(({ description }, idx) => (
+        {columnsData.map(({ title, description }, idx) => (
           <HowItWorksColumn
-            key={description}
+            key={`${title}-how-it-works-description`}
             final={idx + 1 === columnsData.length}
             area={`description-${idx + 1}`}
           >
@@ -200,84 +210,12 @@ export const LandingHowItWorks: FC = () => (
         ))}
         {columnsData.map(({ title, listItems }, idx) => (
           <ListWithIcons
-            key={title}
+            key={`${title}-how-it-works-icons`}
             final={idx + 1 === columnsData.length}
             listItems={listItems}
             area={`list-${idx + 1}`}
           />
         ))}
-      </div>
-      <div className='grid grid-cols-2 lg:grid-cols-9 mt-32'>
-        <div className='col-span-6 lg:pr-12'>
-          <h1
-            className={[
-              "text-xl sm:text-2xl md:text-3xl",
-              "text-purple font-bold font-headline",
-              "mb-4 mt-8",
-            ].join(" ")}
-          >
-            Stadtpuls unterstützt die Anbindung an TTN!
-          </h1>
-          <p className='mb-3'>
-            Durch die TTN-Anbindung kannst du deine TTN-Projekte ganz einfach
-            über einen Webhook mit Stadtpuls verbinden und eigene Projekte
-            anlegen. Deine Daten werden dadurch visualisiert und per API, sowie
-            per CSV offen und kostenlos der gesamten Stadtgesellschaft zur
-            Verfügung gestellt.
-          </p>
-          <p>
-            So trägst auch du dazu bei, unsere Stadt ein Stück smarter zu
-            machen. Wir arbeiten parallel an weiteren Schnittstellen, um in
-            Zukunft die Anbindung aller Protkolle und Sensortypen zu
-            ermöglichen.
-          </p>
-        </div>
-        <aside
-          className={[
-            "col-span-3",
-            "w-full",
-            "p-8 mt-8 lg:mt-0",
-            "border border-green shadow-green",
-          ].join(" ")}
-        >
-          <h3
-            className={[
-              "flex gap-4 items-center",
-              "font-headline font-bold",
-              "text-xl sm:text-2xl md:text-3xl",
-              "mb-4",
-            ].join(" ")}
-          >
-            <img
-              src='/images/illustrations/microcontroller-2.svg'
-              alt='Microcontroller'
-            />
-            TTN? LoRa-Was?
-          </h3>
-          <p className='col-span-2'>
-            In Berlin gibt es ein offenes{" "}
-            <a
-              href='https://de.wikipedia.org/wiki/Long_Range_Wide_Area_Network'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='underline hover:text-blue transition-colors'
-            >
-              LoRaWan-Netzwerk
-            </a>
-            , welches seit 2017 durch die{" "}
-            <a
-              href='https://www.thethingsnetwork.org/'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='underline hover:text-blue transition-colors'
-            >
-              The Things Network (TTN)
-            </a>{" "}
-            Community betrieben wird. Jeder kann und darf es komplett kostenlos
-            benutzten, seine Sensoren mit dem Netzwerk verbinden und die Stadt
-            auf eigene Faust vermessen.
-          </p>
-        </aside>
       </div>
     </section>
   </div>

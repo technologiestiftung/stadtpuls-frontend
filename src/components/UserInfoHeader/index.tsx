@@ -5,9 +5,9 @@ import { FC } from "react";
 import Link from "next/link";
 import { normalizeURL } from "@lib/urlUtil";
 import { Button } from "@components/Button";
-import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
+import { AccountWithSensorsType } from "@lib/requests/getAccountDataByUsername";
 
-export interface UserInfoHeaderPropType extends ParsedAccountType {
+export interface UserInfoHeaderPropType extends AccountWithSensorsType {
   withEditButton?: boolean;
   onEditButtonClick?: () => void | undefined;
 }
@@ -63,9 +63,9 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
               <p className='max-w-prose text-sm sm:text-base'>{description}</p>
             </div>
           )}
-          <Link href={`/accounts/${username}`}>
+          <Link href={`/${username}/sensors`}>
             <a
-              href={`/accounts/${username}`}
+              href={`/${username}/sensors`}
               className={[
                 "text-purple hover:text-blue transition-colors",
                 "inline-block order-2 sm:order-3",
@@ -86,28 +86,28 @@ export const UserInfoHeader: FC<UserInfoHeaderPropType> = ({
             </TextLink>
           )}
         </div>
-        <div className='flex gap-8 justify-self-end items-center'>
+        <div className='md:mt-12 self-start flex flex-wrap md:flex-nowrap gap-4 sm:gap-8 justify-self-end items-center'>
           <div className='flex flex-col'>
             <span
               className={[
-                "text-lg sm:text-xl lg:text-2xl pt-1",
+                "text-md sm:text-xl lg:text-2xl pt-1",
                 "font-mono lg:font-light text-gray-700",
               ].join(" ")}
             >
               {numberFormatter.format(sensorsCount)}
             </span>
-            <span>Sensoren</span>
+            <span>Sensor{sensorsCount === 1 ? "" : "en"}</span>
           </div>
           <div className='flex flex-col'>
             <span
               className={[
-                "text-lg sm:text-xl lg:text-2xl pt-1",
+                "text-md sm:text-xl lg:text-2xl pt-1",
                 "font-mono lg:font-light text-gray-700",
               ].join(" ")}
             >
               {numberFormatter.format(recordsCount)}
             </span>
-            <span>Messwerte</span>
+            <span>Messwert{recordsCount === 1 ? "" : "e"}</span>
           </div>
         </div>
       </div>

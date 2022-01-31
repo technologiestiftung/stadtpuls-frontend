@@ -10,11 +10,11 @@ import { userprofiles } from "./userprofiles";
 export const ttnSensors: SensorQueryResponseType[] = [
   {
     id: 1,
-    name: "Temperatur Grunewaldstraße",
+    name: "Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz",
     created_at: "2020-12-01T07:00:00",
     connection_type: "ttn",
     description:
-      "Temperaturmessung den Räumlichkeiten der Technologiestiftung Berlin in der Grunewaldstraße",
+      "Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz Temperaturmessung den Räumlichkeiten der Technologiestiftung Berlin in der Grunewaldstraße",
     external_id: "ttn-device-id-123",
     category_id: 1,
     location: "Berlin",
@@ -33,11 +33,11 @@ export const ttnSensors: SensorQueryResponseType[] = [
   },
   {
     id: 2,
-    name: "Plan of Simplicity",
+    name: "ok",
     created_at: "2021-05-19T018:00:00",
     connection_type: "ttn",
     description:
-      "What is once well done is done forever. - Henry David Thoreau",
+      "Eine Boombox dröhnt im Park, die U1 quietscht über die Hochbahnstrecke und die Polizei rückt mal wieder mit Sirenen an: Eine typische Soundkulisse im Berliner Szenekiez. Klingt nicht sonderlich angenehm? Wir haben uns gefragt, welche Rolle Lärm für die Identität eines Kiezes spielt und welche Muster es gibt.",
     external_id: "ttn-device-id-456",
     category_id: 2,
     location: "Neubrandenburg",
@@ -56,7 +56,7 @@ export const ttnSensors: SensorQueryResponseType[] = [
   },
   {
     id: 3,
-    name: "Shadow of Struggle",
+    name: "Donaudampfschifffahrtsgesellschaftskapitän",
     created_at: "2021-08-25T011:00:00",
     connection_type: "ttn",
     external_id: "ttn-device-id-789",
@@ -80,11 +80,11 @@ export const ttnSensors: SensorQueryResponseType[] = [
 export const httpSensors: SensorQueryResponseType[] = [
   {
     id: 4,
-    name: "Poison Thing",
+    name: "Betäubungsmittelverschreibungsverordnung",
     created_at: "2021-09-03T008:00:00",
     connection_type: "http",
     description:
-      "Ambition is the path to success. Persistence is the vehicle you arrive in. - Bill Bradley",
+      "Absolute Stille, das gibt es praktisch nur im Vakuum. Da, wo sich Schall ausbreiten kann, gibt es auch Geräusche und wo viele Menschen auf engem Raum leben, kann es schnell laut werden. Der akustische Puls der Stadt schlägt im Takt der Aktivität seiner Bewohner:innen und Besucher:innen und in Berlin kommt er selten zum Stillstand.",
     category_id: 3,
     location: "Düren",
     user_id: userprofiles[0].id,
@@ -102,11 +102,11 @@ export const httpSensors: SensorQueryResponseType[] = [
   },
   {
     id: 5,
-    name: "Delicate Collapse",
+    name: "Donaudampfschiffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft",
     created_at: "2021-09-12T022:00:00",
     connection_type: "http",
     description:
-      "Sadness flies away on the wings of time. - Jean de La Fontaine",
+      "Offene Verwaltungsdaten helfen uns, die Lärmbelastung in Berlin zu verstehen und zu bewerten. Die strategischen Lärmkarten zeigen, wie sich der Lärm des Hauptverkehrsstraßennetzes und des Schienennetzes auswirkt und Erhebungen zur Verkehrslärmexposition zeigen, dass 12,3% der Berliner:innen einer gesundheitskritischen",
     category_id: 4,
     location: "Villingen-Schwenningen",
     user_id: userprofiles[0].id,
@@ -128,7 +128,7 @@ export const httpSensors: SensorQueryResponseType[] = [
     created_at: "2021-09-15T020:00:00",
     connection_type: "http",
     description:
-      "Through perseverance many people win success out of what seemed destined to be certain failure. - Benjamin Disraeli",
+      "Wir wollten wissen: Wie wird die Lebensqualität im Kiez durch Lärm beeinflusst? Welche kleinräumigen und zeitlichen Muster gibt es in Kiezen? Gibt es Zeiten und Orte, die besonders laut oder leise sind?",
     category_id: 5,
     location: "München",
     user_id: userprofiles[0].id,

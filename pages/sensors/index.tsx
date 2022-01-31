@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { SensorsGrid } from "@components/SensorsGrid";
 import { GetServerSideProps } from "next";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { Pagination } from "@components/Pagination";
@@ -7,6 +6,7 @@ import router from "next/router";
 import classNames from "classnames";
 import { getLandingStats } from "@lib/requests/getLandingStats";
 import { getPublicSensors } from "@lib/requests/getPublicSensors";
+import { SensorsList } from "@components/SensorsList";
 
 interface SensorsOverviewPropType {
   sensors: ParsedSensorType[];
@@ -89,7 +89,7 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({
           Seite {page} von {pageCount}
         </h2>
       </div>
-      <SensorsGrid sensors={sensors} />
+      <SensorsList sensors={sensors} />
       <div className='mt-12 flex justify-center'>
         <Pagination
           pageCount={pageCount}

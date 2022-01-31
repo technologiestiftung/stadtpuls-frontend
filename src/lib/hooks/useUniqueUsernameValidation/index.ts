@@ -1,4 +1,4 @@
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { supabase } from "@auth/supabase";
 import useSWR from "swr";
 
@@ -7,7 +7,7 @@ const checkIfUsernameIsUnique = async (username?: string): Promise<boolean> => {
   const { data: usersWithMatchingUsernames, error } = await supabase
     .from<definitions["user_profiles"]>("user_profiles")
     .select("id")
-    .ilike("name", `%${username}%`);
+    .ilike("name", `%${username.trim()}%`);
 
   if (error) throw error;
   return !usersWithMatchingUsernames || usersWithMatchingUsernames.length === 0;

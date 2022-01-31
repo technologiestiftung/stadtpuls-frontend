@@ -531,6 +531,7 @@ exports[`Storyshots Charts/LineChart Humidity Once A Day 1`] = `
             strokeLinecap="round"
             strokeOpacity={1}
             strokeWidth={2}
+            vectorEffect="non-scaling-stroke"
           />
         </g>
         <rect
@@ -1167,6 +1168,7 @@ exports[`Storyshots Charts/LineChart Paxcounter Throughout Day 1`] = `
             strokeLinecap="round"
             strokeOpacity={1}
             strokeWidth={2}
+            vectorEffect="non-scaling-stroke"
           />
         </g>
         <rect
@@ -1761,6 +1763,7 @@ exports[`Storyshots Charts/LineChart Temperature Throughout Day 1`] = `
             strokeLinecap="round"
             strokeOpacity={1}
             strokeWidth={2}
+            vectorEffect="non-scaling-stroke"
           />
         </g>
         <rect
@@ -2262,6 +2265,7 @@ exports[`Storyshots Charts/LineChart Values Without Supplied Unit 1`] = `
             strokeLinecap="round"
             strokeOpacity={1}
             strokeWidth={2}
+            vectorEffect="non-scaling-stroke"
           />
         </g>
         <rect

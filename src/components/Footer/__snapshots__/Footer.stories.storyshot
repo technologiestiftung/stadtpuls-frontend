@@ -28,7 +28,7 @@ exports[`Storyshots Layout/Footer Default 1`] = `
           >
             <img
               alt="Logo des CityLAB Berlin"
-              className="w-40"
+              className="w-44"
               src="/images/citylab-logo.svg"
             />
           </a>
@@ -50,7 +50,7 @@ exports[`Storyshots Layout/Footer Default 1`] = `
           >
             <img
               alt="Logo der Technologiestiftung Berlin"
-              className="w-32"
+              className="w-40"
               src="/images/tsb-logo.svg"
             />
           </a>
@@ -61,19 +61,19 @@ exports[`Storyshots Layout/Footer Default 1`] = `
           <span
             className="w-full block text-xs text-gray-700"
           >
-            Gefördert von:
+            Gefördert durch:
           </span>
           <a
-            aria-label="berlin.de"
+            aria-label="Der Regierende Bürgermeister von Berlin - Senatskanzlei"
             className="mt-4 block focus-offset"
-            href="https://www.berlin.de/"
+            href="https://www.berlin.de/rbmskzl/"
             rel="noopener noreferrer"
             target="_blank"
           >
             <img
-              alt="Berlin Logo"
+              alt="Logo: Der Regierende Bürgermeister von Berlin - Senatskanzlei"
               className="w-32"
-              src="/images/berlin-logo.svg"
+              src="/images/berlin-skzl-logo.svg"
             />
           </a>
         </div>
@@ -93,7 +93,7 @@ exports[`Storyshots Layout/Footer Default 1`] = `
           className="text-sm text-gray-700"
         >
           © 
-          2021
+          2022
            Technologiestiftung Berlin
         </p>
       </div>

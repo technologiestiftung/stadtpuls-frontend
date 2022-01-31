@@ -13,9 +13,9 @@ import {
 import React, { FC, useEffect, useCallback } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormTextarea } from "@components/FormTextarea";
-import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
+import { AccountWithSensorsType } from "@lib/requests/getAccountDataByUsername";
 
-interface DefaultValuesType extends ParsedAccountType {
+interface DefaultValuesType extends AccountWithSensorsType {
   email: string;
 }
 
@@ -145,6 +145,7 @@ export const EditAccountModal: FC<EditAccountModalPropType> = ({
               {...field}
               optional
               label='Beschreibung'
+              maxCharacters={500}
               placeholder='Gebe deinem Profil eine kurze Beschreibung'
               errors={formatError(errors.description?.message)}
             />

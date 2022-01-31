@@ -61,4 +61,28 @@ describe("component SignupForm", () => {
       })
     );
   });
+  it("should not allow reserved words", async (): Promise<void> => {
+    const mySubmit = jest.fn();
+    render(<SignupForm onSubmit={mySubmit} />);
+    const usernameInput = screen.getByRole("textbox", { name: /Nutzername/i });
+    const submitButton = screen.getByRole("button");
+    fireEvent.change(usernameInput, {
+      target: {
+        value: "sensor",
+      },
+    });
+    usernameInput.focus();
+    const errorMsg = screen.getByText(
+      "Dieser Benutzername darf nicht verwendet werden"
+    );
+    expect(errorMsg).toBeInTheDocument();
+    fireEvent.click(submitButton);
+    await waitFor(() =>
+      expect(mySubmit).not.toHaveBeenCalledWith({
+        username: "sensor",
+        email: "contact@example.com",
+        areConditionsAccepted: true,
+      })
+    );
+  });
 });

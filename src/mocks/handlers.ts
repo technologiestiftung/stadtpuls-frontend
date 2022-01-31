@@ -1,11 +1,11 @@
 import { rest } from "msw";
 import { fakeAuthToken } from "./supabaseData/userData";
 import { parsedSensors, sensors } from "./supabaseData/sensors";
-import { publicAccounts } from "./supabaseData/accounts";
+import { extendedUserProfiles, userProfiles } from "./supabaseData/accounts";
 import { createSupabaseUrl } from "../lib/requests/createSupabaseUrl";
 import { getSupabaseCredentials } from "../auth/supabase";
 import { createApiUrl } from "@lib/requests/createApiUrl";
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { fakeGeocondingData } from "./mapboxData";
 import { fakeGithubUserData } from "./githubData";
 import { SensorQueryResponseType } from "@lib/hooks/usePublicSensors";
@@ -125,27 +125,33 @@ const supabaseHandlers = [
           return res(
             ctx.status(201, "Mocked status"),
             ctx.json(
-              publicAccounts.find(
+              userProfiles.find(
                 account => String(account.name) === String(username)
               )
             )
           );
         }
         if (limitedAccountsRequested && limit) {
-          const limitedAccounts = publicAccounts.slice(0, parseInt(limit, 10));
+          const limitedAccounts = userProfiles.slice(0, parseInt(limit, 10));
           return res(
             ctx.status(201, "Mocked status"),
             ctx.json(limitedAccounts)
           );
         } else {
-          return res(
-            ctx.status(201, "Mocked status"),
-            ctx.json(publicAccounts)
-          );
+          return res(ctx.status(201, "Mocked status"), ctx.json(userProfiles));
         }
       }
 
-      return res(ctx.status(201, "Mocked status"), ctx.json(publicAccounts));
+      return res(ctx.status(201, "Mocked status"), ctx.json(userProfiles));
+    }
+  ),
+  rest.get<definitions["extended_user_profiles"]>(
+    createSupabaseUrl("/extended_user_profiles"),
+    (_req, res, ctx) => {
+      return res(
+        ctx.status(200, "Mocked status"),
+        ctx.json(extendedUserProfiles)
+      );
     }
   ),
   rest.get<SensorQueryResponseType>(

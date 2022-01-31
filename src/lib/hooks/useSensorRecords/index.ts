@@ -1,4 +1,4 @@
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import {
   getRecordsBySensorId,
   GetRecordsResponseType,
@@ -53,18 +53,23 @@ export const useSensorRecords = ({
     endDateString,
     maxRows,
   ];
-  const { data, error } = useSWR<GetRecordsResponseType, Error>(params, () =>
-    fetchSensorRecords({
-      sensorId,
-      startDateString,
-      endDateString,
-      maxRows,
-    })
+  const { data, error } = useSWR<GetRecordsResponseType, Error>(
+    params,
+    () =>
+      fetchSensorRecords({
+        sensorId,
+        startDateString,
+        endDateString,
+        maxRows,
+      }),
+    {
+      revalidateOnFocus: false,
+    }
   );
 
   return {
     isLoading: data?.records === undefined,
-    records: data?.records || ([] as definitions["records"][]),
+    records: data?.records || [],
     recordsCount: data?.count || null,
     error: error || null,
   };

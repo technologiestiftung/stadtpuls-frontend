@@ -1,4 +1,4 @@
-import { definitions } from "@common/types/supabase";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { createApiUrl } from "@lib/requests/createApiUrl";
 
 type TokenType = Omit<definitions["auth_tokens"], "id">;
