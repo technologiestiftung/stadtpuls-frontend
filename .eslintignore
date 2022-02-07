@@ -4,3 +4,4 @@ out
 .*.js
 storybook-static
 public
+supabase/*
