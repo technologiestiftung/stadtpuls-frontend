@@ -145,7 +145,7 @@ describe("The Sensors page - Mobile", () => {
     cy.get("canvas.mapboxgl-canvas").should("exist");
     cy.get(".mapboxgl-marker").should("have.length", 5);
   });
-  it.only("should be able to search for a place", () => {
+  it("should be able to search for a place", () => {
     cy.viewport("iphone-3");
     cy.visit("/sensors");
 
