@@ -39,6 +39,11 @@
     },
     "moduleResolution": "node"
   },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
   "include": [
     "next-env.d.ts",
     "./src/**/*.ts",
@@ -46,6 +51,7 @@
     "./pages/**/*.ts",
     "./pages/**/*.tsx",
     "./workers/*.worker.ts",
+    "./dev-tools/**/*.ts"
   ],
   "exclude": [
     "node_modules",
