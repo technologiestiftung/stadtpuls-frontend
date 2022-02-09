@@ -5,6 +5,7 @@ export interface MarkerCirclePropType {
   isPulsating?: boolean;
   isHighlighted?: boolean;
   className?: string;
+  id?: string;
   clickHandler?: () => void;
   mouseEnterHandler?: () => void;
   mouseLeaveHandler?: () => void;
@@ -15,6 +16,7 @@ export const MarkerCircle: FC<MarkerCirclePropType> = ({
   isPulsating = false,
   isHighlighted = false,
   className = "",
+  id,
   clickHandler,
   mouseEnterHandler,
   mouseLeaveHandler,
@@ -33,7 +35,9 @@ export const MarkerCircle: FC<MarkerCirclePropType> = ({
         />
       )}
       <button
-        data-cy={`marker-circle-${children ? "cluster" : "single"}`}
+        data-cy={`marker-circle-${children ? "cluster" : "single"}${
+          id ? `-${id}` : ""
+        }`}
         className={[
           className,
           "relative rounded-full inline-flex",

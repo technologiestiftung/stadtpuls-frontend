@@ -65,11 +65,10 @@ describe("The Sensors page - Desktop", () => {
     cy.get("[data-cy='sensors-list-item']").should("have.length", 30);
     
     // Cluster
-    cy.findByRole("button", { name: /16/i }).click();
-    cy.findByRole("button", { name: /15/i }).click();
-    cy.findByRole("button", { name: /7/i }).click();
-    cy.wait(1000);
-    cy.get("[data-cy='marker-circle-cluster']").eq(3).click();
+    cy.get("[data-cy='marker-circle-cluster-5248381255975295-1338759183883667']").click();
+    cy.get("[data-cy='marker-circle-cluster-5248378642492082-13387527465820312']").click();
+    cy.get("[data-cy='marker-circle-cluster-5248381255975295-13387227058410645']").click();
+    cy.get("[data-cy='marker-circle-cluster-5248390403154306-1338707685470581']").click();
     
     map.get("[data-cy='same-position-markers-group']").should("exist");
   });
@@ -148,7 +147,7 @@ describe("The Sensors page - Mobile", () => {
 
     cy.get("[data-cy='marker-map-loaded']", { timeout: 16000 }).should("exist");
 
-    cy.get("[data-cy='marker-circle-single']").first().click({ waitForAnimations: false });
+    cy.get("[data-cy^='marker-circle-single']").first().click({ waitForAnimations: false });
     
     cy.get("[data-cy='map-thumbnail-sensor']").should("exist");
     

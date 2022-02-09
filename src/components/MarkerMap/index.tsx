@@ -282,6 +282,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
                 ? cluster.properties.point_count
                 : 0;
             const id = "id" in cluster.properties ? cluster.properties.id : 0;
+            const latLngId = `${latitude}-${longitude}`.replace(/\./gi, "");
             const leaves = isCluster
               ? supercluster.getLeaves(cluster.id, Infinity)
               : [];
@@ -324,6 +325,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
                 )
               : cluster.properties.isHighlighted;
 
+            console.log(latLngId);
             return (
               <Marker
                 key={cluster.id}
@@ -360,6 +362,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
                       <MarkerCircle
                         key={leaf.id}
                         {...leaf.properties}
+                        id={latLngId}
                         clickHandler={() =>
                           clickHandler &&
                           typeof leaf.id === "number" &&
@@ -387,6 +390,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
                       {...handlers}
                       isActive={isActive}
                       isHighlighted={isHighlighted}
+                      id={latLngId}
                     >
                       {isCluster && pointCount > 1 ? pointCount : null}
                     </MarkerCircle>
