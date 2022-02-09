@@ -153,7 +153,8 @@ describe("The Sensors page - Mobile", () => {
 
     cy.findByRole("textbox").type("Platz d. Luftbrücke 4, 12101 Berlin, Germany");
 
-    cy.get("ul.bg-white.shadow > li:first-child > button").click();
+    cy.get("ul.bg-white.shadow > li:first-child > button")
+      .click({ waitForAnimations: false });
     
     cy.get("div.mapboxgl-marker").should("have.length", 3);
   });
