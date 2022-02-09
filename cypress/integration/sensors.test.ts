@@ -59,7 +59,7 @@ describe("The Sensors page - Desktop", () => {
 
     cy.get("div.mapboxgl-marker").should("have.length", 5);
   });
-  it.only("should expand multiple dots on same spot", () => {
+  it("should expand multiple dots on same spot", () => {
     cy.viewport("macbook-13");
     cy.visit("/sensors");
 
