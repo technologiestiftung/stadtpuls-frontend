@@ -6,6 +6,7 @@ exports[`Storyshots Map/MarkerMap Berlin 1`] = `
 >
   <div
     className="w-full h-full relative"
+    data-cy="marker-map-loading"
   >
     <div
       style={
@@ -50,6 +51,7 @@ exports[`Storyshots Map/MarkerMap Germany 1`] = `
 >
   <div
     className="w-full h-full relative"
+    data-cy="marker-map-loading"
   >
     <div
       style={
@@ -94,6 +96,7 @@ exports[`Storyshots Map/MarkerMap Park 1`] = `
 >
   <div
     className="w-full h-full relative"
+    data-cy="marker-map-loading"
   >
     <div
       style={
@@ -138,6 +141,7 @@ exports[`Storyshots Map/MarkerMap World 1`] = `
 >
   <div
     className="w-full h-full relative"
+    data-cy="marker-map-loading"
   >
     <div
       style={

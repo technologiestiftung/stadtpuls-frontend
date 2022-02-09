@@ -27,9 +27,11 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
     </div>
     <ul
       className="flex flex-col w-[calc(100%+16px)] ml-[-8px]"
+      data-cy="sensors-list"
     >
       <li
         className="list-none"
+        data-cy="sensors-list-item"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
@@ -624,6 +626,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
       </li>
       <li
         className="list-none"
+        data-cy="sensors-list-item"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
@@ -1218,6 +1221,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
       </li>
       <li
         className="list-none"
+        data-cy="sensors-list-item"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
@@ -1778,6 +1782,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
       </li>
       <li
         className="list-none"
+        data-cy="sensors-list-item"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
@@ -2372,6 +2377,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
       </li>
       <li
         className="list-none"
+        data-cy="sensors-list-item"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
@@ -2966,6 +2972,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
       </li>
       <li
         className="list-none"
+        data-cy="sensors-list-item"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
@@ -3703,6 +3710,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
   >
     <div
       className="w-full h-full relative"
+      data-cy="marker-map-loading"
     >
       <div
         style={

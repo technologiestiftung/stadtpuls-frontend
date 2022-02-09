@@ -64,6 +64,7 @@ Array [
   </li>,
   <li
     className="list-none"
+    data-cy="sensors-list-item"
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >

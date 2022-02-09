@@ -67,6 +67,7 @@ const MapListSwitch: FC<{
 }> = ({ showList, setShowList }) => {
   return (
     <div
+      data-cy='map-list-switch'
       className={[
         "bg-white rounded-full border border-gray-200",
         "fixed w-[calc(100vw-1rem)] left-2 bottom-2 z-30",
@@ -75,6 +76,7 @@ const MapListSwitch: FC<{
       ].join(" ")}
     >
       <button
+        data-cy='map-list-switch-map-link'
         onClick={() => {
           window.scrollTo({ top: 0, behavior: "smooth" });
           setShowList(false);
@@ -93,6 +95,7 @@ const MapListSwitch: FC<{
           checked={showList}
           onChange={setShowList}
           className={`bg-blue relative inline-flex items-center h-6 rounded-full w-11`}
+          data-cy='map-list-switch-button'
         >
           <span
             className={`${
@@ -102,6 +105,7 @@ const MapListSwitch: FC<{
         </Switch>
       </div>
       <button
+        data-cy='map-list-switch-list-link'
         onClick={() => {
           window.scrollTo({ top: 0, behavior: "smooth" });
           setShowList(true);
@@ -137,6 +141,7 @@ const MapThumbnailSensor: FC<
   return (
     <Link href={`/${authorUsername}/sensors/${id}`}>
       <a
+        data-cy='map-thumbnail-sensor'
         ref={ref}
         className={[
           "fixed inset-x-4 bottom-16 z-40 bg-white px-2.5 py-2",
@@ -244,7 +249,10 @@ export const SensorsMap: FC<SensorsMapType> = ({
             />
           )}
           {!error && (
-            <ul className='flex flex-col w-[calc(100%+16px)] ml-[-8px]'>
+            <ul
+              data-cy='sensors-list'
+              className='flex flex-col w-[calc(100%+16px)] ml-[-8px]'
+            >
               {sensorsAreLoading
                 ? Array.from(Array(30).keys()).map(i => (
                     <SensorsListRowLoadingSkeleton key={i} />

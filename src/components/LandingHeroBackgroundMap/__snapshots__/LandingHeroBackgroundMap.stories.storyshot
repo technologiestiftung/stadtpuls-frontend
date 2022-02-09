@@ -12,6 +12,7 @@ exports[`Storyshots Promotional/LandingHeroBackgroundMap Default 1`] = `
 >
   <div
     className="w-full h-full relative"
+    data-cy="marker-map-loading"
   >
     <div
       style={

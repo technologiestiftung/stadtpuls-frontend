@@ -36,6 +36,7 @@ const SearchResultItem: FC<SearchResultItemPropType> = ({
   const after = name.slice(indexOfTerm + searchTerm.length, name.length);
   return (
     <button
+      data-cy='map-search-result'
       onClick={onClick}
       className={[
         "grid grid-cols-[16px,1fr]",

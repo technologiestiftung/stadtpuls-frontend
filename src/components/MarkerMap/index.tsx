@@ -215,7 +215,11 @@ export const MarkerMap: FC<MarkerMapType> = ({
   const maxZoom = otherProps.maxZoom || 20;
 
   return (
-    <div ref={mapContainerRef} className='w-full h-full relative'>
+    <div
+      ref={mapContainerRef}
+      className='w-full h-full relative'
+      data-cy={`marker-map-${mapIsLoaded ? "loaded" : "loading"}`}
+    >
       <ReactMapGL
         {...viewport}
         width={width}

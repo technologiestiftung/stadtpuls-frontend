@@ -4,6 +4,7 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
 <div>
   <li
     className="list-none"
+    data-cy="sensors-list-item"
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -605,6 +606,7 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
 <div>
   <li
     className="list-none"
+    data-cy="sensors-list-item"
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -1166,6 +1168,7 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
 <div>
   <li
     className="list-none"
+    data-cy="sensors-list-item"
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >

@@ -39,6 +39,7 @@ export const SensorsListRow: FC<SensorsListRowPropType> = ({
   }, [id, isHighlighted, onHighlighted]);
   return (
     <li
+      data-cy='sensors-list-item'
       className='list-none'
       ref={ref}
       onMouseEnter={() => onMouseEnter(id)}
