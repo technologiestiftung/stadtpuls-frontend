@@ -139,7 +139,6 @@ describe("The Sensors page - Mobile", () => {
 
     cy.get("#headlessui-switch-1").click();
 
-    cy.findByText(/Karte lädt.../i).should("exist");
     cy.wait(4000);
     cy.get("canvas.mapboxgl-canvas").should("exist");
     cy.get(".mapboxgl-marker").should("have.length", 5);
