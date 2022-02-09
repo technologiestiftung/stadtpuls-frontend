@@ -328,6 +328,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
               >
                 {viewport.zoom >= maxZoom && isCluster ? (
                   <div
+                    data-cy='same-position-markers-group'
                     className={[
                       "bg-white rounded-xl",
                       "transform -translate-x-1/2 -translate-y-1/2",

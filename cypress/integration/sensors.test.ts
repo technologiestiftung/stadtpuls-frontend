@@ -4,7 +4,6 @@ describe("The Sensors page - Desktop", () => {
     cy.visit("/sensors");
 
     cy.findByRole("heading", { name: /Alle Sensoren/i }).should("exist");
-    cy.findByText(/Karte lädt.../i).should("exist");
     cy.findByRole("button", { name: /1/i }).should("exist");
     
     cy.get("ul.flex").findAllByRole("listitem").should("have.length", 30);
@@ -60,7 +59,7 @@ describe("The Sensors page - Desktop", () => {
 
     cy.get("div.mapboxgl-marker").should("have.length", 5);
   });
-  it("should expand multiple dots on same spot", () => {
+  it.only("should expand multiple dots on same spot", () => {
     cy.viewport("macbook-13");
     cy.visit("/sensors");
 
@@ -84,7 +83,7 @@ describe("The Sensors page - Desktop", () => {
     cy.get(".mapboxgl-marker:nth-child(5) button").first().click();
     cy.wait(2000);
     
-    cy.get("div.mapboxgl-marker").should("have.length", 3);
+    cy.get("[data-cy='same-position-markers-group']").should("exist");
   });
   it("should scroll element into view when map bubble is hovered", () => {
     cy.viewport("macbook-13");
