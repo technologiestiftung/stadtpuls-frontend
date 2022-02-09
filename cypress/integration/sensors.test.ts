@@ -139,7 +139,7 @@ describe("The Sensors page - Mobile", () => {
     
     cy.get("[data-cy^='marker-circle']").should("have.length", 3);
   });
-  it("should show a sensor thumbnail when marker is clicked on mobile", () => {
+  it.only("should show a sensor thumbnail when marker is clicked on mobile", () => {
     cy.viewport("iphone-3");
     cy.visit("/sensors");
 
