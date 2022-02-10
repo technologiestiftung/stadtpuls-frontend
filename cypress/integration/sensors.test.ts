@@ -93,7 +93,7 @@ describe("The Sensors page - Desktop", () => {
     cy.wait(1000);
     cy.get("[data-cy='sensors-list-item']:nth-child(23)").should("be.inViewport");
   });
-  it("should zoom the map when using buttons", () => {
+  it("should zoom and geolocate map when using buttons", () => {
     cy.viewport("macbook-13");
     cy.visit("/sensors");
 
@@ -103,6 +103,8 @@ describe("The Sensors page - Desktop", () => {
     cy.get("button.mapboxgl-ctrl-zoom-in").click();
     cy.wait(1000);
     cy.get("button.mapboxgl-ctrl-zoom-out").click();
+    cy.wait(1000);
+    cy.get("button.mapboxgl-ctrl-geolocate").click();
   });
 });
 describe("The Sensors page - Mobile", () => {
@@ -139,7 +141,7 @@ describe("The Sensors page - Mobile", () => {
     
     cy.get("[data-cy^='marker-circle']").should("have.length", 3);
   });
-  it.only("should show a sensor thumbnail when marker is clicked on mobile", () => {
+  it("should show a sensor thumbnail when marker is clicked on mobile", () => {
     cy.viewport("iphone-3");
     cy.visit("/sensors");
 
