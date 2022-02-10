@@ -6,6 +6,7 @@ import { EditAddSensorModal } from "@components/EditAddSensorModal";
 import { NUMBER_OF_SENSOR_SYMBOLS } from "@components/SensorSymbol";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { Tabs } from "@components/Tabs";
+import { useReducedMotion } from "@lib/hooks/useReducedMotion";
 import { useUserData } from "@lib/hooks/useUserData";
 import { AccountWithSensorsType } from "@lib/requests/getAccountDataByUsername";
 import { useRouter } from "next/router";
@@ -24,6 +25,7 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
   routeAccount,
   activeTab,
 }) => {
+  const reducedMotionWished = useReducedMotion(false);
   const router = useRouter();
   const {
     isLoggedIn,
@@ -85,7 +87,10 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
               )
               .finally(() => {
                 setNewSensorModalIsOpen(false);
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                window.scrollTo({
+                  top: 0,
+                  behavior: reducedMotionWished ? "auto" : "smooth",
+                });
               });
           }}
         />
@@ -105,7 +110,10 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
               .then(() => setShowEditSuccessAlert(true))
               .finally(() => {
                 setEditModalIsOpen(false);
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                window.scrollTo({
+                  top: 0,
+                  behavior: reducedMotionWished ? "auto" : "smooth",
+                });
               });
           }}
           onDelete={() => setDeletionConfirmationIsOpened(true)}

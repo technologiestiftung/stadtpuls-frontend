@@ -1,20 +1,20 @@
-import { FC } from "react";
+import { useState, FC, useEffect } from "react";
 import { GetServerSideProps } from "next";
-import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
-import { Pagination } from "@components/Pagination";
-import router from "next/router";
-import classNames from "classnames";
-import { getLandingStats } from "@lib/requests/getLandingStats";
-import { getPublicSensors } from "@lib/requests/getPublicSensors";
-import { SensorsList } from "@components/SensorsList";
+import { usePublicSensors } from "@lib/hooks/usePublicSensors";
+import router, { useRouter } from "next/router";
+import { SensorsMap } from "@components/SensorsMap";
+import { supabase } from "@auth/supabase";
+import { definitions } from "@common/types/supabase";
+import { useReducedMotion } from "@lib/hooks/useReducedMotion";
 
 interface SensorsOverviewPropType {
-  sensors: ParsedSensorType[];
-  sensorsCount: number;
+  rangeStart: number;
+  rangeEnd: number;
   page: number;
+  totalSensors: number;
 }
 
-export const MAX_SENSORS_PER_PAGE = 15;
+export const MAX_SENSORS_PER_PAGE = 30;
 
 export const getRangeByPageNumber = (page: number): [number, number] => {
   const rangeStart = (page - 1) * MAX_SENSORS_PER_PAGE;
@@ -25,15 +25,18 @@ export const getRangeByPageNumber = (page: number): [number, number] => {
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const page = Array.isArray(query.page) ? 1 : Number.parseInt(query.page) || 1;
   const [rangeStart, rangeEnd] = getRangeByPageNumber(page);
-  try {
-    const sensors = await getPublicSensors({ rangeStart, rangeEnd });
-    const { sensorsCount } = await getLandingStats();
-    return { props: { sensors, sensorsCount, page } };
-  } catch (error) {
-    console.error("Error when fetching sensors:");
+
+  const { count: totalSensors, error } = await supabase
+    .from<definitions["sensors"]>("sensors")
+    .select("name", { count: "exact", head: true });
+
+  if (error) {
+    console.error("Error when fetching totalSensors");
     console.error(error);
     return { notFound: true };
   }
+
+  return { props: { page, rangeStart, rangeEnd, totalSensors } };
 };
 
 const handlePageChange = ({
@@ -42,65 +45,68 @@ const handlePageChange = ({
 }: {
   selectedPage: number;
   pageCount: number;
-}): void => {
+}): Promise<boolean> => {
   const path = router.pathname;
   const query =
     selectedPage === 1 || selectedPage > pageCount
       ? ""
       : `page=${selectedPage}`;
 
-  void router.push({
+  return router.push({
     pathname: path,
     query: query,
   });
 };
 
 const SensorsOverview: FC<SensorsOverviewPropType> = ({
-  sensors,
-  sensorsCount,
+  rangeStart,
+  rangeEnd,
   page,
+  totalSensors,
 }) => {
-  const pageCount = Math.ceil(sensorsCount / MAX_SENSORS_PER_PAGE);
-  const pageIsWithinPageCount = page <= pageCount;
+  const { reload } = useRouter();
+  const reducedMotionIsWished = useReducedMotion(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const { sensors, error } = usePublicSensors({
+    rangeStart,
+    rangeEnd,
+  });
+  const sensorsAreThere =
+    !error && Array.isArray(sensors) && sensors.length > 0;
+  const totalPages = Math.ceil(totalSensors / MAX_SENSORS_PER_PAGE);
+  const pageIsWithinPageCount = page <= totalPages;
   const pageToRender = pageIsWithinPageCount ? page : 1;
 
-  if ((!sensors || sensors.length === 0) && pageIsWithinPageCount)
-    return (
-      <h1 className='flex justify-center mt-32'>Keine Sensordaten vorhanden</h1>
-    );
+  useEffect(() => {
+    if (error || sensors?.length !== 0) {
+      setIsLoading(false);
+    }
+  }, [sensors, error]);
+
+  if (error?.message === "JWT expired") reload();
 
   return (
-    <div className='container mx-auto max-w-8xl pt-12 pb-24 px-4'>
-      <div
-        className={classNames(
-          "sm:mt-1 md:mt-2",
-          "mb-4 sm:mb-5 md:mb-6",
-          "flex place-content-between"
-        )}
-      >
-        <h1
-          className={[
-            "font-bold text-xl sm:text-2xl md:text-3xl font-headline",
-          ].join(" ")}
-        >
-          Alle Sensoren
-        </h1>
-        <h2 className='text-gray-600 mt-0 md:mt-2'>
-          Seite {page} von {pageCount}
-        </h2>
-      </div>
-      <SensorsList sensors={sensors} />
-      <div className='mt-12 flex justify-center'>
-        <Pagination
-          pageCount={pageCount}
-          numberOfDisplayedPages={5}
-          marginPagesDisplayed={1}
-          currentPage={pageToRender}
-          onPageChange={({ selected: selectedIndex }) => {
-            handlePageChange({ selectedPage: selectedIndex + 1, pageCount });
-          }}
-        />
-      </div>
+    <div className='pt-[62px]'>
+      <SensorsMap
+        error={error || undefined}
+        sensors={!isLoading && sensorsAreThere ? sensors : []}
+        sensorsAreLoading={isLoading}
+        paginationProps={{
+          currentPage: pageToRender,
+          pageCount: totalPages,
+          onPageChange: async ({ selected: selectedIndex }) => {
+            window.scrollTo({
+              top: 0,
+              behavior: reducedMotionIsWished ? "auto" : "smooth",
+            });
+            setIsLoading(true);
+            await handlePageChange({
+              selectedPage: selectedIndex + 1,
+              pageCount: totalPages,
+            });
+          },
+        }}
+      />
     </div>
   );
 };

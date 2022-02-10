@@ -3,6 +3,7 @@ import { Button } from "@components/Button";
 import { EditAddSensorModal } from "@components/EditAddSensorModal";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
+import { useReducedMotion } from "@lib/hooks/useReducedMotion";
 import { useUserData } from "@lib/hooks/useUserData";
 import { IntegrationType } from "@lib/integrationsUtil";
 import { useRouter } from "next/router";
@@ -16,6 +17,7 @@ interface SensorPageHeaderWithDataPropType {
 export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
   initialSensor,
 }) => {
+  const reducedMotionWished = useReducedMotion(false);
   const router = useRouter();
   const { isLoggedIn, user, sensors, error, updateSensor, deleteSensor } =
     useUserData();
@@ -83,7 +85,10 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
               .then(() => setShowEditSuccessAlert(true))
               .finally(() => {
                 setEditModalIsOpen(false);
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                window.scrollTo({
+                  top: 0,
+                  behavior: reducedMotionWished ? "auto" : "smooth",
+                });
               });
           }}
           onDelete={() => setDeletionConfirmationIsOpened(true)}

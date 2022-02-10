@@ -36,12 +36,13 @@ const LandingPage: FC<{
           <LandingHeroBackgroundMap
             sensors={curatedSensors}
             activeMarkerIndex={activeSlideIndex}
+            onMarkerClick={setActiveSlideIndex}
           />
         </section>
       )}
       <LandingSensorsSlider
         sensors={curatedSensors}
-        initialSlideIndex={initialSlideIndex}
+        slideIndex={activeSlideIndex}
         onSlideChange={setActiveSlideIndex}
       />
       <LandingProjectAbout />

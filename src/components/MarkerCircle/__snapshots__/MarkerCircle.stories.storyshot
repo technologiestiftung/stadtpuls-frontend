@@ -2,28 +2,57 @@
 
 exports[`Storyshots Map/MarkerCircle Active 1`] = `
 <div
-  className="w-6 h-6 flex"
+  className="grid place-items-center place-content-center h-screen w-full"
 >
   <div
-    className="motion-safe:animate-ping absolute -top-3 -left-3 inline-flex h-full w-full rounded-full bg-green opacity-90"
-  />
-  <button
-    className="relative inline-flex w-6 h-6 rounded-full bg-blue border-white border-2 text-center -translate-x-3 -translate-y-3 cursor-default"
-    onClick={[Function]}
-  />
+    className="min-w-5 h-5 relative"
+  >
+    <button
+      className=" relative rounded-full inline-flex min-w-5 h-5 bg-blue text-white false false hover:bg-green hover:text-blue border-white border-2 focus-offset text-center transition-colors cursor-pointer place-items-center place-content-center text-sm font-monospace px-2"
+      data-cy="marker-circle-single"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    />
+  </div>
 </div>
 `;
 
 exports[`Storyshots Map/MarkerCircle Inactive 1`] = `
 <div
-  className="w-6 h-6 flex"
+  className="grid place-items-center place-content-center h-screen w-full"
 >
   <div
-    className="motion-safe:animate-ping absolute -top-3 -left-3 inline-flex h-full w-full rounded-full bg-green opacity-90"
-  />
-  <button
-    className="relative inline-flex w-6 h-6 rounded-full bg-gray-500 border-white border-2 text-center -translate-x-3 -translate-y-3 cursor-default"
-    onClick={[Function]}
-  />
+    className="min-w-5 h-5 relative"
+  >
+    <button
+      className=" relative rounded-full inline-flex min-w-5 h-5 false false bg-gray-400 text-white hover:bg-green hover:text-blue border-white border-2 focus-offset text-center transition-colors cursor-pointer place-items-center place-content-center text-sm font-monospace px-2"
+      data-cy="marker-circle-single"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Map/MarkerCircle Pulsating 1`] = `
+<div
+  className="grid place-items-center place-content-center h-screen w-full"
+>
+  <div
+    className="min-w-5 h-5 relative"
+  >
+    <div
+      className="motion-safe:animate-ping absolute -top-1/2 -left-1/2 h-full w-full rounded-full bg-green opacity-90"
+    />
+    <button
+      className=" relative rounded-full inline-flex min-w-5 h-5 bg-blue text-white false false hover:bg-green hover:text-blue border-white border-2 focus-offset text-center transition-colors cursor-pointer place-items-center place-content-center text-sm font-monospace px-2"
+      data-cy="marker-circle-single"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    />
+  </div>
 </div>
 `;

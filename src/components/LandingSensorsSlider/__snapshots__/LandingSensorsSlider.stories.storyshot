@@ -69,10 +69,11 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                 className="grid grid-cols-[24px,1fr] gap-3"
               >
                 <span
-                  className="mt-[1px] inline-block bg-gray-50 w-6 h-6"
+                  className="mt-[1px] inline-block bg-gray-50 w-6 h-6}"
                 >
                   <img
                     alt="Sensor Symbol 3"
+                    className="w-6 h-6"
                     src="/images/sensor-symbols/3.svg"
                   />
                 </span>
@@ -654,10 +655,11 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                 className="grid grid-cols-[24px,1fr] gap-3"
               >
                 <span
-                  className="mt-[1px] inline-block bg-gray-50 w-6 h-6"
+                  className="mt-[1px] inline-block bg-gray-50 w-6 h-6}"
                 >
                   <img
                     alt="Sensor Symbol 13"
+                    className="w-6 h-6"
                     src="/images/sensor-symbols/13.svg"
                   />
                 </span>
@@ -1239,10 +1241,11 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                 className="grid grid-cols-[24px,1fr] gap-3"
               >
                 <span
-                  className="mt-[1px] inline-block bg-gray-50 w-6 h-6"
+                  className="mt-[1px] inline-block bg-gray-50 w-6 h-6}"
                 >
                   <img
                     alt="Sensor Symbol 16"
+                    className="w-6 h-6"
                     src="/images/sensor-symbols/16.svg"
                   />
                 </span>

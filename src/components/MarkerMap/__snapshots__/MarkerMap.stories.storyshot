@@ -1,37 +1,181 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Map/MarkerMap Default 1`] = `
-<div
-  style={
-    Object {
-      "cursor": "grab",
-      "height": 400,
-      "position": "relative",
-      "width": 600,
-    }
-  }
+exports[`Storyshots Map/MarkerMap Berlin 1`] = `
+<main
+  className="w-[calc(100vw-40px)] h-[calc(100vh-40px)]"
 >
   <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
+    className="w-full h-full relative"
+    data-cy="marker-map-loading"
   >
     <div
-      className=""
       style={
         Object {
-          "height": "100%",
-          "overflow": "hidden",
-          "position": "absolute",
-          "visibility": "inherit",
-          "width": "100%",
+          "cursor": "grab",
+          "height": 0,
+          "position": "relative",
+          "width": 0,
         }
       }
-    />
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className=" undefined undefined"
+          style={
+            Object {
+              "height": "100%",
+              "overflow": "hidden",
+              "position": "absolute",
+              "visibility": "inherit",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
   </div>
-</div>
+</main>
+`;
+
+exports[`Storyshots Map/MarkerMap Germany 1`] = `
+<main
+  className="w-[calc(100vw-40px)] h-[calc(100vh-40px)]"
+>
+  <div
+    className="w-full h-full relative"
+    data-cy="marker-map-loading"
+  >
+    <div
+      style={
+        Object {
+          "cursor": "grab",
+          "height": 0,
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className=" undefined undefined"
+          style={
+            Object {
+              "height": "100%",
+              "overflow": "hidden",
+              "position": "absolute",
+              "visibility": "inherit",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</main>
+`;
+
+exports[`Storyshots Map/MarkerMap Park 1`] = `
+<main
+  className="w-[calc(100vw-40px)] h-[calc(100vh-40px)]"
+>
+  <div
+    className="w-full h-full relative"
+    data-cy="marker-map-loading"
+  >
+    <div
+      style={
+        Object {
+          "cursor": "grab",
+          "height": 0,
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className=" undefined undefined"
+          style={
+            Object {
+              "height": "100%",
+              "overflow": "hidden",
+              "position": "absolute",
+              "visibility": "inherit",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</main>
+`;
+
+exports[`Storyshots Map/MarkerMap World 1`] = `
+<main
+  className="w-[calc(100vw-40px)] h-[calc(100vh-40px)]"
+>
+  <div
+    className="w-full h-full relative"
+    data-cy="marker-map-loading"
+  >
+    <div
+      style={
+        Object {
+          "cursor": "grab",
+          "height": 0,
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className=" undefined undefined"
+          style={
+            Object {
+              "height": "100%",
+              "overflow": "hidden",
+              "position": "absolute",
+              "visibility": "inherit",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</main>
 `;

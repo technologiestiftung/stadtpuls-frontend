@@ -1,0 +1,37 @@
+.mapParent {
+  @apply z-20;
+}
+
+.mapParent div[class="mapboxgl-ctrl mapboxgl-ctrl-attrib mapboxgl-compact mapboxgl-compact-show"] {
+  @apply py-2 text-xs leading-3 bg-white;
+}
+
+.mapParent > div[class^="mapboxgl-ctrl mapboxgl-ctrl-attrib mapboxgl-compact"] {
+  @apply m-0 p-0;
+  width: 24px;
+  height: 24px;
+}
+
+.mapParent button:not(:disabled):focus {
+  @apply focus-offset bg-white;
+  outline: none;
+}
+
+.mapParent div[class="mapboxgl-ctrl-attrib-inner"] {
+  @apply p-1 bg-white relative z-10  ml-8 border border-gray-200 transform -translate-y-1;
+  width: calc(100vw - 120px);
+  max-width: 200px;
+}
+
+.mapContainer div[class="mapboxgl-ctrl-bottom-left"] {
+  @apply top-6 left-10 z-10 pointer-events-none transform -translate-y-0.5;
+}
+
+.mapParent a,
+.mapContainer a {
+  @apply focus-offset;
+}
+
+.mapContainer.withSearch div[class="mapboxgl-ctrl-bottom-left"] {
+  @apply bottom-14 left-8 sm:bottom-0 top-auto;
+}

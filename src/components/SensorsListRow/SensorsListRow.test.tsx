@@ -1,6 +1,6 @@
 import { mapPublicSensor } from "@lib/hooks/usePublicSensors";
 import { sensors } from "@mocks/supabaseData/sensors";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { DESCRIPTION_MAX_LENGTH, SensorsListRow } from ".";
 
 jest.mock("use-is-in-viewport", () => jest.fn().mockReturnValue([true, null]));
@@ -57,5 +57,55 @@ describe("SensorsListRow", () => {
     const links = desc.querySelectorAll("a");
     expect(desc).toBeInTheDocument();
     expect(links.length).toBe(0);
+  });
+  it("should call mouse handlers when set", () => {
+    const enterHandler = jest.fn();
+    const leaveHandler = jest.fn();
+    const props = mapPublicSensor(sensors[0]);
+    const comp = render(<SensorsListRow {...props} />);
+
+    const liParent = document.querySelector("li");
+    if (!liParent) throw new Error("No li parent found");
+
+    fireEvent.mouseEnter(liParent);
+    expect(enterHandler).not.toHaveBeenCalled();
+
+    fireEvent.mouseLeave(liParent);
+    expect(leaveHandler).not.toHaveBeenCalled();
+
+    comp.rerender(
+      <SensorsListRow
+        {...props}
+        onMouseEnter={enterHandler}
+        onMouseLeave={leaveHandler}
+      />
+    );
+
+    fireEvent.mouseEnter(liParent);
+    expect(enterHandler).toHaveBeenCalled();
+
+    fireEvent.mouseLeave(liParent);
+    expect(leaveHandler).toHaveBeenCalled();
+  });
+  it("should call handlers when set", () => {
+    const highlightedHandler = jest.fn();
+    const props = mapPublicSensor(sensors[0]);
+    const comp = render(
+      <SensorsListRow {...props} onHighlighted={highlightedHandler} />
+    );
+
+    expect(highlightedHandler).not.toHaveBeenCalled();
+
+    comp.rerender(
+      <SensorsListRow
+        {...props}
+        onHighlighted={highlightedHandler}
+        isHighlighted={true}
+      />
+    );
+    expect(highlightedHandler).toHaveBeenCalledWith(
+      props.id,
+      expect.anything()
+    );
   });
 });

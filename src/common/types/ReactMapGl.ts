@@ -1,3 +1,5 @@
+import { FlyToInterpolator } from "react-map-gl";
+
 export interface ViewportType {
   latitude: number;
   longitude: number;
@@ -7,4 +9,7 @@ export interface ViewportType {
   maxZoom: number;
   width: number;
   height: number;
+  transitionDuration?: number;
+  transitionEasing?: (t: number) => number;
+  transitionInterpolator?: FlyToInterpolator;
 }

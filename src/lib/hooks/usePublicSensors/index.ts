@@ -95,7 +95,15 @@ export const mapPublicSensor = (
 interface usePublicSensorsParamsType {
   rangeStart: GetSensorsOptionsType["rangeStart"];
   rangeEnd: GetSensorsOptionsType["rangeEnd"];
-  initialData: ParsedSensorType[] | undefined;
+  initialData?: {
+    sensors: ParsedSensorType[];
+    count: number;
+  };
+}
+
+interface DataType {
+  sensors: ParsedSensorType[];
+  count: number;
 }
 
 export const usePublicSensors = (
@@ -104,12 +112,11 @@ export const usePublicSensors = (
     rangeEnd,
     initialData,
   }: usePublicSensorsParamsType = {} as usePublicSensorsParamsType
-): {
-  data: ParsedSensorType[];
+): DataType & {
   error: Error | null;
 } => {
   const params = ["usePublicSensors", rangeStart, rangeEnd, initialData];
-  const { data, error } = useSWR<ParsedSensorType[], Error>(
+  const { data, error } = useSWR<DataType, Error>(
     params,
     () =>
       getPublicSensors({
@@ -120,7 +127,8 @@ export const usePublicSensors = (
   );
 
   return {
-    data: data || [],
+    sensors: data?.sensors || [],
+    count: data?.count || 0,
     error: error || null,
   };
 };

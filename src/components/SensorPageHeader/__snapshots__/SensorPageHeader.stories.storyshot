@@ -82,10 +82,11 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
         className="grid gap-4 grid-cols-[24px,1fr] font-semibold font-headline text-blue mb-2 leading-tight sm:leading-tight md:leading-tight text-xl sm:text-2xl md:text-3xl"
       >
         <span
-          className="mt-1 inline-block bg-gray-50 w-6 h-6"
+          className="mt-1 inline-block bg-gray-50 w-6 h-6}"
         >
           <img
             alt="Sensor Symbol 1"
+            className="w-6 h-6"
             src="/images/sensor-symbols/1.svg"
           />
         </span>
@@ -752,10 +753,11 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
         className="grid gap-4 grid-cols-[24px,1fr] font-semibold font-headline text-blue mb-2 leading-tight sm:leading-tight md:leading-tight text-xl sm:text-2xl md:text-3xl"
       >
         <span
-          className="mt-1 inline-block bg-gray-50 w-6 h-6"
+          className="mt-1 inline-block bg-gray-50 w-6 h-6}"
         >
           <img
             alt="Sensor Symbol 13"
+            className="w-6 h-6"
             src="/images/sensor-symbols/13.svg"
           />
         </span>

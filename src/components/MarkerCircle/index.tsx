@@ -1,22 +1,60 @@
 import { FC } from "react";
 
-export const MarkerCircle: FC<{
-  isActive: boolean;
+export interface MarkerCirclePropType {
+  isActive?: boolean;
+  isPulsating?: boolean;
+  isHighlighted?: boolean;
+  className?: string;
+  id?: string;
   clickHandler?: () => void;
-}> = ({ isActive, clickHandler, children }) => {
+  mouseEnterHandler?: () => void;
+  mouseLeaveHandler?: () => void;
+}
+
+export const MarkerCircle: FC<MarkerCirclePropType> = ({
+  isActive = false,
+  isPulsating = false,
+  isHighlighted = false,
+  className = "",
+  id,
+  clickHandler,
+  mouseEnterHandler,
+  mouseLeaveHandler,
+  children,
+}) => {
+  const isInteractive = clickHandler || mouseEnterHandler || mouseLeaveHandler;
+  const sizeClass = children ? "min-w-7 h-7" : "min-w-5 h-5";
   return (
-    <div className='w-6 h-6 flex'>
-      <div className='motion-safe:animate-ping absolute -top-3 -left-3 inline-flex h-full w-full rounded-full bg-green opacity-90'></div>
+    <div className={`${sizeClass} relative`}>
+      {isPulsating && (
+        <div
+          className={[
+            "motion-safe:animate-ping absolute -top-1/2 -left-1/2",
+            "h-full w-full rounded-full bg-green opacity-90",
+          ].join(" ")}
+        />
+      )}
       <button
+        data-cy={`marker-circle-${children ? "cluster" : "single"}${
+          id ? `-${id}` : ""
+        }`}
         className={[
-          "relative inline-flex",
-          "w-6 h-6 rounded-full",
-          `${isActive ? "bg-blue" : "bg-gray-500"} border-white border-2`,
-          "text-center",
-          "-translate-x-3 -translate-y-3",
-          `${clickHandler ? "cursor-pointer" : "cursor-default"}`,
+          className,
+          "relative rounded-full inline-flex",
+          sizeClass,
+          isActive && !isHighlighted && "bg-blue text-white",
+          isHighlighted && "bg-green text-blue",
+          !isActive && !isHighlighted && "bg-gray-400 text-white",
+          isInteractive && "hover:bg-green hover:text-blue",
+          "border-white border-2 focus-offset",
+          "text-center transition-colors",
+          `${isInteractive ? "cursor-pointer" : "cursor-default"}`,
+          "place-items-center place-content-center",
+          "text-sm font-monospace px-2",
         ].join(" ")}
         onClick={() => (clickHandler ? clickHandler() : null)}
+        onMouseEnter={() => (mouseEnterHandler ? mouseEnterHandler() : null)}
+        onMouseLeave={() => (mouseLeaveHandler ? mouseLeaveHandler() : null)}
       >
         {children}
       </button>

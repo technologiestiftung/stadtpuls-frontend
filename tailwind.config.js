@@ -27,6 +27,7 @@ module.exports = {
     screens: {
       xs: '400px',
       ...defaultTheme.screens,
+      '3xl': '1920px',
     },
     fontFamily: {
       headline: ["'SpaceGrotesk'", ...fallbackFonts],
@@ -55,9 +56,7 @@ module.exports = {
       },
       animation: {
         borderpulse: "border-pulse 3s ease-in-out infinite",
-        "borderpulse-blue": "border-pulse-blue 3s ease-in-out infinite",
         textpulse: "text-pulse 3s ease-out infinite",
-        bgpulse: "bg-pulse 3s linear infinite",
       },
       keyframes: {
         "border-pulse": {
@@ -78,29 +77,10 @@ module.exports = {
             "box-shadow": `0 4px 0 0 ${colors.green}`,
           },
         },
-        "border-pulse-blue": {
-          "0%, 100%": {
-            "border-color": colors.blue,
-            "box-shadow": `0 4px 0 0 ${colors.blue}`,
-          },
-          "33%": {
-            "border-color": colors.green,
-            "box-shadow": `0 4px 0 0 ${colors.green}`,
-          },
-          "66%": {
-            "border-color": colors.purple,
-            "box-shadow": `0 4px 0 0 ${colors.purple}`,
-          },
-        },
         "text-pulse": {
           "0%, 25%, 100%": { color: colors.purple },
           "50%": { color: colors.blue },
           "75%": { color: colors.green },
-        },
-        "bg-pulse": {
-          "0%, 25%, 100%": { "background-color": colors.purple },
-          "50%": { "background-color": colors.blue },
-          "75%": { "background-color": colors.green },
         },
       },
     },
