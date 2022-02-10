@@ -32,6 +32,7 @@ import styles from "./MarkerMap.module.css";
 import MapIcon from "../../../public/images/icons/16px/map.svg";
 import { useWindowSize } from "@lib/hooks/useWindowSize";
 import { GeoSearchField } from "@components/GeoSearchField";
+import { useReducedMotion } from "@lib/hooks/useReducedMotion";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
@@ -103,6 +104,10 @@ const useClusterMarkersMap = ({
   highlightedMarkerIds,
   markersPadding,
 }: UseClusterMarkersMapInputType): UseClusterMarkersMapOutputType => {
+  const reducedMotionWished = useReducedMotion(false);
+  const animatedFlyToProps = reducedMotionWished
+    ? directFlyToProps
+    : smoothFlyToProps;
   const [viewport, setViewport] = useState<ViewportType>({
     ...defaultViewport,
     bearing: 0,
@@ -127,7 +132,7 @@ const useClusterMarkersMap = ({
         latitude: highlightedMarkers[0].latitude,
         longitude: highlightedMarkers[0].longitude,
         bearing: 0,
-        ...smoothFlyToProps,
+        ...animatedFlyToProps,
       }));
     } else {
       const { latitude, longitude, zoom } = fitFeatureToBounds(
@@ -141,7 +146,7 @@ const useClusterMarkersMap = ({
         longitude,
         zoom,
         bearing: 0,
-        ...smoothFlyToProps,
+        ...animatedFlyToProps,
       }));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -165,7 +170,7 @@ const useClusterMarkersMap = ({
       latitude,
       zoom,
       bearing: 0,
-      ...smoothFlyToProps,
+      ...animatedFlyToProps,
     }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [readyForDisplay, idsString]);
@@ -188,6 +193,10 @@ export const MarkerMap: FC<MarkerMapType> = ({
   className = "",
   ...otherProps
 }) => {
+  const reducedMotionWished = useReducedMotion(false);
+  const animatedFlyToProps = reducedMotionWished
+    ? directFlyToProps
+    : smoothFlyToProps;
   const defaultCoordinates = {
     latitude: markers[0]?.latitude || 52.52,
     longitude: markers[0]?.longitude || 13.405,
@@ -207,7 +216,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
         width: width || 1200,
         height: height || 800,
         zoom: mapZoom,
-        ...smoothFlyToProps,
+        ...animatedFlyToProps,
       } as ViewportType,
     });
   const { width: windowWidth } = useWindowSize();
@@ -260,8 +269,8 @@ export const MarkerMap: FC<MarkerMapType> = ({
             onViewportChange={(nextViewport: ViewportType) => {
               setViewport({
                 ...nextViewport,
-                ...smoothFlyToProps,
-                transitionDuration: 500,
+                ...animatedFlyToProps,
+                transitionDuration: reducedMotionWished ? 0 : 500,
                 bearing: 0,
               });
             }}
@@ -310,7 +319,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
                       longitude: cluster.geometry.coordinates[0],
                       zoom: expansionZoom,
                       bearing: 0,
-                      ...smoothFlyToProps,
+                      ...animatedFlyToProps,
                     });
                   },
                   mouseEnterHandler: () =>
@@ -430,7 +439,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
               }
               setViewport((prevViewport: ViewportType) => ({
                 ...prevViewport,
-                ...smoothFlyToProps,
+                ...animatedFlyToProps,
                 ...newViewport,
               }));
             }}
