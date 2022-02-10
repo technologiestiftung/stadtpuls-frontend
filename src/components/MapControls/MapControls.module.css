@@ -1,40 +1,53 @@
 .root {
-  @apply z-20 shadow;
+  @apply flex flex-col w-10 absolute h-[7.5rem];
 }
 
-.root > div[class^="mapboxgl-ctrl"]:not(:empty) {
+.button {
+  @apply z-20 shadow-none;
+  position: relative !important;
+}
+
+.button:focus-within {
+  @apply z-30;
+}
+
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) {
   @apply bg-white transition border border-gray-200 rounded-none shadow-none flex flex-col z-20;
 }
 
-.root > div[class^="mapboxgl-ctrl"]:not(:empty) button {
+.geolocateControl > div[class^="mapboxgl-ctrl"]:not(:empty) {
+  @apply border-b-0;
+}
+
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button {
   @apply w-10 h-10 text-blue relative focus-offset rounded-none;
 }
 
-.root > div[class^="mapboxgl-ctrl"]:not(:empty) button:focus {
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button:focus {
   @apply z-20 bg-white;
 }
 
-.root > div[class^="mapboxgl-ctrl"]:not(:empty) button::before {
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button::before {
   content: " ";
-  @apply absolute transition inset-0 h-full w-full bg-gray-400 mix-blend-color z-10;
+  @apply absolute transition inset-0 h-full w-[calc(100%-1px)] bg-gray-400 mix-blend-color z-10;
 }
 
-.root > div[class^="mapboxgl-ctrl"]:not(:empty) button:hover {
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button:hover {
   @apply bg-none;
 }
 
-.root > div[class^="mapboxgl-ctrl"]:not(:empty) button:hover::before {
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button:hover::before {
   @apply bg-blue;
 }
 
-.root > div[class^="mapboxgl-ctrl"]:not(:empty) button[class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"] > span {
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button[class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"] > span {
   background-image: url('/images/icons/16px/plus.svg');
 }
 
-.root > div[class^="mapboxgl-ctrl"]:not(:empty) button[class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"] > span {
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button[class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"] > span {
   background-image: url('/images/icons/16px/minus.svg');
 }
 
-.root > div[class^="mapboxgl-ctrl"]:not(:empty) button[class="mapboxgl-ctrl-icon mapboxgl-ctrl-compass"] > span {
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button[class="mapboxgl-ctrl-icon mapboxgl-ctrl-geolocate"] > span {
   background-image: url('/images/icons/target.svg');
 }

@@ -334,7 +334,6 @@ export const MarkerMap: FC<MarkerMapType> = ({
                 )
               : cluster.properties.isHighlighted;
 
-            console.log(latLngId);
             return (
               <Marker
                 key={cluster.id}
