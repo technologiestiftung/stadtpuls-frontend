@@ -8,8 +8,10 @@ import CloseIcon from "@material-ui/icons/Close";
 import Head from "next/head";
 import { TableOfContents } from "@components/TableOfContents";
 import { DocsBottomNavigation } from "@components/DocsBottomNavigation";
+import { useReducedMotion } from "@lib/hooks/useReducedMotion";
 
 const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
+  const reducedMotionWished = useReducedMotion(false);
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const [tocTitles, setTocTitles] = useState<HTMLHeadingElement[]>([]);
   const toggleSidebar = (): void => setIsOpened(!isOpened);
@@ -21,7 +23,10 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
 
   const scrollUp = (): void => {
     if (typeof window === undefined) return;
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: reducedMotionWished ? "auto" : "smooth",
+    });
   };
 
   useEffect(() => {

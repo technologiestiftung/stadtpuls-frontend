@@ -5,6 +5,7 @@ import router, { useRouter } from "next/router";
 import { SensorsMap } from "@components/SensorsMap";
 import { supabase } from "@auth/supabase";
 import { definitions } from "@common/types/supabase";
+import { useReducedMotion } from "@lib/hooks/useReducedMotion";
 
 interface SensorsOverviewPropType {
   rangeStart: number;
@@ -64,6 +65,7 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({
   totalSensors,
 }) => {
   const { reload } = useRouter();
+  const reducedMotionIsWished = useReducedMotion(false);
   const [isLoading, setIsLoading] = useState(true);
   const { sensors, error } = usePublicSensors({
     rangeStart,
@@ -93,7 +95,10 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({
           currentPage: pageToRender,
           pageCount: totalPages,
           onPageChange: async ({ selected: selectedIndex }) => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.scrollTo({
+              top: 0,
+              behavior: reducedMotionIsWished ? "auto" : "smooth",
+            });
             setIsLoading(true);
             await handlePageChange({
               selectedPage: selectedIndex + 1,

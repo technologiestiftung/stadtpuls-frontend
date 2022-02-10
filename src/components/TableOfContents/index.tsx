@@ -1,3 +1,4 @@
+import { useReducedMotion } from "@lib/hooks/useReducedMotion";
 import { FC, useEffect, useRef, useState } from "react";
 
 interface TableOfContentsLinkType {
@@ -9,7 +10,7 @@ interface TableOfContentsPropType {
   links: TableOfContentsLinkType[];
 }
 
-const scrollToId = (id: string): void => {
+const scrollToId = (id: string, reducedMotion = false): void => {
   const elementToScrollTo = document.getElementById(id);
   if (!elementToScrollTo) return;
 
@@ -19,7 +20,7 @@ const scrollToId = (id: string): void => {
 
   window.scrollTo({
     top: offsetPosition,
-    behavior: "smooth",
+    behavior: reducedMotion ? "auto" : "smooth",
   });
 };
 
@@ -58,6 +59,7 @@ const getActiveLinkId = (): string => {
 
 export const TableOfContents: FC<TableOfContentsPropType> = ({ links }) => {
   const requestRef = useRef(0);
+  const reducedMotionWished = useReducedMotion(false);
   const [activeLinkId, setActiveLinkId] = useState<string>("main-headline");
 
   const checkForActiveLinks = (): void => {
@@ -81,7 +83,7 @@ export const TableOfContents: FC<TableOfContentsPropType> = ({ links }) => {
           {links.map(({ id, text }) => (
             <li key={id} className='mb-2'>
               <button
-                onClick={() => scrollToId(id)}
+                onClick={() => scrollToId(id, reducedMotionWished)}
                 className={[
                   "text-left cursor-pointer",
                   "hover:text-blue transition",

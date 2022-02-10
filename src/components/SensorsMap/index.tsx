@@ -15,6 +15,7 @@ import useClickOutside from "@lib/hooks/useClickOutside";
 import { SensorSymbol } from "@components/SensorSymbol";
 import { UserAvatar } from "@components/UserAvatar";
 import { CategoryIcon } from "@components/CategoryIcon";
+import { useReducedMotion } from "@lib/hooks/useReducedMotion";
 
 interface SensorsMapType {
   sensors?: ParsedSensorType[];
@@ -37,7 +38,10 @@ function isInViewport(el: HTMLLIElement): boolean {
   );
 }
 
-function scrollToTargetAdjusted(el: HTMLLIElement): void {
+function scrollToTargetAdjusted(
+  el: HTMLLIElement,
+  reducedMotionWished = false
+): void {
   if (isInViewport(el)) return;
   const paddingTop = 10;
   const elementPosition = el.getBoundingClientRect().top;
@@ -57,7 +61,7 @@ function scrollToTargetAdjusted(el: HTMLLIElement): void {
 
   window.scrollTo({
     top: Math.min(offsetPosition, maxScrollDist),
-    behavior: "smooth",
+    behavior: reducedMotionWished ? "auto" : "smooth",
   });
 }
 
@@ -65,6 +69,7 @@ const MapListSwitch: FC<{
   showList: boolean;
   setShowList: (newVal: boolean) => void;
 }> = ({ showList, setShowList }) => {
+  const reducedMotionWished = useReducedMotion(false);
   return (
     <div
       data-cy='map-list-switch'
@@ -78,7 +83,10 @@ const MapListSwitch: FC<{
       <button
         data-cy='map-list-switch-map-link'
         onClick={() => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
+          window.scrollTo({
+            top: 0,
+            behavior: reducedMotionWished ? "auto" : "smooth",
+          });
           setShowList(false);
         }}
         className={[
@@ -107,7 +115,10 @@ const MapListSwitch: FC<{
       <button
         data-cy='map-list-switch-list-link'
         onClick={() => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
+          window.scrollTo({
+            top: 0,
+            behavior: reducedMotionWished ? "auto" : "smooth",
+          });
           setShowList(true);
         }}
         className={[
@@ -181,6 +192,7 @@ export const SensorsMap: FC<SensorsMapType> = ({
   error,
 }) => {
   const { push } = useRouter();
+  const reducedMotionWished = useReducedMotion(false);
   const [hoveredSensorIds, setHoveredSensorIds] = useState<number[]>([]);
   const [showList, setShowList] = useState(true);
   const [thumbnailItem, setThumbnailItem] = useState<ParsedSensorType | null>(
@@ -269,7 +281,9 @@ export const SensorsMap: FC<SensorsMapType> = ({
                           : undefined
                       }
                       onMouseLeave={() => setHoveredSensorIds([])}
-                      onHighlighted={(_id, el) => scrollToTargetAdjusted(el)}
+                      onHighlighted={(_id, el) =>
+                        scrollToTargetAdjusted(el, reducedMotionWished)
+                      }
                       key={marker.id}
                     />
                   ))}
