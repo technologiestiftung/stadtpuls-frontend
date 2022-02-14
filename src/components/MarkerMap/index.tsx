@@ -6,11 +6,11 @@ import {
   Dispatch,
   RefObject,
 } from "react";
+import dynamic from "next/dynamic";
 import ReactMapGL, {
   AttributionControl,
   InteractiveMapProps,
   MapRef,
-  Marker,
   WebMercatorViewport,
 } from "react-map-gl";
 import { useMeasure } from "react-use";
@@ -38,6 +38,9 @@ const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
 type ClickHandlerType = (markerIds: number[]) => void;
 
+const Marker = dynamic(async () => (await import("react-map-gl")).Marker, {
+  ssr: false,
+});
 export interface MarkerMapType extends InteractiveMapProps {
   markers: MarkerType[];
   clickHandler?: ClickHandlerType;

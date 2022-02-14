@@ -1,8 +1,8 @@
 import { FC, useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { SensorsListRow } from "@components/SensorsListRow";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
-import { MarkerMap } from "@components/MarkerMap";
 import { Pagination, PaginationType } from "@components/Pagination";
 import { useRouter } from "next/router";
 import { SensorsListRowLoadingSkeleton } from "@components/SensorsListRowLoadingSkeleton";
@@ -16,6 +16,18 @@ import { SensorSymbol } from "@components/SensorSymbol";
 import { UserAvatar } from "@components/UserAvatar";
 import { CategoryIcon } from "@components/CategoryIcon";
 import { useReducedMotion } from "@lib/hooks/useReducedMotion";
+
+const MarkerMap = dynamic(
+  async () => {
+    const { MarkerMap: MarkerMapComponent } = await import(
+      "@components/MarkerMap"
+    );
+    return MarkerMapComponent;
+  },
+  {
+    ssr: false,
+  }
+);
 
 interface SensorsMapType {
   sensors?: ParsedSensorType[];
@@ -240,10 +252,12 @@ export const SensorsMap: FC<SensorsMapType> = ({
             >
               Alle Sensoren
             </h1>
-            <h2 className='text-gray-600 mt-0 md:mt-2'>
-              Seite {paginationProps.currentPage} von{" "}
-              {paginationProps.pageCount}
-            </h2>
+            {!sensorsAreLoading && (
+              <h2 className='text-gray-600 mt-0 md:mt-2'>
+                Seite {paginationProps.currentPage} von{" "}
+                {paginationProps.pageCount}
+              </h2>
+            )}
           </div>
           {error?.message && (
             <Alert
@@ -289,40 +303,37 @@ export const SensorsMap: FC<SensorsMapType> = ({
                   ))}
             </ul>
           )}
-          <div className='mt-12 flex justify-center'>
-            <Pagination
-              {...paginationProps}
-              numberOfDisplayedPages={5}
-              marginPagesDisplayed={1}
+          {!sensorsAreLoading && (
+            <div className='mt-12 flex justify-center'>
+              <Pagination
+                {...paginationProps}
+                numberOfDisplayedPages={5}
+                marginPagesDisplayed={1}
+              />
+            </div>
+          )}
+        </aside>
+        {!(isSm && showList) && (
+          <div className='h-[calc(100vh-62px)] sticky w-full top-[62px]'>
+            <MarkerMap
+              clickHandler={ids => {
+                if (ids.length === 0) return;
+                const sensor = sensors.find(s => s.id === ids[0]);
+                if (!sensor) return;
+                if (isSm) return setThumbnailItem(sensor);
+                const path = `${sensor.authorUsername}/sensors/${sensor.id}`;
+                void push(path, path, { scroll: false });
+              }}
+              highlightedMarkerIds={hoveredSensorIds}
+              mouseEnterHandler={
+                !isSm ? ids => setHoveredSensorIds(ids) : undefined
+              }
+              mouseLeaveHandler={() => setHoveredSensorIds([])}
+              markers={markers}
+              markersAreLoading={sensorsAreLoading}
             />
           </div>
-        </aside>
-        <div
-          className={[
-            "h-[calc(100vh-62px)] sticky w-full top-[62px]",
-            isSm && showList && "hidden",
-          ]
-            .filter(Boolean)
-            .join(" ")}
-        >
-          <MarkerMap
-            clickHandler={ids => {
-              if (ids.length === 0) return;
-              const sensor = sensors.find(s => s.id === ids[0]);
-              if (!sensor) return;
-              if (isSm) return setThumbnailItem(sensor);
-              const path = `${sensor.authorUsername}/sensors/${sensor.id}`;
-              void push(path, path, { scroll: false });
-            }}
-            highlightedMarkerIds={hoveredSensorIds}
-            mouseEnterHandler={
-              !isSm ? ids => setHoveredSensorIds(ids) : undefined
-            }
-            mouseLeaveHandler={() => setHoveredSensorIds([])}
-            markers={markers}
-            markersAreLoading={sensorsAreLoading}
-          />
-        </div>
+        )}
       </section>
     </>
   );

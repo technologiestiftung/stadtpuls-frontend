@@ -2930,7 +2930,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
               <span
                 className="absolute bottom-0 left-0 text-xs text-gray-300"
               >
-                Zul. vor 8 Monaten
+                Zul. vor 9 Monaten
               </span>
               <span
                 className="absolute top-0 right-0 bg-white text-xs text-purple font-mono font-semibold px-0.5 py-[1px] border border-gray-200 leading-3"
@@ -3707,45 +3707,6 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
   </aside>
   <div
     className="h-[calc(100vh-62px)] sticky w-full top-[62px]"
-  >
-    <div
-      className="w-full h-full relative"
-      data-cy="marker-map-loading"
-    >
-      <div
-        style={
-          Object {
-            "cursor": "grab",
-            "height": 0,
-            "position": "relative",
-            "width": 0,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "100%",
-              "position": "relative",
-              "width": "100%",
-            }
-          }
-        >
-          <div
-            className=" undefined undefined"
-            style={
-              Object {
-                "height": "100%",
-                "overflow": "hidden",
-                "position": "absolute",
-                "visibility": "inherit",
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-      </div>
-    </div>
-  </div>
+  />
 </section>
 `;
