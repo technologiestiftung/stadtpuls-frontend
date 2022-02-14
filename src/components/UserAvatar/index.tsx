@@ -1,11 +1,11 @@
 import { FC } from "react";
-import BoringAvatar from "boring-avatars";
 import colors from "../../style/colors";
 
 interface UserAvatarPropType {
   size?: number;
   className?: string;
   username: string;
+  colors?: string[];
 }
 
 const avatarColors = [
@@ -21,28 +21,34 @@ const avatarColors = [
   colors.purple,
   colors.purple,
   ...Object.values(colors.gray),
-];
+].map(c => c.replace("#", ""));
 
 export const UserAvatar: FC<UserAvatarPropType> = ({
   size = 24,
   username,
   className,
-}) => (
-  <span
-    className={[
-      className,
-      "inline-block align-middle rounded-full border border-gray-50",
-    ]
-      .filter(Boolean)
-      .join(" ")}
-    style={{ width: size + 1, height: size + 1 }}
-    role='img'
-  >
-    <BoringAvatar
-      name={username}
-      size={size}
-      variant='pixel'
-      colors={avatarColors}
-    />
-  </span>
-);
+  colors = avatarColors,
+}) => {
+  const colorsString = colors.join(",");
+  return (
+    <span
+      className={[
+        className,
+        "inline-block align-middle rounded-full border border-gray-50",
+      ]
+        .filter(Boolean)
+        .join(" ")}
+      style={{ width: size + 1, height: size + 1 }}
+      role='img'
+    >
+      <img
+        src={`https://source.boringavatars.com/pixel/${size}/${encodeURIComponent(
+          username
+        )}?colors=${colorsString}`}
+        width={size}
+        height={size}
+        alt={`Avatar of ${username}`}
+      />
+    </span>
+  );
+};
