@@ -1,4 +1,4 @@
-import { useState, FC, useEffect } from "react";
+import { FC } from "react";
 import { usePublicSensors } from "@lib/hooks/usePublicSensors";
 import router, { useRouter } from "next/router";
 import { SensorsMap } from "@components/SensorsMap";
@@ -41,12 +41,11 @@ const handlePageChange = ({
 const SensorsOverview: FC<SensorsOverviewPropType> = () => {
   const { reload, query } = useRouter();
   const reducedMotionIsWished = useReducedMotion(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   const page =
     typeof query.page === "string" ? parseInt(query.page, 10) || 1 : 1;
   const [rangeStart, rangeEnd] = getRangeByPageNumber(page);
-  const { sensors, count, error } = usePublicSensors({
+  const { sensors, count, error, isLoading } = usePublicSensors({
     rangeStart,
     rangeEnd,
   });
@@ -55,12 +54,6 @@ const SensorsOverview: FC<SensorsOverviewPropType> = () => {
   const totalPages = count ? Math.ceil(count / MAX_SENSORS_PER_PAGE) : 1;
   const pageIsWithinPageCount = page <= totalPages;
   const pageToRender = pageIsWithinPageCount ? page : 1;
-
-  useEffect(() => {
-    if (error || sensors?.length !== 0) {
-      setIsLoading(false);
-    }
-  }, [sensors, error]);
 
   if (error?.message === "JWT expired") reload();
 
@@ -78,7 +71,6 @@ const SensorsOverview: FC<SensorsOverviewPropType> = () => {
               top: 0,
               behavior: reducedMotionIsWished ? "auto" : "smooth",
             });
-            setIsLoading(true);
             await handlePageChange({
               selectedPage: selectedIndex + 1,
               pageCount: totalPages,

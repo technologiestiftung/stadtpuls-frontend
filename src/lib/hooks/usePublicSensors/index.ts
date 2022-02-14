@@ -114,6 +114,7 @@ export const usePublicSensors = (
   }: usePublicSensorsParamsType = {} as usePublicSensorsParamsType
 ): DataType & {
   error: Error | null;
+  isLoading: boolean;
 } => {
   const params = ["usePublicSensors", rangeStart, rangeEnd, initialData];
   const { data, error } = useSWR<DataType, Error>(
@@ -129,6 +130,7 @@ export const usePublicSensors = (
   return {
     sensors: data?.sensors || [],
     count: data?.count || 0,
+    isLoading: !data && !error,
     error: error || null,
   };
 };
