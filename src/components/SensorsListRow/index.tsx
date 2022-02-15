@@ -10,11 +10,13 @@ import ReactAutolinker from "react-autolinker";
 const DISPLAYABLE_RECORDS_AMOUNT = 20;
 export const DESCRIPTION_MAX_LENGTH = 70;
 
-export interface SensorsListRowPropType extends ParsedSensorType {
+export interface SensorsListRowPropType
+  extends Omit<ParsedSensorType, "parsedRecords"> {
   isHighlighted?: boolean;
   onMouseEnter?: (id: number) => void;
   onMouseLeave?: (id: number) => void;
   onHighlighted?: (id: number, el: HTMLLIElement) => void;
+  parsedRecords?: ParsedSensorType["parsedRecords"];
 }
 
 export const SensorsListRow: FC<SensorsListRowPropType> = ({
@@ -125,12 +127,22 @@ export const SensorsListRow: FC<SensorsListRowPropType> = ({
             className={[
               "w-full xl:w-[140px] h-[72px]",
               "relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end",
+              "flex items-center justify-center",
             ].join(" ")}
           >
-            <ChartThumbnail
-              //FIXME: Figure out how we want to handle multiple data points
-              data={parsedRecords.slice(DISPLAYABLE_RECORDS_AMOUNT * -1)}
-            />
+            {Array.isArray(parsedRecords) ? (
+              <ChartThumbnail
+                //FIXME: Figure out how we want to handle multiple data points
+                data={parsedRecords.slice(DISPLAYABLE_RECORDS_AMOUNT * -1)}
+              />
+            ) : (
+              <div
+                className={[
+                  "w-full xl:w-[140px] h-[72px] bg-gray-100 animate-pulse delay-300 rounded",
+                  "relative flex-shrink-0 flex-grow-0 justify-self-end",
+                ].join(" ")}
+              />
+            )}
           </div>
         </a>
       </Link>

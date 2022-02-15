@@ -189,7 +189,7 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
         </span>
       </div>
       <div
-        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end"
+        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end flex items-center justify-center"
       >
         <div
           className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
@@ -423,7 +423,7 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
         </span>
       </div>
       <div
-        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end"
+        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end flex items-center justify-center"
       >
         <div
           className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"
@@ -627,7 +627,7 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
         </span>
       </div>
       <div
-        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end"
+        className="w-full xl:w-[140px] h-[72px] relative flex-shrink-0 flex-grow-0 max-w-full justify-self-end flex items-center justify-center"
       >
         <div
           className="w-full h-[76px] relative flex-shrink-0 flex-grow-0 justify-self-end"

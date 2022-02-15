@@ -3,6 +3,7 @@ import { usePublicSensors } from "@lib/hooks/usePublicSensors";
 import router, { useRouter } from "next/router";
 import { SensorsMap } from "@components/SensorsMap";
 import { useReducedMotion } from "@lib/hooks/useReducedMotion";
+import { useSensorsRecords } from "@lib/hooks/useSensorsRecords";
 
 interface SensorsOverviewPropType {
   rangeStart: number;
@@ -49,6 +50,8 @@ const SensorsOverview: FC<SensorsOverviewPropType> = () => {
     rangeStart,
     rangeEnd,
   });
+  const ids = sensors.map(({ id }) => id);
+  const { sensorsRecordsMap } = useSensorsRecords(ids);
   const sensorsAreThere =
     !error && Array.isArray(sensors) && sensors.length > 0;
   const totalPages = count ? Math.ceil(count / MAX_SENSORS_PER_PAGE) : 1;
@@ -57,11 +60,15 @@ const SensorsOverview: FC<SensorsOverviewPropType> = () => {
 
   if (error?.message === "JWT expired") reload();
 
+  const sensorsToDisplay = !isLoading && sensorsAreThere ? sensors : [];
   return (
     <div className='pt-[62px]'>
       <SensorsMap
         error={error || undefined}
-        sensors={!isLoading && sensorsAreThere ? sensors : []}
+        sensors={sensorsToDisplay.map(s => ({
+          ...s,
+          parsedRecords: sensorsRecordsMap[s.id],
+        }))}
         sensorsAreLoading={isLoading}
         paginationProps={{
           currentPage: pageToRender,
