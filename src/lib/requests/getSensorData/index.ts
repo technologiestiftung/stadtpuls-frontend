@@ -7,8 +7,9 @@ import {
 import { sensorQueryString, RECORDS_LIMIT } from "../getPublicSensors";
 
 export const getSensorData = async (
-  sensorId: number
-): Promise<ParsedSensorType> => {
+  sensorId?: number
+): Promise<ParsedSensorType | undefined> => {
+  if (!sensorId) return undefined;
   const { data, error } = await supabase
     .from<SensorQueryResponseType>("sensors")
     .select(sensorQueryString)

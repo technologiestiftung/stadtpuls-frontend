@@ -83,7 +83,7 @@ const CategoryLabel: FC<Pick<ParsedSensorType, "categoryName" | "categoryId">> =
     </span>
   );
 
-const BackLink: FC = () => (
+export const BackLink: FC = () => (
   <Link href='/sensors'>
     <a
       href='/sensors'

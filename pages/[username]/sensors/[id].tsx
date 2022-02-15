@@ -20,6 +20,8 @@ import { Alert } from "@components/Alert";
 import { MAX_RENDERABLE_VALUES as MAX_RENDERABLE_VALUES_LINE_CHART } from "@components/LinePath";
 import { getPublicSensors } from "@lib/requests/getPublicSensors";
 import { useSensorData } from "@lib/hooks/useSensorData";
+import { useRouter } from "next/router";
+import { SensorPageHeaderLoadingSkeleton } from "@components/SensorPageHeaderLoadingSkeleton";
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -27,20 +29,17 @@ const tenDaysAgo = new Date();
 tenDaysAgo.setDate(today.getDate() - 10);
 today.setHours(0, 0, 0, 0);
 
-export const getStaticProps: GetStaticProps = async context => {
-  try {
-    const sensorId = context.params?.id;
-    if (!sensorId || Array.isArray(sensorId)) return { notFound: true };
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const sensorId =
+    typeof params?.id === "string" ? parseInt(params.id, 10) : null;
+  if (!sensorId || Array.isArray(sensorId)) return { notFound: true };
 
-    const sensor = await getSensorData(parseInt(sensorId, 10));
+  const sensor = await getSensorData(sensorId);
 
-    if (sensor.authorUsername !== context.params?.username)
-      return { notFound: true };
+  if (!sensor || sensor.authorUsername !== params?.username)
+    return { notFound: true };
 
-    return { props: { sensor, error: null }, revalidate: 60 };
-  } catch (error) {
-    return { notFound: true, revalidate: 30 };
-  }
+  return { props: { sensor, error: null }, revalidate: 60 };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -62,10 +61,11 @@ const numberFormatter = new Intl.NumberFormat("de-DE", {
 });
 
 const SensorPage: FC<{
-  sensor: ParsedSensorType;
+  sensor?: ParsedSensorType;
 }> = ({ sensor: initialSensor }) => {
-  const { sensor } = useSensorData({
-    sensorId: initialSensor.id,
+  const { isFallback } = useRouter();
+  const { sensor, isLoading } = useSensorData({
+    sensorId: initialSensor?.id,
     initialData: initialSensor,
   });
   const { pushToQueue } = useDownloadQueue();
@@ -78,14 +78,14 @@ const SensorPage: FC<{
     startDateTimeString: undefined,
     endDateTimeString: undefined,
   });
-  const { count: recordsCount } = useSensorRecordsCount(initialSensor.id);
+  const { count: recordsCount } = useSensorRecordsCount(initialSensor?.id);
   const {
     records,
     recordsCount: requestedRecordsCount,
     error: recordsFetchError,
     isLoading: recordsAreLoading,
   } = useSensorRecords({
-    sensorId: initialSensor.id,
+    sensorId: initialSensor?.id,
     startDateString: currentDatetimeRange.startDateTimeString,
     endDateString: currentDatetimeRange.endDateTimeString,
     maxRows: MAX_RENDERABLE_VALUES_LINE_CHART,
@@ -101,6 +101,7 @@ const SensorPage: FC<{
 
   const handleDownload = useCallback(
     (options?: GetRecordsOptionsType): void => {
+      if (isFallback || !initialSensor?.id) return;
       const CSVTitle = !options
         ? `${moment.parseZone().format("YYYY-MM-DD")}-sensor-${
             initialSensor.id
@@ -126,14 +127,20 @@ const SensorPage: FC<{
       currentDatetimeRange.startDateTimeString,
       pushToQueue,
       recordsCount,
-      initialSensor.id,
-      initialSensor.authorUsername,
+      initialSensor?.id,
+      initialSensor?.authorUsername,
+      isFallback,
     ]
   );
 
+  const sensorToRender = !isFallback && !isLoading && (sensor || initialSensor);
   return (
     <>
-      <SensorPageHeaderWithData initialSensor={sensor || initialSensor} />
+      {sensorToRender ? (
+        <SensorPageHeaderWithData initialSensor={sensorToRender} />
+      ) : (
+        <SensorPageHeaderLoadingSkeleton />
+      )}
       <div className='container mx-auto max-w-8xl mb-32 px-4'>
         <div>
           <div className='flex justify-between flex-wrap gap-4 pb-8'>

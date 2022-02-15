@@ -3,7 +3,7 @@ import useSWR from "swr";
 import { getSensorData } from "@lib/requests/getSensorData";
 
 interface useSensorDataParamsType {
-  sensorId: number;
+  sensorId?: number;
   initialData?: ParsedSensorType;
 }
 
@@ -18,7 +18,7 @@ export const useSensorData = ({
   initialData,
 }: useSensorDataParamsType): useSensorDataReturnType => {
   const params = [`sensor-${sensorId || "no"}-data`];
-  const { data, error } = useSWR<ParsedSensorType, Error>(
+  const { data, error } = useSWR<ParsedSensorType | undefined, Error>(
     params,
     () => getSensorData(sensorId),
     { initialData }
