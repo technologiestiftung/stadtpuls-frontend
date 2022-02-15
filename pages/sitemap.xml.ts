@@ -62,7 +62,7 @@ class Sitemap extends Component<NextPage> {
     res: NextApiResponse;
   }): Promise<void> {
     const { sensors } = await getPublicSensors();
-    const accounts = await getPublicAccounts();
+    const { accounts } = await getPublicAccounts();
     res.setHeader("Content-Type", "text/xml");
     res.write(getSitemap({ sensors, accounts }));
     res.end();

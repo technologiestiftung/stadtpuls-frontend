@@ -38,6 +38,11 @@ export interface ParsedAccountType {
   sensors: definitions["extended_user_profiles"]["sensors"];
 }
 
+interface ReturnedAccountsType {
+  accounts: ParsedAccountType[];
+  count: number;
+}
+
 export const mapPublicAccount = ({
   ...user
 }: definitions["extended_user_profiles"]): ParsedAccountType => ({
@@ -56,7 +61,7 @@ export const mapPublicAccount = ({
 interface usePublicAccountsParamsType {
   rangeStart: GetAccountsOptionsType["rangeStart"];
   rangeEnd: GetAccountsOptionsType["rangeEnd"];
-  initialData?: ParsedAccountType[];
+  initialData?: ReturnedAccountsType;
 }
 
 export const usePublicAccounts = (
@@ -65,11 +70,11 @@ export const usePublicAccounts = (
     rangeEnd,
     initialData,
   }: usePublicAccountsParamsType = {} as usePublicAccountsParamsType
-): {
-  accounts: ParsedAccountType[];
+): ReturnedAccountsType & {
   error: Error | null;
+  isLoading: boolean;
 } => {
-  const { data, error } = useSWR<ParsedAccountType[] | null, Error>(
+  const { data, error } = useSWR<ReturnedAccountsType, Error>(
     ["usePublicAccounts", rangeStart, rangeEnd, initialData],
     () =>
       getPublicAccounts({
@@ -80,7 +85,9 @@ export const usePublicAccounts = (
   );
 
   return {
-    accounts: data || [],
+    accounts: data?.accounts || [],
+    count: data?.count || 0,
     error: error || null,
+    isLoading: !data && !error,
   };
 };
