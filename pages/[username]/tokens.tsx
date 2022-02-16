@@ -21,14 +21,10 @@ interface AccountTokensPagePropType {
 
 const AccountTokensPage: FC<AccountTokensPagePropType> = () => {
   const { query } = useRouter();
-  const { account: routeAccount, isLoading } = useAccountData({
+  const { account: routeAccount } = useAccountData({
     username: typeof query?.username === "string" ? query.username : undefined,
   });
-  const {
-    isLoggedIn,
-    user: loggedInAccount,
-    isLoading: userDataLoading,
-  } = useUserData();
+  const { isLoggedIn, user: loggedInAccount } = useUserData();
   const account =
     loggedInAccount?.username === routeAccount?.username
       ? loggedInAccount
@@ -48,15 +44,16 @@ const AccountTokensPage: FC<AccountTokensPagePropType> = () => {
   const [newTokenDescription, setNewTokenDescription] = useState<
     string | undefined
   >(undefined);
+  const isLoading = !tokens || !account;
 
   return (
     <>
       <UserInfoWithData
         routeAccount={account || undefined}
-        isLoading={isLoading || userDataLoading}
+        isLoading={isLoading}
         activeTab='tokens'
       />
-      {!isOwnerAndLoggedIn && (
+      {!isOwnerAndLoggedIn && !isLoading && (
         <div
           className='container max-w-8xl mx-auto px-4 py-8'
           id='tab-content'
