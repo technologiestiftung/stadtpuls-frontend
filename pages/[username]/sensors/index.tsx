@@ -2,21 +2,24 @@ import {
   AccountWithSensorsType,
   getAccountDataByUsername,
 } from "@lib/requests/getAccountDataByUsername";
-import { GetServerSideProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import { FC } from "react";
 import { UserInfoWithData } from "@components/UserInfoHeader/withData";
-import { SensorsList } from "@components/SensorsList";
+import { useSensorsRecords } from "@lib/hooks/useSensorsRecords";
+import { getPublicAccounts } from "@lib/requests/getPublicAccounts";
+import { useRouter } from "next/router";
+import { SensorsListRow } from "@components/SensorsListRow";
+import { SensorsListRowLoadingSkeleton } from "@components/SensorsListRowLoadingSkeleton";
+import { useAccountData } from "@lib/hooks/useAccountData";
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
-    const username = context.query.username;
+    const username = params?.username;
     if (!username || Array.isArray(username)) return { notFound: true };
-    const accountData = await getAccountDataByUsername(username);
+    const account = await getAccountDataByUsername(username);
     return {
-      props: {
-        account: { ...accountData },
-        error: null,
-      },
+      props: { account, error: null },
+      revalidate: 30,
     };
   } catch (error) {
     console.error(error);
@@ -24,27 +27,64 @@ export const getServerSideProps: GetServerSideProps = async context => {
   }
 };
 
+export const getStaticPaths: GetStaticPaths = async () => {
+  const { accounts } = await getPublicAccounts();
+  return {
+    paths: accounts.map(({ username }) => ({ params: { username } })),
+    fallback: true,
+  };
+};
+
 interface AccountSensorsPagePropType {
-  account: AccountWithSensorsType;
+  account?: AccountWithSensorsType;
 }
 
-const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({ account }) => {
+const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({
+  account: initalAccount,
+}) => {
+  const { isFallback } = useRouter();
+  const { account, isLoading } = useAccountData({
+    username: initalAccount?.username,
+    initialData: initalAccount,
+  });
+  const { sensorsRecordsMap } = useSensorsRecords(
+    account?.sensors.map(s => s.id)
+  );
+
+  const sensorsToDisplay = account?.sensors || [];
   return (
     <>
-      <UserInfoWithData routeAccount={account} activeTab='sensors' />
+      <UserInfoWithData
+        routeAccount={account || undefined}
+        isLoading={isFallback || !account}
+        activeTab='sensors'
+      />
       <div
         id='tab-content'
         role='tabpanel'
         className={[
           "container max-w-8xl mx-auto px-4 pt-8 pb-24 min-h-[500px]",
-          account.sensors.length === 0
+          account?.sensors.length === 0
             ? "flex place-items-center place-content-center"
             : "",
         ].join(" ")}
       >
-        {account.sensors.length > 0 ? (
-          <SensorsList sensors={account.sensors} />
-        ) : (
+        {(isFallback || isLoading || sensorsToDisplay.length > 0) && (
+          <ul className='flex flex-col w-[calc(100%+16px)] ml-[-8px]'>
+            {isFallback
+              ? Array.from({ length: 10 }).map((_, i) => (
+                  <SensorsListRowLoadingSkeleton key={i} />
+                ))
+              : sensorsToDisplay.map(sensor => (
+                  <SensorsListRow
+                    {...sensor}
+                    parsedRecords={sensorsRecordsMap[sensor.id]}
+                    key={sensor.id}
+                  />
+                ))}
+          </ul>
+        )}
+        {!isFallback && !isLoading && sensorsToDisplay.length === 0 && (
           <p>Keine Sensoren vorhanden</p>
         )}
       </div>

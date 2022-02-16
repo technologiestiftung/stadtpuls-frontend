@@ -1,11 +1,9 @@
-import { useState, FC, useEffect } from "react";
-import { GetServerSideProps } from "next";
+import { FC } from "react";
 import { usePublicSensors } from "@lib/hooks/usePublicSensors";
 import router, { useRouter } from "next/router";
 import { SensorsMap } from "@components/SensorsMap";
-import { supabase } from "@auth/supabase";
-import { definitions } from "@common/types/supabase";
 import { useReducedMotion } from "@lib/hooks/useReducedMotion";
+import { useSensorsRecords } from "@lib/hooks/useSensorsRecords";
 
 interface SensorsOverviewPropType {
   rangeStart: number;
@@ -20,23 +18,6 @@ export const getRangeByPageNumber = (page: number): [number, number] => {
   const rangeStart = (page - 1) * MAX_SENSORS_PER_PAGE;
   const rangeEnd = rangeStart + MAX_SENSORS_PER_PAGE - 1;
   return [rangeStart, rangeEnd];
-};
-
-export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const page = Array.isArray(query.page) ? 1 : Number.parseInt(query.page) || 1;
-  const [rangeStart, rangeEnd] = getRangeByPageNumber(page);
-
-  const { count: totalSensors, error } = await supabase
-    .from<definitions["sensors"]>("sensors")
-    .select("name", { count: "exact", head: true });
-
-  if (error) {
-    console.error("Error when fetching totalSensors");
-    console.error(error);
-    return { notFound: true };
-  }
-
-  return { props: { page, rangeStart, rangeEnd, totalSensors } };
 };
 
 const handlePageChange = ({
@@ -58,38 +39,36 @@ const handlePageChange = ({
   });
 };
 
-const SensorsOverview: FC<SensorsOverviewPropType> = ({
-  rangeStart,
-  rangeEnd,
-  page,
-  totalSensors,
-}) => {
-  const { reload } = useRouter();
+const SensorsOverview: FC<SensorsOverviewPropType> = () => {
+  const { reload, query } = useRouter();
   const reducedMotionIsWished = useReducedMotion(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const { sensors, error } = usePublicSensors({
+
+  const page =
+    typeof query.page === "string" ? parseInt(query.page, 10) || 1 : 1;
+  const [rangeStart, rangeEnd] = getRangeByPageNumber(page);
+  const { sensors, count, error, isLoading } = usePublicSensors({
     rangeStart,
     rangeEnd,
   });
+  const ids = sensors.map(({ id }) => id);
+  const { sensorsRecordsMap } = useSensorsRecords(ids);
   const sensorsAreThere =
     !error && Array.isArray(sensors) && sensors.length > 0;
-  const totalPages = Math.ceil(totalSensors / MAX_SENSORS_PER_PAGE);
+  const totalPages = count ? Math.ceil(count / MAX_SENSORS_PER_PAGE) : 1;
   const pageIsWithinPageCount = page <= totalPages;
   const pageToRender = pageIsWithinPageCount ? page : 1;
 
-  useEffect(() => {
-    if (error || sensors?.length !== 0) {
-      setIsLoading(false);
-    }
-  }, [sensors, error]);
-
   if (error?.message === "JWT expired") reload();
 
+  const sensorsToDisplay = !isLoading && sensorsAreThere ? sensors : [];
   return (
     <div className='pt-[62px]'>
       <SensorsMap
         error={error || undefined}
-        sensors={!isLoading && sensorsAreThere ? sensors : []}
+        sensors={sensorsToDisplay.map(s => ({
+          ...s,
+          parsedRecords: sensorsRecordsMap[s.id],
+        }))}
         sensorsAreLoading={isLoading}
         paginationProps={{
           currentPage: pageToRender,
@@ -99,7 +78,6 @@ const SensorsOverview: FC<SensorsOverviewPropType> = ({
               top: 0,
               behavior: reducedMotionIsWished ? "auto" : "smooth",
             });
-            setIsLoading(true);
             await handlePageChange({
               selectedPage: selectedIndex + 1,
               pageCount: totalPages,

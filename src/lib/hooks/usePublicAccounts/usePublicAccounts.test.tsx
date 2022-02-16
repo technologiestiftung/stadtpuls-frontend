@@ -13,7 +13,10 @@ describe("hook usePublicAccounts", () => {
       usePublicAccounts({
         rangeStart: undefined,
         rangeEnd: undefined,
-        initialData: parsedAccounts,
+        initialData: {
+          accounts: parsedAccounts,
+          count: parsedAccounts.length,
+        },
       })
     );
 

@@ -26,7 +26,7 @@ module.exports = withImages(withMdxEnhanced({
               `script-src 'self' 'unsafe-eval'`,
               `style-src 'self' 'unsafe-inline'`,
               `font-src 'self' data:`,
-              `img-src 'self' ${process.env.NEXT_PUBLIC_MATOMO_URL} data: blob:`,
+              `img-src 'self' ${process.env.NEXT_PUBLIC_MATOMO_URL} https://source.boringavatars.com data: blob:`,
               `frame-ancestors 'none'`,
               `worker-src 'self' blob:`,
               `child-src 'self' blob:`,

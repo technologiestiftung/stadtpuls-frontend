@@ -11,13 +11,17 @@ import { GetRecordsOptionsType } from "@lib/requests/getRecordsBySensorId";
 import { getSensorData } from "@lib/requests/getSensorData";
 import DownloadIcon from "../../../public/images/icons/16px/arrowDownWithHalfSquare.svg";
 import moment from "moment";
-import { GetServerSideProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import React, { FC, useCallback, useState } from "react";
 import { SensorPageHeaderWithData } from "@components/SensorPageHeader/withData";
 import { useDownloadQueue } from "@lib/hooks/useDownloadQueue";
 import { downloadCSVString } from "@lib/downloadCsvUtil";
 import { Alert } from "@components/Alert";
 import { MAX_RENDERABLE_VALUES as MAX_RENDERABLE_VALUES_LINE_CHART } from "@components/LinePath";
+import { getPublicSensors } from "@lib/requests/getPublicSensors";
+import { useSensorData } from "@lib/hooks/useSensorData";
+import { useRouter } from "next/router";
+import { SensorPageHeaderLoadingSkeleton } from "@components/SensorPageHeaderLoadingSkeleton";
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -25,20 +29,28 @@ const tenDaysAgo = new Date();
 tenDaysAgo.setDate(today.getDate() - 10);
 today.setHours(0, 0, 0, 0);
 
-export const getServerSideProps: GetServerSideProps = async context => {
-  try {
-    const sensorId = context.query.id;
-    if (!sensorId || Array.isArray(sensorId)) return { notFound: true };
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const sensorId =
+    typeof params?.id === "string" ? parseInt(params.id, 10) : null;
+  if (!sensorId || Array.isArray(sensorId)) return { notFound: true };
 
-    const sensor = await getSensorData(parseInt(sensorId, 10));
+  const sensor = await getSensorData(sensorId);
 
-    if (sensor.authorUsername !== context.query.username)
-      return { notFound: true };
-
-    return { props: { sensor, error: null } };
-  } catch (error) {
+  if (!sensor || sensor.authorUsername !== params?.username)
     return { notFound: true };
-  }
+
+  return { props: { sensor, error: null }, revalidate: 60 };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const { sensors } = await getPublicSensors();
+  const paths = sensors.map(sensor => ({
+    params: { id: `${sensor.id}`, username: sensor.authorUsername },
+  }));
+  return {
+    paths: paths,
+    fallback: true,
+  };
 };
 
 const numberFormatter = new Intl.NumberFormat("de-DE", {
@@ -49,8 +61,13 @@ const numberFormatter = new Intl.NumberFormat("de-DE", {
 });
 
 const SensorPage: FC<{
-  sensor: ParsedSensorType;
-}> = ({ sensor }) => {
+  sensor?: ParsedSensorType;
+}> = ({ sensor: initialSensor }) => {
+  const { isFallback } = useRouter();
+  const { sensor, isLoading } = useSensorData({
+    sensorId: initialSensor?.id,
+    initialData: initialSensor,
+  });
   const { pushToQueue } = useDownloadQueue();
   const [chartWidth, setChartWidth] = useState<number | undefined>(undefined);
   const [chartHeight, setChartHeight] = useState<number | undefined>(undefined);
@@ -61,14 +78,14 @@ const SensorPage: FC<{
     startDateTimeString: undefined,
     endDateTimeString: undefined,
   });
-  const { count: recordsCount } = useSensorRecordsCount(sensor.id);
+  const { count: recordsCount } = useSensorRecordsCount(initialSensor?.id);
   const {
     records,
     recordsCount: requestedRecordsCount,
     error: recordsFetchError,
     isLoading: recordsAreLoading,
   } = useSensorRecords({
-    sensorId: sensor.id,
+    sensorId: initialSensor?.id,
     startDateString: currentDatetimeRange.startDateTimeString,
     endDateString: currentDatetimeRange.endDateTimeString,
     maxRows: MAX_RENDERABLE_VALUES_LINE_CHART,
@@ -84,19 +101,20 @@ const SensorPage: FC<{
 
   const handleDownload = useCallback(
     (options?: GetRecordsOptionsType): void => {
+      if (isFallback || !initialSensor?.id) return;
       const CSVTitle = !options
         ? `${moment.parseZone().format("YYYY-MM-DD")}-sensor-${
-            sensor.id
+            initialSensor.id
           }-all-data`
         : `${moment
             .parseZone(currentDatetimeRange.startDateTimeString)
             .format("YYYY-MM-DD")}-to-${moment
             .parseZone(currentDatetimeRange.endDateTimeString)
-            .format("YYYY-MM-DD")}-sensor-${sensor.id}`;
+            .format("YYYY-MM-DD")}-sensor-${initialSensor.id}`;
 
       pushToQueue({
-        id: sensor.id,
-        username: sensor.authorUsername,
+        id: initialSensor.id,
+        username: initialSensor.authorUsername,
         title: CSVTitle,
         totalCount: recordsCount || 0,
         options,
@@ -109,14 +127,20 @@ const SensorPage: FC<{
       currentDatetimeRange.startDateTimeString,
       pushToQueue,
       recordsCount,
-      sensor.id,
-      sensor.authorUsername,
+      initialSensor?.id,
+      initialSensor?.authorUsername,
+      isFallback,
     ]
   );
 
+  const sensorToRender = !isFallback && !isLoading && (sensor || initialSensor);
   return (
     <>
-      <SensorPageHeaderWithData initialSensor={sensor} />
+      {sensorToRender ? (
+        <SensorPageHeaderWithData initialSensor={sensorToRender} />
+      ) : (
+        <SensorPageHeaderLoadingSkeleton />
+      )}
       <div className='container mx-auto max-w-8xl mb-32 px-4'>
         <div>
           <div className='flex justify-between flex-wrap gap-4 pb-8'>

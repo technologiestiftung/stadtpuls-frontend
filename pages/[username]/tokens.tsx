@@ -1,8 +1,4 @@
-import {
-  AccountWithSensorsType,
-  getAccountDataByUsername,
-} from "@lib/requests/getAccountDataByUsername";
-import { GetServerSideProps } from "next";
+import { AccountWithSensorsType } from "@lib/requests/getAccountDataByUsername";
 import React, { FC, useState } from "react";
 import { UserInfoWithData } from "@components/UserInfoHeader/withData";
 import { useUserData } from "@lib/hooks/useUserData";
@@ -14,34 +10,27 @@ import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions
 import { TokenCreationModal } from "@components/TokenCreationModal";
 import { TokenDeletionModal } from "@components/TokenDeletionModal";
 import { useUserTokens } from "@lib/hooks/useUserTokens";
+import { useRouter } from "next/router";
+import { useAccountData } from "@lib/hooks/useAccountData";
 
 type TokenType = Omit<definitions["auth_tokens"], "id">;
-
-export const getServerSideProps: GetServerSideProps = async context => {
-  try {
-    const username = context.query.username;
-    if (!username || Array.isArray(username)) return { notFound: true };
-
-    const routeAccount = await getAccountDataByUsername(username);
-    return { props: { routeAccount, error: null } };
-  } catch (error) {
-    console.error(error);
-    return { notFound: true };
-  }
-};
 
 interface AccountTokensPagePropType {
   routeAccount: AccountWithSensorsType;
 }
 
-const AccountTokensPage: FC<AccountTokensPagePropType> = ({ routeAccount }) => {
+const AccountTokensPage: FC<AccountTokensPagePropType> = () => {
+  const { query } = useRouter();
+  const { account: routeAccount } = useAccountData({
+    username: typeof query?.username === "string" ? query.username : undefined,
+  });
   const { isLoggedIn, user: loggedInAccount } = useUserData();
   const account =
     loggedInAccount?.username === routeAccount?.username
       ? loggedInAccount
       : routeAccount;
   const isOwnerAndLoggedIn =
-    isLoggedIn && loggedInAccount?.username === routeAccount.username;
+    isLoggedIn && loggedInAccount?.username === routeAccount?.username;
 
   const [deleteIsInitiated, setDeleteIsInitiated] = useState(false);
   const [touchedToken, setTouchedToken] = useState<TokenType | undefined>(
@@ -55,11 +44,16 @@ const AccountTokensPage: FC<AccountTokensPagePropType> = ({ routeAccount }) => {
   const [newTokenDescription, setNewTokenDescription] = useState<
     string | undefined
   >(undefined);
+  const isLoading = !tokens || !account;
 
   return (
     <>
-      <UserInfoWithData routeAccount={account} activeTab='tokens' />
-      {!isOwnerAndLoggedIn && (
+      <UserInfoWithData
+        routeAccount={account || undefined}
+        isLoading={isLoading}
+        activeTab='tokens'
+      />
+      {!isOwnerAndLoggedIn && !isLoading && (
         <div
           className='container max-w-8xl mx-auto px-4 py-8'
           id='tab-content'

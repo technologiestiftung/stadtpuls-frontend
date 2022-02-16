@@ -33,7 +33,7 @@ describe("SensorPageHeader component", () => {
     const backLink = screen.getByRole("link", { name: "Zurück zu Sensoren" });
     const category = screen.getByText(testProps.categoryName);
     const author = screen.getByRole("link", {
-      name: testProps.authorName,
+      name: `Avatar of ${testProps.authorUsername} ${testProps.authorName}`,
     });
     const description = screen.getByText(testProps.description);
     const apiRoute = screen.getByRole("textbox", { name: "API Schnittstelle" });

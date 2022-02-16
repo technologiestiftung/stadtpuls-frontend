@@ -1,36 +1,13 @@
 import { FC } from "react";
 import { AccountsGrid } from "@components/AccountsGrid";
-import { GetServerSideProps } from "next";
-import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
+import { usePublicAccounts } from "@lib/hooks/usePublicAccounts";
 import {
   getRangeByPageNumber,
   MAX_SENSORS_PER_PAGE as MAX_ACCOUNTS_PER_PAGE,
 } from "../sensors";
 import { Pagination } from "@components/Pagination";
-import router from "next/router";
-import { getLandingStats } from "@lib/requests/getLandingStats";
+import router, { useRouter } from "next/router";
 import classNames from "classnames";
-import { getPublicAccounts } from "@lib/requests/getPublicAccounts";
-
-interface AccountsOverviewPropType {
-  accounts: ParsedAccountType[];
-  accountsCount: number;
-  page: number;
-}
-
-export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const page = Array.isArray(query.page) ? 1 : Number.parseInt(query.page) || 1;
-  const [rangeStart, rangeEnd] = getRangeByPageNumber(page);
-  try {
-    const accounts = await getPublicAccounts({ rangeStart, rangeEnd });
-    const { usersCount: accountsCount } = await getLandingStats();
-    return { props: { accounts, accountsCount, page } };
-  } catch (error) {
-    console.error("Error when fetching accounts:");
-    console.error(error);
-    return { notFound: true };
-  }
-};
 
 const handlePageChange = ({
   selectedPage,
@@ -51,11 +28,15 @@ const handlePageChange = ({
   });
 };
 
-const AccountsOverview: FC<AccountsOverviewPropType> = ({
-  accounts,
-  accountsCount,
-  page,
-}) => {
+const AccountsOverview: FC = () => {
+  const { query } = useRouter();
+  const page = Array.isArray(query.page) ? 1 : Number.parseInt(query.page) || 1;
+  const [rangeStart, rangeEnd] = getRangeByPageNumber(page);
+  const {
+    accounts,
+    count: accountsCount,
+    isLoading: accountsAreLoading,
+  } = usePublicAccounts({ rangeStart, rangeEnd });
   const pageCount = Math.ceil(accountsCount / MAX_ACCOUNTS_PER_PAGE);
   const pageIsWithinPageCount = page <= pageCount;
   const pageToRender = pageIsWithinPageCount ? page : 1;
@@ -82,22 +63,26 @@ const AccountsOverview: FC<AccountsOverviewPropType> = ({
         >
           Alle Accounts
         </h1>
-        <h2 className='text-gray-600 mt-0 md:mt-2'>
-          Seite {page} von {pageCount}
-        </h2>
+        {!accountsAreLoading && (
+          <h2 className='text-gray-600 mt-0 md:mt-2'>
+            Seite {page} von {pageCount}
+          </h2>
+        )}
       </div>
-      <AccountsGrid accounts={accounts} />
-      <div className='mt-12 flex justify-center'>
-        <Pagination
-          pageCount={pageCount}
-          numberOfDisplayedPages={5}
-          marginPagesDisplayed={1}
-          currentPage={pageToRender}
-          onPageChange={({ selected: selectedIndex }) => {
-            handlePageChange({ selectedPage: selectedIndex + 1, pageCount });
-          }}
-        />
-      </div>
+      <AccountsGrid isLoading={accountsAreLoading} accounts={accounts} />
+      {!accountsAreLoading && (
+        <div className='mt-12 flex justify-center'>
+          <Pagination
+            pageCount={pageCount}
+            numberOfDisplayedPages={5}
+            marginPagesDisplayed={1}
+            currentPage={pageToRender}
+            onPageChange={({ selected: selectedIndex }) => {
+              handlePageChange({ selectedPage: selectedIndex + 1, pageCount });
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 };

@@ -7,6 +7,9 @@ export const getServerSideProps: GetServerSideProps = async context => {
   if (!sensorId || Array.isArray(sensorId)) return { notFound: true };
 
   const sensor = await getSensorData(parseInt(sensorId, 10));
+
+  if (!sensor) return { notFound: true };
+
   return {
     redirect: {
       destination: `/${sensor.authorUsername}/sensors/${sensor.id}`,

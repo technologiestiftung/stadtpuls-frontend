@@ -5,46 +5,38 @@ import { LandingLabAbout } from "@components/LandingLabAbout";
 import { LandingProjectAbout } from "@components/LandingProjectAbout";
 import { LandingSensorsSlider } from "@components/LandingSensorsSlider";
 import { LandingStoriesIntro } from "@components/LandingStoriesIntro";
-import { getCuratedSensors } from "@lib/hooks/useCuratedSensors";
-import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
-import { GetStaticProps } from "next";
-import { FC, useState } from "react";
+import { useCuratedSensors } from "@lib/hooks/useCuratedSensors";
+import { FC, useEffect, useState } from "react";
 
-export const getStaticProps: GetStaticProps = async () => {
-  try {
-    const curatedSensors = await getCuratedSensors();
-    return { props: { curatedSensors }, revalidate: 60 };
-  } catch (error) {
-    console.log(error);
-    return { notFound: true };
-  }
-};
+const LandingPage: FC = () => {
+  const { data: curatedSensors } = useCuratedSensors();
+  const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
 
-const LandingPage: FC<{
-  curatedSensors?: ParsedSensorType[];
-}> = ({ curatedSensors = [] }) => {
-  const initialSlideIndex = Math.round(curatedSensors.length / 2) - 1;
-  const [activeSlideIndex, setActiveSlideIndex] =
-    useState<number>(initialSlideIndex);
+  useEffect(() => {
+    if (!curatedSensors) return;
+    setActiveSlideIndex(Math.max(Math.round(curatedSensors.length / 2) - 1, 0));
+  }, [curatedSensors]);
 
   return (
     <>
       <LandingHero />
       <LandingStoriesIntro />
-      {curatedSensors.length > 0 && (
-        <section>
-          <LandingHeroBackgroundMap
+      {curatedSensors && curatedSensors.length > 0 && (
+        <>
+          <section>
+            <LandingHeroBackgroundMap
+              sensors={curatedSensors}
+              activeMarkerIndex={activeSlideIndex}
+              onMarkerClick={setActiveSlideIndex}
+            />
+          </section>
+          <LandingSensorsSlider
             sensors={curatedSensors}
-            activeMarkerIndex={activeSlideIndex}
-            onMarkerClick={setActiveSlideIndex}
+            slideIndex={activeSlideIndex}
+            onSlideChange={setActiveSlideIndex}
           />
-        </section>
+        </>
       )}
-      <LandingSensorsSlider
-        sensors={curatedSensors}
-        slideIndex={activeSlideIndex}
-        onSlideChange={setActiveSlideIndex}
-      />
       <LandingProjectAbout />
       <LandingHowItWorks />
       <LandingLabAbout />
