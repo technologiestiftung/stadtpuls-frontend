@@ -27,7 +27,7 @@ export interface ParsedSensorType {
   authorId: string;
   authorName: string;
   authorUsername: string;
-  parsedRecords: DateValueType[];
+  parsedRecords?: DateValueType[];
   categoryId: number;
   categoryName: string;
   connectionType: IntegrationType;

@@ -6,6 +6,7 @@ import { EditAddSensorModal } from "@components/EditAddSensorModal";
 import { NUMBER_OF_SENSOR_SYMBOLS } from "@components/SensorSymbol";
 import { SmallModalOverlay } from "@components/SmallModalOverlay";
 import { Tabs } from "@components/Tabs";
+import { UserInfoLoadingSkeleton } from "@components/UserInfoLoadingSkeleton";
 import { useReducedMotion } from "@lib/hooks/useReducedMotion";
 import { useUserData } from "@lib/hooks/useUserData";
 import { AccountWithSensorsType } from "@lib/requests/getAccountDataByUsername";
@@ -14,8 +15,9 @@ import { FC, useState } from "react";
 import { UserInfoHeader } from ".";
 
 interface UserInfoWithDataPropType {
-  routeAccount: AccountWithSensorsType;
+  routeAccount?: AccountWithSensorsType;
   activeTab: "sensors" | "tokens";
+  isLoading?: boolean;
 }
 
 export const getRandomSensorId = (): number =>
@@ -24,6 +26,7 @@ export const getRandomSensorId = (): number =>
 export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
   routeAccount,
   activeTab,
+  isLoading = false,
 }) => {
   const reducedMotionWished = useReducedMotion(false);
   const router = useRouter();
@@ -37,8 +40,9 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
   } = useUserData();
   const [randomSymbolId, setRandomSymbolId] = useState(getRandomSensorId());
   const { authenticatedUser } = useAuth();
+  const username = routeAccount?.username || "#";
   const isOwnerAndLoggedIn =
-    isLoggedIn && loggedInAccount?.username === routeAccount.username;
+    isLoggedIn && loggedInAccount?.username === username;
   const finalAccount =
     isOwnerAndLoggedIn && loggedInAccount ? loggedInAccount : routeAccount;
   const [editModalIsOpen, setEditModalIsOpen] = useState(false);
@@ -52,19 +56,19 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
     {
       id: "sensors",
       name: "Sensoren",
-      href: `/${finalAccount.username}/sensors`,
+      href: `/${username}/sensors`,
     },
   ];
   if (isOwnerAndLoggedIn || activeTab === "tokens") {
     tabs.push({
       id: "tokens",
       name: "Tokens",
-      href: `/${finalAccount.username}/tokens`,
+      href: `/${username}/tokens`,
     });
   }
   return (
     <>
-      {newSensorModalIsOpen && (
+      {!isLoading && newSensorModalIsOpen && finalAccount && (
         <EditAddSensorModal
           defaultValues={{ symbolId: randomSymbolId }}
           author={{
@@ -95,30 +99,34 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
           }}
         />
       )}
-      {authenticatedUser && isOwnerAndLoggedIn && editModalIsOpen && (
-        <EditAccountModal
-          defaultValues={{
-            ...finalAccount,
-            email: authenticatedUser.email || "",
-          }}
-          onCancel={() => setEditModalIsOpen(false)}
-          onSubmit={data => {
-            updateUser({
-              ...data,
-              id: authenticatedUser.id,
-            })
-              .then(() => setShowEditSuccessAlert(true))
-              .finally(() => {
-                setEditModalIsOpen(false);
-                window.scrollTo({
-                  top: 0,
-                  behavior: reducedMotionWished ? "auto" : "smooth",
+      {!isLoading &&
+        authenticatedUser &&
+        isOwnerAndLoggedIn &&
+        finalAccount &&
+        editModalIsOpen && (
+          <EditAccountModal
+            defaultValues={{
+              ...finalAccount,
+              email: authenticatedUser.email || "",
+            }}
+            onCancel={() => setEditModalIsOpen(false)}
+            onSubmit={data => {
+              updateUser({
+                ...data,
+                id: authenticatedUser.id,
+              })
+                .then(() => setShowEditSuccessAlert(true))
+                .finally(() => {
+                  setEditModalIsOpen(false);
+                  window.scrollTo({
+                    top: 0,
+                    behavior: reducedMotionWished ? "auto" : "smooth",
+                  });
                 });
-              });
-          }}
-          onDelete={() => setDeletionConfirmationIsOpened(true)}
-        />
-      )}
+            }}
+            onDelete={() => setDeletionConfirmationIsOpened(true)}
+          />
+        )}
       <div className={`border-b border-gray-200 pt-4`}>
         <div className='container max-w-8xl mx-auto px-4 relative'>
           {(error || showEditSuccessAlert) && (
@@ -149,14 +157,18 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
               )}
             </div>
           )}
-          <UserInfoHeader
-            {...finalAccount}
-            withEditButton={isOwnerAndLoggedIn}
-            onEditButtonClick={() => {
-              setEditModalIsOpen(true);
-              setShowEditSuccessAlert(false);
-            }}
-          />
+          {isLoading || !finalAccount ? (
+            <UserInfoLoadingSkeleton />
+          ) : (
+            <UserInfoHeader
+              {...finalAccount}
+              withEditButton={isOwnerAndLoggedIn}
+              onEditButtonClick={() => {
+                setEditModalIsOpen(true);
+                setShowEditSuccessAlert(false);
+              }}
+            />
+          )}
           <div className='grid gap-4 grid-cols-1 sm:grid-cols-2'>
             <div className='z-10 translate-y-0.5'>
               <Tabs

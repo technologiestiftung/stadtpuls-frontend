@@ -29,9 +29,9 @@ describe("utility function getAccountDataByUsername", () => {
     );
 
     expect(Array.isArray(accountData)).toBe(false);
-    expect(accountData.id).toBe(exampleAccount.id);
-    expect(accountData.username).toBe(exampleAccount.username);
-    expect(accountData.displayName).toBe(exampleAccount.display_name);
+    expect(accountData?.id).toBe(exampleAccount.id);
+    expect(accountData?.username).toBe(exampleAccount.username);
+    expect(accountData?.displayName).toBe(exampleAccount.display_name);
     server.resetHandlers();
     server.close();
   });
