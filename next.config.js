@@ -1,19 +1,4 @@
-const withMdxEnhanced = require("next-mdx-enhanced");
-const withImages = require('next-images');
-
-module.exports = withImages(withMdxEnhanced({
-  layoutPath: "src/components/layouts",
-  defaultLayout: true,
-  fileExtensions: ["mdx"],
-  remarkPlugins: [require("remark-slug"), require("remark-prism")],
-  rehypePlugins: [],
-  usesSrc: false,
-  extendFrontMatter: {
-    process: (mdxContent, frontMatter) => {},
-    phase: "prebuild|loader|both",
-  },
-  reExportDataFetching: false,
-})({
+module.exports = {
   async headers() {
     return [
       {
@@ -36,5 +21,5 @@ module.exports = withImages(withMdxEnhanced({
         ],
       },
     ];
-  },
-}));
+  }
+};

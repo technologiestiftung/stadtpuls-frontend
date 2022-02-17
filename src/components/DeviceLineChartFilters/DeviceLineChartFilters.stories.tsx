@@ -1,12 +1,15 @@
 import { action } from "@storybook/addon-actions";
 import { Meta, Story } from "@storybook/react";
 import moment from "moment";
+import "moment/locale/de";
 import { useState } from "react";
 import {
   DatetimeRangeType,
   DeviceLineChartFilters,
   DeviceLineChartFiltersPropType,
 } from ".";
+
+moment.locale("de-DE");
 
 export default {
   title: "Forms/DeviceLineChartFilters",

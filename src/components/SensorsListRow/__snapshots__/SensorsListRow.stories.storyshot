@@ -48,7 +48,6 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
                 <img
                   alt=""
                   aria-hidden={true}
-                  role="presentation"
                   src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
                   style={
                     Object {
@@ -61,40 +60,10 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
                   }
                 />
               </div>
-              <noscript>
-                <img
-                  alt="Sensor Symbol 1"
-                  className="w-6 h-6"
-                  decoding="async"
-                  src="/images/sensor-symbols/1.svg"
-                  srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=48&q=75 2x"
-                  style={
-                    Object {
-                      "border": "none",
-                      "bottom": 0,
-                      "boxSizing": "border-box",
-                      "display": "block",
-                      "height": 0,
-                      "left": 0,
-                      "margin": "auto",
-                      "maxHeight": "100%",
-                      "maxWidth": "100%",
-                      "minHeight": "100%",
-                      "minWidth": "100%",
-                      "objectFit": undefined,
-                      "objectPosition": undefined,
-                      "padding": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                      "width": 0,
-                    }
-                  }
-                />
-              </noscript>
               <img
                 alt="Sensor Symbol 1"
                 className="w-6 h-6"
+                data-nimg="intrinsic"
                 decoding="async"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                 style={
@@ -120,6 +89,39 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
                   }
                 }
               />
+              <noscript>
+                <img
+                  alt="Sensor Symbol 1"
+                  className="w-6 h-6"
+                  data-nimg="intrinsic"
+                  decoding="async"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=48&q=75"
+                  srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=48&q=75 2x"
+                  style={
+                    Object {
+                      "border": "none",
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": 0,
+                      "left": 0,
+                      "margin": "auto",
+                      "maxHeight": "100%",
+                      "maxWidth": "100%",
+                      "minHeight": "100%",
+                      "minWidth": "100%",
+                      "objectFit": undefined,
+                      "objectPosition": undefined,
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </noscript>
             </div>
           </span>
           <h3
@@ -288,7 +290,6 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
                 <img
                   alt=""
                   aria-hidden={true}
-                  role="presentation"
                   src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
                   style={
                     Object {
@@ -301,40 +302,10 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
                   }
                 />
               </div>
-              <noscript>
-                <img
-                  alt="Sensor Symbol 32"
-                  className="w-6 h-6"
-                  decoding="async"
-                  src="/images/sensor-symbols/32.svg"
-                  srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F32.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F32.svg&w=48&q=75 2x"
-                  style={
-                    Object {
-                      "border": "none",
-                      "bottom": 0,
-                      "boxSizing": "border-box",
-                      "display": "block",
-                      "height": 0,
-                      "left": 0,
-                      "margin": "auto",
-                      "maxHeight": "100%",
-                      "maxWidth": "100%",
-                      "minHeight": "100%",
-                      "minWidth": "100%",
-                      "objectFit": undefined,
-                      "objectPosition": undefined,
-                      "padding": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                      "width": 0,
-                    }
-                  }
-                />
-              </noscript>
               <img
                 alt="Sensor Symbol 32"
                 className="w-6 h-6"
+                data-nimg="intrinsic"
                 decoding="async"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                 style={
@@ -360,6 +331,39 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
                   }
                 }
               />
+              <noscript>
+                <img
+                  alt="Sensor Symbol 32"
+                  className="w-6 h-6"
+                  data-nimg="intrinsic"
+                  decoding="async"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F32.svg&w=48&q=75"
+                  srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F32.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F32.svg&w=48&q=75 2x"
+                  style={
+                    Object {
+                      "border": "none",
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": 0,
+                      "left": 0,
+                      "margin": "auto",
+                      "maxHeight": "100%",
+                      "maxWidth": "100%",
+                      "minHeight": "100%",
+                      "minWidth": "100%",
+                      "objectFit": undefined,
+                      "objectPosition": undefined,
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </noscript>
             </div>
           </span>
           <h3
@@ -488,7 +492,6 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
                 <img
                   alt=""
                   aria-hidden={true}
-                  role="presentation"
                   src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
                   style={
                     Object {
@@ -501,40 +504,10 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
                   }
                 />
               </div>
-              <noscript>
-                <img
-                  alt="Sensor Symbol 15"
-                  className="w-6 h-6"
-                  decoding="async"
-                  src="/images/sensor-symbols/15.svg"
-                  srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F15.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F15.svg&w=48&q=75 2x"
-                  style={
-                    Object {
-                      "border": "none",
-                      "bottom": 0,
-                      "boxSizing": "border-box",
-                      "display": "block",
-                      "height": 0,
-                      "left": 0,
-                      "margin": "auto",
-                      "maxHeight": "100%",
-                      "maxWidth": "100%",
-                      "minHeight": "100%",
-                      "minWidth": "100%",
-                      "objectFit": undefined,
-                      "objectPosition": undefined,
-                      "padding": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                      "width": 0,
-                    }
-                  }
-                />
-              </noscript>
               <img
                 alt="Sensor Symbol 15"
                 className="w-6 h-6"
+                data-nimg="intrinsic"
                 decoding="async"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                 style={
@@ -560,6 +533,39 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
                   }
                 }
               />
+              <noscript>
+                <img
+                  alt="Sensor Symbol 15"
+                  className="w-6 h-6"
+                  data-nimg="intrinsic"
+                  decoding="async"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F15.svg&w=48&q=75"
+                  srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F15.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F15.svg&w=48&q=75 2x"
+                  style={
+                    Object {
+                      "border": "none",
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": 0,
+                      "left": 0,
+                      "margin": "auto",
+                      "maxHeight": "100%",
+                      "maxWidth": "100%",
+                      "minHeight": "100%",
+                      "minWidth": "100%",
+                      "objectFit": undefined,
+                      "objectPosition": undefined,
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </noscript>
             </div>
           </span>
           <h3

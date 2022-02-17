@@ -1,9 +1,11 @@
 import { FC } from "react";
 import "react-day-picker/lib/style.css";
-import "moment/locale/de";
 import { DayPickerInput } from "@components/DayPickerInput";
 import { TimeInput } from "@components/TimeInput";
 import moment from "moment";
+import "moment/locale/de";
+
+moment.locale("de-DE");
 
 export interface DatetimeRangePickerPropType {
   startDateTimeString: string;

@@ -10,7 +10,7 @@ export default {
 
 const Template: Story = () => (
   <div className='container mx-auto'>
-    <DocsBottomNavigation />
+    <DocsBottomNavigation page='index' />
   </div>
 );
 

@@ -11,6 +11,7 @@ import { GetRecordsOptionsType } from "@lib/requests/getRecordsBySensorId";
 import { getSensorData } from "@lib/requests/getSensorData";
 import DownloadIcon from "../../../public/images/icons/16px/arrowDownWithHalfSquare.svg";
 import moment from "moment";
+import "moment/locale/de";
 import { GetStaticPaths, GetStaticProps } from "next";
 import React, { FC, useCallback, useState } from "react";
 import { SensorPageHeaderWithData } from "@components/SensorPageHeader/withData";
@@ -22,6 +23,8 @@ import { getPublicSensors } from "@lib/requests/getPublicSensors";
 import { useSensorData } from "@lib/hooks/useSensorData";
 import { useRouter } from "next/router";
 import { SensorPageHeaderLoadingSkeleton } from "@components/SensorPageHeaderLoadingSkeleton";
+
+moment.locale("de-DE");
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);

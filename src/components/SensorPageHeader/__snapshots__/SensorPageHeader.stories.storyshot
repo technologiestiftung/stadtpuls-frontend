@@ -108,7 +108,6 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
               <img
                 alt=""
                 aria-hidden={true}
-                role="presentation"
                 src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
                 style={
                   Object {
@@ -121,40 +120,10 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
                 }
               />
             </div>
-            <noscript>
-              <img
-                alt="Sensor Symbol 1"
-                className="w-6 h-6"
-                decoding="async"
-                src="/images/sensor-symbols/1.svg"
-                srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=48&q=75 2x"
-                style={
-                  Object {
-                    "border": "none",
-                    "bottom": 0,
-                    "boxSizing": "border-box",
-                    "display": "block",
-                    "height": 0,
-                    "left": 0,
-                    "margin": "auto",
-                    "maxHeight": "100%",
-                    "maxWidth": "100%",
-                    "minHeight": "100%",
-                    "minWidth": "100%",
-                    "objectFit": undefined,
-                    "objectPosition": undefined,
-                    "padding": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                    "width": 0,
-                  }
-                }
-              />
-            </noscript>
             <img
               alt="Sensor Symbol 1"
               className="w-6 h-6"
+              data-nimg="intrinsic"
               decoding="async"
               src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
               style={
@@ -180,6 +149,39 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
                 }
               }
             />
+            <noscript>
+              <img
+                alt="Sensor Symbol 1"
+                className="w-6 h-6"
+                data-nimg="intrinsic"
+                decoding="async"
+                loading="lazy"
+                src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=48&q=75"
+                srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=48&q=75 2x"
+                style={
+                  Object {
+                    "border": "none",
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "maxHeight": "100%",
+                    "maxWidth": "100%",
+                    "minHeight": "100%",
+                    "minWidth": "100%",
+                    "objectFit": undefined,
+                    "objectPosition": undefined,
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  }
+                }
+              />
+            </noscript>
           </div>
         </span>
         <span>
@@ -417,7 +419,6 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
               <img
                 alt=""
                 aria-hidden={true}
-                role="presentation"
                 src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
                 style={
                   Object {
@@ -430,40 +431,10 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
                 }
               />
             </div>
-            <noscript>
-              <img
-                alt="Sensor Symbol 13"
-                className="w-6 h-6"
-                decoding="async"
-                src="/images/sensor-symbols/13.svg"
-                srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F13.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F13.svg&w=48&q=75 2x"
-                style={
-                  Object {
-                    "border": "none",
-                    "bottom": 0,
-                    "boxSizing": "border-box",
-                    "display": "block",
-                    "height": 0,
-                    "left": 0,
-                    "margin": "auto",
-                    "maxHeight": "100%",
-                    "maxWidth": "100%",
-                    "minHeight": "100%",
-                    "minWidth": "100%",
-                    "objectFit": undefined,
-                    "objectPosition": undefined,
-                    "padding": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                    "width": 0,
-                  }
-                }
-              />
-            </noscript>
             <img
               alt="Sensor Symbol 13"
               className="w-6 h-6"
+              data-nimg="intrinsic"
               decoding="async"
               src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
               style={
@@ -489,6 +460,39 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
                 }
               }
             />
+            <noscript>
+              <img
+                alt="Sensor Symbol 13"
+                className="w-6 h-6"
+                data-nimg="intrinsic"
+                decoding="async"
+                loading="lazy"
+                src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F13.svg&w=48&q=75"
+                srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F13.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F13.svg&w=48&q=75 2x"
+                style={
+                  Object {
+                    "border": "none",
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "maxHeight": "100%",
+                    "maxWidth": "100%",
+                    "minHeight": "100%",
+                    "minWidth": "100%",
+                    "objectFit": undefined,
+                    "objectPosition": undefined,
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  }
+                }
+              />
+            </noscript>
           </div>
         </span>
         <span>
