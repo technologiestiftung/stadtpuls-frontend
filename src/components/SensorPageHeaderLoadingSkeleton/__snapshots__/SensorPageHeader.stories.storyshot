@@ -177,7 +177,13 @@ Array [
           className="grid gap-4 grid-cols-[24px,1fr] font-semibold font-headline text-blue mb-2 leading-tight sm:leading-tight md:leading-tight text-xl sm:text-2xl md:text-3xl"
         >
           <span
-            className="mt-1 inline-block bg-gray-50 w-6 h-6}"
+            className="mt-1 inline-block"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
           >
             <div
               style={
@@ -217,7 +223,7 @@ Array [
               </div>
               <img
                 alt="Sensor Symbol 1"
-                className="w-6 h-6"
+                className="bg-gray-50"
                 data-nimg="intrinsic"
                 decoding="async"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -247,12 +253,11 @@ Array [
               <noscript>
                 <img
                   alt="Sensor Symbol 1"
-                  className="w-6 h-6"
+                  className="bg-gray-50"
                   data-nimg="intrinsic"
                   decoding="async"
                   loading="lazy"
-                  src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=48&q=75"
-                  srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=48&q=75 2x"
+                  src="/images/sensor-symbols/1.svg"
                   style={
                     Object {
                       "border": "none",

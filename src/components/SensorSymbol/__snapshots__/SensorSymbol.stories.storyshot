@@ -5,7 +5,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
   className="inline-grid grid-cols-8 gap-4"
 >
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -45,7 +51,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 1"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -75,12 +81,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 1"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/1.svg"
           style={
             Object {
               "border": "none",
@@ -108,7 +113,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -148,7 +159,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 2"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -178,12 +189,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 2"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F2.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F2.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F2.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/2.svg"
           style={
             Object {
               "border": "none",
@@ -211,7 +221,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -251,7 +267,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 3"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -281,12 +297,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 3"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F3.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F3.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F3.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/3.svg"
           style={
             Object {
               "border": "none",
@@ -314,7 +329,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -354,7 +375,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 4"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -384,12 +405,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 4"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F4.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F4.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F4.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/4.svg"
           style={
             Object {
               "border": "none",
@@ -417,7 +437,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -457,7 +483,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 5"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -487,12 +513,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 5"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F5.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F5.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F5.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/5.svg"
           style={
             Object {
               "border": "none",
@@ -520,7 +545,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -560,7 +591,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 6"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -590,12 +621,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 6"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F6.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F6.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F6.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/6.svg"
           style={
             Object {
               "border": "none",
@@ -623,7 +653,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -663,7 +699,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 7"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -693,12 +729,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 7"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F7.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F7.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F7.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/7.svg"
           style={
             Object {
               "border": "none",
@@ -726,7 +761,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -766,7 +807,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 8"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -796,12 +837,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 8"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F8.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F8.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F8.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/8.svg"
           style={
             Object {
               "border": "none",
@@ -829,7 +869,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -869,7 +915,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 9"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -899,12 +945,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 9"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F9.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F9.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F9.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/9.svg"
           style={
             Object {
               "border": "none",
@@ -932,7 +977,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -972,7 +1023,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 10"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1002,12 +1053,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 10"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F10.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F10.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F10.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/10.svg"
           style={
             Object {
               "border": "none",
@@ -1035,7 +1085,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -1075,7 +1131,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 11"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1105,12 +1161,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 11"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F11.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F11.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F11.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/11.svg"
           style={
             Object {
               "border": "none",
@@ -1138,7 +1193,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -1178,7 +1239,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 12"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1208,12 +1269,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 12"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F12.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F12.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F12.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/12.svg"
           style={
             Object {
               "border": "none",
@@ -1241,7 +1301,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -1281,7 +1347,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 13"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1311,12 +1377,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 13"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F13.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F13.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F13.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/13.svg"
           style={
             Object {
               "border": "none",
@@ -1344,7 +1409,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -1384,7 +1455,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 14"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1414,12 +1485,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 14"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F14.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F14.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F14.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/14.svg"
           style={
             Object {
               "border": "none",
@@ -1447,7 +1517,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -1487,7 +1563,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 15"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1517,12 +1593,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 15"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F15.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F15.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F15.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/15.svg"
           style={
             Object {
               "border": "none",
@@ -1550,7 +1625,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -1590,7 +1671,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 16"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1620,12 +1701,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 16"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F16.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F16.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F16.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/16.svg"
           style={
             Object {
               "border": "none",
@@ -1653,7 +1733,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -1693,7 +1779,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 17"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1723,12 +1809,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 17"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F17.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F17.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F17.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/17.svg"
           style={
             Object {
               "border": "none",
@@ -1756,7 +1841,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -1796,7 +1887,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 18"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1826,12 +1917,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 18"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F18.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F18.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F18.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/18.svg"
           style={
             Object {
               "border": "none",
@@ -1859,7 +1949,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -1899,7 +1995,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 19"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1929,12 +2025,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 19"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F19.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F19.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F19.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/19.svg"
           style={
             Object {
               "border": "none",
@@ -1962,7 +2057,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -2002,7 +2103,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 20"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2032,12 +2133,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 20"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F20.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F20.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F20.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/20.svg"
           style={
             Object {
               "border": "none",
@@ -2065,7 +2165,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -2105,7 +2211,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 21"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2135,12 +2241,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 21"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F21.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F21.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F21.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/21.svg"
           style={
             Object {
               "border": "none",
@@ -2168,7 +2273,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -2208,7 +2319,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 22"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2238,12 +2349,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 22"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F22.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F22.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F22.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/22.svg"
           style={
             Object {
               "border": "none",
@@ -2271,7 +2381,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -2311,7 +2427,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 23"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2341,12 +2457,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 23"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F23.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F23.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F23.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/23.svg"
           style={
             Object {
               "border": "none",
@@ -2374,7 +2489,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -2414,7 +2535,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 24"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2444,12 +2565,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 24"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F24.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F24.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F24.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/24.svg"
           style={
             Object {
               "border": "none",
@@ -2477,7 +2597,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -2517,7 +2643,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 25"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2547,12 +2673,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 25"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F25.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F25.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F25.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/25.svg"
           style={
             Object {
               "border": "none",
@@ -2580,7 +2705,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -2620,7 +2751,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 26"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2650,12 +2781,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 26"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F26.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F26.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F26.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/26.svg"
           style={
             Object {
               "border": "none",
@@ -2683,7 +2813,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -2723,7 +2859,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 27"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2753,12 +2889,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 27"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F27.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F27.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F27.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/27.svg"
           style={
             Object {
               "border": "none",
@@ -2786,7 +2921,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -2826,7 +2967,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 28"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2856,12 +2997,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 28"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F28.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F28.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F28.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/28.svg"
           style={
             Object {
               "border": "none",
@@ -2889,7 +3029,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -2929,7 +3075,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 29"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2959,12 +3105,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 29"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F29.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F29.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F29.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/29.svg"
           style={
             Object {
               "border": "none",
@@ -2992,7 +3137,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -3032,7 +3183,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 30"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -3062,12 +3213,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 30"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F30.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F30.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F30.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/30.svg"
           style={
             Object {
               "border": "none",
@@ -3095,7 +3245,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -3135,7 +3291,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 31"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -3165,12 +3321,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 31"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F31.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F31.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F31.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/31.svg"
           style={
             Object {
               "border": "none",
@@ -3198,7 +3353,13 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
     </div>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
     <div
       style={
@@ -3238,7 +3399,7 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       </div>
       <img
         alt="Sensor Symbol 32"
-        className="w-6 h-6"
+        className="bg-gray-50"
         data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -3268,12 +3429,11 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
       <noscript>
         <img
           alt="Sensor Symbol 32"
-          className="w-6 h-6"
+          className="bg-gray-50"
           data-nimg="intrinsic"
           decoding="async"
           loading="lazy"
-          src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F32.svg&w=48&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F32.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F32.svg&w=48&q=75 2x"
+          src="/images/sensor-symbols/32.svg"
           style={
             Object {
               "border": "none",

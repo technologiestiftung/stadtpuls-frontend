@@ -6,7 +6,7 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Default 1`] = `
 >
   Here is a heading that needs some explaining
    
-  <p
+  <div
     className="inline-block transform -translate-y-0.5"
     role="tooltip"
   >
@@ -56,7 +56,7 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Default 1`] = `
       />
       I am a tooltip, I explain things
     </span>
-  </p>
+  </div>
 </h3>
 `;
 
@@ -66,7 +66,7 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Long Content 1`] = `
 >
   Here is a heading that needs some explaining
    
-  <p
+  <div
     className="inline-block transform -translate-y-0.5"
     role="tooltip"
   >
@@ -134,6 +134,6 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Long Content 1`] = `
         </p>
       </div>
     </span>
-  </p>
+  </div>
 </h3>
 `;

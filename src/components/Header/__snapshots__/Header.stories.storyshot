@@ -6,10 +6,10 @@ exports[`Storyshots Layout/Header Default 1`] = `
   id="main-header"
 >
   <nav
-    className="w-full border transition border-t-0 flex place-content-between container mx-auto max-w-8xl bg-black-dot-pattern border-purple text-white"
+    className="w-full border transition border-t-0 flex place-content-between container mx-auto max-w-8xl bg-white border-gray-100 shadow text-blue"
   >
     <a
-      className="w-max flex items-center p-4 sm:border-r transition focus-offset border-purple"
+      className="w-max flex items-center p-4 sm:border-r transition focus-offset border-gray-100"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -47,7 +47,7 @@ exports[`Storyshots Layout/Header Default 1`] = `
           </svg>
         </button>
         <nav
-          className="fixed lg:static lg:top-auto left-1/2 lg:left-auto transform -translate-x-1/2 lg:translate-x-0 sm:border-r lg:border-r-0 sm:border-l lg:border-l-0 z-20 lg:z-auto w-full lg:w-auto shadow lg:shadow-none container max-w-8xl mx-auto lg:py-4 lg:px-1 lg:p-0 lg:bg-opacity-0 bg-black transition opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto"
+          className="fixed lg:static lg:top-auto left-1/2 lg:left-auto transform -translate-x-1/2 lg:translate-x-0 sm:border-r lg:border-r-0 sm:border-l lg:border-l-0 z-20 lg:z-auto w-full lg:w-auto shadow lg:shadow-none container max-w-8xl mx-auto lg:py-4 lg:px-1 lg:p-0 lg:bg-opacity-0 bg-white transition opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto"
           style={
             Object {
               "top": 62,
@@ -61,7 +61,7 @@ exports[`Storyshots Layout/Header Default 1`] = `
               className="lg:hidden text-xl lg:text-base"
             >
               <a
-                className="navigation-link-active navigation-link p-4 block lg:inline focus-offset"
+                className="navigation-link p-4 block lg:inline focus-offset"
                 href="/"
                 onClick={[Function]}
                 onMouseEnter={[Function]}

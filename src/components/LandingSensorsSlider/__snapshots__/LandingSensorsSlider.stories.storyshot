@@ -69,7 +69,13 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                 className="grid grid-cols-[24px,1fr] gap-3"
               >
                 <span
-                  className="mt-[1px] inline-block bg-gray-50 w-6 h-6}"
+                  className="mt-[1px] inline-block"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
                 >
                   <div
                     style={
@@ -109,7 +115,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                     </div>
                     <img
                       alt="Sensor Symbol 3"
-                      className="w-6 h-6"
+                      className="bg-gray-50"
                       data-nimg="intrinsic"
                       decoding="async"
                       src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -139,12 +145,11 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                     <noscript>
                       <img
                         alt="Sensor Symbol 3"
-                        className="w-6 h-6"
+                        className="bg-gray-50"
                         data-nimg="intrinsic"
                         decoding="async"
                         loading="lazy"
-                        src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F3.svg&w=48&q=75"
-                        srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F3.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F3.svg&w=48&q=75 2x"
+                        src="/images/sensor-symbols/3.svg"
                         style={
                           Object {
                             "border": "none",
@@ -295,7 +300,13 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                 className="grid grid-cols-[24px,1fr] gap-3"
               >
                 <span
-                  className="mt-[1px] inline-block bg-gray-50 w-6 h-6}"
+                  className="mt-[1px] inline-block"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
                 >
                   <div
                     style={
@@ -335,7 +346,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                     </div>
                     <img
                       alt="Sensor Symbol 13"
-                      className="w-6 h-6"
+                      className="bg-gray-50"
                       data-nimg="intrinsic"
                       decoding="async"
                       src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -365,12 +376,11 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                     <noscript>
                       <img
                         alt="Sensor Symbol 13"
-                        className="w-6 h-6"
+                        className="bg-gray-50"
                         data-nimg="intrinsic"
                         decoding="async"
                         loading="lazy"
-                        src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F13.svg&w=48&q=75"
-                        srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F13.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F13.svg&w=48&q=75 2x"
+                        src="/images/sensor-symbols/13.svg"
                         style={
                           Object {
                             "border": "none",
@@ -521,7 +531,13 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                 className="grid grid-cols-[24px,1fr] gap-3"
               >
                 <span
-                  className="mt-[1px] inline-block bg-gray-50 w-6 h-6}"
+                  className="mt-[1px] inline-block"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
                 >
                   <div
                     style={
@@ -561,7 +577,7 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                     </div>
                     <img
                       alt="Sensor Symbol 16"
-                      className="w-6 h-6"
+                      className="bg-gray-50"
                       data-nimg="intrinsic"
                       decoding="async"
                       src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -591,12 +607,11 @@ exports[`Storyshots Promotional/LandingSensorsSlider Default 1`] = `
                     <noscript>
                       <img
                         alt="Sensor Symbol 16"
-                        className="w-6 h-6"
+                        className="bg-gray-50"
                         data-nimg="intrinsic"
                         decoding="async"
                         loading="lazy"
-                        src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F16.svg&w=48&q=75"
-                        srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F16.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F16.svg&w=48&q=75 2x"
+                        src="/images/sensor-symbols/16.svg"
                         style={
                           Object {
                             "border": "none",

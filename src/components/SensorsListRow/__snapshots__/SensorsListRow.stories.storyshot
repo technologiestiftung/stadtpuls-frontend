@@ -22,7 +22,13 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
           className="grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center"
         >
           <span
-            className=" inline-block bg-gray-50 w-6 h-6}"
+            className=" inline-block"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
           >
             <div
               style={
@@ -62,7 +68,7 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
               </div>
               <img
                 alt="Sensor Symbol 1"
-                className="w-6 h-6"
+                className="bg-gray-50"
                 data-nimg="intrinsic"
                 decoding="async"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -92,12 +98,11 @@ exports[`Storyshots UI Elements/SensorsListRow Long Fields 1`] = `
               <noscript>
                 <img
                   alt="Sensor Symbol 1"
-                  className="w-6 h-6"
+                  className="bg-gray-50"
                   data-nimg="intrinsic"
                   decoding="async"
                   loading="lazy"
-                  src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=48&q=75"
-                  srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=48&q=75 2x"
+                  src="/images/sensor-symbols/1.svg"
                   style={
                     Object {
                       "border": "none",
@@ -264,7 +269,13 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
           className="grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center"
         >
           <span
-            className=" inline-block bg-gray-50 w-6 h-6}"
+            className=" inline-block"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
           >
             <div
               style={
@@ -304,7 +315,7 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
               </div>
               <img
                 alt="Sensor Symbol 32"
-                className="w-6 h-6"
+                className="bg-gray-50"
                 data-nimg="intrinsic"
                 decoding="async"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -334,12 +345,11 @@ exports[`Storyshots UI Elements/SensorsListRow Minimal Fields 1`] = `
               <noscript>
                 <img
                   alt="Sensor Symbol 32"
-                  className="w-6 h-6"
+                  className="bg-gray-50"
                   data-nimg="intrinsic"
                   decoding="async"
                   loading="lazy"
-                  src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F32.svg&w=48&q=75"
-                  srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F32.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F32.svg&w=48&q=75 2x"
+                  src="/images/sensor-symbols/32.svg"
                   style={
                     Object {
                       "border": "none",
@@ -466,7 +476,13 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
           className="grid grid-cols-[24px,minmax(0,1fr)] w-full gap-3 items-center"
         >
           <span
-            className=" inline-block bg-gray-50 w-6 h-6}"
+            className=" inline-block"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
           >
             <div
               style={
@@ -506,7 +522,7 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
               </div>
               <img
                 alt="Sensor Symbol 15"
-                className="w-6 h-6"
+                className="bg-gray-50"
                 data-nimg="intrinsic"
                 decoding="async"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -536,12 +552,11 @@ exports[`Storyshots UI Elements/SensorsListRow No Map 1`] = `
               <noscript>
                 <img
                   alt="Sensor Symbol 15"
-                  className="w-6 h-6"
+                  className="bg-gray-50"
                   data-nimg="intrinsic"
                   decoding="async"
                   loading="lazy"
-                  src="/_next/image?url=%2Fimages%2Fsensor-symbols%2F15.svg&w=48&q=75"
-                  srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F15.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F15.svg&w=48&q=75 2x"
+                  src="/images/sensor-symbols/15.svg"
                   style={
                     Object {
                       "border": "none",
