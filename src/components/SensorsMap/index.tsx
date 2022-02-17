@@ -203,7 +203,8 @@ export const SensorsMap: FC<SensorsMapType> = ({
   sensorsAreLoading = false,
   error,
 }) => {
-  const { push } = useRouter();
+  const router = useRouter();
+  const { push } = router || {};
   const reducedMotionWished = useReducedMotion(false);
   const [hoveredSensorIds, setHoveredSensorIds] = useState<number[]>([]);
   const [showList, setShowList] = useState(true);

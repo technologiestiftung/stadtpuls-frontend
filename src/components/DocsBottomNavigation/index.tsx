@@ -31,11 +31,10 @@ const DocsBottomNavigationLi: FC<DocsBottomNavigationLiPropType> = ({
 );
 
 export const DocsBottomNavigation: FC<{ page: string }> = ({ page }) => {
-  const pages = allPages.map(({ path }) => {
-    const cleanPath = path.replace("/docs/", "");
-    return cleanPath === "" ? "index" : cleanPath;
-  });
-  const currentPageIndex = pages.findIndex(path => path === page);
+  const currentPageIndex =
+    page === ""
+      ? 0
+      : allPages.findIndex(({ path }) => path.replace("/docs/", "") === page);
 
   if (currentPageIndex < 0) return null;
 

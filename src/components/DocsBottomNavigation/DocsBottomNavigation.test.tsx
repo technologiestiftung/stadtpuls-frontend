@@ -28,7 +28,7 @@ describe("DocsBottomNavigation component", () => {
       pathname: allPages[1].path,
     }));
     render(
-      <DocsBottomNavigation page={allPages[1].path.replace("/docs/", "")} />
+      <DocsBottomNavigation page={allPages[1].path.replace(/\/docs\/?/g, "")} />
     );
     const links = screen.getAllByRole("link");
     expect(links[0].getAttribute("href")).toBe(allPages[0].path);
@@ -41,9 +41,7 @@ describe("DocsBottomNavigation component", () => {
     nextRouter.useRouter.mockImplementation(() => ({
       pathname: allPages[0].path,
     }));
-    render(
-      <DocsBottomNavigation page={allPages[0].path.replace("/docs/", "")} />
-    );
+    render(<DocsBottomNavigation page='' />);
     const links = screen.getAllByRole("link");
     expect(links[0].getAttribute("href")).toBe(
       allPages[allPages.length - 1].path
@@ -58,7 +56,7 @@ describe("DocsBottomNavigation component", () => {
     }));
     render(
       <DocsBottomNavigation
-        page={allPages[allPages.length - 1].path.replace("/docs/", "")}
+        page={allPages[allPages.length - 1].path.replace(/\/docs\/?/g, "")}
       />
     );
     const links = screen.getAllByRole("link");
