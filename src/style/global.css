@@ -132,7 +132,7 @@
   }
 
   body {
-    @apply font-sans bg-white;
+    @apply font-sans bg-white overflow-x-hidden;
   }
 
   html.no-scroll {
