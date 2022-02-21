@@ -315,7 +315,7 @@ export const SensorsMap: FC<SensorsMapType> = ({
           )}
         </aside>
         {!(isSm && showList) && (
-          <div className='h-[calc(100vh-62px)] sticky w-full top-[62px]'>
+          <div className='h-[calc(100vh-62px-env(safe-area-inset-bottom))] sticky w-full top-[62px]'>
             <MarkerMap
               clickHandler={ids => {
                 if (ids.length === 0) return;
