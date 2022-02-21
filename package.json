@@ -36,7 +36,7 @@
     "react-dom": "17.0.2",
     "react-hook-form": "7.27.0",
     "react-map-gl": "6.1.17",
-    "react-paginate": "7.1.5",
+    "react-paginate": "8.1.1",
     "react-router-dom": "5.3.0",
     "react-simple-timefield": "3.2.5",
     "react-use": "17.3.2",
