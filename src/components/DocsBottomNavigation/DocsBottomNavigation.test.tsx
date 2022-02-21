@@ -16,7 +16,7 @@ describe("DocsBottomNavigation component", () => {
     }));
   });
   it("should render some links", () => {
-    render(<DocsBottomNavigation />);
+    render(<DocsBottomNavigation page='faq' />);
     const links = screen.getAllByRole("link");
     expect(links).toHaveLength(2);
   });
@@ -27,7 +27,9 @@ describe("DocsBottomNavigation component", () => {
     nextRouter.useRouter.mockImplementation(() => ({
       pathname: allPages[1].path,
     }));
-    render(<DocsBottomNavigation />);
+    render(
+      <DocsBottomNavigation page={allPages[1].path.replace(/\/docs\/?/g, "")} />
+    );
     const links = screen.getAllByRole("link");
     expect(links[0].getAttribute("href")).toBe(allPages[0].path);
     expect(links[1].getAttribute("href")).toBe(allPages[2].path);
@@ -39,7 +41,7 @@ describe("DocsBottomNavigation component", () => {
     nextRouter.useRouter.mockImplementation(() => ({
       pathname: allPages[0].path,
     }));
-    render(<DocsBottomNavigation />);
+    render(<DocsBottomNavigation page='' />);
     const links = screen.getAllByRole("link");
     expect(links[0].getAttribute("href")).toBe(
       allPages[allPages.length - 1].path
@@ -52,7 +54,11 @@ describe("DocsBottomNavigation component", () => {
     nextRouter.useRouter.mockImplementation(() => ({
       pathname: allPages[allPages.length - 1].path,
     }));
-    render(<DocsBottomNavigation />);
+    render(
+      <DocsBottomNavigation
+        page={allPages[allPages.length - 1].path.replace(/\/docs\/?/g, "")}
+      />
+    );
     const links = screen.getAllByRole("link");
     expect(links[1].getAttribute("href")).toBe(allPages[0].path);
   });
@@ -63,7 +69,7 @@ describe("DocsBottomNavigation component", () => {
     nextRouter.useRouter.mockImplementation(() => ({
       pathname: "/unexisting-page",
     }));
-    render(<DocsBottomNavigation />);
+    render(<DocsBottomNavigation page='unexisting-page' />);
     const links = screen.queryAllByRole("link");
     expect(links).toHaveLength(0);
   });

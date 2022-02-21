@@ -75,7 +75,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
         </a>
       </div>
       <div
-        className="absolute bottom-0 right-0 z-10 overflow-hidden "
+        className="absolute bottom-0 right-0 z-10 overflow-hidden wrapper"
       >
         <svg
           height="870px"
@@ -511,7 +511,7 @@ exports[`Storyshots Promotional/LandingHero Default 1`] = `
                   y="580"
                 />
                 <rect
-                  className="animate-slide-in undefined"
+                  className="animate-slide-in hiddenSmall"
                   fill="#8330FF"
                   height="58"
                   style={

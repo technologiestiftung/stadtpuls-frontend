@@ -104,16 +104,7 @@ exports[`Storyshots UI Elements/DownloadQueueButton Default 1`] = `
                   <span
                     className="text-blue group-hover:text-purple transition-colors"
                   >
-                    <svg
-                      height="16"
-                      width="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M15 9a1 1 0 0 1 .993.883L16 10v4.503a1.5 1.5 0 0 1-1.356 1.494l-.144.006h-13a1.5 1.5 0 0 1-1.493-1.355L0 14.503V10a1 1 0 0 1 1.993-.117L2 10v4.003h12V10a1 1 0 0 1 .883-.993L15 9ZM9 0v8.17l2.59-2.58L13 7l-5 5-5-5 1.41-1.41L7 8.17V0h2Z"
-                        fill="currentColor"
-                      />
-                    </svg>
+                    <test-file-stub />
                   </span>
                 </div>
               </div>

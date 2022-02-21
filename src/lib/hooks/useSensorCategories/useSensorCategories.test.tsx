@@ -1,74 +1,63 @@
-import { FC, useEffect } from "react";
-import { render, waitFor } from "@testing-library/react";
+import { FC } from "react";
 import { rest } from "msw";
 import { useSensorCategories } from ".";
-import { server } from "@mocks/server";
 import { SWRConfig } from "swr";
+import { setupServer } from "msw/node";
+import { categories } from "@mocks/supabaseData/categories";
+import { renderHook } from "@testing-library/react-hooks";
+import { AuthProvider } from "@auth/Auth";
 
-type DataType = ReturnType<typeof useSensorCategories>["categories"];
-type OnSuccessType = (data: DataType) => void;
-type OnFailType = (error: string) => void;
-
-const createTestComponent = (
-  onSuccess: OnSuccessType,
-  onFail: OnFailType
-): FC => {
-  const TestComponent: FC = () => {
-    const { isLoading, error, categories } = useSensorCategories();
-    useEffect(() => {
-      if (categories && !error) onSuccess(categories);
-      if (error) onFail(error.message);
-    }, [isLoading, categories, error]);
-    if (isLoading) return <p>Loading</p>;
-    if (error) return <p>Error</p>;
-    return (
-      <p>
-        {categories && categories.length ? categories[0].name : "no categories"}
-      </p>
-    );
-  };
-  return TestComponent;
-};
+const HookWrapper: FC = ({ children }) => (
+  <SWRConfig value={{ dedupingInterval: 0 }}>
+    <AuthProvider>{children}</AuthProvider>
+  </SWRConfig>
+);
 
 describe("useSensorCategories", () => {
   it("should get the sensor categories", async (): Promise<void> => {
-    const onSuccess = jest.fn();
-    const onSuccessWrapper = (categories: DataType): void => {
-      onSuccess(categories);
-    };
-    const onError = jest.fn();
-    const TestComponent = createTestComponent(onSuccessWrapper, onError);
+    const server = setupServer(
+      rest.get("*", (_req, res, ctx) =>
+        res(ctx.status(200, "Mocked status"), ctx.json(categories))
+      )
+    );
+    server.listen();
 
-    render(
-      <SWRConfig value={{ dedupingInterval: 0 }}>
-        <TestComponent />
-      </SWRConfig>
+    const { result, waitForNextUpdate } = renderHook(
+      () => useSensorCategories(),
+      {
+        wrapper: HookWrapper,
+      }
     );
 
-    await waitFor(() => {
-      expect(onSuccess).toHaveBeenCalled();
-      expect(onError).not.toHaveBeenCalled();
-    });
+    await waitForNextUpdate();
+
+    expect(result.current.isLoading).toBe(false);
+    expect(result.current.categories).toStrictEqual(categories);
+
+    server.close();
+    server.resetHandlers();
   });
 
   it("should return an error if network has error", async (): Promise<void> => {
     const testError = "Mammamamamma";
-    server.use(rest.get("*", (_req, res) => res.networkError(testError)));
-    const onSuccess = jest.fn();
-    const onError = jest.fn();
-    const onErrorWrapper = (error: string): void => {
-      onError(error.includes(testError) ? true : false);
-    };
-    const TestComponent = createTestComponent(onSuccess, onErrorWrapper);
-    render(
-      <SWRConfig value={{ dedupingInterval: 0 }}>
-        <TestComponent />
-      </SWRConfig>
+    const server = setupServer(
+      rest.get("*", (_req, res) => res.networkError(testError))
+    );
+    server.listen();
+
+    const { result, waitForNextUpdate } = renderHook(
+      () => useSensorCategories(),
+      {
+        wrapper: HookWrapper,
+      }
     );
 
-    await waitFor(() => {
-      expect(onError).toHaveBeenLastCalledWith(true);
-      expect(onSuccess).not.toHaveBeenCalled();
-    });
+    await waitForNextUpdate();
+
+    expect(result.current.isLoading).toBe(false);
+    expect(result.current.error).not.toBeNull();
+
+    server.close();
+    server.resetHandlers();
   });
 });

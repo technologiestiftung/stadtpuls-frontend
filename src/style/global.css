@@ -224,6 +224,8 @@
   main code[class*='language-'],
   main pre[class*='language-'] {
     text-shadow: none;
+    font-size: 14px;
+    line-height: 24px;
   }
   
   main .prose code {

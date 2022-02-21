@@ -1,66 +1,62 @@
-import { FC, useEffect } from "react";
-import { render, waitFor } from "@testing-library/react";
+import { FC } from "react";
 import { rest } from "msw";
 import { useCuratedSensors } from ".";
-import { server } from "@mocks/server";
 import { SWRConfig } from "swr";
-import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
+import { setupServer } from "msw/node";
+import { parsedSensors, sensors } from "@mocks/supabaseData/sensors";
+import { AuthProvider } from "@auth/Auth";
+import { renderHook } from "@testing-library/react-hooks";
 
-type OnSuccessType = (data: ParsedSensorType[]) => void;
-type OnFailType = (error: string) => void;
-
-const createTestComponent = (
-  onSuccess: OnSuccessType,
-  onFail: OnFailType
-): FC => {
-  const TestComponent: FC = () => {
-    const { data, error } = useCuratedSensors();
-    useEffect(() => {
-      if (data && !error) onSuccess(data);
-      if (error) onFail(error.message);
-    }, [data, error]);
-    return <div />;
-  };
-  return TestComponent;
-};
+const HookWrapper: FC = ({ children }) => (
+  <SWRConfig value={{ dedupingInterval: 0 }}>
+    <AuthProvider>{children}</AuthProvider>
+  </SWRConfig>
+);
 
 describe("hook useCuratedSensors", () => {
   it("should provide a data and error value", async (): Promise<void> => {
-    const onSuccess = jest.fn();
-    const onSuccessWrapper = (data: ParsedSensorType[]): void => {
-      onSuccess(data);
-    };
-    const onError = jest.fn();
-    const TestComponent = createTestComponent(onSuccessWrapper, onError);
-    render(
-      <SWRConfig value={{ dedupingInterval: 0 }}>
-        <TestComponent />
-      </SWRConfig>
+    const server = setupServer(
+      rest.get("*", (_req, res, ctx) =>
+        res(ctx.status(200, "Mocked status"), ctx.json(sensors.slice(0, 3)))
+      )
+    );
+    server.listen();
+
+    const { result, waitForNextUpdate } = renderHook(
+      () => useCuratedSensors(),
+      {
+        wrapper: HookWrapper,
+      }
     );
 
-    await waitFor(() => {
-      expect(onSuccess).toHaveBeenCalled();
-      expect(onError).not.toHaveBeenCalled();
-    });
+    await waitForNextUpdate();
+
+    expect(result.current.data).toStrictEqual(parsedSensors.slice(0, 3));
+    expect(result.current.error).toBeNull();
+
+    server.close();
+    server.resetHandlers();
   });
   it("should return an error if network has error", async (): Promise<void> => {
     const testError = "Mammamamamma";
-    server.use(rest.get("*", (_req, res) => res.networkError(testError)));
-    const onSuccess = jest.fn();
-    const onError = jest.fn();
-    const onErrorWrapper = (error: string): void => {
-      onError(error.includes(testError) ? true : false);
-    };
-    const TestComponent = createTestComponent(onSuccess, onErrorWrapper);
-    render(
-      <SWRConfig value={{ dedupingInterval: 0 }}>
-        <TestComponent />
-      </SWRConfig>
+    const server = setupServer(
+      rest.get("*", (_req, res) => res.networkError(testError))
+    );
+    server.listen();
+
+    const { result, waitForNextUpdate } = renderHook(
+      () => useCuratedSensors(),
+      {
+        wrapper: HookWrapper,
+      }
     );
 
-    await waitFor(() => {
-      expect(onError).toHaveBeenLastCalledWith(true);
-      expect(onSuccess).not.toHaveBeenCalled();
-    });
+    await waitForNextUpdate();
+
+    expect(result.current.data).toBeNull();
+    expect(result.current.error).not.toBeNull();
+
+    server.close();
+    server.resetHandlers();
   });
 });

@@ -28,7 +28,7 @@ exports[`Storyshots Map/MarkerMap Berlin 1`] = `
         }
       >
         <div
-          className=" undefined undefined"
+          className=" mapContainer withSearch"
           style={
             Object {
               "height": "100%",
@@ -73,7 +73,7 @@ exports[`Storyshots Map/MarkerMap Germany 1`] = `
         }
       >
         <div
-          className=" undefined undefined"
+          className=" mapContainer withSearch"
           style={
             Object {
               "height": "100%",
@@ -118,7 +118,7 @@ exports[`Storyshots Map/MarkerMap Park 1`] = `
         }
       >
         <div
-          className=" undefined undefined"
+          className=" mapContainer withSearch"
           style={
             Object {
               "height": "100%",
@@ -163,7 +163,7 @@ exports[`Storyshots Map/MarkerMap World 1`] = `
         }
       >
         <div
-          className=" undefined undefined"
+          className=" mapContainer withSearch"
           style={
             Object {
               "height": "100%",

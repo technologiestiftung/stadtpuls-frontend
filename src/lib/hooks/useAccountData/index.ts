@@ -23,7 +23,7 @@ export const useAccountData = ({
   const { data, error } = useSWR<AccountWithSensorsType | undefined, Error>(
     params,
     () => getAccountDataByUsername(username),
-    { initialData }
+    { fallbackData: initialData }
   );
 
   return {

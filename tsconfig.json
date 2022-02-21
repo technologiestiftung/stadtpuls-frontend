@@ -35,17 +35,19 @@
       ],
       "@auth/*": [
         "./src/auth/*"
-      ],
+      ]
     },
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "incremental": true
   },
   "include": [
+    "global-types.d.ts",
     "next-env.d.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx",
     "./pages/**/*.ts",
     "./pages/**/*.tsx",
-    "./workers/*.worker.ts",
+    "./workers/*.worker.ts"
   ],
   "exclude": [
     "node_modules",

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
+import "moment/locale/de";
 import { Button } from "@components/Button";
+
+moment.locale("de-DE");
 
 interface DataTableRowType {
   id: number;

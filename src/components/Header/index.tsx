@@ -10,7 +10,8 @@ import { DownloadQueueButton } from "@components/DownloadQueueButton/widthData";
 const SCROLL_THRESHOLD = 100;
 
 export const Header: React.FC = () => {
-  const { pathname } = useRouter();
+  const router = useRouter();
+  const { pathname } = router || {};
   const { user } = useUserData();
   const [hasScrolled, setHasScrolled] = useState<boolean>(false);
   const hasDarkMode = pathname === "/" && !hasScrolled;

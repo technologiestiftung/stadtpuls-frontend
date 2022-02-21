@@ -2,12 +2,10 @@ import { Story } from "@storybook/react";
 import { SensorsMap } from ".";
 import { parsedSensors } from "@mocks/supabaseData/sensors";
 import { action } from "@storybook/addon-actions";
-import { withNextRouter } from "storybook-addon-next-router";
 
 export default {
   title: "Pages/SensorsMap",
   component: SensorsMap,
-  decorators: [withNextRouter],
 };
 
 const Template: Story = () => (

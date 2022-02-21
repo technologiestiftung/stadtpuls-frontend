@@ -6,6 +6,9 @@ import { scaleLinear, scaleUtc } from "@visx/scale";
 import { DateValueType } from "../../common/interfaces";
 import colors from "../../style/colors";
 import moment from "moment";
+import "moment/locale/de";
+
+moment.locale("de-DE");
 
 interface ChartThumbnailPropType {
   data: Array<DateValueType>;

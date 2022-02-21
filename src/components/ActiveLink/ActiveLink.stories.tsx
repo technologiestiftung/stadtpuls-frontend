@@ -1,12 +1,11 @@
 import { TextLink } from "@components/TextLink";
 import { Meta, Story } from "@storybook/react";
-import { withNextRouter } from "storybook-addon-next-router";
+// import { withNextRouter } from "storybook-addon-next-router";
 import { ActiveLink } from ".";
 
 export default {
   title: "UI Elements/ActiveLink",
   component: ActiveLink,
-  decorators: [withNextRouter],
 } as Meta;
 
 const Template: Story<{

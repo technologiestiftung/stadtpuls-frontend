@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-interface MDXFrontmatterType extends Record<string, unknown> {
+export interface MDXFrontmatterType extends Record<string, unknown> {
   title: string;
   metaTitle: string;
   metaDescription: string;
@@ -8,6 +8,7 @@ interface MDXFrontmatterType extends Record<string, unknown> {
 
 interface MDXLayoutProps {
   frontMatter: MDXFrontmatterType;
+  slug: string;
 }
 
 export type MDXLayoutType = FC<MDXLayoutProps>;

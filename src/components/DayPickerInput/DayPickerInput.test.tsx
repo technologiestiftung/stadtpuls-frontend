@@ -6,7 +6,7 @@ describe("DayPickerInput", () => {
     const initialValue = "01/01/2021";
     const targetValue = "24/12/2021";
     render(<DayPickerInput value={new Date(initialValue)} />);
-    const input = screen.getByRole("textbox") as HTMLInputElement;
+    const input = screen.getByRole("textbox");
     expect(input).toBeInTheDocument();
 
     fireEvent.change(input, { target: { value: targetValue } });
@@ -14,7 +14,7 @@ describe("DayPickerInput", () => {
     const day = screen.getByLabelText("Fr. 24. Dez. 2021");
     expect(day).toBeInTheDocument();
     expect(day.getAttribute("aria-selected")).toBe("true");
-    expect(input.value).toBe(targetValue);
+    expect((input as HTMLInputElement).value).toBe(targetValue);
   });
   test("should call onDayChange when input changes", () => {
     const initialValue = "01/01/2021";
@@ -26,7 +26,7 @@ describe("DayPickerInput", () => {
         onDayChange={onDayChange}
       />
     );
-    const input = screen.getByRole("textbox") as HTMLInputElement;
+    const input = screen.getByRole("textbox");
     expect(input).toBeInTheDocument();
 
     fireEvent.change(input, {

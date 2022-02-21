@@ -1,7 +1,6 @@
 import { allPages } from "@components/DocsSidebar";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { FC } from "react";
 
 interface DocsBottomNavigationLiPropType {
@@ -31,9 +30,11 @@ const DocsBottomNavigationLi: FC<DocsBottomNavigationLiPropType> = ({
   </li>
 );
 
-export const DocsBottomNavigation: FC = () => {
-  const { pathname } = useRouter();
-  const currentPageIndex = allPages.findIndex(({ path }) => pathname === path);
+export const DocsBottomNavigation: FC<{ page: string }> = ({ page }) => {
+  const currentPageIndex =
+    page === ""
+      ? 0
+      : allPages.findIndex(({ path }) => path.replace("/docs/", "") === page);
 
   if (currentPageIndex < 0) return null;
 

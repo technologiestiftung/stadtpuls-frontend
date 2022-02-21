@@ -40,7 +40,9 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
           <div
             className="inline-flex"
           >
-            <div>
+            <div
+              className="inputContainer"
+            >
               <input
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -54,7 +56,7 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
               />
             </div>
             <input
-              className="InputTime-from font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 "
+              className="InputTime-from font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 timeInput"
               onChange={[Function]}
               style={Object {}}
               tabIndex={-1}
@@ -65,7 +67,9 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
           <span
             className="inline-flex"
           >
-            <div>
+            <div
+              className="inputContainer"
+            >
               <input
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -79,7 +83,7 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
               />
             </div>
             <input
-              className="InputTime-to font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 "
+              className="InputTime-to font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 timeInput"
               onChange={[Function]}
               style={Object {}}
               tabIndex={-1}

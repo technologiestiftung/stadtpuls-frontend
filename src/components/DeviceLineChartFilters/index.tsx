@@ -1,7 +1,10 @@
 import { DatetimeRangePicker } from "@components/DatetimeRangePicker";
 import { RadioFieldset } from "@components/RadioFieldset";
 import moment from "moment";
+import "moment/locale/de";
 import { FC, useState } from "react";
+
+moment.locale("de-DE");
 
 type FilterType = "devicesByTimespan" | "devicesByDatetimeRange";
 type TimespanType = "last24h" | "last7days" | "last30days" | "max";

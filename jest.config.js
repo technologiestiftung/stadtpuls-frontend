@@ -1,4 +1,8 @@
-module.exports = {
+const nextJest = require('next/jest')
+
+const createJestConfig = nextJest({ dir: './', })
+
+module.exports = createJestConfig({
   setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
   moduleNameMapper: {
     "^@components(.*)$": "<rootDir>/src/components$1",
@@ -9,5 +13,6 @@ module.exports = {
     "\\.css$": "<rootDir>/src/mocks/cssMock.ts",
     "\\/mocks/index$": "<rootDir>/src/mocks/mswMock.ts",
   },
+  testEnvironment: 'jest-environment-jsdom',
   modulePathIgnorePatterns: ["<rootDir>/cypress/"],
-};
+})

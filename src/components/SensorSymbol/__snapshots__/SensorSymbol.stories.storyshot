@@ -5,52 +5,104 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
   className="inline-grid grid-cols-8 gap-4"
 >
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
-    <div
+    <span
       style={
         Object {
+          "background": "none",
+          "border": 0,
           "boxSizing": "border-box",
           "display": "inline-block",
+          "height": "initial",
           "margin": 0,
           "maxWidth": "100%",
+          "opacity": 1,
           "overflow": "hidden",
+          "padding": 0,
           "position": "relative",
+          "width": "initial",
         }
       }
     >
-      <div
+      <span
         style={
           Object {
+            "background": "none",
+            "border": 0,
             "boxSizing": "border-box",
             "display": "block",
+            "height": "initial",
+            "margin": 0,
             "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
           }
         }
       >
         <img
           alt=""
           aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
           style={
             Object {
-              "border": "none",
+              "background": "none",
+              "border": 0,
               "display": "block",
+              "height": "initial",
               "margin": 0,
               "maxWidth": "100%",
+              "opacity": 1,
               "padding": 0,
+              "width": "initial",
             }
           }
         />
-      </div>
+      </span>
+      <img
+        alt="Sensor Symbol 1"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
+        decoding="async"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        style={
+          Object {
+            "border": "none",
+            "bottom": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": 0,
+            "left": 0,
+            "margin": "auto",
+            "maxHeight": "100%",
+            "maxWidth": "100%",
+            "minHeight": "100%",
+            "minWidth": "100%",
+            "objectFit": undefined,
+            "objectPosition": undefined,
+            "padding": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "width": 0,
+          }
+        }
+      />
       <noscript>
         <img
           alt="Sensor Symbol 1"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/1.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F1.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -75,9 +127,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 1"
-        className="w-6 h-6"
+        alt="Sensor Symbol 2"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -103,55 +220,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 2"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/2.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F2.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F2.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -176,9 +252,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 2"
-        className="w-6 h-6"
+        alt="Sensor Symbol 3"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -204,55 +345,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 3"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/3.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F3.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F3.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -277,9 +377,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 3"
-        className="w-6 h-6"
+        alt="Sensor Symbol 4"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -305,55 +470,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 4"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/4.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F4.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F4.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -378,9 +502,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 4"
-        className="w-6 h-6"
+        alt="Sensor Symbol 5"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -406,55 +595,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 5"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/5.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F5.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F5.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -479,9 +627,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 5"
-        className="w-6 h-6"
+        alt="Sensor Symbol 6"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -507,55 +720,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 6"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/6.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F6.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F6.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -580,9 +752,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 6"
-        className="w-6 h-6"
+        alt="Sensor Symbol 7"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -608,55 +845,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 7"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/7.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F7.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F7.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -681,9 +877,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 7"
-        className="w-6 h-6"
+        alt="Sensor Symbol 8"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -709,55 +970,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 8"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/8.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F8.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F8.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -782,9 +1002,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 8"
-        className="w-6 h-6"
+        alt="Sensor Symbol 9"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -810,55 +1095,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 9"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/9.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F9.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F9.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -883,9 +1127,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 9"
-        className="w-6 h-6"
+        alt="Sensor Symbol 10"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -911,55 +1220,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 10"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/10.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F10.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F10.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -984,9 +1252,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 10"
-        className="w-6 h-6"
+        alt="Sensor Symbol 11"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -1012,55 +1345,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 11"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/11.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F11.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F11.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -1085,9 +1377,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 11"
-        className="w-6 h-6"
+        alt="Sensor Symbol 12"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -1113,55 +1470,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 12"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/12.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F12.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F12.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -1186,9 +1502,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 12"
-        className="w-6 h-6"
+        alt="Sensor Symbol 13"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -1214,55 +1595,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 13"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/13.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F13.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F13.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -1287,9 +1627,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 13"
-        className="w-6 h-6"
+        alt="Sensor Symbol 14"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -1315,55 +1720,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 14"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/14.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F14.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F14.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -1388,9 +1752,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 14"
-        className="w-6 h-6"
+        alt="Sensor Symbol 15"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -1416,55 +1845,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 15"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/15.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F15.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F15.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -1489,9 +1877,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 15"
-        className="w-6 h-6"
+        alt="Sensor Symbol 16"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -1517,55 +1970,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 16"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/16.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F16.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F16.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -1590,9 +2002,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 16"
-        className="w-6 h-6"
+        alt="Sensor Symbol 17"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -1618,55 +2095,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 17"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/17.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F17.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F17.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -1691,9 +2127,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 17"
-        className="w-6 h-6"
+        alt="Sensor Symbol 18"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -1719,55 +2220,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 18"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/18.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F18.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F18.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -1792,9 +2252,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 18"
-        className="w-6 h-6"
+        alt="Sensor Symbol 19"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -1820,55 +2345,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 19"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/19.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F19.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F19.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -1893,9 +2377,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 19"
-        className="w-6 h-6"
+        alt="Sensor Symbol 20"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -1921,55 +2470,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 20"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/20.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F20.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F20.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -1994,9 +2502,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 20"
-        className="w-6 h-6"
+        alt="Sensor Symbol 21"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -2022,55 +2595,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 21"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/21.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F21.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F21.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -2095,9 +2627,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 21"
-        className="w-6 h-6"
+        alt="Sensor Symbol 22"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -2123,55 +2720,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 22"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/22.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F22.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F22.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -2196,9 +2752,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 22"
-        className="w-6 h-6"
+        alt="Sensor Symbol 23"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -2224,55 +2845,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 23"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/23.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F23.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F23.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -2297,9 +2877,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 23"
-        className="w-6 h-6"
+        alt="Sensor Symbol 24"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -2325,55 +2970,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 24"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/24.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F24.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F24.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -2398,9 +3002,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 24"
-        className="w-6 h-6"
+        alt="Sensor Symbol 25"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -2426,55 +3095,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 25"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/25.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F25.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F25.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -2499,9 +3127,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 25"
-        className="w-6 h-6"
+        alt="Sensor Symbol 26"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -2527,55 +3220,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 26"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/26.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F26.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F26.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -2600,9 +3252,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 26"
-        className="w-6 h-6"
+        alt="Sensor Symbol 27"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -2628,55 +3345,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 27"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/27.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F27.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F27.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -2701,9 +3377,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 27"
-        className="w-6 h-6"
+        alt="Sensor Symbol 28"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -2729,55 +3470,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 28"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/28.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F28.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F28.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -2802,9 +3502,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 28"
-        className="w-6 h-6"
+        alt="Sensor Symbol 29"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -2830,55 +3595,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 29"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/29.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F29.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F29.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -2903,9 +3627,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 29"
-        className="w-6 h-6"
+        alt="Sensor Symbol 30"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -2931,55 +3720,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 30"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/30.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F30.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F30.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -3004,9 +3752,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
+    </span>
+  </span>
+  <span
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
       <img
-        alt="Sensor Symbol 30"
-        className="w-6 h-6"
+        alt="Sensor Symbol 31"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -3032,55 +3845,14 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
-  </span>
-  <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
-  >
-    <div
-      style={
-        Object {
-          "boxSizing": "border-box",
-          "display": "inline-block",
-          "margin": 0,
-          "maxWidth": "100%",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "boxSizing": "border-box",
-            "display": "block",
-            "maxWidth": "100%",
-          }
-        }
-      >
-        <img
-          alt=""
-          aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-          style={
-            Object {
-              "border": "none",
-              "display": "block",
-              "margin": 0,
-              "maxWidth": "100%",
-              "padding": 0,
-            }
-          }
-        />
-      </div>
       <noscript>
         <img
           alt="Sensor Symbol 31"
-          className="w-6 h-6"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
           decoding="async"
+          loading="lazy"
           src="/images/sensor-symbols/31.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F31.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F31.svg&w=48&q=75 2x"
           style={
             Object {
               "border": "none",
@@ -3105,110 +3877,74 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         />
       </noscript>
-      <img
-        alt="Sensor Symbol 31"
-        className="w-6 h-6"
-        decoding="async"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-        style={
-          Object {
-            "border": "none",
-            "bottom": 0,
-            "boxSizing": "border-box",
-            "display": "block",
-            "height": 0,
-            "left": 0,
-            "margin": "auto",
-            "maxHeight": "100%",
-            "maxWidth": "100%",
-            "minHeight": "100%",
-            "minWidth": "100%",
-            "objectFit": undefined,
-            "objectPosition": undefined,
-            "padding": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-            "width": 0,
-          }
-        }
-      />
-    </div>
+    </span>
   </span>
   <span
-    className=" inline-block bg-gray-50 w-6 h-6}"
+    className=" inline-block"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
   >
-    <div
+    <span
       style={
         Object {
+          "background": "none",
+          "border": 0,
           "boxSizing": "border-box",
           "display": "inline-block",
+          "height": "initial",
           "margin": 0,
           "maxWidth": "100%",
+          "opacity": 1,
           "overflow": "hidden",
+          "padding": 0,
           "position": "relative",
+          "width": "initial",
         }
       }
     >
-      <div
+      <span
         style={
           Object {
+            "background": "none",
+            "border": 0,
             "boxSizing": "border-box",
             "display": "block",
+            "height": "initial",
+            "margin": 0,
             "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
           }
         }
       >
         <img
           alt=""
           aria-hidden={true}
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
           style={
             Object {
-              "border": "none",
+              "background": "none",
+              "border": 0,
               "display": "block",
+              "height": "initial",
               "margin": 0,
               "maxWidth": "100%",
+              "opacity": 1,
               "padding": 0,
+              "width": "initial",
             }
           }
         />
-      </div>
-      <noscript>
-        <img
-          alt="Sensor Symbol 32"
-          className="w-6 h-6"
-          decoding="async"
-          src="/images/sensor-symbols/32.svg"
-          srcSet="/_next/image?url=%2Fimages%2Fsensor-symbols%2F32.svg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fsensor-symbols%2F32.svg&w=48&q=75 2x"
-          style={
-            Object {
-              "border": "none",
-              "bottom": 0,
-              "boxSizing": "border-box",
-              "display": "block",
-              "height": 0,
-              "left": 0,
-              "margin": "auto",
-              "maxHeight": "100%",
-              "maxWidth": "100%",
-              "minHeight": "100%",
-              "minWidth": "100%",
-              "objectFit": undefined,
-              "objectPosition": undefined,
-              "padding": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-              "width": 0,
-            }
-          }
-        />
-      </noscript>
+      </span>
       <img
         alt="Sensor Symbol 32"
-        className="w-6 h-6"
+        className="bg-gray-50"
+        data-nimg="intrinsic"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
@@ -3234,7 +3970,39 @@ exports[`Storyshots UI Elements/SensorSymbol Default 1`] = `
           }
         }
       />
-    </div>
+      <noscript>
+        <img
+          alt="Sensor Symbol 32"
+          className="bg-gray-50"
+          data-nimg="intrinsic"
+          decoding="async"
+          loading="lazy"
+          src="/images/sensor-symbols/32.svg"
+          style={
+            Object {
+              "border": "none",
+              "bottom": 0,
+              "boxSizing": "border-box",
+              "display": "block",
+              "height": 0,
+              "left": 0,
+              "margin": "auto",
+              "maxHeight": "100%",
+              "maxWidth": "100%",
+              "minHeight": "100%",
+              "minWidth": "100%",
+              "objectFit": undefined,
+              "objectPosition": undefined,
+              "padding": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": 0,
+            }
+          }
+        />
+      </noscript>
+    </span>
   </span>
 </div>
 `;

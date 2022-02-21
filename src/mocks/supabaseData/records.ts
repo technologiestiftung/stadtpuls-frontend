@@ -1,5 +1,8 @@
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import moment from "moment";
+import "moment/locale/de";
+
+moment.locale("de-DE");
 
 export const getSensorRecords = ({
   sensorId,
