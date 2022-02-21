@@ -1,5 +1,5 @@
 module.exports = {
-  swcMinify: true,
+  swcMinify: false,
   async headers() {
     return [
       {
