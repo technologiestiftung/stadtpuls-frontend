@@ -1678,7 +1678,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
     </div>
   </aside>
   <div
-    className="h-[calc(100vh-62px)] h-[calc(100vh-62px-env(safe-area-inset-bottom))] sticky w-full top-[62px]"
+    className="h-[calc(100vh-62px-env(safe-area-inset-bottom)-env(safe-area-inset-top))] sticky w-full top-[62px]"
   />
 </section>
 `;
