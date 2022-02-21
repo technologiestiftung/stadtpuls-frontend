@@ -128,7 +128,7 @@ Array [
             }
           >
             <div
-              className=" undefined"
+              className=" mapContainer"
               style={
                 Object {
                   "height": "100%",
@@ -185,42 +185,59 @@ Array [
               }
             }
           >
-            <div
+            <span
               style={
                 Object {
+                  "background": "none",
+                  "border": 0,
                   "boxSizing": "border-box",
                   "display": "inline-block",
+                  "height": "initial",
                   "margin": 0,
                   "maxWidth": "100%",
+                  "opacity": 1,
                   "overflow": "hidden",
+                  "padding": 0,
                   "position": "relative",
+                  "width": "initial",
                 }
               }
             >
-              <div
+              <span
                 style={
                   Object {
+                    "background": "none",
+                    "border": 0,
                     "boxSizing": "border-box",
                     "display": "block",
+                    "height": "initial",
+                    "margin": 0,
                     "maxWidth": "100%",
+                    "opacity": 1,
+                    "padding": 0,
+                    "width": "initial",
                   }
                 }
               >
                 <img
                   alt=""
                   aria-hidden={true}
-                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
                   style={
                     Object {
-                      "border": "none",
+                      "background": "none",
+                      "border": 0,
                       "display": "block",
+                      "height": "initial",
                       "margin": 0,
                       "maxWidth": "100%",
+                      "opacity": 1,
                       "padding": 0,
+                      "width": "initial",
                     }
                   }
                 />
-              </div>
+              </span>
               <img
                 alt="Sensor Symbol 1"
                 className="bg-gray-50"
@@ -282,7 +299,7 @@ Array [
                   }
                 />
               </noscript>
-            </div>
+            </span>
           </span>
           <span>
             When Array is given
@@ -366,7 +383,7 @@ Array [
             onClick={[Function]}
             readOnly={true}
             type="text"
-            value="fake-token-api-url.com/api/v3/sensors/1/records"
+            value="localhost/api/v3/sensors/1/records"
           />
           <div
             aria-hidden={true}
@@ -377,16 +394,7 @@ Array [
             <div
               className="text-green"
             >
-              <svg
-                height="16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14.088 1.691a1 1 0 0 1 .288 1.291l-.067.106-8 11-.009.012a.4.4 0 0 1-.032.04l.04-.052a1.009 1.009 0 0 1-.089.107l-.012.012-.03.029a.993.993 0 0 1-.054.047l.084-.076a1.007 1.007 0 0 1-.74.293 1.066 1.066 0 0 1-.303-.058.955.955 0 0 1-.252-.133L4.9 14.3a.999.999 0 0 1-.013-.01l-.037-.032-.035-.03a1 1 0 0 1-.01-.009l-.012-.012-3-3a1 1 0 0 1 1.32-1.497l.094.083 2.172 2.17 7.312-10.051a1 1 0 0 1 1.397-.22Z"
-                  fill="currentColor"
-                />
-              </svg>
+              <test-file-stub />
             </div>
             <span
               className="ml-1 text-xs text-gray-600"

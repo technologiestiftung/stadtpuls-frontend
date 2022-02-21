@@ -19,7 +19,7 @@ if (process.env.NODE_ENV !== "production") {
   // require("../src/mocks/index");
 }
 
-const App: FC<{
+const Document: FC<{
   Component: FC;
   pageProps: Record<string, unknown>;
 }> = ({ Component, pageProps }) => {
@@ -64,4 +64,4 @@ const App: FC<{
   );
 };
 
-export default App;
+export default Document;

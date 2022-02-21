@@ -6,7 +6,7 @@ exports[`Storyshots Forms/FormFieldRules All Fulfilled 1`] = `
     className="mb-2"
   >
     <label
-      className="undefined block mb-2 cursor-pointer transition"
+      className="label block mb-2 cursor-pointer transition"
       htmlFor="username"
     >
       <span>
@@ -29,17 +29,10 @@ exports[`Storyshots Forms/FormFieldRules All Fulfilled 1`] = `
     <li
       className="flex gap-1 items-center leading-tight text-sm"
     >
-      <svg
+      <test-file-stub
         className="text-green"
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.088 1.691a1 1 0 0 1 .288 1.291l-.067.106-8 11-.009.012a.4.4 0 0 1-.032.04l.04-.052a1.009 1.009 0 0 1-.089.107l-.012.012-.03.029a.993.993 0 0 1-.054.047l.084-.076a1.007 1.007 0 0 1-.74.293 1.066 1.066 0 0 1-.303-.058.955.955 0 0 1-.252-.133L4.9 14.3a.999.999 0 0 1-.013-.01l-.037-.032-.035-.03a1 1 0 0 1-.01-.009l-.012-.012-3-3a1 1 0 0 1 1.32-1.497l.094.083 2.172 2.17 7.312-10.051a1 1 0 0 1 1.397-.22Z"
-          fill="currentColor"
-        />
-      </svg>
+        data-testid="icon-uniqueness"
+      />
        
       <span
         className="pt-1"
@@ -50,17 +43,10 @@ exports[`Storyshots Forms/FormFieldRules All Fulfilled 1`] = `
     <li
       className="flex gap-1 items-center leading-tight text-sm"
     >
-      <svg
+      <test-file-stub
         className="text-green"
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.088 1.691a1 1 0 0 1 .288 1.291l-.067.106-8 11-.009.012a.4.4 0 0 1-.032.04l.04-.052a1.009 1.009 0 0 1-.089.107l-.012.012-.03.029a.993.993 0 0 1-.054.047l.084-.076a1.007 1.007 0 0 1-.74.293 1.066 1.066 0 0 1-.303-.058.955.955 0 0 1-.252-.133L4.9 14.3a.999.999 0 0 1-.013-.01l-.037-.032-.035-.03a1 1 0 0 1-.01-.009l-.012-.012-3-3a1 1 0 0 1 1.32-1.497l.094.083 2.172 2.17 7.312-10.051a1 1 0 0 1 1.397-.22Z"
-          fill="currentColor"
-        />
-      </svg>
+        data-testid="icon-characters"
+      />
        
       <span
         className="pt-1"
@@ -71,17 +57,10 @@ exports[`Storyshots Forms/FormFieldRules All Fulfilled 1`] = `
     <li
       className="flex gap-1 items-center leading-tight text-sm"
     >
-      <svg
+      <test-file-stub
         className="text-green"
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.088 1.691a1 1 0 0 1 .288 1.291l-.067.106-8 11-.009.012a.4.4 0 0 1-.032.04l.04-.052a1.009 1.009 0 0 1-.089.107l-.012.012-.03.029a.993.993 0 0 1-.054.047l.084-.076a1.007 1.007 0 0 1-.74.293 1.066 1.066 0 0 1-.303-.058.955.955 0 0 1-.252-.133L4.9 14.3a.999.999 0 0 1-.013-.01l-.037-.032-.035-.03a1 1 0 0 1-.01-.009l-.012-.012-3-3a1 1 0 0 1 1.32-1.497l.094.083 2.172 2.17 7.312-10.051a1 1 0 0 1 1.397-.22Z"
-          fill="currentColor"
-        />
-      </svg>
+        data-testid="icon-length"
+      />
        
       <span
         className="pt-1"
@@ -99,7 +78,7 @@ exports[`Storyshots Forms/FormFieldRules Some Fulfilled 1`] = `
     className="mb-2"
   >
     <label
-      className="undefined block mb-2 cursor-pointer transition"
+      className="label block mb-2 cursor-pointer transition"
       htmlFor="username"
     >
       <span>
@@ -122,17 +101,10 @@ exports[`Storyshots Forms/FormFieldRules Some Fulfilled 1`] = `
     <li
       className="flex gap-1 items-center leading-tight text-sm"
     >
-      <svg
+      <test-file-stub
         className="text-green"
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.088 1.691a1 1 0 0 1 .288 1.291l-.067.106-8 11-.009.012a.4.4 0 0 1-.032.04l.04-.052a1.009 1.009 0 0 1-.089.107l-.012.012-.03.029a.993.993 0 0 1-.054.047l.084-.076a1.007 1.007 0 0 1-.74.293 1.066 1.066 0 0 1-.303-.058.955.955 0 0 1-.252-.133L4.9 14.3a.999.999 0 0 1-.013-.01l-.037-.032-.035-.03a1 1 0 0 1-.01-.009l-.012-.012-3-3a1 1 0 0 1 1.32-1.497l.094.083 2.172 2.17 7.312-10.051a1 1 0 0 1 1.397-.22Z"
-          fill="currentColor"
-        />
-      </svg>
+        data-testid="icon-uniqueness"
+      />
        
       <span
         className="pt-1"
@@ -143,16 +115,9 @@ exports[`Storyshots Forms/FormFieldRules Some Fulfilled 1`] = `
     <li
       className="flex gap-1 items-center leading-tight text-sm text-gray-500"
     >
-      <svg
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M3.387 3.21a1 1 0 0 1 1.226 0l.094.083L8 6.585l3.293-3.292.094-.083a1 1 0 0 1 1.403 1.403l-.083.094L9.415 8l3.292 3.293a1 1 0 0 1-1.32 1.497l-.094-.083L8 9.415l-3.293 3.292a1 1 0 0 1-1.32.083l-.094-.083a1 1 0 0 1-.083-1.32l.083-.094L6.585 8 3.293 4.707l-.083-.094a1 1 0 0 1 0-1.226l.083-.094.094-.083Z"
-          fill="currentColor"
-        />
-      </svg>
+      <test-file-stub
+        data-testid="icon-characters"
+      />
        
       <span
         className="pt-1"
@@ -163,17 +128,10 @@ exports[`Storyshots Forms/FormFieldRules Some Fulfilled 1`] = `
     <li
       className="flex gap-1 items-center leading-tight text-sm"
     >
-      <svg
+      <test-file-stub
         className="text-green"
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.088 1.691a1 1 0 0 1 .288 1.291l-.067.106-8 11-.009.012a.4.4 0 0 1-.032.04l.04-.052a1.009 1.009 0 0 1-.089.107l-.012.012-.03.029a.993.993 0 0 1-.054.047l.084-.076a1.007 1.007 0 0 1-.74.293 1.066 1.066 0 0 1-.303-.058.955.955 0 0 1-.252-.133L4.9 14.3a.999.999 0 0 1-.013-.01l-.037-.032-.035-.03a1 1 0 0 1-.01-.009l-.012-.012-3-3a1 1 0 0 1 1.32-1.497l.094.083 2.172 2.17 7.312-10.051a1 1 0 0 1 1.397-.22Z"
-          fill="currentColor"
-        />
-      </svg>
+        data-testid="icon-length"
+      />
        
       <span
         className="pt-1"
@@ -191,7 +149,7 @@ exports[`Storyshots Forms/FormFieldRules Some Loading 1`] = `
     className="mb-2"
   >
     <label
-      className="undefined block mb-2 cursor-pointer transition"
+      className="label block mb-2 cursor-pointer transition"
       htmlFor="username"
     >
       <span>
@@ -214,17 +172,10 @@ exports[`Storyshots Forms/FormFieldRules Some Loading 1`] = `
     <li
       className="flex gap-1 items-center leading-tight text-sm"
     >
-      <svg
+      <test-file-stub
         className="text-green"
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.088 1.691a1 1 0 0 1 .288 1.291l-.067.106-8 11-.009.012a.4.4 0 0 1-.032.04l.04-.052a1.009 1.009 0 0 1-.089.107l-.012.012-.03.029a.993.993 0 0 1-.054.047l.084-.076a1.007 1.007 0 0 1-.74.293 1.066 1.066 0 0 1-.303-.058.955.955 0 0 1-.252-.133L4.9 14.3a.999.999 0 0 1-.013-.01l-.037-.032-.035-.03a1 1 0 0 1-.01-.009l-.012-.012-3-3a1 1 0 0 1 1.32-1.497l.094.083 2.172 2.17 7.312-10.051a1 1 0 0 1 1.397-.22Z"
-          fill="currentColor"
-        />
-      </svg>
+        data-testid="icon-uniqueness"
+      />
        
       <span
         className="pt-1"
@@ -235,16 +186,9 @@ exports[`Storyshots Forms/FormFieldRules Some Loading 1`] = `
     <li
       className="flex gap-1 items-center leading-tight text-sm text-gray-500"
     >
-      <svg
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M3.387 3.21a1 1 0 0 1 1.226 0l.094.083L8 6.585l3.293-3.292.094-.083a1 1 0 0 1 1.403 1.403l-.083.094L9.415 8l3.292 3.293a1 1 0 0 1-1.32 1.497l-.094-.083L8 9.415l-3.293 3.292a1 1 0 0 1-1.32.083l-.094-.083a1 1 0 0 1-.083-1.32l.083-.094L6.585 8 3.293 4.707l-.083-.094a1 1 0 0 1 0-1.226l.083-.094.094-.083Z"
-          fill="currentColor"
-        />
-      </svg>
+      <test-file-stub
+        data-testid="icon-characters"
+      />
        
       <span
         className="pt-1"
@@ -255,17 +199,10 @@ exports[`Storyshots Forms/FormFieldRules Some Loading 1`] = `
     <li
       className="flex gap-1 items-center leading-tight text-sm text-gray-500"
     >
-      <svg
+      <test-file-stub
         className="animate-spin"
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8 .013a8.001 8.001 0 0 1 7.927 6.915 1 1 0 0 1-1.982.269A6.001 6.001 0 0 0 8 2.013c-3.314 0-6.45 2.726-6.45 6.04 0 3.963 3.136 7.431 6.45 7.431C4.616 15.484.317 12.316.317 8 .317 3.683 3.581.013 8 .013Z"
-          fill="currentColor"
-        />
-      </svg>
+        data-testid="icon-length"
+      />
        
       <span
         className="pt-1"
@@ -283,7 +220,7 @@ exports[`Storyshots Forms/FormFieldRules Untouched 1`] = `
     className="mb-2"
   >
     <label
-      className="undefined block mb-2 cursor-pointer transition"
+      className="label block mb-2 cursor-pointer transition"
       htmlFor="username"
     >
       <span>
@@ -309,7 +246,7 @@ exports[`Storyshots Forms/FormFieldRules With Errors 1`] = `
     className="mb-2"
   >
     <label
-      className="undefined block mb-2 cursor-pointer transition"
+      className="label block mb-2 cursor-pointer transition"
       htmlFor="username"
     >
       <span>
@@ -342,17 +279,10 @@ exports[`Storyshots Forms/FormFieldRules With Errors 1`] = `
     <li
       className="flex gap-1 items-center leading-tight text-sm"
     >
-      <svg
+      <test-file-stub
         className="text-green"
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.088 1.691a1 1 0 0 1 .288 1.291l-.067.106-8 11-.009.012a.4.4 0 0 1-.032.04l.04-.052a1.009 1.009 0 0 1-.089.107l-.012.012-.03.029a.993.993 0 0 1-.054.047l.084-.076a1.007 1.007 0 0 1-.74.293 1.066 1.066 0 0 1-.303-.058.955.955 0 0 1-.252-.133L4.9 14.3a.999.999 0 0 1-.013-.01l-.037-.032-.035-.03a1 1 0 0 1-.01-.009l-.012-.012-3-3a1 1 0 0 1 1.32-1.497l.094.083 2.172 2.17 7.312-10.051a1 1 0 0 1 1.397-.22Z"
-          fill="currentColor"
-        />
-      </svg>
+        data-testid="icon-uniqueness"
+      />
        
       <span
         className="pt-1"
@@ -363,16 +293,9 @@ exports[`Storyshots Forms/FormFieldRules With Errors 1`] = `
     <li
       className="flex gap-1 items-center leading-tight text-sm text-gray-500"
     >
-      <svg
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M3.387 3.21a1 1 0 0 1 1.226 0l.094.083L8 6.585l3.293-3.292.094-.083a1 1 0 0 1 1.403 1.403l-.083.094L9.415 8l3.292 3.293a1 1 0 0 1-1.32 1.497l-.094-.083L8 9.415l-3.293 3.292a1 1 0 0 1-1.32.083l-.094-.083a1 1 0 0 1-.083-1.32l.083-.094L6.585 8 3.293 4.707l-.083-.094a1 1 0 0 1 0-1.226l.083-.094.094-.083Z"
-          fill="currentColor"
-        />
-      </svg>
+      <test-file-stub
+        data-testid="icon-characters"
+      />
        
       <span
         className="pt-1"
@@ -383,16 +306,9 @@ exports[`Storyshots Forms/FormFieldRules With Errors 1`] = `
     <li
       className="flex gap-1 items-center leading-tight text-sm text-gray-500"
     >
-      <svg
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M3.387 3.21a1 1 0 0 1 1.226 0l.094.083L8 6.585l3.293-3.292.094-.083a1 1 0 0 1 1.403 1.403l-.083.094L9.415 8l3.292 3.293a1 1 0 0 1-1.32 1.497l-.094-.083L8 9.415l-3.293 3.292a1 1 0 0 1-1.32.083l-.094-.083a1 1 0 0 1-.083-1.32l.083-.094L6.585 8 3.293 4.707l-.083-.094a1 1 0 0 1 0-1.226l.083-.094.094-.083Z"
-          fill="currentColor"
-        />
-      </svg>
+      <test-file-stub
+        data-testid="icon-length"
+      />
        
       <span
         className="pt-1"

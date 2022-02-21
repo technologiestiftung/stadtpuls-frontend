@@ -124,7 +124,7 @@ export const usePublicSensors = (
         rangeStart,
         rangeEnd,
       }),
-    { initialData }
+    { fallbackData: initialData }
   );
 
   return {

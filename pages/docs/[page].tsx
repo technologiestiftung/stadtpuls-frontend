@@ -9,8 +9,12 @@ import { MDXFrontmatterType } from "@common/types/MDXLayout";
 import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
+import "prism-themes/themes/prism-shades-of-purple.css";
 
-const components = { Accordion, Button };
+const components = {
+  Accordion,
+  Button,
+};
 
 interface Props {
   source: MDXRemoteSerializeResult;
@@ -35,7 +39,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params.page;
   const { content, data } = loadPage(slug);
 
-  const mdxSource = await serialize(content);
+  const mdxSource = await serialize(content, {
+    mdxOptions: { remarkPlugins: [require("remark-prism")] },
+  });
   return { props: { source: mdxSource, frontmatter: data, slug } };
 };
 

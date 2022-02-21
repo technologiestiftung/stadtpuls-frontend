@@ -28,7 +28,7 @@ exports[`Storyshots Forms/Signin Default 1`] = `
           className="mb-2"
         >
           <label
-            className="undefined block mb-2 cursor-pointer transition"
+            className="label block mb-2 cursor-pointer transition"
             htmlFor="email"
           >
             <span>

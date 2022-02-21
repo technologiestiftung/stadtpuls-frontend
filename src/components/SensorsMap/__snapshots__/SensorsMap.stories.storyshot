@@ -57,42 +57,59 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
                   }
                 }
               >
-                <div
+                <span
                   style={
                     Object {
+                      "background": "none",
+                      "border": 0,
                       "boxSizing": "border-box",
                       "display": "inline-block",
+                      "height": "initial",
                       "margin": 0,
                       "maxWidth": "100%",
+                      "opacity": 1,
                       "overflow": "hidden",
+                      "padding": 0,
                       "position": "relative",
+                      "width": "initial",
                     }
                   }
                 >
-                  <div
+                  <span
                     style={
                       Object {
+                        "background": "none",
+                        "border": 0,
                         "boxSizing": "border-box",
                         "display": "block",
+                        "height": "initial",
+                        "margin": 0,
                         "maxWidth": "100%",
+                        "opacity": 1,
+                        "padding": 0,
+                        "width": "initial",
                       }
                     }
                   >
                     <img
                       alt=""
                       aria-hidden={true}
-                      src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
                       style={
                         Object {
-                          "border": "none",
+                          "background": "none",
+                          "border": 0,
                           "display": "block",
+                          "height": "initial",
                           "margin": 0,
                           "maxWidth": "100%",
+                          "opacity": 1,
                           "padding": 0,
+                          "width": "initial",
                         }
                       }
                     />
-                  </div>
+                  </span>
                   <img
                     alt="Sensor Symbol 3"
                     className="bg-gray-50"
@@ -154,7 +171,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
                       }
                     />
                   </noscript>
-                </div>
+                </span>
               </span>
               <h3
                 className="text-xl leading-6 pt-1 xl:whitespace-nowrap xl:leading-7 xl:pt-0 break-words font-headline font-bold block xl:truncate"
@@ -297,42 +314,59 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
                   }
                 }
               >
-                <div
+                <span
                   style={
                     Object {
+                      "background": "none",
+                      "border": 0,
                       "boxSizing": "border-box",
                       "display": "inline-block",
+                      "height": "initial",
                       "margin": 0,
                       "maxWidth": "100%",
+                      "opacity": 1,
                       "overflow": "hidden",
+                      "padding": 0,
                       "position": "relative",
+                      "width": "initial",
                     }
                   }
                 >
-                  <div
+                  <span
                     style={
                       Object {
+                        "background": "none",
+                        "border": 0,
                         "boxSizing": "border-box",
                         "display": "block",
+                        "height": "initial",
+                        "margin": 0,
                         "maxWidth": "100%",
+                        "opacity": 1,
+                        "padding": 0,
+                        "width": "initial",
                       }
                     }
                   >
                     <img
                       alt=""
                       aria-hidden={true}
-                      src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
                       style={
                         Object {
-                          "border": "none",
+                          "background": "none",
+                          "border": 0,
                           "display": "block",
+                          "height": "initial",
                           "margin": 0,
                           "maxWidth": "100%",
+                          "opacity": 1,
                           "padding": 0,
+                          "width": "initial",
                         }
                       }
                     />
-                  </div>
+                  </span>
                   <img
                     alt="Sensor Symbol 13"
                     className="bg-gray-50"
@@ -394,7 +428,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
                       }
                     />
                   </noscript>
-                </div>
+                </span>
               </span>
               <h3
                 className="text-xl leading-6 pt-1 xl:whitespace-nowrap xl:leading-7 xl:pt-0 break-words font-headline font-bold block xl:truncate"
@@ -537,42 +571,59 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
                   }
                 }
               >
-                <div
+                <span
                   style={
                     Object {
+                      "background": "none",
+                      "border": 0,
                       "boxSizing": "border-box",
                       "display": "inline-block",
+                      "height": "initial",
                       "margin": 0,
                       "maxWidth": "100%",
+                      "opacity": 1,
                       "overflow": "hidden",
+                      "padding": 0,
                       "position": "relative",
+                      "width": "initial",
                     }
                   }
                 >
-                  <div
+                  <span
                     style={
                       Object {
+                        "background": "none",
+                        "border": 0,
                         "boxSizing": "border-box",
                         "display": "block",
+                        "height": "initial",
+                        "margin": 0,
                         "maxWidth": "100%",
+                        "opacity": 1,
+                        "padding": 0,
+                        "width": "initial",
                       }
                     }
                   >
                     <img
                       alt=""
                       aria-hidden={true}
-                      src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
                       style={
                         Object {
-                          "border": "none",
+                          "background": "none",
+                          "border": 0,
                           "display": "block",
+                          "height": "initial",
                           "margin": 0,
                           "maxWidth": "100%",
+                          "opacity": 1,
                           "padding": 0,
+                          "width": "initial",
                         }
                       }
                     />
-                  </div>
+                  </span>
                   <img
                     alt="Sensor Symbol 16"
                     className="bg-gray-50"
@@ -634,7 +685,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
                       }
                     />
                   </noscript>
-                </div>
+                </span>
               </span>
               <h3
                 className="text-xl leading-6 pt-1 xl:whitespace-nowrap xl:leading-7 xl:pt-0 break-words font-headline font-bold block xl:truncate"
@@ -743,42 +794,59 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
                   }
                 }
               >
-                <div
+                <span
                   style={
                     Object {
+                      "background": "none",
+                      "border": 0,
                       "boxSizing": "border-box",
                       "display": "inline-block",
+                      "height": "initial",
                       "margin": 0,
                       "maxWidth": "100%",
+                      "opacity": 1,
                       "overflow": "hidden",
+                      "padding": 0,
                       "position": "relative",
+                      "width": "initial",
                     }
                   }
                 >
-                  <div
+                  <span
                     style={
                       Object {
+                        "background": "none",
+                        "border": 0,
                         "boxSizing": "border-box",
                         "display": "block",
+                        "height": "initial",
+                        "margin": 0,
                         "maxWidth": "100%",
+                        "opacity": 1,
+                        "padding": 0,
+                        "width": "initial",
                       }
                     }
                   >
                     <img
                       alt=""
                       aria-hidden={true}
-                      src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
                       style={
                         Object {
-                          "border": "none",
+                          "background": "none",
+                          "border": 0,
                           "display": "block",
+                          "height": "initial",
                           "margin": 0,
                           "maxWidth": "100%",
+                          "opacity": 1,
                           "padding": 0,
+                          "width": "initial",
                         }
                       }
                     />
-                  </div>
+                  </span>
                   <img
                     alt="Sensor Symbol 1"
                     className="bg-gray-50"
@@ -840,7 +908,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
                       }
                     />
                   </noscript>
-                </div>
+                </span>
               </span>
               <h3
                 className="text-xl leading-6 pt-1 xl:whitespace-nowrap xl:leading-7 xl:pt-0 break-words font-headline font-bold block xl:truncate"
@@ -983,42 +1051,59 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
                   }
                 }
               >
-                <div
+                <span
                   style={
                     Object {
+                      "background": "none",
+                      "border": 0,
                       "boxSizing": "border-box",
                       "display": "inline-block",
+                      "height": "initial",
                       "margin": 0,
                       "maxWidth": "100%",
+                      "opacity": 1,
                       "overflow": "hidden",
+                      "padding": 0,
                       "position": "relative",
+                      "width": "initial",
                     }
                   }
                 >
-                  <div
+                  <span
                     style={
                       Object {
+                        "background": "none",
+                        "border": 0,
                         "boxSizing": "border-box",
                         "display": "block",
+                        "height": "initial",
+                        "margin": 0,
                         "maxWidth": "100%",
+                        "opacity": 1,
+                        "padding": 0,
+                        "width": "initial",
                       }
                     }
                   >
                     <img
                       alt=""
                       aria-hidden={true}
-                      src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
                       style={
                         Object {
-                          "border": "none",
+                          "background": "none",
+                          "border": 0,
                           "display": "block",
+                          "height": "initial",
                           "margin": 0,
                           "maxWidth": "100%",
+                          "opacity": 1,
                           "padding": 0,
+                          "width": "initial",
                         }
                       }
                     />
-                  </div>
+                  </span>
                   <img
                     alt="Sensor Symbol 4"
                     className="bg-gray-50"
@@ -1080,7 +1165,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
                       }
                     />
                   </noscript>
-                </div>
+                </span>
               </span>
               <h3
                 className="text-xl leading-6 pt-1 xl:whitespace-nowrap xl:leading-7 xl:pt-0 break-words font-headline font-bold block xl:truncate"
@@ -1223,42 +1308,59 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
                   }
                 }
               >
-                <div
+                <span
                   style={
                     Object {
+                      "background": "none",
+                      "border": 0,
                       "boxSizing": "border-box",
                       "display": "inline-block",
+                      "height": "initial",
                       "margin": 0,
                       "maxWidth": "100%",
+                      "opacity": 1,
                       "overflow": "hidden",
+                      "padding": 0,
                       "position": "relative",
+                      "width": "initial",
                     }
                   }
                 >
-                  <div
+                  <span
                     style={
                       Object {
+                        "background": "none",
+                        "border": 0,
                         "boxSizing": "border-box",
                         "display": "block",
+                        "height": "initial",
+                        "margin": 0,
                         "maxWidth": "100%",
+                        "opacity": 1,
+                        "padding": 0,
+                        "width": "initial",
                       }
                     }
                   >
                     <img
                       alt=""
                       aria-hidden={true}
-                      src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
                       style={
                         Object {
-                          "border": "none",
+                          "background": "none",
+                          "border": 0,
                           "display": "block",
+                          "height": "initial",
                           "margin": 0,
                           "maxWidth": "100%",
+                          "opacity": 1,
                           "padding": 0,
+                          "width": "initial",
                         }
                       }
                     />
-                  </div>
+                  </span>
                   <img
                     alt="Sensor Symbol 19"
                     className="bg-gray-50"
@@ -1320,7 +1422,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
                       }
                     />
                   </noscript>
-                </div>
+                </span>
               </span>
               <h3
                 className="text-xl leading-6 pt-1 xl:whitespace-nowrap xl:leading-7 xl:pt-0 break-words font-headline font-bold block xl:truncate"
@@ -1390,7 +1492,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
               <span
                 className="absolute bottom-0 left-0 text-xs text-gray-300"
               >
-                Zul. vor 5 Monaten
+                Zul. vor 6 Monaten
               </span>
               <span
                 className="absolute top-0 right-0 bg-white text-xs text-purple font-mono font-semibold px-0.5 py-[1px] border border-gray-200 leading-3"
@@ -1484,7 +1586,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
           </a>
         </li>
         <li
-          className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10 bg-purple bg-opacity-10 text-purple z-20 undefined"
+          className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10 bg-purple bg-opacity-10 text-purple z-20 activePaginationItem"
         >
           <a
             aria-current="page"

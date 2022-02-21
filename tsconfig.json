@@ -35,9 +35,10 @@
       ],
       "@auth/*": [
         "./src/auth/*"
-      ],
+      ]
     },
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "incremental": true
   },
   "include": [
     "global-types.d.ts",
@@ -46,7 +47,7 @@
     "./src/**/*.tsx",
     "./pages/**/*.ts",
     "./pages/**/*.tsx",
-    "./workers/*.worker.ts",
+    "./workers/*.worker.ts"
   ],
   "exclude": [
     "node_modules",

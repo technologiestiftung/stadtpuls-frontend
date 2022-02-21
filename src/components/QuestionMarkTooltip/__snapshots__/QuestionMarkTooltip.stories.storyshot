@@ -34,7 +34,7 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Default 1`] = `
       </span>
     </button>
     <span
-      className="undefined -left-2 absolute top-9 h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
+      className="tooltipToggle -left-2 absolute top-9 h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
       id="one-tooltip"
       role="tooltip"
       style={
@@ -94,7 +94,7 @@ exports[`Storyshots UI Elements/QuestionMarkTooltip Long Content 1`] = `
       </span>
     </button>
     <span
-      className="undefined -left-2 absolute top-9 h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
+      className="tooltipToggle -left-2 absolute top-9 h-auto p-4 bg-gray-900 text-white text-xs whitespace-normal"
       id="two-tooltip"
       role="tooltip"
       style={

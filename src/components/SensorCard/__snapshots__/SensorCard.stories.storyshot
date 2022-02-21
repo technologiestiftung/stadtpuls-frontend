@@ -61,42 +61,59 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
             }
           }
         >
-          <div
+          <span
             style={
               Object {
+                "background": "none",
+                "border": 0,
                 "boxSizing": "border-box",
                 "display": "inline-block",
+                "height": "initial",
                 "margin": 0,
                 "maxWidth": "100%",
+                "opacity": 1,
                 "overflow": "hidden",
+                "padding": 0,
                 "position": "relative",
+                "width": "initial",
               }
             }
           >
-            <div
+            <span
               style={
                 Object {
+                  "background": "none",
+                  "border": 0,
                   "boxSizing": "border-box",
                   "display": "block",
+                  "height": "initial",
+                  "margin": 0,
                   "maxWidth": "100%",
+                  "opacity": 1,
+                  "padding": 0,
+                  "width": "initial",
                 }
               }
             >
               <img
                 alt=""
                 aria-hidden={true}
-                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
                 style={
                   Object {
-                    "border": "none",
+                    "background": "none",
+                    "border": 0,
                     "display": "block",
+                    "height": "initial",
                     "margin": 0,
                     "maxWidth": "100%",
+                    "opacity": 1,
                     "padding": 0,
+                    "width": "initial",
                   }
                 }
               />
-            </div>
+            </span>
             <img
               alt="Sensor Symbol 1"
               className="bg-gray-50"
@@ -158,7 +175,7 @@ exports[`Storyshots UI Elements/SensorCard Long Fields 1`] = `
                 }
               />
             </noscript>
-          </div>
+          </span>
         </span>
         <h3
           className="text-xl leading-6 pt-1 lg:leading-7 lg:text-2xl lg:pt-0 font-headline font-bold inline"
@@ -292,42 +309,59 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
             }
           }
         >
-          <div
+          <span
             style={
               Object {
+                "background": "none",
+                "border": 0,
                 "boxSizing": "border-box",
                 "display": "inline-block",
+                "height": "initial",
                 "margin": 0,
                 "maxWidth": "100%",
+                "opacity": 1,
                 "overflow": "hidden",
+                "padding": 0,
                 "position": "relative",
+                "width": "initial",
               }
             }
           >
-            <div
+            <span
               style={
                 Object {
+                  "background": "none",
+                  "border": 0,
                   "boxSizing": "border-box",
                   "display": "block",
+                  "height": "initial",
+                  "margin": 0,
                   "maxWidth": "100%",
+                  "opacity": 1,
+                  "padding": 0,
+                  "width": "initial",
                 }
               }
             >
               <img
                 alt=""
                 aria-hidden={true}
-                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
                 style={
                   Object {
-                    "border": "none",
+                    "background": "none",
+                    "border": 0,
                     "display": "block",
+                    "height": "initial",
                     "margin": 0,
                     "maxWidth": "100%",
+                    "opacity": 1,
                     "padding": 0,
+                    "width": "initial",
                   }
                 }
               />
-            </div>
+            </span>
             <img
               alt="Sensor Symbol 32"
               className="bg-gray-50"
@@ -389,7 +423,7 @@ exports[`Storyshots UI Elements/SensorCard Minimal Fields 1`] = `
                 }
               />
             </noscript>
-          </div>
+          </span>
         </span>
         <h3
           className="text-xl leading-6 pt-1 lg:leading-7 lg:text-2xl lg:pt-0 font-headline font-bold inline"
@@ -517,42 +551,59 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
             }
           }
         >
-          <div
+          <span
             style={
               Object {
+                "background": "none",
+                "border": 0,
                 "boxSizing": "border-box",
                 "display": "inline-block",
+                "height": "initial",
                 "margin": 0,
                 "maxWidth": "100%",
+                "opacity": 1,
                 "overflow": "hidden",
+                "padding": 0,
                 "position": "relative",
+                "width": "initial",
               }
             }
           >
-            <div
+            <span
               style={
                 Object {
+                  "background": "none",
+                  "border": 0,
                   "boxSizing": "border-box",
                   "display": "block",
+                  "height": "initial",
+                  "margin": 0,
                   "maxWidth": "100%",
+                  "opacity": 1,
+                  "padding": 0,
+                  "width": "initial",
                 }
               }
             >
               <img
                 alt=""
                 aria-hidden={true}
-                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
                 style={
                   Object {
-                    "border": "none",
+                    "background": "none",
+                    "border": 0,
                     "display": "block",
+                    "height": "initial",
                     "margin": 0,
                     "maxWidth": "100%",
+                    "opacity": 1,
                     "padding": 0,
+                    "width": "initial",
                   }
                 }
               />
-            </div>
+            </span>
             <img
               alt="Sensor Symbol 15"
               className="bg-gray-50"
@@ -614,7 +665,7 @@ exports[`Storyshots UI Elements/SensorCard No Map 1`] = `
                 }
               />
             </noscript>
-          </div>
+          </span>
         </span>
         <h3
           className="text-xl leading-6 pt-1 lg:leading-7 lg:text-2xl lg:pt-0 font-headline font-bold inline"

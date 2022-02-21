@@ -21,7 +21,7 @@ export const useSensorData = ({
   const { data, error } = useSWR<ParsedSensorType | undefined, Error>(
     params,
     () => getSensorData(sensorId),
-    { initialData }
+    { fallbackData: initialData }
   );
 
   return {

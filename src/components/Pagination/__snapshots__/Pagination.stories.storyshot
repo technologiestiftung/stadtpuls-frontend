@@ -24,7 +24,7 @@ exports[`Storyshots UI Elements/Pagination Few Pages 1`] = `
       </a>
     </li>
     <li
-      className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10 bg-purple bg-opacity-10 text-purple z-20 undefined"
+      className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10 bg-purple bg-opacity-10 text-purple z-20 activePaginationItem"
     >
       <a
         aria-current="page"
@@ -112,7 +112,7 @@ exports[`Storyshots UI Elements/Pagination Many Pages 1`] = `
       </a>
     </li>
     <li
-      className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10 bg-purple bg-opacity-10 text-purple z-20 undefined"
+      className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10 bg-purple bg-opacity-10 text-purple z-20 activePaginationItem"
     >
       <a
         aria-current="page"

@@ -81,7 +81,7 @@ export const usePublicAccounts = (
         rangeStart,
         rangeEnd,
       }),
-    { initialData }
+    { fallbackData: initialData }
   );
 
   return {

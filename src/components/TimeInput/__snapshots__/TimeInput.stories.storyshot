@@ -5,7 +5,7 @@ exports[`Storyshots Forms/TimeInput Default 1`] = `
   className="grid place-content-center h-screen"
 >
   <input
-    className=" font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 "
+    className=" font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 timeInput"
     onChange={[Function]}
     style={Object {}}
     tabIndex={1}

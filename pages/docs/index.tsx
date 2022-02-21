@@ -10,8 +10,10 @@ import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
 
-const components = { Accordion, Button };
-
+const components = {
+  Accordion,
+  Button,
+};
 interface Props {
   source: MDXRemoteSerializeResult;
   frontmatter: MDXFrontmatterType;
