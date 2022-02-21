@@ -113,7 +113,7 @@ exports[`Storyshots UI Elements/DownloadQueueButton Default 1`] = `
         </span>
       </button>
       <section
-        className="absolute top-full transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 transform-x-3 right-0 opacity-0 pointer-events-none"
+        className="absolute top-full transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 transform-x-3 z-10 right-0 opacity-0 pointer-events-none"
       >
         <div
           className="bg-white border border-gray-200 shadow"

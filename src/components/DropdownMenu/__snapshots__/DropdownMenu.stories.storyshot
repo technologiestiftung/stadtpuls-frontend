@@ -15,7 +15,7 @@ exports[`Storyshots UI Elements/DropdownMenu Default 1`] = `
     </a>
   </button>
   <section
-    className="absolute top-full transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 transform-x-3 left-0 opacity-0 pointer-events-none"
+    className="absolute top-full transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 transform-x-3 z-10 left-0 opacity-0 pointer-events-none"
   >
     <div
       className="bg-white border border-gray-200 shadow"
@@ -62,7 +62,7 @@ exports[`Storyshots UI Elements/DropdownMenu With Custom Children 1`] = `
     </a>
   </button>
   <section
-    className="absolute top-full transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 transform-x-3 left-0 opacity-0 pointer-events-none"
+    className="absolute top-full transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 transform-x-3 z-10 left-0 opacity-0 pointer-events-none"
   >
     <div
       className="bg-white border border-gray-200 shadow"
@@ -139,7 +139,7 @@ exports[`Storyshots UI Elements/DropdownMenu With Disabled Item 1`] = `
     </a>
   </button>
   <section
-    className="absolute top-full transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 transform-x-3 left-0 opacity-0 pointer-events-none"
+    className="absolute top-full transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 transform-x-3 z-10 left-0 opacity-0 pointer-events-none"
   >
     <div
       className="bg-white border border-gray-200 shadow"
