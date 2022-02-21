@@ -337,6 +337,7 @@ export const SensorsMap: FC<SensorsMapType> = ({
               mouseLeaveHandler={() => setHoveredSensorIds([])}
               markers={markers}
               markersAreLoading={sensorsAreLoading}
+              withControls={isSm ? !!thumbnailItem : true}
             />
           </div>
         )}
