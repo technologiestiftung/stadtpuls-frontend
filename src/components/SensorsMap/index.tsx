@@ -78,9 +78,9 @@ function scrollToTargetAdjusted(
 }
 
 const MapListSwitch: FC<{
-  showList: boolean;
-  setShowList: (newVal: boolean) => void;
-}> = ({ showList, setShowList }) => {
+  showMap: boolean;
+  setShowMap: (newVal: boolean) => void;
+}> = ({ showMap, setShowMap }) => {
   const reducedMotionWished = useReducedMotion(false);
   return (
     <div
@@ -93,54 +93,54 @@ const MapListSwitch: FC<{
       ].join(" ")}
     >
       <button
-        data-cy='map-list-switch-map-link'
-        onClick={() => {
-          window.scrollTo({
-            top: 0,
-            behavior: reducedMotionWished ? "auto" : "smooth",
-          });
-          setShowList(false);
-        }}
-        className={[
-          "px-4 py-3 flex gap-2 items-center justify-center",
-          !showList && "font-bold text-blue",
-        ]
-          .filter(Boolean)
-          .join(" ")}
-      >
-        Karte <MapIcon />
-      </button>
-      <div className='grid items-center justify-center'>
-        <Switch
-          checked={showList}
-          onChange={setShowList}
-          className={`bg-blue relative inline-flex items-center h-6 rounded-full w-11`}
-          data-cy='map-list-switch-button'
-        >
-          <span
-            className={`${
-              showList ? "translate-x-6" : "translate-x-1"
-            } inline-block w-4 h-4 transform bg-white rounded-full`}
-          />
-        </Switch>
-      </div>
-      <button
         data-cy='map-list-switch-list-link'
         onClick={() => {
           window.scrollTo({
             top: 0,
             behavior: reducedMotionWished ? "auto" : "smooth",
           });
-          setShowList(true);
+          setShowMap(false);
         }}
         className={[
           "px-4 py-3 flex gap-2 items-center justify-center",
-          showList && "font-bold text-blue",
+          !showMap && "font-bold text-blue",
         ]
           .filter(Boolean)
           .join(" ")}
       >
         Liste <ListIcon />
+      </button>
+      <div className='grid items-center justify-center'>
+        <Switch
+          checked={showMap}
+          onChange={setShowMap}
+          className={`bg-blue relative inline-flex items-center h-6 rounded-full w-11`}
+          data-cy='map-list-switch-button'
+        >
+          <span
+            className={`${
+              showMap ? "translate-x-6" : "translate-x-1"
+            } inline-block w-4 h-4 transform bg-white rounded-full`}
+          />
+        </Switch>
+      </div>
+      <button
+        data-cy='map-list-switch-map-link'
+        onClick={() => {
+          window.scrollTo({
+            top: 0,
+            behavior: reducedMotionWished ? "auto" : "smooth",
+          });
+          setShowMap(true);
+        }}
+        className={[
+          "px-4 py-3 flex gap-2 items-center justify-center",
+          showMap && "font-bold text-blue",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+      >
+        Karte <MapIcon />
       </button>
     </div>
   );
@@ -207,7 +207,7 @@ export const SensorsMap: FC<SensorsMapType> = ({
   const { push } = router || {};
   const reducedMotionWished = useReducedMotion(false);
   const [hoveredSensorIds, setHoveredSensorIds] = useState<number[]>([]);
-  const [showList, setShowList] = useState(true);
+  const [showMap, setShowMap] = useState(false);
   const [thumbnailItem, setThumbnailItem] = useState<ParsedSensorType | null>(
     null
   );
@@ -227,13 +227,13 @@ export const SensorsMap: FC<SensorsMapType> = ({
           onClose={() => setThumbnailItem(null)}
         />
       )}
-      {isSm && <MapListSwitch showList={showList} setShowList={setShowList} />}
+      {isSm && <MapListSwitch showMap={showMap} setShowMap={setShowMap} />}
       <section className='sm:grid sm:grid-cols-2 relative'>
         <aside
           className={[
             "p-4 bg-white overflow-y-auto",
-            !showList && isSm && "hidden",
-            showList && isSm && "pt-8 pb-24",
+            showMap && isSm && "hidden",
+            !showMap && isSm && "pt-8 pb-24",
           ]
             .filter(Boolean)
             .join(" ")}
@@ -314,7 +314,7 @@ export const SensorsMap: FC<SensorsMapType> = ({
             </div>
           )}
         </aside>
-        {!(isSm && showList) && (
+        {!(isSm && !showMap) && (
           <div
             className={[
               `w-full top-[62px]`,
@@ -337,7 +337,7 @@ export const SensorsMap: FC<SensorsMapType> = ({
               mouseLeaveHandler={() => setHoveredSensorIds([])}
               markers={markers}
               markersAreLoading={sensorsAreLoading}
-              withControls={isSm ? !!thumbnailItem : true}
+              withControls={isSm ? !thumbnailItem : true}
             />
           </div>
         )}
