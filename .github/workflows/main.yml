@@ -57,3 +57,4 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ env.SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_PUBLIC_KEY: ${{ env.SUPABASE_ANON_KEY }}
           NEXT_PUBLIC_MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.API_URL }}
