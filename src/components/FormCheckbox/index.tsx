@@ -8,7 +8,6 @@ interface FormCheckboxPropType
   optional?: boolean;
 }
 
-// eslint-disable-next-line react/display-name
 export const FormCheckbox = forwardRef<HTMLInputElement, FormCheckboxPropType>(
   ({ name, label, optional = false, errors = [], ...checkboxProps }, ref) => (
     <section className='flex'>

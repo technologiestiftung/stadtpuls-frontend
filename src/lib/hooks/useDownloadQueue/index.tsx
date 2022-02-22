@@ -82,7 +82,6 @@ export const DownloadQueueProvider: FC = ({ children }) => {
     return () => {
       workerRef.current?.terminate();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

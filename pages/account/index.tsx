@@ -27,7 +27,6 @@ const AccountRedirectionPage: FC = () => {
       pathname: "/[username]/sensors",
       query: { username: loggedInAccount.username },
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loggedInAccount]);
 
   return (

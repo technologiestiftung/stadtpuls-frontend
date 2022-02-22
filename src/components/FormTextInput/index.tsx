@@ -11,7 +11,6 @@ interface FormTextInputPropType
   onChange?: (evt: ChangeEvent<HTMLInputElement>) => void;
 }
 
-// eslint-disable-next-line react/display-name
 export const FormTextInput = forwardRef<
   HTMLInputElement,
   FormTextInputPropType

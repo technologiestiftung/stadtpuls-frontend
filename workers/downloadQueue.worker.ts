@@ -43,8 +43,9 @@ self.addEventListener("message", event => {
     cancellationList[`${event.data}`] = true;
     return;
   }
-  void getRecordsCount(event.data).then((totalCount: number) => {
-    void getAllRecrodsBySensorId({ ...event.data, totalCount });
+  const data = event.data as QueueItemType;
+  void getRecordsCount(data).then((totalCount: number) => {
+    void getAllRecrodsBySensorId({ ...data, totalCount });
   });
 });
 
