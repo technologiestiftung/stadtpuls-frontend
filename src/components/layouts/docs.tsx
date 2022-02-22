@@ -8,10 +8,19 @@ import CloseIcon from "@material-ui/icons/Close";
 import Head from "next/head";
 import { TableOfContents } from "@components/TableOfContents";
 import { DocsBottomNavigation } from "@components/DocsBottomNavigation";
+import { useReducedMotion } from "@lib/hooks/useReducedMotion";
+import slugify from "slugify";
 
-const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
+interface TocTitleType {
+  el: HTMLHeadingElement;
+  text: string;
+  id: string;
+}
+
+const DocsLayout: MDXLayoutType = ({ slug, children, frontMatter }) => {
+  const reducedMotionWished = useReducedMotion(false);
   const [isOpened, setIsOpened] = useState<boolean>(false);
-  const [tocTitles, setTocTitles] = useState<HTMLHeadingElement[]>([]);
+  const [tocTitles, setTocTitles] = useState<TocTitleType[]>([]);
   const toggleSidebar = (): void => setIsOpened(!isOpened);
 
   useEffect(() => {
@@ -21,13 +30,26 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
 
   const scrollUp = (): void => {
     if (typeof window === undefined) return;
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: reducedMotionWished ? "auto" : "smooth",
+    });
   };
 
   useEffect(() => {
     if (typeof document === undefined) return;
-    setTocTitles(Array.from(document.querySelectorAll("h2")));
-  }, []);
+    const h2Els = Array.from(document.querySelectorAll("h2"))
+      .filter(h2El => h2El.textContent)
+      .map(h2El => ({
+        el: h2El,
+        text: h2El.textContent || "",
+        id: slugify(h2El.textContent || ""),
+      }));
+    h2Els.forEach(({ el, id }) => {
+      el.setAttribute("id", id);
+    });
+    setTocTitles(h2Els);
+  }, [frontMatter.title]);
 
   return (
     <>
@@ -70,7 +92,7 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
           >
             {children}
           </div>
-          <DocsBottomNavigation />
+          <DocsBottomNavigation page={slug} />
         </article>
         <TableOfContents
           links={[
@@ -78,12 +100,7 @@ const DocsLayout: MDXLayoutType = ({ children, frontMatter }) => {
               text: frontMatter.title,
               id: "main-headline",
             },
-            ...tocTitles
-              .filter(h2El => !!h2El.textContent && !!h2El.getAttribute("id"))
-              .map(h2El => ({
-                text: h2El.textContent || "",
-                id: h2El.getAttribute("id") || "",
-              })),
+            ...tocTitles,
           ]}
         />
       </div>

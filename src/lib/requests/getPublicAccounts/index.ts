@@ -13,7 +13,10 @@ export interface GetAccountsOptionsType {
 
 export const getPublicAccounts = async (
   options?: GetAccountsOptionsType
-): Promise<ParsedAccountType[]> => {
+): Promise<{
+  accounts: ParsedAccountType[];
+  count: number;
+}> => {
   if (
     options &&
     typeof options.rangeStart !== "undefined" &&
@@ -37,17 +40,21 @@ export const getPublicAccounts = async (
     Number.parseInt(process.env.NEXT_PUBLIC_SUPABASE_MAX_ROWS as string) ||
     1000;
 
-  const { data: extended_user_profiles, error } = await supabase
+  const {
+    data: extended_user_profiles,
+    count,
+    error,
+  } = await supabase
     .from<definitions["extended_user_profiles"]>("extended_user_profiles")
-    .select("*")
+    .select("*", { count: "exact" })
     .range(
       options?.rangeStart || defaultRangeStart,
       options?.rangeEnd || defaultRangeEnd
     );
 
   if (error) throw error;
-  if (!extended_user_profiles) return [];
+  if (!extended_user_profiles || !count) return { accounts: [], count: 0 };
 
   const accounts = extended_user_profiles.map(mapPublicAccount);
-  return accounts;
+  return { count, accounts };
 };

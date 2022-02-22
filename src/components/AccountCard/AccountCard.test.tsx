@@ -15,7 +15,7 @@ describe("AccountCard component", () => {
   it("should render all elements", () => {
     render(<AccountCard {...testProps} />);
     const wrapperLink = screen.getByRole("link");
-    const [profilePic, ...categories] = screen.getAllByRole("img");
+    const images = screen.getAllByRole("img");
     const name = screen.getByRole("heading", { name: testProps.displayName });
     const username = screen.getByText(`@${testProps.username}`);
     const description = screen.getByText(
@@ -25,12 +25,11 @@ describe("AccountCard component", () => {
     const recordsCount = screen.queryByText("12 Mio.");
 
     expect(wrapperLink).toBeInTheDocument();
-    expect(profilePic).toBeInTheDocument();
     expect(name).toBeInTheDocument();
     expect(username).toBeInTheDocument();
     expect(description).toBeInTheDocument();
     expect(sensorsCount).toBeInTheDocument();
     expect(recordsCount).toBeInTheDocument();
-    expect(categories).toHaveLength(4);
+    expect(images).toHaveLength(6);
   });
 });

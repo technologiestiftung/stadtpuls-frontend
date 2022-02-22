@@ -1,5 +1,8 @@
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import moment from "moment";
+import "moment/locale/de";
+
+moment.locale("de-DE");
 
 export const getSensorRecords = ({
   sensorId,
@@ -20,18 +23,23 @@ export const getSensorRecords = ({
     Math.floor(endDate.diff(startDate) / (numberOfRecords - 1))
   );
 
-  return Array.from(Array(numberOfRecords)).map((_, index) => {
-    const recordDate = moment.parseZone(
-      startDate.valueOf() + index * stepInMillis
-    );
+  return Array.from(Array(numberOfRecords))
+    .map((_, index) => {
+      const recordDate = moment.parseZone(
+        startDate.valueOf() + index * stepInMillis
+      );
 
-    return {
-      id: sensorId + index,
-      recorded_at: recordDate.toISOString(),
-      measurements: [
-        recordDate.hours() * recordDate.minutes() * recordDate.seconds(),
-      ],
-      sensor_id: sensorId,
-    };
-  });
+      return {
+        id: sensorId + index,
+        recorded_at: recordDate.toISOString(),
+        measurements: [
+          recordDate.hours() * recordDate.minutes() * recordDate.seconds(),
+        ],
+        sensor_id: sensorId,
+      };
+    })
+    .sort(
+      (a, b) =>
+        new Date(a.recorded_at).getTime() - new Date(b.recorded_at).getTime()
+    );
 };

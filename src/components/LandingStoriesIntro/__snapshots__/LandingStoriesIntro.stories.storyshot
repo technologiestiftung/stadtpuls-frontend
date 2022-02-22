@@ -11,7 +11,7 @@ exports[`Storyshots Promotional/LandingStoriesIntro Default 1`] = `
       className="col-span-3 relative -order-1 md:order-1"
     >
       <div
-        className="undefined h-full max-h-56 md:max-h-full"
+        className="storyThumbnail h-full max-h-56 md:max-h-full"
       >
         <img
           alt="Eine herbstliche Straße im Berliner Wrangelkiez"

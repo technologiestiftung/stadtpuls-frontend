@@ -54,7 +54,7 @@ const UserLink: FC<Pick<ParsedSensorType, "authorName" | "authorUsername">> = ({
   authorName,
   authorUsername,
 }) => (
-  <Link href={`/accounts/${authorUsername}`}>
+  <Link href={`/${authorUsername}/sensors`}>
     <a
       className={[
         "flex gap-2 items-center leading-tight",
@@ -83,7 +83,7 @@ const CategoryLabel: FC<Pick<ParsedSensorType, "categoryName" | "categoryId">> =
     </span>
   );
 
-const BackLink: FC = () => (
+export const BackLink: FC = () => (
   <Link href='/sensors'>
     <a
       href='/sensors'

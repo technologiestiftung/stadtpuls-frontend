@@ -195,14 +195,14 @@ export const useUserData = (
   const user = useSWR<AccountWithSensorsType | null, Error>(
     userParams,
     () => fetchUser(userId),
-    { initialData: initialData?.user }
+    { fallbackData: initialData?.user }
   );
 
   const sensorsParams = ["sensors", userId];
   const sensors = useSWR<ParsedSensorType[] | null, Error>(
     sensorsParams,
     () => fetchUserSensors(userId),
-    { initialData: initialData?.sensors }
+    { fallbackData: initialData?.sensors }
   );
 
   return {

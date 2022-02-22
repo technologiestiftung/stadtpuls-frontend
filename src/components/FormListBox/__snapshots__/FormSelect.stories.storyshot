@@ -23,16 +23,7 @@ exports[`Storyshots Forms/FormListBox With Custom Placeholder 1`] = `
     <span
       className="absolute inset-y-0 right-3 flex items-center pointer-events-none"
     >
-      <svg
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M.293 5.293 8 13l7.707-7.707a1 1 0 0 0-1.32-1.498l-.094.084L8 10.17 1.707 3.879a1 1 0 0 0-1.32-.084l-.094.084a1 1 0 0 0-.083 1.32l.083.094Z"
-          fill="currentColor"
-        />
-      </svg>
+      <test-file-stub />
     </span>
   </button>
 </div>
@@ -61,16 +52,7 @@ exports[`Storyshots Forms/FormListBox With Disabled Option 1`] = `
     <span
       className="absolute inset-y-0 right-3 flex items-center pointer-events-none"
     >
-      <svg
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M.293 5.293 8 13l7.707-7.707a1 1 0 0 0-1.32-1.498l-.094.084L8 10.17 1.707 3.879a1 1 0 0 0-1.32-.084l-.094.084a1 1 0 0 0-.083 1.32l.083.094Z"
-          fill="currentColor"
-        />
-      </svg>
+      <test-file-stub />
     </span>
   </button>
 </div>
@@ -99,16 +81,7 @@ exports[`Storyshots Forms/FormListBox With Errors 1`] = `
     <span
       className="absolute inset-y-0 right-3 flex items-center pointer-events-none"
     >
-      <svg
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M.293 5.293 8 13l7.707-7.707a1 1 0 0 0-1.32-1.498l-.094.084L8 10.17 1.707 3.879a1 1 0 0 0-1.32-.084l-.094.084a1 1 0 0 0-.083 1.32l.083.094Z"
-          fill="currentColor"
-        />
-      </svg>
+      <test-file-stub />
     </span>
   </button>
   <div
@@ -149,32 +122,14 @@ exports[`Storyshots Forms/FormListBox With Icons 1`] = `
       <span
         className="flex items-center gap-2"
       >
-        <svg
-          height="16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M1.005 0a1 1 0 0 0-1 1v11.14a1 1 0 0 0 .505.87l5.013 2.859A1 1 0 0 0 7.02 15v-2H8v-2h-.98l-.001-5.821a1 1 0 0 0-.448-.834L3.028 2H11V1a1 1 0 0 0-1-1H1.005Zm1 3.721L5.02 5.715v7.563l-3.014-1.719V3.721ZM11 3l5 5-5 5-1.41-1.41L12.17 9H8V7h4.17L9.59 4.41 11 3Z"
-            fill="currentColor"
-          />
-        </svg>
+        <test-file-stub />
          Second option
       </span>
     </span>
     <span
       className="absolute inset-y-0 right-3 flex items-center pointer-events-none"
     >
-      <svg
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M.293 5.293 8 13l7.707-7.707a1 1 0 0 0-1.32-1.498l-.094.084L8 10.17 1.707 3.879a1 1 0 0 0-1.32-.084l-.094.084a1 1 0 0 0-.083 1.32l.083.094Z"
-          fill="currentColor"
-        />
-      </svg>
+      <test-file-stub />
     </span>
   </button>
 </div>
@@ -210,16 +165,7 @@ exports[`Storyshots Forms/FormListBox With Label 1`] = `
     <span
       className="absolute inset-y-0 right-3 flex items-center pointer-events-none"
     >
-      <svg
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M.293 5.293 8 13l7.707-7.707a1 1 0 0 0-1.32-1.498l-.094.084L8 10.17 1.707 3.879a1 1 0 0 0-1.32-.084l-.094.084a1 1 0 0 0-.083 1.32l.083.094Z"
-          fill="currentColor"
-        />
-      </svg>
+      <test-file-stub />
     </span>
   </button>
 </div>
@@ -248,16 +194,7 @@ exports[`Storyshots Forms/FormListBox With Selected Default 1`] = `
     <span
       className="absolute inset-y-0 right-3 flex items-center pointer-events-none"
     >
-      <svg
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M.293 5.293 8 13l7.707-7.707a1 1 0 0 0-1.32-1.498l-.094.084L8 10.17 1.707 3.879a1 1 0 0 0-1.32-.084l-.094.084a1 1 0 0 0-.083 1.32l.083.094Z"
-          fill="currentColor"
-        />
-      </svg>
+      <test-file-stub />
     </span>
   </button>
 </div>
@@ -286,16 +223,7 @@ exports[`Storyshots Forms/FormListBox Without Label 1`] = `
     <span
       className="absolute inset-y-0 right-3 flex items-center pointer-events-none"
     >
-      <svg
-        height="16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M.293 5.293 8 13l7.707-7.707a1 1 0 0 0-1.32-1.498l-.094.084L8 10.17 1.707 3.879a1 1 0 0 0-1.32-.084l-.094.084a1 1 0 0 0-.083 1.32l.083.094Z"
-          fill="currentColor"
-        />
-      </svg>
+      <test-file-stub />
     </span>
   </button>
 </div>

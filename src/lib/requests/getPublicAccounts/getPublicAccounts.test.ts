@@ -23,6 +23,10 @@ describe("utility function getPublicAccounts", () => {
         createSupabaseUrl(`/extended_user_profiles`),
         (_req, res, ctx) => {
           return res(
+            ctx.set(
+              "Content-Range",
+              `0-${exampleAccounts.length - 1}/${exampleAccounts.length}`
+            ),
             ctx.status(200, "Mocked status"),
             ctx.json(exampleAccounts)
           );
@@ -30,7 +34,7 @@ describe("utility function getPublicAccounts", () => {
       )
     );
     server.listen();
-    const fetchedAccounts = await getPublicAccounts();
+    const { accounts: fetchedAccounts } = await getPublicAccounts();
     expect(fetchedAccounts.length).toEqual(exampleAccounts.length);
     server.resetHandlers();
     server.close();
@@ -42,6 +46,10 @@ describe("utility function getPublicAccounts", () => {
         createSupabaseUrl(`/extended_user_profiles`),
         (_req, res, ctx) => {
           return res(
+            ctx.set(
+              "Content-Range",
+              `0-${exampleAccounts.length - 1}/${exampleAccounts.length}`
+            ),
             ctx.status(200, "Mocked status"),
             ctx.json(exampleAccounts)
           );
@@ -49,7 +57,7 @@ describe("utility function getPublicAccounts", () => {
       )
     );
     server.listen();
-    const fetchedAccounts = await getPublicAccounts();
+    const { accounts: fetchedAccounts } = await getPublicAccounts();
     expect(fetchedAccounts[0].username).toEqual("dennis");
     expect(fetchedAccounts[fetchedAccounts.length - 1].username).toEqual(
       "XXDennis"
@@ -79,16 +87,25 @@ describe("utility function getPublicAccounts", () => {
             return index >= fromIndex && index <= toIndex;
           });
 
+          const returnedAccounts =
+            limit && offset ? filteredAccounts : exampleAccounts;
           return res(
+            ctx.set(
+              "Content-Range",
+              `0-${returnedAccounts.length - 1}/${returnedAccounts.length}`
+            ),
             ctx.status(200, "Mocked status"),
-            ctx.json(limit && offset ? filteredAccounts : exampleAccounts)
+            ctx.json(returnedAccounts)
           );
         }
       )
     );
     server.listen();
 
-    const fetchedAccounts = await getPublicAccounts({ rangeStart, rangeEnd });
+    const { accounts: fetchedAccounts } = await getPublicAccounts({
+      rangeStart,
+      rangeEnd,
+    });
     expect(fetchedAccounts.length).toEqual(filteredAccounts.length);
 
     const expectedAccountIds = filteredAccounts.map(sensor => sensor.id);

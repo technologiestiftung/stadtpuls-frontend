@@ -27,7 +27,7 @@ export interface ParsedSensorType {
   authorId: string;
   authorName: string;
   authorUsername: string;
-  parsedRecords: DateValueType[];
+  parsedRecords?: DateValueType[];
   categoryId: number;
   categoryName: string;
   connectionType: IntegrationType;
@@ -95,7 +95,15 @@ export const mapPublicSensor = (
 interface usePublicSensorsParamsType {
   rangeStart: GetSensorsOptionsType["rangeStart"];
   rangeEnd: GetSensorsOptionsType["rangeEnd"];
-  initialData: ParsedSensorType[] | undefined;
+  initialData?: {
+    sensors: ParsedSensorType[];
+    count: number;
+  };
+}
+
+interface DataType {
+  sensors: ParsedSensorType[];
+  count: number;
 }
 
 export const usePublicSensors = (
@@ -104,23 +112,25 @@ export const usePublicSensors = (
     rangeEnd,
     initialData,
   }: usePublicSensorsParamsType = {} as usePublicSensorsParamsType
-): {
-  data: ParsedSensorType[];
+): DataType & {
   error: Error | null;
+  isLoading: boolean;
 } => {
   const params = ["usePublicSensors", rangeStart, rangeEnd, initialData];
-  const { data, error } = useSWR<ParsedSensorType[], Error>(
+  const { data, error } = useSWR<DataType, Error>(
     params,
     () =>
       getPublicSensors({
         rangeStart,
         rangeEnd,
       }),
-    { initialData }
+    { fallbackData: initialData }
   );
 
   return {
-    data: data || [],
+    sensors: data?.sensors || [],
+    count: data?.count || 0,
+    isLoading: !data && !error,
     error: error || null,
   };
 };

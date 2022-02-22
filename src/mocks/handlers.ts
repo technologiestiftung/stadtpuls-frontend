@@ -120,9 +120,15 @@ const supabaseHandlers = [
         specificAccountDataRequested && username;
       const limitedAccountsRequested = specificAccountDataRequested && limit;
 
+      const countTransformer = ctx.set(
+        "content-range",
+        `0-${userProfiles.length - 1}/${userProfiles.length}`
+      );
+
       if (specificAccountDataRequested) {
         if (oneAccountRequestedByName && username) {
           return res(
+            ctx.set("content-range", `0-0/1`),
             ctx.status(201, "Mocked status"),
             ctx.json(
               userProfiles.find(
@@ -134,21 +140,37 @@ const supabaseHandlers = [
         if (limitedAccountsRequested && limit) {
           const limitedAccounts = userProfiles.slice(0, parseInt(limit, 10));
           return res(
+            ctx.set(
+              "content-range",
+              `0-${limitedAccounts.length - 1}/${limitedAccounts.length}`
+            ),
             ctx.status(201, "Mocked status"),
             ctx.json(limitedAccounts)
           );
         } else {
-          return res(ctx.status(201, "Mocked status"), ctx.json(userProfiles));
+          return res(
+            countTransformer,
+            ctx.status(201, "Mocked status"),
+            ctx.json(userProfiles)
+          );
         }
       }
 
-      return res(ctx.status(201, "Mocked status"), ctx.json(userProfiles));
+      return res(
+        countTransformer,
+        ctx.status(201, "Mocked status"),
+        ctx.json(userProfiles)
+      );
     }
   ),
   rest.get<definitions["extended_user_profiles"]>(
     createSupabaseUrl("/extended_user_profiles"),
     (_req, res, ctx) => {
       return res(
+        ctx.set(
+          "content-range",
+          `0-${extendedUserProfiles.length - 1}/${extendedUserProfiles.length}`
+        ),
         ctx.status(200, "Mocked status"),
         ctx.json(extendedUserProfiles)
       );
@@ -163,6 +185,10 @@ const supabaseHandlers = [
       const id = query.get("id")?.replace("eq.", "");
       const limit = query.get("limit");
       const recordsLimit = query.get("records.limit");
+      const countTransformer = ctx.set(
+        "content-range",
+        `0-${sensors.length - 1}/${sensors.length}`
+      );
 
       // Regex removes whitespaces and line breaks. Necessary because sensorQueryString is constructed as template literal
       const trimmedSensorSelectString = sensorQueryString.replace(
@@ -203,16 +229,29 @@ const supabaseHandlers = [
 
           return recordsLimit
             ? res(
+                countTransformer,
                 ctx.status(201, "Mocked status"),
                 ctx.json(limitedSensorsWithLimitedRecords)
               )
-            : res(ctx.status(201, "Mocked status"), ctx.json(limitedSensors));
+            : res(
+                countTransformer,
+                ctx.status(201, "Mocked status"),
+                ctx.json(limitedSensors)
+              );
         } else {
-          return res(ctx.status(201, "Mocked status"), ctx.json(sensors));
+          return res(
+            countTransformer,
+            ctx.status(201, "Mocked status"),
+            ctx.json(sensors)
+          );
         }
       }
 
-      return res(ctx.status(201, "Mocked status"), ctx.json(sensors));
+      return res(
+        countTransformer,
+        ctx.status(201, "Mocked status"),
+        ctx.json(sensors)
+      );
     }
   ),
   //User

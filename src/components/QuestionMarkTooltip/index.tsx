@@ -60,7 +60,7 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
   }, [windowWidth, id]);
 
   return (
-    <p
+    <div
       role='tooltip'
       className={classNames(
         `${
@@ -134,6 +134,6 @@ export const QuestionMarkTooltip: FC<QuestionMarkTooltipType> = ({
         ></span>
         {content}
       </span>
-    </p>
+    </div>
   );
 };

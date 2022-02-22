@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Layout/Footer Default 1`] = `
-<footer>
+<footer
+  id="main-footer"
+>
   <section
     className="bg-white border-t border-gray-100"
   >

@@ -5,7 +5,7 @@ exports[`Storyshots Forms/FormTextInput As Email 1`] = `
   className="mb-2"
 >
   <label
-    className="undefined block mb-2 cursor-pointer transition"
+    className="label block mb-2 cursor-pointer transition"
     htmlFor="email"
   >
     <span>
@@ -31,7 +31,7 @@ exports[`Storyshots Forms/FormTextInput As Password 1`] = `
   className="mb-2"
 >
   <label
-    className="undefined block mb-2 cursor-pointer transition"
+    className="label block mb-2 cursor-pointer transition"
     htmlFor="password"
   >
     <span>
@@ -57,7 +57,7 @@ exports[`Storyshots Forms/FormTextInput Optional Field 1`] = `
   className="mb-2"
 >
   <label
-    className="undefined block mb-2 cursor-pointer transition"
+    className="label block mb-2 cursor-pointer transition"
     htmlFor="firstName"
   >
     <span>
@@ -88,7 +88,7 @@ exports[`Storyshots Forms/FormTextInput With Error 1`] = `
   className="mb-2"
 >
   <label
-    className="undefined block mb-2 cursor-pointer transition"
+    className="label block mb-2 cursor-pointer transition"
     htmlFor="firstName"
   >
     <span>
@@ -124,7 +124,7 @@ exports[`Storyshots Forms/FormTextInput With Label 1`] = `
   className="mb-2"
 >
   <label
-    className="undefined block mb-2 cursor-pointer transition"
+    className="label block mb-2 cursor-pointer transition"
     htmlFor="firstName"
   >
     <span>

@@ -2,7 +2,7 @@
 
 exports[`Storyshots Visual identity/Stadtpuls Logo Default 1`] = `
 <a
-  className="w-max flex items-center"
+  className="w-max flex items-center logoContainer"
   href="/"
   onClick={[Function]}
   onMouseEnter={[Function]}
@@ -11,6 +11,7 @@ exports[`Storyshots Visual identity/Stadtpuls Logo Default 1`] = `
     className="relative inline-flex h-[29px] items-center sm:gap-4"
   >
     <span
+      className="logoImage"
       role="img"
     />
     <span

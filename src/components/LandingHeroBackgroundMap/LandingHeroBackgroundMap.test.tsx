@@ -8,6 +8,7 @@ describe("LandingHeroBackgroundMap component", () => {
       <LandingHeroBackgroundMap
         sensors={curatedSensors}
         activeMarkerIndex={0}
+        onMarkerClick={jest.fn()}
       />
     );
   });

@@ -18,7 +18,7 @@ export const Dropdown: FC<DropdownPropType> = ({
   const isVisible = Boolean(isOpened && Children.count(dropdownContent) > 0);
   const dropdownStyles = [
     "absolute top-full transform transition whitespace-nowrap pt-3",
-    "w-auto max-width-md transform-y-4 transform-x-3",
+    "w-auto max-width-md transform-y-4 transform-x-3 z-10",
     position === "right" ? "right-0" : "left-0",
     !isVisible && "opacity-0 pointer-events-none",
     isVisible && "transform-y-0 opacity-100 pointer-events-all",

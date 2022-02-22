@@ -22,10 +22,18 @@ describe("Footer component", () => {
     }));
   });
   it("should render without crashing", () => {
-    render(<DocsLayout frontMatter={testFrontmatter}>docs</DocsLayout>);
+    render(
+      <DocsLayout slug='' frontMatter={testFrontmatter}>
+        docs
+      </DocsLayout>
+    );
   });
   it("should render a menu toggle button", () => {
-    render(<DocsLayout frontMatter={testFrontmatter}>docs</DocsLayout>);
+    render(
+      <DocsLayout slug='' frontMatter={testFrontmatter}>
+        docs
+      </DocsLayout>
+    );
     const openButton = screen.getByText(/Seiten/gi);
     expect(openButton).toBeInTheDocument();
 
@@ -35,7 +43,11 @@ describe("Footer component", () => {
     expect(closeButton).toBeInTheDocument();
   });
   it("should render a scroll to top button", () => {
-    render(<DocsLayout frontMatter={testFrontmatter}>docs</DocsLayout>);
+    render(
+      <DocsLayout slug='' frontMatter={testFrontmatter}>
+        docs
+      </DocsLayout>
+    );
 
     window.scrollTo = jest.fn();
 

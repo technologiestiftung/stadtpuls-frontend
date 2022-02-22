@@ -1,0 +1,53 @@
+.root {
+  @apply flex flex-col w-10 absolute h-[7.5rem];
+}
+
+.button {
+  @apply z-20 shadow-none;
+  position: relative !important;
+}
+
+.button:focus-within {
+  @apply z-30;
+}
+
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) {
+  @apply bg-white transition border border-gray-200 rounded-none shadow-none flex flex-col z-20;
+}
+
+.geolocateControl > div[class^="mapboxgl-ctrl"]:not(:empty) {
+  @apply border-b-0;
+}
+
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button {
+  @apply w-10 h-10 text-blue relative focus-offset rounded-none;
+}
+
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button:focus {
+  @apply z-20 bg-white;
+}
+
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button::before {
+  content: " ";
+  @apply absolute transition inset-0 h-full w-[calc(100%-1px)] bg-gray-400 mix-blend-color z-10;
+}
+
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button:hover {
+  @apply bg-none;
+}
+
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button:hover::before {
+  @apply bg-blue;
+}
+
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button[class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"] > span {
+  background-image: url('/images/icons/16px/plus.svg');
+}
+
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button[class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"] > span {
+  background-image: url('/images/icons/16px/minus.svg');
+}
+
+.button > div[class^="mapboxgl-ctrl"]:not(:empty) button[class="mapboxgl-ctrl-icon mapboxgl-ctrl-geolocate"] > span {
+  background-image: url('/images/icons/target.svg');
+}

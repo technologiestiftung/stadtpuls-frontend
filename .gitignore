@@ -7,6 +7,7 @@
 
 # testing
 /coverage
+supabase/*
 
 # production
 /build
@@ -17,6 +18,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.tsconfig-lint.tsbuildinfo
 
 npm-debug.log*
 yarn-debug.log*
@@ -30,3 +32,6 @@ storybook-static
 
 # Web Workers
 public/workers
+
+# Local DB
+supabase

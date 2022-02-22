@@ -4,7 +4,7 @@ export const BetaBanner: FC = () => {
   const [isClosed, setIsClosed] = useState(false);
 
   useEffect(() => {
-    const hasClosedBetaBanner = sessionStorage.getItem("hasClosedBetaBanner");
+    const hasClosedBetaBanner = localStorage.getItem("hasClosedBetaBanner");
     if (hasClosedBetaBanner === "true") {
       setIsClosed(true);
     }
@@ -51,7 +51,7 @@ export const BetaBanner: FC = () => {
           ].join(" ")}
           onClick={() => {
             setIsClosed(true);
-            sessionStorage.setItem("hasClosedBetaBanner", "true");
+            localStorage.setItem("hasClosedBetaBanner", "true");
           }}
           aria-label='Schließen'
         >

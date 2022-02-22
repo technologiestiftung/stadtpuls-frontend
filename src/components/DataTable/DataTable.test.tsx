@@ -2,6 +2,9 @@ import { render, screen } from "@testing-library/react";
 
 import { DataTable } from ".";
 import moment from "moment";
+import "moment/locale/de";
+
+moment.locale("de-DE");
 
 const fakeData = [
   {

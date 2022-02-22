@@ -27,6 +27,7 @@ export const SensorCard: FC<SensorCardPropType> = ({
   description,
   parsedRecords,
   authorName,
+  authorUsername,
   categoryId,
   categoryName,
   withMapBackground = true,
@@ -36,9 +37,9 @@ export const SensorCard: FC<SensorCardPropType> = ({
   const [isInViewport, mapWrapperRef] = useIsInViewport({ threshold: 50 });
 
   return (
-    <Link href={`/sensors/${id}`}>
+    <Link href={`/${authorUsername}/sensors/${id}`}>
       <a
-        href={`/sensors/${id}`}
+        href={`/${authorUsername}/sensors/${id}`}
         ref={mapWrapperRef}
         className={[
           "block focus-offset",
@@ -104,24 +105,26 @@ export const SensorCard: FC<SensorCardPropType> = ({
             ].join(" ")}
           />
           <div className='absolute inset-0 overflow-hidden z-40'>
-            <svg
-              viewBox={`0 0 100 82`}
-              preserveAspectRatio='none'
-              xmlns='http://www.w3.org/2000/svg'
-              width='104%'
-              height={82}
-              className={[
-                "overflow-visible absolute -bottom-1 -right-1 -left-1",
-                "text-purple group-hover:animate-textpulse",
-              ].join(" ")}
-            >
-              <AreaPath
-                width={100}
+            {parsedRecords && (
+              <svg
+                viewBox={`0 0 100 82`}
+                preserveAspectRatio='none'
+                xmlns='http://www.w3.org/2000/svg'
+                width='104%'
                 height={82}
-                //FIXME: Figure out how we want to handle multiple data points
-                data={parsedRecords.slice(DISPLAYABLE_RECORDS_AMOUNT * -1)}
-              />
-            </svg>
+                className={[
+                  "overflow-visible absolute -bottom-1 -right-1 -left-1",
+                  "text-purple group-hover:animate-textpulse",
+                ].join(" ")}
+              >
+                <AreaPath
+                  width={100}
+                  height={82}
+                  //FIXME: Figure out how we want to handle multiple data points
+                  data={parsedRecords.slice(DISPLAYABLE_RECORDS_AMOUNT * -1)}
+                />
+              </svg>
+            )}
           </div>
         </div>
         <div

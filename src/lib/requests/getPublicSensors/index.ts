@@ -25,10 +25,6 @@ export const sensorQueryString = `
   category_id,
   icon_id,
   user_id,
-  records (
-    recorded_at,
-    measurements
-  ),
   user:user_profiles!user_id (
     name,
     display_name
@@ -46,7 +42,10 @@ export interface GetSensorsOptionsType {
 
 export const getPublicSensors = async (
   options?: GetSensorsOptionsType
-): Promise<ParsedSensorType[]> => {
+): Promise<{
+  sensors: ParsedSensorType[];
+  count: number;
+}> => {
   if (
     options &&
     typeof options.rangeStart !== "undefined" &&
@@ -70,43 +69,27 @@ export const getPublicSensors = async (
     (options.rangeStart || options.rangeStart === 0) &&
     options.rangeEnd
   ) {
-    const { data, error } = await supabase
+    const { data, count, error } = await supabase
       .from<SensorQueryResponseType>("sensors")
-      .select(sensorQueryString)
+      .select(sensorQueryString, { count: "exact" })
       .order("created_at", { ascending: false })
-      // FIXME: recorded_at is not recognized altought it is inherited from the definitions
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      .order("recorded_at", {
-        foreignTable: "records",
-        ascending: false,
-      })
-      .range(options.rangeStart, options.rangeEnd)
-      .limit(RECORDS_LIMIT, { foreignTable: "records" });
+      .range(options.rangeStart, options.rangeEnd);
 
     if (error) throw error;
-    if (!data) return [];
+    if (!data || typeof count !== "number") return { sensors: [], count: 0 };
     const sensors = data?.map(mapPublicSensor);
 
-    return sensors;
+    return { sensors, count };
   } else {
-    const { data, error } = await supabase
+    const { data, count, error } = await supabase
       .from<SensorQueryResponseType>("sensors")
-      .select(sensorQueryString)
-      .order("created_at", { ascending: false })
-      // FIXME: recorded_at is not recognized altought it is inherited from the definitions
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      .order("recorded_at", {
-        foreignTable: "records",
-        ascending: false,
-      })
-      .limit(RECORDS_LIMIT, { foreignTable: "records" });
+      .select(sensorQueryString, { count: "exact" })
+      .order("created_at", { ascending: false });
 
     if (error) throw error;
-    if (!data) return [];
+    if (!data || typeof count !== "number") return { sensors: [], count: 0 };
     const sensors = data?.map(mapPublicSensor);
 
-    return sensors;
+    return { sensors, count };
   }
 };

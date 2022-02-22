@@ -1,0 +1,67 @@
+---
+layout: 'docs'
+title: 'Sensordaten nutzen'
+metaTitle: 'Sensordaten'
+metaDescription: 'Sensordaten anschauen und nutzen.'
+---
+  
+<p className="lead">
+  Nutze die Sensordaten von *Stadtpuls* für deine Analysen und Forschung.
+</p>
+
+Du kannst auf *Stadtpuls* nicht nur eigene IoT-Projekte hinzufügen und verwalten, sondern auch die IoT-Projekte anderer Nutzer:innen sehen und deren Daten für deine Analysen nutzen.
+Denn: alle Sensordaten auf *Stadtpuls* sind offene Daten. Das heißt, sie können kostenlos und ohne Einschränkungen oder Verpflichtung gegenüber Dritten von dir heruntergeladen, verändert und verwertet werden. 
+
+Mit Klick auf <a href="/sensors">Sensoren</a> in der Menüleiste oben rechts gelangst du zur Sensorenübersicht. Hier findest du die aktiven Sensoren aller Nutzer:innen von *Stadtpuls*.
+
+  <figure>
+  <img style={{maxHeight: 400, border: '1px solid rgba(0, 0, 0, 0.05)'}}
+    src="/images/viewSensors.png"
+    alt="Sensorenübersicht"
+  />
+    <figcaption>
+    Ansicht aller Sensoren auf Stadtpuls (Ausschnitt)
+    </figcaption>
+  </figure>
+
+## Messwerte erkunden
+Mit Klick auf einen Sensor gelangt man zur Detailansicht. Hier werden alle Messwerte in einem **Linechart visualisiert** und kostenlos zum **Download bereitgestellt**.
+Du kannst die Ansicht des Linecharts verändern, indem du:
+
+- die Messwerte nach einer ganz spezifischen Zeitspanne filterst
+- die Messwerte nach fixen Zeiträumen filterst
+
+Bewege deine Maus über das Linechart, um den Messwert des Sensors an exakt dieser Stelle ablesen zu können.
+Spiele mit den Filtern herum! Wer weiß, vielleicht lassen sich so interessante Insights und Erkenntnisse gewinnen.
+
+## Messwerte nutzen
+Auf der Detailseite eines Sensors findest du ein Feld *API-Schnittstelle*, welche einen direkten Link zur *RESTful API* des Sensors bereitstellt. Mit diesem Link kannst du die Messwerte des Sensors auslesen und verwenden. Klicke auf das Feld, um den Link zu kopieren. Wenn du ihn in einem Browser öffnest, bekommst du die Messdaten im *JSON-Format* angezeigt.
+
+Beispiel: 
+
+```json
+{
+    "nextPage": "/api/v3/sensors/55/records?offset=1000&limit=1000",
+    "data": [
+        {
+            "id": 129853,
+            "recorded_at": "2021-11-25T11:06:49.312+00:00",
+            "measurements": [
+                14.6666666666667
+            ],
+            "sensor_id": 55
+        },
+        {
+            "id": 129854,
+            "recorded_at": "2021-11-25T13:51:52.683+00:00",
+            "measurements": [
+                17.7777777777778
+            ],
+            "sensor_id": 55
+        }
+    ]
+}
+```
+
+Mit Klick auf *Herunterladen (CSV)* kannst du dir schließlich auch die gesamten Sensordaten als *CSV-Datei* herunterladen.
+

@@ -10,6 +10,7 @@ import { useDebounce } from "use-debounce";
 import {
   requiredEmailValidation,
   requiredUsernameValidation,
+  RESERVED_USERNAMES,
 } from "@lib/formValidationUtil";
 import {
   FormFieldRules,
@@ -48,24 +49,36 @@ const getUsernameRules = ({
   value,
   isUnique,
   isLoading,
-}: GetUsernameRulesParamType): FormFieldRulesPropType["rules"] => [
-  {
-    id: "unique",
-    msg: "Einzigartig",
-    isFulfilled: !!isUnique,
-    isLoading,
-  },
-  {
-    id: "validchars",
-    msg: "Nur Buchstaben, Zahlen, - und _",
-    isFulfilled: !!value && /^[a-zA-Z0-9_-]+$/.test(value),
-  },
-  {
-    id: "length",
-    msg: "Zwischen 4 und 20 Zeichen",
-    isFulfilled: !!value && value.length >= 4 && value.length <= 20,
-  },
-];
+}: GetUsernameRulesParamType): FormFieldRulesPropType["rules"] => {
+  const normalRules = [
+    {
+      id: "unique",
+      msg: "Einzigartig",
+      isFulfilled: !!isUnique,
+      isLoading,
+    },
+    {
+      id: "validchars",
+      msg: "Nur Buchstaben, Zahlen, - und _",
+      isFulfilled: !!value && /^[a-zA-Z0-9_-]+$/.test(value),
+    },
+    {
+      id: "length",
+      msg: "Zwischen 4 und 20 Zeichen",
+      isFulfilled: !!value && value.length >= 4 && value.length <= 20,
+    },
+  ];
+  return RESERVED_USERNAMES.find(word => value === word)
+    ? [
+        ...normalRules,
+        {
+          id: "reserved",
+          msg: "Dieser Benutzername darf nicht verwendet werden",
+          isFulfilled: false,
+        },
+      ]
+    : normalRules;
+};
 
 export const SignupForm: FC<SignupFormPropType> = ({
   defaultValues = {},

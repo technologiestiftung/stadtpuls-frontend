@@ -1,6 +1,9 @@
 import { Story, Meta } from "@storybook/react";
 import { DataTableType, DataTable } from ".";
 import moment from "moment";
+import "moment/locale/de";
+
+moment.locale("de-DE");
 
 export default {
   title: "UI Elements/DataTable",

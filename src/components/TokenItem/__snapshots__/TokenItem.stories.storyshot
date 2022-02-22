@@ -7,35 +7,10 @@ exports[`Storyshots UI Elements/TokenItem Default 1`] = `
   <div
     className="flex py-2 text-gray-800"
   >
-    <svg
+    <test-file-stub
       aria-hidden={true}
       className="flex-shrink-0 self-center"
-      height="16"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g
-        fill="none"
-        fillRule="evenodd"
-        stroke="currentColor"
-        strokeWidth="2"
-        transform="translate(0 5)"
-      >
-        <path
-          d="M5 3h10"
-          strokeLinecap="round"
-        />
-        <circle
-          cx="3"
-          cy="3"
-          r="2"
-        />
-        <path
-          d="M13 3v3m-3-3v2"
-          strokeLinecap="round"
-        />
-      </g>
-    </svg>
+    />
     <p
       className="ml-3 break-all"
     >
@@ -73,35 +48,10 @@ exports[`Storyshots UI Elements/TokenItem First Item In List 1`] = `
   <div
     className="flex py-2 text-gray-800"
   >
-    <svg
+    <test-file-stub
       aria-hidden={true}
       className="flex-shrink-0 self-center"
-      height="16"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g
-        fill="none"
-        fillRule="evenodd"
-        stroke="currentColor"
-        strokeWidth="2"
-        transform="translate(0 5)"
-      >
-        <path
-          d="M5 3h10"
-          strokeLinecap="round"
-        />
-        <circle
-          cx="3"
-          cy="3"
-          r="2"
-        />
-        <path
-          d="M13 3v3m-3-3v2"
-          strokeLinecap="round"
-        />
-      </g>
-    </svg>
+    />
     <p
       className="ml-3 break-all"
     >
@@ -139,35 +89,10 @@ exports[`Storyshots UI Elements/TokenItem Long Description Without Spaces 1`] = 
   <div
     className="flex py-2 text-gray-800"
   >
-    <svg
+    <test-file-stub
       aria-hidden={true}
       className="flex-shrink-0 self-center"
-      height="16"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g
-        fill="none"
-        fillRule="evenodd"
-        stroke="currentColor"
-        strokeWidth="2"
-        transform="translate(0 5)"
-      >
-        <path
-          d="M5 3h10"
-          strokeLinecap="round"
-        />
-        <circle
-          cx="3"
-          cy="3"
-          r="2"
-        />
-        <path
-          d="M13 3v3m-3-3v2"
-          strokeLinecap="round"
-        />
-      </g>
-    </svg>
+    />
     <p
       className="ml-3 break-all"
     >
@@ -205,35 +130,10 @@ exports[`Storyshots UI Elements/TokenItem Long Name 1`] = `
   <div
     className="flex py-2 text-gray-800"
   >
-    <svg
+    <test-file-stub
       aria-hidden={true}
       className="flex-shrink-0 self-center"
-      height="16"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g
-        fill="none"
-        fillRule="evenodd"
-        stroke="currentColor"
-        strokeWidth="2"
-        transform="translate(0 5)"
-      >
-        <path
-          d="M5 3h10"
-          strokeLinecap="round"
-        />
-        <circle
-          cx="3"
-          cy="3"
-          r="2"
-        />
-        <path
-          d="M13 3v3m-3-3v2"
-          strokeLinecap="round"
-        />
-      </g>
-    </svg>
+    />
     <p
       className="ml-3 break-all"
     >

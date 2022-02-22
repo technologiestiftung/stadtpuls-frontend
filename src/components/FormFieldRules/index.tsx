@@ -16,8 +16,15 @@ export interface FormFieldRulesPropType {
   rules: RuleType[];
 }
 
-const getIconByFulfilledStatus = (isFulfilled: boolean): ReactNode =>
-  isFulfilled ? <CheckmarkIcon className='text-green' /> : <CrossIcon />;
+const getIconByFulfilledStatus = (
+  id: string,
+  isFulfilled: boolean
+): ReactNode =>
+  isFulfilled ? (
+    <CheckmarkIcon data-testid={`icon-${id}`} className='text-green' />
+  ) : (
+    <CrossIcon data-testid={`icon-${id}`} />
+  );
 
 export const FormFieldRules: FC<FormFieldRulesPropType> = ({
   isTouched,
@@ -38,9 +45,9 @@ export const FormFieldRules: FC<FormFieldRulesPropType> = ({
             .join(" ")}
         >
           {isLoading ? (
-            <LoadingIcon className='animate-spin' />
+            <LoadingIcon data-testid={`icon-${id}`} className='animate-spin' />
           ) : (
-            getIconByFulfilledStatus(isFulfilled)
+            getIconByFulfilledStatus(id, isFulfilled)
           )}{" "}
           <span className='pt-1'>{msg}</span>
         </li>

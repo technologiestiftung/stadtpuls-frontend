@@ -3,12 +3,13 @@
 exports[`Storyshots Layout/Header Default 1`] = `
 <header
   className="w-full z-50 top-0 border-t-0 sticky"
+  id="main-header"
 >
   <nav
-    className="w-full border transition border-t-0 flex place-content-between container mx-auto max-w-8xl bg-black-dot-pattern border-purple text-white"
+    className="w-full border transition border-t-0 flex place-content-between container mx-auto max-w-8xl bg-white border-gray-100 shadow text-blue"
   >
     <a
-      className="w-max flex items-center p-4 sm:border-r transition focus-offset border-purple"
+      className="w-max flex items-center p-4 sm:border-r transition focus-offset border-gray-100 logoContainer"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -17,6 +18,7 @@ exports[`Storyshots Layout/Header Default 1`] = `
         className="relative inline-flex h-[29px] items-center sm:gap-4"
       >
         <span
+          className="logoImage"
           role="img"
         />
         <span
@@ -46,7 +48,7 @@ exports[`Storyshots Layout/Header Default 1`] = `
           </svg>
         </button>
         <nav
-          className="fixed lg:static lg:top-auto left-1/2 lg:left-auto transform -translate-x-1/2 lg:translate-x-0 sm:border-r lg:border-r-0 sm:border-l lg:border-l-0 z-20 lg:z-auto w-full lg:w-auto shadow lg:shadow-none container max-w-8xl mx-auto lg:py-4 lg:px-1 lg:p-0 lg:bg-opacity-0 bg-black transition opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto"
+          className="fixed lg:static lg:top-auto left-1/2 lg:left-auto transform -translate-x-1/2 lg:translate-x-0 sm:border-r lg:border-r-0 sm:border-l lg:border-l-0 z-20 lg:z-auto w-full lg:w-auto shadow lg:shadow-none container max-w-8xl mx-auto lg:py-4 lg:px-1 lg:p-0 lg:bg-opacity-0 bg-white transition opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto"
           style={
             Object {
               "top": 62,
@@ -60,7 +62,7 @@ exports[`Storyshots Layout/Header Default 1`] = `
               className="lg:hidden text-xl lg:text-base"
             >
               <a
-                className="navigation-link-active navigation-link p-4 block lg:inline focus-offset"
+                className="navigation-link p-4 block lg:inline focus-offset"
                 href="/"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -201,16 +203,7 @@ exports[`Storyshots Layout/Header Default 1`] = `
                     <span
                       className="text-blue group-hover:text-purple transition-colors"
                     >
-                      <svg
-                        height="16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M15 9a1 1 0 0 1 .993.883L16 10v4.503a1.5 1.5 0 0 1-1.356 1.494l-.144.006h-13a1.5 1.5 0 0 1-1.493-1.355L0 14.503V10a1 1 0 0 1 1.993-.117L2 10v4.003h12V10a1 1 0 0 1 .883-.993L15 9ZM9 0v8.17l2.59-2.58L13 7l-5 5-5-5 1.41-1.41L7 8.17V0h2Z"
-                          fill="currentColor"
-                        />
-                      </svg>
+                      <test-file-stub />
                     </span>
                   </div>
                 </div>
@@ -219,7 +212,7 @@ exports[`Storyshots Layout/Header Default 1`] = `
           </span>
         </button>
         <section
-          className="absolute top-full transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 transform-x-3 right-0 opacity-0 pointer-events-none"
+          className="absolute top-full transform transition whitespace-nowrap pt-3 w-auto max-width-md transform-y-4 transform-x-3 z-10 right-0 opacity-0 pointer-events-none"
         >
           <div
             className="bg-white border border-gray-200 shadow"
@@ -235,16 +228,7 @@ exports[`Storyshots Layout/Header Default 1`] = `
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
-          <svg
-            height="16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M15 0a1 1 0 0 1 1 1v11.14a1 1 0 0 1-.505.87l-5.013 2.859A1 1 0 0 1 8.987 15l-.001-2H5.199l2-2h1.787V5.179a1 1 0 0 1 .449-.834L12.977 2H7v2.8L5.004 2.806V1a1 1 0 0 1 1-1H15Zm-1 3.721-3.014 1.994v7.563L14 11.559V3.721ZM3 3l5 5-5 5-1.41-1.41L4.17 9H0V7h4.17L1.59 4.41 3 3Z"
-              fill="currentColor"
-            />
-          </svg>
+          <test-file-stub />
           <span
             className="hidden xs:inline-block"
           >

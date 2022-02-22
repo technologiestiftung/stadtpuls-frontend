@@ -33,9 +33,9 @@ export const getSitemap: (params: {
   </url>
   ${sensors
     .map(
-      ({ id }) => `
+      ({ id, authorUsername }) => `
   <url>
-    <loc>${createFullUrl(`/sensors/${id}`)}</loc>
+    <loc>${createFullUrl(`/${authorUsername}/sensors/${id}`)}</loc>
     <lastmod>${formatDate()}</lastmod>
   </url>`
     )
@@ -48,7 +48,7 @@ export const getSitemap: (params: {
     .map(
       ({ username }) => `
   <url>
-    <loc>${createFullUrl(`/accounts/${username}`)}</loc>
+    <loc>${createFullUrl(`/${username}/sensors`)}</loc>
     <lastmod>${formatDate()}</lastmod>
   </url>`
     )
@@ -61,8 +61,8 @@ class Sitemap extends Component<NextPage> {
   }: {
     res: NextApiResponse;
   }): Promise<void> {
-    const sensors = await getPublicSensors();
-    const accounts = await getPublicAccounts();
+    const { sensors } = await getPublicSensors();
+    const { accounts } = await getPublicAccounts();
     res.setHeader("Content-Type", "text/xml");
     res.write(getSitemap({ sensors, accounts }));
     res.end();

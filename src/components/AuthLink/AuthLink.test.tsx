@@ -15,7 +15,7 @@ describe("component AuthLink while logged out", () => {
   });
   it("should render an icon", () => {
     render(<AuthLink />);
-    const icon = document.querySelector("svg");
+    const icon = document.querySelector("test-file-stub");
     expect(icon).toBeInTheDocument();
   });
 });
@@ -32,7 +32,7 @@ describe("component AuthLink while logged in", () => {
       </AuthProvider>
     );
     const logoutLink = screen.getByText(/Logout/gi);
-    const icon = document.querySelector("svg");
+    const icon = document.querySelector("test-file-stub");
     expect(icon).toBeInTheDocument();
 
     await waitFor(() => expect(logoutLink).toBeInTheDocument());

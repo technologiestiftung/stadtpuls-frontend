@@ -62,7 +62,7 @@ export const useCuratedSensors = (): {
   );
 
   return {
-    data: data || null,
+    data: error ? null : data || null,
     error: error || null,
   };
 };

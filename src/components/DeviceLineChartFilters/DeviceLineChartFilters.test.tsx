@@ -1,8 +1,11 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import moment from "moment";
+import "moment/locale/de";
 import { FC } from "react";
 import { DeviceLineChartFilters, DeviceLineChartFiltersPropType } from ".";
+
+moment.locale("de-DE");
 
 const todayString = "2021-12-31T12:34:56.789Z";
 const today = moment(todayString);

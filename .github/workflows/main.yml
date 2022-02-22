@@ -1,0 +1,61 @@
+name: Test and Build
+env:
+  SUPABASE_ANON_KEY: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsImlhdCI6MTYyNzIwODU0MCwiZXhwIjoxOTc0MzYzNzQwLCJhdWQiOiIiLCJzdWIiOiIiLCJyb2xlIjoiYW5vbiJ9.sUHErUOiKZ3nHQIxy-7jND6B80Uzf9G4NtMLmL6HXPQ"
+
+  SUPABASE_URL: http://localhost:8000
+
+on:
+  push:
+    branches: [main, staging]
+  pull_request:
+    branches: [main, staging]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: remote-development
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        # checkout supabase for local usage
+      - name: Clone Stadtpuls Supabase v4.0.0
+        run: ./scripts/supabase-test-setup.sh
+      - name: Run supabase
+        run: |
+          docker-compose \
+          --env-file supabase/supabase-docker-compose/.env \
+          --file supabase/supabase-docker-compose/docker-compose.yml  \
+          --file supabase/supabase-docker-compose/docker-compose.override.yml \
+          up \
+          --detach \
+          --build \
+          --force-recreate
+      - name: Read .nvmrc
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+        id: nvm
+      - name: Use Node.js (.nvmrc)
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ steps.nvm.outputs.NVMRC }}
+      - name: Set timezone
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: "Europe/Berlin"
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run type-check
+      - run: npm run test:ci
+        env:
+          CI: true
+          NEXT_PUBLIC_API_URL: ${{ secrets.API_URL }}
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm start -- -p 3333
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ env.SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_PUBLIC_KEY: ${{ env.SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.API_URL }}

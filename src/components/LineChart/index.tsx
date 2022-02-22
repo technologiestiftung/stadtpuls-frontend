@@ -13,6 +13,9 @@ import { localPoint } from "@visx/event";
 import { GridRows as HorizontalGridLines } from "@visx/grid";
 import colors from "../../style/colors";
 import moment from "moment";
+import "moment/locale/de";
+
+moment.locale("de-DE");
 
 const getX = (d: DateValueType): Date => {
   return moment.parseZone(d.date).toDate();

@@ -6,7 +6,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
 >
   <div>
     <div
-      className="border-b border-b-gray-50"
+      className="wrapper border-b border-b-gray-50"
     >
       <button
         className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
@@ -32,7 +32,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       </button>
     </div>
     <div
-      className="border-b border-b-gray-50"
+      className="wrapper border-b border-b-gray-50"
     >
       <button
         className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
@@ -58,7 +58,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       </button>
     </div>
     <div
-      className="border-b border-b-gray-50"
+      className="wrapper border-b border-b-gray-50"
     >
       <button
         className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
@@ -84,7 +84,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       </button>
     </div>
     <div
-      className="border-b border-b-gray-50"
+      className="wrapper border-b border-b-gray-50"
     >
       <button
         className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
@@ -110,7 +110,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       </button>
     </div>
     <div
-      className="border-b border-b-gray-50"
+      className="wrapper border-b border-b-gray-50"
     >
       <button
         className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
@@ -136,7 +136,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       </button>
     </div>
     <div
-      className="border-b border-b-gray-50"
+      className="wrapper border-b border-b-gray-50"
     >
       <button
         className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
@@ -162,7 +162,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       </button>
     </div>
     <div
-      className="border-b border-b-gray-50"
+      className="wrapper border-b border-b-gray-50"
     >
       <button
         className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
@@ -188,7 +188,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       </button>
     </div>
     <div
-      className="border-b border-b-gray-50"
+      className="wrapper border-b border-b-gray-50"
     >
       <button
         className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
@@ -214,7 +214,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       </button>
     </div>
     <div
-      className="border-b border-b-gray-50"
+      className="wrapper border-b border-b-gray-50"
     >
       <button
         className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
@@ -240,7 +240,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       </button>
     </div>
     <div
-      className="border-b border-b-gray-50"
+      className="wrapper border-b border-b-gray-50"
     >
       <button
         className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
@@ -266,7 +266,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       </button>
     </div>
     <div
-      className="border-b border-b-gray-50"
+      className="wrapper border-b border-b-gray-50"
     >
       <button
         className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"
@@ -292,7 +292,7 @@ exports[`Storyshots UI Elements/Accordion Default 1`] = `
       </button>
     </div>
     <div
-      className="border-b border-b-gray-50"
+      className="wrapper border-b border-b-gray-50"
     >
       <button
         className="p-4 block w-full text-sm text-left bg-gray-50 border border-white transition rounded relative focus:outline-none focus:z-10 hover:bg-gray-50 group hover:border-blue focus-offset"

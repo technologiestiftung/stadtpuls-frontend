@@ -4,7 +4,9 @@ exports[`Storyshots Forms/DayPickerInput Default 1`] = `
 <div
   className="grid place-content-center h-screen"
 >
-  <div>
+  <div
+    className="inputContainer"
+  >
     <input
       onBlur={[Function]}
       onChange={[Function]}

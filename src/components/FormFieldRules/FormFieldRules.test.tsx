@@ -45,13 +45,12 @@ describe("FormFieldRules", () => {
       />
     );
 
-    const iconsFulfilled = document.querySelectorAll("svg.text-green");
-    const iconsLoading = document.querySelectorAll("svg.animate-spin");
-    const iconsUnfulfilled = document.querySelectorAll(
-      "svg:not(.text-green):not(.animate-spin)"
-    );
-    expect(iconsFulfilled).toHaveLength(1);
-    expect(iconsUnfulfilled).toHaveLength(1);
-    expect(iconsLoading).toHaveLength(1);
+    const iconsFulfilled = screen.getByTestId(`icon-uniqueness`);
+    const iconsLoading = screen.getByTestId(`icon-chars`);
+    const iconsUnfulfilled = screen.getByTestId(`icon-length`);
+
+    expect(iconsFulfilled).toBeInTheDocument();
+    expect(iconsLoading).toBeInTheDocument();
+    expect(iconsUnfulfilled).toBeInTheDocument();
   });
 });

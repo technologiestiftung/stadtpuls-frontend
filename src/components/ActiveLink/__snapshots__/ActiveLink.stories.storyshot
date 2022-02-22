@@ -4,7 +4,7 @@ exports[`Storyshots UI Elements/ActiveLink Default 1`] = `
 Array [
   <p>
     <a
-      className="underline transition cursor-pointer text-left font-headline focus:ring-green text-blue underline-green hover:text-purple focus-offset no-underline font-bold hover:opacity-100"
+      className="underline transition cursor-pointer text-left font-headline focus:ring-green text-blue underline-green hover:text-purple focus-offset"
       href="/a"
       onClick={[Function]}
       onMouseEnter={[Function]}

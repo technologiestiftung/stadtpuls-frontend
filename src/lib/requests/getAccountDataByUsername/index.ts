@@ -9,15 +9,7 @@ import {
   ParsedSensorType,
   SensorQueryResponseType,
 } from "@lib/hooks/usePublicSensors";
-import {
-  RECORDS_LIMIT,
-  sensorQueryString,
-} from "@lib/requests/getPublicSensors";
-
-export interface GetRecordsOptionsType {
-  startDate?: string;
-  endDate?: string;
-}
+import { sensorQueryString } from "@lib/requests/getPublicSensors";
 
 export interface AccountWithSensorsType
   extends Omit<ParsedAccountType, "sensors"> {
@@ -25,8 +17,9 @@ export interface AccountWithSensorsType
 }
 
 export const getAccountDataByUsername = async (
-  username: string
-): Promise<AccountWithSensorsType> => {
+  username?: string
+): Promise<AccountWithSensorsType | undefined> => {
+  if (!username) return undefined;
   const { data: accountData, error: usersError } = await supabase
     .from<definitions["extended_user_profiles"]>("extended_user_profiles")
     .select("*")
@@ -39,15 +32,7 @@ export const getAccountDataByUsername = async (
   const { data: sensors, error: sensorsError } = await supabase
     .from<SensorQueryResponseType>("sensors")
     .select(sensorQueryString)
-    .eq("user_id", String(accountData.id).trim())
-    //FIXME: recorded_at is not recognized altought it is inherited from the definitions
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    .order("recorded_at", {
-      foreignTable: "records",
-      ascending: false,
-    })
-    .limit(RECORDS_LIMIT, { foreignTable: "records" });
+    .eq("user_id", String(accountData.id).trim());
   if (sensorsError) throw sensorsError;
   if (!accountData)
     throw new Error(`No sensors found for username "${username}"`);

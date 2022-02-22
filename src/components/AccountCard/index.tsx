@@ -35,9 +35,9 @@ export const AccountCard: FC<AccountCardPropType> = ({
   const isMd = windowWidth && windowWidth >= 640 && windowWidth < 768;
   const avatarSize = isSm ? 32 : isMd ? 40 : 48;
   return (
-    <Link href={`/accounts/${username}`}>
+    <Link href={`/${username}/sensors`}>
       <a
-        href={`/accounts/${username}`}
+        href={`/${username}/sensors`}
         className={[
           "group border border-gray-200 bg-white shadow block",
           "flex gap-x-3 sm:gap-x-4 md:gap-x-5",
