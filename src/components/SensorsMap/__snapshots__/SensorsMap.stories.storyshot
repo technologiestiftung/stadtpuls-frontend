@@ -1579,6 +1579,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             className="px-2 py-0.5 min-w-[3ch] inline-block"
             onClick={[Function]}
             onKeyPress={[Function]}
+            rel="prev"
             role="button"
             tabIndex="0"
           >
@@ -1594,8 +1595,9 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             className="px-2 py-0.5 min-w-[3ch] inline-block font-bold"
             onClick={[Function]}
             onKeyPress={[Function]}
+            rel="canonical"
             role="button"
-            tabIndex="0"
+            tabIndex="-1"
           >
             3
           </a>
@@ -1609,6 +1611,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             className="px-2 py-0.5 min-w-[3ch] inline-block"
             onClick={[Function]}
             onKeyPress={[Function]}
+            rel="next"
             role="button"
             tabIndex="0"
           >

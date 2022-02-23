@@ -4,7 +4,6 @@ import useClickOutside from ".";
 
 const createChildComponent =
   (clickOutsideHandler: () => void): FC =>
-  // eslint-disable-next-line react/display-name
   () => {
     const ref = useClickOutside<HTMLDivElement>(clickOutsideHandler);
     return (

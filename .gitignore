@@ -19,6 +19,7 @@ supabase/*
 .env.test.local
 .env.production.local
 .tsconfig-lint.tsbuildinfo
+tsconfig.tsbuildinfo 
 
 npm-debug.log*
 yarn-debug.log*

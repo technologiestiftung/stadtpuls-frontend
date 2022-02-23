@@ -12,7 +12,6 @@ export interface FormTextareaPropType
   optional?: boolean;
 }
 
-// eslint-disable-next-line react/display-name
 export const FormTextarea = forwardRef<
   HTMLTextAreaElement,
   FormTextareaPropType

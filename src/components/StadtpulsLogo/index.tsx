@@ -6,7 +6,6 @@ interface StadtpulsLogoPropType extends HTMLProps<HTMLAnchorElement> {
   className?: string;
 }
 
-// eslint-disable-next-line react/display-name
 export const StadtpulsLogo = forwardRef<
   HTMLAnchorElement,
   StadtpulsLogoPropType

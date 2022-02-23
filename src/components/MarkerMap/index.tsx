@@ -152,7 +152,6 @@ const useClusterMarkersMap = ({
         ...animatedFlyToProps,
       }));
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [highlightedMarkerIds]);
 
   useEffect(() => {
@@ -175,7 +174,6 @@ const useClusterMarkersMap = ({
       bearing: 0,
       ...animatedFlyToProps,
     }));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [readyForDisplay, idsString]);
 
   return { viewport, setViewport, mapRef, clusters, supercluster };

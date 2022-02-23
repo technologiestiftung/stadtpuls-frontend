@@ -39,7 +39,6 @@ export const PreviewMap: FC<PreviewMapPropType> = ({
     )
       return;
     setViewport(initialViewport);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialViewport]);
 
   const displayViewport = interactive ? viewport : initialViewport;

@@ -144,7 +144,6 @@ export const EditAddSensorModal: FC<EditAddSensorModalPropType> = ({
     ) {
       setConnectionType(defaultValues.connectionType);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultValues.connectionType]);
 
   return (

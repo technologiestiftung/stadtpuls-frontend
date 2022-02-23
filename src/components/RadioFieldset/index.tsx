@@ -14,11 +14,7 @@ export const RadioFieldset: FC<RadioFieldsetPropType> = ({
   children,
   onSelect = () => undefined,
 }) => (
-  /* eslint-disable jsx-a11y/click-events-have-key-events */
-  /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
   <fieldset className='relative' onClick={onSelect}>
-    {/* eslint-enable jsx-a11y/click-events-have-key-events */
-    /* eslint-enable jsx-a11y/no-noninteractive-element-interactions */}
     {!isSelected && (
       <div
         className={[

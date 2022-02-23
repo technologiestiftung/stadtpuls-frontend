@@ -13,10 +13,10 @@ module.exports = {
   // to enable features such as async/await
   ignorePatterns: ["node_modules/*", ".next/*", ".out/*", "!.prettierrc.js", "cypress/*"],
   // We don't want to lint generated files nor node_modules, but we want to lint .prettierrc.js (ignored by default by eslint)
-  extends: ["eslint:recommended", "plugin:storybook/recommended"],
+  extends: ["eslint:recommended", "plugin:storybook/recommended", "plugin:@next/next/recommended"],
   overrides: [// This configuration will apply only to TypeScript files
   {
-    plugins: ["@typescript-eslint", "import"],
+    plugins: ["@typescript-eslint"],
     files: ["**/*.ts", "**/*.tsx", "**/*.mdx"],
     parser: "@typescript-eslint/parser",
     settings: {
@@ -37,11 +37,11 @@ module.exports = {
       node: true,
       es6: true
     },
-    extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", // TypeScript rules
-    "plugin:@typescript-eslint/recommended-requiring-type-checking", "plugin:react/recommended", // React rules
-    "plugin:react-hooks/recommended", // React hooks rules
-    "plugin:jsx-a11y/recommended", // Accessibility rules
-    "plugin:prettier/recommended" // Prettier recommended rules
+    extends: [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended", // TypeScript rules
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      "plugin:prettier/recommended", // Prettier recommended rules
     ],
     rules: {
       // We will use TypeScript's types for component props instead
@@ -59,9 +59,7 @@ module.exports = {
       }],
       "prettier/prettier": ["error", {}, {
         usePrettierrc: true
-      }],
-      // Includes .prettierrc.js rules
-      "import/no-unresolved": "error"
+      }]
     }
   }]
 };

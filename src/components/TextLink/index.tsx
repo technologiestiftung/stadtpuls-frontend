@@ -45,7 +45,6 @@ const getLinkStyle = (props: GetLinkStyleType): string =>
     .filter(Boolean)
     .join(" ");
 
-// eslint-disable-next-line react/display-name
 export const TextLink = forwardRef<HTMLAnchorElement, AnchorTextLinkPropType>(
   ({ children, ...rest }, ref) => (
     <a {...rest} ref={ref} className={getLinkStyle(rest)}>
@@ -54,7 +53,6 @@ export const TextLink = forwardRef<HTMLAnchorElement, AnchorTextLinkPropType>(
   )
 );
 
-// eslint-disable-next-line react/display-name
 export const ButtonTextLink = forwardRef<
   HTMLButtonElement,
   ButtonTextLinkPropType
