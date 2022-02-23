@@ -337,7 +337,7 @@ export const MarkerMap: FC<MarkerMapType> = ({
 
             return (
               <Marker
-                key={cluster.id}
+                key={`${isCluster ? "cluster" : "marker"}-${cluster.id}`}
                 latitude={latitude}
                 longitude={longitude}
               >
