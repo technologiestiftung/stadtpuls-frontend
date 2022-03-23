@@ -288,7 +288,7 @@ exports[`Storyshots Layout/SensorPageHeader Maximum Props 1`] = `
           onClick={[Function]}
           readOnly={true}
           type="text"
-          value="api.stadtpuls.com/api/v3/sensors/1/records"
+          value="localhost/api/v3/sensors/1/records"
         />
         <div
           aria-hidden={true}
@@ -604,7 +604,7 @@ exports[`Storyshots Layout/SensorPageHeader Minimum Props 1`] = `
           onClick={[Function]}
           readOnly={true}
           type="text"
-          value="api.stadtpuls.com/api/v3/sensors/1/records"
+          value="localhost/api/v3/sensors/1/records"
         />
         <div
           aria-hidden={true}
