@@ -28,15 +28,7 @@ export const getSensorsRecords = async (
   const { data, error } = await supabase
     .from<SensorQueryResponseType>("sensors")
     .select(recordsQueryString)
-    .filter("id", "in", `(${ids.toString()})`)
-    // FIXME: recorded_at is not recognized altought it is inherited from the definitions
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    .order("recorded_at", {
-      foreignTable: "records",
-      ascending: false,
-    })
-    .limit(RECORDS_LIMIT, { foreignTable: "records" });
+    .filter("id", "in", `(${ids.toString()})`);
 
   if (error) throw error;
   if (!data) return {};
