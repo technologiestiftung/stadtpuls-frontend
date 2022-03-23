@@ -5,10 +5,7 @@ import {
   ParsedSensorType,
   SensorQueryResponseType,
 } from "@lib/hooks/usePublicSensors";
-import {
-  sensorQueryString,
-  RECORDS_LIMIT,
-} from "@lib/requests/getPublicSensors";
+import { sensorQueryString } from "@lib/requests/getPublicSensors";
 
 // The following is a quickfix because we currently know what our curated sensors are
 // In the future we might wanna save them in a DB table
@@ -35,15 +32,7 @@ export const getCuratedSensors = async (): Promise<ParsedSensorType[]> => {
       // In the future we might wanna save them in a DB table
       // TODO: Refactor this!
       isProduction ? PRODUCTION_SENSORS_IDS : STAGING_SENSORS_IDS
-    )
-    //FIXME: the ignorance
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    .order("recorded_at", {
-      foreignTable: "records",
-      ascending: false,
-    })
-    .limit(RECORDS_LIMIT, { foreignTable: "records" });
+    );
 
   if (error) throw error;
   if (!data) return [];
