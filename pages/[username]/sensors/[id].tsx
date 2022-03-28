@@ -33,16 +33,21 @@ tenDaysAgo.setDate(today.getDate() - 10);
 today.setHours(0, 0, 0, 0);
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const sensorId =
-    typeof params?.id === "string" ? parseInt(params.id, 10) : null;
-  if (!sensorId || Array.isArray(sensorId)) return { notFound: true };
+  try {
+    const sensorId =
+      typeof params?.id === "string" ? parseInt(params.id, 10) : null;
+    if (!sensorId || Array.isArray(sensorId)) return { notFound: true };
 
-  const sensor = await getSensorData(sensorId);
+    const sensor = await getSensorData(sensorId);
 
-  if (!sensor || sensor.authorUsername !== params?.username)
+    if (!sensor || sensor.authorUsername !== params?.username)
+      return { notFound: true };
+
+    return { props: { sensor, error: null }, revalidate: 60 };
+  } catch (error) {
+    console.error(error);
     return { notFound: true };
-
-  return { props: { sensor, error: null }, revalidate: 60 };
+  }
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

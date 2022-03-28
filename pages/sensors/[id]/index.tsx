@@ -6,17 +6,21 @@ export const getServerSideProps: GetServerSideProps = async context => {
   const sensorId = context.query.id;
   if (!sensorId || Array.isArray(sensorId)) return { notFound: true };
 
-  const sensor = await getSensorData(parseInt(sensorId, 10));
+  try {
+    const sensor = await getSensorData(parseInt(sensorId, 10));
 
-  if (!sensor) return { notFound: true };
+    if (!sensor) return { notFound: true };
 
-  return {
-    redirect: {
-      destination: `/${sensor.authorUsername}/sensors/${sensor.id}`,
-      permanent: true,
-    },
-    props: {},
-  };
+    return {
+      redirect: {
+        destination: `/${sensor.authorUsername}/sensors/${sensor.id}`,
+        permanent: true,
+      },
+      props: {},
+    };
+  } catch {
+    return { notFound: true };
+  }
 };
 
 const Nothing: FC = () => null;
