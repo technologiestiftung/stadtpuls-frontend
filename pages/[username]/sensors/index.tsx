@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       revalidate: 30,
     };
   } catch (error) {
-    console.error(error);
+    console.error(JSON.stringify(error));
     return { notFound: true };
   }
 };
