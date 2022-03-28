@@ -45,8 +45,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     return { props: { sensor, error: null }, revalidate: 60 };
   } catch (error) {
-    console.error(error);
-    return { notFound: true };
+    const { details } = error as { details: string };
+    if (details && details.startsWith("Results contain 0 rows")) {
+      return { notFound: true };
+    }
+    throw error;
   }
 };
 

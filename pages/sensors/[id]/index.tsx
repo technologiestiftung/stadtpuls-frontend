@@ -18,8 +18,12 @@ export const getServerSideProps: GetServerSideProps = async context => {
       },
       props: {},
     };
-  } catch {
-    return { notFound: true };
+  } catch (error) {
+    const { details } = error as { details: string };
+    if (details && details.startsWith("Results contain 0 rows")) {
+      return { notFound: true };
+    }
+    throw error;
   }
 };
 
