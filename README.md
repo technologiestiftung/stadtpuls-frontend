@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/Build%20with%20%E2%9D%A4%EF%B8%8F-at%20Technologiesitftung%20Berlin-blue)
+
 # Stadtpuls (Frontend)
 
 This repository contains the frontend of the platform *Stadtpuls* of Technologiestiftung Berlin. It is built using [Next.js](https://nextjs.org/), TypeScript, [visx](https://airbnb.io/visx/), and [a wrapper for Mapbox GL](https://visgl.github.io/react-map-gl/).
