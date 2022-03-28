@@ -64,12 +64,12 @@ const numberFormatter = new Intl.NumberFormat("de-DE", {
 });
 
 const SensorPage: FC<{
-  sensor?: ParsedSensorType;
-}> = ({ sensor: initialSensor }) => {
+  sensor?: ParsedSensorType | null;
+}> = ({ sensor: initialSensor } = { sensor: null }) => {
   const { isFallback } = useRouter();
   const { sensor, isLoading } = useSensorData({
     sensorId: initialSensor?.id,
-    initialData: initialSensor,
+    initialData: initialSensor || undefined,
   });
   const { pushToQueue } = useDownloadQueue();
   const [chartWidth, setChartWidth] = useState<number | undefined>(undefined);
