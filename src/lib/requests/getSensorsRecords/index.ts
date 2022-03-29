@@ -5,8 +5,6 @@ import {
   parseSensorRecords,
 } from "@lib/hooks/usePublicSensors";
 
-export const RECORDS_LIMIT = 20;
-
 export const recordsQueryString = `
   id,
   records (

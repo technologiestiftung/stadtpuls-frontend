@@ -10,7 +10,6 @@ interface TrProps extends HTMLProps<HTMLTableRowElement> {
   p?: string;
 }
 
-// eslint-disable-next-line react/display-name
 export const Tr = forwardRef<HTMLTableRowElement, TrProps>(
   ({ children, className = "", p = "py-4 sm:py-0", ...rest }, ref) => (
     <tr
@@ -31,7 +30,7 @@ export const Tr = forwardRef<HTMLTableRowElement, TrProps>(
 );
 
 const commonStyles = `whitespace-nowrap w-auto block align-top sm:table-cell`;
-// eslint-disable-next-line react/display-name
+
 export const Th = forwardRef<HTMLTableHeaderCellElement, ThProps>(
   (
     { children, className = "", p = "sm:py-3 sm:pr-3 sm:pl-2", ...rest },
@@ -54,7 +53,6 @@ export const Th = forwardRef<HTMLTableHeaderCellElement, ThProps>(
   )
 );
 
-// eslint-disable-next-line react/display-name
 export const Td = forwardRef<HTMLTableCellElement, TdProps>(
   (
     { children, className = "", p = "sm:py-3 pl-8 sm:pl-2 sm:pr-6", ...rest },

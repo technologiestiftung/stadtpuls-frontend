@@ -15,7 +15,6 @@ const Template: Story<MarkerMapType> = args => {
       setMarkers(args.markers || []);
     }, 500);
     return () => clearTimeout(to);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

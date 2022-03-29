@@ -246,7 +246,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
               <span
                 className="absolute bottom-0 left-0 text-xs text-gray-300"
               >
-                Zul. vor 6 Monaten
+                Zul. vor 7 Monaten
               </span>
               <span
                 className="absolute top-0 right-0 bg-white text-xs text-purple font-mono font-semibold px-0.5 py-[1px] border border-gray-200 leading-3"
@@ -1579,6 +1579,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             className="px-2 py-0.5 min-w-[3ch] inline-block"
             onClick={[Function]}
             onKeyPress={[Function]}
+            rel="prev"
             role="button"
             tabIndex="0"
           >
@@ -1594,8 +1595,9 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             className="px-2 py-0.5 min-w-[3ch] inline-block font-bold"
             onClick={[Function]}
             onKeyPress={[Function]}
+            rel="canonical"
             role="button"
-            tabIndex="0"
+            tabIndex="-1"
           >
             3
           </a>
@@ -1609,6 +1611,7 @@ exports[`Storyshots Pages/SensorsMap Default 1`] = `
             className="px-2 py-0.5 min-w-[3ch] inline-block"
             onClick={[Function]}
             onKeyPress={[Function]}
+            rel="next"
             role="button"
             tabIndex="0"
           >

@@ -10,7 +10,6 @@ describe("Pagination component", () => {
       marginPagesDisplayed: 1,
       pages: 10,
       startPage: 1,
-      breakItem: 1,
     };
     render(
       <Pagination
@@ -24,7 +23,6 @@ describe("Pagination component", () => {
     const expectedNumberOfListItems =
       counts.previousButton +
       counts.pageRangeDisplayed +
-      counts.breakItem +
       counts.marginPagesDisplayed +
       counts.nextButton;
 

@@ -75,7 +75,6 @@ const getButtonStyles = ({
   return classes.filter(Boolean).join(" ");
 };
 
-// eslint-disable-next-line react/display-name
 export const Button = forwardRef<HTMLButtonElement, ButtonPropType>(
   ({ children, ...buttonProps }, ref) => (
     <button
@@ -89,7 +88,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonPropType>(
   )
 );
 
-// eslint-disable-next-line react/display-name
 export const Submit = forwardRef<HTMLInputElement, SubmitPropType>(
   ({ children, ...submitProps }, ref) => (
     <input
@@ -102,7 +100,6 @@ export const Submit = forwardRef<HTMLInputElement, SubmitPropType>(
   )
 );
 
-// eslint-disable-next-line react/display-name
 export const AnchorButton = forwardRef<HTMLAnchorElement, AnchorButtonPropType>(
   ({ href, children, ...anchorProps }, ref) => (
     <a

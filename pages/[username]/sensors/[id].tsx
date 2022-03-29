@@ -33,16 +33,24 @@ tenDaysAgo.setDate(today.getDate() - 10);
 today.setHours(0, 0, 0, 0);
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const sensorId =
-    typeof params?.id === "string" ? parseInt(params.id, 10) : null;
-  if (!sensorId || Array.isArray(sensorId)) return { notFound: true };
+  try {
+    const sensorId =
+      typeof params?.id === "string" ? parseInt(params.id, 10) : null;
+    if (!sensorId || Array.isArray(sensorId)) return { notFound: true };
 
-  const sensor = await getSensorData(sensorId);
+    const sensor = await getSensorData(sensorId);
 
-  if (!sensor || sensor.authorUsername !== params?.username)
-    return { notFound: true };
+    if (!sensor || sensor.authorUsername !== params?.username)
+      return { notFound: true };
 
-  return { props: { sensor, error: null }, revalidate: 60 };
+    return { props: { sensor, error: null }, revalidate: 60 };
+  } catch (error) {
+    const { details } = error as { details: string };
+    if (details && details.startsWith("Results contain 0 rows")) {
+      return { notFound: true };
+    }
+    throw error;
+  }
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -64,12 +72,12 @@ const numberFormatter = new Intl.NumberFormat("de-DE", {
 });
 
 const SensorPage: FC<{
-  sensor?: ParsedSensorType;
-}> = ({ sensor: initialSensor }) => {
+  sensor?: ParsedSensorType | null;
+}> = ({ sensor: initialSensor } = { sensor: null }) => {
   const { isFallback } = useRouter();
   const { sensor, isLoading } = useSensorData({
     sensorId: initialSensor?.id,
-    initialData: initialSensor,
+    initialData: initialSensor || undefined,
   });
   const { pushToQueue } = useDownloadQueue();
   const [chartWidth, setChartWidth] = useState<number | undefined>(undefined);

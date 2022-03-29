@@ -1,4 +1,5 @@
 import { SmallModal } from "@components/SmallModal";
+import Image from "next/image";
 import { FC } from "react";
 
 export interface MagicLinkModalPropType {
@@ -37,9 +38,19 @@ export const MagicLinkModal: FC<MagicLinkModalPropType> = props => {
       }
     >
       {props.isLoading ? (
-        <img src='/images/magick-link-loading.svg' alt='closed envelope' />
+        <Image
+          width='384'
+          height='128'
+          src='/images/magick-link-loading.svg'
+          alt='closed envelope'
+        />
       ) : (
-        <img src='/images/magick-link-sent.svg' alt='opened envelope' />
+        <Image
+          width='384'
+          height='128'
+          src='/images/magick-link-sent.svg'
+          alt='opened envelope'
+        />
       )}
     </SmallModal>
   );

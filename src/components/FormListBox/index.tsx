@@ -26,7 +26,6 @@ interface FormListBoxPropType {
   listBoxOptionsCssProperties?: React.CSSProperties;
 }
 
-// eslint-disable-next-line react/display-name
 export const FormListBox = forwardRef<HTMLButtonElement, FormListBoxPropType>(
   (
     {

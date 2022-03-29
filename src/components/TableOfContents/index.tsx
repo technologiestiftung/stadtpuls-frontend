@@ -71,7 +71,6 @@ export const TableOfContents: FC<TableOfContentsPropType> = ({ links }) => {
   useEffect(() => {
     requestRef.current = requestAnimationFrame(checkForActiveLinks);
     return () => cancelAnimationFrame(requestRef.current);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -13,12 +13,12 @@ exports[`Storyshots UI Elements/Pagination Few Pages 1`] = `
       <a
         aria-disabled="true"
         aria-label="Previous page"
-        className="px-2 py-0.5 min-w-[3ch] inline-block"
+        className="px-2 py-0.5 min-w-[3ch] inline-block "
         onClick={[Function]}
         onKeyPress={[Function]}
         rel="prev"
         role="button"
-        tabIndex="0"
+        tabIndex="-1"
       >
         ←
       </a>
@@ -32,8 +32,9 @@ exports[`Storyshots UI Elements/Pagination Few Pages 1`] = `
         className="px-2 py-0.5 min-w-[3ch] inline-block font-bold"
         onClick={[Function]}
         onKeyPress={[Function]}
+        rel="canonical"
         role="button"
-        tabIndex="0"
+        tabIndex="-1"
       >
         1
       </a>
@@ -47,6 +48,7 @@ exports[`Storyshots UI Elements/Pagination Few Pages 1`] = `
         className="px-2 py-0.5 min-w-[3ch] inline-block"
         onClick={[Function]}
         onKeyPress={[Function]}
+        rel="next"
         role="button"
         tabIndex="0"
       >
@@ -101,12 +103,12 @@ exports[`Storyshots UI Elements/Pagination Many Pages 1`] = `
       <a
         aria-disabled="true"
         aria-label="Previous page"
-        className="px-2 py-0.5 min-w-[3ch] inline-block"
+        className="px-2 py-0.5 min-w-[3ch] inline-block "
         onClick={[Function]}
         onKeyPress={[Function]}
         rel="prev"
         role="button"
-        tabIndex="0"
+        tabIndex="-1"
       >
         ←
       </a>
@@ -120,8 +122,9 @@ exports[`Storyshots UI Elements/Pagination Many Pages 1`] = `
         className="px-2 py-0.5 min-w-[3ch] inline-block font-bold"
         onClick={[Function]}
         onKeyPress={[Function]}
+        rel="canonical"
         role="button"
-        tabIndex="0"
+        tabIndex="-1"
       >
         1
       </a>
@@ -135,6 +138,7 @@ exports[`Storyshots UI Elements/Pagination Many Pages 1`] = `
         className="px-2 py-0.5 min-w-[3ch] inline-block"
         onClick={[Function]}
         onKeyPress={[Function]}
+        rel="next"
         role="button"
         tabIndex="0"
       >
@@ -169,21 +173,6 @@ exports[`Storyshots UI Elements/Pagination Many Pages 1`] = `
         tabIndex="0"
       >
         4
-      </a>
-    </li>
-    <li
-      className="text-center border-r border-t border-b border-gray-200 hover:bg-purple hover:bg-opacity-10 z-10"
-    >
-      <a
-        aria-current={null}
-        aria-label="Page 5"
-        className="px-2 py-0.5 min-w-[3ch] inline-block"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        5
       </a>
     </li>
     <li
