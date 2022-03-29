@@ -72,4 +72,4 @@ You can commit using the `npm run cm` command to ensure your commits follow our 
 
 ## Deployment
 
-The frontend is currently deployed to [Vercel](https://vercel.com/). Pushing to the `main` branch will automatically trigger a new deploy (this should be avoided, if possible).
+The frontend is currently deployed to [Vercel](https://vercel.com/). Pushing to the `main` branch will automatically trigger a new deploy (avoid to push directly to main and rather create pull requests).
