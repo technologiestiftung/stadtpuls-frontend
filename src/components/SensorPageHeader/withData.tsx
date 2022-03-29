@@ -132,7 +132,7 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
           <div className='prose max-w-none'>
             <p>Du bist dabei, den Sensor „{mergedSensor.name}“ zu löschen.</p>
             <p>
-              <strong>Diese Aktion is unwiderruflich.</strong>
+              <strong>Diese Aktion ist unwiderruflich.</strong>
             </p>
             <p>Bist du sicher?</p>
           </div>
