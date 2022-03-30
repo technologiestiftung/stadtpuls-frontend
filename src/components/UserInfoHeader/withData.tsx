@@ -223,9 +223,9 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
           }
         >
           <div className='prose max-w-none'>
-            <p>Du bist dabei, dein Account zu löschen.</p>
+            <p>Du bist dabei, deinen Account zu löschen.</p>
             <p>
-              <strong>Diese Aktion is unwiderruflich.</strong>
+              <strong>Diese Aktion ist unwiderruflich.</strong>
             </p>
             <p>Bist du sicher?</p>
           </div>
