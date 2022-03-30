@@ -1,6 +1,6 @@
 {
   "name": "stadtpuls-frontend",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@headlessui/react": "1.4.1",
