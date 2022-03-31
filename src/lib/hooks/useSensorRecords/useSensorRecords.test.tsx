@@ -1,11 +1,23 @@
+import { AuthProvider } from "@auth/Auth";
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { render, waitFor } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react-hooks";
 import { FC, useEffect } from "react";
 import { SWRConfig } from "swr";
+import { rest } from "msw";
+import { setupServer } from "msw/node";
 import { useSensorRecords } from ".";
+import { createSupabaseUrl } from "@lib/requests/createSupabaseUrl";
+import { getSensorRecords } from "@mocks/supabaseData/records";
 
 type OnSuccessType = (data: definitions["records"][]) => void;
 type OnFailType = (error: string) => void;
+
+const HookWrapper: FC = ({ children }) => (
+  <SWRConfig value={{ dedupingInterval: 0 }}>
+    <AuthProvider>{children}</AuthProvider>
+  </SWRConfig>
+);
 
 const createTestComponent = (
   sensorId: number | undefined,
@@ -66,6 +78,90 @@ describe("useSensorRecords hook", () => {
     await waitFor(() => {
       expect(onSuccess).toHaveBeenCalledWith(true);
       expect(onError).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("deleteRecords", () => {
+    it.only("deletes records", async () => {
+      const parentSensorId = 4;
+      const records = getSensorRecords({
+        sensorId: parentSensorId,
+        numberOfRecords: 10,
+      });
+      const server = setupServer(
+        rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
+          console.log("GET WAS CALLED");
+          return res(ctx.status(201, "Mocked status"), ctx.json(records));
+        }),
+        rest.delete(createSupabaseUrl(`/records`), (_req, res, ctx) => {
+          return res(ctx.status(201, "Mocked status"));
+        })
+      );
+      server.listen();
+      const { result, waitForNextUpdate } = renderHook(
+        () => useSensorRecords({ sensorId: parentSensorId }),
+        {
+          wrapper: HookWrapper,
+        }
+      );
+
+      const recordsIds = records
+        .slice(-4, records.length - 1)
+        .map(record => record.id);
+
+      await waitForNextUpdate();
+
+      await act(async () => {
+        await result.current.deleteRecords(recordsIds);
+      });
+
+      await waitFor(() => {
+        expect(result.current.error).toBeNull();
+        console.log(result.current.records.length);
+        expect(result.current.records).toHaveLength(records.length - 4);
+      });
+
+      await waitFor(() => {
+        const remainingRecords = (result.current.records || []).filter(
+          ({ id }) => recordsIds.includes(id)
+        );
+        console.log(remainingRecords);
+        expect(remainingRecords).toHaveLength(0);
+      });
+    });
+    it("fails when no ids are provided", async () => {
+      const parentSensorId = 4;
+      const records = getSensorRecords({
+        sensorId: parentSensorId,
+        numberOfRecords: 10,
+      });
+      const server = setupServer(
+        rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
+          return res(ctx.status(201, "Mocked status"), ctx.json(records));
+        }),
+        rest.delete(createSupabaseUrl(`/records`), (_req, res, ctx) => {
+          return res(ctx.status(201, "Mocked status"));
+        })
+      );
+      server.listen();
+      const { result, waitForNextUpdate } = renderHook(
+        () => useSensorRecords({ sensorId: parentSensorId }),
+        {
+          wrapper: HookWrapper,
+        }
+      );
+
+      await waitForNextUpdate();
+
+      await act(async () => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        await result.current.deleteRecords();
+      });
+
+      await waitFor(() => {
+        expect(result.current.error?.message).toBe("Please provide record ids");
+      });
     });
   });
 });

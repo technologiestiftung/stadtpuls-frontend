@@ -12,9 +12,13 @@ interface DataTableRowType {
 }
 export interface DataTableType {
   data: DataTableRowType[];
+  onRowsDelete?: (ids: number[]) => void | Promise<void>;
 }
 
-export const DataTable: React.FC<DataTableType> = ({ data }) => {
+export const DataTable: React.FC<DataTableType> = ({
+  data,
+  onRowsDelete = () => undefined,
+}) => {
   const [displayedData, setDisplayedData] = useState<DataTableRowType[]>([]);
 
   const [numberOfRecordsToDisplay, setNumberOfRecordsToDisplay] =
@@ -40,6 +44,13 @@ export const DataTable: React.FC<DataTableType> = ({ data }) => {
         "max-h-[500px]",
       ].join(" ")}
     >
+      <Button
+        onClick={() => {
+          void onRowsDelete([displayedData[0].id]);
+        }}
+      >
+        Delete first item
+      </Button>
       <table className='w-full p-2 border-collapse'>
         <thead className='sticky top-0 bottom-auto'>
           <tr className='h-8'>

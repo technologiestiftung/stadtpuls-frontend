@@ -95,6 +95,7 @@ const SensorPage: FC<{
     recordsCount: requestedRecordsCount,
     error: recordsFetchError,
     isLoading: recordsAreLoading,
+    deleteRecords,
   } = useSensorRecords({
     sensorId: initialSensor?.id,
     startDateString: currentDatetimeRange.startDateTimeString,
@@ -260,7 +261,10 @@ const SensorPage: FC<{
         </div>
         {records.length > 0 && (
           <div className='mt-16'>
-            <DataTable data={parsedAndSortedRecords.reverse()} />
+            <DataTable
+              data={parsedAndSortedRecords.reverse()}
+              onRowsDelete={deleteRecords}
+            />
           </div>
         )}
       </div>

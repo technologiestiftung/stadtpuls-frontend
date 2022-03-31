@@ -1,9 +1,12 @@
+import { supabase } from "@auth/supabase";
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import {
   getRecordsBySensorId,
   GetRecordsResponseType,
 } from "@lib/requests/getRecordsBySensorId";
-import useSWR from "swr";
+import useSWR, { mutate } from "swr";
+import { useState } from "react";
+import { useAuth } from "@auth/Auth";
 
 interface useSensorRecordsParamsType {
   sensorId: number | undefined;
@@ -17,7 +20,23 @@ interface useSensorRecordsReturnType {
   records: definitions["records"][];
   recordsCount: number | null;
   error: Error | null;
+  deleteRecords: (recordIds: number[]) => Promise<void>;
 }
+
+const deleteRecords = async (
+  ids: definitions["records"]["id"][],
+  user_id: string | undefined
+): Promise<void> => {
+  if (!user_id) throw new Error("Not authenticated");
+  if (!ids || ids.length === 0) throw new Error("Please provide record ids");
+
+  const { error } = await supabase
+    .from<definitions["records"]>("records")
+    .delete()
+    .in("id", ids);
+
+  if (error) throw error;
+};
 
 type fetchSensorRecordsSignature = (
   params: useSensorRecordsParamsType
@@ -46,6 +65,9 @@ export const useSensorRecords = ({
   endDateString,
   maxRows,
 }: useSensorRecordsParamsType): useSensorRecordsReturnType => {
+  const { authenticatedUser } = useAuth();
+  const userId = authenticatedUser?.id;
+  const [actionError, setActionError] = useState<Error | null>(null);
   const params = [
     `sensor-${sensorId || "no"}-records`,
     sensorId,
@@ -71,6 +93,21 @@ export const useSensorRecords = ({
     isLoading: data?.records === undefined,
     records: data?.records || [],
     recordsCount: data?.count || null,
-    error: error || null,
+    error: error || actionError || null,
+    deleteRecords: async recordIds => {
+      if (!data || error) return;
+      if (!recordIds || recordIds.length === 0) {
+        setActionError(() => new Error("Please provide record ids"));
+        return;
+      }
+      setActionError(null);
+      void mutate(
+        params,
+        data.records.filter(({ id }) => !recordIds.includes(id)),
+        false
+      );
+      await deleteRecords(recordIds, userId).catch(setActionError);
+      void mutate(params);
+    },
   };
 };
