@@ -55,7 +55,12 @@ const IndeterminateCheckbox = forwardRef<
 
   return (
     <>
-      <input type='checkbox' ref={resolvedRef} {...rest} />
+      <input
+        type='checkbox'
+        ref={resolvedRef}
+        {...rest}
+        className='m-0 -translate-y-0.5'
+      />
     </>
   );
 });
@@ -74,19 +79,13 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
       {
         id: "selection",
         Header: ({ getToggleAllRowsSelectedProps }) => (
-          <div>
-            <IndeterminateCheckbox {...getToggleAllRowsSelectedProps()} />
-          </div>
+          <IndeterminateCheckbox {...getToggleAllRowsSelectedProps()} />
         ),
         Cell: ({
           row,
         }: {
           row: { getToggleRowSelectedProps: () => TableToggleCommonProps };
-        }) => (
-          <div>
-            <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />
-          </div>
-        ),
+        }) => <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />,
         width: 50,
       },
       ...columns,
@@ -101,25 +100,22 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
         <div
           {...row.getRowProps({ style })}
           role='row'
-          className='tr font-mono odd:bg-white-dot-pattern even:bg-white grid grid-cols-[auto,1fr,1fr]'
+          className='tr font-mono odd:bg-white-dot-pattern even:bg-white grid grid-cols-[auto,1fr,1fr] justify-items-stretch'
         >
           {row.cells.map((cell, i) => {
             return (
               <div
                 {...cell.getCellProps()}
                 role='cell'
-                className={`td text-left p-0 whitespace-nowrap`}
+                className={[
+                  "td text-left p-0 whitespace-nowrap",
+                  "grid items-center",
+                  i !== row.cells.length - 1 ? "border-r border-gray-200" : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
               >
-                <span
-                  className={[
-                    "block text-left",
-                    "py-3 px-4 font-normal",
-                    "border-gray-200",
-                    i !== row.cells.length - 1 ? "border-r" : "",
-                  ]
-                    .filter(Boolean)
-                    .join(" ")}
-                >
+                <span className='inline-block text-left px-4 font-normal'>
                   {cell.render("Cell")}
                 </span>
               </div>
