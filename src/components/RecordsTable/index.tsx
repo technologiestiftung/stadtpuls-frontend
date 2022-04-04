@@ -1,22 +1,25 @@
 import { FC, forwardRef, useEffect, useMemo, useRef } from "react";
-import { useTable, usePagination, useRowSelect, Column } from "react-table";
-import { createDateValueArray } from "@utils/dateUtil";
-
-type DateValueType = ReturnType<createDateValueArray>;
+import {
+  useTable,
+  useRowSelect,
+  Column,
+  TableToggleCommonProps,
+} from "react-table";
+import { DateValueType } from "@lib/dateUtil";
 
 interface RecordsTablePropsType {
-  data: DateValueType;
+  data: DateValueType[];
 }
 
 const numberFormatter = new Intl.NumberFormat("de-DE");
 
-function createRecordsColumns(): Column<DateValueType> {
-  return useMemo<Column<DateValueType>>(
+function createRecordsColumns(): Column<DateValueType>[] {
+  return useMemo(
     () => [
       {
         Header: "Datum und Uhrzeit (ISO)",
         accessor: "date",
-        Cell: ({ value }) => value.format("DD. MMM YYYY - HH:mm:sss"),
+        Cell: ({ value }) => value.format("DD. MMM YYYY - HH:mm:ss"),
       },
       {
         Header: "Wert",
@@ -28,13 +31,17 @@ function createRecordsColumns(): Column<DateValueType> {
   );
 }
 
-const IndeterminateCheckbox = forwardRef(({ indeterminate, ...rest }, ref) => {
+const IndeterminateCheckbox = forwardRef<
+  HTMLInputElement,
+  TableToggleCommonProps
+>(({ indeterminate, ...rest }, ref) => {
   const defaultRef = useRef<HTMLInputElement>(null);
   const resolvedRef = ref || defaultRef;
 
   useEffect(() => {
-    if (!resolvedRef?.current) return;
-    resolvedRef.current.indeterminate = indeterminate;
+    if (!resolvedRef || !("current" in resolvedRef) || !resolvedRef?.current)
+      return;
+    resolvedRef.current.indeterminate = !!indeterminate;
   }, [resolvedRef, indeterminate]);
 
   return (
@@ -53,7 +60,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
     prepareRow,
     rows,
     selectedFlatRows,
-  } = useTable({ columns, data }, usePagination, useRowSelect, hooks => {
+  } = useTable({ columns, data }, useRowSelect, hooks => {
     hooks.visibleColumns.push(columns => [
       {
         id: "selection",
@@ -62,7 +69,11 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
             <IndeterminateCheckbox {...getToggleAllRowsSelectedProps()} />
           </div>
         ),
-        Cell: ({ row }) => (
+        Cell: ({
+          row,
+        }: {
+          row: { getToggleRowSelectedProps: () => TableToggleCommonProps };
+        }) => (
           <div>
             <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />
           </div>

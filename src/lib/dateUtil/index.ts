@@ -3,7 +3,7 @@ import "moment/locale/de";
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 moment.locale("de-DE");
 
-interface DateValueType {
+export interface DateValueType {
   id: number;
   value: number;
   date: moment.Moment;
