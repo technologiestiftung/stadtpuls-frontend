@@ -1,10 +1,19 @@
-import { FC, forwardRef, useEffect, useMemo, useRef } from "react";
+import {
+  CSSProperties,
+  FC,
+  forwardRef,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+} from "react";
 import {
   useTable,
   useRowSelect,
   Column,
   TableToggleCommonProps,
 } from "react-table";
+import { FixedSizeList } from "react-window";
 import { DateValueType } from "@lib/dateUtil";
 
 interface RecordsTablePropsType {
@@ -83,73 +92,102 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
       ...columns,
     ]);
   });
+
+  const RenderRow = useCallback(
+    ({ index, style }: { index: number; style: CSSProperties }) => {
+      const row = rows[index];
+      prepareRow(row);
+      return (
+        <div
+          {...row.getRowProps({ style })}
+          role='row'
+          className='tr font-mono odd:bg-white-dot-pattern even:bg-white grid grid-cols-[auto,1fr,1fr]'
+        >
+          {row.cells.map((cell, i) => {
+            return (
+              <div
+                {...cell.getCellProps()}
+                role='cell'
+                className={`td text-left p-0 whitespace-nowrap`}
+              >
+                <span
+                  className={[
+                    "block text-left",
+                    "py-3 px-4 font-normal",
+                    "border-gray-200",
+                    i !== row.cells.length - 1 ? "border-r" : "",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                >
+                  {cell.render("Cell")}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      );
+    },
+    [prepareRow, rows, selectedFlatRows]
+  );
+
   return (
     <>
       {selectedFlatRows.length > 0 && <button>Delete selected rows</button>}
       <div className='w-full overflow-auto border border-gray-200 relative max-h-[600px]'>
-        <table
+        <div
           {...getTableProps()}
           className='w-full border-collapse table-fixed block'
+          role='table'
         >
-          <thead className='sticky top-0 bottom-auto block w-full z-10'>
+          <div
+            role='rowgroup'
+            className='sticky top-0 bottom-auto block w-full z-10'
+          >
             {headerGroups.map(headerGroup => (
-              <tr
+              <div
+                role='row'
                 className='grid grid-cols-[auto,1fr,1fr]'
                 {...headerGroup.getHeaderGroupProps()}
               >
-                {headerGroup.headers.map(column => (
-                  <th
+                {headerGroup.headers.map((column, i) => (
+                  <div
+                    role='cell'
                     className={`text-left p-0 whitespace-nowrap`}
                     {...column.getHeaderProps()}
-                    colSpan={undefined}
                   >
                     <span
                       className={[
                         "block",
                         "text-left font-headline text-lg",
                         "py-3 px-4 font-normal shadow",
-                        "border-r border-gray-200",
+                        "border-gray-200",
                         "border-b bg-white border-gray-200",
+                        i !== headerGroup.headers.length - 1 ? "border-r" : "",
                       ].join(" ")}
                     >
                       {column.render("Header")}
                     </span>
-                  </th>
+                  </div>
                 ))}
-              </tr>
+              </div>
             ))}
-          </thead>
-          <tbody {...getTableBodyProps()} className='block w-full'>
-            {rows.map(row => {
-              prepareRow(row);
-              return (
-                <tr
-                  {...row.getRowProps()}
-                  className='font-mono odd:bg-white-dot-pattern even:bg-white grid grid-cols-[auto,1fr,1fr]'
-                >
-                  {row.cells.map((cell, i) => {
-                    return (
-                      <td
-                        {...cell.getCellProps()}
-                        className={`text-left p-0 whitespace-nowrap`}
-                      >
-                        <span
-                          className={[
-                            "block text-left",
-                            "py-3 px-4 font-normal",
-                            "border-r border-gray-200",
-                          ].join(" ")}
-                        >
-                          {cell.render("Cell")}
-                        </span>
-                      </td>
-                    );
-                  })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+          </div>
+          <div
+            role='rowgroup'
+            {...getTableBodyProps()}
+            className='block w-full'
+          >
+            <FixedSizeList
+              height={600}
+              itemCount={rows.length}
+              itemSize={48}
+              width='100%'
+            >
+              {RenderRow}
+            </FixedSizeList>
+          </div>
+        </div>
       </div>
     </>
   );
