@@ -24,16 +24,19 @@ interface useSensorRecordsReturnType {
 }
 
 const deleteRecords = async (
-  ids: definitions["records"]["id"][],
-  user_id: string | undefined
+  ids?: definitions["records"]["id"][],
+  sensor_id?: definitions["sensors"]["id"],
+  user_id?: definitions["user_profiles"]["id"]
 ): Promise<void> => {
   if (!user_id) throw new Error("Not authenticated");
+  if (!sensor_id) throw new Error("Please provide a sensor ids");
   if (!ids || ids.length === 0) throw new Error("Please provide record ids");
 
   const { error } = await supabase
     .from<definitions["records"]>("records")
     .delete()
-    .in("id", ids);
+    .in("id", ids)
+    .eq("sensor_id", sensor_id);
 
   if (error) throw error;
 };
@@ -96,8 +99,10 @@ export const useSensorRecords = ({
     error: error || actionError || null,
     deleteRecords: async recordIds => {
       if (!data || error) return;
-      if (!recordIds || recordIds.length === 0) {
-        setActionError(() => new Error("Please provide record ids"));
+      if (!recordIds || recordIds.length === 0 || !sensorId) {
+        setActionError(
+          () => new Error("Please provide a sensor id and record ids")
+        );
         return;
       }
       setActionError(null);
@@ -106,7 +111,7 @@ export const useSensorRecords = ({
         data.records.filter(({ id }) => !recordIds.includes(id)),
         false
       );
-      await deleteRecords(recordIds, userId).catch(setActionError);
+      await deleteRecords(recordIds, sensorId, userId).catch(setActionError);
       void mutate(params);
     },
   };

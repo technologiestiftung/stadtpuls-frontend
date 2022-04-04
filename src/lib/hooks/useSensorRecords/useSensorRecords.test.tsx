@@ -81,8 +81,8 @@ describe("useSensorRecords hook", () => {
     });
   });
 
-  describe("deleteRecords", () => {
-    it.only("deletes records", async () => {
+  describe.skip("deleteRecords", () => {
+    it("deletes records", async () => {
       const parentSensorId = 4;
       const records = getSensorRecords({
         sensorId: parentSensorId,
