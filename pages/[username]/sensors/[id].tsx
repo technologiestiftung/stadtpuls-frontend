@@ -23,6 +23,7 @@ import { getPublicSensors } from "@lib/requests/getPublicSensors";
 import { useSensorData } from "@lib/hooks/useSensorData";
 import { useRouter } from "next/router";
 import { SensorPageHeaderLoadingSkeleton } from "@components/SensorPageHeaderLoadingSkeleton";
+import { RecordsTable } from "@components/RecordsTable";
 
 moment.locale("de-DE");
 
@@ -261,10 +262,11 @@ const SensorPage: FC<{
         </div>
         {records.length > 0 && (
           <div className='mt-16'>
-            <DataTable
+            <RecordsTable data={parsedAndSortedRecords.reverse()} />
+            {/* <DataTable
               data={parsedAndSortedRecords.reverse()}
               onRowsDelete={deleteRecords}
-            />
+            /> */}
           </div>
         )}
       </div>
