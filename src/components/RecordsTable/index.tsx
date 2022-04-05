@@ -1,70 +1,17 @@
-import {
-  CSSProperties,
-  FC,
-  forwardRef,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-} from "react";
-import {
-  useTable,
-  useRowSelect,
-  Column,
-  TableToggleCommonProps,
-} from "react-table";
+import { CSSProperties, FC, useCallback } from "react";
+import { useTable, useRowSelect } from "react-table";
 import { FixedSizeList } from "react-window";
 import { DateValueType } from "@lib/dateUtil";
 import { Button } from "@components/Button";
+import {
+  createHeaderColumn,
+  createRecordsColumns,
+  numberFormatter,
+} from "./recordsTableUtils";
 
-interface RecordsTablePropsType {
+export interface RecordsTablePropsType {
   data: DateValueType[];
 }
-
-const numberFormatter = new Intl.NumberFormat("de-DE");
-
-function createRecordsColumns(): Column<DateValueType>[] {
-  return useMemo(
-    () => [
-      {
-        Header: "Datum und Uhrzeit (ISO)",
-        accessor: "date",
-        Cell: ({ value }) => value.format("DD. MMM YYYY - HH:mm:ss"),
-      },
-      {
-        Header: "Wert",
-        accessor: "value",
-        Cell: ({ value }) => numberFormatter.format(value),
-      },
-    ],
-    []
-  );
-}
-
-const IndeterminateCheckbox = forwardRef<
-  HTMLInputElement,
-  TableToggleCommonProps
->(({ indeterminate, ...rest }, ref) => {
-  const defaultRef = useRef<HTMLInputElement>(null);
-  const resolvedRef = ref || defaultRef;
-
-  useEffect(() => {
-    if (!resolvedRef || !("current" in resolvedRef) || !resolvedRef?.current)
-      return;
-    resolvedRef.current.indeterminate = !!indeterminate;
-  }, [resolvedRef, indeterminate]);
-
-  return (
-    <>
-      <input
-        type='checkbox'
-        ref={resolvedRef}
-        {...rest}
-        className='m-0 -translate-y-0.5'
-      />
-    </>
-  );
-});
 
 export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
   const columns = createRecordsColumns();
@@ -76,21 +23,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
     rows,
     selectedFlatRows,
   } = useTable({ columns, data }, useRowSelect, hooks => {
-    hooks.visibleColumns.push(columns => [
-      {
-        id: "selection",
-        Header: ({ getToggleAllRowsSelectedProps }) => (
-          <IndeterminateCheckbox {...getToggleAllRowsSelectedProps()} />
-        ),
-        Cell: ({
-          row,
-        }: {
-          row: { getToggleRowSelectedProps: () => TableToggleCommonProps };
-        }) => <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />,
-        width: 50,
-      },
-      ...columns,
-    ]);
+    hooks.visibleColumns.push(createHeaderColumn);
   });
 
   const RenderRow = useCallback(
@@ -101,7 +34,11 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
         <div
           {...row.getRowProps({ style })}
           role='row'
-          className='tr font-mono odd:bg-white-dot-pattern even:bg-white grid grid-cols-[auto,1fr,1fr] justify-items-stretch'
+          className={[
+            "tr font-mono",
+            "grid grid-cols-[auto,1fr,1fr] justify-items-stretch",
+            index % 2 === 0 ? "bg-white-dot-pattern" : "bg-white",
+          ].join(" ")}
         >
           {row.cells.map((cell, i) => {
             return (
@@ -132,6 +69,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
     <>
       <Button
         variant='dangerous'
+        disabled={selectedFlatRows.length === 0}
         className={[
           "transition-opacity border border-error mb-4",
           selectedFlatRows.length > 0
@@ -141,7 +79,8 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
           .filter(Boolean)
           .join(" ")}
       >
-        {numberFormatter.format(selectedFlatRows.length)} Werte löschen
+        {numberFormatter.format(selectedFlatRows.length)}{" "}
+        {selectedFlatRows.length === 1 ? "Wert" : "Werte"} löschen
       </Button>
       <div className='w-full overflow-auto border border-gray-200 relative max-h-[600px]'>
         <div
@@ -155,9 +94,9 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
           >
             {headerGroups.map(headerGroup => (
               <div
+                {...headerGroup.getHeaderGroupProps()}
                 role='row'
                 className='grid grid-cols-[auto,1fr,1fr]'
-                {...headerGroup.getHeaderGroupProps()}
               >
                 {headerGroup.headers.map((column, i) => (
                   <div

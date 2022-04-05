@@ -19,9 +19,10 @@ describe("createDateValueArray", () => {
         measurements: [20],
       },
     ]);
-    expect(dateValueArray[0].date.toISOString()).toBe(
-      "2021-04-08T20:32:49.796Z"
-    );
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    expect(dateValueArray[0].date instanceof Date).toBe(false);
+    expect(dateValueArray[0].date).toBe("2021-04-08T20:32:49.796Z");
   });
   it("should return an array sorted by Date", () => {
     const dateValueArray = createDateValueArray([

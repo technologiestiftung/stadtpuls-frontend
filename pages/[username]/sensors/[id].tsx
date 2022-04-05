@@ -237,7 +237,7 @@ const SensorPage: FC<{
               xAxisUnit='Messdatum'
               data={parsedAndSortedRecords.map(({ id, date, value }) => ({
                 id,
-                date: date.toISOString(),
+                date: new Date().toISOString(),
                 value,
               }))}
               startDateTimeString={currentDatetimeRange.startDateTimeString}

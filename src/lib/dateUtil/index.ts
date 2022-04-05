@@ -6,7 +6,7 @@ moment.locale("de-DE");
 export interface DateValueType {
   id: number;
   value: number;
-  date: moment.Moment;
+  date: string;
 }
 
 export const createDateValueArray = (
@@ -19,8 +19,11 @@ export const createDateValueArray = (
   }));
   const sortedDateValueArray = dateValueArray.sort((a, b) => {
     return a.date.valueOf() - b.date.valueOf();
-  }) as DateValueType[];
-  return sortedDateValueArray;
+  });
+  return sortedDateValueArray.map(d => ({
+    ...d,
+    date: d.date.toISOString(),
+  }));
 };
 
 export const formatDateFromNow = (date: Date): string => {
