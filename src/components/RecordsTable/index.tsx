@@ -13,6 +13,11 @@ export interface RecordsTablePropsType {
   data: DateValueType[];
 }
 
+const isLoggedInOwner = false;
+const tableHeight = 600;
+const tableHeightClass = "max-h-[600px]";
+const tableRowHeight = 48;
+
 export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
   const columns = createRecordsColumns();
   const {
@@ -23,6 +28,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
     rows,
     selectedFlatRows,
   } = useTable({ columns, data }, useRowSelect, hooks => {
+    if (!isLoggedInOwner) return;
     hooks.visibleColumns.push(createHeaderColumn);
   });
 
@@ -36,11 +42,13 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
           role='row'
           className={[
             "tr font-mono",
-            "grid grid-cols-[auto,1fr,1fr] justify-items-stretch",
+            "grid justify-items-stretch",
             index % 2 === 0 ? "bg-white-dot-pattern" : "bg-white",
+            isLoggedInOwner ? "grid-cols-[auto,1fr,1fr]" : "grid-cols-2",
           ].join(" ")}
         >
           {row.cells.map((cell, i) => {
+            if (isLoggedInOwner && i === 0) return null;
             return (
               <div
                 {...cell.getCellProps()}
@@ -67,36 +75,44 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
 
   return (
     <>
-      <Button
-        variant='dangerous'
-        disabled={selectedFlatRows.length === 0}
-        className={[
-          "transition-opacity border border-error mb-4",
-          selectedFlatRows.length > 0
-            ? "opacity-100"
-            : "opacity-0 pointer-events-none",
-        ]
-          .filter(Boolean)
-          .join(" ")}
+      {isLoggedInOwner && (
+        <Button
+          variant='dangerous'
+          disabled={selectedFlatRows.length === 0}
+          className={[
+            "transition-opacity border border-error mb-4",
+            selectedFlatRows.length > 0
+              ? "opacity-100"
+              : "opacity-0 pointer-events-none",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+        >
+          {numberFormatter.format(selectedFlatRows.length)}{" "}
+          {selectedFlatRows.length === 1 ? "Wert" : "Werte"} löschen
+        </Button>
+      )}
+      <div
+        className={`w-full overflow-auto border border-gray-200 relative ${tableHeightClass}`}
       >
-        {numberFormatter.format(selectedFlatRows.length)}{" "}
-        {selectedFlatRows.length === 1 ? "Wert" : "Werte"} löschen
-      </Button>
-      <div className='w-full overflow-auto border border-gray-200 relative max-h-[600px]'>
         <div
           {...getTableProps()}
           className='w-full border-collapse table-fixed block'
+          style={{ paddingTop: tableRowHeight }}
           role='table'
         >
           <div
             role='rowgroup'
-            className='sticky top-0 bottom-auto block w-full z-10'
+            className='absolute top-0 bottom-auto block w-full z-10'
           >
             {headerGroups.map(headerGroup => (
               <div
                 {...headerGroup.getHeaderGroupProps()}
                 role='row'
-                className='grid grid-cols-[auto,1fr,1fr]'
+                style={{ height: tableRowHeight }}
+                className={`grid ${
+                  isLoggedInOwner ? "grid-cols-[auto,1fr,1fr]" : "grid-cols-2"
+                }`}
               >
                 {headerGroup.headers.map((column, i) => (
                   <div
@@ -106,9 +122,9 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
                   >
                     <span
                       className={[
-                        "block",
+                        "h-full grid items-center",
                         "text-left font-headline text-lg",
-                        "py-3 px-4 font-normal shadow",
+                        "px-4 font-normal shadow",
                         "border-gray-200",
                         "border-b bg-white border-gray-200",
                         i !== headerGroup.headers.length - 1 ? "border-r" : "",
@@ -127,9 +143,9 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
             className='block w-full'
           >
             <FixedSizeList
-              height={600}
+              height={tableHeight - tableRowHeight - 2} // -2 for border
               itemCount={rows.length}
-              itemSize={48}
+              itemSize={tableRowHeight}
               width='100%'
             >
               {RenderRow}
