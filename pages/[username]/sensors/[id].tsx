@@ -1,4 +1,3 @@
-import { DataTable } from "@components/DataTable";
 import { DeviceLineChartFilters } from "@components/DeviceLineChartFilters";
 import { DropdownMenu } from "@components/DropdownMenu";
 import { LineChart } from "@components/LineChart";
@@ -13,7 +12,7 @@ import DownloadIcon from "../../../public/images/icons/16px/arrowDownWithHalfSqu
 import moment from "moment";
 import "moment/locale/de";
 import { GetStaticPaths, GetStaticProps } from "next";
-import React, { FC, useCallback, useState } from "react";
+import { FC, useCallback, useState } from "react";
 import { SensorPageHeaderWithData } from "@components/SensorPageHeader/withData";
 import { useDownloadQueue } from "@lib/hooks/useDownloadQueue";
 import { downloadCSVString } from "@lib/downloadCsvUtil";
@@ -24,6 +23,7 @@ import { useSensorData } from "@lib/hooks/useSensorData";
 import { useRouter } from "next/router";
 import { SensorPageHeaderLoadingSkeleton } from "@components/SensorPageHeaderLoadingSkeleton";
 import { RecordsTable } from "@components/RecordsTable";
+import { useUserData } from "@lib/hooks/useUserData";
 
 moment.locale("de-DE");
 
@@ -76,6 +76,9 @@ const SensorPage: FC<{
   sensor?: ParsedSensorType | null;
 }> = ({ sensor: initialSensor } = { sensor: null }) => {
   const { isFallback } = useRouter();
+  const { isLoggedIn, user: loggedInAccount } = useUserData();
+  const isEditable =
+    isLoggedIn && loggedInAccount?.username === initialSensor?.authorUsername;
   const { sensor, isLoading } = useSensorData({
     sensorId: initialSensor?.id,
     initialData: initialSensor || undefined,
@@ -96,7 +99,6 @@ const SensorPage: FC<{
     recordsCount: requestedRecordsCount,
     error: recordsFetchError,
     isLoading: recordsAreLoading,
-    deleteRecords,
   } = useSensorRecords({
     sensorId: initialSensor?.id,
     startDateString: currentDatetimeRange.startDateTimeString,
@@ -235,11 +237,7 @@ const SensorPage: FC<{
               height={chartHeight || 400}
               yAxisUnit=''
               xAxisUnit='Messdatum'
-              data={parsedAndSortedRecords.map(({ id, date, value }) => ({
-                id,
-                date: new Date().toISOString(),
-                value,
-              }))}
+              data={parsedAndSortedRecords}
               startDateTimeString={currentDatetimeRange.startDateTimeString}
               endDateTimeString={currentDatetimeRange.endDateTimeString}
             />
@@ -262,7 +260,10 @@ const SensorPage: FC<{
         </div>
         {records.length > 0 && (
           <div className='mt-16'>
-            <RecordsTable data={parsedAndSortedRecords.reverse()} />
+            <RecordsTable
+              isEditable={isEditable}
+              data={parsedAndSortedRecords.reverse()}
+            />
             {/* <DataTable
               data={parsedAndSortedRecords.reverse()}
               onRowsDelete={deleteRecords}

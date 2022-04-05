@@ -8,17 +8,21 @@ import {
   createRecordsColumns,
   numberFormatter,
 } from "./recordsTableUtils";
+import styles from "./RecordsTable.module.css";
 
 export interface RecordsTablePropsType {
   data: DateValueType[];
+  isEditable: boolean;
 }
 
-const isLoggedInOwner = false;
 const tableHeight = 600;
 const tableHeightClass = "max-h-[600px]";
 const tableRowHeight = 48;
 
-export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
+export const RecordsTable: FC<RecordsTablePropsType> = ({
+  data,
+  isEditable,
+}) => {
   const columns = createRecordsColumns();
   const {
     getTableProps,
@@ -28,7 +32,6 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
     rows,
     selectedFlatRows,
   } = useTable({ columns, data }, useRowSelect, hooks => {
-    if (!isLoggedInOwner) return;
     hooks.visibleColumns.push(createHeaderColumn);
   });
 
@@ -44,29 +47,27 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
             "tr font-mono",
             "grid justify-items-stretch",
             index % 2 === 0 ? "bg-white-dot-pattern" : "bg-white",
-            isLoggedInOwner ? "grid-cols-[auto,1fr,1fr]" : "grid-cols-2",
+            isEditable ? "grid-cols-[auto,3fr,1fr]" : "grid-cols-[3fr,1fr]",
           ].join(" ")}
         >
-          {row.cells.map((cell, i) => {
-            if (isLoggedInOwner && i === 0) return null;
-            return (
-              <div
-                {...cell.getCellProps()}
-                role='cell'
-                className={[
-                  "td text-left p-0 whitespace-nowrap",
-                  "grid items-center",
-                  i !== row.cells.length - 1 ? "border-r border-gray-200" : "",
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-              >
-                <span className='inline-block text-left px-4 font-normal'>
-                  {cell.render("Cell")}
-                </span>
-              </div>
-            );
-          })}
+          {row.cells.map((cell, i) => (
+            <div
+              {...cell.getCellProps()}
+              role='cell'
+              className={[
+                "td text-left p-0 whitespace-nowrap",
+                "grid items-center",
+                styles.tableCell,
+                i !== row.cells.length - 1 ? "border-r border-gray-200" : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
+            >
+              <span className='inline-block text-left px-4 font-normal'>
+                {cell.render("Cell")}
+              </span>
+            </div>
+          ))}
         </div>
       );
     },
@@ -75,7 +76,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
 
   return (
     <>
-      {isLoggedInOwner && (
+      {isEditable && (
         <Button
           variant='dangerous'
           disabled={selectedFlatRows.length === 0}
@@ -97,13 +98,15 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
       >
         <div
           {...getTableProps()}
-          className='w-full border-collapse table-fixed block'
+          className={`w-full border-collapse table-fixed block ${
+            !isEditable ? styles.notEditableTable : ""
+          }`}
           style={{ paddingTop: tableRowHeight }}
           role='table'
         >
           <div
             role='rowgroup'
-            className='absolute top-0 bottom-auto block w-full z-10'
+            className='absolute top-0 bottom-auto block w-[max(100%,400px)] z-10'
           >
             {headerGroups.map(headerGroup => (
               <div
@@ -111,13 +114,15 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
                 role='row'
                 style={{ height: tableRowHeight }}
                 className={`grid ${
-                  isLoggedInOwner ? "grid-cols-[auto,1fr,1fr]" : "grid-cols-2"
+                  isEditable
+                    ? "grid-cols-[auto,3fr,1fr]"
+                    : "grid-cols-[3fr,1fr]"
                 }`}
               >
                 {headerGroup.headers.map((column, i) => (
                   <div
                     role='cell'
-                    className={`text-left p-0 whitespace-nowrap`}
+                    className={`text-left p-0 whitespace-nowrap ${styles.tableCell}`}
                     {...column.getHeaderProps()}
                   >
                     <span
@@ -140,7 +145,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
           <div
             role='rowgroup'
             {...getTableBodyProps()}
-            className='block w-full'
+            className='block w-[max(100%,400px)]'
           >
             <FixedSizeList
               height={tableHeight - tableRowHeight - 2} // -2 for border

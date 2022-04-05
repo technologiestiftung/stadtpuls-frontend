@@ -10,7 +10,7 @@ const testData = Array.from(Array(30)).map((_, i) => ({
 describe("RecordsTable", () => {
   test("should render data as rows with checkboxes", () => {
     const arrayLength = 5;
-    render(<RecordsTable data={testData.slice(0, arrayLength)} />);
+    render(<RecordsTable data={testData.slice(0, arrayLength)} isEditable />);
 
     const table = screen.getByRole("table");
     const rowGroups = screen.getAllByRole("rowgroup");
