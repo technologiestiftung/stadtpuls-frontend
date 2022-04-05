@@ -20,7 +20,9 @@ moment.locale("de-DE");
 const getX = (d: { date: Date }): Date => d.date;
 const getY = (d: { value: number }): number => d.value;
 // eslint-disable-next-line @typescript-eslint/unbound-method
-const bisectDate = bisector<DateValueType, Date>(d => d.date).left;
+const bisectDate = bisector<DateValueType, Date>(
+  (a, b) => b.getTime() - a.date.getTime()
+).left;
 
 const tooltipStyles = {
   ...defaultStyles,
@@ -93,7 +95,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
           | React.MouseEvent<SVGRectElement>
       ) => {
         const { x } = localPoint(event) || { x: 0 };
-        const x0 = xScale.invert(x - padding.left);
+        const x0 = xScale.invert(Math.ceil(x - padding.left));
         const index = bisectDate(data, x0, 1);
         const d0 = data[index - 1];
         const d1 = data[index];
@@ -105,6 +107,7 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
               ? d1
               : d0;
         }
+
         showTooltip({
           tooltipData: d,
           tooltipLeft: xScale(getX(d)) + padding.left,
@@ -222,7 +225,6 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
         {tooltipData && (
           <div>
             <TooltipWithBounds
-              key={Math.random()}
               top={tooltipTop - 40}
               left={tooltipLeft}
               style={tooltipStyles}
