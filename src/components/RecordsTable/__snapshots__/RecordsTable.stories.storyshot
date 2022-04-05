@@ -5,7 +5,7 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
   className="w-full overflow-auto border border-gray-200 relative max-h-[600px]"
 >
   <div
-    className="w-full border-collapse table-fixed block"
+    className="w-full border-collapse table-fixed block notEditableTable"
     role="table"
     style={
       Object {
@@ -14,11 +14,11 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
     }
   >
     <div
-      className="absolute top-0 bottom-auto block w-full z-10"
+      className="absolute top-0 bottom-auto block max-h-[600px] z-10"
       role="rowgroup"
     >
       <div
-        className="grid grid-cols-2"
+        className="grid grid-cols-3"
         role="row"
         style={
           Object {
@@ -27,23 +27,56 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
         }
       >
         <div
-          className="text-left p-0 whitespace-nowrap"
+          className="text-left p-0 whitespace-nowrap tableCell"
           colSpan={1}
           role="columnheader"
         >
           <span
-            className="h-full grid items-center text-left font-headline text-lg px-4 font-normal shadow border-gray-200 border-b bg-white border-gray-200 border-r"
+            className="h-full grid items-center text-left font-headline text-lg px-4 font-normal shadow border-gray-200 border-b bg-white border-gray-200 max-w-full truncate border-r"
           >
-            Datum und Uhrzeit (ISO)
+            <input
+              checked={false}
+              className="m-0 -translate-y-0.5"
+              onChange={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+              title="Toggle All Rows Selected"
+              type="checkbox"
+            />
           </span>
         </div>
         <div
-          className="text-left p-0 whitespace-nowrap"
+          className="text-left p-0 whitespace-nowrap tableCell"
           colSpan={1}
           role="columnheader"
         >
           <span
-            className="h-full grid items-center text-left font-headline text-lg px-4 font-normal shadow border-gray-200 border-b bg-white border-gray-200 "
+            className="h-full grid items-center text-left font-headline text-lg px-4 font-normal shadow border-gray-200 border-b bg-white border-gray-200 max-w-full truncate border-r"
+          >
+            Datum (ISO)
+          </span>
+        </div>
+        <div
+          className="text-left p-0 whitespace-nowrap tableCell"
+          colSpan={1}
+          role="columnheader"
+        >
+          <span
+            className="h-full grid items-center text-left font-headline text-lg px-4 font-normal shadow border-gray-200 border-b bg-white border-gray-200 max-w-full truncate border-r"
+          >
+            Uhrzeit (ISO)
+          </span>
+        </div>
+        <div
+          className="text-left p-0 whitespace-nowrap tableCell"
+          colSpan={1}
+          role="columnheader"
+        >
+          <span
+            className="h-full grid items-center text-left font-headline text-lg px-4 font-normal shadow border-gray-200 border-b bg-white border-gray-200 max-w-full truncate "
           >
             Wert
           </span>
@@ -51,7 +84,7 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
       </div>
     </div>
     <div
-      className="block w-full"
+      className="block w-[max(100%,500px)]}"
       role="rowgroup"
     >
       <div
@@ -78,7 +111,7 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
           }
         >
           <div
-            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-2"
+            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-3"
             role="row"
             style={
               Object {
@@ -92,28 +125,59 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
             }
           >
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                2022-01-1T00:00:00:00Z
+                <input
+                  checked={false}
+                  className="m-0 -translate-y-0.5"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  title="Toggle Row Selected"
+                  type="checkbox"
+                />
               </span>
             </div>
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                2022-01-01
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                00:00:00
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
                 20
               </span>
             </div>
           </div>
           <div
-            className="tr font-mono grid justify-items-stretch bg-white grid-cols-2"
+            className="tr font-mono grid justify-items-stretch bg-white grid-cols-3"
             role="row"
             style={
               Object {
@@ -127,28 +191,59 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
             }
           >
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                2022-01-2T00:00:00:00Z
+                <input
+                  checked={false}
+                  className="m-0 -translate-y-0.5"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  title="Toggle Row Selected"
+                  type="checkbox"
+                />
               </span>
             </div>
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                20
+                2022-01-02
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                00:00:00
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                21
               </span>
             </div>
           </div>
           <div
-            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-2"
+            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-3"
             role="row"
             style={
               Object {
@@ -162,28 +257,59 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
             }
           >
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                2022-01-3T00:00:00:00Z
+                <input
+                  checked={false}
+                  className="m-0 -translate-y-0.5"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  title="Toggle Row Selected"
+                  type="checkbox"
+                />
               </span>
             </div>
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                20
+                2022-01-03
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                00:00:00
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                22
               </span>
             </div>
           </div>
           <div
-            className="tr font-mono grid justify-items-stretch bg-white grid-cols-2"
+            className="tr font-mono grid justify-items-stretch bg-white grid-cols-3"
             role="row"
             style={
               Object {
@@ -197,28 +323,59 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
             }
           >
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                2022-01-4T00:00:00:00Z
+                <input
+                  checked={false}
+                  className="m-0 -translate-y-0.5"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  title="Toggle Row Selected"
+                  type="checkbox"
+                />
               </span>
             </div>
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                20
+                2022-01-04
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                00:00:00
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                23
               </span>
             </div>
           </div>
           <div
-            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-2"
+            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-3"
             role="row"
             style={
               Object {
@@ -232,28 +389,59 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
             }
           >
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                2022-01-5T00:00:00:00Z
+                <input
+                  checked={false}
+                  className="m-0 -translate-y-0.5"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  title="Toggle Row Selected"
+                  type="checkbox"
+                />
               </span>
             </div>
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                20
+                2022-01-05
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                00:00:00
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                24
               </span>
             </div>
           </div>
           <div
-            className="tr font-mono grid justify-items-stretch bg-white grid-cols-2"
+            className="tr font-mono grid justify-items-stretch bg-white grid-cols-3"
             role="row"
             style={
               Object {
@@ -267,28 +455,59 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
             }
           >
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                2022-01-6T00:00:00:00Z
+                <input
+                  checked={false}
+                  className="m-0 -translate-y-0.5"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  title="Toggle Row Selected"
+                  type="checkbox"
+                />
               </span>
             </div>
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                20
+                2022-01-06
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                00:00:00
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                25
               </span>
             </div>
           </div>
           <div
-            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-2"
+            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-3"
             role="row"
             style={
               Object {
@@ -302,28 +521,59 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
             }
           >
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                2022-01-7T00:00:00:00Z
+                <input
+                  checked={false}
+                  className="m-0 -translate-y-0.5"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  title="Toggle Row Selected"
+                  type="checkbox"
+                />
               </span>
             </div>
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                20
+                2022-01-07
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                00:00:00
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                26
               </span>
             </div>
           </div>
           <div
-            className="tr font-mono grid justify-items-stretch bg-white grid-cols-2"
+            className="tr font-mono grid justify-items-stretch bg-white grid-cols-3"
             role="row"
             style={
               Object {
@@ -337,28 +587,59 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
             }
           >
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                2022-01-8T00:00:00:00Z
+                <input
+                  checked={false}
+                  className="m-0 -translate-y-0.5"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  title="Toggle Row Selected"
+                  type="checkbox"
+                />
               </span>
             </div>
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                20
+                2022-01-08
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                00:00:00
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                27
               </span>
             </div>
           </div>
           <div
-            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-2"
+            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-3"
             role="row"
             style={
               Object {
@@ -372,28 +653,59 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
             }
           >
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                2022-01-9T00:00:00:00Z
+                <input
+                  checked={false}
+                  className="m-0 -translate-y-0.5"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  title="Toggle Row Selected"
+                  type="checkbox"
+                />
               </span>
             </div>
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                20
+                2022-01-09
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                00:00:00
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                28
               </span>
             </div>
           </div>
           <div
-            className="tr font-mono grid justify-items-stretch bg-white grid-cols-2"
+            className="tr font-mono grid justify-items-stretch bg-white grid-cols-3"
             role="row"
             style={
               Object {
@@ -407,28 +719,59 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
             }
           >
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                2022-01-10T00:00:00:00Z
+                <input
+                  checked={false}
+                  className="m-0 -translate-y-0.5"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  title="Toggle Row Selected"
+                  type="checkbox"
+                />
               </span>
             </div>
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                20
+                2022-01-10
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                00:00:00
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                29
               </span>
             </div>
           </div>
           <div
-            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-2"
+            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-3"
             role="row"
             style={
               Object {
@@ -442,28 +785,59 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
             }
           >
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                2022-01-11T00:00:00:00Z
+                <input
+                  checked={false}
+                  className="m-0 -translate-y-0.5"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  title="Toggle Row Selected"
+                  type="checkbox"
+                />
               </span>
             </div>
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                20
+                2022-01-11
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                00:00:00
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                30
               </span>
             </div>
           </div>
           <div
-            className="tr font-mono grid justify-items-stretch bg-white grid-cols-2"
+            className="tr font-mono grid justify-items-stretch bg-white grid-cols-3"
             role="row"
             style={
               Object {
@@ -477,28 +851,59 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
             }
           >
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                2022-01-12T00:00:00:00Z
+                <input
+                  checked={false}
+                  className="m-0 -translate-y-0.5"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  title="Toggle Row Selected"
+                  type="checkbox"
+                />
               </span>
             </div>
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                20
+                2022-01-12
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                00:00:00
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                31
               </span>
             </div>
           </div>
           <div
-            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-2"
+            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-3"
             role="row"
             style={
               Object {
@@ -512,28 +917,59 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
             }
           >
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                2022-01-13T00:00:00:00Z
+                <input
+                  checked={false}
+                  className="m-0 -translate-y-0.5"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  title="Toggle Row Selected"
+                  type="checkbox"
+                />
               </span>
             </div>
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                20
+                2022-01-13
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                00:00:00
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                32
               </span>
             </div>
           </div>
           <div
-            className="tr font-mono grid justify-items-stretch bg-white grid-cols-2"
+            className="tr font-mono grid justify-items-stretch bg-white grid-cols-3"
             role="row"
             style={
               Object {
@@ -547,23 +983,54 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
             }
           >
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                2022-01-14T00:00:00:00Z
+                <input
+                  checked={false}
+                  className="m-0 -translate-y-0.5"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  title="Toggle Row Selected"
+                  type="checkbox"
+                />
               </span>
             </div>
             <div
-              className="td text-left p-0 whitespace-nowrap grid items-center"
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
               role="cell"
             >
               <span
-                className="inline-block text-left px-4 font-normal"
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
               >
-                20
+                2022-01-14
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                00:00:00
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center tableCell"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal max-w-full truncate"
+              >
+                33
               </span>
             </div>
           </div>

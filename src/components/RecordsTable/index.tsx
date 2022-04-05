@@ -2,13 +2,9 @@ import { CSSProperties, FC, useCallback } from "react";
 import { useTable, useRowSelect } from "react-table";
 import { FixedSizeList } from "react-window";
 import { DateValueType } from "@lib/dateUtil";
-import { Button } from "@components/Button";
-import {
-  createHeaderColumn,
-  createRecordsColumns,
-  numberFormatter,
-} from "./recordsTableUtils";
+import { createHeaderColumn, createRecordsColumns } from "./recordsTableUtils";
 import styles from "./RecordsTable.module.css";
+import { DeleteRecordsButton } from "./DeleteRecordsButton";
 
 export interface RecordsTablePropsType {
   data: DateValueType[];
@@ -17,6 +13,7 @@ export interface RecordsTablePropsType {
 
 const tableHeight = 600;
 const tableHeightClass = "max-h-[600px]";
+const tableWidthClass = "w-[max(100%,500px)]";
 const tableRowHeight = 48;
 
 export const RecordsTable: FC<RecordsTablePropsType> = ({
@@ -77,21 +74,10 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
   return (
     <>
       {isEditable && (
-        <Button
-          variant='dangerous'
-          disabled={selectedFlatRows.length === 0}
-          className={[
-            "transition-opacity border border-error mb-4",
-            selectedFlatRows.length > 0
-              ? "opacity-100"
-              : "opacity-0 pointer-events-none",
-          ]
-            .filter(Boolean)
-            .join(" ")}
-        >
-          {numberFormatter.format(selectedFlatRows.length)}{" "}
-          {selectedFlatRows.length === 1 ? "Wert" : "Werte"} löschen
-        </Button>
+        <DeleteRecordsButton
+          selectedRowAmount={selectedFlatRows.length}
+          onClick={() => undefined}
+        />
       )}
       <div
         className={`w-full overflow-auto border border-gray-200 relative ${tableHeightClass}`}
@@ -106,7 +92,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
         >
           <div
             role='rowgroup'
-            className='absolute top-0 bottom-auto block w-[max(100%,500px)] z-10'
+            className={`absolute top-0 bottom-auto block ${tableHeightClass} z-10`}
           >
             {headerGroups.map(headerGroup => (
               <div
@@ -144,7 +130,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
           <div
             role='rowgroup'
             {...getTableBodyProps()}
-            className='block w-[max(100%,500px)]'
+            className={`block ${tableWidthClass}}`}
           >
             <FixedSizeList
               height={tableHeight - tableRowHeight - 2} // -2 for border

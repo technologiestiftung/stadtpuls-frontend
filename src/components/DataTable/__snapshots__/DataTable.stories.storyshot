@@ -4,6 +4,13 @@ exports[`Storyshots UI Elements/DataTable Default 1`] = `
 <div
   className="border border-gray-200 shadow bg-white relative overflow-y-scroll max-h-[500px]"
 >
+  <button
+    className="inline-block font-headline transition text-base sm:text-lg rounded-none px-3 sm:px-4 py-1.5 sm:py-2 cursor-pointer focus-offset focus:ring-green border border-purple hover:bg-opacity-10 hover:bg-green hover:border-green"
+    onClick={[Function]}
+    type="button"
+  >
+    Delete first item
+  </button>
   <table
     className="w-full p-2 border-collapse"
   >
