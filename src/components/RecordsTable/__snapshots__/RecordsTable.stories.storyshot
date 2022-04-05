@@ -1,0 +1,575 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
+<div
+  className="w-full overflow-auto border border-gray-200 relative max-h-[600px]"
+>
+  <div
+    className="w-full border-collapse table-fixed block"
+    role="table"
+    style={
+      Object {
+        "paddingTop": 48,
+      }
+    }
+  >
+    <div
+      className="absolute top-0 bottom-auto block w-full z-10"
+      role="rowgroup"
+    >
+      <div
+        className="grid grid-cols-2"
+        role="row"
+        style={
+          Object {
+            "height": 48,
+          }
+        }
+      >
+        <div
+          className="text-left p-0 whitespace-nowrap"
+          colSpan={1}
+          role="columnheader"
+        >
+          <span
+            className="h-full grid items-center text-left font-headline text-lg px-4 font-normal shadow border-gray-200 border-b bg-white border-gray-200 border-r"
+          >
+            Datum und Uhrzeit (ISO)
+          </span>
+        </div>
+        <div
+          className="text-left p-0 whitespace-nowrap"
+          colSpan={1}
+          role="columnheader"
+        >
+          <span
+            className="h-full grid items-center text-left font-headline text-lg px-4 font-normal shadow border-gray-200 border-b bg-white border-gray-200 "
+          >
+            Wert
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      className="block w-full"
+      role="rowgroup"
+    >
+      <div
+        onScroll={[Function]}
+        style={
+          Object {
+            "WebkitOverflowScrolling": "touch",
+            "direction": "ltr",
+            "height": 550,
+            "overflow": "auto",
+            "position": "relative",
+            "width": "100%",
+            "willChange": "transform",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": 1440,
+              "pointerEvents": undefined,
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-2"
+            role="row"
+            style={
+              Object {
+                "height": 48,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                2022-01-1T00:00:00:00Z
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                20
+              </span>
+            </div>
+          </div>
+          <div
+            className="tr font-mono grid justify-items-stretch bg-white grid-cols-2"
+            role="row"
+            style={
+              Object {
+                "height": 48,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 48,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                2022-01-2T00:00:00:00Z
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                20
+              </span>
+            </div>
+          </div>
+          <div
+            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-2"
+            role="row"
+            style={
+              Object {
+                "height": 48,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 96,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                2022-01-3T00:00:00:00Z
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                20
+              </span>
+            </div>
+          </div>
+          <div
+            className="tr font-mono grid justify-items-stretch bg-white grid-cols-2"
+            role="row"
+            style={
+              Object {
+                "height": 48,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 144,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                2022-01-4T00:00:00:00Z
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                20
+              </span>
+            </div>
+          </div>
+          <div
+            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-2"
+            role="row"
+            style={
+              Object {
+                "height": 48,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 192,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                2022-01-5T00:00:00:00Z
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                20
+              </span>
+            </div>
+          </div>
+          <div
+            className="tr font-mono grid justify-items-stretch bg-white grid-cols-2"
+            role="row"
+            style={
+              Object {
+                "height": 48,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 240,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                2022-01-6T00:00:00:00Z
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                20
+              </span>
+            </div>
+          </div>
+          <div
+            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-2"
+            role="row"
+            style={
+              Object {
+                "height": 48,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 288,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                2022-01-7T00:00:00:00Z
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                20
+              </span>
+            </div>
+          </div>
+          <div
+            className="tr font-mono grid justify-items-stretch bg-white grid-cols-2"
+            role="row"
+            style={
+              Object {
+                "height": 48,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 336,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                2022-01-8T00:00:00:00Z
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                20
+              </span>
+            </div>
+          </div>
+          <div
+            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-2"
+            role="row"
+            style={
+              Object {
+                "height": 48,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 384,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                2022-01-9T00:00:00:00Z
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                20
+              </span>
+            </div>
+          </div>
+          <div
+            className="tr font-mono grid justify-items-stretch bg-white grid-cols-2"
+            role="row"
+            style={
+              Object {
+                "height": 48,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 432,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                2022-01-10T00:00:00:00Z
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                20
+              </span>
+            </div>
+          </div>
+          <div
+            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-2"
+            role="row"
+            style={
+              Object {
+                "height": 48,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 480,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                2022-01-11T00:00:00:00Z
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                20
+              </span>
+            </div>
+          </div>
+          <div
+            className="tr font-mono grid justify-items-stretch bg-white grid-cols-2"
+            role="row"
+            style={
+              Object {
+                "height": 48,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 528,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                2022-01-12T00:00:00:00Z
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                20
+              </span>
+            </div>
+          </div>
+          <div
+            className="tr font-mono grid justify-items-stretch bg-white-dot-pattern grid-cols-2"
+            role="row"
+            style={
+              Object {
+                "height": 48,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 576,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                2022-01-13T00:00:00:00Z
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                20
+              </span>
+            </div>
+          </div>
+          <div
+            className="tr font-mono grid justify-items-stretch bg-white grid-cols-2"
+            role="row"
+            style={
+              Object {
+                "height": 48,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 624,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center border-r border-gray-200"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                2022-01-14T00:00:00:00Z
+              </span>
+            </div>
+            <div
+              className="td text-left p-0 whitespace-nowrap grid items-center"
+              role="cell"
+            >
+              <span
+                className="inline-block text-left px-4 font-normal"
+              >
+                20
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
