@@ -3,7 +3,7 @@ import { bisector, extent, max, min } from "d3-array";
 import { Group } from "@visx/group";
 import { scaleLinear, scaleUtc } from "@visx/scale";
 import { AxisBottom, AxisLeft } from "@visx/axis";
-import { ArrayElement, LineGraphType } from "@common/interfaces";
+import { DateValueType, LineGraphType } from "@common/interfaces";
 import { LinePath } from "../LinePath";
 
 import { TooltipWithBounds, withTooltip, defaultStyles } from "@visx/tooltip";
@@ -17,12 +17,10 @@ import "moment/locale/de";
 
 moment.locale("de-DE");
 
-type ItemType = ArrayElement<LineGraphType["data"]>;
-
 const getX = (d: { date: Date }): Date => d.date;
 const getY = (d: { value: number }): number => d.value;
 // eslint-disable-next-line @typescript-eslint/unbound-method
-const bisectDate = bisector<ItemType, Date>(d => d.date).left;
+const bisectDate = bisector<DateValueType, Date>(d => d.date).left;
 
 const tooltipStyles = {
   ...defaultStyles,
@@ -40,7 +38,7 @@ const padding = {
   bottom: 80,
 };
 
-export const LineChart = withTooltip<LineGraphType, ItemType>(
+export const LineChart = withTooltip<LineGraphType, DateValueType>(
   ({
     data,
     width,
@@ -54,7 +52,7 @@ export const LineChart = withTooltip<LineGraphType, ItemType>(
     tooltipData,
     tooltipTop = 0,
     tooltipLeft = 0,
-  }: LineGraphType & WithTooltipProvidedProps<ItemType>) => {
+  }: LineGraphType & WithTooltipProvidedProps<DateValueType>) => {
     if (width < 10) return null;
 
     const graphWidth: number = width - padding.left - padding.right;

@@ -1,4 +1,3 @@
-import { DateValueType } from "@lib/dateUtil";
 import { ReactNode } from "react";
 interface Heading {
   fontFamily: string;
@@ -159,13 +158,20 @@ export interface Theme {
   };
 }
 
+// Use to extract the type of an Array's item type
 export type ArrayElement<ArrayType extends readonly unknown[]> =
   ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
+
+export interface DateValueType {
+  id: number | string;
+  value: number;
+  date: Date;
+}
 
 export interface LineGraphType {
   width: number;
   height: number;
-  data: Array<Pick<DateValueType, "id" | "date" | "value">>;
+  data: DateValueType[];
   yAxisUnit?: string;
   xAxisUnit?: string;
   startDateTimeString?: string;

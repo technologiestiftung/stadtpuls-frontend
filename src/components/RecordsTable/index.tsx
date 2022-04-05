@@ -1,13 +1,13 @@
 import { CSSProperties, FC, useCallback } from "react";
 import { useTable, useRowSelect } from "react-table";
 import { FixedSizeList } from "react-window";
-import { DateValueType } from "@lib/dateUtil";
+import { ExtendedDateValueType } from "@lib/dateUtil";
 import { createHeaderColumn, createRecordsColumns } from "./recordsTableUtils";
 import styles from "./RecordsTable.module.css";
 import { DeleteRecordsButton } from "./DeleteRecordsButton";
 
 export interface RecordsTablePropsType {
-  data: DateValueType[];
+  data: ExtendedDateValueType[];
   isEditable: boolean;
 }
 

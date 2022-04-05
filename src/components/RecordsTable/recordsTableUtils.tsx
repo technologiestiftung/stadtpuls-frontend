@@ -1,4 +1,4 @@
-import { DateValueType } from "@lib/dateUtil";
+import { ExtendedDateValueType } from "@lib/dateUtil";
 import { useMemo } from "react";
 import {
   Column,
@@ -9,9 +9,9 @@ import {
 import { IndeterminateCheckbox } from "./IndeterminateCheckbox";
 
 export const createHeaderColumn: (
-  allColumns: ColumnInstance<DateValueType>[],
-  meta: MetaBase<DateValueType>
-) => Column<DateValueType>[] = columns => [
+  allColumns: ColumnInstance<ExtendedDateValueType>[],
+  meta: MetaBase<ExtendedDateValueType>
+) => Column<ExtendedDateValueType>[] = columns => [
   {
     id: "selection",
     Header: ({ getToggleAllRowsSelectedProps }) => (
@@ -29,7 +29,7 @@ export const createHeaderColumn: (
 
 export const numberFormatter = new Intl.NumberFormat("de-DE");
 
-export const createRecordsColumns = (): Column<DateValueType>[] =>
+export const createRecordsColumns = (): Column<ExtendedDateValueType>[] =>
   useMemo(
     () => [
       {

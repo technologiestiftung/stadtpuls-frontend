@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { extent, max, min } from "d3-array";
 import { curveLinear } from "@visx/curve";
 import { AreaClosed } from "@visx/shape";
 import { scaleLinear, scaleUtc } from "@visx/scale";
-import { ArrayElement, LineGraphType } from "../../common/interfaces";
+import { DateValueType, LineGraphType } from "@common/interfaces";
 
 const getX = (d: { date: Date }): Date => d.date;
 const getY = (d: { value: number }): number => d.value;
@@ -23,7 +23,7 @@ const defaultArr = [
   },
 ];
 
-const normalizeData = (data: LineGraphType["data"]): LineGraphType["data"] =>
+const normalizeData = (data: DateValueType[]): DateValueType[] =>
   data.length <= 1 ? defaultArr : data;
 
 export const AreaPath: FC<LineGraphType> = ({ width, height, data }) => {
@@ -41,7 +41,7 @@ export const AreaPath: FC<LineGraphType> = ({ width, height, data }) => {
   });
 
   return (
-    <AreaClosed<ArrayElement<LineGraphType["data"]>>
+    <AreaClosed<DateValueType>
       curve={curveLinear}
       data={normalizedData}
       x={d => xScale(getX(d))}

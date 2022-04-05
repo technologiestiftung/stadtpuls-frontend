@@ -1,20 +1,18 @@
 import moment from "moment";
 import "moment/locale/de";
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
+import { DateValueType } from "@common/interfaces";
 moment.locale("de-DE");
 
-export interface DateValueType {
-  id: number;
-  value: number;
+export interface ExtendedDateValueType extends DateValueType {
   formattedDay: string;
   formattedTime: string;
-  date: Date;
   dateISOString: string;
 }
 
 export const createDateValueArray = (
   input: Pick<definitions["records"], "id" | "recorded_at" | "measurements">[]
-): DateValueType[] => {
+): ExtendedDateValueType[] => {
   const dateValueArray = input.map(({ id, measurements, recorded_at }) => {
     const dateMoment = moment.parseZone(recorded_at);
     return {

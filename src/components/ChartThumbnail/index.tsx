@@ -6,12 +6,12 @@ import { scaleLinear, scaleUtc } from "@visx/scale";
 import colors from "../../style/colors";
 import moment from "moment";
 import "moment/locale/de";
-import { ArrayElement, LineGraphType } from "@common/interfaces";
+import { DateValueType } from "@common/interfaces";
 
 moment.locale("de-DE");
 
 interface ChartThumbnailPropType {
-  data: LineGraphType["data"];
+  data: DateValueType[];
 }
 
 const CHART_WIDTH = 140;
@@ -38,7 +38,7 @@ const defaultArr = [
   },
 ];
 
-const normalizeData = (data: LineGraphType["data"]): LineGraphType["data"] =>
+const normalizeData = (data: DateValueType[]): DateValueType[] =>
   data.length <= 1
     ? defaultArr
     : data.sort((a, b) => a.date.getTime() - b.date.getTime());
@@ -102,7 +102,7 @@ export const ChartThumbnail: FC<ChartThumbnailPropType> = ({ data }) => {
               shapeRendering='geometricPrecision'
               strokeLinecap='round'
             />
-            <LinePath<ArrayElement<LineGraphType["data"]>>
+            <LinePath<DateValueType>
               curve={curveLinear}
               data={normalizedData}
               x={d => xScale(getX(d))}

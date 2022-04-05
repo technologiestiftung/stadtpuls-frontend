@@ -1,5 +1,5 @@
 import { supabase } from "@auth/supabase";
-import { LineGraphType } from "@common/interfaces";
+import { DateValueType } from "@common/interfaces";
 import {
   SensorQueryResponseType,
   parseSensorRecords,
@@ -17,7 +17,7 @@ export interface GetSensorsOptionsType {
   ids: number[];
 }
 
-export type SensorsRecordsMapType = Record<string, LineGraphType["data"]>;
+export type SensorsRecordsMapType = Record<string, DateValueType[]>;
 
 export const getSensorsRecords = async (
   ids?: number[]

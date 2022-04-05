@@ -3,11 +3,11 @@ import { extent, max, min } from "d3-array";
 import { curveLinear } from "@visx/curve";
 import { LinePath as Path } from "@visx/shape";
 import { scaleLinear, scaleTime } from "@visx/scale";
-import { ArrayElement, LineGraphType } from "../../common/interfaces";
+import { DateValueType, LineGraphType } from "../../common/interfaces";
 import colors from "../../style/colors";
 
-const getX = (d: { date: Date }): Date => d.date;
-const getY = (d: { value: number }): number => d.value;
+const getX = (d: DateValueType): Date => d.date;
+const getY = (d: DateValueType): number => d.value;
 
 export const MAX_RENDERABLE_VALUES = 3000;
 
@@ -34,7 +34,7 @@ export const LinePath: FC<LineGraphType> = ({
   });
 
   return (
-    <Path<ArrayElement<LineGraphType["data"]>>
+    <Path<DateValueType>
       curve={curveLinear}
       data={data}
       x={d => xScale(getX(d))}

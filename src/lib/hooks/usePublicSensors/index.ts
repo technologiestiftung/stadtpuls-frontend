@@ -5,7 +5,7 @@ import {
   getPublicSensors,
   GetSensorsOptionsType,
 } from "@lib/requests/getPublicSensors";
-import { LineGraphType } from "@common/interfaces";
+import { DateValueType } from "@common/interfaces";
 
 type SensorType = definitions["sensors"];
 export interface SensorQueryResponseType extends SensorType {
@@ -27,7 +27,7 @@ export interface ParsedSensorType {
   authorId: string;
   authorName: string;
   authorUsername: string;
-  parsedRecords?: LineGraphType["data"];
+  parsedRecords?: DateValueType[];
   categoryId: number;
   categoryName: string;
   connectionType: IntegrationType;
@@ -40,7 +40,7 @@ export const parseSensorRecords = (
   records:
     | Pick<definitions["records"], "id" | "recorded_at" | "measurements">[]
     | undefined
-): LineGraphType["data"] => {
+): DateValueType[] => {
   if (!records) return [];
   if (records.length === 0) return [];
 
