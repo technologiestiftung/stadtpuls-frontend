@@ -6,24 +6,30 @@ moment.locale("de-DE");
 export interface DateValueType {
   id: number;
   value: number;
-  date: string;
+  formattedDay: string;
+  formattedTime: string;
+  date: Date;
+  dateISOString: string;
 }
 
 export const createDateValueArray = (
   input: Pick<definitions["records"], "id" | "recorded_at" | "measurements">[]
 ): DateValueType[] => {
-  const dateValueArray = input.map(({ id, measurements, recorded_at }) => ({
-    id,
-    value: measurements && measurements.length >= 1 ? measurements[0] : 0,
-    date: moment.parseZone(recorded_at),
-  }));
-  const sortedDateValueArray = dateValueArray.sort((a, b) => {
-    return a.date.valueOf() - b.date.valueOf();
+  const dateValueArray = input.map(({ id, measurements, recorded_at }) => {
+    const dateMoment = moment.parseZone(recorded_at);
+    return {
+      id,
+      value: measurements && measurements.length >= 1 ? measurements[0] : 0,
+      date: dateMoment.toDate(),
+      dateISOString: dateMoment.toISOString(),
+      formattedDay: dateMoment.format("DD. MMM YYYY"),
+      formattedTime: dateMoment.format("HH:mm:ss"),
+    };
   });
-  return sortedDateValueArray.map(d => ({
-    ...d,
-    date: d.date.toISOString(),
-  }));
+  const sortedDateValueArray = dateValueArray.sort((a, b) => {
+    return a.date.getTime() - b.date.getTime();
+  });
+  return sortedDateValueArray;
 };
 
 export const formatDateFromNow = (date: Date): string => {

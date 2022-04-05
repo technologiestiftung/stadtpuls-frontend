@@ -33,8 +33,13 @@ export const createRecordsColumns = (): Column<DateValueType>[] =>
   useMemo(
     () => [
       {
-        Header: "Datum und Uhrzeit (ISO)",
-        accessor: "date",
+        Header: "Datum (ISO)",
+        accessor: "formattedDay",
+        Cell: ({ value }) => value,
+      },
+      {
+        Header: "Uhrzeit (ISO)",
+        accessor: "formattedTime",
         Cell: ({ value }) => value,
       },
       {

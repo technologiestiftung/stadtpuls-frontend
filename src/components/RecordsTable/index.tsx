@@ -47,7 +47,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
             "tr font-mono",
             "grid justify-items-stretch",
             index % 2 === 0 ? "bg-white-dot-pattern" : "bg-white",
-            isEditable ? "grid-cols-[auto,3fr,1fr]" : "grid-cols-[3fr,1fr]",
+            isEditable ? "grid-cols-[auto,1fr,1fr,1fr]" : "grid-cols-3",
           ].join(" ")}
         >
           {row.cells.map((cell, i) => (
@@ -63,7 +63,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
                 .filter(Boolean)
                 .join(" ")}
             >
-              <span className='inline-block text-left px-4 font-normal'>
+              <span className='inline-block text-left px-4 font-normal max-w-full truncate'>
                 {cell.render("Cell")}
               </span>
             </div>
@@ -106,7 +106,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
         >
           <div
             role='rowgroup'
-            className='absolute top-0 bottom-auto block w-[max(100%,400px)] z-10'
+            className='absolute top-0 bottom-auto block w-[max(100%,500px)] z-10'
           >
             {headerGroups.map(headerGroup => (
               <div
@@ -114,9 +114,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
                 role='row'
                 style={{ height: tableRowHeight }}
                 className={`grid ${
-                  isEditable
-                    ? "grid-cols-[auto,3fr,1fr]"
-                    : "grid-cols-[3fr,1fr]"
+                  isEditable ? "grid-cols-[auto,1fr,1fr,1fr]" : "grid-cols-3"
                 }`}
               >
                 {headerGroup.headers.map((column, i) => (
@@ -132,6 +130,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
                         "px-4 font-normal shadow",
                         "border-gray-200",
                         "border-b bg-white border-gray-200",
+                        "max-w-full truncate",
                         i !== headerGroup.headers.length - 1 ? "border-r" : "",
                       ].join(" ")}
                     >
@@ -145,7 +144,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
           <div
             role='rowgroup'
             {...getTableBodyProps()}
-            className='block w-[max(100%,400px)]'
+            className='block w-[max(100%,500px)]'
           >
             <FixedSizeList
               height={tableHeight - tableRowHeight - 2} // -2 for border
