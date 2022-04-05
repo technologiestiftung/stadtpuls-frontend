@@ -14,7 +14,7 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
     }
   >
     <div
-      className="absolute top-0 bottom-auto block max-h-[600px] z-10"
+      className="absolute top-0 bottom-auto block w-[max(100%,500px)] z-10"
       role="rowgroup"
     >
       <div
@@ -84,7 +84,7 @@ exports[`Storyshots UI Elements/RecordsTable Default 1`] = `
       </div>
     </div>
     <div
-      className="block w-[max(100%,500px)]}"
+      className="block w-[max(100%,500px)]"
       role="rowgroup"
     >
       <div

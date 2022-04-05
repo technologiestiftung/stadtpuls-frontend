@@ -92,7 +92,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
         >
           <div
             role='rowgroup'
-            className={`absolute top-0 bottom-auto block ${tableHeightClass} z-10`}
+            className={`absolute top-0 bottom-auto block ${tableWidthClass} z-10`}
           >
             {headerGroups.map(headerGroup => (
               <div
@@ -130,7 +130,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
           <div
             role='rowgroup'
             {...getTableBodyProps()}
-            className={`block ${tableWidthClass}}`}
+            className={`block ${tableWidthClass}`}
           >
             <FixedSizeList
               height={tableHeight - tableRowHeight - 2} // -2 for border

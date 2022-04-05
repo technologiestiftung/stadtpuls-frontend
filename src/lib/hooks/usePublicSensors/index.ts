@@ -1,11 +1,11 @@
 import useSWR from "swr";
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
-import { DateValueType } from "@common/interfaces";
 import { IntegrationType } from "@lib/integrationsUtil";
 import {
   getPublicSensors,
   GetSensorsOptionsType,
 } from "@lib/requests/getPublicSensors";
+import { LineGraphType } from "@common/interfaces";
 
 type SensorType = definitions["sensors"];
 export interface SensorQueryResponseType extends SensorType {
@@ -27,7 +27,7 @@ export interface ParsedSensorType {
   authorId: string;
   authorName: string;
   authorUsername: string;
-  parsedRecords?: DateValueType[];
+  parsedRecords?: LineGraphType["data"];
   categoryId: number;
   categoryName: string;
   connectionType: IntegrationType;
@@ -38,14 +38,15 @@ export interface ParsedSensorType {
 
 export const parseSensorRecords = (
   records:
-    | Pick<definitions["records"], "recorded_at" | "measurements">[]
+    | Pick<definitions["records"], "id" | "recorded_at" | "measurements">[]
     | undefined
-): DateValueType[] => {
+): LineGraphType["data"] => {
   if (!records) return [];
   if (records.length === 0) return [];
 
   const mappedRecords = records.map(record => ({
-    date: record.recorded_at,
+    id: record.id,
+    date: new Date(record.recorded_at),
     value: record.measurements ? record.measurements[0] : 0,
   }));
   return mappedRecords;

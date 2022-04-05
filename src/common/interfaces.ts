@@ -1,3 +1,4 @@
+import { DateValueType } from "@lib/dateUtil";
 import { ReactNode } from "react";
 interface Heading {
   fontFamily: string;
@@ -158,15 +159,13 @@ export interface Theme {
   };
 }
 
-export interface DateValueType {
-  date: string;
-  value: number;
-}
+export type ArrayElement<ArrayType extends readonly unknown[]> =
+  ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
 
 export interface LineGraphType {
   width: number;
   height: number;
-  data: Array<DateValueType>;
+  data: Array<Pick<DateValueType, "id" | "date" | "value">>;
   yAxisUnit?: string;
   xAxisUnit?: string;
   startDateTimeString?: string;

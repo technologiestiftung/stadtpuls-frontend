@@ -3,24 +3,27 @@ import { extent, max, min } from "d3-array";
 import { curveLinear } from "@visx/curve";
 import { AreaClosed } from "@visx/shape";
 import { scaleLinear, scaleUtc } from "@visx/scale";
-import { DateValueType, LineGraphType } from "../../common/interfaces";
+import { ArrayElement, LineGraphType } from "../../common/interfaces";
 
-const getX = (d: DateValueType): Date => new Date(d.date);
-const getY = (d: DateValueType): number => d.value;
+const getX = (d: { date: Date }): Date => d.date;
+const getY = (d: { value: number }): number => d.value;
 
 const startDate = new Date();
+const endDate = new Date(startDate.getDate() + 1);
 const defaultArr = [
   {
-    date: startDate.toISOString(),
+    id: 1,
+    date: startDate,
     value: 0,
   },
   {
-    date: new Date(startDate.getDate() + 1).toISOString(),
+    id: 2,
+    date: endDate,
     value: 0,
   },
 ];
 
-const normalizeData = (data: DateValueType[]): DateValueType[] =>
+const normalizeData = (data: LineGraphType["data"]): LineGraphType["data"] =>
   data.length <= 1 ? defaultArr : data;
 
 export const AreaPath: FC<LineGraphType> = ({ width, height, data }) => {
@@ -38,7 +41,7 @@ export const AreaPath: FC<LineGraphType> = ({ width, height, data }) => {
   });
 
   return (
-    <AreaClosed<DateValueType>
+    <AreaClosed<ArrayElement<LineGraphType["data"]>>
       curve={curveLinear}
       data={normalizedData}
       x={d => xScale(getX(d))}
