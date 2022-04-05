@@ -22,11 +22,13 @@ describe("RecordsTable", () => {
     const rowGroups = screen.getAllByRole("rowgroup");
     const rows = screen.getAllByRole("row");
     const checkboxes = screen.getAllByRole("checkbox");
+    const headerCells = screen.getAllByRole("columnheader");
 
     expect(table).toBeInTheDocument();
     expect(rowGroups).toHaveLength(2);
     expect(rows).toHaveLength(arrayLength + 1);
     expect(checkboxes).toHaveLength(arrayLength + 1);
+    expect(headerCells).toHaveLength(4);
   });
   // test("should select checkboxes", () => {
   //   const arrayLength = 5;

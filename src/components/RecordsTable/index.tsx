@@ -105,7 +105,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
               >
                 {headerGroup.headers.map((column, i) => (
                   <div
-                    role='cell'
+                    role='columnheader'
                     className={`text-left p-0 whitespace-nowrap ${styles.tableCell}`}
                     {...column.getHeaderProps()}
                   >
