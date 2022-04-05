@@ -15,6 +15,7 @@ import {
 } from "react-table";
 import { FixedSizeList } from "react-window";
 import { DateValueType } from "@lib/dateUtil";
+import { Button } from "@components/Button";
 
 interface RecordsTablePropsType {
   data: DateValueType[];
@@ -129,7 +130,19 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({ data }) => {
 
   return (
     <>
-      {selectedFlatRows.length > 0 && <button>Delete selected rows</button>}
+      <Button
+        variant='dangerous'
+        className={[
+          "transition-opacity border border-error mb-4",
+          selectedFlatRows.length > 0
+            ? "opacity-100"
+            : "opacity-0 pointer-events-none",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+      >
+        {numberFormatter.format(selectedFlatRows.length)} Werte löschen
+      </Button>
       <div className='w-full overflow-auto border border-gray-200 relative max-h-[600px]'>
         <div
           {...getTableProps()}
