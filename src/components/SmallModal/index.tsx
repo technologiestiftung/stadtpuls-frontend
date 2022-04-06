@@ -27,7 +27,7 @@ export const SmallModal: FC<SmallModalPropType> = ({
         <div>
           <h1
             className={`text-3xl font-bold font-headline m-0 mb-4 ${
-              variant == "dangerous" ? "text-error-500" : "text-purple"
+              variant == "dangerous" ? "text-error" : "text-purple"
             }`}
           >
             {title}

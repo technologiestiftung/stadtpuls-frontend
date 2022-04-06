@@ -1,10 +1,11 @@
-import { CSSProperties, FC, useCallback } from "react";
+import { CSSProperties, FC, useCallback, useEffect, useState } from "react";
 import { useTable, useRowSelect } from "react-table";
 import { FixedSizeList } from "react-window";
 import { ExtendedDateValueType } from "@lib/dateUtil";
 import { createHeaderColumn, createRecordsColumns } from "./recordsTableUtils";
 import styles from "./RecordsTable.module.css";
 import { DeleteRecordsButton } from "./DeleteRecordsButton";
+import { DeleteConfirmationModal } from "./DeleteConfirmationModal";
 
 export interface RecordsTablePropsType {
   data: ExtendedDateValueType[];
@@ -21,6 +22,8 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
   isEditable,
 }) => {
   const columns = createRecordsColumns();
+  const [deleteConfirmationOpened, setDeleteConfirmationOpened] =
+    useState(false);
   const {
     getTableProps,
     getTableBodyProps,
@@ -71,12 +74,26 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
     [prepareRow, rows, selectedFlatRows]
   );
 
+  const selectedCount = selectedFlatRows.length;
+
+  useEffect(() => {
+    if (selectedCount === 0) {
+      setDeleteConfirmationOpened(false);
+    }
+  }, [selectedCount]);
+
   return (
     <>
+      {deleteConfirmationOpened && selectedCount > 0 && (
+        <DeleteConfirmationModal
+          setOpened={setDeleteConfirmationOpened}
+          selectedCount={selectedCount}
+        />
+      )}
       {isEditable && (
         <DeleteRecordsButton
-          selectedRowAmount={selectedFlatRows.length}
-          onClick={() => undefined}
+          selectedRowAmount={selectedCount}
+          onClick={() => setDeleteConfirmationOpened(true)}
         />
       )}
       <div

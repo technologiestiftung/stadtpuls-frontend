@@ -383,7 +383,7 @@ Array [
             onClick={[Function]}
             readOnly={true}
             type="text"
-            value="localhost/api/v3/sensors/1/records"
+            value="stadtpuls-api-v3-staging.onrender.com/api/v3/sensors/1/records"
           />
           <div
             aria-hidden={true}
