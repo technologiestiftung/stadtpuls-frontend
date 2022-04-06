@@ -13,12 +13,7 @@ export const DangerousDialog = Template.bind({});
 DangerousDialog.args = {
   title: "Willst du wirklich dein Leben löschen",
   description: "Das Auslöschen des eigenen Lebens kann tödlich sein.",
-  children: (
-    <div className='prose'>
-      <p>Das Auslöschen des eigenen Lebens kann tödlich sein.</p>
-      <p>Bist du dir sicher?</p>
-    </div>
-  ),
+  children: <p>Bist du dir sicher?</p>,
   variant: "dangerous",
   footerContent: (
     <div className='flex flex-row-reverse justify-between w-full'>

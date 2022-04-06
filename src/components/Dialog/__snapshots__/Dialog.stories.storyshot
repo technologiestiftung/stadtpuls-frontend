@@ -34,15 +34,12 @@ exports[`Storyshots UI Elements/Dialog Dangerous Dialog 1`] = `
         >
           Willst du wirklich dein Leben löschen
         </h2>
-        <p
-          id="headlessui-description-4"
-        >
-          Das Auslöschen des eigenen Lebens kann tödlich sein.
-        </p>
         <div
           className="prose"
         >
-          <p>
+          <p
+            id="headlessui-description-4"
+          >
             Das Auslöschen des eigenen Lebens kann tödlich sein.
           </p>
           <p>

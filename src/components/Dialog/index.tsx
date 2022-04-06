@@ -9,7 +9,7 @@ export interface DialogPropsType {
   isOpen?: boolean;
   setIsOpen?: (isOpen: boolean) => void;
   initialFocus?: MutableRefObject<HTMLElement | null>;
-  description?: string;
+  description?: ReactNode;
   children?: ReactNode;
 }
 
@@ -59,10 +59,12 @@ export const Dialog: FC<DialogPropsType> = ({
             >
               {title}
             </HUIDialog.Title>
-            {description && (
-              <HUIDialog.Description>{description}</HUIDialog.Description>
-            )}
-            {children}
+            <div className='prose'>
+              {description && (
+                <HUIDialog.Description>{description}</HUIDialog.Description>
+              )}
+              {children}
+            </div>
           </div>
           <div className='flex gap-4 place-content-between'>
             {footerContent}

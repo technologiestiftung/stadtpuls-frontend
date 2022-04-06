@@ -5,11 +5,13 @@ import { FC, useCallback, useEffect, useRef } from "react";
 interface DeleteConfirmationModalPropsType {
   selectedCount: number;
   setOpened: (opened: boolean) => void;
+  onConfirm: () => void;
 }
 
 export const DeleteConfirmationModal: FC<DeleteConfirmationModalPropsType> = ({
   selectedCount,
   setOpened,
+  onConfirm,
 }) => {
   const recordsName = selectedCount === 1 ? "Messwert" : "Messwerte";
   const cancelButtonRef = useRef<HTMLButtonElement>(null);
@@ -35,7 +37,7 @@ export const DeleteConfirmationModal: FC<DeleteConfirmationModalPropsType> = ({
       initialFocus={cancelButtonRef}
       footerContent={
         <div className='flex justify-between w-full'>
-          <Button onClick={() => undefined} variant='dangerous'>
+          <Button onClick={onConfirm} variant='dangerous'>
             Unwiderruflich löschen
           </Button>
           <Button onClick={() => setOpened(false)} ref={cancelButtonRef}>
@@ -43,20 +45,19 @@ export const DeleteConfirmationModal: FC<DeleteConfirmationModalPropsType> = ({
           </Button>
         </div>
       }
-      description={`Du bist dabei ${selectedCount} ${recordsName} zu löschen.`}
-    >
-      <div className='prose'>
-        <p>
+      description={
+        <>
           Du bist dabei{" "}
           <b>
             {selectedCount} {recordsName}
           </b>{" "}
           zu löschen.
-        </p>
-        <p>
-          Diese Aktion ist <b>unwiderruflich</b>. Bist du dir sicher?
-        </p>
-      </div>
+        </>
+      }
+    >
+      <p>
+        Diese Aktion ist <b>unwiderruflich</b>. Bist du dir sicher?
+      </p>
     </Dialog>
   );
 };

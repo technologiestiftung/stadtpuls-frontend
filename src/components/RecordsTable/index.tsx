@@ -10,6 +10,7 @@ import { DeleteConfirmationModal } from "./DeleteConfirmationModal";
 export interface RecordsTablePropsType {
   data: ExtendedDateValueType[];
   isEditable: boolean;
+  onRecordsDelete?: (ids: number[]) => void;
 }
 
 const tableHeight = 600;
@@ -20,6 +21,7 @@ const tableRowHeight = 48;
 export const RecordsTable: FC<RecordsTablePropsType> = ({
   data,
   isEditable,
+  onRecordsDelete = () => undefined,
 }) => {
   const columns = createRecordsColumns();
   const [deleteConfirmationOpened, setDeleteConfirmationOpened] =
@@ -88,6 +90,9 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
         <DeleteConfirmationModal
           setOpened={setDeleteConfirmationOpened}
           selectedCount={selectedCount}
+          onConfirm={() => {
+            onRecordsDelete(selectedFlatRows.map(({ id }) => parseInt(id, 10)));
+          }}
         />
       )}
       {isEditable && (
