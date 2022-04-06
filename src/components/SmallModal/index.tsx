@@ -9,6 +9,9 @@ interface SmallModalPropType {
   onClickOutside?: () => void;
 }
 
+/**
+ * Use for modal-looking components that are not a dialog with overlay. For dialogs that overlay the whole page, use Dialog
+ */
 export const SmallModal: FC<SmallModalPropType> = ({
   title,
   children,

@@ -3,6 +3,10 @@ import { render, screen } from "@testing-library/react";
 import { Dialog } from ".";
 
 describe("Dialog component", () => {
+  afterEach(() => {
+    const modals = document.querySelectorAll("#headlessui-portal-root");
+    modals.forEach(modal => modal.parentNode?.removeChild(modal));
+  });
   it("should add a no-scroll class to the html tag on mount", () => {
     render(<Dialog title='Hello' footerContent={<Button>DO IT</Button>} />);
     const html = document.querySelector("html.no-scroll");

@@ -7,18 +7,10 @@ export default {
   component: Dialog,
 } as Meta;
 
-const Template: Story<DialogPropsType> = args => (
-  <Dialog
-    title={args.title}
-    footerContent={args.footerContent}
-    variant={args.variant}
-  >
-    {args.children}
-  </Dialog>
-);
+const Template: Story<DialogPropsType> = args => <Dialog {...args} />;
 
-export const WitFooterContent = Template.bind({});
-WitFooterContent.args = {
+export const DangerousDialog = Template.bind({});
+DangerousDialog.args = {
   title: "Willst du wirklich dein Leben löschen",
   description: "Das Auslöschen des eigenen Lebens kann tödlich sein.",
   children: (
@@ -34,12 +26,4 @@ WitFooterContent.args = {
       <Button variant='dangerous'>Löschen</Button>
     </div>
   ),
-};
-
-export const WithoutFooterContent = Template.bind({});
-WithoutFooterContent.args = {
-  title: "Gehe zu deinen E-Mails",
-  description:
-    "Wir haben dir eine E-Mail mit einem Anmeldungs-Link geschickt. Klicke den Link an, um dich einzuloggen.",
-  children: <p>Bitte überprüfe auch Deinen Spam-Ordner..</p>,
 };
