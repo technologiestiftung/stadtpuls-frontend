@@ -24,6 +24,7 @@ import { useRouter } from "next/router";
 import { SensorPageHeaderLoadingSkeleton } from "@components/SensorPageHeaderLoadingSkeleton";
 import { RecordsTable } from "@components/RecordsTable";
 import { useUserData } from "@lib/hooks/useUserData";
+import { getTranslatedErrorMessage } from "@lib/translationUtil";
 
 moment.locale("de-DE");
 
@@ -243,9 +244,27 @@ const SensorPage: FC<{
               endDateTimeString={currentDatetimeRange.endDateTimeString}
             />
           )}
-          {recordsFetchError && (
-            <div className='prose p-8 max-w-full h-80 grid place-content-center place-items-center'>
-              <p>{recordsFetchError.message}</p>
+          {recordsFetchError?.message && (
+            <div
+              className={[
+                "fixed top-[60px] w-full container max-w-8xl z-50",
+                "left-1/2 transform -translate-x-1/2 backdrop-filter backdrop-blur-md",
+              ].join(" ")}
+            >
+              <Alert
+                type='error'
+                title='Es ist ein Fehler aufgetreten:'
+                message={
+                  getTranslatedErrorMessage(recordsFetchError.message) ===
+                  recordsFetchError.message ? (
+                    <code className='inline-block mt-1 px-2 py-1 font-mono bg-error bg-opacity-20 box-decoration-clone'>
+                      {recordsFetchError.message}
+                    </code>
+                  ) : (
+                    getTranslatedErrorMessage(recordsFetchError.message)
+                  )
+                }
+              />
             </div>
           )}
           {!recordsFetchError && !recordsAreLoading && records.length === 0 && (

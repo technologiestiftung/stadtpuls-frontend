@@ -32,13 +32,19 @@ const deleteRecords = async (
   if (!sensor_id) throw new Error("Please provide a sensor ids");
   if (!ids || ids.length === 0) throw new Error("Please provide record ids");
 
-  const { error } = await supabase
+  const { data, error } = await supabase
     .from<definitions["records"]>("records")
     .delete()
     .in("id", ids)
     .eq("sensor_id", sensor_id);
 
   if (error) throw error;
+  if (!data || data.length === 0) {
+    const errMsg =
+      "No records could be deleted. Your Row Level Security might be too strict.";
+    console.error(errMsg);
+    throw new Error(errMsg);
+  }
 };
 
 type fetchSensorRecordsSignature = (
@@ -101,7 +107,10 @@ export const useSensorRecords = ({
       if (!data || error) return;
       if (!recordIds || recordIds.length === 0 || !sensorId) {
         setActionError(
-          () => new Error("Please provide a sensor id and record ids")
+          () =>
+            new Error(
+              "To delete records please provide a sensor id and record ids"
+            )
         );
         return;
       }
