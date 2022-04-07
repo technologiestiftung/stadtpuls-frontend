@@ -1,4 +1,4 @@
-import { AuthProvider } from "@auth/Auth";
+import { AuthProvider, useAuth } from "@auth/Auth";
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { render, waitFor } from "@testing-library/react";
 import { act, renderHook } from "@testing-library/react-hooks";
@@ -9,13 +9,17 @@ import { setupServer } from "msw/node";
 import { useSensorRecords } from ".";
 import { createSupabaseUrl } from "@lib/requests/createSupabaseUrl";
 import { getSensorRecords } from "@mocks/supabaseData/records";
+import { supabase } from "@auth/supabase";
+import { programaticSignup } from "@lib/testUtil";
 
 type OnSuccessType = (data: definitions["records"][]) => void;
 type OnFailType = (error: string) => void;
 
-const HookWrapper: FC = ({ children }) => (
+const HookWrapper: FC<{
+  session: ReturnType<typeof supabase.auth.session>;
+}> = ({ session, children }) => (
   <SWRConfig value={{ dedupingInterval: 0 }}>
-    <AuthProvider>{children}</AuthProvider>
+    <AuthProvider session={session}>{children}</AuthProvider>
   </SWRConfig>
 );
 
@@ -81,7 +85,7 @@ describe("useSensorRecords hook", () => {
     });
   });
 
-  describe.skip("deleteRecords", () => {
+  describe("deleteRecords", () => {
     it("deletes records", async () => {
       const parentSensorId = 4;
       const records = getSensorRecords({
@@ -90,7 +94,6 @@ describe("useSensorRecords hook", () => {
       });
       const server = setupServer(
         rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
-          console.log("GET WAS CALLED");
           return res(ctx.status(201, "Mocked status"), ctx.json(records));
         }),
         rest.delete(createSupabaseUrl(`/records`), (_req, res, ctx) => {
@@ -98,12 +101,26 @@ describe("useSensorRecords hook", () => {
         })
       );
       server.listen();
+      const session = await programaticSignup({
+        email: "test@email.com",
+        password: "password",
+      });
+      const HookWrapper: FC = ({ children }) => (
+        <SWRConfig value={{ dedupingInterval: 0 }}>
+          <AuthProvider session={session}>{children}</AuthProvider>
+        </SWRConfig>
+      );
       const { result, waitForNextUpdate } = renderHook(
         () => useSensorRecords({ sensorId: parentSensorId }),
         {
           wrapper: HookWrapper,
         }
       );
+      const { waitForNextUpdate: waitForAuth } = renderHook(() => useAuth(), {
+        wrapper: HookWrapper,
+      });
+
+      await waitForAuth();
 
       const recordsIds = records
         .slice(-4, records.length - 1)
@@ -117,16 +134,6 @@ describe("useSensorRecords hook", () => {
 
       await waitFor(() => {
         expect(result.current.error).toBeNull();
-        console.log(result.current.records.length);
-        expect(result.current.records).toHaveLength(records.length - 4);
-      });
-
-      await waitFor(() => {
-        const remainingRecords = (result.current.records || []).filter(
-          ({ id }) => recordsIds.includes(id)
-        );
-        console.log(remainingRecords);
-        expect(remainingRecords).toHaveLength(0);
       });
     });
     it("fails when no ids are provided", async () => {
@@ -160,7 +167,9 @@ describe("useSensorRecords hook", () => {
       });
 
       await waitFor(() => {
-        expect(result.current.error?.message).toBe("Please provide record ids");
+        expect(result.current.error?.message).toBe(
+          "To delete records please provide a sensor id and record ids"
+        );
       });
     });
   });

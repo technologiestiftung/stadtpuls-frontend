@@ -35,7 +35,6 @@ Cypress.Commands.add("signIn", () => {
 
 Cypress.Commands.add("getSession", () => {
   return cy.request({
-    // TODO: why does only v1 work? Should be v3
     method: "POST",
     url: `${supabaseUrl}/auth/v1/token?grant_type=password`,
     headers: {

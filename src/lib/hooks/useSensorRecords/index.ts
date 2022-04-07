@@ -39,7 +39,7 @@ const deleteRecords = async (
     .eq("sensor_id", sensor_id);
 
   if (error) throw error;
-  if (!data || data.length === 0) {
+  if (data && data.length === 0) {
     const errMsg =
       "No records could be deleted. Your Row Level Security might be too strict.";
     console.error(errMsg);
@@ -97,9 +97,8 @@ export const useSensorRecords = ({
       revalidateOnFocus: false,
     }
   );
-
   return {
-    isLoading: data?.records === undefined,
+    isLoading: typeof data === "undefined" && typeof error === "undefined",
     records: data?.records || [],
     recordsCount: data?.count || null,
     error: error || actionError || null,
@@ -120,6 +119,8 @@ export const useSensorRecords = ({
         data.records.filter(({ id }) => !recordIds.includes(id)),
         false
       );
+
+      console.log("ACTION", userId);
       await deleteRecords(recordIds, sensorId, userId).catch(setActionError);
       void mutate(params);
     },
