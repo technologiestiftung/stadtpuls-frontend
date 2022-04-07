@@ -49,6 +49,7 @@ jobs:
         env:
           CI: true
           NEXT_PUBLIC_API_URL: ${{ secrets.API_URL }}
+          NEXT_PUBLIC_SUPABASE_PUBLIC_KEY: ${{ env.SUPABASE_ANON_KEY }}
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
