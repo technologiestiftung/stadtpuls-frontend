@@ -120,7 +120,6 @@ export const useSensorRecords = ({
         false
       );
 
-      console.log("ACTION", userId);
       await deleteRecords(recordIds, sensorId, userId).catch(setActionError);
       void mutate(params);
     },
