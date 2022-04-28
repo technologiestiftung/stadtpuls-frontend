@@ -1,27 +1,21 @@
-import { AuthProvider, useAuth } from "@auth/Auth";
+import { AuthProvider } from "@auth/Auth";
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
-import { render, waitFor } from "@testing-library/react";
-import { act, renderHook } from "@testing-library/react-hooks";
+import { act as renderAct, render, waitFor } from "@testing-library/react";
+import { renderHook } from "@testing-library/react-hooks";
 import { FC, useEffect } from "react";
 import { SWRConfig } from "swr";
-import { rest } from "msw";
-import { setupServer } from "msw/node";
 import { useSensorRecords } from ".";
-import { createSupabaseUrl } from "@lib/requests/createSupabaseUrl";
+import format from "pg-format";
 import { getSensorRecords } from "@mocks/supabaseData/records";
-import { supabase } from "@auth/supabase";
 import { programaticSignup } from "@lib/testUtil";
+import {
+  closePool,
+  openPool,
+  getClient,
+} from "@technologiestiftung/stadtpuls-test-utils";
 
 type OnSuccessType = (data: definitions["records"][]) => void;
 type OnFailType = (error: string) => void;
-
-const HookWrapper: FC<{
-  session: ReturnType<typeof supabase.auth.session>;
-}> = ({ session, children }) => (
-  <SWRConfig value={{ dedupingInterval: 0 }}>
-    <AuthProvider session={session}>{children}</AuthProvider>
-  </SWRConfig>
-);
 
 const createTestComponent = (
   sensorId: number | undefined,
@@ -85,86 +79,101 @@ describe("useSensorRecords hook", () => {
     });
   });
 
+  let client: Awaited<ReturnType<typeof getClient>> | undefined;
   describe("deleteRecords", () => {
+    beforeAll(async () => {
+      await openPool(
+        "postgresql://postgres:your-super-secret-and-long-postgres-password@localhost/postgres?statusColor=F8F8F8&enviroment=production&name=Local%20Stadtpuls%20Supabase%20DB&tLSMode=0&usePrivateKey=false&safeModeLevel=0&advancedSafeModeLevel=0&driverVersion=0"
+      );
+      client = await getClient();
+    });
+
+    afterAll(async () => {
+      await closePool();
+    });
+
     it("deletes records", async () => {
+      if (!client) throw new Error("client is undefined");
+
+      // Create test data in the DB
       const parentSensorId = 4;
       const records = getSensorRecords({
         sensorId: parentSensorId,
         numberOfRecords: 10,
       });
-      const server = setupServer(
-        rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
-          return res(ctx.status(201, "Mocked status"), ctx.json(records));
-        }),
-        rest.delete(createSupabaseUrl(`/records`), (_req, res, ctx) => {
-          return res(ctx.status(201, "Mocked status"));
-        })
+      const values = records.map(record => [
+        record.sensor_id,
+        record.recorded_at,
+        `{ ${record.measurements.join(", ")} }`,
+      ]);
+      const addRecrodsQuery = format(
+        `INSERT INTO records (sensor_id, recorded_at, measurements) VALUES %L`,
+        values
       );
-      server.listen();
+      await client.query(addRecrodsQuery);
+
+      // Login user
       const session = await programaticSignup({
         email: "test@email.com",
         password: "password",
       });
-      const HookWrapper: FC = ({ children }) => (
-        <SWRConfig value={{ dedupingInterval: 0 }}>
-          <AuthProvider session={session}>{children}</AuthProvider>
-        </SWRConfig>
+      const LocalHookWrapper: FC = ({ children }) => (
+        <AuthProvider session={session}>{children}</AuthProvider>
       );
+
+      // Render hook
       const { result, waitForNextUpdate } = renderHook(
         () => useSensorRecords({ sensorId: parentSensorId }),
         {
-          wrapper: HookWrapper,
+          wrapper: LocalHookWrapper,
         }
       );
-      const { waitForNextUpdate: waitForAuth } = renderHook(() => useAuth(), {
-        wrapper: HookWrapper,
-      });
 
-      await waitForAuth();
+      const getRecordsQuery = `SELECT * FROM records WHERE sensor_id = $1`;
 
-      const recordsIds = records
-        .slice(-4, records.length - 1)
-        .map(record => record.id);
+      const recordsIds = (
+        await client.query(getRecordsQuery, [parentSensorId])
+      ).rows.map(({ id }) => id as number);
 
       await waitForNextUpdate();
 
-      await act(async () => {
-        await result.current.deleteRecords(recordsIds);
-      });
+      await renderAct(() => result.current.deleteRecords(recordsIds));
 
       await waitFor(() => {
         expect(result.current.error).toBeNull();
       });
+      const recordsCount = (
+        await client.query(getRecordsQuery, [parentSensorId])
+      ).rowCount;
+
+      await waitFor(() => {
+        expect(recordsCount).toBe(0);
+      });
     });
     it("fails when no ids are provided", async () => {
       const parentSensorId = 4;
-      const records = getSensorRecords({
-        sensorId: parentSensorId,
-        numberOfRecords: 10,
+
+      // Login user
+      const session = await programaticSignup({
+        email: "test@email.com",
+        password: "password",
       });
-      const server = setupServer(
-        rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
-          return res(ctx.status(201, "Mocked status"), ctx.json(records));
-        }),
-        rest.delete(createSupabaseUrl(`/records`), (_req, res, ctx) => {
-          return res(ctx.status(201, "Mocked status"));
-        })
+      const LocalHookWrapper: FC = ({ children }) => (
+        <AuthProvider session={session}>{children}</AuthProvider>
       );
-      server.listen();
+
       const { result, waitForNextUpdate } = renderHook(
         () => useSensorRecords({ sensorId: parentSensorId }),
         {
-          wrapper: HookWrapper,
+          wrapper: LocalHookWrapper,
         }
       );
 
       await waitForNextUpdate();
 
-      await act(async () => {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        await result.current.deleteRecords();
-      });
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      await renderAct(async () => await result.current.deleteRecords());
 
       await waitFor(() => {
         expect(result.current.error?.message).toBe(
