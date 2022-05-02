@@ -18,11 +18,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     if (!username || Array.isArray(username)) return { notFound: true };
     const account = await getAccountDataByUsername(username);
     return {
-      props: { account, error: null },
+      props: { account: account || null, error: null },
       revalidate: 30,
     };
   } catch (error) {
-    console.error(error);
+    console.error(JSON.stringify(error));
     return { notFound: true };
   }
 };
@@ -36,7 +36,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 interface AccountSensorsPagePropType {
-  account?: AccountWithSensorsType;
+  account: AccountWithSensorsType | null;
 }
 
 const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({
@@ -45,7 +45,7 @@ const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({
   const { isFallback } = useRouter();
   const { account, isLoading } = useAccountData({
     username: initalAccount?.username,
-    initialData: initalAccount,
+    initialData: initalAccount || undefined,
   });
   const { sensorsRecordsMap } = useSensorsRecords(
     account?.sensors.map(s => s.id)

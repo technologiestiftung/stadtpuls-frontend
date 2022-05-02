@@ -5,7 +5,6 @@ import {
   mapPublicSensor,
 } from "@lib/hooks/usePublicSensors";
 
-export const RECORDS_LIMIT = 500;
 export const errors = {
   rangeEndGreaterThanRangeStart: "rangeEnd can not be smaller than rangeStart",
   onlyOneRangeValue: "rangeStart and rangeEnd must both be provided",

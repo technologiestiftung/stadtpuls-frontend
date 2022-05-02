@@ -11,6 +11,12 @@ describe("utility function getRecordsBySensorId", () => {
     const server = setupServer(
       rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(
+          ctx.set(
+            "Content-Range",
+            `0-${exampleSensor.records.length - 1}/${
+              exampleSensor.records.length
+            }`
+          ),
           ctx.status(200, "Mocked status"),
           ctx.json(exampleSensor.records)
         );
@@ -38,14 +44,17 @@ describe("utility function getRecordsBySensorId", () => {
         const gteValue = gte.replace("gte.", "");
         const lteValue = lte.replace("lte.", "");
 
+        const filteredRecords = exampleSensor.records.filter(
+          record =>
+            record.recorded_at >= gteValue && record.recorded_at <= lteValue
+        );
         return res(
+          ctx.set(
+            "Content-Range",
+            `0-${filteredRecords.length - 1}/${filteredRecords.length}`
+          ),
           ctx.status(200, "Mocked status"),
-          ctx.json(
-            exampleSensor.records.filter(
-              record =>
-                record.recorded_at >= gteValue && record.recorded_at <= lteValue
-            )
-          )
+          ctx.json(filteredRecords)
         );
       })
     );
@@ -79,13 +88,16 @@ describe("utility function getRecordsBySensorId", () => {
         const [gte] = query.getAll("recorded_at");
         const gteValue = gte.replace("gte.", "");
 
+        const filteredRecords = exampleSensor.records.filter(
+          record => record.recorded_at >= gteValue
+        );
         return res(
+          ctx.set(
+            "Content-Range",
+            `0-${filteredRecords.length - 1}/${filteredRecords.length}`
+          ),
           ctx.status(200, "Mocked status"),
-          ctx.json(
-            exampleSensor.records.filter(
-              record => record.recorded_at >= gteValue
-            )
-          )
+          ctx.json(filteredRecords)
         );
       })
     );
@@ -118,13 +130,17 @@ describe("utility function getRecordsBySensorId", () => {
         const [lte] = query.getAll("recorded_at");
         const lteValue = lte.replace("lte.", "");
 
+        const filteredRecords = exampleSensor.records.filter(
+          record => record.recorded_at <= lteValue
+        );
+
         return res(
+          ctx.set(
+            "Content-Range",
+            `0-${filteredRecords.length - 1}/${filteredRecords.length}`
+          ),
           ctx.status(200, "Mocked status"),
-          ctx.json(
-            exampleSensor.records.filter(
-              record => record.recorded_at <= lteValue
-            )
-          )
+          ctx.json(filteredRecords)
         );
       })
     );
@@ -151,6 +167,12 @@ describe("utility function getRecordsBySensorId", () => {
     const server = setupServer(
       rest.get(createSupabaseUrl(`/records`), (_req, res, ctx) => {
         return res(
+          ctx.set(
+            "Content-Range",
+            `0-${exampleSensor.records.length - 1}/${
+              exampleSensor.records.length
+            }`
+          ),
           ctx.status(200, "Mocked status"),
           ctx.json(exampleSensor.records)
         );

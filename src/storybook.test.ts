@@ -10,6 +10,7 @@ initStoryshots({
     const snapshotFileName = path.resolve(
       __dirname,
       "..", // go backwards so when we go forwards again we end up in the right place.
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       story.stories2snapsConverter.getSnapshotFileName(story.context)
     );
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return

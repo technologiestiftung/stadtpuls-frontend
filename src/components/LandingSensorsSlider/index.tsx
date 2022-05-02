@@ -49,13 +49,11 @@ export const LandingSensorsSlider: FC<LandingSensorsSliderPropType> = ({
     setSwiperInstance(swiper);
 
     return () => swiper.destroy();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (!swiperInstance) return;
     swiperInstance.slideTo(slideIndex);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slideIndex]);
 
   return (
