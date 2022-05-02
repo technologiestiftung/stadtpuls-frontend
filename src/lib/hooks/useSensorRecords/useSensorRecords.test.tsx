@@ -95,8 +95,38 @@ describe("useSensorRecords hook", () => {
     it("deletes records", async () => {
       if (!client) throw new Error("client is undefined");
 
+      // Login user
+      const session = await programaticSignup({
+        email: "test@email.com",
+        password: "password",
+      });
+      const LocalHookWrapper: FC = ({ children }) => (
+        <AuthProvider session={session}>{children}</AuthProvider>
+      );
+
       // Create test data in the DB
-      const parentSensorId = 4;
+      const sensor = {
+        name: `My Test Sensor ${Date.now()}`,
+        description: `This is an important sensor. It was created now (${Date.now()})`,
+        connection_type: "http",
+        longitude: 13.37,
+        latitude: 13.37,
+        category_id: 1,
+        user_id: session?.user?.id,
+      };
+
+      const addSensorQuery = format(
+        `INSERT INTO sensors (${Object.keys(sensor).join(", ")}) VALUES %L`,
+        [Object.values(sensor)]
+      );
+      await client.query(addSensorQuery);
+
+      const newSensor = await client.query<{ id: number }>(
+        `SELECT id FROM sensors WHERE name = $1 LIMIT 1`,
+        [sensor.name]
+      );
+      const parentSensorId = newSensor.rows[0].id;
+
       const records = getSensorRecords({
         sensorId: parentSensorId,
         numberOfRecords: 10,
@@ -111,15 +141,6 @@ describe("useSensorRecords hook", () => {
         values
       );
       await client.query(addRecrodsQuery);
-
-      // Login user
-      const session = await programaticSignup({
-        email: "test@email.com",
-        password: "password",
-      });
-      const LocalHookWrapper: FC = ({ children }) => (
-        <AuthProvider session={session}>{children}</AuthProvider>
-      );
 
       // Render hook
       const { result, waitForNextUpdate } = renderHook(
@@ -149,6 +170,8 @@ describe("useSensorRecords hook", () => {
       await waitFor(() => {
         expect(recordsCount).toBe(0);
       });
+
+      await client.query(`DELETE FROM sensors WHERE id = $1`, [parentSensorId]);
     });
     it("fails when no ids are provided", async () => {
       const parentSensorId = 4;
