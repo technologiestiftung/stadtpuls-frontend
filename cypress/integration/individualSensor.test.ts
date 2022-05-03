@@ -1,5 +1,5 @@
-import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions/generated";
-import { CurrentSessionType } from "../support";
+import { getSensorRecords } from '@mocks/supabaseData/records';
+import { definitions } from '@technologiestiftung/stadtpuls-supabase-definitions';
 
 describe("Individual Sensor Page - Logged Out", () => {
   it("should share username with URL", () => {
@@ -59,26 +59,39 @@ describe.only("Individual Sensor Page - Logged In", () => {
   });
   it("should share username with URL", () => {
     cy.viewport("macbook-13");
-    const sensor = {
-      name: `Sensor ${Date.now()}`,
-      description: "Test Sensor description",
-      created_at: new Date().toISOString(),
-      connection_type: "http" as const,
-      category_id: 1,
-    };
-    cy.createSensor(sensor)
-      .then(() => cy.getSensorByName(sensor.name))
-      .then(({ body }) => {
-        const id = body[0].id;
-        cy.visit(`/sensors/${id}`);
-        cy.get(`h1`).should("exist").and("contain", sensor.name);
-        cy.findByText(sensor.description).should("exist").and("contain", sensor.description);
-        cy.findByRole('textbox', { name: 'API Schnittstelle' })
-          .should("exist")
-          .and("contain.value", `/api/v3/sensors/${id}/records`);
-        // TODO: Create records for the sensors
-        // TODO: Delete 1 record
-        // TODO: Delete all records using checkbox
+    cy.getSession()
+      .then(sessionRes => {
+        const userId = sessionRes.body.user.id;
+        const sensor = {
+          name: `Sensor ${Date.now()}`,
+          description: "Test Sensor description",
+          created_at: new Date().toISOString(),
+          connection_type: "http" as const,
+          category_id: 1,
+          user_id: userId,
+        };
+        cy.task('createSensor', sensor)
+          .then((newSensor) => {
+            const id = (newSensor as definitions['sensors']).id;
+            const fakeRecords = getSensorRecords({
+              sensorId: id,
+              numberOfRecords: 10,
+            }).map(({ id, ...r }, idx) => ({
+              ...r,
+              measurements: [`999${idx}`]
+            }));
+            cy.task('createRecords', fakeRecords)
+            cy.visit(`/sensors/${id}`);
+            cy.get(`h1`).should("exist").and("contain", sensor.name);
+            cy.findByText(sensor.description).should("exist").and("contain", sensor.description);
+            cy.findByRole('textbox', { name: 'API Schnittstelle' })
+              .should("exist")
+              .and("contain.value", `/api/v3/sensors/${id}/records`);
+            cy.findByText(`9990`).should("exist");
+            // TODO: Create records for the sensors
+            // TODO: Delete 1 record
+            // TODO: Delete all records using checkbox
+          })
+      });
       })
-  });
 });

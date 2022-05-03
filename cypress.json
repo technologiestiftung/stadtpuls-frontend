@@ -1,6 +1,7 @@
 {
   "baseUrl": "http://localhost:3333",
   "testFiles": "**/*.test.*",
+  "pluginFile": "./cypress/plugins/index.ts",
   "video": false,
   "env": {
     "email": "user9@user.com",
