@@ -76,10 +76,9 @@ const pluginFile: Cypress.PluginConfig = (on) => {
         records.map(r => [r.recorded_at, `{${r.measurements?.join(',')}}`, r.sensor_id]),
       );
       await client.query(createSensorQuery);
-      const newRecords = await client.query(format(
-        `SELECT * FROM public.records WHERE recorded_at IN %L`,
-        records.map(r => r.recorded_at),
-      ));
+      const newRecords = await client.query(
+        `SELECT * FROM public.records WHERE recorded_at IN (${records.map(r => `'${r.recorded_at}'`).join(',')})`,
+      );
       return newRecords.rows;
     },
 

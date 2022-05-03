@@ -22,6 +22,8 @@ describe("Individual Sensor Page - Logged Out", () => {
 
 describe.only("Individual Sensor Page - Logged In", () => {
   before(() => {
+    cy.task('openPool');
+    cy.task('deleteUser', Cypress.env('email'))
     cy.signUp();
   });
   beforeEach(() => {
@@ -31,6 +33,7 @@ describe.only("Individual Sensor Page - Logged In", () => {
     cy.getSession().then(session =>
       cy.deleteUser(session.body.access_token)
     );
+    cy.task('closePool');
   })
 
   it("should Show title and API URLs", () => {
@@ -57,7 +60,7 @@ describe.only("Individual Sensor Page - Logged In", () => {
         });
       });
   });
-  it("should share username with URL", () => {
+  it.only("should share username with URL", () => {
     cy.viewport("macbook-13");
     cy.getSession()
       .then(sessionRes => {
@@ -87,7 +90,7 @@ describe.only("Individual Sensor Page - Logged In", () => {
             cy.findByRole('textbox', { name: 'API Schnittstelle' })
               .should("exist")
               .and("contain.value", `/api/v3/sensors/${id}/records`);
-            cy.findByText(`9990`).should("exist");
+            cy.findByText(`9.990`).should("exist");
             // TODO: Create records for the sensors
             // TODO: Delete 1 record
             // TODO: Delete all records using checkbox
