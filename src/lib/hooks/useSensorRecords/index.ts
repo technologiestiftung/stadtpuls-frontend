@@ -23,20 +23,24 @@ interface useSensorRecordsReturnType {
   deleteRecords: (recordIds: number[]) => Promise<void>;
 }
 
-const deleteRecords = async (
-  ids?: definitions["records"]["id"][],
-  sensor_id?: definitions["sensors"]["id"],
-  user_id?: definitions["user_profiles"]["id"]
-): Promise<void> => {
-  if (!user_id) throw new Error("Not authenticated");
-  if (!sensor_id) throw new Error("Please provide a sensor ids");
+const deleteRecords = async ({
+  ids,
+  sensorId,
+  userId,
+}: {
+  ids?: definitions["records"]["id"][];
+  sensorId?: definitions["sensors"]["id"];
+  userId?: definitions["user_profiles"]["id"];
+}): Promise<void> => {
+  if (!userId) throw new Error("Not authenticated");
+  if (!sensorId) throw new Error("Please provide a sensor ids");
   if (!ids || ids.length === 0) throw new Error("Please provide record ids");
 
   const { data, error } = await supabase
     .from<definitions["records"]>("records")
     .delete()
     .in("id", ids)
-    .eq("sensor_id", sensor_id);
+    .eq("sensor_id", sensorId);
 
   if (error) throw error;
   if (data && data.length === 0) {
@@ -120,7 +124,9 @@ export const useSensorRecords = ({
         false
       );
 
-      await deleteRecords(recordIds, sensorId, userId).catch(setActionError);
+      await deleteRecords({ ids: recordIds, sensorId, userId }).catch(
+        setActionError
+      );
       void mutate(params);
     },
   };

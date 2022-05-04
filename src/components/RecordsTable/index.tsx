@@ -84,6 +84,9 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
     }
   }, [selectedCount]);
 
+  const recordsIds = selectedFlatRows.map(({ index }) =>
+    parseInt(`${data[index].id}`, 10)
+  );
   return (
     <>
       {deleteConfirmationOpened && selectedCount > 0 && (
@@ -91,7 +94,7 @@ export const RecordsTable: FC<RecordsTablePropsType> = ({
           setOpened={setDeleteConfirmationOpened}
           selectedCount={selectedCount}
           onConfirm={() => {
-            onRecordsDelete(selectedFlatRows.map(({ id }) => parseInt(id, 10)));
+            onRecordsDelete(recordsIds);
           }}
         />
       )}
