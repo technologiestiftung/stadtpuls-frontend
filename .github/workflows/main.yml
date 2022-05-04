@@ -43,8 +43,6 @@ jobs:
         with:
           timezoneLinux: "Europe/Berlin"
       - run: npm ci
-      - run: npm run build
-      - run: npm start -- -p 3333
       - run: npm run lint
       - run: npm run type-check
       - run: npm run test:ci
