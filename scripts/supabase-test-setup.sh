@@ -13,7 +13,7 @@ git clone --no-checkout https://github.com/technologiestiftung/stadtpuls-supabas
 
 # Remove git folder to avoid changes within supabase folder
 # to be recognised as changes to a subrepo
-rm -rf ./.git
+rm -rf ../supabase/.git
 
 # Add a custom seeding script to the list of automatically
 # executed SQL scripts when the DB is created
