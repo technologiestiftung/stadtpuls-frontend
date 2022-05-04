@@ -23,17 +23,16 @@ describe("Individual Sensor Page - Logged Out", () => {
 describe.only("Individual Sensor Page - Logged In", () => {
   before(() => {
     cy.task('openPool');
+  })
+
+  beforeEach(() => {
     cy.task('deleteUser', Cypress.env('email'))
     cy.signUp();
-  });
-  beforeEach(() => {
     cy.signIn();
   });
+
   after(() => {
-    cy.getSession().then(session =>
-      cy.deleteUser(session.body.access_token)
-    );
-    cy.task('closePool');
+    cy.task('openPool');
   })
 
   it("should Show title and API URLs", () => {
@@ -83,6 +82,7 @@ describe.only("Individual Sensor Page - Logged In", () => {
               ...r,
               measurements: [`999${idx}`]
             }));
+            cy.task('clearSensorRecords', id)
             cy.task('createRecords', fakeRecords)
             cy.visit(`/sensors/${id}`);
             cy.get(`h1`).should("exist").and("contain", sensor.name);
@@ -91,6 +91,17 @@ describe.only("Individual Sensor Page - Logged In", () => {
               .should("exist")
               .and("contain.value", `/api/v3/sensors/${id}/records`);
             cy.findByText(`9.990`).should("exist");
+            const checkboxes = cy.findAllByRole('checkbox');
+            checkboxes.should("have.length", 11);
+            const firstCheckbox = checkboxes.eq(1);
+            firstCheckbox.click();
+            cy.findByRole('button', { name: '1 Wert löschen' }).click();
+            cy.findByRole('button', { name: 'Unwiderruflich löschen' }).click();
+            cy.findByText(`9.990`).should("not.exist");
+            cy.findAllByRole('checkbox').first().click();
+            cy.findByRole('button', { name: '9 Werte löschen' }).click();
+            cy.findByRole('button', { name: 'Unwiderruflich löschen' }).click();
+            cy.findAllByRole('checkbox').should("have.length", 0);
             // TODO: Create records for the sensors
             // TODO: Delete 1 record
             // TODO: Delete all records using checkbox
