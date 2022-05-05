@@ -1,6 +1,6 @@
 import { AuthProvider } from "@auth/Auth";
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
-import { act as renderAct, render, waitFor } from "@testing-library/react";
+import { render, waitFor } from "@testing-library/react";
 import { renderHook } from "@testing-library/react-hooks";
 import { FC, useEffect } from "react";
 import { SWRConfig } from "swr";
@@ -196,7 +196,7 @@ describe("useSensorRecords hook", () => {
 
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      await renderAct(async () => await result.current.deleteRecords());
+      await result.current.deleteRecords();
 
       await waitFor(() => {
         expect(result.current.error?.message).toBe(
