@@ -45,7 +45,12 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run type-check
-      - run: npm run test:ci
+      - name: Run Unit/Integration Tests
+        uses: BerniWittmann/background-server-action@latest
+        with:
+          command: npm run test:ci
+          build: npm run build
+          start: npm run start
         env:
           CI: true
           NEXT_PUBLIC_API_URL: ${{ secrets.API_URL }}
