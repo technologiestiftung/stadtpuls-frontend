@@ -46,11 +46,10 @@ jobs:
       - run: npm run lint
       - run: npm run type-check
       - name: Run Unit/Integration Tests
-        uses: BerniWittmann/background-server-action@latest
-        with:
-          command: npm run test:ci
-          build: npm run build
-          start: npm run start
+        run: |
+          npm run build --if-present
+          npm start -- -p 3333 & npx wait-on http://localhost:3333
+          npm run test:ci
         env:
           CI: true
           NEXT_PUBLIC_API_URL: ${{ secrets.API_URL }}
