@@ -158,7 +158,7 @@ describe("useSensorRecords hook", () => {
 
       await waitForNextUpdate();
 
-      await renderAct(() => result.current.deleteRecords(recordsIds));
+      await result.current.deleteRecords(recordsIds);
 
       await waitFor(() => {
         expect(result.current.error).toBeNull();
