@@ -20,7 +20,7 @@ describe("Individual Sensor Page - Logged Out", () => {
   });
 });
 
-describe.only("Individual Sensor Page - Logged In", () => {
+describe("Individual Sensor Page - Logged In", () => {
   before(() => {
     cy.task('openPool');
   })
@@ -59,7 +59,7 @@ describe.only("Individual Sensor Page - Logged In", () => {
         });
       });
   });
-  it.only("should share username with URL", () => {
+  it("should share username with URL", () => {
     cy.viewport("macbook-13");
     cy.getSession()
       .then(sessionRes => {
@@ -102,9 +102,7 @@ describe.only("Individual Sensor Page - Logged In", () => {
             cy.findByRole('button', { name: '9 Werte löschen' }).click();
             cy.findByRole('button', { name: 'Unwiderruflich löschen' }).click();
             cy.findAllByRole('checkbox').should("have.length", 0);
-            // TODO: Create records for the sensors
-            // TODO: Delete 1 record
-            // TODO: Delete all records using checkbox
+            cy.task('deleteSensor', id);
           })
       });
       })

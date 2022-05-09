@@ -47,6 +47,7 @@ const pluginFile: Cypress.PluginConfig = (on) => {
         `SELECT * FROM auth.users WHERE email = $1`,
         [email],
       );
+      debugger
       if (existingUsers.rows.length === 0) return null
       await client.query(
         `DELETE FROM auth.users WHERE email = $1`,
@@ -91,6 +92,20 @@ const pluginFile: Cypress.PluginConfig = (on) => {
       if (sensorRecords.rows.length === 0) return null
       await client.query(
         `DELETE FROM public.records WHERE sensor_id = $1`,
+        [sensorId],
+      );
+      return null;
+    },
+
+    async deleteSensor(sensorId: number): Promise<null> {
+      const client = await getClient();
+      const sensors = await client.query(
+        `SELECT * FROM public.sensors WHERE id = $1`,
+        [sensorId],
+      );
+      if (sensors.rows.length === 0) return null
+      await client.query(
+        `DELETE FROM public.sensors WHERE id = $1`,
         [sensorId],
       );
       return null;
