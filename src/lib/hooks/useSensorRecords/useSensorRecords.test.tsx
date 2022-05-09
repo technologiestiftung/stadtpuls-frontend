@@ -1,4 +1,4 @@
-import { AuthProvider } from "@auth/Auth";
+import * as auth from "@auth/Auth";
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { render, waitFor } from "@testing-library/react";
 import { renderHook } from "@testing-library/react-hooks";
@@ -16,6 +16,8 @@ import {
 
 type OnSuccessType = (data: definitions["records"][]) => void;
 type OnFailType = (error: string) => void;
+
+const { AuthProvider } = auth;
 
 const createTestComponent = (
   sensorId: number | undefined,
@@ -142,8 +144,14 @@ describe("useSensorRecords hook", () => {
       );
       await client.query(addRecrodsQuery);
 
+      jest.spyOn(auth, "useAuth").mockImplementation().mockReturnValue({
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        authenticatedUser: session?.user,
+      });
+
       // Render hook
-      const { result, waitForNextUpdate } = renderHook(
+      const { result, rerender } = renderHook(
         () => useSensorRecords({ sensorId: parentSensorId }),
         {
           wrapper: LocalHookWrapper,
@@ -156,24 +164,31 @@ describe("useSensorRecords hook", () => {
         await client.query(getRecordsQuery, [parentSensorId])
       ).rows.map(({ id }) => id as number);
 
-      await waitForNextUpdate();
+      await waitFor(() => {
+        expect(result.current.isLoading).toBe(false);
+      });
+      expect(recordsIds.length).toBe(10);
+      expect(result.current.records.length).toBe(10);
 
       await result.current.deleteRecords(recordsIds);
 
+      rerender({ sensorId: parentSensorId });
+
       await waitFor(() => {
         expect(result.current.error).toBeNull();
+        expect(result.current.records.length).toBe(0);
       });
+
       const recordsCount = (
         await client.query(getRecordsQuery, [parentSensorId])
       ).rowCount;
 
-      await waitFor(() => {
-        expect(recordsCount).toBe(0);
-      });
+      expect(recordsCount).toBe(0);
 
       await client.query(`DELETE FROM sensors WHERE id = $1`, [parentSensorId]);
     });
     it("fails when no ids are provided", async () => {
+      if (!client) throw new Error("client is undefined");
       const parentSensorId = 4;
 
       // Login user
@@ -185,18 +200,28 @@ describe("useSensorRecords hook", () => {
         <AuthProvider session={session}>{children}</AuthProvider>
       );
 
-      const { result, waitForNextUpdate } = renderHook(
+      jest.spyOn(auth, "useAuth").mockImplementation().mockReturnValue({
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        authenticatedUser: session?.user,
+      });
+
+      const { result, rerender } = renderHook(
         () => useSensorRecords({ sensorId: parentSensorId }),
         {
           wrapper: LocalHookWrapper,
         }
       );
 
-      await waitForNextUpdate();
+      await waitFor(() => {
+        expect(result.current.isLoading).toBe(false);
+      });
 
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       await result.current.deleteRecords();
+
+      rerender({ sensorId: parentSensorId });
 
       await waitFor(() => {
         expect(result.current.error?.message).toBe(
