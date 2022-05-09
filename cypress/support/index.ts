@@ -60,38 +60,6 @@ declare global {
       getSensorByName(name: definitions['sensors']['name']): Chainable<
         Cypress.Response<definitions['sensors'][]>
       >;
-
-      /**
-       * Retrieves all the sensors
-       * @example cy.getAllSensors()
-       */
-      getAllSensors(): Chainable<
-        Cypress.Response<definitions['sensors'][]>
-      >;
-
-      /**
-       * Retrieves a sensor's records
-       * @example cy.getSensorRecords(4)
-       */
-      getSensorRecords(sensorId: definitions['sensors']['id']): Chainable<
-        Cypress.Response<definitions['records'][]>
-      >;
-
-      /**
-       * Creates records for a give sensor
-       * @example cy.createSensorRecords(4)
-       */
-      createSensorRecord(sensorId: definitions['sensors']['id']): Chainable<
-        Cypress.Response<definitions['records']>
-      >;
-
-      /**
-       * Creates a sensor and retrived its id
-       * @example cy.createSensor({ name: "Test Sensor", ... }).then(id => { ... })
-       */
-      createSensor(sensor: Omit<definitions['sensors'], 'id' | 'user_id'>): Chainable<
-        Cypress.Response<undefined>
-      >;
     }
   }
 }
