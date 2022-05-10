@@ -1,0 +1,3 @@
+.notEditableTable .tableCell:first-of-type {
+  display: none;
+}

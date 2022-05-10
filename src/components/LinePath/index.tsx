@@ -2,11 +2,11 @@ import { FC } from "react";
 import { extent, max, min } from "d3-array";
 import { curveLinear } from "@visx/curve";
 import { LinePath as Path } from "@visx/shape";
-import { scaleLinear, scaleUtc } from "@visx/scale";
+import { scaleLinear, scaleTime } from "@visx/scale";
 import { DateValueType, LineGraphType } from "../../common/interfaces";
 import colors from "../../style/colors";
 
-const getX = (d: DateValueType): Date => new Date(d.date);
+const getX = (d: DateValueType): Date => d.date;
 const getY = (d: DateValueType): number => d.value;
 
 export const MAX_RENDERABLE_VALUES = 3000;
@@ -18,7 +18,7 @@ export const LinePath: FC<LineGraphType> = ({
   startDateTimeString,
   endDateTimeString,
 }) => {
-  const xScale = scaleUtc<number>({
+  const xScale = scaleTime<number>({
     domain:
       startDateTimeString && endDateTimeString
         ? [new Date(startDateTimeString), new Date(endDateTimeString)]

@@ -7,6 +7,7 @@ cat >$TMP <<EOF
   "include": [
     "./next-env.d.ts",
     "./global-types.d.ts",
+    "./src/common/**/*.ts",
 EOF
 for file in "$@"; do
   echo "    \"$file\"," >> $TMP

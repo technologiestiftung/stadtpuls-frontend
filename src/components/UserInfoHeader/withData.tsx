@@ -198,6 +198,7 @@ export const UserInfoWithData: FC<UserInfoWithDataPropType> = ({
       {deletionConfirmationIsOpened && (
         <SmallModalOverlay
           title={`Account löschen`}
+          variant='dangerous'
           footerContent={
             <>
               <Button

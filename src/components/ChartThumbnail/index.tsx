@@ -1,17 +1,17 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { extent, max, min } from "d3-array";
 import { curveLinear } from "@visx/curve";
 import { LinePath } from "@visx/shape";
 import { scaleLinear, scaleUtc } from "@visx/scale";
-import { DateValueType } from "../../common/interfaces";
 import colors from "../../style/colors";
 import moment from "moment";
 import "moment/locale/de";
+import { DateValueType } from "@common/interfaces";
 
 moment.locale("de-DE");
 
 interface ChartThumbnailPropType {
-  data: Array<DateValueType>;
+  data: DateValueType[];
 }
 
 const CHART_WIDTH = 140;
@@ -19,19 +19,21 @@ const CHART_HEIGHT = 76;
 const MARGIN_SIZE = 24;
 const STROKE_WIDTH = 2;
 
-const getX = (d: DateValueType): Date => new Date(d.date);
-const getY = (d: DateValueType): number => d.value;
+const getX = (d: { date: Date }): Date => d.date;
+const getY = (d: { value: number }): number => d.value;
 
 const numberFormatter = new Intl.NumberFormat("de-DE");
 
 const startDate = new Date();
 const defaultArr = [
   {
-    date: startDate.toISOString(),
+    id: 1,
+    date: startDate,
     value: 0,
   },
   {
-    date: new Date(startDate.getDate() + 1).toISOString(),
+    id: 2,
+    date: new Date(startDate.getDate() + 1),
     value: 0,
   },
 ];
@@ -39,9 +41,7 @@ const defaultArr = [
 const normalizeData = (data: DateValueType[]): DateValueType[] =>
   data.length <= 1
     ? defaultArr
-    : data.sort(
-        (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
-      );
+    : data.sort((a, b) => a.date.getTime() - b.date.getTime());
 
 export const ChartThumbnail: FC<ChartThumbnailPropType> = ({ data }) => {
   const normalizedData = normalizeData(data);

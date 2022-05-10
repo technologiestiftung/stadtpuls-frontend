@@ -48,11 +48,8 @@ export const SignInUpFormWrapper: FC<SignInUpFormWrapperPropType> = ({
         <>
           <section className='text-gray-500'>
             {`${texts.switchQuestion} `}
-            <Link href={`/${texts.switchLinkRoute}`}>
-              <TextLink
-                href={`/${texts.switchLinkRoute}`}
-                className='inline-block'
-              >
+            <Link href={`/${texts.switchLinkRoute}`} passHref>
+              <TextLink className='inline-block'>
                 {texts.switchLinkText}
               </TextLink>
             </Link>

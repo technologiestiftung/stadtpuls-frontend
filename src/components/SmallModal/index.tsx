@@ -9,6 +9,9 @@ interface SmallModalPropType {
   onClickOutside?: () => void;
 }
 
+/**
+ * Use for modal-looking components that are not a dialog with overlay. For dialogs that overlay the whole page, use Dialog
+ */
 export const SmallModal: FC<SmallModalPropType> = ({
   title,
   children,
@@ -27,7 +30,7 @@ export const SmallModal: FC<SmallModalPropType> = ({
         <div>
           <h1
             className={`text-3xl font-bold font-headline m-0 mb-4 ${
-              variant == "dangerous" ? "text-error-500" : "text-purple"
+              variant == "dangerous" ? "text-error" : "text-purple"
             }`}
           >
             {title}

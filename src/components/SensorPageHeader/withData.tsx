@@ -105,6 +105,7 @@ export const SensorPageHeaderWithData: FC<SensorPageHeaderWithDataPropType> = ({
       {deletionConfirmationIsOpened && user && (
         <SmallModalOverlay
           title={`Sensor löschen`}
+          variant='dangerous'
           footerContent={
             <>
               <Button

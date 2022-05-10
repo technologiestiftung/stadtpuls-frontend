@@ -14,7 +14,7 @@ exports[`Storyshots UI Elements/SmallModal With Dangerous Content 1`] = `
   >
     <div>
       <h1
-        className="text-3xl font-bold font-headline m-0 mb-4 text-error-500"
+        className="text-3xl font-bold font-headline m-0 mb-4 text-error"
       >
         Bitte bestätige die Löschung deines Accounts
       </h1>

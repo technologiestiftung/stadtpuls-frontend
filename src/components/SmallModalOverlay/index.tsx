@@ -8,8 +8,12 @@ interface SmallModalOverlayPropType extends HTMLProps<HTMLFormElement> {
   footerContent?: ReactNode;
   className?: string;
   onClickOutside?: () => void;
+  onRendered?: () => void;
 }
 
+/**
+ * @deprecated use the Dialog component instead, which is aria-ready and handles focus better
+ */
 export const SmallModalOverlay: FC<SmallModalOverlayPropType> = props => {
   const [container, setContainer] = useState<Element | null>(null);
 
@@ -20,6 +24,10 @@ export const SmallModalOverlay: FC<SmallModalOverlayPropType> = props => {
       document.querySelector("html")?.classList.remove("no-scroll");
     };
   }, [setContainer]);
+
+  useEffect(() => {
+    container && props.onRendered && props.onRendered();
+  }, [container]);
 
   if (!container) return null;
   else

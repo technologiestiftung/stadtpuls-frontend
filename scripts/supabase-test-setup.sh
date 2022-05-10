@@ -9,11 +9,11 @@ git clone --no-checkout https://github.com/technologiestiftung/stadtpuls-supabas
   && git config advice.detachedHead false \
   && mkdir -p .git/info \
   && echo supabase-docker-compose >> .git/info/sparse-checkout \
-  && git checkout v4.0.0
+  && git checkout v4.1.0
 
 # Remove git folder to avoid changes within supabase folder
 # to be recognised as changes to a subrepo
-rm -rf ./.git
+rm -rf ../supabase/.git
 
 # Add a custom seeding script to the list of automatically
 # executed SQL scripts when the DB is created

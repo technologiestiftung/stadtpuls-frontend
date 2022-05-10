@@ -1,9 +1,12 @@
+import { supabase } from "@auth/supabase";
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import {
   getRecordsBySensorId,
   GetRecordsResponseType,
 } from "@lib/requests/getRecordsBySensorId";
-import useSWR from "swr";
+import useSWR, { mutate } from "swr";
+import { useState } from "react";
+import { useAuth } from "@auth/Auth";
 
 interface useSensorRecordsParamsType {
   sensorId: number | undefined;
@@ -17,7 +20,36 @@ interface useSensorRecordsReturnType {
   records: definitions["records"][];
   recordsCount: number | null;
   error: Error | null;
+  deleteRecords: (recordIds: number[]) => Promise<void>;
 }
+
+const deleteRecords = async ({
+  ids,
+  sensorId,
+  userId,
+}: {
+  ids?: definitions["records"]["id"][];
+  sensorId?: definitions["sensors"]["id"];
+  userId?: definitions["user_profiles"]["id"];
+}): Promise<void> => {
+  if (!userId) throw new Error("Not authenticated");
+  if (!sensorId) throw new Error("Please provide a sensor ids");
+  if (!ids || ids.length === 0) throw new Error("Please provide record ids");
+
+  const { data, error } = await supabase
+    .from<definitions["records"]>("records")
+    .delete()
+    .in("id", ids)
+    .eq("sensor_id", sensorId);
+
+  if (error) throw error;
+  if (data && data.length === 0) {
+    const errMsg =
+      "No records could be deleted. Your Row Level Security might be too strict.";
+    console.error(errMsg);
+    throw new Error(errMsg);
+  }
+};
 
 type fetchSensorRecordsSignature = (
   params: useSensorRecordsParamsType
@@ -46,6 +78,9 @@ export const useSensorRecords = ({
   endDateString,
   maxRows,
 }: useSensorRecordsParamsType): useSensorRecordsReturnType => {
+  const { authenticatedUser } = useAuth();
+  const userId = authenticatedUser?.id;
+  const [actionError, setActionError] = useState<Error | null>(null);
   const params = [
     `sensor-${sensorId || "no"}-records`,
     sensorId,
@@ -66,11 +101,33 @@ export const useSensorRecords = ({
       revalidateOnFocus: false,
     }
   );
-
   return {
-    isLoading: data?.records === undefined,
+    isLoading: typeof data === "undefined" && typeof error === "undefined",
     records: data?.records || [],
     recordsCount: data?.count || null,
-    error: error || null,
+    error: error || actionError || null,
+    deleteRecords: async recordIds => {
+      if (!data || error) return;
+      if (!recordIds || recordIds.length === 0 || !sensorId) {
+        setActionError(
+          () =>
+            new Error(
+              "To delete records please provide a sensor id and record ids"
+            )
+        );
+        return;
+      }
+      setActionError(null);
+      void mutate(
+        params,
+        data.records.filter(({ id }) => !recordIds.includes(id)),
+        false
+      );
+
+      await deleteRecords({ ids: recordIds, sensorId, userId }).catch(
+        setActionError
+      );
+      void mutate(params);
+    },
   };
 };

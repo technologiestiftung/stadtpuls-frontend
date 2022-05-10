@@ -1,4 +1,3 @@
-import { DataTable } from "@components/DataTable";
 import { DeviceLineChartFilters } from "@components/DeviceLineChartFilters";
 import { DropdownMenu } from "@components/DropdownMenu";
 import { LineChart } from "@components/LineChart";
@@ -13,7 +12,7 @@ import DownloadIcon from "../../../public/images/icons/16px/arrowDownWithHalfSqu
 import moment from "moment";
 import "moment/locale/de";
 import { GetStaticPaths, GetStaticProps } from "next";
-import React, { FC, useCallback, useState } from "react";
+import { FC, useCallback, useState } from "react";
 import { SensorPageHeaderWithData } from "@components/SensorPageHeader/withData";
 import { useDownloadQueue } from "@lib/hooks/useDownloadQueue";
 import { downloadCSVString } from "@lib/downloadCsvUtil";
@@ -23,6 +22,9 @@ import { getPublicSensors } from "@lib/requests/getPublicSensors";
 import { useSensorData } from "@lib/hooks/useSensorData";
 import { useRouter } from "next/router";
 import { SensorPageHeaderLoadingSkeleton } from "@components/SensorPageHeaderLoadingSkeleton";
+import { RecordsTable } from "@components/RecordsTable";
+import { useUserData } from "@lib/hooks/useUserData";
+import { getTranslatedErrorMessage } from "@lib/translationUtil";
 
 moment.locale("de-DE");
 
@@ -75,6 +77,9 @@ const SensorPage: FC<{
   sensor?: ParsedSensorType | null;
 }> = ({ sensor: initialSensor } = { sensor: null }) => {
   const { isFallback } = useRouter();
+  const { isLoggedIn, user: loggedInAccount } = useUserData();
+  const isEditable =
+    isLoggedIn && loggedInAccount?.username === initialSensor?.authorUsername;
   const { sensor, isLoading } = useSensorData({
     sensorId: initialSensor?.id,
     initialData: initialSensor || undefined,
@@ -95,6 +100,7 @@ const SensorPage: FC<{
     recordsCount: requestedRecordsCount,
     error: recordsFetchError,
     isLoading: recordsAreLoading,
+    deleteRecords,
   } = useSensorRecords({
     sensorId: initialSensor?.id,
     startDateString: currentDatetimeRange.startDateTimeString,
@@ -233,18 +239,32 @@ const SensorPage: FC<{
               height={chartHeight || 400}
               yAxisUnit=''
               xAxisUnit='Messdatum'
-              data={parsedAndSortedRecords.map(({ id, date, value }) => ({
-                id,
-                date: date.toISOString(),
-                value,
-              }))}
+              data={parsedAndSortedRecords}
               startDateTimeString={currentDatetimeRange.startDateTimeString}
               endDateTimeString={currentDatetimeRange.endDateTimeString}
             />
           )}
-          {recordsFetchError && (
-            <div className='prose p-8 max-w-full h-80 grid place-content-center place-items-center'>
-              <p>{recordsFetchError.message}</p>
+          {recordsFetchError?.message && (
+            <div
+              className={[
+                "fixed top-[60px] w-full container max-w-8xl z-50",
+                "left-1/2 transform -translate-x-1/2 backdrop-filter backdrop-blur-md",
+              ].join(" ")}
+            >
+              <Alert
+                type='error'
+                title='Es ist ein Fehler aufgetreten:'
+                message={
+                  getTranslatedErrorMessage(recordsFetchError.message) ===
+                  recordsFetchError.message ? (
+                    <code className='inline-block mt-1 px-2 py-1 font-mono bg-error bg-opacity-20 box-decoration-clone'>
+                      {recordsFetchError.message}
+                    </code>
+                  ) : (
+                    getTranslatedErrorMessage(recordsFetchError.message)
+                  )
+                }
+              />
             </div>
           )}
           {!recordsFetchError && !recordsAreLoading && records.length === 0 && (
@@ -260,7 +280,11 @@ const SensorPage: FC<{
         </div>
         {records.length > 0 && (
           <div className='mt-16'>
-            <DataTable data={parsedAndSortedRecords.reverse()} />
+            <RecordsTable
+              isEditable={isEditable}
+              data={parsedAndSortedRecords.reverse()}
+              onRecordsDelete={deleteRecords}
+            />
           </div>
         )}
       </div>

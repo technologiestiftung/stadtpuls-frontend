@@ -48,6 +48,7 @@ export const TokenDeletionModal: FC<TokenDeletionModalPropType> = ({
     <SmallModalOverlay
       className='w-[640px] max-w-full'
       title='Token löschen'
+      variant='dangerous'
       footerContent={<ModalFooter onDelete={onDelete} onCancel={onCancel} />}
     >
       <Alert
