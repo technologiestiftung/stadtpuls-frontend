@@ -16,7 +16,6 @@ type GetSessionSignature = (body: {
 
 const getSession: GetSessionSignature = async body => {
   const res = await fetch(`${supabaseUrl}/auth/v1/token?grant_type=password`, {
-    // TODO: why does only v1 work? Should be v3
     method: "POST",
     headers: { apiKey },
     body: JSON.stringify(body),

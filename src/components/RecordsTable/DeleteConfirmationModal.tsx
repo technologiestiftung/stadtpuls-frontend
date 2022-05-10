@@ -30,7 +30,7 @@ export const DeleteConfirmationModal: FC<DeleteConfirmationModalPropsType> = ({
 
   return (
     <Dialog
-      title={`${selectedCount} ${recordsName} Löschen`}
+      title={`${selectedCount} ${recordsName} löschen`}
       variant='dangerous'
       setIsOpen={setOpened}
       isOpen={true}

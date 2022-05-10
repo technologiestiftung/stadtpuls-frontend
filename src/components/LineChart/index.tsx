@@ -95,23 +95,24 @@ export const LineChart = withTooltip<LineGraphType, DateValueType>(
           | React.MouseEvent<SVGRectElement>
       ) => {
         const { x } = localPoint(event) || { x: 0 };
-        const x0 = xScale.invert(Math.ceil(x - padding.left));
-        const index = bisectDate(data, x0, 1);
-        const d0 = data[index - 1];
-        const d1 = data[index];
-        let d = d0;
-        if (d1 && getX(d1)) {
-          d =
-            x0.valueOf() - getX(d0).valueOf() >
-            getX(d1).valueOf() - x0.valueOf()
-              ? d1
-              : d0;
+        const dateInX = xScale.invert(x - padding.left);
+        const dateIndex = bisectDate(data, dateInX, 1);
+        const itemLeft = data[dateIndex - 1];
+        const itemRight = data[dateIndex];
+        let tooltipData = itemLeft;
+
+        if (itemRight && getX(itemRight)) {
+          tooltipData =
+            dateInX.valueOf() - getX(itemLeft).valueOf() <
+            getX(itemRight).valueOf() - dateInX.valueOf()
+              ? itemRight
+              : itemLeft;
         }
 
         showTooltip({
-          tooltipData: d,
-          tooltipLeft: xScale(getX(d)) + padding.left,
-          tooltipTop: yScale(getY(d)) + padding.top,
+          tooltipData,
+          tooltipLeft: xScale(getX(tooltipData)) + padding.left,
+          tooltipTop: yScale(getY(tooltipData)) + padding.top,
         });
       },
       [xScale, data, showTooltip, yScale]
