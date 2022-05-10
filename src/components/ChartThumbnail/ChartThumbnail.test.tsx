@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import React from "react";
 import { ChartThumbnail } from ".";
 
 describe("ChartThumbnail component", () => {
@@ -8,11 +7,13 @@ describe("ChartThumbnail component", () => {
       <ChartThumbnail
         data={[
           {
-            date: new Date().toISOString(),
+            id: 1,
+            date: new Date(),
             value: 20,
           },
           {
-            date: new Date().toISOString(),
+            id: 2,
+            date: new Date(),
             value: 40,
           },
         ]}
@@ -30,7 +31,8 @@ describe("ChartThumbnail component", () => {
       <ChartThumbnail
         data={[
           {
-            date: new Date().toISOString(),
+            id: 1,
+            date: new Date(),
             value: 20,
           },
         ]}
@@ -52,11 +54,13 @@ describe("ChartThumbnail component", () => {
       <ChartThumbnail
         data={[
           {
-            date: dateB.toISOString(),
+            id: 1,
+            date: dateB,
             value: 123456789,
           },
           {
-            date: dateA.toISOString(),
+            id: 2,
+            date: dateA,
             value: 0,
           },
         ]}

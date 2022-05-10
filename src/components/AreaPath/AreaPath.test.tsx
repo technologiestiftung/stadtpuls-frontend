@@ -1,5 +1,4 @@
 import { render } from "@testing-library/react";
-import React from "react";
 import { AreaPath } from ".";
 
 describe("AreaPath component", () => {
@@ -13,7 +12,8 @@ describe("AreaPath component", () => {
           height={height}
           data={[
             {
-              date: new Date().toISOString(),
+              id: 1,
+              date: new Date(),
               value: 20,
             },
           ]}

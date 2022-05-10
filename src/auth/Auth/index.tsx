@@ -11,7 +11,9 @@ import { AuthenticatedUsersType } from "@common/types/authenticated_user";
 import { createApiUrl } from "@lib/requests/createApiUrl";
 import { useRouter } from "next/router";
 
-export const AuthProvider: FC = ({ children }) => {
+export const AuthProvider: FC<{
+  session?: ReturnType<typeof supabase.auth.session>;
+}> = ({ session, children }) => {
   const router = useRouter();
   const [authenticatedUser, setUser] =
     useState<AuthContextType["authenticatedUser"]>();
@@ -19,6 +21,17 @@ export const AuthProvider: FC = ({ children }) => {
     useState<AuthContextType["isLoadingAuth"]>(true);
   const [accessToken, setAccessToken] =
     useState<AuthContextType["accessToken"]>(null);
+
+  useEffect(() => {
+    if (session) {
+      void supabase.auth.setAuth(session.access_token);
+      session.refresh_token &&
+        void supabase.auth.setSession(session.refresh_token);
+      setAccessToken(session.access_token);
+      setUser(session.user);
+      setLoading(false);
+    }
+  }, [session]);
 
   useEffect(() => {
     const session = supabase.auth.session();

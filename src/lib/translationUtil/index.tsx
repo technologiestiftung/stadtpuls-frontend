@@ -48,5 +48,19 @@ export const getTranslatedErrorMessage = (errorMessage: string): ReactNode => {
       </>
     );
   }
+  if (errorMessage.includes("JWT") && errorMessage.includes("expired")) {
+    return (
+      <>
+        Dein Token ist abgelaufen. Bitte melde dich erneut an.{" "}
+        <TextLink href='/signin'>Login</TextLink>
+      </>
+    );
+  }
+  if (
+    errorMessage ===
+    "No records could be deleted. Your Row Level Security might be too strict."
+  ) {
+    return "Die Messwerte konnten leider nicht gelöscht werden.";
+  }
   return errorMessage;
 };

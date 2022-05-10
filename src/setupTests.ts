@@ -5,6 +5,11 @@
 import "@testing-library/jest-dom/extend-expect";
 import { server } from "./mocks/server";
 import "whatwg-fetch";
+import ReactDOM from "react-dom";
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+ReactDOM.createPortal = jest.fn(element => element);
 
 const noop = (): void => undefined;
 Object.defineProperty(window, "scrollTo", { value: noop, writable: true });

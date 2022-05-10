@@ -1,3 +1,4 @@
+import { LineGraphType } from "@common/interfaces";
 import { Story, Meta } from "@storybook/react";
 import { LinePath } from ".";
 
@@ -6,14 +7,7 @@ export default {
   component: LinePath,
 } as Meta;
 
-const Template: Story<{
-  width: number;
-  height: number;
-  data: Array<{
-    date: string;
-    value: number;
-  }>;
-}> = args => (
+const Template: Story<LineGraphType> = args => (
   <svg width={args.width} height={args.height}>
     <LinePath {...args} />
   </svg>
@@ -25,15 +19,18 @@ Default.args = {
   height: 200,
   data: [
     {
-      date: "2021-04-09T12:10:01.908Z",
+      id: 10,
+      date: new Date("2021-04-09T12:10:01.908Z"),
       value: 10,
     },
     {
-      date: "2021-04-08T12:10:01.908Z",
+      id: 20,
+      date: new Date("2021-04-08T12:10:01.908Z"),
       value: 20,
     },
     {
-      date: "2021-04-07T12:10:01.908Z",
+      id: 15,
+      date: new Date("2021-04-07T12:10:01.908Z"),
       value: 15,
     },
   ],

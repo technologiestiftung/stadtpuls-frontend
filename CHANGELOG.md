@@ -1,3 +1,27 @@
+# [1.1.0-rc.1](https://github.com/technologiestiftung/stadtpuls-frontend/compare/v1.0.0...v1.1.0-rc.1) (2022-05-10)
+
+
+### Bug Fixes
+
+* **LineChart:** Fix LineChart hover bug ([99cb7c1](https://github.com/technologiestiftung/stadtpuls-frontend/commit/99cb7c1c6c86b195ad99eff3c4c7183d4f83928b))
+* **LineChart:** Fix tooltip position on hover ([36a3dc2](https://github.com/technologiestiftung/stadtpuls-frontend/commit/36a3dc24712616c44ef0e8a1d11cdc8fb31aa753))
+* **RecordsTable:** Align checkboxes ([e63c40d](https://github.com/technologiestiftung/stadtpuls-frontend/commit/e63c40d618a17a780219efeb66cc909e0c435f1b))
+* **RecordsTable:** fix the ids provided to the delete call ([2dbcbb1](https://github.com/technologiestiftung/stadtpuls-frontend/commit/2dbcbb179804aa66923a8af0ca19ca223945125b))
+
+
+### Features
+
+* **Dialog:** Add Dialog component and DeleteConfirmationModal ([01c9164](https://github.com/technologiestiftung/stadtpuls-frontend/commit/01c916481f939eb21191ecef8eeca624d74a443c))
+* **RecordsTable:** Add component WIP ([5b1eb5e](https://github.com/technologiestiftung/stadtpuls-frontend/commit/5b1eb5ee8ce1bd3a7b4584f834a32336c8c65dae))
+* **RecordsTable:** Add delete button to table ([80bd706](https://github.com/technologiestiftung/stadtpuls-frontend/commit/80bd70628d47a272f06f97dd7f1fa1583dbabd2a))
+* **RecordsTable:** Add styles from DataTable ([67852ab](https://github.com/technologiestiftung/stadtpuls-frontend/commit/67852abb1efd47e53c3a9d10e866fc90132b609b))
+* **RecordsTable:** Add virtualized to show all rows efficiently ([38ceaec](https://github.com/technologiestiftung/stadtpuls-frontend/commit/38ceaec21eab5e017ef8a07ced541b7f3a607293))
+* **RecordsTable:** Apply deletion of records when confirmed ([0528acf](https://github.com/technologiestiftung/stadtpuls-frontend/commit/0528acfbc142446855c2156338fad0f44277000f))
+* **RecordsTable:** Avoid double scroll in table ([016ab1f](https://github.com/technologiestiftung/stadtpuls-frontend/commit/016ab1f535da9d743b00dc800d7ca1fb43a10acc))
+* **RecordsTable:** Separate time and date columns ([821163b](https://github.com/technologiestiftung/stadtpuls-frontend/commit/821163b4e95c0438f2165e7f1efb639cba48e387))
+* **RecordsTable:** Show and hide based on editable ([a19e25a](https://github.com/technologiestiftung/stadtpuls-frontend/commit/a19e25a18e925b5e101e18e24ae36e51e6c4cd80))
+* **useSensorRecords:** Add method to delete records WIP ([737bcba](https://github.com/technologiestiftung/stadtpuls-frontend/commit/737bcbafc202f819e47f448e9b6e82ea62bc2b9e))
+
 # 1.0.0 (2022-03-29)
 
 
