@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/technologiestiftung/stadtpuls-frontend/compare/v1.1.0...v1.1.1) (2022-05-11)
+
+
+### Bug Fixes
+
+* typo in badge ([f94c37c](https://github.com/technologiestiftung/stadtpuls-frontend/commit/f94c37c961761545d9a359b0b132faa2f7b4717b))
+
 # [1.1.0](https://github.com/technologiestiftung/stadtpuls-frontend/compare/v1.0.0...v1.1.0) (2022-05-10)
 
 
