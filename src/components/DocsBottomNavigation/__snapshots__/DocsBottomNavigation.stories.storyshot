@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Storyshots Navigation/DocsBottomNavigation Default 1`] = `
-<div
-  className="container mx-auto"
-/>
-`;
