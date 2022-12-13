@@ -2,8 +2,10 @@ import { Dialog as HUIDialog } from "@headlessui/react";
 import { FC, MutableRefObject, ReactNode, useEffect } from "react";
 
 export interface DialogPropsType {
-  title: string;
+  title?: string;
   className?: string;
+  modalClassName?: string;
+  contentClassName?: string;
   variant?: "dangerous" | "primary";
   footerContent: ReactNode;
   isOpen?: boolean;
@@ -19,6 +21,8 @@ export const Dialog: FC<DialogPropsType> = ({
   footerContent,
   variant,
   className = "max-w-md",
+  modalClassName = "border-gray-200 bg-white",
+  contentClassName = "prose",
   isOpen = true,
   setIsOpen = () => undefined,
   initialFocus,
@@ -48,18 +52,20 @@ export const Dialog: FC<DialogPropsType> = ({
         className={`${className} md:px-0 h-full overflow-y-auto p-4 relative z-10`}
       >
         <div
-          className='bg-white border border-gray-200 shadow p-4 sm:p-8 flex flex-col gap-8 place-content-between'
+          className={`${modalClassName} border shadow p-4 sm:p-8 flex flex-col gap-8 place-content-between`}
           style={{ minHeight: 360 }}
         >
           <div>
-            <HUIDialog.Title
-              className={`text-3xl font-bold font-headline m-0 mb-4 ${
-                variant == "dangerous" ? "text-error" : "text-purple"
-              }`}
-            >
-              {title}
-            </HUIDialog.Title>
-            <div className='prose'>
+            {title && (
+              <HUIDialog.Title
+                className={`text-3xl font-bold font-headline m-0 mb-4 ${
+                  variant == "dangerous" ? "text-error" : "text-purple"
+                }`}
+              >
+                {title}
+              </HUIDialog.Title>
+            )}
+            <div className={contentClassName}>
               {description && (
                 <HUIDialog.Description>{description}</HUIDialog.Description>
               )}

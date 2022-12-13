@@ -1,27 +1,22 @@
+import { useSessionStorageValue } from "@lib/hooks/useBrowserStorageValue";
 import { useRouter } from "next/router";
-import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
+import { FC } from "react";
 
 export const useHasClosedShutdownBanner = (): [
-  boolean,
-  Dispatch<SetStateAction<boolean>>
+  isClosed: boolean,
+  closeBanner: () => void
 ] => {
-  const [isClosed, setIsClosed] = useState(false);
+  const [isClosed, setIsClosed] = useSessionStorageValue<boolean>(
+    "hasClosedShutdownBanner",
+    false
+  );
 
-  useEffect(() => {
-    const hasClosedShutdownBanner = sessionStorage.getItem(
-      "hasClosedShutdownBanner"
-    );
-    if (hasClosedShutdownBanner === "true") {
-      setIsClosed(true);
-    }
-  }, []);
-
-  return [isClosed, setIsClosed];
+  return [!!isClosed, () => setIsClosed(true)];
 };
 
 export const ShutdownBanner: FC = () => {
   const { pathname } = useRouter();
-  const [isClosed, setIsClosed] = useHasClosedShutdownBanner();
+  const [isClosed, closeBanner] = useHasClosedShutdownBanner();
 
   if (isClosed) return null;
   return (
@@ -51,7 +46,7 @@ export const ShutdownBanner: FC = () => {
             <path
               d='M8.446.057a1 1 0 0 1 .448.45l6.979 14.007a1 1 0 0 1-.895 1.446H1.006a1 1 0 0 1-.894-1.447L7.104.505A1 1 0 0 1 8.446.057ZM8 11.96a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm0-7a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Z'
               fill='currentColor'
-              fill-rule='evenodd'
+              fillRule='evenodd'
             />
           </svg>
         </span>
@@ -72,10 +67,7 @@ export const ShutdownBanner: FC = () => {
             "text-blue hover:text-purple transition",
             "hover:rotate-180 p-2 rounded-full focus-offset",
           ].join(" ")}
-          onClick={() => {
-            setIsClosed(true);
-            sessionStorage.setItem("hasClosedShutdownBanner", "true");
-          }}
+          onClick={closeBanner}
           aria-label='Schließen'
         >
           <svg width='16' height='16' xmlns='http://www.w3.org/2000/svg'>

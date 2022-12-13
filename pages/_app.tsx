@@ -14,6 +14,7 @@ import colors from "../src/style/colors";
 import { DownloadQueueProvider } from "@lib/hooks/useDownloadQueue";
 import { useWindowSize } from "@lib/hooks/useWindowSize";
 import { ShutdownBanner } from "@components/ShutdownAnnouncementBanner";
+import { ShutdownModal } from "@components/ShutdownAnnouncementModal";
 
 if (process.env.NODE_ENV !== "production") {
   // require("../src/mocks/index");
@@ -53,6 +54,7 @@ const Document: FC<{
               minHeight: "calc(100vh - 215px)",
             }}
           >
+            <ShutdownModal />
             {!isSensorsMap && !isSensorsPage && !isDocsPage && (
               <ShutdownBanner />
             )}
