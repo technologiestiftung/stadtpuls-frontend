@@ -12,8 +12,8 @@ import { Head } from "@components/Head";
 import NextNProgress from "nextjs-progressbar";
 import colors from "../src/style/colors";
 import { DownloadQueueProvider } from "@lib/hooks/useDownloadQueue";
-import { BetaBanner } from "@components/BetaBanner";
 import { useWindowSize } from "@lib/hooks/useWindowSize";
+import { ShutdownBanner } from "@components/ShutdownAnnouncementBanner";
 
 if (process.env.NODE_ENV !== "production") {
   // require("../src/mocks/index");
@@ -45,7 +45,6 @@ const Document: FC<{
             color={colors.green}
             options={{ showSpinner: false }}
           />
-          {!isDocsPage && !isSensorsPage && <BetaBanner />}
           <main
             id={pathname?.replace(/\//gi, "") || "home"}
             className='z-0 relative w-full'
@@ -54,6 +53,9 @@ const Document: FC<{
               minHeight: "calc(100vh - 215px)",
             }}
           >
+            {!isSensorsMap && !isSensorsPage && !isDocsPage && (
+              <ShutdownBanner />
+            )}
             <Header />
             <Component {...pageProps} />
           </main>
