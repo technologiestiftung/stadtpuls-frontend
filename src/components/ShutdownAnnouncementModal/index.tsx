@@ -8,7 +8,9 @@ import {
 import Image from "next/image";
 import { FC, useCallback, useState } from "react";
 
-const shutdownLevel = parseInt(process.env.NEXT_PUBLIC_SHUTDOWN_LEVEL || "0");
+const shutdownLevel = parseInt(
+  `${process.env.NEXT_PUBLIC_SHUTDOWN_LEVEL || 0}`
+);
 
 const gracePeriodText = (
   <div className='flex flex-col gap-3'>
