@@ -2,6 +2,16 @@ import { useSessionStorageValue } from "@lib/hooks/useBrowserStorageValue";
 import { useRouter } from "next/router";
 import { FC } from "react";
 
+const shutdownLevel = parseInt(
+  `${process.env.NEXT_PUBLIC_SHUTDOWN_LEVEL || 0}`
+);
+
+const gracePeriodText = <>Stadtpuls wird am 31. Januar 2023 Eingestellt</>;
+const shutdownAnnouncementText = (
+  <>Stadtpuls wird am 31. Januar 2023 Eingestellt</>
+);
+const shutdownDoneText = <>Stadtpuls wurde am 31. Januar 2023 Eingestellt</>;
+
 export const useHasClosedShutdownBanner = (): [
   isClosed: boolean,
   closeBanner: () => void
@@ -29,17 +39,22 @@ export const ShutdownBanner: FC = () => {
     >
       <div
         className={[
-          "container max-w-8xl mx-auto flex bg-white relative",
+          "container max-w-8xl mx-auto flex relative",
           "flex-wrap lg:flex-nowrap gap-x-4 gap-y-2 items-start",
-          "items-center ring-inset ring-1 ring-error",
+          "items-center ring-inset ring-1",
+          shutdownLevel < 2
+            ? "bg-white ring-error"
+            : "bg-black ring-warning text-white",
         ].join(" ")}
       >
         <span
           className={[
             "sm:w-12 sm:h-12 flex place-content-center items-center",
-            "tracking-wider font-bold sm:bg-error",
+            "tracking-wider font-bold",
             "pl-4 sm:pl-0 pt-4 sm:pt-0 pb-2 sm:pb-0",
-            "text-error sm:text-white",
+            shutdownLevel < 2
+              ? "sm:bg-error text-error sm:text-white"
+              : "sm:bg-warning text-warning sm:text-white",
           ].join(" ")}
         >
           <svg width='16' height='16' xmlns='http://www.w3.org/2000/svg'>
@@ -51,21 +66,24 @@ export const ShutdownBanner: FC = () => {
           </svg>
         </span>
         <strong className='px-4 sm:px-0'>
-          Stadtpuls wird am 31. Januar eingestellt.
+          {shutdownLevel === 0 && gracePeriodText}
+          {shutdownLevel === 1 && shutdownAnnouncementText}
+          {shutdownLevel >= 2 && shutdownDoneText}
         </strong>{" "}
         <a
           href='https://github.com/technologiestiftung/stadtpuls/discussions'
           target='_blank'
           rel='noreferrer'
-          className='navigation-link mx-4 sm:mx-0 mb-4 sm:mb-0'
+          className='mx-4 mb-4 navigation-link sm:mx-0 sm:mb-0'
         >
           Erfahre mehr im Blogbeitrag
         </a>
         <button
           className={[
             "absolute right-2 top-2",
-            "text-blue hover:text-purple transition",
+            "hover:text-purple transition",
             "hover:rotate-180 p-2 rounded-full focus-offset",
+            shutdownLevel < 2 ? "text-blue" : "text-green",
           ].join(" ")}
           onClick={closeBanner}
           aria-label='Schließen'
