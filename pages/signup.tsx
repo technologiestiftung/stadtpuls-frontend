@@ -2,6 +2,36 @@ import { FC, useState } from "react";
 import { SignupForm } from "@components/SignupForm";
 import { useAuth } from "@auth/Auth";
 import { MagicLinkModal } from "@components/MagicLinkModal";
+import { Alert } from "@components/Alert";
+
+const shutdownLevel = parseInt(
+  `${process.env.NEXT_PUBLIC_SHUTDOWN_LEVEL || 0}`
+);
+
+const preShutdownTexts = {
+  title: `Registrierung deaktiviert`,
+  message: (
+    <>
+      Stadtpuls wird am <strong>31. Januar 2023</strong> eingestellt.
+      <br />
+      Es ist deshalb nicht mehr möglich, sich zu registrieren.
+    </>
+  ),
+};
+const shutdownTexts = {
+  0: preShutdownTexts,
+  1: preShutdownTexts,
+  2: {
+    title: preShutdownTexts.title,
+    message: (
+      <>
+        Stadtpuls wurde am <strong>31. Januar 2023</strong> eingestellt.
+        <br />
+        Es ist deshalb nicht mehr möglich, sich zu registrieren.
+      </>
+    ),
+  },
+};
 
 const parseServerErrors = (
   error: string | null
@@ -51,27 +81,40 @@ const SigninPage: FC = () => {
   >(undefined);
   const { error, signUp, isAuthenticating, magicLinkWasSent } = useAuth();
 
+  const shutdownText = shutdownTexts[shutdownLevel as 0 | 1 | 2];
+
   const registrationDataWasSubmitted = isAuthenticating || magicLinkWasSent;
   return (
     <div
       className='w-full h-full relative flex flex-col justify-center items-center'
       style={{ padding: "calc(10vmax + 62px) 16px 10vmax" }}
     >
-      {!registrationDataWasSubmitted && (
-        <SignupForm
-          onSubmit={data => {
-            void signUp(data);
-            setPreviouslySubmittedData(data);
-          }}
-          defaultValues={previouslySubmittedData}
-          serverErrors={parseServerErrors(error)}
+      {shutdownLevel >= 0 && shutdownText ? (
+        <Alert
+          type='warning'
+          title={shutdownText.title}
+          message={shutdownText.message}
+          isRemovable={false}
         />
-      )}
-      {registrationDataWasSubmitted && (
-        <MagicLinkModal
-          isLoading={isAuthenticating && !magicLinkWasSent}
-          email={previouslySubmittedData?.email || ""}
-        />
+      ) : (
+        <>
+          {!registrationDataWasSubmitted && (
+            <SignupForm
+              onSubmit={data => {
+                void signUp(data);
+                setPreviouslySubmittedData(data);
+              }}
+              defaultValues={previouslySubmittedData}
+              serverErrors={parseServerErrors(error)}
+            />
+          )}
+          {registrationDataWasSubmitted && (
+            <MagicLinkModal
+              isLoading={isAuthenticating && !magicLinkWasSent}
+              email={previouslySubmittedData?.email || ""}
+            />
+          )}
+        </>
       )}
     </div>
   );

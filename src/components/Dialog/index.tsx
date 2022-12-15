@@ -29,11 +29,12 @@ export const Dialog: FC<DialogPropsType> = ({
   description,
 }) => {
   useEffect(() => {
-    document.querySelector("html")?.classList.add("no-scroll");
+    isOpen && document.querySelector("html")?.classList.add("no-scroll");
+    !isOpen && document.querySelector("html")?.classList.remove("no-scroll");
     return () => {
       document.querySelector("html")?.classList.remove("no-scroll");
     };
-  }, []);
+  }, [isOpen]);
 
   return (
     <HUIDialog
