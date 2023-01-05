@@ -15,7 +15,7 @@ const shutdownLevel = parseInt(
 const gracePeriodText = (
   <div className='flex flex-col gap-3'>
     <p>
-      Am <strong>5. Januar 2023</strong> werden wir die Registrierungen
+      Am <strong>11. Januar 2023</strong> werden wir die Registrierungen
       abschalten und die Möglichkeit deaktivieren, POST-Anfragen an Deine
       Sensoren zu stellen.
     </p>
