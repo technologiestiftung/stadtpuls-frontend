@@ -1,0 +1,1351 @@
+[
+  {
+    "id": "67f8d939-7362-4d58-b3c9-6eff1e30f374",
+    "username": "-stk",
+    "display_name": null,
+    "created_at": "2021-12-09T12:35:15.271678+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "92333917-316f-4aea-a55a-31e81e01c93c",
+    "username": "18840",
+    "display_name": null,
+    "created_at": "2021-12-02T12:19:23.552548+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "bcfff056-1029-48e1-b366-d407bfb5d17d",
+    "username": "952877",
+    "display_name": null,
+    "created_at": "2021-12-02T12:18:02.859698+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "65050808-2b30-4872-9222-8599982fda64",
+    "username": "Adlerkiez-IoT",
+    "display_name": "Adlerkiez-IoT",
+    "created_at": "2021-12-09T17:14:47.575926+00:00",
+    "link": "https://github.com/CargoBikoMeter",
+    "description": null,
+    "sensors_count": 1,
+    "records_count": 27019,
+    "categories": [
+      8
+    ],
+    "sensors": [
+      72
+    ]
+  },
+  {
+    "id": "2080fa8a-edab-4529-b297-f2a348e0a88d",
+    "username": "anna_mei",
+    "display_name": null,
+    "created_at": "2022-01-31T15:24:22.453976+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      1
+    ],
+    "sensors": [
+      71
+    ]
+  },
+  {
+    "id": "5f402216-a2df-402b-ad72-e74f478c7685",
+    "username": "Benjamin",
+    "display_name": null,
+    "created_at": "2021-11-24T09:46:52.167464+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "74fdcb7b-efab-4710-9aa8-c9c6c63a33c3",
+    "username": "berlintracker",
+    "display_name": "berlintracker",
+    "created_at": "2021-11-27T10:05:50.15423+00:00",
+    "link": "http://berlintracker.de",
+    "description": "Wir haben den \"berlintracker\" entworfen. Aufgrund der Chipkrise ist er derzeit nicht (re)produzierbar. Daher: \"hidden tests only\".\n",
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      5
+    ],
+    "sensors": [
+      43
+    ]
+  },
+  {
+    "id": "f588df1a-a44b-4c47-bd5a-4eaf33767932",
+    "username": "Bjoern_Kluge_2021",
+    "display_name": "BK_2021",
+    "created_at": "2021-12-09T13:56:29.788853+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      8
+    ],
+    "sensors": [
+      92
+    ]
+  },
+  {
+    "id": "4b1b84a4-2865-412c-996a-eb0af2490f6e",
+    "username": "BRZ5",
+    "display_name": "BRZ5",
+    "created_at": "2022-07-01T09:59:51.877746+00:00",
+    "link": null,
+    "description": "Haus-Sensoren ",
+    "sensors_count": 2,
+    "records_count": 10,
+    "categories": [
+      2,
+      8
+    ],
+    "sensors": [
+      141,
+      140
+    ]
+  },
+  {
+    "id": "7659d8ef-d77b-470d-acf9-47436d876d7f",
+    "username": "BSR_de",
+    "display_name": "BSR_de",
+    "created_at": "2022-02-10T20:56:22.601887+00:00",
+    "link": "https://www.bsr.de/",
+    "description": "Offizieller Stadtpuls-Account der Berliner Stadtreinigung",
+    "sensors_count": 7,
+    "records_count": 4519,
+    "categories": [
+      8
+    ],
+    "sensors": [
+      76,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90
+    ]
+  },
+  {
+    "id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "username": "CityLAB-Berlin",
+    "display_name": "CityLAB-Berlin",
+    "created_at": "2021-11-10T13:13:07.580089+00:00",
+    "link": "https://www.citylab-berlin.org",
+    "description": "Das CityLAB Berlin ist das Innovationslabor für das digitale Berlin von Morgen.",
+    "sensors_count": 30,
+    "records_count": 202150,
+    "categories": [
+      2,
+      6,
+      8
+    ],
+    "sensors": [
+      129,
+      28,
+      24,
+      27,
+      22,
+      25,
+      23,
+      29,
+      73,
+      79,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      130,
+      137
+    ]
+  },
+  {
+    "id": "325e948a-4b9e-4578-b009-714a5d8196e4",
+    "username": "COMo-Projekt",
+    "display_name": "COMo-Projekt",
+    "created_at": "2022-05-04T13:06:03.884869+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 13,
+    "records_count": 585853,
+    "categories": [
+      1
+    ],
+    "sensors": [
+      102,
+      103,
+      99,
+      100,
+      101,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      142
+    ]
+  },
+  {
+    "id": "def4ff6f-432f-4958-bdd3-13e146fddd1d",
+    "username": "CptDesign",
+    "display_name": null,
+    "created_at": "2022-02-07T11:05:42.396925+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "4c2a23e0-4929-4a71-aa81-c6e1dd687b9d",
+    "username": "d57406db-b583-4fb2-960b-3faa970bdf27",
+    "display_name": null,
+    "created_at": "2022-04-12T15:26:50.557111+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": 13,
+    "categories": [
+      5
+    ],
+    "sensors": [
+      96
+    ]
+  },
+  {
+    "id": "94cbe347-304c-434b-bd6b-dfd096630bdf",
+    "username": "dennis",
+    "display_name": "           Dennis Ostendorf",
+    "created_at": "2021-09-28T15:14:36.018+00:00",
+    "link": "https://github.com/dnsos",
+    "description": "",
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "917e312f-8450-429d-968d-6fd68fc02f65",
+    "username": "DennisDennis",
+    "display_name": null,
+    "created_at": "2021-12-08T14:05:56.093948+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "d5195020-ff3d-4226-ad8b-d72e7594fce6",
+    "username": "DigitalInfinity",
+    "display_name": null,
+    "created_at": "2021-12-10T12:58:03.225815+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "be98be98-06e7-48c0-83d6-f5cd4c328e01",
+    "username": "e03cebb025e6212f705",
+    "display_name": null,
+    "created_at": "2021-12-09T12:46:24.624892+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "aaf177c1-b29d-4e79-a31e-6a245f229ae2",
+    "username": "edgal",
+    "display_name": "edgal",
+    "created_at": "2021-12-07T23:32:28.387383+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "62343107-aa11-4f63-8666-c2a68865b26f",
+    "username": "EliasSchneider",
+    "display_name": null,
+    "created_at": "2022-03-22T14:14:32.693439+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      3
+    ],
+    "sensors": [
+      95
+    ]
+  },
+  {
+    "id": "6174d0c3-9cfa-4928-80ef-8a5119986625",
+    "username": "Enne",
+    "display_name": null,
+    "created_at": "2022-07-07T16:09:13.283844+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "bb1bd09b-de52-48ea-9b85-279375a82f18",
+    "username": "ethergeist",
+    "display_name": null,
+    "created_at": "2021-12-09T16:38:44.278928+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "df3f14d3-f869-4b1c-8a7e-94ee1ea17db5",
+    "username": "FabLab",
+    "display_name": null,
+    "created_at": "2022-02-03T10:11:44.539454+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": 257,
+    "categories": [
+      1
+    ],
+    "sensors": [
+      70
+    ]
+  },
+  {
+    "id": "f8eda365-4d39-4afd-b624-0e80b7228347",
+    "username": "Flochs",
+    "display_name": null,
+    "created_at": "2022-03-30T13:01:41.715784+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "a7db9a70-9b09-4d11-98c1-ea161917f60c",
+    "username": "fmanzke",
+    "display_name": "Fabian Manzke",
+    "created_at": "2021-12-27T13:28:06.425086+00:00",
+    "link": "https://www.oeffentliche-it.de/werkstatt/iot-demos",
+    "description": "Firebeetle ESP32 + LoRa-Cover + BMP280 + BH1750 + Adafruit Solar  charger (bq24074) + 6V Solarpanel 🤗\n\nBuilding blocks:\nLoRaWAN --Cayenne LPP-> TTN --MQTT-> Node-Red --HTTPS-> Stadtpuls",
+    "sensors_count": 5,
+    "records_count": 840216,
+    "categories": [
+      2,
+      3,
+      4,
+      7,
+      8
+    ],
+    "sensors": [
+      59,
+      60,
+      61,
+      63,
+      62
+    ]
+  },
+  {
+    "id": "d0c2e5b4-ff4f-4eba-b9ea-19eb7d9cc126",
+    "username": "gjb_",
+    "display_name": null,
+    "created_at": "2022-02-03T14:05:11.586595+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
+    "username": "hash",
+    "display_name": "ff6347",
+    "created_at": "2021-10-05T13:39:46.148319+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 13,
+    "records_count": 2448167,
+    "categories": [
+      1,
+      2,
+      3,
+      5,
+      8
+    ],
+    "sensors": [
+      10,
+      5,
+      8,
+      7,
+      12,
+      13,
+      14,
+      9,
+      11,
+      18,
+      19,
+      6,
+      97
+    ]
+  },
+  {
+    "id": "63350a17-e3aa-4205-86a6-ddbb45d43549",
+    "username": "ingo",
+    "display_name": "Ingo Hinterding",
+    "created_at": "2021-09-28T14:50:25.62+00:00",
+    "link": "https://www.citylab-berlin.org",
+    "description": "Daten aus meiner Stadt.",
+    "sensors_count": 1,
+    "records_count": 6,
+    "categories": [
+      2
+    ],
+    "sensors": [
+      78
+    ]
+  },
+  {
+    "id": "ead66944-a4dd-4da9-b467-cf4c0f5db749",
+    "username": "Ingo-test",
+    "display_name": null,
+    "created_at": "2021-11-24T08:45:40.031544+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "02baa0fa-72e7-4676-aa53-4f65b68d89c9",
+    "username": "ingoknito",
+    "display_name": null,
+    "created_at": "2021-11-24T08:58:10.581398+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "09522dd7-0c4f-41c9-96f4-326df9077ee5",
+    "username": "inpjs",
+    "display_name": "inpjs",
+    "created_at": "2022-01-11T14:29:18.855872+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "60305c8d-6f37-46b2-b10a-fc31f9ae5375",
+    "username": "jawebada",
+    "display_name": null,
+    "created_at": "2021-12-28T10:44:55.491676+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      1
+    ],
+    "sensors": [
+      65
+    ]
+  },
+  {
+    "id": "48ab801d-07f9-411f-b404-6560b6bef554",
+    "username": "JensTiemann",
+    "display_name": "JensTiemann",
+    "created_at": "2021-12-15T08:48:01.292851+00:00",
+    "link": "https://www.oeffentliche-it.de/team?name=jens-tiemann",
+    "description": null,
+    "sensors_count": 1,
+    "records_count": 660,
+    "categories": [
+      7
+    ],
+    "sensors": [
+      68
+    ]
+  },
+  {
+    "id": "fd4192e7-0f0d-48c0-b389-1c171777f461",
+    "username": "joerg_zschimmer",
+    "display_name": "joerg_zschimmer",
+    "created_at": "2022-02-22T09:13:16.373125+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "76aa5fac-1e25-44df-938f-591abc43d9e9",
+    "username": "JonasDaWi",
+    "display_name": null,
+    "created_at": "2022-02-15T12:33:29.801599+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 2,
+    "records_count": 63243,
+    "categories": [
+      8
+    ],
+    "sensors": [
+      77,
+      132
+    ]
+  },
+  {
+    "id": "b2764415-faad-4b6d-9b07-a7daa744df8c",
+    "username": "liwenli",
+    "display_name": null,
+    "created_at": "2022-12-05T11:22:34.821253+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "55302f25-b172-4ca4-b06f-1835cbc43cd0",
+    "username": "lucasoeth",
+    "display_name": null,
+    "created_at": "2022-04-01T06:45:20.240779+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "3aaec338-236f-4199-8510-075715ac4f9b",
+    "username": "manton",
+    "display_name": null,
+    "created_at": "2022-06-30T16:01:54.845419+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      2
+    ],
+    "sensors": [
+      139
+    ]
+  },
+  {
+    "id": "a91659ae-9194-42d1-8723-cf7e0aa9c72a",
+    "username": "Marco",
+    "display_name": null,
+    "created_at": "2021-12-08T18:21:28.700868+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "01e94de7-9679-460b-b58f-21c79f88e122",
+    "username": "MEKTA82",
+    "display_name": "HTW Berlin",
+    "created_at": "2021-11-09T13:17:30.543011+00:00",
+    "link": null,
+    "description": "Hochschule für Technik und Wirtschaft Berlin an der Wihelminenhofstraße",
+    "sensors_count": 1,
+    "records_count": 31635,
+    "categories": [
+      2
+    ],
+    "sensors": [
+      64
+    ]
+  },
+  {
+    "id": "7e2ad9fa-4c7f-46b4-b49d-147061e53797",
+    "username": "metoikos",
+    "display_name": null,
+    "created_at": "2022-02-07T10:52:02.002871+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "6f421647-f659-4e4c-abb4-ae3cbd047406",
+    "username": "mithilaGhuge",
+    "display_name": null,
+    "created_at": "2022-02-07T13:04:07.401122+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "e0d9e0ec-68de-43f2-972a-27a7a215b47d",
+    "username": "MrnWill",
+    "display_name": "MrnWill",
+    "created_at": "2021-12-09T12:57:18.890222+00:00",
+    "link": null,
+    "description": "",
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "e9cef391-bc69-423c-9600-749664a1b34e",
+    "username": "nlohmann",
+    "display_name": "Niels Lohmann",
+    "created_at": "2021-12-30T09:23:26.049943+00:00",
+    "link": "https://nlohmann.me",
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
+    "username": "NoraK",
+    "display_name": null,
+    "created_at": "2022-03-29T13:57:51.042716+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 7,
+    "records_count": 167748,
+    "categories": [
+      2,
+      3,
+      4,
+      6,
+      7
+    ],
+    "sensors": [
+      91,
+      147,
+      148,
+      150,
+      151,
+      152,
+      149
+    ]
+  },
+  {
+    "id": "4e655e61-10cd-48ad-a6aa-a06e6ceb15a9",
+    "username": "Orock",
+    "display_name": null,
+    "created_at": "2021-12-21T13:34:38.201196+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      3
+    ],
+    "sensors": [
+      58
+    ]
+  },
+  {
+    "id": "c9744139-2292-4e69-9c68-739c8cd8cc21",
+    "username": "pankow",
+    "display_name": "Pankow",
+    "created_at": "2021-12-10T20:00:52.437926+00:00",
+    "link": null,
+    "description": "Verkehrszählungen",
+    "sensors_count": 5,
+    "records_count": null,
+    "categories": [
+      5
+    ],
+    "sensors": [
+      54,
+      57,
+      55,
+      56,
+      53
+    ]
+  },
+  {
+    "id": "01e6ac47-66b4-4d72-a62a-fa465bd03f76",
+    "username": "paul_schuetz",
+    "display_name": null,
+    "created_at": "2022-12-23T09:30:03.523633+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      2
+    ],
+    "sensors": [
+      153
+    ]
+  },
+  {
+    "id": "5bb51260-6b35-4d56-8851-70cc68f87bd5",
+    "username": "paxcounting",
+    "display_name": "paxcounting",
+    "created_at": "2021-11-20T14:35:09.932627+00:00",
+    "link": "http://paxcounting.de",
+    "description": "Mit dem Paxcounter zählt man, datenschutzgerecht, die Anzahl von Personen in der Umgebung. Spannend wäre dies in Corona Zeiten......",
+    "sensors_count": 1,
+    "records_count": 34271,
+    "categories": [
+      5
+    ],
+    "sensors": [
+      40
+    ]
+  },
+  {
+    "id": "7ab1f310-d0e4-4d10-a458-d62a2ba854d4",
+    "username": "ronin",
+    "display_name": null,
+    "created_at": "2022-06-23T15:05:00.4107+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "4c55d885-f3cc-4675-ad5b-ad1c9dd52f2f",
+    "username": "s-hoeffken",
+    "display_name": null,
+    "created_at": "2022-03-23T08:30:34.166237+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "5dad4ffe-c060-41cd-a78d-e84e4417859d",
+    "username": "Sandra",
+    "display_name": null,
+    "created_at": "2021-12-16T00:29:03.734725+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "71f85f6f-5050-4437-8562-fe6d1280c93c",
+    "username": "sara",
+    "display_name": null,
+    "created_at": "2021-11-09T17:11:24.1659+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      5
+    ],
+    "sensors": [
+      30
+    ]
+  },
+  {
+    "id": "ad3f8afa-ee45-4ec4-9619-887f4cb2501e",
+    "username": "semaphor",
+    "display_name": null,
+    "created_at": "2021-12-09T18:20:42.516747+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "4447079f-40b6-421d-9d97-5f7a1e34f65a",
+    "username": "Shiran",
+    "display_name": null,
+    "created_at": "2022-06-29T17:29:52.407097+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      2
+    ],
+    "sensors": [
+      138
+    ]
+  },
+  {
+    "id": "e18ebf8d-35c4-4a11-8dbd-d89a2c8bd9bd",
+    "username": "squeezer44",
+    "display_name": "squeezer44",
+    "created_at": "2021-10-21T08:52:48.947135+00:00",
+    "link": "https://github.com/squeezer44",
+    "description": "Data Scientist = {\n    'focus': ['data science', 'python', 'cycling'],\n    'specialty':['find the story behind the data']\n}",
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "adeb964c-0cd2-43b3-86b4-9f5a16e9795b",
+    "username": "Sumit",
+    "display_name": null,
+    "created_at": "2021-12-15T23:36:09.906373+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "4c5ba286-5c0f-47a5-8a40-0ef47b81adc9",
+    "username": "susett",
+    "display_name": null,
+    "created_at": "2022-06-24T15:46:48.031308+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "820b0991-d38b-4427-8f09-7e7547dc6edf",
+    "username": "Tasso",
+    "display_name": "Tasso Mulzer (BHT)",
+    "created_at": "2022-03-04T15:19:39.051808+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "5d20f24c-1ff7-4551-afe1-55db7fda90b3",
+    "username": "vogelino",
+    "display_name": "Lucas Vogelino",
+    "created_at": "2021-12-08T13:06:17.172563+00:00",
+    "link": "https://vogelino.com",
+    "description": "Creative Technologist @ CityLAB",
+    "sensors_count": 2,
+    "records_count": 26,
+    "categories": [
+      4,
+      8
+    ],
+    "sensors": [
+      49,
+      74
+    ]
+  },
+  {
+    "id": "09522dd7-0c4f-41c9-96f4-326df9077ee5",
+    "username": "inpjs",
+    "display_name": "inpjs",
+    "created_at": "2022-01-11T14:29:18.855872+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "60305c8d-6f37-46b2-b10a-fc31f9ae5375",
+    "username": "jawebada",
+    "display_name": null,
+    "created_at": "2021-12-28T10:44:55.491676+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      1
+    ],
+    "sensors": [
+      65
+    ]
+  },
+  {
+    "id": "48ab801d-07f9-411f-b404-6560b6bef554",
+    "username": "JensTiemann",
+    "display_name": "JensTiemann",
+    "created_at": "2021-12-15T08:48:01.292851+00:00",
+    "link": "https://www.oeffentliche-it.de/team?name=jens-tiemann",
+    "description": null,
+    "sensors_count": 1,
+    "records_count": 660,
+    "categories": [
+      7
+    ],
+    "sensors": [
+      68
+    ]
+  },
+  {
+    "id": "fd4192e7-0f0d-48c0-b389-1c171777f461",
+    "username": "joerg_zschimmer",
+    "display_name": "joerg_zschimmer",
+    "created_at": "2022-02-22T09:13:16.373125+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "76aa5fac-1e25-44df-938f-591abc43d9e9",
+    "username": "JonasDaWi",
+    "display_name": null,
+    "created_at": "2022-02-15T12:33:29.801599+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 2,
+    "records_count": 63243,
+    "categories": [
+      8
+    ],
+    "sensors": [
+      77,
+      132
+    ]
+  },
+  {
+    "id": "b2764415-faad-4b6d-9b07-a7daa744df8c",
+    "username": "liwenli",
+    "display_name": null,
+    "created_at": "2022-12-05T11:22:34.821253+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "55302f25-b172-4ca4-b06f-1835cbc43cd0",
+    "username": "lucasoeth",
+    "display_name": null,
+    "created_at": "2022-04-01T06:45:20.240779+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "3aaec338-236f-4199-8510-075715ac4f9b",
+    "username": "manton",
+    "display_name": null,
+    "created_at": "2022-06-30T16:01:54.845419+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      2
+    ],
+    "sensors": [
+      139
+    ]
+  },
+  {
+    "id": "a91659ae-9194-42d1-8723-cf7e0aa9c72a",
+    "username": "Marco",
+    "display_name": null,
+    "created_at": "2021-12-08T18:21:28.700868+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "01e94de7-9679-460b-b58f-21c79f88e122",
+    "username": "MEKTA82",
+    "display_name": "HTW Berlin",
+    "created_at": "2021-11-09T13:17:30.543011+00:00",
+    "link": null,
+    "description": "Hochschule für Technik und Wirtschaft Berlin an der Wihelminenhofstraße",
+    "sensors_count": 1,
+    "records_count": 31635,
+    "categories": [
+      2
+    ],
+    "sensors": [
+      64
+    ]
+  },
+  {
+    "id": "7e2ad9fa-4c7f-46b4-b49d-147061e53797",
+    "username": "metoikos",
+    "display_name": null,
+    "created_at": "2022-02-07T10:52:02.002871+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "6f421647-f659-4e4c-abb4-ae3cbd047406",
+    "username": "mithilaGhuge",
+    "display_name": null,
+    "created_at": "2022-02-07T13:04:07.401122+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "e0d9e0ec-68de-43f2-972a-27a7a215b47d",
+    "username": "MrnWill",
+    "display_name": "MrnWill",
+    "created_at": "2021-12-09T12:57:18.890222+00:00",
+    "link": null,
+    "description": "",
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "e9cef391-bc69-423c-9600-749664a1b34e",
+    "username": "nlohmann",
+    "display_name": "Niels Lohmann",
+    "created_at": "2021-12-30T09:23:26.049943+00:00",
+    "link": "https://nlohmann.me",
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
+    "username": "NoraK",
+    "display_name": null,
+    "created_at": "2022-03-29T13:57:51.042716+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 7,
+    "records_count": 167748,
+    "categories": [
+      2,
+      3,
+      4,
+      6,
+      7
+    ],
+    "sensors": [
+      91,
+      147,
+      148,
+      150,
+      151,
+      152,
+      149
+    ]
+  },
+  {
+    "id": "4e655e61-10cd-48ad-a6aa-a06e6ceb15a9",
+    "username": "Orock",
+    "display_name": null,
+    "created_at": "2021-12-21T13:34:38.201196+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      3
+    ],
+    "sensors": [
+      58
+    ]
+  },
+  {
+    "id": "c9744139-2292-4e69-9c68-739c8cd8cc21",
+    "username": "pankow",
+    "display_name": "Pankow",
+    "created_at": "2021-12-10T20:00:52.437926+00:00",
+    "link": null,
+    "description": "Verkehrszählungen",
+    "sensors_count": 5,
+    "records_count": null,
+    "categories": [
+      5
+    ],
+    "sensors": [
+      54,
+      57,
+      55,
+      56,
+      53
+    ]
+  },
+  {
+    "id": "01e6ac47-66b4-4d72-a62a-fa465bd03f76",
+    "username": "paul_schuetz",
+    "display_name": null,
+    "created_at": "2022-12-23T09:30:03.523633+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      2
+    ],
+    "sensors": [
+      153
+    ]
+  },
+  {
+    "id": "5bb51260-6b35-4d56-8851-70cc68f87bd5",
+    "username": "paxcounting",
+    "display_name": "paxcounting",
+    "created_at": "2021-11-20T14:35:09.932627+00:00",
+    "link": "http://paxcounting.de",
+    "description": "Mit dem Paxcounter zählt man, datenschutzgerecht, die Anzahl von Personen in der Umgebung. Spannend wäre dies in Corona Zeiten......",
+    "sensors_count": 1,
+    "records_count": 34271,
+    "categories": [
+      5
+    ],
+    "sensors": [
+      40
+    ]
+  },
+  {
+    "id": "7ab1f310-d0e4-4d10-a458-d62a2ba854d4",
+    "username": "ronin",
+    "display_name": null,
+    "created_at": "2022-06-23T15:05:00.4107+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "4c55d885-f3cc-4675-ad5b-ad1c9dd52f2f",
+    "username": "s-hoeffken",
+    "display_name": null,
+    "created_at": "2022-03-23T08:30:34.166237+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "5dad4ffe-c060-41cd-a78d-e84e4417859d",
+    "username": "Sandra",
+    "display_name": null,
+    "created_at": "2021-12-16T00:29:03.734725+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "71f85f6f-5050-4437-8562-fe6d1280c93c",
+    "username": "sara",
+    "display_name": null,
+    "created_at": "2021-11-09T17:11:24.1659+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      5
+    ],
+    "sensors": [
+      30
+    ]
+  },
+  {
+    "id": "ad3f8afa-ee45-4ec4-9619-887f4cb2501e",
+    "username": "semaphor",
+    "display_name": null,
+    "created_at": "2021-12-09T18:20:42.516747+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "4447079f-40b6-421d-9d97-5f7a1e34f65a",
+    "username": "Shiran",
+    "display_name": null,
+    "created_at": "2022-06-29T17:29:52.407097+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 1,
+    "records_count": null,
+    "categories": [
+      2
+    ],
+    "sensors": [
+      138
+    ]
+  },
+  {
+    "id": "e18ebf8d-35c4-4a11-8dbd-d89a2c8bd9bd",
+    "username": "squeezer44",
+    "display_name": "squeezer44",
+    "created_at": "2021-10-21T08:52:48.947135+00:00",
+    "link": "https://github.com/squeezer44",
+    "description": "Data Scientist = {\n    'focus': ['data science', 'python', 'cycling'],\n    'specialty':['find the story behind the data']\n}",
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "adeb964c-0cd2-43b3-86b4-9f5a16e9795b",
+    "username": "Sumit",
+    "display_name": null,
+    "created_at": "2021-12-15T23:36:09.906373+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "4c5ba286-5c0f-47a5-8a40-0ef47b81adc9",
+    "username": "susett",
+    "display_name": null,
+    "created_at": "2022-06-24T15:46:48.031308+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "820b0991-d38b-4427-8f09-7e7547dc6edf",
+    "username": "Tasso",
+    "display_name": "Tasso Mulzer (BHT)",
+    "created_at": "2022-03-04T15:19:39.051808+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 0,
+    "records_count": null,
+    "categories": [],
+    "sensors": []
+  },
+  {
+    "id": "5d20f24c-1ff7-4551-afe1-55db7fda90b3",
+    "username": "vogelino",
+    "display_name": "Lucas Vogelino",
+    "created_at": "2021-12-08T13:06:17.172563+00:00",
+    "link": "https://vogelino.com",
+    "description": "Creative Technologist @ CityLAB",
+    "sensors_count": 2,
+    "records_count": 26,
+    "categories": [
+      4,
+      8
+    ],
+    "sensors": [
+      49,
+      74
+    ]
+  }
+]
