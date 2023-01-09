@@ -118,6 +118,7 @@ export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
             handleDateChange("start", val, "day");
           }}
           tabIndex={tabIndex}
+          disabled={true}
         />
         <TimeInput
           className='InputTime-from'
@@ -126,6 +127,7 @@ export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
             handleDateChange("start", val, "time");
           }}
           tabIndex={tabIndex}
+          disabled={true}
         />
       </div>
       <span className='inline-flex'>
@@ -146,6 +148,7 @@ export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
             handleDateChange("end", val, "day");
           }}
           tabIndex={tabIndex}
+          disabled={true}
         />
         <TimeInput
           className='InputTime-to'
@@ -154,6 +157,7 @@ export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
             handleDateChange("end", val, "time");
           }}
           tabIndex={tabIndex}
+          disabled={true}
         />
       </span>
     </div>

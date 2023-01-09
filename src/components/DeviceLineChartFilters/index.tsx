@@ -65,12 +65,14 @@ interface TemporalityButtonPropType {
   isActive?: boolean;
   isFirst?: boolean;
   onClick: () => void;
+  disabled?: boolean;
 }
 
 const TemporalityButton: FC<TemporalityButtonPropType> = ({
   isActive = false,
   isFirst = false,
   onClick,
+  disabled = false,
   children,
 }) => (
   <button
@@ -79,9 +81,11 @@ const TemporalityButton: FC<TemporalityButtonPropType> = ({
       "focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30",
       "focus:ring-offset focus:ring-offset-white focus:ring-offset-2",
       !isActive &&
+        !disabled &&
         "hover:bg-purple hover:bg-opacity-10 hover:text-purple hover:border-purple hover:z-10",
       !isFirst && "ml-[-1px]",
       isActive && "bg-blue border-blue text-white z-20",
+      disabled && "cursor-not-allowed",
     ]
       .filter(Boolean)
       .join(" ")}
@@ -90,6 +94,7 @@ const TemporalityButton: FC<TemporalityButtonPropType> = ({
       evt.stopPropagation();
       onClick();
     }}
+    disabled={disabled}
   >
     {children}
   </button>
@@ -113,6 +118,7 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
         label='Messwerte nach Zeitspanne'
         name='devicesByDatetimeRange'
         onSelect={() => setActiveFilterType("devicesByDatetimeRange")}
+        disabled={true}
       >
         <DatetimeRangePicker
           startDateTimeString={
@@ -139,6 +145,7 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
           setTemporaityOfRecords("last24h");
           onDatetimeRangeChange(getTimeRangeByTimespan("last24h", today));
         }}
+        disabled={true}
       >
         <div className='flex'>
           <TemporalityButton
@@ -152,6 +159,7 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
               setTemporaityOfRecords("last24h");
               onDatetimeRangeChange(getTimeRangeByTimespan("last24h", today));
             }}
+            disabled={true}
           >
             24 Std.
           </TemporalityButton>
@@ -165,6 +173,7 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
               setTemporaityOfRecords("last7days");
               onDatetimeRangeChange(getTimeRangeByTimespan("last7days", today));
             }}
+            disabled={true}
           >
             7 Tage
           </TemporalityButton>
@@ -180,6 +189,7 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
                 getTimeRangeByTimespan("last30days", today)
               );
             }}
+            disabled={true}
           >
             30 Tage
           </TemporalityButton>
@@ -193,6 +203,7 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
               setTemporaityOfRecords("max");
               onDatetimeRangeChange(getTimeRangeByTimespan("max", today));
             }}
+            disabled={true}
           >
             Max.
           </TemporalityButton>

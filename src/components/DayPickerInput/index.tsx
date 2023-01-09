@@ -10,6 +10,7 @@ interface DayPickerInputExtendedProps extends DayPickerInputProps {
   nextElSelector?: string;
   tabIndex?: number;
   value: Date;
+  disabled?: boolean;
   onDayChange?: (val: Date) => void;
 }
 
@@ -52,6 +53,7 @@ export const DayPickerInput: FC<DayPickerInputExtendedProps> = ({
   tabIndex = 1,
   value,
   dayPickerProps,
+  disabled = false,
   nextElSelector,
   ...props
 }) => {
@@ -91,7 +93,10 @@ export const DayPickerInput: FC<DayPickerInputExtendedProps> = ({
         overlayWrapper: "",
         overlay: "",
       }}
-      inputProps={{ tabIndex }}
+      inputProps={{
+        tabIndex,
+        class: [disabled && "cursor-not-allowed"].join(" "),
+      }}
       {...props}
     />
   );
