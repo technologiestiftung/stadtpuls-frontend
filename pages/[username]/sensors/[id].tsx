@@ -1,12 +1,10 @@
 import { DeviceLineChartFilters } from "@components/DeviceLineChartFilters";
-import { DropdownMenu } from "@components/DropdownMenu";
 import { LineChart } from "@components/LineChart";
 import { TextLink } from "@components/TextLink";
 import { createDateValueArray } from "@lib/dateUtil";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { useSensorRecords } from "@lib/hooks/useSensorRecords";
 import { useSensorRecordsCount } from "@lib/hooks/useSensorRecordsCount";
-import { GetRecordsOptionsType } from "@lib/requests/getRecordsBySensorId";
 import { getSensorData } from "@lib/requests/getSensorData";
 import DownloadIcon from "../../../public/images/icons/16px/arrowDownWithHalfSquare.svg";
 import moment from "moment";
@@ -15,7 +13,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { FC, useCallback, useState } from "react";
 import { SensorPageHeaderWithData } from "@components/SensorPageHeader/withData";
 import { useDownloadQueue } from "@lib/hooks/useDownloadQueue";
-import { downloadCSVString } from "@lib/downloadCsvUtil";
+import { createCSVStructure, downloadCSVString } from "@lib/downloadCsvUtil";
 import { Alert } from "@components/Alert";
 import { MAX_RENDERABLE_VALUES as MAX_RENDERABLE_VALUES_LINE_CHART } from "@components/LinePath";
 import { getPublicSensors } from "@lib/requests/getPublicSensors";
@@ -116,39 +114,22 @@ const SensorPage: FC<{
     setChartHeight(width / 2);
   }, []);
 
-  const handleDownload = useCallback(
-    (options?: GetRecordsOptionsType): void => {
-      if (isFallback || !initialSensor?.id) return;
-      const CSVTitle = !options
-        ? `${moment.parseZone().format("YYYY-MM-DD")}-sensor-${
-            initialSensor.id
-          }-all-data`
-        : `${moment
-            .parseZone(currentDatetimeRange.startDateTimeString)
-            .format("YYYY-MM-DD")}-to-${moment
-            .parseZone(currentDatetimeRange.endDateTimeString)
-            .format("YYYY-MM-DD")}-sensor-${initialSensor.id}`;
+  const handleDownload = useCallback((): void => {
+    if (isFallback || !initialSensor?.id) return;
+    const CSVTitle = `sensor-${initialSensor.id}`;
 
-      pushToQueue({
-        id: initialSensor.id,
-        username: initialSensor.authorUsername,
-        title: CSVTitle,
-        totalCount: recordsCount || 0,
-        options,
-        callback: ({ title, result }) =>
-          result && downloadCSVString(result, title),
-      });
-    },
-    [
-      currentDatetimeRange.endDateTimeString,
-      currentDatetimeRange.startDateTimeString,
-      pushToQueue,
-      recordsCount,
-      initialSensor?.id,
-      initialSensor?.authorUsername,
-      isFallback,
-    ]
-  );
+    const CSVData = createCSVStructure(records);
+
+    downloadCSVString(CSVData, CSVTitle);
+  }, [
+    currentDatetimeRange.endDateTimeString,
+    currentDatetimeRange.startDateTimeString,
+    pushToQueue,
+    recordsCount,
+    initialSensor?.id,
+    initialSensor?.authorUsername,
+    isFallback,
+  ]);
 
   const sensorToRender = !isFallback && !isLoading && (sensor || initialSensor);
   return (
@@ -167,33 +148,16 @@ const SensorPage: FC<{
               onDatetimeRangeChange={vals => setCurrentDatetimeRange(vals)}
             />
             <div className='md:pt-4 lg:pt-8'>
-              <DropdownMenu
-                items={[
-                  {
-                    id: "all",
-                    title: "Alle Daten",
-                    onClick: () => {
-                      void handleDownload();
-                    },
-                  },
-                  {
-                    id: "filtered",
-                    title: "Gefilterte Daten",
-                    disabled: records.length === 0,
-                    onClick: () => {
-                      void handleDownload({
-                        startDate: currentDatetimeRange.startDateTimeString,
-                        endDate: currentDatetimeRange.endDateTimeString,
-                      });
-                    },
-                  },
-                ]}
-              >
-                <span className='inline-flex gap-2 place-items-center'>
-                  <DownloadIcon className='text-black' />
-                  <TextLink>Herunterladen (CSV)</TextLink>
-                </span>
-              </DropdownMenu>
+              <span className='inline-flex gap-2 place-items-center'>
+                <DownloadIcon className='text-black' />
+                <TextLink
+                  onClick={() => {
+                    void handleDownload();
+                  }}
+                >
+                  Herunterladen (CSV)
+                </TextLink>
+              </span>
             </div>
           </div>
           {requestedRecordsCount &&
