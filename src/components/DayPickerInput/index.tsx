@@ -95,7 +95,7 @@ export const DayPickerInput: FC<DayPickerInputExtendedProps> = ({
       }}
       inputProps={{
         tabIndex,
-        class: [disabled && "cursor-not-allowed"].join(" "),
+        className: [disabled && "cursor-not-allowed"].join(" "),
       }}
       {...props}
     />
