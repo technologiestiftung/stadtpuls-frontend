@@ -12,9 +12,9 @@ const preShutdownTexts = {
   title: `Registrierung deaktiviert`,
   message: (
     <>
-      Stadtpuls wird am <strong>31. Januar 2023</strong> eingestellt.
+      Stadtpuls wird am <strong>31. Januar 2023</strong> beendet.
       <br />
-      Es ist deshalb nicht mehr möglich, sich zu registrieren.
+      Ab dann wird keine Registrierung mehr möglich sein.
       <br />
       <a
         href='https://stories.stadtpuls.com/stadtpuls-ende'
@@ -22,7 +22,7 @@ const preShutdownTexts = {
         rel='noreferrer'
         className='mx-4 mb-4 navigation-link sm:mx-0 sm:mb-0'
       >
-        Erfahre mehr im Blogbeitrag
+        Erfahre mehr dazu in der Stadtpuls Story.
       </a>
     </>
   ),
@@ -34,9 +34,7 @@ const shutdownTexts = {
     title: preShutdownTexts.title,
     message: (
       <>
-        Stadtpuls wurde am <strong>31. Januar 2023</strong> eingestellt.
-        <br />
-        Es ist deshalb nicht mehr möglich, sich zu registrieren.
+        Stadtpuls wurde nach einjähriger Pilotphase beendet.
         <br />
         <a
           href='https://stories.stadtpuls.com/stadtpuls-ende'
@@ -44,7 +42,7 @@ const shutdownTexts = {
           rel='noreferrer'
           className='mx-4 mb-4 navigation-link sm:mx-0 sm:mb-0'
         >
-          Erfahre mehr im Blogbeitrag
+          Erfahre mehr dazu in der Stadtpuls Story.
         </a>
       </>
     ),

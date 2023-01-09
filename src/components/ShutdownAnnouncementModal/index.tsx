@@ -15,29 +15,62 @@ const shutdownLevel = parseInt(
 const gracePeriodText = (
   <div className='flex flex-col gap-3'>
     <p>
-      Am <strong>11. Januar 2023</strong> werden wir die Registrierungen
-      abschalten und die Möglichkeit deaktivieren, POST-Anfragen an Deine
-      Sensoren zu stellen.
+      Ab dem <strong>11. Januar 2023</strong> sind keine neuen Registrierungen
+      möglich und ab dem <strong>31. Januar 2023</strong> können keinen Daten an
+      die Plattform gesendet werden.
     </p>
     <p>
-      Am <strong>31. Januar 2023</strong> werden die Daten entfernt und die
-      Logging-Funktion abgeschaltet.
+      Mehr dazu erfährst Du in unserer letzten{" "}
+      <a
+        href='https://stories.stadtpuls.com/stadtpuls-ende'
+        target='_blank'
+        rel='noreferrer'
+        className='mx-4 mb-4 navigation-link sm:mx-0 sm:mb-0'
+      >
+        Stadtpuls Story
+      </a>
     </p>
   </div>
 );
 const shutdownAnnouncementText = (
-  <p>
-    Am <strong>31. Januar 2023</strong> werden die Daten entfernt und die
-    Logging-Funktion abgeschaltet.
-  </p>
+  <div className='flex flex-col gap-3'>
+    <p>
+      Ab <strong>31. Januar 2023</strong> können keinen Daten an die Plattform
+      gesendet werden.
+    </p>
+    <p>
+      Mehr dazu erfährst Du in unserer letzten{" "}
+      <a
+        href='https://stories.stadtpuls.com/stadtpuls-ende'
+        target='_blank'
+        rel='noreferrer'
+        className='mx-4 mb-4 navigation-link sm:mx-0 sm:mb-0'
+      >
+        Stadtpuls Story
+      </a>
+    </p>
+  </div>
 );
 const shutdownDoneText = (
-  <p>
-    Wir haben Stadtpuls entwickelt, weil wir davon überzeugt sind, dass wir eine
-    freie und zugängliche Plattform für Sensordaten brauchen, die für jeden
-    öffentlich zugänglich ist. Leider war der Erfolg von Stadtpuls nicht der,
-    den wir uns gewünscht haben und die Pflege ist nicht mehr nachhaltig.
-  </p>
+  <div className='flex flex-col gap-3'>
+    <p>
+      Wir haben Stadtpuls entwickelt, um eine freie und kostenlose Plattform für
+      Sensordaten zu schaffen, die von allen Interessierten genutzt werden kann.
+      Nach der einjährigen Pilotphase haben wir uns entschieden, das Projekt zu
+      beenden.
+    </p>
+    <p>
+      Mehr dazu erfährst Du in unserer{" "}
+      <a
+        href='https://stories.stadtpuls.com/stadtpuls-ende'
+        target='_blank'
+        rel='noreferrer'
+        className='mx-4 mb-4 navigation-link sm:mx-0 sm:mb-0'
+      >
+        Stadtpuls Story
+      </a>
+    </p>
+  </div>
 );
 
 export const useHasClosedShutdownModal = (): [
@@ -149,8 +182,8 @@ export const ShutdownModal: FC = () => {
       <div className='relative z-20 sm:max-w-sm'>
         <h2 className='flex items-center mb-4 text-2xl font-bold gap-4 font-headline'>
           {warningIcon}
-          {shutdownLevel < 2 && "Stadtpuls wird eingestellt"}
-          {shutdownLevel >= 2 && "Stadtpuls wurde eingestellt"}
+          {shutdownLevel < 2 && "Stadtpuls wird beendet"}
+          {shutdownLevel >= 2 && "Stadtpuls wurde beendet"}
         </h2>
         {shutdownLevel === 0 && gracePeriodText}
         {shutdownLevel === 1 && shutdownAnnouncementText}

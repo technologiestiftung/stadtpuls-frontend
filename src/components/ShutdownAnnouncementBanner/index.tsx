@@ -6,11 +6,9 @@ const shutdownLevel = parseInt(
   `${process.env.NEXT_PUBLIC_SHUTDOWN_LEVEL || 0}`
 );
 
-const gracePeriodText = <>Stadtpuls wird am 31. Januar 2023 Eingestellt</>;
-const shutdownAnnouncementText = (
-  <>Stadtpuls wird am 31. Januar 2023 Eingestellt</>
-);
-const shutdownDoneText = <>Stadtpuls wurde am 31. Januar 2023 Eingestellt</>;
+const gracePeriodText = <>Stadtpuls wird am 31. Januar 2023 beendet.</>;
+const shutdownAnnouncementText = gracePeriodText;
+const shutdownDoneText = <>Stadtpuls wurde am 31. Januar 2023 beendet.</>;
 
 export const useHasClosedShutdownBanner = (): [
   isClosed: boolean,
@@ -76,7 +74,7 @@ export const ShutdownBanner: FC = () => {
           rel='noreferrer'
           className='mx-4 mb-4 navigation-link sm:mx-0 sm:mb-0'
         >
-          Erfahre mehr im Blogbeitrag
+          Erfahre mehr dazu in der Stadtpuls Story
         </a>
         <button
           className={[
