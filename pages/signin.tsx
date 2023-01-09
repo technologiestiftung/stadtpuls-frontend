@@ -15,6 +15,15 @@ const preShutdownTexts = {
       Stadtpuls wird am <strong>31. Januar 2023</strong> eingestellt.
       <br />
       Ab dann wird es nicht mehr möglich, sich einzuloggen.
+      <br />
+      <a
+        href='https://stories.stadtpuls.com/stadtpuls-ende'
+        target='_blank'
+        rel='noreferrer'
+        className='mx-4 mb-4 navigation-link sm:mx-0 sm:mb-0'
+      >
+        Erfahre mehr im Blogbeitrag
+      </a>
     </>
   ),
 };
@@ -28,6 +37,15 @@ const shutdownTexts = {
         Stadtpuls wurde am <strong>31. Januar 2023</strong> eingestellt.
         <br />
         Es ist deshalb nicht mehr möglich, sich zu einzuloggen.
+        <br />
+        <a
+          href='https://stories.stadtpuls.com/stadtpuls-ende'
+          target='_blank'
+          rel='noreferrer'
+          className='mx-4 mb-4 navigation-link sm:mx-0 sm:mb-0'
+        >
+          Erfahre mehr im Blogbeitrag
+        </a>
       </>
     ),
   },

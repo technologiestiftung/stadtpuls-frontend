@@ -71,7 +71,7 @@ export const ShutdownBanner: FC = () => {
           {shutdownLevel >= 2 && shutdownDoneText}
         </strong>{" "}
         <a
-          href='https://github.com/technologiestiftung/stadtpuls/discussions'
+          href='https://stories.stadtpuls.com/stadtpuls-ende'
           target='_blank'
           rel='noreferrer'
           className='mx-4 mb-4 navigation-link sm:mx-0 sm:mb-0'

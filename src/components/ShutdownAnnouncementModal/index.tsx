@@ -156,7 +156,7 @@ export const ShutdownModal: FC = () => {
         {shutdownLevel === 1 && shutdownAnnouncementText}
         {shutdownLevel >= 2 && shutdownDoneText}
         <AnchorButton
-          href='https://stories.stadtpuls.com'
+          href='https://stories.stadtpuls.com/stadtpuls-ende'
           variant='primary'
           className='mt-6 mb-10'
         >
