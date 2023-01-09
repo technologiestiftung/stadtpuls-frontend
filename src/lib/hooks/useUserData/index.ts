@@ -9,14 +9,11 @@ import {
 } from "./manageSensorsLocally";
 import { useState } from "react";
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
-import {
-  mapPublicSensor,
-  ParsedSensorType,
-  SensorQueryResponseType,
-} from "@lib/hooks/usePublicSensors";
+import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { mapPublicAccount } from "@lib/hooks/usePublicAccounts";
-import { sensorQueryString } from "@lib/requests/getPublicSensors";
+import { getPublicSensors } from "@lib/requests/getPublicSensors";
 import { AccountWithSensorsType } from "@lib/requests/getAccountDataByUsername";
+import { getPublicAccounts } from "@lib/requests/getPublicAccounts";
 
 interface UseUserDataInitialDataType {
   user?: AccountWithSensorsType;
@@ -36,25 +33,20 @@ type UserFetcherSignature = (
 const fetchUser: UserFetcherSignature = async userId => {
   if (!userId) return null;
 
-  const { data: userData, error } = await supabase
-    .from<definitions["extended_user_profiles"]>("extended_user_profiles")
-    .select("*")
-    .eq("id", userId.trim())
-    .single();
+  const { accounts: allAccounts } = await getPublicAccounts();
+  const userData = allAccounts.find(account => account.id === userId);
 
-  if (error) throw error;
-  else if (!userData) throw new Error(`User with id "${userId} was not found"`);
+  if (!userData) throw new Error(`User with id "${userId} was not found"`);
 
-  const { data: sensors, error: sensorsError } = await supabase
-    .from<SensorQueryResponseType>("sensors")
-    .select(sensorQueryString)
-    .eq("user_id", userId.trim());
-  if (sensorsError) throw sensorsError;
+  const { sensors: allSensors } = await getPublicSensors();
+  const sensors = allSensors.filter(sensor =>
+    userData.sensors.includes(sensor.id)
+  );
   if (!sensors) throw new Error(`No sensors found for user id "${userId}"`);
 
   const accountDataWithSensors = {
     ...mapPublicAccount(userData),
-    sensors: sensors?.map(mapPublicSensor) || [],
+    sensors: sensors || [],
   };
   return accountDataWithSensors;
 };
@@ -67,15 +59,11 @@ type SensorsFetcherSignature = (
 export const fetchUserSensors: SensorsFetcherSignature = async userId => {
   if (!userId) return [];
 
-  const { data, error } = await supabase
-    .from<SensorQueryResponseType>("sensors")
-    .select(sensorQueryString)
-    .eq("user_id", userId.trim());
+  const { sensors: allSensors } = await getPublicSensors();
+  const data = allSensors.filter(sensor => sensor.authorId === userId);
 
-  if (error) throw error;
-  else if (!data)
-    throw new Error(`Sensors for user with id "${userId} not found"`);
-  return data.map(mapPublicSensor);
+  if (!data) throw new Error(`Sensors for user with id "${userId} not found"`);
+  return data;
 };
 
 const parsedSensorToRawSensor = (

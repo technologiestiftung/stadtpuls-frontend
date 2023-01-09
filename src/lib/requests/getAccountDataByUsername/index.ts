@@ -1,15 +1,7 @@
-import {
-  mapPublicAccount,
-  ParsedAccountType,
-} from "@lib/hooks/usePublicAccounts";
-import { supabase } from "@auth/supabase";
-import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
-import {
-  mapPublicSensor,
-  ParsedSensorType,
-  SensorQueryResponseType,
-} from "@lib/hooks/usePublicSensors";
-import { sensorQueryString } from "@lib/requests/getPublicSensors";
+import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
+import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
+import { getPublicAccounts } from "../getPublicAccounts";
+import { getPublicSensors } from "../getPublicSensors";
 
 export interface AccountWithSensorsType
   extends Omit<ParsedAccountType, "sensors"> {
@@ -20,26 +12,21 @@ export const getAccountDataByUsername = async (
   username?: string
 ): Promise<AccountWithSensorsType | undefined> => {
   if (!username) return undefined;
-  const { data: accountData, error: usersError } = await supabase
-    .from<definitions["extended_user_profiles"]>("extended_user_profiles")
-    .select("*")
-    .ilike("username", username.trim())
-    .single();
-  if (usersError) throw usersError;
+  const { accounts: allAccounts } = await getPublicAccounts();
+  const accountData = allAccounts.find(
+    account => account.username === username
+  );
   if (!accountData)
     throw new Error(`No account found with username "${username}"`);
 
-  const { data: sensors, error: sensorsError } = await supabase
-    .from<SensorQueryResponseType>("sensors")
-    .select(sensorQueryString)
-    .eq("user_id", String(accountData.id).trim());
-  if (sensorsError) throw sensorsError;
-  if (!accountData)
-    throw new Error(`No sensors found for username "${username}"`);
+  const { sensors: allSensors } = await getPublicSensors();
+  const sensors = allSensors.filter(sensor =>
+    accountData.sensors.includes(sensor.id)
+  );
 
   const accountDataWithSensors = {
-    ...mapPublicAccount(accountData),
-    sensors: sensors?.map(mapPublicSensor) || [],
+    ...accountData,
+    sensors,
   };
   return accountDataWithSensors;
 };

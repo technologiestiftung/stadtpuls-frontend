@@ -1,5 +1,7 @@
 import { supabase } from "@auth/supabase";
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
+import { getPublicAccounts } from "../getPublicAccounts";
+import { getPublicSensors } from "../getPublicSensors";
 
 export interface LandingStatsReturnType {
   usersCount: number;
@@ -9,19 +11,13 @@ export interface LandingStatsReturnType {
 
 export async function getLandingStats(): Promise<LandingStatsReturnType> {
   const [usersReq, sensorsReq, recordsReq] = await Promise.all([
-    supabase
-      .from<definitions["user_profiles"]>("user_profiles")
-      .select("name", { count: "exact", head: true }),
-    supabase
-      .from<definitions["sensors"]>("sensors")
-      .select("name", { count: "exact", head: true }),
+    getPublicAccounts(),
+    getPublicSensors(),
     supabase
       .from<definitions["records"]>("records")
       .select("measurements", { count: "exact", head: true }),
   ]);
 
-  if (usersReq.error) throw usersReq.error;
-  if (sensorsReq.error) throw sensorsReq.error;
   if (recordsReq.error) throw recordsReq.error;
   return {
     usersCount: usersReq.count || 0,
