@@ -12,7 +12,6 @@ import "moment/locale/de";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { FC, useCallback, useState } from "react";
 import { SensorPageHeaderWithData } from "@components/SensorPageHeader/withData";
-import { useDownloadQueue } from "@lib/hooks/useDownloadQueue";
 import { createCSVStructure, downloadCSVString } from "@lib/downloadCsvUtil";
 import { Alert } from "@components/Alert";
 import { MAX_RENDERABLE_VALUES as MAX_RENDERABLE_VALUES_LINE_CHART } from "@components/LinePath";
@@ -82,7 +81,6 @@ const SensorPage: FC<{
     sensorId: initialSensor?.id,
     initialData: initialSensor || undefined,
   });
-  const { pushToQueue } = useDownloadQueue();
   const [chartWidth, setChartWidth] = useState<number | undefined>(undefined);
   const [chartHeight, setChartHeight] = useState<number | undefined>(undefined);
   const [currentDatetimeRange, setCurrentDatetimeRange] = useState<{
@@ -121,15 +119,7 @@ const SensorPage: FC<{
     const CSVData = createCSVStructure(records);
 
     downloadCSVString(CSVData, CSVTitle);
-  }, [
-    currentDatetimeRange.endDateTimeString,
-    currentDatetimeRange.startDateTimeString,
-    pushToQueue,
-    recordsCount,
-    initialSensor?.id,
-    initialSensor?.authorUsername,
-    isFallback,
-  ]);
+  }, [initialSensor?.id, isFallback]);
 
   const sensorToRender = !isFallback && !isLoading && (sensor || initialSensor);
   return (
