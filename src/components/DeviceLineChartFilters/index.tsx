@@ -117,7 +117,6 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
         isSelected={activeFilterType === "devicesByDatetimeRange"}
         label='Messwerte nach Zeitspanne'
         name='devicesByDatetimeRange'
-        onSelect={() => setActiveFilterType("devicesByDatetimeRange")}
         disabled={true}
       >
         <DatetimeRangePicker
@@ -131,7 +130,6 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
             last7daysTimeRange.endDateTimeString ||
             moment.parseZone().toISOString()
           }
-          onDatetimeRangeChange={onDatetimeRangeChange}
           tabIndex={activeFilterType === "devicesByDatetimeRange" ? 0 : -1}
         />
       </RadioFieldset>
@@ -139,12 +137,6 @@ export const DeviceLineChartFilters: FC<DeviceLineChartFiltersPropType> = ({
         isSelected={activeFilterType === "devicesByTimespan"}
         label='Messwerte nach Zeitraum'
         name='devicesByTimespan'
-        onSelect={() => {
-          if (activeFilterType === "devicesByTimespan") return;
-          setActiveFilterType("devicesByTimespan");
-          setTemporaityOfRecords("last24h");
-          onDatetimeRangeChange(getTimeRangeByTimespan("last24h", today));
-        }}
         disabled={true}
       >
         <div className='flex'>

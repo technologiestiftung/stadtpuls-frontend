@@ -11,7 +11,7 @@ export interface DatetimeRangePickerPropType {
   startDateTimeString: string;
   endDateTimeString: string;
   tabIndex?: number;
-  onDatetimeRangeChange: (vals: {
+  onDatetimeRangeChange?: (vals: {
     startDateTimeString: string | undefined;
     endDateTimeString: string | undefined;
   }) => void;
@@ -77,7 +77,7 @@ const getModifiedTimeRange: GetModifiedTimeRangeSignature = ({
 export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
   startDateTimeString,
   endDateTimeString,
-  onDatetimeRangeChange,
+  onDatetimeRangeChange = () => undefined,
   tabIndex = 1,
 }) => {
   const fromDate = moment.parseZone(startDateTimeString);
@@ -118,7 +118,11 @@ export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
             handleDateChange("start", val, "day");
           }}
           tabIndex={tabIndex}
-          disabled={true}
+          inputProps={{
+            readOnly: true,
+            disabled: true,
+            className: "cursor-not-allowed",
+          }}
         />
         <TimeInput
           className='InputTime-from'
@@ -148,7 +152,11 @@ export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
             handleDateChange("end", val, "day");
           }}
           tabIndex={tabIndex}
-          disabled={true}
+          inputProps={{
+            readOnly: true,
+            disabled: true,
+            className: "cursor-not-allowed",
+          }}
         />
         <TimeInput
           className='InputTime-to'
