@@ -11,7 +11,7 @@ export interface DatetimeRangePickerPropType {
   startDateTimeString: string;
   endDateTimeString: string;
   tabIndex?: number;
-  onDatetimeRangeChange: (vals: {
+  onDatetimeRangeChange?: (vals: {
     startDateTimeString: string | undefined;
     endDateTimeString: string | undefined;
   }) => void;
@@ -77,7 +77,7 @@ const getModifiedTimeRange: GetModifiedTimeRangeSignature = ({
 export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
   startDateTimeString,
   endDateTimeString,
-  onDatetimeRangeChange,
+  onDatetimeRangeChange = () => undefined,
   tabIndex = 1,
 }) => {
   const fromDate = moment.parseZone(startDateTimeString);
@@ -118,6 +118,11 @@ export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
             handleDateChange("start", val, "day");
           }}
           tabIndex={tabIndex}
+          inputProps={{
+            readOnly: true,
+            disabled: true,
+            className: "cursor-not-allowed",
+          }}
         />
         <TimeInput
           className='InputTime-from'
@@ -126,6 +131,7 @@ export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
             handleDateChange("start", val, "time");
           }}
           tabIndex={tabIndex}
+          disabled={true}
         />
       </div>
       <span className='inline-flex'>
@@ -146,6 +152,11 @@ export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
             handleDateChange("end", val, "day");
           }}
           tabIndex={tabIndex}
+          inputProps={{
+            readOnly: true,
+            disabled: true,
+            className: "cursor-not-allowed",
+          }}
         />
         <TimeInput
           className='InputTime-to'
@@ -154,6 +165,7 @@ export const DatetimeRangePicker: FC<DatetimeRangePickerPropType> = ({
             handleDateChange("end", val, "time");
           }}
           tabIndex={tabIndex}
+          disabled={true}
         />
       </span>
     </div>
