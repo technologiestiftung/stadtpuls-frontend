@@ -8,6 +8,7 @@ exports[`Storyshots Forms/DayPickerInput Default 1`] = `
     className="inputContainer"
   >
     <input
+      className="false"
       onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}

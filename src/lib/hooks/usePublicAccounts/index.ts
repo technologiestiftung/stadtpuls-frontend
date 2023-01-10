@@ -1,7 +1,20 @@
+import { sensorQueryString } from "@lib/requests/getPublicSensors";
 import useSWR from "swr";
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { SensorQueryResponseType } from "@lib/hooks/usePublicSensors";
 import { getPublicAccounts } from "@lib/requests/getPublicAccounts";
+
+export const accountQueryString = `
+  id,
+  name,
+  display_name,
+  created_at,
+  url,
+  description,
+  sensors (
+    ${sensorQueryString}
+  )
+`;
 
 type AccountType = definitions["user_profiles"];
 export interface AccountQueryResponseType extends AccountType {

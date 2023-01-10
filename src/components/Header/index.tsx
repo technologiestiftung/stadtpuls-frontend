@@ -5,7 +5,6 @@ import { HeaderMenu } from "@components/HeaderMenu";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useUserData } from "@lib/hooks/useUserData";
-import { DownloadQueueButton } from "@components/DownloadQueueButton/widthData";
 
 const SCROLL_THRESHOLD = 100;
 
@@ -65,7 +64,6 @@ export const Header: React.FC = () => {
         </Link>
         <section className='flex flex-row-reverse lg:flex-row gap-2 sm:gap-4 items-center pr-4'>
           <HeaderMenu hasDarkMode={hasDarkMode} />
-          <DownloadQueueButton />
           <AuthLink loggedInUserName={user?.username} />
         </section>
       </nav>

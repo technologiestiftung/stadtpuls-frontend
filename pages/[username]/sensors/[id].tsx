@@ -97,12 +97,7 @@ const SensorPage: FC<{
     error: recordsFetchError,
     isLoading: recordsAreLoading,
     deleteRecords,
-  } = useSensorRecords({
-    sensorId: initialSensor?.id,
-    startDateString: currentDatetimeRange.startDateTimeString,
-    endDateString: currentDatetimeRange.endDateTimeString,
-    maxRows: MAX_RENDERABLE_VALUES_LINE_CHART,
-  });
+  } = useSensorRecords({ sensorId: initialSensor?.id });
   const parsedAndSortedRecords = createDateValueArray(records);
 
   const chartWrapper = useCallback((node: HTMLDivElement | null) => {

@@ -14,19 +14,20 @@ exports[`Storyshots Forms/DatetimeRangePicker Default 1`] = `
         className="inputContainer"
       >
         <input
+          className="cursor-not-allowed"
+          disabled={true}
           onBlur={[Function]}
           onChange={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
           placeholder="DD/MM/YYYY"
-          tabIndex={1}
+          readOnly={true}
           value="11/08/2021"
         />
       </div>
       <input
-        className="InputTime-from font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 timeInput"
+        className="InputTime-from font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 cursor-not-allowed !opacity-100 timeInput"
         onChange={[Function]}
         style={Object {}}
         tabIndex={1}
@@ -41,19 +42,20 @@ exports[`Storyshots Forms/DatetimeRangePicker Default 1`] = `
         className="inputContainer"
       >
         <input
+          className="cursor-not-allowed"
+          disabled={true}
           onBlur={[Function]}
           onChange={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
           placeholder="DD/MM/YYYY"
-          tabIndex={1}
+          readOnly={true}
           value="01/08/2021"
         />
       </div>
       <input
-        className="InputTime-to font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 timeInput"
+        className="InputTime-to font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 cursor-not-allowed !opacity-100 timeInput"
         onChange={[Function]}
         style={Object {}}
         tabIndex={1}
