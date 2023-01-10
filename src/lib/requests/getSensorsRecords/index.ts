@@ -1,17 +1,6 @@
-import { supabase } from "@auth/supabase";
 import { DateValueType } from "@common/interfaces";
-import {
-  SensorQueryResponseType,
-  parseSensorRecords,
-} from "@lib/hooks/usePublicSensors";
-
-export const recordsQueryString = `
-  id,
-  records (
-    recorded_at,
-    measurements
-  )
-`;
+import { parseSensorRecords } from "@lib/hooks/usePublicSensors";
+import { getRecordsBySensorId } from "../getRecordsBySensorId";
 
 export interface GetSensorsOptionsType {
   ids: number[];
@@ -23,20 +12,12 @@ export const getSensorsRecords = async (
   ids?: number[]
 ): Promise<SensorsRecordsMapType> => {
   if (!ids || ids.length === 0) return {};
-  const { data, error } = await supabase
-    .from<SensorQueryResponseType>("sensors")
-    .select(recordsQueryString)
-    .filter("id", "in", `(${ids.toString()})`);
+  const sensorsRecordsMap = {} as SensorsRecordsMapType;
 
-  if (error) throw error;
-  if (!data) return {};
-  const sensorsRecordsMap = data?.reduce(
-    (acc, s) => ({
-      ...acc,
-      [s.id]: parseSensorRecords(s.records),
-    }),
-    {}
-  );
+  for (const sensorId of ids) {
+    const { records } = await getRecordsBySensorId(sensorId);
+    sensorsRecordsMap[sensorId] = parseSensorRecords(records);
+  }
 
   return sensorsRecordsMap;
 };

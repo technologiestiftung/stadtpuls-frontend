@@ -10,9 +10,6 @@ import { useAuth } from "@auth/Auth";
 
 interface useSensorRecordsParamsType {
   sensorId: number | undefined;
-  startDateString?: string;
-  endDateString?: string;
-  maxRows?: number;
 }
 
 interface useSensorRecordsReturnType {
@@ -57,46 +54,24 @@ type fetchSensorRecordsSignature = (
 
 const fetchSensorRecords: fetchSensorRecordsSignature = async ({
   sensorId,
-  startDateString,
-  endDateString,
-  maxRows,
 }) => {
   if (!sensorId) return { records: [], count: null };
 
-  const { records, count } = await getRecordsBySensorId(sensorId, {
-    startDate: startDateString,
-    endDate: endDateString,
-    maxRows: maxRows,
-  });
+  const { records, count } = await getRecordsBySensorId(sensorId);
 
   return { records, count };
 };
 
 export const useSensorRecords = ({
   sensorId,
-  startDateString,
-  endDateString,
-  maxRows,
 }: useSensorRecordsParamsType): useSensorRecordsReturnType => {
   const { authenticatedUser } = useAuth();
   const userId = authenticatedUser?.id;
   const [actionError, setActionError] = useState<Error | null>(null);
-  const params = [
-    `sensor-${sensorId || "no"}-records`,
-    sensorId,
-    startDateString,
-    endDateString,
-    maxRows,
-  ];
+  const params = [`sensor-${sensorId || "no"}-records`, sensorId];
   const { data, error } = useSWR<GetRecordsResponseType, Error>(
     params,
-    () =>
-      fetchSensorRecords({
-        sensorId,
-        startDateString,
-        endDateString,
-        maxRows,
-      }),
+    () => fetchSensorRecords({ sensorId }),
     {
       revalidateOnFocus: false,
     }
