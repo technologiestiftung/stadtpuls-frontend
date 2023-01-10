@@ -113,13 +113,13 @@ const SensorPage: FC<{
   }, []);
 
   const handleDownload = useCallback((): void => {
-    if (isFallback || !initialSensor?.id) return;
+    if (isFallback || !initialSensor?.id || records.length === 0) return;
     const CSVTitle = `sensor-${initialSensor.id}`;
 
     const CSVData = createCSVStructure(records);
 
     downloadCSVString(CSVData, CSVTitle);
-  }, [initialSensor?.id, isFallback]);
+  }, [initialSensor?.id, records, isFallback]);
 
   const sensorToRender = !isFallback && !isLoading && (sensor || initialSensor);
   return (
