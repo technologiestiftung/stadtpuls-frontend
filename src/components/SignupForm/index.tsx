@@ -6,7 +6,6 @@ import { TextLink } from "@components/TextLink";
 import { FormTextInput } from "@components/FormTextInput";
 import { FormCheckbox } from "@components/FormCheckbox";
 import { SignInUpFormWrapper } from "@components/SignInUpFormWrapper";
-import { useDebounce } from "use-debounce";
 import {
   requiredEmailValidation,
   requiredUsernameValidation,
@@ -16,7 +15,6 @@ import {
   FormFieldRules,
   FormFieldRulesPropType,
 } from "@components/FormFieldRules";
-import { useUniqueUsernameValidation } from "@lib/hooks/useUniqueUsernameValidation";
 import { getTranslatedErrorMessage } from "@lib/translationUtil";
 
 interface SignupFormData {
@@ -96,21 +94,13 @@ export const SignupForm: FC<SignupFormPropType> = ({
     resolver: yupResolver(formSchema),
   });
   const watchUsername = watch("username");
-  // FIXME: Understand why the types here are not right
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  const [debouncedUsername] = useDebounce<string>(
-    watchUsername,
-    500
-  ) as string[];
-  const { isUnique: isUsernameUnique, isLoading } =
-    useUniqueUsernameValidation(debouncedUsername);
 
   useEffect(() => setIsSubmitted(formIsSubmitted), [formIsSubmitted]);
 
   const usernameRules = getUsernameRules({
     value: watchUsername,
-    isUnique: !!isUsernameUnique,
-    isLoading: !!isLoading,
+    isUnique: false,
+    isLoading: false,
   });
   const usernameIsInvalid = usernameRules.some(
     ({ isFulfilled }) => !isFulfilled
