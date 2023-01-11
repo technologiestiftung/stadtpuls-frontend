@@ -1,5 +1,5 @@
 const colors = require("./src/style/colors");
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 const fallbackFonts = [
   "ui-sans-serif",
@@ -25,9 +25,9 @@ module.exports = {
   theme: {
     colors,
     screens: {
-      xs: '400px',
+      xs: "400px",
       ...defaultTheme.screens,
-      '3xl': '1920px',
+      "3xl": "1920px",
     },
     fontFamily: {
       headline: ["'SpaceGrotesk'", ...fallbackFonts],
@@ -50,9 +50,13 @@ module.exports = {
       none: "none",
     },
     extend: {
+      maxWidth: {
+        "8xl": "90rem",
+      },
       backgroundImage: {
-        'sensor-page-header': "url('/images/sensor-page-header-pixels.svg')",
-        'sensor-page-header-mobile': "url('/images/sensor-page-header-pixels-mobile.svg')",
+        "sensor-page-header": "url('/images/sensor-page-header-pixels.svg')",
+        "sensor-page-header-mobile":
+          "url('/images/sensor-page-header-pixels-mobile.svg')",
       },
       animation: {
         borderpulse: "border-pulse 3s ease-in-out infinite",
@@ -92,15 +96,15 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/forms"),
-    require('@tailwindcss/typography'),
-    function ({addUtilities}) {
+    require("@tailwindcss/typography"),
+    function ({ addUtilities }) {
       const extendUnderline = {
-        '.underline-green': { 'text-decoration-color': colors.green, },
-        '.underline-blue': { 'text-decoration-color': colors.blue, },
-        '.underline-purple': { 'text-decoration-color': colors.purple, },
-        '.underline-gray': { 'text-decoration-color': colors.gray['200'], },
-      }
-      addUtilities(extendUnderline)
-    }
+        ".underline-green": { "text-decoration-color": colors.green },
+        ".underline-blue": { "text-decoration-color": colors.blue },
+        ".underline-purple": { "text-decoration-color": colors.purple },
+        ".underline-gray": { "text-decoration-color": colors.gray["200"] },
+      };
+      addUtilities(extendUnderline);
+    },
   ],
 };

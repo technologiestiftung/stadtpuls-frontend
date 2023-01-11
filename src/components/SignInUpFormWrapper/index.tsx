@@ -16,6 +16,10 @@ interface TextsObjectType {
   submitButton: string;
 }
 
+const shutdownLevel = parseInt(
+  `${process.env.NEXT_PUBLIC_SHUTDOWN_LEVEL || 0}`
+);
+
 const getTextsByType = (type: "in" | "up"): TextsObjectType =>
   type === "in"
     ? {
@@ -44,16 +48,19 @@ export const SignInUpFormWrapper: FC<SignInUpFormWrapperPropType> = ({
   return (
     <SmallModal
       title={texts.title}
+      className='w-full max-w-sm'
       footerContent={
         <>
-          <section className='text-gray-500'>
-            {`${texts.switchQuestion} `}
-            <Link href={`/${texts.switchLinkRoute}`} passHref>
-              <TextLink className='inline-block'>
-                {texts.switchLinkText}
-              </TextLink>
-            </Link>
-          </section>
+          {shutdownLevel === 0 && (
+            <section className='text-gray-500'>
+              {`${texts.switchQuestion} `}
+              <Link href={`/${texts.switchLinkRoute}`} passHref>
+                <TextLink className='inline-block'>
+                  {texts.switchLinkText}
+                </TextLink>
+              </Link>
+            </section>
+          )}
           <section
             className='flex flex-col'
             style={{ justifyContent: "flex-end" }}
