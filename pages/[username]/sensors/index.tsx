@@ -16,6 +16,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const username = params?.username;
     if (!username || Array.isArray(username)) return { notFound: true };
     const account = await getAccountDataByUsername(username);
+
+    if (!account) return { notFound: true };
     return {
       props: { account: account || null, error: null },
       revalidate: 30,

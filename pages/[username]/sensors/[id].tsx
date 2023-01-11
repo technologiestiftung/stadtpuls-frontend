@@ -43,6 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       return { notFound: true };
     const { records } = await getRecordsBySensorId(`${sensorId}`);
 
+    if (!records) return { notFound: true };
     return { props: { sensor, records, error: null }, revalidate: 60 };
   } catch (error) {
     const { details } = error as { details: string };

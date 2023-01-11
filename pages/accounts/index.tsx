@@ -8,6 +8,7 @@ import { getPublicAccounts } from "@lib/requests/getPublicAccounts";
 export const getStaticProps: GetStaticProps = async () => {
   try {
     const { accounts } = await getPublicAccounts();
+    if (!accounts) return { notFound: true };
     return { props: { accounts, error: null } };
   } catch (error) {
     console.error(JSON.stringify(error));

@@ -21,6 +21,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const recordsMap = await getSensorsRecords(
       curatedSensors.map(({ id }) => id)
     );
+    if (!curatedSensors || !recordsMap) return { notFound: true };
     return { props: { curatedSensors, recordsMap, error: null } };
   } catch (error) {
     console.error(JSON.stringify(error));
