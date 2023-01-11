@@ -1,6 +1,6 @@
 {
   "name": "stadtpuls-frontend",
-  "version": "1.1.0-rc.1",
+  "version": "1.1.1",
   "private": true,
   "dependencies": {
     "@headlessui/react": "1.4.1",
@@ -25,12 +25,11 @@
     "d3-time-format": "4.0.0",
     "moment": "2.29.2",
     "next-images": "1.8.1",
-    "next-mdx-enhanced": "5.0.0",
     "next-mdx-remote": "3.0.8",
-    "nextjs-progressbar": "0.0.11",
+    "nextjs-progressbar": "0.0.14",
     "prism-themes": "1.9.0",
     "react": "17.0.2",
-    "react-autolinker": "1.0.7",
+    "react-autolinker": "^1.0.7",
     "react-circular-progressbar": "2.0.4",
     "react-day-picker": "7.4.10",
     "react-dom": "17.0.2",
