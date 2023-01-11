@@ -14,7 +14,8 @@ const preShutdownTexts = {
     <>
       Stadtpuls wird am <strong>31. Januar 2023</strong> beendet.
       <br />
-      Ab dann wird keine Registrierung mehr möglich sein.
+      Ab dem <strong>16. Januar 2023</strong> wird keine Registrierung mehr
+      möglich sein.
       <br />
       <a
         href='https://stories.stadtpuls.com/stadtpuls-ende'

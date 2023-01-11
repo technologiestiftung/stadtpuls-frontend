@@ -15,7 +15,7 @@ const shutdownLevel = parseInt(
 const gracePeriodText = (
   <div className='flex flex-col gap-3'>
     <p>
-      Ab dem <strong>11. Januar 2023</strong> sind keine neuen Registrierungen
+      Ab dem <strong>16. Januar 2023</strong> sind keine neuen Registrierungen
       möglich und ab dem <strong>31. Januar 2023</strong> können keinen Daten an
       die Plattform gesendet werden.
     </p>
