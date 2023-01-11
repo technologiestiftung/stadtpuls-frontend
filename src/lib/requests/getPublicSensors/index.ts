@@ -1,9 +1,10 @@
 import {
-  ParsedSensorType,
   mapPublicSensor,
+  ParsedSensorType,
   SensorQueryResponseType,
 } from "@lib/hooks/usePublicSensors";
-import { getBaseUrl } from "@lib/urlUtil";
+import path from "path";
+import { promises as fs } from "fs";
 
 export const sensorQueryString = `
   id,
@@ -29,13 +30,16 @@ export const sensorQueryString = `
   )
 `;
 
-export const getPublicSensors = async (): Promise<{
+type SensorsResponseType = {
   sensors: ParsedSensorType[];
   count: number;
-}> => {
-  const response = await fetch(`${getBaseUrl()}/data/sensors.json`);
+};
+
+export const getPublicSensors = async (): Promise<SensorsResponseType> => {
+  const basePath = path.join(process.cwd(), "public/data");
+  const response = await fs.readFile(`${basePath}/sensors.json`, "utf8");
   try {
-    const rawSensors = (await response.json()) as SensorQueryResponseType[];
+    const rawSensors = JSON.parse(response) as SensorQueryResponseType[];
     const sensors = rawSensors.map(mapPublicSensor);
     return { count: sensors.length, sensors };
   } catch (error) {

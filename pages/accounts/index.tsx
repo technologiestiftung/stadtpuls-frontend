@@ -1,11 +1,23 @@
 import { FC } from "react";
 import { AccountsGrid } from "@components/AccountsGrid";
-import { usePublicAccounts } from "@lib/hooks/usePublicAccounts";
+import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
 import classNames from "classnames";
+import { GetStaticProps } from "next";
+import { getPublicAccounts } from "@lib/requests/getPublicAccounts";
 
-const AccountsOverview: FC = () => {
-  const { accounts, isLoading: accountsAreLoading } = usePublicAccounts();
+export const getStaticProps: GetStaticProps = async () => {
+  try {
+    const { accounts } = await getPublicAccounts();
+    return { props: { accounts, error: null } };
+  } catch (error) {
+    console.error(JSON.stringify(error));
+    return { notFound: true };
+  }
+};
 
+const AccountsOverview: FC<{
+  accounts: ParsedAccountType[];
+}> = ({ accounts }) => {
   if (!accounts || accounts.length === 0)
     return (
       <div className='container mx-auto max-w-8xl pt-12 pb-24 px-4'>
@@ -29,7 +41,7 @@ const AccountsOverview: FC = () => {
           Alle Accounts
         </h1>
       </div>
-      <AccountsGrid isLoading={accountsAreLoading} accounts={accounts} />
+      <AccountsGrid isLoading={false} accounts={accounts} />
     </div>
   );
 };

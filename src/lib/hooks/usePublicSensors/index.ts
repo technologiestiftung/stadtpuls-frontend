@@ -1,7 +1,5 @@
-import useSWR from "swr";
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { IntegrationType } from "@lib/integrationsUtil";
-import { getPublicSensors } from "@lib/requests/getPublicSensors";
 import { DateValueType } from "@common/interfaces";
 
 type SensorType = definitions["sensors"];
@@ -87,38 +85,5 @@ export const mapPublicSensor = (
     ttnDeviceId: external_id,
     latitude: latitude || 0,
     longitude: longitude || 0,
-  };
-};
-
-interface usePublicSensorsParamsType {
-  initialData?: {
-    sensors: ParsedSensorType[];
-    count: number;
-  };
-}
-
-interface DataType {
-  sensors: ParsedSensorType[];
-  count: number;
-}
-
-export const usePublicSensors = (
-  { initialData }: usePublicSensorsParamsType = {} as usePublicSensorsParamsType
-): DataType & {
-  error: Error | null;
-  isLoading: boolean;
-} => {
-  const params = ["usePublicSensors", initialData];
-  const { data, error } = useSWR<DataType, Error>(
-    params,
-    () => getPublicSensors(),
-    { fallbackData: initialData }
-  );
-
-  return {
-    sensors: data?.sensors || [],
-    count: data?.count || 0,
-    isLoading: !data && !error,
-    error: error || null,
   };
 };

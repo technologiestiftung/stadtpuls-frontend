@@ -1,6 +1,5 @@
 import moment from "moment";
 import "moment/locale/de";
-import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { DateValueType } from "@common/interfaces";
 moment.locale("de-DE");
 
@@ -11,13 +10,13 @@ export interface ExtendedDateValueType extends DateValueType {
 }
 
 export const createDateValueArray = (
-  input: Pick<definitions["records"], "id" | "recorded_at" | "measurements">[]
+  input: DateValueType[]
 ): ExtendedDateValueType[] => {
-  const dateValueArray = input.map(({ id, measurements, recorded_at }) => {
-    const dateMoment = moment.parseZone(recorded_at);
+  const dateValueArray = input.map(({ id, value, date }) => {
+    const dateMoment = moment.parseZone(date);
     return {
       id,
-      value: measurements && measurements.length >= 1 ? measurements[0] : 0,
+      value,
       date: dateMoment.toDate(),
       dateISOString: dateMoment.toISOString(),
       formattedDay: dateMoment.format("DD. MMM YYYY"),

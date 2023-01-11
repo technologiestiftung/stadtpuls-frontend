@@ -1,8 +1,6 @@
 import { sensorQueryString } from "@lib/requests/getPublicSensors";
-import useSWR from "swr";
 import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions";
 import { SensorQueryResponseType } from "@lib/hooks/usePublicSensors";
-import { getPublicAccounts } from "@lib/requests/getPublicAccounts";
 
 export const accountQueryString = `
   id,
@@ -35,11 +33,6 @@ export interface ParsedAccountType {
   sensors: definitions["extended_user_profiles"]["sensors"];
 }
 
-interface ReturnedAccountsType {
-  accounts: ParsedAccountType[];
-  count: number;
-}
-
 export const mapPublicAccount = ({
   ...user
 }: definitions["extended_user_profiles"]): ParsedAccountType => ({
@@ -54,29 +47,3 @@ export const mapPublicAccount = ({
   categories: user.categories || [],
   sensors: user.sensors,
 });
-
-interface usePublicAccountsParamsType {
-  initialData?: ReturnedAccountsType;
-}
-
-export const usePublicAccounts = (
-  {
-    initialData,
-  }: usePublicAccountsParamsType = {} as usePublicAccountsParamsType
-): ReturnedAccountsType & {
-  error: Error | null;
-  isLoading: boolean;
-} => {
-  const { data, error } = useSWR<ReturnedAccountsType, Error>(
-    ["usePublicAccounts", initialData],
-    () => getPublicAccounts(),
-    { fallbackData: initialData }
-  );
-
-  return {
-    accounts: data?.accounts || [],
-    count: data?.count || 0,
-    error: error || null,
-    isLoading: !data && !error,
-  };
-};

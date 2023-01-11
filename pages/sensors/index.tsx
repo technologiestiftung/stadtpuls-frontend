@@ -1,36 +1,58 @@
 import { FC } from "react";
-import { usePublicSensors } from "@lib/hooks/usePublicSensors";
-import { useRouter } from "next/router";
 import { SensorsMap } from "@components/SensorsMap";
-import { useSensorsRecords } from "@lib/hooks/useSensorsRecords";
+import { GetStaticProps } from "next";
+import { getPublicSensors } from "@lib/requests/getPublicSensors";
+import {
+  ParsedSensorType,
+  parseSensorRecords,
+} from "@lib/hooks/usePublicSensors";
+import { getSensorsRecords } from "@lib/requests/getSensorsRecords";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions/generated";
+
+type RecordType = Omit<definitions["records"], "measurements"> & {
+  measurements: number[];
+};
 
 interface SensorsOverviewPropType {
-  totalSensors: number;
+  sensors: ParsedSensorType[];
+  sensorsRecordsMap: Record<string, RecordType[]>;
 }
 
 export const MAX_SENSORS_PER_PAGE = 30;
 
-const SensorsOverview: FC<SensorsOverviewPropType> = () => {
-  const { reload } = useRouter();
+export const getStaticProps: GetStaticProps = async () => {
+  try {
+    const { sensors } = await getPublicSensors();
+    const sensorsRecordsMap = await getSensorsRecords(
+      sensors.map(({ id }) => id)
+    );
+    return { props: { sensors, sensorsRecordsMap, error: null } };
+  } catch (error) {
+    console.error(JSON.stringify(error));
+    return { notFound: true };
+  }
+};
 
-  const { sensors, error, isLoading } = usePublicSensors();
-  const ids = sensors.map(({ id }) => id);
-  const { sensorsRecordsMap } = useSensorsRecords(ids);
-  const sensorsAreThere =
-    !error && Array.isArray(sensors) && sensors.length > 0;
+const SensorsOverview: FC<SensorsOverviewPropType> = ({
+  sensors,
+  sensorsRecordsMap,
+}) => {
+  const sensorsAreThere = Array.isArray(sensors) && sensors.length > 0;
 
-  if (error?.message === "JWT expired") reload();
-
-  const sensorsToDisplay = !isLoading && sensorsAreThere ? sensors : [];
+  const sensorsToDisplay = sensorsAreThere ? sensors : [];
   return (
     <div className='pt-[62px]'>
       <SensorsMap
-        error={error || undefined}
-        sensors={sensorsToDisplay.map(s => ({
-          ...s,
-          parsedRecords: sensorsRecordsMap[s.id],
-        }))}
-        sensorsAreLoading={isLoading}
+        sensors={sensorsToDisplay.map(s => {
+          const parsedRecords = parseSensorRecords(
+            sensorsRecordsMap[s.id] || []
+          );
+          return {
+            ...s,
+            parsedRecords,
+          };
+        })}
+        sensorsAreLoading={false}
       />
     </div>
   );

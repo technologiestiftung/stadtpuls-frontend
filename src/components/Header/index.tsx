@@ -1,17 +1,14 @@
 import Link from "next/link";
 import { StadtpulsLogo } from "@components/StadtpulsLogo";
-import { AuthLink } from "@components/AuthLink";
 import { HeaderMenu } from "@components/HeaderMenu";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { useUserData } from "@lib/hooks/useUserData";
 
 const SCROLL_THRESHOLD = 100;
 
 export const Header: React.FC = () => {
   const router = useRouter();
   const { pathname } = router || {};
-  const { user } = useUserData();
   const [hasScrolled, setHasScrolled] = useState<boolean>(false);
   const hasDarkMode = pathname === "/" && !hasScrolled;
 
@@ -64,7 +61,6 @@ export const Header: React.FC = () => {
         </Link>
         <section className='flex flex-row-reverse lg:flex-row gap-2 sm:gap-4 items-center pr-4'>
           <HeaderMenu hasDarkMode={hasDarkMode} />
-          <AuthLink loggedInUserName={user?.username} />
         </section>
       </nav>
     </header>

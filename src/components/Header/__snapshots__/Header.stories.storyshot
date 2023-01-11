@@ -109,23 +109,6 @@ exports[`Storyshots Layout/Header Default 1`] = `
           </ul>
         </nav>
       </div>
-      <span
-        className="inline-flex items-center gap-6"
-      >
-        <a
-          className="inline-flex text gap-2 transition items-center font-headline font-semibold group-hover:text-green"
-          href="/signin"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          <test-file-stub />
-          <span
-            className="hidden xs:inline-block"
-          >
-            Login
-          </span>
-        </a>
-      </span>
     </section>
   </nav>
 </header>

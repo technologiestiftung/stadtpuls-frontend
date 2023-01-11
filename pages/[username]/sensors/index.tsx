@@ -5,12 +5,11 @@ import {
 import { GetStaticPaths, GetStaticProps } from "next";
 import { FC } from "react";
 import { UserInfoWithData } from "@components/UserInfoHeader/withData";
-import { useSensorsRecords } from "@lib/hooks/useSensorsRecords";
 import { getPublicAccounts } from "@lib/requests/getPublicAccounts";
 import { useRouter } from "next/router";
 import { SensorsListRow } from "@components/SensorsListRow";
 import { SensorsListRowLoadingSkeleton } from "@components/SensorsListRowLoadingSkeleton";
-import { useAccountData } from "@lib/hooks/useAccountData";
+import { parseSensorRecords } from "@lib/hooks/usePublicSensors";
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
@@ -36,26 +35,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 interface AccountSensorsPagePropType {
-  account: AccountWithSensorsType | null;
+  account: AccountWithSensorsType;
 }
 
-const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({
-  account: initalAccount,
-}) => {
+const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({ account }) => {
   const { isFallback } = useRouter();
-  const { account, isLoading } = useAccountData({
-    username: initalAccount?.username,
-    initialData: initalAccount || undefined,
-  });
-  const { sensorsRecordsMap } = useSensorsRecords(
-    account?.sensors.map(s => s.id)
-  );
 
-  const sensorsToDisplay = account?.sensors || [];
+  const sensorsToDisplay = (account.sensors || []).map(sensor => ({
+    ...sensor,
+    parsedRecords: parseSensorRecords(sensor.parsedRecords),
+  }));
   return (
     <>
       <UserInfoWithData
-        routeAccount={account || undefined}
+        routeAccount={account}
+        sensors={sensorsToDisplay}
         isLoading={isFallback || !account}
         activeTab='sensors'
       />
@@ -69,7 +63,7 @@ const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({
             : "",
         ].join(" ")}
       >
-        {(isFallback || isLoading || sensorsToDisplay.length > 0) && (
+        {(isFallback || sensorsToDisplay.length > 0) && (
           <ul className='flex flex-col w-[calc(100%+16px)] ml-[-8px]'>
             {isFallback
               ? Array.from({ length: 10 }).map((_, i) => (
@@ -78,13 +72,13 @@ const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({
               : sensorsToDisplay.map(sensor => (
                   <SensorsListRow
                     {...sensor}
-                    parsedRecords={sensorsRecordsMap[sensor.id]}
+                    parsedRecords={sensor.parsedRecords}
                     key={sensor.id}
                   />
                 ))}
           </ul>
         )}
-        {!isFallback && !isLoading && sensorsToDisplay.length === 0 && (
+        {!isFallback && sensorsToDisplay.length === 0 && (
           <p>Keine Sensoren vorhanden</p>
         )}
       </div>

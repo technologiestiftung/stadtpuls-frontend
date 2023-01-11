@@ -10,7 +10,7 @@ export const getPublicRecords = async (): Promise<{
   const records = [] as definitions["records"][];
 
   for (const sensor of sensors) {
-    const sensorRecords = await getRecordsBySensorId(sensor.id);
+    const sensorRecords = await getRecordsBySensorId(`${sensor.id}`);
     records.concat(sensorRecords.records);
   }
 

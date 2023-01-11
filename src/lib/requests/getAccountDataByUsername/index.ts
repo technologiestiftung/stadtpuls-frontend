@@ -1,11 +1,19 @@
 import { ParsedAccountType } from "@lib/hooks/usePublicAccounts";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions/generated";
 import { getPublicAccounts } from "../getPublicAccounts";
 import { getPublicSensors } from "../getPublicSensors";
+import { getSensorsRecords } from "../getSensorsRecords";
+
+type RecordType = Omit<definitions["records"], "measurements"> & {
+  measurements: number[];
+};
 
 export interface AccountWithSensorsType
   extends Omit<ParsedAccountType, "sensors"> {
-  sensors: ParsedSensorType[];
+  sensors: (Omit<ParsedSensorType, "parsedRecords"> & {
+    parsedRecords: RecordType[];
+  })[];
 }
 
 export const getAccountDataByUsername = async (
@@ -24,9 +32,21 @@ export const getAccountDataByUsername = async (
     accountData.sensors.includes(sensor.id)
   );
 
+  const sensorsRecordsMap = await getSensorsRecords(
+    sensors.map(({ id }) => id)
+  );
+  const sensorsWithRecords = sensors.map(sensor => ({
+    ...sensor,
+    parsedRecords: (sensorsRecordsMap[sensor.id] || []).map(record => ({
+      ...record,
+      measurements: (record.measurements || []) as number[],
+    })),
+  }));
+
   const accountDataWithSensors = {
     ...accountData,
-    sensors,
+    sensors: sensorsWithRecords,
   };
+
   return accountDataWithSensors;
 };
