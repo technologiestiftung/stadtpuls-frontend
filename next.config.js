@@ -1,6 +1,5 @@
 module.exports = {
   swcMinify: false,
-  staticPageGenerationTimeout: 1000,
   async headers() {
     return [
       {
