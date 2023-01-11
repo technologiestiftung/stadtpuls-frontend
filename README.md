@@ -1,4 +1,11 @@
-![](https://img.shields.io/badge/Built%20with%20%E2%9D%A4%EF%B8%8F-at%20Technologiestiftung%20Berlin-blue)
+| :warning: STADTPULS HAS BEEN DISCONTINUED                                                                                                                                                                                                                                                                                                                                                                                                          |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Stadtpuls' pilot phase is over and the project isn't maintained anymore. <br />If you wish to know why, read the [blog post](https://stories-stadtpuls-com.translate.goog/stadtpuls-ende?_x_tr_sl=de&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp) <br /> If you wish to download or clone the working code of this repository, use [the latest pre-shutdown release.](https://github.com/technologiestiftung/stadtpuls-frontend/releases/tag/v1.1.1) |
+
+---
+<br />
+
+![](https://img.shields.io/badge/Build%20with%20%E2%9D%A4%EF%B8%8F-at%20Technologiesitftung%20Berlin-blue)
 
 # Stadtpuls (Frontend)
 

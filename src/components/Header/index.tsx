@@ -9,6 +9,10 @@ import { DownloadQueueButton } from "@components/DownloadQueueButton/widthData";
 
 const SCROLL_THRESHOLD = 100;
 
+const shutdownLevel = parseInt(
+  `${process.env.NEXT_PUBLIC_SHUTDOWN_LEVEL || 0}`
+);
+
 export const Header: React.FC = () => {
   const router = useRouter();
   const { pathname } = router || {};
@@ -66,7 +70,7 @@ export const Header: React.FC = () => {
         <section className='flex flex-row-reverse lg:flex-row gap-2 sm:gap-4 items-center pr-4'>
           <HeaderMenu hasDarkMode={hasDarkMode} />
           <DownloadQueueButton />
-          <AuthLink loggedInUserName={user?.username} />
+          {shutdownLevel <= 1 && <AuthLink loggedInUserName={user?.username} />}
         </section>
       </nav>
     </header>

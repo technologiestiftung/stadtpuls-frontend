@@ -20,7 +20,7 @@
 }
 
 .button > div[class^="mapboxgl-ctrl"]:not(:empty) button {
-  @apply w-10 h-10 text-blue relative focus-offset rounded-none;
+  @apply w-10 h-10 text-blue relative rounded-none;
 }
 
 .button > div[class^="mapboxgl-ctrl"]:not(:empty) button:focus {
