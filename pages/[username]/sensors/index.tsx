@@ -19,8 +19,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     if (!account) return { notFound: true };
     return {
-      props: { account: account || null, error: null },
-      revalidate: 30,
+      props: { account: account, error: null },
     };
   } catch (error) {
     console.error(JSON.stringify(error));
@@ -43,7 +42,7 @@ interface AccountSensorsPagePropType {
 const AccountSensorsPage: FC<AccountSensorsPagePropType> = ({ account }) => {
   const { isFallback } = useRouter();
 
-  const sensorsToDisplay = (account.sensors || []).map(sensor => ({
+  const sensorsToDisplay = (account?.sensors || []).map(sensor => ({
     ...sensor,
     parsedRecords: parseSensorRecords(sensor.parsedRecords),
   }));
