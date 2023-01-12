@@ -1,182 +1,21 @@
 [
   {
-    "id": 153,
-    "name": "paul_temp",
-    "created_at": "2022-12-23T09:40:47.574+00:00",
+    "id": 10,
+    "name": "enviro+ carbon monoxide",
+    "created_at": "2021-10-04T17:01:09.969+00:00",
     "connection_type": "http",
     "external_id": null,
-    "description": "Raspberry Pico W - Temp Sensor",
+    "description": "Carbon monoxide measured with enviro+ attached to Raspberry Pi Zero in kO\n",
     "location": null,
-    "latitude": 49.8107200148624,
-    "longitude": 8.64217571429324,
-    "altitude": null,
-    "category_id": 2,
-    "icon_id": 8,
-    "user_id": "01e6ac47-66b4-4d72-a62a-fa465bd03f76",
-    "user": {
-      "name": "paul_schuetz",
-      "display_name": null
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 152,
-    "name": "Tegel Projekt - Luftdruck",
-    "created_at": "2022-10-11T12:06:14.583+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "box id: 5fcf669dfab469001ce52232 \nsensor id: 5fcf669dfab469001ce52238",
-    "location": null,
-    "latitude": 52.5550082556998,
-    "longitude": 13.3003395956393,
-    "altitude": null,
-    "category_id": 4,
-    "icon_id": 31,
-    "user_id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
-    "user": {
-      "name": "NoraK",
-      "display_name": null
-    },
-    "category": {
-      "id": 4,
-      "name": "Luftdruck"
-    }
-  },
-  {
-    "id": 151,
-    "name": "Tegel Projekt - Temperatur HDC1080",
-    "created_at": "2022-10-11T12:04:47.537+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "box id: 5fcf669dfab469001ce52232 \nsensor id: 5fcf669dfab469001ce52235",
-    "location": null,
-    "latitude": 52.5552436389193,
-    "longitude": 13.2942689729069,
-    "altitude": null,
-    "category_id": 2,
-    "icon_id": 22,
-    "user_id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
-    "user": {
-      "name": "NoraK",
-      "display_name": null
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 150,
-    "name": "Tegel Projekt - Temperatur BMP280",
-    "created_at": "2022-10-11T12:03:16.937+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "box id: 5fcf669dfab469001ce52232 \nsensor id: 5fcf669dfab469001ce52237",
-    "location": null,
-    "latitude": 52.5538794178438,
-    "longitude": 13.2968407196611,
-    "altitude": null,
-    "category_id": 2,
-    "icon_id": 10,
-    "user_id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
-    "user": {
-      "name": "NoraK",
-      "display_name": null
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 149,
-    "name": "Tegel Projekt - Lautstärke",
-    "created_at": "2022-10-11T11:59:06.472+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "box id: 5fcf669dfab469001ce52232 sensor id: 5fcf669dfab469001ce52236",
-    "location": null,
-    "latitude": 52.5586443367843,
-    "longitude": 13.2983090387306,
-    "altitude": null,
-    "category_id": 6,
-    "icon_id": 13,
-    "user_id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
-    "user": {
-      "name": "NoraK",
-      "display_name": null
-    },
-    "category": {
-      "id": 6,
-      "name": "Lautstärke"
-    }
-  },
-  {
-    "id": 148,
-    "name": "Tegel Projekt - Relative Luftfeuchte",
-    "created_at": "2022-10-11T11:54:44.225+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "box id: 5fcf669dfab469001ce52232 \nsensor id: 5fcf669dfab469001ce52234",
-    "location": null,
-    "latitude": 52.5,
-    "longitude": 13.39,
-    "altitude": null,
-    "category_id": 3,
-    "icon_id": 13,
-    "user_id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
-    "user": {
-      "name": "NoraK",
-      "display_name": null
-    },
-    "category": {
-      "id": 3,
-      "name": "Luftfeuchtigkeit"
-    }
-  },
-  {
-    "id": 147,
-    "name": "Tegel Projekt - UV-Intensität",
-    "created_at": "2022-10-11T11:49:58.291+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "box id: 5fcf669dfab469001ce52232\nsensor id: 5fcf669dfab469001ce52233",
-    "location": null,
-    "latitude": 52.5495935857833,
-    "longitude": 13.2980363272671,
-    "altitude": null,
-    "category_id": 7,
-    "icon_id": 27,
-    "user_id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
-    "user": {
-      "name": "NoraK",
-      "display_name": null
-    },
-    "category": {
-      "id": 7,
-      "name": "Helligkeit"
-    }
-  },
-  {
-    "id": 146,
-    "name": "Parkplatzsensor 2",
-    "created_at": "2022-07-20T13:50:10.94+00:00",
-    "connection_type": "ttn",
-    "external_id": "dzz-parking002",
-    "description": null,
-    "location": null,
-    "latitude": 51.0508876886298,
-    "longitude": 12.1279059441956,
+    "latitude": 52.4836880404568,
+    "longitude": 13.387464422176,
     "altitude": null,
     "category_id": 5,
-    "icon_id": 4,
-    "user_id": "a0921e50-39e6-4316-8004-ad8afc474265",
+    "icon_id": 17,
+    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
     "user": {
-      "name": "ZeitzDigital",
-      "display_name": null
+      "name": "hash",
+      "display_name": "ff6347"
     },
     "category": {
       "id": 5,
@@ -184,702 +23,12 @@
     }
   },
   {
-    "id": 145,
-    "name": "Parkplatzsensor 1",
-    "created_at": "2022-07-20T13:43:30.065+00:00",
-    "connection_type": "ttn",
-    "external_id": "dzz-parking001",
-    "description": null,
-    "location": null,
-    "latitude": 51.0508867449567,
-    "longitude": 12.1280108318228,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 4,
-    "user_id": "a0921e50-39e6-4316-8004-ad8afc474265",
-    "user": {
-      "name": "ZeitzDigital",
-      "display_name": null
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 144,
-    "name": "Besucherstrom 1",
-    "created_at": "2022-07-20T09:29:50.371+00:00",
-    "connection_type": "ttn",
-    "external_id": "dzz-peoplecounter001",
-    "description": "Sensor an der Brücke zum Schlosspark",
-    "location": null,
-    "latitude": 51.0507737602945,
-    "longitude": 12.1250233043661,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 21,
-    "user_id": "a0921e50-39e6-4316-8004-ad8afc474265",
-    "user": {
-      "name": "ZeitzDigital",
-      "display_name": null
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 143,
-    "name": "Besucherstrom 2",
-    "created_at": "2022-07-20T09:27:05.724+00:00",
-    "connection_type": "ttn",
-    "external_id": "dzz-peoplecounter002",
-    "description": "Sensor am Kassenhäuschen",
-    "location": null,
-    "latitude": 51.0499152244261,
-    "longitude": 12.1267268559294,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 20,
-    "user_id": "a0921e50-39e6-4316-8004-ad8afc474265",
-    "user": {
-      "name": "ZeitzDigital",
-      "display_name": null
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 142,
-    "name": "como-A81758FFFE0634FE in EN268",
-    "created_at": "2022-07-07T11:11:48.632723+00:00",
+    "id": 104,
+    "name": "como-A81758FFFE06350B in 9",
+    "created_at": "2022-05-31T08:25:05.926046+00:00",
     "connection_type": "http",
     "external_id": null,
-    "description": "id = \"8fc3cc72-ec88-6f1a-a61a-d98e9caea66f\"\neui64 = \"A81758FFFE0634FE\"\nalias = \"como-A81758FFFE0634FE\"\nowner = \"dEIn Labor\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"EN268\"\ndescription = \"großes Lötlabor\"\nsize_sqm = 120.0\nheight_m = 3.6\n\n[site]\nname = \"dEIn Labor\"\ndescription = \"\"\nstreet = \"Einsteinufer 17\"\nzip = \"10587\"\ncity = \"Berlin\"\n",
-    "location": "Berlin",
-    "latitude": 52.515481,
-    "longitude": 13.326469,
-    "altitude": null,
-    "category_id": 1,
-    "icon_id": null,
-    "user_id": "325e948a-4b9e-4578-b009-714a5d8196e4",
-    "user": {
-      "name": "COMo-Projekt",
-      "display_name": "COMo-Projekt"
-    },
-    "category": {
-      "id": 1,
-      "name": "CO2"
-    }
-  },
-  {
-    "id": 141,
-    "name": "TestHTTP-KFZCounter",
-    "created_at": "2022-07-01T16:27:35.28+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Anzahl KFZ pro Tag in der Jaffestr. Richtung Süd-Ost",
-    "location": null,
-    "latitude": 52.4992381018563,
-    "longitude": 13.2700523689944,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 12,
-    "user_id": "4b1b84a4-2865-412c-996a-eb0af2490f6e",
-    "user": {
-      "name": "BRZ5",
-      "display_name": "BRZ5"
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 140,
-    "name": "LHT65-Home",
-    "created_at": "2022-07-01T14:58:18.232+00:00",
-    "connection_type": "ttn",
-    "external_id": "eui-a840418f41840161",
-    "description": "Dragino Temp, Humidity",
-    "location": null,
-    "latitude": 52.4939403149118,
-    "longitude": 13.2620013163961,
-    "altitude": null,
-    "category_id": 2,
-    "icon_id": 3,
-    "user_id": "4b1b84a4-2865-412c-996a-eb0af2490f6e",
-    "user": {
-      "name": "BRZ5",
-      "display_name": "BRZ5"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 139,
-    "name": "Dazzler",
-    "created_at": "2022-06-30T17:12:28.06+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatursensor für SmartCity-Experimente",
-    "location": null,
-    "latitude": 52.5461990505354,
-    "longitude": 13.4238058136701,
-    "altitude": null,
-    "category_id": 2,
-    "icon_id": 14,
-    "user_id": "3aaec338-236f-4199-8510-075715ac4f9b",
-    "user": {
-      "name": "manton",
-      "display_name": null
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 138,
-    "name": "my air pollution",
-    "created_at": "2022-06-29T17:34:21.387+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "xksamc ckmd",
-    "location": null,
-    "latitude": 52.5,
-    "longitude": 13.39,
-    "altitude": null,
-    "category_id": 2,
-    "icon_id": 15,
-    "user_id": "4447079f-40b6-421d-9d97-5f7a1e34f65a",
-    "user": {
-      "name": "Shiran",
-      "display_name": null
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 137,
-    "name": "ESP32-assitant",
-    "created_at": "2022-06-29T15:02:30.314+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "A template repository for ESP32 projects that connect to https://github.com/technologiestiftung/stadtpuls-esp32-assistant. Create your own by going to this link https://github.com/technologiestiftung/stadtpuls-esp32-assistant/generate\n",
-    "location": null,
-    "latitude": 52.483668471649,
-    "longitude": 13.3880289889939,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 32,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 136,
-    "name": "Feuchtigkeitssensor 1",
-    "created_at": "2022-06-24T13:37:42.102+00:00",
-    "connection_type": "ttn",
-    "external_id": "dzz-beet001",
-    "description": "Feuchtigkeitsmessung in den Blumenbeeten im Schlosspark",
-    "location": null,
-    "latitude": 51.0499627599915,
-    "longitude": 12.1246729448473,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 31,
-    "user_id": "a0921e50-39e6-4316-8004-ad8afc474265",
-    "user": {
-      "name": "ZeitzDigital",
-      "display_name": null
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 135,
-    "name": "Feuchtigkeitssensor 2",
-    "created_at": "2022-06-24T13:37:38.919+00:00",
-    "connection_type": "ttn",
-    "external_id": "dzz-beet002",
-    "description": "Feuchtigkeitsmessung in den Blumenbeeten im Schlosspark",
-    "location": null,
-    "latitude": 51.0495711050345,
-    "longitude": 12.1270139092778,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 31,
-    "user_id": "a0921e50-39e6-4316-8004-ad8afc474265",
-    "user": {
-      "name": "ZeitzDigital",
-      "display_name": null
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 134,
-    "name": "Wasserpegelsensor Mühlgraben",
-    "created_at": "2022-06-24T06:39:27.787+00:00",
-    "connection_type": "ttn",
-    "external_id": "dzz-wilsen001",
-    "description": "Wilsen Sensor von Pepperl + Fuchs",
-    "location": null,
-    "latitude": 51.0521095918721,
-    "longitude": 12.1244388699838,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 11,
-    "user_id": "a0921e50-39e6-4316-8004-ad8afc474265",
-    "user": {
-      "name": "ZeitzDigital",
-      "display_name": null
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 133,
-    "name": "Feinstaubsensor",
-    "created_at": "2022-06-24T06:34:21.365+00:00",
-    "connection_type": "ttn",
-    "external_id": "dzz-fss001",
-    "description": "Feinstaubsensor alte Stadtbibliothek Zeitz Rahnestraße",
-    "location": null,
-    "latitude": 51.0503969190964,
-    "longitude": 12.1325633826636,
-    "altitude": null,
-    "category_id": 1,
-    "icon_id": 31,
-    "user_id": "a0921e50-39e6-4316-8004-ad8afc474265",
-    "user": {
-      "name": "ZeitzDigital",
-      "display_name": null
-    },
-    "category": {
-      "id": 1,
-      "name": "CO2"
-    }
-  },
-  {
-    "id": 132,
-    "name": "BaumScheibenSensor",
-    "created_at": "2022-06-22T12:13:43.49+00:00",
-    "connection_type": "ttn",
-    "external_id": "eui-a84041f67183fed9",
-    "description": "Der Sensor vom Typ Dragino LSE01 misst Bodenfeuchte, Bodenleitfähigkeit und Temperatur in einer Baumscheibe. Die Einheiten der Werte sind Bodenfeuchte in %, Temperatur in Celsius, Batteriestatus in Volt, Bodenleitfähigkeit in uS/cm, kalibriert bei 25C (0-20EC).",
-    "location": null,
-    "latitude": 52.4969622582906,
-    "longitude": 13.4406909397583,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 8,
-    "user_id": "76aa5fac-1e25-44df-938f-591abc43d9e9",
-    "user": {
-      "name": "JonasDaWi",
-      "display_name": null
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 131,
-    "name": "Johannisteich",
-    "created_at": "2022-06-17T13:54:40.522+00:00",
-    "connection_type": "ttn",
-    "external_id": "dzz-ldds75-001",
-    "description": "Pegelmessersensor Johannisteich",
-    "location": null,
-    "latitude": 51.0503616373093,
-    "longitude": 12.1237322688103,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 6,
-    "user_id": "a0921e50-39e6-4316-8004-ad8afc474265",
-    "user": {
-      "name": "ZeitzDigital",
-      "display_name": null
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 112,
-    "name": "Elektra",
-    "created_at": "2022-06-04T14:08:35.660627+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
-    "location": "Berlin",
-    "latitude": 52.4814051,
-    "longitude": 13.3898952,
-    "altitude": 30,
-    "category_id": 2,
-    "icon_id": 7,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 122,
-    "name": "Blink",
-    "created_at": "2022-06-04T14:08:35.660627+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
-    "location": "Berlin",
-    "latitude": 52.4814051,
-    "longitude": 13.3898952,
-    "altitude": 30,
-    "category_id": 2,
-    "icon_id": 7,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 125,
-    "name": "Medusa",
-    "created_at": "2022-06-04T14:08:35.660627+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
-    "location": "Berlin",
-    "latitude": 52.4814051,
-    "longitude": 13.3898952,
-    "altitude": 30,
-    "category_id": 2,
-    "icon_id": 2,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 114,
-    "name": "Wasp",
-    "created_at": "2022-06-04T14:08:35.660627+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
-    "location": "Berlin",
-    "latitude": 52.4814051,
-    "longitude": 13.3898952,
-    "altitude": 30,
-    "category_id": 2,
-    "icon_id": 18,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 123,
-    "name": "Polaris",
-    "created_at": "2022-06-04T14:08:35.660627+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
-    "location": "Berlin",
-    "latitude": 52.4814051,
-    "longitude": 13.3898952,
-    "altitude": 30,
-    "category_id": 2,
-    "icon_id": 2,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 111,
-    "name": "Storm",
-    "created_at": "2022-06-04T14:08:35.660627+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
-    "location": "Berlin",
-    "latitude": 52.4814051,
-    "longitude": 13.3898952,
-    "altitude": 30,
-    "category_id": 2,
-    "icon_id": 10,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 115,
-    "name": "Falcon",
-    "created_at": "2022-06-04T14:08:35.660627+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
-    "location": "Berlin",
-    "latitude": 52.4814051,
-    "longitude": 13.3898952,
-    "altitude": 30,
-    "category_id": 2,
-    "icon_id": 19,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 128,
-    "name": "Elixir",
-    "created_at": "2022-06-04T14:08:35.660627+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
-    "location": "Berlin",
-    "latitude": 52.4814051,
-    "longitude": 13.3898952,
-    "altitude": 30,
-    "category_id": 2,
-    "icon_id": 9,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 127,
-    "name": "Echo",
-    "created_at": "2022-06-04T14:08:35.660627+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
-    "location": "Berlin",
-    "latitude": 52.4814051,
-    "longitude": 13.3898952,
-    "altitude": 30,
-    "category_id": 2,
-    "icon_id": 10,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 126,
-    "name": "Ares",
-    "created_at": "2022-06-04T14:08:35.660627+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
-    "location": "Berlin",
-    "latitude": 52.4814051,
-    "longitude": 13.3898952,
-    "altitude": 30,
-    "category_id": 2,
-    "icon_id": 5,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 124,
-    "name": "Cypher",
-    "created_at": "2022-06-04T14:08:35.660627+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
-    "location": "Berlin",
-    "latitude": 52.4814051,
-    "longitude": 13.3898952,
-    "altitude": 30,
-    "category_id": 2,
-    "icon_id": 12,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 121,
-    "name": "Moonstar",
-    "created_at": "2022-06-04T14:08:35.660627+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
-    "location": "Berlin",
-    "latitude": 52.4814051,
-    "longitude": 13.3898952,
-    "altitude": 30,
-    "category_id": 2,
-    "icon_id": 7,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 120,
-    "name": "Dazzler",
-    "created_at": "2022-06-04T14:08:35.660627+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
-    "location": "Berlin",
-    "latitude": 52.4814051,
-    "longitude": 13.3898952,
-    "altitude": 30,
-    "category_id": 2,
-    "icon_id": 7,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 119,
-    "name": "Cloak",
-    "created_at": "2022-06-04T14:08:35.660627+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
-    "location": "Berlin",
-    "latitude": 52.4814051,
-    "longitude": 13.3898952,
-    "altitude": 30,
-    "category_id": 2,
-    "icon_id": 4,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 129,
-    "name": "Mantis",
-    "created_at": "2022-06-04T14:08:35.660627+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
-    "location": "Berlin",
-    "latitude": 52.4814051,
-    "longitude": 13.3898952,
-    "altitude": 30,
-    "category_id": 2,
-    "icon_id": 29,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 110,
-    "name": "como-A81758FFFE0634FD in 11",
-    "created_at": "2022-05-31T08:49:10.691178+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "id = \"3ed143dc-1a90-6e68-79f6-9799a54f8d88\"\neui64 = \"A81758FFFE0634FD\"\nalias = \"como-A81758FFFE0634FD\"\nowner = \"noisy Musicworld GmbH\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"11\"\ndescription = \"\"\nsize_sqm = 35.0\n\n[site]\nname = \"noisy Rooms\"\ndescription = \"\"\nstreet = \"Revaler Str. 99\"\nzip = \"10245\"\ncity = \"Berlin\"\n",
+    "description": "id = \"76004669-daac-0d75-a70a-17da54975ef3\"\neui64 = \"A81758FFFE06350B\"\nalias = \"como-A81758FFFE06350B\"\nowner = \"noisy Musicworld GmbH\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"9\"\ndescription = \"\"\nsize_sqm = 30.0\n\n[site]\nname = \"noisy Rooms\"\ndescription = \"\"\nstreet = \"Revaler Str. 99\"\nzip = \"10245\"\ncity = \"Berlin\"\n",
     "location": "Berlin",
     "latitude": 52.507756,
     "longitude": 13.453712,
@@ -920,22 +69,229 @@
     }
   },
   {
-    "id": 108,
-    "name": "como-A81758FFFE0632E3 in Musiksalon",
-    "created_at": "2022-05-31T08:29:14.288087+00:00",
+    "id": 114,
+    "name": "Wasp",
+    "created_at": "2022-06-04T14:08:35.660627+00:00",
     "connection_type": "http",
     "external_id": null,
-    "description": "id = \"80847907-4819-e7b1-e8fd-5253ee80403c\"\neui64 = \"A81758FFFE0632E3\"\nalias = \"como-A81758FFFE0632E3\"\nowner = \"Schloss Biesdorf\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"Musiksalon\"\ndescription = \"77m² im EG für kulturelle Veranstaltungen und Galeriebetrieb\"\nsize_sqm = 77.0\nheight_m = 8.0\n\n[site]\nname = \"Schloss Biesdorf\"\ndescription = \"Kommunale Galerie Bezirk Marzahn-Hellersdorf\"\nstreet = \"Alt-Biesdorf 55\"\nzip = \"12683\"\ncity = \"Berlin\"\n",
+    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
     "location": "Berlin",
-    "latitude": 52.509841,
-    "longitude": 13.557632,
+    "latitude": 52.4814051,
+    "longitude": 13.3898952,
+    "altitude": 30,
+    "category_id": 2,
+    "icon_id": 18,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 120,
+    "name": "Dazzler",
+    "created_at": "2022-06-04T14:08:35.660627+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
+    "location": "Berlin",
+    "latitude": 52.4814051,
+    "longitude": 13.3898952,
+    "altitude": 30,
+    "category_id": 2,
+    "icon_id": 7,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 128,
+    "name": "Elixir",
+    "created_at": "2022-06-04T14:08:35.660627+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
+    "location": "Berlin",
+    "latitude": 52.4814051,
+    "longitude": 13.3898952,
+    "altitude": 30,
+    "category_id": 2,
+    "icon_id": 9,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 14,
+    "name": "enviro+ particulate matter 10",
+    "created_at": "2021-10-04T17:04:27.149+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Particulate matter 10 measured with enviro+ attached to Raspberry Pi Zero in ug/m3",
+    "location": null,
+    "latitude": 52.4839039273588,
+    "longitude": 13.3870817565934,
+    "altitude": null,
+    "category_id": 5,
+    "icon_id": 9,
+    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
+    "user": {
+      "name": "hash",
+      "display_name": "ff6347"
+    },
+    "category": {
+      "id": 5,
+      "name": "Zähler"
+    }
+  },
+  {
+    "id": 149,
+    "name": "Tegel Projekt - Lautstärke",
+    "created_at": "2022-10-11T11:59:06.472+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "box id: 5fcf669dfab469001ce52232 sensor id: 5fcf669dfab469001ce52236",
+    "location": null,
+    "latitude": 52.5586443367843,
+    "longitude": 13.2983090387306,
+    "altitude": null,
+    "category_id": 6,
+    "icon_id": 13,
+    "user_id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
+    "user": {
+      "name": "NoraK",
+      "display_name": null
+    },
+    "category": {
+      "id": 6,
+      "name": "Lautstärke"
+    }
+  },
+  {
+    "id": 19,
+    "name": "Breakout Garden TVOC",
+    "created_at": "2021-10-11T14:24:19.149+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Measure indoor air quality total volatile organic compounds (TVOC) with Raspberry Pi. TVOC sensing from 0-60,000 ppb (parts per billion).",
+    "location": null,
+    "latitude": 52.4838799588605,
+    "longitude": 13.3878695428315,
+    "altitude": null,
+    "category_id": 5,
+    "icon_id": 12,
+    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
+    "user": {
+      "name": "hash",
+      "display_name": "ff6347"
+    },
+    "category": {
+      "id": 5,
+      "name": "Zähler"
+    }
+  },
+  {
+    "id": 27,
+    "name": "Loudness Sensor - Fadil",
+    "created_at": "2021-11-10T13:25:58.647+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Eckwohnung. Kreuzung. Tourismushotspot und Gastronomie. Nähe Hochbahn. Nähe Clubs. Sirenen, Sirenen, Sirenen.",
+    "location": null,
+    "latitude": 52.4984324596778,
+    "longitude": 13.4416700744616,
+    "altitude": null,
+    "category_id": 6,
+    "icon_id": 8,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 6,
+      "name": "Lautstärke"
+    }
+  },
+  {
+    "id": 5,
+    "name": "enviro+ temperatur",
+    "created_at": "2021-10-04T16:56:42.36+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Temperature  measured with enviro+ attached to Raspberry Pi Zero in °C",
+    "location": null,
+    "latitude": 52.4836116461114,
+    "longitude": 13.3875740393339,
+    "altitude": null,
+    "category_id": 2,
+    "icon_id": 8,
+    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
+    "user": {
+      "name": "hash",
+      "display_name": "ff6347"
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 62,
+    "name": "outside-env_analog_in_0",
+    "created_at": "2021-12-27T16:56:53.379+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Akkuspannung bei Dunkelheit bzw. Solarreglerausgangsspannung in Volt",
+    "location": null,
+    "latitude": 50.983947166787,
+    "longitude": 11.0144264056329,
+    "altitude": null,
+    "category_id": 8,
+    "icon_id": 1,
+    "user_id": "a7db9a70-9b09-4d11-98c1-ea161917f60c",
+    "user": {
+      "name": "fmanzke",
+      "display_name": "Fabian Manzke"
+    },
+    "category": {
+      "id": 8,
+      "name": "Sonstige"
+    }
+  },
+  {
+    "id": 70,
+    "name": "IoT Octopus - CO2 #001",
+    "created_at": "2022-02-03T10:22:42.651+00:00",
+    "connection_type": "ttn",
+    "external_id": "eui-70b3d57ed004c267",
+    "description": "Mit dem #IoT Octopus, der IoT Werkstatt, messen wir Umweltdaten - hier CO2",
+    "location": null,
+    "latitude": 52.4859660811895,
+    "longitude": 13.3377668541434,
     "altitude": null,
     "category_id": 1,
-    "icon_id": null,
-    "user_id": "325e948a-4b9e-4578-b009-714a5d8196e4",
+    "icon_id": 21,
+    "user_id": "df3f14d3-f869-4b1c-8a7e-94ee1ea17db5",
     "user": {
-      "name": "COMo-Projekt",
-      "display_name": "COMo-Projekt"
+      "name": "FabLab",
+      "display_name": null
     },
     "category": {
       "id": 1,
@@ -943,38 +299,84 @@
     }
   },
   {
-    "id": 107,
-    "name": "como-A81758FFFE06350A in 21",
-    "created_at": "2022-05-31T08:26:28.209079+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "id = \"cbdd4106-40c3-014c-f462-1579b1ea5c84\"\neui64 = \"A81758FFFE06350A\"\nalias = \"como-A81758FFFE06350A\"\nowner = \"noisy Musicworld GmbH\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"21\"\ndescription = \"\"\nsize_sqm = 15.0\n\n[site]\nname = \"noisy Rooms\"\ndescription = \"\"\nstreet = \"Revaler Str. 99\"\nzip = \"10245\"\ncity = \"Berlin\"\n",
-    "location": "Berlin",
-    "latitude": 52.507756,
-    "longitude": 13.453712,
+    "id": 77,
+    "name": "ParkletSensor1",
+    "created_at": "2022-02-16T08:43:42.761+00:00",
+    "connection_type": "ttn",
+    "external_id": "eui-a84041945183fed8",
+    "description": "Der Sensor vom Typ Dragino LSE01 misst Bodenfeuchte, Bodenleitfähigkeit und Temperatur in einem Hochbeet-Parklet. Die Einheiten der Werte sind Bodenfeuchte in %, Temperatur in Celsius, Batteriestatus in Volt, Bodenleitfähigkeit in uS/cm, kalibriert bei 25C (0-20EC).",
+    "location": null,
+    "latitude": 52.4969404813364,
+    "longitude": 13.4406167427151,
     "altitude": null,
-    "category_id": 1,
-    "icon_id": null,
-    "user_id": "325e948a-4b9e-4578-b009-714a5d8196e4",
+    "category_id": 8,
+    "icon_id": 22,
+    "user_id": "76aa5fac-1e25-44df-938f-591abc43d9e9",
     "user": {
-      "name": "COMo-Projekt",
-      "display_name": "COMo-Projekt"
+      "name": "JonasDaWi",
+      "display_name": null
     },
     "category": {
-      "id": 1,
-      "name": "CO2"
+      "id": 8,
+      "name": "Sonstige"
     }
   },
   {
-    "id": 106,
-    "name": "como-A81758FFFE063404 in Pepsi Boston Bar",
-    "created_at": "2022-05-31T08:26:24.872493+00:00",
+    "id": 86,
+    "name": "bosch-5",
+    "created_at": "2022-03-24T05:16:42.318+00:00",
+    "connection_type": "ttn",
+    "external_id": "bosch-5",
+    "description": "Belegungserkennung von Parkflächen (BOSCH)",
+    "location": null,
+    "latitude": 52.4691184814159,
+    "longitude": 13.3829267504392,
+    "altitude": null,
+    "category_id": 8,
+    "icon_id": 29,
+    "user_id": "7659d8ef-d77b-470d-acf9-47436d876d7f",
+    "user": {
+      "name": "BSR_de",
+      "display_name": "BSR_de"
+    },
+    "category": {
+      "id": 8,
+      "name": "Sonstige"
+    }
+  },
+  {
+    "id": 91,
+    "name": "Tegel Projekt - Beleuchtungsstärke",
+    "created_at": "2022-03-29T14:16:15.645+00:00",
     "connection_type": "http",
     "external_id": null,
-    "description": "id = \"30a9d701-1539-266e-4663-66b42cd166b7\"\neui64 = \"A81758FFFE063404\"\nalias = \"como-A81758FFFE063404\"\nowner = \"SchwuZ\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"Pepsi Boston Bar\"\ndescription = \"\"\nsize_sqm = 82.0\nheight_m = 2.7\n\n[site]\nname = \"SchwuZ Club\"\ndescription = \"\"\nstreet = \"Rollbergstr. 26\"\nzip = \"12053\"\ncity = \"Berlin\"\n",
+    "description": "box id: 5fcf669dfab469001ce52232\nsensor id: 5fcf669dfab469001ce52239\n",
+    "location": null,
+    "latitude": 52.5498155329781,
+    "longitude": 13.2980648953025,
+    "altitude": null,
+    "category_id": 7,
+    "icon_id": 18,
+    "user_id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
+    "user": {
+      "name": "NoraK",
+      "display_name": null
+    },
+    "category": {
+      "id": 7,
+      "name": "Helligkeit"
+    }
+  },
+  {
+    "id": 100,
+    "name": "como-A81758FFFE0634FE in EN 201",
+    "created_at": "2022-05-31T08:22:01.916463+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "id = \"8fc3cc72-ec88-6f1a-a61a-d98e9caea66f\"\neui64 = \"A81758FFFE0634FE\"\nalias = \"como-A81758FFFE0634FE\"\nowner = \"dEIn Labor\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"EN 201\"\ndescription = \"Lötlabor\"\nsize_sqm = 60.0\nheight_m = 3.6\n\n[site]\nname = \"dEIn Labor\"\ndescription = \"\"\nstreet = \"Einsteinufer 17\"\nzip = \"10587\"\ncity = \"Berlin\"\n",
     "location": "Berlin",
-    "latitude": 52.516181,
-    "longitude": 13.376935,
+    "latitude": 52.515481,
+    "longitude": 13.326469,
     "altitude": null,
     "category_id": 1,
     "icon_id": null,
@@ -1012,15 +414,1004 @@
     }
   },
   {
-    "id": 104,
-    "name": "como-A81758FFFE06350B in 9",
-    "created_at": "2022-05-31T08:25:05.926046+00:00",
+    "id": 11,
+    "name": "enviro+ ammonia",
+    "created_at": "2021-10-04T17:01:39.534+00:00",
     "connection_type": "http",
     "external_id": null,
-    "description": "id = \"76004669-daac-0d75-a70a-17da54975ef3\"\neui64 = \"A81758FFFE06350B\"\nalias = \"como-A81758FFFE06350B\"\nowner = \"noisy Musicworld GmbH\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"9\"\ndescription = \"\"\nsize_sqm = 30.0\n\n[site]\nname = \"noisy Rooms\"\ndescription = \"\"\nstreet = \"Revaler Str. 99\"\nzip = \"10245\"\ncity = \"Berlin\"\n",
+    "description": "Ammonia measured with enviro+ attached to Raspberry Pi Zero in NH3\n",
+    "location": null,
+    "latitude": 52.483799388154,
+    "longitude": 13.3877684020998,
+    "altitude": null,
+    "category_id": 5,
+    "icon_id": 28,
+    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
+    "user": {
+      "name": "hash",
+      "display_name": "ff6347"
+    },
+    "category": {
+      "id": 5,
+      "name": "Zähler"
+    }
+  },
+  {
+    "id": 122,
+    "name": "Blink",
+    "created_at": "2022-06-04T14:08:35.660627+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
+    "location": "Berlin",
+    "latitude": 52.4814051,
+    "longitude": 13.3898952,
+    "altitude": 30,
+    "category_id": 2,
+    "icon_id": 7,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 129,
+    "name": "Mantis",
+    "created_at": "2022-06-04T14:08:35.660627+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
+    "location": "Berlin",
+    "latitude": 52.4814051,
+    "longitude": 13.3898952,
+    "altitude": 30,
+    "category_id": 2,
+    "icon_id": 29,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 141,
+    "name": "TestHTTP-KFZCounter",
+    "created_at": "2022-07-01T16:27:35.28+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Anzahl KFZ pro Tag in der Jaffestr. Richtung Süd-Ost",
+    "location": null,
+    "latitude": 52.4992381018563,
+    "longitude": 13.2700523689944,
+    "altitude": null,
+    "category_id": 8,
+    "icon_id": 12,
+    "user_id": "4b1b84a4-2865-412c-996a-eb0af2490f6e",
+    "user": {
+      "name": "BRZ5",
+      "display_name": "BRZ5"
+    },
+    "category": {
+      "id": 8,
+      "name": "Sonstige"
+    }
+  },
+  {
+    "id": 150,
+    "name": "Tegel Projekt - Temperatur BMP280",
+    "created_at": "2022-10-11T12:03:16.937+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "box id: 5fcf669dfab469001ce52232 \nsensor id: 5fcf669dfab469001ce52237",
+    "location": null,
+    "latitude": 52.5538794178438,
+    "longitude": 13.2968407196611,
+    "altitude": null,
+    "category_id": 2,
+    "icon_id": 10,
+    "user_id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
+    "user": {
+      "name": "NoraK",
+      "display_name": null
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 22,
+    "name": "Loudness Sensor - Albert",
+    "created_at": "2021-11-10T13:21:14.071+00:00",
+    "connection_type": "ttn",
+    "external_id": "albert",
+    "description": "Vorderhaus. Dealer, Touristen, Polizei, Dönerbude, Supermarkt. Mi-Sa abends, nachts Do-Sa oft laut. 03-07 Uhr nachts leise. Sonntags Kinderspielen.",
+    "location": null,
+    "latitude": 52.4985369641046,
+    "longitude": 13.4420133972187,
+    "altitude": null,
+    "category_id": 6,
+    "icon_id": 19,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 6,
+      "name": "Lautstärke"
+    }
+  },
+  {
+    "id": 28,
+    "name": "Loudness Sensor - Grace",
+    "created_at": "2021-11-10T13:26:15.248+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Viel befahrene Straße. Dicht an der Hochbahn, 5-Minuten-Takt tagsüber. Nähe Bahnhof Görlitzer Straße. Sirenen sind besonder störend.",
+    "location": null,
+    "latitude": 52.4990594825113,
+    "longitude": 13.4294821166995,
+    "altitude": null,
+    "category_id": 6,
+    "icon_id": 20,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 6,
+      "name": "Lautstärke"
+    }
+  },
+  {
+    "id": 59,
+    "name": "outside-env_temperature_1",
+    "created_at": "2021-12-27T14:39:19.884+00:00",
+    "connection_type": "http",
+    "external_id": "outside-env",
+    "description": "Temperatur in °C",
+    "location": null,
+    "latitude": 50.983947166787,
+    "longitude": 11.0148485068072,
+    "altitude": null,
+    "category_id": 2,
+    "icon_id": 22,
+    "user_id": "a7db9a70-9b09-4d11-98c1-ea161917f60c",
+    "user": {
+      "name": "fmanzke",
+      "display_name": "Fabian Manzke"
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 63,
+    "name": "outside-env_luminosity_4",
+    "created_at": "2021-12-27T18:18:22.685+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Lichtstärke in Lux",
+    "location": null,
+    "latitude": 50.983947166787,
+    "longitude": 11.0148485068072,
+    "altitude": null,
+    "category_id": 7,
+    "icon_id": 28,
+    "user_id": "a7db9a70-9b09-4d11-98c1-ea161917f60c",
+    "user": {
+      "name": "fmanzke",
+      "display_name": "Fabian Manzke"
+    },
+    "category": {
+      "id": 7,
+      "name": "Helligkeit"
+    }
+  },
+  {
+    "id": 72,
+    "name": "AKIOT-Umweltsensor-01",
+    "created_at": "2022-02-08T22:58:19.346+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Solar basierter Umweltsensor -\nmeasurements[voltage,temperature,pressure,humidity,p10,p25] - \nMesswerte basieren auf TTN Daten, die mittels Logstash Pipelines für die HTTP-API aufbereitet und versendet werden; Voltaic Solarpanel angeschlossen am LiFePO4-Lader mit 4400mAh Akku, Heltec AB01 mit BME 280 und SDS011 Feinstaubsensor\nsiehe auch: https://opensensemap.org/explore/60c14256b2a183001cd39959 und https://github.com/CargoBikoMeter/LoRaWAN-Solar-PM-Sensor\n\n",
+    "location": null,
+    "latitude": 52.436850883755,
+    "longitude": 13.547664271886,
+    "altitude": null,
+    "category_id": 8,
+    "icon_id": 31,
+    "user_id": "65050808-2b30-4872-9222-8599982fda64",
+    "user": {
+      "name": "Adlerkiez-IoT",
+      "display_name": "Adlerkiez-IoT"
+    },
+    "category": {
+      "id": 8,
+      "name": "Sonstige"
+    }
+  },
+  {
+    "id": 78,
+    "name": "Temperatur Zellestrasse",
+    "created_at": "2022-03-04T15:42:16.87+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": null,
+    "location": null,
+    "latitude": 52.5161839252271,
+    "longitude": 13.480970137462,
+    "altitude": null,
+    "category_id": 2,
+    "icon_id": 22,
+    "user_id": "63350a17-e3aa-4205-86a6-ddbb45d43549",
+    "user": {
+      "name": "ingo",
+      "display_name": "Ingo Hinterding"
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 87,
+    "name": "bosch-6",
+    "created_at": "2022-03-24T05:17:53.238+00:00",
+    "connection_type": "ttn",
+    "external_id": "bosch-6",
+    "description": "Belegungserkennung von Parkflächen (BOSCH)",
+    "location": null,
+    "latitude": 52.4691086329181,
+    "longitude": 13.3831717185404,
+    "altitude": null,
+    "category_id": 8,
+    "icon_id": 26,
+    "user_id": "7659d8ef-d77b-470d-acf9-47436d876d7f",
+    "user": {
+      "name": "BSR_de",
+      "display_name": "BSR_de"
+    },
+    "category": {
+      "id": 8,
+      "name": "Sonstige"
+    }
+  },
+  {
+    "id": 96,
+    "name": "Menschen zählen mit Pax",
+    "created_at": "2022-04-29T11:17:03.074+00:00",
+    "connection_type": "ttn",
+    "external_id": "eui-zweiterversuch",
+    "description": null,
+    "location": null,
+    "latitude": 52.5,
+    "longitude": 13.39,
+    "altitude": null,
+    "category_id": 5,
+    "icon_id": 32,
+    "user_id": "4c2a23e0-4929-4a71-aa81-c6e1dd687b9d",
+    "user": {
+      "name": "d57406db-b583-4fb2-960b-3faa970bdf27",
+      "display_name": null
+    },
+    "category": {
+      "id": 5,
+      "name": "Zähler"
+    }
+  },
+  {
+    "id": 101,
+    "name": "CLB-A81758FFFE053C79-Clair-Sensor-05 in CityLAB G",
+    "created_at": "2022-05-31T08:24:30.70055+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "id = \"79d0dbe4-d2c9-9468-a37c-5b37dbf99366\"\neui64 = \"A81758FFFE053C79\"\nalias = \"CLB-A81758FFFE053C79-Clair-Sensor-05\"\nowner = \"CityLAB Berlin\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"CityLAB Großer Saal\"\ndescription = \"\"\nsize_sqm = 0.0\nheight_m = 0.0\n\n[site]\nname = \"CityLAB HQ\"\ndescription = \"\"\nstreet = \"Platz der Luftbrücke 4\"\nzip = \"12101\"\ncity = \"Berlin\"\n",
+    "location": "Berlin",
+    "latitude": 52.48388,
+    "longitude": 13.388578,
+    "altitude": null,
+    "category_id": 1,
+    "icon_id": null,
+    "user_id": "325e948a-4b9e-4578-b009-714a5d8196e4",
+    "user": {
+      "name": "COMo-Projekt",
+      "display_name": "COMo-Projekt"
+    },
+    "category": {
+      "id": 1,
+      "name": "CO2"
+    }
+  },
+  {
+    "id": 106,
+    "name": "como-A81758FFFE063404 in Pepsi Boston Bar",
+    "created_at": "2022-05-31T08:26:24.872493+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "id = \"30a9d701-1539-266e-4663-66b42cd166b7\"\neui64 = \"A81758FFFE063404\"\nalias = \"como-A81758FFFE063404\"\nowner = \"SchwuZ\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"Pepsi Boston Bar\"\ndescription = \"\"\nsize_sqm = 82.0\nheight_m = 2.7\n\n[site]\nname = \"SchwuZ Club\"\ndescription = \"\"\nstreet = \"Rollbergstr. 26\"\nzip = \"12053\"\ncity = \"Berlin\"\n",
+    "location": "Berlin",
+    "latitude": 52.516181,
+    "longitude": 13.376935,
+    "altitude": null,
+    "category_id": 1,
+    "icon_id": null,
+    "user_id": "325e948a-4b9e-4578-b009-714a5d8196e4",
+    "user": {
+      "name": "COMo-Projekt",
+      "display_name": "COMo-Projekt"
+    },
+    "category": {
+      "id": 1,
+      "name": "CO2"
+    }
+  },
+  {
+    "id": 110,
+    "name": "como-A81758FFFE0634FD in 11",
+    "created_at": "2022-05-31T08:49:10.691178+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "id = \"3ed143dc-1a90-6e68-79f6-9799a54f8d88\"\neui64 = \"A81758FFFE0634FD\"\nalias = \"como-A81758FFFE0634FD\"\nowner = \"noisy Musicworld GmbH\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"11\"\ndescription = \"\"\nsize_sqm = 35.0\n\n[site]\nname = \"noisy Rooms\"\ndescription = \"\"\nstreet = \"Revaler Str. 99\"\nzip = \"10245\"\ncity = \"Berlin\"\n",
     "location": "Berlin",
     "latitude": 52.507756,
     "longitude": 13.453712,
+    "altitude": null,
+    "category_id": 1,
+    "icon_id": null,
+    "user_id": "325e948a-4b9e-4578-b009-714a5d8196e4",
+    "user": {
+      "name": "COMo-Projekt",
+      "display_name": "COMo-Projekt"
+    },
+    "category": {
+      "id": 1,
+      "name": "CO2"
+    }
+  },
+  {
+    "id": 124,
+    "name": "Cypher",
+    "created_at": "2022-06-04T14:08:35.660627+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
+    "location": "Berlin",
+    "latitude": 52.4814051,
+    "longitude": 13.3898952,
+    "altitude": 30,
+    "category_id": 2,
+    "icon_id": 12,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 13,
+    "name": "enviro+ particulate matter 2.5",
+    "created_at": "2021-10-04T17:04:23.47+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Particulate matter 2.5 measured with enviro+ attached to Raspberry Pi Zero in ug/m3",
+    "location": null,
+    "latitude": 52.4839039273588,
+    "longitude": 13.3870817565934,
+    "altitude": null,
+    "category_id": 5,
+    "icon_id": 9,
+    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
+    "user": {
+      "name": "hash",
+      "display_name": "ff6347"
+    },
+    "category": {
+      "id": 5,
+      "name": "Zähler"
+    }
+  },
+  {
+    "id": 142,
+    "name": "como-A81758FFFE0634FE in EN268",
+    "created_at": "2022-07-07T11:11:48.632723+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "id = \"8fc3cc72-ec88-6f1a-a61a-d98e9caea66f\"\neui64 = \"A81758FFFE0634FE\"\nalias = \"como-A81758FFFE0634FE\"\nowner = \"dEIn Labor\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"EN268\"\ndescription = \"großes Lötlabor\"\nsize_sqm = 120.0\nheight_m = 3.6\n\n[site]\nname = \"dEIn Labor\"\ndescription = \"\"\nstreet = \"Einsteinufer 17\"\nzip = \"10587\"\ncity = \"Berlin\"\n",
+    "location": "Berlin",
+    "latitude": 52.515481,
+    "longitude": 13.326469,
+    "altitude": null,
+    "category_id": 1,
+    "icon_id": null,
+    "user_id": "325e948a-4b9e-4578-b009-714a5d8196e4",
+    "user": {
+      "name": "COMo-Projekt",
+      "display_name": "COMo-Projekt"
+    },
+    "category": {
+      "id": 1,
+      "name": "CO2"
+    }
+  },
+  {
+    "id": 151,
+    "name": "Tegel Projekt - Temperatur HDC1080",
+    "created_at": "2022-10-11T12:04:47.537+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "box id: 5fcf669dfab469001ce52232 \nsensor id: 5fcf669dfab469001ce52235",
+    "location": null,
+    "latitude": 52.5552436389193,
+    "longitude": 13.2942689729069,
+    "altitude": null,
+    "category_id": 2,
+    "icon_id": 22,
+    "user_id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
+    "user": {
+      "name": "NoraK",
+      "display_name": null
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 23,
+    "name": "Loudness Sensor - Bob",
+    "created_at": "2021-11-10T13:23:42.679+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Verkehrsberuhigte Straße. Verweilende Menschen auf Sitzbänken, Gespräche. Fahrradwerkstatt als Nachbarschaftstreff. Bob wurde entführt!",
+    "location": null,
+    "latitude": 52.4986414682845,
+    "longitude": 13.438065185546,
+    "altitude": null,
+    "category_id": 6,
+    "icon_id": 17,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 6,
+      "name": "Lautstärke"
+    }
+  },
+  {
+    "id": 29,
+    "name": "Loudness Sensor - Hector",
+    "created_at": "2021-11-10T13:26:27.349+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Hinterhof mit starkem Efeu Bewuchs. Kita im Vorderhaus. Stille. Leise Gespräche unter Nachbarn.",
+    "location": null,
+    "latitude": 52.4996864964073,
+    "longitude": 13.436005249025,
+    "altitude": null,
+    "category_id": 6,
+    "icon_id": 21,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 6,
+      "name": "Lautstärke"
+    }
+  },
+  {
+    "id": 6,
+    "name": "enviro+ humidity",
+    "created_at": "2021-10-04T16:58:08.339+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Humidity measured with enviro+ attached to Raspberry Pi Zero in %",
+    "location": null,
+    "latitude": 52.483762302146,
+    "longitude": 13.3872954069758,
+    "altitude": null,
+    "category_id": 3,
+    "icon_id": 9,
+    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
+    "user": {
+      "name": "hash",
+      "display_name": "ff6347"
+    },
+    "category": {
+      "id": 3,
+      "name": "Luftfeuchtigkeit"
+    }
+  },
+  {
+    "id": 64,
+    "name": "Temperaturssensor an der HTW Berlin",
+    "created_at": "2021-12-27T19:32:46.365+00:00",
+    "connection_type": "ttn",
+    "external_id": "eui-70b3d57ed0049ea9",
+    "description": "Beim Herunterladen von Daten bekommt man ein Array mit weiteren Sensordaten an der HTW Berlin: Luftfeuchtigkeit-und Lautstärkesensor ",
+    "location": null,
+    "latitude": 52.4552727163743,
+    "longitude": 13.5267145337635,
+    "altitude": null,
+    "category_id": 2,
+    "icon_id": 25,
+    "user_id": "01e94de7-9679-460b-b58f-21c79f88e122",
+    "user": {
+      "name": "MEKTA82",
+      "display_name": "HTW Berlin"
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 73,
+    "name": "ifttt Button",
+    "created_at": "2022-02-01T13:26:15.248+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "ifttt.com sendet Geo-Positionen mit button + webhook widget - Teil der Stadtpuls Story \"Wenn Dies Dann Das\" https://stories.stadtpuls.com/wenn-dies-dann-das",
+    "location": null,
+    "latitude": 52.4837733742836,
+    "longitude": 13.388160547577,
+    "altitude": null,
+    "category_id": 8,
+    "icon_id": 20,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 8,
+      "name": "Sonstige"
+    }
+  },
+  {
+    "id": 79,
+    "name": "opensensemap - bridge",
+    "created_at": "2022-03-22T12:32:41.443212+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Experimental sensor for getting data from opensensemap into stadtpuls. Measurements tuple is 'PM10',\n  'PM2.5',\n  'Lichtintensität',\n  'UV-Strahlung',\n  'Temperatur',\n  'Luftfeutigkeit' ",
+    "location": null,
+    "latitude": 52.5,
+    "longitude": 13.39,
+    "altitude": null,
+    "category_id": 8,
+    "icon_id": 21,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 8,
+      "name": "Sonstige"
+    }
+  },
+  {
+    "id": 88,
+    "name": "bosch-7",
+    "created_at": "2022-03-24T05:18:50.766+00:00",
+    "connection_type": "ttn",
+    "external_id": "bosch-7",
+    "description": "Belegungserkennung von Parkflächen (BOSCH)",
+    "location": null,
+    "latitude": 52.4691041596719,
+    "longitude": 13.3834506465047,
+    "altitude": null,
+    "category_id": 8,
+    "icon_id": 29,
+    "user_id": "7659d8ef-d77b-470d-acf9-47436d876d7f",
+    "user": {
+      "name": "BSR_de",
+      "display_name": "BSR_de"
+    },
+    "category": {
+      "id": 8,
+      "name": "Sonstige"
+    }
+  },
+  {
+    "id": 97,
+    "name": "developer meetup demo",
+    "created_at": "2022-05-10T13:53:46.41+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "This is a demo sensor for our developer meetup taking place @CityLAB on 11. of May 2022. It receives data send form ifttt.com using the note widget through pipedream.com.",
+    "location": null,
+    "latitude": 52.4838630314761,
+    "longitude": 13.388117557476,
+    "altitude": null,
+    "category_id": 8,
+    "icon_id": 28,
+    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
+    "user": {
+      "name": "hash",
+      "display_name": "ff6347"
+    },
+    "category": {
+      "id": 8,
+      "name": "Sonstige"
+    }
+  },
+  {
+    "id": 102,
+    "name": "CLB-A81758FFFE053C94-Clair-Sensor-06 in CityLAB L",
+    "created_at": "2022-05-31T08:24:39.370156+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "id = \"e60e2d41-a1e6-10b9-1df0-532908e0ea2f\"\neui64 = \"A81758FFFE053C94\"\nalias = \"CLB-A81758FFFE053C94-Clair-Sensor-06\"\nowner = \"CityLAB Berlin\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"CityLAB Lobby\"\ndescription = \"\"\nsize_sqm = 30.0\nheight_m = 4.0\n\n[site]\nname = \"CityLAB HQ\"\ndescription = \"\"\nstreet = \"Platz der Luftbrücke 4\"\nzip = \"12101\"\ncity = \"Berlin\"\n",
+    "location": "Berlin",
+    "latitude": 52.48388,
+    "longitude": 13.388578,
+    "altitude": null,
+    "category_id": 1,
+    "icon_id": null,
+    "user_id": "325e948a-4b9e-4578-b009-714a5d8196e4",
+    "user": {
+      "name": "COMo-Projekt",
+      "display_name": "COMo-Projekt"
+    },
+    "category": {
+      "id": 1,
+      "name": "CO2"
+    }
+  },
+  {
+    "id": 107,
+    "name": "como-A81758FFFE06350A in 21",
+    "created_at": "2022-05-31T08:26:28.209079+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "id = \"cbdd4106-40c3-014c-f462-1579b1ea5c84\"\neui64 = \"A81758FFFE06350A\"\nalias = \"como-A81758FFFE06350A\"\nowner = \"noisy Musicworld GmbH\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"21\"\ndescription = \"\"\nsize_sqm = 15.0\n\n[site]\nname = \"noisy Rooms\"\ndescription = \"\"\nstreet = \"Revaler Str. 99\"\nzip = \"10245\"\ncity = \"Berlin\"\n",
+    "location": "Berlin",
+    "latitude": 52.507756,
+    "longitude": 13.453712,
+    "altitude": null,
+    "category_id": 1,
+    "icon_id": null,
+    "user_id": "325e948a-4b9e-4578-b009-714a5d8196e4",
+    "user": {
+      "name": "COMo-Projekt",
+      "display_name": "COMo-Projekt"
+    },
+    "category": {
+      "id": 1,
+      "name": "CO2"
+    }
+  },
+  {
+    "id": 111,
+    "name": "Storm",
+    "created_at": "2022-06-04T14:08:35.660627+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
+    "location": "Berlin",
+    "latitude": 52.4814051,
+    "longitude": 13.3898952,
+    "altitude": 30,
+    "category_id": 2,
+    "icon_id": 10,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 119,
+    "name": "Cloak",
+    "created_at": "2022-06-04T14:08:35.660627+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
+    "location": "Berlin",
+    "latitude": 52.4814051,
+    "longitude": 13.3898952,
+    "altitude": 30,
+    "category_id": 2,
+    "icon_id": 4,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 125,
+    "name": "Medusa",
+    "created_at": "2022-06-04T14:08:35.660627+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
+    "location": "Berlin",
+    "latitude": 52.4814051,
+    "longitude": 13.3898952,
+    "altitude": 30,
+    "category_id": 2,
+    "icon_id": 2,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 132,
+    "name": "BaumScheibenSensor",
+    "created_at": "2022-06-22T12:13:43.49+00:00",
+    "connection_type": "ttn",
+    "external_id": "eui-a84041f67183fed9",
+    "description": "Der Sensor vom Typ Dragino LSE01 misst Bodenfeuchte, Bodenleitfähigkeit und Temperatur in einer Baumscheibe. Die Einheiten der Werte sind Bodenfeuchte in %, Temperatur in Celsius, Batteriestatus in Volt, Bodenleitfähigkeit in uS/cm, kalibriert bei 25C (0-20EC).",
+    "location": null,
+    "latitude": 52.4969622582906,
+    "longitude": 13.4406909397583,
+    "altitude": null,
+    "category_id": 8,
+    "icon_id": 8,
+    "user_id": "76aa5fac-1e25-44df-938f-591abc43d9e9",
+    "user": {
+      "name": "JonasDaWi",
+      "display_name": null
+    },
+    "category": {
+      "id": 8,
+      "name": "Sonstige"
+    }
+  },
+  {
+    "id": 147,
+    "name": "Tegel Projekt - UV-Intensität",
+    "created_at": "2022-10-11T11:49:58.291+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "box id: 5fcf669dfab469001ce52232\nsensor id: 5fcf669dfab469001ce52233",
+    "location": null,
+    "latitude": 52.5495935857833,
+    "longitude": 13.2980363272671,
+    "altitude": null,
+    "category_id": 7,
+    "icon_id": 27,
+    "user_id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
+    "user": {
+      "name": "NoraK",
+      "display_name": null
+    },
+    "category": {
+      "id": 7,
+      "name": "Helligkeit"
+    }
+  },
+  {
+    "id": 152,
+    "name": "Tegel Projekt - Luftdruck",
+    "created_at": "2022-10-11T12:06:14.583+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "box id: 5fcf669dfab469001ce52232 \nsensor id: 5fcf669dfab469001ce52238",
+    "location": null,
+    "latitude": 52.5550082556998,
+    "longitude": 13.3003395956393,
+    "altitude": null,
+    "category_id": 4,
+    "icon_id": 31,
+    "user_id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
+    "user": {
+      "name": "NoraK",
+      "display_name": null
+    },
+    "category": {
+      "id": 4,
+      "name": "Luftdruck"
+    }
+  },
+  {
+    "id": 24,
+    "name": "Loudness Sensor - Camille",
+    "created_at": "2021-11-10T13:24:00.829+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Lage gegenüber Görlitzer Park. Musik aus dem Park und Streit unter Dealern. Gastronomie im Erdgeschoss. Hahn kräht beim Kinderbauernhof.",
+    "location": null,
+    "latitude": 52.4969693716214,
+    "longitude": 13.4390951538088,
+    "altitude": null,
+    "category_id": 6,
+    "icon_id": 31,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 6,
+      "name": "Lautstärke"
+    }
+  },
+  {
+    "id": 40,
+    "name": "Paxcounter",
+    "created_at": "2021-11-20T14:36:21.526+00:00",
+    "connection_type": "ttn",
+    "external_id": "eui-500291828d64feff",
+    "description": "from github [by cyberman54] - note: experimental! - placed: secret.\nPlease be sure to enter correct: TTN Device-ID below!",
+    "location": null,
+    "latitude": 52.579990652629,
+    "longitude": 13.2597619755408,
+    "altitude": null,
+    "category_id": 5,
+    "icon_id": 24,
+    "user_id": "5bb51260-6b35-4d56-8851-70cc68f87bd5",
+    "user": {
+      "name": "paxcounting",
+      "display_name": "paxcounting"
+    },
+    "category": {
+      "id": 5,
+      "name": "Zähler"
+    }
+  },
+  {
+    "id": 60,
+    "name": "outside-env_relative_humidity_2",
+    "created_at": "2021-12-27T16:54:50.968+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "relative Luftfeuchtigkeit in %",
+    "location": null,
+    "latitude": 50.983947166787,
+    "longitude": 11.0148485068072,
+    "altitude": null,
+    "category_id": 3,
+    "icon_id": 24,
+    "user_id": "a7db9a70-9b09-4d11-98c1-ea161917f60c",
+    "user": {
+      "name": "fmanzke",
+      "display_name": "Fabian Manzke"
+    },
+    "category": {
+      "id": 3,
+      "name": "Luftfeuchtigkeit"
+    }
+  },
+  {
+    "id": 68,
+    "name": "Licht",
+    "created_at": "2022-01-02T09:10:32.719+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "(später, ESPx WLAN Sensor)",
+    "location": null,
+    "latitude": 52.4428173071328,
+    "longitude": 13.2162943671686,
+    "altitude": null,
+    "category_id": 7,
+    "icon_id": 8,
+    "user_id": "48ab801d-07f9-411f-b404-6560b6bef554",
+    "user": {
+      "name": "JensTiemann",
+      "display_name": "JensTiemann"
+    },
+    "category": {
+      "id": 7,
+      "name": "Helligkeit"
+    }
+  },
+  {
+    "id": 74,
+    "name": "Wenn Dies Dann Das - Vogelino",
+    "created_at": "2022-02-09T16:12:19.952+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Ich habe das Tutorial von Fabian Morón Zirfas \"Wenn Dies Dann Das\" gefolgt: https://stories.stadtpuls.com/wenn-dies-dann-das",
+    "location": null,
+    "latitude": 52.4956829092644,
+    "longitude": 13.4335176754557,
+    "altitude": null,
+    "category_id": 8,
+    "icon_id": 9,
+    "user_id": "5d20f24c-1ff7-4551-afe1-55db7fda90b3",
+    "user": {
+      "name": "vogelino",
+      "display_name": "Lucas Vogelino"
+    },
+    "category": {
+      "id": 8,
+      "name": "Sonstige"
+    }
+  },
+  {
+    "id": 8,
+    "name": "enviro+ light",
+    "created_at": "2021-10-04T16:59:50.755+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Light measured with enviro+ attached to Raspberry Pi Zero in Lux",
+    "location": null,
+    "latitude": 52.4835745184153,
+    "longitude": 13.3874356469841,
+    "altitude": null,
+    "category_id": 5,
+    "icon_id": 25,
+    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
+    "user": {
+      "name": "hash",
+      "display_name": "ff6347"
+    },
+    "category": {
+      "id": 5,
+      "name": "Zähler"
+    }
+  },
+  {
+    "id": 89,
+    "name": "bosch-1",
+    "created_at": "2022-03-24T05:32:52.184+00:00",
+    "connection_type": "ttn",
+    "external_id": "bosch-1",
+    "description": "Belegungserkennung von Parkflächen (BOSCH)",
+    "location": null,
+    "latitude": 52.4691292397522,
+    "longitude": 13.3817097607119,
+    "altitude": null,
+    "category_id": 8,
+    "icon_id": 14,
+    "user_id": "7659d8ef-d77b-470d-acf9-47436d876d7f",
+    "user": {
+      "name": "BSR_de",
+      "display_name": "BSR_de"
+    },
+    "category": {
+      "id": 8,
+      "name": "Sonstige"
+    }
+  },
+  {
+    "id": 99,
+    "name": "como-A81758FFFE0634FF in EN 243",
+    "created_at": "2022-05-31T08:15:56.464785+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "id = \"eea44968-3063-52b9-f291-893714e8e692\"\neui64 = \"A81758FFFE0634FF\"\nalias = \"como-A81758FFFE0634FF\"\nowner = \"dEIn Labor\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"EN 243\"\ndescription = \"PC-Labor\"\nsize_sqm = 60.0\nheight_m = 3.6\n\n[site]\nname = \"dEIn Labor\"\ndescription = \"\"\nstreet = \"Einsteinufer 17\"\nzip = \"10587\"\ncity = \"Berlin\"\n",
+    "location": "Berlin",
+    "latitude": 52.515481,
+    "longitude": 13.326469,
     "altitude": null,
     "category_id": 1,
     "icon_id": null,
@@ -1058,15 +1449,15 @@
     }
   },
   {
-    "id": 102,
-    "name": "CLB-A81758FFFE053C94-Clair-Sensor-06 in CityLAB L",
-    "created_at": "2022-05-31T08:24:39.370156+00:00",
+    "id": 108,
+    "name": "como-A81758FFFE0632E3 in Musiksalon",
+    "created_at": "2022-05-31T08:29:14.288087+00:00",
     "connection_type": "http",
     "external_id": null,
-    "description": "id = \"e60e2d41-a1e6-10b9-1df0-532908e0ea2f\"\neui64 = \"A81758FFFE053C94\"\nalias = \"CLB-A81758FFFE053C94-Clair-Sensor-06\"\nowner = \"CityLAB Berlin\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"CityLAB Lobby\"\ndescription = \"\"\nsize_sqm = 30.0\nheight_m = 4.0\n\n[site]\nname = \"CityLAB HQ\"\ndescription = \"\"\nstreet = \"Platz der Luftbrücke 4\"\nzip = \"12101\"\ncity = \"Berlin\"\n",
+    "description": "id = \"80847907-4819-e7b1-e8fd-5253ee80403c\"\neui64 = \"A81758FFFE0632E3\"\nalias = \"como-A81758FFFE0632E3\"\nowner = \"Schloss Biesdorf\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"Musiksalon\"\ndescription = \"77m² im EG für kulturelle Veranstaltungen und Galeriebetrieb\"\nsize_sqm = 77.0\nheight_m = 8.0\n\n[site]\nname = \"Schloss Biesdorf\"\ndescription = \"Kommunale Galerie Bezirk Marzahn-Hellersdorf\"\nstreet = \"Alt-Biesdorf 55\"\nzip = \"12683\"\ncity = \"Berlin\"\n",
     "location": "Berlin",
-    "latitude": 52.48388,
-    "longitude": 13.388578,
+    "latitude": 52.509841,
+    "longitude": 13.557632,
     "altitude": null,
     "category_id": 1,
     "icon_id": null,
@@ -1081,91 +1472,45 @@
     }
   },
   {
-    "id": 101,
-    "name": "CLB-A81758FFFE053C79-Clair-Sensor-05 in CityLAB G",
-    "created_at": "2022-05-31T08:24:30.70055+00:00",
+    "id": 112,
+    "name": "Elektra",
+    "created_at": "2022-06-04T14:08:35.660627+00:00",
     "connection_type": "http",
     "external_id": null,
-    "description": "id = \"79d0dbe4-d2c9-9468-a37c-5b37dbf99366\"\neui64 = \"A81758FFFE053C79\"\nalias = \"CLB-A81758FFFE053C79-Clair-Sensor-05\"\nowner = \"CityLAB Berlin\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"CityLAB Großer Saal\"\ndescription = \"\"\nsize_sqm = 0.0\nheight_m = 0.0\n\n[site]\nname = \"CityLAB HQ\"\ndescription = \"\"\nstreet = \"Platz der Luftbrücke 4\"\nzip = \"12101\"\ncity = \"Berlin\"\n",
+    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
     "location": "Berlin",
-    "latitude": 52.48388,
-    "longitude": 13.388578,
-    "altitude": null,
-    "category_id": 1,
-    "icon_id": null,
-    "user_id": "325e948a-4b9e-4578-b009-714a5d8196e4",
+    "latitude": 52.4814051,
+    "longitude": 13.3898952,
+    "altitude": 30,
+    "category_id": 2,
+    "icon_id": 7,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
     "user": {
-      "name": "COMo-Projekt",
-      "display_name": "COMo-Projekt"
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
     },
     "category": {
-      "id": 1,
-      "name": "CO2"
+      "id": 2,
+      "name": "Temperatur"
     }
   },
   {
-    "id": 100,
-    "name": "como-A81758FFFE0634FE in EN 201",
-    "created_at": "2022-05-31T08:22:01.916463+00:00",
+    "id": 12,
+    "name": "enviro+ particulate matter 1",
+    "created_at": "2021-10-04T17:02:18.316+00:00",
     "connection_type": "http",
     "external_id": null,
-    "description": "id = \"8fc3cc72-ec88-6f1a-a61a-d98e9caea66f\"\neui64 = \"A81758FFFE0634FE\"\nalias = \"como-A81758FFFE0634FE\"\nowner = \"dEIn Labor\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"EN 201\"\ndescription = \"Lötlabor\"\nsize_sqm = 60.0\nheight_m = 3.6\n\n[site]\nname = \"dEIn Labor\"\ndescription = \"\"\nstreet = \"Einsteinufer 17\"\nzip = \"10587\"\ncity = \"Berlin\"\n",
-    "location": "Berlin",
-    "latitude": 52.515481,
-    "longitude": 13.326469,
-    "altitude": null,
-    "category_id": 1,
-    "icon_id": null,
-    "user_id": "325e948a-4b9e-4578-b009-714a5d8196e4",
-    "user": {
-      "name": "COMo-Projekt",
-      "display_name": "COMo-Projekt"
-    },
-    "category": {
-      "id": 1,
-      "name": "CO2"
-    }
-  },
-  {
-    "id": 99,
-    "name": "como-A81758FFFE0634FF in EN 243",
-    "created_at": "2022-05-31T08:15:56.464785+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "id = \"eea44968-3063-52b9-f291-893714e8e692\"\neui64 = \"A81758FFFE0634FF\"\nalias = \"como-A81758FFFE0634FF\"\nowner = \"dEIn Labor\"\n\n[model]\nmanufacturer = \"Elektroniksystem i Umeå AB\"\ntype = \"ElSys ERS CO2\"\n\n[room]\nname = \"EN 243\"\ndescription = \"PC-Labor\"\nsize_sqm = 60.0\nheight_m = 3.6\n\n[site]\nname = \"dEIn Labor\"\ndescription = \"\"\nstreet = \"Einsteinufer 17\"\nzip = \"10587\"\ncity = \"Berlin\"\n",
-    "location": "Berlin",
-    "latitude": 52.515481,
-    "longitude": 13.326469,
-    "altitude": null,
-    "category_id": 1,
-    "icon_id": null,
-    "user_id": "325e948a-4b9e-4578-b009-714a5d8196e4",
-    "user": {
-      "name": "COMo-Projekt",
-      "display_name": "COMo-Projekt"
-    },
-    "category": {
-      "id": 1,
-      "name": "CO2"
-    }
-  },
-  {
-    "id": 98,
-    "name": "Personenzähler CityLAB unidirect",
-    "created_at": "2022-05-11T11:28:37.591+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Zählt die Personen im CityLAB Berlin mit Hilfe von zwei gegensätzlich ausgerichteten Ultraschall Sensoren (unidirektional)",
+    "description": "Particulate matter  measured with enviro+ attached to Raspberry Pi Zero in ug/m3",
     "location": null,
-    "latitude": 52.4840393565641,
-    "longitude": 13.3878082959908,
+    "latitude": 52.4839339056192,
+    "longitude": 13.3872521845159,
     "altitude": null,
     "category_id": 5,
-    "icon_id": 25,
-    "user_id": "0c084e50-dfdf-4ddb-924c-d0f57dfbff61",
+    "icon_id": 27,
+    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
     "user": {
-      "name": "zetiot",
-      "display_name": "Julia Zet"
+      "name": "hash",
+      "display_name": "ff6347"
     },
     "category": {
       "id": 5,
@@ -1173,22 +1518,45 @@
     }
   },
   {
-    "id": 97,
-    "name": "developer meetup demo",
-    "created_at": "2022-05-10T13:53:46.41+00:00",
+    "id": 127,
+    "name": "Echo",
+    "created_at": "2022-06-04T14:08:35.660627+00:00",
     "connection_type": "http",
     "external_id": null,
-    "description": "This is a demo sensor for our developer meetup taking place @CityLAB on 11. of May 2022. It receives data send form ifttt.com using the note widget through pipedream.com.",
+    "description": "Temperatur sensor for the workshop at re:publica and CityLAB Sommerfest 2022",
+    "location": "Berlin",
+    "latitude": 52.4814051,
+    "longitude": 13.3898952,
+    "altitude": 30,
+    "category_id": 2,
+    "icon_id": 10,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 2,
+      "name": "Temperatur"
+    }
+  },
+  {
+    "id": 137,
+    "name": "ESP32-assitant",
+    "created_at": "2022-06-29T15:02:30.314+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "A template repository for ESP32 projects that connect to https://github.com/technologiestiftung/stadtpuls-esp32-assistant. Create your own by going to this link https://github.com/technologiestiftung/stadtpuls-esp32-assistant/generate\n",
     "location": null,
-    "latitude": 52.4838630314761,
-    "longitude": 13.388117557476,
+    "latitude": 52.483668471649,
+    "longitude": 13.3880289889939,
     "altitude": null,
     "category_id": 8,
-    "icon_id": 28,
-    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
+    "icon_id": 32,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
     "user": {
-      "name": "hash",
-      "display_name": "ff6347"
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
     },
     "category": {
       "id": 8,
@@ -1196,44 +1564,21 @@
     }
   },
   {
-    "id": 96,
-    "name": "Menschen zählen mit Pax",
-    "created_at": "2022-04-29T11:17:03.074+00:00",
-    "connection_type": "ttn",
-    "external_id": "eui-zweiterversuch",
-    "description": null,
+    "id": 148,
+    "name": "Tegel Projekt - Relative Luftfeuchte",
+    "created_at": "2022-10-11T11:54:44.225+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "box id: 5fcf669dfab469001ce52232 \nsensor id: 5fcf669dfab469001ce52234",
     "location": null,
     "latitude": 52.5,
     "longitude": 13.39,
     "altitude": null,
-    "category_id": 5,
-    "icon_id": 32,
-    "user_id": "4c2a23e0-4929-4a71-aa81-c6e1dd687b9d",
-    "user": {
-      "name": "d57406db-b583-4fb2-960b-3faa970bdf27",
-      "display_name": null
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 95,
-    "name": "Luftfeuchte TP",
-    "created_at": "2022-04-25T17:10:03.76+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": null,
-    "location": null,
-    "latitude": 52.5497021719284,
-    "longitude": 13.2980200014924,
-    "altitude": null,
     "category_id": 3,
-    "icon_id": 6,
-    "user_id": "62343107-aa11-4f63-8666-c2a68865b26f",
+    "icon_id": 13,
+    "user_id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
     "user": {
-      "name": "EliasSchneider",
+      "name": "NoraK",
       "display_name": null
     },
     "category": {
@@ -1242,22 +1587,114 @@
     }
   },
   {
-    "id": 93,
-    "name": "Personenzähler CityLAB",
-    "created_at": "2022-04-08T13:02:30.789+00:00",
+    "id": 18,
+    "name": "Breakout Garden CO2",
+    "created_at": "2021-10-11T14:21:25.817+00:00",
     "connection_type": "http",
     "external_id": null,
-    "description": "Dieser kleine Freund zählt die Besucher und Mitarbeiter des CityLAB. Er besteht aus zwei Ultraschall Sensoren, die die vorbeigehenden Personen im Eingangsbereich des CityLABs erfasst.",
+    "description": "Measure indoor air quality equivalent CO2 (eCO2) with Raspberry Pi. CO2 sensing from 400 to 60,000 ppm (parts per million)",
     "location": null,
-    "latitude": 52.4840121232738,
-    "longitude": 13.3881818144865,
+    "latitude": 52.4839001427697,
+    "longitude": 13.3877994515563,
+    "altitude": null,
+    "category_id": 1,
+    "icon_id": 28,
+    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
+    "user": {
+      "name": "hash",
+      "display_name": "ff6347"
+    },
+    "category": {
+      "id": 1,
+      "name": "CO2"
+    }
+  },
+  {
+    "id": 25,
+    "name": "Loudness Sensor - Dafne",
+    "created_at": "2021-11-10T13:24:17.632+00:00",
+    "connection_type": "ttn",
+    "external_id": "dafne",
+    "description": "Belebte Straße mit einzelnen Bäumen. Viele Geschäfte und Gastronomie. Nähe zum Supermarkt.",
+    "location": null,
+    "latitude": 52.4981189449076,
+    "longitude": 13.4433866882319,
+    "altitude": null,
+    "category_id": 6,
+    "icon_id": 17,
+    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "user": {
+      "name": "CityLAB-Berlin",
+      "display_name": "CityLAB-Berlin"
+    },
+    "category": {
+      "id": 6,
+      "name": "Lautstärke"
+    }
+  },
+  {
+    "id": 49,
+    "name": "Vogelino's erstes Sensor",
+    "created_at": "2021-12-08T13:09:42.186+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Das ist mein allererstes Sensor",
+    "location": null,
+    "latitude": 52.4943859250857,
+    "longitude": 13.436196333601,
+    "altitude": null,
+    "category_id": 4,
+    "icon_id": 27,
+    "user_id": "5d20f24c-1ff7-4551-afe1-55db7fda90b3",
+    "user": {
+      "name": "vogelino",
+      "display_name": "Lucas Vogelino"
+    },
+    "category": {
+      "id": 4,
+      "name": "Luftdruck"
+    }
+  },
+  {
+    "id": 61,
+    "name": "outside-env_barometric_pressure_3",
+    "created_at": "2021-12-27T16:55:28.811+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Luftdruck in hPa",
+    "location": null,
+    "latitude": 50.983947166787,
+    "longitude": 11.0148485068072,
+    "altitude": null,
+    "category_id": 4,
+    "icon_id": 22,
+    "user_id": "a7db9a70-9b09-4d11-98c1-ea161917f60c",
+    "user": {
+      "name": "fmanzke",
+      "display_name": "Fabian Manzke"
+    },
+    "category": {
+      "id": 4,
+      "name": "Luftdruck"
+    }
+  },
+  {
+    "id": 7,
+    "name": "enviro+ pressure",
+    "created_at": "2021-10-04T16:58:57.037+00:00",
+    "connection_type": "http",
+    "external_id": null,
+    "description": "Pressure  measured with enviro+ attached to Raspberry Pi Zero in hPa",
+    "location": null,
+    "latitude": 52.4837311831314,
+    "longitude": 13.3872939353866,
     "altitude": null,
     "category_id": 5,
-    "icon_id": 25,
-    "user_id": "0c084e50-dfdf-4ddb-924c-d0f57dfbff61",
+    "icon_id": 12,
+    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
     "user": {
-      "name": "zetiot",
-      "display_name": "Julia Zet"
+      "name": "hash",
+      "display_name": "ff6347"
     },
     "category": {
       "id": 5,
@@ -1265,153 +1702,15 @@
     }
   },
   {
-    "id": 92,
-    "name": "SAP THerz TUB",
-    "created_at": "2022-04-04T13:27:36.448+00:00",
+    "id": 76,
+    "name": "bosch-3",
+    "created_at": "2022-02-10T21:19:20.449+00:00",
     "connection_type": "ttn",
-    "external_id": "sap35-20031118",
-    "description": null,
-    "location": null,
-    "latitude": 52.5119145430108,
-    "longitude": 13.3262481681121,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 12,
-    "user_id": "f588df1a-a44b-4c47-bd5a-4eaf33767932",
-    "user": {
-      "name": "Bjoern_Kluge_2021",
-      "display_name": "BK_2021"
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 91,
-    "name": "Tegel Projekt - Beleuchtungsstärke",
-    "created_at": "2022-03-29T14:16:15.645+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "box id: 5fcf669dfab469001ce52232\nsensor id: 5fcf669dfab469001ce52239\n",
-    "location": null,
-    "latitude": 52.5498155329781,
-    "longitude": 13.2980648953025,
-    "altitude": null,
-    "category_id": 7,
-    "icon_id": 18,
-    "user_id": "34ecb553-be3f-4917-9cb2-b2d93200b446",
-    "user": {
-      "name": "NoraK",
-      "display_name": null
-    },
-    "category": {
-      "id": 7,
-      "name": "Helligkeit"
-    }
-  },
-  {
-    "id": 90,
-    "name": "bosch-2",
-    "created_at": "2022-03-24T05:34:12.917+00:00",
-    "connection_type": "ttn",
-    "external_id": "bosch-2",
+    "external_id": "bosch-3",
     "description": "Belegungserkennung von Parkflächen (BOSCH)",
     "location": null,
-    "latitude": 52.4692830869274,
-    "longitude": 13.3817150973542,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 13,
-    "user_id": "7659d8ef-d77b-470d-acf9-47436d876d7f",
-    "user": {
-      "name": "BSR_de",
-      "display_name": "BSR_de"
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 89,
-    "name": "bosch-1",
-    "created_at": "2022-03-24T05:32:52.184+00:00",
-    "connection_type": "ttn",
-    "external_id": "bosch-1",
-    "description": "Belegungserkennung von Parkflächen (BOSCH)",
-    "location": null,
-    "latitude": 52.4691292397522,
-    "longitude": 13.3817097607119,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 14,
-    "user_id": "7659d8ef-d77b-470d-acf9-47436d876d7f",
-    "user": {
-      "name": "BSR_de",
-      "display_name": "BSR_de"
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 88,
-    "name": "bosch-7",
-    "created_at": "2022-03-24T05:18:50.766+00:00",
-    "connection_type": "ttn",
-    "external_id": "bosch-7",
-    "description": "Belegungserkennung von Parkflächen (BOSCH)",
-    "location": null,
-    "latitude": 52.4691041596719,
-    "longitude": 13.3834506465047,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 29,
-    "user_id": "7659d8ef-d77b-470d-acf9-47436d876d7f",
-    "user": {
-      "name": "BSR_de",
-      "display_name": "BSR_de"
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 87,
-    "name": "bosch-6",
-    "created_at": "2022-03-24T05:17:53.238+00:00",
-    "connection_type": "ttn",
-    "external_id": "bosch-6",
-    "description": "Belegungserkennung von Parkflächen (BOSCH)",
-    "location": null,
-    "latitude": 52.4691086329181,
-    "longitude": 13.3831717185404,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 26,
-    "user_id": "7659d8ef-d77b-470d-acf9-47436d876d7f",
-    "user": {
-      "name": "BSR_de",
-      "display_name": "BSR_de"
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 86,
-    "name": "bosch-5",
-    "created_at": "2022-03-24T05:16:42.318+00:00",
-    "connection_type": "ttn",
-    "external_id": "bosch-5",
-    "description": "Belegungserkennung von Parkflächen (BOSCH)",
-    "location": null,
-    "latitude": 52.4691184814159,
-    "longitude": 13.3829267504392,
+    "latitude": 52.4691156653958,
+    "longitude": 13.3824361353041,
     "altitude": null,
     "category_id": 8,
     "icon_id": 29,
@@ -1449,972 +1748,6 @@
     }
   },
   {
-    "id": 79,
-    "name": "opensensemap - bridge",
-    "created_at": "2022-03-22T12:32:41.443212+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Experimental sensor for getting data from opensensemap into stadtpuls. Measurements tuple is 'PM10',\n  'PM2.5',\n  'Lichtintensität',\n  'UV-Strahlung',\n  'Temperatur',\n  'Luftfeutigkeit' ",
-    "location": null,
-    "latitude": 52.5,
-    "longitude": 13.39,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 21,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 78,
-    "name": "Temperatur Zellestrasse",
-    "created_at": "2022-03-04T15:42:16.87+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": null,
-    "location": null,
-    "latitude": 52.5161839252271,
-    "longitude": 13.480970137462,
-    "altitude": null,
-    "category_id": 2,
-    "icon_id": 22,
-    "user_id": "63350a17-e3aa-4205-86a6-ddbb45d43549",
-    "user": {
-      "name": "ingo",
-      "display_name": "Ingo Hinterding"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 77,
-    "name": "ParkletSensor1",
-    "created_at": "2022-02-16T08:43:42.761+00:00",
-    "connection_type": "ttn",
-    "external_id": "eui-a84041945183fed8",
-    "description": "Der Sensor vom Typ Dragino LSE01 misst Bodenfeuchte, Bodenleitfähigkeit und Temperatur in einem Hochbeet-Parklet. Die Einheiten der Werte sind Bodenfeuchte in %, Temperatur in Celsius, Batteriestatus in Volt, Bodenleitfähigkeit in uS/cm, kalibriert bei 25C (0-20EC).",
-    "location": null,
-    "latitude": 52.4969404813364,
-    "longitude": 13.4406167427151,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 22,
-    "user_id": "76aa5fac-1e25-44df-938f-591abc43d9e9",
-    "user": {
-      "name": "JonasDaWi",
-      "display_name": null
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 76,
-    "name": "bosch-3",
-    "created_at": "2022-02-10T21:19:20.449+00:00",
-    "connection_type": "ttn",
-    "external_id": "bosch-3",
-    "description": "Belegungserkennung von Parkflächen (BOSCH)",
-    "location": null,
-    "latitude": 52.4691156653958,
-    "longitude": 13.3824361353041,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 29,
-    "user_id": "7659d8ef-d77b-470d-acf9-47436d876d7f",
-    "user": {
-      "name": "BSR_de",
-      "display_name": "BSR_de"
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 74,
-    "name": "Wenn Dies Dann Das - Vogelino",
-    "created_at": "2022-02-09T16:12:19.952+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Ich habe das Tutorial von Fabian Morón Zirfas \"Wenn Dies Dann Das\" gefolgt: https://stories.stadtpuls.com/wenn-dies-dann-das",
-    "location": null,
-    "latitude": 52.4956829092644,
-    "longitude": 13.4335176754557,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 9,
-    "user_id": "5d20f24c-1ff7-4551-afe1-55db7fda90b3",
-    "user": {
-      "name": "vogelino",
-      "display_name": "Lucas Vogelino"
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 72,
-    "name": "AKIOT-Umweltsensor-01",
-    "created_at": "2022-02-08T22:58:19.346+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Solar basierter Umweltsensor -\nmeasurements[voltage,temperature,pressure,humidity,p10,p25] - \nMesswerte basieren auf TTN Daten, die mittels Logstash Pipelines für die HTTP-API aufbereitet und versendet werden; Voltaic Solarpanel angeschlossen am LiFePO4-Lader mit 4400mAh Akku, Heltec AB01 mit BME 280 und SDS011 Feinstaubsensor\nsiehe auch: https://opensensemap.org/explore/60c14256b2a183001cd39959 und https://github.com/CargoBikoMeter/LoRaWAN-Solar-PM-Sensor\n\n",
-    "location": null,
-    "latitude": 52.436850883755,
-    "longitude": 13.547664271886,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 31,
-    "user_id": "65050808-2b30-4872-9222-8599982fda64",
-    "user": {
-      "name": "Adlerkiez-IoT",
-      "display_name": "Adlerkiez-IoT"
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 71,
-    "name": "test",
-    "created_at": "2022-02-04T17:58:23.671+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "test",
-    "location": null,
-    "latitude": 52.3957395019045,
-    "longitude": 13.0534950833371,
-    "altitude": null,
-    "category_id": 1,
-    "icon_id": 17,
-    "user_id": "2080fa8a-edab-4529-b297-f2a348e0a88d",
-    "user": {
-      "name": "anna_mei",
-      "display_name": null
-    },
-    "category": {
-      "id": 1,
-      "name": "CO2"
-    }
-  },
-  {
-    "id": 70,
-    "name": "IoT Octopus - CO2 #001",
-    "created_at": "2022-02-03T10:22:42.651+00:00",
-    "connection_type": "ttn",
-    "external_id": "eui-70b3d57ed004c267",
-    "description": "Mit dem #IoT Octopus, der IoT Werkstatt, messen wir Umweltdaten - hier CO2",
-    "location": null,
-    "latitude": 52.4859660811895,
-    "longitude": 13.3377668541434,
-    "altitude": null,
-    "category_id": 1,
-    "icon_id": 21,
-    "user_id": "df3f14d3-f869-4b1c-8a7e-94ee1ea17db5",
-    "user": {
-      "name": "FabLab",
-      "display_name": null
-    },
-    "category": {
-      "id": 1,
-      "name": "CO2"
-    }
-  },
-  {
-    "id": 73,
-    "name": "ifttt Button",
-    "created_at": "2022-02-01T13:26:15.248+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "ifttt.com sendet Geo-Positionen mit button + webhook widget - Teil der Stadtpuls Story \"Wenn Dies Dann Das\" https://stories.stadtpuls.com/wenn-dies-dann-das",
-    "location": null,
-    "latitude": 52.4837733742836,
-    "longitude": 13.388160547577,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 20,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 68,
-    "name": "Licht",
-    "created_at": "2022-01-02T09:10:32.719+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "(später, ESPx WLAN Sensor)",
-    "location": null,
-    "latitude": 52.4428173071328,
-    "longitude": 13.2162943671686,
-    "altitude": null,
-    "category_id": 7,
-    "icon_id": 8,
-    "user_id": "48ab801d-07f9-411f-b404-6560b6bef554",
-    "user": {
-      "name": "JensTiemann",
-      "display_name": "JensTiemann"
-    },
-    "category": {
-      "id": 7,
-      "name": "Helligkeit"
-    }
-  },
-  {
-    "id": 65,
-    "name": "TEST",
-    "created_at": "2021-12-28T10:52:29.523+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": null,
-    "location": null,
-    "latitude": 52.500803342754,
-    "longitude": 13.388927116394,
-    "altitude": null,
-    "category_id": 1,
-    "icon_id": 29,
-    "user_id": "60305c8d-6f37-46b2-b10a-fc31f9ae5375",
-    "user": {
-      "name": "jawebada",
-      "display_name": null
-    },
-    "category": {
-      "id": 1,
-      "name": "CO2"
-    }
-  },
-  {
-    "id": 64,
-    "name": "Temperaturssensor an der HTW Berlin",
-    "created_at": "2021-12-27T19:32:46.365+00:00",
-    "connection_type": "ttn",
-    "external_id": "eui-70b3d57ed0049ea9",
-    "description": "Beim Herunterladen von Daten bekommt man ein Array mit weiteren Sensordaten an der HTW Berlin: Luftfeuchtigkeit-und Lautstärkesensor ",
-    "location": null,
-    "latitude": 52.4552727163743,
-    "longitude": 13.5267145337635,
-    "altitude": null,
-    "category_id": 2,
-    "icon_id": 25,
-    "user_id": "01e94de7-9679-460b-b58f-21c79f88e122",
-    "user": {
-      "name": "MEKTA82",
-      "display_name": "HTW Berlin"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 63,
-    "name": "outside-env_luminosity_4",
-    "created_at": "2021-12-27T18:18:22.685+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Lichtstärke in Lux",
-    "location": null,
-    "latitude": 50.983947166787,
-    "longitude": 11.0148485068072,
-    "altitude": null,
-    "category_id": 7,
-    "icon_id": 28,
-    "user_id": "a7db9a70-9b09-4d11-98c1-ea161917f60c",
-    "user": {
-      "name": "fmanzke",
-      "display_name": "Fabian Manzke"
-    },
-    "category": {
-      "id": 7,
-      "name": "Helligkeit"
-    }
-  },
-  {
-    "id": 62,
-    "name": "outside-env_analog_in_0",
-    "created_at": "2021-12-27T16:56:53.379+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Akkuspannung bei Dunkelheit bzw. Solarreglerausgangsspannung in Volt",
-    "location": null,
-    "latitude": 50.983947166787,
-    "longitude": 11.0144264056329,
-    "altitude": null,
-    "category_id": 8,
-    "icon_id": 1,
-    "user_id": "a7db9a70-9b09-4d11-98c1-ea161917f60c",
-    "user": {
-      "name": "fmanzke",
-      "display_name": "Fabian Manzke"
-    },
-    "category": {
-      "id": 8,
-      "name": "Sonstige"
-    }
-  },
-  {
-    "id": 61,
-    "name": "outside-env_barometric_pressure_3",
-    "created_at": "2021-12-27T16:55:28.811+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Luftdruck in hPa",
-    "location": null,
-    "latitude": 50.983947166787,
-    "longitude": 11.0148485068072,
-    "altitude": null,
-    "category_id": 4,
-    "icon_id": 22,
-    "user_id": "a7db9a70-9b09-4d11-98c1-ea161917f60c",
-    "user": {
-      "name": "fmanzke",
-      "display_name": "Fabian Manzke"
-    },
-    "category": {
-      "id": 4,
-      "name": "Luftdruck"
-    }
-  },
-  {
-    "id": 60,
-    "name": "outside-env_relative_humidity_2",
-    "created_at": "2021-12-27T16:54:50.968+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "relative Luftfeuchtigkeit in %",
-    "location": null,
-    "latitude": 50.983947166787,
-    "longitude": 11.0148485068072,
-    "altitude": null,
-    "category_id": 3,
-    "icon_id": 24,
-    "user_id": "a7db9a70-9b09-4d11-98c1-ea161917f60c",
-    "user": {
-      "name": "fmanzke",
-      "display_name": "Fabian Manzke"
-    },
-    "category": {
-      "id": 3,
-      "name": "Luftfeuchtigkeit"
-    }
-  },
-  {
-    "id": 59,
-    "name": "outside-env_temperature_1",
-    "created_at": "2021-12-27T14:39:19.884+00:00",
-    "connection_type": "http",
-    "external_id": "outside-env",
-    "description": "Temperatur in °C",
-    "location": null,
-    "latitude": 50.983947166787,
-    "longitude": 11.0148485068072,
-    "altitude": null,
-    "category_id": 2,
-    "icon_id": 22,
-    "user_id": "a7db9a70-9b09-4d11-98c1-ea161917f60c",
-    "user": {
-      "name": "fmanzke",
-      "display_name": "Fabian Manzke"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 58,
-    "name": "Luftfeuchtigkeitssensor",
-    "created_at": "2021-12-21T14:35:52.828+00:00",
-    "connection_type": "ttn",
-    "external_id": "eui-70b3d57ed0049ea9",
-    "description": null,
-    "location": null,
-    "latitude": 52.4551476915033,
-    "longitude": 13.5254208697558,
-    "altitude": null,
-    "category_id": 3,
-    "icon_id": 5,
-    "user_id": "4e655e61-10cd-48ad-a6aa-a06e6ceb15a9",
-    "user": {
-      "name": "Orock",
-      "display_name": null
-    },
-    "category": {
-      "id": 3,
-      "name": "Luftfeuchtigkeit"
-    }
-  },
-  {
-    "id": 57,
-    "name": "trafficcounter 05",
-    "created_at": "2021-12-10T20:32:39.486+00:00",
-    "connection_type": "ttn",
-    "external_id": "eui-trafficcounter5",
-    "description": "traffic counter 05 in Pankow [in Arbeit]\nhttps://www.thethingsnetwork.org/community/berlin/post/ttn-sonderzug-in-berlin-pankow-angekommen-1\n",
-    "location": null,
-    "latitude": 52.5,
-    "longitude": 13.39,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 21,
-    "user_id": "c9744139-2292-4e69-9c68-739c8cd8cc21",
-    "user": {
-      "name": "pankow",
-      "display_name": "Pankow"
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 56,
-    "name": "trafficcounter 04",
-    "created_at": "2021-12-10T20:30:43.407+00:00",
-    "connection_type": "ttn",
-    "external_id": "eui-trafficcounter4",
-    "description": "traffic counter 04 in Pankow [in Arbeit]\nhttps://www.thethingsnetwork.org/community/berlin/post/ttn-sonderzug-in-berlin-pankow-angekommen-1",
-    "location": null,
-    "latitude": 52.5,
-    "longitude": 13.39,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 21,
-    "user_id": "c9744139-2292-4e69-9c68-739c8cd8cc21",
-    "user": {
-      "name": "pankow",
-      "display_name": "Pankow"
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 55,
-    "name": "trafficcounter 03",
-    "created_at": "2021-12-10T20:29:41.521+00:00",
-    "connection_type": "ttn",
-    "external_id": "eui-trafficcounter3",
-    "description": "traffic counter 03 in Pankow [in Arbeit]\nhttps://www.thethingsnetwork.org/community/berlin/post/ttn-sonderzug-in-berlin-pankow-angekommen-1",
-    "location": null,
-    "latitude": 52.5,
-    "longitude": 13.39,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 21,
-    "user_id": "c9744139-2292-4e69-9c68-739c8cd8cc21",
-    "user": {
-      "name": "pankow",
-      "display_name": "Pankow"
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 54,
-    "name": "trafficcounter 02",
-    "created_at": "2021-12-10T20:28:43.345+00:00",
-    "connection_type": "ttn",
-    "external_id": "eui-trafficcounter2",
-    "description": "traffic counter 02 in Pankow [in Arbeit]\nhttps://www.thethingsnetwork.org/community/berlin/post/ttn-sonderzug-in-berlin-pankow-angekommen-1",
-    "location": null,
-    "latitude": 52.5,
-    "longitude": 13.39,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 21,
-    "user_id": "c9744139-2292-4e69-9c68-739c8cd8cc21",
-    "user": {
-      "name": "pankow",
-      "display_name": "Pankow"
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 53,
-    "name": "trafficcounter 01",
-    "created_at": "2021-12-10T20:27:46.4+00:00",
-    "connection_type": "ttn",
-    "external_id": "eui-trafficcounter1",
-    "description": "trafficcounter 01 in Pankow [in Arbeit]\nhttps://www.thethingsnetwork.org/community/berlin/post/ttn-sonderzug-in-berlin-pankow-angekommen-1\n",
-    "location": null,
-    "latitude": 51.546331287223,
-    "longitude": 13.4248194815309,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 21,
-    "user_id": "c9744139-2292-4e69-9c68-739c8cd8cc21",
-    "user": {
-      "name": "pankow",
-      "display_name": "Pankow"
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 49,
-    "name": "Vogelino's erstes Sensor",
-    "created_at": "2021-12-08T13:09:42.186+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Das ist mein allererstes Sensor",
-    "location": null,
-    "latitude": 52.4943859250857,
-    "longitude": 13.436196333601,
-    "altitude": null,
-    "category_id": 4,
-    "icon_id": 27,
-    "user_id": "5d20f24c-1ff7-4551-afe1-55db7fda90b3",
-    "user": {
-      "name": "vogelino",
-      "display_name": "Lucas Vogelino"
-    },
-    "category": {
-      "id": 4,
-      "name": "Luftdruck"
-    }
-  },
-  {
-    "id": 43,
-    "name": "berlintracker",
-    "created_at": "2021-11-27T10:13:18.801+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Ein in Berlin entworfener GPS-tracker mit Tiefstenergiebedarf in der Warteschleife. Wir benötigen Chips!! Test only",
-    "location": null,
-    "latitude": 52.5143142821207,
-    "longitude": 13.3500194272191,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 26,
-    "user_id": "74fdcb7b-efab-4710-9aa8-c9c6c63a33c3",
-    "user": {
-      "name": "berlintracker",
-      "display_name": "berlintracker"
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 40,
-    "name": "Paxcounter",
-    "created_at": "2021-11-20T14:36:21.526+00:00",
-    "connection_type": "ttn",
-    "external_id": "eui-500291828d64feff",
-    "description": "from github [by cyberman54] - note: experimental! - placed: secret.\nPlease be sure to enter correct: TTN Device-ID below!",
-    "location": null,
-    "latitude": 52.579990652629,
-    "longitude": 13.2597619755408,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 24,
-    "user_id": "5bb51260-6b35-4d56-8851-70cc68f87bd5",
-    "user": {
-      "name": "paxcounting",
-      "display_name": "paxcounting"
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 30,
-    "name": "Klara",
-    "created_at": "2021-11-10T14:45:04.271+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Wasserklarheit von Jakob",
-    "location": null,
-    "latitude": 52.4984790003586,
-    "longitude": 13.3985524615535,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 17,
-    "user_id": "71f85f6f-5050-4437-8562-fe6d1280c93c",
-    "user": {
-      "name": "sara",
-      "display_name": null
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 29,
-    "name": "Loudness Sensor - Hector",
-    "created_at": "2021-11-10T13:26:27.349+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Hinterhof mit starkem Efeu Bewuchs. Kita im Vorderhaus. Stille. Leise Gespräche unter Nachbarn.",
-    "location": null,
-    "latitude": 52.4996864964073,
-    "longitude": 13.436005249025,
-    "altitude": null,
-    "category_id": 6,
-    "icon_id": 21,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 6,
-      "name": "Lautstärke"
-    }
-  },
-  {
-    "id": 28,
-    "name": "Loudness Sensor - Grace",
-    "created_at": "2021-11-10T13:26:15.248+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Viel befahrene Straße. Dicht an der Hochbahn, 5-Minuten-Takt tagsüber. Nähe Bahnhof Görlitzer Straße. Sirenen sind besonder störend.",
-    "location": null,
-    "latitude": 52.4990594825113,
-    "longitude": 13.4294821166995,
-    "altitude": null,
-    "category_id": 6,
-    "icon_id": 20,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 6,
-      "name": "Lautstärke"
-    }
-  },
-  {
-    "id": 27,
-    "name": "Loudness Sensor - Fadil",
-    "created_at": "2021-11-10T13:25:58.647+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Eckwohnung. Kreuzung. Tourismushotspot und Gastronomie. Nähe Hochbahn. Nähe Clubs. Sirenen, Sirenen, Sirenen.",
-    "location": null,
-    "latitude": 52.4984324596778,
-    "longitude": 13.4416700744616,
-    "altitude": null,
-    "category_id": 6,
-    "icon_id": 8,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 6,
-      "name": "Lautstärke"
-    }
-  },
-  {
-    "id": 25,
-    "name": "Loudness Sensor - Dafne",
-    "created_at": "2021-11-10T13:24:17.632+00:00",
-    "connection_type": "ttn",
-    "external_id": "dafne",
-    "description": "Belebte Straße mit einzelnen Bäumen. Viele Geschäfte und Gastronomie. Nähe zum Supermarkt.",
-    "location": null,
-    "latitude": 52.4981189449076,
-    "longitude": 13.4433866882319,
-    "altitude": null,
-    "category_id": 6,
-    "icon_id": 17,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 6,
-      "name": "Lautstärke"
-    }
-  },
-  {
-    "id": 24,
-    "name": "Loudness Sensor - Camille",
-    "created_at": "2021-11-10T13:24:00.829+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Lage gegenüber Görlitzer Park. Musik aus dem Park und Streit unter Dealern. Gastronomie im Erdgeschoss. Hahn kräht beim Kinderbauernhof.",
-    "location": null,
-    "latitude": 52.4969693716214,
-    "longitude": 13.4390951538088,
-    "altitude": null,
-    "category_id": 6,
-    "icon_id": 31,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 6,
-      "name": "Lautstärke"
-    }
-  },
-  {
-    "id": 23,
-    "name": "Loudness Sensor - Bob",
-    "created_at": "2021-11-10T13:23:42.679+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Verkehrsberuhigte Straße. Verweilende Menschen auf Sitzbänken, Gespräche. Fahrradwerkstatt als Nachbarschaftstreff. Bob wurde entführt!",
-    "location": null,
-    "latitude": 52.4986414682845,
-    "longitude": 13.438065185546,
-    "altitude": null,
-    "category_id": 6,
-    "icon_id": 17,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 6,
-      "name": "Lautstärke"
-    }
-  },
-  {
-    "id": 22,
-    "name": "Loudness Sensor - Albert",
-    "created_at": "2021-11-10T13:21:14.071+00:00",
-    "connection_type": "ttn",
-    "external_id": "albert",
-    "description": "Vorderhaus. Dealer, Touristen, Polizei, Dönerbude, Supermarkt. Mi-Sa abends, nachts Do-Sa oft laut. 03-07 Uhr nachts leise. Sonntags Kinderspielen.",
-    "location": null,
-    "latitude": 52.4985369641046,
-    "longitude": 13.4420133972187,
-    "altitude": null,
-    "category_id": 6,
-    "icon_id": 19,
-    "user_id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
-    "user": {
-      "name": "CityLAB-Berlin",
-      "display_name": "CityLAB-Berlin"
-    },
-    "category": {
-      "id": 6,
-      "name": "Lautstärke"
-    }
-  },
-  {
-    "id": 20,
-    "name": "Temperature @Californian Balcony",
-    "created_at": "2021-10-27T20:57:21.635+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "This sensor measures the temperature at my balcony in San Diego, CA.",
-    "location": null,
-    "latitude": 32.7508052580553,
-    "longitude": -117.144841129381,
-    "altitude": 42,
-    "category_id": 2,
-    "icon_id": 20,
-    "user_id": "0c084e50-dfdf-4ddb-924c-d0f57dfbff61",
-    "user": {
-      "name": "zetiot",
-      "display_name": "Julia Zet"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
-    }
-  },
-  {
-    "id": 19,
-    "name": "Breakout Garden TVOC",
-    "created_at": "2021-10-11T14:24:19.149+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Measure indoor air quality total volatile organic compounds (TVOC) with Raspberry Pi. TVOC sensing from 0-60,000 ppb (parts per billion).",
-    "location": null,
-    "latitude": 52.4838799588605,
-    "longitude": 13.3878695428315,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 12,
-    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
-    "user": {
-      "name": "hash",
-      "display_name": "ff6347"
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 18,
-    "name": "Breakout Garden CO2",
-    "created_at": "2021-10-11T14:21:25.817+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Measure indoor air quality equivalent CO2 (eCO2) with Raspberry Pi. CO2 sensing from 400 to 60,000 ppm (parts per million)",
-    "location": null,
-    "latitude": 52.4839001427697,
-    "longitude": 13.3877994515563,
-    "altitude": null,
-    "category_id": 1,
-    "icon_id": 28,
-    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
-    "user": {
-      "name": "hash",
-      "display_name": "ff6347"
-    },
-    "category": {
-      "id": 1,
-      "name": "CO2"
-    }
-  },
-  {
-    "id": 14,
-    "name": "enviro+ particulate matter 10",
-    "created_at": "2021-10-04T17:04:27.149+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Particulate matter 10 measured with enviro+ attached to Raspberry Pi Zero in ug/m3",
-    "location": null,
-    "latitude": 52.4839039273588,
-    "longitude": 13.3870817565934,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 9,
-    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
-    "user": {
-      "name": "hash",
-      "display_name": "ff6347"
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 13,
-    "name": "enviro+ particulate matter 2.5",
-    "created_at": "2021-10-04T17:04:23.47+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Particulate matter 2.5 measured with enviro+ attached to Raspberry Pi Zero in ug/m3",
-    "location": null,
-    "latitude": 52.4839039273588,
-    "longitude": 13.3870817565934,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 9,
-    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
-    "user": {
-      "name": "hash",
-      "display_name": "ff6347"
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 12,
-    "name": "enviro+ particulate matter 1",
-    "created_at": "2021-10-04T17:02:18.316+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Particulate matter  measured with enviro+ attached to Raspberry Pi Zero in ug/m3",
-    "location": null,
-    "latitude": 52.4839339056192,
-    "longitude": 13.3872521845159,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 27,
-    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
-    "user": {
-      "name": "hash",
-      "display_name": "ff6347"
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 11,
-    "name": "enviro+ ammonia",
-    "created_at": "2021-10-04T17:01:39.534+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Ammonia measured with enviro+ attached to Raspberry Pi Zero in NH3\n",
-    "location": null,
-    "latitude": 52.483799388154,
-    "longitude": 13.3877684020998,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 28,
-    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
-    "user": {
-      "name": "hash",
-      "display_name": "ff6347"
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 10,
-    "name": "enviro+ carbon monoxide",
-    "created_at": "2021-10-04T17:01:09.969+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Carbon monoxide measured with enviro+ attached to Raspberry Pi Zero in kO\n",
-    "location": null,
-    "latitude": 52.4836880404568,
-    "longitude": 13.387464422176,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 17,
-    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
-    "user": {
-      "name": "hash",
-      "display_name": "ff6347"
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
     "id": 9,
     "name": "enviro+ nitrogen dioxide",
     "created_at": "2021-10-04T17:00:35.799+00:00",
@@ -2435,98 +1768,6 @@
     "category": {
       "id": 5,
       "name": "Zähler"
-    }
-  },
-  {
-    "id": 8,
-    "name": "enviro+ light",
-    "created_at": "2021-10-04T16:59:50.755+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Light measured with enviro+ attached to Raspberry Pi Zero in Lux",
-    "location": null,
-    "latitude": 52.4835745184153,
-    "longitude": 13.3874356469841,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 25,
-    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
-    "user": {
-      "name": "hash",
-      "display_name": "ff6347"
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 7,
-    "name": "enviro+ pressure",
-    "created_at": "2021-10-04T16:58:57.037+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Pressure  measured with enviro+ attached to Raspberry Pi Zero in hPa",
-    "location": null,
-    "latitude": 52.4837311831314,
-    "longitude": 13.3872939353866,
-    "altitude": null,
-    "category_id": 5,
-    "icon_id": 12,
-    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
-    "user": {
-      "name": "hash",
-      "display_name": "ff6347"
-    },
-    "category": {
-      "id": 5,
-      "name": "Zähler"
-    }
-  },
-  {
-    "id": 6,
-    "name": "enviro+ humidity",
-    "created_at": "2021-10-04T16:58:08.339+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Humidity measured with enviro+ attached to Raspberry Pi Zero in %",
-    "location": null,
-    "latitude": 52.483762302146,
-    "longitude": 13.3872954069758,
-    "altitude": null,
-    "category_id": 3,
-    "icon_id": 9,
-    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
-    "user": {
-      "name": "hash",
-      "display_name": "ff6347"
-    },
-    "category": {
-      "id": 3,
-      "name": "Luftfeuchtigkeit"
-    }
-  },
-  {
-    "id": 5,
-    "name": "enviro+ temperatur",
-    "created_at": "2021-10-04T16:56:42.36+00:00",
-    "connection_type": "http",
-    "external_id": null,
-    "description": "Temperature  measured with enviro+ attached to Raspberry Pi Zero in °C",
-    "location": null,
-    "latitude": 52.4836116461114,
-    "longitude": 13.3875740393339,
-    "altitude": null,
-    "category_id": 2,
-    "icon_id": 8,
-    "user_id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
-    "user": {
-      "name": "hash",
-      "display_name": "ff6347"
-    },
-    "category": {
-      "id": 2,
-      "name": "Temperatur"
     }
   }
 ]

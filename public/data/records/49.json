@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1580018,
+    "recorded_at": "2022-05-06T15:53:44.18+00:00",
+    "measurements": [
+      20
+    ],
+    "sensor_id": 49
+  },
+  {
+    "id": 15800181,
+    "recorded_at": "2022-05-07T15:53:44.18+00:00",
+    "measurements": [
+      40
+    ],
+    "sensor_id": 49
+  },
+  {
+    "id": 15800182,
+    "recorded_at": "2022-05-08T15:53:44.18+00:00",
+    "measurements": [
+      30
+    ],
+    "sensor_id": 49
+  },
+  {
+    "id": 15800183,
+    "recorded_at": "2022-05-09T15:53:44.18+00:00",
+    "measurements": [
+      10
+    ],
+    "sensor_id": 49
+  },
+  {
+    "id": 15800184,
+    "recorded_at": "2022-05-10T15:53:44.18+00:00",
+    "measurements": [
+      90
+    ],
+    "sensor_id": 49
+  }
+]
