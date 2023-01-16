@@ -10,6 +10,7 @@ import { TableOfContents } from "@components/TableOfContents";
 import { DocsBottomNavigation } from "@components/DocsBottomNavigation";
 import { useReducedMotion } from "@lib/hooks/useReducedMotion";
 import slugify from "slugify";
+import { Alert } from "@components/Alert";
 
 interface TocTitleType {
   el: HTMLHeadingElement;
@@ -82,6 +83,35 @@ const DocsLayout: MDXLayoutType = ({ slug, children, frontMatter }) => {
                 </h1>
               </div>
             </div>
+          </div>
+          <div
+            className={[
+              "relative z-0",
+              "container max-w-prose prose-purple",
+              "px-4 py-6 sm:p-8 md:p-12 lg:p-18",
+            ].join(" ")}
+          >
+            <Alert
+              title='Stadtpuls wurde Beendet'
+              type='warning'
+              isRemovable={false}
+              message={
+                <p>
+                  Stadtpuls wurde am 31. Januar 2023 beendet. Diese
+                  Dokumentation ist archiviert und dient nur zu
+                  Demonstrationszwecken.
+                  <br />
+                  <a
+                    href='https://stories.stadtpuls.com/stadtpuls-ende'
+                    target='_blank'
+                    rel='noreferrer'
+                    className='mx-4 navigation-link mb-4 sm:mx-0 sm:mb-0'
+                  >
+                    Erfahre mehr dazu in der Stadtpuls Story
+                  </a>
+                </p>
+              }
+            />
           </div>
           <div
             className={[
