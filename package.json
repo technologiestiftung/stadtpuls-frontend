@@ -34,7 +34,7 @@
     "react-day-picker": "7.4.10",
     "react-dom": "17.0.2",
     "react-hook-form": "7.27.0",
-    "react-map-gl": "6.1.17",
+    "react-map-gl": "7.0.21",
     "react-paginate": "8.1.1",
     "react-router-dom": "6.2.1",
     "react-simple-timefield": "3.2.5",
