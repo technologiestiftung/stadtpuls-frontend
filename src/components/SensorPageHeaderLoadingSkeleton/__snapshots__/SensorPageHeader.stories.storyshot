@@ -383,7 +383,7 @@ Array [
             onClick={[Function]}
             readOnly={true}
             type="text"
-            value="localhost/api/v3/sensors/1/records"
+            value="localhost/data/records/1.json"
           />
           <div
             aria-hidden={true}

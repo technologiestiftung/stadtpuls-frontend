@@ -1,0 +1,134 @@
+[
+  {
+    "id": "2bc3e26f-0dfe-4100-8dfc-e2a0a0d89c50",
+    "username": "CityLAB-Berlin",
+    "display_name": "CityLAB-Berlin",
+    "created_at": "2021-11-10T13:13:07.580089+00:00",
+    "link": "https://www.citylab-berlin.org",
+    "description": "Das CityLAB Berlin ist das Innovationslabor für das digitale Berlin von Morgen.",
+    "sensors_count": 30,
+    "records_count": 202150,
+    "categories": [
+      2,
+      6,
+      8
+    ],
+    "sensors": [
+      129,
+      28,
+      24,
+      27,
+      22,
+      25,
+      23,
+      29,
+      73,
+      79,
+      119,
+      120,
+      122,
+      124,
+      125,
+      127,
+      128,
+      111,
+      112,
+      114,
+      137
+    ]
+  },
+  {
+    "id": "325e948a-4b9e-4578-b009-714a5d8196e4",
+    "username": "COMo-Projekt",
+    "display_name": "COMo-Projekt",
+    "created_at": "2022-05-04T13:06:03.884869+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 13,
+    "records_count": 585853,
+    "categories": [
+      1
+    ],
+    "sensors": [
+      102,
+      103,
+      99,
+      100,
+      101,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      142
+    ]
+  },
+  {
+    "id": "aba73495-ebac-4cff-80c0-bd476b9b9cce",
+    "username": "hash",
+    "display_name": "ff6347",
+    "created_at": "2021-10-05T13:39:46.148319+00:00",
+    "link": null,
+    "description": null,
+    "sensors_count": 13,
+    "records_count": 2448167,
+    "categories": [
+      1,
+      2,
+      3,
+      5,
+      8
+    ],
+    "sensors": [
+      10,
+      5,
+      8,
+      7,
+      12,
+      13,
+      14,
+      9,
+      11,
+      18,
+      19,
+      6,
+      97
+    ]
+  },
+  {
+    "id": "63350a17-e3aa-4205-86a6-ddbb45d43549",
+    "username": "ingo",
+    "display_name": "Ingo Hinterding",
+    "created_at": "2021-09-28T14:50:25.62+00:00",
+    "link": "https://www.citylab-berlin.org",
+    "description": "Daten aus meiner Stadt.",
+    "sensors_count": 1,
+    "records_count": 6,
+    "categories": [
+      2
+    ],
+    "sensors": [
+      78
+    ]
+  },
+  {
+    "id": "5d20f24c-1ff7-4551-afe1-55db7fda90b3",
+    "username": "vogelino",
+    "display_name": "Lucas Vogelino",
+    "created_at": "2021-12-08T13:06:17.172563+00:00",
+    "link": "https://vogelino.com",
+    "description": "Creative Technologist @ CityLAB",
+    "sensors_count": 2,
+    "records_count": 26,
+    "categories": [
+      4,
+      8
+    ],
+    "sensors": [
+      49,
+      74
+    ]
+  }
+]

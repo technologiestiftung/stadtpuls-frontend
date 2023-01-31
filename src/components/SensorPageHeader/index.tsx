@@ -8,8 +8,7 @@ import { CopyTextField } from "@components/CopyTextField";
 import { PreviewMap } from "@components/PreviewMap";
 import { Button } from "@components/Button";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
-import { createApiUrl } from "@lib/requests/createApiUrl";
-import { normalizeURL } from "@lib/urlUtil";
+import { getAbsoluteBaseUrl, normalizeURL } from "@lib/urlUtil";
 import ReactAutolinker from "react-autolinker";
 
 export interface SensorPageHeaderPropType extends ParsedSensorType {
@@ -183,7 +182,7 @@ export const SensorPageHeader: FC<SensorPageHeaderPropType> = ({
               />
             )}
           </div>
-          <ApiUrl url={`${createApiUrl()}sensors/${id}/records`} />
+          <ApiUrl url={`${getAbsoluteBaseUrl()}/data/records/${id}.json`} />
           {withEditButton && onEditButtonClick && (
             <div className='w-full order-last mt-6'>
               <Button onClick={onEditButtonClick}>Sensor editieren</Button>

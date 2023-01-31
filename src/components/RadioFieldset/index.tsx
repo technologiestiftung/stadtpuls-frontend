@@ -4,6 +4,7 @@ interface RadioFieldsetPropType {
   name: string;
   label: string;
   isSelected: boolean;
+  disabled?: boolean;
   onSelect?: () => void;
 }
 
@@ -12,9 +13,14 @@ export const RadioFieldset: FC<RadioFieldsetPropType> = ({
   label,
   isSelected,
   children,
+  disabled = false,
   onSelect = () => undefined,
 }) => (
-  <fieldset className='relative' onClick={onSelect}>
+  <fieldset
+    className={["relative", disabled && "cursor-not-allowed"].join(" ")}
+    onClick={onSelect}
+    disabled={disabled}
+  >
     {!isSelected && (
       <div
         className={[
@@ -30,10 +36,13 @@ export const RadioFieldset: FC<RadioFieldsetPropType> = ({
         name={name}
         tabIndex={0}
         readOnly
+        className={[disabled && "cursor-not-allowed"].join(" ")}
       />
       <label
         htmlFor={name}
-        className={`inline-block text-sm mb-2 ${isSelected ? "text-blue" : ""}`}
+        className={`inline-block text-sm mb-2 ${
+          isSelected ? "text-blue" : ""
+        } ${disabled ? "cursor-not-allowed" : ""}`}
       >
         {label}
       </label>

@@ -8,7 +8,8 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
     className="pb-4 pt-8 flex flex-wrap gap-8"
   >
     <fieldset
-      className="relative"
+      className="relative cursor-not-allowed"
+      disabled={true}
       onClick={[Function]}
     >
       <div
@@ -19,13 +20,14 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
       >
         <input
           checked={false}
+          className="cursor-not-allowed"
           name="devicesByDatetimeRange"
           readOnly={true}
           tabIndex={0}
           type="radio"
         />
         <label
-          className="inline-block text-sm mb-2 "
+          className="inline-block text-sm mb-2  cursor-not-allowed"
           htmlFor="devicesByDatetimeRange"
         >
           Messwerte nach Zeitspanne
@@ -44,19 +46,20 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
               className="inputContainer"
             >
               <input
+                className="cursor-not-allowed"
+                disabled={true}
                 onBlur={[Function]}
                 onChange={[Function]}
-                onClick={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 onKeyUp={[Function]}
                 placeholder="DD/MM/YYYY"
-                tabIndex={-1}
+                readOnly={true}
                 value="11/08/2021"
               />
             </div>
             <input
-              className="InputTime-from font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 timeInput"
+              className="InputTime-from font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 cursor-not-allowed !opacity-100 timeInput"
               onChange={[Function]}
               style={Object {}}
               tabIndex={-1}
@@ -71,19 +74,20 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
               className="inputContainer"
             >
               <input
+                className="cursor-not-allowed"
+                disabled={true}
                 onBlur={[Function]}
                 onChange={[Function]}
-                onClick={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 onKeyUp={[Function]}
                 placeholder="DD/MM/YYYY"
-                tabIndex={-1}
+                readOnly={true}
                 value="01/08/2021"
               />
             </div>
             <input
-              className="InputTime-to font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 timeInput"
+              className="InputTime-to font-mono relative focus:z-30 w-[4.5rem] text-center inline-block border border-gray-200 p-1.5 cursor-not-allowed !opacity-100 timeInput"
               onChange={[Function]}
               style={Object {}}
               tabIndex={-1}
@@ -95,7 +99,8 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
       </div>
     </fieldset>
     <fieldset
-      className="relative"
+      className="relative cursor-not-allowed"
+      disabled={true}
       onClick={[Function]}
     >
       <div
@@ -103,13 +108,14 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
       >
         <input
           checked={true}
+          className="cursor-not-allowed"
           name="devicesByTimespan"
           readOnly={true}
           tabIndex={0}
           type="radio"
         />
         <label
-          className="inline-block text-sm mb-2 text-blue"
+          className="inline-block text-sm mb-2 text-blue cursor-not-allowed"
           htmlFor="devicesByTimespan"
         >
           Messwerte nach Zeitraum
@@ -122,25 +128,29 @@ exports[`Storyshots Forms/DeviceLineChartFilters Default 1`] = `
           className="flex"
         >
           <button
-            className="border border-gray-200 px-2 sm:px-3 py-2 text-sm relative transition focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30 focus:ring-offset focus:ring-offset-white focus:ring-offset-2 hover:bg-purple hover:bg-opacity-10 hover:text-purple hover:border-purple hover:z-10"
+            className="border border-gray-200 px-2 sm:px-3 py-2 text-sm relative transition focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30 focus:ring-offset focus:ring-offset-white focus:ring-offset-2 cursor-not-allowed"
+            disabled={true}
             onClick={[Function]}
           >
             24 Std.
           </button>
           <button
-            className="border border-gray-200 px-2 sm:px-3 py-2 text-sm relative transition focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30 focus:ring-offset focus:ring-offset-white focus:ring-offset-2 hover:bg-purple hover:bg-opacity-10 hover:text-purple hover:border-purple hover:z-10 ml-[-1px]"
+            className="border border-gray-200 px-2 sm:px-3 py-2 text-sm relative transition focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30 focus:ring-offset focus:ring-offset-white focus:ring-offset-2 ml-[-1px] cursor-not-allowed"
+            disabled={true}
             onClick={[Function]}
           >
             7 Tage
           </button>
           <button
-            className="border border-gray-200 px-2 sm:px-3 py-2 text-sm relative transition focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30 focus:ring-offset focus:ring-offset-white focus:ring-offset-2 hover:bg-purple hover:bg-opacity-10 hover:text-purple hover:border-purple hover:z-10 ml-[-1px]"
+            className="border border-gray-200 px-2 sm:px-3 py-2 text-sm relative transition focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30 focus:ring-offset focus:ring-offset-white focus:ring-offset-2 ml-[-1px] cursor-not-allowed"
+            disabled={true}
             onClick={[Function]}
           >
             30 Tage
           </button>
           <button
-            className="border border-gray-200 px-2 sm:px-3 py-2 text-sm relative transition focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30 focus:ring-offset focus:ring-offset-white focus:ring-offset-2 ml-[-1px] bg-blue border-blue text-white z-20"
+            className="border border-gray-200 px-2 sm:px-3 py-2 text-sm relative transition focus:outline-none focus:ring-2 focus:border-purple focus:ring-purple focus:z-30 focus:ring-offset focus:ring-offset-white focus:ring-offset-2 ml-[-1px] bg-blue border-blue text-white z-20 cursor-not-allowed"
+            disabled={true}
             onClick={[Function]}
           >
             Max.

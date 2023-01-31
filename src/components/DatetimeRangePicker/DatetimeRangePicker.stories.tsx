@@ -32,7 +32,7 @@ const Template: Story<DatetimeRangePickerPropType> = ({
               currentDatetimeRange.endDateTimeString ||
               new Date().toISOString(),
           });
-          onDatetimeRangeChange(dateTimeRange);
+          onDatetimeRangeChange && onDatetimeRangeChange(dateTimeRange);
         }}
       />
     </div>

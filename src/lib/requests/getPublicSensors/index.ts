@@ -1,14 +1,10 @@
-import { supabase } from "@auth/supabase";
 import {
+  mapPublicSensor,
   ParsedSensorType,
   SensorQueryResponseType,
-  mapPublicSensor,
 } from "@lib/hooks/usePublicSensors";
-
-export const errors = {
-  rangeEndGreaterThanRangeStart: "rangeEnd can not be smaller than rangeStart",
-  onlyOneRangeValue: "rangeStart and rangeEnd must both be provided",
-};
+import path from "path";
+import { promises as fs } from "fs";
 
 export const sensorQueryString = `
   id,
@@ -34,61 +30,22 @@ export const sensorQueryString = `
   )
 `;
 
-export interface GetSensorsOptionsType {
-  rangeStart?: number;
-  rangeEnd?: number;
-}
-
-export const getPublicSensors = async (
-  options?: GetSensorsOptionsType
-): Promise<{
+type SensorsResponseType = {
   sensors: ParsedSensorType[];
   count: number;
-}> => {
-  if (
-    options &&
-    typeof options.rangeStart !== "undefined" &&
-    typeof options.rangeEnd !== "undefined" &&
-    options.rangeEnd <= options.rangeStart
-  )
-    throw new Error(errors.rangeEndGreaterThanRangeStart);
+};
 
-  if (
-    (options &&
-      typeof options.rangeStart !== "undefined" &&
-      typeof options.rangeEnd === "undefined") ||
-    (options &&
-      typeof options.rangeStart === "undefined" &&
-      typeof options.rangeEnd !== "undefined")
-  )
-    throw new Error(errors.onlyOneRangeValue);
-
-  if (
-    options &&
-    (options.rangeStart || options.rangeStart === 0) &&
-    options.rangeEnd
-  ) {
-    const { data, count, error } = await supabase
-      .from<SensorQueryResponseType>("sensors")
-      .select(sensorQueryString, { count: "exact" })
-      .order("created_at", { ascending: false })
-      .range(options.rangeStart, options.rangeEnd);
-
-    if (error) throw error;
-    if (!data || typeof count !== "number") return { sensors: [], count: 0 };
-    const sensors = data?.map(mapPublicSensor);
-
-    return { sensors, count };
-  } else {
-    const { data, count, error } = await supabase
-      .from<SensorQueryResponseType>("sensors")
-      .select(sensorQueryString, { count: "exact" })
-      .order("created_at", { ascending: false });
-
-    if (error) throw error;
-    if (!data || typeof count !== "number") return { sensors: [], count: 0 };
-    const sensors = data?.map(mapPublicSensor);
-
-    return { sensors, count };
+export const getPublicSensors = async (): Promise<SensorsResponseType> => {
+  const basePath = path.join(process.cwd(), "public/data");
+  const response = await fs.readFile(`${basePath}/sensors.json`, "utf8");
+  try {
+    const rawSensors = JSON.parse(response) as SensorQueryResponseType[];
+    const sensors = rawSensors.map(mapPublicSensor);
+    return { count: sensors.length, sensors };
+  } catch (error) {
+    throw new Error(
+      (error as Error).message ||
+        `There was an error parsing the response of the accounts call`
+    );
   }
 };

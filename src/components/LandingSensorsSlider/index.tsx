@@ -7,7 +7,7 @@ import "swiper/swiper-bundle.css";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 import { SensorCard } from "@components/SensorCard";
-import { getCuratedSensorImageById } from "@lib/hooks/useCuratedSensors";
+import { getCuratedSensorImageById } from "@lib/getCuratedSensorImageById";
 
 interface LandingSensorsSliderPropType {
   sensors: ParsedSensorType[];
