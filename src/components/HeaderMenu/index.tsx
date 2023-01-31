@@ -1,10 +1,7 @@
-import { useAuth } from "@auth/Auth";
 import { ActiveLink } from "@components/ActiveLink";
 import useClickOutside from "@lib/hooks/useClickOutside";
-import { useUserData } from "@lib/hooks/useUserData";
 import { Close, Menu } from "@material-ui/icons";
 import { FC, ReactNode, useState } from "react";
-import ArrowOutOfDoor from "../../../public/images/icons/16px/arrowOutOfDoor.svg";
 
 interface MenuPageType {
   href: string;
@@ -48,8 +45,6 @@ const HeaderLink: FC<MenuLinkPropType> = ({
 );
 
 export const HeaderMenu: FC<HeaderMenuPropType> = ({ hasDarkMode = false }) => {
-  const { signOut } = useAuth();
-  const { user } = useUserData();
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const toggleIsOpened = (): void => setIsOpened(!isOpened);
   const menuRef = useClickOutside<HTMLDivElement>(() => setIsOpened(false));
@@ -89,44 +84,20 @@ export const HeaderMenu: FC<HeaderMenuPropType> = ({ hasDarkMode = false }) => {
             className='lg:hidden'
             onClick={() => setIsOpened(false)}
           />
-          {[
-            ...pages,
-            ...(user
-              ? [
-                  {
-                    href: `/${user.username}/sensors`,
-                    text: "Deine Sensoren",
-                    className: "lg:hidden",
-                  },
-                  {
-                    href: `/${user.username}/tokens`,
-                    text: "Deine Tokens",
-                    className: "lg:hidden",
-                  },
-                  {
-                    href: `#`,
-                    text: (
-                      <span className='inline-flex gap-2 items-center font-bold font-headline'>
-                        <ArrowOutOfDoor /> Logout
-                      </span>
-                    ),
-                    onClick: () => signOut(),
-                    className: "lg:hidden",
-                  },
-                ]
-              : []),
-          ].map(({ href, onClick = () => undefined, className = "", text }) => (
-            <HeaderLink
-              key={href}
-              href={href}
-              text={text}
-              className={className}
-              onClick={() => {
-                setIsOpened(false);
-                onClick();
-              }}
-            />
-          ))}
+          {pages.map(
+            ({ href, onClick = () => undefined, className = "", text }) => (
+              <HeaderLink
+                key={href}
+                href={href}
+                text={text}
+                className={className}
+                onClick={() => {
+                  setIsOpened(false);
+                  onClick();
+                }}
+              />
+            )
+          )}
         </ul>
       </nav>
     </div>

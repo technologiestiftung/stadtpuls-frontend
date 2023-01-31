@@ -8,7 +8,8 @@ exports[`Storyshots Forms/RadioFieldset Default 1`] = `
     className="grid grid-cols-2 gap-8"
   >
     <fieldset
-      className="relative"
+      className="relative false"
+      disabled={false}
       onClick={[Function]}
     >
       <div
@@ -16,13 +17,14 @@ exports[`Storyshots Forms/RadioFieldset Default 1`] = `
       >
         <input
           checked={true}
+          className="false"
           name="a"
           readOnly={true}
           tabIndex={0}
           type="radio"
         />
         <label
-          className="inline-block text-sm mb-2 text-blue"
+          className="inline-block text-sm mb-2 text-blue "
           htmlFor="a"
         >
           I am a label
@@ -35,7 +37,8 @@ exports[`Storyshots Forms/RadioFieldset Default 1`] = `
       </div>
     </fieldset>
     <fieldset
-      className="relative"
+      className="relative false"
+      disabled={false}
       onClick={[Function]}
     >
       <div
@@ -46,13 +49,14 @@ exports[`Storyshots Forms/RadioFieldset Default 1`] = `
       >
         <input
           checked={false}
+          className="false"
           name="b"
           readOnly={true}
           tabIndex={0}
           type="radio"
         />
         <label
-          className="inline-block text-sm mb-2 "
+          className="inline-block text-sm mb-2  "
           htmlFor="b"
         >
           I am a label

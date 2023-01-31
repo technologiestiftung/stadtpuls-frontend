@@ -3,7 +3,6 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { SensorsListRow } from "@components/SensorsListRow";
 import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
-import { Pagination, PaginationType } from "@components/Pagination";
 import { useRouter } from "next/router";
 import { SensorsListRowLoadingSkeleton } from "@components/SensorsListRowLoadingSkeleton";
 import { Alert } from "@components/Alert";
@@ -31,10 +30,6 @@ const MarkerMap = dynamic(
 
 interface SensorsMapType {
   sensors?: ParsedSensorType[];
-  paginationProps: Omit<
-    PaginationType,
-    "numberOfDisplayedPages" | "marginPagesDisplayed"
-  >;
   sensorsAreLoading?: boolean;
   error?: Error;
 }
@@ -199,7 +194,6 @@ const MapThumbnailSensor: FC<
 
 export const SensorsMap: FC<SensorsMapType> = ({
   sensors = [],
-  paginationProps,
   sensorsAreLoading = false,
   error,
 }) => {
@@ -253,12 +247,6 @@ export const SensorsMap: FC<SensorsMapType> = ({
             >
               Alle Sensoren
             </h1>
-            {!sensorsAreLoading && (
-              <h2 className='text-gray-600 mt-0 md:mt-2'>
-                Seite {paginationProps.currentPage} von{" "}
-                {paginationProps.pageCount}
-              </h2>
-            )}
           </div>
           {error?.message && (
             <Alert
@@ -303,15 +291,6 @@ export const SensorsMap: FC<SensorsMapType> = ({
                     />
                   ))}
             </ul>
-          )}
-          {!sensorsAreLoading && (
-            <div className='mt-12 flex justify-center'>
-              <Pagination
-                {...paginationProps}
-                numberOfDisplayedPages={5}
-                marginPagesDisplayed={1}
-              />
-            </div>
           )}
         </aside>
         {!(isSm && !showMap) && (

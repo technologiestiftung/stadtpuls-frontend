@@ -11,7 +11,6 @@ import "../src/style/global.css";
 import { Head } from "@components/Head";
 import NextNProgress from "nextjs-progressbar";
 import colors from "../src/style/colors";
-import { DownloadQueueProvider } from "@lib/hooks/useDownloadQueue";
 import { useWindowSize } from "@lib/hooks/useWindowSize";
 import { ShutdownBanner } from "@components/ShutdownAnnouncementBanner";
 import { ShutdownModal } from "@components/ShutdownAnnouncementModal";
@@ -39,30 +38,26 @@ const Document: FC<{
   return (
     <StrictMode>
       <AuthProvider>
-        <DownloadQueueProvider>
-          <Head />
-          <NextNProgress
-            stopDelayMs={50}
-            color={colors.green}
-            options={{ showSpinner: false }}
-          />
-          <main
-            id={pathname?.replace(/\//gi, "") || "home"}
-            className='z-0 relative w-full'
-            style={{
-              paddingTop: 0,
-              minHeight: "calc(100vh - 215px)",
-            }}
-          >
-            <ShutdownModal />
-            {!isSensorsMap && !isSensorsPage && !isDocsPage && (
-              <ShutdownBanner />
-            )}
-            <Header />
-            <Component {...pageProps} />
-          </main>
-          {!isSensorsMap && <Footer />}
-        </DownloadQueueProvider>
+        <Head />
+        <NextNProgress
+          stopDelayMs={50}
+          color={colors.green}
+          options={{ showSpinner: false }}
+        />
+        <main
+          id={pathname?.replace(/\//gi, "") || "home"}
+          className='z-0 relative w-full'
+          style={{
+            paddingTop: 0,
+            minHeight: "calc(100vh - 215px)",
+          }}
+        >
+          <ShutdownModal />
+          {!isSensorsMap && !isSensorsPage && !isDocsPage && <ShutdownBanner />}
+          <Header />
+          <Component {...pageProps} />
+        </main>
+        {!isSensorsMap && <Footer />}
       </AuthProvider>
     </StrictMode>
   );

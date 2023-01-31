@@ -1,12 +1,11 @@
 import { DeviceLineChartFilters } from "@components/DeviceLineChartFilters";
-import { DropdownMenu } from "@components/DropdownMenu";
 import { LineChart } from "@components/LineChart";
 import { TextLink } from "@components/TextLink";
 import { createDateValueArray } from "@lib/dateUtil";
-import { ParsedSensorType } from "@lib/hooks/usePublicSensors";
-import { useSensorRecords } from "@lib/hooks/useSensorRecords";
-import { useSensorRecordsCount } from "@lib/hooks/useSensorRecordsCount";
-import { GetRecordsOptionsType } from "@lib/requests/getRecordsBySensorId";
+import {
+  ParsedSensorType,
+  parseSensorRecords,
+} from "@lib/hooks/usePublicSensors";
 import { getSensorData } from "@lib/requests/getSensorData";
 import DownloadIcon from "../../../public/images/icons/16px/arrowDownWithHalfSquare.svg";
 import moment from "moment";
@@ -14,17 +13,15 @@ import "moment/locale/de";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { FC, useCallback, useState } from "react";
 import { SensorPageHeaderWithData } from "@components/SensorPageHeader/withData";
-import { useDownloadQueue } from "@lib/hooks/useDownloadQueue";
-import { downloadCSVString } from "@lib/downloadCsvUtil";
+import { createCSVStructure, downloadCSVString } from "@lib/downloadCsvUtil";
 import { Alert } from "@components/Alert";
 import { MAX_RENDERABLE_VALUES as MAX_RENDERABLE_VALUES_LINE_CHART } from "@components/LinePath";
 import { getPublicSensors } from "@lib/requests/getPublicSensors";
-import { useSensorData } from "@lib/hooks/useSensorData";
 import { useRouter } from "next/router";
 import { SensorPageHeaderLoadingSkeleton } from "@components/SensorPageHeaderLoadingSkeleton";
 import { RecordsTable } from "@components/RecordsTable";
-import { useUserData } from "@lib/hooks/useUserData";
-import { getTranslatedErrorMessage } from "@lib/translationUtil";
+import { getRecordsBySensorId } from "@lib/requests/getRecordsBySensorId";
+import { definitions } from "@technologiestiftung/stadtpuls-supabase-definitions/generated";
 
 moment.locale("de-DE");
 
@@ -44,8 +41,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     if (!sensor || sensor.authorUsername !== params?.username)
       return { notFound: true };
+    const { records } = await getRecordsBySensorId(`${sensorId}`);
 
-    return { props: { sensor, error: null }, revalidate: 60 };
+    if (!records) return { notFound: true };
+    return { props: { sensor, records, error: null }, revalidate: 60 };
   } catch (error) {
     const { details } = error as { details: string };
     if (details && details.startsWith("Results contain 0 rows")) {
@@ -75,16 +74,11 @@ const numberFormatter = new Intl.NumberFormat("de-DE", {
 
 const SensorPage: FC<{
   sensor?: ParsedSensorType | null;
-}> = ({ sensor: initialSensor } = { sensor: null }) => {
+  records: (Omit<definitions["records"], "measurements"> & {
+    measurements: number[];
+  })[];
+}> = ({ sensor, records: rawRecords }) => {
   const { isFallback } = useRouter();
-  const { isLoggedIn, user: loggedInAccount } = useUserData();
-  const isEditable =
-    isLoggedIn && loggedInAccount?.username === initialSensor?.authorUsername;
-  const { sensor, isLoading } = useSensorData({
-    sensorId: initialSensor?.id,
-    initialData: initialSensor || undefined,
-  });
-  const { pushToQueue } = useDownloadQueue();
   const [chartWidth, setChartWidth] = useState<number | undefined>(undefined);
   const [chartHeight, setChartHeight] = useState<number | undefined>(undefined);
   const [currentDatetimeRange, setCurrentDatetimeRange] = useState<{
@@ -94,19 +88,8 @@ const SensorPage: FC<{
     startDateTimeString: undefined,
     endDateTimeString: undefined,
   });
-  const { count: recordsCount } = useSensorRecordsCount(initialSensor?.id);
-  const {
-    records,
-    recordsCount: requestedRecordsCount,
-    error: recordsFetchError,
-    isLoading: recordsAreLoading,
-    deleteRecords,
-  } = useSensorRecords({
-    sensorId: initialSensor?.id,
-    startDateString: currentDatetimeRange.startDateTimeString,
-    endDateString: currentDatetimeRange.endDateTimeString,
-    maxRows: MAX_RENDERABLE_VALUES_LINE_CHART,
-  });
+  const records = parseSensorRecords(rawRecords || []);
+  const requestedRecordsCount = records.length;
   const parsedAndSortedRecords = createDateValueArray(records);
 
   const chartWrapper = useCallback((node: HTMLDivElement | null) => {
@@ -116,41 +99,23 @@ const SensorPage: FC<{
     setChartHeight(width / 2);
   }, []);
 
-  const handleDownload = useCallback(
-    (options?: GetRecordsOptionsType): void => {
-      if (isFallback || !initialSensor?.id) return;
-      const CSVTitle = !options
-        ? `${moment.parseZone().format("YYYY-MM-DD")}-sensor-${
-            initialSensor.id
-          }-all-data`
-        : `${moment
-            .parseZone(currentDatetimeRange.startDateTimeString)
-            .format("YYYY-MM-DD")}-to-${moment
-            .parseZone(currentDatetimeRange.endDateTimeString)
-            .format("YYYY-MM-DD")}-sensor-${initialSensor.id}`;
+  const handleDownload = useCallback((): void => {
+    if (isFallback || !sensor?.id || records.length === 0) return;
+    const CSVTitle = `sensor-${sensor.id}`;
 
-      pushToQueue({
-        id: initialSensor.id,
-        username: initialSensor.authorUsername,
-        title: CSVTitle,
-        totalCount: recordsCount || 0,
-        options,
-        callback: ({ title, result }) =>
-          result && downloadCSVString(result, title),
-      });
-    },
-    [
-      currentDatetimeRange.endDateTimeString,
-      currentDatetimeRange.startDateTimeString,
-      pushToQueue,
-      recordsCount,
-      initialSensor?.id,
-      initialSensor?.authorUsername,
-      isFallback,
-    ]
-  );
+    const CSVData = createCSVStructure(
+      records.map(dateValue => ({
+        id: +dateValue.id,
+        recorded_at: dateValue.date.toISOString(),
+        measurements: [dateValue.value],
+        sensor_id: sensor.id,
+      }))
+    );
 
-  const sensorToRender = !isFallback && !isLoading && (sensor || initialSensor);
+    downloadCSVString(CSVData, CSVTitle);
+  }, [sensor?.id, records, isFallback]);
+
+  const sensorToRender = !isFallback && sensor;
   return (
     <>
       {sensorToRender ? (
@@ -166,37 +131,22 @@ const SensorPage: FC<{
               endDateTimeString={currentDatetimeRange.endDateTimeString}
               onDatetimeRangeChange={vals => setCurrentDatetimeRange(vals)}
             />
-            <div className='md:pt-4 lg:pt-8'>
-              <DropdownMenu
-                items={[
-                  {
-                    id: "all",
-                    title: "Alle Daten",
-                    onClick: () => {
-                      void handleDownload();
-                    },
-                  },
-                  {
-                    id: "filtered",
-                    title: "Gefilterte Daten",
-                    disabled: records.length === 0,
-                    onClick: () => {
-                      void handleDownload({
-                        startDate: currentDatetimeRange.startDateTimeString,
-                        endDate: currentDatetimeRange.endDateTimeString,
-                      });
-                    },
-                  },
-                ]}
-              >
+            {(requestedRecordsCount || 0) > 0 && (
+              <div className='md:pt-4 lg:pt-8'>
                 <span className='inline-flex gap-2 place-items-center'>
                   <DownloadIcon className='text-black' />
-                  <TextLink>Herunterladen (CSV)</TextLink>
+                  <TextLink
+                    onClick={() => {
+                      void handleDownload();
+                    }}
+                  >
+                    Herunterladen (CSV)
+                  </TextLink>
                 </span>
-              </DropdownMenu>
-            </div>
+              </div>
+            )}
           </div>
-          {requestedRecordsCount &&
+          {typeof requestedRecordsCount !== "undefined" &&
             requestedRecordsCount > MAX_RENDERABLE_VALUES_LINE_CHART && (
               <Alert
                 message={
@@ -223,7 +173,7 @@ const SensorPage: FC<{
             <div className={["text-sm text-gray-500"].join(" ")}>
               {numberFormatter.format(records.length)}
               {` von `}
-              {recordsCount || 0}
+              {sensor?.parsedRecords?.length || 0}
               {` Messwerte`}
             </div>
           </div>
@@ -244,46 +194,18 @@ const SensorPage: FC<{
               endDateTimeString={currentDatetimeRange.endDateTimeString}
             />
           )}
-          {recordsFetchError?.message && (
-            <div
-              className={[
-                "fixed top-[60px] w-full container max-w-8xl z-50",
-                "left-1/2 transform -translate-x-1/2 backdrop-filter backdrop-blur-md",
-              ].join(" ")}
-            >
-              <Alert
-                type='error'
-                title='Es ist ein Fehler aufgetreten:'
-                message={
-                  getTranslatedErrorMessage(recordsFetchError.message) ===
-                  recordsFetchError.message ? (
-                    <code className='inline-block mt-1 px-2 py-1 font-mono bg-error bg-opacity-20 box-decoration-clone'>
-                      {recordsFetchError.message}
-                    </code>
-                  ) : (
-                    getTranslatedErrorMessage(recordsFetchError.message)
-                  )
-                }
-              />
-            </div>
-          )}
-          {!recordsFetchError && !recordsAreLoading && records.length === 0 && (
+          {records.length === 0 && (
             <div className='prose p-8 max-w-full h-80 grid place-content-center place-items-center'>
               <p>Keine Daten für die aktuelle Filterkonfiguration</p>
-            </div>
-          )}
-          {!recordsFetchError && recordsAreLoading && (
-            <div className='prose p-8 max-w-full h-80 grid place-content-center place-items-center'>
-              <p>Daten werden geladen...</p>
             </div>
           )}
         </div>
         {records.length > 0 && (
           <div className='mt-16'>
             <RecordsTable
-              isEditable={isEditable}
+              isEditable={false}
               data={parsedAndSortedRecords.reverse()}
-              onRecordsDelete={deleteRecords}
+              onRecordsDelete={() => undefined}
             />
           </div>
         )}
